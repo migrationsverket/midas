@@ -7,4 +7,7 @@ export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/storybook',
   plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin([])],
+  build: {
+    target: 'esnext',
+  },
 })

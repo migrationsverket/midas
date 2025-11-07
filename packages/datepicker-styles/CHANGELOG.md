@@ -1,3 +1,28 @@
+## 0.2.1 (2025-11-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.2.0
+
+## 0.2.0 (2025-10-27)
+
+### 🚀 Features
+
+- **date-picker:** add forced colors support ([bf2843c952](https://github.com/migrationsverket/midas/commit/bf2843c952))
+- **date-picker:** add medium size ([d713916d3d](https://github.com/migrationsverket/midas/commit/d713916d3d))
+- **date-picker:** hide days outside of month ([b0baef9b54](https://github.com/migrationsverket/midas/commit/b0baef9b54))
+- **date-picker:** add hover states ([07292399fc](https://github.com/migrationsverket/midas/commit/07292399fc))
+- **datepicker-styles:** set correct styles for next-prev arrows, add docs ([36119dfcb2](https://github.com/migrationsverket/midas/commit/36119dfcb2))
+- **datepicker-styles:** align more styles with midas-datepicker ([6d83b05d58](https://github.com/migrationsverket/midas/commit/6d83b05d58))
+
+### 🔙 Rollback changes
+
+- revert: Revert "feat(date-picker): hide days outside of month" ([deaf763a30](https://github.com/migrationsverket/midas/commit/deaf763a30))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.1.1
+
 ## 0.1.2 (2025-10-10)
 
 ### 🧱 Updated Dependencies

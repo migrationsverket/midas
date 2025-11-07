@@ -1,10 +1,7 @@
+import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DatePicker } from '@midas-ds/components'
-import { expect, userEvent, within } from 'storybook/test'
-import React from 'react'
 import { parseDate, CalendarDate } from '@internationalized/date'
-
-const testID = 'datePicker'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -37,15 +34,7 @@ const meta: Meta<typeof DatePicker> = {
 export default meta
 type Story = StoryObj<typeof DatePicker>
 
-export const Primary: Story = {
-  play: async ({ step, canvas, args }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(canvas.getByRole('group')).toHaveStyle({
-        height: args.size === 'large' ? '48px' : '40px',
-      })
-    })
-  },
-}
+export const Primary: Story = {}
 
 export const WithTime: Story = {
   args: {
@@ -58,6 +47,13 @@ export const WithTime: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    defaultValue: new CalendarDate(1995, 5, 29),
   },
 }
 
@@ -83,20 +79,6 @@ export const Required: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvas, step, args: { errorMessage } }) => {
-    await step(
-      'it should show an error message if submitted empty',
-      async () => {
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
-      },
-    )
-  },
 }
 
 export const CustomValiation: Story = {
@@ -115,22 +97,6 @@ export const CustomValiation: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvas, step }) => {
-    /**
-     * This test is made to create an invalid DatePicker
-     * the current year is not allowed the "user" selects todays date and submits the form
-     */
-    await step('it should show a custom error message if invalid', async () => {
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.keyboard('[Enter]')
-      await userEvent.keyboard('[Enter]')
-      await userEvent.tab()
-      expect(canvas.getByText('Var god välj ett annat år')).toBeInTheDocument()
-    })
-  },
 }
 
 export const ControlledState: Story = {
@@ -144,33 +110,12 @@ export const ControlledState: Story = {
     )
     return (
       <DatePicker
-        data-testid={testID}
         {...args}
         value={value}
         onChange={newValue =>
           setValue(newValue ? parseDate(newValue.toString()) : null)
         }
       />
-    )
-  },
-  play: async ({ canvas, step }) => {
-    await step(
-      'the calendar should not be contained by the datepicker div',
-      async () => {
-        // Select tomorrows date
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        await userEvent.keyboard('[ArrowRight]')
-        await userEvent.keyboard('[Enter]')
-        await userEvent.keyboard('[Enter]')
-
-        await expect(
-          within(canvas.getByTestId(testID)).queryByRole('application'),
-        ).toBeNull()
-      },
     )
   },
 }

@@ -1,0 +1,109 @@
+---
+title: React Datepicker
+description: Använda React Datepicker med Midas-stilar
+---
+
+import { DefaultReactDatepickerExample, MonthSelectExample } from '@site/src/components/examples'
+
+# React Datepicker
+
+För de flesta användningsfall rekommenderar vi att du använder Midas inbyggda datumkomponenter, då de är fullt integrerade med vårt designsystem och erbjuder god tillgänglighet. Om du däremot behöver en datumväljare med mer avancerade funktioner som inte finns tillgängliga i Midas standardkomponenter, kan du använda det populära tredjepartsbiblioteket [React Datepicker](https://reactdatepicker.com/). Vi har tillhandahållit stilar för att säkerställa att den matchar Midas utseende och känsla.
+
+:::info
+Stilarna för React Datepicker är just nu i en tidig version och är ett arbete som pågår. React Datepicker är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/migrationsverket/midas) och tar gärna emot förslag på stilar som saknas när du implementerar React Datepicker.
+:::
+
+## När du ska använda React Datepicker
+
+Använd Midas inbyggda datumkomponenter som standard. React Datepicker är ett alternativ när du har specifika behov som kräver dess utökade funktionalitet, såsom:
+
+- Avancerade datumintervall
+- Månads- eller årsväljare
+- Anpassade datumformat och validering
+- Tidsväljare
+- Och andra specialfunktioner som inte stöds av Midas standardkomponenter.
+
+## Komma igång
+
+För att använda React Datepicker med Midas-stilar måste du först installera de nödvändiga beroendena:
+
+```bash
+npm install react-datepicker @midas-ds/datepicker-styles date-fns
+```
+
+Importera sedan Midas-stilarna för datumväljaren:
+
+```css
+@import '@midas-ds/datepicker-styles/react-datepicker.css';
+```
+
+### Språkstöd (Locale Support)
+
+React Datepicker använder `date-fns` för hantering av språk och lokala inställningar. För att lägga till språkstöd, installera önskat språkpaket från `date-fns` och registrera det med `react-datepicker`.
+
+```tsx
+import { registerLocale, setDefaultLocale } from 'react-datepicker'
+import { sv } from 'date-fns/locale/sv'
+registerLocale('sv', sv)
+setDefaultLocale('sv')
+```
+
+## Användbara länkar
+
+Här är några resurser som hjälper dig att komma igång med React Datepicker:
+
+- [**React Datepicker GitHub**](https://github.com/Hacker0x01/react-datepicker): Officiella GitHub-repot.
+- [**React Datepicker Docs**](https://reactdatepicker.com/): Den officiella dokumentationen är den bästa platsen att lära sig om alla funktioner och hur man använder dem.
+
+## Exempel
+
+Här är ett exempel på en datumväljare byggd med React Datepicker och stylad med Midas:
+
+<DefaultReactDatepickerExample />
+
+```tsx title="DatePickerExample.tsx"
+import { CalendarDays } from 'lucide-react'
+import DatePicker from 'react-datepicker'
+import { useState } from 'react'
+import '@midas-ds/datepicker-styles/lib/react-datepicker.css'
+
+export const DefaultReactDatepickerExample = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  return (
+    <DatePicker
+      showIcon
+      selected={selectedDate}
+      onChange={(date: Date | null) => setSelectedDate(date)}
+      formatWeekDay={date => date[0].toUpperCase()} // Capitalize first letter of the weekday
+      toggleCalendarOnIconClick
+      icon={<CalendarDays height={20} />}
+      showPopperArrow={false}
+      dateFormat='dd-MM-yyyy'
+      placeholderText='Select a date'
+    />
+  )
+}
+```
+
+### Månadsväljare
+
+Här är ett exempel på en månadsväljare byggd med React Datepicker och stylad med Midas:
+
+```tsx title="MonthPickerExample.tsx"
+const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+return (
+  <DatePicker
+    showPopperArrow={false}
+    selected={selectedDate}
+    showIcon
+    toggleCalendarOnIconClick
+    icon={<CalendarDays height={20} />}
+    showMonthYearPicker
+    onChange={(date: Date | null) => setSelectedDate(date)}
+    dateFormat='MM-yyyy'
+    placeholderText='Select a date'
+  />
+)
+```
+
+<MonthSelectExample />

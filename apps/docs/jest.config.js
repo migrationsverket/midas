@@ -7,4 +7,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   passWithNoTests: true,
+  modulePathIgnorePatterns: ['./tests'],
 }

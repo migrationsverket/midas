@@ -17,25 +17,6 @@ export default {
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-vitest'),
-    {
-      name: getAbsolutePath('storybook-addon-vis'),
-      options: {
-        visProjects: [
-          {
-            snapshotRootDir: '__vis__/light/local',
-          },
-          {
-            snapshotRootDir: '__vis__/dark/local',
-          },
-          {
-            snapshotRootDir: '__vis__/forced-colors-light/local',
-          },
-          {
-            snapshotRootDir: '__vis__/forced-colors-dark/local',
-          },
-        ],
-      },
-    },
   ],
   core: {
     disableTelemetry: true,
@@ -55,7 +36,10 @@ export default {
       tsconfigPath: join(basePath, 'tsconfig.storybook.json'),
       propFilter: prop => {
         if (prop.parent) {
-          return !prop.parent.fileName.includes('@types/react')
+          return !(
+            prop.parent.fileName.includes('@types/react') ||
+            prop.parent.fileName.includes('dom.d.ts')
+          )
         }
         return true
       },

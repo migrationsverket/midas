@@ -36,15 +36,19 @@
   }
 
   &[data-placement='top'] {
-    margin-bottom: 8px;
-
     --origin: translateY(4px);
+
+    &:has(.arrow) {
+      margin-bottom: 8px;
+    }
   }
 
   &[data-placement='bottom'] {
-    margin-top: 8px;
-
     --origin: translateY(-4px);
+
+    &:has(.arrow) {
+      margin-top: 8px;
+    }
 
     .arrow svg {
       transform: rotate(180deg);
@@ -52,9 +56,11 @@
   }
 
   &[data-placement='right'] {
-    margin-left: 8px;
-
     --origin: translateX(-4px);
+
+    &:has(.arrow) {
+      margin-left: 8px;
+    }
 
     & .arrow svg {
       transform: rotate(90deg);
@@ -62,7 +68,9 @@
   }
 
   &[data-placement='left'] {
-    margin-right: 8px;
+    &:has(.arrow) {
+      margin-right: 8px;
+    }
 
     --origin: translateX(4px);
 

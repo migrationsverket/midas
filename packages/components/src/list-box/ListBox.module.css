@@ -29,12 +29,14 @@
 }
 
 .listBoxSectionHeading {
+  background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40)
-    var(--midas-spacing-40);
+  padding: var(--midas-spacing-50) var(--midas-spacing-50)
+    var(--midas-spacing-20) var(--midas-spacing-40);
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
   color: var(--midas-menu-text-section-header);
 }
 
@@ -51,14 +53,23 @@
 }
 
 .listBoxItem {
+  align-items: center;
   background-color: var(--midas-layer-01-base);
+  box-sizing: border-box;
   color: var(--midas-text-primary);
   display: flex;
   font-family: var(--midas-typography-font-family);
-  line-height: 1;
+  line-height: var(--midas-typography-line-height-30);
   margin-bottom: 0;
-  padding: var(--midas-size-80);
+  padding: var(--midas-size-70) var(--midas-spacing-50);
   transition: background-color 60ms;
+  gap: var(--midas-spacing-50);
+
+  .textContent {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    width: 100%;
+  }
 
   &:hover:not([data-disabled]) {
     background-color: var(--midas-layer-01-hover);
@@ -94,13 +105,81 @@
     box-shadow: var(--midas-state-focus-inset);
     outline: none;
   }
+
+  &[data-show-selection] {
+    justify-content: space-between;
+
+    &[data-selection-mode='single'] {
+      &[data-selected] {
+        .textContent {
+          max-width: calc(100% - 3rem);
+        }
+
+        &::after {
+          content: '';
+          background-color: var(--midas-text-primary);
+          width: var(--midas-size-80);
+          height: var(--midas-size-80);
+          mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
+          mask-size: var(--midas-size-80) var(--midas-size-80);
+          flex-shrink: 0;
+
+          @media (forced-colors: active) {
+            filter: invert(1);
+          }
+        }
+      }
+    }
+
+    &[data-selection-mode='multiple'] {
+      justify-content: flex-start;
+      gap: var(--midas-spacing-30);
+
+      &::before {
+        transition: all 200ms;
+        box-sizing: border-box;
+        content: '';
+        border: 1px solid var(--midas-border-color-primary);
+        min-width: var(--midas-size-80);
+        height: var(--midas-size-80);
+      }
+
+      &[data-selected] {
+        &::before {
+          min-width: var(--midas-size-80);
+          min-height: var(--midas-size-80);
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGVjay1pY29uIGx1Y2lkZS1jaGVjayI+PHBhdGggZD0iTTIwIDYgOSAxN2wtNS01Ii8+PC9zdmc+');
+          background-size: contain;
+          background-color: var(--midas-button-background-primary-base);
+          border-color: var(--midas-button-background-primary-base);
+
+          @media (forced-colors: active) {
+            background-color: SelectedItem;
+            border-color: SelectedItem;
+          }
+        }
+
+        &[data-hovered] {
+          &::before {
+            background-color: var(--midas-button-background-primary-hover);
+            border-color: var(--midas-button-background-primary-hover);
+
+            @media (forced-colors: active) {
+              background-color: SelectedItem;
+              border-color: SelectedItem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .listBoxLoadMoreItem {
   align-items: center;
   display: flex;
-  gap: var(--midas-size-80);
+  gap: var(--midas-spacing-50);
   line-height: var(--midas-typography-line-height-30);
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-60)
-    var(--midas-size-80);
+  padding: var(--midas-spacing-50) var(--midas-spacing-50)
+    var(--midas-spacing-40) var(--midas-spacing-50);
 }

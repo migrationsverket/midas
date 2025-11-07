@@ -11,11 +11,13 @@ import styles from './Calendar.module.css'
 export interface CalendarGridProps {
   weekdayStyle?: AriaCalendarGridProps['weekdayStyle']
   isRange?: boolean
+  isReadOnly?: boolean
 }
 
 export const CalendarGrid: React.FC<CalendarGridProps> = ({
   weekdayStyle = 'short',
   isRange = false,
+  isReadOnly,
 }) => (
   <AriaCalendarGrid weekdayStyle={weekdayStyle}>
     {date => (
@@ -26,6 +28,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
           isToday(date, getLocalTimeZone()) && styles.today,
           isRange && styles.range,
         )}
+        data-readonly={isReadOnly || undefined}
       />
     )}
   </AriaCalendarGrid>

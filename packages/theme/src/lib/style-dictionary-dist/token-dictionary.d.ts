@@ -242,6 +242,7 @@ declare const tokens: {
     info: DesignToken;
     warning: DesignToken;
     important: DesignToken;
+    readOnly: DesignToken;
   };
   link: {
     enabled: DesignToken;
@@ -276,6 +277,7 @@ declare const tokens: {
     disabled: DesignToken;
     warning: DesignToken;
     placeholder: DesignToken;
+    readOnly: DesignToken;
   };
   badge: {
     background: DesignToken;

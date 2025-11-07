@@ -220,6 +220,8 @@ export const iconInfo: string;
 export const iconWarning: string;
 /** Ikonfärg för viktig information */
 export const iconImportant: string;
+/** Ikonfärg för read-only state */
+export const iconReadOnly: string;
 /** Primärlänkfärg */
 export const linkEnabled: string;
 /** Hover state för länkar */
@@ -268,6 +270,8 @@ export const textDisabled: string;
 export const textWarning: string;
 /** Textfärg för platshållare */
 export const textPlaceholder: string;
+/** Textfärg för read-only state */
+export const textReadOnly: string;
 export const badgeBackground: string;
 export const calendarDateBackgroundHover: string;
 export const calendarDateBackgroundSelected: string;

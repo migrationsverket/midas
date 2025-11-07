@@ -1,21 +1,38 @@
-import * as React from 'react'
-import clsx from '../utils/clsx'
 import {
   ListBoxItem as AriaListBoxItem,
-  type ListBoxItemProps,
+  type ListBoxItemProps as AriaListBoxItemProps,
 } from 'react-aria-components'
-import type { ListBoxItemElement } from './types'
+import clsx from '../utils/clsx'
 import styles from './ListBox.module.css'
 
-export const ListBoxItem = <T extends ListBoxItemElement>({
+export interface ListBoxItemProps<T extends object>
+  extends AriaListBoxItemProps<T> {
+  /**
+   * Wheter to hide the checkmarks and checkboxes for selected items
+   * @default false
+   */
+  hideSelectionIndicator?: boolean
+}
+
+export const ListBoxItem = <T extends object>({
   children,
   className,
+  hideSelectionIndicator,
+  textValue,
   ...rest
 }: ListBoxItemProps<T>) => (
   <AriaListBoxItem
     className={clsx(styles.listBoxItem, className)}
+    data-show-selection={!hideSelectionIndicator || undefined}
+    textValue={
+      textValue || (typeof children === 'string' ? children : undefined)
+    }
     {...rest}
   >
-    {children}
+    {renderProps => (
+      <div className={styles.textContent}>
+        {typeof children === 'function' ? children(renderProps) : children}
+      </div>
+    )}
   </AriaListBoxItem>
 )

@@ -209,6 +209,10 @@
     "important": {
       "$value": "light-dark({color.signalYellow.100}, {color.signalYellow.100})",
       "$description": "Ikonf\u00e4rg f\u00f6r viktig information"
+    },
+    "readOnly": {
+      "$value": "light-dark({color.gray.50}, {color.gray.160})",
+      "$description": "Ikonf\u00e4rg f\u00f6r read-only state"
     }
   },
   "link": {
@@ -318,6 +322,10 @@
     "placeholder": {
       "$value": "light-dark({color.gray.70}, {color.gray.140})",
       "$description": "Textf\u00e4rg f\u00f6r platsh\u00e5llare"
+    },
+    "readOnly": {
+      "$value": "light-dark({color.gray.110}, {color.gray.80})",
+      "$description": "Textf\u00e4rg f\u00f6r read-only state"
     }
   },
   "badge": {

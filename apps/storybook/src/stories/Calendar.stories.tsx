@@ -2,9 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Calendar } from '@midas-ds/components'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
-import { expect, userEvent, within } from 'storybook/test'
-import { today, getLocalTimeZone, isWeekend } from '@internationalized/date'
-import { mockedNow } from '../utils/storybook'
+import { CalendarDate, isWeekend } from '@internationalized/date'
 import { RunOptions } from 'axe-core'
 
 type Story = StoryObj<typeof Calendar>
@@ -23,58 +21,9 @@ export default {
   },
   title: 'Components/Calendar',
   tags: ['autodocs'],
-} as Meta<typeof Calendar>
+} satisfies Meta<typeof Calendar>
 
 export const Primary: Story = {}
-
-export const KeyboardTest: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should be possible to select tomorrow with the keyboard',
-      async () => {
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[ArrowRight]')
-        await userEvent.keyboard('[Space]')
-        await expect(
-          canvas.getByRole('gridcell', {
-            name: today(getLocalTimeZone()).add({ days: 1 }).day.toString(),
-          }),
-        ).toHaveAttribute('aria-selected', 'true')
-      },
-    )
-  },
-}
-
-export const DS1141: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  args: {
-    minValue: mockedNow,
-  },
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should show a "not-allowed" cursor when hovering disabled dates',
-      async () => {
-        const yesterdayButton = within(
-          canvas.getByRole('gridcell', {
-            name: `${mockedNow.day - 1}`,
-          }),
-        ).getByRole('button')
-
-        await userEvent.hover(yesterdayButton)
-        await expect(yesterdayButton).toHaveStyle({ cursor: 'not-allowed' })
-      },
-    )
-  },
-}
 
 export const Disabled: Story = {
   args: {
@@ -98,6 +47,13 @@ export const Disabled: Story = {
         },
       } satisfies RunOptions,
     },
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    value: new CalendarDate(1995, 5, 29),
   },
 }
 

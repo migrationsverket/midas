@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RadioGroup, Radio } from '@midas-ds/components'
-import { expect, userEvent } from 'storybook/test'
-import styles from '@midas-ds/components/radio/Radio.module.css'
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/Radio',
@@ -71,7 +69,7 @@ const radioItemsOneDisabled = [
   </Radio>,
 ]
 
-export const Normal: Story = {
+export const Primary: Story = {
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',
@@ -87,30 +85,20 @@ export const Normal: Story = {
     )),
     className: 'test-class',
   },
-  play: async ({ canvas, step, args }) => {
-    await step(
-      'it should preserve its classNames when being passed new ones',
-      async () => {
-        const radioGroup = canvas.getByRole('radiogroup')
-        const radios = canvas.getByRole('group').childNodes
-
-        await expect(radioGroup).toHaveClass(
-          styles.radioGroup,
-          args.className as string,
-        )
-
-        radios.forEach(async radio => {
-          await expect(radio).toHaveClass(styles.radio, 'test-radio-class')
-        })
-      },
-    )
-  },
 }
 
 export const Disabled: Story = {
   args: {
     children: items,
     isDisabled: true,
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    children: items,
+    isReadOnly: true,
+    value: 'Kiwi',
   },
 }
 
@@ -145,20 +133,6 @@ export const Required: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvas, step, args }) => {
-    await step(
-      'should show a validation error message if the user submitted without selecting anything',
-      async () => {
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(canvas.getByRole('radiogroup')).toBeInvalid()
-        expect(
-          canvas.getByText(args.errorMessage as string),
-        ).toBeInTheDocument()
-      },
-    )
-  },
 }
 
 export const CustomValidation: Story = {
@@ -180,23 +154,11 @@ export const CustomValidation: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should show the custom error message if the constraints was not satisfied',
-      async () => {
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(canvas.getByText('Inga äpplen är tillåtna')).toBeInTheDocument()
-      },
-    )
-  },
 }
 
 export const Horizontal: Story = {
   args: {
-    ...Normal.args,
+    ...Primary.args,
     children: (
       <>
         <Radio

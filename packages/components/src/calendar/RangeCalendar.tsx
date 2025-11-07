@@ -21,9 +21,10 @@ export const RangeCalendar: React.FC<RangeCalendarProps> = ({
 }) => (
   <AriaRangeCalendar
     className={clsx(styles.calendar, className)}
+    data-readonly={rest.isReadOnly || undefined}
     {...rest}
   >
-    <CalendarHeader isDisabled={rest.isDisabled} />
+    <CalendarHeader {...rest} />
     <CalendarGrid
       {...rest}
       isRange

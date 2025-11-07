@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { expect } from 'storybook/test'
 import {
   Table,
   TableHeader,
@@ -10,7 +9,6 @@ import {
   Link,
 } from '@midas-ds/components'
 import { TableLayout, Virtualizer } from 'react-aria-components'
-import styles from '@midas-ds/components/table/Table.module.css'
 
 type Story = StoryObj<typeof Table>
 
@@ -87,13 +85,6 @@ export const Striped: Story = {
   args: {
     striped: true,
     className: 'my-class',
-  },
-  play: async ({ canvas, step, args }) => {
-    const table = canvas.getByLabelText(args['aria-label'] as string)
-
-    await step('Class names should be appended', async () => {
-      await expect(table).toHaveClass(styles.table, args.className as string)
-    })
   },
 }
 

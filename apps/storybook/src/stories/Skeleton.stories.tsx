@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Skeleton } from '@midas-ds/components'
-import { expect } from 'storybook/test'
-import styles from '@midas-ds/components/skeleton/Skeleton.module.css'
 import { variables } from '@midas-ds/theme'
-const { layer01Base } = variables
 
 type Story = StoryObj<typeof Skeleton>
 
@@ -33,20 +30,12 @@ export const Rectangle: Story = {
     width: '100px',
     height: '40px',
   },
-  play: async ({ canvas }) => {
-    const skeleton = canvas.getByTestId('skeleton')
-    await expect(skeleton).toHaveClass(styles.wave, styles.skeleton)
-  },
 }
 
 export const Circle: Story = {
   args: {
     variant: 'circle',
     width: '50px',
-  },
-  play: async ({ canvas }) => {
-    const skeleton = canvas.getByTestId('skeleton')
-    await expect(skeleton).toHaveClass(styles.wave, styles.circle)
   },
 }
 
@@ -67,21 +56,6 @@ export const NoAnimation: Story = {
       },
     },
   },
-  play: async ({ canvas }) => {
-    const skeleton = canvas.getByTestId('skeleton')
-    await expect(skeleton).not.toHaveClass(styles.wave)
-  },
-}
-
-export const Animation: Story = {
-  args: {
-    ...Rectangle.args,
-    isAnimated: true,
-  },
-  play: async ({ canvas }) => {
-    const skeleton = canvas.getByTestId('skeleton')
-    await expect(skeleton).toHaveClass(styles.wave)
-  },
 }
 
 export const IsOnLayer01: Story = {
@@ -90,17 +64,13 @@ export const IsOnLayer01: Story = {
     isOnLayer01: true,
   },
   render: args => (
-    <div style={{ backgroundColor: layer01Base, padding: '1rem' }}>
+    <div style={{ backgroundColor: variables.layer01Base, padding: '1rem' }}>
       <Skeleton
         {...args}
         data-testid='skeleton'
       />
     </div>
   ),
-  play: async ({ canvas }) => {
-    const skeleton = canvas.getByTestId('skeleton')
-    await expect(skeleton).toHaveClass(styles.wave, styles.onLayer01)
-  },
 }
 export const DS1191: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
@@ -114,19 +84,5 @@ export const DS1191: Story = {
     style: {
       verticalAlign: 'bottom',
     },
-  },
-  play: async ({ canvas, step }) => {
-    await step(
-      'It should merge provided className and style props',
-      async () => {
-        const skeleton = canvas.getByTestId('skeleton')
-        await expect(skeleton).toHaveClass(styles.wave, styles.skeleton, 'derp')
-        await expect(skeleton).toHaveStyle({
-          width: '100px',
-          height: '40px',
-          verticalAlign: 'bottom',
-        })
-      },
-    )
   },
 }

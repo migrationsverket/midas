@@ -1,8 +1,9 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
-import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
+import prismLight from './src/theme/prismLight'
+import prismDark from './src/theme/prismDark'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 const packageAliases = {}
@@ -57,23 +58,13 @@ const config: Config = {
   i18n: { defaultLocale: 'sv', locales: ['sv'] },
   plugins: [
     [
-      'docusaurus-plugin-react-docgen-typescript',
-      /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
+      require.resolve('./docgen-fix-plugin.js'),
       {
-        global: true,
-        src: Object.values(packageAliases),
+        src: `${packagesDir}/components/src/**/[A-Z]*.tsx`,
         parserOptions: {
-          // prop table gets a bit crowded if we allow everything
-          propFilter: prop => {
-            if (prop.parent) {
-              return !prop.parent.fileName.includes('@types/react')
-            }
-            return true
-          },
-          savePropValueAsString: true,
           shouldExtractValuesFromUnion: true,
           shouldExtractLiteralValuesFromEnum: false,
-        },
+        }
       },
     ],
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
@@ -158,7 +149,7 @@ const config: Config = {
           position: 'right',
           value: isUnreleased
             ? `<code class="unreleased">Version ${version} (unreleased)</code>`
-            : `<code>Version ${version}</code>`,
+            : `<a href="https://github.com/migrationsverket/midas/releases" target="_blank" rel="noopener noreferrer"><code>Version ${version}</code></a>`,
         },
         {
           href:
@@ -185,8 +176,8 @@ const config: Config = {
     },
     prism: {
       additionalLanguages: ['bash', 'git', 'css', 'diff'],
-      theme: prismThemes.vsLight,
-      darkTheme: prismThemes.vsDark,
+      theme: prismLight,
+      darkTheme: prismDark,
     },
     mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [

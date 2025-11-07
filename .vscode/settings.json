@@ -10,5 +10,6 @@
   "css.lint.unknownAtRules": "ignore",
   "cssModules.camelCase": true,
   "stylelint.configFile": ".stylelintrc.json",
-  "stylelint.validate": ["css", "postcss"]
+  "stylelint.validate": ["css", "postcss"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

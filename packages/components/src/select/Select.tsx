@@ -1,193 +1,125 @@
 import * as React from 'react'
-import clsx from '../utils/clsx'
-import { useObjectRef } from '@react-aria/utils'
-import { Item, Section } from '@react-stately/collections'
-import { TagList, TextField } from 'react-aria-components'
-import { SelectListBox } from './SelectListBox'
-import { useMultiSelect } from './useMultiSelect'
-import { useMultiSelectState } from './useMultiSelectState'
-import { TagGroup, Tag } from '../tag'
-import useObserveElement from '../utils/useObserveElement'
-import { HiddenMultiSelect } from './HiddenMultiSelect'
-import { InfoPopoverProps, Label } from '../label'
-import { Text } from '../text'
-import { Checkbox } from '../checkbox'
-import { ListBoxPopover } from '../list-box'
-import { MultiSelectValueTag } from './MultiSelectValueTag'
-import { SelectTrigger } from './SelectTrigger'
-import { SelectFieldError } from './SelectFieldError'
-import styles from './Select.module.css'
-import type { SelectContainerProps, SelectProps } from './types'
+import {
+  SelectProps,
+  ValidationResult,
+  Select as AriaSelect,
+  SelectValue,
+} from 'react-aria-components'
+import { FocusScope } from '@react-aria/focus'
+import { Label, type InfoPopoverProps } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
-import { useLocalizedStringFormatter } from '../utils/intl'
-import messages from './intl/translations.json'
+import clsx from '../utils/clsx'
+import { Size } from '../common/types'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
+import { SelectAll } from './SelectAll'
+import { SelectValueTag } from './SelectValueTag'
+import { ListBox } from '../list-box'
+import { Popover } from '../popover'
+import { SelectTags } from './SelectTags'
+import { SelectTrigger } from './SelectTrigger'
+import styles from './Select.module.css'
 
-interface MidasSelectProps extends SelectProps {
-  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+export type SelectionMode = 'single' | 'multiple'
+
+export interface MidasSelectProps<
+  T extends object,
+  M extends SelectionMode = 'single',
+> extends Omit<SelectProps<T, M>, 'children'> {
+  children: React.ReactNode | ((item: T) => React.ReactNode)
+  description?: string
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  /**
+   * The position of the error message
+   * @default "top"
+   */
+  errorPosition?: 'top' | 'bottom'
+  /**
+   * Whether to show a button to select all items.
+   */
+  isSelectableAll?: boolean
+  items?: Iterable<T>
+  label?: string
+  /**
+   * An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button.
+   */
   popover?: InfoPopoverProps
+  /**
+   * Show selected items as tags below select
+   */
+  showTags?: boolean
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   */
+  size?: Size
 }
 
-const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
-  ({ isClearable = true, popover, ...rest }, ref) => {
-    const props: MidasSelectProps = {
-      selectionMode: 'single',
-      errorPosition: 'top',
-      disallowEmptySelection: !isClearable,
-      isClearable,
-      size: 'large',
-      popover,
-      ...rest,
-    }
-
-    const triggerRef = useObjectRef(ref)
-
-    const state = useMultiSelectState(props)
-
-    const strings = useLocalizedStringFormatter(messages)
-
-    const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
-      props,
-      state,
-      triggerRef,
-    )
-
-    const { width: triggerWidth } = useObserveElement(triggerRef.current, {
-      includePadding: true,
-    })
-
-    return (
-      <TextField
+export function Select<T extends object, M extends SelectionMode = 'single'>({
+  children,
+  description,
+  errorMessage,
+  errorPosition = 'top',
+  items,
+  label,
+  popover,
+  size = 'large',
+  ...props
+}: MidasSelectProps<T, M>) {
+  return (
+    <FocusScope>
+      <AriaSelect
         {...props}
-        className={clsx(styles.wrapper, props.className)}
+        className={clsx(props.className, styles.select)}
       >
-        <HiddenMultiSelect
-          {...props}
-          state={state}
-          triggerRef={triggerRef}
-        />
         <LabelWrapper popover={popover}>
-          {props.label && (
-            <Label
-              {...labelProps}
-              data-disabled={props.isDisabled || undefined}
-            >
-              {props.label}
-            </Label>
+          {label && (
+            <Label data-disabled={props.isDisabled || undefined}>{label}</Label>
           )}
         </LabelWrapper>
-        {props.description && (
-          <Text slot='description'>{props.description}</Text>
-        )}
-        {props.errorPosition === 'top' && (
-          <SelectFieldError
-            {...props}
-            state={state}
-          />
-        )}
-        <SelectTrigger
-          {...props}
-          {...triggerProps}
-          isInvalid={state.displayValidation.isInvalid}
-          triggerRef={triggerRef}
-          state={state}
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <div
+          className={styles.triggerContainer}
+          data-disabled={props.isDisabled || undefined}
         >
-          {props.selectionMode === 'multiple' && state.selectedItems ? (
-            <span {...valueProps}>
-              <MultiSelectValueTag
-                {...props}
-                state={state}
-                parentWidth={triggerWidth}
-                onClear={() => state.selectionManager.clearSelection()}
-                triggerRef={triggerRef}
-              />
-            </span>
-          ) : null}
-        </SelectTrigger>
-        {props.errorPosition === 'bottom' && (
-          <SelectFieldError
-            {...props}
-            state={state}
-          />
-        )}
-        <ListBoxPopover
-          isOpen={state.isOpen}
-          onOpenChange={(isOpen: boolean) => {
-            if (!isOpen) {
-              state.close()
+          <SelectTrigger size={size} />
+          <SelectValue
+            className={styles.selectValue}
+            data-disabled={props.isDisabled || undefined}
+          >
+            {renderProps =>
+              renderProps.isPlaceholder ||
+              props.selectionMode !== 'multiple' ? (
+                <div className={clsx(styles.placeholder)}>
+                  <span className={clsx(styles.truncate)}>
+                    {renderProps.selectedText || renderProps.defaultChildren}
+                  </span>
+                </div>
+              ) : (
+                <SelectValueTag
+                  {...props}
+                  {...renderProps}
+                />
+              )
             }
-          }}
-          triggerRef={triggerRef}
-          style={{ width: triggerWidth }}
+          </SelectValue>
+        </div>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        <Popover
+          className={styles.popover}
+          offset={0}
+          hideArrow
         >
-          {props.isSelectableAll && (
-            <Checkbox
-              isSelected={state.selectionManager.isSelectAll}
-              isIndeterminate={
-                !state.selectionManager.isSelectAll &&
-                !state.selectionManager.isEmpty
-              }
-              className={styles.selectAll}
-              onChange={() => state.selectionManager.toggleSelectAll()}
-            >
-              {strings.format('selectAll')}
-            </Checkbox>
-          )}
-          <SelectListBox
-            {...menuProps}
-            state={state}
-          />
-        </ListBoxPopover>
-        {props.showTags && !!state.selectedItems && (
-          <TagGroup
-            aria-label={strings.format('selectedItems')}
-            selectionBehavior='toggle'
-            onRemove={keys =>
-              state.selectionManager.toggleSelection(Array.from(keys)[0])
-            }
-            className={styles.tagGroup}
+          {props.isSelectableAll && <SelectAll />}
+          <ListBox
+            escapeKeyBehavior='none'
+            items={items}
           >
-            <TagList items={state.selectedItems}>
-              {item => (
-                <Tag
-                  key={item.key}
-                  textValue={item.textValue}
-                  id={item.key}
-                  dismissable
-                  isDisabled={props.isDisabled}
-                >
-                  {item.textValue}
-                </Tag>
-              )}
-            </TagList>
-          </TagGroup>
-        )}
-      </TextField>
-    )
-  },
-)
-
-export const Select = React.forwardRef<HTMLButtonElement, SelectContainerProps>(
-  ({ options, ...props }, ref) => (
-    <SelectComponent
-      {...props}
-      items={options}
-      ref={ref}
-    >
-      {section =>
-        section.children ? (
-          <Section
-            key={section.name}
-            items={section.children}
-            title={section.name}
-          >
-            {item => <Item textValue={item.textValue}>{item.name}</Item>}
-          </Section>
-        ) : (
-          <Item textValue={section.textValue}>{section.name}</Item>
-        )
-      }
-    </SelectComponent>
-  ),
-)
-
-Select.displayName = 'Select'
+            {children}
+          </ListBox>
+        </Popover>
+        <SelectTags {...props} />
+      </AriaSelect>
+    </FocusScope>
+  )
+}

@@ -1,3 +1,19 @@
+## 3.2.0 (2025-11-07)
+
+### 🚀 Features
+
+- **theme:** add read-only colors ([5b6be5ae97](https://github.com/migrationsverket/midas/commit/5b6be5ae97))
+
+### 🔧 Maintenance
+
+- **theme:** revert read-only border color token (same as subtle) ([c42f60935b](https://github.com/migrationsverket/midas/commit/c42f60935b))
+
+## 3.1.1 (2025-10-27)
+
+### 🩹 Fixes
+
+- **theme:** add unit to panel transisitions fixing bug with broken animations ([ffcd857c52](https://github.com/migrationsverket/midas/commit/ffcd857c52))
+
 ## 3.1.0 (2025-10-10)
 
 ### 🚀 Features

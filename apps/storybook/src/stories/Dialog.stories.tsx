@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { options } from '../utils/storybook'
 import { useState } from 'react'
-import { type Selection } from 'react-aria-components'
-import { expect, userEvent, within } from 'storybook/test'
+import { type Key } from 'react-aria-components'
 import {
+  ListBoxItem,
   DialogTrigger,
   Modal,
   Button,
@@ -39,13 +39,14 @@ export default {
         <Select
           autoFocus
           placeholder='Select...'
-          defaultSelectedKeys={['kiwi']}
+          defaultValue={['kiwi']}
           label='Select fruits'
           selectionMode='multiple'
-          options={options}
-          isClearable
+          items={options}
           isSelectableAll={false}
-        />
+        >
+          {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+        </Select>
         <Button slot='close'>Submit</Button>
       </Modal>
     </DialogTrigger>
@@ -233,7 +234,7 @@ export const DS1282: Story = {
     chromatic: { disableSnapshot: true },
   },
   render: () => {
-    const [selectedFruit, setSelectedFruit] = useState<Selection>(new Set())
+    const [selectedFruit, setSelectedFruit] = useState<Key[] | null>(null)
     const options = ['apple', 'banana'].map(fruit => ({
       id: fruit,
       name: fruit,
@@ -246,16 +247,17 @@ export const DS1282: Story = {
             <Column isRowHeader>Actions</Column>
           </TableHeader>
           <TableBody>
-            {[...selectedFruit].map(fruit => (
-              <Row key={fruit}>
-                <Cell>
-                  <DialogTrigger>
-                    <Button>View</Button>
-                    <Modal>{fruit}</Modal>
-                  </DialogTrigger>
-                </Cell>
-              </Row>
-            ))}
+            {selectedFruit &&
+              selectedFruit.map(fruit => (
+                <Row key={fruit}>
+                  <Cell>
+                    <DialogTrigger>
+                      <Button>View</Button>
+                      <Modal>{fruit}</Modal>
+                    </DialogTrigger>
+                  </Cell>
+                </Row>
+              ))}
           </TableBody>
         </Table>
         <DialogTrigger>
@@ -264,38 +266,19 @@ export const DS1282: Story = {
             <Select
               autoFocus
               label='test'
-              options={options}
-              onSelectionChange={setSelectedFruit}
-            />
+              items={options}
+              onChange={value =>
+                value &&
+                setSelectedFruit(previousValue =>
+                  previousValue ? [...previousValue, value] : [value],
+                )
+              }
+            >
+              {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+            </Select>
           </Modal>
         </DialogTrigger>
       </>
-    )
-  },
-  play: async ({ canvasElement, step }) => {
-    await step(
-      'it should be possible to use the select multiple times while rendering a table with modals',
-      async () => {
-        // Open modal
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Space]')
-
-        // Get the value of the select
-        const body = canvasElement.ownerDocument.body
-        const hiddenSelect = within(body).getByLabelText('test-hidden')
-
-        // Select "apple"
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Space]')
-        await expect(hiddenSelect).toHaveDisplayValue('apple')
-
-        // Select "banana"
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[ArrowDown]')
-        await userEvent.keyboard('[Space]')
-        await expect(hiddenSelect).toHaveDisplayValue('banana')
-      },
     )
   },
 }

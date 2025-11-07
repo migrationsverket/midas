@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { mergeProps, VisuallyHidden } from 'react-aria'
 import { clsx } from 'clsx'
+import { Minus, Check } from 'lucide-react'
 import { CheckboxInnerProps } from './types'
 import styles from './Checkbox.module.css'
+import { variables } from '@midas-ds/theme'
 
 export const CheckboxInner = React.forwardRef<
   HTMLLabelElement,
@@ -30,23 +32,19 @@ export const CheckboxInner = React.forwardRef<
       data-required={props.isRequired || undefined}
     >
       <div className={clsx(styles.checkboxInner)}>
-        <svg
-          width={16}
-          height={16}
-          viewBox='0 0 18 18'
-          aria-hidden='true'
-        >
-          {props.isIndeterminate ? (
-            <rect
-              x={4}
-              y={8}
-              width={10}
-              height={2}
-            />
-          ) : (
-            <polyline points='3,9 7,13 15,4' />
-          )}
-        </svg>
+        {props.isIndeterminate ? (
+          <Minus
+            size={16}
+            viewBox={'0 0 24 24'}
+            color={variables.iconOnColor}
+          />
+        ) : (
+          <Check
+            size={16}
+            viewBox={'0 0 24 24'}
+            color={variables.iconOnColor}
+          />
+        )}
       </div>
       <VisuallyHidden>
         <input

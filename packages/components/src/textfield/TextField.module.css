@@ -24,6 +24,14 @@
   &[data-disabled] {
     color: var(--midas-text-disabled);
   }
+
+  &[data-readonly] {
+    .textArea,
+    .input {
+      background-color: transparent;
+      border-color: var(--midas-border-color-subtle);
+    }
+  }
 }
 
 .textArea {
@@ -40,7 +48,6 @@
   box-sizing: border-box;
   word-wrap: break-word;
   width: 100%;
-  color: var(--midas-text-primary);
   resize: both;
   overflow: auto;
 
@@ -72,6 +79,7 @@
     background-color: var(--midas-field-disabled);
     border: none;
     border-bottom: 1px solid var(--midas-border-color-disabled);
+    color: var(--midas-text-disabled);
   }
 }
 
@@ -90,7 +98,6 @@
   all: unset;
   font-family: var(--midas-typography-font-family);
   grid-area: Input;
-  color: var(--midas-text-primary);
   border-bottom: 1px solid var(--midas-border-color-primary);
   font-size: 1rem;
   padding: 0 1rem;

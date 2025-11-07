@@ -4,6 +4,10 @@
   }
 }
 
+td[data-title='Type'] {
+  word-break: break-all;
+}
+
 .propsGridTable {
   table,
   tbody,

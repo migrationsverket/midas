@@ -4,6 +4,7 @@ const { execSync } = require('child_process')
 
 const allowedPrefixes = [
   'feature/',
+  'feat/',
   'bugfix/',
   'fix/',
   'docs/',

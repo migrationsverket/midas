@@ -5,28 +5,18 @@
   font-size: var(--midas-typography-font-size-30);
   line-height: var(--midas-typography-line-height-30);
   font-weight: 500;
-}
 
-.labelBase:has(~ [data-disabled]) {
-  color: var(--midas-text-disabled);
+  & > [data-disabled],
+  [data-disabled] & {
+    color: var(--midas-text-disabled);
 
-  @media (forced-colors: active) {
-    color: GrayText;
+    @media (forced-colors: active) {
+      color: GrayText;
+    }
   }
-}
 
-[data-disabled] > .labelBase {
-  color: var(--midas-text-disabled);
-
-  @media (forced-colors: active) {
-    color: GrayText;
-  }
-}
-
-[data-disabled] {
-  color: var(--midas-text-disabled);
-
-  @media (forced-colors: active) {
-    color: GrayText;
+  & > [data-readonly],
+  [data-readonly] & {
+    color: var(--midas-text-read-only);
   }
 }

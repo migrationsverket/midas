@@ -72,6 +72,7 @@ export function ComboBox<T extends ListBoxOption>({
     <AriaComboBox
       className={clsx(styles.combobox, className)}
       {...props}
+      data-readonly={props.isReadOnly || undefined}
     >
       <LabelWrapper popover={popover}>
         {label && <Label>{label}</Label>}
@@ -85,6 +86,7 @@ export function ComboBox<T extends ListBoxOption>({
           className={clsx(styles.inputField, {
             [styles.medium]: size === 'medium',
           })}
+          data-readonly={props.isReadOnly || undefined}
           onMouseUp={handleMouseUp}
           ref={inputRef}
         />
@@ -127,7 +129,12 @@ export function ComboBox<T extends ListBoxOption>({
 export function ComboBoxItem<T extends ListBoxItemElement>(
   props: ListBoxItemProps<T>,
 ) {
-  return <ListBoxItem {...props} />
+  return (
+    <ListBoxItem
+      {...props}
+      hideSelectionIndicator
+    />
+  )
 }
 
 export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {

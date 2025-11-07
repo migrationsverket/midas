@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { AccordionItem } from '@midas-ds/components'
 
-const meta: Meta<typeof AccordionItem> = {
+type Story = StoryObj<typeof AccordionItem>
+
+export default {
   component: AccordionItem,
   title: 'Components/Accordion/AccordionItem',
   tags: ['autodocs'],
@@ -9,11 +11,9 @@ const meta: Meta<typeof AccordionItem> = {
     title: 'An accordion item',
     children:
       'Content of the accordion item. Content of the accordion item. Content of the accordion item. Content of the accordion item.',
+    size: 'large',
   },
-}
-
-export default meta
-type Story = StoryObj<typeof AccordionItem>
+} satisfies Meta<typeof AccordionItem>
 
 export const Default: Story = {
   args: {

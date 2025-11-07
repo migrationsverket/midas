@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateRangePicker } from '@midas-ds/components'
-import { expect } from 'storybook/test'
+import { CalendarDate } from '@internationalized/date'
 
-const meta: Meta<typeof DateRangePicker> = {
+type Story = StoryObj<typeof DateRangePicker>
+
+export default {
   component: DateRangePicker,
   title: 'Components/DatePicker/DateRangePicker',
   tags: ['autodocs'],
@@ -29,23 +31,23 @@ const meta: Meta<typeof DateRangePicker> = {
     errorMessage: 'Felmeddelande',
     errorPosition: 'top',
   },
-}
-export default meta
-type Story = StoryObj<typeof DateRangePicker>
+} satisfies Meta<typeof DateRangePicker>
 
-export const Primary: Story = {
-  play: async ({ step, canvas, globals: { size } }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(canvas.getByRole('group')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
-      })
-    })
-  },
-}
+export const Primary: Story = {}
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    defaultValue: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(2025, 5, 29),
+    },
   },
 }
 

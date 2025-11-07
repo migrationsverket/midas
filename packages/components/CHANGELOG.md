@@ -1,3 +1,113 @@
+## 15.2.0 (2025-11-07)
+
+### 🚀 Features
+
+- **label:** add styling for read-only state ([9422f77547](https://github.com/migrationsverket/midas/commit/9422f77547))
+- **text:** add styling for read-only state ([76d1f9c655](https://github.com/migrationsverket/midas/commit/76d1f9c655))
+- **calendar:** add styling for read-only state ([53dadfad5c](https://github.com/migrationsverket/midas/commit/53dadfad5c))
+- **date-picker:** add styling for read-only state ([d9d3856259](https://github.com/migrationsverket/midas/commit/d9d3856259))
+- **date-field:** add styling for read-only state ([9cdfb7b8cc](https://github.com/migrationsverket/midas/commit/9cdfb7b8cc))
+- **checkbox:** add styling for read-only state ([fc34e942be](https://github.com/migrationsverket/midas/commit/fc34e942be))
+- **radio:** add styling for read-only state ([bb69e7e7ac](https://github.com/migrationsverket/midas/commit/bb69e7e7ac))
+- **combobox:** add styling for read-only state ([65fe61058d](https://github.com/migrationsverket/midas/commit/65fe61058d))
+- **textfield:** add styling for read-only state ([a25bce820a](https://github.com/migrationsverket/midas/commit/a25bce820a))
+
+### 🩹 Fixes
+
+- **checkbox:** set correct indeterminate icon and refactor styles ([baf09f4d11](https://github.com/migrationsverket/midas/commit/baf09f4d11))
+
+### 🏭 Refactoring
+
+- **textfield:** move data attributes from template to css ([387113c52d](https://github.com/migrationsverket/midas/commit/387113c52d))
+- **date-field:** move data attributes from template to css ([3ad82fb182](https://github.com/migrationsverket/midas/commit/3ad82fb182))
+
+### 🔧 Maintenance
+
+- **theme:** revert read-only border color token (same as subtle) ([c42f60935b](https://github.com/migrationsverket/midas/commit/c42f60935b))
+
+### 🧪 Tests updated
+
+- update baseline snapshots ([015a9af328](https://github.com/migrationsverket/midas/commit/015a9af328))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.2.0
+
+## 15.1.3 (2025-11-06)
+
+### 🩹 Fixes
+
+- **list-box:** add breaks for long words ([ee353f7654](https://github.com/migrationsverket/midas/commit/ee353f7654))
+
+## 15.1.2 (2025-11-06)
+
+### 🩹 Fixes
+
+- **label:** remove unused global css ([4dccf5ce7f](https://github.com/migrationsverket/midas/commit/4dccf5ce7f))
+- **textfield:** adjust text color in disabled mode ([2790ec6752](https://github.com/migrationsverket/midas/commit/2790ec6752))
+- **combobox:** adjust text color in disabled mode ([88027e5b4a](https://github.com/migrationsverket/midas/commit/88027e5b4a))
+
+## 15.1.1 (2025-10-30)
+
+### 🩹 Fixes
+
+- **list-box:** adjust selected styling for listBoxItem ([#901](https://github.com/migrationsverket/midas/pull/901))
+
+## 15.1.0 (2025-10-30)
+
+### 🚀 Features
+
+- **accordion:** add size prop ([#896](https://github.com/migrationsverket/midas/pull/896))
+
+# 15.0.0 (2025-10-28)
+
+### 🚀 Features
+
+- ⚠️ **select:** replace custom select with new RAC based select
+- **select:** use midas popover
+- **select:** update type imports
+- **select:** add sections
+- **select:** boilerplate for RAC select implementation
+
+### 🩹 Fixes
+
+- **select:** adjust selectAll styling
+- **list-box:** adjust section header styling
+- **list-box:** loosen type definitions
+- **list-box:** adjust vertical padding
+- **tag:** add visible keyboard focus for all tags
+- **field-error:** remove margin from aria hidden siblings
+
+### ⚠️ Breaking Changes
+
+- ⚠️ **select:** replace custom select with new RAC based select
+
+## 14.1.0 (2025-10-27)
+
+### 🚀 Features
+
+- **spinner:** color defaults to icon-tertiary, deprecate `isOnColor` ([68108dfea0](https://github.com/migrationsverket/midas/commit/68108dfea0))
+- **accordion:** add panel animation support for non-chrome browsers ([1a00da2ddc](https://github.com/migrationsverket/midas/commit/1a00da2ddc))
+
+### 🩹 Fixes
+
+- **textfield:** omit duplicate prop definitions ([d19e6e3ad0](https://github.com/migrationsverket/midas/commit/d19e6e3ad0))
+- **calendar:** set correct styles for days outside month ([61b9958ad6](https://github.com/migrationsverket/midas/commit/61b9958ad6))
+- **tabs:** fix displaying horizontal/vertical tabs ([55507b2ed2](https://github.com/migrationsverket/midas/commit/55507b2ed2))
+
+### 📖 Documentation changes
+
+- **spinner:** update spinner docs with new props ([6ffbcabf1e](https://github.com/migrationsverket/midas/commit/6ffbcabf1e))
+
+### 🔧 Maintenance
+
+- **select:** utilize RAC multi select types ([06f9720a99](https://github.com/migrationsverket/midas/commit/06f9720a99))
+- **deps:** update react-aria-components and react-stately ([a0d8b0bd63](https://github.com/migrationsverket/midas/commit/a0d8b0bd63))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.1.1
+
 # 14.0.0 (2025-10-10)
 
 ### 🚀 Features

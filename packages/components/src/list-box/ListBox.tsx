@@ -5,11 +5,10 @@ import {
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import { SectionedListLayout } from './SectionedListLayout'
-import { ListBoxOption } from './types'
 import type { Node } from '@react-types/shared'
 import styles from './ListBox.module.css'
 
-export const ListBox = <T extends ListBoxOption | Node<ListBoxOption>>({
+export const ListBox = <T extends object | Node<object>>({
   className,
   children,
   ...rest
@@ -17,7 +16,7 @@ export const ListBox = <T extends ListBoxOption | Node<ListBoxOption>>({
   <Virtualizer
     layout={SectionedListLayout}
     layoutOptions={{
-      headingHeight: 44,
+      headingHeight: 38,
     }}
   >
     <AriaListBox

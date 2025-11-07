@@ -2547,6 +2547,23 @@ export default {
       attributes: {},
       path: ["icon", "important"],
     },
+    readOnly: {
+      key: "{icon.readOnly}",
+      $value: "light-dark(#bfbfbf, #383838)",
+      $description: "Ikonfärg för read-only state",
+      filePath: "packages/theme/tokens/object-values.json",
+      isSource: true,
+      $type: "string",
+      original: {
+        $value: "light-dark({color.gray.50}, {color.gray.160})",
+        $description: "Ikonfärg för read-only state",
+        $type: "string",
+        key: "{icon.readOnly}",
+      },
+      name: "iconReadOnly",
+      attributes: {},
+      path: ["icon", "readOnly"],
+    },
   },
   link: {
     enabled: {
@@ -2967,6 +2984,23 @@ export default {
       name: "textPlaceholder",
       attributes: {},
       path: ["text", "placeholder"],
+    },
+    readOnly: {
+      key: "{text.readOnly}",
+      $value: "light-dark(#737373, #999)",
+      $description: "Textfärg för read-only state",
+      filePath: "packages/theme/tokens/object-values.json",
+      isSource: true,
+      $type: "string",
+      original: {
+        $value: "light-dark({color.gray.110}, {color.gray.80})",
+        $description: "Textfärg för read-only state",
+        $type: "string",
+        key: "{text.readOnly}",
+      },
+      name: "textReadOnly",
+      attributes: {},
+      path: ["text", "readOnly"],
     },
   },
   badge: {

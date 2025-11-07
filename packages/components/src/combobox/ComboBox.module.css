@@ -53,10 +53,16 @@
   }
 
   &[data-disabled] {
+    color: var(--midas-text-disabled);
     background: var(--midas-field-disabled);
     box-shadow: none;
     border-bottom: 0.063rem solid var(--midas-border-color-disabled);
     cursor: not-allowed;
+  }
+
+  &[data-readonly] {
+    background-color: transparent;
+    border-color: var(--midas-border-color-subtle);
   }
 }
 
@@ -96,6 +102,10 @@
   &[data-disabled] {
     cursor: not-allowed;
     color: var(--midas-icon-disabled);
+
+    [data-readonly] & {
+      color: var(--midas-icon-read-only);
+    }
   }
 
   &[data-hovered] {

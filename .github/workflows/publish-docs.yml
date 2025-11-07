@@ -7,7 +7,9 @@ permissions:
 
 on:
   workflow_dispatch:
-  workflow_call:
+  push:
+    tags:
+      - '*@v*.*.*'
 
 jobs:
   publish-docs:
@@ -43,5 +45,4 @@ jobs:
           branch: gh-pages
           clean-exclude: |
             pr-preview
-            unreleased
           force: false
