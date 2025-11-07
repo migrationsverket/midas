@@ -2,10 +2,13 @@ import { describe, expect, it, beforeEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page } from '@vitest/browser/context'
 import * as stories from './Skeleton.stories'
+import * as formStories from './Skeleton.Form.stories'
 import styles from '@midas-ds/components/skeleton/Skeleton.module.css'
 
 const { Rectangle, Circle, NoAnimation, IsOnLayer01, DS1191 } =
   composeStories(stories)
+
+const { Large, Medium } = composeStories(formStories)
 
 describe('given a Rectangle Skeleton', async () => {
   beforeEach(async () => {
@@ -66,5 +69,25 @@ describe('given DS1191', async () => {
       height: '40px',
       verticalAlign: 'bottom',
     })
+  })
+})
+
+describe('given a Large Form Skeleton', async () => {
+  beforeEach(async () => {
+    await Large.run()
+  })
+
+  it('should have the correct classes', async () => {
+    expect(page.getByTestId('skeleton')).toHaveClass(styles.form)
+  })
+})
+
+describe('given a Medium Form Skeleton', async () => {
+  beforeEach(async () => {
+    await Medium.run()
+  })
+
+  it('should have the medium size class', async () => {
+    expect(page.getByTestId('skeleton')).toHaveClass(styles.form, styles.medium)
   })
 })

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styles from './Skeleton.module.css'
 import clsx from '../utils/clsx'
-import { Size } from '@midas-ds/components/common/types.ts'
+import { Size } from '../common/types'
 
 export interface SkeletonProps
   extends React.DetailedHTMLProps<
