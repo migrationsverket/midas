@@ -62,6 +62,68 @@ Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` o
   />
 </div>
 
+### Form
+
+Används som platshållare för formulärfält som inte laddat klart än. Form-varianten visar en skeleton för etikett, beskrivning och inmatningsfält som liknar riktiga formulärkomponenter som TextField.
+
+```tsx
+<Skeleton
+  // highlight-start
+  variant='form'
+  // highlight-end
+  width='400px'
+/>
+```
+
+<div className='card'>
+  <Skeleton
+    variant='form'
+    width='400px'
+  />
+</div>
+
+#### Storlek
+
+Form-varianten stödjer två storlekar för inmatningsfältet: `large` (48px, standard) och `medium` (40px).
+
+```tsx
+<Skeleton
+  variant='form'
+  // highlight-start
+  size='medium'
+  // highlight-end
+  width='400px'
+/>
+```
+
+<div className='card'>
+  <Skeleton
+    variant='form'
+    size='medium'
+    width='400px'
+  />
+</div>
+
+#### Flera formulärfält
+
+För att visa en laddningsindikator för flera formulärfält, använd flera Skeleton-komponenter med form-varianten.
+
+```tsx
+<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+  <Skeleton variant='form' />
+  <Skeleton variant='form' />
+  <Skeleton variant='form' />
+</div>
+```
+
+<div className='card'>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+    <Skeleton variant='form' />
+    <Skeleton variant='form' />
+    <Skeleton variant='form' />
+  </div>
+</div>
+
 ## Animation
 
 Skeleton är animerad som standard. Det går att stänga av med `isAnimated={false}`.
