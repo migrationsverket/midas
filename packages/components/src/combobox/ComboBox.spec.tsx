@@ -1,9 +1,10 @@
 import { screen } from '@testing-library/react'
 import { axe } from 'jest-axe'
 import user from '../../tests/utils/user'
-import { ComboBox, ComboBoxItem } from './ComboBox'
+import { ComboBox } from './ComboBox'
 import { generateMockOptions } from './utils'
 import { renderWithForm } from '../../tests/utils/browser'
+import { ListBoxItem } from '../list-box'
 
 const label = 'basic combobox'
 const items = generateMockOptions(30)
@@ -19,7 +20,7 @@ describe('given a default ComboBox', () => {
         data-testid={testID}
         className={testClass}
       >
-        {({ name }) => <ComboBoxItem>{name}</ComboBoxItem>}
+        {({ name }) => <ListBoxItem>{name}</ListBoxItem>}
       </ComboBox>,
     )
   })
@@ -41,7 +42,7 @@ describe('given a required ComboBox', () => {
         aria-label={label}
         isRequired
       >
-        {({ name }) => <ComboBoxItem>{name}</ComboBoxItem>}
+        {({ name }) => <ListBoxItem>{name}</ListBoxItem>}
       </ComboBox>,
     )
   })
@@ -67,7 +68,7 @@ describe('given a required ComboBox with a custom error message', () => {
         isRequired
         errorMessage={errorMessage}
       >
-        {({ name }) => <ComboBoxItem>{name}</ComboBoxItem>}
+        {({ name }) => <ListBoxItem>{name}</ListBoxItem>}
       </ComboBox>,
     )
   })

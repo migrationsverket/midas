@@ -4,16 +4,23 @@ import { RunOptions } from 'axe-core'
 import React from 'react'
 import {
   ComboBox,
-  ComboBoxItem,
-  ComboBoxSection,
+  ListBoxHeader,
+  ListBoxItem,
   ListBoxLoadMoreItem,
-  type ListBoxOption,
-  type ListBoxSectionElement,
+  ListBoxSection,
 } from '@midas-ds/components'
 import { useAsyncList } from 'react-stately'
 import { Collection } from 'react-aria-components'
 
-const meta: Meta<typeof ComboBox> = {
+type Item = (typeof options)[0]
+
+type Section = (typeof optionsWithSections)[0]
+
+type Story<T extends object = Item> = StoryObj<typeof ComboBox<T>>
+
+const options = generateMockOptions(30)
+
+export default {
   component: ComboBox,
   title: 'Components/ComboBox',
   tags: ['autodocs'],
@@ -30,17 +37,11 @@ const meta: Meta<typeof ComboBox> = {
   },
   render: args => (
     <ComboBox {...args}>
-      <ComboBoxItem id='apple'>Apple</ComboBoxItem>
-      <ComboBoxItem id='lemon'>Lemon</ComboBoxItem>
+      <ListBoxItem id='apple'>Apple</ListBoxItem>
+      <ListBoxItem id='lemon'>Lemon</ListBoxItem>
     </ComboBox>
   ),
-}
-
-export default meta
-
-type Story = StoryObj<typeof ComboBox>
-
-const options = generateMockOptions(30)
+} satisfies Meta<typeof ComboBox<Item>>
 
 export const Primary: Story = {
   args: {
@@ -55,7 +56,7 @@ export const Primary: Story = {
       items={options}
       {...args}
     >
-      {item => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      {item => <ListBoxItem>{item.name}</ListBoxItem>}
     </ComboBox>
   ),
 }
@@ -124,7 +125,7 @@ export const Required: Story = {
   render: args => (
     <form>
       <ComboBox {...args}>
-        <ComboBoxItem>Hej</ComboBoxItem>
+        <ListBoxItem>Hej</ListBoxItem>
       </ComboBox>
       <button type='submit'>Submit</button>
     </form>
@@ -132,7 +133,7 @@ export const Required: Story = {
 }
 
 // The generic type is infered from the items prop in real life
-export const Sectioned: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
+export const Sectioned: Story<Section> = {
   args: {
     placeholder: 'Välj eller sök frukt',
     label: 'Välj en frukt',
@@ -143,10 +144,12 @@ export const Sectioned: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
   render: args => (
     <ComboBox {...args}>
       {section => (
-        <ComboBoxSection
-          {...section}
-          id={section.name}
-        />
+        <ListBoxSection id={section.name}>
+          <ListBoxHeader>{section.name}</ListBoxHeader>
+          <Collection items={section.children}>
+            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+          </Collection>
+        </ListBoxSection>
       )}
     </ComboBox>
   ),
@@ -178,7 +181,7 @@ export const PerformanceTest: Story = {
         </label>
         <ComboBox {...args}>
           {items.map(({ name, id }) => (
-            <ComboBoxItem key={id}>{name}</ComboBoxItem>
+            <ListBoxItem key={id}>{name}</ListBoxItem>
           ))}
         </ComboBox>
       </>
@@ -194,7 +197,7 @@ export const AsynchronousLoadingWithEmptyMessage: Story = {
     allowsEmptyCollection: true,
   },
   render: args => {
-    const list = useAsyncList<ListBoxOption>({
+    const list = useAsyncList<Item>({
       async load({ signal, cursor, filterText }) {
         if (cursor) {
           cursor = cursor.replace(/^http:\/\//i, 'https://')
@@ -222,7 +225,7 @@ export const AsynchronousLoadingWithEmptyMessage: Story = {
       >
         <Collection items={list.items}>
           {item => (
-            <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
+            <ListBoxItem id={item.name?.toString()}>{item.name}</ListBoxItem>
           )}
         </Collection>
         {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
@@ -236,7 +239,7 @@ export const InfiniteScroll: Story = {
     ...AsynchronousLoadingWithEmptyMessage.args,
   },
   render: args => {
-    const list = useAsyncList<ListBoxOption>({
+    const list = useAsyncList<Item>({
       async load({ signal, cursor, filterText }) {
         if (cursor) {
           cursor = cursor.replace(/^http:\/\//i, 'https://')
@@ -264,7 +267,7 @@ export const InfiniteScroll: Story = {
       >
         <Collection items={list.items}>
           {item => (
-            <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
+            <ListBoxItem id={item.name?.toString()}>{item.name}</ListBoxItem>
           )}
         </Collection>
         <ListBoxLoadMoreItem
