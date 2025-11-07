@@ -4,10 +4,41 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Tue, 28 Oct 2025 11:08:38 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Nov 2025 09:51:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 15.2.0]]></title>
+            <link>https://designsystem.migrationsverket.se/release-notes/15.2.0/</link>
+            <guid>https://designsystem.migrationsverket.se/release-notes/15.2.0/</guid>
+            <pubDate>Fri, 07 Nov 2025 09:51:40 GMT</pubDate>
+            <description><![CDATA[Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Nya färgtokens för read-only state har lagts till i temat.</li>
+<li><strong>read-only state:</strong> Stöd för read-only state med anpassad styling har lagts till i följande komponenter: <strong>textfield</strong>, <strong>combobox</strong>, <strong>radio</strong>, <strong>checkbox</strong>, <strong>date-field</strong>, <strong>date-picker</strong>, <strong>calendar</strong>, <strong>text</strong> och <strong>label</strong>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>checkbox:</strong> Korrekt ikon för indeterminate state och refaktorerad styling.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactor">🔧 Refactor<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-refactor" class="hash-link" aria-label="Direktlänk till 🔧 Refactor" title="Direktlänk till 🔧 Refactor" translate="no">​</a></h2>
+<ul>
+<li><strong>textfield:</strong> Data-attribut har flyttats från template till CSS.</li>
+<li><strong>date-field:</strong> Data-attribut har flyttats från template till CSS.</li>
+<li><strong>theme:</strong> Read-only border color token har justerats.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.2.0" target="_blank" rel="noopener noreferrer">components@v15.2.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.2.0" target="_blank" rel="noopener noreferrer">theme@v3.2.0</a></li>
+</ul>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v15</category>
+        </item>
         <item>
             <title><![CDATA[Release 15.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/release-notes/15.0.0/</link>
@@ -94,7 +125,7 @@ Om du inte har möjlighet att uppdatera din implementation just nu, kan du forts
             <content:encoded><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
 <p>Vi introducerar ett nytt paket, <a href="https://www.npmjs.com/package/@midas-ds/datepicker-styles" target="_blank" rel="noopener noreferrer"><code scope="[object Object]">@midas-ds/datepicker-styles</code></a>, för att hjälpa till med styling av <a href="https://www.npmjs.com/package/react-datepicker" target="_blank" rel="noopener noreferrer"><code scope="[object Object]">react-datepicker</code></a>. Detta är ett renodlat CSS-paket och är i ett tidigt beta-stadie. Vi uppmuntrar er att testa det och ge oss feedback.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ��♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
 <p>Vi har gjort en större genomgång av hur våra komponenter presenteras i Windows högkontrastläge (CSS <code scope="[object Object]">forced-colors</code>). Detta innebär att komponenterna nu ska ha ett betydligt bättre utseende och vara mer användbara för personer som använder detta läge.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
 <ul>
@@ -621,17 +652,6 @@ Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#CD3B49">&lt;</span><span class="token maybe-class-name">SearchField</span><span class="token plain"> validate</span><span class="token operator" style="color:#CD3B49">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain">v </span><span class="token arrow operator" style="color:#CD3B49">=&gt;</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">!</span><span class="token operator" style="color:#CD3B49">!</span><span class="token plain">v</span><span class="token punctuation" style="color:#393A34">.</span><span class="token property-access">length</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">||</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'Var god ange åtminstone ett tecken'</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">/</span><span class="token operator" style="color:#CD3B49">&gt;</span><br></span></code></pre></div></div>
 <p>Se mer information om <a href="https://designsystem.migrationsverket.se/components/search-field/">hur du använder SearchField</a></p>
 <p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v3.0.0" target="_blank" rel="noopener noreferrer">changelog</a>.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Release 2.0.0]]></title>
-            <link>https://designsystem.migrationsverket.se/release-notes/2.0.0/</link>
-            <guid>https://designsystem.migrationsverket.se/release-notes/2.0.0/</guid>
-            <pubDate>Tue, 25 Feb 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[{/ truncate /}]]></description>
-            <content:encoded><![CDATA[
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="migrera-från-1xx-till-200">Migrera från 1.x.x till 2.0.0<a href="https://designsystem.migrationsverket.se/release-notes/2.0.0/#migrera-fr%C3%A5n-1xx-till-200" class="hash-link" aria-label="Direktlänk till Migrera från 1.x.x till 2.0.0" title="Direktlänk till Migrera från 1.x.x till 2.0.0" translate="no">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="textfield-textarea">TextField, TextArea<a href="https://designsystem.migrationsverket.se/release-notes/2.0.0/#textfield-textarea" class="hash-link" aria-label="Direktlänk till TextField, TextArea" title="Direktlänk till TextField, TextArea" translate="no">​</a></h3>
-<p><code scope="[object Object]">maxCharacters</code> byter namn till <code scope="[object Object]">maxLength</code> för enhetlighet</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
