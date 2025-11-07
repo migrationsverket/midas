@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styles from './Skeleton.module.css'
 import clsx from '../utils/clsx'
+import { Size } from '@midas-ds/components/common/types.ts'
 
 export interface SkeletonProps
   extends React.DetailedHTMLProps<
@@ -27,7 +28,7 @@ export interface SkeletonProps
    * - `large`: 48px height
    * @default 'large'
    */
-  size?: 'medium' | 'large'
+  size?: Size
   /**
    * Displays the skeleton component with a wave animation
    * @default true
