@@ -1,3 +1,38 @@
+## 15.2.0 (2025-11-07)
+
+### 🚀 Features
+
+- **label:** add styling for read-only state ([9422f77547](https://github.com/migrationsverket/midas/commit/9422f77547))
+- **text:** add styling for read-only state ([76d1f9c655](https://github.com/migrationsverket/midas/commit/76d1f9c655))
+- **calendar:** add styling for read-only state ([53dadfad5c](https://github.com/migrationsverket/midas/commit/53dadfad5c))
+- **date-picker:** add styling for read-only state ([d9d3856259](https://github.com/migrationsverket/midas/commit/d9d3856259))
+- **date-field:** add styling for read-only state ([9cdfb7b8cc](https://github.com/migrationsverket/midas/commit/9cdfb7b8cc))
+- **checkbox:** add styling for read-only state ([fc34e942be](https://github.com/migrationsverket/midas/commit/fc34e942be))
+- **radio:** add styling for read-only state ([bb69e7e7ac](https://github.com/migrationsverket/midas/commit/bb69e7e7ac))
+- **combobox:** add styling for read-only state ([65fe61058d](https://github.com/migrationsverket/midas/commit/65fe61058d))
+- **textfield:** add styling for read-only state ([a25bce820a](https://github.com/migrationsverket/midas/commit/a25bce820a))
+
+### 🩹 Fixes
+
+- **checkbox:** set correct indeterminate icon and refactor styles ([baf09f4d11](https://github.com/migrationsverket/midas/commit/baf09f4d11))
+
+### 🏭 Refactoring
+
+- **textfield:** move data attributes from template to css ([387113c52d](https://github.com/migrationsverket/midas/commit/387113c52d))
+- **date-field:** move data attributes from template to css ([3ad82fb182](https://github.com/migrationsverket/midas/commit/3ad82fb182))
+
+### 🔧 Maintenance
+
+- **theme:** revert read-only border color token (same as subtle) ([c42f60935b](https://github.com/migrationsverket/midas/commit/c42f60935b))
+
+### 🧪 Tests updated
+
+- update baseline snapshots ([015a9af328](https://github.com/migrationsverket/midas/commit/015a9af328))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.2.0
+
 ## 15.1.3 (2025-11-06)
 
 ### 🩹 Fixes
