@@ -149,7 +149,7 @@ const config: Config = {
           position: 'right',
           value: isUnreleased
             ? `<code class="unreleased">Version ${version} (unreleased)</code>`
-            : `<code>Version ${version}</code>`,
+            : `<a href="https://github.com/migrationsverket/midas/releases" target="_blank" rel="noopener noreferrer"><code>Version ${version}</code></a>`,
         },
         {
           href:
