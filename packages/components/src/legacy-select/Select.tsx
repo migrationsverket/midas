@@ -166,7 +166,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
   },
 )
 /**
- * @deprecated Kept for backwards compatibility, but will be removed in a future version. Use `Select` from `@midas-ds/components` instead.
+ * @deprecated since v15.2.0 Kept for backwards compatibility, but will be removed in a future version. Use `Select` from `@midas-ds/components` instead.
  */
 export const Select = React.forwardRef<HTMLButtonElement, SelectContainerProps>(
   ({ options, ...props }, ref) => (

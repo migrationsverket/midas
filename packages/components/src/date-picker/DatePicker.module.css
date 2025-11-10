@@ -82,10 +82,10 @@
       cursor: not-allowed;
       color: var(--midas-icon-disabled);
       border-color: var(--midas-border-color-disabled);
+    }
 
-      .readOnly & {
-        color: var(--midas-icon-read-only);
-      }
+    &.readOnly {
+      color: var(--midas-icon-read-only);
     }
 
     &[data-hovered]:not([data-disabled]) {

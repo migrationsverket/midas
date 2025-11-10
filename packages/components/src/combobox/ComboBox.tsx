@@ -23,7 +23,6 @@ import {
   ListBoxItem,
   ListBoxSection,
   ListBoxPopover,
-  type ListBoxOption,
   type ListBoxItemElement,
   type ListBoxSectionElement,
 } from '../list-box'
@@ -31,7 +30,7 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
-export interface ComboBoxProps<T extends ListBoxOption>
+export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
   label?: string
   description?: string
@@ -47,7 +46,7 @@ export interface ComboBoxProps<T extends ListBoxOption>
   popover?: InfoPopoverProps
 }
 
-export function ComboBox<T extends ListBoxOption>({
+export function ComboBox<T extends object>({
   label,
   description,
   errorMessage,
@@ -126,17 +125,19 @@ export function ComboBox<T extends ListBoxOption>({
   )
 }
 
+/**
+ * @deprecated since v15.2.0 please use ListBoxItem instead
+ */
 export function ComboBoxItem<T extends ListBoxItemElement>(
   props: ListBoxItemProps<T>,
 ) {
-  return (
-    <ListBoxItem
-      {...props}
-      hideSelectionIndicator
-    />
-  )
+  return <ListBoxItem {...props} />
 }
 
+/**
+ * @deprecated since v15.2.0 please use ListBoxSection instead
+ * @see {@link https://designsystem.migrationsverket.se/components/combobox/#sektioner|sektioner i ComboBox}
+ */
 export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
   return (
     <ListBoxSection {...props}>

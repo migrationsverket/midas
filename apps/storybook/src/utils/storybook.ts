@@ -1,8 +1,4 @@
 import { parseDate } from '@internationalized/date'
-import {
-  type ListBoxItemElement,
-  type ListBoxSectionElement,
-} from '@midas-ds/components'
 
 export const options = [
   'Apple',
@@ -38,7 +34,9 @@ export const options = [
 
 export const mockedNow = parseDate('2025-05-29')
 
-export function generateMockOptions(count: number): ListBoxItemElement[] {
+export function generateMockOptions(
+  count: number,
+): { id: number; name: string }[] {
   const fruits = [
     'Äpple',
     'Banan',
@@ -80,7 +78,11 @@ export function generateMockOptions(count: number): ListBoxItemElement[] {
   })
 }
 
-export const optionsWithSections: ListBoxSectionElement[] = [
+export const optionsWithSections: {
+  name: string
+  id: number
+  children: { name: string; id: number }[]
+}[] = [
   {
     name: 'Grönsaker',
     id: 123,

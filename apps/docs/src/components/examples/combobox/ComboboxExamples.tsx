@@ -1,7 +1,8 @@
 import {
   ComboBox,
-  ComboBoxItem,
-  ComboBoxSection,
+  ListBoxHeader,
+  ListBoxItem,
+  ListBoxSection,
   ListBoxLoadMoreItem,
 } from '@midas-ds/components'
 import React from 'react'
@@ -13,11 +14,11 @@ export const BasicExample: React.FC = () => (
     label='Välj din favoritfrukt'
     description='Du kan bara välja en'
   >
-    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
-    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
-    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
-    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
-    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+    <ListBoxItem id='Lime'>Lime</ListBoxItem>
+    <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
+    <ListBoxItem id='Banan'>Banan</ListBoxItem>
+    <ListBoxItem id='Kiwi'>Kiwi</ListBoxItem>
+    <ListBoxItem id='Apelsin'>Apelsin</ListBoxItem>
   </ComboBox>
 )
 
@@ -32,11 +33,11 @@ export const ControlledExample = () => {
         selectedKey={selectedFruit}
         onSelectionChange={setSelectedFruit}
       >
-        <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
-        <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
-        <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
-        <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
-        <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+        <ListBoxItem id='Lime'>Lime</ListBoxItem>
+        <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
+        <ListBoxItem id='Banan'>Banan</ListBoxItem>
+        <ListBoxItem id='Kiwi'>Kiwi</ListBoxItem>
+        <ListBoxItem id='Apelsin'>Apelsin</ListBoxItem>
       </ComboBox>
 
       <pre style={{ marginTop: '1rem' }}>Vald frukt: {selectedFruit}</pre>
@@ -73,10 +74,12 @@ export const SectionedExample = () => {
       ]}
     >
       {section => (
-        <ComboBoxSection
-          {...section}
-          id={section.name}
-        />
+        <ListBoxSection id={section.name}>
+          <ListBoxHeader>{section.name}</ListBoxHeader>
+          <Collection items={section.children}>
+            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+          </Collection>
+        </ListBoxSection>
       )}
     </ComboBox>
   )
@@ -113,7 +116,7 @@ export const AsyncExample = () => {
       allowsEmptyCollection
     >
       <Collection items={list.items}>
-        {item => <ComboBoxItem id={item.name}>{item.name}</ComboBoxItem>}
+        {item => <ListBoxItem id={item.name}>{item.name}</ListBoxItem>}
       </Collection>
       {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
     </ComboBox>

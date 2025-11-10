@@ -1,3 +1,11 @@
+## 15.2.1 (2025-11-10)
+
+### 🩹 Fixes
+
+- **combobox:** use common ListBox component ([9bd9854d92](https://github.com/migrationsverket/midas/commit/9bd9854d92))
+- **select:** deprecate legacy component and types ([7230bef1be](https://github.com/migrationsverket/midas/commit/7230bef1be))
+- **list-box:** deprecate custom item and section types ([e5a415eb03](https://github.com/migrationsverket/midas/commit/e5a415eb03))
+
 ## 15.2.0 (2025-11-07)
 
 ### 🚀 Features

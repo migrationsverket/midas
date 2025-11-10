@@ -64,19 +64,21 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
           state={state}
         />
       )}
-      {props.showSelectAll && (
-        <Checkbox
-          isSelected={allSelected}
-          isIndeterminate={someSelected}
-          isReadOnly={props.isReadOnly}
-          onChange={handleChange}
-        >
-          {props.selectAllLabel || stringFormatter.format('selectAll')}
-        </Checkbox>
-      )}
-      <CheckboxGroupContext.Provider value={state}>
-        {props.children}
-      </CheckboxGroupContext.Provider>
+      <div className={styles.checkboxList}>
+        {props.showSelectAll && (
+          <Checkbox
+            isSelected={allSelected}
+            isIndeterminate={someSelected}
+            isReadOnly={props.isReadOnly}
+            onChange={handleChange}
+          >
+            {props.selectAllLabel || stringFormatter.format('selectAll')}
+          </Checkbox>
+        )}
+        <CheckboxGroupContext.Provider value={state}>
+          {props.children}
+        </CheckboxGroupContext.Provider>
+      </div>
       {props.errorPosition === 'bottom' && (
         <CheckboxGroupFieldError
           {...props}
