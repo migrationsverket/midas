@@ -1,0 +1,14 @@
+{
+  "executors": {
+    "dev-server": {
+      "implementation": "./src/executors/dev-server/executor.ts",
+      "schema": "./src/executors/dev-server/schema.json",
+      "description": "dev-server executor"
+    },
+    "browser": {
+      "implementation": "./src/executors/browser/executor.ts",
+      "schema": "./src/executors/browser/schema.json",
+      "description": "browser executor"
+    }
+  }
+}

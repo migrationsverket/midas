@@ -11,5 +11,6 @@
   "cssModules.camelCase": true,
   "stylelint.configFile": ".stylelintrc.json",
   "stylelint.validate": ["css", "postcss"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": ["json"]
 }

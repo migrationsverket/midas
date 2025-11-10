@@ -64,7 +64,7 @@ const config: Config = {
         parserOptions: {
           shouldExtractValuesFromUnion: true,
           shouldExtractLiteralValuesFromEnum: false,
-        }
+        },
       },
     ],
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],

@@ -1,0 +1,41 @@
+{
+  "name": "docusaurus",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/docusaurus/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/docusaurus",
+        "main": "tools/docusaurus/src/index.ts",
+        "tsConfig": "tools/docusaurus/tsconfig.lib.json",
+        "assets": [
+          "tools/docusaurus/*.md",
+          {
+            "input": "./tools/docusaurus/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/docusaurus/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/docusaurus",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./tools/docusaurus",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

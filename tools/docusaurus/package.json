@@ -1,0 +1,14 @@
+{
+  "name": "@midas-ds/docusaurus",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@docusaurus/core": "^3.9.1",
+    "@nx/devkit": "21.4.0",
+    "tslib": "^2.3.0"
+  },
+  "executors": "./executors.json"
+}
