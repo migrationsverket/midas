@@ -1,8 +1,9 @@
 .checkboxInner {
   --border-color: var(--midas-border-color-primary);
 
-  width: 18px;
-  height: 18px;
+  display: flex;
+  width: var(--midas-size-80);
+  height: var(--midas-size-80);
   box-sizing: border-box;
   border: 1px solid var(--border-color);
   transition:
@@ -49,10 +50,6 @@
   cursor: pointer;
   color: var(--midas-text-primary);
   line-height: var(--midas-typography-line-height-30);
-
-  &:not(:last-child) {
-    margin-bottom: 0.5rem;
-  }
 
   /* Focus ring */
   &[data-focus-visible],
@@ -152,6 +149,12 @@
 
   &[data-disabled] {
     color: var(--midas-text-disabled);
+  }
+
+  .checkboxList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .checkbox {
