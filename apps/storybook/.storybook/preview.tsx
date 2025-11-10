@@ -1,12 +1,7 @@
 import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
-import {
-  customDarkTheme,
-  customLightTheme,
-  getPreferredColorScheme,
-} from './custom-theme'
-import React from 'react'
-import { globalModes } from './modes'
+import React, { useRef } from 'react'
+// import { globalModes } from './modes'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
@@ -16,6 +11,7 @@ import '@midas-ds/theme/lib/fonts.css'
 import '@midas-ds/theme/lib/color-scheme.css'
 import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
 import './custom.css'
+import {UNSAFE_PortalProvider as PortalProvider} from 'react-aria'
 
 const preview: Preview = {
   async beforeEach() {
@@ -38,12 +34,6 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    docs: {
-      theme:
-        getPreferredColorScheme() === 'dark'
-          ? customDarkTheme
-          : customLightTheme,
-    },
     viewport: {
       viewports: customViewports,
     },
@@ -54,23 +44,11 @@ const preview: Preview = {
       },
     },
     chromatic: {
-      modes: globalModes,
+      // modes: globalModes,
     },
     a11y: { test: 'error' },
   },
   globalTypes: {
-    scheme: {
-      toolbar: {
-        title: 'Color Scheme',
-        icon: 'paintbrush',
-        items: [
-          { value: 'light', title: 'Light', icon: 'sun' },
-          { value: 'dark', title: 'Dark', icon: 'moon' },
-        ],
-        dynamicTitle: true,
-      },
-    },
-
     lang: {
       description: 'Language',
       toolbar: {
@@ -85,35 +63,40 @@ const preview: Preview = {
   },
   initialGlobals: {
     size: 'large',
-    scheme: getPreferredColorScheme(),
     lang: 'sv',
     backgrounds: { value: 'background' },
   },
   decorators: [
     (Story, context) => {
-      const RootTag: React.ElementType =
-        context?.parameters?.rootElement || 'main'
 
-      const story = document.querySelector<HTMLElement>('body')
+    const lightRef = useRef(null)
+    const darkRef = useRef(null)
 
-      if (story) {
-        story.style.colorScheme = context.globals.scheme
-        story.style.transition = 'none'
-        story.style.background = variables.backgroundBase
-      }
+    return (
+      <I18nProvider locale={context.globals.lang}>
+      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+        <div style={{ colorScheme: 'dark', backgroundColor: variables.layer01Base, padding: '2rem' }}>
+          <div ref={darkRef} data-portal-root-dark/>
+          <PortalProvider getContainer={() => darkRef.current ?? document.body}>
 
-      return (
-        <RootTag
-          style={{
-            colorScheme: context.globals.scheme,
-          }}
-        >
-          <I18nProvider locale={context.globals.lang}>
-            <Story />
-          </I18nProvider>
-        </RootTag>
-      )
-    },
+              <Story />
+          </PortalProvider>
+            </div>
+
+
+
+        <div style={{ colorScheme: 'light', backgroundColor: variables.layer01Base, padding: '2rem' }} >
+          <div ref={lightRef} data-portal-root-light/>
+        <PortalProvider getContainer={() => lightRef.current ?? document.body}>
+
+          <Story />
+
+        </PortalProvider>
+        </div>
+      </div>
+      </I18nProvider>
+    )
+    }
   ],
   tags: ['autodocs', 'snapshot'],
 }

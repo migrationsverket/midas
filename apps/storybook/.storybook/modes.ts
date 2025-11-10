@@ -1,4 +1,4 @@
-export const globalModes = {
+/*export const globalModes = {
   'Light Mode': {
     scheme: 'light',
     colorScheme: 'light',
@@ -7,4 +7,4 @@ export const globalModes = {
     scheme: 'dark',
     colorScheme: 'dark',
   },
-}
+}*/

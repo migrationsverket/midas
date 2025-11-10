@@ -24,7 +24,7 @@ export const customDarkTheme = create({
   barSelectedColor: 'rgb(201, 205, 207)',
 })
 
-export const getPreferredColorScheme = () => {
+/*export const getPreferredColorScheme = () => {
   if (!globalThis || !globalThis.matchMedia) return 'light'
 
   const isDarkThemePreferred = globalThis.matchMedia(
@@ -33,4 +33,4 @@ export const getPreferredColorScheme = () => {
   if (isDarkThemePreferred) return 'dark'
 
   return 'light'
-}
+}*/
