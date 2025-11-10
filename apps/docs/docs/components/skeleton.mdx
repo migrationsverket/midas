@@ -104,26 +104,6 @@ Form-varianten stödjer två storlekar för inmatningsfältet: `large` (48px, st
   />
 </div>
 
-#### Flera formulärfält
-
-För att visa en laddningsindikator för flera formulärfält, använd flera Skeleton-komponenter med form-varianten.
-
-```tsx
-<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-  <Skeleton variant='form' />
-  <Skeleton variant='form' />
-  <Skeleton variant='form' />
-</div>
-```
-
-<div className='card'>
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-    <Skeleton variant='form' />
-    <Skeleton variant='form' />
-    <Skeleton variant='form' />
-  </div>
-</div>
-
 ## Animation
 
 Skeleton är animerad som standard. Det går att stänga av med `isAnimated={false}`.
