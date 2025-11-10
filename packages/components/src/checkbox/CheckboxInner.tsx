@@ -34,14 +34,12 @@ export const CheckboxInner = React.forwardRef<
       <div className={clsx(styles.checkboxInner)}>
         {props.isIndeterminate ? (
           <Minus
-            size={16}
-            viewBox='0 0 24 24'
+            size={14}
             color={variables.iconOnColor}
           />
         ) : (
           <Check
-            size={16}
-            viewBox='0 0 24 24'
+            size={14}
             color={variables.iconOnColor}
           />
         )}
