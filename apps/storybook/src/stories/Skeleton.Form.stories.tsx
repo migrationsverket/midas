@@ -18,7 +18,7 @@ export default {
       data-testid='skeleton'
     />
   ),
-} as Meta<typeof Skeleton>
+} satisfies Meta<typeof Skeleton>
 
 export const Large: Story = {
   args: {
