@@ -30,6 +30,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
     <Button
       className={clsx(styles.calendarButton, {
         [styles.medium]: size === 'medium',
+        [styles.readOnly]: isReadOnly,
       })}
       data-invalid={isInvalid || undefined}
       isDisabled={isDisabled}
