@@ -74,7 +74,6 @@
       "table-styles",
       "datepicker-styles"
     ],
-    "releaseTagPattern": "{projectName}@v{version}",
     "git": {
       "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"
     },
@@ -84,6 +83,9 @@
       "currentVersionResolver": "git-tag",
       "updateDependents": "auto",
       "preserveLocalDependencyProtocols": false
+    },
+    "releaseTag": {
+      "pattern": "{projectName}@v{version}"
     }
   },
   "targetDefaults": {
