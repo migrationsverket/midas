@@ -9,7 +9,7 @@ export const AccessLevelExample = () => {
     >
       <InfoBanner
         type='info'
-        message='Du har endast behörighet att redigera vissa fält. Kontakta din administratör om du behöver kunna ändra alla fält'
+        message='Du har endast behörighet att redigera vissa fält. Kontakta din administratör om för behörighetsfrågor.'
       />
       <TextField
         label='Kortnummer'
