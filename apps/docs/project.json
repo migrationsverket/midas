@@ -6,7 +6,7 @@
   "tags": ["docs", "apps"],
   "targets": {
     "build": {
-      "executor": "@nx-extend/docusaurus:browser",
+      "executor": "@midas-ds/docusaurus:browser",
       "options": {
         "outputPath": "dist/docs",
         "minify": false
@@ -14,7 +14,7 @@
       "dependsOn": []
     },
     "serve": {
-      "executor": "@nx-extend/docusaurus:dev-server",
+      "executor": "@midas-ds/docusaurus:dev-server",
       "options": {
         "port": 3000
       }
