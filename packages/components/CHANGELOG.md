@@ -1,3 +1,9 @@
+## 15.2.3 (2025-11-11)
+
+### 🩹 Fixes
+
+- **textfield:** honor min and max for number fields ([8791661e57](https://github.com/migrationsverket/midas/commit/8791661e57))
+
 ## 15.2.2 (2025-11-11)
 
 ### 🔧 Maintenance
