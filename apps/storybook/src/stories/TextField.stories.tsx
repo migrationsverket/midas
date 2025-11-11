@@ -21,7 +21,11 @@ export default {
   },
 } satisfies Meta<typeof TextField>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    defaultValue: 'Text value'
+  }
+}
 
 export const Password: Story = {
   args: {

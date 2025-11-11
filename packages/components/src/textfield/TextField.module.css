@@ -36,6 +36,7 @@
 
 .textArea {
   all: unset;
+  color: var(--midas-text-primary);
   font-family: var(--midas-typography-font-family);
   display: flex;
   grid-area: Input;
@@ -96,6 +97,7 @@
 
 .input {
   all: unset;
+  color: var(--midas-text-primary);
   font-family: var(--midas-typography-font-family);
   grid-area: Input;
   border-bottom: 1px solid var(--midas-border-color-primary);
