@@ -128,7 +128,7 @@ function ThemeScopeProvider({
 
   return (
     <ThemeScopeContext.Provider value={theme}>
-      <div ref={scopeRef} data-theme-scope={theme} data-theme={theme} data-scope-id={scopeId}>
+      <div ref={scopeRef} data-theme-scope={theme} data-theme={theme} data-scope-id={scopeId} role="presentation">
         {children}
       </div>
     </ThemeScopeContext.Provider>
@@ -213,6 +213,7 @@ const preview: Preview = {
               <RootColorScheme theme={theme} />
               <div
                 className="theme-decorator-single"
+                role="presentation"
                 style={{
                   colorScheme: theme,
                   backgroundColor,
@@ -243,9 +244,10 @@ const preview: Preview = {
         variables.layer02Base
       return (
         <I18nProvider locale={context.globals.lang}>
-          <div className="theme-decorator-container">
+          <div className="theme-decorator-container" role="presentation">
             <div
               className="theme-decorator-panel"
+              role="presentation"
               style={{
                 colorScheme: 'dark',
                 backgroundColor,
@@ -258,6 +260,7 @@ const preview: Preview = {
 
             <div
               className="theme-decorator-panel"
+              role="presentation"
               style={{
                 colorScheme: 'light',
                 backgroundColor,

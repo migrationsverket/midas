@@ -2,21 +2,30 @@ import * as a11yAddonAnnotations from '@storybook/addon-a11y/preview'
 import { setProjectAnnotations } from '@storybook/react-vite'
 import * as projectAnnotations from './preview'
 import { afterAll, beforeAll, vi } from 'vitest'
+import React from 'react'
 
-// Override the preview to force dark theme for a11y tests
+// Override preview to use dark theme with section wrapper
 const a11yAnnotations = {
   ...projectAnnotations,
   default: {
     ...projectAnnotations.default,
     parameters: {
       ...projectAnnotations.default.parameters,
-      themeMode: 'dark', // Force single dark theme for a11y dark mode tests
+      themeMode: 'dark', // Force dark theme
     },
+    decorators: [
+      // Wrap stories in <section> to prevent banner landmark issues
+      (Story: any, context: any) => {
+        const OriginalDecorator = projectAnnotations.default.decorators?.[0]
+        if (OriginalDecorator) {
+          return React.createElement('section', { role: 'presentation' }, OriginalDecorator(Story, context))
+        }
+        return React.createElement('section', { role: 'presentation' }, React.createElement(Story))
+      },
+    ],
   },
 }
 
-// This is an important step to apply the right configuration when testing your stories.
-// More info at: https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#setprojectannotations
 setProjectAnnotations([a11yAddonAnnotations, a11yAnnotations])
 
 beforeAll(() => {
