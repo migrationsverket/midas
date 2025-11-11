@@ -1,6 +1,6 @@
 import * as a11yAddonAnnotations from '@storybook/addon-a11y/preview'
 import { setProjectAnnotations } from '@storybook/react-vite'
-import * as projectAnnotations from './preview'
+import * as projectAnnotations from './preview.test'
 import { afterAll, beforeAll, vi } from 'vitest'
 import { vis, visAnnotations } from 'storybook-addon-vis/vitest-setup'
 

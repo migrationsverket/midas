@@ -165,35 +165,63 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-    const globalsBackground = context.globals.backgrounds?.value;
+      const globalsBackground = context.globals.backgrounds?.value;
+
+      // Check if this story wants to override the default dual-mode
+      const themeModeParam = context.parameters.themeMode
+
+      // If a specific theme is requested, render only that theme
+      if (themeModeParam === 'dark' || themeModeParam === 'light') {
+        const theme = themeModeParam
+        return (
+          <I18nProvider locale={context.globals.lang}>
+            <div
+              className="theme-decorator-single"
+              style={{
+                colorScheme: theme,
+                backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
+              }}
+            >
+              <ThemeScopeProvider theme={theme}>
+                <Story />
+              </ThemeScopeProvider>
+            </div>
+          </I18nProvider>
+        )
+      }
+
+      // If dual mode is explicitly disabled, render without theme scoping
+      if (themeModeParam === 'none') {
+        return (
+          <I18nProvider locale={context.globals.lang}>
+            <Story />
+          </I18nProvider>
+        )
+      }
+
+      // Default: render both themes side by side
       return (
         <I18nProvider locale={context.globals.lang}>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'flex-start', height: 'fit-content'}}>
-            <div style={{
-              colorScheme: 'dark',
-              backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
-              padding: '2rem',
-              minWidth: '300px',
-              flex: 1,
-              display: 'flex',
-              justifyContent: 'center',
-              height: '100%'
-            }}>
+          <div className="theme-decorator-container">
+            <div
+              className="theme-decorator-panel"
+              style={{
+                colorScheme: 'dark',
+                backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
+              }}
+            >
               <ThemeScopeProvider theme="dark">
                 <Story />
               </ThemeScopeProvider>
             </div>
 
-            <div style={{
-              colorScheme: 'light',
-              backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
-              padding: '2rem',
-              minWidth: '300px',
-              flex: 1,
-              display: 'flex',
-              justifyContent: 'center',
-              height: '100%'
-            }}>
+            <div
+              className="theme-decorator-panel"
+              style={{
+                colorScheme: 'light',
+                backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
+              }}
+            >
               <ThemeScopeProvider theme="light">
                 <Story />
               </ThemeScopeProvider>

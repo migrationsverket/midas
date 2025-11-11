@@ -21,3 +21,25 @@
 [data-theme-scope='light'] {
   color-scheme: light;
 }
+
+/* Theme decorator styles */
+.theme-decorator-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: fit-content;
+}
+
+.theme-decorator-panel {
+  padding: 2rem;
+  min-width: 300px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.theme-decorator-single {
+  padding: 2rem;
+}
