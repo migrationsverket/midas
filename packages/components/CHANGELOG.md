@@ -1,3 +1,10 @@
+## 15.2.2 (2025-11-11)
+
+### 🔧 Maintenance
+
+- **date-picker:** change complex css selector ([6ea5c10517](https://github.com/migrationsverket/midas/commit/6ea5c10517))
+- **date-picker:** change complex css selector ([3442d959ec](https://github.com/migrationsverket/midas/commit/3442d959ec))
+
 ## 15.2.1 (2025-11-10)
 
 ### 🩹 Fixes
