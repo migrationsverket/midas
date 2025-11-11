@@ -161,7 +161,7 @@ const preview: Preview = {
   initialGlobals: {
     size: 'large',
     lang: 'sv',
-    backgrounds: { value: 'layer02' },
+    backgrounds: { value: 'background' },
   },
   decorators: [
     (Story, context) => {
