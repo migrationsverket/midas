@@ -1,6 +1,7 @@
 .select {
   display: flex;
   flex-direction: column;
+  align-self: stretch;
 }
 
 .triggerContainer {
