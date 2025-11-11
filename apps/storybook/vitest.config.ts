@@ -18,6 +18,7 @@ export default mergeConfig(
         defineStorybookProject({
           name: 'storybook',
           snapshotSubpath: 'light',
+          setupFile: 'vitest.setup.a11y.ts',
         }),
         {
           extends: true,

@@ -12,6 +12,7 @@ export default mergeConfig(
         defineStorybookProject({
           name: 'storybook:dark-mode',
           snapshotSubpath: 'dark',
+          setupFile: 'vitest.setup.a11y.dark.ts',
           context: {
             colorScheme: 'dark',
           },

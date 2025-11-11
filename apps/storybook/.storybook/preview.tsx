@@ -18,6 +18,31 @@ import {
 
 const ThemeScopeContext = createContext<'light' | 'dark' | null>(null)
 
+// Component to inject root color-scheme
+function RootColorScheme({ theme }: { theme: 'light' | 'dark' }) {
+  useEffect(() => {
+    const styleId = 'root-color-scheme'
+    let styleEl = document.getElementById(styleId) as HTMLStyleElement
+
+    if (!styleEl) {
+      styleEl = document.createElement('style')
+      styleEl.id = styleId
+      document.head.appendChild(styleEl)
+    }
+
+    styleEl.textContent = `:root, html, body { color-scheme: ${theme} !important; }`
+
+    return () => {
+      const el = document.getElementById(styleId)
+      if (el) {
+        el.remove()
+      }
+    }
+  }, [theme])
+
+  return null
+}
+
 // Global singleton to track the currently active theme
 let activeTheme: 'light' | 'dark' | null = null
 let activeThemeTimeout: NodeJS.Timeout | null = null
@@ -173,19 +198,32 @@ const preview: Preview = {
       // If a specific theme is requested, render only that theme
       if (themeModeParam === 'dark' || themeModeParam === 'light') {
         const theme = themeModeParam
+        // Get background color, with dark mode fallback
+        let backgroundColor =
+          context.parameters.backgrounds?.options?.[globalsBackground]?.value
+
+        // If no background is set, use theme-appropriate default
+        if (!backgroundColor) {
+          backgroundColor = theme === 'dark' ? '#383838' : '#ffffff'
+        }
+
         return (
           <I18nProvider locale={context.globals.lang}>
-            <div
-              className="theme-decorator-single"
-              style={{
-                colorScheme: theme,
-                backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
-              }}
-            >
-              <ThemeScopeProvider theme={theme}>
-                <Story />
-              </ThemeScopeProvider>
-            </div>
+            <>
+              <RootColorScheme theme={theme} />
+              <div
+                className="theme-decorator-single"
+                style={{
+                  colorScheme: theme,
+                  backgroundColor,
+                }}
+                data-color-scheme={theme}
+              >
+                <ThemeScopeProvider theme={theme}>
+                  <Story />
+                </ThemeScopeProvider>
+              </div>
+            </>
           </I18nProvider>
         )
       }
@@ -200,6 +238,9 @@ const preview: Preview = {
       }
 
       // Default: render both themes side by side
+      const backgroundColor =
+        context.parameters.backgrounds?.options?.[globalsBackground]?.value ||
+        variables.layer02Base
       return (
         <I18nProvider locale={context.globals.lang}>
           <div className="theme-decorator-container">
@@ -207,7 +248,7 @@ const preview: Preview = {
               className="theme-decorator-panel"
               style={{
                 colorScheme: 'dark',
-                backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
+                backgroundColor,
               }}
             >
               <ThemeScopeProvider theme="dark">
@@ -219,7 +260,7 @@ const preview: Preview = {
               className="theme-decorator-panel"
               style={{
                 colorScheme: 'light',
-                backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
+                backgroundColor,
               }}
             >
               <ThemeScopeProvider theme="light">

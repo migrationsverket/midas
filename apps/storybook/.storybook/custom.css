@@ -43,3 +43,16 @@
 .theme-decorator-single {
   padding: 2rem;
 }
+
+/* Ensure form components respect dark mode */
+:root[style*="color-scheme: dark"] input,
+:root[style*="color-scheme: dark"] textarea,
+:root[style*="color-scheme: dark"] select,
+html[style*="color-scheme: dark"] input,
+html[style*="color-scheme: dark"] textarea,
+html[style*="color-scheme: dark"] select,
+body[style*="color-scheme: dark"] input,
+body[style*="color-scheme: dark"] textarea,
+body[style*="color-scheme: dark"] select {
+  color-scheme: dark;
+}
