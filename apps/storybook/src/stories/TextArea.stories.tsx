@@ -17,7 +17,11 @@ export default {
   },
 } satisfies Meta<typeof TextArea>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    defaultValue: 'Text value'
+  }
+}
 
 export const Invalid: Story = {
   args: {
