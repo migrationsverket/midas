@@ -125,14 +125,23 @@ describe('given DS1243', async () => {
 })
 
 describe('given a TextField with type="number"', async () => {
-  beforeEach(async () => {
-    await Number.run()
-  })
-
   it('should not allow any non number input', async () => {
+    await Number.run()
     await userEvent.tab()
     await userEvent.keyboard('abc')
     expect(page.getByRole('spinbutton')).toHaveValue(null)
+  })
+
+  it('should not allow numbers below the "min" threshold', async () => {
+    await Number.run({
+      args: {
+        ...Number.args,
+        min: 0,
+      },
+    })
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown]')
+    expect(page.getByRole('spinbutton')).toHaveValue(0)
   })
 })
 
