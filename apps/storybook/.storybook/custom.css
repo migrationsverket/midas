@@ -1,17 +1,23 @@
-:root {
-  color-scheme: light dark;
-}
-
-.dark {
-  color-scheme: dark;
-}
-
-.light {
-  color-scheme: light;
-}
-
 .innerZoomElementWrapper > *:not(#\9) {
   @media (forced-colors: active) {
     border-color: Canvas !important;
   }
+}
+
+/* Portal styling - these are rendered to document.body */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Ensure theme scopes have the right color scheme */
+[data-theme-scope='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme-scope='light'] {
+  color-scheme: light;
 }
