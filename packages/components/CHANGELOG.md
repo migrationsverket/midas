@@ -1,3 +1,15 @@
+## 15.2.4 (2025-11-11)
+
+### 🚀 Features
+
+- **skeleton:** tweak size/space to match textfield cmp ([6e2fce81f4](https://github.com/migrationsverket/midas/commit/6e2fce81f4))
+- **skeleton:** use type `Size` for form variant ([4d4bf6424e](https://github.com/migrationsverket/midas/commit/4d4bf6424e))
+- **skeleton:** add form variant ([f77655c09e](https://github.com/migrationsverket/midas/commit/f77655c09e))
+
+### 🧪 Tests updated
+
+- **skeleton:** fix test syntax and location for skeleton form tests ([86573b9647](https://github.com/migrationsverket/midas/commit/86573b9647))
+
 ## 15.2.3 (2025-11-11)
 
 ### 🩹 Fixes
