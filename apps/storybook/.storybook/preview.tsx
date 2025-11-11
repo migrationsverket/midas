@@ -161,19 +161,23 @@ const preview: Preview = {
   initialGlobals: {
     size: 'large',
     lang: 'sv',
-    backgrounds: { value: 'background' },
+    backgrounds: { value: 'layer02' },
   },
   decorators: [
     (Story, context) => {
+    const globalsBackground = context.globals.backgrounds?.value;
       return (
         <I18nProvider locale={context.globals.lang}>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'flex-start', height: '400px' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'flex-start', height: 'fit-content'}}>
             <div style={{
               colorScheme: 'dark',
-              backgroundColor: variables.layer02Base,
+              backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
               padding: '2rem',
               minWidth: '300px',
               flex: 1,
+              display: 'flex',
+              justifyContent: 'center',
+              height: '100%'
             }}>
               <ThemeScopeProvider theme="dark">
                 <Story />
@@ -182,10 +186,13 @@ const preview: Preview = {
 
             <div style={{
               colorScheme: 'light',
-              backgroundColor: variables.layer02Base,
+              backgroundColor: context.parameters.backgrounds.options[globalsBackground]?.value,
               padding: '2rem',
               minWidth: '300px',
-              flex: 1
+              flex: 1,
+              display: 'flex',
+              justifyContent: 'center',
+              height: '100%'
             }}>
               <ThemeScopeProvider theme="light">
                 <Story />
