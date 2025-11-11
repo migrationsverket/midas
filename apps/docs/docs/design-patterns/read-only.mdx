@@ -1,0 +1,23 @@
+# Read-only
+
+import { AccessLevelExample } from '@site/src/components/examples/read-only/ReadOnlyExamples'
+
+Normalfallet i ett gränssnitt är att alla kontroller, till exempel textfält eller kryssrutor, går att interagera med. Om det uppstår ett läge där en specifik kontroll och dess information inte är relevant är huvudregeln att inte visa kontrollen för användaren. Men, i de fall där informationen i kontrollen är relevant men användaren inte ska kunna interagera med kontrollen kan vi sätta komponenterna i read-only-läge. I detta läge har kontrollen ett annorlunda utseende för att indikera att den inte går att interagera med.
+
+Read-only finns till [Calendar](/components/calendar), [Checkbox](/components/checkbox), [Combobox](/components/combobox), [DateField](/components/datefield), [DatePicker](/components/date-picker), [Radio](/components/radio), [TextArea](/components/textarea) och [Textfield](/components/textfield)
+
+:::info[Read-only finns inte till Select]
+Vi har bara read-only till de komponenter där React Aria har property isReadOnly. Deras Select, som vår Select bygger på, har inte det i dagsläget. Om du har en Select som du vill göra read-only rekommenderar vi att använda Textfield och fylla den med informationen från Select.
+:::
+
+## När använder vi read-only
+
+Typexemplet på när det är lämpligt att använda read-only är när en användare har begränsad behörighet. Den kan inte ändra vissa kontroller men behöver kunna se informationen i fälten. Vi bör alltid komplettera med information till användaren om varför vissa av kontrollerna är read-only.
+
+<AccessLevelExample />
+
+## När använder vi inte read-only
+
+Vi använder inte read-only som ett alternativ till Disabled eller vice versa. Disabled och read-only har två helt olika syften.
+
+Vi använder inte read-only för att presentera information. När vi ska presentera information eller data så är huvudregeln att vi visar det som text.
