@@ -43,8 +43,6 @@
       background-color: var(--midas-layer-01-hover);
     }
 
-    background-color: var(--midas-layer-01-base);
-
     .cell {
       border-top: 1px var(--midas-border-color-subtle) solid;
       color: var(--midas-text-primary);
