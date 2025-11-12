@@ -28,6 +28,8 @@
   }
 
   .row {
+    background-color: var(--midas-layer-01-base);
+
     &[data-focused] {
       outline: var(--midas-size-10) solid var(--midas-border-color-primary);
       outline-offset: -4px;
@@ -44,7 +46,7 @@
     }
 
     .cell {
-      border-top: 1px var(--midas-border-color-subtle) solid;
+      border-bottom: 1px var(--midas-border-color-subtle) solid;
       color: var(--midas-text-primary);
       padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
         var(--midas-size-75);
@@ -96,9 +98,9 @@
 
   &.striped {
     .row {
-      &:nth-child(even),
+      &:nth-child(odd),
       &[data-even='false'] {
-        background-color: var(--midas-layer-accent-01-base);
+        background-color: transparent;
 
         &[data-hovered] {
           background-color: var(--midas-layer-accent-01-hover);
