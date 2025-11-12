@@ -1,3 +1,9 @@
+## 15.2.6 (2025-11-12)
+
+### 🩹 Fixes
+
+- **text-area, text-field:** explicitly set text color ([9c05a9bd14](https://github.com/migrationsverket/midas/commit/9c05a9bd14))
+
 ## 15.2.5 (2025-11-12)
 
 ### 🩹 Fixes
