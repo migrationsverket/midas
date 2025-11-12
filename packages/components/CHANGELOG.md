@@ -1,3 +1,9 @@
+## 15.2.5 (2025-11-12)
+
+### 🩹 Fixes
+
+- **select:** prevent unexpected sizing when select is in a flex container ([07cca197a5](https://github.com/migrationsverket/midas/commit/07cca197a5))
+
 ## 15.2.4 (2025-11-11)
 
 ### 🚀 Features
