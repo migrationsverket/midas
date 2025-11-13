@@ -1,7 +1,4 @@
-import * as React from 'react'
-import { Check } from 'lucide-react'
 import { Collection } from 'react-aria-components'
-import { Checkbox } from '../checkbox'
 import {
   ListBox,
   ListBoxItem,
@@ -13,7 +10,6 @@ import {
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import type { MultiSelectState } from './types'
-import styles from './Select.module.css'
 
 interface ListBoxProps<T extends ListBoxOption> extends AriaListBoxOptions<T> {
   state: MultiSelectState<T>
@@ -34,31 +30,7 @@ const Option = ({ item }: OptionProps) => (
     textValue={item.textValue}
     aria-label={item.textValue}
   >
-    {({ isDisabled, isSelected, selectionMode }) => (
-      <>
-        {selectionMode === 'multiple' ? (
-          <div
-            className={styles.checkboxContainer}
-            aria-hidden
-          >
-            <Checkbox
-              isDisabled={isDisabled}
-              isSelected={isSelected}
-              isReadOnly
-              excludeFromTabOrder
-              aria-label={item.textValue}
-            />
-          </div>
-        ) : null}
-        {item.rendered}
-        {isSelected && selectionMode === 'single' ? (
-          <Check
-            size={20}
-            className={styles.listBoxItemCheckmark}
-          />
-        ) : null}
-      </>
-    )}
+    {item.rendered}
   </ListBoxItem>
 )
 
