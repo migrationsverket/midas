@@ -98,8 +98,8 @@
 
   &.striped {
     .row {
-      &:nth-child(odd),
-      &[data-even='false'] {
+      &:nth-child(odd):not([data-even='false']),
+      &[data-even='true'] {
         background-color: transparent;
 
         &[data-hovered] {
