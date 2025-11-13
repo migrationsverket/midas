@@ -10,8 +10,7 @@ Paketet exporterar CSS-variabler som kan användas både i Tailwind v4 och v3.
 
 ## Tailwind v4 (rekommenderat)
 
-Tailwind v4 introducerar `@theme`-direktivet som gör det enkelt att definiera design tokens som CSS-variabler
-och automatiskt generera motsvarande utility classes.
+Midas designsystemets tokens används med Tailwind v4 genom CSS-variabler och Tailwinds [*arbitrary values*](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values).
 
 ### Installation
 
@@ -21,82 +20,83 @@ Installera Tailwind CSS v4:
 npm install tailwindcss@next @tailwindcss/vite@next
 ```
 
-### Importera variabler
+### Setup
 
-Importera Midas CSS-variabler i din huvudsakliga CSS-fil:
+**VIKTIGT:** Importera CSS-filerna i rätt ordning:
 
-```css title="app.css"
-@import "tailwindcss";
-@import url("@midas-ds/theme/variables.css");
+```typescript title="main.tsx"
+import '@midas-ds/theme/color-scheme.css' // Krävs för light/dark mode
+import '@midas-ds/theme/variables.css'
+import '@midas-ds/theme/fonts.css'
 ```
 
-### Användning med anpassade värden
+Importera Midas Tailwind-tema och Tailwind i din CSS-fil:
 
-Använd Midas CSS-variabler direkt i Tailwind classes med parentessyntax (Tailwinds [*arbitrary values*](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values)):
-
-```tsx
-<div className="bg-(--midas-background-base) text-(--midas-text-primary)">
-  <h1 className="text-[length:var(--midas-typography-font-size-80)]">Rubrik</h1>
-  <p className="mt-[var(--midas-spacing-50)]">Text som använder Midas tokens</p>
-</div>
+```css title="app.css"
+@import url("@midas-ds/theme/tailwind-theme.css");
+@import "tailwindcss";
 ```
 
 :::info
-Parentessyntaxen `bg-(--variable)` är en förkortning för `bg-[var(--variable)]` som automatiskt lägger
-till `var()` funktionen åt dig. Du kan använda vilken syntax som helst.
+- `color-scheme.css` innehåller `color-scheme: light dark` som krävs för att Midas semantiska färger med `light-dark()` ska fungera korrekt vid tema-växling.
+- `tailwind-theme.css` innehåller färgpaletten (blue-100, gray-200, etc.) som Tailwind utilities. Detta gör att färgerna fungerar direkt utan arbitrary values.
 :::
 
-### Skapa utilities med @theme (rekommenderat)
+### Användning
 
-För att automatiskt få tillgång till alla Midas tokens som Tailwind utilities, importera den färdiga `tailwind-theme.css` filen:
+**Semantiska tokens (huvudsaklig användning):**
 
-```css title="app.css"
-@import "tailwindcss";
-@import url("@midas-ds/theme/variables.css");
-@import url("@midas-ds/theme/tailwind-theme.css");
-```
-
-Nu kan du använda alla Midas tokens direkt som Tailwind utilities:
+Använd Midas semantiska tokens med [arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values):
 
 ```tsx
-<div className="bg-background-base text-text-primary">
-  <h1 className="text-blue-100">Rubrik med Midas blå färg</h1>
-  <p className="mt-spacing-50 text-gray-140">
-    Text med Midas spacing och färg
-  </p>
-  <button className="bg-button-background-primary-base text-on-color px-spacing-40">
-    Knapp med Midas tokens
-  </button>
+<div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)] p-[var(--midas-spacing-50)]">
+  <div className="text-[length:var(--midas-typography-font-size-80)] mb-[var(--midas-spacing-40)]">
+    Stor text
+  </div>
+  <div className="text-[var(--midas-text-secondary)] mb-[var(--midas-spacing-30)]">
+    Mindre text med semantiska tokens
+  </div>
+  <div className="bg-[var(--midas-layer-01-base)] p-[var(--midas-spacing-40)] border-[var(--midas-border-color-primary)]">
+    Innehåll i en nested box
+  </div>
 </div>
 ```
 
-:::tip
-`tailwind-theme.css` genereras automatiskt från dina JSON tokens via Style Dictionary.
-Alla `--midas-*` variabler blir tillgängliga utan prefixet, t.ex. `--midas-color-blue-100` → `bg-blue-100`.
+**Färgpalett (fungerar direkt):**
+
+Tack vare `tailwind-theme.css` fungerar färger från Midas färgpalett direkt som Tailwind utilities:
+
+```tsx
+<div className="bg-blue-100 text-gray-200 border-2 border-blue-130">
+  <div className="text-signal-red-100">Färgerna från paletten fungerar direkt</div>
+</div>
+```
+
+:::tip Sammanfattning
+- **Semantiska tokens** (background-base, text-primary, spacing-50, etc.): Använd `[var(--midas-*)]`
+- **Färgpalett** (blue-100, gray-140, signal-red-100, etc.): Fungerar direkt som `bg-blue-100`
 :::
 
-### Anpassa @theme
+### Anpassa med @theme (valfritt)
 
-Om du bara vill ha vissa tokens eller vill skapa egna namn, kan du definiera ditt eget `@theme`-block:
+Om du vill skapa egna kortare utility-namn kan du definiera ett `@theme`-block:
 
 ```css title="app.css"
 @import "tailwindcss";
-@import url("@midas-ds/theme/variables.css");
 
 @theme {
-  /* Välj bara de tokens du vill ha */
+  /* Egna namn för tokens */
   --color-primary: var(--midas-color-blue-100);
-  --color-danger: var(--midas-color-signal-red-100);
+  --color-bg: var(--midas-background-base);
   --spacing-sm: var(--midas-spacing-30);
   --spacing-md: var(--midas-spacing-50);
-  --spacing-lg: var(--midas-spacing-70);
 }
 ```
 
 ```tsx
-<button className="bg-primary text-white px-md">
-  Klicka här
-</button>
+<div className="bg-bg text-primary p-md">
+  Element med kortare namn
+</div>
 ```
 
 ## Tailwind v3
@@ -120,8 +120,8 @@ Använd Tailwinds [*arbitrary values*](https://tailwindcss.com/docs/adding-custo
 
 ```tsx
 <div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)]">
-  <h1 className="text-[length:var(--midas-typography-font-size-80)]">Rubrik</h1>
-  <p className="mt-[var(--midas-spacing-50)]">Text som använder Midas tokens</p>
+  <div className="text-[length:var(--midas-typography-font-size-80)]">Stor text</div>
+  <div className="mt-[var(--midas-spacing-50)]">Text som använder Midas tokens</div>
 </div>
 ```
 
@@ -161,7 +161,7 @@ export default {
 
 ```tsx
 <div className="bg-midas-bg-base text-midas-primary">
-  <p className="mt-midas-50">Text med förkonfigurerade Tailwind classes</p>
+  <div className="mt-midas-50">Text med förkonfigurerade Tailwind classes</div>
 </div>
 ```
 
@@ -211,9 +211,9 @@ export function Alert() {
         borderLeft: `4px solid ${variables.colorSignalRed100}`
       }}
     >
-      <p className="text-[color:var(--midas-color-signal-red-150)]">
+      <div className="text-[color:var(--midas-color-signal-red-150)]">
         Detta är en varning
-      </p>
+      </div>
     </div>
   )
 }
