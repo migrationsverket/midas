@@ -23,11 +23,20 @@
     },
     "release:local": {
       "continuous": false,
-      "dependsOn": ["local-registry-clear"],
       "executor": "@midas-ds/release-local:release-local",
       "options": {
         "registry": "http://localhost:4873/",
-        "runTests": false
+        "runTests": false,
+        "keepRunning": false
+      }
+    },
+    "release:local:dev": {
+      "continuous": true,
+      "executor": "@midas-ds/release-local:release-local",
+      "options": {
+        "registry": "http://localhost:4873/",
+        "runTests": false,
+        "keepRunning": true
       }
     }
   }

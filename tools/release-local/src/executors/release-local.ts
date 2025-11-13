@@ -3,14 +3,148 @@ import { ReleaseLocalExecutorSchema } from './schema'
 import { releaseVersion, releasePublish } from 'nx/release'
 import { readFileSync, promises as fs } from 'fs'
 import path = require('path')
-import { execSync } from 'node:child_process'
+import { execSync, spawn } from 'node:child_process'
+
+/**
+ * Check if a port is in use and kill any process using it
+ */
+function ensurePortAvailable(port: number): void {
+  try {
+    // Check if port is in use and get the PID
+    const result = execSync(`lsof -ti:${port}`, { encoding: 'utf-8' }).trim()
+
+    if (result) {
+      const pids = result.split('\n')
+      logger.warn(`Port ${port} is in use by process(es): ${pids.join(', ')}`)
+      logger.info(`Killing process(es) to ensure consistent port usage...`)
+
+      for (const pid of pids) {
+        try {
+          execSync(`kill -9 ${pid}`)
+          logger.info(`Killed process ${pid}`)
+        } catch (e) {
+          logger.warn(`Failed to kill process ${pid}: ${e.message}`)
+        }
+      }
+
+      // Wait a moment for the port to be released
+      execSync('sleep 1')
+      logger.info(`Port ${port} is now available`)
+    } else {
+      logger.info(`Port ${port} is available`)
+    }
+  } catch (e) {
+    // lsof returns non-zero exit code when port is not in use
+    // This is expected and means the port is available
+    if (!e.message.includes('code 1')) {
+      logger.warn(`Error checking port ${port}: ${e.message}`)
+    }
+  }
+}
+
+/**
+ * Wait for Verdaccio to be ready by checking if the registry is accessible
+ */
+async function waitForRegistry(
+  registry: string,
+  maxAttempts = 30,
+  delayMs = 1000,
+): Promise<void> {
+  logger.info(`Waiting for Verdaccio at ${registry} to be ready...`)
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      execSync(`curl -f ${registry} -o /dev/null -s`, { stdio: 'ignore' })
+      logger.info(`Verdaccio is ready on ${registry}`)
+      return
+    } catch (e) {
+      if (attempt === maxAttempts) {
+        throw new Error(
+          `Verdaccio did not become ready after ${maxAttempts} attempts`,
+        )
+      }
+      // Wait before retrying
+      await new Promise(resolve => setTimeout(resolve, delayMs))
+    }
+  }
+}
 
 const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
   options,
   context,
 ) => {
   const registry = options.registry ?? 'http://localhost:4873/'
-  // Verdaccio is running in the background with a cleared storage from task `nx run local-registry-clear`
+  const port = new URL(registry).port || '4873'
+
+  // Ensure port is available before starting
+  logger.info(`Ensuring port ${port} is available for Verdaccio...`)
+  ensurePortAvailable(parseInt(port))
+
+  // Clear storage directory
+  const storagePath = path.join(context.root, 'tmp/local-registry/storage')
+  logger.info(`Clearing local registry storage: ${storagePath}`)
+  try {
+    execSync(`rm -rf ${storagePath}`)
+    logger.info('Storage cleared successfully')
+  } catch (e) {
+    logger.warn(`Failed to clear storage: ${e.message}`)
+  }
+
+  // Create default htpasswd file with test user if it doesn't exist
+  const htpasswdPath = path.join(context.root, '.verdaccio/htpasswd')
+  logger.info('Ensuring htpasswd file exists with default user...')
+  try {
+    // Create .verdaccio directory if it doesn't exist
+    await fs.mkdir(path.dirname(htpasswdPath), { recursive: true })
+
+    // Create htpasswd with bcrypt hash for password "test"
+    // bcrypt hash of "test": $2a$10$...
+    const htpasswdContent = 'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
+    await fs.writeFile(htpasswdPath, htpasswdContent, 'utf-8')
+    logger.info('htpasswd file created with test user')
+  } catch (e) {
+    logger.warn(`Failed to create htpasswd: ${e.message}`)
+  }
+
+  // Start Verdaccio directly
+  const configPath = path.join(context.root, '.verdaccio/config.yml')
+  logger.info(`Starting Verdaccio on port ${port}...`)
+
+  const verdaccioProcess = spawn(
+    'npx',
+    ['verdaccio', '--config', configPath, '--listen', port],
+    {
+      cwd: context.root,
+      stdio: 'pipe',
+      detached: false,
+    },
+  )
+
+  // Log Verdaccio output
+  verdaccioProcess.stdout?.on('data', data => {
+    logger.info(`[Verdaccio] ${data.toString().trim()}`)
+  })
+
+  verdaccioProcess.stderr?.on('data', data => {
+    logger.info(`[Verdaccio] ${data.toString().trim()}`)
+  })
+
+  // Wait for Verdaccio to be ready
+  await waitForRegistry(registry)
+
+  // Authenticate with Verdaccio by setting npm credentials directly
+  logger.info('Setting npm credentials for local registry...')
+  try {
+    // Configure npm to use the test user credentials via .npmrc
+    // Only set the auth token, NOT the default registry
+    const npmrcPath = path.join(context.root, '.npmrc')
+    const npmrcContent = `//localhost:${port}/:_authToken="dGVzdDp0ZXN0"\n`
+    await fs.writeFile(npmrcPath, npmrcContent, 'utf-8')
+    logger.info('npm credentials configured')
+  } catch (e) {
+    logger.error(`Failed to configure npm: ${e.message}`)
+    throw e
+  }
 
   try {
     logger.info('📦 Running Nx Release API…')
@@ -85,7 +219,40 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
     logger.error(`❌ Error: ${e.message}`)
     return { success: false }
   } finally {
-    logger.info('Finished.')
+    // Clean up .npmrc
+    logger.info('Cleaning up npm configuration...')
+    try {
+      const npmrcPath = path.join(context.root, '.npmrc')
+      await fs.unlink(npmrcPath).catch(() => {})
+      logger.info('.npmrc cleaned up')
+    } catch (e) {
+      logger.warn(`Failed to clean up .npmrc: ${e.message}`)
+    }
+
+    // Clean up Verdaccio process (unless keepRunning is true)
+    if (options.keepRunning) {
+      logger.info(
+        '🔄 Keeping Verdaccio running at http://localhost:4873/ (use Ctrl+C to stop)',
+      )
+      logger.info('📦 Packages are ready for testing!')
+
+      // Keep the process alive
+      return new Promise(() => {
+        // This promise never resolves, keeping the executor running
+        // The Verdaccio process will keep running until manually stopped
+      })
+    } else {
+      if (verdaccioProcess && !verdaccioProcess.killed) {
+        logger.info('Stopping Verdaccio...')
+        verdaccioProcess.kill('SIGTERM')
+        // Give it a moment to shut down gracefully
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        if (!verdaccioProcess.killed) {
+          verdaccioProcess.kill('SIGKILL')
+        }
+      }
+      logger.info('Finished.')
+    }
   }
 }
 

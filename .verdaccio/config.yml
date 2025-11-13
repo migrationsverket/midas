@@ -18,6 +18,20 @@ packages:
     # if package is not available locally, proxy requests to npm registry
     proxy: npmjs
 
+# Authentication - disable for local development
+auth:
+  htpasswd:
+    file: ./htpasswd
+    max_users: -1  # Disable new user registration
+    algorithm: bcrypt
+
+# Anyone can access/publish
+security:
+  api:
+    jwt:
+      sign:
+        expiresIn: 7d
+
 # log settings
 log:
   type: stdout
