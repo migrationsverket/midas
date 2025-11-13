@@ -46,16 +46,45 @@ Parentessyntaxen `bg-(--variable)` är en förkortning för `bg-[var(--variable)
 till `var()` funktionen åt dig. Du kan använda vilken syntax som helst.
 :::
 
-### Skapa egna utilities med @theme
+### Skapa utilities med @theme (rekommenderat)
 
-Om du vill skapa egna utility classes från Midas tokens använder du `@theme`-direktivet:
+För att automatiskt få tillgång till alla Midas tokens som Tailwind utilities, importera den färdiga `tailwind-theme.css` filen:
+
+```css title="app.css"
+@import "tailwindcss";
+@import url("@midas-ds/theme/variables.css");
+@import url("@midas-ds/theme/tailwind-theme.css");
+```
+
+Nu kan du använda alla Midas tokens direkt som Tailwind utilities:
+
+```tsx
+<div className="bg-background-base text-text-primary">
+  <h1 className="text-blue-100">Rubrik med Midas blå färg</h1>
+  <p className="mt-spacing-50 text-gray-140">
+    Text med Midas spacing och färg
+  </p>
+  <button className="bg-button-background-primary-base text-on-color px-spacing-40">
+    Knapp med Midas tokens
+  </button>
+</div>
+```
+
+:::tip
+`tailwind-theme.css` genereras automatiskt från dina JSON tokens via Style Dictionary.
+Alla `--midas-*` variabler blir tillgängliga utan prefixet, t.ex. `--midas-color-blue-100` → `bg-blue-100`.
+:::
+
+### Anpassa @theme
+
+Om du bara vill ha vissa tokens eller vill skapa egna namn, kan du definiera ditt eget `@theme`-block:
 
 ```css title="app.css"
 @import "tailwindcss";
 @import url("@midas-ds/theme/variables.css");
 
 @theme {
-  /* Mappa Midas tokens till egna utilities */
+  /* Välj bara de tokens du vill ha */
   --color-primary: var(--midas-color-blue-100);
   --color-danger: var(--midas-color-signal-red-100);
   --spacing-sm: var(--midas-spacing-30);
@@ -64,15 +93,10 @@ Om du vill skapa egna utility classes från Midas tokens använder du `@theme`-d
 }
 ```
 
-Nu kan du använda dessa som vanliga Tailwind utilities:
-
 ```tsx
 <button className="bg-primary text-white px-md">
   Klicka här
 </button>
-<div className="text-danger mt-lg">
-  Varningstext
-</div>
 ```
 
 ## Tailwind v3
