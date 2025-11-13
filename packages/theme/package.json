@@ -26,6 +26,9 @@
     "./variables.css": {
       "import": "./variables.css"
     },
+    "./tailwind-theme.css": {
+      "import": "./tailwind-theme.css"
+    },
     "./fonts.css": {
       "import": "./fonts.css"
     },
