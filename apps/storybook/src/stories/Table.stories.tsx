@@ -128,6 +128,53 @@ export const Virtualized: Story = {
   },
 }
 
+export const VirtualizedStriped: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    striped: true,
+  },
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: args => {
+    const rows = []
+
+    for (let i = 0; i < 5000; i++) {
+      rows.push({ id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}` })
+    }
+
+    return (
+      <Virtualizer
+        layout={TableLayout}
+        layoutOptions={{
+          rowHeight: 48,
+          headingHeight: 48,
+        }}
+      >
+        <Table
+          {...args}
+          style={{ height: 300, overflow: 'auto', scrollPaddingTop: 48 }}
+        >
+          <TableHeader>
+            <Column isRowHeader>Foo</Column>
+            <Column>Bar</Column>
+            <Column>Baz</Column>
+          </TableHeader>
+          <TableBody items={rows}>
+            {item => (
+              <Row data-even={item.id % 2 === 0}>
+                <Cell>{item.foo}</Cell>
+                <Cell>{item.bar}</Cell>
+                <Cell>{item.baz}</Cell>
+              </Row>
+            )}
+          </TableBody>
+        </Table>
+      </Virtualizer>
+    )
+  },
+}
+
 export const StripedWithLink: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
