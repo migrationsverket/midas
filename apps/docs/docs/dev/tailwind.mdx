@@ -1,0 +1,237 @@
+---
+title: Tailwind CSS
+description: Använd Midas tema med Tailwind CSS
+---
+
+# Tailwind CSS
+
+Midas theme-paket kan integreras med Tailwind CSS för att använda designsystemets tokens direkt i dina utility classes.
+Paketet exporterar CSS-variabler som kan användas både i Tailwind v4 och v3.
+
+## Tailwind v4 (rekommenderat)
+
+Tailwind v4 introducerar `@theme`-direktivet som gör det enkelt att definiera design tokens som CSS-variabler
+och automatiskt generera motsvarande utility classes.
+
+### Installation
+
+Installera Tailwind CSS v4:
+
+```bash
+npm install tailwindcss@next @tailwindcss/vite@next
+```
+
+### Importera variabler
+
+Importera Midas CSS-variabler i din huvudsakliga CSS-fil:
+
+```css title="app.css"
+@import "tailwindcss";
+@import url("@midas-ds/theme/variables.css");
+```
+
+### Användning med anpassade värden
+
+Använd Midas CSS-variabler direkt i Tailwind classes med parentessyntax (Tailwinds [*arbitrary values*](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values)):
+
+```tsx
+<div className="bg-(--midas-background-base) text-(--midas-text-primary)">
+  <h1 className="text-[length:var(--midas-typography-font-size-80)]">Rubrik</h1>
+  <p className="mt-[var(--midas-spacing-50)]">Text som använder Midas tokens</p>
+</div>
+```
+
+:::info
+Parentessyntaxen `bg-(--variable)` är en förkortning för `bg-[var(--variable)]` som automatiskt lägger
+till `var()` funktionen åt dig. Du kan använda vilken syntax som helst.
+:::
+
+### Skapa egna utilities med @theme
+
+Om du vill skapa egna utility classes från Midas tokens använder du `@theme`-direktivet:
+
+```css title="app.css"
+@import "tailwindcss";
+@import url("@midas-ds/theme/variables.css");
+
+@theme {
+  /* Mappa Midas tokens till egna utilities */
+  --color-primary: var(--midas-color-blue-100);
+  --color-danger: var(--midas-color-signal-red-100);
+  --spacing-sm: var(--midas-spacing-30);
+  --spacing-md: var(--midas-spacing-50);
+  --spacing-lg: var(--midas-spacing-70);
+}
+```
+
+Nu kan du använda dessa som vanliga Tailwind utilities:
+
+```tsx
+<button className="bg-primary text-white px-md">
+  Klicka här
+</button>
+<div className="text-danger mt-lg">
+  Varningstext
+</div>
+```
+
+## Tailwind v3
+
+För projekt som använder Tailwind v3 kan du importera variablerna och använda dem via arbitrary values.
+
+### Importera variabler
+
+Importera Midas CSS-variabler i din huvudsakliga CSS-fil:
+
+```css title="app.css"
+@import url("@midas-ds/theme/variables.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Användning med anpassade värden
+
+Använd Tailwinds [*arbitrary values*](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values) syntax med hakparenteser för att referera till Midas CSS-variabler:
+
+```tsx
+<div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)]">
+  <h1 className="text-[length:var(--midas-typography-font-size-80)]">Rubrik</h1>
+  <p className="mt-[var(--midas-spacing-50)]">Text som använder Midas tokens</p>
+</div>
+```
+
+:::info
+För de flesta utilities räcker det med `bg-[var(--variable)]`. Om Tailwind inte kan avgöra vilken
+typ av värde det är (t.ex. om `text-` skulle kunna vara både font-size och color) kan du lägga till
+en typbeskrivning: `text-[color:var(--variable)]` eller `text-[length:var(--variable)]`.
+:::
+
+### Utöka Tailwind config (alternativ)
+
+För att slippa använda anpassade värden kan du utöka Tailwinds konfiguration med Midas tokens:
+
+```js title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        'midas-blue': 'var(--midas-color-blue-100)',
+        'midas-primary': 'var(--midas-text-primary)',
+        'midas-bg-base': 'var(--midas-background-base)',
+      },
+      spacing: {
+        'midas-20': 'var(--midas-spacing-20)',
+        'midas-30': 'var(--midas-spacing-30)',
+        'midas-50': 'var(--midas-spacing-50)',
+        'midas-70': 'var(--midas-spacing-70)',
+        'midas-100': 'var(--midas-spacing-100)',
+      },
+    },
+  },
+  plugins: [],
+}
+```
+
+```tsx
+<div className="bg-midas-bg-base text-midas-primary">
+  <p className="mt-midas-50">Text med förkonfigurerade Tailwind classes</p>
+</div>
+```
+
+## Använd TypeScript/JavaScript tokens
+
+Utöver CSS-variabler exporterar theme-paketet också tokens som TypeScript/JavaScript-objekt.
+Detta är användbart när du behöver tokens i din JavaScript-kod, till exempel för dynamisk styling
+eller beräkningar.
+
+### Importera tokens
+
+```tsx
+import { variables } from '@midas-ds/theme'
+```
+
+### Användning
+
+```tsx
+export function Card() {
+  return (
+    <div
+      style={{
+        backgroundColor: variables.backgroundBase,
+        color: variables.textPrimary,
+        padding: variables.spacing50,
+      }}
+    >
+      <p>Kort med Midas styling</p>
+    </div>
+  )
+}
+```
+
+### Kombinera med Tailwind
+
+Du kan även kombinera JavaScript tokens med Tailwind classes:
+
+```tsx
+import { variables } from '@midas-ds/theme'
+
+export function Alert() {
+  return (
+    <div
+      className="p-[var(--midas-spacing-40)]"
+      style={{
+        backgroundColor: variables.colorSignalRed10,
+        borderLeft: `4px solid ${variables.colorSignalRed100}`
+      }}
+    >
+      <p className="text-[color:var(--midas-color-signal-red-150)]">
+        Detta är en varning
+      </p>
+    </div>
+  )
+}
+```
+
+## Mörkt läge
+
+Midas CSS-variabler stödjer automatiskt mörkt läge via `light-dark()` funktionen. För mer information
+om hur mörkt läge fungerar, se [Dark Mode dokumentationen](/dev/dark-mode).
+
+```tsx
+// Denna komponent anpassar sig automatiskt till ljust/mörkt läge
+
+// Tailwind v4
+<div className="bg-(--midas-background-base) text-(--midas-text-primary)">
+  Text som ändrar färg baserat på färgschema
+</div>
+
+// Tailwind v3
+<div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)]">
+  Text som ändrar färg baserat på färgschema
+</div>
+```
+
+## Tillgängliga tokens
+
+Midas theme-paketet innehåller tokens för:
+
+- **Färger** - `--midas-color-*` (blue, gray, signal-red, signal-green, etc.)
+- **Semantiska färger** - `--midas-background-*`, `--midas-text-*`, `--midas-icon-*`, `--midas-border-color-*`
+- **Spacing** - `--midas-spacing-10` till `--midas-spacing-120` (0.125rem till 6rem)
+- **Storlekar** - `--midas-size-10` till `--midas-size-150` (0.125rem till 3rem)
+- **Typografi** - `--midas-typography-font-size-*`, `--midas-typography-line-height-*`, `--midas-typography-weight-*`
+- **Z-index** - `--midas-z-index-base`, `--midas-z-index-modal`, `--midas-z-index-toast`
+- **Breakpoints** - `--midas-window-sizes-sm/md/lg/xl` (480px, 768px, 1024px, 1280px)
+- **Transitions** - `--midas-transition-duration-*`, `--midas-transition-timing-*`
+
+För en fullständig lista över tillgängliga tokens, se [@midas-ds/theme på npm](https://www.npmjs.com/package/@midas-ds/theme)
+eller utforska `variables.css` filen i paketet.
+
+## Resurser
+
+- [Tailwind CSS v4 dokumentation](https://tailwindcss.com/docs)
+- [Tailwind CSS @theme directive](https://tailwindcss.com/docs/theme)
+- [Tailwind CSS - Using arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values)
