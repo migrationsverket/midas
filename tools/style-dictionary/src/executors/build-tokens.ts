@@ -3,9 +3,11 @@ import { BuildTokensExecutorSchema } from './schema'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 import { Config } from 'style-dictionary/types'
 import { dimensionToUnit } from './transforms/dimensionToUnit'
+import { tailwindTheme } from './formats/tailwindTheme'
 import StyleDictionary from 'style-dictionary'
 
 StyleDictionary.registerTransform(dimensionToUnit)
+StyleDictionary.registerFormat(tailwindTheme)
 
 const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
   config,
@@ -64,6 +66,20 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
           {
             destination: 'variables.css',
             format: formats.cssVariables,
+          },
+        ],
+      },
+      tailwind: {
+        transformGroup: transformGroups.css,
+        transforms: ['dimensionToUnit'],
+        options: {
+          outputReferences: true,
+        },
+        buildPath: buildPath,
+        files: [
+          {
+            destination: 'tailwind-theme.css',
+            format: 'css/tailwind-theme',
           },
         ],
       },
