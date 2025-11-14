@@ -1,3 +1,12 @@
+## 3.3.0 (2025-11-14)
+
+### 🚀 Features
+
+- **theme:** update export conditions, set `default` as fallback ([4c78c2ee9c](https://github.com/migrationsverket/midas/commit/4c78c2ee9c))
+- **theme:** add `default` export to all .css in package.json ([8c08d764de](https://github.com/migrationsverket/midas/commit/8c08d764de))
+- **theme:** add tailwind theme generator ([60eb1295b8](https://github.com/migrationsverket/midas/commit/60eb1295b8))
+- **theme:** add default export in package.json ([4b171addd0](https://github.com/migrationsverket/midas/commit/4b171addd0))
+
 ## 3.2.0 (2025-11-07)
 
 ### 🚀 Features
