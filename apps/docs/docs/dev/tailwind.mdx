@@ -17,7 +17,7 @@ Midas designsystemets tokens används med Tailwind v4 genom CSS-variabler och Ta
 Installera Tailwind CSS v4:
 
 ```bash
-npm install tailwindcss@next @tailwindcss/vite@next
+npm install tailwindcss @tailwindcss/vite
 ```
 
 ### Setup
@@ -32,9 +32,9 @@ import '@midas-ds/theme/fonts.css'
 
 Importera Midas Tailwind-tema och Tailwind i din CSS-fil:
 
-```css title="app.css"
-@import url("@midas-ds/theme/tailwind-theme.css");
+```css title="index.css"
 @import "tailwindcss";
+@import "@midas-ds/theme/tailwind-theme.css";
 ```
 
 :::info
@@ -82,7 +82,7 @@ Tack vare `tailwind-theme.css` fungerar färger från Midas färgpalett direkt s
 Om du vill skapa egna kortare utility-namn kan du definiera ett `@theme`-block:
 
 ```css title="app.css"
-@import "tailwindcss";
+@import "@midas-ds/theme/tailwind-theme.css";
 
 @theme {
   /* Egna namn för tokens */
@@ -108,7 +108,7 @@ För projekt som använder Tailwind v3 kan du importera variablerna och använda
 Importera Midas CSS-variabler i din huvudsakliga CSS-fil:
 
 ```css title="app.css"
-@import url("@midas-ds/theme/variables.css");
+@import "@midas-ds/theme/variables.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
