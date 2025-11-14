@@ -4,7 +4,7 @@ import { page } from '@vitest/browser/context'
 import * as stories from './Table.stories'
 import styles from '@midas-ds/components/table/Table.module.css'
 
-const { Striped, VirtualizedStriped } = composeStories(stories)
+const { Striped, Virtualized } = composeStories(stories)
 
 describe('given a Striped Table', async () => {
   beforeEach(async () => {
@@ -21,7 +21,12 @@ describe('given a Striped Table', async () => {
 
 describe('given a VirtualizedStriped Table', async () => {
   beforeEach(async () => {
-    await VirtualizedStriped.run()
+    await Virtualized.run({
+      args: {
+        ...Virtualized.args,
+        striped: true,
+      }
+    })
   })
 
   it('should have striped class', async () => {
