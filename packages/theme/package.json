@@ -24,15 +24,19 @@
       "import": "./index.mjs"
     },
     "./variables.css": {
+      "default": "./variables.css",
       "import": "./variables.css"
     },
     "./tailwind-theme.css": {
+      "default": "./tailwind-theme.css",
       "import": "./tailwind-theme.css"
     },
     "./fonts.css": {
+      "default": "./fonts.css",
       "import": "./fonts.css"
     },
     "./color-scheme.css": {
+      "default": "./color-scheme.css",
       "import": "./color-scheme.css"
     }
   }
