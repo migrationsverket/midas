@@ -19,25 +19,25 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "default": "./index.mjs",
       "types": "./index.d.ts",
-      "import": "./index.mjs"
+      "import": "./index.mjs",
+      "default": "./index.mjs"
     },
     "./variables.css": {
-      "default": "./variables.css",
-      "import": "./variables.css"
+      "import": "./variables.css",
+      "default": "./variables.css"
     },
     "./tailwind-theme.css": {
-      "default": "./tailwind-theme.css",
-      "import": "./tailwind-theme.css"
+      "import": "./tailwind-theme.css",
+      "default": "./tailwind-theme.css"
     },
     "./fonts.css": {
-      "default": "./fonts.css",
-      "import": "./fonts.css"
+      "import": "./fonts.css",
+      "default": "./fonts.css"
     },
     "./color-scheme.css": {
-      "default": "./color-scheme.css",
-      "import": "./color-scheme.css"
+      "import": "./color-scheme.css",
+      "default": "./color-scheme.css"
     }
   }
 }
