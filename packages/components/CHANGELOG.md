@@ -1,3 +1,9 @@
+## 15.2.7 (2025-11-14)
+
+### 🩹 Fixes
+
+- **select:** remove selection indicators in legacy select ([49e1ad52a0](https://github.com/migrationsverket/midas/commit/49e1ad52a0))
+
 ## 15.2.6 (2025-11-12)
 
 ### 🩹 Fixes
