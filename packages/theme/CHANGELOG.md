@@ -1,3 +1,10 @@
+## 3.4.0 (2025-11-17)
+
+### 🚀 Features
+
+- **theme:** set support-border-important to orange.100 ([3fe1ac203a](https://github.com/migrationsverket/midas/commit/3fe1ac203a))
+- **theme:** add orange-100 color ([7b8a925af3](https://github.com/migrationsverket/midas/commit/7b8a925af3))
+
 ## 3.3.0 (2025-11-14)
 
 ### 🚀 Features
