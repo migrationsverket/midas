@@ -10,6 +10,7 @@ const meta: Meta<typeof Button> = {
     variant: 'primary',
     children: 'Button',
     size: 'large',
+    isPending: false,
   },
   argTypes: {
     children: { type: 'string' },
@@ -68,12 +69,8 @@ export const PrimaryFullwidth = {
 
 export const Icon = {
   args: {
-    children: (
-      <X
-        size={20}
-        aria-hidden
-      />
-    ),
+    children: undefined,
+    icon: X,
     variant: 'icon',
     'aria-label': 'Stäng',
   },

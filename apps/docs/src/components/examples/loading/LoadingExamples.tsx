@@ -44,14 +44,7 @@ export const ButtonLoadingExample = () => {
             isPending={isPending}
             onPress={handlePress}
           >
-            {isPending ? (
-              <>
-                <Spinner small />
-                Skickar...
-              </>
-            ) : (
-              'Skicka'
-            )}
+            {isPending ? 'Skickar...' : 'Skicka'}
           </Button>
         </GridItem>
       </Grid>

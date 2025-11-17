@@ -121,6 +121,23 @@ Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
   </Button>
 </div>
 
+## Tillstånd
+
+### isPending
+
+För att visa att systemet laddas kan `isPending` användas, läs mer under [mönster för laddningsindikatorer](/design-patterns/page-loading/#spinner-i-button).
+
+```tsx
+<Button isPending>Laddar...</Button>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button isPending>Laddar...</Button>
+</div>
+
 ## Grupp av knappar
 
 För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
