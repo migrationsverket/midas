@@ -168,6 +168,9 @@ build
 .nx
 tmp
 
+# Generated style-dictionary files
+packages/theme/src/lib/style-dictionary-dist/
+
 # Editors
 .idea
 
