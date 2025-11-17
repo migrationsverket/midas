@@ -145,6 +145,11 @@
         "$value": "#b90835"
       }
     },
+    "orange": {
+      "100": {
+        "$value": "oklch(0.66 0.18 45)"
+      }
+    },
     "signalBlue": {
       "10": {
         "$value": "#eaf2f6"
