@@ -48,4 +48,4 @@ jobs:
         run: |
           git config --global user.email "midas@superuser.dev"
           git config --global user.name "Automate Damon"
-          npx nx release
+          npx nx release --yes
