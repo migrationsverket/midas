@@ -207,7 +207,7 @@
       "$description": "Ikonf\u00e4rg f\u00f6r varningsikoner och invalid state"
     },
     "important": {
-      "$value": "light-dark({color.signalYellow.100}, {color.signalYellow.100})",
+      "$value": "{color.orange.100}",
       "$description": "Ikonf\u00e4rg f\u00f6r viktig information"
     },
     "readOnly": {
@@ -246,7 +246,7 @@
         "$description": "Kantlinje f\u00f6r notifikationer med information"
       },
       "important": {
-        "$value": "light-dark({color.signalYellow.100}, {color.signalYellow.100})",
+        "$value": "{color.orange.100}",
         "$description": "Kantlinje f\u00f6r notifikationer med viktig information"
       },
       "warning": {
