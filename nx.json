@@ -90,9 +90,12 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["theme:style-dictionary-generate", "^build"],
       "inputs": ["production", "^production"],
       "cache": true
+    },
+    "serve": {
+      "dependsOn": ["theme:style-dictionary-generate"]
     },
     "e2e": {
       "inputs": ["default", "^production"]

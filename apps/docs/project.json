@@ -11,7 +11,7 @@
         "outputPath": "dist/docs",
         "minify": false
       },
-      "dependsOn": []
+      "dependsOn": ["theme:style-dictionary-generate", "^build"]
     },
     "serve": {
       "executor": "@midas-ds/docusaurus:dev-server",
