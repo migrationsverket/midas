@@ -19,12 +19,14 @@ Läs mer om hur spinner används i [Mönster för laddningsindikatorer](/design-
 
 ```tsx
 import { Spinner } from '@midas-ds/components'
+```
 
-<Spinner/>
+```tsx
+<Spinner />
 ```
 
 <div className='card'>
-  <Spinner/>
+  <Spinner />
 </div>
 
 ## Varianter
@@ -34,13 +36,11 @@ import { Spinner } from '@midas-ds/components'
 Standardstorleken är helskärmsspinner. Använd varianten `small` när spinner ligger bredvid andra komponenter.
 
 ```tsx
-<Spinner small/>
+<Spinner small />
 ```
 
 <div className='card'>
-  <Spinner
-    small
-  />
+  <Spinner small />
 </div>
 
 ### Färg
@@ -48,24 +48,30 @@ Standardstorleken är helskärmsspinner. Använd varianten `small` när spinner 
 Spinnern ärver sin färg från textfärgen på det element den placeras i.
 
 ```tsx
-<Spinner/>
+<Spinner />
 ```
 
 <div className='card'>
-  <Spinner/>
+  <Spinner />
 </div>
 
 ### Valfri färg
 
 ```tsx
-<Spinner color={variables.iconOnColor} small/>
+<Spinner
+  color={variables.iconOnColor}
+  small
+/>
 ```
 
 <div
   className='card'
   style={{ backgroundColor: variables.colorGray200 }}
 >
-  <Spinner color={variables.iconOnColor} small/>
+  <Spinner
+    color={variables.iconOnColor}
+    small
+  />
 </div>
 
 ### Knapp med spinner
@@ -73,13 +79,15 @@ Spinnern ärver sin färg från textfärgen på det element den placeras i.
 För att visa en spinner i Button används property `isPending` på [Button](/components/button)
 
 ```tsx
-<Button isPending>
-  <Spinner small/>
-  Laddar...
-</Button>
+<Button isPending>Laddar...</Button>
 ```
 
-<Button isPending><Spinner small/>Laddar...</Button>
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button isPending>Laddar...</Button>
+</div>
 
 ## Riktlinjer
 

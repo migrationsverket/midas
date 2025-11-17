@@ -10,6 +10,7 @@ import {
 import clsx from '../utils/clsx'
 import { LucideIcon } from 'lucide-react'
 import { Size } from '../common/types'
+import { Spinner } from '../spinner'
 
 export interface MidasButtonProps {
   /**
@@ -87,12 +88,13 @@ export const Button: React.FC<MidasButton> = ({
       {...rest}
     >
       <>
-        {IconComponent && (
+        {IconComponent && !rest.isPending && (
           <IconComponent
             aria-hidden
             size={iconSize ?? 20}
           />
         )}
+        {rest.isPending && <Spinner small />}
         {rest.children}
       </>
     </AriaButton>
