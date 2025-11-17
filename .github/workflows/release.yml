@@ -1,7 +1,5 @@
-# Name of your workflow
 name: NX release
 
-# Rules that triggers the workflows
 on:
   push:
     branches:
@@ -41,13 +39,13 @@ jobs:
       - name: Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
 
-      - name: Build affected libs
-        run: npx nx affected -t build
-
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
       - name: Run nx release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
         run: |
           git config --global user.email "midas@superuser.dev"
           git config --global user.name "Automate Damon"
-          npx nx release --skip-publish
+          npx nx release
