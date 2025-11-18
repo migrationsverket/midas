@@ -52,7 +52,7 @@
         }
       }
     },
-    "a11y:dark-mode": {
+    "a11y-dark-mode": {
       "executor": "@nx/vite:test",
       "options": {
         "config": "apps/storybook/vitest.config.dark.ts",
@@ -64,7 +64,7 @@
         }
       }
     },
-    "a11y:forced-colors": {
+    "a11y-forced-colors": {
       "executor": "@nx/vite:test",
       "options": {
         "config": "apps/storybook/vitest.config.forced-colors.ts",
