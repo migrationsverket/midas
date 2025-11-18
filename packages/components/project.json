@@ -42,7 +42,8 @@
       "options": {
         "lintFilePatterns": ["packages/components/**/*.css"],
         "formatter": "unix"
-      }
+      },
+      "dependsOn": ["^build"]
     },
     "compile": {
       "executor": "@nx/js:tsc",
