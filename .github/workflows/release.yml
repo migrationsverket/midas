@@ -41,11 +41,19 @@ jobs:
 
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
-      - name: Run nx release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+      - name: Configure git
         run: |
           git config --global user.email "midas@superuser.dev"
           git config --global user.name "Automate Damon"
-          npx nx release --yes
+
+      - name: Version packages and create tags
+        run: npx nx release version --yes
+
+      - name: Push changes and tags
+        run: git push --follow-tags
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: npx nx release publish --yes
