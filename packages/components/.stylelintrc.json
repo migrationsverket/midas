@@ -8,7 +8,7 @@
         "csstools/value-no-unknown-custom-properties": [
           true,
           {
-            "importFrom": ["packages/theme/src/lib/style-dictionary-dist/variables.css"]
+            "importFrom": ["dist/packages/theme/variables.css"]
           }
         ]
       }
