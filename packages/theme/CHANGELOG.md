@@ -1,3 +1,9 @@
+## 3.4.1 (2025-11-18)
+
+### 🔧 Maintenance
+
+- set correct types for tokens in object-values.json ([d2074ce94e](https://github.com/migrationsverket/midas/commit/d2074ce94e))
+
 ## 3.4.0 (2025-11-17)
 
 ### 🚀 Features

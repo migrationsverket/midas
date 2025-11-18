@@ -1,3 +1,9 @@
+## 15.2.10 (2025-11-18)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.4.1
+
 ## 15.2.9 (2025-11-17)
 
 ### 🧱 Updated Dependencies
