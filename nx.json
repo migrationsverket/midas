@@ -75,7 +75,7 @@
       "datepicker-styles"
     ],
     "git": {
-      "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"
+      "commitMessage": "chore(release): release {projectName} package, version {version} [release]"
     },
     "version": {
       "preVersionCommand": "npx nx affected -t build",
