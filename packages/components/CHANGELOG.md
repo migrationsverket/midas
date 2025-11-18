@@ -1,3 +1,15 @@
+## 15.2.11 (2025-11-18)
+
+### 🚀 Features
+
+- **table:** set correct striped colors for virtualized table ([2750446687](https://github.com/migrationsverket/midas/commit/2750446687))
+- **table:** move row border from top -> bottom, flip striped row colors ([14a178bb6c](https://github.com/migrationsverket/midas/commit/14a178bb6c))
+- **table:** remove background from rows ([67e3825829](https://github.com/migrationsverket/midas/commit/67e3825829))
+
+### 🔧 Maintenance
+
+- add dependency config for stylelint target ([4bca048372](https://github.com/migrationsverket/midas/commit/4bca048372))
+
 ## 15.2.10 (2025-11-18)
 
 ### 🧱 Updated Dependencies
