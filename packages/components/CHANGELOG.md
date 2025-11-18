@@ -1,3 +1,9 @@
+## 15.2.12 (2025-11-18)
+
+### 🚀 Features
+
+- **button:** add spinner to pending buttons ([a876074bac](https://github.com/migrationsverket/midas/commit/a876074bac))
+
 ## 15.2.11 (2025-11-18)
 
 ### 🚀 Features
