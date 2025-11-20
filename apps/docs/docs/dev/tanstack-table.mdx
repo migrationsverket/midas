@@ -3,7 +3,7 @@ title: Tanstack Table
 description: Implementation av Tanstack Table
 ---
 
-import { FilteringExample } from '@site/src/components/examples'
+import { FilteringExample, ColumnVisibilityExample } from '@site/src/components/examples'
 
 # Tanstack Table
 
@@ -77,14 +77,12 @@ function MyTable() {
   })
 
   return (
-    <table className="midas-tanstack-table">
+    <table className='midas-tanstack-table'>
       <thead>
         {table.getHeaderGroups().map(headerGroup => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map(header => (
-              <th key={header.id}>
-                {flexRender(header.column.columnDef.header, header.getContext())}
-              </th>
+              <th key={header.id}>{flexRender(header.column.columnDef.header, header.getContext())}</th>
             ))}
           </tr>
         ))}
@@ -93,9 +91,7 @@ function MyTable() {
         {table.getRowModel().rows.map(row => (
           <tr key={row.id}>
             {row.getVisibleCells().map(cell => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
+              <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
             ))}
           </tr>
         ))}
@@ -121,8 +117,37 @@ Tanstack Table har inbyggt stöd för filtrering med `getFilteredRowModel`. Du k
 <FilteringExample />
 
 I detta exempel används:
+
 - `globalFilter` för textsökning över flera kolumner
 - `columnFilters` för att filtrera på specifika kolumner
 - `getFilteredRowModel()` för att hantera filtreringen
 
 Läs mer om filtrering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/filters).
+
+### Kolumnsynlighet
+
+Tanstack Table gör det enkelt att låta användare välja vilka kolumner som ska visas med `columnVisibility` state.
+
+```jsx
+{
+  table.getAllLeafColumns().map(column => (
+    <Checkbox
+      key={column.id}
+      isSelected={column.getIsVisible()}
+      onChange={isSelected => column.toggleVisibility(isSelected)}
+    >
+      {typeof column.columnDef.header === 'string' ? column.columnDef.header : column.id}
+    </Checkbox>
+  ))
+}
+```
+
+<ColumnVisibilityExample />
+
+I detta exempel används:
+
+- `columnVisibility` state för att hålla reda på vilka kolumner som är synliga
+- `column.getIsVisible()` för att kontrollera om en kolumn är synlig
+- `column.getToggleVisibilityHandler()` för att växla synlighet
+
+Läs mer om kolumnsynlighet i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/column-visibility).
