@@ -21,9 +21,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
-          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v5
