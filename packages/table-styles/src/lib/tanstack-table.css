@@ -18,7 +18,7 @@
 }
 
 .midas-tanstack-table td {
-  border-top: 1px var(--midas-border-color-subtle) solid;
+  border-bottom: 1px var(--midas-border-color-subtle) solid;
   color: var(--midas-text-primary);
   padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
     var(--midas-size-75);
@@ -29,9 +29,9 @@
 }
 
 .midas-tanstack-table tbody tr:nth-child(even) {
-  background-color: var(--midas-layer-accent-01-base);
+  background-color: var(--midas-layer-01-base);
 }
 
 .midas-tanstack-table tbody tr:nth-child(even):hover {
-  background-color: var(--midas-layer-accent-01-hover);
+  background-color: var(--midas-layer-01-hover);
 }
