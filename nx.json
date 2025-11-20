@@ -78,7 +78,6 @@
       "commitMessage": "chore(release): release {projectName} package, version {version} [release]"
     },
     "version": {
-      "preVersionCommand": "npx nx affected -t build",
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "updateDependents": "auto",
