@@ -37,15 +37,9 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Sets the base and head SHAs for the nx affected commands in CI
-        uses: nrwl/nx-set-shas@v4
-
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
       - name: Run nx release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
         run: |
           git config --global user.email "midas@superuser.dev"
           git config --global user.name "Automate Damon"
