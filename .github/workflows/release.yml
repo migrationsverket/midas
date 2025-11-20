@@ -18,11 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the main branch
-        uses: actions/checkout@v4
-        # Only a single commit is fetched by default
-        # we need full repo history with tags, so we are setting fetch-depth: 0
+        uses: actions/checkout@v5
         with:
-          fetch-depth: 0
           # We need to pass Personal Access Token in order
           # to force triggering on-publish workflow
           token: ${{ secrets.PAT }}
