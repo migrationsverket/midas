@@ -3,7 +3,7 @@ name: 'Deploy Docs (PR)'
 on:
   pull_request:
     types:
-      - labeled
+      - opened
       - reopened
       - synchronize
       - closed
@@ -21,9 +21,6 @@ concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
-    if: >
-      (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'preview') ||
-      contains(github.event.pull_request.labels.*.name, 'preview')
     name: Build Docusaurus and Storybook and deploy PR preview
     runs-on: ubuntu-latest
     steps:
