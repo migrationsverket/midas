@@ -1,1 +1,1 @@
-export * from './TanstackTableExamples'
+export * from './FilteringExample'
