@@ -84,7 +84,6 @@ export function FilteringExample() {
       columnFilters,
     },
     onGlobalFilterChange: setNameFilter,
-    onColumnFiltersChange: () => {}, // We manage column filters manually
     globalFilterFn: (row, columnId, filterValue) => {
       const firstName = String(row.getValue('firstName')).toLowerCase();
       const lastName = String(row.getValue('lastName')).toLowerCase();
