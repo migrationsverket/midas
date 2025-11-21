@@ -1,3 +1,13 @@
+## 15.2.13 (2025-11-21)
+
+### 🩹 Fixes
+
+- **accordion:** remove z-index ([09d96ce3ee](https://github.com/migrationsverket/midas/commit/09d96ce3ee))
+
+### 🔧 Maintenance
+
+- **components:** update storybook link in README.md ([498c57be64](https://github.com/migrationsverket/midas/commit/498c57be64))
+
 ## 15.2.12 (2025-11-18)
 
 ### 🚀 Features
