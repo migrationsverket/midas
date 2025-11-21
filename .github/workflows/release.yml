@@ -19,7 +19,10 @@ jobs:
     steps:
       - name: Checkout the main branch
         uses: actions/checkout@v5
+        # Only a single commit is fetched by default
+        # we need full repo history with tags, so we are setting fetch-depth: 0
         with:
+          fetch-depth: 0
           # We need to pass Personal Access Token in order
           # to force triggering on-publish workflow
           token: ${{ secrets.PAT }}
