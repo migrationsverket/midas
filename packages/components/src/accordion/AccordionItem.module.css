@@ -72,8 +72,6 @@
   border: 0;
   cursor: pointer;
   margin: 0;
-  position: relative;
-  z-index: 1;
 }
 
 .triggerMainContent {
@@ -115,6 +113,10 @@
 
 .triggerButton[data-hovered] {
   background-color: var(--accordion-background-hover);
+}
+
+.triggerButton[data-focus-visible] {
+  box-shadow: var(--midas-state-focus-inset);
 }
 
 .panel {
