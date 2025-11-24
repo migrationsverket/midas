@@ -1,3 +1,9 @@
+## 15.2.14 (2025-11-24)
+
+### 🩹 Fixes
+
+- **select:** fix flying popover animation bug ([c15412f354](https://github.com/migrationsverket/midas/commit/c15412f354))
+
 ## 15.2.13 (2025-11-21)
 
 ### 🩹 Fixes
