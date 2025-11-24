@@ -1,0 +1,33 @@
+---
+id: icons
+title: Ikoner
+---
+
+import { Plus, Minus, Check, LogIn, LogOut } from 'lucide-react'
+
+Ikoner används som ett komplement till text för att underlätta för användaren. Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
+
+## Riktlinjer för ikoner
+
+- Ikonen ligger som standard till vänster om texten.
+- Ikoner kan användas fristående, tex där det är ont om plats. Rekommendationen är dock att komplettera ikonen med en beskrivande text så ofta det går.
+- Ikonen ska ha samma färg som den kompletterande texten.
+- Färgen på ikoner sätts via våra [icon tokens](./tokens.mdx#ikoner). Inga egna färger utanför tokens används.
+- Ikoner ska alltid ha tillräcklig kontrast mot bakgrund.
+- Standardstorleken på ikonerna är 20px. Om textstorleken är liten eller ikonen används i en tabell kan 16px användas istället.
+
+## Standardikoner
+
+För att säkerställga enhetlighet och tydlighet har vi ett antal standardikoner som ska användas på samma sätt i alla system.
+
+| Ikon               | Namn    | Semantisk användning           |
+| :----------------- | :------ | :----------------------------- |
+| <Plus size={20}/>  | plus    | Lägg till                      |
+| <Minus size={20}/> | minus   | Ta bort, minska, indeterminate |
+| <Check size={20}/> | check   | Ok, slutfört                   |
+| <LogIn size={20}/> | log-in  | Logga in                       |
+| <LogIn size={20}/> | log-out | Logga ut                       |
+
+## Egna ikoner
+
+Om du har behov av en ikon som inte finns i Lucide icons, kontakta Midas-teamet för analys av behovet och möjliga lösningar.
