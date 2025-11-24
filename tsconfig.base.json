@@ -19,6 +19,7 @@
       "@midas-ds/components/*": ["packages/components/src/*"],
       "@midas-ds/datepicker-styles/*": ["packages/datepicker-styles/src/*"],
       "@midas-ds/docusaurus": ["tools/docusaurus/src/index.ts"],
+      "@midas-ds/docusaurus-typedoc-plugin": ["tools/docusaurus-typedoc-plugin/src/index.ts"],
       "@midas-ds/release-local": ["tools/release-local/src/index.ts"],
       "@midas-ds/style-dictionary": ["tools/style-dictionary/src/index.ts"],
       "@midas-ds/table-styles/*": ["packages/table-styles/src/*"],

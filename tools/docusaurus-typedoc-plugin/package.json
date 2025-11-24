@@ -1,0 +1,29 @@
+{
+  "name": "@midas-ds/docusaurus-typedoc-plugin",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Docusaurus plugin for generating API documentation using TypeDoc",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@docusaurus/types": "3.9.2",
+    "@docusaurus/utils": "3.9.2",
+    "@docusaurus/utils-validation": "3.9.2",
+    "@docusaurus/useGlobalData": "3.9.2",
+    "typedoc": "^0.27.0",
+    "typescript": "5.9.3",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "chokidar": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.0.0"
+  }
+}

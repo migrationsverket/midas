@@ -13,6 +13,21 @@ import 'react-lowlight/common'
 import { Pressable } from 'react-aria-components'
 import { jsdocLinkToMarkdown } from '../utils/jsdocLinkToMarkdown'
 
+// Helper function to parse union types into enum values
+function parseEnumValues(typeString: string): Array<{ value: string }> | undefined {
+  if (typeString && typeString.includes('|')) {
+    const values = typeString
+      .split('|')
+      .map((v) => v.trim())
+      .filter((v) => v.startsWith("'") || v.startsWith('"'));
+
+    if (values.length > 0) {
+      return values.map((v) => ({ value: v }));
+    }
+  }
+  return undefined;
+}
+
 export const DisplayCompositeTypes = ({ props }: Props) => {
   switch (props.type.name) {
     case 'enum': {
@@ -66,14 +81,50 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
 export const PropTable = ({ name, defaultOpen = true }) => {
   const globalData = useGlobalData()
 
-  const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
-    .default as ComponentDoc[]
+  // Try new TypeDoc plugin first, fall back to old react-docgen plugin
+  let props;
 
-  const props = ComponentsDocs.find(
-    componentDoc => componentDoc.displayName === name,
-  )?.props
+  // Check for new TypeDoc plugin data
+  const typedocPlugin = globalData['@midas-ds/docusaurus-typedoc-plugin']?.['components'];
+
+  console.log('PropTable debug:', {
+    name,
+    hasTypedocPlugin: !!typedocPlugin,
+    hasApiData: !!typedocPlugin?.apiData,
+    componentNames: typedocPlugin?.apiData ? Object.keys(typedocPlugin.apiData.components).slice(0, 10) : [],
+    component: typedocPlugin?.apiData?.components[name],
+    globalDataKeys: Object.keys(globalData),
+  });
+
+  if (typedocPlugin?.apiData) {
+    const component = typedocPlugin.apiData.components[name];
+    if (component && component.props) {
+      // Convert TypeDoc format to react-docgen format
+      props = {};
+      for (const prop of component.props) {
+        props[prop.name] = {
+          type: {
+            name: prop.type,
+            raw: prop.type,
+            value: parseEnumValues(prop.type),
+          },
+          required: prop.required,
+          defaultValue: prop.defaultValue ? { value: prop.defaultValue } : undefined,
+          description: prop.description || '',
+        };
+      }
+    }
+  } else {
+    // Fall back to old plugin
+    const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
+      ?.default as ComponentDoc[];
+    props = ComponentsDocs?.find(
+      componentDoc => componentDoc.displayName === name,
+    )?.props;
+  }
 
   if (!props) {
+    console.log('PropTable: No props found for', name);
     return null
   }
 

@@ -1,0 +1,19 @@
+{
+  "name": "@midas-ds/docusaurus-typedoc-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/docusaurus-typedoc-plugin/src",
+  "projectType": "library",
+  "tags": ["type:tool"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "tools/docusaurus-typedoc-plugin/jest.config.ts"
+      }
+    }
+  }
+}

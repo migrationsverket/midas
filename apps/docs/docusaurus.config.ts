@@ -57,13 +57,30 @@ const config: Config = {
   trailingSlash: true,
   i18n: { defaultLocale: 'sv', locales: ['sv'] },
   plugins: [
-    [
+/*    [
       require.resolve('./docgen-fix-plugin.js'),
       {
-        src: `${packagesDir}/components/src/**/[A-Z]*.tsx`,
+        src: `${packagesDir}/components/src/!**!/[A-Z]*.tsx`,
         parserOptions: {
           shouldExtractValuesFromUnion: true,
           shouldExtractLiteralValuesFromEnum: false,
+        },
+      },
+    ],*/
+    [
+      '@midas-ds/docusaurus-typedoc-plugin',
+      {
+        id: 'components',
+        entryPoints: ['../../packages/components/src/**/[A-Z]*.tsx'],
+        tsconfig: '../../packages/components/tsconfig.json',
+        out: '.docusaurus/typedoc-api',
+        watch: process.env.NODE_ENV === 'development',
+        exclude: ['**/*.test.tsx', '**/*.stories.tsx', '**/intl/**'],
+        typedocOptions: {
+          excludePrivate: true,
+          excludeProtected: false,
+          excludeExternals: true,
+          excludeInternal: false,
         },
       },
     ],
