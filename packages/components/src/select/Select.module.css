@@ -167,7 +167,9 @@
     /* RAC passes this variable via the style prop, making it available during runtime only */
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
     min-width: var(--trigger-width);
-    transition: all 0.2s ease-in-out;
+    transition:
+      transform 0.2s ease-in-out,
+      opacity 0.2s ease-in-out;
     opacity: 1;
 
     &[data-entering] {
