@@ -15,7 +15,8 @@
 
   table {
     display: table;
-    border-collapse: unset;
+    border-collapse: separate;
+    border-spacing: 0 2px;
   }
 
   thead tr,
@@ -27,7 +28,7 @@
   & .day {
     text-align: center;
     min-width: 2.25rem;
-    box-sizing: content-box;
+    box-sizing: border-box;
     line-height: initial;
   }
 
@@ -119,7 +120,7 @@
 }
 
 .day {
-  border: solid 2px var(--midas-layer-01-base);
+  border: solid 1px var(--midas-layer-01-base);
   cursor: pointer;
 
   &[data-hovered]:not([data-unavailable], [data-disabled], [data-selected]) {
@@ -152,7 +153,10 @@
     &[data-selected='true'] {
       color: var(--midas-text-primary);
       background-color: var(--midas-calendar-date-background-in-range);
-      border-color: var(--midas-calendar-date-background-in-range);
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid var(--midas-border-color-tertiary);
+      border-bottom: 1px solid var(--midas-border-color-tertiary);
 
       @media (forced-colors: active) {
         background-color: Mark;
@@ -163,6 +167,8 @@
       color: var(--midas-text-inverse);
       background-color: var(--midas-calendar-date-background-start-range);
       border-color: var(--midas-calendar-date-background-start-range);
+      border-style: solid;
+      border-width: 1px 0 1px 2px;
 
       @media (forced-colors: active) {
         background-color: SelectedItem;
@@ -173,6 +179,8 @@
       color: var(--midas-text-inverse);
       background-color: var(--midas-calendar-date-background-end-range);
       border-color: var(--midas-calendar-date-background-end-range);
+      border-style: solid;
+      border-width: 1px 2px 1px 0;
 
       @media (forced-colors: active) {
         background-color: SelectedItem;
