@@ -3,7 +3,31 @@ id: icons
 title: Ikoner
 ---
 
-import { Plus, Minus, Check, LogIn, LogOut } from 'lucide-react'
+import {
+  Plus,
+  Minus,
+  Check,
+  LogIn,
+  LogOut,
+  Trash2,
+  Sun,
+  Moon,
+  Laptop,
+  Info,
+  Pencil,
+  Flag,
+  TriangleAlert,
+  Search,
+  X,
+  CalendarDays,
+  ArrowRight,
+  ArrowLeft,
+  ChevronDown,
+  ChevronUp,
+  SquareArrowOutUpRight,
+  ArrowDownToLine,
+  Menu,
+} from 'lucide-react'
 
 Ikoner används som ett komplement till text för att underlätta för användaren. Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
 
@@ -14,19 +38,55 @@ Ikoner används som ett komplement till text för att underlätta för användar
 - Ikonen ska ha samma färg som den kompletterande texten.
 - Färgen på ikoner sätts via våra [icon tokens](./tokens.mdx#ikoner). Inga egna färger utanför tokens används.
 - Ikoner ska alltid ha tillräcklig kontrast mot bakgrund.
-- Standardstorleken på ikonerna är 20px. Om textstorleken är liten eller ikonen används i en tabell kan 16px användas istället.
+- Standardstorleken på ikonerna är 20px/1.25rem. Om textstorleken är liten eller ikonen används i en tabell kan 16px/1rem användas istället.
 
 ## Standardikoner
 
 För att säkerställga enhetlighet och tydlighet har vi ett antal standardikoner som ska användas på samma sätt i alla system.
 
-| Ikon               | Namn    | Semantisk användning           |
-| :----------------- | :------ | :----------------------------- |
-| <Plus size={20}/>  | plus    | Lägg till                      |
-| <Minus size={20}/> | minus   | Ta bort, minska, indeterminate |
-| <Check size={20}/> | check   | Ok, slutfört                   |
-| <LogIn size={20}/> | log-in  | Logga in                       |
-| <LogIn size={20}/> | log-out | Logga ut                       |
+### Navigation
+
+| Ikon              | Namn | Semantisk användning |
+| :---------------- | :--- | :------------------- |
+| <Menu size={20}/> | menu | Meny                 |
+
+### Pilar/riktning
+
+| Ikon                     | Namn         | Semantisk användning |
+| :----------------------- | :----------- | :------------------- |
+| <ArrowRight size={20}/>  | arrow-right  | Höger, nästa         |
+| <ArrowLeft size={20}/>   | arrow-left   | Vänster, tillbaka    |
+| <ChevronDown size={20}/> | chevron-down | Fäll ut, nedåt       |
+| <ChevronUp size={20}/>   | chevron-up   | Fäll ihop, uppåt     |
+
+### Status
+
+| Ikon                       | Namn           | Semantisk användning |
+| :------------------------- | :------------- | :------------------- |
+| <Check size={20}/>         | check          | Ok, slutfört         |
+| <Info size={20}/>          | info           | Information          |
+| <Flag size={20}/>          | flag           | Viktig information   |
+| <TriangleAlert size={20}/> | triangle-alert | Varning              |
+
+### Action
+
+| Ikon                | Namn   | Semantisk användning |
+| :------------------ | :----- | :------------------- |
+| <Plus size={20}/>   | plus   | Lägg till            |
+| <Minus size={20}/>  | minus  | Ta bort, minska      |
+| <Trash2 size={20}/> | trash2 | Ta bort, släng       |
+| <Pencil size={20}/> | pencil | Redigera             |
+| <X size={20}/>      | x      | Stäng, avbryt        |
+
+### Övrigt
+
+| Ikon                | Namn    | Semantisk användning |
+| :------------------ | :------ | :------------------- |
+| <LogIn size={20}/>  | log-in  | Logga in             |
+| <LogIn size={20}/>  | log-out | Logga ut             |
+| <Moon size={20}/>   | moon    | Mörkt läge           |
+| <Sun size={20}/>    | sun     | Ljust läge           |
+| <Laptop size={20}/> | laptop  | Systemläge           |
 
 ## Egna ikoner
 
