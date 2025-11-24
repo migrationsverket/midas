@@ -27,6 +27,10 @@ import {
   SquareArrowOutUpRight,
   ArrowDownToLine,
   Menu,
+  EllipsisVertical,
+  Bell,
+  House,
+  Languages,
 } from 'lucide-react'
 
 Ikoner används som ett komplement till text för att underlätta för användaren. Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
@@ -46,9 +50,10 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 
 ### Navigation
 
-| Ikon              | Namn | Semantisk användning |
-| :---------------- | :--- | :------------------- |
-| <Menu size={20}/> | menu | Meny                 |
+| Ikon                          | Namn              | Semantisk användning |
+| :---------------------------- | :---------------- | :------------------- |
+| <Menu size={20}/>             | menu              | Huvudmeny, meny      |
+| <EllipsisVertical size={20}/> | ellipsis-vertical | Meny                 |
 
 ### Pilar/riktning
 
@@ -72,21 +77,33 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 
 | Ikon                | Namn   | Semantisk användning |
 | :------------------ | :----- | :------------------- |
-| <Plus size={20}/>   | plus   | Lägg till            |
+| <Plus size={20}/>   | plus   | Lägg till, öka       |
 | <Minus size={20}/>  | minus  | Ta bort, minska      |
 | <Trash2 size={20}/> | trash2 | Ta bort, släng       |
 | <Pencil size={20}/> | pencil | Redigera             |
 | <X size={20}/>      | x      | Stäng, avbryt        |
+| <Search size={20}/> | search | Sök                  |
+
+### Länkar/Media
+
+| Ikon                               | Namn                      | Semantisk användning |
+| :--------------------------------- | :------------------------ | :------------------- |
+| <ArrowDownToLine size={20}/>       | arrow-down-to-line        | Ladda ner            |
+| <SquareArrowOutUpRight size={20}/> | square-arrow-out-up-right | Extern länk          |
 
 ### Övrigt
 
-| Ikon                | Namn    | Semantisk användning |
-| :------------------ | :------ | :------------------- |
-| <LogIn size={20}/>  | log-in  | Logga in             |
-| <LogIn size={20}/>  | log-out | Logga ut             |
-| <Moon size={20}/>   | moon    | Mörkt läge           |
-| <Sun size={20}/>    | sun     | Ljust läge           |
-| <Laptop size={20}/> | laptop  | Systemläge           |
+| Ikon                      | Namn         | Semantisk användning     |
+| :------------------------ | :----------- | :----------------------- |
+| <LogIn size={20}/>        | log-in       | Logga in                 |
+| <LogIn size={20}/>        | log-out      | Logga ut                 |
+| <CalendarDays size={20}/> | calendar-day | Kalender, datum, bokning |
+| <Bell size={20}/>         | bell         | Notifiering              |
+| <House size={20}/>        | house        | Hem                      |
+| <Languages size={20}/>    | languages    | Språkväxlare             |
+| <Moon size={20}/>         | moon         | Mörkt läge               |
+| <Sun size={20}/>          | sun          | Ljust läge               |
+| <Laptop size={20}/>       | laptop       | Systemläge               |
 
 ## Egna ikoner
 
