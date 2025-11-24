@@ -14,7 +14,7 @@
   "description": "Midas table styles",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "0.0.11",
+  "version": "1.0.0",
   "exports": {
     "./tanstack-table.css": {
       "import": "./tanstack-table.css"

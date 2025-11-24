@@ -1,3 +1,15 @@
+# 1.0.0 (2025-11-24)
+
+### 🚀 Features
+
+- **table-styles:** update row colors and borders with latest theme ([6e7aac6770](https://github.com/migrationsverket/midas/commit/6e7aac6770))
+- ⚠️ **table-styles:** change `.table` class to `.midas-tanstack-table` ([9752ed63f2](https://github.com/migrationsverket/midas/commit/9752ed63f2))
+
+### ⚠️ Breaking Changes
+
+- **table-styles:** change `.table` class to `.midas-tanstack-table` ([9752ed63f2](https://github.com/migrationsverket/midas/commit/9752ed63f2))
+  add prefix `midas-tanstack` to table avoid collisions
+
 ## 0.0.11 (2025-11-18)
 
 ### 🧱 Updated Dependencies
