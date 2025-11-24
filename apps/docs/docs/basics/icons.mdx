@@ -33,8 +33,13 @@ import {
   Languages,
 } from 'lucide-react'
 
+import { Tooltip, TooltipTrigger } from '@midas-ds/components'
+import { Focusable } from 'react-aria-components'
+import { toastQueue, GlobalToastRegion } from '@midas-ds/components'
+
 Ikoner används som ett komplement till text för att underlätta för användaren. Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
 
+<GlobalToastRegion />
 ## Riktlinjer för ikoner
 
 - Ikonen ligger som standard till vänster om texten.
@@ -50,10 +55,10 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 
 ### Navigation
 
-| Ikon                          | Namn              | Semantisk användning |
-| :---------------------------- | :---------------- | :------------------- |
-| <Menu size={20}/>             | menu              | Huvudmeny, meny      |
-| <EllipsisVertical size={20}/> | ellipsis-vertical | Meny                 |
+| Ikon                          | Namn                                 | Semantisk användning |
+| :---------------------------- | :----------------------------------- | :------------------- |
+| <Menu size={20}/>             | <IconCopy name='Menu' />             | Huvudmeny, meny      |
+| <EllipsisVertical size={20}/> | <IconCopy name='EllipsisVertical' /> | Meny                 |
 
 ### Pilar/riktning
 
@@ -108,3 +113,33 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 ## Egna ikoner
 
 Om du har behov av en ikon som inte finns i Lucide icons, kontakta Midas-teamet för analys av behovet och möjliga lösningar.
+
+export function IconCopy({ name }) {
+
+const handleCopy = () => {
+navigator.clipboard.writeText(name);
+toastQueue.add({
+type: "success",
+message: `Kopierade "${name}"`
+},
+{timeout: 5000,});
+};
+
+return (
+
+<TooltipTrigger>
+  <Focusable>
+    <span
+      onClick={handleCopy}
+      style={{
+        cursor: 'pointer',
+      }}
+    >
+      {name}
+    </span>
+  </Focusable>
+  <Tooltip>Klicka för att kopiera</Tooltip>
+</TooltipTrigger>
+
+);
+}
