@@ -32,7 +32,7 @@ import {
   House,
   Languages,
 } from 'lucide-react'
-
+import { IconCopy } from '@site/src/components/IconCopy'
 import { Tooltip, TooltipTrigger } from '@midas-ds/components'
 import { Focusable } from 'react-aria-components'
 import { toastQueue, GlobalToastRegion } from '@midas-ds/components'
@@ -113,33 +113,3 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 ## Egna ikoner
 
 Om du har behov av en ikon som inte finns i Lucide icons, kontakta Midas-teamet för analys av behovet och möjliga lösningar.
-
-export function IconCopy({ name }) {
-
-const handleCopy = () => {
-navigator.clipboard.writeText(name);
-toastQueue.add({
-type: "success",
-message: `Kopierade "${name}"`
-},
-{timeout: 5000,});
-};
-
-return (
-
-<TooltipTrigger>
-  <Focusable>
-    <span
-      onClick={handleCopy}
-      style={{
-        cursor: 'pointer',
-      }}
-    >
-      {name}
-    </span>
-  </Focusable>
-  <Tooltip>Klicka för att kopiera</Tooltip>
-</TooltipTrigger>
-
-);
-}
