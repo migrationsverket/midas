@@ -1,10 +1,5 @@
 import { Focusable } from 'react-aria-components'
-import {
-  toastQueue,
-  TooltipTrigger,
-  Tooltip,
-  Button,
-} from '@midas-ds/components'
+import { toastQueue, TooltipTrigger, Tooltip, Text } from '@midas-ds/components'
 
 export interface IconCopyProps {
   name: string
@@ -35,18 +30,16 @@ export function IconCopy({ name }: IconCopyProps) {
   return (
     <TooltipTrigger>
       <Focusable>
-        <Button
-          variant='tertiary'
+        <button
           onClick={handleClick}
           style={{
-            padding: 0,
             background: 'none',
             border: 'none',
-            fontWeight: 400,
+            cursor: 'pointer',
           }}
         >
-          {name}
-        </Button>
+          <Text>{name}</Text>
+        </button>
       </Focusable>
       <Tooltip>Klicka för att kopiera</Tooltip>
     </TooltipTrigger>
