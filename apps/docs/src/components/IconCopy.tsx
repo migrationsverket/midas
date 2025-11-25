@@ -36,6 +36,7 @@ export function IconCopy({ name }: IconCopyProps) {
     <TooltipTrigger>
       <Focusable>
         <Button
+          variant='tertiary'
           onClick={handleClick}
           style={{
             padding: 0,
