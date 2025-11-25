@@ -27,7 +27,8 @@
   th,
   & .day {
     text-align: center;
-    min-width: 2.25rem;
+    width: var(--midas-size-130);
+    height: var(--midas-size-130);
     box-sizing: border-box;
     line-height: initial;
   }
@@ -53,12 +54,16 @@
     color: var(--midas-text-disabled);
   }
 
-  & div:focus-visible,
+  & div:focus-visible {
+    outline: none;
+  }
+
   & div[data-focus-visible] {
-    outline: 2px solid var(--midas-border-color-primary);
+    outline: none;
+    box-shadow: var(--midas-state-focus-inset);
 
     @media (forced-colors: active) {
-      outline: 3px solid activeText;
+      outline: 3px solid Highlight;
       outline-offset: 2px;
     }
   }
@@ -168,7 +173,6 @@
       background-color: var(--midas-calendar-date-background-start-range);
       border-color: var(--midas-calendar-date-background-start-range);
       border-style: solid;
-      border-width: 1px 0 1px 2px;
 
       @media (forced-colors: active) {
         background-color: SelectedItem;
@@ -180,7 +184,6 @@
       background-color: var(--midas-calendar-date-background-end-range);
       border-color: var(--midas-calendar-date-background-end-range);
       border-style: solid;
-      border-width: 1px 2px 1px 0;
 
       @media (forced-colors: active) {
         background-color: SelectedItem;
