@@ -36,6 +36,7 @@ export function IconCopy({ name }: IconCopyProps) {
             background: 'none',
             border: 'none',
             cursor: 'pointer',
+            padding: 0,
           }}
         >
           <Text>{name}</Text>
