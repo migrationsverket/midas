@@ -15,6 +15,8 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
 
+## DEMO Med 180
+
 <div className='card'>
   <Tabs label='Välj typ'>
     <TabList>
@@ -28,6 +30,7 @@ Komponent för att visa viktiga och aktuella meddelanden om händelser eller fö
         type='success'
         title='Formuläret har skickats'
         message='Allt gick bra. Du kan nu stänga fönstret.'
+        style={{ backgroundColor: '#112722' }}
       />
     </TabPanel>
     <TabPanel id='info'>
@@ -35,6 +38,7 @@ Komponent för att visa viktiga och aktuella meddelanden om händelser eller fö
         type='info'
         title='Kom ihåg att fylla i din semesterplan'
         message='Vi behöver din semesterplan för att kunna gå vidare.'
+        style={{ backgroundColor: '#112127' }}
       />
     </TabPanel>
     <TabPanel id='important'>
@@ -42,6 +46,7 @@ Komponent för att visa viktiga och aktuella meddelanden om händelser eller fö
         type='important'
         title='Du behöver komplettera!'
         message='Vi saknar din semesterplan.'
+        style={{ backgroundColor: '#322A20' }}
       />
     </TabPanel>
     <TabPanel id='warning'>
@@ -49,6 +54,52 @@ Komponent för att visa viktiga och aktuella meddelanden om händelser eller fö
         type='warning'
         title='Formuläret kunde inte skickas!'
         message='Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'
+        style={{ backgroundColor: '#3F0A0A' }}
+      />
+    </TabPanel>
+  </Tabs>
+</div>
+
+## DEMO med 160
+
+<div className='card'>
+  <Tabs label='Välj typ'>
+    <TabList>
+      <Tab id='success'>Success</Tab>
+      <Tab id='info'>Info</Tab>
+      <Tab id='important'>Important</Tab>
+      <Tab id='warning'>Warning</Tab>
+    </TabList>
+    <TabPanel id='success'>
+      <InfoBanner
+        type='success'
+        title='Formuläret har skickats'
+        message='Allt gick bra. Du kan nu stänga fönstret.'
+        style={{ backgroundColor: '#183f2e' }}
+      />
+    </TabPanel>
+    <TabPanel id='info'>
+      <InfoBanner
+        type='info'
+        title='Kom ihåg att fylla i din semesterplan'
+        message='Vi behöver din semesterplan för att kunna gå vidare.'
+        style={{ backgroundColor: '#274b58' }}
+      />
+    </TabPanel>
+    <TabPanel id='important'>
+      <InfoBanner
+        type='important'
+        title='Du behöver komplettera!'
+        message='Vi saknar din semesterplan.'
+        style={{ backgroundColor: '#5A4629' }}
+      />
+    </TabPanel>
+    <TabPanel id='warning'>
+      <InfoBanner
+        type='warning'
+        title='Formuläret kunde inte skickas!'
+        message='Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'
+        style={{ backgroundColor: '#691010' }}
       />
     </TabPanel>
   </Tabs>
