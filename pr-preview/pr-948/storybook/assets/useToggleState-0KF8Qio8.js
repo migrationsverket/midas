@@ -1,1 +1,0 @@
-import{$ as o}from"./useControlledState-DTUVTQNc.js";import{r as u}from"./iframe-B_9EF7Dq.js";function s(e={}){let{isReadOnly:a}=e,[t,d]=o(e.isSelected,e.defaultSelected||!1,e.onChange),[c]=u.useState(t);function f(n){a||d(n)}function i(){a||d(!t)}var l;return{isSelected:t,defaultSelected:(l=e.defaultSelected)!==null&&l!==void 0?l:c,setSelected:f,toggle:i}}export{s as $};
