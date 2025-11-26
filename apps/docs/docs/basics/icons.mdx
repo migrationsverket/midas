@@ -40,14 +40,6 @@ import { toastQueue, GlobalToastRegion } from '@midas-ds/components'
 Ikoner används som ett komplement till text för att underlätta för användaren. Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
 
 <GlobalToastRegion />
-## Riktlinjer för ikoner
-
-- Ikonen ligger som standard till vänster om texten.
-- Ikoner kan användas fristående, tex där det är ont om plats. Rekommendationen är dock att komplettera ikonen med en beskrivande text så ofta det går.
-- Ikonen ska ha samma färg som den kompletterande texten.
-- Färgen på ikoner sätts via våra [icon tokens](./tokens.mdx#ikoner). Inga egna färger utanför tokens används.
-- Ikoner ska alltid ha tillräcklig kontrast mot bakgrund.
-- Standardstorleken på ikonerna är 20px/1.25rem. Om textstorleken är liten eller ikonen används i en tabell kan 16px/1rem användas istället.
 
 ## Standardikoner
 
@@ -55,50 +47,50 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 
 ### Navigation
 
-| Ikon                          | Namn                                 | Semantisk användning |
-| :---------------------------- | :----------------------------------- | :------------------- |
-| <Menu size={20}/>             | <IconCopy name='Menu' />             | Huvudmeny, meny      |
-| <EllipsisVertical size={20}/> | <IconCopy name='EllipsisVertical' /> | Meny                 |
+| Ikon                          | Namn                                 | Användning      |
+| :---------------------------- | :----------------------------------- | :-------------- |
+| <Menu size={20}/>             | <IconCopy name='Menu' />             | Huvudmeny, meny |
+| <EllipsisVertical size={20}/> | <IconCopy name='EllipsisVertical' /> | Meny            |
 
 ### Pilar/riktning
 
-| Ikon                     | Namn                            | Semantisk användning |
-| :----------------------- | :------------------------------ | :------------------- |
-| <ArrowRight size={20}/>  | <IconCopy name='ArrowRight' />  | Höger, nästa         |
-| <ArrowLeft size={20}/>   | <IconCopy name='ArrowLeft' />   | Vänster, tillbaka    |
-| <ChevronDown size={20}/> | <IconCopy name='ChevronDown' /> | Fäll ut, nedåt       |
-| <ChevronUp size={20}/>   | <IconCopy name='ChevronUp' />   | Fäll ihop, uppåt     |
+| Ikon                     | Namn                            | Användning        |
+| :----------------------- | :------------------------------ | :---------------- |
+| <ArrowRight size={20}/>  | <IconCopy name='ArrowRight' />  | Höger, nästa      |
+| <ArrowLeft size={20}/>   | <IconCopy name='ArrowLeft' />   | Vänster, tillbaka |
+| <ChevronDown size={20}/> | <IconCopy name='ChevronDown' /> | Fäll ut, nedåt    |
+| <ChevronUp size={20}/>   | <IconCopy name='ChevronUp' />   | Fäll ihop, uppåt  |
 
 ### Status
 
-| Ikon                       | Namn                              | Semantisk användning |
-| :------------------------- | :-------------------------------- | :------------------- |
-| <Check size={20}/>         | <IconCopy name='Check' />         | Ok, slutfört         |
-| <Info size={20}/>          | <IconCopy name='Info' />          | Information          |
-| <Flag size={20}/>          | <IconCopy name='Flag' />          | Viktig information   |
-| <TriangleAlert size={20}/> | <IconCopy name='TriangleAlert' /> | Varning              |
+| Ikon                       | Namn                              | Användning         |
+| :------------------------- | :-------------------------------- | :----------------- |
+| <Check size={20}/>         | <IconCopy name='Check' />         | Ok, slutfört       |
+| <Info size={20}/>          | <IconCopy name='Info' />          | Information        |
+| <Flag size={20}/>          | <IconCopy name='Flag' />          | Viktig information |
+| <TriangleAlert size={20}/> | <IconCopy name='TriangleAlert' /> | Varning            |
 
 ### Action
 
-| Ikon                | Namn                       | Semantisk användning |
-| :------------------ | :------------------------- | :------------------- |
-| <Plus size={20}/>   | <IconCopy name='Plus' />   | Lägg till, öka       |
-| <Minus size={20}/>  | <IconCopy name='Minus' />  | Ta bort, minska      |
-| <Trash2 size={20}/> | <IconCopy name='Trash2' /> | Ta bort, släng       |
-| <Pencil size={20}/> | <IconCopy name='Pencil' /> | Redigera             |
-| <X size={20}/>      | <IconCopy name='X' />      | Stäng, avbryt        |
-| <Search size={20}/> | <IconCopy name='Search' /> | Sök                  |
+| Ikon                | Namn                       | Användning      |
+| :------------------ | :------------------------- | :-------------- |
+| <Plus size={20}/>   | <IconCopy name='Plus' />   | Lägg till, öka  |
+| <Minus size={20}/>  | <IconCopy name='Minus' />  | Ta bort, minska |
+| <Trash2 size={20}/> | <IconCopy name='Trash2' /> | Ta bort, släng  |
+| <Pencil size={20}/> | <IconCopy name='Pencil' /> | Redigera        |
+| <X size={20}/>      | <IconCopy name='X' />      | Stäng, avbryt   |
+| <Search size={20}/> | <IconCopy name='Search' /> | Sök             |
 
 ### Länkar/Media
 
-| Ikon                               | Namn                                      | Semantisk användning |
-| :--------------------------------- | :---------------------------------------- | :------------------- |
-| <ArrowDownToLine size={20}/>       | <IconCopy name='ArrowDownToLine' />       | Ladda ner            |
-| <SquareArrowOutUpRight size={20}/> | <IconCopy name='SquareArrowOutUpRight' /> | Extern länk          |
+| Ikon                               | Namn                                      | Användning  |
+| :--------------------------------- | :---------------------------------------- | :---------- |
+| <ArrowDownToLine size={20}/>       | <IconCopy name='ArrowDownToLine' />       | Ladda ner   |
+| <SquareArrowOutUpRight size={20}/> | <IconCopy name='SquareArrowOutUpRight' /> | Extern länk |
 
 ### Övrigt
 
-| Ikon                      | Namn                             | Semantisk användning     |
+| Ikon                      | Namn                             | Användning               |
 | :------------------------ | :------------------------------- | :----------------------- |
 | <LogIn size={20}/>        | <IconCopy name='LogIn' />        | Logga in                 |
 | <LogOut size={20}/>       | <IconCopy name='LogOut' />       | Logga ut                 |
