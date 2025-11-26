@@ -37,6 +37,21 @@ jobs:
       - name: Install packages
         run: npm ci
 
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Install Playwright
+        run: npx playwright install chromium --only-shell
+
+      - name: Build packages
+        run: npx nx affected -t lint stylelint build
+
+      - name: Test packages
+        run: npx nx affected -t test
+
+      - name: A11y check packages
+        run: npx nx run-many -t a11y a11y-dark-mode a11y-forced-colors -p storybook --parallel=1
+
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
       - name: Run nx release
