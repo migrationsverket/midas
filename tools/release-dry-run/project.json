@@ -1,0 +1,26 @@
+{
+  "name": "release-dry-run",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/release-dry-run/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "options": {
+        "main": "tools/release-dry-run/src/index.ts",
+        "assets": ["tools/release-dry-run/src/action.yml"],
+        "outputPath": "dist/tools/release-dry-run",
+        "tsConfig": "tools/release-dry-run/tsconfig.lib.json",
+        "sourceMap": true
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "tools/release-dry-run/jest.config.cts"
+      }
+    }
+  }
+}

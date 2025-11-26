@@ -1,0 +1,10 @@
+name: NX release report
+description: Get release information from a `nx release --dry-run` command
+
+outputs:
+  message:
+    description: The affected projects and their old and new versions.
+
+runs:
+  using: node20
+  main: index.cjs.js
