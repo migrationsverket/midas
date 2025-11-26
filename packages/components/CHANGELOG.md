@@ -1,3 +1,10 @@
+## 15.2.15 (2025-11-25)
+
+### 🚀 Features
+
+- **calendar:** change focus styles for start/end range ([1b28159515](https://github.com/migrationsverket/midas/commit/1b28159515))
+- **calendar:** change in-range styles to top-bottom border ([f7e604461a](https://github.com/migrationsverket/midas/commit/f7e604461a))
+
 ## 15.2.14 (2025-11-24)
 
 ### 🩹 Fixes
