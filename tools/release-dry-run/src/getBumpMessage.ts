@@ -12,6 +12,7 @@ const getDiffIcon = ({
     case 'major':
       return ':boom:'
     default:
+      // Prerelease versions (prepatch, preminor, premajor, prerelease) and null get no icon
       return ''
   }
 }
