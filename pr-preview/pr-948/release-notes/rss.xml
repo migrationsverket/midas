@@ -4,7 +4,7 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Wed, 26 Nov 2025 10:56:33 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Nov 2025 11:00:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Release 11.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/11.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/11.0.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[🚀 Features]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/11.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features" translate="no">​</a></h2>
 <ul>
@@ -47,7 +47,7 @@
             <title><![CDATA[Release 12.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/12.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/12.0.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.]]></description>
             <content:encoded><![CDATA[<p>I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
 Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
@@ -94,7 +94,7 @@ våra komponenter. Läs vidare för att få veta mer om vad som är nytt i versi
             <title><![CDATA[Release 12.1.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/12.1.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/12.1.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.]]></description>
             <content:encoded><![CDATA[<p>En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.</p>
 <p>Vårt fokus har den senaste tiden legat kring våra designtokens och dess struktur, vi kommer att behöva stöka lite till innan vi är helt nöjda.
@@ -127,7 +127,7 @@ Vi påbörjar en utfasning av variablen <code scope="[object Object]">semantic</
             <title><![CDATA[Release 13.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/13.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/13.0.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
 göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.</p>
@@ -182,7 +182,7 @@ avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
             <title><![CDATA[Release 14.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/14.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/14.0.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
@@ -241,7 +241,7 @@ avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
             <title><![CDATA[Release 15.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/15.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/15.0.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ny-select-komponent">🚀 Ny select-komponent<a href="https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/15.0.0/#-ny-select-komponent" class="hash-link" aria-label="Direktlänk till 🚀 Ny select-komponent" title="Direktlänk till 🚀 Ny select-komponent" translate="no">​</a></h2>
@@ -318,7 +318,7 @@ Om du inte har möjlighet att uppdatera din implementation just nu, kan du forts
             <title><![CDATA[Release 15.2.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/15.2.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/15.2.0/</guid>
-            <pubDate>Wed, 26 Nov 2025 10:56:33 GMT</pubDate>
+            <pubDate>Wed, 26 Nov 2025 11:00:17 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-948/release-notes/15.2.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
