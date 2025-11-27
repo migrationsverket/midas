@@ -1,10 +1,13 @@
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import ThemedImage from '@theme/ThemedImage'
+
 # Tabeller
 
 ## Filtrering
 
 ### Inline-filter
 
-Inline-filter innebär att filtren placeras direkt ovanför tabellen och är alltid synliga. Detta gör det enkelt att upptäcka vilka filter som finns tillgängliga, se vilka filter som redan är aktiva samt justera flera filter i följd utan extra interaktioner. Filtren kan vid behov läggas i en [Accordion](/components/accordion) för att kunna fällas ihop och ta mindre plats.
+Inline-filter innebär att filtren placeras direkt ovanför tabellen och är alltid synliga. Detta gör det enkelt att upptäcka vilka filter som finns tillgängliga, se vilka filter som redan är aktiva samt justera flera filter samtidigt utan extra interaktioner. Du kan [se ett exempel på detta mönster här](/dev/tanstack-table/#filtrering)
 
 Använd detta mönster när
 
@@ -12,11 +15,47 @@ Använd detta mönster när
 - användaren snabbt behöver kunna justera flera filter på en gång
 - det är viktigt att direkt kunna se vilka filter som är aktiva
 
+<InlineFilter />
+
+Filtren kan vid behov läggas i en [Accordion](/components/accordion) för att kunna fällas ihop och ta mindre plats.
+
+<InlineFilterAccordion />
 ### Filter i popover
 
-I detta mönster öppnas filtrvalen i en popover via en knapp eller en ikon. Det ger en fokuserad tabellvy när filtrering inte är användarens primära handling. Inne i popovern läggs filtren i [Accordion](/components/accordion) som kan expanderas och fällas ihop, vilket möjliggör en tydlig och skalbar struktur även när antalet filter är stort.
+I detta mönster öppnas filtervalen i en popover via en knapp eller en ikon. Det ger en fokuserad tabellvy när filtrering inte är användarens primära handling. Inne i popovern läggs filtren i [Accordion](/components/accordion) som kan expanderas och fällas ihop, vilket ger en tydlig och skalbar struktur även när det är många filter.
 
-- datatunga applikationer där användaren ibland behöver göra mer detaljerade avgränsningar
+Använd detta mönster när
+
 - filtreringen inte är en primär uppgift för de flesta användare
 - det finns många filter
 - du vill kunna gruppera filter
+
+export function InlineFilter() {
+  const lightSrc = useBaseUrl('/img/inline-filter.svg');
+  const darkSrc = useBaseUrl('/img/inline-filter.svg');
+
+return (
+
+<ThemedImage
+  alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
+
+export function InlineFilterAccordion() {
+  const lightSrc = useBaseUrl('/img/inline-filter-accordion.svg');
+  const darkSrc = useBaseUrl('/img/inline-filter-accordion.svg');
+
+return (
+
+<ThemedImage
+  alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
