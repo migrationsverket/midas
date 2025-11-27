@@ -41,6 +41,13 @@ import { ComboBox, ListBoxItem } from '@midas-ds/components'
   <BasicExample />
 </div>
 
+## Riktlinjer
+
+### Val av komponent
+
+- Om det ska gå att välja flera eller inga alternativ är det [Checkbox](/components/checkbox) eller [Select](/components/select) som ska användas.
+- Om det är färre alternativ än fyra (4) används med fördel [Radio](/components/radio) istället.
+
 ## Kontrollerat val
 
 Använd attributet `id` och eventet `onSelectionChange` för att använda controlled value på ComboBox.
@@ -72,12 +79,9 @@ return (
   <ControlledExample />
 </div>
 
-## Riktlinjer
+## Flerval
 
-### Val av komponent
-
-- Om det ska gå att välja flera eller inga alternativ är det [Checkbox](/components/checkbox) eller [Select](/components/select) som ska användas.
-- Om det är färre alternativ än fyra (4) används med fördel [Radio](/components/radio) istället.
+För närvarande stödjer inte ComboBox flerval, vi hänvisar er istället att använda [Midas CSS för react-select](/dev/react-select) för detta.
 
 ## Sektioner
 
