@@ -1,0 +1,132 @@
+"use strict";
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6618],{
+
+/***/ 16467:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_design_patterns_tables_mdx_93c_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-tables-mdx-93c.json
+const site_docs_design_patterns_tables_mdx_93c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/tables","title":"Tabeller","description":"Filtrering","source":"@site/docs/design-patterns/tables.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/tables","permalink":"/pr-preview/pr-953/design-patterns/tables","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+;// ./apps/docs/docs/design-patterns/tables.mdx
+
+
+const frontMatter = {
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = 'Tabeller';
+
+const assets = {
+
+};
+
+
+
+const toc = [{
+  "value": "Filtrering",
+  "id": "filtrering",
+  "level": 2
+}, {
+  "value": "Inline-filter",
+  "id": "inline-filter",
+  "level": 3
+}, {
+  "value": "Filter i popover",
+  "id": "filter-i-popover",
+  "level": 3
+}];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    header: "header",
+    li: "li",
+    p: "p",
+    ul: "ul",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(_components.header, {
+      children: (0,jsx_runtime.jsx)(_components.h1, {
+        id: "tabeller",
+        children: "Tabeller"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "filtrering",
+      children: "Filtrering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "inline-filter",
+      children: "Inline-filter"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Inline-filter innebär att filtren placeras direkt ovanför tabellen och är alltid synliga. Detta gör det enkelt att upptäcka vilka filter som finns tillgängliga, se vilka filter som redan är aktiva samt justera flera filter i följd utan extra interaktioner. Filtren kan vid behov läggas i en ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/accordion",
+        children: "Accordion"
+      }), " för att kunna fällas ihop och ta mindre plats."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Använd detta mönster när"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "du har ett fåtal filter"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "användaren snabbt behöver kunna justera flera filter på en gång"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "det är viktigt att direkt kunna se vilka filter som är aktiva"
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "filter-i-popover",
+      children: "Filter i popover"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["I detta mönster öppnas filtrvalen i en popover via en knapp eller en ikon. Det ger en fokuserad tabellvy när filtrering inte är användarens primära handling. Inne i popovern läggs filtren i ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/accordion",
+        children: "Accordion"
+      }), " som kan expanderas och fällas ihop, vilket möjliggör en tydlig och skalbar struktur även när antalet filter är stort."]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "datatunga applikationer där användaren ibland behöver göra mer detaljerade avgränsningar"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "filtreringen inte är en primär uppgift för de flesta användare"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "det finns många filter"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "du vill kunna gruppera filter"
+      }), "\n"]
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
+
+/***/ })
+
+}]);
