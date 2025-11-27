@@ -1,3 +1,0 @@
-import{j as n}from"./iframe-jgKyCgCs.js";import{useMDXComponents as r}from"./index-CzEFEISA.js";import{M as s}from"./blocks-C48qtdNS.js";import"./preload-helper-PPVm8Dsz.js";import"./index-DG2WG7qx.js";import"./index-BFSl9xNw.js";function o(e){const t={h1:"h1",p:"p",...r(),...e.components};return n.jsxs(n.Fragment,{children:[n.jsx(s,{title:"Components/Intro"}),`
-`,n.jsx(t.h1,{id:"komponenter",children:"Komponenter"}),`
-`,n.jsx(t.p,{children:"Här listas exempel på hur du kan använda vardera komponent. Props, kodexempel se hur de beter sig responsivt m.m."})]})}function x(e={}){const{wrapper:t}={...r(),...e.components};return t?n.jsx(t,{...e,children:n.jsx(o,{...e})}):o(e)}export{x as default};
