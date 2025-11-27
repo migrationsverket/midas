@@ -75,9 +75,6 @@
       "datepicker-styles"
     ],
     "version": {
-      "git": {
-        "commitMessage": "chore(release): release {projectName} package, version {version} [release]"
-      },
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "updateDependents": "auto",
