@@ -1,0 +1,44 @@
+name: 'NX release dry run'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  nx-release-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build tool
+        run: npx nx build release-dry-run
+
+      - name: Run tool
+        id: dry-run
+        uses: ./dist/tools/release-dry-run
+
+      - name: Leave a comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: ${{ steps.dry-run.outputs.message }}

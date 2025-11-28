@@ -10,7 +10,7 @@ jobs:
   publish-to-npm:
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      contains(github.event.head_commit.message, '[release]')
+      contains(github.event.head_commit.message, 'chore(release)')
     name: Publish to NPM
     runs-on: ubuntu-latest
     permissions:

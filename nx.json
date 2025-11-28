@@ -74,9 +74,6 @@
       "table-styles",
       "datepicker-styles"
     ],
-    "git": {
-      "commitMessage": "chore(release): release {projectName} package, version {version} [release]"
-    },
     "version": {
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
