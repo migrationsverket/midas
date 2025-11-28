@@ -24,8 +24,9 @@ import {
 } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
 import {
-  ArrowDownNarrowWide,
-  ArrowUpWideNarrow,
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
   GripVertical,
 } from 'lucide-react'
 import clsx from '../utils/clsx'
@@ -124,23 +125,31 @@ export const Column = ({ children, className, ...rest }: ColumnProps) => {
       className={clsx(className, styles.column)}
       {...rest}
     >
-      {({ allowsSorting, sortDirection }) => (
-        <>
-          {children}
-          {allowsSorting && (
-            <span
-              aria-hidden='true'
-              className='sort-indicator'
-            >
-              {sortDirection === 'ascending' ? (
-                <ArrowUpWideNarrow size={20} />
-              ) : (
-                <ArrowDownNarrowWide size={20} />
-              )}
-            </span>
-          )}
-        </>
-      )}
+      {({ allowsSorting, sortDirection }) => {
+        const getSortIcon = () => {
+          if (sortDirection === 'ascending') {
+            return <ArrowUp size={16} />
+          }
+          if (sortDirection === 'descending') {
+            return <ArrowDown size={16} />
+          }
+          return <ArrowUpDown size={16} className={styles.sortIconNeutral} />
+        }
+
+        return (
+          <>
+            {children}
+            {allowsSorting && (
+              <span
+                aria-hidden='true'
+                className={styles.sortIndicator}
+              >
+                {getSortIcon()}
+              </span>
+            )}
+          </>
+        )
+      }}
     </AriaColumn>
   )
 }
