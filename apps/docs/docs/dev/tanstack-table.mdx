@@ -123,22 +123,9 @@ I detta exempel används:
 - `column.getToggleSortingHandler()` för att växla sorteringsriktning vid klick
 - `column.getIsSorted()` för att visa rätt sorteringsikon
 - `ArrowUp`, `ArrowDown`, och `ArrowUpDown` från `lucide-react` som sorteringsindikatorer
+- Klasserna `sortable-header` och `sort-icon-neutral` för att få rätt hover-beteende
 
-**Viktigt att notera:** Sorteringsikonen (`ArrowUpDown`) är dold som standard och visas med låg opacitet vid hover. När en kolumn är sorterad visas `ArrowUp` eller `ArrowDown` istället. CSS-stilarna appliceras i komponenten:
-
-```css
-.sort-icon-neutral {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.sortable-header:hover .sort-icon-neutral {
-  opacity: 1;
-}
-.sortable-header {
-  cursor: pointer;
-  user-select: none;
-}
-```
+**Viktigt att notera:** Sorteringsikonen (`ArrowUpDown`) är dold som standard och visas automatiskt vid hover tack vare stilarna i `tanstack-table.css`. När en kolumn är sorterad visas `ArrowUp` eller `ArrowDown` istället.
 
 Läs mer om sortering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/sorting).
 
@@ -204,17 +191,8 @@ I detta exempel används:
 - `useSortable` hook för att göra individuella kolumner draggbara
 - `arrayMove` från `@dnd-kit/sortable` för att ordna om kolumnerna
 - `GripVertical` från `lucide-react` som drag-ikon som visas vid hover
+- Klassen `drag-handle` för att få rätt hover-beteende
 
-**Viktigt att notera:** Drag-ikonen är dold som standard och visas bara när du hovrar över kolumnrubriken. Detta görs med CSS där ikonen har `opacity: 0` och övergår till `opacity: 1` vid hover. Se till att CSS-stilarna appliceras i komponenten för att få hover-effekten att fungera:
-
-```css
-.drag-handle {
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.midas-tanstack-table th:hover .drag-handle {
-  opacity: 1 !important;
-}
-```
+**Viktigt att notera:** Drag-ikonen är dold som standard och visas automatiskt vid hover över kolumnrubriken tack vare stilarna i `tanstack-table.css`.
 
 Läs mer om column ordering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/column-ordering).

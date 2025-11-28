@@ -144,17 +144,6 @@ export function ColumnDndExample() {
     onColumnOrderChange: setColumnOrder,
   });
 
-  // Add style for hover effect
-  const hoverStyles = `
-    .drag-handle {
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-    }
-    .midas-tanstack-table th:hover .drag-handle {
-      opacity: 1 !important;
-    }
-  `;
-
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
     if (active && over && active.id !== over.id) {
@@ -180,7 +169,6 @@ export function ColumnDndExample() {
       sensors={sensors}
     >
       <div style={{ width: '100%', overflowX: 'auto' }}>
-        <style>{hoverStyles}</style>
         <table className="midas-tanstack-table">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (

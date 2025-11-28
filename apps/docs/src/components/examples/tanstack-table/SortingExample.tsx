@@ -64,23 +64,8 @@ export function SortingExample() {
     return <ArrowUpDown size={14} className="sort-icon-neutral" />;
   };
 
-  const sortIconStyles = `
-    .sort-icon-neutral {
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-    }
-    .sortable-header:hover .sort-icon-neutral {
-      opacity: 1;
-    }
-    .sortable-header {
-      cursor: pointer;
-      user-select: none;
-    }
-  `;
-
   return (
     <div style={{ width: '100%', overflowX: 'auto' }}>
-      <style>{sortIconStyles}</style>
       <table className="midas-tanstack-table">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
