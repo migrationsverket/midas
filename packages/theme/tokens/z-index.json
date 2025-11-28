@@ -3,6 +3,7 @@
     "$type": "number",
     "base": { "$value": 1 },
     "above": { "$value": 10 },
+    "sidebar": { "$value": 500 },
     "modal": { "$value": 1000 },
     "toast": { "$value": 1100 },
     "skipToContent": { "$value": 1200 }
