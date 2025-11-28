@@ -3,7 +3,7 @@ title: Tanstack Table
 description: Implementation av Tanstack Table
 ---
 
-import { FilteringExample, ColumnVisibilityExample } from '@site/src/components/examples'
+import { FilteringExample, ColumnVisibilityExample, ColumnDndExample } from '@site/src/components/examples'
 
 # Tanstack Table
 
@@ -151,3 +151,38 @@ I detta exempel används:
 - `column.getToggleVisibilityHandler()` för att växla synlighet
 
 Läs mer om kolumnsynlighet i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/column-visibility).
+
+### Drag and Drop-kolumner
+
+Med hjälp av `@dnd-kit` kan du låta användare ordna om kolumner genom att dra och släppa dem. Detta ger en intuitiv och användarvänlig upplevelse för att anpassa tabellens layout.
+
+Först, installera de nödvändiga beroendena:
+
+```bash
+npm install @dnd-kit/core @dnd-kit/sortable @dnd-kit/utilities @dnd-kit/modifiers
+```
+
+<ColumnDndExample />
+
+I detta exempel används:
+
+- `columnOrder` state för att hålla reda på ordningen av kolumnerna
+- `DndContext` för att hantera drag and drop-funktionalitet
+- `SortableContext` för att göra kolumner sorterbara
+- `useSortable` hook för att göra individuella kolumner draggbara
+- `arrayMove` från `@dnd-kit/sortable` för att ordna om kolumnerna
+- `GripVertical` från `lucide-react` som drag-ikon som visas vid hover
+
+**Viktigt att notera:** Drag-ikonen är dold som standard och visas bara när du hovrar över kolumnrubriken. Detta görs med CSS där ikonen har `opacity: 0` och övergår till `opacity: 1` vid hover. Se till att CSS-stilarna appliceras i komponenten för att få hover-effekten att fungera:
+
+```css
+.drag-handle {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.midas-tanstack-table th:hover .drag-handle {
+  opacity: 1 !important;
+}
+```
+
+Läs mer om column ordering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/column-ordering).
