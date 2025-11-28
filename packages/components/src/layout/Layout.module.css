@@ -34,7 +34,7 @@
 
   @media (width >= 1024px) {
     padding: 1.25rem 1rem;
-    z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
+    z-index: calc(var(--midas-z-index-sidebar) + var(--midas-z-index-above));
   }
 }
 
@@ -93,7 +93,7 @@
   height: 100vh;
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
-  z-index: calc(var(--midas-z-index-base));
+  z-index: calc(var(--midas-z-index-sidebar));
   border-right: 1px solid var(--midas-border-color-subtle);
 
   @media (width >= 1024px) {
