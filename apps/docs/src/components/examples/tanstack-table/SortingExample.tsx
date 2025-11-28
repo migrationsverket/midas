@@ -70,7 +70,7 @@ export function SortingExample() {
       transition: opacity 0.2s ease-in-out;
     }
     .sortable-header:hover .sort-icon-neutral {
-      opacity: 0.4;
+      opacity: 1;
     }
     .sortable-header {
       cursor: pointer;
