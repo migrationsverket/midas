@@ -161,6 +161,42 @@
       "black": {
         "$value": 900
       }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{typography.font.family}",
+        "fontSize": "{typography.font.size.30}",
+        "fontWeight": "{typography.weight.regular}",
+        "lineHeight": "{typography.lineHeight.20}"
+      }
+    },
+    "body-small": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{typography.font.family}",
+        "fontSize": "{typography.font.size.20}",
+        "fontWeight": "{typography.weight.regular}",
+        "lineHeight": "{typography.lineHeight.20}"
+      }
+    },
+    "description": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{typography.font.family}",
+        "fontSize": "{typography.font.size.20}",
+        "fontWeight": "{typography.weight.regular}",
+        "lineHeight": "{typography.lineHeight.20}"
+      }
+    },
+    "description-small": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{typography.font.family}",
+        "fontSize": "{typography.font.size.10}",
+        "fontWeight": "{typography.weight.regular}",
+        "lineHeight": "{typography.lineHeight.10}"
+      }
     }
   }
 }
