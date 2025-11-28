@@ -93,6 +93,14 @@ export function SortingExample() {
                         header.column.getCanSort() ? 'sortable-header' : ''
                       }
                       onClick={header.column.getToggleSortingHandler()}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          header.column.getToggleSortingHandler()?.(e);
+                        }
+                      }}
+                      role={header.column.getCanSort() ? 'button' : undefined}
+                      tabIndex={header.column.getCanSort() ? 0 : undefined}
                       style={{
                         display: 'flex',
                         alignItems: 'center',
