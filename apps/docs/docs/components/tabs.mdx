@@ -40,6 +40,29 @@ import { Tabs, TabList, Tab, TabPanel } from '@midas-ds/components'
 Midas `Tabs` är en wrapperkomponent som används tillsammans med `TabList`, `Tab` och `TabPanel`.
 Samtliga komponenter utgår från React Arias komponenter med samma namn, vänligen se [dokumentationen för Tabs hos React Aria](https://react-spectrum.adobe.com/react-aria/Tabs.html) för en djupare förklaring.
 
+## Varianter
+
+Tabs finns i varianterna `"uncontained" | "contained"`, där den senare passar bra för äldre appar som använder tabs mer som "flikar":
+
+### Contained
+
+```tsx {1}
+<Tabs variant='contained'>
+  <TabList aria-label='Viktig information om frukter och bär'>
+    <Tab id='vitaminer'>...</Tab>
+    <Tab id='frukter'>...</Tab>
+    <Tab id='hallon'>...</Tab>
+  </TabList>
+  <TabPanel id='vitaminer'>...</TabPanel>
+  <TabPanel id='frukter'>...</TabPanel>
+  <TabPanel id='hallon'>...</TabPanel>
+</Tabs>
+```
+
+<div className='card'>
+  <BasicExample variant='contained' />
+</div>
+
 ## Användning
 
 ### Standardval (okontrollerad)
@@ -106,14 +129,7 @@ Här är ett exempel på flikar där varje flik har en stängningsknapp. Detta �
 ```tsx
 import React, { useState } from 'react'
 import { X } from 'lucide-react'
-import {
-  Tab,
-  TabList,
-  Tabs,
-  TabPanel,
-  Text,
-  Button,
-} from '@midas-ds/components'
+import { Tab, TabList, Tabs, TabPanel, Text, Button } from '@midas-ds/components'
 
 export const ClosableTabsExample = () => {
   const [openTabs, setOpenTabs] = useState([
@@ -122,8 +138,7 @@ export const ClosableTabsExample = () => {
   ])
 
   const handleCloseTab = (idToClose: string) => {
-    if (openTabs.length > 1)
-      setOpenTabs(prevTabs => prevTabs.filter(tab => tab.id !== idToClose))
+    if (openTabs.length > 1) setOpenTabs(prevTabs => prevTabs.filter(tab => tab.id !== idToClose))
   }
 
   return (
@@ -136,7 +151,10 @@ export const ClosableTabsExample = () => {
             style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}
           >
             {tab.title}
-            <Button variant='icon' onPress={() => handleCloseTab(tab.id)}>
+            <Button
+              variant='icon'
+              onPress={() => handleCloseTab(tab.id)}
+            >
               <X size={16} />
             </Button>
           </Tab>

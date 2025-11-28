@@ -3,20 +3,27 @@
 import * as React from 'react'
 import {
   Tabs as AriaTabs,
-  type TabsProps,
+  type TabsProps as AriaTabsProps,
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
-
+import { TabsContext } from './TabsContext'
 import styles from './Tabs.module.css'
-export type { TabsProps }
 
-export const Tabs: React.FC<TabsProps> = ({ children, className, ...props }) => {
+export interface TabsProps extends AriaTabsProps {
+  variant?: 'uncontained' | 'contained'
+}
 
+export const Tabs: React.FC<TabsProps> = ({
+  className,
+  variant = 'uncontained',
+  ...rest
+}) => {
   return (
-    <AriaTabs
-      {...props}
-      className={clsx(styles.tabs, className)}
-      children={children}
-    />
+    <TabsContext.Provider value={{ variant }}>
+      <AriaTabs
+        className={clsx(styles.tabs, className)}
+        {...rest}
+      />
+    </TabsContext.Provider>
   )
 }
