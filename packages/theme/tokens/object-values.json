@@ -103,7 +103,7 @@
         "$description": "Kantlinje med medelh\u00f6g kontrast"
       },
       "subtle": {
-        "$value": "light-dark({color.gray.50}, {color.gray.160})",
+        "$value": "light-dark({color.gray.50}, {color.gray.140})",
         "$description": "Kantlinje med l\u00e5g kontrast"
       },
       "tertiary": {
