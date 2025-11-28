@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "create": {
+      "implementation": "./src/executors/create/create",
+      "schema": "./src/executors/create/schema.json",
+      "description": "create executor"
+    }
+  }
+}

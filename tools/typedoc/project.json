@@ -1,0 +1,48 @@
+{
+  "name": "typedoc",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/typedoc/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/typedoc",
+        "main": "tools/typedoc/src/index.ts",
+        "tsConfig": "tools/typedoc/tsconfig.lib.json",
+        "assets": [
+          "tools/typedoc/*.md",
+          {
+            "input": "./tools/typedoc/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/typedoc/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/typedoc",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./tools/typedoc",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "tools/typedoc/jest.config.cts"
+      }
+    }
+  }
+}

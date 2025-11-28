@@ -26,7 +26,8 @@
       "@midas-ds/theme/*": ["packages/theme/src/*"],
       "@midas-ds/workspace-tools": ["workspace-tools/src/index.ts"],
       "@site/*": ["apps/docs/*"],
-      "@midas-ds/release-dry-run": ["tools/release-dry-run/src/index.ts"]
+      "@midas-ds/release-dry-run": ["tools/release-dry-run/src/index.ts"],
+      "@midas-ds/typedoc": ["tools/typedoc/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
