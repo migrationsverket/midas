@@ -3,7 +3,7 @@ title: Tanstack Table
 description: Implementation av Tanstack Table
 ---
 
-import { FilteringExample, ColumnVisibilityExample, ColumnDndExample } from '@site/src/components/examples'
+import { FilteringExample, ColumnVisibilityExample, ColumnDndExample, SortingExample } from '@site/src/components/examples'
 
 # Tanstack Table
 
@@ -109,6 +109,38 @@ Här är några resurser som hjälper dig att komma igång med TanStack Table:
 - [**Exempel**](https://tanstack.com/table/v8/docs/framework/react/examples/basic): En stor samling exempel som visar hur man implementerar olika funktioner.
 
 ## Exempel
+
+### Sortering
+
+Tanstack Table har inbyggt stöd för sortering med `getSortedRowModel`. Klicka på kolumnrubrikerna för att sortera tabellen.
+
+<SortingExample />
+
+I detta exempel används:
+
+- `sorting` state för att hålla reda på vilka kolumner som är sorterade och i vilken riktning
+- `getSortedRowModel()` för att hantera sorteringen
+- `column.getToggleSortingHandler()` för att växla sorteringsriktning vid klick
+- `column.getIsSorted()` för att visa rätt sorteringsikon
+- `ArrowUp`, `ArrowDown`, och `ArrowUpDown` från `lucide-react` som sorteringsindikatorer
+
+**Viktigt att notera:** Sorteringsikonen (`ArrowUpDown`) är dold som standard och visas med låg opacitet vid hover. När en kolumn är sorterad visas `ArrowUp` eller `ArrowDown` istället. CSS-stilarna appliceras i komponenten:
+
+```css
+.sort-icon-neutral {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.sortable-header:hover .sort-icon-neutral {
+  opacity: 0.4;
+}
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+}
+```
+
+Läs mer om sortering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/sorting).
 
 ### Filtrering
 
