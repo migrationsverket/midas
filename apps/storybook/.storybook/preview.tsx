@@ -1,21 +1,19 @@
 import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
+import MockDate from 'mockdate'
+import { getLocalTimeZone } from '@internationalized/date'
+import { mockedNow } from '../src/utils/storybook'
+import { variables } from '@midas-ds/theme'
+import '@midas-ds/theme/lib/fonts.css'
+import '@midas-ds/theme/lib/color-scheme.css'
+import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
+import './custom.css'
 import {
   customDarkTheme,
   customLightTheme,
   getPreferredColorScheme,
 } from './custom-theme'
-import React from 'react'
-import { globalModes } from './modes'
-import MockDate from 'mockdate'
-import { getLocalTimeZone } from '@internationalized/date'
-import { mockedNow } from '../src/utils/storybook'
-import { variables } from '@midas-ds/theme'
-import { I18nProvider } from 'react-aria'
-import '@midas-ds/theme/lib/fonts.css'
-import '@midas-ds/theme/lib/color-scheme.css'
-import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
-import './custom.css'
+import { presentationDecorator } from './decorators/presentation'
 
 const preview: Preview = {
   async beforeEach() {
@@ -25,6 +23,9 @@ const preview: Preview = {
     }
   },
   parameters: {
+    docs: {
+      theme: getPreferredColorScheme() === 'dark' ? customDarkTheme : customLightTheme
+    },
     backgrounds: {
       options: {
         background: { name: 'Background', value: variables.backgroundBase },
@@ -38,12 +39,6 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    docs: {
-      theme:
-        getPreferredColorScheme() === 'dark'
-          ? customDarkTheme
-          : customLightTheme,
-    },
     viewport: {
       viewports: customViewports,
     },
@@ -53,24 +48,9 @@ const preview: Preview = {
         order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
       },
     },
-    chromatic: {
-      modes: globalModes,
-    },
     a11y: { test: 'error' },
   },
   globalTypes: {
-    scheme: {
-      toolbar: {
-        title: 'Color Scheme',
-        icon: 'paintbrush',
-        items: [
-          { value: 'light', title: 'Light', icon: 'sun' },
-          { value: 'dark', title: 'Dark', icon: 'moon' },
-        ],
-        dynamicTitle: true,
-      },
-    },
-
     lang: {
       description: 'Language',
       toolbar: {
@@ -85,36 +65,10 @@ const preview: Preview = {
   },
   initialGlobals: {
     size: 'large',
-    scheme: getPreferredColorScheme(),
     lang: 'sv',
     backgrounds: { value: 'background' },
   },
-  decorators: [
-    (Story, context) => {
-      const RootTag: React.ElementType =
-        context?.parameters?.rootElement || 'main'
-
-      const story = document.querySelector<HTMLElement>('body')
-
-      if (story) {
-        story.style.colorScheme = context.globals.scheme
-        story.style.transition = 'none'
-        story.style.background = variables.backgroundBase
-      }
-
-      return (
-        <RootTag
-          style={{
-            colorScheme: context.globals.scheme,
-          }}
-        >
-          <I18nProvider locale={context.globals.lang}>
-            <Story />
-          </I18nProvider>
-        </RootTag>
-      )
-    },
-  ],
+  decorators: [presentationDecorator],
   tags: ['autodocs', 'snapshot'],
 }
 

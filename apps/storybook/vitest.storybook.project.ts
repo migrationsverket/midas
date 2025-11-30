@@ -10,6 +10,7 @@ interface Props {
   name: string
   snapshotSubpath: string
   context?: BrowserContextOptions
+  setupFile?: string
 }
 
 const currentDirectory =
@@ -23,6 +24,7 @@ export const defineStorybookProject = async ({
   name,
   context,
   snapshotSubpath,
+  setupFile,
 }: Props) =>
   ({
     extends: true,
@@ -55,7 +57,10 @@ export const defineStorybookProject = async ({
         ],
       },
       setupFiles: [
-        join('.storybook', isCI ? 'vitest.setup.ci.ts' : 'vitest.setup.ts'),
+        join(
+          '.storybook',
+          setupFile || (isCI ? 'vitest.setup.ci.ts' : 'vitest.setup.ts')
+        ),
       ],
     },
   }) satisfies TestProjectConfiguration

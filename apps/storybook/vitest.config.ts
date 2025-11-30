@@ -9,10 +9,16 @@ export default mergeConfig(
     test: {
       testTimeout: 20000,
       reporters: ['default'],
+      exclude: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/.storybook/preview.test.tsx',
+      ],
       projects: [
         defineStorybookProject({
           name: 'storybook',
           snapshotSubpath: 'light',
+          setupFile: 'vitest.setup.a11y.ts',
         }),
         {
           extends: true,

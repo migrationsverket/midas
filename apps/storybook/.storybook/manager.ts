@@ -7,8 +7,7 @@ import {
 import { version } from '../../../packages/components/package.json'
 
 addons.setConfig({
-  theme:
-    getPreferredColorScheme() === 'dark' ? customDarkTheme : customLightTheme,
+  theme: getPreferredColorScheme() === 'dark' ? customDarkTheme : customLightTheme,
   sidebar: {
     showRoots: true,
     renderLabel: item => {
@@ -17,7 +16,6 @@ addons.setConfig({
           window.location.pathname.includes('unreleased') ? '(unreleased)' : ''
         }`
       }
-
       return item.name
     },
   },

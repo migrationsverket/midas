@@ -12,6 +12,7 @@ export default mergeConfig(
         defineStorybookProject({
           name: 'storybook:forced-colors',
           snapshotSubpath: 'forced-colors',
+          setupFile: 'vitest.setup.a11y.ts',
           context: {
             forcedColors: 'active',
           },
