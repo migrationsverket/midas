@@ -1,8 +1,8 @@
 import React from 'react'
-import { RangeCalendar } from '@midas-ds/components'
+import { RangeCalendar, RangeCalendarProps } from '@midas-ds/components'
 import { DateValue } from 'react-aria-components'
 
-export const RangeCalendarExample = () => {
+export const RangeCalendarExample = (props: Partial<RangeCalendarProps>) => {
   const [selected, setSelected] = React.useState<{
     start: DateValue
     end: DateValue
@@ -13,6 +13,7 @@ export const RangeCalendarExample = () => {
       <RangeCalendar
         value={selected}
         onChange={setSelected}
+        {...props}
       />
       <pre style={{ marginTop: '1rem' }}>
         Valda datum:{' '}

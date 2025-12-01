@@ -21,14 +21,14 @@ import { Calendar } from '@midas-ds/components'
 ```
 
 ```tsx
-<Calendar />
+<Calendar aria-label='Kalender' />
 ```
 
 <div
   className='card'
   style={{ display: 'block' }}
 >
-  <Calendar />
+  <Calendar aria-label='Kalender' />
 </div>
 
 ## Användning
@@ -59,6 +59,7 @@ export const RangeCalendarExample = () => {
   return (
     <>
       <RangeCalendar
+        aria-label='Kalender'
         value={selected}
         onChange={setSelected}
       />
@@ -77,7 +78,7 @@ export const RangeCalendarExample = () => {
   className='card'
   style={{ display: 'block' }}
 >
-  <RangeCalendarExample />
+  <RangeCalendarExample aria-label='Kalender' />
 </div>
 
 ## API
