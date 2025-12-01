@@ -1,49 +1,33 @@
-import { beforeEach, describe, expect, it } from 'vitest'
-import { page, userEvent } from '@vitest/browser/context'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Button.stories'
+import { render } from 'vitest-browser-react'
 
 const { Primary, Secondary } = composeStories(stories)
 
 describe('given a basic Button', async () => {
-  beforeEach(async () => {
-    await Primary.run()
-  })
-
   it('should have focus when clicked', async () => {
-    const button = page.getByRole('button')
-    await userEvent.click(button)
-    expect(button).toBeEnabled()
-    expect(button).toHaveFocus()
+    const { getByRole } = await render(<Primary />)
+
+    const button = getByRole('button')
+    await button.click()
+    await expect.element(button).toBeEnabled()
+    await expect.element(button).toHaveFocus()
   })
 })
 
 describe('given a disabled primary Button', async () => {
-  beforeEach(async () => {
-    await Primary.run({
-      args: {
-        ...Primary.args,
-        isDisabled: true,
-      },
-    })
-  })
-
   it('should be disabled', async () => {
-    expect(page.getByRole('button')).toBeDisabled()
+    const { getByRole } = await render(<Primary isDisabled />)
+
+    await expect.element(getByRole('button')).toBeDisabled()
   })
 })
 
 describe('given a disabled secondary Button', async () => {
-  beforeEach(async () => {
-    await Secondary.run({
-      args: {
-        ...Secondary.args,
-        isDisabled: true,
-      },
-    })
-  })
-
   it('should be disabled', async () => {
-    expect(page.getByRole('button')).toBeDisabled()
+    const { getByRole } = await render(<Secondary isDisabled />)
+
+    await expect.element(getByRole('button')).toBeDisabled()
   })
 })

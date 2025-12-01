@@ -1,22 +1,17 @@
-import { beforeEach, describe, expect, it } from 'vitest'
-import { page } from '@vitest/browser/context'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Breadcrumbs.stories'
 import styles from '@midas-ds/components/breadcrumbs/Breadcrumbs.module.css'
+import { render } from 'vitest-browser-react'
 
 const { Primary } = composeStories(stories)
 
 describe('given a Breadcrumbs with a Custom ClassName', async () => {
-  beforeEach(async () => {
-    await Primary.run({
-      args: {
-        ...Primary.args,
-        className: 'derp',
-      },
-    })
-  })
-
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(page.getByRole('list')).toHaveClass(styles.container, 'derp')
+    const { getByRole } = await render(<Primary className='test' />)
+
+    await expect
+      .element(getByRole('list'))
+      .toHaveClass(styles.container, 'test')
   })
 })

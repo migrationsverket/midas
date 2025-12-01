@@ -1,21 +1,14 @@
-import { beforeEach, describe, expect, it } from 'vitest'
-import { page } from '@vitest/browser/context'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Badge.stories'
+import { render } from 'vitest-browser-react'
 
 const { NoLabel } = composeStories(stories)
 
 describe('given a Badge without a label', async () => {
-  beforeEach(async () => {
-    await NoLabel.run({
-      args: {
-        ...NoLabel.args,
-        className: 'derp',
-      },
-    })
-  })
-
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(page.getByTestId('badge')).toHaveClass('derp')
+    const { getByTestId } = await render(<NoLabel className='test' />)
+
+    await expect.element(getByTestId('badge')).toHaveClass('test')
   })
 })

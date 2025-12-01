@@ -18,6 +18,7 @@ module.exports = {
       rules: {
         'testing-library/prefer-screen-queries': 'off',
         'testing-library/prefer-presence-queries': 'off',
+        'testing-library/no-container': 'off',
       },
     },
   ],

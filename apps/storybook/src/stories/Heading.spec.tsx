@@ -1,7 +1,7 @@
-import { describe, expect, it, beforeEach } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { page } from '@vitest/browser/context'
 import * as stories from './Heading.stories'
+import { render } from 'vitest-browser-react'
 
 const {
   Heading1,
@@ -13,12 +13,10 @@ const {
 } = composeStories(stories)
 
 describe('given a Heading1', async () => {
-  beforeEach(async () => {
-    await Heading1.run()
-  })
-
   it('should match styles', async () => {
-    expect(page.getByRole('heading', { level: 1 })).toHaveStyle({
+    const { getByRole } = await render(<Heading1 />)
+
+    await expect.element(getByRole('heading', { level: 1 })).toHaveStyle({
       fontSize: '26px',
       lineHeight: '32px',
       fontWeight: '400',
@@ -28,16 +26,10 @@ describe('given a Heading1', async () => {
   })
 
   describe('with isExpressive set to true', async () => {
-    beforeEach(async () => {
-      await Heading1.run({
-        args: {
-          ...Heading1.args,
-          isExpressive: true,
-        },
-      })
-    })
     it('should match styles', async () => {
-      expect(page.getByRole('heading', { level: 1 })).toHaveStyle({
+      const { getByRole } = await render(<Heading1 isExpressive />)
+
+      await expect.element(getByRole('heading', { level: 1 })).toHaveStyle({
         fontSize: '36px',
         lineHeight: '48px',
         fontWeight: '400',
@@ -49,12 +41,10 @@ describe('given a Heading1', async () => {
 })
 
 describe('given a Heading2', async () => {
-  beforeEach(async () => {
-    await Heading2.run()
-  })
-
   it('should match styles', async () => {
-    expect(page.getByRole('heading', { level: 2 })).toHaveStyle({
+    const { getByRole } = await render(<Heading2 />)
+
+    await expect.element(getByRole('heading', { level: 2 })).toHaveStyle({
       fontSize: '20px',
       lineHeight: '28px',
       fontWeight: '400',
@@ -64,16 +54,10 @@ describe('given a Heading2', async () => {
   })
 
   describe('with isExpressive set to true', async () => {
-    beforeEach(async () => {
-      await Heading2.run({
-        args: {
-          ...Heading2.args,
-          isExpressive: true,
-        },
-      })
-    })
     it('should match styles', async () => {
-      expect(page.getByRole('heading', { level: 2 })).toHaveStyle({
+      const { getByRole } = await render(<Heading2 isExpressive />)
+
+      await expect.element(getByRole('heading', { level: 2 })).toHaveStyle({
         fontSize: '26px',
         lineHeight: '34px',
         fontWeight: '500',
@@ -85,12 +69,10 @@ describe('given a Heading2', async () => {
 })
 
 describe('given a Heading3', async () => {
-  beforeEach(async () => {
-    await Heading3.run()
-  })
-
   it('should match styles', async () => {
-    expect(page.getByRole('heading', { level: 3 })).toHaveStyle({
+    const { getByRole } = await render(<Heading3 />)
+
+    await expect.element(getByRole('heading', { level: 3 })).toHaveStyle({
       fontSize: '16px',
       lineHeight: '24px',
       fontWeight: '600',
@@ -100,16 +82,10 @@ describe('given a Heading3', async () => {
   })
 
   describe('with isExpressive set to true', async () => {
-    beforeEach(async () => {
-      await Heading3.run({
-        args: {
-          ...Heading3.args,
-          isExpressive: true,
-        },
-      })
-    })
     it('should match styles', async () => {
-      expect(page.getByRole('heading', { level: 3 })).toHaveStyle({
+      const { getByRole } = await render(<Heading3 isExpressive />)
+
+      await expect.element(getByRole('heading', { level: 3 })).toHaveStyle({
         fontSize: '20px',
         lineHeight: '28px',
         fontWeight: '600',
@@ -120,12 +96,10 @@ describe('given a Heading3', async () => {
   })
 })
 describe('given an ExpressiveHeading4', async () => {
-  beforeEach(async () => {
-    await ExpressiveHeading4.run()
-  })
-
   it('should match styles', async () => {
-    expect(page.getByRole('heading', { level: 4 })).toHaveStyle({
+    const { getByRole } = await render(<ExpressiveHeading4 />)
+
+    await expect.element(getByRole('heading', { level: 4 })).toHaveStyle({
       fontSize: '18px',
       lineHeight: '26px',
       fontWeight: '600',
@@ -136,12 +110,10 @@ describe('given an ExpressiveHeading4', async () => {
 })
 
 describe('given an ExpressiveHeading5', async () => {
-  beforeEach(async () => {
-    await ExpressiveHeading5.run()
-  })
-
   it('should match styles', async () => {
-    expect(page.getByRole('heading', { level: 5 })).toHaveStyle({
+    const { getByRole } = await render(<ExpressiveHeading5 />)
+
+    await expect.element(getByRole('heading', { level: 5 })).toHaveStyle({
       fontSize: '16px',
       lineHeight: '24px',
       fontWeight: '600',
@@ -152,12 +124,10 @@ describe('given an ExpressiveHeading5', async () => {
 })
 
 describe('given a Heading with a changed semantic element', async () => {
-  beforeEach(async () => {
-    await ChangeSemanticElement.run()
-  })
-
   it('should match styles', async () => {
-    expect(page.getByRole('heading', { level: 1 })).toHaveStyle({
+    const { getByRole } = await render(<ChangeSemanticElement />)
+
+    await expect.element(getByRole('heading', { level: 1 })).toHaveStyle({
       fontSize: '16px',
       lineHeight: '24px',
       fontWeight: '600',
