@@ -1,41 +1,33 @@
 import { describe, expect, it, beforeEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { page } from '@vitest/browser/context'
+import { page } from 'vitest/browser'
 import * as stories from './Table.stories'
 import styles from '@midas-ds/components/table/Table.module.css'
+import { render } from 'vitest-browser-react'
 
 const { Striped, Virtualized } = composeStories(stories)
 
 describe('given a Striped Table', async () => {
-  beforeEach(async () => {
-    await Striped.run()
-  })
-
   it('should append classNames', async () => {
-    expect(page.getByRole('grid')).toHaveClass(
-      styles.table,
-      Striped.args.className as string,
-    )
+    const { getByRole } = await render(<Striped />)
+
+    await expect
+      .element(getByRole('grid'))
+      .toHaveClass(styles.table, Striped.args.className as string)
   })
 })
 
 describe('given a VirtualizedStriped Table', async () => {
   beforeEach(async () => {
-    await Virtualized.run({
-      args: {
-        ...Virtualized.args,
-        striped: true,
-      }
-    })
+    await render(<Virtualized striped />)
   })
 
   it('should have striped class', async () => {
     const table = page.getByRole('grid')
-    expect(table).toHaveClass(styles.striped)
+    await expect.element(table).toHaveClass(styles.striped)
   })
 
   it('should have data-even attribute on rows', async () => {
-
     const allRows = document.querySelectorAll('[role="row"]')
     const dataRows = Array.from(allRows).slice(1) // Skip header row
 

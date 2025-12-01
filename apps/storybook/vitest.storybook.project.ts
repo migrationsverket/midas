@@ -1,15 +1,15 @@
-/// <reference types="@vitest/browser/providers/playwright" />
 import storybookTest from '@storybook/addon-vitest/vitest-plugin'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { BrowserContextOptions } from 'playwright'
-import { TestProjectConfiguration } from 'vitest/config.js'
+import { playwright } from '@vitest/browser-playwright'
+import { TestProjectConfiguration } from 'vitest/config'
 import { storybookVis } from 'storybook-addon-vis/vitest-plugin'
 
 interface Props {
   name: string
   snapshotSubpath: string
-  context?: BrowserContextOptions
+  contextOptions?: BrowserContextOptions
 }
 
 const currentDirectory =
@@ -21,7 +21,7 @@ const isCI = !!process.env.GITHUB_ACTIONS
 
 export const defineStorybookProject = async ({
   name,
-  context,
+  contextOptions,
   snapshotSubpath,
 }: Props) =>
   ({
@@ -46,11 +46,10 @@ export const defineStorybookProject = async ({
       browser: {
         enabled: true,
         headless: true,
-        provider: 'playwright',
+        provider: playwright({ contextOptions }),
         instances: [
           {
             browser: 'chromium',
-            context,
           },
         ],
       },

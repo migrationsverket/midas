@@ -1,52 +1,55 @@
-import { beforeEach, describe, expect, it } from 'vitest'
-import { page, userEvent } from '@vitest/browser/context'
+import { describe, expect, it } from 'vitest'
+import { userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './CheckboxGroup.stories'
+import { render } from 'vitest-browser-react'
 
 const { Primary, SelectAllInteraction } = composeStories(stories)
 
-describe('given a required CheckboxGroup', async () => {
-  beforeEach(async () => {
-    await Primary.run({
-      args: {
-        ...Primary.args,
-        isRequired: true,
-        isInvalid: undefined,
-        label: 'Invalid (by required)',
-        description: 'This is a working test',
-        validationBehavior: 'aria',
-        errorMessage: 'Du måste välja en av frukterna',
-      },
-    })
-  })
+const Required = () => (
+  <Primary
+    {...Primary.args}
+    isRequired
+    isInvalid={undefined}
+    label='Invalid (by required)'
+    description='This is a working test'
+    validationBehavior='aria'
+    errorMessage='Du måste välja en av frukterna'
+  />
+)
 
+describe('given a required CheckboxGroup', async () => {
   it('should display correct error message when invalid', async () => {
-    expect(page.getByText('Du måste välja en av frukterna')).toBeVisible()
+    const { getByText } = await render(<Required />)
+
+    await expect
+      .element(getByText('Du måste välja en av frukterna'))
+      .toBeVisible()
   })
 
   it('All checkboxes should be required', async () => {
-    page
-      .getByRole('checkbox')
+    const { getByRole } = await render(<Required />)
+
+    getByRole('checkbox')
       .all()
-      .forEach(async checkbox => expect(checkbox).toBeRequired())
+      .forEach(async checkbox => expect.element(checkbox).toBeRequired())
   })
 
   it('Validation should be satisfied when checking one checkbox', async () => {
+    const { getByRole } = await render(<Required />)
     await userEvent.tab()
     await userEvent.keyboard('[Space]')
 
-    page
-      .getByRole('checkbox')
+    getByRole('checkbox')
       .all()
-      .forEach(async checkbox => expect(checkbox).toBeValid())
+      .forEach(async checkbox => expect.element(checkbox).toBeValid())
   })
 })
 
 describe('given a Checkbox with select all enabled', async () => {
-  beforeEach(async () => {
-    await SelectAllInteraction.run()
-  })
   it('should show all selected as checked when all options are checked', async () => {
+    const { getByRole } = await render(<SelectAllInteraction />)
+
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
@@ -54,18 +57,19 @@ describe('given a Checkbox with select all enabled', async () => {
     await userEvent.keyboard('[Enter]')
 
     expect(
-      (page.getByRole('checkbox').first().element() as HTMLInputElement)
-        .checked,
+      (getByRole('checkbox').first().element() as HTMLInputElement).checked,
     ).toBe(true)
   })
 
   it('should show select all as indeterminate when 0 > check < max is selected', async () => {
+    const { getByRole } = await render(<SelectAllInteraction />)
+
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
 
     expect(
-      (page.getByRole('checkbox').first().element() as HTMLInputElement)
+      (getByRole('checkbox').first().element() as HTMLInputElement)
         .indeterminate,
     ).toBe(true)
   })

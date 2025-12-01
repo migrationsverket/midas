@@ -1,18 +1,17 @@
-import { describe, expect, it, beforeEach } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { page, userEvent } from '@vitest/browser/context'
 import * as stories from './LinkButton.stories'
+import { render } from 'vitest-browser-react'
 
 const { Disabled } = composeStories(stories)
 
 describe('given a disabled LinkButton', async () => {
-  beforeEach(async () => {
-    await Disabled.run()
-  })
-
   it('should have cursor not allowed when disabled', async () => {
-    const linkButton = page.getByRole('link')
-    await userEvent.hover(linkButton)
-    expect(linkButton).toHaveStyle({ cursor: 'not-allowed' })
+    const { getByRole } = await render(<Disabled />)
+    const link = getByRole('link')
+
+    await link.hover()
+
+    await expect.element(link).toHaveStyle({ cursor: 'not-allowed' })
   })
 })

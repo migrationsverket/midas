@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { page, userEvent } from '@vitest/browser/context'
+import { page, userEvent } from 'vitest/browser'
 import * as stories from './Tabs.stories'
 
 const { DefaultSelectedKey, Controlled, MoreItemsThanChildren } =
