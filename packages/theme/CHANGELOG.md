@@ -1,3 +1,9 @@
+## 3.5.0 (2025-12-01)
+
+### 🚀 Features
+
+- **theme:** add typography tokens `body` and `body-small` ([3143ca294d](https://github.com/migrationsverket/midas/commit/3143ca294d))
+
 ## 3.4.1 (2025-11-18)
 
 ### 🔧 Maintenance
