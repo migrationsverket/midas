@@ -1,33 +1,28 @@
-import { beforeEach, describe, expect, it } from 'vitest'
-import { page, userEvent } from '@vitest/browser/context'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Accordion.stories'
 import styles from '@midas-ds/components/accordion/Accordion.module.css'
+import { render } from 'vitest-browser-react'
 
 const { Default, DynamicContent } = composeStories(stories)
 
 describe('given a Default Accordion', async () => {
-  beforeEach(async () => {
-    await Default.run()
-  })
-
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(document.querySelector(`.${styles.root}`)).toHaveClass(
-      styles.root,
-      Default.args.className as string,
-    )
+    const { container } = await render(<Default />)
+
+    await expect
+      .element(container.querySelector(`.${styles.root}`) as HTMLElement)
+      .toHaveClass(styles.root, Default.args.className as string)
   })
 })
 
 describe('given an Accordion with Dynamic Content', async () => {
-  beforeEach(async () => {
-    await DynamicContent.run()
-  })
-
   it('should show dynamic content', async () => {
-    await userEvent.click(page.getByRole('button').first())
-    await userEvent.click(page.getByRole('button').nth(1))
+    const { getByRole, getByTestId } = await render(<DynamicContent />)
 
-    expect(page.getByTestId('hidden-content')).toBeVisible()
+    await getByRole('button').first().click()
+    await getByRole('button').nth(1).click()
+
+    await expect.element(getByTestId('hidden-content')).toBeVisible()
   })
 })

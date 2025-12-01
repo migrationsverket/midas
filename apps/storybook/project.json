@@ -29,7 +29,7 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "options": {
         "config": "apps/storybook/vitest.config.ts",
         "project": "interactions"
@@ -41,7 +41,7 @@
       }
     },
     "a11y": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "options": {
         "config": "apps/storybook/vitest.config.ts",
         "project": "storybook"
@@ -53,7 +53,7 @@
       }
     },
     "a11y-dark-mode": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "options": {
         "config": "apps/storybook/vitest.config.dark.ts",
         "project": "storybook:dark-mode"
@@ -65,7 +65,7 @@
       }
     },
     "a11y-forced-colors": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "options": {
         "config": "apps/storybook/vitest.config.forced-colors.ts",
         "project": "storybook:forced-colors"

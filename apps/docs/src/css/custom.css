@@ -138,6 +138,10 @@ table td {
   border: none;
 }
 
+table td svg {
+  vertical-align: middle;
+}
+
 .card-guidelines {
   position: relative;
   padding: 1rem;

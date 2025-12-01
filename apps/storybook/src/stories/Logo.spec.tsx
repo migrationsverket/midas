@@ -1,18 +1,17 @@
-import { describe, expect, it, beforeEach } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import styles from '@midas-ds/components/logo/Logo.module.css'
 import * as stories from './Logo.stories'
+import { render } from 'vitest-browser-react'
 
 const { Primary } = composeStories(stories)
 
 describe('given a primary Logo', async () => {
-  beforeEach(async () => {
-    await Primary.run({ args: { ...Primary.args, className: 'test-class' } })
-  })
-
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(document.querySelector(`.${styles.container}`)).toHaveClass(
-      'test-class',
-    )
+    const { container } = await render(<Primary className='test' />)
+
+    await expect
+      .element(container.querySelector(`.${styles.container}`) as HTMLElement)
+      .toHaveClass('test')
   })
 })

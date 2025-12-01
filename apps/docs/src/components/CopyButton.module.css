@@ -1,0 +1,47 @@
+.copyButtonContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.copyButton {
+  opacity: 0;
+  transition: opacity var(--ifm-transition-fast) ease;
+  position: relative;
+}
+
+.copyButtonContainer:hover .copyButton {
+  opacity: 1;
+}
+
+.copyButton.copied {
+  opacity: 1 !important;
+}
+
+/* Icon container for overlapping transitions */
+.copyButton :global(svg) {
+  transition: all var(--ifm-transition-fast) ease;
+}
+
+/* Copy icon scales down and fades out when copied */
+.copyButton.copied :global(svg:first-child) {
+  transform: scale(0.33);
+  opacity: 0;
+}
+
+/* Success icon (check) scales up and shows with delay */
+.copyButton :global(svg:last-child) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.33);
+  opacity: 0;
+  color: #00d600;
+}
+
+.copyButton.copied :global(svg:last-child) {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition-delay: 0.075s;
+}
