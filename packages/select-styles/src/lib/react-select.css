@@ -147,7 +147,7 @@
   }
 
   .midas__menu {
-    margin-top: 1px;
+    margin-top: var(--midas-spacing-20);
     box-shadow: 0 4px 5px rgba(0 0 0 / 20%);
   }
 
