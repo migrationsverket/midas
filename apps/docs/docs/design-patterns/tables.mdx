@@ -30,6 +30,7 @@ Använd detta mönster när
 - det finns många filter
 - du vill kunna gruppera filter
 
+<FilterPopup />
 export function InlineFilter() {
   const lightSrc = useBaseUrl('/img/inline-filter.svg');
   const darkSrc = useBaseUrl('/img/inline-filter.svg');
@@ -48,6 +49,21 @@ return (
 export function InlineFilterAccordion() {
   const lightSrc = useBaseUrl('/img/inline-filter-accordion.svg');
   const darkSrc = useBaseUrl('/img/inline-filter-accordion.svg');
+
+return (
+
+<ThemedImage
+  alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
+
+export function FilterPopup() {
+  const lightSrc = useBaseUrl('/img/filter-popup.svg');
+  const darkSrc = useBaseUrl('/img/filter-popup.svg');
 
 return (
 
