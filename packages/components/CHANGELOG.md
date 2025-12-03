@@ -1,3 +1,13 @@
+## 15.2.17 (2025-12-03)
+
+### 🩹 Fixes
+
+- **components, calendar:** remove custom todays date comparison ([23e9126bab](https://github.com/migrationsverket/midas/commit/23e9126bab))
+
+### 🏭 Refactoring
+
+- **components, calendar:** sync Calendar and RangeCalendar implementations ([3b397f99ae](https://github.com/migrationsverket/midas/commit/3b397f99ae))
+
 ## 15.2.16 (2025-12-01)
 
 ### 🧱 Updated Dependencies
