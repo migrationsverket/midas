@@ -28,7 +28,6 @@ export const Calendar: React.FC<CalendarProps> = ({
       <CalendarHeader {...rest} />
       <CalendarGrid {...rest} />
     </AriaCalendar>
-
     <FieldError isInvalid={rest.isInvalid}>{errorMessage}</FieldError>
   </div>
 )
