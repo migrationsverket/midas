@@ -5,7 +5,6 @@ import {
   CalendarGridProps as AriaCalendarGridProps,
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
-import { getLocalTimeZone, isToday } from '@internationalized/date'
 import styles from './Calendar.module.css'
 
 export interface CalendarGridProps {
@@ -23,11 +22,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
     {date => (
       <CalendarCell
         date={date}
-        className={clsx(
-          styles.day,
-          isToday(date, getLocalTimeZone()) && styles.today,
-          isRange && styles.range,
-        )}
+        className={clsx(styles.day, isRange && styles.range)}
         data-readonly={isReadOnly || undefined}
       />
     )}

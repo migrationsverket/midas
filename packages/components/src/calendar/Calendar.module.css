@@ -219,7 +219,7 @@
     cursor: not-allowed;
   }
 
-  &.today {
+  &[data-today] {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
