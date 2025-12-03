@@ -36,8 +36,8 @@
   "exports": {
     ".": "./index.js",
     "./default.css": "./assets/default.css",
-    "./*": "./*",
-    "./*/index.js": "./*/index.js"
+    "./*/index.js": "./*/index.js",
+    "./*": "./*/index.js"
   },
   "dependencies": {
     "@midas-ds/theme": "3.5.0",
