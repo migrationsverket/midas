@@ -57,13 +57,13 @@ export default defineConfig({
         format: 'es',
         manualChunks: (id) => {
           if (id.includes('node_modules/react-aria-components')) {
-            return 'chunks/react-aria-components'
+            return 'react-aria-components'
           }
           if (id.includes('node_modules/@internationalized')) {
-            return 'chunks/internationalized'
+            return 'internationalized'
           }
           if (id.includes('node_modules/react-stately')) {
-            return 'chunks/react-stately'
+            return 'react-stately'
           }
         },
       },
