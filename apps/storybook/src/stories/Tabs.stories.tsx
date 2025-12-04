@@ -36,6 +36,7 @@ export default {
   tags: ['autodocs'],
   args: {
     orientation: 'horizontal',
+    variant: 'uncontained',
   },
   render: args => (
     <Tabs {...args}>
@@ -63,6 +64,12 @@ export default {
 } satisfies Meta<typeof Tabs>
 
 export const Primary: Story = {}
+
+export const Contained: Story = {
+  args: {
+    variant: 'contained',
+  },
+}
 
 export const Vertical: Story = {
   args: {
