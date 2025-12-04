@@ -15,10 +15,10 @@
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
   "version": "15.2.17",
-  "main": "./index.cjs",
   "module": "./index.js",
-  "types": "./index.d.ts",
   "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "files": [
     "./"
   ],
@@ -35,13 +35,10 @@
     "react-dom": "^18.3.1 || ^19.0.0"
   },
   "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
-    },
-    "./default.css": {
-      "import": "./assets/default.css"
-    }
+    ".": "./index.js",
+    "./default.css": "./assets/default.css",
+    "./*/index.js": "./*/index.js",
+    "./*": "./*/index.js"
   },
   "dependencies": {
     "@midas-ds/theme": "3.5.0",

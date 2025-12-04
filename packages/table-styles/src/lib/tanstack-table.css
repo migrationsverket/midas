@@ -35,3 +35,28 @@
 .midas-tanstack-table tbody tr:nth-child(even):hover {
   background-color: var(--midas-layer-01-hover);
 }
+
+/* Sorting styles */
+.midas-tanstack-table .sortable-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.midas-tanstack-table .sort-icon-neutral {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.midas-tanstack-table .sortable-header:hover .sort-icon-neutral {
+  opacity: 1;
+}
+
+/* Drag and drop styles */
+.midas-tanstack-table .drag-handle {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.midas-tanstack-table th:hover .drag-handle {
+  opacity: 1;
+}

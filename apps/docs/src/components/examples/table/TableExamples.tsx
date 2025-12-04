@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Selection } from 'react-aria-components'
+import type { Selection, SortDescriptor } from 'react-aria-components'
 import {
   Cell,
   Column,
@@ -95,5 +95,59 @@ export const ControlledExample: React.FC<TableProps> = props => {
       />
       Valda rader: {Array.from(selectedKeys).join(', ')}
     </>
+  )
+}
+
+export const SortingExample: React.FC<TableProps> = props => {
+  const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
+    column: 'name',
+    direction: 'ascending',
+  })
+
+  const sortedRows = [...rows].sort((a, b) => {
+    const first = a[sortDescriptor.column as keyof typeof a]
+    const second = b[sortDescriptor.column as keyof typeof b]
+    let cmp = 0
+
+    if (typeof first === 'string' && typeof second === 'string') {
+      cmp = first.localeCompare(second)
+    } else if (typeof first === 'number' && typeof second === 'number') {
+      cmp = first - second
+    }
+
+    if (sortDescriptor.direction === 'descending') {
+      cmp *= -1
+    }
+
+    return cmp
+  })
+
+  return (
+    <div className='card'>
+      <Table
+        aria-label='Fruit'
+        sortDescriptor={sortDescriptor}
+        onSortChange={setSortDescriptor}
+        {...props}
+      >
+        <TableHeader columns={columns}>
+          {column => (
+            <Column
+              isRowHeader={column.isRowHeader}
+              allowsSorting
+            >
+              {column.name}
+            </Column>
+          )}
+        </TableHeader>
+        <TableBody items={sortedRows}>
+          {item => (
+            <Row columns={columns}>
+              {column => <Cell>{item[column.id]}</Cell>}
+            </Row>
+          )}
+        </TableBody>
+      </Table>
+    </div>
   )
 }

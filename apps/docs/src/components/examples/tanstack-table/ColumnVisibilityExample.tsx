@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   ColumnDef,
   getCoreRowModel,
   useReactTable,
   flexRender,
-} from '@tanstack/react-table';
-import { Checkbox, Popover, Button, DialogTrigger } from '@midas-ds/components';
-import { Settings } from 'lucide-react';
-import { Person, mockPersonData } from './mockData';
-import '@midas-ds/table-styles/lib/tanstack-table.css';
+} from '@tanstack/react-table'
+import { Checkbox, Popover, Button, DialogTrigger } from '@midas-ds/components'
+import { Settings } from 'lucide-react'
+import { Person, mockPersonData } from '../mockData'
+import '@midas-ds/table-styles/lib/tanstack-table.css'
 
 const columns: ColumnDef<Person>[] = [
   {
@@ -35,10 +35,10 @@ const columns: ColumnDef<Person>[] = [
     accessorKey: 'status',
     header: 'Status',
   },
-];
+]
 
 export function ColumnVisibilityExample() {
-  const [columnVisibility, setColumnVisibility] = useState({});
+  const [columnVisibility, setColumnVisibility] = useState({})
 
   const table = useReactTable({
     data: mockPersonData,
@@ -48,16 +48,16 @@ export function ColumnVisibilityExample() {
       columnVisibility,
     },
     onColumnVisibilityChange: setColumnVisibility,
-  });
+  })
 
   return (
     <div>
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-        {table.getAllLeafColumns().map((column) => (
+        {table.getAllLeafColumns().map(column => (
           <Checkbox
             key={column.id}
             isSelected={column.getIsVisible()}
-            onChange={(isSelected) => column.toggleVisibility(isSelected)}
+            onChange={isSelected => column.toggleVisibility(isSelected)}
           >
             {typeof column.columnDef.header === 'string'
               ? column.columnDef.header
@@ -70,21 +70,20 @@ export function ColumnVisibilityExample() {
           display: 'flex',
           marginBottom: '1rem',
         }}
-      >
-      </div>
+      ></div>
 
       <div style={{ width: '100%', overflowX: 'auto' }}>
-        <table className="midas-tanstack-table">
+        <table className='midas-tanstack-table'>
           <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
+            {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
+                {headerGroup.headers.map(header => (
                   <th key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </th>
                 ))}
@@ -92,9 +91,9 @@ export function ColumnVisibilityExample() {
             ))}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((row) => (
+            {table.getRowModel().rows.map(row => (
               <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => (
+                {row.getVisibleCells().map(cell => (
                   <td key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
@@ -103,9 +102,10 @@ export function ColumnVisibilityExample() {
             ))}
           </tbody>
         </table>
-        <div style={{display: 'flex', alignItems: 'center'}}>Kolumnsynlighet kan också läggas i en popover:
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          Kolumnsynlighet kan också läggas i en popover:
           <DialogTrigger>
-            <Button variant="icon">
+            <Button variant='icon'>
               <Settings />
             </Button>
             <Popover>
@@ -117,11 +117,11 @@ export function ColumnVisibilityExample() {
                 }}
               >
                 <strong>Visa kolumner:</strong>
-                {table.getAllLeafColumns().map((column) => (
+                {table.getAllLeafColumns().map(column => (
                   <Checkbox
                     key={column.id}
                     isSelected={column.getIsVisible()}
-                    onChange={(isSelected) => column.toggleVisibility(isSelected)}
+                    onChange={isSelected => column.toggleVisibility(isSelected)}
                   >
                     {typeof column.columnDef.header === 'string'
                       ? column.columnDef.header
@@ -134,5 +134,5 @@ export function ColumnVisibilityExample() {
         </div>
       </div>
     </div>
-  );
+  )
 }
