@@ -4,7 +4,7 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Thu, 04 Dec 2025 08:50:33 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Dec 2025 09:32:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Release 11.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/11.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/11.0.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[🚀 Features]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/11.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features" translate="no">​</a></h2>
 <ul>
@@ -47,7 +47,7 @@
             <title><![CDATA[Release 12.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/12.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/12.0.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.]]></description>
             <content:encoded><![CDATA[<p>I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
 Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
@@ -94,7 +94,7 @@ våra komponenter. Läs vidare för att få veta mer om vad som är nytt i versi
             <title><![CDATA[Release 12.1.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/12.1.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/12.1.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.]]></description>
             <content:encoded><![CDATA[<p>En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.</p>
 <p>Vårt fokus har den senaste tiden legat kring våra designtokens och dess struktur, vi kommer att behöva stöka lite till innan vi är helt nöjda.
@@ -127,7 +127,7 @@ Vi påbörjar en utfasning av variablen <code scope="[object Object]">semantic</
             <title><![CDATA[Release 13.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/13.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/13.0.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
 göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.</p>
@@ -182,7 +182,7 @@ avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
             <title><![CDATA[Release 14.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/14.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/14.0.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
@@ -241,7 +241,7 @@ avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
             <title><![CDATA[Release 15.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.0.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ny-select-komponent">🚀 Ny select-komponent<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.0.0/#-ny-select-komponent" class="hash-link" aria-label="Direktlänk till 🚀 Ny select-komponent" title="Direktlänk till 🚀 Ny select-komponent" translate="no">​</a></h2>
@@ -318,7 +318,7 @@ Om du inte har möjlighet att uppdatera din implementation just nu, kan du forts
             <title><![CDATA[Release 15.2.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.2.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.2.0/</guid>
-            <pubDate>Thu, 04 Dec 2025 08:50:33 GMT</pubDate>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.2.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
@@ -341,6 +341,46 @@ Om du inte har möjlighet att uppdatera din implementation just nu, kan du forts
 <ul>
 <li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.2.0" target="_blank" rel="noopener noreferrer" class="">components@v15.2.0</a></li>
 <li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.2.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.2.0</a></li>
+</ul>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v15</category>
+        </item>
+        <item>
+            <title><![CDATA[Release 15.3.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.3.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.3.0/</guid>
+            <pubDate>Thu, 04 Dec 2025 09:32:13 GMT</pubDate>
+            <description><![CDATA[I den här releasen har vi gjort stora förbättringar av byggstrukturen som ger mindre bundle-storlekar och bättre prestanda. Du kan nu välja att importera enskilda komponenter för ännu mindre bundles. Vi har också lagt till nya typografitokens och förbättrat ett antal komponenter.]]></description>
+            <content:encoded><![CDATA[<p>I den här releasen har vi gjort stora förbättringar av byggstrukturen som ger mindre bundle-storlekar och bättre prestanda. Du kan nu välja att importera enskilda komponenter för ännu mindre bundles. Vi har också lagt till nya typografitokens och förbättrat ett antal komponenter.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.3.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Två nya typografitokens, <code scope="[object Object]">body</code> och <code scope="[object Object]">body-small</code>, gör det enklare att styla brödtext konsekvent.</li>
+<li><strong>theme:</strong> Nu kan du generera Tailwind-tema direkt från Midas tokens för smidig integration med Tailwind CSS.</li>
+<li><strong>theme:</strong> En ny <code scope="[object Object]">orange-100</code> färg finns tillgänglig i färgpaletten.</li>
+<li><strong>tabs:</strong> Tabs kan nu renderas i en <code scope="[object Object]">contained</code> stil för tydligare avgränsning.</li>
+<li><strong>layout:</strong> Sidebaren ligger nu på en högre z-index så den inte täcks av annat innehåll.</li>
+<li><strong>table:</strong> Sorteringsikonerna i tabeller har fått rätt visuella ikoner och reagerar nu snyggare på hover.</li>
+<li><strong>table-styles:</strong> Hover-effekter och transitions för sorterings- och drag-and-drop-ikoner i tabeller.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.3.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>calendar:</strong> Datumcellerna i kalendern är nu perfekt centrerade vertikalt.</li>
+<li><strong>calendar:</strong> Förenklad implementation för att markera dagens datum.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactor">🔧 Refactor<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/15.3.0/#-refactor" class="hash-link" aria-label="Direktlänk till 🔧 Refactor" title="Direktlänk till 🔧 Refactor" translate="no">​</a></h2>
+<ul>
+<li><strong>components:</strong> Helt omgjord byggstruktur med stöd för tree-shaking och flera importsätt. Du kan nu välja att importera allt (<code scope="[object Object]">import { Button } from '@midas-ds/components'</code>) eller enskilda komponenter (<code scope="[object Object]">import { Button } from '@midas-ds/components/button'</code>) för mindre bundles.</li>
+<li><strong>calendar:</strong> Calendar och RangeCalendar delar nu samma implementation för mer konsekvent beteende.</li>
+<li><strong>theme:</strong> Bättre exporthantering med fallbacks för ökad kompatibilitet med olika bundlers.</li>
+<li><strong>theme:</strong> Subtila färgjusteringar för borders och varningar.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.3.0" target="_blank" rel="noopener noreferrer" class="">components@v15.3.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.6.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.6.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/table-styles@v1.1.0" target="_blank" rel="noopener noreferrer" class="">table-styles@v1.1.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.2.6" target="_blank" rel="noopener noreferrer" class="">datepicker-styles@v0.2.6</a></li>
 </ul>]]></content:encoded>
             <category>release-notes</category>
             <category>v15</category>
@@ -638,20 +678,6 @@ Läs mer om egenskapen under vår <a class="" href="https://designsystem.migrati
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag class-name" style="color:#116329">Select</span><span class="token tag" style="color:#165F27"> </span><span class="token tag attr-name" style="color:#0550AE">selectionMode</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">'</span><span class="token tag attr-value" style="color:#C6105F">multiple</span><span class="token tag attr-value punctuation" style="color:#393A34">'</span><span class="token tag" style="color:#165F27"> </span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><br></span></code></pre></div></div>
 <p>Se mer information om <a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-965/components/select/">hur du använder Select</a></p>
 <p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v4.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Release 3.0.0]]></title>
-            <link>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/3.0.0/</link>
-            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/3.0.0/</guid>
-            <pubDate>Fri, 28 Feb 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[{/ truncate /}]]></description>
-            <content:encoded><![CDATA[
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="migrera-från-2xx-till-300">Migrera från 2.x.x till 3.0.0<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/3.0.0/#migrera-fr%C3%A5n-2xx-till-300" class="hash-link" aria-label="Direktlänk till Migrera från 2.x.x till 3.0.0" title="Direktlänk till Migrera från 2.x.x till 3.0.0" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="searchfield">SearchField<a href="https://designsystem.migrationsverket.se/pr-preview/pr-965/release-notes/3.0.0/#searchfield" class="hash-link" aria-label="Direktlänk till SearchField" title="Direktlänk till SearchField" translate="no">​</a></h3>
-<p><code scope="[object Object]">SearchField</code> stödjer inte längre <code scope="[object Object]">isRequired</code>. Beteendet kan efterliknas med hjälp av <code scope="[object Object]">validate</code></p>
-<div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#CD3B49">&lt;</span><span class="token maybe-class-name">SearchField</span><span class="token plain"> validate</span><span class="token operator" style="color:#CD3B49">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain">v </span><span class="token arrow operator" style="color:#CD3B49">=&gt;</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">!</span><span class="token operator" style="color:#CD3B49">!</span><span class="token plain">v</span><span class="token punctuation" style="color:#393A34">.</span><span class="token property-access">length</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">||</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'Var god ange åtminstone ett tecken'</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">/</span><span class="token operator" style="color:#CD3B49">&gt;</span><br></span></code></pre></div></div>
-<p>Se mer information om <a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-965/components/search-field/">hur du använder SearchField</a></p>
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v3.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
