@@ -3,7 +3,7 @@ title: Tanstack Table
 description: Implementation av Tanstack Table
 ---
 
-import { FilteringExample, ColumnVisibilityExample } from '@site/src/components/examples'
+import { FilteringExample, ColumnVisibilityExample, ColumnDndExample, SortingExample } from '@site/src/components/examples'
 
 # Tanstack Table
 
@@ -110,6 +110,25 @@ Här är några resurser som hjälper dig att komma igång med TanStack Table:
 
 ## Exempel
 
+### Sortering
+
+Tanstack Table har inbyggt stöd för sortering med `getSortedRowModel`. Klicka på kolumnrubrikerna för att sortera tabellen.
+
+<SortingExample />
+
+I detta exempel används:
+
+- `sorting` state för att hålla reda på vilka kolumner som är sorterade och i vilken riktning
+- `getSortedRowModel()` för att hantera sorteringen
+- `column.getToggleSortingHandler()` för att växla sorteringsriktning vid klick
+- `column.getIsSorted()` för att visa rätt sorteringsikon
+- `ArrowUp`, `ArrowDown`, och `ArrowUpDown` från `lucide-react` som sorteringsindikatorer
+- Klasserna `sortable-header` och `sort-icon-neutral` för att få rätt hover-beteende
+
+**Viktigt att notera:** Sorteringsikonen (`ArrowUpDown`) är dold som standard och visas automatiskt vid hover tack vare stilarna i `tanstack-table.css`. När en kolumn är sorterad visas `ArrowUp` eller `ArrowDown` istället.
+
+Läs mer om sortering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/sorting).
+
 ### Filtrering
 
 Tanstack Table har inbyggt stöd för filtrering med `getFilteredRowModel`. Du kan använda alla standardformulärkomponenter från Midas för att skapa filterkontrollen.
@@ -151,3 +170,29 @@ I detta exempel används:
 - `column.getToggleVisibilityHandler()` för att växla synlighet
 
 Läs mer om kolumnsynlighet i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/column-visibility).
+
+### Drag and Drop-kolumner
+
+Med hjälp av `@dnd-kit` kan du låta användare ordna om kolumner genom att dra och släppa dem. Detta ger en intuitiv och användarvänlig upplevelse för att anpassa tabellens layout.
+
+Först, installera de nödvändiga beroendena:
+
+```bash
+npm install @dnd-kit/core @dnd-kit/sortable @dnd-kit/utilities @dnd-kit/modifiers
+```
+
+<ColumnDndExample />
+
+I detta exempel används:
+
+- `columnOrder` state för att hålla reda på ordningen av kolumnerna
+- `DndContext` för att hantera drag and drop-funktionalitet
+- `SortableContext` för att göra kolumner sorterbara
+- `useSortable` hook för att göra individuella kolumner draggbara
+- `arrayMove` från `@dnd-kit/sortable` för att ordna om kolumnerna
+- `GripVertical` från `lucide-react` som drag-ikon som visas vid hover
+- Klassen `drag-handle` för att få rätt hover-beteende
+
+**Viktigt att notera:** Drag-ikonen är dold som standard och visas automatiskt vid hover över kolumnrubriken tack vare stilarna i `tanstack-table.css`.
+
+Läs mer om column ordering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/column-ordering).

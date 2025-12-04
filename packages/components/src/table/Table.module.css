@@ -21,6 +21,28 @@
         outline-offset: -4px;
       }
 
+      &[data-allows-sorting] {
+        cursor: pointer;
+        user-select: none;
+
+        .sortIndicator {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: var(--midas-size-20);
+          vertical-align: text-bottom;
+        }
+
+        .sortIconNeutral {
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+        }
+
+        &:hover .sortIconNeutral {
+          opacity: 0.5;
+        }
+      }
+
       .selection {
         height: 18px;
       }
