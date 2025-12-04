@@ -1,3 +1,30 @@
+## 15.3.0 (2025-12-04)
+
+### 🚀 Features
+
+- **components, tabs:** add contained style ([805b8a56e0](https://github.com/migrationsverket/midas/commit/805b8a56e0))
+- **components, layout:** increase z-index of sidebar ([b80b17af56](https://github.com/migrationsverket/midas/commit/b80b17af56))
+- **components, table:** lower sort button opacity on hover ([75ada7c4c8](https://github.com/migrationsverket/midas/commit/75ada7c4c8))
+- **components, table:** set correct icons for sorting ([b35ef9a7c3](https://github.com/migrationsverket/midas/commit/b35ef9a7c3))
+
+### 🩹 Fixes
+
+- **components, calendar:** align date vertically using flex ([f7627207a5](https://github.com/migrationsverket/midas/commit/f7627207a5))
+
+### 🏭 Refactoring
+
+- **components:** put the aria chunks with the other chunks ([dd51d8169c](https://github.com/migrationsverket/midas/commit/dd51d8169c))
+- **components:** optimize build structure ([b67a7734e2](https://github.com/migrationsverket/midas/commit/b67a7734e2))
+
+### 🔧 Maintenance
+
+- remove duplicates in package.json ([d86447f0b0](https://github.com/migrationsverket/midas/commit/d86447f0b0))
+- fix imports from individual components ([8439fc47d4](https://github.com/migrationsverket/midas/commit/8439fc47d4))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.6.0
+
 ## 15.2.17 (2025-12-03)
 
 ### 🩹 Fixes

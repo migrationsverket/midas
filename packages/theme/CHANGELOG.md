@@ -1,3 +1,10 @@
+## 3.6.0 (2025-12-04)
+
+### 🚀 Features
+
+- **theme:** add z-index for layout sidebar ([d2055d5a3b](https://github.com/migrationsverket/midas/commit/d2055d5a3b))
+- **theme:** change color of border-color-subtle ([2c5ee1bfe3](https://github.com/migrationsverket/midas/commit/2c5ee1bfe3))
+
 ## 3.5.0 (2025-12-01)
 
 ### 🚀 Features
