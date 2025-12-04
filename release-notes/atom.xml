@@ -2,260 +2,93 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/release-notes/</id>
     <title>Migrationsverkets designsystem Blog</title>
-    <updated>2025-12-03T13:09:53.000Z</updated>
+    <updated>2025-12-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/release-notes/"/>
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
     <icon>https://designsystem.migrationsverket.se/img/favicon.ico?v=3</icon>
     <entry>
-        <title type="html"><![CDATA[Release 11.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/11.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/11.0.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
-        <summary type="html"><![CDATA[🚀 Features]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features" translate="no">​</a></h2>
+        <title type="html"><![CDATA[Release 15.3.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/15.3.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/15.3.0/"/>
+        <updated>2025-12-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I den här releasen har vi gjort stora förbättringar av byggstrukturen som ger mindre bundle-storlekar och bättre prestanda. Du kan nu välja att importera enskilda komponenter för ännu mindre bundles. Vi har också lagt till nya typografitokens och förbättrat ett antal komponenter.]]></summary>
+        <content type="html"><![CDATA[<p>I den här releasen har vi gjort stora förbättringar av byggstrukturen som ger mindre bundle-storlekar och bättre prestanda. Du kan nu välja att importera enskilda komponenter för ännu mindre bundles. Vi har också lagt till nya typografitokens och förbättrat ett antal komponenter.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/15.3.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
 <ul>
-<li><strong>file-upload:</strong> Komponenten <code scope="[object Object]">FileUpload</code> är borttagen och ersatt av <code scope="[object Object]">FileTrigger</code> från React Aria. Detta innebär att API<!-- -->:et<!-- --> för komponenten nu är i linje med React Aria. Se dokumentationen för mer information om hur du använder den nya komponenten.</li>
-<li><strong>theme:</strong> Nya tokens för <code scope="[object Object]">badge-background</code> har lagts till.</li>
+<li><strong>theme:</strong> Två nya typografitokens, <code scope="[object Object]">body</code> och <code scope="[object Object]">body-small</code>, gör det enklare att styla brödtext konsekvent.</li>
+<li><strong>theme:</strong> Nu kan du generera Tailwind-tema direkt från Midas tokens för smidig integration med Tailwind CSS.</li>
+<li><strong>theme:</strong> En ny <code scope="[object Object]">orange-100</code> färg finns tillgänglig i färgpaletten.</li>
+<li><strong>tabs:</strong> Tabs kan nu renderas i en <code scope="[object Object]">contained</code> stil för tydligare avgränsning.</li>
+<li><strong>layout:</strong> Sidebaren ligger nu på en högre z-index så den inte täcks av annat innehåll.</li>
+<li><strong>table:</strong> Sorteringsikonerna i tabeller har fått rätt visuella ikoner och reagerar nu snyggare på hover.</li>
+<li><strong>table-styles:</strong> Hover-effekter och transitions för sorterings- och drag-and-drop-ikoner i tabeller.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/15.3.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
 <ul>
-<li><strong>link:</strong> En bugg har fixats som gjorde att länkar med <code scope="[object Object]">target='_blank'</code> inte öppnades i ett nytt fönster.</li>
-<li><strong>popover:</strong> En bugg har fixats som gjorde att långa strängar kunde flöda över i en popover.</li>
-<li><strong>theme:</strong> Färger för "danger button" i dark mode har justerats.</li>
+<li><strong>calendar:</strong> Datumcellerna i kalendern är nu perfekt centrerade vertikalt.</li>
+<li><strong>calendar:</strong> Förenklad implementation för att markera dagens datum.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactor">🔧 Refactor<a href="https://designsystem.migrationsverket.se/release-notes/15.3.0/#-refactor" class="hash-link" aria-label="Direktlänk till 🔧 Refactor" title="Direktlänk till 🔧 Refactor" translate="no">​</a></h2>
 <ul>
-<li>Ett felaktigt <code scope="[object Object]">tsx</code>-exempel har korrigerats.</li>
+<li><strong>components:</strong> Helt omgjord byggstruktur med stöd för tree-shaking och flera importsätt. Du kan nu välja att importera allt (<code scope="[object Object]">import { Button } from '@midas-ds/components'</code>) eller enskilda komponenter (<code scope="[object Object]">import { Button } from '@midas-ds/components/button'</code>) för mindre bundles.</li>
+<li><strong>calendar:</strong> Calendar och RangeCalendar delar nu samma implementation för mer konsekvent beteende.</li>
+<li><strong>theme:</strong> Bättre exporthantering med fallbacks för ökad kompatibilitet med olika bundlers.</li>
+<li><strong>theme:</strong> Subtila färgjusteringar för borders och varningar.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance" translate="no">​</a></h2>
-<ul>
-<li>Beroenden har uppdaterats.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes" translate="no">​</a></h2>
-<ul>
-<li><strong>file-upload:</strong> Komponenten <code scope="[object Object]">FileUpload</code> är borttagen och ersatt av <code scope="[object Object]">FileTrigger</code>. Detta är en "breaking change" och kräver att du uppdaterar din kod. Se dokumentationen för <code scope="[object Object]">file-upload</code> för mer information.</li>
-</ul>
-<!-- -->
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v10.4.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
-        <author>
-            <name>Midas</name>
-        </author>
-        <category label="release-notes" term="release-notes"/>
-        <category label="v11" term="v11"/>
-        <category label="breaking-change" term="breaking-change"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Release 12.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/12.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/12.0.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
-        <summary type="html"><![CDATA[I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.]]></summary>
-        <content type="html"><![CDATA[<p>I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
-Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
-våra komponenter. Läs vidare för att få veta mer om vad som är nytt i version 12.0.0.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner-och-förbättringar">🚀 Nya funktioner och förbättringar<a href="https://designsystem.migrationsverket.se/release-notes/12.0.0/#-nya-funktioner-och-f%C3%B6rb%C3%A4ttringar" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner och förbättringar" title="Direktlänk till 🚀 Nya funktioner och förbättringar" translate="no">​</a></h2>
-<p>Vi har lagt till flera nya funktioner för att göra våra komponenter mer flexibla och kraftfulla. Du kan nu:</p>
-<ul>
-<li><strong>Använda fler statusar i <code scope="[object Object]">Accordion</code>:</strong> Vi har lagt till möjligheten att visa fler statusar i vår <code scope="[object Object]">Accordion</code>-komponent, vilket ger dig mer flexibilitet att kommunicera olika tillstånd till dina användare.</li>
-<li><strong>Anpassa ikoner i <code scope="[object Object]">Dropdown</code>:</strong> Du kan nu lägga till anpassade ikoner i vår <code scope="[object Object]">Dropdown</code>-komponent, vilket gör det enklare att skapa ett konsekvent och visuellt tilltalande gränssnitt.</li>
-<li><strong>Kontrollera tillståndet i <code scope="[object Object]">InfoBanner</code>:</strong> Vi har infört ett kontrollerat tillstånd för vår <code scope="[object Object]">InfoBanner</code>-komponent, vilket ger dig mer kontroll över när och hur den visas.</li>
-<li><strong>Virtualiserad tabell:</strong> Vi har lagt till ett recept för en virtualiserad tabell, vilket gör det möjligt att visa större datamängder utan att kompromissa med prestandan.</li>
-<li><strong>Exportera tokens som CS:</strong> Vi har implementerat export av våra tokens som CSS vilket gör det enklare att anpassa utseendet på dina komponenter och säkerställa att din CSS är giltig.</li>
-<li><strong>Titel i <code scope="[object Object]">Modal</code>:</strong> Vi har flyttat titeln i vår <code scope="[object Object]">Modal</code>-komponent till sidhuvudet och ändrat den till en <code scope="[object Object]">h2</code>-rubrik. Vi har också tagit bort marginalen och centrerat den vertikalt för att skapa en mer balanserad och visuellt tilltalande design.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/12.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes" translate="no">​</a></h2>
-<p>Den här versionen innehåller några viktiga ändringar som kan kräva att du uppdaterar din kod. Vi har gjort dessa ändringar för att förbättra den övergripande kvaliteten och konsekvensen i vårt komponentbibliotek.</p>
-<ul>
-<li><strong>Borttagning av funktioner som varit deprecated:</strong> Vi har tagit bort ett antal funktioner, props och typer som tidigare har varit markerade som deprecated. Detta är en del av vårt kontinuerliga arbete med att hålla vårt API rent och konsekvent. De borttagna funktionerna är:<!-- -->
-<ul>
-<li><code scope="[object Object]">BreadcrumbProps</code> (använd <code scope="[object Object]">BreadcrumbsProps</code> istället)</li>
-<li><code scope="[object Object]">ComboBoxSelection</code> (använd <code scope="[object Object]">ComboBoxSection</code> istället)</li>
-<li><code scope="[object Object]">Item</code> och <code scope="[object Object]">Section</code> från <code scope="[object Object]">combobox/types.ts</code> (använd <code scope="[object Object]">ListBoxItemElement</code> och <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
-<li><code scope="[object Object]">Flex</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">Grid</code> istället)</li>
-<li><code scope="[object Object]">fluid</code> från <code scope="[object Object]">GridProps</code> (använd <code scope="[object Object]">isContained</code> istället)</li>
-<li><code scope="[object Object]">FlexItem</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">GridItem</code> istället)</li>
-<li><code scope="[object Object]">col</code> från <code scope="[object Object]">GridItemProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
-<li><code scope="[object Object]">dismissable</code> från <code scope="[object Object]">InfoBannerProps</code> (använd <code scope="[object Object]">isDismissable</code> istället)</li>
-<li><code scope="[object Object]">narrow</code> från <code scope="[object Object]">TableProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
-<li><code scope="[object Object]">tabs</code> och <code scope="[object Object]">label</code> från <code scope="[object Object]">TabsProps</code> (använd det deklarativa API<!-- -->:et<!-- --> med <code scope="[object Object]">TabList</code> och <code scope="[object Object]">TabPanel</code> istället)</li>
-<li><code scope="[object Object]">Option</code>, <code scope="[object Object]">OptionItem</code>, <code scope="[object Object]">OptionSection</code> från <code scope="[object Object]">select/types.ts</code> (använd <code scope="[object Object]">ListBoxOption</code>, <code scope="[object Object]">ListBoxItemElement</code>, <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
-<li><code scope="[object Object]">fieldSkeleton</code> och <code scope="[object Object]">buttonBackgroundSkeleton</code> från <code scope="[object Object]">theme/tokens.ts</code> (använd <code scope="[object Object]">skeleton01</code> istället)</li>
-</ul>
-</li>
-<li><strong>Ändrade ikoner för FeedbackStatus:</strong> Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder <code scope="[object Object]">type</code> (<code scope="[object Object]">'success'|'info'|'warning'|'important'</code>) kommer strängen <code scope="[object Object]">default</code> inte längre att vara tillgänglig.</li>
-</ul>
-<p>Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.</p>
-<!-- -->
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v12.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
-        <author>
-            <name>Midas</name>
-        </author>
-        <category label="release-notes" term="release-notes"/>
-        <category label="v12" term="v12"/>
-        <category label="breaking-change" term="breaking-change"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Release 12.1.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/12.1.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/12.1.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
-        <summary type="html"><![CDATA[En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.]]></summary>
-        <content type="html"><![CDATA[<p>En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.</p>
-<p>Vårt fokus har den senaste tiden legat kring våra designtokens och dess struktur, vi kommer att behöva stöka lite till innan vi är helt nöjda.
-Vi ber om ursäkt för röran men vi hoppas kunna leverera ett mer förutsägbart, konsekvent och anpassningsbart komponentbibliotek.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tokens">Tokens<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#tokens" class="hash-link" aria-label="Direktlänk till Tokens" title="Direktlänk till Tokens" translate="no">​</a></h3>
-<p>Under huven hanterar Midas designtokens med ett nytt verktyg vilket har medfört vissa ändringar i namngivningen av våra variabler.
-Vi påbörjar en utfasning av variablen <code scope="[object Object]">semantic</code> och <code scope="[object Object]">theme.css</code> och hänvisar er istället att använda variablen <code scope="[object Object]">variables</code> och <code scope="[object Object]">variables.css</code>.</p>
-<p>Läs mer under <a class="" href="https://designsystem.migrationsverket.se/basics/tokens/">artikeln för Tokens</a>, och notera att artikeln för Färger är utdaterad.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="combobox">ComboBox<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#combobox" class="hash-link" aria-label="Direktlänk till ComboBox" title="Direktlänk till ComboBox" translate="no">​</a></h3>
-<p>ComboBox stödjer numer asynkron laddning, se <a class="" href="https://designsystem.migrationsverket.se/components/combobox/#asynkron-laddning">dokumentationen för ComboBox</a> för detaljer hur du implementerar detta.</p>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="menu">Menu<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#menu" class="hash-link" aria-label="Direktlänk till Menu" title="Direktlänk till Menu" translate="no">​</a></h3>
-<p><a class="" href="https://designsystem.migrationsverket.se/components/menu/">Menu</a> är en ny komponent med ett deklarativt API för kompletterande menyer/kontextmenyer. Vi påbörjar en utfasning av <a class="" href="https://designsystem.migrationsverket.se/components/dropdown/">Dropdown</a> som ersätts av Menu.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
-<p>Vi arbetar kontinuerligt med buggfixar, här är några nämnvärda fixar:</p>
-<ul>
-<li><code scope="[object Object]">Accordion</code> har fått extra marginal för att tydligare visa sin fokusram vid tangentbordsinteraktion (<a href="https://github.com/migrationsverket/midas/pull/780" target="_blank" rel="noopener noreferrer" class="">#780</a>)</li>
-<li><code scope="[object Object]">Badge</code> har fått en ny bakgrundsfärg i mörkt läge för att klara krav på färgkontraster (<a href="https://github.com/migrationsverket/midas/commit/f40f2dad67" target="_blank" rel="noopener noreferrer" class="">f40f2dad67</a>)</li>
-<li><code scope="[object Object]">Layout</code> visar aktivt menyval för appar som använder en annan basepath än <code scope="[object Object]">/</code> (<a href="https://github.com/migrationsverket/midas/commit/4dec0a45ef" target="_blank" rel="noopener noreferrer" class="">4dec0a45ef</a>)</li>
-<li><code scope="[object Object]">ListBox</code> och relaterade komponenter/typer ingår igen i komponentbiblioteket (<a href="https://github.com/migrationsverket/midas/commit/1f06b98610" target="_blank" rel="noopener noreferrer" class="">1f06b98610</a>)</li>
-<li><code scope="[object Object]">TextArea</code>s storlek är nu justerbar (<a href="https://github.com/migrationsverket/midas/commit/6d04e25308" target="_blank" rel="noopener noreferrer" class="">6d04e25308</a>)</li>
-<li><code scope="[object Object]">TextField</code> kallar inte längre på events så som <code scope="[object Object]">onBlur</code> fler gånger än nödvändigt (<a href="https://github.com/migrationsverket/midas/pull/769" target="_blank" rel="noopener noreferrer" class="">#769</a>)</li>
-</ul>
-<!-- -->
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/components@v12.1.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
-        <author>
-            <name>Midas</name>
-        </author>
-        <category label="release-notes" term="release-notes"/>
-        <category label="v12" term="v12"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Release 13.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/13.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/13.0.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
-        <summary type="html"><![CDATA[Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att]]></summary>
-        <content type="html"><![CDATA[<p>Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
-göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
-<p>CSS/Styles är nu tillgängliga från <code scope="[object Object]">import '@midas-ds/components/default.css'</code> eller via <code scope="[object Object]">@midas-ds/theme</code>-paketet. Läs mer
-på <a class="" href="https://designsystem.migrationsverket.se/get-started/install/">instruktioner för att komma igång</a>.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-migrationsguide">⬆️ Migrationsguide<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#%EF%B8%8F-migrationsguide" class="hash-link" aria-label="Direktlänk till ⬆️ Migrationsguide" title="Direktlänk till ⬆️ Migrationsguide" translate="no">​</a></h2>
-<p>För att uppgradera från version 12 till 13 behöver du uppdatera hur du importerar CSS-filerna.</p>
-<p>Tidigare importerades CSS direkt från komponentpaketet. Nu måste du istället importera en global stilmall.</p>
-<p><strong>Gör så här:</strong></p>
-<ol>
-<li>Ta bort alla CSS-importer från <code scope="[object Object]">@midas-ds/components</code> som du har i din applikation.</li>
-<li>Lägg till en ny import i din huvudsakliga <code scope="[object Object]">App</code> komponent eller motsvarande:</li>
-</ol>
-<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/components/default.css'</span><br></span></code></pre></div></div>
-<p>Denna import innehåller allt du behöver för att komma igång.
-Om du istället vill importera olika delar av Midas stilar kan du använda <code scope="[object Object]">@midas-ds/theme</code>:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token function" style="color:#804ce1">npm</span><span class="token plain"> </span><span class="token function" style="color:#804ce1">install</span><span class="token plain"> @midas-ds/theme</span><br></span></code></pre></div></div>
-<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/theme/fonts.css'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/theme/variables.css'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/theme/color-scheme.css'</span><br></span></code></pre></div></div>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
-<ul>
-<li><strong>components:</strong> Ikonfärgen för feedback-status har ändrats till <code scope="[object Object]">--midas-icon-primary</code>.</li>
-<li><strong>theme:</strong> Signal-färgerna har uppdaterats.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
-<ul>
-<li><strong>textfield:</strong> Inbyggda (native) attribut har lagts till för textfield och textarea.</li>
-<li><strong>table:</strong> Korrekt bakgrundsfärg används nu för rader i tabellen.</li>
-<li><strong>layout:</strong> Hash har tagits bort från main role querySelector.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring" translate="no">​</a></h2>
-<ul>
-<li>Temat har helt separerats från komponentprojektet och ligger nu i ett eget paket.</li>
-<li>Style dictionary build-skriptet har refaktorerats till en nx executor.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-support-för-tanstack-table">🐣 Support för Tanstack Table<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-support-f%C3%B6r-tanstack-table" class="hash-link" aria-label="Direktlänk till 🐣 Support för Tanstack Table" title="Direktlänk till 🐣 Support för Tanstack Table" translate="no">​</a></h2>
-<p>Vi introducerar ett nytt paket <code scope="[object Object]">@midas-ds/table-styles</code> för att hjälpa till med styling för utvecklare som använder
-<a href="https://tanstack.com/table/latest" target="_blank" rel="noopener noreferrer" class="">Tanstack Table</a>. Läs mer på <a class="" href="https://designsystem.migrationsverket.se/dev/tanstack-table/">instruktioner för Tanstack Table</a>.
-Det är en css-fil i tidig version som vi hoppas kunna bygga mer på som ett stöd för de utvecklare som vill komma åt mer
-avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
 <!-- -->
 <p>Se alla förändringar i detalj på changelog:</p>
 <ul>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v13.0.0" target="_blank" rel="noopener noreferrer" class="">components@v13.0.0</a></li>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.0.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.0.0</a></li>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/table-styles@v0.0.4" target="_blank" rel="noopener noreferrer" class="">table-styles@v0.0.4</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.3.0" target="_blank" rel="noopener noreferrer" class="">components@v15.3.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.6.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.6.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/table-styles@v1.1.0" target="_blank" rel="noopener noreferrer" class="">table-styles@v1.1.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.2.6" target="_blank" rel="noopener noreferrer" class="">datepicker-styles@v0.2.6</a></li>
 </ul>]]></content>
         <author>
             <name>Midas</name>
         </author>
         <category label="release-notes" term="release-notes"/>
-        <category label="v13" term="v13"/>
+        <category label="v15" term="v15"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Release 14.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/14.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/14.0.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
-        <summary type="html"><![CDATA[Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.]]></summary>
-        <content type="html"><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
-<p>Vi introducerar ett nytt paket, <a href="https://www.npmjs.com/package/@midas-ds/datepicker-styles" target="_blank" rel="noopener noreferrer" class=""><code scope="[object Object]">@midas-ds/datepicker-styles</code></a>, för att hjälpa till med styling av <a href="https://www.npmjs.com/package/react-datepicker" target="_blank" rel="noopener noreferrer" class=""><code scope="[object Object]">react-datepicker</code></a>. Detta är ett renodlat CSS-paket och är i ett tidigt beta-stadie. Vi uppmuntrar er att testa det och ge oss feedback.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
-<p>Vi har gjort en större genomgång av hur våra komponenter presenteras i Windows högkontrastläge (CSS <code scope="[object Object]">forced-colors</code>). Detta innebär att komponenterna nu ska ha ett betydligt bättre utseende och vara mer användbara för personer som använder detta läge.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
+        <title type="html"><![CDATA[Release 15.2.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/15.2.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/15.2.0/"/>
+        <updated>2025-11-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.]]></summary>
+        <content type="html"><![CDATA[<p>Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
 <ul>
-<li><strong>theme:</strong> Vår token för <code scope="[object Object]">transition</code> har bytt namn från <code scope="[object Object]">transitions</code> till <code scope="[object Object]">transition</code> för att vara mer konsekvent.</li>
+<li><strong>theme:</strong> Nya färgtokens för read-only state har lagts till i temat.</li>
+<li><strong>read-only state:</strong> Stöd för read-only state med anpassad styling har lagts till i följande komponenter: <strong>textfield</strong>, <strong>combobox</strong>, <strong>radio</strong>, <strong>checkbox</strong>, <strong>date-field</strong>, <strong>date-picker</strong>, <strong>calendar</strong>, <strong>text</strong> och <strong>label</strong>.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
 <ul>
-<li><strong>theme:</strong> Vi har uppdaterat vårt tema för att följa den nya <a href="https://tr.designtokens.org/format/" target="_blank" rel="noopener noreferrer" class="">Design Token Community Group (DTCG)</a> standarden, vilket gör det enklare att återanvända våra design tokens.</li>
-<li><strong>button:</strong> Knappar har fått ett utökat <code scope="[object Object]">:not</code>-condition för att bättre hantera <code scope="[object Object]">pressed state</code>.</li>
-<li><strong>button:</strong> Vi har förhindrat att bakgrunden på en knapp ändras när den är nedtryckt och har <code scope="[object Object]">aria-expanded</code>, vilket ger en mer konsekvent användarupplevelse.</li>
-<li><strong>heading:</strong> Nu kan du använda en flagga för att styra om en rubrik ska ha inbyggda marginaler eller inte.</li>
-<li><strong>theme:</strong> Vi har lagt till nya variabler för <code scope="[object Object]">spacing</code> för att ge mer flexibilitet i layouten.</li>
-<li><strong>modal:</strong> Det är nu möjligt att dölja stängningsknappen i en modal.</li>
-<li><strong>modal:</strong> Du kan nu skicka med en egen <code scope="[object Object]">className</code> till en modal för att anpassa stilen.</li>
-<li><strong>datepicker-styles:</strong> Vi har skapat ett nytt paket, <code scope="[object Object]">@midas-ds/datepicker-styles</code>, för att enkelt kunna styla <code scope="[object Object]">react-datepicker</code>.</li>
+<li><strong>checkbox:</strong> Korrekt ikon för indeterminate state och refaktorerad styling.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactor">🔧 Refactor<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-refactor" class="hash-link" aria-label="Direktlänk till 🔧 Refactor" title="Direktlänk till 🔧 Refactor" translate="no">​</a></h2>
 <ul>
-<li><strong>core:</strong> Vi har förbättrat hur våra komponenter ser ut i <code scope="[object Object]">forced-colors-mode</code> för bättre tillgänglighet.</li>
-<li><strong>info-banner:</strong> Vi har åtgärdat en bugg som gjorde att <code scope="[object Object]">useEffect</code> kördes två gånger i strict mode.</li>
-<li><strong>theme:</strong> Vi har justerat storleken på <code scope="[object Object]">line-height-100</code> och <code scope="[object Object]">font-size-70</code> för att vara mer konsekventa.</li>
-<li><strong>storybook:</strong> Vi har fixat ett stavfel i en bakgrundsväljare i Storybook.</li>
-<li><strong>core:</strong> Vi har lagt till en <code scope="[object Object]">clsx</code>-wrapper för att bättre hantera klassnamn från React Aria.</li>
-<li><strong>modal:</strong> En modal kan nu hantera <code scope="[object Object]">open</code>-state som en kontrollerad komponent.</li>
-<li><strong>progress-bar:</strong> Skärmläsare kan nu läsa av <code scope="[object Object]">valueLabels</code> för en progress-bar.</li>
-<li><strong>accordion-item:</strong> Vi har löst en bugg som påverkade tangentbordsfokus, animeringar och hover-effekter i <code scope="[object Object]">accordion-item</code>.</li>
-<li><strong>accordion:</strong> Vi har ökat specificiteten i CSS för knappar i ett <code scope="[object Object]">accordion</code> för att undvika stilkonflikter.</li>
-<li><strong>menu:</strong> Vi har exporterat <code scope="[object Object]">MenuTrigger</code> så att den kan användas direkt.</li>
-<li><strong>list-box:</strong> Rubriken i en <code scope="[object Object]">list-box</code>-sektion har nu rätt färg.</li>
-<li><strong>popover:</strong> Vi har justerat storleken på popovers för att de ska se bättre ut.</li>
-<li><strong>theme:</strong> <code scope="[object Object]">README</code>- och <code scope="[object Object]">CHANGELOG</code>-filerna inkluderas nu korrekt i vårt tema-paket.</li>
-<li><strong>popover:</strong> Vi har förhindrat att texten i en popover bryts för tidigt.</li>
-<li><strong>table-styles:</strong> Vi har tagit bort onödiga release-inställningar för <code scope="[object Object]">table-styles</code>.</li>
-<li><strong>table-styles:</strong> Vi har uppdaterat Vite-konfigurationen för <code scope="[object Object]">table-styles</code> för att inkludera <code scope="[object Object]">readme</code> och <code scope="[object Object]">tspaths</code>.</li>
-</ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring" translate="no">​</a></h2>
-<ul>
-<li><strong>theme:</strong> Vi har brutit ut knapp-specifika design tokens från <code scope="[object Object]">object-values.json</code> till en egen fil för bättre struktur.</li>
+<li><strong>textfield:</strong> Data-attribut har flyttats från template till CSS.</li>
+<li><strong>date-field:</strong> Data-attribut har flyttats från template till CSS.</li>
+<li><strong>theme:</strong> Read-only border color token har justerats.</li>
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på changelog:</p>
 <ul>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v14.0.0" target="_blank" rel="noopener noreferrer" class="">components@v14.0.0</a></li>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.1.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.1.0</a></li>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.1.2" target="_blank" rel="noopener noreferrer" class="">datepicker-styles@v0.1.2</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.2.0" target="_blank" rel="noopener noreferrer" class="">components@v15.2.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.2.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.2.0</a></li>
 </ul>]]></content>
         <author>
             <name>Midas</name>
         </author>
         <category label="release-notes" term="release-notes"/>
-        <category label="v14" term="v14"/>
+        <category label="v15" term="v15"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 15.0.0]]></title>
         <id>https://designsystem.migrationsverket.se/release-notes/15.0.0/</id>
         <link href="https://designsystem.migrationsverket.se/release-notes/15.0.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
+        <updated>2025-10-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.]]></summary>
         <content type="html"><![CDATA[<p>Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ny-select-komponent">🚀 Ny select-komponent<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-ny-select-komponent" class="hash-link" aria-label="Direktlänk till 🚀 Ny select-komponent" title="Direktlänk till 🚀 Ny select-komponent" translate="no">​</a></h2>
@@ -332,38 +165,248 @@ Om du inte har möjlighet att uppdatera din implementation just nu, kan du forts
         <category label="v15" term="v15"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Release 15.2.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/15.2.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/15.2.0/"/>
-        <updated>2025-12-03T13:09:53.000Z</updated>
-        <summary type="html"><![CDATA[Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.]]></summary>
-        <content type="html"><![CDATA[<p>Den här releasen innehåller stöd för read-only state i ett stort antal komponenter. Detta gör det lättare att visa formulärfält som är synliga men inte redigerbara, med tydlig visuell indikation.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+        <title type="html"><![CDATA[Release 14.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/14.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/14.0.0/"/>
+        <updated>2025-10-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.]]></summary>
+        <content type="html"><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
+<p>Vi introducerar ett nytt paket, <a href="https://www.npmjs.com/package/@midas-ds/datepicker-styles" target="_blank" rel="noopener noreferrer" class=""><code scope="[object Object]">@midas-ds/datepicker-styles</code></a>, för att hjälpa till med styling av <a href="https://www.npmjs.com/package/react-datepicker" target="_blank" rel="noopener noreferrer" class=""><code scope="[object Object]">react-datepicker</code></a>. Detta är ett renodlat CSS-paket och är i ett tidigt beta-stadie. Vi uppmuntrar er att testa det och ge oss feedback.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
+<p>Vi har gjort en större genomgång av hur våra komponenter presenteras i Windows högkontrastläge (CSS <code scope="[object Object]">forced-colors</code>). Detta innebär att komponenterna nu ska ha ett betydligt bättre utseende och vara mer användbara för personer som använder detta läge.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
 <ul>
-<li><strong>theme:</strong> Nya färgtokens för read-only state har lagts till i temat.</li>
-<li><strong>read-only state:</strong> Stöd för read-only state med anpassad styling har lagts till i följande komponenter: <strong>textfield</strong>, <strong>combobox</strong>, <strong>radio</strong>, <strong>checkbox</strong>, <strong>date-field</strong>, <strong>date-picker</strong>, <strong>calendar</strong>, <strong>text</strong> och <strong>label</strong>.</li>
+<li><strong>theme:</strong> Vår token för <code scope="[object Object]">transition</code> har bytt namn från <code scope="[object Object]">transitions</code> till <code scope="[object Object]">transition</code> för att vara mer konsekvent.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till ���🩹 Fixar" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
 <ul>
-<li><strong>checkbox:</strong> Korrekt ikon för indeterminate state och refaktorerad styling.</li>
+<li><strong>theme:</strong> Vi har uppdaterat vårt tema för att följa den nya <a href="https://tr.designtokens.org/format/" target="_blank" rel="noopener noreferrer" class="">Design Token Community Group (DTCG)</a> standarden, vilket gör det enklare att återanvända våra design tokens.</li>
+<li><strong>button:</strong> Knappar har fått ett utökat <code scope="[object Object]">:not</code>-condition för att bättre hantera <code scope="[object Object]">pressed state</code>.</li>
+<li><strong>button:</strong> Vi har förhindrat att bakgrunden på en knapp ändras när den är nedtryckt och har <code scope="[object Object]">aria-expanded</code>, vilket ger en mer konsekvent användarupplevelse.</li>
+<li><strong>heading:</strong> Nu kan du använda en flagga för att styra om en rubrik ska ha inbyggda marginaler eller inte.</li>
+<li><strong>theme:</strong> Vi har lagt till nya variabler för <code scope="[object Object]">spacing</code> för att ge mer flexibilitet i layouten.</li>
+<li><strong>modal:</strong> Det är nu möjligt att dölja stängningsknappen i en modal.</li>
+<li><strong>modal:</strong> Du kan nu skicka med en egen <code scope="[object Object]">className</code> till en modal för att anpassa stilen.</li>
+<li><strong>datepicker-styles:</strong> Vi har skapat ett nytt paket, <code scope="[object Object]">@midas-ds/datepicker-styles</code>, för att enkelt kunna styla <code scope="[object Object]">react-datepicker</code>.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactor">🔧 Refactor<a href="https://designsystem.migrationsverket.se/release-notes/15.2.0/#-refactor" class="hash-link" aria-label="Direktlänk till 🔧 Refactor" title="Direktlänk till 🔧 Refactor" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
 <ul>
-<li><strong>textfield:</strong> Data-attribut har flyttats från template till CSS.</li>
-<li><strong>date-field:</strong> Data-attribut har flyttats från template till CSS.</li>
-<li><strong>theme:</strong> Read-only border color token har justerats.</li>
+<li><strong>core:</strong> Vi har förbättrat hur våra komponenter ser ut i <code scope="[object Object]">forced-colors-mode</code> för bättre tillgänglighet.</li>
+<li><strong>info-banner:</strong> Vi har åtgärdat en bugg som gjorde att <code scope="[object Object]">useEffect</code> kördes två gånger i strict mode.</li>
+<li><strong>theme:</strong> Vi har justerat storleken på <code scope="[object Object]">line-height-100</code> och <code scope="[object Object]">font-size-70</code> för att vara mer konsekventa.</li>
+<li><strong>storybook:</strong> Vi har fixat ett stavfel i en bakgrundsväljare i Storybook.</li>
+<li><strong>core:</strong> Vi har lagt till en <code scope="[object Object]">clsx</code>-wrapper för att bättre hantera klassnamn från React Aria.</li>
+<li><strong>modal:</strong> En modal kan nu hantera <code scope="[object Object]">open</code>-state som en kontrollerad komponent.</li>
+<li><strong>progress-bar:</strong> Skärmläsare kan nu läsa av <code scope="[object Object]">valueLabels</code> för en progress-bar.</li>
+<li><strong>accordion-item:</strong> Vi har löst en bugg som påverkade tangentbordsfokus, animeringar och hover-effekter i <code scope="[object Object]">accordion-item</code>.</li>
+<li><strong>accordion:</strong> Vi har ökat specificiteten i CSS för knappar i ett <code scope="[object Object]">accordion</code> för att undvika stilkonflikter.</li>
+<li><strong>menu:</strong> Vi har exporterat <code scope="[object Object]">MenuTrigger</code> så att den kan användas direkt.</li>
+<li><strong>list-box:</strong> Rubriken i en <code scope="[object Object]">list-box</code>-sektion har nu rätt färg.</li>
+<li><strong>popover:</strong> Vi har justerat storleken på popovers för att de ska se bättre ut.</li>
+<li><strong>theme:</strong> <code scope="[object Object]">README</code>- och <code scope="[object Object]">CHANGELOG</code>-filerna inkluderas nu korrekt i vårt tema-paket.</li>
+<li><strong>popover:</strong> Vi har förhindrat att texten i en popover bryts för tidigt.</li>
+<li><strong>table-styles:</strong> Vi har tagit bort onödiga release-inställningar för <code scope="[object Object]">table-styles</code>.</li>
+<li><strong>table-styles:</strong> Vi har uppdaterat Vite-konfigurationen för <code scope="[object Object]">table-styles</code> för att inkludera <code scope="[object Object]">readme</code> och <code scope="[object Object]">tspaths</code>.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring" translate="no">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Vi har brutit ut knapp-specifika design tokens från <code scope="[object Object]">object-values.json</code> till en egen fil för bättre struktur.</li>
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på changelog:</p>
 <ul>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.2.0" target="_blank" rel="noopener noreferrer" class="">components@v15.2.0</a></li>
-<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.2.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.2.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v14.0.0" target="_blank" rel="noopener noreferrer" class="">components@v14.0.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.1.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.1.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.1.2" target="_blank" rel="noopener noreferrer" class="">datepicker-styles@v0.1.2</a></li>
 </ul>]]></content>
         <author>
             <name>Midas</name>
         </author>
         <category label="release-notes" term="release-notes"/>
-        <category label="v15" term="v15"/>
+        <category label="v14" term="v14"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Release 13.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/13.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/13.0.0/"/>
+        <updated>2025-09-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att]]></summary>
+        <content type="html"><![CDATA[<p>Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
+göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
+<p>CSS/Styles är nu tillgängliga från <code scope="[object Object]">import '@midas-ds/components/default.css'</code> eller via <code scope="[object Object]">@midas-ds/theme</code>-paketet. Läs mer
+på <a class="" href="https://designsystem.migrationsverket.se/get-started/install/">instruktioner för att komma igång</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-migrationsguide">⬆️ Migrationsguide<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#%EF%B8%8F-migrationsguide" class="hash-link" aria-label="Direktlänk till ⬆️ Migrationsguide" title="Direktlänk till ⬆️ Migrationsguide" translate="no">​</a></h2>
+<p>För att uppgradera från version 12 till 13 behöver du uppdatera hur du importerar CSS-filerna.</p>
+<p>Tidigare importerades CSS direkt från komponentpaketet. Nu måste du istället importera en global stilmall.</p>
+<p><strong>Gör så här:</strong></p>
+<ol>
+<li>Ta bort alla CSS-importer från <code scope="[object Object]">@midas-ds/components</code> som du har i din applikation.</li>
+<li>Lägg till en ny import i din huvudsakliga <code scope="[object Object]">App</code> komponent eller motsvarande:</li>
+</ol>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/components/default.css'</span><br></span></code></pre></div></div>
+<p>Denna import innehåller allt du behöver för att komma igång.
+Om du istället vill importera olika delar av Midas stilar kan du använda <code scope="[object Object]">@midas-ds/theme</code>:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token function" style="color:#804ce1">npm</span><span class="token plain"> </span><span class="token function" style="color:#804ce1">install</span><span class="token plain"> @midas-ds/theme</span><br></span></code></pre></div></div>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/theme/fonts.css'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/theme/variables.css'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword module" style="color:#CF222E">import</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'@midas-ds/theme/color-scheme.css'</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>components:</strong> Ikonfärgen för feedback-status har ändrats till <code scope="[object Object]">--midas-icon-primary</code>.</li>
+<li><strong>theme:</strong> Signal-färgerna har uppdaterats.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>textfield:</strong> Inbyggda (native) attribut har lagts till för textfield och textarea.</li>
+<li><strong>table:</strong> Korrekt bakgrundsfärg används nu för rader i tabellen.</li>
+<li><strong>layout:</strong> Hash har tagits bort från main role querySelector.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring" translate="no">​</a></h2>
+<ul>
+<li>Temat har helt separerats från komponentprojektet och ligger nu i ett eget paket.</li>
+<li>Style dictionary build-skriptet har refaktorerats till en nx executor.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-support-för-tanstack-table">🐣 Support för Tanstack Table<a href="https://designsystem.migrationsverket.se/release-notes/13.0.0/#-support-f%C3%B6r-tanstack-table" class="hash-link" aria-label="Direktlänk till 🐣 Support för Tanstack Table" title="Direktlänk till 🐣 Support för Tanstack Table" translate="no">​</a></h2>
+<p>Vi introducerar ett nytt paket <code scope="[object Object]">@midas-ds/table-styles</code> för att hjälpa till med styling för utvecklare som använder
+<a href="https://tanstack.com/table/latest" target="_blank" rel="noopener noreferrer" class="">Tanstack Table</a>. Läs mer på <a class="" href="https://designsystem.migrationsverket.se/dev/tanstack-table/">instruktioner för Tanstack Table</a>.
+Det är en css-fil i tidig version som vi hoppas kunna bygga mer på som ett stöd för de utvecklare som vill komma åt mer
+avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v13.0.0" target="_blank" rel="noopener noreferrer" class="">components@v13.0.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.0.0" target="_blank" rel="noopener noreferrer" class="">theme@v3.0.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/table-styles@v0.0.4" target="_blank" rel="noopener noreferrer" class="">table-styles@v0.0.4</a></li>
+</ul>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
+        <category label="release-notes" term="release-notes"/>
+        <category label="v13" term="v13"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Release 12.1.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/12.1.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/12.1.0/"/>
+        <updated>2025-09-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.]]></summary>
+        <content type="html"><![CDATA[<p>En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.</p>
+<p>Vårt fokus har den senaste tiden legat kring våra designtokens och dess struktur, vi kommer att behöva stöka lite till innan vi är helt nöjda.
+Vi ber om ursäkt för röran men vi hoppas kunna leverera ett mer förutsägbart, konsekvent och anpassningsbart komponentbibliotek.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tokens">Tokens<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#tokens" class="hash-link" aria-label="Direktlänk till Tokens" title="Direktlänk till Tokens" translate="no">​</a></h3>
+<p>Under huven hanterar Midas designtokens med ett nytt verktyg vilket har medfört vissa ändringar i namngivningen av våra variabler.
+Vi påbörjar en utfasning av variablen <code scope="[object Object]">semantic</code> och <code scope="[object Object]">theme.css</code> och hänvisar er istället att använda variablen <code scope="[object Object]">variables</code> och <code scope="[object Object]">variables.css</code>.</p>
+<p>Läs mer under <a class="" href="https://designsystem.migrationsverket.se/basics/tokens/">artikeln för Tokens</a>, och notera att artikeln för Färger är utdaterad.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="combobox">ComboBox<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#combobox" class="hash-link" aria-label="Direktlänk till ComboBox" title="Direktlänk till ComboBox" translate="no">​</a></h3>
+<p>ComboBox stödjer numer asynkron laddning, se <a class="" href="https://designsystem.migrationsverket.se/components/combobox/#asynkron-laddning">dokumentationen för ComboBox</a> för detaljer hur du implementerar detta.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="menu">Menu<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#menu" class="hash-link" aria-label="Direktlänk till Menu" title="Direktlänk till Menu" translate="no">​</a></h3>
+<p><a class="" href="https://designsystem.migrationsverket.se/components/menu/">Menu</a> är en ny komponent med ett deklarativt API för kompletterande menyer/kontextmenyer. Vi påbörjar en utfasning av <a class="" href="https://designsystem.migrationsverket.se/components/dropdown/">Dropdown</a> som ersätts av Menu.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/12.1.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<p>Vi arbetar kontinuerligt med buggfixar, här är några nämnvärda fixar:</p>
+<ul>
+<li><code scope="[object Object]">Accordion</code> har fått extra marginal för att tydligare visa sin fokusram vid tangentbordsinteraktion (<a href="https://github.com/migrationsverket/midas/pull/780" target="_blank" rel="noopener noreferrer" class="">#780</a>)</li>
+<li><code scope="[object Object]">Badge</code> har fått en ny bakgrundsfärg i mörkt läge för att klara krav på färgkontraster (<a href="https://github.com/migrationsverket/midas/commit/f40f2dad67" target="_blank" rel="noopener noreferrer" class="">f40f2dad67</a>)</li>
+<li><code scope="[object Object]">Layout</code> visar aktivt menyval för appar som använder en annan basepath än <code scope="[object Object]">/</code> (<a href="https://github.com/migrationsverket/midas/commit/4dec0a45ef" target="_blank" rel="noopener noreferrer" class="">4dec0a45ef</a>)</li>
+<li><code scope="[object Object]">ListBox</code> och relaterade komponenter/typer ingår igen i komponentbiblioteket (<a href="https://github.com/migrationsverket/midas/commit/1f06b98610" target="_blank" rel="noopener noreferrer" class="">1f06b98610</a>)</li>
+<li><code scope="[object Object]">TextArea</code>s storlek är nu justerbar (<a href="https://github.com/migrationsverket/midas/commit/6d04e25308" target="_blank" rel="noopener noreferrer" class="">6d04e25308</a>)</li>
+<li><code scope="[object Object]">TextField</code> kallar inte längre på events så som <code scope="[object Object]">onBlur</code> fler gånger än nödvändigt (<a href="https://github.com/migrationsverket/midas/pull/769" target="_blank" rel="noopener noreferrer" class="">#769</a>)</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/components@v12.1.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
+        <category label="release-notes" term="release-notes"/>
+        <category label="v12" term="v12"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Release 12.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/12.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/12.0.0/"/>
+        <updated>2025-08-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.]]></summary>
+        <content type="html"><![CDATA[<p>I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
+Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
+våra komponenter. Läs vidare för att få veta mer om vad som är nytt i version 12.0.0.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner-och-förbättringar">🚀 Nya funktioner och förbättringar<a href="https://designsystem.migrationsverket.se/release-notes/12.0.0/#-nya-funktioner-och-f%C3%B6rb%C3%A4ttringar" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner och förbättringar" title="Direktlänk till 🚀 Nya funktioner och förbättringar" translate="no">​</a></h2>
+<p>Vi har lagt till flera nya funktioner för att göra våra komponenter mer flexibla och kraftfulla. Du kan nu:</p>
+<ul>
+<li><strong>Använda fler statusar i <code scope="[object Object]">Accordion</code>:</strong> Vi har lagt till möjligheten att visa fler statusar i vår <code scope="[object Object]">Accordion</code>-komponent, vilket ger dig mer flexibilitet att kommunicera olika tillstånd till dina användare.</li>
+<li><strong>Anpassa ikoner i <code scope="[object Object]">Dropdown</code>:</strong> Du kan nu lägga till anpassade ikoner i vår <code scope="[object Object]">Dropdown</code>-komponent, vilket gör det enklare att skapa ett konsekvent och visuellt tilltalande gränssnitt.</li>
+<li><strong>Kontrollera tillståndet i <code scope="[object Object]">InfoBanner</code>:</strong> Vi har infört ett kontrollerat tillstånd för vår <code scope="[object Object]">InfoBanner</code>-komponent, vilket ger dig mer kontroll över när och hur den visas.</li>
+<li><strong>Virtualiserad tabell:</strong> Vi har lagt till ett recept för en virtualiserad tabell, vilket gör det möjligt att visa större datamängder utan att kompromissa med prestandan.</li>
+<li><strong>Exportera tokens som CS:</strong> Vi har implementerat export av våra tokens som CSS vilket gör det enklare att anpassa utseendet på dina komponenter och säkerställa att din CSS är giltig.</li>
+<li><strong>Titel i <code scope="[object Object]">Modal</code>:</strong> Vi har flyttat titeln i vår <code scope="[object Object]">Modal</code>-komponent till sidhuvudet och ändrat den till en <code scope="[object Object]">h2</code>-rubrik. Vi har också tagit bort marginalen och centrerat den vertikalt för att skapa en mer balanserad och visuellt tilltalande design.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/12.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes" translate="no">​</a></h2>
+<p>Den här versionen innehåller några viktiga ändringar som kan kräva att du uppdaterar din kod. Vi har gjort dessa ändringar för att förbättra den övergripande kvaliteten och konsekvensen i vårt komponentbibliotek.</p>
+<ul>
+<li><strong>Borttagning av funktioner som varit deprecated:</strong> Vi har tagit bort ett antal funktioner, props och typer som tidigare har varit markerade som deprecated. Detta är en del av vårt kontinuerliga arbete med att hålla vårt API rent och konsekvent. De borttagna funktionerna är:<!-- -->
+<ul>
+<li><code scope="[object Object]">BreadcrumbProps</code> (använd <code scope="[object Object]">BreadcrumbsProps</code> istället)</li>
+<li><code scope="[object Object]">ComboBoxSelection</code> (använd <code scope="[object Object]">ComboBoxSection</code> istället)</li>
+<li><code scope="[object Object]">Item</code> och <code scope="[object Object]">Section</code> från <code scope="[object Object]">combobox/types.ts</code> (använd <code scope="[object Object]">ListBoxItemElement</code> och <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
+<li><code scope="[object Object]">Flex</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">Grid</code> istället)</li>
+<li><code scope="[object Object]">fluid</code> från <code scope="[object Object]">GridProps</code> (använd <code scope="[object Object]">isContained</code> istället)</li>
+<li><code scope="[object Object]">FlexItem</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">GridItem</code> istället)</li>
+<li><code scope="[object Object]">col</code> från <code scope="[object Object]">GridItemProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
+<li><code scope="[object Object]">dismissable</code> från <code scope="[object Object]">InfoBannerProps</code> (använd <code scope="[object Object]">isDismissable</code> istället)</li>
+<li><code scope="[object Object]">narrow</code> från <code scope="[object Object]">TableProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
+<li><code scope="[object Object]">tabs</code> och <code scope="[object Object]">label</code> från <code scope="[object Object]">TabsProps</code> (använd det deklarativa API<!-- -->:et<!-- --> med <code scope="[object Object]">TabList</code> och <code scope="[object Object]">TabPanel</code> istället)</li>
+<li><code scope="[object Object]">Option</code>, <code scope="[object Object]">OptionItem</code>, <code scope="[object Object]">OptionSection</code> från <code scope="[object Object]">select/types.ts</code> (använd <code scope="[object Object]">ListBoxOption</code>, <code scope="[object Object]">ListBoxItemElement</code>, <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
+<li><code scope="[object Object]">fieldSkeleton</code> och <code scope="[object Object]">buttonBackgroundSkeleton</code> från <code scope="[object Object]">theme/tokens.ts</code> (använd <code scope="[object Object]">skeleton01</code> istället)</li>
+</ul>
+</li>
+<li><strong>Ändrade ikoner för FeedbackStatus:</strong> Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder <code scope="[object Object]">type</code> (<code scope="[object Object]">'success'|'info'|'warning'|'important'</code>) kommer strängen <code scope="[object Object]">default</code> inte längre att vara tillgänglig.</li>
+</ul>
+<p>Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.</p>
+<!-- -->
+<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v12.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
+        <category label="release-notes" term="release-notes"/>
+        <category label="v12" term="v12"/>
+        <category label="breaking-change" term="breaking-change"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Release 11.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/11.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/11.0.0/"/>
+        <updated>2025-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🚀 Features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features" translate="no">​</a></h2>
+<ul>
+<li><strong>file-upload:</strong> Komponenten <code scope="[object Object]">FileUpload</code> är borttagen och ersatt av <code scope="[object Object]">FileTrigger</code> från React Aria. Detta innebär att API<!-- -->:et<!-- --> för komponenten nu är i linje med React Aria. Se dokumentationen för mer information om hur du använder den nya komponenten.</li>
+<li><strong>theme:</strong> Nya tokens för <code scope="[object Object]">badge-background</code> har lagts till.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes" translate="no">​</a></h2>
+<ul>
+<li><strong>link:</strong> En bugg har fixats som gjorde att länkar med <code scope="[object Object]">target='_blank'</code> inte öppnades i ett nytt fönster.</li>
+<li><strong>popover:</strong> En bugg har fixats som gjorde att långa strängar kunde flöda över i en popover.</li>
+<li><strong>theme:</strong> Färger för "danger button" i dark mode har justerats.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes" translate="no">​</a></h2>
+<ul>
+<li>Ett felaktigt <code scope="[object Object]">tsx</code>-exempel har korrigerats.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance" translate="no">​</a></h2>
+<ul>
+<li>Beroenden har uppdaterats.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes" translate="no">​</a></h2>
+<ul>
+<li><strong>file-upload:</strong> Komponenten <code scope="[object Object]">FileUpload</code> är borttagen och ersatt av <code scope="[object Object]">FileTrigger</code>. Detta är en "breaking change" och kräver att du uppdaterar din kod. Se dokumentationen för <code scope="[object Object]">file-upload</code> för mer information.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v10.4.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
+        <category label="release-notes" term="release-notes"/>
+        <category label="v11" term="v11"/>
+        <category label="breaking-change" term="breaking-change"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.4.0]]></title>
@@ -691,23 +734,6 @@ Läs mer om egenskapen under vår <a class="" href="https://designsystem.migrati
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag class-name" style="color:#116329">Select</span><span class="token tag" style="color:#165F27"> </span><span class="token tag attr-name" style="color:#0550AE">selectionMode</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">'</span><span class="token tag attr-value" style="color:#C6105F">multiple</span><span class="token tag attr-value punctuation" style="color:#393A34">'</span><span class="token tag" style="color:#165F27"> </span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><br></span></code></pre></div></div>
 <p>Se mer information om <a class="" href="https://designsystem.migrationsverket.se/components/select/">hur du använder Select</a></p>
 <p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v4.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
-        <author>
-            <name>Midas</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Release 3.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/release-notes/3.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/release-notes/3.0.0/"/>
-        <updated>2025-02-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[{/ truncate /}]]></summary>
-        <content type="html"><![CDATA[
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="migrera-från-2xx-till-300">Migrera från 2.x.x till 3.0.0<a href="https://designsystem.migrationsverket.se/release-notes/3.0.0/#migrera-fr%C3%A5n-2xx-till-300" class="hash-link" aria-label="Direktlänk till Migrera från 2.x.x till 3.0.0" title="Direktlänk till Migrera från 2.x.x till 3.0.0" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="searchfield">SearchField<a href="https://designsystem.migrationsverket.se/release-notes/3.0.0/#searchfield" class="hash-link" aria-label="Direktlänk till SearchField" title="Direktlänk till SearchField" translate="no">​</a></h3>
-<p><code scope="[object Object]">SearchField</code> stödjer inte längre <code scope="[object Object]">isRequired</code>. Beteendet kan efterliknas med hjälp av <code scope="[object Object]">validate</code></p>
-<div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#CD3B49">&lt;</span><span class="token maybe-class-name">SearchField</span><span class="token plain"> validate</span><span class="token operator" style="color:#CD3B49">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain">v </span><span class="token arrow operator" style="color:#CD3B49">=&gt;</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">!</span><span class="token operator" style="color:#CD3B49">!</span><span class="token plain">v</span><span class="token punctuation" style="color:#393A34">.</span><span class="token property-access">length</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">||</span><span class="token plain"> </span><span class="token string" style="color:#C6105F">'Var god ange åtminstone ett tecken'</span><span class="token plain"> </span><span class="token operator" style="color:#CD3B49">/</span><span class="token operator" style="color:#CD3B49">&gt;</span><br></span></code></pre></div></div>
-<p>Se mer information om <a class="" href="https://designsystem.migrationsverket.se/components/search-field/">hur du använder SearchField</a></p>
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v3.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content>
         <author>
             <name>Midas</name>
         </author>
