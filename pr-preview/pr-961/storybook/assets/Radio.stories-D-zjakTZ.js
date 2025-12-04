@@ -1,0 +1,79 @@
+import{j as e}from"./iframe-DzWavng1.js";import{a,R as c}from"./Radio-l2pCgSAe.js";import"./preload-helper-PPVm8Dsz.js";import"./Group-CewnB-LY.js";import"./utils-DZ771gTW.js";import"./clsx-B-dksMZM.js";import"./useFocusRing-BOScdwIf.js";import"./index-BqUojVv0.js";import"./index-3sde6yQY.js";import"./FieldError-B0hGaN2H.js";import"./Text-ePkty29E.js";import"./clsx-Ciqy0D92.js";import"./Text-DA35gZzh.js";import"./Form-AOBXIEea.js";import"./useFormValidation-Bm0uK9_x.js";import"./Button-BvaWFHt-.js";import"./Hidden-ZA6QDtq5.js";import"./useLabels-roEh_XUF.js";import"./useButton-CgRo_gBu.js";import"./SelectionIndicator-BvQjS5SY.js";import"./useField-DgP7ROp1.js";import"./VisuallyHidden-u0dD8pVG.js";import"./useControlledState-lHw30NeI.js";import"./Label-pIcxOt8i.js";import"./Dialog-ByrVMFC8.js";import"./RSPContexts-DGc80Od4.js";import"./OverlayArrow-CzXrQ9SA.js";import"./useResizeObserver-CQn7OSpd.js";import"./Collection-DS74y2Hd.js";import"./index-DJ9boy3L.js";import"./Separator-bMTI7EmG.js";import"./SelectionManager-BbeYuJOR.js";import"./useEvent-5ivb094s.js";import"./scrollIntoView-BAE8WRGI.js";import"./useDescription-B5og04Tz.js";import"./ListKeyboardDelegate-Dq9zMlZb.js";import"./PressResponder-BG4AA7ZS.js";import"./useLocalizedStringFormatter-DkL1-w21.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./getScrollParent-dwiGZhPf.js";import"./Button-C9cedukw.js";import"./Button.module-Co5e5YHp.js";import"./useLocalizedStringFormatter-enb0CHJT.js";import"./createLucideIcon-CC0DruiB.js";import"./x-CWmC_5LK.js";import"./Heading-BDScHeSe.js";import"./info-DpnZATZq.js";import"./Popover-wDjiywCJ.js";const lr={title:"Components/Radio",component:c,subcomponents:{Radio:a},tags:["autodocs"],args:{label:"Välj frukt",description:"Valfri beskrivning",errorMessage:"Du måste välja en frukt?",errorPosition:"top"},argTypes:{children:{table:{disable:!0}},label:{type:"string",control:{type:"text"}},isDisabled:{type:"boolean",options:[!1,!0],control:{type:"radio"}},isInvalid:{type:"boolean",options:[!1,!0],control:{type:"radio"}}}},u=["Äpple","Banan","Kiwi","Apelsin"],t=u.map(r=>e.jsx(a,{value:r,id:r.toLowerCase(),children:r},r)),b=[e.jsx(a,{value:"banan",children:"Banan"},"radio-banan"),e.jsx(a,{value:"apelsin",isDisabled:!0,children:"Apelsin"},"radio-apelsin"),e.jsx(a,{value:"kiwi",children:"Kiwi"},"radio-kiwi")],s={args:{label:"Frukt",description:"Välj en frukt",children:u.map(r=>e.jsx(a,{value:r,id:r.toLowerCase(),className:"test-radio-class",children:r},r)),className:"test-class"}},o={args:{children:t,isDisabled:!0}},i={args:{children:t,isReadOnly:!0,value:"Kiwi"}},n={args:{children:b}},p={args:{children:t,isInvalid:!0,errorMessage:"Det här stämmer inte!"}},l={tags:["!dev","!autodocs","!snapshot"],parameters:{chromatic:{disableSnapshot:!0}},args:{label:"Frukt",description:"Välj en frukt",children:t,isRequired:!0},render:r=>e.jsxs("form",{children:[e.jsx(c,{...r}),e.jsx("button",{type:"submit",children:"Submit"})]})},d={tags:["!dev","!autodocs","!snapshot"],parameters:{chromatic:{disableSnapshot:!0}},args:{label:"Frukt",description:"Välj en frukt",children:t,errorMessage:void 0,validate:r=>r?.includes("Äpple")?"Inga äpplen är tillåtna":!0},render:r=>e.jsxs("form",{children:[e.jsx(c,{...r}),e.jsx("button",{type:"submit",children:"Submit"})]})},m={args:{...s.args,children:e.jsxs(e.Fragment,{children:[e.jsx(a,{value:"apple",children:"Äpple"},"radio-apple"),e.jsx(a,{value:"banan",children:"Banan"},"radio-banan")]}),orientation:"horizontal"}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {
+    label: 'Frukt',
+    description: 'Välj en frukt',
+    children: fruits.map(fruit => <Radio key={fruit} value={fruit} id={fruit.toLowerCase()} className='test-radio-class'>
+        {fruit}
+      </Radio>),
+    className: 'test-class'
+  }
+}`,...s.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: items,
+    isDisabled: true
+  }
+}`,...o.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: items,
+    isReadOnly: true,
+    value: 'Kiwi'
+  }
+}`,...i.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: radioItemsOneDisabled
+  }
+}`,...n.parameters?.docs?.source}}};p.parameters={...p.parameters,docs:{...p.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: items,
+    isInvalid: true,
+    errorMessage: 'Det här stämmer inte!'
+  }
+}`,...p.parameters?.docs?.source}}};l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  args: {
+    label: 'Frukt',
+    description: 'Välj en frukt',
+    children: items,
+    isRequired: true
+  },
+  render: args => <form>
+      <RadioGroup {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+}`,...l.parameters?.docs?.source}}};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  args: {
+    label: 'Frukt',
+    description: 'Välj en frukt',
+    children: items,
+    errorMessage: undefined,
+    validate: value => value?.includes('Äpple') ? 'Inga äpplen är tillåtna' : true
+  },
+  render: args => <form>
+      <RadioGroup {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+}`,...d.parameters?.docs?.source}}};m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{
+  args: {
+    ...Primary.args,
+    children: <>
+        <Radio key='radio-apple' value='apple'>
+          Äpple
+        </Radio>
+        <Radio key='radio-banan' value='banan'>
+          Banan
+        </Radio>
+      </>,
+    orientation: 'horizontal'
+  }
+}`,...m.parameters?.docs?.source}}};const dr=["Primary","Disabled","ReadOnly","OneItemDisabled","Invalid","Required","CustomValidation","Horizontal"];export{d as CustomValidation,o as Disabled,m as Horizontal,p as Invalid,n as OneItemDisabled,s as Primary,i as ReadOnly,l as Required,dr as __namedExportsOrder,lr as default};
