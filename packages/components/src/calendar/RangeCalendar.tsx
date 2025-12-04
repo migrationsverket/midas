@@ -7,7 +7,7 @@ import {
 import { clsx } from 'clsx'
 import { CalendarGrid } from './CalendarGrid'
 import { CalendarHeader } from './CalendarHeader'
-import { Text } from '../text'
+import { FieldError } from '../field-error'
 import styles from './Calendar.module.css'
 
 export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
@@ -19,16 +19,15 @@ export const RangeCalendar: React.FC<RangeCalendarProps> = ({
   errorMessage,
   ...rest
 }) => (
-  <AriaRangeCalendar
-    className={clsx(styles.calendar, className)}
-    data-readonly={rest.isReadOnly || undefined}
-    {...rest}
-  >
-    <CalendarHeader {...rest} />
-    <CalendarGrid
+  <div className={styles.container}>
+    <AriaRangeCalendar
+      className={clsx(styles.calendar, className)}
+      data-readonly={rest.isReadOnly || undefined}
       {...rest}
-      isRange
-    />
-    {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
-  </AriaRangeCalendar>
+    >
+      <CalendarHeader {...rest} />
+      <CalendarGrid {...rest} />
+    </AriaRangeCalendar>
+    <FieldError isInvalid={rest.isInvalid}>{errorMessage}</FieldError>
+  </div>
 )
