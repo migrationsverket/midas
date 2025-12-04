@@ -1,0 +1,28 @@
+{
+  "name": "@midas-ds/select-styles",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/select-styles"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Midas select styles",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
+  "version": "0.0.1",
+  "exports": {
+    "./react-select.css": {
+      "import": "./react-select.css",
+      "default": "./react-select.css"
+    }
+  },
+  "dependencies": {
+    "@midas-ds/theme": "3.2.0",
+    "react-select": "^5.10.2"
+  }
+}

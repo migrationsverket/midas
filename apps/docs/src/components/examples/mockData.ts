@@ -1,10 +1,10 @@
 export interface Person {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  department: string;
-  status: 'Active' | 'Inactive' | 'Pending';
+  id: string
+  firstName: string
+  lastName: string
+  email: string
+  department: string
+  status: 'Active' | 'Inactive' | 'Pending'
 }
 
 export const mockPersonData: Person[] = [
@@ -72,4 +72,4 @@ export const mockPersonData: Person[] = [
     department: 'Engineering',
     status: 'Pending',
   },
-];
+]

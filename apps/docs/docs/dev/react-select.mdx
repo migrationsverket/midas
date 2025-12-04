@@ -1,0 +1,96 @@
+---
+title: react-select
+description: Implementation av react-select
+---
+
+import { MultiComboBox } from '@site/src/components/examples/react-select'
+
+# react-select
+
+I `@midas-ds/components` finns komponenterna [Select](/components/select) och [ComboBox](/components/combobox)
+där användaren kan kan klicka eller söka fram ett val. Select stödjer flerval, ComboBox gör det ej för närvarande.
+
+Ett annat populärt bibliotek som kombinerar dessa mönster är [react-select](https://react-select.com/).
+Tack vare sitt API kan samma komponent leverera snarlik funktionalitet som komponenter i Midas och dessutom t.ex. flerval för ComboBox.
+
+:::info
+Stilarna för react-select är just nu i en tidig version och är ett arbete som pågår. react-select är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/migrationsverket/midas) och tar gärna emot förslag på stilar som saknas när du implementerar react-select.
+:::
+
+## När du ska använda react-select
+
+- Flerval kombinerat med sökbarhet (ComboBox med flerval)
+
+## Komma igång
+
+För att använda react-select med Midas-stilar måste du först installera de nödvändiga beroendena:
+
+```bash
+npm install @midas-ds/select-styles react-select
+```
+
+Importera sedan Midas-stilarna för react-select:
+
+```css
+@import '@midas-ds/select-styles/react-select.css';
+```
+
+Använd åtminstone följande props:
+
+```tsx {2,3,4}
+<Select
+  className='select'
+  classNamePrefix='midas'
+  unstyled
+/>
+```
+
+## Exempel
+
+### ComboBox med flerval
+
+Följande exempel visar hur du kan använda react-select för att sätta upp en komponent som efterliknar [ComboBox](/components/combobox) med flerval.
+
+<div
+  className='card'
+  style={{ overflow: 'visible' }}
+>
+  <MultiComboBox id='multi-combo-box' />
+</div>
+
+```tsx
+import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
+import { Label, Text } from '@midas-ds/components'
+import { variables } from '@midas-ds/theme'
+import '@midas-ds/select-styles/lib/react-select.css'
+```
+
+```tsx
+<div style={{ display: 'flex', flexDirection: 'column' }}>
+  <Label htmlFor='employee'>Select employee</Label>
+  <Text slot='description'>Employees from all departments</Text>
+  <Select
+    className='select'
+    classNamePrefix='midas'
+    closeMenuOnSelect={false}
+    hideSelectedOptions={false}
+    inputId='employee'
+    isMulti
+    isSearchable
+    noOptionsMessage={() => 'No match'}
+    options={[
+      { value: '0', label: 'Anna Andersson' },
+      { value: '1', label: 'Erik Eriksson' },
+      // ...
+    ]}
+    placeholder='Select an employee'
+    styles={{
+      multiValue: (provided: CSSObjectWithLabel, { isFocused }: MultiValueProps) => ({
+        ...provided,
+        boxShadow: isFocused ? variables.stateFocus : undefined,
+      }),
+    }}
+    unstyled
+  />
+</div>
+```
