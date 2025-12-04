@@ -1,0 +1,39 @@
+---
+slug: 15.3.0
+title: Release 15.3.0
+authors: midas
+tags: [release-notes, v15]
+---
+
+I den här releasen har vi gjort stora förbättringar av byggstrukturen som ger mindre bundle-storlekar och bättre prestanda. Du kan nu välja att importera enskilda komponenter för ännu mindre bundles. Vi har också lagt till nya typografitokens och förbättrat ett antal komponenter.
+
+## 🚀 Nya funktioner
+
+- **theme:** Två nya typografitokens, `body` och `body-small`, gör det enklare att styla brödtext konsekvent.
+- **theme:** Nu kan du generera Tailwind-tema direkt från Midas tokens för smidig integration med Tailwind CSS.
+- **theme:** En ny `orange-100` färg finns tillgänglig i färgpaletten.
+- **tabs:** Tabs kan nu renderas i en `contained` stil för tydligare avgränsning.
+- **layout:** Sidebaren ligger nu på en högre z-index så den inte täcks av annat innehåll.
+- **table:** Sorteringsikonerna i tabeller har fått rätt visuella ikoner och reagerar nu snyggare på hover.
+- **table-styles:** Hover-effekter och transitions för sorterings- och drag-and-drop-ikoner i tabeller.
+
+## 🩹 Fixar
+
+- **calendar:** Datumcellerna i kalendern är nu perfekt centrerade vertikalt.
+- **calendar:** Förenklad implementation för att markera dagens datum.
+
+## 🔧 Refactor
+
+- **components:** Helt omgjord byggstruktur med stöd för tree-shaking och flera importsätt. Du kan nu välja att importera allt (`import { Button } from '@midas-ds/components'`) eller enskilda komponenter (`import { Button } from '@midas-ds/components/button'`) för mindre bundles.
+- **calendar:** Calendar och RangeCalendar delar nu samma implementation för mer konsekvent beteende.
+- **theme:** Bättre exporthantering med fallbacks för ökad kompatibilitet med olika bundlers.
+- **theme:** Subtila färgjusteringar för borders och varningar.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v15.3.0](https://github.com/migrationsverket/midas/releases/tag/components@v15.3.0)
+- [theme@v3.6.0](https://github.com/migrationsverket/midas/releases/tag/theme@v3.6.0)
+- [table-styles@v1.1.0](https://github.com/migrationsverket/midas/releases/tag/table-styles@v1.1.0)
+- [datepicker-styles@v0.2.6](https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.2.6)

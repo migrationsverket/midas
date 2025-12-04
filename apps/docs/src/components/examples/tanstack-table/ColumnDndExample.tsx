@@ -24,7 +24,7 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { GripVertical } from 'lucide-react';
-import { Person, mockPersonData } from './mockData';
+import { Person, mockPersonData } from '../mockData';
 import '@midas-ds/table-styles/lib/tanstack-table.css';
 
 const columns: ColumnDef<Person>[] = [

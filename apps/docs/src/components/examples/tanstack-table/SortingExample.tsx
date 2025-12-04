@@ -8,7 +8,7 @@ import {
   SortingState,
 } from '@tanstack/react-table';
 import { ArrowUp, ArrowDown, ArrowUpDown } from 'lucide-react';
-import { Person, mockPersonData } from './mockData';
+import { Person, mockPersonData } from '../mockData';
 import '@midas-ds/table-styles/lib/tanstack-table.css';
 
 const columns: ColumnDef<Person>[] = [
