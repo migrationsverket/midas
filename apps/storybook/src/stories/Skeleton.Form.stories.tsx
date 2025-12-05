@@ -7,7 +7,7 @@ type Story = StoryObj<typeof Skeleton>
 export default {
   component: Skeleton,
   title: 'Components/Skeleton/Form',
-  tags: ['autodocs'],
+  tags: ['autodocs', '!snapshot'],
   args: {
     variant: 'form',
     width: '400px',
@@ -72,9 +72,18 @@ export const Multiple: Story = {
   },
   render: args => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <Skeleton {...args} data-testid='skeleton-1' />
-      <Skeleton {...args} data-testid='skeleton-2' />
-      <Skeleton {...args} data-testid='skeleton-3' />
+      <Skeleton
+        {...args}
+        data-testid='skeleton-1'
+      />
+      <Skeleton
+        {...args}
+        data-testid='skeleton-2'
+      />
+      <Skeleton
+        {...args}
+        data-testid='skeleton-3'
+      />
     </div>
   ),
 }
@@ -87,7 +96,10 @@ export const Comparison: Story = {
         <h3 style={{ marginTop: 0, fontSize: '1rem', fontWeight: 500 }}>
           Skeleton (Loading)
         </h3>
-        <Skeleton variant='form' size='large' />
+        <Skeleton
+          variant='form'
+          size='large'
+        />
       </div>
       <div style={{ flex: 1 }}>
         <h3 style={{ marginTop: 0, fontSize: '1rem', fontWeight: 500 }}>

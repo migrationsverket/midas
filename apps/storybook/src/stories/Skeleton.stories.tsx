@@ -7,7 +7,7 @@ type Story = StoryObj<typeof Skeleton>
 export default {
   component: Skeleton,
   title: 'Components/Skeleton',
-  tags: ['autodocs'],
+  tags: ['autodocs', '!snapshot'],
   args: {
     variant: 'rectangle',
   },

@@ -12,7 +12,7 @@ export default mergeConfig(
         defineStorybookProject({
           name: 'storybook:dark-mode',
           snapshotSubpath: 'dark',
-          context: {
+          contextOptions: {
             colorScheme: 'dark',
           },
         }),
