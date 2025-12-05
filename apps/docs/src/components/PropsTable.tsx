@@ -66,10 +66,14 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
 export const PropTable = ({ name, defaultOpen = true }) => {
   const globalData = useGlobalData()
 
-  const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
-    .default as ComponentDoc[]
+  const componentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
+    ?.default as ComponentDoc[] | undefined
 
-  const props = ComponentsDocs.find(
+  if (!componentsDocs) {
+    return null
+  }
+
+  const props = componentsDocs.find(
     componentDoc => componentDoc.displayName === name,
   )?.props
 
