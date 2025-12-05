@@ -16,6 +16,7 @@
     "serve": {
       "executor": "@midas-ds/docusaurus:dev-server",
       "options": {
+        "hideApi": true,
         "port": 3000
       }
     },

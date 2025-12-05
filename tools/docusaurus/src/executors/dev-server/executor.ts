@@ -14,6 +14,9 @@ export default async function* runExecutor(
   )
   const port = options.port.toString()
 
+  process.env.DOCUSAURUS_HIDE_API =
+    process.env.DOCUSAURUS_HIDE_API || (options.hideApi ? 'true' : 'false')
+
   await start(projectRoot, {
     port,
     host: options.host,

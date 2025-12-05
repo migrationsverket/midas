@@ -43,10 +43,27 @@ nx test components
 
 Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https://docusaurus.io/).
 
-- Kör dokumentationen lokalt:
+Kör dokumentationen lokalt:
 
 ```bash
 nx serve docs
+```
+
+Gör ett produktionsbygge av dokumentationen:
+
+```bash
+nx build docs
+```
+
+#### API
+
+Vid ett produktionsbygge samlas information om komponenternas typescript-typer in och visas med hjälp av en tabell under rubriken API på varje komponentsida.
+På grund av prestandaproblem görs inte detta per default av `serve`-kommandot.
+
+Kör dokumentationen lokalt och inkludera typescript-typer i tabeller:
+
+```bash
+DOCUSAURUS_HIDE_API=false nx serve docs
 ```
 
 ### Bygg komponentbibliotek
