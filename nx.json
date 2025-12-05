@@ -23,6 +23,7 @@
         },
         "refactor": {
           "changelog": {
+            "semverBump": "none",
             "title": "🏭 Refactoring"
           }
         },
