@@ -1,3 +1,7 @@
+## 3.6.1 (2025-12-05)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.6.0 (2025-12-04)
 
 ### 🚀 Features

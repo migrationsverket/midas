@@ -14,7 +14,7 @@
   "description": "Midas Theme",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "main": "./index.mjs",
   "types": "./index.d.ts",
   "exports": {
