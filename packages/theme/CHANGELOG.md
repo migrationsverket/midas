@@ -1,3 +1,10 @@
+## 3.7.0 (2025-12-05)
+
+### 🚀 Features
+
+- **theme:** update colors for support.background in dark mode ([4fd2edec83](https://github.com/migrationsverket/midas/commit/4fd2edec83))
+- **theme:** add signal colors ([bd9a91faf6](https://github.com/migrationsverket/midas/commit/bd9a91faf6))
+
 ## 3.6.1 (2025-12-05)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.
