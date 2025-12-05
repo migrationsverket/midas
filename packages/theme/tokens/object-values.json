@@ -258,35 +258,35 @@
     },
     "background": {
       "success": {
-        "$value": "light-dark({color.signalGreen.20}, {color.gray.180})",
+        "$value": "light-dark({color.signalGreen.20}, {color.signalGreen.180})",
         "$description": "Bakgrund f\u00f6r success-notifikationer"
       },
       "successHover": {
-        "$value": "light-dark({color.signalGreen.30}, {color.gray.170})",
+        "$value": "light-dark({color.signalGreen.30}, {color.signalGreen.170})",
         "$description": "Hoverbakgrund f\u00f6r success-notifikationer"
       },
       "info": {
-        "$value": "light-dark({color.signalBlue.10}, {color.gray.180})",
+        "$value": "light-dark({color.signalBlue.10}, {color.signalBlue.180})",
         "$description": "Bakgrund f\u00f6r notifikationer med information"
       },
       "infoHover": {
-        "$value": "light-dark({color.signalBlue.20}, {color.gray.170})",
+        "$value": "light-dark({color.signalBlue.20}, {color.signalBlue.170})",
         "$description": "Hoverbakgrund f\u00f6r notifikationer med information"
       },
       "important": {
-        "$value": "light-dark({color.signalYellow.10}, {color.gray.180})",
+        "$value": "light-dark({color.signalYellow.10}, {color.signalYellow.180})",
         "$description": "Bakgrund f\u00f6r notifikationer med viktig information"
       },
       "importantHover": {
-        "$value": "light-dark({color.signalYellow.20}, {color.gray.170})",
+        "$value": "light-dark({color.signalYellow.20}, {color.signalYellow.170})",
         "$description": "Hoverbakgrund f\u00f6r notifikationer med viktig information"
       },
       "warning": {
-        "$value": "light-dark({color.signalRed.20}, {color.gray.180})",
+        "$value": "light-dark({color.signalRed.20}, {color.signalRed.180})",
         "$description": "Bakgrund f\u00f6r notifikationer med varningar"
       },
       "warningHover": {
-        "$value": "light-dark({color.signalRed.30}, {color.gray.170})",
+        "$value": "light-dark({color.signalRed.30}, {color.signalRed.170})",
         "$description": "Hoverbakgrund f\u00f6r notifikationer med varningar"
       }
     }
