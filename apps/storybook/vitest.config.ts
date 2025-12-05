@@ -1,35 +1,5 @@
-import { defineConfig, mergeConfig } from 'vitest/config'
-import { defineStorybookProject } from './vitest.storybook.project'
+import { mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config'
-import { join } from 'node:path'
-import { playwright } from '@vitest/browser-playwright'
+import { baseConfig } from './vitest.config.base'
 
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
-    test: {
-      testTimeout: 60000,
-      reporters: ['default'],
-      projects: [
-        defineStorybookProject({
-          name: 'storybook',
-          snapshotSubpath: 'light',
-        }),
-        {
-          extends: true,
-          test: {
-            name: 'interactions',
-            browser: {
-              enabled: true,
-              headless: true,
-              provider: playwright(),
-              instances: [{ browser: 'chromium' }],
-              screenshotFailures: false,
-            },
-            setupFiles: [join('.storybook', 'vitest.setup.ci.ts')],
-          },
-        },
-      ],
-    },
-  }),
-)
+export default mergeConfig(viteConfig, await baseConfig({ name: 'light' }))

@@ -180,3 +180,27 @@ export const PrimaryWithAnotherLabel: Story = {
   // ...
 }
 ```
+
+### Lokala snapshottester
+
+Vi använder [Storybook Vitest visual testing addon](https://github.com/repobuddy/visual-testing) för lokala snapshottester.
+Pluginet utgår från Storybook stories och tar bilder i ljust-, mörkt- och högkontrast-läge.
+
+Kör snapshottester lokalt med
+
+```bash
+nx snapshot storybook
+```
+
+Om du har lagt till en komponent, kör gärna snapshottester för samtliga lägen för att generera underlag för framtida jämförelser.
+
+```bash
+nx run storybook:snapshot && nx run storybook:snapshot:dark && nx run storybook:snapshot:forced-colors
+```
+
+Om du har justerat en komponent och dina snapshottester förväntas faila behöver du uppdatera underlaget.
+Enklast är att radera allt underlag och sedan köra alla tester:
+
+```bash
+rm -rf /path/to/midas/apps/storybook/__vis__ && nx run storybook:snapshot && nx run storybook:snapshot:dark && nx run storybook:snapshot:forced-colors
+```

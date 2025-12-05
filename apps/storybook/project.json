@@ -44,35 +44,33 @@
       "executor": "@nx/vitest:test",
       "options": {
         "config": "apps/storybook/vitest.config.ts",
-        "project": "storybook"
+        "project": "a11y:light"
       },
       "configurations": {
-        "watch": {
-          "watch": true
+        "dark": {
+          "config": "apps/storybook/vitest.config.dark.ts",
+          "project": "a11y:dark"
+        },
+        "forced-colors": {
+          "config": "apps/storybook/vitest.config.forced-colors.ts",
+          "project": "a11y:forced-colors"
         }
       }
     },
-    "a11y-dark-mode": {
+    "snapshot": {
       "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.dark.ts",
-        "project": "storybook:dark-mode"
+        "config": "apps/storybook/vitest.config.ts",
+        "project": "snapshot:light"
       },
       "configurations": {
-        "watch": {
-          "watch": true
-        }
-      }
-    },
-    "a11y-forced-colors": {
-      "executor": "@nx/vitest:test",
-      "options": {
-        "config": "apps/storybook/vitest.config.forced-colors.ts",
-        "project": "storybook:forced-colors"
-      },
-      "configurations": {
-        "watch": {
-          "watch": true
+        "dark": {
+          "config": "apps/storybook/vitest.config.dark.ts",
+          "project": "snapshot:dark"
+        },
+        "forced-colors": {
+          "config": "apps/storybook/vitest.config.forced-colors.ts",
+          "project": "snapshot:forced-colors"
         }
       }
     },

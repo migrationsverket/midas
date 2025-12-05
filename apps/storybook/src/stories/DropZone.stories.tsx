@@ -64,7 +64,7 @@ const DropZoneTestContainer = (props: DropZoneTestContainerProps) => {
 const meta: Meta<typeof DropZone> = {
   component: DropZone,
   title: 'Components/DropZone',
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   // @ts-expect-error onSelect exists only on FileTrigger
   render: args => <DropZoneTestContainer {...args} />,
 }

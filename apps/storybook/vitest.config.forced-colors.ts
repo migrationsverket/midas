@@ -1,22 +1,13 @@
-import { defineConfig, mergeConfig } from 'vitest/config'
-import { defineStorybookProject } from './vitest.storybook.project'
+import { mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config'
+import { baseConfig } from './vitest.config.base'
 
 export default mergeConfig(
   viteConfig,
-  defineConfig({
-    test: {
-      testTimeout: 60000,
-      reporters: ['default'],
-      projects: [
-        defineStorybookProject({
-          name: 'storybook:forced-colors',
-          snapshotSubpath: 'forced-colors',
-          contextOptions: {
-            forcedColors: 'active',
-          },
-        }),
-      ],
+  await baseConfig({
+    name: 'forced-colors',
+    contextOptions: {
+      forcedColors: 'active',
     },
   }),
 )
