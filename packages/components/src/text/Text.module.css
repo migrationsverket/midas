@@ -1,9 +1,29 @@
+:root {
+  color: var(--midas-text-primary);
+}
+
+.body,
+.body-02 {
+  &[data-expressive] {
+    line-height: var(--midas-typography-line-height-50);
+  }
+}
+
+.body {
+  font: var(--midas-typography-body);
+}
+
+.body-small {
+  font: var(--midas-typography-body-small);
+}
+
+.description-small {
+  font: var(--midas-typography-description-small);
+}
+
 .body-01,
 .body-02 {
-  color: var(--midas-text-primary);
-  font-weight: 400;
-  font-family: var(--midas-typography-font-family);
-  font-size: var(--midas-typography-font-size-30);
+  font: var(--midas-typography-body);
 }
 
 .body-01 {
@@ -12,18 +32,10 @@
 
 .body-02 {
   line-height: var(--midas-typography-line-height-40);
-
-  &[data-expressive] {
-    line-height: var(--midas-typography-line-height-50);
-  }
 }
 
 .description {
-  color: var(--midas-text-primary);
-  font-size: var(--midas-typography-font-size-20);
-  line-height: var(--midas-typography-line-height-20);
-  font-weight: 400;
-  font-family: var(--midas-typography-font-family);
+  font: var(--midas-typography-description);
   margin-bottom: 0.5rem;
 
   & > [data-disabled],
