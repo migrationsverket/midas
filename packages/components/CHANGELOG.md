@@ -1,3 +1,9 @@
+## 15.3.2 (2025-12-05)
+
+### 🏭 Refactoring
+
+- **components, tabs:** simplify css nested selectors ([7c2ced9246](https://github.com/migrationsverket/midas/commit/7c2ced9246))
+
 ## 15.3.1 (2025-12-05)
 
 ### 🧱 Updated Dependencies
