@@ -51,8 +51,11 @@ export const Text: React.FC<TextProps> = ({
     'body-02': styles['body-02'],
   }
 
-  // When slot="description" is used without explicit variant, default to 'description' variant
-  const effectiveVariant = rest.slot === 'description' && variant === 'body' ? 'description' : variant
+  // When slot="description" is used, default to 'description' variant unless description variant explicitly set
+  const effectiveVariant =
+    rest.slot === 'description' && variant !== 'description' && variant !== 'descriptionSmall'
+      ? 'description'
+      : variant
 
   const textProps: TextProps = {
     className: clsx(classNames[effectiveVariant], className),
