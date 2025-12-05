@@ -168,7 +168,7 @@
         "fontFamily": "{typography.font.family}",
         "fontSize": "{typography.font.size.30}",
         "fontWeight": "{typography.weight.regular}",
-        "lineHeight": "{typography.lineHeight.20}"
+        "lineHeight": "{typography.lineHeight.30}"
       }
     },
     "body-small": {
