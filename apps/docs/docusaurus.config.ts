@@ -57,16 +57,18 @@ const config: Config = {
   trailingSlash: true,
   i18n: { defaultLocale: 'sv', locales: ['sv'] },
   plugins: [
-    [
-      require.resolve('./docgen-fix-plugin.js'),
-      {
-        src: `${packagesDir}/components/src/**/[A-Z]*.tsx`,
-        parserOptions: {
-          shouldExtractValuesFromUnion: true,
-          shouldExtractLiteralValuesFromEnum: false,
-        },
-      },
-    ],
+    process.env.DOCUSAURUS_HIDE_API === 'true'
+      ? null
+      : [
+          require.resolve('./docgen-fix-plugin'),
+          {
+            src: `${packagesDir}/components/src/**/[A-Z]*.tsx`,
+            parserOptions: {
+              shouldExtractValuesFromUnion: true,
+              shouldExtractLiteralValuesFromEnum: false,
+            },
+          },
+        ],
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
   ],
   markdown: {
