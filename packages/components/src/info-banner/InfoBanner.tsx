@@ -1,12 +1,12 @@
-import { iconMap } from '../common/icon-map'
 import * as React from 'react'
 import { X } from 'lucide-react'
-import { FeedbackStatus } from '../common/types'
 import styles from './InfoBanner.module.css'
 import clsx from '../utils/clsx'
 import { Button } from '../button'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
+import { FeedbackStatus } from '../common/types'
 
 export interface InfoBannerProps
   extends React.DetailedHTMLProps<
@@ -59,8 +59,6 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
 
   const [isOpen, setIsOpen] = React.useState<boolean>(defaultOpen)
 
-  const Icon = iconMap[type]
-
   const strings = useLocalizedStringFormatter(messages)
 
   const handleClose = () => {
@@ -77,10 +75,10 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
         {...rest}
         className={clsx(styles.infoBanner, styles[type], rest.className)}
       >
-        <Icon
-          size={20}
+        <FeedbackStatusIcon
           aria-hidden
           className={styles.icon}
+          status={type}
         />
         <div className={styles.content}>
           {title && <strong className={styles.heading}>{title}</strong>}
