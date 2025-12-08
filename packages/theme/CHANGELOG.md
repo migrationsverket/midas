@@ -1,3 +1,9 @@
+## 3.8.0 (2025-12-08)
+
+### 🚀 Features
+
+- **theme:** set variable body `line-height` to 20px ([bd8ac61b42](https://github.com/migrationsverket/midas/commit/bd8ac61b42))
+
 ## 3.7.1 (2025-12-08)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

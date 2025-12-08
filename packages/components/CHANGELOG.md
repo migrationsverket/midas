@@ -1,3 +1,15 @@
+## 15.4.0 (2025-12-08)
+
+### 🚀 Features
+
+- **components, text:** use prop size to determine size, slot to determine style ([d6e37c59b0](https://github.com/migrationsverket/midas/commit/d6e37c59b0))
+- **components, text:** override body-styles for text variant when description slot is used ([c26ebe89be](https://github.com/migrationsverket/midas/commit/c26ebe89be))
+- **components, text:** add new variants for text-size, deprecate old ones - Added bodySmall, body, descriptionSmall - Updated values and styles to match new variants - Deprecate old variants ([4d3e9ae227](https://github.com/migrationsverket/midas/commit/4d3e9ae227))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.8.0
+
 ## 15.3.4 (2025-12-08)
 
 ### 🧱 Updated Dependencies
