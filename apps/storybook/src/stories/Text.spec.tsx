@@ -5,15 +5,13 @@ import * as stories from './Text.stories'
 import { render } from 'vitest-browser-react'
 
 const {
-  Body,
+  Default,
   BodySmall,
   Description,
   DescriptionSmall,
-  ExpressiveBody,
+  Expressive,
   Body01,
   Body02,
-  Span,
-  SlotDescription,
 } = composeStories(stories)
 
 describe('given a Text with variant=body-01', async () => {
@@ -44,10 +42,10 @@ describe('given a Text with variant=body-02', async () => {
 
 describe('given a Text with variant=body and isExpressive={true}', async () => {
   it('should match styles', async () => {
-    const { getByText } = await render(<ExpressiveBody />)
+    const { getByText } = await render(<Expressive />)
 
     await expect
-      .element(getByText(ExpressiveBody.args.children as string))
+      .element(getByText(Expressive.args.children as string))
       .toHaveStyle({
         fontSize: '16px',
         lineHeight: '24px',
@@ -55,23 +53,29 @@ describe('given a Text with variant=body and isExpressive={true}', async () => {
   })
 })
 
-describe('given a Text with variant=body and elementType="span"', async () => {
+describe('given a Text with elementType="p"', async () => {
   beforeEach(async () => {
-    await render(<Span />)
+    await render(<Default elementType='p'>p</Default>)
   })
 
   it('should have the correct element type', async () => {
-    expect(
-      page
-        .getByText(Span.args.children as string)
-        .element()
-        .nodeName.toLowerCase(),
-    ).toBe(Span.args.elementType)
+    expect(page.getByText('p').element().nodeName.toLowerCase()).toBe('p')
   })
 
   it('should match styles', async () => {
+    await expect.element(page.getByText('p')).toHaveStyle({
+      fontSize: '16px',
+      lineHeight: '20px',
+    })
+  })
+})
+
+describe('given a default Text', async () => {
+  it('should match styles', async () => {
+    const { getByText } = await render(<Default />)
+
     await expect
-      .element(page.getByText(Span.args.children as string))
+      .element(getByText(Default.args.children as string))
       .toHaveStyle({
         fontSize: '16px',
         lineHeight: '20px',
@@ -79,20 +83,7 @@ describe('given a Text with variant=body and elementType="span"', async () => {
   })
 })
 
-describe('given a Text with variant=body', async () => {
-  it('should match styles', async () => {
-    const { getByText } = await render(<Body />)
-
-    await expect
-      .element(getByText(Body.args.children as string))
-      .toHaveStyle({
-        fontSize: '16px',
-        lineHeight: '20px',
-      })
-  })
-})
-
-describe('given a Text with variant=bodySmall', async () => {
+describe('given a Text with size="small"', async () => {
   it('should match styles', async () => {
     const { getByText } = await render(<BodySmall />)
 
@@ -105,7 +96,7 @@ describe('given a Text with variant=bodySmall', async () => {
   })
 })
 
-describe('given a Text with variant=description', async () => {
+describe('given a Text with slot="description"', async () => {
   it('should match styles', async () => {
     const { getByText } = await render(<Description />)
 
@@ -119,7 +110,7 @@ describe('given a Text with variant=description', async () => {
   })
 })
 
-describe('given a Text with variant=descriptionSmall', async () => {
+describe('given a Text with size="small" & slot="description"', async () => {
   it('should match styles', async () => {
     const { getByText } = await render(<DescriptionSmall />)
 
@@ -128,20 +119,6 @@ describe('given a Text with variant=descriptionSmall', async () => {
       .toHaveStyle({
         fontSize: '12px',
         lineHeight: '16px',
-      })
-  })
-})
-
-describe('given a Text with slot="description"', async () => {
-  it('should match styles', async () => {
-    const { getByText } = await render(<SlotDescription />)
-
-    await expect
-      .element(getByText(SlotDescription.args.children as string))
-      .toHaveStyle({
-        fontSize: '14px',
-        lineHeight: '18px',
-        fontWeight: '400',
       })
   })
 })
