@@ -211,3 +211,9 @@
     background: GrayText;
   }
 }
+
+@media (prefers-reduced-motion) {
+  .checkboxInner svg path {
+    transition: none;
+  }
+}

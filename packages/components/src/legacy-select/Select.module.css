@@ -234,3 +234,11 @@
     border: Highlight 1px solid;
   }
 }
+
+@media (prefers-reduced-motion) {
+  .icon,
+  .icon svg,
+  .selectAll {
+    transition: none;
+  }
+}

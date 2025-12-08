@@ -180,3 +180,10 @@
     animation-name: slideOutEnd;
   }
 }
+
+@media (prefers-reduced-motion) {
+  ::view-transition-new(*):only-child,
+  ::view-transition-old(*):only-child {
+    animation: none;
+  }
+}
