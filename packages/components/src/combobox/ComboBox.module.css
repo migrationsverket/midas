@@ -125,3 +125,10 @@ span.emptyState {
   padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-60)
     var(--midas-size-80);
 }
+
+@media (prefers-reduced-motion) {
+  .button,
+  .icon {
+    transition: none;
+  }
+}

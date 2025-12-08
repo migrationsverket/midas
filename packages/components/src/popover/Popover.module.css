@@ -79,3 +79,9 @@
     }
   }
 }
+
+@media (prefers-reduced-motion) {
+  .popover {
+    transition: none;
+  }
+}
