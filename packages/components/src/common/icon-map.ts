@@ -1,7 +1,7 @@
+import { Check, Info, AlertTriangle, Flag, LucideIcon } from 'lucide-react'
+import { FeedbackStatus } from './types'
 
-import { Check, Info, AlertTriangle, Flag } from 'lucide-react'
-
-export const iconMap = {
+export const iconMap: Record<FeedbackStatus, LucideIcon> = {
   success: Check,
   info: Info,
   important: Flag,

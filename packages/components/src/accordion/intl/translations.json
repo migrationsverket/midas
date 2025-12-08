@@ -1,0 +1,14 @@
+{
+  "en": {
+    "ok": "okay",
+    "information": "information",
+    "importantInformation": "important information",
+    "warning": "warning"
+  },
+  "sv": {
+    "ok": "okej",
+    "information": "information",
+    "importantInformation": "viktig information",
+    "warning": "varning"
+  }
+}
