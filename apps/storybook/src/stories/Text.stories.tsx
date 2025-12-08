@@ -18,43 +18,32 @@ export const Default: Story = {
   },
 }
 
-export const Body: Story = {
-  args: {
-    variant: 'body',
-    elementType: 'p',
-    children: 'I am a paragraph with the variant of "body"',
-  },
-}
-
 export const BodySmall: Story = {
   args: {
-    variant: 'bodySmall',
-    elementType: 'p',
-    children: 'I am a paragraph with the variant of "bodySmall"',
+    size: 'small',
+    children: 'I am a paragraph with small body text',
   },
 }
 
 export const Description: Story = {
   args: {
-    variant: 'description',
-    elementType: 'p',
-    children: 'I am a paragraph with the variant of "description"',
+    slot: 'description',
+    children: 'I am a description with the slot of "description"',
   },
 }
 
 export const DescriptionSmall: Story = {
   args: {
-    variant: 'descriptionSmall',
-    elementType: 'p',
-    children: 'I am a paragraph with the variant of "descriptionSmall"',
+    slot: 'description',
+    size: 'small',
+    children: 'I am a paragraph with small description styling',
   },
 }
 
-export const ExpressiveBody: Story = {
+export const Expressive: Story = {
   args: {
-    variant: 'body',
     children:
-      'I am a paragraph with the variant of "body" using the expressive/external look which has a slightly increased line height',
+      'I am a paragraph using the expressive/external look which has a slightly increased line height',
     isExpressive: true,
   },
 }
@@ -64,8 +53,7 @@ export const Body01: Story = {
   tags: ['deprecated'],
   args: {
     variant: 'body-01',
-    elementType: 'p',
-    children: 'I am a paragraph with the variant of "body-01" (deprecated, use "body" instead)',
+    children: 'I am a paragraph with the variant of "body-01" (deprecated)',
   },
 }
 
@@ -74,22 +62,7 @@ export const Body02: Story = {
   tags: ['deprecated'],
   args: {
     variant: 'body-02',
-    children: 'I am a paragraph with the variant of "body-02" (deprecated, use "body" instead)',
-  },
-}
-
-export const Span: Story = {
-  args: {
-    variant: 'body',
-    elementType: 'span',
-    children: 'I am a span element with the variant of "body"',
-  },
-}
-
-export const SlotDescription: Story = {
-  args: {
-    slot: 'description',
-    children: 'I am a description with the slot of "description"',
+    children: 'I am a paragraph with the variant of "body-02" (deprecated)',
   },
 }
 export default meta

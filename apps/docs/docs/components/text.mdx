@@ -28,16 +28,16 @@ import { Text } from '@midas-ds/components'
 
 ## Varianter
 
-### Stil
+### Storlek
 
-Använd egenskapen `variant` för att justera textens utseende
+Använd egenskapen `size` för att justera textens storlek
 
 ```tsx
-<Text variant='body-01'>Jag är ett span-element av varianten 'body-01'</Text>
+<Text size='small'>Jag är ett span-element med liten text</Text>
 ```
 
 <div className='card'>
-  <Text variant='body-01'>Jag är ett span-element av varianten 'body-01'</Text>
+  <Text size='small'>Jag är ett span-element med liten text</Text>
 </div>
 
 ### Extern
@@ -45,19 +45,13 @@ Använd egenskapen `variant` för att justera textens utseende
 Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
 
 ```tsx
-<Text
-  variant='body-02'
-  isExpressive
->
+<Text isExpressive>
   Jag är ett externt span-element
 </Text>
 ```
 
 <div className='card'>
-  <Text
-    variant='body-02'
-    isExpressive
-  >
+  <Text isExpressive>
     Jag är ett externt span-element
   </Text>
 </div>
@@ -76,7 +70,7 @@ Egenskapen `elementType` kan användas för att ändra textens DOM-element.
 
 ### Slot
 
-I Midas används `Text` internt i formulärkomponenter för att skriva ut en hjälptext `slot='description'`.
+I Midas används `Text` internt i formulärkomponenter för att skriva ut en hjälptext `slot='description'`. När `slot='description'` används får texten automatiskt description-stil istället för body-stil.
 
 ```tsx
 <Label htmlFor="name">Fullständigt namn</Label>
@@ -93,6 +87,16 @@ I Midas används `Text` internt i formulärkomponenter för att skriva ut en hj�
     id='name'
     style={{ maxWidth: 200 }}
   />
+</div>
+
+Du kan även kombinera `slot='description'` med `size='small'` för liten description-text:
+
+```tsx
+<Text slot="description" size="small">Liten hjälptext</Text>
+```
+
+<div className='card'>
+  <Text slot='description' size='small'>Liten hjälptext</Text>
 </div>
 
 ## API

@@ -6,24 +6,21 @@ import {
 } from 'react-aria-components'
 import styles from './Text.module.css'
 
-export type TextVariant =
-  | 'body'
-  | 'bodySmall'
-  | 'description'
-  | 'descriptionSmall'
-  /**
-   * @deprecated Use 'body' instead
-   */
-  | 'body-01'
-  /**
-   * @deprecated Use 'body' instead
-   */
-  | 'body-02'
+export type TextSize = 'small'
+
+/**
+ * @deprecated Use size prop instead. Only kept for backwards compatibility with body-01 and body-02.
+ */
+export type TextVariant = 'body-01' | 'body-02'
 
 export interface TextProps extends AriaTextProps {
   /**
-   * The visual variant of the component
-   * @default 'body'
+   * The size of the text. When omitted, uses the default size.
+   * The style type (body vs description) is derived from the slot prop.
+   */
+  size?: TextSize
+  /**
+   * @deprecated Use size prop instead. Only body-01 and body-02 are supported for backwards compatibility.
    */
   variant?: TextVariant
   /**
@@ -37,28 +34,29 @@ const DEFAULT_ELEMENT = 'span'
 export const Text: React.FC<TextProps> = ({
   children,
   className,
-  variant = 'body',
+  size,
+  variant,
   isExpressive = false,
   elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
-  const classNames: Record<TextVariant, string> = {
-    'body': styles['body'],
-    'bodySmall': styles['body-small'],
-    'description': styles['description'],
-    'descriptionSmall': styles['description-small'],
-    'body-01': styles['body-01'],
-    'body-02': styles['body-02'],
+  const getClassName = () => {
+    if (variant === 'body-01') {
+      return styles['body-01']
+    }
+    if (variant === 'body-02') {
+      return styles['body-02']
+    }
+
+    const isDescription = rest.slot === 'description'
+    if (isDescription) {
+      return size === 'small' ? styles['description-small'] : styles['description']
+    }
+    return size === 'small' ? styles['body-small'] : styles['body']
   }
 
-  // When slot="description" is used, default to 'description' variant unless description variant explicitly set
-  const effectiveVariant =
-    rest.slot === 'description' && variant !== 'description' && variant !== 'descriptionSmall'
-      ? 'description'
-      : variant
-
   const textProps: TextProps = {
-    className: clsx(classNames[effectiveVariant], className),
+    className: clsx(getClassName(), className),
     elementType: elementType || DEFAULT_ELEMENT,
     ...(isExpressive && { 'data-expressive': true }),
     ...rest,
