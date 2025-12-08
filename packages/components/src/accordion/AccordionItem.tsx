@@ -13,6 +13,8 @@ import itemStyles from './AccordionItem.module.css'
 import { Heading, HeadingProps } from '../heading'
 import { FeedbackStatus, Size } from '../common/types'
 import { AccordionContext } from './AccordionContext'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   /** The text displayed in the collapsed state. If a ReactNode is provided, a heading will not be automatically added, and you must provide one yourself. */
@@ -32,6 +34,10 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
    *  @default 'large'
    **/
   size?: Size
+  /**
+   * Change the aria-label of the status icon shown when defining the `type`
+   */
+  iconAriaLabel?: string
 }
 
 export const AccordionItem: React.FC<MidasAccordionItem> = ({
@@ -43,9 +49,11 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   hasBackground = true,
   size = 'large',
   isContained: isContainedFromProp,
+  iconAriaLabel,
   ...props
 }) => {
   const context = useContext(AccordionContext)
+  const strings = useLocalizedStringFormatter(messages)
   const isContained = isContainedFromProp ?? context?.isContained ?? false
   const titleIsReactNode = typeof title === 'object'
 
@@ -58,12 +66,22 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   }, [type, isContained])
 
   const Icon = type ? iconMap[type] : null
-  const renderedIcon = Icon ? (
-    <Icon
-      size={20}
-      className={itemStyles.statusIcon}
-    />
-  ) : null
+
+  const iconAriaLabelMap: Record<FeedbackStatus, string> = {
+    success: strings.format('ok'),
+    info: strings.format('information'),
+    important: strings.format('importantInformation'),
+    warning: strings.format('warning'),
+  }
+
+  const renderedIcon =
+    type && Icon ? (
+      <Icon
+        aria-label={iconAriaLabel || iconAriaLabelMap[type]}
+        size={20}
+        className={itemStyles.statusIcon}
+      />
+    ) : null
 
   return (
     <Disclosure
