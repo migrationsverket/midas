@@ -14,7 +14,7 @@
   "description": "Midas select styles",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "exports": {
     "./react-select.css": {
       "import": "./react-select.css",
@@ -22,7 +22,7 @@
     }
   },
   "dependencies": {
-    "@midas-ds/theme": "3.7.0",
+    "@midas-ds/theme": "3.7.1",
     "react-select": "^5.10.2"
   }
 }
