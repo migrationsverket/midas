@@ -20,8 +20,8 @@ import styles from './Toast.module.css'
 import { X } from 'lucide-react'
 import clsx from '../utils/clsx'
 
-import { iconMap } from '../common/icon-map'
-import { FeedbackStatus } from '../common/types.ts'
+import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
+import { FeedbackStatus } from '../common/types'
 
 export interface MidasToast {
   message: string
@@ -142,7 +142,6 @@ export function Toast<T extends MidasToast>({
     state,
     ref,
   )
-  const Icon = iconMap[props.toast.content.type]
 
   return (
     <div
@@ -159,10 +158,10 @@ export function Toast<T extends MidasToast>({
         {...contentProps}
         className={clsx(styles.toastContent, contentProps.className)}
       >
-        <Icon
-          className={styles.icon}
-          size={20}
+        <FeedbackStatusIcon
           aria-hidden
+          className={styles.icon}
+          status={props.toast.content.type}
         />
         <div>
           <p
