@@ -1,4 +1,5 @@
 import { DesignToken } from 'style-dictionary/types'
+import { CopyButton } from '@site/src/components/CopyButton'
 
 const transitionAnimationStyles = `
   @keyframes fillBar {
@@ -204,7 +205,7 @@ export const Token = ({ token }: { token: DesignToken }) => {
 
     if (isDimension) {
       return (
-        <div>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', justifySelf: 'flex-end', minWidth: '150px' }}>
           <div
             style={{
               width: token.$value,
@@ -259,14 +260,13 @@ export const Token = ({ token }: { token: DesignToken }) => {
       {(isDuration || isTransition) && <style>{transitionAnimationStyles}</style>}
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
+          display: 'grid',
+          gridTemplateColumns: '3fr 1fr auto',
           gap: '1rem',
           marginBottom: '0.5rem',
           border: '1px solid #eee',
           padding: '1rem',
           width: '100%',
-          justifyContent: 'space-between',
           overflow: 'hidden',
         }}
       >
@@ -280,11 +280,11 @@ export const Token = ({ token }: { token: DesignToken }) => {
           wordBreak: 'break-all',
           overflowWrap: 'break-word',
         }}>
-          {cssVarName}
+          <CopyButton text={cssVarName}/>
         </div>
         {token.$description && <div style={{ wordBreak: 'break-word' }}>{token.$description}</div>}
       </div>
-      <div style={{ flex: '0 0 auto', maxWidth: '300px', overflow: 'hidden' }}>
+      <div style={{ justifySelf: 'flex-end', alignSelf: 'center', maxWidth: '400px', overflow: 'hidden' }}>
         {renderValue()}
       </div>
     </div>
