@@ -6,22 +6,30 @@ sidebar_label: 'Utveckling'
 
 Att komma igång och bidra med kod till Midas är enkelt!
 
-## Du behöver
+## 🤝 Gemenskapsdriven utveckling
 
-- En normalt fungerande WSL2 eller motsvarande setup med Node version >22.
-- [Nx](https://nx.dev) installerat globalt `npm install --global nx@latest`
+Midas komponentbibliotek är **gemenskapsdriven** - det är ett strategiskt mål att biblioteket produceras av och för användarcommunityn. Ett litet core-team ansvarar för att hantera projektet och säkerställa kvalitet, men **bidrag från användare är mer än välkomna**.
 
-```bash
-npm install
-```
+Ett av våra viktigaste mål är att erbjuda en så bra **developer experience (DX)** som möjligt. För att uppnå detta behöver vi er feedback, era idéer och era bidrag. Genom att vara gemenskapsdriven säkerställer vi att biblioteket möter verkliga behov och utmaningar som ni stöter på i era projekt.
+
+**Hur du kan bidra:**
+- Rapportera buggar och föreslå förbättringar
+- Bidra med kod för nya komponenter eller funktionalitet
+- Förbättra dokumentation
+- Delta i diskussioner och code reviews
+- Dela din erfarenhet av att använda Midas
+
+Din feedback och ditt engagemang är avgörande för att göra Midas bättre. Tveka inte att höra av dig!
+
+## 🛠️ Kom igång
+
+Node version >22 krävs. Installera [Nx](https://nx.dev) globalt: `npm install --global nx@latest`
 
 ### Nx
 
 Midas är ett monorepo som hanteras med [Nx](https://nx.dev). Det innebär att vi har flera olika projekt i samma repo, till exempel komponentbiblioteket, dokumentationswebben och andra verktyg. Varje projekt har sitt eget scope och kan hanteras individuellt. Du kan köra `nx graph` för att se en visuell representation av hur projekten är relaterade till varandra. Eftersom vissa projekt är beroende av andra, kan en ändring i ett projekt innebära att ett annat projekt också behöver en ny version. Till exempel, om `theme` uppdateras, så kommer `components` som är beroende av `theme` också att få en ny version.
 
 ### Starta Storybook
-
-Storybook är ett verktyg för att bygga och visa upp UI-komponenter i en isolerad miljö. Det gör det enklare att utveckla, testa och dokumentera komponenter.
 
 ```bash
 nx serve storybook
@@ -33,53 +41,49 @@ Alla komponenter ligger under `/packages/components` och exporteras som ett npm-
 
 ### Tester
 
-- Kör enhetstester för komponentbiblioteket, mer info finns på [sidan om tester](../tests)
-
 ```bash
 nx test components
 ```
+
+Mer info finns på [sidan om tester](../tests).
 
 ### Dokumentationswebb
 
 Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https://docusaurus.io/).
 
-Kör dokumentationen lokalt:
-
 ```bash
-nx serve docs
-```
-
-Gör ett produktionsbygge av dokumentationen:
-
-```bash
-nx build docs
+nx serve docs    # Kör lokalt
+nx build docs    # Produktionsbygge
 ```
 
 #### API
 
 Vid ett produktionsbygge samlas information om komponenternas typescript-typer in och visas med hjälp av en tabell under rubriken API på varje komponentsida.
-På grund av prestandaproblem görs inte detta per default av `serve`-kommandot.
-
-Kör dokumentationen lokalt och inkludera typescript-typer i tabeller:
+För snabbare uppstart är detta inaktiverat per default i `serve`-kommandot, men du kan aktivera det om du behöver se API-tabellerna under utveckling:
 
 ```bash
 DOCUSAURUS_HIDE_API=false nx serve docs
 ```
 
-### Bygg komponentbibliotek
+### Testa lokalt end-to-end
 
-Komponentbibliotek och appar kan byggas med:
+För att testa komponentbiblioteket i en annan app kan du publicera det till ett lokalt npm-registry:
 
-```shell
-nx build <namn>
+```bash
+nx run @midas-ds/source:release:local:dev
 ```
 
-och allt som byggs hamnar i `/dist`. Om du vill testa utanför monorepot går det att zippa med `npm pack` och installera i
-separat app med `npm install [sökväg]`.
+Detta startar ett lokalt Verdaccio-registry och publicerar alla paket. Du kan sedan installera dem i ett testprojekt:
 
-## Arbetsflöde versionshantering
+```bash
+npm install @midas-ds/components@latest --registry=http://localhost:4873/
+```
 
-Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-branchar som sedan mergas in i `main`. Vi använder inte `develop` eller andra liknande branchar för att hålla det enkelt och för att passa ett arbetssätt med kontinuerlig integration och leverans (CI/CD).
+Mer information finns i `tools/release-local/README.md`.
+
+## 🌿 Arbetsflöde versionshantering
+
+Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-brancher som sedan mergas in i `main`. Vi använder inte `develop` eller andra liknande brancher för att hålla det enkelt och för att passa ett arbetssätt med kontinuerlig integration och leverans (CI/CD).
 
 Ett exempel på hur det kan se ut i praktiken:
 
@@ -115,57 +119,104 @@ gitGraph
 
 ### Branch
 
-Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/`, till exempel `feature/button`. Scope är valfritt men om det används ska det referera till ett av projekten i monorepot, till exempel `components`, `docs` eller `theme`.
+Brancher namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/`, till exempel `feature/button`. Scope är valfritt men om det används ska det referera till ett av projekten i monorepot, till exempel `components`, `docs` eller `theme`.
 
 ### Commit
 
 Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
-**imperativ form**, definiera type `feat|docs|fix|refactor|test|chore|ops...` för att avgöra vilken versionsändring du vill göra och scope `(theme|button|etc...)` som rubrik för changelog.
+**imperativ form**, definiera type `feat|docs|fix|refactor|test|chore|ops...` för att avgöra vilken versionsändring du vill göra och scope `(project, component)` som rubrik för changelog.
+
+**Viktigt**: Scope börjar alltid med ett av Nx-projekten (`components`, `theme`, `docs`, etc.) för att versionshanteringen ska fungera korrekt. Komponenter eller features anges som andra parametern efter kommatecken.
 
 Se `.commitlintrc.js` för tillåtna types och scopes.
 
-:::info
-Våra commits är hela projektets historik, avgör vilken version nästa release blir, samt är indata till
-changelogs och release notes så lägg gärna en extra minut på att vara tydlig. Om du är osäker på vilken
-commit du ska göra, titta på [conventional commits cheatsheet](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13).
-:::
+**Exempel:**
 
-#### Varför conventional commits?
+```bash
+feat(components, button): add new button variant   # Minor bump för components
+fix(theme): fix button hover color                 # Patch för theme
+docs: update contribution guide                    # Ingen bump
 
-    - Generera automatisk CHANGELOG
-    - Automatiskt bestämma `semantic version`
-    - Kommunicera inom team och till andra intressenter vad förändringen gäller.
-    - Trigga byggen och andra åtgärder.
-    - Bidra till att hålla en konsekvent och strukturerad historik.
-
-#### Commit message på en rad
-
-`docs: update button variant docs`
-
-#### Commit message med header och body
-
-```
+# Med body för mer kontext
 fix(theme): prevent red color on button hover
 
 Introduce new css variable to automatically
 select style based on input type
 ```
 
-###
-
-Ta dig gärna tid att läsa igenom [conventional commit summary](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)
-och försök jobba enligt det flödet.
-
 :::info
-Innan du skapar en PR, gå igenom så att du har commits som representerar vad du har gjort.
-Jobbar du ensam i en feature branch och har skapat många commits? Använd `git rebase -i`,
-då kan du välja vilka commits som ska vara med och vilka som kan kombineras. Du kan också passa på att
-ändra commit messages.
+Innan du skapar en PR, städa gärna commit-historiken med `git rebase -i` om du har många commits i din feature branch. [Guide till git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 :::
 
-Instruktioner för hur du använder `git rebase` finns [här](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
+## 🏗️ Designfilosofi och arkitektur
 
-## Bygga komponenter
+Midas designsystem följer principer från Clean Code och Clean Architecture för att säkerställa hög kvalitet, underhållbarhet och långsiktig stabilitet.
+
+### ✨ Clean Code-principer
+
+Vi strävar efter ren, läsbar och underhållbar kod:
+
+- **Små funktioner och komponenter**: Varje komponent har ett tydligt, avgränsat ansvar (Single Responsibility Principle)
+- **Beskrivande namn**: Funktioner, variabler och komponenter har namn som tydligt beskriver vad de gör
+- **Testbar kod**: Kod struktureras för att vara enkel att testa
+- **DRY (Don't Repeat Yourself)**: Undvik kodduplicering genom återanvändning och abstraktion
+- **Inkrementella förbättringar**: Lämna koden bättre än du hittade den - fixa gärna problem du ser även om de inte är en del av din uppgift
+- **Stateless komponenter**: Komponenter är i möjlig mån stateless och stödjer designsystemet på ett generiskt sätt
+
+### 🏛️ Clean Architecture-principer
+
+Vi tillämpar principer från clean architecture för att skapa ett underhållbart och stabilt komponentbibliotek:
+
+- **Separera styling från beteende**: Använd headless-bibliotek för logik och tillgänglighet, applicera endast visuell stil
+- **Minimera beroenden**: Håll komponenter löst kopplade och undvik onödiga beroenden mellan dem
+- **Testbarhet**: Komponenter är enkla att testa isolerat utan omfattande setup
+- **Stabilitet över flexibilitet**: Välj stabila, välunderhållna beroenden framför att bygga egen komplexitet
+
+### 📦 Beroendestrategi: Headless-bibliotek
+
+#### React Aria Components (RAC) - Förstahandsval
+
+Komponenter byggs **i första hand** på [React Aria Components](https://react-spectrum.adobe.com/react-aria/getting-started.html). React Aria tillhandahåller:
+
+- **Tillgänglighet**: Fullständigt stöd för WCAG, skärmläsare och tangentbordsnavigation
+- **Plattformsstöd**: Touch, mouse och keyboard fungerar sömlöst
+- **Produktionstestad**: Vältestad kod från Adobe som används i stora produktionsmiljöer
+- **Internationalisering**: Inbyggt stöd för olika språk och lokalisering
+
+**Viktigt**: Följ React Aria's API och mönster så nära som möjligt. Undvik att avvika för mycket från originalet då det:
+- Försvårar uppgraderingar när React Aria uppdaterar sitt API
+- Ökar underhållsbördan för teamet
+- Riskerar att vi bygger egen komplexitet som redan är löst
+
+**Best practice**: Om du behöver anpassa beteende, fråga dig först om React Aria redan har en lösning via props, composition eller hooks.
+
+#### Alternativa headless-bibliotek
+
+När funktionalitet **inte finns** i React Aria Components, välj andra välunderhållna headless-bibliotek.
+
+**Exempel på bibliotek vi redan använder:**
+- **[TanStack Table](https://tanstack.com/table)**: För avancerad tabellhantering
+- **[React Select](https://react-select.com/)**: För komplexa select-komponenter
+
+**Kriterier för att välja ett bibliotek:**
+- Välunderhållet och aktivt utvecklat
+- Headless (ingen inbyggd styling)
+- Stort community och bra dokumentation
+- TypeScript-stöd
+- Stabilt API med tydlig versionshantering
+- Produktionstestat och används av många projekt
+
+Tveka inte att föreslå andra välunderhållna headless-bibliotek om de passar användarfallet bättre.
+
+#### Undvik custom-lösningar
+
+:::warning
+Bygg inte egen logik för tangentbordshantering, focus management, ARIA eller accessibility-funktionalitet. Custom-lösningar är svåra att få rätt, ökar underhållsbördan dramatiskt och riskerar att introducera tillgänglighetsbrister.
+:::
+
+**När är custom OK?** Endast för ren visuell styling eller små, väldefinierade utilities som inte existerar i headless-bibliotek.
+
+## 🔨 Bygga komponenter
 
 ### Styleguide
 
@@ -173,27 +224,18 @@ Generellt, använd övriga komponenter som referens när nya läggs till. React 
 och struktur, både via deras ostylade komponentbibliotek och via sin designsystemsimplementation
 [React Spectrum](https://github.com/adobe/react-spectrum/tree/main/packages/%40react-spectrum).
 
-- Målet är små funktioner, små komponenter, clean code.
-- Det uppmuntras att hela tiden göra inkrementella förbättringar i kringliggande kod
-- Komponenter ska vara testbara och dokumenterade
-- Komponenter ska stödja designsystemet på ett generiskt sätt och i möjlig mån vara stateless
-- Formatera enligt [Prettier](https://prettier.io/) standard
-
-### Importera headless-bibliotek
-
-Komponenter ska i första hand byggas på [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) i den mån det går. React Aria har ett omfattande bibliotek av
-färdiga komponenter och hooks som går att kombinera ihop för att uppnå önskat resultat. Fördelen med att följa React Arias
-konventioner är att det följer med mycket gratis i form av stöd för skärmläsare, tangentbordsnavigation och olika states.
+- **Formatera enligt [Prettier](https://prettier.io/) standard**
+- **Följ existerande patterns**: Se hur liknande komponenter är strukturerade
 
 ### Skapa stories
 
-I utgångspunkt bör alla states finnas representerade som stories i Storybook. Storybook är i första hand ett internt
+Alla states bör finnas representerade som stories i Storybook. Storybook är i första hand ett internt
 verktyg för UX och utvecklare i designsystemet men också en publikt exponerad referens med API och visuell
 representation av komponenterna.
 
 ### Skriv enhetstester
 
-Ur perspektivet att tillgänglighet är ett av designsystemets viktigaste fokusområden är det viktigt att vi regressionstestar och testar
+Eftersom tillgänglighet är ett av designsystemets viktigaste fokusområden är det viktigt att vi regressionstestar och testar
 så stor del av möjliga states av alla komponenter på enhetsnivå. MIDAS använder primärt
 [Storybook som testplattform](https://storybook.js.org/docs/writing-tests). De stories du skapat för komponenter kan du nu använda som utgångspunkt för dina tester.
 Läs mer om [hur vi förhåller oss till tester av våra komponenter](../tests).
@@ -206,27 +248,25 @@ men om det har införts nya types eller interfaces kan de behöva specificeras e
 
 ---
 
-## Release
+## 🚀 Release
 
-Release görs med hjälp av Nx Release som räknar fram rätt version via commit messages.
+Release sker automatiskt via CI/CD när ändringar mergas till `main`-branchen.
 
-Använd följande kommando:
+### Hur det fungerar
 
-```bash
-nx release --skip-publish
-```
+1. **Automatiska versioner**: När en pull request mergas till `main` analyserar Nx Release alla commits sedan senaste release och räknar fram rätt version baserat på conventional commits.
 
-eller välj vilka projekt du vill:
+2. **Publicering**: Om någon package får en ny version publiceras den automatiskt till npm.
 
-```bash
-nx release -p components theme --skip-publish
-```
+3. **Changelog och taggar**: Changelog uppdateras automatiskt och nya git-taggar skapas enligt formatet `nx-project@version`.
 
-Själva flödet är en uppdatering av changlog och package.json med ny version och en ny tagg enligt `nx-project@version`.
-Nx pushar sedan alla ändringar och taggar och berörda workflows triggas.
+4. **Dokumentation**: Dokumentationswebben byggs och publiceras automatiskt med de senaste ändringarna.
 
-Behöver du skriva release notes får du commita desssa i efterhand och ompublicera dokumentationswebben, kör `publish-docs`-workflowet från github.
+### Vad du behöver göra
+
+- **Följ conventional commits**: Dina commits följer conventional commits-standarden, eftersom det avgör vilken versionsändring som sker (major, minor, patch).
+- **Merge till main**: När din pull request godkänns och mergas till `main` sker resten automatiskt.
 
 :::info
-Endast Midas core-team har de nödvändiga rättigheterna för att göra nya releaser.
+Du behöver inte köra några manuella release-kommandon. CI/CD-pipelinen hanterar hela releasen automatiskt.
 :::
