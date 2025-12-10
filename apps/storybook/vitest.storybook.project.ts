@@ -25,6 +25,14 @@ export const defineStorybookProject = async ({
   snapshotSubpath,
 }: Props) =>
   ({
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'react/jsx-dev-runtime',
+      ],
+    },
     extends: true,
     plugins: [
       // The plugin will run tests for the stories defined in your Storybook config
