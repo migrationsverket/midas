@@ -68,4 +68,4 @@ jobs:
         if: >
           steps.storybook.outputs.affected == 'true' && (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
           steps.storybook.outputs.affected == 'true' && contains(github.event.pull_request.labels.*.name, 'a11y')
-        run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
+        run: npx nx run-many -t a11y a11y-dark-mode a11y-forced-colors -p storybook --parallel=1
