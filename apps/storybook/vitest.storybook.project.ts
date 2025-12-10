@@ -17,7 +17,7 @@ const currentDirectory =
     ? __dirname
     : dirname(fileURLToPath(import.meta.url))
 
-const isCI = !!process.env.GITHUB_ACTIONS
+const isCI = !!process.env.CI
 
 export const defineStorybookProject = async ({
   name,
