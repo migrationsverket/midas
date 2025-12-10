@@ -1,3 +1,9 @@
+## 15.4.1 (2025-12-10)
+
+### 🩹 Fixes
+
+- **components:** externalize dependecies ([5e95894058](https://github.com/migrationsverket/midas/commit/5e95894058))
+
 ## 15.4.0 (2025-12-08)
 
 ### 🚀 Features
