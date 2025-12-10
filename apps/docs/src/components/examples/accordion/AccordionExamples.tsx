@@ -49,15 +49,14 @@ export const StatusExample = () => (
       <AccordionItem
         id='watermelon'
         title='Vattenmelon'
-        type={undefined}
+        type='info'
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>
       <AccordionItem
         id='yellowmelon'
         title='Honungsmelon'
-        type='success'
-        hasBackground={false}
+        type='important'
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>
