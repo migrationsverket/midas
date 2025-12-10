@@ -39,7 +39,13 @@ Det gör det enklare att dela och återanvända våra designbeslut över olika p
 
 ## Generering av variabler
 
-För att generera CSS-variabler från våra design tokens använder vi ett skript som heter `sd.build.mjs`. Detta skript körs med kommandot `nx run theme:build` och gör följande:
+För att generera CSS-variabler från våra design tokens använder vi ett skript som heter `sd.build.mjs`:
+
+```bash
+nx run theme:build
+```
+
+Detta skript gör följande:
 
 1.  **Läser in tokens:** Skriptet läser in alla token-filer från `/packages/theme/tokens` och slår ihop dem till ett enda stort objekt.
 2.  **Transformerar tokens:** Style Dictionary transformerar sedan detta objekt enligt de konfigurationer som finns i `sd.build.mjs`. Detta inkluderar att omvandla färger till rätt format, lägga till prefix och andra anpassningar.
@@ -48,4 +54,4 @@ För att generera CSS-variabler från våra design tokens använder vi ett skrip
 
 De genererade filerna publiceras som ett eget npm-paket med namnet `@midas-ds/theme`.
 
-En komplett lista över alla tillgängliga tokens finns på sidan [token reference](dev-tokens.mdx).
+En komplett lista över alla tillgängliga tokens finns på sidan [token reference](dev-tokens).

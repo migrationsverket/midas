@@ -1,0 +1,226 @@
+@keyframes fillBar {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.tokenContainer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #eee;
+  padding: 1rem;
+  width: 100%;
+  overflow: hidden;
+  align-items: start;
+}
+
+.tokenInfo {
+  min-width: 200px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tokenName {
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.tokenVariable {
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  font-family: monospace;
+  margin-top: 0.25rem;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.tokenDescription {
+  word-break: break-word;
+}
+
+.tokenPreview {
+  place-self: start flex-end;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.colorSwatch {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.colorSwatchContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.typographyPreview {
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.compositeTypography {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 100%;
+}
+
+.compositeTypographyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 4px;
+  word-break: break-word;
+}
+
+.compositeTypographyDetails > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.compositeTypographyPreview {
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: var(--ifm-background-surface-color);
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.dimensionContainer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-self: flex-end;
+  min-width: 150px;
+}
+
+.dimensionBar {
+  height: 1rem;
+  background-color: #ccc;
+  max-width: 100%;
+}
+
+.dimensionValue {
+  font-size: 0.875rem;
+  font-family: monospace;
+  margin-top: 0.25rem;
+}
+
+.windowSizeContainer {
+  width: 100%;
+}
+
+.windowSizeBar {
+  height: 1rem;
+  background-color: #ccc;
+  max-width: 100%;
+}
+
+.windowSizeValue {
+  font-size: 0.875rem;
+  font-family: monospace;
+  margin-top: 0.25rem;
+}
+
+.durationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.durationValue {
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+.durationBarContainer {
+  width: 120px;
+  height: 20px;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.durationBar {
+  height: 100%;
+  background-color: var(--ifm-color-primary);
+  width: 0;
+}
+
+.durationBarContainer:hover .durationBar {
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  animation: fillBar var(--duration, 1s) ease-out infinite;
+}
+
+.genericValue {
+  font-size: 0.875rem;
+  font-family: monospace;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.sectionHeader {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+  text-transform: capitalize;
+}
+
+.subsectionHeader {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-primary);
+  text-transform: capitalize;
+}
+
+.usageExample {
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 4px;
+  font-family: monospace;
+  margin-bottom: 1rem;
+}
+
+.usageTitle {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.tokenListContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.tokenSection {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.tokenGroup {
+  display: flex;
+  flex-direction: column;
+}
