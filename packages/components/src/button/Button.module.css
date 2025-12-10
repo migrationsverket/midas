@@ -94,6 +94,7 @@
   color: var(--midas-icon-primary);
   display: flex;
   align-items: center;
+  justify-content: center;
 
   &[data-hovered] {
     background-color: var(--midas-button-icon-hover);
