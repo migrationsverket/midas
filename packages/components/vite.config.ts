@@ -40,7 +40,7 @@ export default defineConfig({
           globSync(`${src}/*/index.ts`).map(file => [
             relative(src, file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(relative(__dirname, file), import.meta.url)),
-          ])
+          ]),
         ),
       },
       formats: ['es'],
@@ -49,23 +49,23 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        'react-aria-components',
+        'react-aria',
+        'react-stately',
+        /@react-aria/,
+        /@react-stately/,
+        /@internationalized/,
+        '@midas-ds/theme',
+      ],
       output: {
         assetFileNames: 'assets/[name][extname]',
         entryFileNames: '[name].js',
         chunkFileNames: 'chunks/[name]-[hash].js',
         format: 'es',
-        manualChunks: (id) => {
-          if (id.includes('node_modules/react-aria-components')) {
-            return 'react-aria-components'
-          }
-          if (id.includes('node_modules/@internationalized')) {
-            return 'internationalized'
-          }
-          if (id.includes('node_modules/react-stately')) {
-            return 'react-stately'
-          }
-        },
       },
     },
   },
