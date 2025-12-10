@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "@midas-ds/theme": "3.8.0",
-    "react-aria-components": "1.13.0",
-    "react-stately": "3.42.0"
+    "react-aria-components": "1.13.0"
   }
 }
