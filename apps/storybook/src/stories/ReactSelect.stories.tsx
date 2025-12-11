@@ -52,3 +52,10 @@ export const MultiSelect: Story = {
     },
   },
 }
+
+export const MultiSelectMedium: Story = {
+  args: {
+    ...MultiSelect.args,
+    className: 'select medium',
+  },
+}
