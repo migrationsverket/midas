@@ -9,6 +9,62 @@ import { findPage } from './utils'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import styles from './Pagination.module.css'
+import { FocusScope, useFocusManager } from 'react-aria'
+import type React from 'react'
+
+interface NavigationButtonsProps {
+  getCanNextPage: () => boolean
+  getCanPreviousPage: () => boolean
+  nextPage: () => void
+  previousPage: () => void
+  nextPageLabel: string
+  previousPageLabel: string
+}
+
+const NavigationButtons = ({
+  getCanNextPage,
+  getCanPreviousPage,
+  nextPage,
+  previousPage,
+  nextPageLabel,
+  previousPageLabel,
+}: NavigationButtonsProps) => {
+  const focusManager = useFocusManager()
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    switch (e.key) {
+      case 'ArrowRight':
+        focusManager?.focusNext({ wrap: true })
+        break
+      case 'ArrowLeft':
+        focusManager?.focusPrevious({ wrap: true })
+        break
+    }
+  }
+
+  return (
+    <>
+      <Button
+        onKeyDown={onKeyDown}
+        aria-label={previousPageLabel}
+        isDisabled={!getCanPreviousPage()}
+        onPress={previousPage}
+        variant='icon'
+      >
+        <ChevronLeft />
+      </Button>
+      <Button
+        onKeyDown={onKeyDown}
+        aria-label={nextPageLabel}
+        isDisabled={!getCanNextPage()}
+        onPress={nextPage}
+        variant='icon'
+      >
+        <ChevronRight />
+      </Button>
+    </>
+  )
+}
 
 export interface PaginationProps<TData extends RowData>
   extends Pick<
@@ -108,22 +164,16 @@ export const Pagination = <T extends RowData>({
         </Text>
       </div>
       <div className={styles.buttons}>
-        <Button
-          aria-label={strings.format('previousPage')}
-          isDisabled={!getCanPreviousPage()}
-          onPress={previousPage}
-          variant='icon'
-        >
-          <ChevronLeft />
-        </Button>
-        <Button
-          aria-label={strings.format('nextPage')}
-          isDisabled={!getCanNextPage()}
-          onPress={nextPage}
-          variant='icon'
-        >
-          <ChevronRight />
-        </Button>
+        <FocusScope>
+          <NavigationButtons
+            getCanNextPage={getCanNextPage}
+            getCanPreviousPage={getCanPreviousPage}
+            nextPage={nextPage}
+            previousPage={previousPage}
+            nextPageLabel={strings.format('nextPage')}
+            previousPageLabel={strings.format('previousPage')}
+          />
+        </FocusScope>
       </div>
     </div>
   )
