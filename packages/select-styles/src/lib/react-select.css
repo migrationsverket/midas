@@ -11,6 +11,10 @@
     .midas__control {
       min-height: var(--midas-size-130);
     }
+
+    .midas__value-container--is-multi {
+      padding: 4px;
+    }
   }
 
   .midas__control {

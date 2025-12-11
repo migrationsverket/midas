@@ -5,15 +5,18 @@ import '@midas-ds/select-styles/lib/react-select.css'
 
 import { mockPersonData } from '../mockData'
 
-type MultiComboBoxProps = { id?: string }
+type MultiComboBoxProps = { id?: string; className?: string }
 
-export const MultiComboBox = ({ id = 'basic-example' }: MultiComboBoxProps) => {
+export const MultiComboBox = ({
+  id = 'basic-example',
+  className = 'select',
+}: MultiComboBoxProps) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <Label htmlFor={id}>Select employee</Label>
       <Text slot='description'>Employees from all departments</Text>
       <Select
-        className='select'
+        className={className}
         classNamePrefix='midas'
         closeMenuOnSelect={false}
         hideSelectedOptions={false}
