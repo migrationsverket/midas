@@ -50,12 +50,11 @@ export const Pagination = <T extends RowData>({
   const firstVisibleItem = lastVisibleItem - pageSize + 1
 
   const handleChangePageIndex = (value: Key | null) => {
-    setPageIndex(typeof value === 'string' ? Number(value) : value || 0)
+    setPageIndex(value !== null ? Number(value) : 0)
   }
 
   const handleChangePageSize = (value: Key | null) => {
-    const newPageSize =
-      typeof value === 'string' ? parseInt(value) : value || pageSize
+    const newPageSize = value !== null ? Number(value) : pageSize
     setPageSize(newPageSize)
     setPageIndex(findPage(firstVisibleItem, newPageSize))
   }
@@ -64,15 +63,15 @@ export const Pagination = <T extends RowData>({
     <div className={styles.pagination}>
       <Select
         className={styles.pageSize}
-        items={pageSizeOptions.map(size => ({ id: size, name: size }))}
+        items={pageSizeOptions.map(size => ({ id: size.toString(), name: size }))}
         label={strings.format('rowsPerPage')}
         onChange={handleChangePageSize}
-        value={pageSize}
+        value={pageSize.toString()}
       >
         {item => (
           <ListBoxItem
             id={item.id}
-            textValue={item.id.toString()}
+            textValue={item.id}
           >
             {item.name}
           </ListBoxItem>
@@ -89,16 +88,16 @@ export const Pagination = <T extends RowData>({
           aria-label={strings.format('selectPage')}
           className={styles.pageIndex}
           items={[...Array(pageCount).keys()].map(n => ({
-            id: n,
+            id: n.toString(),
             name: n,
           }))}
           onChange={handleChangePageIndex}
-          value={pageIndex}
+          value={pageIndex.toString()}
         >
           {item => (
             <ListBoxItem
               id={item.id}
-              textValue={Number(item.id + 1).toString()}
+              textValue={(Number(item.id) + 1).toString()}
             >
               {item.name + 1}
             </ListBoxItem>
