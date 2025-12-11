@@ -1,20 +1,20 @@
 {
   "en": {
     "nextPage": "Next page",
+    "previousPage": "Previous page",
+    "rowsPerPage": "Rows per page:",
     "of": "of",
     "pages": "pages",
-    "previousPage": "Previous page",
     "rows": "rows",
-    "rowsPerPage": "Rows per page:",
     "selectPage": "Select page"
   },
   "sv": {
     "nextPage": "Nästa sida",
+    "previousPage": "Föregående sida",
+    "rowsPerPage": "Rader per sida:",
     "of": "av",
     "pages": "sidor",
-    "previousPage": "Föregående sida",
-    "rows": "träffar",
-    "rowsPerPage": "Rader per sida:",
+    "rows": "rader",
     "selectPage": "Välj sida"
   }
 }
