@@ -1,0 +1,20 @@
+{
+  "en": {
+    "nextPage": "Next page",
+    "of": "of",
+    "pages": "pages",
+    "previousPage": "Previous page",
+    "rows": "rows",
+    "rowsPerPage": "Rows per page:",
+    "selectPage": "Select page"
+  },
+  "sv": {
+    "nextPage": "Nästa sida",
+    "of": "av",
+    "pages": "sidor",
+    "previousPage": "Föregående sida",
+    "rows": "träffar",
+    "rowsPerPage": "Rader per sida:",
+    "selectPage": "Välj sida"
+  }
+}
