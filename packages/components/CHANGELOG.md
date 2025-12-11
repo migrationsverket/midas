@@ -1,3 +1,13 @@
+## 15.5.0 (2025-12-11)
+
+### 🚀 Features
+
+- **components, accordion:** add an aria-label to the status icon ([e2f126366e](https://github.com/migrationsverket/midas/commit/e2f126366e))
+
+### 🏭 Refactoring
+
+- **components:** create a common component for status icons ([be6b2480f7](https://github.com/migrationsverket/midas/commit/be6b2480f7))
+
 ## 15.4.1 (2025-12-10)
 
 ### 🩹 Fixes
