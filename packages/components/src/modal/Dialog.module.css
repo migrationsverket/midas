@@ -90,3 +90,10 @@
     transform: scale(1);
   }
 }
+
+@media (prefers-reduced-motion) {
+  .overlay[data-entering],
+  .overlay[data-exiting] {
+    animation: none;
+  }
+}

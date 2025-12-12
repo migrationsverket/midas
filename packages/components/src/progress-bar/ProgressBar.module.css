@@ -59,3 +59,9 @@
     transform: translate(200%);
   }
 }
+
+@media (prefers-reduced-motion) {
+  .progressBar:not([aria-valuenow]) .fill {
+    animation-duration: 6s;
+  }
+}

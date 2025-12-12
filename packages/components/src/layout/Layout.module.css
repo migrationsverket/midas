@@ -488,3 +488,21 @@
     display: none;
   }
 }
+
+@media (prefers-reduced-motion) {
+  .sidebar,
+  .sidebarCollapsed,
+  .listLink,
+  .linkText,
+  .backdrop,
+  .backdrop.backdropOpened {
+    transition: none;
+  }
+
+  @starting-style {
+    .backdrop.backdropOpened,
+    .linkText {
+      opacity: 1;
+    }
+  }
+}

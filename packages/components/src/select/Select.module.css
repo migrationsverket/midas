@@ -247,3 +247,11 @@
 .tagGroup {
   margin-top: var(--midas-size-40);
 }
+
+@media (prefers-reduced-motion) {
+  .trigger,
+  .popover[data-trigger='Select'],
+  .selectAll {
+    transition: none;
+  }
+}

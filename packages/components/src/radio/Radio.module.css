@@ -142,3 +142,9 @@
     }
   }
 }
+
+@media (prefers-reduced-motion) {
+  .radio::before {
+    transition: none;
+  }
+}

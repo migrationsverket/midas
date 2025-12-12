@@ -180,3 +180,11 @@
   padding: var(--midas-spacing-50) var(--midas-spacing-50)
     var(--midas-spacing-40) var(--midas-spacing-50);
 }
+
+@media (prefers-reduced-motion) {
+  .listBoxItem,
+  .item,
+  .option .inputCheckbox {
+    transition: none;
+  }
+}

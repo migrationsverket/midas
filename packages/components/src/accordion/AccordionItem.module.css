@@ -139,3 +139,11 @@
 .header {
   margin: 0;
 }
+
+@media (prefers-reduced-motion) {
+  .chevronIcon,
+  .triggerButton[aria-expanded='true'] .chevronIcon,
+  .panel {
+    transition: none;
+  }
+}

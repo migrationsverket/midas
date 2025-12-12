@@ -36,6 +36,10 @@
         .sortIconNeutral {
           opacity: 0;
           transition: opacity 0.2s ease-in-out;
+
+          @media (prefers-reduced-motion) {
+            transition: none;
+          }
         }
 
         &:hover .sortIconNeutral {
