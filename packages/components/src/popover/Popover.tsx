@@ -28,11 +28,11 @@ export function Popover({
       {!hideArrow && (
         <OverlayArrow className={styles.arrow}>
           <svg
-            width={8}
-            height={8}
-            viewBox='0 0 8 8'
+            width={16}
+            height={16}
+            viewBox='0 0 16 16'
           >
-            <path d='M0 0 L4 4 L8 0' />
+            <path d='M0 0 L8 8 L16 0' />
           </svg>
         </OverlayArrow>
       )}

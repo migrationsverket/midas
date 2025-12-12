@@ -32,22 +32,39 @@
   &[data-entering],
   &[data-exiting] {
     transform: var(--origin);
+    transition: transform 200ms ease-in-out;
     opacity: 0;
+  }
+
+  &:has(.arrow) {
+    box-shadow: none;
+    filter: drop-shadow(
+        calc(var(--shadow-x, 0) * 2px) calc(var(--shadow-y, 0) * 2px) 3px
+          rgb(0 0 0 / 15%)
+      )
+      drop-shadow(
+        calc(var(--shadow-x, 0) * 6px) calc(var(--shadow-y, 0) * 6px) 8px
+          rgb(0 0 0 / 10%)
+      );
   }
 
   &[data-placement='top'] {
     --origin: translateY(4px);
+    --shadow-x: 0;
+    --shadow-y: 1;
 
     &:has(.arrow) {
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
   }
 
   &[data-placement='bottom'] {
     --origin: translateY(-4px);
+    --shadow-x: 0;
+    --shadow-y: -1;
 
     &:has(.arrow) {
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
     .arrow svg {
@@ -57,9 +74,11 @@
 
   &[data-placement='right'] {
     --origin: translateX(-4px);
+    --shadow-x: -1;
+    --shadow-y: 0;
 
     &:has(.arrow) {
-      margin-left: 8px;
+      margin-left: 4px;
     }
 
     & .arrow svg {
@@ -68,11 +87,13 @@
   }
 
   &[data-placement='left'] {
-    &:has(.arrow) {
-      margin-right: 8px;
-    }
-
     --origin: translateX(4px);
+    --shadow-x: 1;
+    --shadow-y: 0;
+
+    &:has(.arrow) {
+      margin-right: 4px;
+    }
 
     & .arrow svg {
       transform: rotate(-90deg);
