@@ -1,3 +1,9 @@
+## 15.5.1 (2025-12-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.8.1
+
 ## 15.5.0 (2025-12-11)
 
 ### 🚀 Features
