@@ -19,6 +19,7 @@ import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
 import styles from './Select.module.css'
+import { ListBoxItemContext } from '../list-box/ListBoxItemContext'
 
 export type SelectionMode = 'single' | 'multiple'
 
@@ -52,6 +53,7 @@ export interface MidasSelectProps<
    *  @default 'large'
    */
   size?: Size
+  isInline?: boolean
 }
 
 export function Select<T extends object, M extends SelectionMode = 'single'>({
@@ -63,17 +65,25 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
   label,
   popover,
   size = 'large',
+  isInline = false,
   ...props
 }: MidasSelectProps<T, M>) {
   return (
     <FocusScope>
       <AriaSelect
         {...props}
-        className={clsx(props.className, styles.select)}
+        className={clsx(props.className, styles.select, {
+          [styles.inline]: isInline,
+        })}
       >
         <LabelWrapper popover={popover}>
           {label && (
-            <Label data-disabled={props.isDisabled || undefined}>{label}</Label>
+            <Label
+              data-disabled={props.isDisabled || undefined}
+              className={styles.label}
+            >
+              {label}
+            </Label>
           )}
         </LabelWrapper>
         {description && <Text slot='description'>{description}</Text>}
@@ -111,12 +121,16 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
           hideArrow
         >
           {props.isSelectableAll && <SelectAll />}
-          <ListBox
-            escapeKeyBehavior='none'
-            items={items}
+          <ListBoxItemContext.Provider
+            value={{ size: isInline ? 'small' : 'large' }}
           >
-            {children}
-          </ListBox>
+            <ListBox
+              escapeKeyBehavior='none'
+              items={items}
+            >
+              {children}
+            </ListBox>
+          </ListBoxItemContext.Provider>
         </Popover>
         <SelectTags {...props} />
       </AriaSelect>

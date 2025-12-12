@@ -1,0 +1,48 @@
+import { findPage } from './utils'
+
+describe('findPage', () => {
+  it('should return the correct page number for pageSize 10', () => {
+    expect(findPage(0, 10)).toBe(0)
+    expect(findPage(1, 10)).toBe(0)
+    expect(findPage(2, 10)).toBe(0)
+    expect(findPage(3, 10)).toBe(0)
+    expect(findPage(4, 10)).toBe(0)
+    expect(findPage(5, 10)).toBe(0)
+    expect(findPage(6, 10)).toBe(0)
+    expect(findPage(7, 10)).toBe(0)
+    expect(findPage(8, 10)).toBe(0)
+    expect(findPage(9, 10)).toBe(0)
+    expect(findPage(10, 10)).toBe(1)
+    expect(findPage(11, 10)).toBe(1)
+    expect(findPage(12, 10)).toBe(1)
+    expect(findPage(13, 10)).toBe(1)
+    expect(findPage(14, 10)).toBe(1)
+    expect(findPage(15, 10)).toBe(1)
+    expect(findPage(16, 10)).toBe(1)
+    expect(findPage(17, 10)).toBe(1)
+    expect(findPage(18, 10)).toBe(1)
+    expect(findPage(19, 10)).toBe(1)
+    expect(findPage(20, 10)).toBe(2)
+    expect(findPage(21, 10)).toBe(2)
+    expect(findPage(22, 10)).toBe(2)
+    expect(findPage(23, 10)).toBe(2)
+    expect(findPage(24, 10)).toBe(2)
+    expect(findPage(25, 10)).toBe(2)
+    expect(findPage(26, 10)).toBe(2)
+    expect(findPage(27, 10)).toBe(2)
+    expect(findPage(28, 10)).toBe(2)
+    expect(findPage(29, 10)).toBe(2)
+  })
+
+  it('should return the correct page number for pageSize 20', () => {
+    expect(findPage(0, 20)).toBe(0)
+    expect(findPage(20, 20)).toBe(1)
+  })
+
+  it('should return the correct page number for pageSize 50', () => {
+    expect(findPage(23, 50)).toBe(0)
+    expect(findPage(50, 50)).toBe(1)
+    expect(findPage(100, 50)).toBe(2)
+    expect(findPage(150, 50)).toBe(3)
+  })
+})
