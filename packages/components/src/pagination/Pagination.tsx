@@ -12,23 +12,23 @@ import styles from './Pagination.module.css'
 import { FocusScope, useFocusManager } from 'react-aria'
 import type React from 'react'
 
-interface NavigationButtonsProps {
-  getCanNextPage: () => boolean
-  getCanPreviousPage: () => boolean
-  nextPage: () => void
-  previousPage: () => void
+interface NavigationButtonsProps<TData extends RowData>
+  extends Pick<
+    PaginationProps<TData>,
+    'getCanNextPage' | 'getCanPreviousPage' | 'nextPage' | 'previousPage'
+  > {
   nextPageLabel: string
   previousPageLabel: string
 }
 
-const NavigationButtons = ({
+const NavigationButtons = <T extends RowData>({
   getCanNextPage,
   getCanPreviousPage,
   nextPage,
   previousPage,
   nextPageLabel,
   previousPageLabel,
-}: NavigationButtonsProps) => {
+}: NavigationButtonsProps<T>) => {
   const focusManager = useFocusManager()
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -119,7 +119,10 @@ export const Pagination = <T extends RowData>({
     <div className={styles.pagination}>
       <Select
         className={styles.pageSize}
-        items={pageSizeOptions.map(size => ({ id: size.toString(), name: size }))}
+        items={pageSizeOptions.map(size => ({
+          id: size.toString(),
+          name: size,
+        }))}
         label={strings.format('rowsPerPage')}
         onChange={handleChangePageSize}
         value={pageSize.toString()}
