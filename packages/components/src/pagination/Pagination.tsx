@@ -1,5 +1,5 @@
 import { type Key } from 'react-aria-components'
-import type { PaginationState, RowData, Table } from '@tanstack/react-table'
+import type { RowData, Table } from '@tanstack/react-table'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '../button'
 import { ListBoxItem } from '../list-box'
@@ -10,26 +10,20 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import styles from './Pagination.module.css'
 import { FocusScope, useFocusManager } from 'react-aria'
-import type React from 'react'
 
-interface NavigationButtonsProps<TData extends RowData>
-  extends Pick<
-    PaginationProps<TData>,
-    'getCanNextPage' | 'getCanPreviousPage' | 'nextPage' | 'previousPage'
-  > {
-  nextPageLabel: string
-  previousPageLabel: string
-}
+type NavigationButtonsProps<T extends RowData> = Pick<
+  PaginationProps<T>,
+  'getCanNextPage' | 'getCanPreviousPage' | 'nextPage' | 'previousPage'
+>
 
 const NavigationButtons = <T extends RowData>({
   getCanNextPage,
   getCanPreviousPage,
   nextPage,
   previousPage,
-  nextPageLabel,
-  previousPageLabel,
 }: NavigationButtonsProps<T>) => {
   const focusManager = useFocusManager()
+  const strings = useLocalizedStringFormatter(messages)
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     switch (e.key) {
@@ -45,18 +39,18 @@ const NavigationButtons = <T extends RowData>({
   return (
     <>
       <Button
-        onKeyDown={onKeyDown}
-        aria-label={previousPageLabel}
+        aria-label={strings.format('previousPage')}
         isDisabled={!getCanPreviousPage()}
+        onKeyDown={onKeyDown}
         onPress={previousPage}
         variant='icon'
       >
         <ChevronLeft />
       </Button>
       <Button
-        onKeyDown={onKeyDown}
-        aria-label={nextPageLabel}
+        aria-label={strings.format('nextPage')}
         isDisabled={!getCanNextPage()}
+        onKeyDown={onKeyDown}
         onPress={nextPage}
         variant='icon'
       >
@@ -66,19 +60,19 @@ const NavigationButtons = <T extends RowData>({
   )
 }
 
-export interface PaginationProps<TData extends RowData>
+export interface PaginationProps<T extends RowData>
   extends Pick<
-      Table<TData>,
-      | 'getCanNextPage'
-      | 'getCanPreviousPage'
-      | 'getPageCount'
-      | 'getRowCount'
-      | 'nextPage'
-      | 'previousPage'
-      | 'setPageIndex'
-      | 'setPageSize'
-    >,
-    PaginationState {
+    Table<T>,
+    | 'getCanNextPage'
+    | 'getCanPreviousPage'
+    | 'getPageCount'
+    | 'getRowCount'
+    | 'getState'
+    | 'nextPage'
+    | 'previousPage'
+    | 'setPageIndex'
+    | 'setPageSize'
+  > {
   /**
    * Options for different page sizes
    * @default [10, 20, 30, 40, 50]
@@ -86,20 +80,17 @@ export interface PaginationProps<TData extends RowData>
   pageSizeOptions?: number[]
 }
 
-export const Pagination = <T extends RowData>({
-  getCanNextPage,
-  getCanPreviousPage,
-  getPageCount,
-  getRowCount,
-  nextPage,
-  pageIndex,
-  pageSize,
-  pageSizeOptions = [10, 20, 30, 40, 50],
-  previousPage,
-  setPageIndex,
-  setPageSize,
-}: PaginationProps<T>) => {
+export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
+  const {
+    getPageCount,
+    getRowCount,
+    getState,
+    pageSizeOptions = [10, 20, 30, 40, 50],
+    setPageIndex,
+    setPageSize,
+  } = props
   const strings = useLocalizedStringFormatter(messages)
+  const { pageIndex, pageSize } = getState().pagination
   const pageCount = getPageCount()
   const rowCount = getRowCount()
   const lastVisibleItem = (pageIndex + 1) * pageSize
@@ -168,14 +159,7 @@ export const Pagination = <T extends RowData>({
       </div>
       <div className={styles.buttons}>
         <FocusScope>
-          <NavigationButtons
-            getCanNextPage={getCanNextPage}
-            getCanPreviousPage={getCanPreviousPage}
-            nextPage={nextPage}
-            previousPage={previousPage}
-            nextPageLabel={strings.format('nextPage')}
-            previousPageLabel={strings.format('previousPage')}
-          />
+          <NavigationButtons {...props} />
         </FocusScope>
       </div>
     </div>

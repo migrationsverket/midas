@@ -60,18 +60,18 @@ export default function App() {
     <div style={{ padding: '2rem' }}>
       <h1>Table with Pagination</h1>
 
-      <table className="midas-tanstack-table">
+      <table className='midas-tanstack-table'>
         <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
+              {headerGroup.headers.map(header => (
                 <th key={header.id}>
-                  <div className="headerCell">
+                  <div className='headerCell'>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </div>
                 </th>
@@ -80,9 +80,9 @@ export default function App() {
           ))}
         </thead>
         <tbody>
-          {table.getRowModel().rows.map((row) => (
+          {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
+              {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
@@ -91,19 +91,7 @@ export default function App() {
           ))}
         </tbody>
       </table>
-
-      <Pagination
-        getCanNextPage={table.getCanNextPage}
-        getCanPreviousPage={table.getCanPreviousPage}
-        getPageCount={table.getPageCount}
-        getRowCount={table.getRowCount}
-        nextPage={table.nextPage}
-        pageIndex={table.getState().pagination.pageIndex}
-        pageSize={table.getState().pagination.pageSize}
-        previousPage={table.previousPage}
-        setPageIndex={table.setPageIndex}
-        setPageSize={table.setPageSize}
-      />
+      <Pagination {...table} />
     </div>
   )
 }

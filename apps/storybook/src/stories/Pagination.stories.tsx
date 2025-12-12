@@ -1,10 +1,46 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Pagination } from '@midas-ds/components'
-import { useCallback, useState } from 'react'
+import {
+  useReactTable,
+  getCoreRowModel,
+  getPaginationRowModel,
+  ColumnDef,
+} from '@tanstack/react-table'
 
 type Story = StoryObj<typeof Pagination>
 
-const data = [...Array(100).keys()]
+type Person = {
+  id: number
+  name: string
+  email: string
+  age: number
+}
+
+const data: Person[] = Array.from({ length: 100 }, (_, i) => ({
+  id: i + 1,
+  name: `Person ${i + 1}`,
+  email: `person${i + 1}@example.com`,
+  age: 20 + (i % 50),
+}))
+
+const columns: ColumnDef<Person>[] = [
+  {
+    accessorKey: 'id',
+    header: 'ID',
+  },
+  {
+    accessorKey: 'name',
+    header: 'Name',
+  },
+  {
+    accessorKey: 'email',
+    header: 'Email',
+  },
+  {
+    accessorKey: 'age',
+    header: 'Age',
+  },
+]
 
 export default {
   title: 'Components/Pagination',
@@ -13,35 +49,23 @@ export default {
     pageSizeOptions: [10, 20, 30, 40, 50],
   },
   render: args => {
-    const [pageIndex, setPageIndex] = useState(0)
-    const [pageSize, setPageSize] = useState(10)
-
-    const pageCount = Math.ceil(data.length / pageSize)
-
-    const nextPage = useCallback(
-      () => setPageIndex(p => (p < pageCount ? p + 1 : p)),
-      [pageCount],
-    )
-    const getPageCount = useCallback(() => pageCount, [pageCount])
-    const getCanNextPage = useCallback(
-      () => pageIndex < pageCount - 1,
-      [pageIndex, pageCount],
-    )
-    const getCanPreviousPage = useCallback(() => pageIndex > 0, [pageIndex])
+    const table = useReactTable({
+      data,
+      columns,
+      getCoreRowModel: getCoreRowModel(),
+      getPaginationRowModel: getPaginationRowModel(),
+      initialState: {
+        pagination: {
+          pageIndex: 0,
+          pageSize: 10,
+        },
+      },
+    })
 
     return (
       <Pagination
-        {...args}
-        getCanNextPage={getCanNextPage}
-        getCanPreviousPage={getCanPreviousPage}
-        getPageCount={getPageCount}
-        getRowCount={() => data.length}
-        nextPage={nextPage}
-        pageIndex={pageIndex}
-        pageSize={pageSize}
-        previousPage={() => setPageIndex(p => (p ? p - 1 : 0))}
-        setPageIndex={setPageIndex}
-        setPageSize={setPageSize}
+        {...table}
+        pageSizeOptions={args.pageSizeOptions}
       />
     )
   },
