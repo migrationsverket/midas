@@ -91,7 +91,10 @@ export default function App() {
           ))}
         </tbody>
       </table>
-      <Pagination {...table} />
+      <Pagination
+        {...table}
+        {...table.getState().pagination}
+      />
     </div>
   )
 }

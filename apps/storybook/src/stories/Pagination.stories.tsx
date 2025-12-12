@@ -65,6 +65,7 @@ export default {
     return (
       <Pagination
         {...table}
+        {...table.getState().pagination}
         pageSizeOptions={args.pageSizeOptions}
       />
     )

@@ -1,5 +1,5 @@
 import { type Key } from 'react-aria-components'
-import type { RowData, Table } from '@tanstack/react-table'
+import type { PaginationState, RowData, Table } from '@tanstack/react-table'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '../button'
 import { ListBoxItem } from '../list-box'
@@ -62,17 +62,17 @@ const NavigationButtons = <T extends RowData>({
 
 export interface PaginationProps<T extends RowData>
   extends Pick<
-    Table<T>,
-    | 'getCanNextPage'
-    | 'getCanPreviousPage'
-    | 'getPageCount'
-    | 'getRowCount'
-    | 'getState'
-    | 'nextPage'
-    | 'previousPage'
-    | 'setPageIndex'
-    | 'setPageSize'
-  > {
+      Table<T>,
+      | 'getCanNextPage'
+      | 'getCanPreviousPage'
+      | 'getPageCount'
+      | 'getRowCount'
+      | 'nextPage'
+      | 'previousPage'
+      | 'setPageIndex'
+      | 'setPageSize'
+    >,
+    PaginationState {
   /**
    * Options for different page sizes
    * @default [10, 20, 30, 40, 50]
@@ -84,13 +84,13 @@ export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
   const {
     getPageCount,
     getRowCount,
-    getState,
+    pageIndex,
+    pageSize,
     pageSizeOptions = [10, 20, 30, 40, 50],
     setPageIndex,
     setPageSize,
   } = props
   const strings = useLocalizedStringFormatter(messages)
-  const { pageIndex, pageSize } = getState().pagination
   const pageCount = getPageCount()
   const rowCount = getRowCount()
   const lastVisibleItem = (pageIndex + 1) * pageSize
