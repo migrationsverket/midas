@@ -1,3 +1,9 @@
+## 15.5.2 (2025-12-12)
+
+### 🩹 Fixes
+
+- **components, popover:** change caret size ([#981](https://github.com/migrationsverket/midas/pull/981))
+
 ## 15.5.1 (2025-12-12)
 
 ### 🧱 Updated Dependencies
