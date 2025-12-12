@@ -6,6 +6,7 @@
   background-color: var(--midas-layer-01-base);
   outline: none;
   transform: translate3d(0, 0, 0);
+  box-shadow: 0 4px 5px rgba(0 0 0 / 20%);
   display: inline-block;
   max-width: min(90vw, 320px);
   white-space: normal;
@@ -35,11 +36,22 @@
     opacity: 0;
   }
 
+  &:has(.arrow) {
+    box-shadow: none;
+    filter: drop-shadow(
+        calc(var(--shadow-x, 0) * 2px) calc(var(--shadow-y, 0) * 2px) 3px
+          rgb(0 0 0 / 15%)
+      )
+      drop-shadow(
+        calc(var(--shadow-x, 0) * 6px) calc(var(--shadow-y, 0) * 6px) 8px
+          rgb(0 0 0 / 10%)
+      );
+  }
+
   &[data-placement='top'] {
     --origin: translateY(4px);
-
-    filter: drop-shadow(0 2px 3px rgb(0 0 0 / 15%))
-      drop-shadow(0 6px 8px rgb(0 0 0 / 10%));
+    --shadow-x: 0;
+    --shadow-y: 1;
 
     &:has(.arrow) {
       margin-bottom: 4px;
@@ -48,9 +60,8 @@
 
   &[data-placement='bottom'] {
     --origin: translateY(-4px);
-
-    filter: drop-shadow(0 -2px 3px rgb(0 0 0 / 15%))
-      drop-shadow(0 -6px 8px rgb(0 0 0 / 10%));
+    --shadow-x: 0;
+    --shadow-y: -1;
 
     &:has(.arrow) {
       margin-top: 4px;
@@ -63,9 +74,8 @@
 
   &[data-placement='right'] {
     --origin: translateX(-4px);
-
-    filter: drop-shadow(-2px 0 3px rgb(0 0 0 / 15%))
-      drop-shadow(-6px 0 8px rgb(0 0 0 / 10%));
+    --shadow-x: -1;
+    --shadow-y: 0;
 
     &:has(.arrow) {
       margin-left: 4px;
@@ -78,9 +88,8 @@
 
   &[data-placement='left'] {
     --origin: translateX(4px);
-
-    filter: drop-shadow(2px 0 3px rgb(0 0 0 / 15%))
-      drop-shadow(6px 0 8px rgb(0 0 0 / 10%));
+    --shadow-x: 1;
+    --shadow-y: 0;
 
     &:has(.arrow) {
       margin-right: 4px;
