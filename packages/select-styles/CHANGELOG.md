@@ -1,3 +1,9 @@
+## 1.0.5 (2025-12-12)
+
+### 🩹 Fixes
+
+- **select-styles:** add medium size support ([a22db144f1](https://github.com/migrationsverket/midas/commit/a22db144f1))
+
 ## 1.0.4 (2025-12-08)
 
 ### 🧱 Updated Dependencies
