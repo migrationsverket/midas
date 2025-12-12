@@ -40,6 +40,7 @@ const NavigationButtons = <T extends RowData>({
     <>
       <Button
         aria-label={strings.format('previousPage')}
+        className={styles.button}
         isDisabled={!getCanPreviousPage()}
         onKeyDown={onKeyDown}
         onPress={previousPage}
@@ -49,6 +50,7 @@ const NavigationButtons = <T extends RowData>({
       </Button>
       <Button
         aria-label={strings.format('nextPage')}
+        className={styles.button}
         isDisabled={!getCanNextPage()}
         onKeyDown={onKeyDown}
         onPress={nextPage}
@@ -110,6 +112,7 @@ export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
     <div className={styles.pagination}>
       <Select
         className={styles.pageSize}
+        isInline
         items={pageSizeOptions.map(size => ({
           id: size.toString(),
           name: size,
@@ -136,7 +139,8 @@ export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
       <div className={styles.pageIndexContainer}>
         <Select
           aria-label={strings.format('selectPage')}
-          className={styles.pageIndex}
+          // className={styles.pageIndex}
+          isInline
           items={[...Array(pageCount).keys()].map(n => ({
             id: n.toString(),
             name: n,
