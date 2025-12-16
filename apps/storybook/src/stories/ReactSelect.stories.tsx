@@ -19,6 +19,7 @@ export default {
     unstyled: true,
     isMulti: false,
     isSearchable: true,
+    isClearable: true,
     placeholder: 'Välj en artikel',
     noOptionsMessage: () => 'Inga träffar',
     hideSelectedOptions: false,
@@ -36,6 +37,12 @@ export default {
 } satisfies Meta<typeof Select>
 
 export const Primary: Story = {}
+
+export const Medium: Story = {
+  args: {
+    className: 'select medium',
+  },
+}
 
 export const MultiSelect: Story = {
   args: {
