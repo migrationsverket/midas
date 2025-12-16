@@ -162,6 +162,8 @@
   }
 
   .midas__dropdown-indicator {
+    cursor: pointer;
+
     svg {
       display: none;
     }
