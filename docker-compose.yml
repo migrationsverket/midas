@@ -1,0 +1,69 @@
+services:
+  # Docusaurus documentation site
+  docs:
+    build: .
+    container_name: midas-docs
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - nx-cache:/app/.nx
+      - docs-tmp:/tmp
+    command: npx nx serve docs --host=0.0.0.0
+    environment:
+      - NODE_ENV=development
+      - TMPDIR=/tmp
+      - NX_DAEMON=false
+      - NX_BATCH_MODE=true
+      - CI=true
+    stdin_open: false
+    tty: false
+
+  # Storybook component showcase
+  storybook:
+    build: .
+    container_name: midas-storybook
+    ports:
+      - "4400:4400"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - nx-cache:/app/.nx
+      - storybook-tmp:/tmp
+    command: sh -c "cd apps/storybook && npx storybook dev --host=0.0.0.0 --port=4400 --no-open --ci"
+    environment:
+      - NODE_ENV=development
+      - TMPDIR=/tmp
+      - NX_DAEMON=false
+      - NX_BATCH_MODE=true
+      - CI=true
+    stdin_open: false
+    tty: false
+
+  # Playground development app
+  playground:
+    build: .
+    container_name: midas-playground
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - nx-cache:/app/.nx
+      - playground-tmp:/tmp
+    command: npx nx run playground:dev --host=0.0.0.0
+    environment:
+      - NODE_ENV=development
+      - TMPDIR=/tmp
+      - NX_DAEMON=false
+      - NX_BATCH_MODE=true
+      - CI=true
+    stdin_open: false
+    tty: false
+
+volumes:
+  nx-cache:
+  docs-tmp:
+  storybook-tmp:
+  playground-tmp:
