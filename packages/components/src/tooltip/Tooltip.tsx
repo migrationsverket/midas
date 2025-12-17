@@ -12,7 +12,7 @@ import {
 export type { TooltipProps }
 
 /**
- * @deprecated since v15 please use TooltipProps instead
+ * @deprecated since v16.0.0 please use TooltipProps instead
  */
 export type MidasTooltipProps = TooltipProps
 
