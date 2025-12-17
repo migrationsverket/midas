@@ -1,0 +1,39 @@
+---
+slug: 16.0.0
+title: Release 16.0.0
+authors: midas
+tags: [release-notes, v16]
+date: 2025-12-17
+---
+
+Den här releasen fokuserar på att rensa bort utfasad funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med en rensa-knapp och uppdaterat React Aria Components till senaste versionen.
+
+## 💥 Breaking Changes
+
+I den här releasen har vi tagit bort funktioner som varit markerade som deprecated i tidigare versioner:
+
+- **dropdown:** Hela Dropdown-komponenten är borttagen. Använd Menu-komponenten istället.
+- **accordion:** Prop `variant` är borttagen. Använd `isContained` istället för `variant="contained"`
+- **modal:** Type `DialogProps` är borttagen. Använd `ModalProps` istället.
+- **spinner:** Prop `isOnColor` är borttagen. Spinnern använder nu alltid färgen `icon-tertiary`.
+
+## 🚀 Nya funktioner
+
+- **select-styles:** React-select har nu en clear indicator (rensa-knapp) med Lucide X-ikon som matchar designsystemets stil.
+- **select-styles:** Dropdown-indikatorn visar nu rätt musmarkör (`cursor: pointer`) vid hover.
+
+## 🩹 Fixar
+
+- **tooltip:** Utökad definition av `children` prop för utökad kontroll av komponenten.
+- **search-field:** `isRequired` prop är nu tillgänglig för att markera fältet som obligatoriskt.
+
+## 🔧 Uppdateringar
+
+- **components:** React Aria Components har uppdaterats från v1.13.0 till v1.14.0 för förbättrad prestanda och nya funktioner.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v16.0.0](https://github.com/migrationsverket/midas/releases/tag/components@v16.0.0)
+- [select-styles@v1.2.0](https://github.com/migrationsverket/midas/releases/tag/select-styles@v1.2.0)
