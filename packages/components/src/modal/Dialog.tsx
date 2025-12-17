@@ -1,4 +1,3 @@
-import { AriaDialogProps } from 'react-aria'
 import {
   DialogTrigger,
   Modal as AriaModal,
@@ -14,17 +13,6 @@ import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import clsx from '../utils/clsx'
-
-/**
- * @deprecated since v13.0.1 please use ModalProps instead
- */
-export interface DialogProps extends AriaDialogProps {
-  /**
-   * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
-   */
-  title?: React.ReactNode
-  children: React.ReactNode
-}
 
 export interface ModalProps
   extends ModalOverlayProps,
