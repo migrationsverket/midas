@@ -1,3 +1,11 @@
+## 1.1.0 (2025-12-17)
+
+### 🚀 Features
+
+- **select-styles:** update dropdown indicator cursor ([6e60559215](https://github.com/migrationsverket/midas/commit/6e60559215))
+- **select-styles:** update sizing for medium clear indicator ([5de1950df4](https://github.com/migrationsverket/midas/commit/5de1950df4))
+- **select-styles:** add clear indicator ([dfd617418b](https://github.com/migrationsverket/midas/commit/dfd617418b))
+
 ## 1.0.6 (2025-12-12)
 
 ### 🧱 Updated Dependencies
