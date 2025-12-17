@@ -9,7 +9,7 @@ import styles from './Text.module.css'
 export type TextSize = 'small'
 
 /**
- * @deprecated Use size prop instead. Only kept for backwards compatibility with body-01 and body-02.
+ * @deprecated since v15.0.0 Use size prop instead. Only kept for backwards compatibility with body-01 and body-02.
  */
 export type TextVariant = 'body-01' | 'body-02'
 
@@ -20,7 +20,7 @@ export interface TextProps extends AriaTextProps {
    */
   size?: TextSize
   /**
-   * @deprecated Use size prop instead. Only body-01 and body-02 are supported for backwards compatibility.
+   * @deprecated since v15.0.0 Use size prop instead. Only body-01 and body-02 are supported for backwards compatibility.
    */
   variant?: TextVariant
   /**
@@ -50,7 +50,9 @@ export const Text: React.FC<TextProps> = ({
 
     const isDescription = rest.slot === 'description'
     if (isDescription) {
-      return size === 'small' ? styles['description-small'] : styles['description']
+      return size === 'small'
+        ? styles['description-small']
+        : styles['description']
     }
     return size === 'small' ? styles['body-small'] : styles['body']
   }
