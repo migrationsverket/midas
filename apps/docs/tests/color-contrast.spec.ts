@@ -35,7 +35,6 @@ const pages = [
   'components/combobox',
   'components/date-picker',
   'components/datefield',
-  'components/dropdown',
   'components/file-trigger',
   'components/grid',
   'components/heading',
