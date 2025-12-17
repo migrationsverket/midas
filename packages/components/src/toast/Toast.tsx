@@ -13,8 +13,9 @@ import {
   ToastState,
   ToastStateProps,
   useToastQueue,
+  useToastState,
 } from 'react-stately'
-import React, { useMemo } from 'react'
+import React from 'react'
 import { createPortal, flushSync } from 'react-dom'
 import styles from './Toast.module.css'
 import { X } from 'lucide-react'
@@ -61,18 +62,7 @@ const toastStateProps: ToastStateProps = {
   maxVisibleToasts: 5,
 }
 
-/**
- * Temporary implementation of https://github.com/adobe/react-spectrum/blob/main/packages/%40react-stately/toast/src/useToastState.ts#L59
- * TODO: Erase this as soon as react-stately is released
- */
-export function useToastState<T>(props: ToastStateProps = {}): ToastState<T> {
-  const { maxVisibleToasts = 1, wrapUpdate } = props
-  const queue = useMemo(
-    () => new ToastQueue<T>({ maxVisibleToasts, wrapUpdate }),
-    [maxVisibleToasts, wrapUpdate],
-  )
-  return useToastQueue(queue)
-}
+export { useToastState }
 
 export const toastQueue = new ToastQueue<MidasToast>(toastStateProps)
 
