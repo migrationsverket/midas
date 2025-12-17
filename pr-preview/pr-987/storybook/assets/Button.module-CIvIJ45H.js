@@ -1,0 +1,1 @@
+const t="_button_1t8tb_1",n="_secondary_1t8tb_48",_="_tertiary_1t8tb_71",o="_iconBtn_1t8tb_91",i="_medium_1t8tb_111",c="_danger_1t8tb_116",r="_iconRight_1t8tb_138",s="_fullwidth_1t8tb_142",e="_primary_1t8tb_152",a={button:t,secondary:n,tertiary:_,iconBtn:o,medium:i,danger:c,iconRight:r,fullwidth:s,primary:e};export{a as B};
