@@ -1,3 +1,33 @@
+# 16.0.0 (2025-12-17)
+
+### 🚀 Features
+
+- ⚠️ **components, spinner:** remove deprecated prop "isOnColor" ([7141d87067](https://github.com/migrationsverket/midas/commit/7141d87067))
+- ⚠️ **components, modal:** remove deprecated type "DialogProps" ([68401b15e0](https://github.com/migrationsverket/midas/commit/68401b15e0))
+- ⚠️ **components, accordion:** remove deprecated prop "variant" ([5ae11869cc](https://github.com/migrationsverket/midas/commit/5ae11869cc))
+- ⚠️ **components, dropdown:** remove component ([df9f54f4e7](https://github.com/migrationsverket/midas/commit/df9f54f4e7))
+
+### 🩹 Fixes
+
+- **components, tooltip:** change definition of children prop ([684f43ceab](https://github.com/migrationsverket/midas/commit/684f43ceab))
+- **components, search-field:** allow isRequired prop ([fc671ad083](https://github.com/migrationsverket/midas/commit/fc671ad083))
+
+### 🏭 Refactoring
+
+- **components, toast:** remove temporary hook implementation ([580af11a1d](https://github.com/migrationsverket/midas/commit/580af11a1d))
+
+### 🔧 Maintenance
+
+- **components:** update deprecation comments ([f95a58a0fb](https://github.com/migrationsverket/midas/commit/f95a58a0fb))
+- update RAC to latest ([bc0b5708b3](https://github.com/migrationsverket/midas/commit/bc0b5708b3))
+
+### ⚠️ Breaking Changes
+
+- **components, spinner:** remove deprecated prop "isOnColor" ([7141d87067](https://github.com/migrationsverket/midas/commit/7141d87067))
+- **components, modal:** remove deprecated type "DialogProps" ([68401b15e0](https://github.com/migrationsverket/midas/commit/68401b15e0))
+- **components, accordion:** remove deprecated prop "variant" ([5ae11869cc](https://github.com/migrationsverket/midas/commit/5ae11869cc))
+- **components, dropdown:** remove component ([df9f54f4e7](https://github.com/migrationsverket/midas/commit/df9f54f4e7))
+
 ## 15.5.2 (2025-12-12)
 
 ### 🩹 Fixes
