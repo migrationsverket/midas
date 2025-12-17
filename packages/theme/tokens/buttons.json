@@ -18,7 +18,7 @@
       },
       "secondary": {
         "base": {
-          "$value": "light-dark({color.white.base}, {color.gray.200})",
+          "$value": "transparent",
           "$description": "F\u00e4rg p\u00e5 sekund\u00e4rknapp"
         },
         "hover": {
