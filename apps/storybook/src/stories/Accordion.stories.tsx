@@ -159,7 +159,7 @@ const ExpandableStuff = () => {
 
 export const AccordionHasBackground: Story = {
   args: {
-    variant: 'contained',
+    isContained: true,
     children: ITEMS.map((item, i) => (
       <AccordionItem
         id={item}

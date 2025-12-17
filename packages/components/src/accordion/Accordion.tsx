@@ -8,11 +8,6 @@ import { AccordionContext } from './AccordionContext'
 import { Size } from '../common/types'
 
 export interface MidasAccordion extends DisclosureGroupProps {
-  /**
-   * Display either the larger contained variant or a smaller uncontained variant
-   * @deprecated since 11.0.0. Please use `isContained` instead
-   **/
-  variant?: 'uncontained' | 'contained'
   children?: React.ReactNode
   isDisabled?: boolean
   isContained?: boolean
@@ -25,16 +20,13 @@ export interface MidasAccordion extends DisclosureGroupProps {
 /**
  * Accordions help reduce visual clutter on a page by organizing content into collapsible sections.
  */
-
 export const Accordion: React.FC<MidasAccordion> = ({
-  variant,
   children,
   className,
-  isContained: isContainedFromProp,
+  isContained,
   size = 'large',
   ...props
 }) => {
-  const isContained = isContainedFromProp || variant === 'contained'
   return (
     <AccordionContext.Provider value={{ isContained, size }}>
       <DisclosureGroup
