@@ -23,6 +23,42 @@ Din feedback och ditt engagemang är avgörande för att göra Midas bättre. Tv
 
 ## 🛠️ Kom igång
 
+### 🐳 Snabbstart med Docker (Rekommenderat)
+
+Det snabbaste sättet att komma igång är med Docker. Då behöver du inte installera Node.js, npm eller några beroenden lokalt - allt körs i en isolerad miljö med exakt rätt versioner.
+
+**Krav:** Endast Docker Desktop (eller Docker Engine + Docker Compose)
+
+**Starta alla appar:**
+```bash
+docker-compose up
+```
+
+Detta startar:
+- **Storybook** på http://localhost:4400
+- **Dokumentation** på http://localhost:3000
+- **Playground** på http://localhost:4200
+
+**Starta en specifik app:**
+```bash
+docker-compose up storybook  # Endast Storybook
+docker-compose up docs       # Endast dokumentation
+```
+
+**Kör kommandon i containern:**
+```bash
+docker-compose exec docs nx test components  # Kör tester
+docker-compose exec docs nx build components # Bygg komponenter
+```
+
+📖 Läs mer i [DOCKER.md](https://github.com/migrationsverket/midas/blob/main/DOCKER.md) för fullständig dokumentation.
+
+---
+
+### 💻 Lokal installation (Alternativ)
+
+Om du föredrar att köra allt lokalt behöver du:
+
 Node version >22 krävs. Installera [Nx](https://nx.dev) globalt: `npm install --global nx@latest`
 
 ### Nx

@@ -1,0 +1,14 @@
+node_modules
+dist
+.nx
+.git
+.github
+.vscode
+.idea
+*.log
+npm-debug.log*
+.DS_Store
+coverage
+.cache
+.turbo
+.husky
