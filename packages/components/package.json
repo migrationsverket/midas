@@ -42,6 +42,6 @@
   },
   "dependencies": {
     "@midas-ds/theme": "3.8.1",
-    "react-aria-components": "1.13.0"
+    "react-aria-components": "1.14.0"
   }
 }

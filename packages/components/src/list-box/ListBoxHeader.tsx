@@ -4,7 +4,7 @@ import clsx from '../utils/clsx'
 import styles from './ListBox.module.css'
 
 export type ListBoxHeaderProps = React.HTMLAttributes<HTMLElement> &
-  React.RefAttributes<object>
+  React.RefAttributes<HTMLElement>
 
 export const ListBoxHeader = ({ className, ...rest }: ListBoxHeaderProps) => (
   <AriaHeader
