@@ -15,8 +15,7 @@ import { FieldError } from '../field-error'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
-export interface SearchFieldProps
-  extends Omit<AriaSearchFieldProps, 'isRequired'> {
+export interface SearchFieldProps extends AriaSearchFieldProps {
   /** Placeholder text */
   placeholder: string
   /**
