@@ -4,10 +4,48 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Thu, 04 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 16.0.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/16.0.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/16.0.0/</guid>
+            <pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Den här releasen fokuserar på att rensa bort utfasad funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med en rensa-knapp och uppdaterat React Aria Components till senaste versionen.]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen fokuserar på att rensa bort utfasad funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med en rensa-knapp och uppdaterat React Aria Components till senaste versionen.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/16.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
+<p>I den här releasen har vi tagit bort funktioner som varit markerade som deprecated i tidigare versioner:</p>
+<ul>
+<li><strong>dropdown:</strong> Hela Dropdown-komponenten är borttagen. Använd Menu-komponenten istället.</li>
+<li><strong>accordion:</strong> Prop <code scope="[object Object]">variant</code> är borttagen. Använd <code scope="[object Object]">isContained</code> istället för <code scope="[object Object]">variant="contained"</code></li>
+<li><strong>modal:</strong> Type <code scope="[object Object]">DialogProps</code> är borttagen. Använd <code scope="[object Object]">ModalProps</code> istället.</li>
+<li><strong>spinner:</strong> Prop <code scope="[object Object]">isOnColor</code> är borttagen. Spinnern använder nu alltid färgen <code scope="[object Object]">icon-tertiary</code>.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/16.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>select-styles:</strong> React-select har nu en clear indicator (rensa-knapp) med Lucide X-ikon som matchar designsystemets stil.</li>
+<li><strong>select-styles:</strong> Dropdown-indikatorn visar nu rätt musmarkör (<code scope="[object Object]">cursor: pointer</code>) vid hover.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/16.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>tooltip:</strong> Utökad definition av <code scope="[object Object]">children</code> prop för utökad kontroll av komponenten.</li>
+<li><strong>search-field:</strong> <code scope="[object Object]">isRequired</code> prop är nu tillgänglig för att markera fältet som obligatoriskt.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-uppdateringar">🔧 Uppdateringar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/16.0.0/#-uppdateringar" class="hash-link" aria-label="Direktlänk till 🔧 Uppdateringar" title="Direktlänk till 🔧 Uppdateringar" translate="no">​</a></h2>
+<ul>
+<li><strong>components:</strong> React Aria Components har uppdaterats från v1.13.0 till v1.14.0 för förbättrad prestanda och nya funktioner.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v16.0.0" target="_blank" rel="noopener noreferrer" class="">components@v16.0.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/select-styles@v1.2.0" target="_blank" rel="noopener noreferrer" class="">select-styles@v1.2.0</a></li>
+</ul>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v16</category>
+        </item>
         <item>
             <title><![CDATA[Release 15.3.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/15.3.0/</link>
@@ -287,7 +325,7 @@ Vi påbörjar en utfasning av variablen <code scope="[object Object]">semantic</
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="combobox">ComboBox<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/12.1.0/#combobox" class="hash-link" aria-label="Direktlänk till ComboBox" title="Direktlänk till ComboBox" translate="no">​</a></h3>
 <p>ComboBox stödjer numer asynkron laddning, se <a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-986/components/combobox/#asynkron-laddning">dokumentationen för ComboBox</a> för detaljer hur du implementerar detta.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="menu">Menu<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/12.1.0/#menu" class="hash-link" aria-label="Direktlänk till Menu" title="Direktlänk till Menu" translate="no">​</a></h3>
-<p><a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-986/components/menu/">Menu</a> är en ny komponent med ett deklarativt API för kompletterande menyer/kontextmenyer. Vi påbörjar en utfasning av <a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-986/components/dropdown/">Dropdown</a> som ersätts av Menu.</p>
+<p><a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-986/components/menu/">Menu</a> är en ny komponent med ett deklarativt API för kompletterande menyer/kontextmenyer. Vi påbörjar en utfasning av Dropdown som ersätts av Menu.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/12.1.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
 <p>Vi arbetar kontinuerligt med buggfixar, här är några nämnvärda fixar:</p>
 <ul>
@@ -664,20 +702,6 @@ Läs mer om egenskapen under vår <a class="" href="https://designsystem.migrati
             <content:encoded><![CDATA[<p>Vi introducerar stöd för dark mode på samtliga komponenter</p>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v5.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Release 4.0.0]]></title>
-            <link>https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/4.0.0/</link>
-            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/4.0.0/</guid>
-            <pubDate>Mon, 10 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[{/ truncate /}]]></description>
-            <content:encoded><![CDATA[
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="migrera-från-3xx-till-400">Migrera från 3.x.x till 4.0.0<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/4.0.0/#migrera-fr%C3%A5n-3xx-till-400" class="hash-link" aria-label="Direktlänk till Migrera från 3.x.x till 4.0.0" title="Direktlänk till Migrera från 3.x.x till 4.0.0" translate="no">​</a></h2>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="select">Select<a href="https://designsystem.migrationsverket.se/pr-preview/pr-986/release-notes/4.0.0/#select" class="hash-link" aria-label="Direktlänk till Select" title="Direktlänk till Select" translate="no">​</a></h3>
-<p><code scope="[object Object]">MultiSelect</code> ersätts av <code scope="[object Object]">Select</code>, vänligen använd <code scope="[object Object]">selectionMode</code> för en flerväljare:</p>
-<div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag class-name" style="color:#116329">Select</span><span class="token tag" style="color:#165F27"> </span><span class="token tag attr-name" style="color:#0550AE">selectionMode</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">'</span><span class="token tag attr-value" style="color:#C6105F">multiple</span><span class="token tag attr-value punctuation" style="color:#393A34">'</span><span class="token tag" style="color:#165F27"> </span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><br></span></code></pre></div></div>
-<p>Se mer information om <a class="" href="https://designsystem.migrationsverket.se/pr-preview/pr-986/components/select/">hur du använder Select</a></p>
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v4.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
