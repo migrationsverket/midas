@@ -13,13 +13,13 @@
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-984/release-notes/16.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-984/release-notes/16.0.0/</guid>
             <pubDate>Wed, 17 Dec 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Den här releasen fokuserar på att rensa bort tidigare deprecated funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med clear indicator och uppdaterat React Aria Components till senaste versionen.]]></description>
-            <content:encoded><![CDATA[<p>Den här releasen fokuserar på att rensa bort tidigare deprecated funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med clear indicator och uppdaterat React Aria Components till senaste versionen.</p>
+            <description><![CDATA[Den här releasen fokuserar på att rensa bort utfasad funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med en rensa-knapp och uppdaterat React Aria Components till senaste versionen.]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen fokuserar på att rensa bort utfasad funktionalitet och göra biblioteket lättare att underhålla. Vi har även lagt till förbättringar för react-select-komponenten med en rensa-knapp och uppdaterat React Aria Components till senaste versionen.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-984/release-notes/16.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
 <p>I den här releasen har vi tagit bort funktioner som varit markerade som deprecated i tidigare versioner:</p>
 <ul>
 <li><strong>dropdown:</strong> Hela Dropdown-komponenten är borttagen. Använd Menu-komponenten istället.</li>
-<li><strong>accordion:</strong> Prop <code scope="[object Object]">variant</code> är borttagen.</li>
+<li><strong>accordion:</strong> Prop <code scope="[object Object]">variant</code> är borttagen. Använd <code scope="[object Object]">isContained</code> istället för <code scope="[object Object]">variant="contained"</code></li>
 <li><strong>modal:</strong> Type <code scope="[object Object]">DialogProps</code> är borttagen. Använd <code scope="[object Object]">ModalProps</code> istället.</li>
 <li><strong>spinner:</strong> Prop <code scope="[object Object]">isOnColor</code> är borttagen. Spinnern använder nu alltid färgen <code scope="[object Object]">icon-tertiary</code>.</li>
 </ul>
@@ -30,7 +30,7 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-984/release-notes/16.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
 <ul>
-<li><strong>tooltip:</strong> Förbättrad definition av <code scope="[object Object]">children</code> prop för bättre TypeScript-support.</li>
+<li><strong>tooltip:</strong> Utökad definition av <code scope="[object Object]">children</code> prop för utökad kontroll av komponenten.</li>
 <li><strong>search-field:</strong> <code scope="[object Object]">isRequired</code> prop är nu tillgänglig för att markera fältet som obligatoriskt.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-uppdateringar">🔧 Uppdateringar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-984/release-notes/16.0.0/#-uppdateringar" class="hash-link" aria-label="Direktlänk till 🔧 Uppdateringar" title="Direktlänk till 🔧 Uppdateringar" translate="no">​</a></h2>
