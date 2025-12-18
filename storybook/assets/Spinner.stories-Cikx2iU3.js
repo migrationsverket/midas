@@ -1,0 +1,26 @@
+import{j as r}from"./iframe-BsLcG5dW.js";import{S as t,B as p}from"./Button-B2aniDfg.js";import"./preload-helper-PPVm8Dsz.js";import"./Button.module-Co5e5YHp.js";import"./Button-BTB8VJIr.js";import"./utils-D4ybwJ5t.js";import"./clsx-B-dksMZM.js";import"./Hidden-qLdjn3wv.js";import"./useFocusRing-CRMF4aev.js";import"./index-CzmRrwoB.js";import"./index-FzS7-Zeo.js";import"./useLabels-BR2Qh3rY.js";import"./useButton-Ba6tOTsI.js";import"./clsx-Ciqy0D92.js";import"./useLocalizedStringFormatter-DPMXn8cB.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./createLucideIcon-18oN6ckY.js";import"./VisuallyHidden-_HN--CTP.js";const b={component:t,title:"Components/Spinner",tags:["autodocs","!snapshot"],parameters:{layout:"centered"},args:{small:!1,className:"test-class"}},e={},s={args:{small:!0}},a={args:{small:!0},render:n=>r.jsxs("div",{style:{display:"flex",gap:"1rem"},children:[r.jsxs(p,{children:[r.jsx(t,{...n}),"Laddar"]}),r.jsxs(p,{variant:"secondary",children:[r.jsx(t,{...n}),"Laddar"]})]})},o={args:{color:"rebeccapurple"}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:"{}",...e.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {
+    small: true
+  }
+}`,...s.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {
+    small: true
+  },
+  render: args => <div style={{
+    display: 'flex',
+    gap: '1rem'
+  }}>
+      <Button>
+        <Spinner {...args} />
+        Laddar
+      </Button>
+      <Button variant='secondary'>
+        <Spinner {...args} />
+        Laddar
+      </Button>
+    </div>
+}`,...a.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: {
+    color: 'rebeccapurple'
+  }
+}`,...o.parameters?.docs?.source}}};const E=["Primary","Small","InButton","UserSelectColor"];export{a as InButton,e as Primary,s as Small,o as UserSelectColor,E as __namedExportsOrder,b as default};
