@@ -1,3 +1,9 @@
+## 16.2.0 (2025-12-18)
+
+### 🚀 Features
+
+- **components:** limit css animations when prefers-reduced-motion set ([ce215762f5](https://github.com/migrationsverket/midas/commit/ce215762f5))
+
 ## 16.1.0 (2025-12-18)
 
 ### 🧱 Updated Dependencies
