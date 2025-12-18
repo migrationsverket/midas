@@ -9,6 +9,8 @@ Tabeller används för att presentera strukturerad data på ett tydligt och jäm
 
 För tabeller med många kolumner kan det vara lämpligt att låta användaren styra vilka kolumner som ska visas. Detta gör vi genom att ha en knapp placerad i anslutning till tabellen som öppnar en popover. Popovern innehåller en lista med kryssrutor där varje kryssruta representerar en kolumn i tabellen. Genom att markera eller avmarkera kryssrutorna kan användaren välja vilka kolumner som ska vara synliga.
 
+<SelectColumns />
+
 ## Filtrering
 
 ### Inline-filter
@@ -37,6 +39,7 @@ Använd detta mönster när
 - du vill kunna gruppera filter
 
 <FilterPopup />
+
 export function InlineFilter() {
   const lightSrc = useBaseUrl('/img/inline-filter-light.svg');
   const darkSrc = useBaseUrl('/img/inline-filter-dark.svg');
@@ -75,6 +78,21 @@ return (
 
 <ThemedImage
   alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
+
+export function SelectColumns() {
+  const lightSrc = useBaseUrl('/img/select-columns-light.svg');
+  const darkSrc = useBaseUrl('/img/select-columns-dark.svg');
+
+return (
+
+<ThemedImage
+  alt='Select columns'
   sources={{
     light: lightSrc,
     dark: darkSrc,
