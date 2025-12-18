@@ -1,3 +1,9 @@
+## 3.9.0 (2025-12-18)
+
+### 🚀 Features
+
+- **theme,components,button,link-button:** change secondary background color ([868a1b9d27](https://github.com/migrationsverket/midas/commit/868a1b9d27))
+
 ## 3.8.1 (2025-12-12)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.
