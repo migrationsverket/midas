@@ -6,7 +6,7 @@ import {
   getPaginationRowModel,
   ColumnDef,
 } from '@tanstack/react-table'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 interface CustomProps {
   rows?: number
@@ -23,7 +23,7 @@ type Person = {
   age: number
 }
 
-const data: Person[] = Array.from({ length: 100 }, (_, i) => ({
+const data: Person[] = Array.from({ length: 500 }, (_, i) => ({
   id: i + 1,
   name: `Person ${i + 1}`,
   email: `person${i + 1}@example.com`,
@@ -94,5 +94,51 @@ export default {
 export const Primary: Story = {
   args: {
     rows: 100,
+  },
+}
+
+export const ServerSide: Story = {
+  render: args => {
+    const [serverData, setServerData] = useState<Person[]>([])
+
+    const [pagination, setPagination] = useState({
+      pageIndex: 0,
+      pageSize: 50,
+    })
+
+    useEffect(() => {
+      const fetchData = async (firstItem: number, lastItem: number) => {
+        const result: Person[] = await new Promise(res => {
+          setTimeout(() => res(data.slice(firstItem, lastItem)), 200)
+        })
+
+        setServerData(result)
+      }
+
+      fetchData(
+        pagination.pageIndex * pagination.pageSize,
+        pagination.pageIndex * pagination.pageSize + pagination.pageSize,
+      )
+    }, [pagination])
+
+    const table = useReactTable({
+      data: serverData,
+      columns,
+      getCoreRowModel: getCoreRowModel(),
+      manualPagination: true,
+      rowCount: data.length,
+      onPaginationChange: setPagination,
+      state: {
+        pagination,
+      },
+    })
+
+    return (
+      <Pagination
+        {...table}
+        {...table.getState().pagination}
+        pageSizeOptions={args.pageSizeOptions}
+      />
+    )
   },
 }
