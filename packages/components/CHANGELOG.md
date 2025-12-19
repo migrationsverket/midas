@@ -1,3 +1,9 @@
+## 16.2.1 (2025-12-19)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.1
+
 ## 16.2.0 (2025-12-18)
 
 ### 🚀 Features

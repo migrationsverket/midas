@@ -14,13 +14,13 @@
   "description": "Midas table styles",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "exports": {
     "./tanstack-table.css": {
       "import": "./tanstack-table.css"
     }
   },
   "dependencies": {
-    "@midas-ds/theme": "3.9.0"
+    "@midas-ds/theme": "3.9.1"
   }
 }
