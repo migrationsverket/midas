@@ -41,11 +41,9 @@ export const SelectTrigger = <
         {({ selectedText, defaultChildren }) => (
           <div className={styles.placeholder}>
             <span className={styles.truncate}>
-              {selectionMode === 'multiple' && selectedText ? (
-                <></>
-              ) : (
-                selectedText || defaultChildren
-              )}
+              {selectionMode === 'multiple' && selectedText
+                ? null
+                : selectedText || defaultChildren}
             </span>
           </div>
         )}
