@@ -5,7 +5,6 @@ import { Button } from '../button'
 import { ListBoxItem } from '../list-box'
 import { Select } from '../select'
 import { Text } from '../text'
-import { findPage } from './utils'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import styles from './Pagination.module.css'
@@ -105,7 +104,6 @@ export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
   const handleChangePageSize = (value: Key | null) => {
     const newPageSize = value !== null ? Number(value) : pageSize
     setPageSize(newPageSize)
-    setPageIndex(findPage(firstVisibleItem, newPageSize))
   }
 
   return (
