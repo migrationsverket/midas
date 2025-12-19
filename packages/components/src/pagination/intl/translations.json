@@ -4,7 +4,9 @@
     "previousPage": "Previous page",
     "rowsPerPage": "Rows per page:",
     "of": "of",
+    "page": "page",
     "pages": "pages",
+    "row": "row",
     "rows": "rows",
     "selectPage": "Select page"
   },
@@ -13,7 +15,9 @@
     "previousPage": "Föregående sida",
     "rowsPerPage": "Rader per sida:",
     "of": "av",
+    "page": "sida",
     "pages": "sidor",
+    "row": "rad",
     "rows": "rader",
     "selectPage": "Välj sida"
   }

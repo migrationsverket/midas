@@ -134,7 +134,7 @@ export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
         {firstVisibleItem} -{' '}
         {lastVisibleItem > rowCount ? rowCount : lastVisibleItem}{' '}
         {strings.format('of')} {rowCount.toLocaleString()}{' '}
-        {strings.format('rows')}
+        {rowCount === 1 ? strings.format('row') : strings.format('rows')}
       </Text>
       <div className={styles.pageIndexContainer}>
         <Select
@@ -158,7 +158,8 @@ export const Pagination = <T extends RowData>(props: PaginationProps<T>) => {
           )}
         </Select>
         <Text className={styles.label}>
-          {strings.format('of')} {pageCount} {strings.format('pages')}
+          {strings.format('of')} {pageCount}{' '}
+          {pageCount === 1 ? strings.format('page') : strings.format('pages')}
         </Text>
       </div>
       <div className={styles.buttons}>

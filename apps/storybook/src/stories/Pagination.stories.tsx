@@ -6,8 +6,15 @@ import {
   getPaginationRowModel,
   ColumnDef,
 } from '@tanstack/react-table'
+import { useMemo } from 'react'
 
-type Story = StoryObj<typeof Pagination>
+interface CustomProps {
+  rows?: number
+}
+
+type StoryProps = React.ComponentProps<typeof Pagination> & CustomProps
+
+type Story = StoryObj<StoryProps>
 
 type Person = {
   id: number
@@ -47,10 +54,22 @@ export default {
   component: Pagination,
   args: {
     pageSizeOptions: [10, 20, 30, 40, 50],
+    rows: 500,
   },
-  render: args => {
+  argTypes: {
+    rows: {
+      type: 'number',
+      control: {
+        max: 500,
+        min: 0,
+      },
+    },
+  },
+  render: ({ rows, ...args }) => {
+    const slicedData = useMemo(() => data.slice(0, rows), [rows])
+
     const table = useReactTable({
-      data,
+      data: slicedData,
       columns,
       getCoreRowModel: getCoreRowModel(),
       getPaginationRowModel: getPaginationRowModel(),
@@ -70,6 +89,10 @@ export default {
       />
     )
   },
-} satisfies Meta<typeof Pagination>
+} satisfies Meta<StoryProps>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  args: {
+    rows: 100,
+  },
+}
