@@ -1,5 +1,6 @@
 import { DesignToken } from 'style-dictionary/types'
 import { CopyButton } from '@site/src/components/CopyButton'
+import { getCSSVariableName } from './utils'
 import styles from './Tokens.module.css'
 
 export const Token = ({ token }: { token: DesignToken }) => {
@@ -184,7 +185,7 @@ export const Token = ({ token }: { token: DesignToken }) => {
     return <div className={styles.genericValue}>{displayValue}</div>
   }
 
-  const cssVarName = `--midas-${token.path.join('-')}`
+  const cssVarName = getCSSVariableName(token)
 
   return (
     <div className={styles.tokenContainer}>
