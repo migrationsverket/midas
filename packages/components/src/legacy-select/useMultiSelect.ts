@@ -20,7 +20,7 @@ export function useMultiSelect<
 >(
   props: MultiSelectProps<T, M>,
   state: MultiSelectState<T>,
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
 ): MultiSelectDOMProps<T> {
   const { disallowEmptySelection, isDisabled } = props
 
