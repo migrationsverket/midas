@@ -24,7 +24,9 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
-      setIsActive(active ?? window.location.pathname === hrefWithBasePath)
+      setIsActive(
+        active ?? window.location.pathname.startsWith(hrefWithBasePath),
+      )
     }
   }, [active, hrefWithBasePath])
 
