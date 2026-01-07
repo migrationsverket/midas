@@ -31,6 +31,10 @@ export interface DateRangePickerProps
   size?: Size
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
+  /** Show a clear button to remove the selected date range
+   * @default false
+   */
+  showClearButton?: boolean
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({
@@ -40,11 +44,17 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   errorPosition = 'top',
   label,
   popover,
+  showClearButton = false,
+  isReadOnly,
+  isDisabled,
+  size,
   ...rest
 }) => {
   return (
     <AriaDateRangePicker
       className={clsx(styles.datePicker, className)}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
       {...rest}
     >
       <LabelWrapper popover={popover}>
@@ -52,7 +62,14 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerInputField {...rest}>
+      <DatePickerInputField
+        showClearButton={showClearButton}
+        isReadOnly={isReadOnly}
+        isDisabled={isDisabled}
+        size={size}
+        isRangePicker={true}
+        {...rest}
+      >
         <DateInput slot='start'>
           {segment => <DateSegment segment={segment} />}
         </DateInput>

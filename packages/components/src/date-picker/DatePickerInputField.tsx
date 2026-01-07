@@ -1,7 +1,15 @@
 import * as React from 'react'
-import { Button, Group } from 'react-aria-components'
+import {
+  Button,
+  Group,
+  DatePickerStateContext,
+  DateRangePickerStateContext,
+} from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
+import { ClearButton } from '../clear-button'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 import styles from './DatePicker.module.css'
 import { DatePickerProps } from './DatePicker'
 
@@ -11,6 +19,8 @@ interface DatePickerInputFieldProps
     'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size'
   > {
   children?: React.ReactNode
+  showClearButton?: boolean
+  isRangePicker?: boolean
 }
 
 export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
@@ -19,26 +29,65 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   isInvalid,
   isReadOnly,
   size = 'large',
-}) => (
-  <Group
-    className={clsx(styles.inputField, {
-      [styles.medium]: size === 'medium',
-      [styles.readOnly]: isReadOnly,
-    })}
-  >
-    {children}
-    <Button
-      className={clsx(styles.calendarButton, {
+  showClearButton = false,
+  isRangePicker = false,
+}) => {
+  const strings = useLocalizedStringFormatter(messages)
+  const datePickerState = React.useContext(DatePickerStateContext)
+  const dateRangePickerState = React.useContext(DateRangePickerStateContext)
+  const groupRef = React.useRef<HTMLDivElement>(null)
+
+  // Use the appropriate state based on picker type
+  const state = isRangePicker ? dateRangePickerState : datePickerState
+
+  const handleClear = () => {
+    state?.setValue(null)
+
+    // Focus the first date segment after clearing
+    setTimeout(() => {
+      const firstSegment = groupRef.current?.querySelector(
+        '[role="spinbutton"]',
+      ) as HTMLElement
+      firstSegment?.focus()
+    }, 0)
+  }
+
+  const currentValue = state?.value
+  const shouldShowClearButton =
+    showClearButton && currentValue != null && !isReadOnly
+
+  return (
+    <Group
+      ref={groupRef}
+      className={clsx(styles.inputField, {
         [styles.medium]: size === 'medium',
         [styles.readOnly]: isReadOnly,
       })}
-      data-invalid={isInvalid || undefined}
-      isDisabled={isDisabled}
     >
-      <CalendarDays
-        aria-hidden
-        size={20}
-      />
-    </Button>
-  </Group>
-)
+      {children}
+      <div className={styles.buttonGroup}>
+        {shouldShowClearButton && (
+          <ClearButton
+            onPress={handleClear}
+            size={size}
+            isDisabled={isDisabled}
+            aria-label={strings.format('clear')}
+            className={clsx(styles.clearButton, {
+              [styles.medium]: size === 'medium',
+            })}
+          />
+        )}
+        <Button
+          className={clsx(styles.calendarButton, {
+            [styles.medium]: size === 'medium',
+            [styles.readOnly]: isReadOnly,
+          })}
+          data-invalid={isInvalid || undefined}
+          isDisabled={isDisabled}
+        >
+          <CalendarDays aria-hidden size={20} />
+        </Button>
+      </div>
+    </Group>
+  )
+}
