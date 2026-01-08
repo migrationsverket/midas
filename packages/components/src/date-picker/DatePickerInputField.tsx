@@ -19,7 +19,7 @@ interface DatePickerInputFieldProps
     'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size'
   > {
   children?: React.ReactNode
-  showClearButton?: boolean
+  isClearable?: boolean
   isRangePicker?: boolean
 }
 
@@ -29,7 +29,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   isInvalid,
   isReadOnly,
   size = 'large',
-  showClearButton = false,
+  isClearable = false,
   isRangePicker = false,
 }) => {
   const strings = useLocalizedStringFormatter(messages)
@@ -54,7 +54,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
 
   const currentValue = state?.value
   const shouldShowClearButton =
-    showClearButton && currentValue != null && !isReadOnly
+    isClearable && currentValue != null && !isReadOnly
 
   return (
     <Group
@@ -85,7 +85,10 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
           data-invalid={isInvalid || undefined}
           isDisabled={isDisabled}
         >
-          <CalendarDays aria-hidden size={20} />
+          <CalendarDays
+            aria-hidden
+            size={20}
+          />
         </Button>
       </div>
     </Group>

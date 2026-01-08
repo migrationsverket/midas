@@ -123,7 +123,7 @@ export const ControlledState: Story = {
 /** With clear button enabled */
 export const WithClearButton: Story = {
   args: {
-    showClearButton: true,
+    isClearable: true,
     defaultValue: new CalendarDate(1995, 5, 29),
   },
 }
@@ -131,7 +131,7 @@ export const WithClearButton: Story = {
 /** Clear button is disabled when field is disabled */
 export const WithClearButtonDisabled: Story = {
   args: {
-    showClearButton: true,
+    isClearable: true,
     defaultValue: new CalendarDate(1995, 5, 29),
     isDisabled: true,
   },
@@ -140,7 +140,7 @@ export const WithClearButtonDisabled: Story = {
 /** Clear button does not appear when field is read-only */
 export const WithClearButtonReadOnly: Story = {
   args: {
-    showClearButton: true,
+    isClearable: true,
     defaultValue: new CalendarDate(1995, 5, 29),
     isReadOnly: true,
   },

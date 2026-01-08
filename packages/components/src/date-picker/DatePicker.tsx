@@ -6,7 +6,6 @@ import {
   type DatePickerProps as AriaDatePickerProps,
   type DateValue,
   type ValidationResult,
-  DatePickerStateContext,
 } from 'react-aria-components'
 import { clsx } from 'clsx'
 import { DatePickerInputField } from './DatePickerInputField'
@@ -34,7 +33,7 @@ export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   /** Show a clear button to remove the selected date
    * @default false
    */
-  showClearButton?: boolean
+  isClearable?: boolean
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
@@ -44,7 +43,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   errorPosition = 'top',
   label,
   popover,
-  showClearButton = false,
+  isClearable = false,
   isReadOnly,
   isDisabled,
   size,
@@ -63,7 +62,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField
-        showClearButton={showClearButton}
+        isClearable={isClearable}
         isReadOnly={isReadOnly}
         isDisabled={isDisabled}
         size={size}

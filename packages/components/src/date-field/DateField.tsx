@@ -32,16 +32,16 @@ export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   /** Show a clear button to remove the selected date
    * @default false
    */
-  showClearButton?: boolean
+  isClearable?: boolean
 }
 
 const DateFieldClearButton: React.FC<{
-  showClearButton: boolean
+  isClearable: boolean
   size: Size
   isDisabled?: boolean
   isReadOnly?: boolean
   dateInputRef: React.RefObject<HTMLDivElement>
-}> = ({ showClearButton, size, isDisabled, isReadOnly, dateInputRef }) => {
+}> = ({ isClearable, size, isDisabled, isReadOnly, dateInputRef }) => {
   const strings = useLocalizedStringFormatter(messages)
   const state = React.useContext(DateFieldStateContext)
 
@@ -59,7 +59,7 @@ const DateFieldClearButton: React.FC<{
 
   const currentValue = state?.value
   const shouldShowClearButton =
-    showClearButton && currentValue != null && !isReadOnly
+    isClearable && currentValue != null && !isReadOnly
 
   if (!shouldShowClearButton) return null
 
@@ -84,7 +84,7 @@ export const DateField: React.FC<DateFieldProps> = ({
   label,
   size = 'large',
   popover,
-  showClearButton = false,
+  isClearable = false,
   isReadOnly,
   isDisabled,
   ...rest
@@ -112,7 +112,7 @@ export const DateField: React.FC<DateFieldProps> = ({
       >
         <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
         <DateFieldClearButton
-          showClearButton={showClearButton}
+          isClearable={isClearable}
           size={size}
           isDisabled={isDisabled}
           isReadOnly={isReadOnly}

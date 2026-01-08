@@ -34,7 +34,7 @@ export interface DateRangePickerProps
   /** Show a clear button to remove the selected date range
    * @default false
    */
-  showClearButton?: boolean
+  isClearable?: boolean
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({
@@ -44,7 +44,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   errorPosition = 'top',
   label,
   popover,
-  showClearButton = false,
+  isClearable = false,
   isReadOnly,
   isDisabled,
   size,
@@ -63,7 +63,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField
-        showClearButton={showClearButton}
+        isClearable={isClearable}
         isReadOnly={isReadOnly}
         isDisabled={isDisabled}
         size={size}
