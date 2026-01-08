@@ -17,6 +17,8 @@ import messages from './intl/translations.json'
 import styles from './DateField.module.css'
 import { Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { FocusScope } from '@react-aria/focus'
+import { useFocusManager } from '@react-aria/focus'
 
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string
@@ -35,37 +37,26 @@ export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   isClearable?: boolean
 }
 
-const DateFieldClearButton: React.FC<{
-  isClearable: boolean
-  size: Size
-  isDisabled?: boolean
-  isReadOnly?: boolean
-  dateInputRef: React.RefObject<HTMLDivElement>
-}> = ({ isClearable, size, isDisabled, isReadOnly, dateInputRef }) => {
+const DateFieldClearButton: React.FC<DateFieldProps> = ({
+  isClearable,
+  size,
+  isDisabled,
+  isReadOnly,
+}) => {
   const strings = useLocalizedStringFormatter(messages)
   const state = React.useContext(DateFieldStateContext)
+  const focusManager = useFocusManager()
 
-  const handleClear = () => {
+  const handlePress = () => {
     state?.setValue(null)
-
-    // Focus the first date segment after clearing
-    setTimeout(() => {
-      const firstSegment = dateInputRef.current?.querySelector(
-        '[role="spinbutton"]',
-      ) as HTMLElement
-      firstSegment?.focus()
-    }, 0)
+    focusManager?.focusFirst()
   }
 
-  const currentValue = state?.value
-  const isClearButtonVisible =
-    isClearable && currentValue != null && !isReadOnly
+  const isVisible = isClearable && state?.value != null && !isReadOnly
 
-  if (!isClearButtonVisible) return null
-
-  return (
+  return isVisible ? (
     <ClearButton
-      onPress={handleClear}
+      onPress={handlePress}
       size={size}
       isDisabled={isDisabled}
       aria-label={strings.format('clear')}
@@ -73,7 +64,7 @@ const DateFieldClearButton: React.FC<{
         [styles.medium]: size === 'medium',
       })}
     />
-  )
+  ) : null
 }
 
 export const DateField: React.FC<DateFieldProps> = ({
@@ -89,8 +80,6 @@ export const DateField: React.FC<DateFieldProps> = ({
   isDisabled,
   ...rest
 }) => {
-  const dateInputRef = React.useRef<HTMLDivElement>(null)
-
   return (
     <AriaDateField
       {...rest}
@@ -104,20 +93,20 @@ export const DateField: React.FC<DateFieldProps> = ({
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <div
-        ref={dateInputRef}
         className={clsx(styles.inputField, {
           [styles.medium]: size === 'medium',
         })}
         data-testid='date-field_input-field'
       >
-        <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-        <DateFieldClearButton
-          isClearable={isClearable}
-          size={size}
-          isDisabled={isDisabled}
-          isReadOnly={isReadOnly}
-          dateInputRef={dateInputRef}
-        />
+        <FocusScope>
+          <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+          <DateFieldClearButton
+            isClearable={isClearable}
+            size={size}
+            isDisabled={isDisabled}
+            isReadOnly={isReadOnly}
+          />
+        </FocusScope>
       </div>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
     </AriaDateField>
