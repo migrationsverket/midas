@@ -67,7 +67,6 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
         isReadOnly={isReadOnly}
         isDisabled={isDisabled}
         size={size}
-        isRangePicker={true}
         {...rest}
       >
         <DateInput slot='start'>

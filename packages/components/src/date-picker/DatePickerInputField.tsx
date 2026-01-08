@@ -16,11 +16,9 @@ import { DatePickerProps } from './DatePicker'
 interface DatePickerInputFieldProps
   extends Pick<
     DatePickerProps,
-    'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size'
+    'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size' | 'isClearable'
   > {
   children?: React.ReactNode
-  isClearable?: boolean
-  isRangePicker?: boolean
 }
 
 export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
@@ -30,7 +28,6 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   isReadOnly,
   size = 'large',
   isClearable = false,
-  isRangePicker = false,
 }) => {
   const strings = useLocalizedStringFormatter(messages)
   const datePickerState = React.useContext(DatePickerStateContext)
@@ -38,7 +35,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   const groupRef = React.useRef<HTMLDivElement>(null)
 
   // Use the appropriate state based on picker type
-  const state = isRangePicker ? dateRangePickerState : datePickerState
+  const state = dateRangePickerState ?? datePickerState
 
   const handleClear = () => {
     state?.setValue(null)
