@@ -50,7 +50,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   }
 
   const currentValue = state?.value
-  const shouldShowClearButton =
+  const isClearButtonVisible =
     isClearable && currentValue != null && !isReadOnly
 
   return (
@@ -63,7 +63,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
     >
       {children}
       <div className={styles.buttonGroup}>
-        {shouldShowClearButton && (
+        {isClearButtonVisible && (
           <ClearButton
             onPress={handleClear}
             size={size}

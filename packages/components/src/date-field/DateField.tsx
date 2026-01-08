@@ -58,10 +58,10 @@ const DateFieldClearButton: React.FC<{
   }
 
   const currentValue = state?.value
-  const shouldShowClearButton =
+  const isClearButtonVisible =
     isClearable && currentValue != null && !isReadOnly
 
-  if (!shouldShowClearButton) return null
+  if (!isClearButtonVisible) return null
 
   return (
     <ClearButton
