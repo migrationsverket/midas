@@ -5,7 +5,7 @@ import {
   flexRender,
   ColumnDef,
 } from '@tanstack/react-table'
-import { Pagination } from '@midas-ds/components'
+import { Pagination } from '@midas-ds/table-styles'
 import '@midas-ds/table-styles/lib/tanstack-table.css'
 
 type Person = {

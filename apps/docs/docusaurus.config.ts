@@ -26,6 +26,7 @@ fs.readdirSync(packagesDir).forEach(dir => {
 
     if (fs.existsSync(index) && fs.statSync(index).isFile()) {
       packageAliases[`@midas-ds/${dir}`] = index
+      packageAliases[`@midas-ds/${dir}/*`] = path.resolve(packagePath, 'src/*')
     } else {
       packageAliases[`@midas-ds/${dir}/*`] = path.resolve(packagePath, 'src/*')
     }
@@ -70,6 +71,32 @@ const config: Config = {
           },
         ],
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
+    function webpackAliasPlugin() {
+      return {
+        name: 'webpack-alias-plugin',
+        configureWebpack() {
+          // Transform packageAliases for webpack (remove /* suffix)
+          const webpackAliases = {}
+          Object.keys(packageAliases).forEach(key => {
+            if (key.endsWith('/*')) {
+              // Remove /* and /src/* from the path for webpack
+              const aliasKey = key.slice(0, -2)
+              const aliasPath = packageAliases[key].replace('/src/*', '/src')
+              webpackAliases[aliasKey] = aliasPath
+            } else if (!webpackAliases[key]) {
+              // Only add if not already added by wildcard version
+              webpackAliases[key] = packageAliases[key]
+            }
+          })
+
+          return {
+            resolve: {
+              alias: webpackAliases,
+            },
+          }
+        },
+      }
+    },
   ],
   markdown: {
     hooks: {
