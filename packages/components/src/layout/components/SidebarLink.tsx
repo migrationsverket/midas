@@ -1,28 +1,28 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import clsx from '../../utils/clsx'
 import { Link } from 'react-aria-components'
 import { Tooltip, TooltipTrigger } from '../../tooltip'
 import styles from '../Layout.module.css'
 import { SidebarLinkProps } from '../Layout'
-import * as React from 'react'
 import { useLayoutContext } from '../context/LayoutContext'
 import { Badge, BadgeContainer } from '../../badge'
 
-export const SidebarLink: React.FC<SidebarLinkProps> = ({
+export const SidebarLink = ({
   title,
   href,
   icon: IconComponent,
   active,
   hasBadge,
-}) => {
+}: SidebarLinkProps) => {
   const { isCollapsed, setIsOpened, clientSideHref } = useLayoutContext()
 
   const hrefWithBasePath = clientSideHref ? clientSideHref(href) : href
 
-  const [isActive, setIsActive] = React.useState<boolean>(false)
+  const [isActive, setIsActive] = useState<boolean>(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       const isMatch =
         window.location.pathname === hrefWithBasePath ||
