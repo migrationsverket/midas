@@ -56,3 +56,13 @@ export const Invalid: Story = {
     isInvalid: true,
   },
 }
+
+export const WithClearButton: Story = {
+  args: {
+    isClearable: true,
+    defaultValue: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(2025, 5, 29),
+    },
+  },
+}

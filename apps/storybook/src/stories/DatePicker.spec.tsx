@@ -1,10 +1,11 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DatePicker.stories'
 import { render } from 'vitest-browser-react'
 
-const { Required, CustomValiation, ControlledState } = composeStories(stories)
+const { Required, CustomValiation, ControlledState, WithClearButton } =
+  composeStories(stories)
 
 describe('given a required DatePicker', async () => {
   it('should show an error message if submitted empty', async () => {
@@ -60,5 +61,32 @@ describe('given a Contolled DatePicker', async () => {
     await userEvent.keyboard('[Enter]')
 
     await expect.element(page.getByRole('application')).toBeInTheDocument()
+  })
+})
+
+describe('given a clearable DatePicker ', async () => {
+  beforeEach(async () => {
+    await render(<WithClearButton />)
+  })
+  it('should be clearable using the mouse', async () => {
+    await page.getByRole('button').first().click()
+
+    const yearSelector = page.getByRole('group').getByRole('spinbutton').first()
+
+    await expect.element(yearSelector).toHaveFocus()
+    await expect.element(yearSelector).toHaveTextContent('åååå')
+  })
+
+  it('should be clearable using the keyboard', async () => {
+    await userEvent.tab()
+    await userEvent.tab()
+    await userEvent.tab()
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+
+    const yearSelector = page.getByRole('group').getByRole('spinbutton').first()
+
+    await expect.element(yearSelector).toHaveFocus()
+    await expect.element(yearSelector).toHaveTextContent('åååå')
   })
 })

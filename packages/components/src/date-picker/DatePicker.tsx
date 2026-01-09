@@ -30,6 +30,10 @@ export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   size?: Size
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
+  /** Show a clear button to remove the selected date
+   * @default false
+   */
+  isClearable?: boolean
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
@@ -39,11 +43,17 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   errorPosition = 'top',
   label,
   popover,
+  isClearable = false,
+  isReadOnly,
+  isDisabled,
+  size,
   ...rest
 }) => {
   return (
     <AriaDatePicker
       className={clsx(styles.datePicker, className)}
+      isReadOnly={isReadOnly}
+      isDisabled={isDisabled}
       {...rest}
     >
       <LabelWrapper popover={popover}>
@@ -51,7 +61,13 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerInputField {...rest}>
+      <DatePickerInputField
+        isClearable={isClearable}
+        isReadOnly={isReadOnly}
+        isDisabled={isDisabled}
+        size={size}
+        {...rest}
+      >
         <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
       </DatePickerInputField>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}

@@ -61,3 +61,10 @@ export const WithDefaultValue: Story = {
     defaultValue: new CalendarDate(1995, 5, 29),
   },
 }
+
+export const WithClearButton: Story = {
+  args: {
+    isClearable: true,
+    defaultValue: new CalendarDate(1995, 5, 29),
+  },
+}
