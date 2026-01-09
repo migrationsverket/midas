@@ -109,7 +109,7 @@ export function ComboBox<T extends object>({
       {errorPosition === 'bottom' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
-      <ListBoxPopover>
+      <ListBoxPopover offset={4}>
         <ListBox
           items={items}
           renderEmptyState={() => (
