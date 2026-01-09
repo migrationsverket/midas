@@ -148,6 +148,26 @@ export const DateFieldControlled = () => {
 
 <DateFieldControlled />
 
+## Varianter
+
+### isClearable
+
+Använd `isClearable` för att visa en knapp som tömmer fältet. Notera att ett komplett värde krävs för att knappen ska visas.
+
+```tsx {2,3}
+<DateField
+  isClearable
+  defaultValue={new CalendarDate(1995, 5, 29)}
+  label='Etikett'
+  description='Beskrivning'
+/>
+```
+
+<Example
+  isClearable
+  defaultValue={new CalendarDate(1995, 5, 29)}
+/>
+
 ## API
 
 <PropTable name='DateField' />
