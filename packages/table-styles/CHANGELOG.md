@@ -1,3 +1,9 @@
+## 1.1.8 (2026-01-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.2
+
 ## 1.1.7 (2025-12-19)
 
 ### 🧱 Updated Dependencies
