@@ -53,7 +53,7 @@ jobs:
         if: >
           steps.storybook.outputs.affected == 'true' && (github.event.action == 'labeled' && github.event.label && (github.event.label.name == 'test' || github.event.label.name == 'a11y')) ||
           steps.storybook.outputs.affected == 'true' && (contains(github.event.pull_request.labels.*.name, 'test') || contains(github.event.pull_request.labels.*.name, 'a11y'))
-        run: npx playwright install chromium --only-shell
+        run: npx playwright install chromium firefox --only-shell
 
       - name: Build packages
         run: npx nx affected -t lint stylelint build
