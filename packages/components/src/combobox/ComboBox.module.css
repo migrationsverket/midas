@@ -43,6 +43,7 @@
     outline: none;
   }
 
+  &[data-focused],
   &[data-focus-visible] {
     box-shadow: var(--midas-state-focus);
 
@@ -63,6 +64,11 @@
   &[data-readonly] {
     background-color: transparent;
     border-color: var(--midas-border-color-subtle);
+
+    &[data-focused],
+    &[data-focus-visible] {
+      box-shadow: none;
+    }
   }
 }
 
