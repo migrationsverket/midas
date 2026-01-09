@@ -1,3 +1,13 @@
+## 16.2.3 (2026-01-09)
+
+### 🩹 Fixes
+
+- **components, layout:** show active menu item on sub pages ([#994](https://github.com/migrationsverket/midas/pull/994))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.3
+
 ## 16.2.2 (2026-01-09)
 
 ### 🧱 Updated Dependencies
