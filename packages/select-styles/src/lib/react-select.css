@@ -15,6 +15,10 @@
     .midas__value-container--is-multi {
       padding: 4px;
     }
+
+    .midas__clear-indicator {
+      padding: 0.625rem 0.875rem;
+    }
   }
 
   .midas__control {
@@ -155,12 +159,6 @@
     }
   }
 
-  &.medium {
-    .midas__clear-indicator {
-      padding: 0.625rem 0.875rem;
-    }
-  }
-
   .midas__dropdown-indicator {
     cursor: pointer;
 
@@ -193,7 +191,7 @@
   }
 
   .midas__menu {
-    margin-top: 1px;
+    margin-top: 4px;
     box-shadow: 0 4px 5px rgba(0 0 0 / 20%);
   }
 
