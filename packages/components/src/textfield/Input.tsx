@@ -1,11 +1,12 @@
 import {
   Input as AriaInput,
   InputProps as AriaInputProps,
+  useContextProps,
+  InputContext,
 } from 'react-aria-components'
-import * as React from 'react'
+import type { Ref } from 'react'
 import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
-import { useContextProps, InputContext } from 'react-aria-components'
 import { PasswordField } from './PasswordField'
 
 export interface InputProps extends AriaInputProps {
@@ -13,14 +14,14 @@ export interface InputProps extends AriaInputProps {
    * @default false
    */
   skipContext?: boolean
-  ref?: React.Ref<HTMLInputElement>
+  ref?: Ref<HTMLInputElement>
 }
 
-export const Input: React.FC<InputProps> = ({
+export const Input = ({
   ref: localRef,
   skipContext = false,
   ...localProps
-}) => {
+}: InputProps) => {
   const [contextProps, contextRef] = useContextProps(
     localProps,
     localRef,

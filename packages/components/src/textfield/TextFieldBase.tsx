@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type { ReactNode } from 'react'
 import {
   TextField as AriaTextField,
   TextFieldProps,
@@ -14,7 +14,7 @@ import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
-  children?: React.ReactNode
+  children?: ReactNode
   /** Specify label displayed above the TextField*/
   label?: string
   /** Specify description displayed below the label */
@@ -35,7 +35,7 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   popover?: InfoPopoverProps
 }
 
-export const TextFieldBase: React.FC<TextFieldBaseProps> = props => {
+export const TextFieldBase = (props: TextFieldBaseProps) => {
   const {
     label,
     description,

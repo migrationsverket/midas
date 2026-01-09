@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type { Ref } from 'react'
 import {
   InputProps,
   useContextProps,
@@ -8,13 +8,10 @@ import styles from './CharacterCounter.module.css'
 
 export interface CharacterCounterProps extends InputProps {
   isLonely?: boolean
-  ref?: React.Ref<HTMLInputElement>
+  ref?: Ref<HTMLInputElement>
 }
 
-export const CharacterCounter: React.FC<CharacterCounterProps> = ({
-  ref,
-  ...props
-}) => {
+export const CharacterCounter = ({ ref, ...props }: CharacterCounterProps) => {
   ;[props] = useContextProps(props, ref, InputContext)
   const { maxLength, value, isLonely } = props
   const { length } = value?.toString() ?? ''
