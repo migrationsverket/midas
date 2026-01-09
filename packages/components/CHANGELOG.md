@@ -1,3 +1,17 @@
+## 16.2.5 (2026-01-09)
+
+### 🏭 Refactoring
+
+- **components:** remove React.FC wrapper ([4f156ecf45](https://github.com/migrationsverket/midas/commit/4f156ecf45))
+- remove React.forwardRef ([977fc0260b](https://github.com/migrationsverket/midas/commit/977fc0260b))
+
+### 🔧 Maintenance
+
+- accept all shapes of external refs ([340771208d](https://github.com/migrationsverket/midas/commit/340771208d))
+- revert removal of react 18 peerDeps ([8c4b059f56](https://github.com/migrationsverket/midas/commit/8c4b059f56))
+- **checkbox:** assert prop types ([406798b0a1](https://github.com/migrationsverket/midas/commit/406798b0a1))
+- update to react 19 ([7389cceb06](https://github.com/migrationsverket/midas/commit/7389cceb06))
+
 ## 16.2.4 (2026-01-09)
 
 ### 🩹 Fixes
