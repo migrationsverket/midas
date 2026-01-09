@@ -1,33 +1,30 @@
-import {
-  SelectValueRenderProps,
-  SelectStateContext,
-  Button,
-} from 'react-aria-components'
+import { SelectStateContext, Button, SelectValue } from 'react-aria-components'
 import { useFocusManager } from 'react-aria'
 import { X } from 'lucide-react'
 import { useLocalizedStringFormatter } from '../utils/intl'
-import { type MidasSelectProps } from './'
+import { type MidasSelectProps } from '.'
 import messages from './intl/translations.json'
 import React from 'react'
-import { SelectionMode } from './'
+import { SelectionMode } from '.'
 import styles from './Select.module.css'
 
-type SelectValueTagProps<
+type MultiSelectValueProps<
   T extends object,
   M extends SelectionMode = 'single',
-> = SelectValueRenderProps<T> & Pick<MidasSelectProps<T, M>, 'isDisabled'>
+> = Pick<MidasSelectProps<T, M>, 'isDisabled'>
 
-export const SelectValueTag = <
+export const MultiSelectValue = <
   T extends object,
   M extends SelectionMode = 'single',
 >({
   isDisabled,
-  selectedItems,
-  selectedText,
-}: SelectValueTagProps<T, M>) => {
+}: MultiSelectValueProps<T, M>) => {
   const strings = useLocalizedStringFormatter(messages)
 
-  const formatString = () => {
+  const formatString = (
+    selectedItems: (object | null)[],
+    selectedText: string,
+  ) => {
     if (selectedItems.length === 1) {
       return selectedText
     }
@@ -36,13 +33,27 @@ export const SelectValueTag = <
   }
 
   return (
-    <div
-      className={styles.selectValueTag}
+    <SelectValue
+      className={styles.multiSelectValue}
       data-disabled={isDisabled || undefined}
     >
-      <span className={styles.truncate}>{formatString()}</span>
-      <SelectClearButton isDisabled={isDisabled} />
-    </div>
+      {({ isPlaceholder, selectedItems, selectedText }) =>
+        isPlaceholder ? (
+          <></>
+        ) : (
+          <div
+            className={styles.selectValueTag}
+            data-disabled={isDisabled || undefined}
+          >
+            <span className={styles.truncate}>
+              {formatString(selectedItems, selectedText)}
+            </span>
+
+            <SelectClearButton isDisabled={isDisabled} />
+          </div>
+        )
+      }
+    </SelectValue>
   )
 }
 

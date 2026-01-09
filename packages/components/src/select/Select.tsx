@@ -3,7 +3,6 @@ import {
   SelectProps,
   ValidationResult,
   Select as AriaSelect,
-  SelectValue,
 } from 'react-aria-components'
 import { FocusScope } from '@react-aria/focus'
 import { Label, type InfoPopoverProps } from '../label'
@@ -13,7 +12,7 @@ import { Size } from '../common/types'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { SelectAll } from './SelectAll'
-import { SelectValueTag } from './SelectValueTag'
+import { MultiSelectValue } from './MultiSelectValue'
 import { ListBox } from '../list-box'
 import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
@@ -82,27 +81,13 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
           className={styles.triggerContainer}
           data-disabled={props.isDisabled || undefined}
         >
-          <SelectTrigger size={size} />
-          <SelectValue
-            className={styles.selectValue}
-            data-disabled={props.isDisabled || undefined}
-          >
-            {renderProps =>
-              renderProps.isPlaceholder ||
-              props.selectionMode !== 'multiple' ? (
-                <div className={clsx(styles.placeholder)}>
-                  <span className={clsx(styles.truncate)}>
-                    {renderProps.selectedText || renderProps.defaultChildren}
-                  </span>
-                </div>
-              ) : (
-                <SelectValueTag
-                  {...props}
-                  {...renderProps}
-                />
-              )
-            }
-          </SelectValue>
+          <SelectTrigger
+            size={size}
+            {...props}
+          />
+          {props.selectionMode === 'multiple' ? (
+            <MultiSelectValue {...props} />
+          ) : null}
         </div>
         {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
         <Popover
