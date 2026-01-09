@@ -49,7 +49,7 @@ export const defineStorybookProject = async ({
         provider: playwright({ contextOptions }),
         instances: [
           {
-            browser: 'chromium',
+            browser: 'firefox',
           },
         ],
       },
