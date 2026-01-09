@@ -422,7 +422,7 @@ våra komponenter. Läs vidare för att få veta mer om vad som är nytt i versi
 <li><strong>file-upload:</strong> Komponenten <code scope="[object Object]">FileUpload</code> är borttagen och ersatt av <code scope="[object Object]">FileTrigger</code> från React Aria. Detta innebär att API<!-- -->:et<!-- --> för komponenten nu är i linje med React Aria. Se dokumentationen för mer information om hur du använder den nya komponenten.</li>
 <li><strong>theme:</strong> Nya tokens för <code scope="[object Object]">badge-background</code> har lagts till.</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till �🩹 Fixes" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/release-notes/11.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes" translate="no">​</a></h2>
 <ul>
 <li><strong>link:</strong> En bugg har fixats som gjorde att länkar med <code scope="[object Object]">target='_blank'</code> inte öppnades i ett nytt fönster.</li>
 <li><strong>popover:</strong> En bugg har fixats som gjorde att långa strängar kunde flöda över i en popover.</li>
