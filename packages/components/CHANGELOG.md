@@ -1,3 +1,9 @@
+## 16.2.4 (2026-01-09)
+
+### 🩹 Fixes
+
+- **components, layout:** adjust forced colors for active links ([2b27898722](https://github.com/migrationsverket/midas/commit/2b27898722))
+
 ## 16.2.3 (2026-01-09)
 
 ### 🩹 Fixes
