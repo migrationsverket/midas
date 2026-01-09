@@ -10,6 +10,7 @@ import {
   Button,
 } from '@midas-ds/components'
 import { X } from 'lucide-react'
+import { variables } from '@midas-ds/theme'
 
 export const BasicExample: React.FC<Partial<TabsProps>> = props => (
   <Tabs {...props}>
@@ -108,10 +109,19 @@ export const ClosableTabsExample = () => {
           <Tab
             key={tab.id}
             id={tab.id}
-            style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}
+            style={{
+              display: 'flex',
+              gap: '0.5rem',
+              alignItems: 'center',
+              padding: 0,
+              paddingLeft: variables.spacing50,
+            }}
           >
             {tab.title}
-            <Button variant='icon' onPress={() => handleCloseTab(tab.id)}>
+            <Button
+              variant='icon'
+              onPress={() => handleCloseTab(tab.id)}
+            >
               <X size={16} />
             </Button>
           </Tab>
