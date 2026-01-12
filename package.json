@@ -2,11 +2,6 @@
   "name": "@midas-ds/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "prepare": "husky",
-    "commitlint": "commitlint --edit",
-    "commit": "git-cz"
-  },
   "private": false,
   "dependencies": {
     "@actions/core": "1.11.1",
