@@ -1,5 +1,6 @@
 import type { UserConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
@@ -8,6 +9,7 @@ export default {
   cacheDir: '../../node_modules/.vite/packages/table-styles',
   plugins: [
     nxViteTsPaths(),
+    libInjectCss(),
     dts({
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
