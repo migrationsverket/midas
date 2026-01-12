@@ -1,19 +1,32 @@
 'use client'
 
-import * as React from 'react'
+import type { Ref } from 'react'
 import { TextFieldBase, type TextFieldBaseProps } from './TextFieldBase'
 import { Input, type InputProps } from './Input'
 import clsx from '../utils/clsx'
 import { Complement } from '../utils/types'
 
-export type TextFieldProps = TextFieldBaseProps &
-  Complement<TextFieldBaseProps, InputProps>
+export interface TextFieldProps
+  extends TextFieldBaseProps,
+    Complement<TextFieldBaseProps, InputProps> {
+  ref?: Ref<HTMLInputElement>
+}
 
-export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ className, list, type, min, max, ...rest }, ref) => (
+export const TextField = ({
+  className,
+  form,
+  list,
+  min,
+  max,
+  ref,
+  type,
+  ...rest
+}: TextFieldProps) => {
+  return (
     <TextFieldBase {...rest}>
       <Input
         className={clsx(className)}
+        form={form}
         list={list}
         min={min}
         max={max}
@@ -22,5 +35,5 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
         skipContext
       />
     </TextFieldBase>
-  ),
-)
+  )
+}

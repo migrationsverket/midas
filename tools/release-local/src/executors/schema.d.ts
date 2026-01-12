@@ -4,4 +4,5 @@ export interface ReleaseLocalExecutorSchema {
   skipPublish?: boolean;
   runTests?: boolean;
   keepRunning?: boolean;
+  skipVerdaccioStart?: boolean;
 } // eslint-disable-line

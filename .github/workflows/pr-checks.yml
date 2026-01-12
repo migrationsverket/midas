@@ -53,7 +53,7 @@ jobs:
         if: >
           steps.storybook.outputs.affected == 'true' && (github.event.action == 'labeled' && github.event.label && (github.event.label.name == 'test' || github.event.label.name == 'a11y')) ||
           steps.storybook.outputs.affected == 'true' && (contains(github.event.pull_request.labels.*.name, 'test') || contains(github.event.pull_request.labels.*.name, 'a11y'))
-        run: npx playwright install chromium --only-shell
+        run: npx playwright install chromium firefox --only-shell
 
       - name: Build packages
         run: npx nx affected -t lint stylelint build
@@ -64,20 +64,8 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'test')
         run: npx nx affected -t test
 
-      - name: A11y check components in light mode
+      - name: A11y check packages
         if: >
           steps.storybook.outputs.affected == 'true' && (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
           steps.storybook.outputs.affected == 'true' && contains(github.event.pull_request.labels.*.name, 'a11y')
-        run: npx nx run storybook:a11y || npx nx run storybook:a11y
-
-      - name: A11y check components in dark mode
-        if: >
-          steps.storybook.outputs.affected == 'true' && (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
-          steps.storybook.outputs.affected == 'true' && contains(github.event.pull_request.labels.*.name, 'a11y')
-        run: npx nx run storybook:a11y-dark-mode || npx nx run storybook:a11y-dark-mode
-
-      - name: A11y check components in forced colors mode
-        if: >
-          steps.storybook.outputs.affected == 'true' && (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
-          steps.storybook.outputs.affected == 'true' && contains(github.event.pull_request.labels.*.name, 'a11y')
-        run: npx nx run storybook:a11y-forced-colors || npx nx run storybook:a11y-forced-colors
+        run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors

@@ -38,6 +38,24 @@
         "runTests": false,
         "keepRunning": true
       }
+    },
+    "release:local:docker": {
+      "continuous": false,
+      "executor": "@midas-ds/release-local:release-local",
+      "options": {
+        "registry": "http://verdaccio:4873/",
+        "runTests": false,
+        "skipVerdaccioStart": true
+      }
+    },
+    "release:local:docker:dev": {
+      "continuous": true,
+      "executor": "@midas-ds/release-local:release-local",
+      "options": {
+        "registry": "http://verdaccio:4873/",
+        "runTests": false,
+        "skipVerdaccioStart": true
+      }
     }
   }
 }

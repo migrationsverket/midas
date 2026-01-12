@@ -1,4 +1,5 @@
-import * as React from 'react'
+import { useContext } from 'react'
+import type { Ref } from 'react'
 import {
   FieldErrorContext,
   FieldError as AriaFieldError,
@@ -10,26 +11,25 @@ import styles from './FieldError.module.css'
 
 export interface FieldErrorProps extends AriaFieldErrorProps {
   isInvalid?: boolean
+  ref?: Ref<HTMLElement>
 }
 
-export const FieldError = React.forwardRef(
-  (props: FieldErrorProps, ref: React.ForwardedRef<HTMLElement>) => {
-    const { children, isInvalid } = props
-    const className = clsx(styles.fieldError, props.className)
-    const context = React.useContext(FieldErrorContext)
+export const FieldError = ({ ref, ...props }: FieldErrorProps) => {
+  const { children, isInvalid } = props
+  const className = clsx(styles.fieldError, props.className)
+  const context = useContext(FieldErrorContext)
 
-    if (!context && isInvalid && typeof children !== 'function') {
-      return <Text className={className}>{children}</Text>
-    }
+  if (!context && isInvalid && typeof children !== 'function') {
+    return <Text className={className}>{children}</Text>
+  }
 
-    if (!context?.isInvalid) return null
+  if (!context?.isInvalid) return null
 
-    return (
-      <AriaFieldError
-        {...props}
-        ref={ref}
-        className={className}
-      />
-    )
-  },
-)
+  return (
+    <AriaFieldError
+      {...props}
+      ref={ref}
+      className={className}
+    />
+  )
+}

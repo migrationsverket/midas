@@ -24,6 +24,11 @@
       "type": "boolean",
       "description": "Keep Verdaccio running after publishing (for dev workflow)",
       "default": false
+    },
+    "skipVerdaccioStart": {
+      "type": "boolean",
+      "description": "Skip starting Verdaccio (assumes it's already running, e.g., in Docker)",
+      "default": false
     }
   }
 }

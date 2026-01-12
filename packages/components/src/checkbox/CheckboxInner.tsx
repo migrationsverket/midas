@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { mergeProps, VisuallyHidden } from 'react-aria'
 import { clsx } from 'clsx'
 import { Minus, Check } from 'lucide-react'
@@ -6,10 +5,7 @@ import { CheckboxInnerProps } from './types'
 import styles from './Checkbox.module.css'
 import { variables } from '@midas-ds/theme'
 
-export const CheckboxInner = React.forwardRef<
-  HTMLLabelElement,
-  CheckboxInnerProps
->((props, ref) => {
+export const CheckboxInner = ({ ref, ...props }: CheckboxInnerProps) => {
   const { hoverProps, isHovered } = props.hoverResult
   const { pressProps, isPressed } = props.pressResult
   const { isFocused, isFocusVisible, focusProps } = props.focusRingAria
@@ -53,4 +49,4 @@ export const CheckboxInner = React.forwardRef<
       {props.children}
     </label>
   )
-})
+}

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type { Ref } from 'react'
 import {
   InputProps,
   useContextProps,
@@ -8,12 +8,10 @@ import styles from './CharacterCounter.module.css'
 
 export interface CharacterCounterProps extends InputProps {
   isLonely?: boolean
+  ref?: Ref<HTMLInputElement>
 }
 
-export const CharacterCounter = React.forwardRef<
-  HTMLInputElement,
-  CharacterCounterProps
->((props, ref) => {
+export const CharacterCounter = ({ ref, ...props }: CharacterCounterProps) => {
   ;[props] = useContextProps(props, ref, InputContext)
   const { maxLength, value, isLonely } = props
   const { length } = value?.toString() ?? ''
@@ -28,4 +26,4 @@ export const CharacterCounter = React.forwardRef<
       {isMaxLengthDefined ? `${length} / ${maxLength}` : length}
     </span>
   )
-})
+}

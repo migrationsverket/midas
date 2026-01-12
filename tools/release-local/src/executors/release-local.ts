@@ -4,6 +4,8 @@ import { releaseVersion, releasePublish } from 'nx/release'
 import { readFileSync, promises as fs } from 'fs'
 import path = require('path')
 import { execSync, spawn } from 'node:child_process'
+import { get } from 'node:http'
+import { get as httpsGet } from 'node:https'
 
 /**
  * Check if a port is in use and kill any process using it
@@ -52,9 +54,29 @@ async function waitForRegistry(
 ): Promise<void> {
   logger.info(`Waiting for Verdaccio at ${registry} to be ready...`)
 
+  const url = new URL(registry)
+  const httpGet = url.protocol === 'https:' ? httpsGet : get
+
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      execSync(`curl -f ${registry} -o /dev/null -s`, { stdio: 'ignore' })
+      await new Promise<void>((resolve, reject) => {
+        const req = httpGet(registry, res => {
+          if (res.statusCode === 200) {
+            resolve()
+          } else {
+            reject(new Error(`HTTP ${res.statusCode}`))
+          }
+          // Consume response to free up memory
+          res.resume()
+        })
+
+        req.on('error', reject)
+        req.setTimeout(5000, () => {
+          req.destroy()
+          reject(new Error('Timeout'))
+        })
+      })
+
       logger.info(`Verdaccio is ready on ${registry}`)
       return
     } catch (e) {
@@ -76,58 +98,65 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
   const registry = options.registry ?? 'http://localhost:4873/'
   const port = new URL(registry).port || '4873'
 
-  // Ensure port is available before starting
-  logger.info(`Ensuring port ${port} is available for Verdaccio...`)
-  ensurePortAvailable(parseInt(port))
+  let verdaccioProcess: any = null
 
-  // Clear storage directory
-  const storagePath = path.join(context.root, 'tmp/local-registry/storage')
-  logger.info(`Clearing local registry storage: ${storagePath}`)
-  try {
-    execSync(`rm -rf ${storagePath}`)
-    logger.info('Storage cleared successfully')
-  } catch (e) {
-    logger.warn(`Failed to clear storage: ${e.message}`)
+  // Skip Verdaccio setup if requested (e.g., when running in Docker)
+  if (!options.skipVerdaccioStart) {
+    // Ensure port is available before starting
+    logger.info(`Ensuring port ${port} is available for Verdaccio...`)
+    ensurePortAvailable(parseInt(port))
+
+    // Clear storage directory
+    const storagePath = path.join(context.root, 'tmp/local-registry/storage')
+    logger.info(`Clearing local registry storage: ${storagePath}`)
+    try {
+      execSync(`rm -rf ${storagePath}`)
+      logger.info('Storage cleared successfully')
+    } catch (e) {
+      logger.warn(`Failed to clear storage: ${e.message}`)
+    }
+
+    // Create default htpasswd file with test user if it doesn't exist
+    const htpasswdPath = path.join(context.root, '.verdaccio/htpasswd')
+    logger.info('Ensuring htpasswd file exists with default user...')
+    try {
+      // Create .verdaccio directory if it doesn't exist
+      await fs.mkdir(path.dirname(htpasswdPath), { recursive: true })
+
+      // Create htpasswd with bcrypt hash for password "test"
+      // bcrypt hash of "test": $2a$10$...
+      const htpasswdContent = 'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
+      await fs.writeFile(htpasswdPath, htpasswdContent, 'utf-8')
+      logger.info('htpasswd file created with test user')
+    } catch (e) {
+      logger.warn(`Failed to create htpasswd: ${e.message}`)
+    }
+
+    // Start Verdaccio directly
+    const configPath = path.join(context.root, '.verdaccio/config.yml')
+    logger.info(`Starting Verdaccio on port ${port}...`)
+
+    verdaccioProcess = spawn(
+      'npx',
+      ['verdaccio', '--config', configPath, '--listen', port],
+      {
+        cwd: context.root,
+        stdio: 'pipe',
+        detached: false,
+      },
+    )
+
+    // Log Verdaccio output
+    verdaccioProcess.stdout?.on('data', data => {
+      logger.info(`[Verdaccio] ${data.toString().trim()}`)
+    })
+
+    verdaccioProcess.stderr?.on('data', data => {
+      logger.info(`[Verdaccio] ${data.toString().trim()}`)
+    })
+  } else {
+    logger.info('Skipping Verdaccio startup (assuming it\'s already running)')
   }
-
-  // Create default htpasswd file with test user if it doesn't exist
-  const htpasswdPath = path.join(context.root, '.verdaccio/htpasswd')
-  logger.info('Ensuring htpasswd file exists with default user...')
-  try {
-    // Create .verdaccio directory if it doesn't exist
-    await fs.mkdir(path.dirname(htpasswdPath), { recursive: true })
-
-    // Create htpasswd with bcrypt hash for password "test"
-    // bcrypt hash of "test": $2a$10$...
-    const htpasswdContent = 'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
-    await fs.writeFile(htpasswdPath, htpasswdContent, 'utf-8')
-    logger.info('htpasswd file created with test user')
-  } catch (e) {
-    logger.warn(`Failed to create htpasswd: ${e.message}`)
-  }
-
-  // Start Verdaccio directly
-  const configPath = path.join(context.root, '.verdaccio/config.yml')
-  logger.info(`Starting Verdaccio on port ${port}...`)
-
-  const verdaccioProcess = spawn(
-    'npx',
-    ['verdaccio', '--config', configPath, '--listen', port],
-    {
-      cwd: context.root,
-      stdio: 'pipe',
-      detached: false,
-    },
-  )
-
-  // Log Verdaccio output
-  verdaccioProcess.stdout?.on('data', data => {
-    logger.info(`[Verdaccio] ${data.toString().trim()}`)
-  })
-
-  verdaccioProcess.stderr?.on('data', data => {
-    logger.info(`[Verdaccio] ${data.toString().trim()}`)
-  })
 
   // Wait for Verdaccio to be ready
   await waitForRegistry(registry)
@@ -137,10 +166,12 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
   try {
     // Configure npm to use the test user credentials via .npmrc
     // Only set the auth token, NOT the default registry
+    const registryUrl = new URL(registry)
+    const hostname = registryUrl.hostname
     const npmrcPath = path.join(context.root, '.npmrc')
-    const npmrcContent = `//localhost:${port}/:_authToken="dGVzdDp0ZXN0"\n`
+    const npmrcContent = `//${hostname}:${port}/:_authToken="dGVzdDp0ZXN0"\n`
     await fs.writeFile(npmrcPath, npmrcContent, 'utf-8')
-    logger.info('npm credentials configured')
+    logger.info(`npm credentials configured for ${hostname}:${port}`)
   } catch (e) {
     logger.error(`Failed to configure npm: ${e.message}`)
     throw e
@@ -229,8 +260,10 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
       logger.warn(`Failed to clean up .npmrc: ${e.message}`)
     }
 
-    // Clean up Verdaccio process (unless keepRunning is true)
-    if (options.keepRunning) {
+    // Clean up Verdaccio process (unless keepRunning is true or we didn't start it)
+    if (options.skipVerdaccioStart) {
+      logger.info('✅ Finished (Verdaccio was not managed by this executor)')
+    } else if (options.keepRunning) {
       logger.info(
         '🔄 Keeping Verdaccio running at http://localhost:4873/ (use Ctrl+C to stop)',
       )

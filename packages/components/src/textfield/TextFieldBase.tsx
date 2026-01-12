@@ -1,7 +1,5 @@
-import * as React from 'react'
+import type { ReactNode } from 'react'
 import {
-  TextFieldContext,
-  useContextProps,
   TextField as AriaTextField,
   TextFieldProps,
   ValidationResult,
@@ -16,7 +14,7 @@ import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
-  children?: React.ReactNode
+  children?: ReactNode
   /** Specify label displayed above the TextField*/
   label?: string
   /** Specify description displayed below the label */
@@ -37,12 +35,7 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   popover?: InfoPopoverProps
 }
 
-export const TextFieldBase = React.forwardRef<
-  HTMLDivElement,
-  TextFieldBaseProps
->((props, ref) => {
-  ;[props] = useContextProps(props, ref, TextFieldContext)
-
+export const TextFieldBase = (props: TextFieldBaseProps) => {
   const {
     label,
     description,
@@ -80,4 +73,4 @@ export const TextFieldBase = React.forwardRef<
       )}
     </AriaTextField>
   )
-})
+}
