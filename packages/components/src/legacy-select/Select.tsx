@@ -178,14 +178,14 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectContainerProps>(
       {section =>
         section.children ? (
           <Section
-            key={section.name}
+            key={String(section.name)}
             items={section.children}
             title={section.name}
           >
             {item => <Item textValue={item.textValue}>{item.name}</Item>}
           </Section>
         ) : (
-          <Item textValue={section.textValue}>{section.name}</Item>
+          <Item textValue={section.textValue as string}>{section.name}</Item>
         )
       }
     </SelectComponent>

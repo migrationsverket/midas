@@ -11,7 +11,14 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/{projectName}"
+        "outputPath": "dist/packages/{projectName}",
+        "assets": [
+          {
+            "input": "packages/table-styles/src/lib",
+            "glob": "tanstack-table.css",
+            "output": "."
+          }
+        ]
       },
       "configurations": {
         "production": {

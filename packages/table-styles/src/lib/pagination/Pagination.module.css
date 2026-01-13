@@ -1,0 +1,115 @@
+.pagination {
+  align-items: center;
+  background-color: var(--midas-layer-01-base);
+  color: var(--midas-text-primary);
+  container-type: inline-size;
+  display: flex;
+  font-size: var(--midas-typography-font-size-20);
+  height: var(--midas-size-150);
+  justify-content: space-between;
+  line-height: var(--midas-typography-line-height-30);
+
+  & * {
+    font-size: var(--midas-typography-font-size-20);
+  }
+}
+
+.separator {
+  border-left: 1px solid var(--midas-border-color-subtle);
+}
+
+.select {
+  flex-direction: row;
+  gap: var(--midas-spacing-10);
+
+  label {
+    align-items: center;
+    display: flex;
+    font-weight: var(--midas-typography-weight-regular);
+    margin: 0;
+  }
+
+  button {
+    border: none;
+
+    span {
+      max-width: unset !important;
+    }
+  }
+}
+
+.listBoxItem {
+  padding: 0.44rem var(--midas-spacing-50) 0.44rem var(--midas-spacing-50);
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
+  height: var(--midas-size-120);
+  white-space: nowrap;
+
+  &[data-selected] {
+    div {
+      max-width: unset !important;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.pageSize {
+  padding-left: var(--midas-spacing-50);
+  composes: select;
+
+  button {
+    padding: 0 var(--midas-spacing-50) 0 var(--midas-spacing-30);
+  }
+
+  button + span div {
+    left: var(--midas-spacing-30) !important;
+  }
+}
+
+.result {
+  align-items: center;
+  composes: separator;
+  display: flex;
+  height: 100%;
+  padding: 0 var(--midas-spacing-50);
+
+  @container (width < 675px) {
+    display: none;
+  }
+}
+
+.pageIndexContainer {
+  align-items: center;
+  composes: separator;
+  display: flex;
+  padding: 0 var(--midas-spacing-50) 0 0;
+
+  .label {
+    white-space: nowrap;
+
+    @container (width < 420px) {
+      display: none;
+    }
+  }
+}
+
+.pageIndex {
+  composes: select;
+
+  button {
+    padding: 0 var(--midas-spacing-30) 0 var(--midas-spacing-50);
+  }
+}
+
+.buttons {
+  display: flex;
+  height: 100%;
+}
+
+.button {
+  composes: separator;
+}
