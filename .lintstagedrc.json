@@ -1,5 +1,0 @@
-{
-  "*.ts*": ["nx affected:lint --fix --files"],
-  "*": ["nx format:write --files"],
-  "*.css": ["npx stylelint --fix --allow-empty-input"]
-}
