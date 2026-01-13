@@ -4,10 +4,45 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Wed, 17 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 16.3.1]]></title>
+            <link>https://designsystem.migrationsverket.se/release-notes/16.3.1/</link>
+            <guid>https://designsystem.migrationsverket.se/release-notes/16.3.1/</guid>
+            <pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Den här releasen fokuserar på tillgänglighet, förbättrad komponenthantering och nya funktioner för tabeller. Vi har lagt till stöd för React 19, förbättrat tillgänglighet med prefers-reduced-motion och forced colors, samt lagt till en ny Pagination-komponent för Tanstack Table.]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen fokuserar på tillgänglighet, förbättrad komponenthantering och nya funktioner för tabeller. Vi har lagt till stöd för React 19, förbättrat tillgänglighet med prefers-reduced-motion och forced colors, samt lagt till en ny Pagination-komponent för Tanstack Table.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/16.3.1/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>table-styles:</strong> Ny <a class="" href="https://designsystem.migrationsverket.se/dev/tanstack-table/#paginering">Pagination-komponent för Tanstack Table</a> som gör det enkelt att hantera sidnumrering i tabeller.</li>
+<li><strong>components:</strong> Alla forwardRef-komponenter har nu displayName för bättre debugging i React DevTools.</li>
+<li><strong>components:</strong> CSS-animationer respekterar nu användarens prefers-reduced-motion inställning för bättre tillgänglighet.</li>
+<li><strong>theme, button, link-button:</strong> Sekundära knappar har fått uppdaterad bakgrundsfärg.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/16.3.1/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>layout:</strong> Aktiva menyalternativ visas nu korrekt även på undersidor.</li>
+<li><strong>layout:</strong> Förbättrat stöd för forced colors mode (Windows High Contrast) för aktiva länkar.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-uppdateringar">🔧 Uppdateringar<a href="https://designsystem.migrationsverket.se/release-notes/16.3.1/#-uppdateringar" class="hash-link" aria-label="Direktlänk till 🔧 Uppdateringar" title="Direktlänk till 🔧 Uppdateringar" translate="no">​</a></h2>
+<ul>
+<li><strong>components:</strong> Stöd för React 19 samtidigt som bakåtkompatibilitet med React 18 bibehålls.</li>
+<li><strong>components:</strong> React.forwardRef behålls för att bibehålla bakåtkompatibilitet med React 18.</li>
+<li><strong>components:</strong> React.FC wrapper har tagits bort för renare typning.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v16.3.1" target="_blank" rel="noopener noreferrer" class="">components@v16.3.1</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/table-styles@v1.2.0" target="_blank" rel="noopener noreferrer" class="">table-styles@v1.2.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.9.3" target="_blank" rel="noopener noreferrer" class="">theme@v3.9.3</a></li>
+</ul>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v16</category>
+        </item>
         <item>
             <title><![CDATA[Release 16.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/release-notes/16.0.0/</link>
@@ -692,16 +727,6 @@ Läs mer om egenskapen under vår <a class="" href="https://designsystem.migrati
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v6.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Release 5.0.0]]></title>
-            <link>https://designsystem.migrationsverket.se/release-notes/5.0.0/</link>
-            <guid>https://designsystem.migrationsverket.se/release-notes/5.0.0/</guid>
-            <pubDate>Mon, 17 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Vi introducerar stöd för dark mode på samtliga komponenter]]></description>
-            <content:encoded><![CDATA[<p>Vi introducerar stöd för dark mode på samtliga komponenter</p>
-<!-- -->
-<p>Se alla förändringar i detalj på <a href="https://github.com/migrationsverket/midas/releases/tag/v5.0.0" target="_blank" rel="noopener noreferrer" class="">changelog</a>.</p>]]></content:encoded>
         </item>
     </channel>
 </rss>
