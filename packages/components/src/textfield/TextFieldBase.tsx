@@ -80,3 +80,4 @@ export const TextFieldBase = forwardRef<HTMLDivElement, TextFieldBaseProps>(
     )
   },
 )
+TextFieldBase.displayName = 'TextFieldBase'

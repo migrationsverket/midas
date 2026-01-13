@@ -33,3 +33,4 @@ export const FieldError = forwardRef(
     )
   },
 )
+FieldError.displayName = 'FieldError'
