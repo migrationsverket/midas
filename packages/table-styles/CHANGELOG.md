@@ -1,3 +1,13 @@
+## 1.2.0 (2026-01-13)
+
+### 🚀 Features
+
+- **table-styles:** add pagination component ([#978](https://github.com/migrationsverket/midas/pull/978))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.3.1
+
 ## 1.1.9 (2026-01-09)
 
 ### 🧱 Updated Dependencies
