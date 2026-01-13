@@ -1,3 +1,10 @@
+## 16.3.2 (2026-01-13)
+
+### 🩹 Fixes
+
+- **components, combobox:** adjust popover position to show focus indicator ([a5be26d3ab](https://github.com/migrationsverket/midas/commit/a5be26d3ab))
+- **components, combobox:** add focus indicator for mouse interaction ([6cc9a07dc0](https://github.com/migrationsverket/midas/commit/6cc9a07dc0))
+
 ## 16.3.1 (2026-01-13)
 
 ### 🚀 Features
