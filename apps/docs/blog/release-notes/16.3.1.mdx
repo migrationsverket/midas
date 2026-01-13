@@ -1,0 +1,35 @@
+---
+slug: 16.3.1
+title: Release 16.3.1
+authors: midas
+tags: [release-notes, v16]
+date: 2026-01-13
+---
+
+Den här releasen fokuserar på tillgänglighet, förbättrad komponenthantering och nya funktioner för tabeller. Vi har lagt till stöd för React 19, förbättrat tillgänglighet med prefers-reduced-motion och forced colors, samt lagt till en ny Pagination-komponent för Tanstack Table.
+
+## 🚀 Nya funktioner
+
+- **table-styles:** Ny [Pagination-komponent för Tanstack Table](/dev/tanstack-table#paginering) som gör det enkelt att hantera sidnumrering i tabeller.
+- **components:** Alla forwardRef-komponenter har nu displayName för bättre debugging i React DevTools.
+- **components:** CSS-animationer respekterar nu användarens prefers-reduced-motion inställning för bättre tillgänglighet.
+- **theme, button, link-button:** Sekundära knappar har fått uppdaterad bakgrundsfärg.
+
+## 🩹 Fixar
+
+- **layout:** Aktiva menyalternativ visas nu korrekt även på undersidor.
+- **layout:** Förbättrat stöd för forced colors mode (Windows High Contrast) för aktiva länkar.
+
+## 🔧 Uppdateringar
+
+- **components:** Stöd för React 19 samtidigt som bakåtkompatibilitet med React 18 bibehålls.
+- **components:** React.forwardRef behålls för att bibehålla bakåtkompatibilitet med React 18.
+- **components:** React.FC wrapper har tagits bort för renare typning.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v16.3.1](https://github.com/migrationsverket/midas/releases/tag/components@v16.3.1)
+- [table-styles@v1.2.0](https://github.com/migrationsverket/midas/releases/tag/table-styles@v1.2.0)
+- [theme@v3.9.3](https://github.com/migrationsverket/midas/releases/tag/theme@v3.9.3)
