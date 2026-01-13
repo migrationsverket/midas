@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { forwardRef, useContext, useRef } from 'react'
 import { useFocusRing, useHover, usePress } from 'react-aria'
 import {
   CheckboxContext,
@@ -11,32 +11,45 @@ import { CheckboxProps } from './types'
 import { CheckBoxGroupItem } from './CheckboxGroupItem'
 import { SingleCheckbox } from './SingleCheckbox'
 
-export const Checkbox = ({ ref, ...props }: CheckboxProps) => {
-  ;[props, ref] = useContextProps(props, ref, CheckboxContext)
+export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
+  (props, ref) => {
+    ;[props, ref] = useContextProps(props, ref, CheckboxContext)
 
-  const formProps = useSlottedContext(FormContext)
+    const formProps = useSlottedContext(FormContext)
 
-  const validationBehavior =
-    props.validationBehavior ?? formProps?.validationBehavior ?? 'native'
+    const validationBehavior =
+      props.validationBehavior ?? formProps?.validationBehavior ?? 'native'
 
-  const state = useContext(CheckboxGroupContext)
+    const state = useContext(CheckboxGroupContext)
 
-  const inputRef = useRef<HTMLInputElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
 
-  const hoverResult = useHover(props)
+    const hoverResult = useHover(props)
 
-  const pressResult = usePress({
-    ref,
-    isDisabled: props.isDisabled,
-  })
+    const pressResult = usePress({
+      ref,
+      isDisabled: props.isDisabled,
+    })
 
-  const focusRingAria = useFocusRing()
+    const focusRingAria = useFocusRing()
 
-  if (state) {
+    if (state) {
+      return (
+        <CheckBoxGroupItem
+          {...props}
+          state={state}
+          inputRef={inputRef}
+          hoverResult={hoverResult}
+          pressResult={pressResult}
+          focusRingAria={focusRingAria}
+          validationBehavior={validationBehavior}
+        />
+      )
+    }
+
     return (
-      <CheckBoxGroupItem
+      <SingleCheckbox
         {...props}
-        state={state}
         inputRef={inputRef}
         hoverResult={hoverResult}
         pressResult={pressResult}
@@ -44,16 +57,5 @@ export const Checkbox = ({ ref, ...props }: CheckboxProps) => {
         validationBehavior={validationBehavior}
       />
     )
-  }
-
-  return (
-    <SingleCheckbox
-      {...props}
-      inputRef={inputRef}
-      hoverResult={hoverResult}
-      pressResult={pressResult}
-      focusRingAria={focusRingAria}
-      validationBehavior={validationBehavior}
-    />
-  )
-}
+  },
+)

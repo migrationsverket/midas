@@ -1,5 +1,7 @@
-import type { ReactNode } from 'react'
+import { forwardRef, type ReactNode } from 'react'
 import {
+  TextFieldContext,
+  useContextProps,
   TextField as AriaTextField,
   TextFieldProps,
   ValidationResult,
@@ -35,42 +37,46 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   popover?: InfoPopoverProps
 }
 
-export const TextFieldBase = (props: TextFieldBaseProps) => {
-  const {
-    label,
-    description,
-    errorMessage,
-    showCounter,
-    errorPosition = 'top',
-    size = 'large',
-    popover,
-    children,
-  } = props
+export const TextFieldBase = forwardRef<HTMLDivElement, TextFieldBaseProps>(
+  (props, ref) => {
+    ;[props] = useContextProps(props, ref, TextFieldContext)
 
-  return (
-    <AriaTextField
-      {...props}
-      className={clsx(styles.textField, {
-        [styles.medium]: size === 'medium',
-      })}
-    >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {showCounter && <CharacterCounter isLonely={!description} />}
-      {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-      )}
-      {children}
-      {errorPosition === 'bottom' && (
-        <FieldError
-          data-testid='fieldError'
-          className={styles.bottomError}
-        >
-          {errorMessage}
-        </FieldError>
-      )}
-    </AriaTextField>
-  )
-}
+    const {
+      label,
+      description,
+      errorMessage,
+      showCounter,
+      errorPosition = 'top',
+      size = 'large',
+      popover,
+      children,
+    } = props
+
+    return (
+      <AriaTextField
+        {...props}
+        className={clsx(styles.textField, {
+          [styles.medium]: size === 'medium',
+        })}
+      >
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {showCounter && <CharacterCounter isLonely={!description} />}
+        {errorPosition === 'top' && (
+          <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        )}
+        {children}
+        {errorPosition === 'bottom' && (
+          <FieldError
+            data-testid='fieldError'
+            className={styles.bottomError}
+          >
+            {errorMessage}
+          </FieldError>
+        )}
+      </AriaTextField>
+    )
+  },
+)
