@@ -1,3 +1,13 @@
+## 16.3.0 (2026-01-13)
+
+### 🚀 Features
+
+- **components:** add displayName to forwardRef components" ([474d161db5](https://github.com/migrationsverket/midas/commit/474d161db5))
+
+### 🔙 Rollback changes
+
+- Revert "refactor: remove React.forwardRef" ([c4f26cd721](https://github.com/migrationsverket/midas/commit/c4f26cd721))
+
 ## 16.2.5 (2026-01-09)
 
 ### 🏭 Refactoring
