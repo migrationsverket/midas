@@ -53,3 +53,4 @@ export const CheckboxInner = forwardRef<HTMLLabelElement, CheckboxInnerProps>(
     )
   },
 )
+CheckboxInner.displayName = 'CheckboxInner'

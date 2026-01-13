@@ -25,3 +25,4 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     </TextFieldBase>
   ),
 )
+TextField.displayName = 'TextField'

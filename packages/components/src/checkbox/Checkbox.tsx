@@ -59,3 +59,4 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
     )
   },
 )
+Checkbox.displayName = 'Checkbox'

@@ -29,3 +29,4 @@ export const CharacterCounter = forwardRef<
     </span>
   )
 })
+CharacterCounter.displayName = 'CharacterCounter'

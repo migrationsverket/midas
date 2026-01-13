@@ -35,3 +35,4 @@ export const PasswordField = forwardRef<HTMLInputElement, InputProps>(
     )
   },
 )
+PasswordField.displayName = 'PasswordField'

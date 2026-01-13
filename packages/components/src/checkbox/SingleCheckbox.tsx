@@ -18,3 +18,4 @@ export const SingleCheckbox = forwardRef<
     />
   )
 })
+SingleCheckbox.displayName = 'SingleCheckbox'

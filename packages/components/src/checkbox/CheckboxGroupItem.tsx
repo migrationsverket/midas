@@ -24,3 +24,4 @@ export const CheckBoxGroupItem = forwardRef<
     />
   )
 })
+CheckBoxGroupItem.displayName = 'CheckBoxGroupItem'
