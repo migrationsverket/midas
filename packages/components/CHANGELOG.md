@@ -1,3 +1,9 @@
+## 16.3.3 (2026-01-14)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.4
+
 ## 16.3.2 (2026-01-13)
 
 ### 🩹 Fixes
