@@ -49,7 +49,7 @@ export default function Startpage() {
                 <LinkButton
                   variant='secondary'
                   as={Link}
-                  to='/components/accordion'
+                  to='/components/container/accordion'
                 >
                   Komponenter
                 </LinkButton>
