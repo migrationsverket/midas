@@ -40,7 +40,7 @@
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-testing-library": "^7.5.3",
     "lerna": "^9.0.3",
-    "lucide-react": "^0.525.0",
+    "lucide-react": "^0.562.0",
     "raw-loader": "^4.0.2",
     "react": "^19.2.3",
     "react-aria-components": "1.14.0",
