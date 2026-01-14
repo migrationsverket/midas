@@ -19,7 +19,8 @@
   color: var(--midas-text-primary);
   display: flex;
   font-size: var(--midas-typography-font-size-30);
-  justify-content: flex-end;
+  gap: var(--midas-spacing-20);
+  justify-content: space-between;
   min-height: var(--midas-size-150);
   padding-left: var(--midas-size-70);
   padding-right: var(--midas-size-70);
@@ -69,6 +70,22 @@
 }
 
 .selectValue {
+  color: var(--midas-text-primary);
+  font-family: var(--midas-typography-font-family);
+  line-height: var(--midas-typography-line-height-30);
+  max-width: calc(100% - var(--midas-spacing-90));
+
+  .placeholder {
+    display: flex;
+  }
+
+  &[data-disabled] {
+    color: var(--midas-text-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.multiSelectValue {
   pointer-events: none;
   color: var(--midas-text-primary);
   font-family: var(--midas-typography-font-family);

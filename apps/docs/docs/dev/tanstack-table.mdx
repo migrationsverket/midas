@@ -3,7 +3,13 @@ title: Tanstack Table
 description: Implementation av Tanstack Table
 ---
 
-import { FilteringExample, ColumnVisibilityExample, ColumnDndExample, SortingExample } from '@site/src/components/examples'
+import {
+  FilteringExample,
+  ColumnVisibilityExample,
+  ColumnDndExample,
+  SortingExample,
+  PaginationExample,
+} from '@site/src/components/examples'
 
 # Tanstack Table
 
@@ -109,6 +115,56 @@ Här är några resurser som hjälper dig att komma igång med TanStack Table:
 - [**Exempel**](https://tanstack.com/table/v8/docs/framework/react/examples/basic): En stor samling exempel som visar hur man implementerar olika funktioner.
 
 ## Exempel
+
+### Paginering
+
+Midas erbjuder en färdig komponent som jackar in i Tanstack tables API för paginering.
+
+```tsx
+import { Pagination } from '@midas-ds/table-styles'
+```
+
+```tsx
+const table = useReactTable({
+  data,
+  columns,
+  getCoreRowModel: getCoreRowModel(),
+  getPaginationRowModel: getPaginationRowModel(),
+  initialState: {
+    pagination: {
+      pageIndex: 0,
+      pageSize: 10,
+    },
+  },
+})
+
+const {
+  pagination: { pageIndex, pageSize },
+} = table.getState()
+
+
+return (
+  <table>
+  ...
+  </table>
+ <Pagination
+    getCanNextPage={table.getCanNextPage}
+    getCanPreviousPage={table.getCanPreviousPage}
+    getPageCount={table.getPageCount}
+    getRowCount={table.getRowCount}
+    nextPage={table.nextPage}
+    pageIndex={pageIndex}
+    pageSize={pageSize}
+    previousPage={table.previousPage}
+    setPageIndex={table.setPageIndex}
+    setPageSize={table.setPageSize}
+  />
+)
+```
+
+<PaginationExample />
+
+Läs mer om paginering i [Tanstack Table's dokumentation](https://tanstack.com/table/v8/docs/guide/pagination).
 
 ### Sortering
 

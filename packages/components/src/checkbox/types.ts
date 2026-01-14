@@ -17,7 +17,7 @@ export interface CheckboxComponentProps extends CheckboxProps {
   focusRingAria: FocusRingAria
   pressResult: PressResult
   hoverResult: HoverResult
-  inputRef: React.RefObject<HTMLInputElement>
+  inputRef: React.RefObject<HTMLInputElement | null>
 }
 
 export interface CheckboxGroupItemProps extends CheckboxComponentProps {

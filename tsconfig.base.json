@@ -21,6 +21,7 @@
       "@midas-ds/docusaurus": ["tools/docusaurus/src/index.ts"],
       "@midas-ds/release-local": ["tools/release-local/src/index.ts"],
       "@midas-ds/style-dictionary": ["tools/style-dictionary/src/index.ts"],
+      "@midas-ds/table-styles": ["packages/table-styles/src/index.ts"],
       "@midas-ds/table-styles/*": ["packages/table-styles/src/*"],
       "@midas-ds/theme": ["packages/theme/src/index.ts"],
       "@midas-ds/theme/*": ["packages/theme/src/*"],

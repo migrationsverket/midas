@@ -1,10 +1,10 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
 import { useCheckbox } from 'react-aria'
 import { useToggleState } from '@react-stately/toggle'
 import type { CheckboxComponentProps } from './types'
 import { CheckboxInner } from './CheckboxInner'
 
-export const SingleCheckbox = React.forwardRef<
+export const SingleCheckbox = forwardRef<
   HTMLLabelElement,
   CheckboxComponentProps
 >((props, ref) => {
@@ -18,3 +18,4 @@ export const SingleCheckbox = React.forwardRef<
     />
   )
 })
+SingleCheckbox.displayName = 'SingleCheckbox'

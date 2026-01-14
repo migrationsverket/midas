@@ -20,7 +20,7 @@ export class SectionedListLayout<
    *
    * This might not be optional for performance, FYI
    */
-  getContentSize(): Size {
+  override getContentSize(): Size {
     const keys = this?.virtualizer?.collection.getKeys()
 
     Array.from(keys || []).forEach(key => {

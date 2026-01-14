@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type { RefObject } from 'react'
 import { X } from 'lucide-react'
 import type { MultiSelectState, SelectProps } from './types'
 import styles from './Select.module.css'
@@ -10,17 +10,17 @@ interface MultiSelectValueTagProps extends SelectProps {
   state: MultiSelectState<ListBoxOption>
   parentWidth: number
   onClear: () => void
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>
+  triggerRef: RefObject<HTMLButtonElement | null>
 }
 
-export const MultiSelectValueTag: React.FC<MultiSelectValueTagProps> = ({
+export const MultiSelectValueTag = ({
   state: { selectedItems: items },
   isDisabled,
   parentWidth,
   onClear,
   triggerRef,
   isClearable,
-}) => {
+}: MultiSelectValueTagProps) => {
   const strings = useLocalizedStringFormatter(messages)
 
   return (

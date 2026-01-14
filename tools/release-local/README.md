@@ -89,6 +89,44 @@ nx run @midas-ds/source:local-registry
 
 The `release:local` command does everything but stops Verdaccio at the end, requiring a manual restart.
 
+### Docker Workflow
+
+**Using the local registry in Docker containers:**
+
+If you're running your development environment in Docker (using `docker-compose`), the setup is slightly different:
+
+1. **Start the Verdaccio service:**
+```bash
+docker-compose up verdaccio
+```
+
+This starts the Verdaccio registry as a Docker service accessible to all containers.
+
+2. **From within a container, publish packages:**
+```bash
+# Run from inside a container (e.g., docs, storybook, or playground)
+docker-compose exec docs npx nx run @midas-ds/source:release:local:docker
+```
+
+Or for the dev workflow that keeps watching:
+```bash
+docker-compose exec docs npx nx run @midas-ds/source:release:local:docker:dev
+```
+
+3. **Install in another project:**
+
+From within a Docker container, use the `verdaccio` hostname:
+```bash
+npm install @midas-ds/components@latest --registry=http://verdaccio:4873/
+```
+
+From your host machine (outside Docker), use `localhost`:
+```bash
+npm install @midas-ds/components@latest --registry=http://localhost:4873/
+```
+
+**Note:** The Docker targets use `skipVerdaccioStart: true` because Verdaccio is managed as a separate Docker service rather than spawned by the executor.
+
 ### Install in another project
 
 In your test project, install packages from the local registry using the `--registry` flag:
@@ -118,6 +156,7 @@ The executor accepts the following options (configured in `project.json`):
 - `skipPublish` (boolean): Skip publishing step (default: `true`)
 - `runTests` (boolean): Run tests after publishing (default: `false`)
 - `keepRunning` (boolean): Keep Verdaccio running after publishing (default: `false`)
+- `skipVerdaccioStart` (boolean): Skip starting Verdaccio (assumes it's already running, e.g., in Docker) (default: `false`)
 
 ### Available Tasks
 
@@ -137,6 +176,30 @@ The executor accepts the following options (configured in `project.json`):
   "continuous": true,
   "options": {
     "keepRunning": true
+  }
+}
+```
+
+**`release:local:docker`** - Publish in Docker (assumes Verdaccio service is running)
+```json
+{
+  "continuous": false,
+  "options": {
+    "registry": "http://verdaccio:4873/",
+    "keepRunning": false,
+    "skipVerdaccioStart": true
+  }
+}
+```
+
+**`release:local:docker:dev`** - Publish in Docker (dev workflow)
+```json
+{
+  "continuous": true,
+  "options": {
+    "registry": "http://verdaccio:4873/",
+    "keepRunning": false,
+    "skipVerdaccioStart": true
   }
 }
 ```

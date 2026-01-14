@@ -130,6 +130,7 @@ H채r 채r ett exempel p책 flikar d채r varje flik har en st채ngningsknapp. Detta �
 import React, { useState } from 'react'
 import { X } from 'lucide-react'
 import { Tab, TabList, Tabs, TabPanel, Text, Button } from '@midas-ds/components'
+import { variables } from '@midas-ds/theme'
 
 export const ClosableTabsExample = () => {
   const [openTabs, setOpenTabs] = useState([
@@ -148,7 +149,13 @@ export const ClosableTabsExample = () => {
           <Tab
             key={tab.id}
             id={tab.id}
-            style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}
+            style={{
+              display: 'flex',
+              gap: '0.5rem',
+              alignItems: 'center',
+              padding: 0,
+              paddingLeft: variables.spacing50,
+            }}
           >
             {tab.title}
             <Button

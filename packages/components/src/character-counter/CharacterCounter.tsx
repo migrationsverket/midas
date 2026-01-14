@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
 import {
   InputProps,
   useContextProps,
@@ -10,7 +10,7 @@ export interface CharacterCounterProps extends InputProps {
   isLonely?: boolean
 }
 
-export const CharacterCounter = React.forwardRef<
+export const CharacterCounter = forwardRef<
   HTMLInputElement,
   CharacterCounterProps
 >((props, ref) => {
@@ -29,3 +29,4 @@ export const CharacterCounter = React.forwardRef<
     </span>
   )
 })
+CharacterCounter.displayName = 'CharacterCounter'

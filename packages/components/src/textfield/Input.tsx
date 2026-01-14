@@ -1,11 +1,12 @@
 import {
   Input as AriaInput,
   InputProps as AriaInputProps,
+  useContextProps,
+  InputContext,
 } from 'react-aria-components'
-import * as React from 'react'
+import { forwardRef } from 'react'
 import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
-import { useContextProps, InputContext } from 'react-aria-components'
 import { PasswordField } from './PasswordField'
 
 export interface InputProps extends AriaInputProps {
@@ -15,7 +16,7 @@ export interface InputProps extends AriaInputProps {
   skipContext?: boolean
 }
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ skipContext = false, ...localProps }, localRef) => {
     const [contextProps, contextRef] = useContextProps(
       localProps,
@@ -37,3 +38,4 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     )
   },
 )
+Input.displayName = 'Input'

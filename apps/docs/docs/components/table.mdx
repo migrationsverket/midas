@@ -5,7 +5,12 @@ description: En enkel tabell för att visualisera data.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample, FullExample, ControlledExample, SortingExample } from '@site/src/components/examples/table/TableExamples'
+import {
+  BasicExample,
+  FullExample,
+  ControlledExample,
+  SortingExample,
+} from '@site/src/components/examples/table/TableExamples'
 
 <ComponentHeader
   name='Table'
@@ -99,6 +104,23 @@ const rows = [
 
 <FullExample />
 
+### Zebrarandiga rader
+
+Använd `striped` om du vill att raderna ska vara zebrarandiga. Det är särskilt användbart i breda tabeller med många kolumner, där det annars kan vara svårt för användaren att följa en enskild rad horisontellt.
+
+```tsx
+<Table
+  aria-label='Fruit'
+  // highlight-start
+  striped
+  // highlight-end
+>
+  ...
+</Table>
+```
+
+<FullExample striped />
+
 ### Kompakt tabell
 
 Använd `size='medium'` om du vill ha en kompaktare tabell.
@@ -116,7 +138,7 @@ Använd `size='medium'` om du vill ha en kompaktare tabell.
 
 <FullExample size='medium' />
 
-### Valbara rader
+## Valbara rader
 
 Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`
 
@@ -172,24 +194,7 @@ const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set(['appl
 
 <ControlledExample />
 
-### Randiga rader
-
-Använd `striped` om du vill att raderna ska vara olika.
-
-```tsx
-<Table
-  aria-label='Fruit'
-  // highlight-start
-  striped
-  // highlight-end
->
-  ...
-</Table>
-```
-
-<FullExample striped />
-
-### Sortering
+## Sortering
 
 Tabellen har inbyggd support för sortering. Använd `sortDescriptor` och `onSortChange` för att hantera sorteringen, och sätt `allowsSorting` på de kolumner som ska vara sorterbara.
 
@@ -250,7 +255,7 @@ const sortedRows = [...rows].sort((a, b) => {
 
 <SortingExample />
 
-### Virtuell tabell
+## Virtuell tabell
 
 För stora tabeller med mycket data kan en [`Virtualizer`](https://react-spectrum.adobe.com/react-aria/Virtualizer.html) hjälpa till att reducera mängden renderade DOM-element, begränsat till vad användaren ser för tillfället.
 

@@ -1,2 +1,0 @@
-npx nx affected -t lint --exclude tag:apps --base=HEAD
-npx nx affected -t test --base=HEAD

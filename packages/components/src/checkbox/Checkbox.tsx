@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { forwardRef, useContext, useRef } from 'react'
 import { useFocusRing, useHover, usePress } from 'react-aria'
 import {
   CheckboxContext,
@@ -11,7 +11,7 @@ import { CheckboxProps } from './types'
 import { CheckBoxGroupItem } from './CheckboxGroupItem'
 import { SingleCheckbox } from './SingleCheckbox'
 
-export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
+export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
   (props, ref) => {
     ;[props, ref] = useContextProps(props, ref, CheckboxContext)
 
@@ -20,9 +20,9 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
     const validationBehavior =
       props.validationBehavior ?? formProps?.validationBehavior ?? 'native'
 
-    const state = React.useContext(CheckboxGroupContext)
+    const state = useContext(CheckboxGroupContext)
 
-    const inputRef = React.useRef<HTMLInputElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const hoverResult = useHover(props)
 
@@ -59,3 +59,4 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
     )
   },
 )
+Checkbox.displayName = 'Checkbox'

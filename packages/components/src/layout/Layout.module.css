@@ -307,16 +307,7 @@
   font-weight: 600;
 
   @media (forced-colors: active) {
-    background-color: inherit;
-    border-color: highlight;
-    color: highlight;
     transition: none;
-  }
-
-  &[data-hovered] {
-    @media (forced-colors: active) {
-      color: highlight;
-    }
   }
 }
 
@@ -426,7 +417,7 @@
     cursor: pointer;
 
     @media (forced-colors: active) {
-      color: selecteditem;
+      text-decoration: underline;
     }
   }
 

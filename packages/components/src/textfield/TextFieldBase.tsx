@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { forwardRef, type ReactNode } from 'react'
 import {
   TextFieldContext,
   useContextProps,
@@ -16,7 +16,7 @@ import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
-  children?: React.ReactNode
+  children?: ReactNode
   /** Specify label displayed above the TextField*/
   label?: string
   /** Specify description displayed below the label */
@@ -37,47 +37,47 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   popover?: InfoPopoverProps
 }
 
-export const TextFieldBase = React.forwardRef<
-  HTMLDivElement,
-  TextFieldBaseProps
->((props, ref) => {
-  ;[props] = useContextProps(props, ref, TextFieldContext)
+export const TextFieldBase = forwardRef<HTMLDivElement, TextFieldBaseProps>(
+  (props, ref) => {
+    ;[props] = useContextProps(props, ref, TextFieldContext)
 
-  const {
-    label,
-    description,
-    errorMessage,
-    showCounter,
-    errorPosition = 'top',
-    size = 'large',
-    popover,
-    children,
-  } = props
+    const {
+      label,
+      description,
+      errorMessage,
+      showCounter,
+      errorPosition = 'top',
+      size = 'large',
+      popover,
+      children,
+    } = props
 
-  return (
-    <AriaTextField
-      {...props}
-      className={clsx(styles.textField, {
-        [styles.medium]: size === 'medium',
-      })}
-    >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {showCounter && <CharacterCounter isLonely={!description} />}
-      {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-      )}
-      {children}
-      {errorPosition === 'bottom' && (
-        <FieldError
-          data-testid='fieldError'
-          className={styles.bottomError}
-        >
-          {errorMessage}
-        </FieldError>
-      )}
-    </AriaTextField>
-  )
-})
+    return (
+      <AriaTextField
+        {...props}
+        className={clsx(styles.textField, {
+          [styles.medium]: size === 'medium',
+        })}
+      >
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {showCounter && <CharacterCounter isLonely={!description} />}
+        {errorPosition === 'top' && (
+          <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        )}
+        {children}
+        {errorPosition === 'bottom' && (
+          <FieldError
+            data-testid='fieldError'
+            className={styles.bottomError}
+          >
+            {errorMessage}
+          </FieldError>
+        )}
+      </AriaTextField>
+    )
+  },
+)
+TextFieldBase.displayName = 'TextFieldBase'

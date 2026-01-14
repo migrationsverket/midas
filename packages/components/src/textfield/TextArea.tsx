@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { forwardRef } from 'react'
 import { TextFieldBase, type TextFieldBaseProps } from './TextFieldBase'
 import {
   TextArea as AriaTextArea,
@@ -13,12 +13,13 @@ import { Complement } from '../utils/types'
 export type TextAreaProps = Omit<TextFieldBaseProps, 'type' | 'pattern'> &
   Complement<TextFieldBaseProps, AriaTextAreaProps>
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ className, cols, rows, wrap, ...rest }, ref) => (
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  ({ className, cols, form, rows, wrap, ...rest }, ref) => (
     <TextFieldBase {...rest}>
       <AriaTextArea
         className={clsx(styles.textArea, className)}
         cols={cols}
+        form={form}
         ref={ref}
         rows={rows}
         wrap={wrap}
@@ -26,3 +27,4 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     </TextFieldBase>
   ),
 )
+TextArea.displayName = 'TextArea'

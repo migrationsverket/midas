@@ -1,3 +1,68 @@
+## 16.3.2 (2026-01-13)
+
+### 🩹 Fixes
+
+- **components, combobox:** adjust popover position to show focus indicator ([a5be26d3ab](https://github.com/migrationsverket/midas/commit/a5be26d3ab))
+- **components, combobox:** add focus indicator for mouse interaction ([6cc9a07dc0](https://github.com/migrationsverket/midas/commit/6cc9a07dc0))
+
+## 16.3.1 (2026-01-13)
+
+### 🚀 Features
+
+- **table-styles:** add pagination component ([#978](https://github.com/migrationsverket/midas/pull/978))
+
+## 16.3.0 (2026-01-13)
+
+### 🚀 Features
+
+- **components:** add displayName to forwardRef components" ([474d161db5](https://github.com/migrationsverket/midas/commit/474d161db5))
+
+### 🔙 Rollback changes
+
+- Revert "refactor: remove React.forwardRef" ([c4f26cd721](https://github.com/migrationsverket/midas/commit/c4f26cd721))
+
+## 16.2.5 (2026-01-09)
+
+### 🏭 Refactoring
+
+- **components:** remove React.FC wrapper ([4f156ecf45](https://github.com/migrationsverket/midas/commit/4f156ecf45))
+- remove React.forwardRef ([977fc0260b](https://github.com/migrationsverket/midas/commit/977fc0260b))
+
+### 🔧 Maintenance
+
+- accept all shapes of external refs ([340771208d](https://github.com/migrationsverket/midas/commit/340771208d))
+- revert removal of react 18 peerDeps ([8c4b059f56](https://github.com/migrationsverket/midas/commit/8c4b059f56))
+- **checkbox:** assert prop types ([406798b0a1](https://github.com/migrationsverket/midas/commit/406798b0a1))
+- update to react 19 ([7389cceb06](https://github.com/migrationsverket/midas/commit/7389cceb06))
+
+## 16.2.4 (2026-01-09)
+
+### 🩹 Fixes
+
+- **components, layout:** adjust forced colors for active links ([2b27898722](https://github.com/migrationsverket/midas/commit/2b27898722))
+
+## 16.2.3 (2026-01-09)
+
+### 🩹 Fixes
+
+- **components, layout:** show active menu item on sub pages ([#994](https://github.com/migrationsverket/midas/pull/994))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.3
+
+## 16.2.2 (2026-01-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.2
+
+## 16.2.1 (2025-12-19)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.1
+
 ## 16.2.0 (2025-12-18)
 
 ### 🚀 Features
