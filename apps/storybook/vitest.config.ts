@@ -11,7 +11,6 @@ export default mergeConfig(
       projects: [
         defineStorybookProject({
           name: 'storybook',
-          snapshotSubpath: 'light',
         }),
       ],
     },

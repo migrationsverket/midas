@@ -4,11 +4,9 @@ import { fileURLToPath } from 'node:url'
 import { BrowserContextOptions } from 'playwright'
 import { playwright } from '@vitest/browser-playwright'
 import { TestProjectConfiguration } from 'vitest/config'
-import { storybookVis } from 'storybook-addon-vis/vitest-plugin'
 
 interface Props {
   name: string
-  snapshotSubpath: string
   contextOptions?: BrowserContextOptions
 }
 
@@ -17,13 +15,7 @@ const currentDirectory =
     ? __dirname
     : dirname(fileURLToPath(import.meta.url))
 
-const isCI = !!process.env.CI
-
-export const defineStorybookProject = async ({
-  name,
-  contextOptions,
-  snapshotSubpath,
-}: Props) =>
+export const defineStorybookProject = async ({ name, contextOptions }: Props) =>
   ({
     extends: true,
     plugins: [
@@ -33,13 +25,6 @@ export const defineStorybookProject = async ({
         configDir: join(currentDirectory, '.storybook'),
         storybookUrl: 'http://localhost:4400',
       }),
-      ...(isCI
-        ? []
-        : [
-            storybookVis({
-              snapshotRootDir: `__vis__/${snapshotSubpath}`,
-            }),
-          ]),
     ],
     test: {
       name,
@@ -53,8 +38,6 @@ export const defineStorybookProject = async ({
           },
         ],
       },
-      setupFiles: [
-        join('.storybook', isCI ? 'vitest.setup.ci.ts' : 'vitest.setup.ts'),
-      ],
+      setupFiles: [join('.storybook', 'vitest.setup.ts')],
     },
   }) satisfies TestProjectConfiguration
