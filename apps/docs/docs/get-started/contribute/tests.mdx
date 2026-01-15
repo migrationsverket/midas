@@ -4,74 +4,43 @@ sidebar_label: 'Tester'
 
 # Tester
 
-Automatiska tester i Midas utgörs främst av _komponenttester_. Komponenttester testar interaktionen av renderade komponenter i en riktig eller emulerad webbläsare.
-I de riktiga webbläsarna utförs automatiserade _tillgänglighetstester_, _snapshottester_ körs i Chromatic.
+Tester i Midas utgörs främst av _komponenttester_ med hjälp av [Vitest Component Testing](https://vitest.dev/guide/browser/component-testing).
+Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing), _snapshottester_ körs i Chromatic.
 
-Vi har också möjlighet att skriva _enhetstester_ som testar delar ur JavaScript-moduler.
+## Komponenttester
 
-## Webbläsartester
+Midas använder [Storybook](https://storybook.js.org), med hjälp av [portable stories](https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#composestories) kan vi använda en renderad story som utgångspunkt för våra tester.
 
-Midas använder [Storybook som primär testplattform](https://storybook.js.org/docs/writing-tests), med [Storybooks portable stories](https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#composestories)
-får vi tillgång till ett flertal riktiga webbläsare som kan köra våra tester lokalt och i våra CI/CD pipelines.
-Skriv ditt test här i första hand, det hjälper oss att säkerställa att vi har stories för en komponents samtliga tillstånd.
-
-### Kör webbläsartester
-
-Tester som använder Storybooks portable stories kan köras via terminalen med hjälp av [Storybook Vitest addon](https://storybook.js.org/docs/writing-tests/integrations/vitest-addon).
-Under huven används [Vitest](https://vitest.dev/), [Playwright](https://playwright.dev/) och [Testing library](https://testing-library.com/).
+### Kör komponenttester
 
 ```bash
-nx test storybook
+nx test components
 ```
 
-### Skriva webbläsartester
+### Skriva komponenttester
 
 Mycket kan testas på våra komponenter, och mycket kanske redan testas av de bibliotek vi utgår ifrån.
 Försök skriva ett test som kompletterar redan skrivna tester, kom ihåg att ditt test kommer behöva underhållas i framtiden.
-
-#### Interaktioner och förväntade tillstånd
-
-Erbjuder din komponent interaktion kan du skriva tester där en simulerad användare använder musen eller tangentbordet för att framkalla ett visst tillstånd.
-Använd `userEvent` från `vitest/browser` när du simulerar din användare.
 
 #### Buggrättning med TDD
 
 Om du rättar en bugg erbjuds du ett unikt tillfälle att skriva ett test som återskapar din bug, förhoppningsvis kommer vi då inte att återinföra buggen.
 
-Börja med att sätta upp berörd komponent i en separat story, skriv sedan ett test som återskapar din bug, ditt mål är att få ett test som "failar".
+```tsx title="TextField.spec.tsx"
+it('should be impossible to exceed the max length', async () => {
+  // Rendera din story
+  const { getByRole } = await render(<Primary maxLength={3} />)
 
-```tsx
-// TextField.stories.tsx
-export const DS123: Story = {
-  // Dölj gärna storyn från Storybooks UI om den inte ger något direkt värde åt andra intressenter
-  tags: ['!dev', '!autodocs'],
-  args: {
-    label: 'Select a value',
-    options: [{ id: 'banana', name: 'Banana' }],
-  },
-}
-```
-
-```tsx
-// TextField.spec.tsx
-it('should be possible to select a value with the keyboard', async () => {
-  // Kör storyn
-  await DS123.run()
   // Interagera med userEvent
   await userEvent.tab()
-  await userEvent.keyboard('[Space]')
-  await userEvent.keyboard('[Space]')
+  await userEvent.keyboard('abcd')
+
   // Skriv minst en förväntning med expect
-  expect(page.getByRole('textbox')).toHaveDisplayValue('banana')
+  await expect.element(getByRole('textbox')).toHaveDisplayValue('abc')
 })
 ```
 
 Nu kan du åtgärda din bug, när du är klar bör ditt test passera.
-
-##### toHaveStyle
-
-`expect` från `@storybook/test` erbjuder dig att skriva förväntningar på hur en komponent ser ut med hjälp av `toHaveStyle`-metoden.
-Då [metoden inte är helt pålitlig](https://github.com/testing-library/jest-dom/issues/350) bör den användas som en sista utväg.
 
 ## Tillgänglighetstester
 
@@ -84,69 +53,6 @@ nx a11y storybook
 Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
 
 För att kontrollera tillgängligheten i dark-mode eller forced-colors, kör: `nx run storybook:a11y-dark-mode` respektive `nx run storybook:a11y-forced-colors`.
-
-## Enhetstester
-
-Behöver du skriva enhetstester av rena JavaScript-moduler eller använda en emulerad webbläsare (jsdom) för att testa dina komponenter kan du använda filnamn enligt mönstret `**/?(*.)+(spec|test).[jt]s?(x)`.
-Exempelvis: `packages/components/src/badge/badge.spec.ts`.
-
-Enhetstesterna körs också av Jest och accepterar samma argument som när webbläsartesterna körs.
-
-### Kör enhetstester
-
-```bash
-nx test components
-```
-
-#### Kör enhetstester kontinuerligt när du sparar en fil
-
-```bash
-nx test components --watch
-```
-
-### Skriva enhetstester
-
-I våra `.spec|.test`-filer är [Jest definerat globalt](https://jestjs.io/docs/api), det krävs därför inga importer av `describe`, `beforeEach`, `test/it`, `expect`, etc.
-
-Om du har en separerad kod kan du importera delar av en JavaScript-modul och kontrollera att den fungerar som du vill med hjälp av ett test.
-Gör något i stil med:
-
-```ts title="sum.spec.ts"
-import sum from './sum'
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3)
-})
-```
-
-#### Emulerad webbläsare
-
-Om du av någon anledning behöver skriva ett komponenttest med en emulerad webbläsare behöver du använda `screen` och `expect` från `@testing-library/react`.
-Hämta även en uppsatt simulerad användare från `packages/components/tests/utils/user` om du behöver interagera med din komponent.
-
-Sätt gärna upp en komponent i `beforeEach`-hooken så att det är lätt att skriva flera tester på samma tillstånd.
-
-```tsx title="Button.spec.tsx"
-import { render, screen } from '@testing-library/react'
-import { Button } from './Button'
-import user from 'tests/utils/user'
-
-describe('given a default Button', () => {
-  const label = 'my button'
-  const handleClick = jest.fn()
-
-  beforeEach(() => {
-    render(<Button onPress={handleClick}>{label}</Button>)
-  })
-
-  it('should be clickable and visible', async () => {
-    const button = screen.getByRole('button', { name: label })
-    await user.click(button)
-    expect(handleClick).toHaveBeenCalledTimes(1)
-    expect(button).toBeVisible()
-  })
-})
-```
 
 ## Snapshottester
 
