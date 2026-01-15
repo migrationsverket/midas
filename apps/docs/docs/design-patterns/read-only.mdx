@@ -4,7 +4,7 @@ import { AccessLevelExample } from '@site/src/components/examples/read-only/Read
 
 Normalfallet i ett gränssnitt är att alla kontroller, till exempel textfält eller kryssrutor, går att interagera med. Om det uppstår ett läge där en specifik kontroll och dess information inte är relevant är huvudregeln att inte visa kontrollen för användaren. Men, i de fall där informationen i kontrollen är relevant men användaren inte ska kunna interagera med kontrollen kan vi sätta komponenterna i read-only-läge. I detta läge har kontrollen ett annorlunda utseende för att indikera att den inte går att interagera med.
 
-Read-only finns till [Calendar](/components/calendar), [Checkbox](/components/checkbox), [Combobox](/components/combobox), [DateField](/components/datefield), [DatePicker](/components/date-picker), [Radio](/components/radio), [TextArea](/components/textarea) och [Textfield](/components/textfield)
+Read-only finns till [Calendar](/components/calendar), [Checkbox](/components/form/checkbox), [Combobox](/components/form/combobox), [DateField](/components/form/datefield), [DatePicker](/components/form/date-picker), [Radio](/components/form/radio), [TextArea](/components/form/textarea) och [Textfield](/components/form/textfield)
 
 :::info[Read-only finns inte till Select]
 Vi har bara read-only till de komponenter där React Aria har property isReadOnly. Deras Select, som vår Select bygger på, har inte det i dagsläget. Om du har en Select som du vill göra read-only rekommenderar vi att använda Textfield och fylla den med informationen från Select.
