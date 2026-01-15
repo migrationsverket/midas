@@ -1,24 +1,22 @@
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { getAffectedProjects } from './getAffectedProjects'
-import { releaseVersion } from 'nx/release'
 
-jest.mock('nx/release', () => ({
-  releaseVersion: jest.fn(),
+const mockReleaseVersion = vi.hoisted(() => vi.fn())
+
+vi.mock('nx/release', () => ({
+  releaseVersion: mockReleaseVersion,
 }))
 
-const mockReleaseVersion = releaseVersion as jest.MockedFunction<
-  typeof releaseVersion
->
-
 describe('getAffectedProjects', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
+  afterEach(() => {
+    vi.clearAllMocks()
   })
 
   it('should call nx releaseVersion with dryRun: true', async () => {
     mockReleaseVersion.mockResolvedValue({
       projectsVersionData: {},
       workspaceVersion: null,
-    } as any)
+    })
 
     await getAffectedProjects()
 
@@ -39,7 +37,7 @@ describe('getAffectedProjects', () => {
         },
       },
       workspaceVersion: null,
-    } as any)
+    })
 
     const result = await getAffectedProjects()
 
@@ -74,7 +72,7 @@ describe('getAffectedProjects', () => {
         },
       },
       workspaceVersion: null,
-    } as any)
+    })
 
     const result = await getAffectedProjects()
 
@@ -102,7 +100,7 @@ describe('getAffectedProjects', () => {
         },
       },
       workspaceVersion: null,
-    } as any)
+    })
 
     const result = await getAffectedProjects()
 
@@ -130,7 +128,7 @@ describe('getAffectedProjects', () => {
         },
       },
       workspaceVersion: null,
-    } as any)
+    })
 
     const result = await getAffectedProjects()
 
@@ -141,7 +139,7 @@ describe('getAffectedProjects', () => {
     mockReleaseVersion.mockResolvedValue({
       projectsVersionData: {},
       workspaceVersion: null,
-    } as any)
+    })
 
     const result = await getAffectedProjects()
 
@@ -153,7 +151,7 @@ describe('getAffectedProjects', () => {
     mockReleaseVersion.mockRejectedValue(error)
 
     await expect(getAffectedProjects()).rejects.toThrow(
-      'Failed to run nx release'
+      'Failed to run nx release',
     )
   })
 })

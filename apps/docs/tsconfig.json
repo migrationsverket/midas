@@ -1,22 +1,11 @@
 {
-  "extends": ["@docusaurus/tsconfig", "../../tsconfig.base.json"],
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "lib": ["DOM", "dom.iterable"],
-    "noEmit": true,
-    "noImplicitAny": false,
-    "strict": true,
-    "types": [
-      "node",
-      "@docusaurus/module-type-aliases",
-      "@docusaurus/theme-classic"
-    ]
-  },
-  "include": ["**/*"],
-  "exclude": ["**/*.test.*", "**/*.spec.*"]
+  "extends": ["../../tsconfig.base.json"],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest'
 import { getBumpMessage } from './getBumpMessage'
 import { Project } from './types'
 
@@ -18,7 +19,7 @@ describe('getBumpMessage', () => {
       const result = getBumpMessage(projects)
 
       expect(result).toBe(
-        '## NX release report\n:bug: **@midas-ds/button** was `1.0.0` and will be updated to `1.0.1`.'
+        '## NX release report\n:bug: **@midas-ds/button** was `1.0.0` and will be updated to `1.0.1`.',
       )
     })
 
@@ -37,7 +38,7 @@ describe('getBumpMessage', () => {
       const result = getBumpMessage(projects)
 
       expect(result).toBe(
-        '## NX release report\n:sparkles: **@midas-ds/input** was `2.3.0` and will be updated to `2.4.0`.'
+        '## NX release report\n:sparkles: **@midas-ds/input** was `2.3.0` and will be updated to `2.4.0`.',
       )
     })
 
@@ -56,7 +57,7 @@ describe('getBumpMessage', () => {
       const result = getBumpMessage(projects)
 
       expect(result).toBe(
-        '## NX release report\n:boom: **@midas-ds/theme** was `1.5.2` and will be updated to `2.0.0`.'
+        '## NX release report\n:boom: **@midas-ds/theme** was `1.5.2` and will be updated to `2.0.0`.',
       )
     })
 
@@ -92,13 +93,13 @@ describe('getBumpMessage', () => {
 
       expect(result).toContain('## NX release report')
       expect(result).toContain(
-        ':bug: **@midas-ds/button** was `1.0.0` and will be updated to `1.0.1`.'
+        ':bug: **@midas-ds/button** was `1.0.0` and will be updated to `1.0.1`.',
       )
       expect(result).toContain(
-        ':sparkles: **@midas-ds/input** was `2.3.0` and will be updated to `2.4.0`.'
+        ':sparkles: **@midas-ds/input** was `2.3.0` and will be updated to `2.4.0`.',
       )
       expect(result).toContain(
-        ':boom: **@midas-ds/theme** was `1.5.2` and will be updated to `2.0.0`.'
+        ':boom: **@midas-ds/theme** was `1.5.2` and will be updated to `2.0.0`.',
       )
     })
 
@@ -149,7 +150,7 @@ describe('getBumpMessage', () => {
       const result = getBumpMessage(projects)
 
       expect(result).toBe(
-        '## NX release report\nNo version bumps :disappointed:'
+        '## NX release report\nNo version bumps :disappointed:',
       )
     })
   })
