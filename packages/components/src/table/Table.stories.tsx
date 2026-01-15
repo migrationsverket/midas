@@ -87,6 +87,8 @@ export const Striped: Story = {
 }
 
 export const Virtualized: Story = {
+  // slow test
+  tags: ['!test'],
   render: args => {
     const rows = []
 
