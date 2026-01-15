@@ -1,19 +1,33 @@
-import '@testing-library/jest-dom'
-import { render, RenderResult } from '@testing-library/react'
-import { Button } from './Button'
-import { axe } from 'jest-axe'
-import { ButtonProps } from 'react-aria-components'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import * as stories from './Button.stories'
+import { render } from 'vitest-browser-react'
 
-describe('given a default button', () => {
-  let rendered: RenderResult
+const { Primary, Secondary } = composeStories(stories)
 
-  beforeEach(() => {
-    rendered = render(<ButtonTest>Click me!</ButtonTest>)
-  })
+describe('given a basic Button', async () => {
+  it('should have focus when clicked', async () => {
+    const { getByRole } = await render(<Primary />)
 
-  it('should have no accessibility violations', async () => {
-    expect(await axe(rendered.container)).toHaveNoViolations()
+    const button = getByRole('button')
+    await button.click()
+    await expect.element(button).toBeEnabled()
+    await expect.element(button).toHaveFocus()
   })
 })
 
-const ButtonTest = (props: ButtonProps) => <Button {...props} />
+describe('given a disabled primary Button', async () => {
+  it('should be disabled', async () => {
+    const { getByRole } = await render(<Primary isDisabled />)
+
+    await expect.element(getByRole('button')).toBeDisabled()
+  })
+})
+
+describe('given a disabled secondary Button', async () => {
+  it('should be disabled', async () => {
+    const { getByRole } = await render(<Secondary isDisabled />)
+
+    await expect.element(getByRole('button')).toBeDisabled()
+  })
+})

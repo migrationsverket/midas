@@ -1,36 +1,30 @@
-import { screen } from '@testing-library/react'
-import { Checkbox } from './Checkbox'
-import { axe } from 'jest-axe'
-import user from '../../tests/utils/user'
-import { renderWithForm } from '../../tests/utils/browser'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import styles from './Checkbox.module.css'
+import { render } from 'vitest-browser-react'
+import * as stories from './Checkbox.stories'
 
-const label = 'basic checkbox'
+const { Primary, Required } = composeStories(stories)
 
-describe('given a default Checkbox', () => {
-  beforeEach(() => {
-    renderWithForm(<Checkbox aria-label={label} />)
-  })
+describe('given a primary Checkbox', async () => {
+  it('should preserve its classnames when given new ones', async () => {
+    const { container } = await render(<Primary />)
 
-  it('should have no accessibility violations', async () => {
-    expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+    await expect
+      .element(container.querySelector(`.${styles.checkbox}`) as HTMLElement)
+      .toHaveClass(styles.checkbox, Primary.args.className as string)
   })
 })
 
-describe('given a required Checkbox', () => {
-  beforeEach(() => {
-    renderWithForm(
-      <Checkbox
-        aria-label={label}
-        isRequired
-      />,
-    )
-  })
-
+describe('given a required Checkbox', async () => {
   it('should be (aria) invalid if the user submitted without checking the box', async () => {
-    const checkbox = screen.getByLabelText(label)
-    await user.tab()
-    await user.tab()
-    await user.keyboard('[Enter]')
-    expect(checkbox).toBeInvalid()
+    const { getByRole } = await render(<Required />)
+    const checkbox = getByRole('checkbox')
+    const submitButton = getByRole('button')
+
+    await submitButton.click()
+
+    await expect.element(checkbox).toHaveFocus()
+    await expect.element(checkbox).toBeInvalid()
   })
 })

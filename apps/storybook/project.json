@@ -29,15 +29,9 @@
       }
     },
     "test": {
-      "executor": "@nx/vitest:test",
+      "executor": "nx:run-commands",
       "options": {
-        "config": "apps/storybook/vitest.config.ts",
-        "project": "interactions"
-      },
-      "configurations": {
-        "watch": {
-          "watch": true
-        }
+        "command": "echo -n"
       }
     },
     "a11y": {

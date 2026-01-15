@@ -1,10 +1,17 @@
-import { render } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import * as stories from './Spinner.stories'
+import styles from './Spinner.module.css'
+import { render } from 'vitest-browser-react'
 
-import { Spinner } from './'
+const { Primary } = composeStories(stories)
 
-describe('Spinner', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<Spinner />)
-    expect(baseElement).toBeTruthy()
+describe('given a primary Spinner', async () => {
+  it('should accept custom classNames', async () => {
+    const { getByRole } = await render(<Primary />)
+
+    await expect
+      .element(getByRole('status'))
+      .toHaveClass(styles.container, Primary.args.className as string)
   })
 })

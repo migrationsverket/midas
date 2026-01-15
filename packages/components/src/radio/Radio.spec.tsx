@@ -1,87 +1,55 @@
-import { render, screen } from '@testing-library/react'
-import { Radio, RadioGroup } from './'
-import { axe } from 'jest-axe'
-import { renderWithForm } from '../../tests/utils/browser'
-import user from '../../tests/utils/user'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import { userEvent } from 'vitest/browser'
+import { render } from 'vitest-browser-react'
+import * as stories from './Radio.stories'
+import styles from './Radio.module.css'
 
-const label = 'Välj ett av följande alternativ'
-const testClass = 'test'
+const { Primary, Required, CustomValidation } = composeStories(stories)
 
-describe('given a basic Radio group', () => {
-  beforeEach(() => {
-    render(
-      <RadioGroup
-        label={label}
-        className={testClass}
-      />,
-    )
-  })
-
-  it('should have no accessibility violations', async () => {
-    expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
-  })
-
+describe('given a primary RadioGroup', async () => {
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(screen.getByLabelText(label)).toHaveClass('radioGroup', testClass)
+    const { getByRole } = await render(<Primary />)
+
+    const radioGroup = getByRole('radiogroup')
+    const radios = getByRole('group').element().childNodes
+
+    await expect
+      .element(radioGroup)
+      .toHaveClass(styles.radioGroup, Primary.args.className as string)
+
+    radios.forEach(async radio => {
+      expect(radio).toHaveClass(styles.radio, 'test-radio-class')
+    })
   })
 })
 
-describe('given a required Radio group', () => {
-  beforeEach(() => {
-    renderWithForm(
-      <RadioGroup
-        label={label}
-        isRequired
-      >
-        <Radio
-          id='derp'
-          value='derp'
-        >
-          Derp
-        </Radio>
-      </RadioGroup>,
-    )
-  })
-
+describe('given a required RadioGroup', async () => {
   it('should show a validation error message if the user submitted without selecting anything', async () => {
-    await user.tab()
-    await user.tab()
-    await user.keyboard('[Enter]')
-    expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
+    const { getByRole, getByText } = await render(<Required />)
+
+    await userEvent.tab()
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+
+    await expect.element(getByRole('radiogroup')).toBeInvalid()
+    await expect
+      .element(getByText(Required.args.errorMessage as string))
+      .toBeInTheDocument()
   })
 })
 
-describe('given a Radio group with a custom error message and custom validation rules', () => {
-  const errorMessage = 'Det röda äpplet får du inte välja'
-
-  beforeEach(() => {
-    renderWithForm(
-      <RadioGroup
-        label={label}
-        errorMessage={errorMessage}
-        validate={value => value === 'greenapple' || errorMessage}
-      >
-        <Radio
-          id='redapple'
-          value='redapple'
-        >
-          Red Apple
-        </Radio>
-        <Radio
-          id='greenapple'
-          value='greenapple'
-        >
-          Green Apple
-        </Radio>
-      </RadioGroup>,
-    )
-  })
-
+describe('given a RadioGroup with custom validation', async () => {
   it('should show the custom error message if the constraints was not satisfied', async () => {
-    await user.tab()
-    await user.keyboard('[Enter]')
-    await user.tab()
-    await user.keyboard('[Enter]')
-    expect(screen.getByText(errorMessage)).toBeInTheDocument()
+    const { getByText } = await render(<CustomValidation />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+
+    await expect
+      .element(getByText('Inga äpplen är tillåtna'))
+      .toBeInTheDocument()
   })
 })

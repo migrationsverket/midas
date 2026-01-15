@@ -1,30 +1,17 @@
-import { render, screen } from '@testing-library/react'
-import { Logo } from './Logo'
-import { axe } from 'jest-axe'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import styles from './Logo.module.css'
+import * as stories from './Logo.stories'
+import { render } from 'vitest-browser-react'
 
-const testID = 'logo'
-const testClass = 'test'
+const { Primary } = composeStories(stories)
 
-describe('given a default Logo', () => {
-  beforeEach(() => {
-    render(
-      <Logo
-        primary
-        data-testid={testID}
-        className={testClass}
-      />,
-    )
-  })
-
-  it('should render successfully', () => {
-    expect(screen.getByTestId(testID)).toBeTruthy()
-  })
-
-  it('should have no accessibility violations', async () => {
-    expect(await axe(screen.getByTestId(testID))).toHaveNoViolations()
-  })
-
+describe('given a primary Logo', async () => {
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(screen.getByTestId(testID)).toHaveClass('container', testClass)
+    const { container } = await render(<Primary className='test' />)
+
+    await expect
+      .element(container.querySelector(`.${styles.container}`) as HTMLElement)
+      .toHaveClass('test')
   })
 })

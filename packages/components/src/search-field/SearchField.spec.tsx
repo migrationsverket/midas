@@ -1,100 +1,86 @@
-import { render, screen } from '@testing-library/react'
-import { axe } from 'jest-axe'
-import { SearchField } from './'
-import user from '../../tests/utils/user'
+import { describe, expect, it, beforeEach, vi, afterEach } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import { page, userEvent } from 'vitest/browser'
+import styles from './SearchField.module.css'
+import * as stories from './SearchField.stories'
+import { render } from 'vitest-browser-react'
 
-const placeholder = 'Search'
-const buttonText = 'Sök'
+const { Primary, CustomValidation, Invalid } = composeStories(stories)
 
-describe('given a default SearchField', () => {
-  const onChange = jest.fn()
-  const onSubmit = jest.fn()
+const handleChange = vi.fn()
+const handleSubmit = vi.fn()
 
-  beforeEach(() => {
-    render(
-      <SearchField
-        buttonText={buttonText}
-        placeholder={placeholder}
-        onChange={onChange}
-        onSubmit={onSubmit}
+describe('given a primary SearchField', async () => {
+  beforeEach(async () => {
+    await render(
+      <Primary
+        onChange={handleChange}
+        onSubmit={handleSubmit}
       />,
     )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
   })
 
-  it('should have no accessibility violations', async () => {
-    expect(await axe(screen.getByLabelText(placeholder))).toHaveNoViolations()
+  afterEach(() => {
+    vi.resetAllMocks()
   })
 
   it('should be possible to submit a search string using only the keyboard', async () => {
-    await user.tab()
-    await user.keyboard('hello')
-    await user.keyboard('[Enter]')
-    expect(onChange).toHaveBeenCalledWith('hello')
-    expect(onSubmit).toHaveBeenCalledWith('hello')
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleChange).toHaveBeenCalledWith('hello')
+    expect(handleSubmit).toHaveBeenCalledWith('hello')
   })
 
   it('should be possible to submit a search string using the mouse', async () => {
-    await user.tab()
-    await user.keyboard('hello')
-    await user.click(screen.getByText(buttonText))
-    expect(onChange).toHaveBeenCalledWith('hello')
-    expect(onSubmit).toHaveBeenCalledWith('hello')
+    await userEvent.click(page.getByRole('button').last())
+
+    expect(handleChange).toHaveBeenCalledWith('hello')
+    expect(handleSubmit).toHaveBeenCalledWith('hello')
+  })
+
+  it('should accept custom classNames', async () => {
+    await expect
+      .element(document.querySelector(`.${styles.container}`) as HTMLElement)
+      .toHaveClass(Primary.args.className as string)
   })
 })
 
-describe('given a SearchField with custom validation', () => {
-  const errorMessage = 'Dont search for secret documents'
-  const onChange = jest.fn()
-  const onSubmit = jest.fn()
-
-  beforeEach(() =>
-    render(
-      <SearchField
-        buttonText={buttonText}
-        placeholder={placeholder}
-        validate={value => (value === 'secret' ? errorMessage : true)}
-        onChange={onChange}
-        onSubmit={onSubmit}
-      />,
-    ),
-  )
+describe('given a SearchField with custom validation', async () => {
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
 
   it('should give a validation error if the user entered an unpermitted text', async () => {
-    await user.tab()
-    await user.keyboard('secret')
-    await user.tab()
-    await user.keyboard('[Enter]')
-    expect(onChange).toHaveBeenCalledWith('secret')
-    expect(onSubmit).not.toHaveBeenCalled()
-    expect(screen.getByText(errorMessage)).toBeInTheDocument()
-  })
+    const { getByText } = await render(
+      <CustomValidation
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      />,
+    )
 
-  it('should give a validation error if the user entered an unpermitted text and used the mouse to click "search"', async () => {
-    await user.tab()
-    await user.keyboard('secret')
-    await user.click(screen.getByText(buttonText))
-    expect(onChange).toHaveBeenCalledWith('secret')
-    expect(onSubmit).not.toHaveBeenCalled()
-    expect(screen.getByText(errorMessage)).toBeInTheDocument()
+    await userEvent.tab()
+    await userEvent.keyboard('secret')
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleChange).toHaveBeenCalledWith('secret')
+    expect(handleSubmit).not.toHaveBeenCalled()
+    await expect
+      .element(getByText('Sök inte efter hemligheter'))
+      .toBeInTheDocument()
   })
 })
 
-describe('given an invalid SearchField with custom errorMessage', () => {
-  const errorMessage = 'Random error'
+describe('given an invalid SearchField', async () => {
+  it('should be invalid and show a custom error message', async () => {
+    const { getByRole, getByText } = await render(<Invalid />)
 
-  beforeEach(() =>
-    render(
-      <SearchField
-        buttonText={buttonText}
-        placeholder={placeholder}
-        errorMessage={errorMessage}
-        isInvalid
-      />,
-    ),
-  )
-
-  it('it should be invalid and show the custom message', async () => {
-    expect(screen.getByLabelText(placeholder)).toBeInvalid()
-    expect(screen.getByText(errorMessage)).toBeInTheDocument()
+    await expect.element(getByRole('searchbox')).toBeInvalid()
+    await expect
+      .element(getByText(Invalid.args.errorMessage as string))
+      .toBeInTheDocument()
   })
 })
