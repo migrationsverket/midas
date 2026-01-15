@@ -136,7 +136,7 @@ export function ComboBoxItem<T extends ListBoxItemElement>(
 
 /**
  * @deprecated since v15.2.0 please use ListBoxSection instead
- * @see {@link https://designsystem.migrationsverket.se/components/combobox/#sektioner|sektioner i ComboBox}
+ * @see {@link https://designsystem.migrationsverket.se/components/form/combobox/#sektioner|sektioner i ComboBox}
  */
 export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
   return (
