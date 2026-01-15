@@ -1,3 +1,9 @@
+## 16.4.0 (2026-01-15)
+
+### 🚀 Features
+
+- **components, date-field, date-picker, search-field:** add clear button ([#995](https://github.com/migrationsverket/midas/pull/995))
+
 ## 16.3.3 (2026-01-14)
 
 ### 🧱 Updated Dependencies
