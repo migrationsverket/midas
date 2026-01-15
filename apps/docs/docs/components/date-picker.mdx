@@ -7,11 +7,15 @@ import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DatePickerExample, UnavailableDateExample } from '@site/src/components/examples/date-picker/DatePickerExamples'
 import { DatePicker, DateRangePicker } from '@midas-ds/components'
+import { CalendarDate } from '@internationalized/date'
 
-export const Example = () => {
+export const Example = props => {
   return (
     <div className='card'>
-      <DatePicker label='Välj ett datum' />
+      <DatePicker
+        label='Välj ett datum'
+        {...props}
+      />
     </div>
   )
 }
@@ -113,6 +117,25 @@ export const UnavailableDateExample = () => {
 <div className='card'>
   <UnavailableDateExample />
 </div>
+
+## Varianter
+
+### isClearable
+
+Använd `isClearable` för att visa en knapp som tömmer fältet. Notera att ett komplett värde krävs för att knappen ska visas.
+
+```tsx {2,3}
+<DatePicker
+  isClearable
+  defaultValue={new CalendarDate(1995, 5, 29)}
+  label='Välj ett datum'
+/>
+```
+
+<Example
+  isClearable
+  defaultValue={new CalendarDate(1995, 5, 29)}
+/>
 
 ## API
 

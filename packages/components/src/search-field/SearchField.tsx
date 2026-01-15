@@ -1,9 +1,10 @@
 'use client'
 
 import { SearchFieldProps as AriaSearchFieldProps } from 'react-aria-components'
-import { Search, X } from 'lucide-react'
+import { Search } from 'lucide-react'
 import TextFieldStyles from '../textfield/TextField.module.css'
 import { Button } from '../button'
+import { ClearButton } from '../clear-button'
 import styles from './SearchField.module.css'
 import clsx from '../utils/clsx'
 import * as React from 'react'
@@ -127,20 +128,14 @@ export const SearchField: React.FC<SearchFieldProps> = ({
             aria-labelledby=''
           />
           {value.length > 0 && (
-            <Button
-              variant='icon'
+            <ClearButton
+              {...clearButtonProps}
+              onPress={handleClear}
               size={size}
               className={clsx(styles.clear, {
                 [styles.medium]: size === 'medium',
               })}
-              onPress={handleClear}
-              {...clearButtonProps}
-            >
-              <X
-                size={20}
-                aria-hidden
-              />
-            </Button>
+            />
           )}
         </div>
         <Button

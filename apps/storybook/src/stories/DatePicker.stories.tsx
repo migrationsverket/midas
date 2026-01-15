@@ -119,3 +119,10 @@ export const ControlledState: Story = {
     )
   },
 }
+
+export const WithClearButton: Story = {
+  args: {
+    isClearable: true,
+    defaultValue: new CalendarDate(1995, 5, 29),
+  },
+}

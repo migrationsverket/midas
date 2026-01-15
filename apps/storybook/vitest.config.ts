@@ -18,6 +18,7 @@ export default mergeConfig(
         {
           extends: true,
           test: {
+            testTimeout: 5000,
             name: 'interactions',
             browser: {
               enabled: true,
