@@ -2,7 +2,7 @@ import { setOutput, setFailed } from '@actions/core'
 import { getAffectedProjects } from './getAffectedProjects'
 import { getBumpMessage } from './getBumpMessage'
 
-;(async () => {
+export const index = async () => {
   try {
     const affectedProjects = await getAffectedProjects()
     const message = getBumpMessage(affectedProjects)
@@ -11,4 +11,6 @@ import { getBumpMessage } from './getBumpMessage'
     const message = error instanceof Error ? error.message : String(error)
     setFailed(message)
   }
-})()
+}
+
+index()

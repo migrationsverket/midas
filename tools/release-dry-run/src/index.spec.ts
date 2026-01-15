@@ -1,32 +1,27 @@
-import { setOutput, setFailed } from '@actions/core'
-import { getAffectedProjects } from './getAffectedProjects'
-import { getBumpMessage } from './getBumpMessage'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { index } from '.'
 
-jest.mock('@actions/core', () => ({
-  setOutput: jest.fn(),
-  setFailed: jest.fn(),
+const mockSetOutput = vi.hoisted(() => vi.fn())
+const mockSetFailed = vi.hoisted(() => vi.fn())
+const mockGetAffectedProjects = vi.hoisted(() => vi.fn())
+const mockGetBumpMessage = vi.hoisted(() => vi.fn())
+
+vi.mock('@actions/core', () => ({
+  setOutput: mockSetOutput,
+  setFailed: mockSetFailed,
 }))
 
-jest.mock('./getAffectedProjects', () => ({
-  getAffectedProjects: jest.fn(),
+vi.mock('./getAffectedProjects', () => ({
+  getAffectedProjects: mockGetAffectedProjects,
 }))
 
-jest.mock('./getBumpMessage', () => ({
-  getBumpMessage: jest.fn(),
+vi.mock('./getBumpMessage', () => ({
+  getBumpMessage: mockGetBumpMessage,
 }))
-
-const mockGetAffectedProjects = getAffectedProjects as jest.MockedFunction<
-  typeof getAffectedProjects
->
-const mockGetBumpMessage = getBumpMessage as jest.MockedFunction<
-  typeof getBumpMessage
->
-const mockSetOutput = setOutput as jest.MockedFunction<typeof setOutput>
-const mockSetFailed = setFailed as jest.MockedFunction<typeof setFailed>
 
 describe('index', () => {
   beforeEach(() => {
-    jest.clearAllMocks()
+    vi.clearAllMocks()
   })
 
   it('should call getAffectedProjects and getBumpMessage, then set output', async () => {
@@ -46,12 +41,10 @@ describe('index', () => {
     mockGetAffectedProjects.mockResolvedValue(mockProjects)
     mockGetBumpMessage.mockReturnValue(mockMessage)
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
     // Wait for async operation
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockGetAffectedProjects).toHaveBeenCalledTimes(1)
     expect(mockGetBumpMessage).toHaveBeenCalledWith(mockProjects)
@@ -63,12 +56,10 @@ describe('index', () => {
     const error = new Error('Failed to get projects')
     mockGetAffectedProjects.mockRejectedValue(error)
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
     // Wait for async operation
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockSetFailed).toHaveBeenCalledWith('Failed to get projects')
     expect(mockSetOutput).not.toHaveBeenCalled()
@@ -92,30 +83,26 @@ describe('index', () => {
       throw error
     })
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
     // Wait for async operation
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockSetFailed).toHaveBeenCalledWith('Failed to format message')
     expect(mockSetOutput).not.toHaveBeenCalled()
   })
 
   it('should handle empty projects list', async () => {
-    const mockProjects: any[] = []
+    const mockProjects = []
     const mockMessage = '## NX release report\nNo version bumps :disappointed:'
 
     mockGetAffectedProjects.mockResolvedValue(mockProjects)
     mockGetBumpMessage.mockReturnValue(mockMessage)
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
     // Wait for async operation
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockGetBumpMessage).toHaveBeenCalledWith([])
     expect(mockSetOutput).toHaveBeenCalledWith('message', mockMessage)
@@ -126,11 +113,9 @@ describe('index', () => {
     const errorString = 'Connection timeout'
     mockGetAffectedProjects.mockRejectedValue(errorString)
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockSetFailed).toHaveBeenCalledWith('Connection timeout')
     expect(mockSetOutput).not.toHaveBeenCalled()
@@ -140,11 +125,9 @@ describe('index', () => {
     const errorObj = { code: 'ECONNREFUSED', syscall: 'connect' }
     mockGetAffectedProjects.mockRejectedValue(errorObj)
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockSetFailed).toHaveBeenCalledWith('[object Object]')
     expect(mockSetOutput).not.toHaveBeenCalled()
@@ -153,11 +136,9 @@ describe('index', () => {
   it('should handle null errors properly', async () => {
     mockGetAffectedProjects.mockRejectedValue(null)
 
-    jest.isolateModules(() => {
-      require('./index')
-    })
+    index()
 
-    await new Promise((resolve) => setTimeout(resolve, 10))
+    await new Promise(resolve => setTimeout(resolve, 10))
 
     expect(mockSetFailed).toHaveBeenCalledWith('null')
     expect(mockSetOutput).not.toHaveBeenCalled()

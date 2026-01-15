@@ -12,6 +12,7 @@ export default mergeConfig(
         {
           extends: true,
           test: {
+            name: 'browser',
             browser: {
               enabled: true,
               headless: true,

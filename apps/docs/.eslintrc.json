@@ -8,7 +8,7 @@
   "settings": {
     "mdx/code-blocks": false
   },
-  "ignorePatterns": ["!**/*", ".docusaurus"],
+  "ignorePatterns": ["!**/*", ".docusaurus", "**/vitest.config.*.timestamp*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

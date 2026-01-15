@@ -3,6 +3,6 @@
   "compilerOptions": {
     "composite": true,
     "declaration": true,
-    "types": ["jest", "node"]
+    "types": ["vitest", "node"]
   }
 }

@@ -38,17 +38,6 @@
       },
       "dependsOn": ["build"]
     },
-    "test": {
-      "executor": "@nx/vitest:test",
-      "options": {
-        "config": "apps/playground/vitest.config.ts"
-      },
-      "configurations": {
-        "watch": {
-          "watch": true
-        }
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],

@@ -26,8 +26,7 @@
         "esbenp.prettier-vscode",
         "clinyong.vscode-css-modules",
         "stylelint.vscode-stylelint",
-        "andrewleedham.vscode-css-modules",
-        "firsttris.vscode-jest-runner"
+        "andrewleedham.vscode-css-modules"
       ]
     }
   }
