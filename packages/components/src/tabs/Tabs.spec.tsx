@@ -1,38 +1,38 @@
-import { render } from '@testing-library/react'
+import { describe, expect, it, beforeEach } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import { page, userEvent } from 'vitest/browser'
+import * as stories from './Tabs.stories'
 
-import { Tabs, TabsProps } from './Tabs'
-import { Button } from '../button'
+const { DefaultSelectedKey, Controlled, MoreItemsThanChildren } =
+  composeStories(stories)
 
-describe('Tabs', () => {
-  it('should render successfully', () => {
-    const args = {
-      defaultSelectedKey: 'Viktigt att veta',
-      label: 'Följ processen',
-      tabs: ['Processen', 'Viktigt att veta', 'Ansök'],
-    } satisfies Partial<TabsProps>
-    const { baseElement } = render(
-      <Tabs
-        defaultSelectedKey={args.defaultSelectedKey}
-        label={args.label}
-        tabs={args.tabs}
-      >
-        <div>
-          Processen går till såhär Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-          maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-          Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-        </div>
-        <div>
-          Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
-          nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
-          consequatur nam culpa nesciunt cupiditate autem suscipit.
-        </div>
-        <div>
-          Ansök här: <Button>Ansök</Button>
-        </div>
-      </Tabs>,
-    )
-    expect(baseElement).toBeTruthy()
+describe('given a Tabs with a DefaultSelectedKey', async () => {
+  beforeEach(async () => {
+    await DefaultSelectedKey.run()
+  })
+
+  it('the should open the tab "Ansök" per default', async () => {
+    expect(page.getByRole('button')).toBeVisible()
+  })
+})
+
+describe('given a controlled Tabs', async () => {
+  beforeEach(async () => {
+    await Controlled.run()
+  })
+
+  it('should open the tab "Ansök"', async () => {
+    await userEvent.click(page.getByRole('tab', { name: 'Ansök' }))
+    expect(page.getByRole('button')).toBeVisible()
+  })
+})
+
+describe('given a Tabs with more items than children', async () => {
+  beforeEach(async () => {
+    await MoreItemsThanChildren.run()
+  })
+
+  it('the page should still render even if the tabs component is misconfigured', async () => {
+    expect(page.getByText('derp')).toBeInTheDocument()
   })
 })

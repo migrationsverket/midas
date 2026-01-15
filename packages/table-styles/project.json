@@ -29,6 +29,17 @@
           "vendorChunk": false
         }
       }
+    },
+    "test": {
+      "executor": "@nx/vitest:test",
+      "options": {
+        "config": "packages/table-styles/vitest.config.ts"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
+        }
+      }
     }
   }
 }

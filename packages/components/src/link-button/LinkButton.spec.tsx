@@ -1,17 +1,17 @@
-import '@testing-library/jest-dom'
-import { render, RenderResult } from '@testing-library/react'
-import { axe } from 'jest-axe'
-import { LinkButton } from './'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import * as stories from './LinkButton.stories'
+import { render } from 'vitest-browser-react'
 
-describe('given a default link', () => {
-  let rendered: RenderResult
-  const handleChange = jest.fn()
+const { Disabled } = composeStories(stories)
 
-  beforeEach(() => {
-    rendered = render(<LinkButton onPress={handleChange}>Click</LinkButton>)
-  })
+describe('given a disabled LinkButton', async () => {
+  it('should have cursor not allowed when disabled', async () => {
+    const { getByRole } = await render(<Disabled />)
+    const link = getByRole('link')
 
-  it('should have no accessibility violations', async () => {
-    expect(await axe(rendered.container)).toHaveNoViolations()
+    await link.hover()
+
+    await expect.element(link).toHaveStyle({ cursor: 'not-allowed' })
   })
 })

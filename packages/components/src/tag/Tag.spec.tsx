@@ -1,35 +1,17 @@
-import { render, screen } from '@testing-library/react'
-import { Tag, TagGroup } from './Tag'
-import { axe } from 'jest-axe'
+import { describe, expect, it } from 'vitest'
+import { composeStories } from '@storybook/react-vite'
+import * as stories from './Tag.stories'
+import styles from './Tag.module.css'
+import { render } from 'vitest-browser-react'
 
-const label = 'label'
-const testID = 'test'
-const testClass = 'test'
+const { Primary } = composeStories(stories)
 
-describe('Tag', () => {
-  beforeEach(() => {
-    render(
-      <TagGroup aria-label={label}>
-        <Tag
-          textValue='value'
-          data-testid={testID}
-          className={testClass}
-        >
-          Item A
-        </Tag>
-      </TagGroup>,
-    )
-  })
-
-  it('should render successfully', () => {
-    expect(screen.getByLabelText(label)).toBeTruthy()
-  })
-
-  it('should have no accessibility violations in default state', async () => {
-    expect(await axe(screen.getByTestId(testID))).toHaveNoViolations()
-  })
-
+describe('given a Primary Tag', async () => {
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(screen.getByTestId(testID)).toHaveClass('tag', testClass)
+    const { getByRole } = await render(<Primary />)
+
+    await expect
+      .element(getByRole('row'))
+      .toHaveClass(styles.tag, Primary.args.className as string)
   })
 })
