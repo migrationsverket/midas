@@ -31,7 +31,7 @@
     "test": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo -n"
+        "command": "echo 'not implemented'"
       }
     },
     "a11y": {
