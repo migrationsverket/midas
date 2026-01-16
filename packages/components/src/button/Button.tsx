@@ -4,13 +4,16 @@ import * as React from 'react'
 import styles from './Button.module.css'
 import {
   Button as AriaButton,
+  ButtonContext,
   ButtonProps,
   ButtonRenderProps,
+  useContextProps,
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import { LucideIcon } from 'lucide-react'
 import { Size } from '../common/types'
 import { Spinner } from '../spinner'
+import { forwardRef } from 'react'
 
 export interface MidasButtonProps {
   /**
@@ -61,42 +64,50 @@ export type MidasButton = MidasButtonProps & ButtonProps
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */
 
-export const Button: React.FC<MidasButton> = ({
-  variant = 'primary',
-  fullwidth,
-  className,
-  iconPlacement,
-  size = 'large',
-  icon: IconComponent,
-  iconSize,
-  ...rest
-}) => {
-  return (
-    <AriaButton
-      className={clsx(
-        styles.button,
-        variant === 'primary' && styles.primary,
-        variant === 'secondary' && styles.secondary,
-        variant === 'tertiary' && styles.tertiary,
-        variant === 'danger' && styles.danger,
-        variant === 'icon' && styles.iconBtn,
-        fullwidth && styles.fullwidth,
-        size === 'medium' && styles.medium,
-        iconPlacement === 'right' && styles.iconRight,
-        className,
-      )}
-      {...rest}
-    >
-      <>
-        {IconComponent && !rest.isPending && (
-          <IconComponent
-            aria-hidden
-            size={iconSize ?? 20}
-          />
+export const Button = forwardRef<HTMLButtonElement, MidasButton>(
+  (props, ref) => {
+    const [mergedProps, mergedRef] = useContextProps(props, ref, ButtonContext)
+    const {
+      children,
+      className,
+      fullwidth,
+      icon: IconComponent,
+      iconPlacement,
+      iconSize,
+      isPending,
+      size = 'large',
+      variant = 'primary',
+      ...rest
+    } = mergedProps
+
+    return (
+      <AriaButton
+        className={clsx(
+          styles.button,
+          variant === 'primary' && styles.primary,
+          variant === 'secondary' && styles.secondary,
+          variant === 'tertiary' && styles.tertiary,
+          variant === 'danger' && styles.danger,
+          variant === 'icon' && styles.iconBtn,
+          fullwidth && styles.fullwidth,
+          size === 'medium' && styles.medium,
+          iconPlacement === 'right' && styles.iconRight,
+          className,
         )}
-        {rest.isPending && <Spinner small />}
-        {rest.children}
-      </>
-    </AriaButton>
-  )
-}
+        ref={mergedRef}
+        {...rest}
+      >
+        <>
+          {IconComponent && !isPending && (
+            <IconComponent
+              aria-hidden
+              size={iconSize ?? 20}
+            />
+          )}
+          {isPending && <Spinner small />}
+          {children}
+        </>
+      </AriaButton>
+    )
+  },
+)
