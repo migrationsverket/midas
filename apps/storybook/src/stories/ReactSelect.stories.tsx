@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
-import { options } from '../utils/storybook'
+import { options } from '@midas-ds/test-utils'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/lib/react-select.css'
 import { Label, Text } from '@midas-ds/components'

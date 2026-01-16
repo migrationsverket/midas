@@ -7,7 +7,7 @@ import { DisclosureGroup, DisclosureGroupProps } from 'react-aria-components'
 import { AccordionContext } from './AccordionContext'
 import { Size } from '../common/types'
 
-export interface MidasAccordion extends DisclosureGroupProps {
+export interface AccordionProps extends DisclosureGroupProps {
   children?: React.ReactNode
   isDisabled?: boolean
   isContained?: boolean
@@ -18,9 +18,14 @@ export interface MidasAccordion extends DisclosureGroupProps {
 }
 
 /**
+ * @deprecated since v 16.4.1 please use AccordionProps instead
+ */
+export type MidasAccordion = AccordionProps
+
+/**
  * Accordions help reduce visual clutter on a page by organizing content into collapsible sections.
  */
-export const Accordion: React.FC<MidasAccordion> = ({
+export const Accordion: React.FC<AccordionProps> = ({
   children,
   className,
   isContained,

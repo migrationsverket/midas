@@ -17,7 +17,7 @@ import {
   FeedbackStatusIconProps,
 } from '../common/FeedbackStatusIcon'
 
-interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
+export interface AccordionItemProps extends Omit<DisclosureProps, 'children'> {
   /** The text displayed in the collapsed state. If a ReactNode is provided, a heading will not be automatically added, and you must provide one yourself. */
   title?: string | React.ReactNode
   children?: React.ReactNode
@@ -41,7 +41,7 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   iconAriaLabel?: FeedbackStatusIconProps['aria-label']
 }
 
-export const AccordionItem: React.FC<MidasAccordionItem> = ({
+export const AccordionItem: React.FC<AccordionItemProps> = ({
   title,
   children,
   className,

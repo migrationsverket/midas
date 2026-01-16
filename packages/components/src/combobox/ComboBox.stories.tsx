@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { generateMockOptions, optionsWithSections } from '../utils/tests'
+import { options, optionsWithSections } from '@midas-ds/test-utils'
 import { RunOptions } from 'axe-core'
 import React from 'react'
 import { useAsyncList } from 'react-stately'
@@ -17,8 +17,6 @@ type Item = (typeof options)[0]
 type Section = (typeof optionsWithSections)[0]
 
 type Story<T extends object = Item> = StoryObj<typeof ComboBox<T>>
-
-const options = generateMockOptions(30)
 
 export default {
   component: ComboBox,
