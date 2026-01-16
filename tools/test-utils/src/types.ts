@@ -9,8 +9,26 @@ export type Fruit = {
   category: string
 }
 
-export type Category = {
+export type FruitCategory = {
   name: Key
   id: number
   children: Fruit[]
+}
+
+export type Department =
+  | 'Engineering'
+  | 'Finance'
+  | 'HR'
+  | 'Marketing'
+  | 'Sales'
+
+export type Status = 'Active' | 'Inactive' | 'Pending'
+
+export type Employee = {
+  id: string
+  firstName: string
+  lastName: string
+  email: string
+  department: Department
+  status: Status
 }

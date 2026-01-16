@@ -7,10 +7,10 @@ import {
 } from '@tanstack/react-table'
 import { Checkbox, Popover, Button, DialogTrigger } from '@midas-ds/components'
 import { Settings } from 'lucide-react'
-import { Person, mockPersonData } from '../mockData'
+import { type Employee, employees } from '@midas-ds/test-utils'
 import '@midas-ds/table-styles/lib/tanstack-table.css'
 
-const columns: ColumnDef<Person>[] = [
+const columns: ColumnDef<Employee>[] = [
   {
     accessorKey: 'id',
     header: 'ID',
@@ -41,7 +41,7 @@ export function ColumnVisibilityExample() {
   const [columnVisibility, setColumnVisibility] = useState({})
 
   const table = useReactTable({
-    data: mockPersonData,
+    data: employees,
     columns,
     getCoreRowModel: getCoreRowModel(),
     state: {

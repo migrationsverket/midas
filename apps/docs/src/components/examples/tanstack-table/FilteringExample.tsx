@@ -7,10 +7,10 @@ import {
   flexRender,
 } from '@tanstack/react-table'
 import { Select, TextField, ListBoxItem, Button } from '@midas-ds/components'
-import { Person, mockPersonData } from '../mockData'
+import { type Employee, employees } from '@midas-ds/test-utils'
 import '@midas-ds/table-styles/lib/tanstack-table.css'
 
-const columns: ColumnDef<Person>[] = [
+const columns: ColumnDef<Employee>[] = [
   {
     accessorKey: 'id',
     header: 'ID',
@@ -70,7 +70,7 @@ export function FilteringExample() {
   }, [departmentFilter, statusFilter])
 
   const table = useReactTable({
-    data: mockPersonData,
+    data: employees,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
