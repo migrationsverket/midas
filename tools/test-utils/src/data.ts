@@ -1,4 +1,25 @@
-import { Fruit } from './types'
+import { Department, Employee, Fruit, Status } from './types'
+import { faker } from '@faker-js/faker'
+import { getRandomElement } from './utils'
+
+export const departments: Department[] = [
+  'Engineering',
+  'Finance',
+  'HR',
+  'Marketing',
+  'Sales',
+]
+
+export const statuses: Status[] = ['Active', 'Inactive', 'Pending']
+
+export const employees: Employee[] = Array.from({ length: 32 }, (_, index) => ({
+  id: index.toString(),
+  firstName: faker.person.firstName(),
+  lastName: faker.person.lastName(),
+  email: faker.internet.email(),
+  department: getRandomElement(departments),
+  status: getRandomElement(statuses),
+}))
 
 export const fruit: Fruit[] = [
   {

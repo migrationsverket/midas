@@ -3,7 +3,7 @@ import { Label, Text } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/lib/react-select.css'
 
-import { mockPersonData } from '../mockData'
+import { employees } from '@midas-ds/test-utils'
 
 type MultiComboBoxProps = { id?: string; className?: string }
 
@@ -24,7 +24,7 @@ export const MultiComboBox = ({
         isMulti
         isSearchable
         noOptionsMessage={() => 'No match'}
-        options={mockPersonData.map(({ id, firstName, lastName }) => ({
+        options={employees.map(({ id, firstName, lastName }) => ({
           value: id,
           label: [firstName, lastName].join(' '),
         }))}

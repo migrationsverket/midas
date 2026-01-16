@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   ColumnDef,
   getCoreRowModel,
@@ -6,12 +6,12 @@ import {
   flexRender,
   getSortedRowModel,
   SortingState,
-} from '@tanstack/react-table';
-import { ArrowUp, ArrowDown, ArrowUpDown } from 'lucide-react';
-import { Person, mockPersonData } from '../mockData';
-import '@midas-ds/table-styles/lib/tanstack-table.css';
+} from '@tanstack/react-table'
+import { ArrowUp, ArrowDown, ArrowUpDown } from 'lucide-react'
+import { type Employee, employees } from '@midas-ds/test-utils'
+import '@midas-ds/table-styles/lib/tanstack-table.css'
 
-const columns: ColumnDef<Person>[] = [
+const columns: ColumnDef<Employee>[] = [
   {
     accessorKey: 'id',
     header: 'ID',
@@ -38,13 +38,13 @@ const columns: ColumnDef<Person>[] = [
     header: 'Status',
     size: 100,
   },
-];
+]
 
 export function SortingExample() {
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>([])
 
   const table = useReactTable({
-    data: mockPersonData,
+    data: employees,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -52,25 +52,30 @@ export function SortingExample() {
     state: {
       sorting,
     },
-  });
+  })
 
   const getSortIcon = (isSorted: false | 'asc' | 'desc') => {
     if (isSorted === 'asc') {
-      return <ArrowUp size={14} />;
+      return <ArrowUp size={14} />
     }
     if (isSorted === 'desc') {
-      return <ArrowDown size={14} />;
+      return <ArrowDown size={14} />
     }
-    return <ArrowUpDown size={14} className="sort-icon-neutral" />;
-  };
+    return (
+      <ArrowUpDown
+        size={14}
+        className='sort-icon-neutral'
+      />
+    )
+  }
 
   return (
     <div style={{ width: '100%', overflowX: 'auto' }}>
-      <table className="midas-tanstack-table">
+      <table className='midas-tanstack-table'>
         <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
+              {headerGroup.headers.map(header => (
                 <th key={header.id}>
                   {header.isPlaceholder ? null : (
                     <div
@@ -78,10 +83,10 @@ export function SortingExample() {
                         header.column.getCanSort() ? 'sortable-header' : ''
                       }
                       onClick={header.column.getToggleSortingHandler()}
-                      onKeyDown={(e) => {
+                      onKeyDown={e => {
                         if (e.key === 'Enter' || e.key === ' ') {
-                          e.preventDefault();
-                          header.column.getToggleSortingHandler()?.(e);
+                          e.preventDefault()
+                          header.column.getToggleSortingHandler()?.(e)
                         }
                       }}
                       role={header.column.getCanSort() ? 'button' : undefined}
@@ -94,7 +99,7 @@ export function SortingExample() {
                     >
                       {flexRender(
                         header.column.columnDef.header,
-                        header.getContext()
+                        header.getContext(),
                       )}
                       {header.column.getCanSort() &&
                         getSortIcon(header.column.getIsSorted())}
@@ -106,9 +111,9 @@ export function SortingExample() {
           ))}
         </thead>
         <tbody>
-          {table.getRowModel().rows.map((row) => (
+          {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
+              {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
@@ -118,5 +123,5 @@ export function SortingExample() {
         </tbody>
       </table>
     </div>
-  );
+  )
 }
