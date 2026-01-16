@@ -35,10 +35,6 @@
     outline: none;
   }
 
-  &[data-focus-visible] {
-    box-shadow: var(--midas-state-focus);
-  }
-
   &[data-invalid] {
     border: none;
     box-shadow: inset 0 0 0 3px var(--midas-support-border-warning);
