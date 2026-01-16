@@ -1,6 +1,6 @@
 .item {
   --item-padding: 0;
-  --content-padding: var(--midas-spacing-20) var(--midas-spacing-50)
+  --content-padding: var(--midas-spacing-30) var(--midas-spacing-50)
     var(--midas-spacing-50) 1.85rem;
   --border: none;
   --accordion-background: transparent;
