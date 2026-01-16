@@ -40,6 +40,9 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Install Playwright
+        if: >
+          github.event.action == 'labeled' && github.event.label && (github.event.label.name == 'test' || github.event.label.name == 'a11y') ||
+          contains(github.event.pull_request.labels.*.name, 'test') || contains(github.event.pull_request.labels.*.name, 'a11y')
         run: npx playwright install chromium firefox --only-shell
 
       - name: Build packages
