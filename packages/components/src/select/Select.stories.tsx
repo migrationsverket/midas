@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
-import { options, optionsWithSections } from '../utils/tests'
+import { options, optionsWithSections } from '@midas-ds/test-utils'
 import { useState } from 'react'
 import { Collection, type Key } from 'react-aria-components'
 import { Select, SelectionMode } from './Select'
