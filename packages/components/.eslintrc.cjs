@@ -18,6 +18,12 @@ module.exports = {
       },
     },
     {
+      files: ['*.stories.*'],
+      rules: {
+        '@nx/enforce-module-boundaries': 'off',
+      },
+    },
+    {
       files: ['*.ts', '*.tsx'],
       rules: {},
     },

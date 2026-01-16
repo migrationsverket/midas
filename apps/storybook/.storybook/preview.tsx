@@ -8,7 +8,7 @@ import {
 import React from 'react'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
-import { mockedNow } from '../src/utils/storybook'
+import { mockedNow } from '@midas-ds/test-utils'
 import { variables } from '@midas-ds/theme'
 import { I18nProvider } from 'react-aria'
 import '@midas-ds/theme/lib/fonts.css'

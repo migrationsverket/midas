@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { options } from '../utils/tests'
+import { options } from '@midas-ds/test-utils'
 import { useState } from 'react'
 import { DialogTrigger, type Key } from 'react-aria-components'
 import { Modal } from './Dialog'

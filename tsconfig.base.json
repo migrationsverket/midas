@@ -29,7 +29,8 @@
       "@site/*": ["apps/docs/*"],
       "@midas-ds/release-dry-run": ["tools/release-dry-run/src/index.ts"],
       "@midas-ds/select-styles/*": ["packages/select-styles/src/*"],
-      "@midas-ds/storybook/*": ["apps/storybook/src/*"]
+      "@midas-ds/storybook/*": ["apps/storybook/src/*"],
+      "@midas-ds/test-utils": ["tools/test-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
-import { fruits } from '../utils/fruits'
+import { fruit } from '@midas-ds/test-utils'
 import {
   SearchField,
   Table,
@@ -42,7 +42,7 @@ export const SimpleSearch: Story = {
 
     const [searchTerm, setSearchTerm] = useState('')
     const [mockData] = useState<DataRow[]>(() =>
-      fruits.map((item, index) => ({
+      fruit.map((item, index) => ({
         id: index + 1,
         fruit: item.name,
         description: item.description,

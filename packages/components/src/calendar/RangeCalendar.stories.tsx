@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { mockedNow } from '../utils/tests'
+import { mockedNow } from '@midas-ds/test-utils'
 import { RunOptions } from 'axe-core'
 import { CalendarDate } from '@internationalized/date'
 import { RangeCalendar } from './RangeCalendar'
