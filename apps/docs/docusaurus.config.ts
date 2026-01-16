@@ -1,12 +1,13 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 import path from 'path'
-import fs from 'fs'
 import prismLight from './src/theme/prismLight'
 import prismDark from './src/theme/prismDark'
+import { createAliases } from './aliases'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
-const packageAliases = {}
+const toolsDir = path.resolve(__dirname, '../../tools')
+
 // eslint-disable-next-line
 const version: string = require(
   `${packagesDir}/components/package.json`,
@@ -14,24 +15,10 @@ const version: string = require(
 
 const isUnreleased = !!process.env.UNRELEASED
 
-fs.readdirSync(packagesDir).forEach(dir => {
-  if (dir.startsWith('.')) {
-    return
-  }
-
-  const packagePath = path.resolve(packagesDir, dir)
-
-  if (fs.statSync(packagePath).isDirectory()) {
-    const index = path.resolve(packagePath, 'src/index.ts')
-
-    if (fs.existsSync(index) && fs.statSync(index).isFile()) {
-      packageAliases[`@midas-ds/${dir}`] = index
-      packageAliases[`@midas-ds/${dir}/*`] = path.resolve(packagePath, 'src/*')
-    } else {
-      packageAliases[`@midas-ds/${dir}/*`] = path.resolve(packagePath, 'src/*')
-    }
-  }
-})
+const packageAliases = {
+  ...createAliases(packagesDir),
+  ...createAliases(toolsDir),
+}
 
 const getBaseUrl = (): string => {
   if (isUnreleased) {
