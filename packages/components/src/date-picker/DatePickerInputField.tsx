@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {
-  Button,
   Group,
   DatePickerStateContext,
   DateRangePickerStateContext,
@@ -14,12 +13,12 @@ import styles from './DatePicker.module.css'
 import { DatePickerProps } from './DatePicker'
 import { FocusScope, useFocusManager } from '@react-aria/focus'
 import { isRangePickerState } from './utils'
+import { Button } from '../button'
 
-interface DatePickerInputFieldProps
-  extends Pick<
-    DatePickerProps,
-    'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size' | 'isClearable'
-  > {
+interface DatePickerInputFieldProps extends Pick<
+  DatePickerProps,
+  'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size' | 'isClearable'
+> {
   children?: React.ReactNode
 }
 
@@ -51,7 +50,7 @@ const DatePickerClearButton = ({
       size={size}
       isDisabled={isDisabled}
       aria-label={strings.format('clear')}
-      className={clsx(styles.clearButton, {
+      className={clsx(styles.iconButton, {
         [styles.medium]: size === 'medium',
       })}
     />
@@ -83,12 +82,12 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
             size={size}
           />
           <Button
-            className={clsx(styles.calendarButton, {
+            variant='icon'
+            className={clsx(styles.iconButton, {
               [styles.medium]: size === 'medium',
               [styles.readOnly]: isReadOnly,
             })}
             data-invalid={isInvalid || undefined}
-            isDisabled={isDisabled}
           >
             <CalendarDays
               aria-hidden

@@ -59,72 +59,17 @@
     gap: 0;
   }
 
-  .clearButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .iconButton {
     border: none;
-    padding: 0.5rem;
-    color: var(--midas-icon-primary);
-    background-color: transparent;
-    cursor: pointer;
-
-    &.medium {
-      padding: 0.375rem;
-    }
 
     &[data-disabled] {
-      cursor: not-allowed;
-      color: var(--midas-icon-disabled);
-    }
-
-    &[data-hovered]:not([data-disabled]) {
-      background-color: var(--midas-field-01-hover);
+      background-color: transparent;
     }
 
     &:focus-visible,
     &[data-focus-visible] {
       outline: none;
-      box-shadow: var(--midas-state-focus);
-
-      @media (forced-colors: active) {
-        outline: 3px solid highlight;
-        outline-offset: 2px;
-      }
-    }
-  }
-
-  .calendarButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    padding: 0.5rem 0.75rem;
-    color: var(--midas-icon-primary);
-    background-color: transparent;
-    cursor: pointer;
-
-    &.medium {
-      padding: 0.375rem 0.625rem;
-    }
-
-    &[data-disabled] {
-      cursor: not-allowed;
-      color: var(--midas-icon-disabled);
-    }
-
-    &.readOnly {
-      color: var(--midas-icon-read-only);
-    }
-
-    &[data-hovered]:not([data-disabled]) {
-      background-color: var(--midas-field-01-hover);
-    }
-
-    &:focus-visible,
-    &[data-focus-visible] {
-      outline: none;
-      box-shadow: var(--midas-state-focus);
+      box-shadow: var(--midas-state-focus-inset);
 
       @media (forced-colors: active) {
         outline: 3px solid highlight;
