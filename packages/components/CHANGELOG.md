@@ -1,3 +1,13 @@
+## 16.4.1 (2026-01-16)
+
+### 🧪 Tests updated
+
+- **textfield:** rename file ([8287e354be](https://github.com/migrationsverket/midas/commit/8287e354be))
+- replace jest with vitest ([6d8ca7deb3](https://github.com/migrationsverket/midas/commit/6d8ca7deb3))
+- move new tests into component folder ([306aaaa4f5](https://github.com/migrationsverket/midas/commit/306aaaa4f5))
+- **Table:** skip a11y tests for slow virtualized table ([a6055b5c91](https://github.com/migrationsverket/midas/commit/a6055b5c91))
+- move tests and stories to component folders ([967763f723](https://github.com/migrationsverket/midas/commit/967763f723))
+
 ## 16.4.0 (2026-01-15)
 
 ### 🚀 Features

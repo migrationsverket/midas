@@ -1,3 +1,14 @@
+## 1.2.4 (2026-01-16)
+
+### 🧪 Tests updated
+
+- replace jest with vitest ([6d8ca7deb3](https://github.com/migrationsverket/midas/commit/6d8ca7deb3))
+- move tests and stories to component folders ([967763f723](https://github.com/migrationsverket/midas/commit/967763f723))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.4.1
+
 ## 1.2.3 (2026-01-15)
 
 ### 🧱 Updated Dependencies
