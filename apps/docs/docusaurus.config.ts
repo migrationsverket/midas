@@ -6,6 +6,8 @@ import prismLight from './src/theme/prismLight'
 import prismDark from './src/theme/prismDark'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
+const toolsDir = path.resolve(__dirname, '../../tools')
+
 const packageAliases = {}
 // eslint-disable-next-line
 const version: string = require(
@@ -29,6 +31,25 @@ fs.readdirSync(packagesDir).forEach(dir => {
       packageAliases[`@midas-ds/${dir}/*`] = path.resolve(packagePath, 'src/*')
     } else {
       packageAliases[`@midas-ds/${dir}/*`] = path.resolve(packagePath, 'src/*')
+    }
+  }
+})
+
+fs.readdirSync(toolsDir).forEach(dir => {
+  if (dir.startsWith('.')) {
+    return
+  }
+
+  const toolPath = path.resolve(toolsDir, dir)
+
+  if (fs.statSync(toolPath).isDirectory()) {
+    const index = path.resolve(toolPath, 'src/index.ts')
+
+    if (fs.existsSync(index) && fs.statSync(index).isFile()) {
+      packageAliases[`@midas-ds/${dir}`] = index
+      packageAliases[`@midas-ds/${dir}/*`] = path.resolve(toolPath, 'src/*')
+    } else {
+      packageAliases[`@midas-ds/${dir}/*`] = path.resolve(toolPath, 'src/*')
     }
   }
 })
