@@ -1,3 +1,9 @@
+## 16.4.2 (2026-01-19)
+
+### 🩹 Fixes
+
+- **components, accordion:** adjust padding of uncontained content container ([0134e1a054](https://github.com/migrationsverket/midas/commit/0134e1a054))
+
 ## 16.4.1 (2026-01-16)
 
 ### 🧪 Tests updated

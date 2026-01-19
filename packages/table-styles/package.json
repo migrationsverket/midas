@@ -14,7 +14,7 @@
   "description": "Midas table components and styles for TanStack Table",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "./index.mjs",
   "types": "./index.d.ts",
   "files": [
@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "@midas-ds/components": "16.4.1",
+    "@midas-ds/components": "16.4.2",
     "@midas-ds/theme": "3.9.4",
     "lucide-react": "^0.562.0",
     "react-aria-components": "1.14.0",
