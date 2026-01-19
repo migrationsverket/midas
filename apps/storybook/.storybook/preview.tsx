@@ -6,7 +6,6 @@ import {
   getPreferredColorScheme,
 } from './custom-theme'
 import React from 'react'
-import { globalModes } from './modes'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
@@ -53,24 +52,10 @@ const preview: Preview = {
         order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
       },
     },
-    chromatic: {
-      modes: globalModes,
-    },
+    chromatic: {},
     a11y: { test: 'error' },
   },
   globalTypes: {
-    scheme: {
-      toolbar: {
-        title: 'Color Scheme',
-        icon: 'paintbrush',
-        items: [
-          { value: 'light', title: 'Light', icon: 'sun' },
-          { value: 'dark', title: 'Dark', icon: 'moon' },
-        ],
-        dynamicTitle: true,
-      },
-    },
-
     lang: {
       description: 'Language',
       toolbar: {
@@ -85,7 +70,6 @@ const preview: Preview = {
   },
   initialGlobals: {
     size: 'large',
-    scheme: getPreferredColorScheme(),
     lang: 'sv',
     backgrounds: { value: 'background' },
   },
@@ -94,20 +78,15 @@ const preview: Preview = {
       const RootTag: React.ElementType =
         context?.parameters?.rootElement || 'main'
 
-      const story = document.querySelector<HTMLElement>('body')
+      const body = document.querySelector<HTMLElement>('body')
 
-      if (story) {
-        story.style.colorScheme = context.globals.scheme
-        story.style.transition = 'none'
-        story.style.background = variables.backgroundBase
+      if (body) {
+        body.style.transition = 'none'
+        body.style.background = variables.backgroundBase
       }
 
       return (
-        <RootTag
-          style={{
-            colorScheme: context.globals.scheme,
-          }}
-        >
+        <RootTag>
           <I18nProvider locale={context.globals.lang}>
             <Story />
           </I18nProvider>
