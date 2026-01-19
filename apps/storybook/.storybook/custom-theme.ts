@@ -17,11 +17,14 @@ export const customDarkTheme = create({
   brandTitle: 'Midas - Migrationsverkets designsystem',
   brandUrl: 'https://designsystem.migrationsverket.se',
   fontBase: '"Inter", sans-serif',
-  colorPrimary: '#eaf2f6',
-  colorSecondary: '#143c50',
+  colorPrimary: '#ffffff',
+  colorSecondary: '#ffffff',
+  textColor: '#ffffff',
+  textInverseColor: '#1a1a1a',
   appBorderRadius: 0,
-  barTextColor: 'rgb(201, 205, 207)',
-  barSelectedColor: 'rgb(201, 205, 207)',
+  barTextColor: '#ffffff',
+  barSelectedColor: '#ffffff',
+  barHoverColor: '#ffffff',
 })
 
 export const getPreferredColorScheme = () => {
