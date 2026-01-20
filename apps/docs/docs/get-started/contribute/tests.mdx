@@ -4,12 +4,21 @@ sidebar_label: 'Tester'
 
 # Tester
 
+## Översikt
+
 Tester i Midas utgörs främst av _komponenttester_ med hjälp av [Vitest Component Testing](https://vitest.dev/guide/browser/component-testing).
-Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing), _snapshottester_ körs i Chromatic.
+Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing). Våra _snapshottester_ körs i Chromatic.
 
-## Komponenttester
+## Skriva tester
 
-Midas använder [Storybook](https://storybook.js.org), med hjälp av [portable stories](https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#composestories) kan vi använda en renderad story som utgångspunkt för våra tester.
+Vi strävar efter en hög testtäckning, vi tror att en vältestad kodbas ökar förvaltningsbarheten och ger utvecklaren trygghet att förbättra befintlig kod.
+
+Bidrag till kodbasen ska kompletteras med åtminstone ett test.
+
+## 🧩 Komponenttester
+
+Midas använder [Storybook](https://storybook.js.org) för att presentera komponenter, med hjälp av [portable stories](https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#composestories) kan vi använda en renderad story som utgångspunkt för våra tester.
+Testerna körs sedan via en riktig browser. Läs gärna mer om komponenttestning hos [Vitest](https://vitest.dev/guide/browser/component-testing)
 
 ### Kör komponenttester
 
@@ -17,32 +26,25 @@ Midas använder [Storybook](https://storybook.js.org), med hjälp av [portable s
 nx test components
 ```
 
-### Skriva komponenttester
+## 🧪 Enhetstester
 
-Mycket kan testas på våra komponenter, och mycket kanske redan testas av de bibliotek vi utgår ifrån.
-Försök skriva ett test som kompletterar redan skrivna tester, kom ihåg att ditt test kommer behöva underhållas i framtiden.
+För att testa JavaScriptmoduler i nodemiljö används [vitest](https://vitest.dev/guide/).
 
-#### Buggrättning med TDD
+### Lägg till konfiguration för enhetstester
 
-Om du rättar en bugg erbjuds du ett unikt tillfälle att skriva ett test som återskapar din bug, förhoppningsvis kommer vi då inte att återinföra buggen.
+Alla paket och appar i Midas har inte enhetstester konfigurerade. [@nx/vitest](https://nx.dev/docs/technologies/test-tools/vitest/introduction) kommer automatiskt att skapa kommandot `nx test <package>` om paketet har en konfigurationsfil för vitest (`vitest.config.*`)
 
-```tsx title="TextField.spec.tsx"
-it('should be impossible to exceed the max length', async () => {
-  // Rendera din story
-  const { getByRole } = await render(<Primary maxLength={3} />)
+```ts title="vitest.config.ts"
+import { defineProject } from 'vitest/config'
 
-  // Interagera med userEvent
-  await userEvent.tab()
-  await userEvent.keyboard('abcd')
-
-  // Skriv minst en förväntning med expect
-  await expect.element(getByRole('textbox')).toHaveDisplayValue('abc')
+export default defineProject({
+  test: {
+    name: 'unit',
+  },
 })
 ```
 
-Nu kan du åtgärda din bug, när du är klar bör ditt test passera.
-
-## Tillgänglighetstester
+## ♿ Tillgänglighetstester
 
 Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent, dessa testas i våra workfows med kommandot:
 
@@ -54,7 +56,7 @@ Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemo
 
 För att kontrollera tillgängligheten i dark-mode eller forced-colors, kör: `nx run storybook:a11y-dark-mode` respektive `nx run storybook:a11y-forced-colors`.
 
-## Snapshottester
+## 👀 Snapshottester
 
 Vi använder [Chromatic](https://chromatic.com) för att köra snapshottester som jämför visuella ändringar i komponenter.
 Chromatic utgår från vår Storybook och tar snapshots på samtliga stories.
