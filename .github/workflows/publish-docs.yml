@@ -15,7 +15,7 @@ jobs:
   publish-docs:
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      contains(github.event.head_commit.message, 'chore(release)')
+      !contains(github.event.head_commit.message, 'chore(release)')
     name: Publish docs
     runs-on: ubuntu-latest
     steps:
