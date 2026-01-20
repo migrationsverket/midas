@@ -1,7 +1,7 @@
 import { describe, expect, it, vi, afterEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Select.stories'
-import { options } from '../utils/tests'
+import { options } from '@midas-ds/test-utils'
 import { page, userEvent } from 'vitest/browser'
 import { render } from 'vitest-browser-react'
 
@@ -44,7 +44,7 @@ describe('given a Select with a default value', async () => {
   it('should display and reflect the pre-selected value', async () => {
     const { getByTestId } = await render(<DefaultValue />)
 
-    const value = ['Banana', 'Kiwi']
+    const value = ['Ananas', 'Kiwi']
 
     value.forEach(async name => {
       await expect
@@ -64,7 +64,7 @@ describe('given a Select with all keys selected as default', async () => {
   it('should display and reflect the pre-selected values', async () => {
     const { getByTestId } = await render(<AllKeysSelected />)
 
-    const visibleValue = page.getByText('2')
+    const visibleValue = page.getByText('38')
 
     options.forEach(async ({ name }) => {
       await expect
@@ -85,7 +85,7 @@ describe('given a Select with showTags', async () => {
     const { getByTestId } = await render(<WithTags />)
 
     const visibleValue = page.getByText('2')
-    const value = ['Apple', 'Kiwi']
+    const value = ['Ananas', 'Kiwi']
 
     value.forEach(async name => {
       await expect
@@ -100,7 +100,7 @@ describe('given a Select with showTags', async () => {
     await expect.element(visibleValue).toBeVisible()
     await expect
       .element(
-        getByTestId('hidden-select-container').getByText('Apple', {
+        getByTestId('hidden-select-container').getByText('Ananas', {
           exact: true,
         }),
       )

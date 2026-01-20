@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import * as stories from './RangeCalendar.stories'
-import { mockedNow } from '../utils/tests'
+import { mockedNow } from '@midas-ds/test-utils'
 import { render } from 'vitest-browser-react'
 import { getLocalTimeZone } from '@internationalized/date'
 
