@@ -1,3 +1,17 @@
+## 16.4.3 (2026-01-20)
+
+### 🚀 Features
+
+- **test-utils:** add tool for common test utils ([eb2df9b414](https://github.com/migrationsverket/midas/commit/eb2df9b414))
+
+### 🩹 Fixes
+
+- **components, accordion:** rename types ([2f9f64de2f](https://github.com/migrationsverket/midas/commit/2f9f64de2f))
+
+### 🧪 Tests updated
+
+- **components:** update failing tests after data change ([ec21833a37](https://github.com/migrationsverket/midas/commit/ec21833a37))
+
 ## 16.4.2 (2026-01-19)
 
 ### 🩹 Fixes
