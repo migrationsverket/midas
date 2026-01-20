@@ -50,8 +50,8 @@ export const Primary: Story = {}
 
 export const DefaultValue: Story<Item, 'multiple'> = {
   args: {
-    description: 'Kiwi and banana are pre-selected',
-    defaultValue: ['kiwi', 'banana'],
+    description: 'Kiwi and ananas are pre-selected',
+    defaultValue: ['kiwi', 'ananas'],
     selectionMode: 'multiple',
   },
 }
@@ -112,7 +112,7 @@ export const WithTags: Story<Item, 'multiple'> = {
   args: {
     selectionMode: 'multiple',
     showTags: true,
-    defaultValue: ['apple', 'kiwi'],
+    defaultValue: ['ananas', 'kiwi'],
   },
 }
 
