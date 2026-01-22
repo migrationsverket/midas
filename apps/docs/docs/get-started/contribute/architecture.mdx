@@ -1,0 +1,100 @@
+---
+sidebar_label: 'Arkitektur'
+sidebar_position: 4
+---
+
+# 🏗️ Designfilosofi och arkitektur
+
+Midas designsystem följer principer från Clean Code och Clean Architecture för att säkerställa hög kvalitet, underhållbarhet och långsiktig stabilitet.
+
+## ✨ Clean Code-principer
+
+Vi strävar efter ren, läsbar och underhållbar kod:
+
+- **Små funktioner och komponenter**: Varje komponent har ett tydligt, avgränsat ansvar (Single Responsibility Principle)
+- **Beskrivande namn**: Funktioner, variabler och komponenter har namn som tydligt beskriver vad de gör
+- **Testbar kod**: Kod struktureras för att vara enkel att testa
+- **DRY (Don't Repeat Yourself)**: Undvik kodduplicering genom återanvändning och abstraktion
+- **Inkrementella förbättringar**: Lämna koden bättre än du hittade den - fixa gärna problem du ser även om de inte är en del av din uppgift
+- **Stateless komponenter**: Komponenter är i möjlig mån stateless och stödjer designsystemet på ett generiskt sätt
+
+## 🏛️ Clean Architecture-principer
+
+Vi tillämpar principer från clean architecture för att skapa ett underhållbart och stabilt komponentbibliotek:
+
+- **Separera styling från beteende**: Använd headless-bibliotek för logik och tillgänglighet, applicera endast visuell stil
+- **Minimera beroenden**: Håll komponenter löst kopplade och undvik onödiga beroenden mellan dem
+- **Testbarhet**: Komponenter är enkla att testa isolerat utan omfattande setup
+- **Stabilitet över flexibilitet**: Välj stabila, välunderhållna beroenden framför att bygga egen komplexitet
+
+---
+
+## 📦 Beroendestrategi: Headless-bibliotek
+
+### React Aria Components (RAC) - Förstahandsval
+
+Komponenter byggs **i första hand** på [React Aria Components](https://react-spectrum.adobe.com/react-aria/getting-started.html). React Aria tillhandahåller:
+
+- **Tillgänglighet**: Fullständigt stöd för WCAG, skärmläsare och tangentbordsnavigation
+- **Plattformsstöd**: Touch, mouse och keyboard fungerar sömlöst
+- **Produktionstestad**: Vältestad kod från Adobe som används i stora produktionsmiljöer
+- **Internationalisering**: Inbyggt stöd för olika språk och lokalisering
+
+**Viktigt**: Följ React Aria's API och mönster så nära som möjligt. Undvik att avvika för mycket från originalet då det:
+- Försvårar uppgraderingar när React Aria uppdaterar sitt API
+- Ökar underhållsbördan för teamet
+- Riskerar att vi bygger egen komplexitet som redan är löst
+
+:::tip
+Om du behöver anpassa beteende, fråga dig först om React Aria redan har en lösning via props, composition eller hooks.
+:::
+
+### Alternativa headless-bibliotek
+
+När funktionalitet **inte finns** i React Aria Components, välj andra välunderhållna headless-bibliotek.
+
+**Exempel på bibliotek vi redan använder:**
+- **[TanStack Table](https://tanstack.com/table)**: För avancerad tabellhantering
+- **[React Select](https://react-select.com/)**: För komplexa select-komponenter
+
+**Kriterier för att välja ett bibliotek:**
+- Välunderhållet och aktivt utvecklat
+- Headless (ingen inbyggd styling)
+- Stort community och bra dokumentation
+- TypeScript-stöd
+- Stabilt API med tydlig versionshantering
+- Produktionstestat och används av många projekt
+
+Tveka inte att föreslå andra välunderhållna headless-bibliotek om de passar användarfallet bättre!
+
+### Undvik egenutvecklade lösningar
+
+:::warning
+Bygg inte egen logik för tangentbordshantering, focus management, ARIA eller accessibility-funktionalitet. Egenutvecklade lösningar är svåra att få rätt, ökar underhållsbördan dramatiskt och riskerar att introducera tillgänglighetsbrister.
+:::
+
+**Innan du bygger något eget, fråga dig:**
+
+1. **Kan det komponeras av befintliga byggstenar?** Ofta går det att kombinera existerande komponenter för att lösa behovet.
+2. **Är det tillräckligt generiskt?** Om lösningen är väldigt specifik för ett enskilt projekt kanske den inte hör hemma i det delade biblioteket - implementera den då projektspecifikt istället.
+3. **Finns det i ett headless-bibliotek?** Kolla React Aria och andra bibliotek innan du bygger eget.
+
+**När är egenutvecklat OK?** Endast för ren visuell styling eller små, väldefinierade utilities som inte existerar i headless-bibliotek.
+
+---
+
+## 📦 Publicerade paket
+
+Midas är uppdelat i flera paket med tydliga ansvarsområden:
+
+- **components** - Alla komponenter baserade på React Aria samlas i ett paket för enkel installation och uppdatering
+- **theme** - Design tokens och CSS-variabler är separerade för flexibel beroendehantering (du kan använda tokens utan komponenter)
+- **Styling för tredjepartsbibliotek** - När vi stödjer externa bibliotek (react-datepicker, react-select, TanStack Table) publiceras styling som separata paket så du bara installerar det du behöver
+
+| Paket | Version | Beskrivning |
+|-------|---------|-------------|
+| [@midas-ds/components](https://www.npmjs.com/package/@midas-ds/components) | [![npm](https://img.shields.io/npm/v/@midas-ds/components)](https://www.npmjs.com/package/@midas-ds/components) | React-komponenter |
+| [@midas-ds/theme](https://www.npmjs.com/package/@midas-ds/theme) | [![npm](https://img.shields.io/npm/v/@midas-ds/theme)](https://www.npmjs.com/package/@midas-ds/theme) | Design tokens och CSS |
+| [@midas-ds/datepicker-styles](https://www.npmjs.com/package/@midas-ds/datepicker-styles) | [![npm](https://img.shields.io/npm/v/@midas-ds/datepicker-styles)](https://www.npmjs.com/package/@midas-ds/datepicker-styles) | Styling för [react-datepicker](/dev/react-datepicker) |
+| [@midas-ds/select-styles](https://www.npmjs.com/package/@midas-ds/select-styles) | [![npm](https://img.shields.io/npm/v/@midas-ds/select-styles)](https://www.npmjs.com/package/@midas-ds/select-styles) | Styling för [react-select](/dev/react-select) |
+| [@midas-ds/table-styles](https://www.npmjs.com/package/@midas-ds/table-styles) | [![npm](https://img.shields.io/npm/v/@midas-ds/table-styles)](https://www.npmjs.com/package/@midas-ds/table-styles) | Styling för [TanStack Table](/dev/tanstack-table) |

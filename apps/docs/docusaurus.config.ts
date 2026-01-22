@@ -93,9 +93,8 @@ const config: Config = {
     parseFrontMatter: async params => {
       const result = await params.defaultParseFrontMatter(params)
 
-      // Remove previous / next links at bottom of pages
-      result.frontMatter.pagination_prev = null
-      result.frontMatter.pagination_next = null
+      // Pagination is enabled by default
+      // Individual pages can opt out by setting pagination_prev/pagination_next to null in frontmatter
 
       return result
     },
