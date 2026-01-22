@@ -1,8 +1,9 @@
 ---
 sidebar_label: 'Tester'
+sidebar_position: 3
 ---
 
-# Tester
+# 🧪 Tester
 
 Tester i Midas utgörs främst av _komponenttester_ med hjälp av [Vitest Component Testing](https://vitest.dev/guide/browser/component-testing).
 Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing), _snapshottester_ körs i Chromatic.
@@ -14,7 +15,8 @@ Midas använder [Storybook](https://storybook.js.org), med hjälp av [portable s
 ### Kör komponenttester
 
 ```bash
-nx test components
+nx test components                         # Lokal installation
+docker compose exec docs nx test components # Docker
 ```
 
 ### Skriva komponenttester
@@ -44,15 +46,23 @@ Nu kan du åtgärda din bug, när du är klar bör ditt test passera.
 
 ## Tillgänglighetstester
 
-Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent, dessa testas i våra workfows med kommandot:
+Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent, dessa testas i våra workflows med kommandot:
 
 ```bash
-nx a11y storybook
+nx a11y storybook                         # Lokal installation
+docker compose exec docs nx a11y storybook # Docker
 ```
 
 Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
 
-För att kontrollera tillgängligheten i dark-mode eller forced-colors, kör: `nx run storybook:a11y-dark-mode` respektive `nx run storybook:a11y-forced-colors`.
+För att kontrollera tillgängligheten i dark-mode eller forced-colors:
+
+```bash
+nx run storybook:a11y-dark-mode      # Dark mode
+nx run storybook:a11y-forced-colors  # Forced colors
+```
+
+För Docker, lägg till `docker compose exec docs` före kommandot.
 
 ## Snapshottester
 

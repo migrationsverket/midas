@@ -1,0 +1,55 @@
+---
+sidebar_label: 'Bidra med kod'
+sidebar_position: 2
+---
+
+# 🔨 Bidra med kod
+
+Den här guiden beskriver hur du bygger och bidrar med komponenter till Midas. Vi uppskattar alla bidrag - stora som små!
+
+:::tip
+Innan du börjar koda, läs gärna om vår [designfilosofi och arkitektur](/get-started/contribute/architecture) för att förstå hur vi bygger komponenter.
+:::
+
+## 📦 Bygga komponenter
+
+### Styleguide
+
+Använd befintliga komponenter som referens för struktur och namngivning. Se även [React Aria](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components) för inspiration.
+
+### Skapa stories
+
+Alla states bör finnas representerade som stories i Storybook. Storybook är i första hand ett internt verktyg för UX och utvecklare i designsystemet men också en publikt exponerad referens med API och visuell representation av komponenterna.
+
+### Skriv tester
+
+De stories du skapat kan användas som utgångspunkt för komponenttester. Läs mer om [hur vi testar komponenter](/get-started/contribute/tests).
+
+### Dokumentation
+
+Dokumentera komponentens API (props, events etc.) med TypeScript-typer så genereras API-dokumentationen automatiskt. Lägg även till relevanta exempel och användningsfall med kodexempel.
+
+---
+
+## 🌿 Versionshantering
+
+Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-brancher som sedan mergas in i `main`. Följ [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) - det avgör vilken versionsändring som sker.
+
+Se [arbetsflöde](/get-started/contribute/conventions) för detaljerad guide om commits och release-processen.
+
+---
+
+## ✅ Checklista för PR
+
+Innan du skapar en pull request, kontrollera att:
+
+- [ ] Komponenten följer befintliga patterns och styleguide
+- [ ] Alla relevanta states finns som stories i Storybook
+- [ ] Komponenttester är skrivna och passerar (`nx test components`)
+- [ ] Dokumentation är uppdaterad
+- [ ] Commits följer conventional commits-format
+- [ ] Commit-historiken är städad (använd `git rebase -i` vid behov)
+
+:::tip
+Release sker automatiskt via CI/CD när din PR mergas till `main`. Du behöver inte köra några manuella release-kommandon! 🎉
+:::
