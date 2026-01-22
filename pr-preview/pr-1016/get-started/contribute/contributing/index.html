@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">🔨 Bidra med kod | Migrationsverkets designsystem</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://designsystem.migrationsverket.se/pr-preview/pr-1016/get-started/contribute/contributing/"><meta data-rh="true" property="og:locale" content="sv"><meta data-rh="true" name="docusaurus_locale" content="sv"><meta data-rh="true" name="docsearch:language" content="sv"><meta data-rh="true" name="color-scheme" content="light dark"><meta data-rh="true" name="theme-color" content="white"><meta data-rh="true" name="theme-color" content="#242526" media="(prefers-color-scheme: dark)"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="🔨 Bidra med kod | Migrationsverkets designsystem"><meta data-rh="true" name="description" content="Den här guiden beskriver hur du bygger och bidrar med komponenter till Midas. Vi uppskattar alla bidrag - stora som små!"><meta data-rh="true" property="og:description" content="Den här guiden beskriver hur du bygger och bidrar med komponenter till Midas. Vi uppskattar alla bidrag - stora som små!"><link data-rh="true" rel="icon" href="/pr-preview/pr-1016/img/favicon.ico?v=3"><link data-rh="true" rel="canonical" href="https://designsystem.migrationsverket.se/pr-preview/pr-1016/get-started/contribute/contributing/"><link data-rh="true" rel="alternate" href="https://designsystem.migrationsverket.se/pr-preview/pr-1016/get-started/contribute/contributing/" hreflang="sv"><link data-rh="true" rel="alternate" href="https://designsystem.migrationsverket.se/pr-preview/pr-1016/get-started/contribute/contributing/" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/pr-preview/pr-1016/release-notes/rss.xml" title="Migrationsverkets designsystem RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/pr-preview/pr-1016/release-notes/atom.xml" title="Migrationsverkets designsystem Atom Feed"><link rel="stylesheet" href="/pr-preview/pr-1016/assets/css/styles.7bdb1ccd.css">
-<script src="/pr-preview/pr-1016/assets/js/runtime~main.06fa77c3.js" defer="defer"></script>
-<script src="/pr-preview/pr-1016/assets/js/main.3eb0e126.js" defer="defer"></script>
+<script src="/pr-preview/pr-1016/assets/js/runtime~main.6474eaf9.js" defer="defer"></script>
+<script src="/pr-preview/pr-1016/assets/js/main.3ceabd6b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -26,17 +26,15 @@
 <p>Dokumentera komponentens API (props, events etc.) med TypeScript-typer så genereras API-dokumentationen automatiskt. Lägg även till relevanta exempel och användningsfall med kodexempel.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-versionshantering">🌿 Versionshantering<a href="#-versionshantering" class="hash-link" aria-label="Direktlänk till 🌿 Versionshantering" title="Direktlänk till 🌿 Versionshantering" translate="no">​</a></h2>
-<p>Vi använder en enkel branchstrategi med en <code scope="[object Object]">main</code>-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-brancher som sedan mergas in i <code scope="[object Object]">main</code>.</p>
-<p><strong>Branch-namn:</strong> <code scope="[object Object]">[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/</code>, till exempel <code scope="[object Object]">feature/button</code>.</p>
-<p><strong>Commits:</strong> Följ <a href="https://www.conventionalcommits.org/en/v1.0.0/#summary" target="_blank" rel="noopener noreferrer" class="">conventional commits</a> - det avgör vilken versionsändring som sker.</p>
-<p>Se <a class="" href="/pr-preview/pr-1016/get-started/contribute/conventions/">konventioner</a> för detaljerad guide om commits, brancher och release-processen.</p>
+<p>Vi använder en enkel branchstrategi med en <code scope="[object Object]">main</code>-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-brancher som sedan mergas in i <code scope="[object Object]">main</code>. Följ <a href="https://www.conventionalcommits.org/en/v1.0.0/#summary" target="_blank" rel="noopener noreferrer" class="">conventional commits</a> - det avgör vilken versionsändring som sker.</p>
+<p>Se <a class="" href="/pr-preview/pr-1016/get-started/contribute/conventions/">arbetsflöde</a> för detaljerad guide om commits och release-processen.</p>
 <hr>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-checklista-för-pr">✅ Checklista för PR<a href="#-checklista-för-pr" class="hash-link" aria-label="Direktlänk till ✅ Checklista för PR" title="Direktlänk till ✅ Checklista för PR" translate="no">​</a></h2>
 <p>Innan du skapar en pull request, kontrollera att:</p>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Komponenten följer befintliga patterns och styleguide</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Alla relevanta states finns som stories i Storybook</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Enhetstester är skrivna och passerar (<code scope="[object Object]">nx test components</code>)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Komponenttester är skrivna och passerar (<code scope="[object Object]">nx test components</code>)</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Dokumentation är uppdaterad</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Commits följer conventional commits-format</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Commit-historiken är städad (använd <code scope="[object Object]">git rebase -i</code> vid behov)</li>
