@@ -21,3 +21,4 @@ We use a simple format:
 
 - [0001 - Pagination Component Location](./0001-pagination-component-location.md) - **Accepted**
 - [0002 - Component Package Architecture](./0002-component-package-architecture.md) - **Proposed**
+- [0003 - Design Token Shadow Syntax](./0003-design-token-shadow-syntax.md) - **Accepted**
