@@ -1,3 +1,13 @@
+## 0.2.17 (2026-01-23)
+
+### 🧪 Tests updated
+
+- replace jest with vitest ([6d8ca7deb3](https://github.com/migrationsverket/midas/commit/6d8ca7deb3))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.5
+
 ## 0.2.16 (2026-01-14)
 
 ### 🧱 Updated Dependencies
