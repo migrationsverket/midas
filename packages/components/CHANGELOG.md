@@ -1,3 +1,15 @@
+## 16.5.0 (2026-01-23)
+
+### 🚀 Features
+
+- **components, button:** enable context props ([733668775a](https://github.com/migrationsverket/midas/commit/733668775a))
+
+### 🩹 Fixes
+
+- **components, date-picker:** remove focus indicator for parent element ([e97917f674](https://github.com/migrationsverket/midas/commit/e97917f674))
+- **components, date-field:** update styles for clear button ([194d0d1901](https://github.com/migrationsverket/midas/commit/194d0d1901))
+- **components, date-picker:** update styles for icon buttons ([3a8b469747](https://github.com/migrationsverket/midas/commit/3a8b469747))
+
 ## 16.4.3 (2026-01-20)
 
 ### 🚀 Features
