@@ -21,6 +21,11 @@
         "$value": "2px",
         "$description": "Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.."
       }
+    },
+    "invalid": {
+      "$type": "string",
+      "$value": "inset 0 0 0 2px {support.border.warning}",
+      "$description": "Invalid state style for form fields (box-shadow)."
     }
   }
 }
