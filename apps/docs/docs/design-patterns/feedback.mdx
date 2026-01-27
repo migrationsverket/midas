@@ -1,0 +1,135 @@
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import ThemedImage from '@theme/ThemedImage'
+
+import {
+  NotActionableButtonExample,
+  ButtonInfobannerExample,
+} from '@site/src/components/examples/feedback-pattern/FeedbackExamples'
+
+# Återkoppling
+
+Denna sida beskriver hur systemet ska svara när en användare utför en handling. Mönstren refererar till handlingstyperna som definieras i mönstret Handlingstyper.
+Detta mönster definierar:
+
+- hur systemet bekräftar användarens intention
+- hur fel, vägledning och förklaringar kommuniceras
+- hur användaren leds vidare när en handling inte kan utföras
+
+## Från handling till respons
+
+Interaktionen följer alltid samma logik:
+
+1. Användaren utför en handling
+2. Handlingstypen avgör **om och när utförande kan ske**
+3. Ett feedbackmönster avgör **hur systemet svarar användaren**
+
+## Återkoppling vid Efterhandsutvärderade handlingar
+
+Detta mönster används för Efterhandsutvärderade handlingar.
+
+### Användsningsfall
+
+- Vid formulärinlämning
+- Vid sparande av data
+
+### Feedbackmönster
+
+I formulär använder vi oss av en felmeddelandelista. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+
+<ErrorMessageList />
+
+export function ErrorMessageList() {
+  const lightSrc = useBaseUrl('/img/error-message-list-light.svg');
+  const darkSrc = useBaseUrl('/img/error-message-list-dark.svg');
+
+return (
+
+<ThemedImage
+  alt='Felmeddelandelista'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
+
+I mer komplexa UIn används infobanner eller toast användas.
+
+## Återkoppling vid förutsättningsstyrda handlingar
+
+Detta mönster används för Förutsättningsstyrda handlingar.
+
+### Användningsfall
+
+- När ett minsta antal val krävs
+- När utförande skulle vara meningslöst utan förberedelse
+
+### Krav på feedback
+
+- Triggerkomponenten ska vara synlig och möjlig att aktivera
+- Feedback ska vara omedelbar
+- Feedback ska vara tillgänglig även för skärmläsaranvändare
+- Det ska tydligt framgå:
+  - vad som saknas
+  - hur användaren går vidare
+
+### Komponenter och designmönster
+
+För att uppfylla ovanstående krav har vi tagit fram ett mönster där vi låter knappen vara aktiv men när kraven inte är uppfyllda så:
+
+- sätter vi trigger som aria-disabled för att indikera för skärmläsaranvändare att knappen är inaktiv
+- visar en tooltip vid hover för att förklara varför knappen är inaktiv. Den läses även upp av skämläsare
+- tar bort onPress-händelsen för att förhindra handlingen
+
+```tsx
+<TooltipTrigger>
+  <Button
+    variant='secondary'
+    aria-label='Lägg till i fruktkorgen'
+    aria-disabled={!isEnabled}
+    onPress={isEnabled ? handleButtonPress : undefined}
+  >
+    Lägg till i fruktkorgen
+  </Button>
+
+  {!isEnabled && <Tooltip>Du har inte valt någon frukt att lägga till i fruktkorgen</Tooltip>}
+</TooltipTrigger>
+```
+
+<NotActionableButtonExample />
+
+Vi kan även uppfylla kraven genom att visa en infobanner eller en modal med information om hur användaren ska gå vidare, som i nedanstående exempel.
+
+<ButtonInfobannerExample />
+## Tillgänglighetsfeedback (otillgänglig handling)
+
+### Syfte
+
+Att förklara varför en handling inte är möjlig i aktuell kontext.
+
+### Används av
+
+- **Otillgängliga handlingar**
+
+### När används mönstret
+
+- Vid behörighetsbegränsningar
+- Vid avstängd funktionalitet
+- När system- eller beroenden saknas
+
+### Beteende
+
+- Handlingen är synlig men kan inte utföras
+- Systemet kommunicerar otillgänglighet tydligt
+
+### Krav på feedback
+
+- En förklaring ska alltid finnas i direkt anslutning
+- Förklaringen ska vara tillgänglig utan hover
+- Språket ska vara neutralt och icke skuldbeläggande
+
+### Detta mönster får inte
+
+- Ta bort handlingen
+- Förlita sig enbart på tooltip
+- Presentera otillgänglighet som användarfel
