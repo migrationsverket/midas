@@ -9,7 +9,7 @@
 
   &.medium {
     .midas__control {
-      min-height: var(--midas-size-130);
+      min-height: calc(var(--midas-size-130) - 1px);
     }
 
     .midas__value-container--is-multi {
@@ -23,7 +23,7 @@
 
   .midas__control {
     background-color: var(--midas-field-01-base);
-    min-height: var(--midas-size-150);
+    min-height: calc(var(--midas-size-150) - 1px);
     padding: 0 var(--midas-spacing-50);
 
     &:hover {
