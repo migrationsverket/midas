@@ -2,78 +2,96 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import ThemedImage from '@theme/ThemedImage'
 
 import {
-  NotActionableButtonExample,
+  InactiveButtonExample,
   ButtonInfobannerExample,
+  ErrorMessageListExample,
 } from '@site/src/components/examples/feedback-pattern/FeedbackExamples'
 
 # Återkoppling
 
-Denna sida beskriver hur systemet ska svara när en användare utför en handling. Mönstren refererar till handlingstyperna som definieras i mönstret Handlingstyper.
+Detta mönster beskriver hur vi hanterar användarhandlingar i våra gränssnitt/system. Mönstret definierar tre olika typer av handlingar och hur systemen agerar i respektive fall.
 Detta mönster definierar:
 
-- hur systemet bekräftar användarens intention
+- vilka typer av handlingar som finns
+- hur vi bekräftar användarens intention
 - hur fel, vägledning och förklaringar kommuniceras
-- hur användaren leds vidare när en handling inte kan utföras
 
-## Från handling till respons
+## Handlingar
+
+### Definition
+
+Vi använder handling för att beskriva ett medvetet initiativ av användaren för att få systemet att göra något. Handlingar utförs typiskt av knappar eller menyalternativ.
+
+En handling
+
+- är initierad av användaren
+- har ett tydligt syfte eller resultat
+- påverkar vad som händer i systemet
+- kräver ett svar från systemet
+
+### Typer av Handlingar
+
+Vi skiljer mellan tre sorters handlingar:
+
+- [Efterhandsutvärderade handlingar](#efterhandsutvärderade-handlingar): handlingar som alltid är möjliga att utföra och systemet sedan utvärderar
+- [Förutsättningsstyrda handlingar](#förutsättningsstyrda-handlingar): handlingar som kräver specifika förutsättningar för att kunna göras
+- [Otillgängliga handlingar](#otillgänglig-handling): handlingar som inte är möjliga att göra
+
+### Från handling till återkoppling
 
 Interaktionen följer alltid samma logik:
 
-1. Användaren utför en handling
+1. Användaren försöker utföra en handling
 2. Handlingstypen avgör **om och när utförande kan ske**
-3. Ett feedbackmönster avgör **hur systemet svarar användaren**
+3. Ett återkopplingsmönster avgör **hur systemet svarar användaren**
 
-## Återkoppling vid Efterhandsutvärderade handlingar
+## Efterhandsutvärderade handlingar
 
-Detta mönster används för Efterhandsutvärderade handlingar.
+Denna sortens handling utförs alltid när den initieras av användaren. Därefter utvärderar systemet resultatet genom validering eller affärslogik. Fel eller saknade förutsättningar kommuniceras efter försök, inte genom att hindra handlingen.
+Användarupplevelsen är: ”Jag utförde åtgärden, och systemet talade om vad som gick fel eller rätt.”
+
+### Princip
+
+Vi tillåter handlingen och berättar sedan hur det gick
 
 ### Användsningsfall
 
 - Vid formulärinlämning
 - Vid sparande av data
 
-### Feedbackmönster
+### Krav på återkoppling
 
-I formulär använder vi oss av en felmeddelandelista. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+- Resultatet ska kommuniceras tydligt
+- Felen ska kopplas till relevant innehåll/kontroller och vara tillgängliga för hjälpmedel
 
-<ErrorMessageList />
+### Mönster för återkoppling
 
-export function ErrorMessageList() {
-  const lightSrc = useBaseUrl('/img/error-message-list-light.svg');
-  const darkSrc = useBaseUrl('/img/error-message-list-dark.svg');
+I formulär, tex etjänster, använder vi oss av en felmeddelandelista för att visa eventuella fel som användaren måste rätta till. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
 
-return (
+<ErrorMessageListExample />
 
-<ThemedImage
-  alt='Felmeddelandelista'
-  sources={{
-    light: lightSrc,
-    dark: darkSrc,
-  }}
-/>
-); }
+## Förutsättningsstyrda handlingar
 
-I mer komplexa UIn används infobanner eller toast användas.
+En förutsättningsstyrd handling är endast möjlig att utföra när vissa krav är uppfyllda. Om kraven inte är uppfyllda ska handlingen inte kunna utföras, men användaren ska få tydlig vägledning om vad som krävs.
+Användarupplevelsen är: ”Jag försökte utföra åtgärden och fick direkt veta vad jag behöver göra först.”
 
-## Återkoppling vid förutsättningsstyrda handlingar
+### Princip:
 
-Detta mönster används för Förutsättningsstyrda handlingar.
+Vi tillåter inte handlingen utan förklarar istället förutsättningarna för att det ska vara möjligt
 
 ### Användningsfall
 
-- När ett minsta antal val krävs
-- När utförande skulle vara meningslöst utan förberedelse
+- När det inte är meningsfullt att utföra handlingen om inte kraven är uppfyllda
+- När ett minsta antal val krävs (t.ex. markera minst ett objekt)
 
-### Krav på feedback
+### Krav på återkoppling
 
 - Triggerkomponenten ska vara synlig och möjlig att aktivera
-- Feedback ska vara omedelbar
-- Feedback ska vara tillgänglig även för skärmläsaranvändare
-- Det ska tydligt framgå:
-  - vad som saknas
-  - hur användaren går vidare
+- återkopplingen ska vara omedelbar
+- återkoppling ska vara tillgänglig även för skärmläsaranvändare
+- det ska tydligt framgå vad som saknas och hur användaren går vidare
 
-### Komponenter och designmönster
+### Mönster för återkoppling
 
 För att uppfylla ovanstående krav har vi tagit fram ett mönster där vi låter knappen vara aktiv men när kraven inte är uppfyllda så:
 
@@ -81,55 +99,32 @@ För att uppfylla ovanstående krav har vi tagit fram ett mönster där vi låte
 - visar en tooltip vid hover för att förklara varför knappen är inaktiv. Den läses även upp av skämläsare
 - tar bort onPress-händelsen för att förhindra handlingen
 
-```tsx
-<TooltipTrigger>
-  <Button
-    variant='secondary'
-    aria-label='Lägg till i fruktkorgen'
-    aria-disabled={!isEnabled}
-    onPress={isEnabled ? handleButtonPress : undefined}
-  >
-    Lägg till i fruktkorgen
-  </Button>
-
-  {!isEnabled && <Tooltip>Du har inte valt någon frukt att lägga till i fruktkorgen</Tooltip>}
-</TooltipTrigger>
-```
-
-<NotActionableButtonExample />
+<InactiveButtonExample />
 
 Vi kan även uppfylla kraven genom att visa en infobanner eller en modal med information om hur användaren ska gå vidare, som i nedanstående exempel.
 
 <ButtonInfobannerExample />
-## Tillgänglighetsfeedback (otillgänglig handling)
 
-### Syfte
+## Otillgänglig handling
 
-Att förklara varför en handling inte är möjlig i aktuell kontext.
+En otillgänglig åtgärd är en handling som användaren inte kan utföras i aktuell kontext och där användaren själv inte kan uppfylla kraven för att handlingen ska vara möjlig.
+Användaren upplever att: ”Den här handlingen är möjlig, men är inte tillgänglig för mig just nu.”
 
-### Används av
+### Princip
 
-- **Otillgängliga handlingar**
+Vi blockerar handlingen och berättar varför det inte är möjligt att göra den
 
-### När används mönstret
+### Användningsfall
 
-- Vid behörighetsbegränsningar
-- Vid avstängd funktionalitet
-- När system- eller beroenden saknas
+- När användaren inte har tillräckligt hög behörighetsnivå
+- När funktionalitet är avstängd
 
-### Beteende
+### Krav på återkoppling
 
-- Handlingen är synlig men kan inte utföras
-- Systemet kommunicerar otillgänglighet tydligt
-
-### Krav på feedback
-
-- En förklaring ska alltid finnas i direkt anslutning
+- En förklaring ska alltid finnas i direkt anslutning till triggerkomponenten
 - Förklaringen ska vara tillgänglig utan hover
 - Språket ska vara neutralt och icke skuldbeläggande
 
-### Detta mönster får inte
+### Mönster för återkoppling
 
-- Ta bort handlingen
-- Förlita sig enbart på tooltip
-- Presentera otillgänglighet som användarfel
+Vi avänder disabled state.
