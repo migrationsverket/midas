@@ -14,7 +14,7 @@
   "description": "Midas datepicker styles",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -23,6 +23,6 @@
     }
   },
   "dependencies": {
-    "@midas-ds/theme": "3.9.6"
+    "@midas-ds/theme": "3.10.0"
   }
 }
