@@ -5,14 +5,9 @@ import {
   DisabledButtonExample,
 } from '@site/src/components/examples/feedback-pattern/FeedbackExamples'
 
-# Återkoppling
+# Handlingar och återkoppling
 
-Detta mönster beskriver hur vi hanterar användarhandlingar i våra gränssnitt/system. Mönstret definierar tre olika typer av handlingar och hur systemen agerar i respektive fall.
-Detta mönster definierar:
-
-- vilka typer av handlingar som finns
-- hur vi bekräftar användarens intention
-- hur fel, vägledning och förklaringar kommuniceras
+Detta mönster beskriver hur vi hanterar användarhandlingar i våra gränssnitt/system. Mönstret definierar tre olika typer av handlingar, hur vi bekräftar användarens intention och vilken typ av återkoppling vi ger i respektive fall.
 
 ## Handlingar
 
@@ -20,19 +15,12 @@ Detta mönster definierar:
 
 Vi använder handling för att beskriva ett medvetet initiativ av användaren för att få systemet att göra något. Handlingar utförs typiskt av knappar eller menyalternativ.
 
-En handling
-
-- är initierad av användaren
-- har ett tydligt syfte eller resultat
-- påverkar vad som händer i systemet
-- kräver ett svar från systemet
-
 ### Typer av Handlingar
 
 Vi skiljer mellan tre sorters handlingar:
 
-- [Efterhandsutvärderade handlingar](#efterhandsutvärderade-handlingar): handlingar som alltid är möjliga att utföra och systemet sedan utvärderar
-- [Förutsättningsstyrda handlingar](#förutsättningsstyrda-handlingar): handlingar som kräver specifika förutsättningar för att kunna göras
+- [Tillgängliga handlinga](#tillgängliga-handlingar): handlingar som alltid är möjliga att utföra och systemet sedan utvärderar
+- [Villkorade handlingar](#förutsättningsstyrda-handlingar): handlingar som kräver specifika förutsättningar för att kunna göras
 - [Otillgängliga handlingar](#otillgänglig-handling): handlingar som inte är möjliga att göra
 
 ### Från handling till återkoppling
@@ -40,19 +28,14 @@ Vi skiljer mellan tre sorters handlingar:
 Interaktionen följer alltid samma logik:
 
 1. Användaren försöker utföra en handling
-2. Handlingstypen avgör **om och när utförande kan ske**
-3. Ett återkopplingsmönster avgör **hur systemet svarar användaren**
+2. Handlingstypen avgör om och när utförande kan ske
+3. Ett återkopplingsmönster avgör hur systemet svarar användaren
 
-## Efterhandsutvärderade handlingar
+## Tillgängliga handlingar
 
 Denna sortens handling utförs alltid när den initieras av användaren. Därefter utvärderar systemet resultatet genom validering eller affärslogik. Fel eller saknade förutsättningar kommuniceras efter försök, inte genom att hindra handlingen.
-Användarupplevelsen är: ”Jag utförde åtgärden, och systemet talade om vad som gick fel eller rätt.”
 
-### Princip
-
-Vi tillåter handlingen och berättar sedan hur det gick
-
-### Användsningsfall
+### Användning
 
 - Vid formulärinlämning
 - Vid sparande av data
@@ -60,7 +43,7 @@ Vi tillåter handlingen och berättar sedan hur det gick
 ### Krav på återkoppling
 
 - Resultatet ska kommuniceras tydligt
-- Felen ska kopplas till relevant innehåll/kontroller och vara tillgängliga för hjälpmedel
+- Eventuella fel ska kopplas till relevant innehåll/kontroll och vara tillgängliga för hjälpmedel
 
 ### Mönster för återkoppling
 
@@ -68,63 +51,53 @@ I formulär, tex etjänster, använder vi oss av en felmeddelandelista för att 
 
 <ErrorMessageListExample />
 
-## Förutsättningsstyrda handlingar
+## Villkorade handlingar
 
-En förutsättningsstyrd handling är endast möjlig att utföra när vissa krav är uppfyllda. Om kraven inte är uppfyllda ska handlingen inte kunna utföras, men användaren ska få tydlig vägledning om vad som krävs.
-Användarupplevelsen är: ”Jag försökte utföra åtgärden och fick direkt veta vad jag behöver göra först.”
+En villkorad handling är endast möjlig att utföra när vissa krav är uppfyllda. Om kraven inte är uppfyllda ska handlingen inte kunna utföras, men användaren ska få tydlig vägledning om vad som krävs för att kunna göra det.
 
-### Princip:
-
-Vi tillåter inte handlingen utan förklarar istället förutsättningarna för att det ska vara möjligt
-
-### Användningsfall
+### Användning
 
 - När det inte är meningsfullt att utföra handlingen om inte kraven är uppfyllda
 - När ett minsta antal val krävs (t.ex. markera minst ett objekt)
 
 ### Krav på återkoppling
 
-- Triggerkomponenten ska vara synlig och möjlig att aktivera
-- återkopplingen ska vara omedelbar
-- återkoppling ska vara tillgänglig även för skärmläsaranvändare
-- det ska tydligt framgå vad som saknas och hur användaren går vidare
+- Återkopplingen ska vara omedelbar
+- Återkoppling ska vara tillgänglig även för skärmläsaranvändare
+- Det ska tydligt framgå vad som saknas och hur användaren går vidare
 
 ### Mönster för återkoppling
 
-För att uppfylla ovanstående krav har vi tagit fram ett mönster där vi låter knappen vara aktiv men när kraven inte är uppfyllda så:
+:::note
+Notera att vi inte använder `isDisabled` eftersom detta gör triggerelementet otillgängligt för skärmläsaranvändare. Vi låter den istället vara visuellt aktiva och tar bort onPress-händelsen.
+:::
 
-- sätter vi trigger som aria-disabled för att indikera för skärmläsaranvändare att knappen är inaktiv
-- visar en tooltip vid hover för att förklara varför knappen är inaktiv. Den läses även upp av skämläsare
-- tar bort onPress-händelsen för att förhindra handlingen
+För att uppfylla ovanstående krav kan vi göra på två sätt:
+
+1. Visa en tooltip på hover och fokus. För att göra detta tillgängligt för skärmläsaranvändare behöver vi även sätta trigger som `aria-disabled` för att indikera för skärmläsaranvändare att knappen är inaktiv
 
 <InactiveButtonExample />
 
-Vi kan även uppfylla kraven genom att visa en infobanner eller en modal med information om hur användaren ska gå vidare, som i nedanstående exempel.
+2. Visa en infobanner eller en modal vid klick. Detta är lämpligt när det finns flera krav som måste uppfyllas eller när kraven är mer komplexa.
 
 <ButtonInfobannerExample />
 
 ## Otillgänglig handling
 
 En otillgänglig åtgärd är en handling som användaren inte kan utföras i aktuell kontext och där användaren själv inte kan uppfylla kraven för att handlingen ska vara möjlig.
-Användaren upplever att: ”Den här handlingen är möjlig, men är inte tillgänglig för mig just nu.”
 
-### Princip
+### Användning
 
-Vi blockerar handlingen och berättar varför det inte är möjligt att göra den
-
-### Användningsfall
-
-- När användaren inte har tillräckligt hög behörighetsnivå
-- När funktionalitet är avstängd
+- När användaren inte har rätt behörighetsnivå
+- När funktionaliteten är avstängd i systemet
 
 ### Krav på återkoppling
 
 - En förklaring ska alltid finnas i direkt anslutning till triggerkomponenten
 - Förklaringen ska vara tillgänglig utan hover
-- Språket ska vara neutralt och icke skuldbeläggande
 
 ### Mönster för återkoppling
 
-Vi avänder disabled state.
+Vi avänder disabled state för att indikera att en handling är otillgänglig. Enligt ovanstånde krav måste vi även ha en förklaring i direkt anslutning till triggerkomponenten.
 
 <DisabledButtonExample />
