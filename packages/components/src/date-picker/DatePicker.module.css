@@ -52,11 +52,14 @@
   .buttonGroup {
     display: flex;
     margin-left: auto;
-    gap: 0;
+    height: 100%;
   }
 
   .iconButton {
+    align-self: stretch;
+    aspect-ratio: 1;
     border: none;
+    padding: 0;
 
     &[data-disabled] {
       background-color: transparent;
