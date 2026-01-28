@@ -1,3 +1,7 @@
+## 3.9.6 (2026-01-28)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.9.5 (2026-01-23)
 
 ### 🧪 Tests updated
