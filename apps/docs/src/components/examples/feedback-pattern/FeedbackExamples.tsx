@@ -69,7 +69,7 @@ export const ButtonInfobannerExample = () => {
   )
 }
 
-export const NotActionableButtonExample = () => {
+export const InactiveButtonExample = () => {
   const [value, setValue] = useState<Key | Key[] | null>(null)
 
   const isEnabled = value !== null
