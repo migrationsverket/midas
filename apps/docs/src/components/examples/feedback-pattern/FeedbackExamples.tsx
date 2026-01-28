@@ -170,3 +170,23 @@ export const ErrorMessageListExample = () => {
     </div>
   )
 }
+
+export const DisabledButtonExample = () => {
+  return (
+    <div className='card'>
+      <Grid>
+        <GridItem size={12}>
+          <Button
+            value='primary'
+            isDisabled
+          >
+            Lägg till i fruktkorgen
+          </Button>
+        </GridItem>
+        <GridItem size={12}>
+          {'Du har inte rätt behörighet för att lägga till varor i fruktkorgen'}
+        </GridItem>
+      </Grid>
+    </div>
+  )
+}
