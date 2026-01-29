@@ -1,15 +1,15 @@
 .tooltip {
   font-family: var(--midas-typography-font-family);
   font-size: var(--midas-typography-font-size-20);
-  padding: 0.25rem 0.5rem;
+  padding: var(--midas-spacing-20) var(--midas-spacing-30);
   color: var(--midas-text-inverse);
   background-color: var(--midas-background-inverse);
   max-width: 150px;
   outline: none;
   transform: translate3d(0, 0, 0);
   transition:
-    transform 200ms,
-    opacity 200ms;
+    transform var(--midas-transition-duration-fast),
+    opacity var(--midas-transition-duration-fast);
 
   @media (forced-colors: active) {
     border: 1px solid;
