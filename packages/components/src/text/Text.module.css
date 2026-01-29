@@ -1,4 +1,9 @@
-:root {
+.body,
+.body-01,
+.body-02,
+.body-small,
+.description,
+.description-small {
   color: var(--midas-text-primary);
 }
 
@@ -34,39 +39,17 @@
   line-height: var(--midas-typography-line-height-40);
 }
 
-em.body,
-em.body-small,
-em.description,
-em.description-small,
-em.body-01,
-em.body-02,
-i.body,
-i.body-small,
-i.description,
-i.description-small,
-i.body-01,
-i.body-02 {
-  font-style: italic;
+.bold {
+  font-weight: bold;
 }
 
-strong.body,
-strong.body-small,
-strong.description,
-strong.description-small,
-strong.body-01,
-strong.body-02,
-b.body,
-b.body-small,
-b.description,
-b.description-small,
-b.body-01,
-b.body-02 {
-  font-weight: bold;
+.italic {
+  font-style: italic;
 }
 
 .description {
   font: var(--midas-typography-description);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--midas-spacing-30);
 
   & > [data-disabled],
   [data-disabled] & {
