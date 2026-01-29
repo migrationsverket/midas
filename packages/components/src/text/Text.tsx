@@ -58,7 +58,14 @@ export const Text: React.FC<TextProps> = ({
   }
 
   const textProps: TextProps = {
-    className: clsx(getClassName(), className),
+    className: clsx(
+      getClassName(),
+      {
+        [styles.bold]: ['b', 'strong'].includes(elementType),
+        [styles.italic]: ['i', 'em'].includes(elementType),
+      },
+      className,
+    ),
     elementType: elementType || DEFAULT_ELEMENT,
     ...(isExpressive && { 'data-expressive': true }),
     ...rest,
