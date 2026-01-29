@@ -59,15 +59,13 @@
   flex: 1 0 0px;
 }
 
-[class*='col-'] {
-  flex: 0 0 auto;
-}
-
 .col-1 {
+  flex: 0 0 auto;
   width: calc((100% / var(--columns)) - (11 * var(--gutter) / var(--columns)));
 }
 
 .col-2 {
+  flex: 0 0 auto;
   width: calc(
     (2 * 100% / var(--columns)) - (10 * var(--gutter) / var(--columns))
   );
@@ -75,6 +73,7 @@
 
 .col-3,
 .col-quarter {
+  flex: 0 0 auto;
   width: calc(
     (3 * 100% / var(--columns)) - (9 * var(--gutter) / var(--columns))
   );
@@ -82,12 +81,14 @@
 
 .col-4,
 .col-third {
+  flex: 0 0 auto;
   width: calc(
     (4 * 100% / var(--columns)) - (8 * var(--gutter) / var(--columns))
   );
 }
 
 .col-5 {
+  flex: 0 0 auto;
   width: calc(
     (5 * 100% / var(--columns)) - (7 * var(--gutter) / var(--columns))
   );
@@ -95,36 +96,42 @@
 
 .col-6,
 .col-half {
+  flex: 0 0 auto;
   width: calc(
     (6 * 100% / var(--columns)) - (6 * var(--gutter) / var(--columns))
   );
 }
 
 .col-7 {
+  flex: 0 0 auto;
   width: calc(
     (7 * 100% / var(--columns)) - (5 * var(--gutter) / var(--columns))
   );
 }
 
 .col-8 {
+  flex: 0 0 auto;
   width: calc(
     (8 * 100% / var(--columns)) - (4 * var(--gutter) / var(--columns))
   );
 }
 
 .col-9 {
+  flex: 0 0 auto;
   width: calc(
     (9 * 100% / var(--columns)) - (3 * var(--gutter) / var(--columns))
   );
 }
 
 .col-10 {
+  flex: 0 0 auto;
   width: calc(
     (10 * 100% / var(--columns)) - (2 * var(--gutter) / var(--columns))
   );
 }
 
 .col-11 {
+  flex: 0 0 auto;
   width: calc(
     (11 * 100% / var(--columns)) - (1 * var(--gutter) / var(--columns))
   );
@@ -132,12 +139,14 @@
 
 .col-12,
 .col-full {
+  flex: 0 0 auto;
   width: calc(
     (12 * 100% / var(--columns)) - (0 * var(--gutter) / var(--columns))
   );
 }
 
 .col-auto {
+  flex: 0 0 auto;
   width: auto;
 }
 
@@ -147,12 +156,14 @@
 
 @media (width <= 479px) {
   .col-xs-1 {
+    flex: 0 0 auto;
     width: calc(
       (1 * 100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-2 {
+    flex: 0 0 auto;
     width: calc(
       (2 * 100% / var(--columns)) - (10 * var(--gutter) / var(--columns))
     );
@@ -160,6 +171,7 @@
 
   .col-xs-3,
   .col-xs-quarter {
+    flex: 0 0 auto;
     width: calc(
       (3 * 100% / var(--columns)) - (9 * var(--gutter) / var(--columns))
     );
@@ -167,12 +179,14 @@
 
   .col-xs-4,
   .col-xs-third {
+    flex: 0 0 auto;
     width: calc(
       (4 * 100% / var(--columns)) - (8 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-5 {
+    flex: 0 0 auto;
     width: calc(
       (5 * 100% / var(--columns)) - (7 * var(--gutter) / var(--columns))
     );
@@ -180,36 +194,42 @@
 
   .col-xs-6,
   .col-xs-half {
+    flex: 0 0 auto;
     width: calc(
       (6 * 100% / var(--columns)) - (6 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-7 {
+    flex: 0 0 auto;
     width: calc(
       (7 * 100% / var(--columns)) - (5 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-8 {
+    flex: 0 0 auto;
     width: calc(
       (8 * 100% / var(--columns)) - (4 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-9 {
+    flex: 0 0 auto;
     width: calc(
       (9 * 100% / var(--columns)) - (3 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-10 {
+    flex: 0 0 auto;
     width: calc(
       (10 * 100% / var(--columns)) - (2 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xs-11 {
+    flex: 0 0 auto;
     width: calc(
       (11 * 100% / var(--columns)) - (1 * var(--gutter) / var(--columns))
     );
@@ -217,6 +237,7 @@
 
   .col-xs-12,
   .col-xs-full {
+    flex: 0 0 auto;
     width: calc(
       (12 * 100% / var(--columns)) - (0 * var(--gutter) / var(--columns))
     );
@@ -234,12 +255,14 @@
 
 @media (width >= 480px) {
   .col-sm-1 {
+    flex: 0 0 auto;
     width: calc(
       (1 * 100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-2 {
+    flex: 0 0 auto;
     width: calc(
       (2 * 100% / var(--columns)) - (10 * var(--gutter) / var(--columns))
     );
@@ -247,6 +270,7 @@
 
   .col-sm-3,
   .col-sm-quarter {
+    flex: 0 0 auto;
     width: calc(
       (3 * 100% / var(--columns)) - (9 * var(--gutter) / var(--columns))
     );
@@ -254,12 +278,14 @@
 
   .col-sm-4,
   .col-sm-third {
+    flex: 0 0 auto;
     width: calc(
       (4 * 100% / var(--columns)) - (8 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-5 {
+    flex: 0 0 auto;
     width: calc(
       (5 * 100% / var(--columns)) - (7 * var(--gutter) / var(--columns))
     );
@@ -267,36 +293,42 @@
 
   .col-sm-6,
   .col-sm-half {
+    flex: 0 0 auto;
     width: calc(
       (6 * 100% / var(--columns)) - (6 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-7 {
+    flex: 0 0 auto;
     width: calc(
       (7 * 100% / var(--columns)) - (5 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-8 {
+    flex: 0 0 auto;
     width: calc(
       (8 * 100% / var(--columns)) - (4 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-9 {
+    flex: 0 0 auto;
     width: calc(
       (9 * 100% / var(--columns)) - (3 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-10 {
+    flex: 0 0 auto;
     width: calc(
       (10 * 100% / var(--columns)) - (2 * var(--gutter) / var(--columns))
     );
   }
 
   .col-sm-11 {
+    flex: 0 0 auto;
     width: calc(
       (11 * 100% / var(--columns)) - (1 * var(--gutter) / var(--columns))
     );
@@ -304,6 +336,7 @@
 
   .col-sm-12,
   .col-sm-full {
+    flex: 0 0 auto;
     width: calc(
       (12 * 100% / var(--columns)) - (0 * var(--gutter) / var(--columns))
     );
@@ -321,12 +354,14 @@
 
 @media (width >= 768px) {
   .col-md-1 {
+    flex: 0 0 auto;
     width: calc(
       (100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-2 {
+    flex: 0 0 auto;
     width: calc(
       (2 * 100% / var(--columns)) - (10 * var(--gutter) / var(--columns))
     );
@@ -334,6 +369,7 @@
 
   .col-md-3,
   .col-md-quarter {
+    flex: 0 0 auto;
     width: calc(
       (3 * 100% / var(--columns)) - (9 * var(--gutter) / var(--columns))
     );
@@ -341,12 +377,14 @@
 
   .col-md-4,
   .col-md-third {
+    flex: 0 0 auto;
     width: calc(
       (4 * 100% / var(--columns)) - (8 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-5 {
+    flex: 0 0 auto;
     width: calc(
       (5 * 100% / var(--columns)) - (7 * var(--gutter) / var(--columns))
     );
@@ -354,36 +392,42 @@
 
   .col-md-6,
   .col-md-half {
+    flex: 0 0 auto;
     width: calc(
       (6 * 100% / var(--columns)) - (6 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-7 {
+    flex: 0 0 auto;
     width: calc(
       (7 * 100% / var(--columns)) - (5 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-8 {
+    flex: 0 0 auto;
     width: calc(
       (8 * 100% / var(--columns)) - (4 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-9 {
+    flex: 0 0 auto;
     width: calc(
       (9 * 100% / var(--columns)) - (3 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-10 {
+    flex: 0 0 auto;
     width: calc(
       (10 * 100% / var(--columns)) - (2 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-11 {
+    flex: 0 0 auto;
     width: calc(
       (11 * 100% / var(--columns)) - (1 * var(--gutter) / var(--columns))
     );
@@ -391,12 +435,14 @@
 
   .col-md-12,
   .col-md-full {
+    flex: 0 0 auto;
     width: calc(
       (12 * 100% / var(--columns)) - (0 * var(--gutter) / var(--columns))
     );
   }
 
   .col-md-auto {
+    flex: 0 0 auto;
     width: auto;
   }
 
@@ -407,12 +453,14 @@
 
 @media (width >= 1024px) {
   .col-lg-1 {
+    flex: 0 0 auto;
     width: calc(
       (100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-2 {
+    flex: 0 0 auto;
     width: calc(
       (2 * 100% / var(--columns)) - (10 * var(--gutter) / var(--columns))
     );
@@ -420,6 +468,7 @@
 
   .col-lg-3,
   .col-lg-quarter {
+    flex: 0 0 auto;
     width: calc(
       (3 * 100% / var(--columns)) - (9 * var(--gutter) / var(--columns))
     );
@@ -427,12 +476,14 @@
 
   .col-lg-4,
   .col-lg-third {
+    flex: 0 0 auto;
     width: calc(
       (4 * 100% / var(--columns)) - (8 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-5 {
+    flex: 0 0 auto;
     width: calc(
       (5 * 100% / var(--columns)) - (7 * var(--gutter) / var(--columns))
     );
@@ -440,36 +491,42 @@
 
   .col-lg-6,
   .col-lg-half {
+    flex: 0 0 auto;
     width: calc(
       (6 * 100% / var(--columns)) - (6 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-7 {
+    flex: 0 0 auto;
     width: calc(
       (7 * 100% / var(--columns)) - (5 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-8 {
+    flex: 0 0 auto;
     width: calc(
       (8 * 100% / var(--columns)) - (4 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-9 {
+    flex: 0 0 auto;
     width: calc(
       (9 * 100% / var(--columns)) - (3 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-10 {
+    flex: 0 0 auto;
     width: calc(
       (10 * 100% / var(--columns)) - (2 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-11 {
+    flex: 0 0 auto;
     width: calc(
       (11 * 100% / var(--columns)) - (1 * var(--gutter) / var(--columns))
     );
@@ -477,12 +534,14 @@
 
   .col-lg-12,
   .col-lg-full {
+    flex: 0 0 auto;
     width: calc(
       (12 * 100% / var(--columns)) - (0 * var(--gutter) / var(--columns))
     );
   }
 
   .col-lg-auto {
+    flex: 0 0 auto;
     width: auto;
   }
 
@@ -493,12 +552,14 @@
 
 @media (width >= 1280px) {
   .col-xl-1 {
+    flex: 0 0 auto;
     width: calc(
       (100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-2 {
+    flex: 0 0 auto;
     width: calc(
       (2 * 100% / var(--columns)) - (10 * var(--gutter) / var(--columns))
     );
@@ -506,6 +567,7 @@
 
   .col-xl-3,
   .col-xl-quarter {
+    flex: 0 0 auto;
     width: calc(
       (3 * 100% / var(--columns)) - (9 * var(--gutter) / var(--columns))
     );
@@ -513,12 +575,14 @@
 
   .col-xl-4,
   .col-xl-third {
+    flex: 0 0 auto;
     width: calc(
       (4 * 100% / var(--columns)) - (8 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-5 {
+    flex: 0 0 auto;
     width: calc(
       (5 * 100% / var(--columns)) - (7 * var(--gutter) / var(--columns))
     );
@@ -526,36 +590,42 @@
 
   .col-xl-6,
   .col-xl-half {
+    flex: 0 0 auto;
     width: calc(
       (6 * 100% / var(--columns)) - (6 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-7 {
+    flex: 0 0 auto;
     width: calc(
       (7 * 100% / var(--columns)) - (5 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-8 {
+    flex: 0 0 auto;
     width: calc(
       (8 * 100% / var(--columns)) - (4 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-9 {
+    flex: 0 0 auto;
     width: calc(
       (9 * 100% / var(--columns)) - (3 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-10 {
+    flex: 0 0 auto;
     width: calc(
       (10 * 100% / var(--columns)) - (2 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-11 {
+    flex: 0 0 auto;
     width: calc(
       (11 * 100% / var(--columns)) - (1 * var(--gutter) / var(--columns))
     );
@@ -563,12 +633,14 @@
 
   .col-xl-12,
   .col-xl-full {
+    flex: 0 0 auto;
     width: calc(
       (12 * 100% / var(--columns)) - (0 * var(--gutter) / var(--columns))
     );
   }
 
   .col-xl-auto {
+    flex: 0 0 auto;
     width: auto;
   }
 
