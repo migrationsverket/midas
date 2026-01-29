@@ -1,3 +1,16 @@
+## 16.5.4 (2026-01-29)
+
+### 🩹 Fixes
+
+- **components, select:** change horizontal padding ([#1025](https://github.com/migrationsverket/midas/pull/1025))
+
+### 🧪 Tests updated
+
+- **components, toast:** add component tests ([86f0fd5363](https://github.com/migrationsverket/midas/commit/86f0fd5363))
+- **components, popover:** add component tests ([e754520aaf](https://github.com/migrationsverket/midas/commit/e754520aaf))
+- **components, link:** add component tests ([ee02374de4](https://github.com/migrationsverket/midas/commit/ee02374de4))
+- **components, grid:** add component tests ([6f75da4a5c](https://github.com/migrationsverket/midas/commit/6f75da4a5c))
+
 ## 16.5.3 (2026-01-28)
 
 ### 🩹 Fixes
