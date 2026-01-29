@@ -1,6 +1,6 @@
 .tooltip {
   font-family: var(--midas-typography-font-family);
-  font-size: 0.75rem;
+  font-size: var(--midas-typography-font-size-20);
   padding: 0.25rem 0.5rem;
   color: var(--midas-text-inverse);
   background-color: var(--midas-background-inverse);
