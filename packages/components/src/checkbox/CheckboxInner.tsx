@@ -7,30 +7,49 @@ import styles from './Checkbox.module.css'
 import { variables } from '@midas-ds/theme'
 
 export const CheckboxInner = forwardRef<HTMLLabelElement, CheckboxInnerProps>(
-  (props, ref) => {
-    const { hoverProps, isHovered } = props.hoverResult
-    const { pressProps, isPressed } = props.pressResult
-    const { isFocused, isFocusVisible, focusProps } = props.focusRingAria
+  (
+    {
+      hoverResult,
+      pressResult,
+      focusRingAria,
+      labelProps,
+      slot,
+      className,
+      isSelected,
+      isIndeterminate,
+      isDisabled,
+      isInvalid,
+      isReadOnly,
+      isRequired,
+      inputProps,
+      inputRef,
+      children,
+    },
+    ref,
+  ) => {
+    const { hoverProps, isHovered } = hoverResult
+    const { pressProps, isPressed } = pressResult
+    const { isFocused, isFocusVisible, focusProps } = focusRingAria
 
     return (
       <label
         ref={ref}
-        {...mergeProps(hoverProps, pressProps, props.labelProps)}
-        slot={props.slot || undefined}
-        className={clsx(styles.checkbox, props.className)}
+        {...mergeProps(hoverProps, pressProps, labelProps)}
+        slot={slot || undefined}
+        className={clsx(styles.checkbox, className)}
         data-hovered={isHovered || undefined}
-        data-selected={props.isSelected || undefined}
-        data-indeterminate={props.isIndeterminate || undefined}
+        data-selected={isSelected || undefined}
+        data-indeterminate={isIndeterminate || undefined}
         data-pressed={isPressed || undefined}
-        data-disabled={props.isDisabled || undefined}
-        data-readonly={props.isReadOnly || undefined}
-        data-invalid={props.isInvalid || undefined}
+        data-disabled={isDisabled || undefined}
+        data-readonly={isReadOnly || undefined}
+        data-invalid={isInvalid || undefined}
         data-focused={isFocused || undefined}
         data-focus-visible={isFocusVisible || undefined}
-        data-required={props.isRequired || undefined}
+        data-required={isRequired || undefined}
       >
         <div className={clsx(styles.checkboxInner)}>
-          {props.isIndeterminate ? (
+          {isIndeterminate ? (
             <Minus
               size={14}
               color={variables.iconOnColor}
@@ -44,11 +63,11 @@ export const CheckboxInner = forwardRef<HTMLLabelElement, CheckboxInnerProps>(
         </div>
         <VisuallyHidden>
           <input
-            {...mergeProps(props.inputProps, focusProps)}
-            ref={props.inputRef}
+            {...mergeProps(inputProps, focusProps)}
+            ref={inputRef}
           />
         </VisuallyHidden>
-        {props.children}
+        {children}
       </label>
     )
   },

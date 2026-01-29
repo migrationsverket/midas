@@ -30,11 +30,11 @@ export interface LinkButtonComponentProps<C extends React.ElementType> {
   /** Display the icon on the left or right side of the button text */
 
   iconPlacement?: 'left' | 'right'
-  /** Add an icon from lucide-react
+  /** Replace the icon with an icon from lucide-react
    *
    * @see {@link https://lucide.dev/icons/|Lucide}
    */
-  icon?: LucideIcon /**Optional icon prop */
+  icon?: LucideIcon
   className?: string
   /** Replace base component with any Client Side Routing link instead.
    * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
@@ -57,7 +57,7 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
   children,
   variant,
   fullwidth,
-  icon: IconComponent,
+  icon: customIcon,
   iconPlacement,
   className,
   as,
@@ -66,13 +66,15 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
 }: LinkButtonProps<C>) => {
   const Component = as || AriaLink
 
-  const Icon = ({ ...rest }: LucideProps) => {
-    if (IconComponent) return <IconComponent {...rest} />
-    if (rest.target === '_blank') return <SquareArrowOutUpRight {...rest} />
-    if (iconPlacement === 'left') return <ArrowLeft {...rest} />
-
-    return <ArrowRight {...rest} />
+  const getIcon = (): LucideIcon => {
+    if (customIcon) return customIcon
+    if (rest.target === '_blank') return SquareArrowOutUpRight
+    if (iconPlacement === 'left') return ArrowLeft
+    return ArrowRight
   }
+
+  const icon = getIcon()
+
   return (
     <Component
       className={clsx(
@@ -91,11 +93,17 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
     >
       {children}
       <Icon
-        size={20}
         className={styles.icon}
+        icon={icon}
+        size={20}
       />
     </Component>
   )
 }
+
+const Icon = ({
+  icon: IconComponent,
+  ...rest
+}: { icon: LucideIcon } & LucideProps) => <IconComponent {...rest} />
 
 export { RouterProvider }
