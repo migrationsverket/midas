@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { Key } from 'react'
+import { useState } from 'react'
 import {
   Button,
   Tooltip,
@@ -12,14 +11,14 @@ import {
   TextField,
   Link,
 } from '@midas-ds/components'
-import { Form } from 'react-aria-components'
+import { Form, type Key } from 'react-aria-components'
 
 export const ButtonInfobannerExample = () => {
-  const [value, setValue] = useState<Key | Key[] | null>(null)
+  const [value, setValue] = useState<Key | null>(null)
   const [showBanner, setShowBanner] = useState(false)
   const isEnabled = value !== null
 
-  const handleChange = (nextValue: Key | Key[] | null) => {
+  const handleChange = (nextValue: Key | null) => {
     setValue(nextValue)
     setShowBanner(false)
   }
@@ -73,11 +72,11 @@ export const ButtonInfobannerExample = () => {
 }
 
 export const InactiveButtonExample = () => {
-  const [value, setValue] = useState<Key | Key[] | null>(null)
+  const [value, setValue] = useState<Key | null>(null)
 
   const isEnabled = value !== null
 
-  const handleChange = (nextValue: Key | Key[] | null) => {
+  const handleChange = (nextValue: Key | null) => {
     setValue(nextValue)
   }
 
