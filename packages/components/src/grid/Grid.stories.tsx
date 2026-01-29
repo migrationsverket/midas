@@ -1,9 +1,11 @@
-import type { Meta } from '@storybook/react-vite'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Grid } from './Grid'
 import { GridItem } from './GridItem'
 import { TextField } from '../textfield'
 import { Card, CardContent, CardTitle } from '../card'
 import { Text } from '../text'
+
+type Story = StoryObj<typeof Grid>
 
 export default {
   component: Grid,
@@ -17,7 +19,7 @@ export default {
   },
 } satisfies Meta<typeof Grid>
 
-export const Primary = {
+export const Primary: Story = {
   args: {},
   render: ({ ...args }) => (
     <Grid {...args}>

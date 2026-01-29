@@ -1,3 +1,21 @@
+## 1.2.11 (2026-01-28)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
+## 1.2.10 (2026-01-28)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.5.3
+- Updated theme to 3.10.0
+
+## 1.2.9 (2026-01-28)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.5.2
+- Updated theme to 3.9.6
+
 ## 1.2.8 (2026-01-23)
 
 ### 🧱 Updated Dependencies

@@ -1,3 +1,23 @@
+## 16.5.3 (2026-01-28)
+
+### 🩹 Fixes
+
+- **components,date-field, date-picker:** set invalid border and box-shadow to 2px ([0f3f9936db](https://github.com/migrationsverket/midas/commit/0f3f9936db))
+
+### 🏭 Refactoring
+
+- **components:** use tokens for invalid box-shadow ([4c7c46eb4d](https://github.com/migrationsverket/midas/commit/4c7c46eb4d))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.0
+
+## 16.5.2 (2026-01-28)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.9.6
+
 ## 16.5.1 (2026-01-23)
 
 ### 🧱 Updated Dependencies
