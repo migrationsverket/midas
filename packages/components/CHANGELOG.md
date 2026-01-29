@@ -1,3 +1,13 @@
+## 16.6.0 (2026-01-29)
+
+### 🚀 Features
+
+- **components, tooltip:** increase font size ([a1baf17d44](https://github.com/migrationsverket/midas/commit/a1baf17d44))
+
+### 🩹 Fixes
+
+- **components, tooltip:** make use of CSS variables ([b10fe08cd9](https://github.com/migrationsverket/midas/commit/b10fe08cd9))
+
 ## 16.5.5 (2026-01-29)
 
 ### 🩹 Fixes
