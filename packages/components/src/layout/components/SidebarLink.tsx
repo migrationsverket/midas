@@ -1,6 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import clsx from '../../utils/clsx'
 import { Link } from 'react-aria-components'
 import { Tooltip, TooltipTrigger } from '../../tooltip'
@@ -8,6 +7,17 @@ import styles from '../Layout.module.css'
 import { SidebarLinkProps } from '../Layout'
 import { useLayoutContext } from '../context/LayoutContext'
 import { Badge, BadgeContainer } from '../../badge'
+
+const isPathnameMatch = (href: string): boolean => {
+  if (typeof window === 'undefined') {
+    return false
+  }
+
+  return (
+    window.location.pathname === href ||
+    window.location.pathname.startsWith(href + '/')
+  )
+}
 
 export const SidebarLink = ({
   title,
@@ -20,16 +30,8 @@ export const SidebarLink = ({
 
   const hrefWithBasePath = clientSideHref ? clientSideHref(href) : href
 
-  const [isActive, setIsActive] = useState<boolean>(false)
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const isMatch =
-        window.location.pathname === hrefWithBasePath ||
-        window.location.pathname.startsWith(hrefWithBasePath + '/')
-      setIsActive(active ?? isMatch)
-    }
-  }, [active, hrefWithBasePath])
+  const isActive =
+    typeof active === 'boolean' ? active : isPathnameMatch(hrefWithBasePath)
 
   if (isCollapsed)
     return (

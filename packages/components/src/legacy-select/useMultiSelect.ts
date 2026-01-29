@@ -100,7 +100,9 @@ export function useMultiSelect<
     labelElementType: 'span',
   })
 
+  // eslint-disable-next-line
   typeSelectProps.onKeyDown = typeSelectProps.onKeyDownCapture
+  // eslint-disable-next-line
   delete typeSelectProps.onKeyDownCapture
 
   const domProps = filterDOMProps(props, { labelable: true })

@@ -5,7 +5,7 @@ import {
   DialogTrigger,
   Popover,
 } from '@midas-ds/components'
-import { ComponentDoc, Props } from 'react-docgen-typescript'
+import { ComponentDoc, PropItem, Props } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
 import ReactMarkdown from 'react-markdown'
 import Lowlight from 'react-lowlight'
@@ -95,62 +95,6 @@ export const PropTable = ({ name, defaultOpen = true }) => {
     { events: {}, accessibility: {}, rest: {} },
   )
 
-  const Grid = ({ propGroup, showDefault = true }) => {
-    return (
-      <div className={styles.propsGridTable}>
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>{showDefault && 'Default'}</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.keys(propGroup).map(key => (
-              <tr key={key}>
-                <td data-title='Name'>
-                  <Lowlight
-                    value={key}
-                    inline
-                    language='typescript'
-                    markers={[]}
-                  />
-                  {props[key].required && ' *'}
-                </td>
-                <td data-title='Type'>
-                  <DisplayCompositeTypes props={props[key]} />
-                </td>
-                {showDefault ? (
-                  <td data-title='Default'>
-                    {props[key].defaultValue ? (
-                      <Lowlight
-                        value={props[key].defaultValue.value}
-                        inline
-                        language='typescript'
-                        markers={[]}
-                      />
-                    ) : (
-                      '-'
-                    )}
-                  </td>
-                ) : (
-                  <td />
-                )}
-                <td data-title='Description'>
-                  <ReactMarkdown>
-                    {jsdocLinkToMarkdown(props[key].description)}
-                  </ReactMarkdown>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    )
-  }
-
   return (
     <Accordion
       className={styles.accordion}
@@ -164,7 +108,10 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           className={styles.accordionItem}
           hasBackground={false}
         >
-          <Grid propGroup={rest} />
+          <Grid
+            propGroup={rest}
+            props={props}
+          />
         </AccordionItem>
       )}
       {Object.getOwnPropertyNames(events).length !== 0 && (
@@ -176,6 +123,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
         >
           <Grid
             propGroup={events}
+            props={props}
             showDefault={false}
           />
         </AccordionItem>
@@ -189,10 +137,75 @@ export const PropTable = ({ name, defaultOpen = true }) => {
         >
           <Grid
             propGroup={accessibility}
+            props={props}
             showDefault={false}
           />
         </AccordionItem>
       )}
     </Accordion>
+  )
+}
+
+const Grid = ({
+  propGroup,
+  props,
+  showDefault = true,
+}: {
+  propGroup: Record<string, PropItem>
+  props: Props
+  showDefault?: boolean
+}) => {
+  return (
+    <div className={styles.propsGridTable}>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>{showDefault && 'Default'}</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(propGroup).map(key => (
+            <tr key={key}>
+              <td data-title='Name'>
+                <Lowlight
+                  value={key}
+                  inline
+                  language='typescript'
+                  markers={[]}
+                />
+                {props[key].required && ' *'}
+              </td>
+              <td data-title='Type'>
+                <DisplayCompositeTypes props={props[key]} />
+              </td>
+              {showDefault ? (
+                <td data-title='Default'>
+                  {props[key].defaultValue ? (
+                    <Lowlight
+                      value={props[key].defaultValue.value}
+                      inline
+                      language='typescript'
+                      markers={[]}
+                    />
+                  ) : (
+                    '-'
+                  )}
+                </td>
+              ) : (
+                <td />
+              )}
+              <td data-title='Description'>
+                <ReactMarkdown>
+                  {jsdocLinkToMarkdown(props[key].description)}
+                </ReactMarkdown>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
