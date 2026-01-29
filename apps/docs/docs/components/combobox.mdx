@@ -18,7 +18,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/ComboBox.html'
 />
 
-En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ.
+En ComboBox är en sökbar version av Select. Combobox är lämplig att använda när listan med möjliga val är lång eftersom det ger användaren möjlighet att söka efter ett specifikt värde.
 
 ```tsx
 import { ComboBox, ListBoxItem } from '@midas-ds/components'
@@ -40,13 +40,6 @@ import { ComboBox, ListBoxItem } from '@midas-ds/components'
 <div className='card'>
   <BasicExample />
 </div>
-
-## Riktlinjer
-
-### Val av komponent
-
-- Om det ska gå att välja flera eller inga alternativ är det [Checkbox](/components/checkbox) eller [Select](/components/select) som ska användas.
-- Om det är färre alternativ än fyra (4) används med fördel [Radio](/components/radio) istället.
 
 ## Kontrollerat val
 
@@ -81,7 +74,7 @@ return (
 
 ## Flerval
 
-För närvarande stödjer inte ComboBox flerval, vi hänvisar er istället att använda [Midas CSS för react-select](/dev/react-select) för detta.
+För närvarande stödjer inte vår ComboBox flerval. Använd [Midas CSS för react-select](/dev/react-select) för detta.
 
 ## Sektioner
 
