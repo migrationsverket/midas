@@ -22,8 +22,8 @@
   gap: var(--midas-spacing-20);
   justify-content: space-between;
   min-height: var(--midas-size-150);
-  padding-left: var(--midas-size-70);
-  padding-right: var(--midas-size-70);
+  padding-left: var(--midas-size-80);
+  padding-right: var(--midas-size-80);
   transition: all 100ms ease-in;
 
   &.medium {
