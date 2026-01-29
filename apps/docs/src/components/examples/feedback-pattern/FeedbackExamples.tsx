@@ -122,21 +122,19 @@ export const InactiveButtonExample = () => {
 }
 
 export const ErrorMessageListExample = () => {
-  const [value, setValue] = useState<string>('')
-
-  const [submitted, setSubmitted] = useState(false)
-  const hasError = submitted && value.trim() === ''
+  const [value, setValue] = useState('')
+  const [isInvalid, setIsInvalid] = useState(false)
 
   return (
     <div className='card'>
       <Form
         onSubmit={e => {
           e.preventDefault()
-          setSubmitted(true)
+          setIsInvalid(value === '')
         }}
       >
         <Grid>
-          {hasError && (
+          {isInvalid && (
             <GridItem size={12}>
               <InfoBanner type='warning'>
                 Justera dessa fält:
@@ -150,10 +148,11 @@ export const ErrorMessageListExample = () => {
             <TextField
               id='example-field'
               label='Ange ditt förnamn'
-              isInvalid={hasError}
+              isInvalid={isInvalid}
               errorMessage='Du måste ange ett förnamn'
               value={value}
               onChange={setValue}
+              validationBehavior='aria'
             />
           </GridItem>
           <GridItem size={2}>
