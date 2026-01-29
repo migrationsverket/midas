@@ -4,7 +4,7 @@ title: Select
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample, ControlledExample, SectionedExample } from '@site/src/components/examples/select/SelectExamples'
+import { BasicExample, SectionedExample } from '@site/src/components/examples/select/SelectExamples'
 
 <ComponentHeader
   name='Select'
@@ -36,12 +36,52 @@ Den här dokumentationen innehåller främst enklare exempel och användningsfal
 
 :::warning
 Från och med v15.0.0 har Select uppdaterats för att överensstämma bättre med React Arias API. Det innebär vissa breaking changes. Under en övergångsperiod går det att använda den gamla versionen av komponenten, som nu heter `LegacySelect` och kan importeras enligt nedan.
-<br/>
+
+<br />
 
 ```tsx
-import {LegacySelect} from '@midas-ds/components'
+import { LegacySelect } from '@midas-ds/components'
 ```
+
 :::
+
+## Statiskt och dynamiskt innehåll
+
+`Select` använder internt `ListBox`-komponenten som följer React Arias mönster för [Collections](https://react-aria.adobe.com/collections?component=Select).
+En collection kan vara statisk:
+
+```tsx
+<Select label='Favoritfrukt'>
+  <ListBoxItem>Banan</ListBoxItem>
+  <ListBoxItem>Apelsin</ListBoxItem>
+  <ListBoxItem>Mango</ListBoxItem>
+</Select>
+```
+
+eller dynamisk:
+
+```tsx
+import { ListBoxItem, Select } from '@midas-ds/components'
+
+function Example() {
+  const items = [
+    { id: 0, name: 'Banan' },
+    { id: 1, name: 'Apelsin' },
+    { id: 2, name: 'Mango' },
+  ]
+
+  return (
+    <Select
+      label='Favoritfrukt'
+      items={items}
+    >
+      {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+    </Select>
+  )
+}
+```
+
+Vänligen läs [React Arias dokumentation för ListBox](https://react-aria.adobe.com/ListBox) för mer information
 
 ## Flerval / Enkelval
 
