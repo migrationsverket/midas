@@ -51,6 +51,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
       triggerRef,
     )
 
+    // eslint-disable-next-line
     const { width: triggerWidth } = useObserveElement(triggerRef.current, {
       includePadding: true,
     })

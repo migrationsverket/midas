@@ -35,24 +35,22 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
   target,
   stretched,
   download,
-  icon: IconComponent,
+  icon: customIcon,
   className,
   as,
   ...rest
 }: LinkProps<C>) => {
   const Component = as || AriaLink
 
-  const Icon = ({ ...rest }: LucideProps) => {
-    if (IconComponent) return <IconComponent {...rest} />
-
-    if (download) return <ArrowDownToLine {...rest} />
-
-    if (target === '_blank') return <SquareArrowOutUpRight {...rest} />
-
-    if (standalone) return <ArrowRight {...rest} />
-
+  const getIcon = (): LucideIcon | null => {
+    if (customIcon) return customIcon
+    if (download) return ArrowDownToLine
+    if (target === '_blank') return SquareArrowOutUpRight
+    if (standalone) return ArrowRight
     return null
   }
+
+  const icon = getIcon()
 
   return (
     <Component
@@ -67,13 +65,21 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
     >
       <>
         {children}
-        <Icon
-          size={16}
-          className={styles.icon}
-        />
+        {icon ? (
+          <Icon
+            className={styles.icon}
+            icon={icon}
+            size={16}
+          />
+        ) : null}
       </>
     </Component>
   )
 }
+
+const Icon = ({
+  icon: IconComponent,
+  ...rest
+}: { icon: LucideIcon } & LucideProps) => <IconComponent {...rest} />
 
 export { RouterProvider }
