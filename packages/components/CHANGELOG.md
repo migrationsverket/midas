@@ -1,3 +1,13 @@
+## 16.5.5 (2026-01-29)
+
+### 🩹 Fixes
+
+- **components, date-picker:** adjust icon button height ([67c95768db](https://github.com/migrationsverket/midas/commit/67c95768db))
+
+### 🔧 Maintenance
+
+- stylelint ignore dist files ([6288a30bd5](https://github.com/migrationsverket/midas/commit/6288a30bd5))
+
 ## 16.5.4 (2026-01-29)
 
 ### 🩹 Fixes
