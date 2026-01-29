@@ -153,7 +153,8 @@
   line-height: 1.2;
 }
 
-::view-transition-new(*):only-child {
+/* cssmodules-pure-ignore */
+::view-transition-new(.viewTransition):only-child {
   animation-name: slideInTop;
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -162,12 +163,14 @@
 }
 
 @media (width >= 768px) {
-  ::view-transition-new(*):only-child {
+  /* cssmodules-pure-ignore */
+  ::view-transition-new(.viewTransition):only-child {
     animation-name: slideInEnd;
   }
 }
 
-::view-transition-old(*):only-child {
+/* cssmodules-pure-ignore */
+::view-transition-old(.viewTransition):only-child {
   animation-name: slideOutTop;
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -176,14 +179,16 @@
 }
 
 @media (width >= 768px) {
-  ::view-transition-old(*):only-child {
+  /* cssmodules-pure-ignore */
+  ::view-transition-old(.viewTransition):only-child {
     animation-name: slideOutEnd;
   }
 }
 
 @media (prefers-reduced-motion) {
-  ::view-transition-new(*):only-child,
-  ::view-transition-old(*):only-child {
+  /* cssmodules-pure-ignore */
+  ::view-transition-new(.viewTransition):only-child,
+  ::view-transition-old(.viewTransition):only-child {
     animation: none;
   }
 }
