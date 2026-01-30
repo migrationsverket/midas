@@ -1,3 +1,9 @@
+## 16.6.2 (2026-01-30)
+
+### 🩹 Fixes
+
+- **components,select:** rotate chevron icon when select is open ([cfdf842027](https://github.com/migrationsverket/midas/commit/cfdf842027))
+
 ## 16.6.1 (2026-01-30)
 
 ### 🩹 Fixes

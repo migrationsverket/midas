@@ -14,7 +14,7 @@
   "description": "Midas Components",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "16.6.1",
+  "version": "16.6.2",
   "module": "./index.js",
   "type": "module",
   "main": "./index.js",
