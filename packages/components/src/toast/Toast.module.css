@@ -153,7 +153,6 @@
   line-height: 1.2;
 }
 
-/* cssmodules-pure-ignore */
 ::view-transition-new(.viewTransition):only-child {
   animation-name: slideInTop;
   animation-duration: 500ms;
@@ -163,13 +162,11 @@
 }
 
 @media (width >= 768px) {
-  /* cssmodules-pure-ignore */
   ::view-transition-new(.viewTransition):only-child {
     animation-name: slideInEnd;
   }
 }
 
-/* cssmodules-pure-ignore */
 ::view-transition-old(.viewTransition):only-child {
   animation-name: slideOutTop;
   animation-duration: 500ms;
@@ -179,14 +176,12 @@
 }
 
 @media (width >= 768px) {
-  /* cssmodules-pure-ignore */
   ::view-transition-old(.viewTransition):only-child {
     animation-name: slideOutEnd;
   }
 }
 
 @media (prefers-reduced-motion) {
-  /* cssmodules-pure-ignore */
   ::view-transition-new(.viewTransition):only-child,
   ::view-transition-old(.viewTransition):only-child {
     animation: none;
