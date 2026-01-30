@@ -1,3 +1,17 @@
+## 16.6.3 (2026-01-30)
+
+### 🩹 Fixes
+
+- **components:** revert pure css modules comments ([ec0ab554dc](https://github.com/migrationsverket/midas/commit/ec0ab554dc))
+
+### 🔙 Rollback changes
+
+- **components:** Revert "chore(components): install postcss-modules-local-by-default" ([101cac9975](https://github.com/migrationsverket/midas/commit/101cac9975))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.2
+
 ## 16.6.2 (2026-01-30)
 
 ### 🩹 Fixes
