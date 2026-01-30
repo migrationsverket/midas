@@ -1,3 +1,21 @@
+## 16.6.1 (2026-01-30)
+
+### 🩹 Fixes
+
+- **components, legacy-select:** remove global CSS ([7a5833681d](https://github.com/migrationsverket/midas/commit/7a5833681d))
+- **components, grid:** remove global CSS ([61062eef7f](https://github.com/migrationsverket/midas/commit/61062eef7f))
+- **components, text:** remove global CSS ([b68e989094](https://github.com/migrationsverket/midas/commit/b68e989094))
+
+### 🔧 Maintenance
+
+- **components:** allow global CSS ([6be43d3dce](https://github.com/migrationsverket/midas/commit/6be43d3dce))
+- **components, toast:** allow global CSS ([9d7a2103af](https://github.com/migrationsverket/midas/commit/9d7a2103af))
+- **components:** install postcss-modules-local-by-default ([ebc84f65b5](https://github.com/migrationsverket/midas/commit/ebc84f65b5))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.1
+
 ## 16.6.0 (2026-01-29)
 
 ### 🚀 Features
