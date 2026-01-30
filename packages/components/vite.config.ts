@@ -7,7 +7,6 @@ import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
 import { fileURLToPath } from 'node:url'
-import postCSSModulesLocalByDefault from 'postcss-modules-local-by-default'
 
 const src = resolve(__dirname, 'src')
 const defaultCss = resolve(src, 'default.css')
@@ -27,11 +26,7 @@ export default defineConfig({
     }),
     libInjectCss(),
   ],
-  css: {
-    postcss: {
-      plugins: [postCSSModulesLocalByDefault({ mode: 'pure' })],
-    },
-  },
+
   build: {
     outDir: '../../dist/packages/components',
     emptyOutDir: true,
