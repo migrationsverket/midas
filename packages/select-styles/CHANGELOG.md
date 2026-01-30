@@ -1,3 +1,10 @@
+## 1.1.11 (2026-01-30)
+
+### 🩹 Fixes
+
+- **select-styles, react-select:** push pixels for component parts ([bb79caab3c](https://github.com/migrationsverket/midas/commit/bb79caab3c))
+- **select-styles, react-select:** adjust height ([45695d3f99](https://github.com/migrationsverket/midas/commit/45695d3f99))
+
 ## 1.1.10 (2026-01-30)
 
 ### 🧱 Updated Dependencies
