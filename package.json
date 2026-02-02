@@ -86,7 +86,7 @@
     "chromatic": "^11.28.2",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-react-docgen-typescript": "^1.3.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.26.0",
     "eslint-plugin-midas": "file:tools/eslint",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-storybook": "^10.1.11",
