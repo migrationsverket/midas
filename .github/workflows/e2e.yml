@@ -1,0 +1,43 @@
+name: 'e2e'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - labeled
+      - reopened
+      - synchronize
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    name: E2E tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install chromium --only-shell
+
+      - name: Run Verdaccio
+        run: npx nx run @midas-ds/source:release:local
+
+      - name: Install locally published packages
+        run: npm install .verdaccio/storage/@midas-ds/**/*.tgz
+
+      - name: Build and test e2e project
+        run: npx nx e2e next

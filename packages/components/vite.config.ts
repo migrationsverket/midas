@@ -7,6 +7,7 @@ import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
 import { fileURLToPath } from 'node:url'
+import preserveUseClientDirective from 'rollup-plugin-preserve-use-client'
 
 const src = resolve(__dirname, 'src')
 const defaultCss = resolve(src, 'default.css')
@@ -25,6 +26,7 @@ export default defineConfig({
       rollupTypes: false,
     }),
     libInjectCss(),
+    preserveUseClientDirective(),
   ],
 
   build: {
