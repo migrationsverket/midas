@@ -1,10 +1,10 @@
 ---
 title: Breadcrumbs
-description: Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
+description: Brödsmulor används för att visa användaren vart hen är i ett navigationsträd.
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
-import { Breadcrumbs } from '@midas-ds/components'
+import { Breadcrumbs, Breadcrumb, Link } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -12,59 +12,124 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   friendlyName='Brödsmulor'
 />
 
-Komponent som används för att visa användaren var den är i ett djupt navigationsträd.
+Komponent som används för att visa användaren var den är i ett navigationsträd.
 
 ```tsx
-import { Breadcrumbs } from '@midas-ds/components'
+import { Breadcrumbs, Breadcrumb, Link } from '@midas-ds/components'
 ```
 
 ```tsx
-<Breadcrumbs
-  items={[
-    { href: '/', title: 'Start' },
-    { href: '/du-vill-forlanga', title: 'Du vill förlänga' },
-    { href: '/du-vill-forlanga/studera', title: 'Studera' },
-  ]}
-/>
+<Breadcrumbs>
+  <Breadcrumb><Link href="/">Start</Link></Breadcrumb>
+  <Breadcrumb><Link href="/du-vill-forlanga">Du vill förlänga</Link></Breadcrumb>
+  <Breadcrumb><Link href="/du-vill-forlanga/studera">Studera</Link></Breadcrumb>
+</Breadcrumbs>
 ```
 
 <div className='card'>
-  <Breadcrumbs
-    items={[
-      { href: '#', title: 'Start' },
-      { href: '#', title: 'Du vill förlänga' },
-      { href: '#', title: 'Studera' },
-    ]}
-  />
+  <Breadcrumbs>
+    <Breadcrumb><Link href="#">Start</Link></Breadcrumb>
+    <Breadcrumb><Link href="#">Du vill förlänga</Link></Breadcrumb>
+    <Breadcrumb><Link href="#">Studera</Link></Breadcrumb>
+  </Breadcrumbs>
 </div>
 
 ## Varianter
 
-### Förbjudna val
+### Inaktiverad länk
 
-Använd prop `isDisabled` om du vill förbjuda vissa val
+Sätt `isDisabled` på `Link` för att inaktivera en enskild brödsmula.
 
 ```tsx
-<Breadcrumbs
-  items={[
-    { href: '/', title: 'Start' },
-    { href: '/du-vill-forlanga', title: 'Du vill förlänga', isDisabled: true },
-    { href: '/du-vill-forlanga/studera', title: 'Studera' },
-  ]}
-/>
+<Breadcrumbs>
+  <Breadcrumb><Link href="/">Start</Link></Breadcrumb>
+  <Breadcrumb><Link href="/du-vill-forlanga" isDisabled>Du vill förlänga</Link></Breadcrumb>
+  <Breadcrumb><Link href="/du-vill-forlanga/studera">Studera</Link></Breadcrumb>
+</Breadcrumbs>
 ```
 
 <div className='card'>
-  <Breadcrumbs
-    items={[
-      { href: '#', title: 'Start' },
-      { href: '#', title: 'Du vill förlänga', isDisabled: true, },
-      { href: '#', title: 'Studera' },
-    ]}
-/>
-
+  <Breadcrumbs>
+    <Breadcrumb><Link href="#">Start</Link></Breadcrumb>
+    <Breadcrumb><Link href="#" isDisabled>Du vill förlänga</Link></Breadcrumb>
+    <Breadcrumb><Link href="#">Studera</Link></Breadcrumb>
+  </Breadcrumbs>
 </div>
+
+### Dynamiskt innehåll
+
+Använd `items` tillsammans med en render-funktion för att rendera brödsmulor från dynamisk data.
+
+```tsx
+const items = [
+  { id: 1, label: 'Start' },
+  { id: 2, label: 'Du vill förlänga' },
+  { id: 3, label: 'Studera' },
+]
+
+<Breadcrumbs items={items}>
+  {(item) => (
+    <Breadcrumb id={item.id}>
+      <Link href="#">{item.label}</Link>
+    </Breadcrumb>
+  )}
+</Breadcrumbs>
+```
+
+export const DynamicExample = () => {
+  const items = [
+    { id: 1, label: 'Start' },
+    { id: 2, label: 'Du vill förlänga' },
+    { id: 3, label: 'Studera' },
+  ]
+  return (
+    <Breadcrumbs items={items}>
+      {(item) => (
+        <Breadcrumb id={item.id}>
+          <Link href="#">{item.label}</Link>
+        </Breadcrumb>
+      )}
+    </Breadcrumbs>
+  )
+}
+
+<div className='card'>
+  <DynamicExample />
+</div>
+
+### onAction
+
+Använd `onAction` på `Breadcrumbs` för att själv hantera interaktionen. Callbacken tar emot `id` för den klickade brödsmula.
+
+```tsx
+<Breadcrumbs onAction={(id) => console.log(id)}>
+  <Breadcrumb id="start">Start</Breadcrumb>
+  <Breadcrumb id="forlanga">Du vill förlänga</Breadcrumb>
+  <Breadcrumb id="studera">Studera</Breadcrumb>
+</Breadcrumbs>
+```
+
+## Tillgänglighet
+
+:::info[Navigationslandmärke]
+När brödsmulor används som huvudnavigation på en sida bör de placeras i ett `<nav>`-element med ett beskrivande `aria-label`. Detta skapar ett navigationslandmärke som hjälper användare med hjälpmedel att snabbt hitta till rätt del av sidan.
+
+```tsx
+<nav aria-label="Brödsmulor">
+  <Breadcrumbs>
+    <Breadcrumb><Link href="/">Start</Link></Breadcrumb>
+    <Breadcrumb><Link href="/om">Om oss</Link></Breadcrumb>
+  </Breadcrumbs>
+</nav>
+```
+:::
 
 ## API
 
+### Breadcrumbs
+
 <PropTable name='Breadcrumbs' />
+
+### Breadcrumb
+
+<PropTable name='Breadcrumb' />
