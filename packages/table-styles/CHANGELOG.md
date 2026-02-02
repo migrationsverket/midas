@@ -1,3 +1,14 @@
+## 1.2.18 (2026-02-02)
+
+### 🔧 Maintenance
+
+- **deps:** update lucide-react to latest ([443a2c7782](https://github.com/migrationsverket/midas/commit/443a2c7782))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.4
+- Updated theme to 3.10.3
+
 ## 1.2.17 (2026-01-30)
 
 ### 🧱 Updated Dependencies

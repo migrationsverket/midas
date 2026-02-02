@@ -1,3 +1,14 @@
+## 16.6.4 (2026-02-02)
+
+### 🔧 Maintenance
+
+- **components, layout:** revert refactor and bypass linter ([829a2e1274](https://github.com/migrationsverket/midas/commit/829a2e1274))
+- **deps:** update eslint-plugin-react-hooks to latest ([04d26d69ac](https://github.com/migrationsverket/midas/commit/04d26d69ac))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.3
+
 ## 16.6.3 (2026-01-30)
 
 ### 🩹 Fixes
