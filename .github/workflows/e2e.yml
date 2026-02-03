@@ -16,6 +16,7 @@ permissions:
 jobs:
   e2e:
     name: E2E tests
+    if: contains(github.event.pull_request.labels.*.name, 'e2e')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
