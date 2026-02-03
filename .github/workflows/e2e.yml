@@ -33,11 +33,14 @@ jobs:
       - name: Install Playwright
         run: npx playwright install chromium --only-shell
 
-      - name: Run Verdaccio
-        run: npx nx run @midas-ds/source:release:local
+      - name: Start Verdaccio
+        run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
+
+      - name: Publish packages to local registry
+        run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
 
       - name: Install locally published packages
-        run: npm install .verdaccio/storage/@midas-ds/**/*.tgz
+        run: cd apps/next && npm install --@midas-ds:registry=http://localhost:4873/
 
       - name: Build and test e2e project
         run: npx nx e2e next
