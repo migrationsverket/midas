@@ -33,12 +33,12 @@ Interaktionen följer alltid samma logik:
 
 ## Tillgängliga handlingar
 
-Denna sortens handling utförs alltid när den initieras av användaren. Därefter utvärderar systemet resultatet genom validering eller affärslogik. Fel eller saknade förutsättningar kommuniceras efter försök, inte genom att hindra handlingen.
+Denna sortens handling utförs alltid när den initieras av användaren. Därefter utvärderar systemet resultatet genom validering eller affärslogik. Fel eller saknade förutsättningar kommuniceras efter användarens försök att genomföra handling, inte genom att hindra handlingen.
 
 ### Användning
 
-- Vid formulärinlämning
-- Vid sparande av data
+- När användaren skickar in ett formulär
+- När användaren sparar data
 
 ### Krav på återkoppling
 
@@ -57,7 +57,7 @@ En villkorad handling är endast möjlig att utföra när vissa krav är uppfyll
 
 ### Användning
 
-- När det inte är meningsfullt att utföra handlingen om inte kraven är uppfyllda
+- När det inte är meningsfullt eller tillåtet att utföra handlingen om inte kraven är uppfyllda
 - När ett minsta antal val krävs (t.ex. markera minst ett objekt)
 
 ### Krav på återkoppling
@@ -72,19 +72,19 @@ En villkorad handling är endast möjlig att utföra när vissa krav är uppfyll
 Notera att vi inte använder `isDisabled` eftersom detta gör triggerelementet otillgängligt för skärmläsaranvändare. Vi låter den istället vara visuellt aktiva och tar bort onPress-händelsen.
 :::
 
-För att uppfylla ovanstående krav kan vi göra på två sätt:
+Ovanstående krav uppfyllas på följande två sätt:
 
-1. Visa en tooltip på hover och fokus. För att göra detta tillgängligt för skärmläsaranvändare behöver vi även sätta trigger som `aria-disabled` för att indikera för skärmläsaranvändare att knappen är inaktiv
+Alternativ 1: Visa en tooltip på hover och fokus. För att göra detta tillgängligt för skärmläsaranvändare behöver vi även sätta trigger som `aria-disabled` för att indikera för skärmläsaranvändare att knappen är inaktiv
 
 <InactiveButtonExample />
 
-2. Visa en infobanner eller en modal vid klick. Detta är lämpligt när det finns flera krav som måste uppfyllas eller när kraven är mer komplexa.
+Alternativ 2: Visa en infobanner eller en modal vid klick. Detta är lämpligt när det finns flera krav som måste uppfyllas eller när kraven är mer komplexa.
 
 <ButtonInfobannerExample />
 
 ## Otillgänglig handling
 
-En otillgänglig åtgärd är en handling som användaren inte kan utföras i aktuell kontext och där användaren själv inte kan uppfylla kraven för att handlingen ska vara möjlig.
+En otillgänglig åtgärd är en handling som användaren inte kan utföra i aktuell kontext och där användaren själv inte kan uppfylla kraven för att handlingen ska vara möjlig.
 
 ### Användning
 
