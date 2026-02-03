@@ -1,3 +1,5 @@
+'use client'
+
 export * from './accordion'
 export * from './badge'
 export * from './breadcrumbs'
