@@ -18,11 +18,10 @@ describe('given a Breadcrumbs with a Custom ClassName', async () => {
 
 describe('given a Breadcrumbs component', async () => {
   it('should set data-current on the last breadcrumb', async () => {
-    const { container } = await render(<Primary />)
+    const { getByRole } = await render(<Primary />)
 
-    const items = container.querySelectorAll('li')
-    const lastItem = items[items.length - 1]
-
-    await expect.element(lastItem).toHaveAttribute('data-current', 'true')
+    await expect
+      .element(getByRole('listitem').last())
+      .toHaveAttribute('data-current', 'true')
   })
 })
