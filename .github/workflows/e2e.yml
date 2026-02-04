@@ -59,7 +59,7 @@ jobs:
         run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
 
       - name: Install from registry
-        run: cd apps/next && npm install --@midas-ds:registry=http://localhost:4873/
+        run: npm install --@midas-ds:registry=http://localhost:4873/
 
       - name: Build and test e2e project
         run: npx nx e2e next
