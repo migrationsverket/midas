@@ -1,5 +1,5 @@
 # path to a directory with all packages
-storage: ./storage
+storage: /verdaccio/storage
 
 # a list of other known repositories we can talk to
 uplinks:
@@ -22,7 +22,7 @@ packages:
 auth:
   htpasswd:
     file: ./htpasswd
-    max_users: -1 # Disable new user registration
+    max_users: -1  # Disable new user registration
     algorithm: bcrypt
 
 # Anyone can access/publish

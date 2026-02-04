@@ -125,8 +125,7 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
 
       // Create htpasswd with bcrypt hash for password "test"
       // bcrypt hash of "test": $2a$10$...
-      const htpasswdContent =
-        'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
+      const htpasswdContent = 'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
       await fs.writeFile(htpasswdPath, htpasswdContent, 'utf-8')
       logger.info('htpasswd file created with test user')
     } catch (e) {
@@ -134,7 +133,7 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
     }
 
     // Start Verdaccio directly
-    const configPath = path.join(context.root, '.verdaccio/config.yaml')
+    const configPath = path.join(context.root, '.verdaccio/config.yml')
     logger.info(`Starting Verdaccio on port ${port}...`)
 
     verdaccioProcess = spawn(
@@ -156,7 +155,7 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
       logger.info(`[Verdaccio] ${data.toString().trim()}`)
     })
   } else {
-    logger.info("Skipping Verdaccio startup (assuming it's already running)")
+    logger.info('Skipping Verdaccio startup (assuming it\'s already running)')
   }
 
   // Wait for Verdaccio to be ready

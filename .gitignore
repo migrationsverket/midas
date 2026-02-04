@@ -206,9 +206,3 @@ playwright-report/
 blob-report/
 playwright/.cache/
 playwright/.auth/
-
-# verdaccio
-.verdaccio/storage
-
-# e2e app
-apps/next/package-lock.json
