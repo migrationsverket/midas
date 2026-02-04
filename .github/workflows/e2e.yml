@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright
-        run: npx playwright install --only-shell
+        run: npx playwright install --with-deps
 
       - name: Build and test e2e project
         run: npx nx e2e next
