@@ -1,3 +1,9 @@
+## 16.6.5 (2026-02-04)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.4
+
 ## 16.6.4 (2026-02-02)
 
 ### 🔧 Maintenance
