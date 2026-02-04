@@ -7,7 +7,7 @@ import clsx from '../utils/clsx'
 import { Link } from '../link'
 import styles from './Breadcrumbs.module.css'
 
-/** @deprecated since v1.0.0 Use the compound `<Breadcrumbs>` + `<Breadcrumb>` API instead. */
+/** @deprecated since v16.6.3 Use the compound `<Breadcrumbs>` + `<Breadcrumb>` API instead. */
 export interface BreadcrumbItem {
   href: string
   title: string
