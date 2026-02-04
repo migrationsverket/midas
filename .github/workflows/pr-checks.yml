@@ -46,16 +46,16 @@ jobs:
         run: npx playwright install chromium firefox --only-shell
 
       - name: Build packages
-        run: npx nx affected -t lint stylelint build --exclude=next
+        run: npx nx affected -t lint stylelint build
 
       - name: Test packages
         if: >
           (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'test') ||
           contains(github.event.pull_request.labels.*.name, 'test')
-        run: npx nx affected -t test --exclude=next
+        run: npx nx affected -t test
 
       - name: A11y check packages
         if: >
           (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
            contains(github.event.pull_request.labels.*.name, 'a11y')
-        run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors --exclude=next
+        run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
