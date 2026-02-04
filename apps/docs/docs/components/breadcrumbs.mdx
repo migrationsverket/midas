@@ -20,17 +20,29 @@ import { Breadcrumbs, Breadcrumb, Link } from '@midas-ds/components'
 
 ```tsx
 <Breadcrumbs>
-  <Breadcrumb><Link href="/">Start</Link></Breadcrumb>
-  <Breadcrumb><Link href="/du-vill-forlanga">Du vill förlänga</Link></Breadcrumb>
-  <Breadcrumb><Link href="/du-vill-forlanga/studera">Studera</Link></Breadcrumb>
+  <Breadcrumb>
+    <Link href='/'>Start</Link>
+  </Breadcrumb>
+  <Breadcrumb>
+    <Link href='/du-vill-forlanga'>Du vill förlänga</Link>
+  </Breadcrumb>
+  <Breadcrumb>
+    <Link href='/du-vill-forlanga/studera'>Studera</Link>
+  </Breadcrumb>
 </Breadcrumbs>
 ```
 
 <div className='card'>
   <Breadcrumbs>
-    <Breadcrumb><Link href="#">Start</Link></Breadcrumb>
-    <Breadcrumb><Link href="#">Du vill förlänga</Link></Breadcrumb>
-    <Breadcrumb><Link href="#">Studera</Link></Breadcrumb>
+    <Breadcrumb>
+      <Link href='#'>Start</Link>
+    </Breadcrumb>
+    <Breadcrumb>
+      <Link href='#'>Du vill förlänga</Link>
+    </Breadcrumb>
+    <Breadcrumb>
+      <Link href='#'>Studera</Link>
+    </Breadcrumb>
   </Breadcrumbs>
 </div>
 
@@ -42,17 +54,39 @@ Sätt `isDisabled` på `Link` för att inaktivera en enskild brödsmula.
 
 ```tsx
 <Breadcrumbs>
-  <Breadcrumb><Link href="/">Start</Link></Breadcrumb>
-  <Breadcrumb><Link href="/du-vill-forlanga" isDisabled>Du vill förlänga</Link></Breadcrumb>
-  <Breadcrumb><Link href="/du-vill-forlanga/studera">Studera</Link></Breadcrumb>
+  <Breadcrumb>
+    <Link href='/'>Start</Link>
+  </Breadcrumb>
+  <Breadcrumb>
+    <Link
+      href='/du-vill-forlanga'
+      isDisabled
+    >
+      Du vill förlänga
+    </Link>
+  </Breadcrumb>
+  <Breadcrumb>
+    <Link href='/du-vill-forlanga/studera'>Studera</Link>
+  </Breadcrumb>
 </Breadcrumbs>
 ```
 
 <div className='card'>
   <Breadcrumbs>
-    <Breadcrumb><Link href="#">Start</Link></Breadcrumb>
-    <Breadcrumb><Link href="#" isDisabled>Du vill förlänga</Link></Breadcrumb>
-    <Breadcrumb><Link href="#">Studera</Link></Breadcrumb>
+    <Breadcrumb>
+      <Link href='#'>Start</Link>
+    </Breadcrumb>
+    <Breadcrumb>
+      <Link
+        href='#'
+        isDisabled
+      >
+        Du vill förlänga
+      </Link>
+    </Breadcrumb>
+    <Breadcrumb>
+      <Link href='#'>Studera</Link>
+    </Breadcrumb>
   </Breadcrumbs>
 </div>
 
@@ -84,9 +118,9 @@ export const DynamicExample = () => {
   ]
   return (
     <Breadcrumbs items={items}>
-      {(item) => (
+      {item => (
         <Breadcrumb id={item.id}>
-          <Link href="#">{item.label}</Link>
+          <Link href='#'>{item.label}</Link>
         </Breadcrumb>
       )}
     </Breadcrumbs>
@@ -99,13 +133,13 @@ export const DynamicExample = () => {
 
 ### onAction
 
-Använd `onAction` på `Breadcrumbs` för att själv hantera interaktionen. Callbacken tar emot `id` för den klickade brödsmula.
+Använd `onAction` på `Breadcrumbs` för att själv hantera interaktionen. Callbacken tar emot `id` för den klickade brödsmulan.
 
 ```tsx
-<Breadcrumbs onAction={(id) => console.log(id)}>
-  <Breadcrumb id="start">Start</Breadcrumb>
-  <Breadcrumb id="forlanga">Du vill förlänga</Breadcrumb>
-  <Breadcrumb id="studera">Studera</Breadcrumb>
+<Breadcrumbs onAction={id => console.log(id)}>
+  <Breadcrumb id='start'>Start</Breadcrumb>
+  <Breadcrumb id='forlanga'>Du vill förlänga</Breadcrumb>
+  <Breadcrumb id='studera'>Studera</Breadcrumb>
 </Breadcrumbs>
 ```
 
@@ -115,13 +149,18 @@ Använd `onAction` på `Breadcrumbs` för att själv hantera interaktionen. Call
 När brödsmulor används som huvudnavigation på en sida bör de placeras i ett `<nav>`-element med ett beskrivande `aria-label`. Detta skapar ett navigationslandmärke som hjälper användare med hjälpmedel att snabbt hitta till rätt del av sidan.
 
 ```tsx
-<nav aria-label="Brödsmulor">
+<nav aria-label='Brödsmulor'>
   <Breadcrumbs>
-    <Breadcrumb><Link href="/">Start</Link></Breadcrumb>
-    <Breadcrumb><Link href="/om">Om oss</Link></Breadcrumb>
+    <Breadcrumb>
+      <Link href='/'>Start</Link>
+    </Breadcrumb>
+    <Breadcrumb>
+      <Link href='/om'>Om oss</Link>
+    </Breadcrumb>
   </Breadcrumbs>
 </nav>
 ```
+
 :::
 
 ## API
