@@ -3,45 +3,26 @@ import { Breadcrumbs } from './Breadcrumbs'
 import { Breadcrumb } from './Breadcrumb'
 import { Link } from '../link'
 
-type Story = StoryObj<typeof Breadcrumbs>
+type Item = { title: string; href: string }
+type Story = StoryObj<typeof Breadcrumbs<Item>>
 
 export default {
   component: Breadcrumbs,
-  subcomponents: { Breadcrumb },
+  subcomponents: { Breadcrumb, Link },
   title: 'Components/Breadcrumbs',
   tags: ['autodocs'],
-} satisfies Meta<typeof Breadcrumbs>
+  args: {
+    items: [
+      { title: 'Jag vill förlänga', href: '#' },
+      { title: 'Arbete', href: '#' },
+      { title: 'Anställd', href: '#' },
+    ],
+    children: item => (
+      <Breadcrumb id={item.title}>
+        <Link href={item.href}>{item.title}</Link>
+      </Breadcrumb>
+    ),
+  },
+} satisfies Meta<typeof Breadcrumbs<Item>>
 
-export const Primary: Story = {
-  render: (args) => (
-    <Breadcrumbs {...args}>
-      <Breadcrumb>
-        <Link href='#'>Jag vill förlänga</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Arbete</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Anställd</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Jag vill förlänga</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Arbete</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Anställd</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Jag vill förlänga</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Arbete</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <Link href='#'>Anställd</Link>
-      </Breadcrumb>
-    </Breadcrumbs>
-  ),
-}
+export const Primary: Story = {}
