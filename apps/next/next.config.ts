@@ -3,15 +3,9 @@ import { PHASE_PRODUCTION_BUILD, type PHASE_TYPE } from 'next/constants'
 import { TurbopackOptions } from 'next/dist/server/config-shared'
 
 const resolveAlias = (phase: PHASE_TYPE): TurbopackOptions['resolveAlias'] => {
-  if (process.env.E2E_REGISTRY) {
-    return {
-      '@midas-ds/components': 'node_modules/@midas-ds/components',
-    }
-  }
-
   if (phase === PHASE_PRODUCTION_BUILD) {
     return {
-      '@midas-ds/components': 'dist/packages/components',
+      '@midas-ds/components': 'node_modules/@midas-ds/components',
     }
   }
 

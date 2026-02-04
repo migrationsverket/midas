@@ -7,28 +7,28 @@ permissions:
   contents: read
 
 jobs:
-  e2e:
-    name: E2E tests
-    if: contains(github.event.pull_request.labels.*.name, 'e2e')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
+  # e2e:
+  #   name: E2E tests
+  #   if: contains(github.event.pull_request.labels.*.name, 'e2e')
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v5
 
-      - name: Setup Node
-        uses: actions/setup-node@v5
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v5
+  #       with:
+  #         node-version-file: '.nvmrc'
+  #         cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+  #     - name: Install dependencies
+  #       run: npm ci
 
-      - name: Install Playwright
-        run: npx playwright install --with-deps
+  #     - name: Install Playwright
+  #       run: npx playwright install --with-deps
 
-      - name: Build and test e2e project
-        run: npx nx e2e next
+  #     - name: Build and test e2e project
+  #       run: npx nx e2e next
 
   e2e-registry:
     name: E2E registry tests
@@ -52,16 +52,13 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      - name: Start Verdaccio
-        run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
-
-      - name: Publish packages to local registry
-        run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
-
-      - name: Install from registry
-        run: npm install @midas-ds/components --registry=http://localhost:4873/
-
+      # - name: Start Verdaccio
+      #   run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
+      # - name: Publish packages to local registry
+      #   run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
+      # - name: Install from registry
+      #   run: npm install @midas-ds/components --registry=http://localhost:4873/
       - name: Build and test e2e project
         run: npx nx e2e next
-        env:
-          E2E_REGISTRY: true
+        # env:
+        #   E2E_REGISTRY: true

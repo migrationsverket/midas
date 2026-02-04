@@ -4,8 +4,17 @@
   "projectType": "application",
   "tags": ["apps"],
   "targets": {
+    "install-local": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm install @midas-ds/components --registry=http://localhost:4873/"
+      }
+    },
     "e2e": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        { "projects": ["@midas-ds/source"], "target": "release:local:dev" },
+        "install-local"
+      ]
     }
   }
 }
