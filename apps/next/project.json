@@ -2,5 +2,10 @@
   "name": "next",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "tags": ["apps"]
+  "tags": ["apps"],
+  "targets": {
+    "e2e": {
+      "dependsOn": ["^build"]
+    }
+  }
 }
