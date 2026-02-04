@@ -9,7 +9,7 @@ export default function (
     ...defaultConfig,
     turbopack: {
       resolveAlias:
-        phase === PHASE_PRODUCTION_BUILD
+        phase === PHASE_PRODUCTION_BUILD && !process.env.E2E_REGISTRY
           ? {
               '@midas-ds/components': 'dist/packages/components',
             }
