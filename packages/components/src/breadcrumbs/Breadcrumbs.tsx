@@ -14,7 +14,7 @@ export interface BreadcrumbItem {
   isDisabled?: boolean
 }
 
-export type BreadcrumbsProps<T extends object> = AriaBreadcrumbsProps<T>
+export type BreadcrumbsProps<T> = AriaBreadcrumbsProps<T>
 
 function isDeprecatedUsage(props: Record<string, unknown>): boolean {
   if (!('items' in props) || !Array.isArray(props.items)) return false
