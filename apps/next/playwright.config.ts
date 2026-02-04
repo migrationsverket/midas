@@ -72,7 +72,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npx next build && npx next start -p 5000',
+    command: 'npx nx start next -p 5000',
     url: 'http://localhost:5000',
     reuseExistingServer: !process.env.CI,
   },
