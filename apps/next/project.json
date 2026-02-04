@@ -7,7 +7,7 @@
     "install-local": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm install @midas-ds/components --registry=http://localhost:4873/"
+        "command": "cd apps/next && npm install --@midas-ds:registry=http://localhost:4873/"
       }
     },
     "e2e": {

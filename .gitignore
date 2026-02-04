@@ -209,3 +209,6 @@ playwright/.auth/
 
 # verdaccio
 .verdaccio/storage
+
+# e2e app
+apps/next/package-lock.json

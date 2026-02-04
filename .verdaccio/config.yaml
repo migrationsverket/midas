@@ -8,6 +8,12 @@ uplinks:
     maxage: 60m
 
 packages:
+  '@midas-ds/*':
+    access: $all
+    publish: $all
+    unpublish: $all
+    # no proxy — these are published locally and must not conflict with upstream
+
   '**':
     # give all users (including non-authenticated users) full access
     # because it is a local registry

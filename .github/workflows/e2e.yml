@@ -2,6 +2,11 @@ name: 'e2e'
 
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
 
 permissions:
   contents: read
@@ -52,13 +57,17 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      # - name: Start Verdaccio
-      #   run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
-      # - name: Publish packages to local registry
-      #   run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
-      # - name: Install from registry
-      #   run: npm install @midas-ds/components --registry=http://localhost:4873/
-      - name: Build and test e2e project
-        run: npx nx e2e next
-        # env:
-        #   E2E_REGISTRY: true
+      - name: Start Verdaccio
+        run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
+
+      - name: Publish packages to local registry
+        run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
+
+      - name: Install from registry
+        run: cd apps/next && npm install --@midas-ds:registry=http://localhost:4873/
+
+      - name: Run e2e tests
+        working-directory: apps/next
+        run: npx playwright test
+        env:
+          E2E_REGISTRY: true
