@@ -1,5 +1,5 @@
 # path to a directory with all packages
-storage: /verdaccio/storage
+storage: ./storage
 
 # a list of other known repositories we can talk to
 uplinks:
@@ -8,6 +8,12 @@ uplinks:
     maxage: 60m
 
 packages:
+  '@midas-ds/*':
+    access: $all
+    publish: $all
+    unpublish: $all
+    # no proxy — these are published locally and must not conflict with upstream
+
   '**':
     # give all users (including non-authenticated users) full access
     # because it is a local registry
@@ -22,7 +28,7 @@ packages:
 auth:
   htpasswd:
     file: ./htpasswd
-    max_users: -1  # Disable new user registration
+    max_users: -1 # Disable new user registration
     algorithm: bcrypt
 
 # Anyone can access/publish
