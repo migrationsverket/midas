@@ -1,15 +1,11 @@
 import type { NextConfig } from 'next'
 import { PHASE_PRODUCTION_BUILD, type PHASE_TYPE } from 'next/constants'
 import { TurbopackOptions } from 'next/dist/server/config-shared'
-import { join } from 'node:path'
 
 const resolveAlias = (phase: PHASE_TYPE): TurbopackOptions['resolveAlias'] => {
   if (process.env.CI) {
     return {
-      '@midas-ds/components': join(
-        __dirname,
-        'node_modules/@midas-ds/components',
-      ),
+      '@midas-ds/components': 'apps/next/node_modules/@midas-ds/components',
     }
   }
 
