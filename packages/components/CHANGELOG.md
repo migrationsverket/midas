@@ -1,3 +1,27 @@
+## 16.7.0 (2026-02-05)
+
+### 🚀 Features
+
+- **components, breadcrumbs:** refactor breadcrumbs into separate components ([cdf22d5ff3](https://github.com/migrationsverket/midas/commit/cdf22d5ff3))
+
+### 📖 Documentation changes
+
+- **breadcrumbs:** update story ([50ea1c6692](https://github.com/migrationsverket/midas/commit/50ea1c6692))
+
+### 🔧 Maintenance
+
+- **components,breadcrumbs:** remove unnecessary exports ([12954b4cac](https://github.com/migrationsverket/midas/commit/12954b4cac))
+- **breadcrumbs:** remove generic constraint ([bea4f078fd](https://github.com/migrationsverket/midas/commit/bea4f078fd))
+- **breadcrumbs:** change semver in deprecation comment ([cac24ef9fc](https://github.com/migrationsverket/midas/commit/cac24ef9fc))
+
+### 🧪 Tests updated
+
+- **components, breadcrumbs:** change locator to getByRole ([b7122715a4](https://github.com/migrationsverket/midas/commit/b7122715a4))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.5
+
 ## 16.6.5 (2026-02-04)
 
 ### 🧱 Updated Dependencies
