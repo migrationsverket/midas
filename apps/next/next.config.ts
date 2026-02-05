@@ -4,7 +4,7 @@ import { TurbopackOptions } from 'next/dist/server/config-shared'
 import { join } from 'node:path'
 
 const resolveAlias = (phase: PHASE_TYPE): TurbopackOptions['resolveAlias'] => {
-  if (process.env.CI) {
+  if (process.env.E2E_REGISTRY) {
     return {
       '@midas-ds/components': 'apps/next/node_modules/@midas-ds/components',
     }
