@@ -1,0 +1,73 @@
+name: 'e2e'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+
+permissions:
+  contents: read
+
+jobs:
+  # e2e:
+  #   name: E2E tests
+  #   if: contains(github.event.pull_request.labels.*.name, 'e2e')
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v5
+
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v5
+  #       with:
+  #         node-version-file: '.nvmrc'
+  #         cache: npm
+
+  #     - name: Install dependencies
+  #       run: npm ci
+
+  #     - name: Install Playwright
+  #       run: npx playwright install --with-deps
+
+  #     - name: Build and test e2e project
+  #       run: npx nx e2e next
+
+  e2e-registry:
+    name: E2E registry tests
+    if: contains(github.event.pull_request.labels.*.name, 'e2e')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Start Verdaccio
+        run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
+
+      - name: Publish packages to local registry
+        run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
+
+      - name: Install from registry
+        run: cd apps/next && npm install --@midas-ds:registry=http://localhost:4873/
+
+      - name: Run e2e tests
+        working-directory: apps/next
+        run: npx playwright test
+        env:
+          E2E_REGISTRY: true
