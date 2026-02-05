@@ -1,0 +1,5 @@
+.navbar {
+  background-color: var(--midas-background-base);
+  grid-area: navbar;
+  padding: 1rem;
+}
