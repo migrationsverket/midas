@@ -36,6 +36,9 @@ jobs:
       - name: Install from registry
         run: npm install --prefix apps/next --@midas-ds:registry=http://localhost:4873/
 
+      - name: Remove dist files
+        run: rm -rf dist
+
       - name: Build and test e2e project
         run: npx nx e2e next
         env:
