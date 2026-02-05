@@ -1,3 +1,17 @@
+## 16.7.1 (2026-02-05)
+
+### 🔧 Maintenance
+
+- add version export, add e2e version confirmation ([0215e0591c](https://github.com/migrationsverket/midas/commit/0215e0591c))
+
+### 🧪 Tests updated
+
+- add e2e next project ([#1034](https://github.com/migrationsverket/midas/pull/1034))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.6
+
 ## 16.7.0 (2026-02-05)
 
 ### 🚀 Features
