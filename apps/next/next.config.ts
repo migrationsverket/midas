@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next'
 import { PHASE_PRODUCTION_BUILD, type PHASE_TYPE } from 'next/constants'
 import { TurbopackOptions } from 'next/dist/server/config-shared'
+import { join } from 'node:path'
 
 const resolveAlias = (phase: PHASE_TYPE): TurbopackOptions['resolveAlias'] => {
   if (process.env.CI) {
@@ -26,6 +27,7 @@ export default function (
   return {
     ...defaultConfig,
     turbopack: {
+      root: join(__dirname, '../..'),
       resolveAlias: resolveAlias(phase),
     },
   }
