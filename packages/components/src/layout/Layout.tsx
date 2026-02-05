@@ -19,6 +19,11 @@ export interface SidebarLinkGroup {
   items: SidebarLinkProps[]
 }
 
+export type SidebarLinkClickData = {
+  title: string
+  href: string
+}
+
 export interface SidebarLinkProps {
   title: string
   href: string
@@ -27,6 +32,7 @@ export interface SidebarLinkProps {
   hasBadge?: boolean
   isCollapsed?: boolean
   setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>
+  onClick?: (e: SidebarLinkClickData) => void
 }
 
 export interface SidebarUser {
@@ -66,6 +72,8 @@ export interface MidasLayout {
   clientSideHref?: (href: Href) => string
   variant: 'internal' | 'external'
   className?: string
+  /** Event triggered when sidebar link is clicked. */
+  onSidebarLinkClick?: (e: SidebarLinkClickData) => void
 }
 
 export const Layout: React.FC<MidasLayout> & {
@@ -86,6 +94,7 @@ export const Layout: React.FC<MidasLayout> & {
   clientSideHref,
   variant,
   className,
+  onSidebarLinkClick,
 }) => {
   const [isCollapsed, setIsCollapsed] = React.useState<boolean>(false)
   const [isOpened, setIsOpened] = React.useState<boolean>(false)
@@ -110,7 +119,7 @@ export const Layout: React.FC<MidasLayout> & {
           <SkipLink />
           <Layout.Header />
           <div className={styles.mainContent}>
-            <Layout.Sidebar />
+            <Layout.Sidebar onLinkClick={onSidebarLinkClick} />
             <GridItem>
               <main className={styles.main}>
                 <div className={styles.app}>{children}</div>
@@ -145,7 +154,7 @@ export const Layout: React.FC<MidasLayout> & {
         <SkipLink />
         <Layout.Header />
         <div className={styles.mainContent}>
-          <Layout.Sidebar />
+          <Layout.Sidebar onLinkClick={onSidebarLinkClick} />
           <GridItem>
             <main className={styles.main}>
               <div className={styles.app}>{children}</div>

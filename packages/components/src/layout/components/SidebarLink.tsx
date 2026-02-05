@@ -15,6 +15,7 @@ export const SidebarLink = ({
   icon: IconComponent,
   active,
   hasBadge,
+  onClick,
 }: SidebarLinkProps) => {
   const { isCollapsed, setIsOpened, clientSideHref } = useLayoutContext()
 
@@ -32,6 +33,16 @@ export const SidebarLink = ({
     }
   }, [active, hrefWithBasePath])
 
+  const onLinkClicked = () => {
+    setIsOpened?.(false)
+    if (onClick) {
+      onClick({
+        title,
+        href: hrefWithBasePath,
+      })
+    }
+  }
+
   if (isCollapsed)
     return (
       <TooltipTrigger>
@@ -43,7 +54,7 @@ export const SidebarLink = ({
             styles.listLinkCollapsed,
             isActive && styles.active,
           )}
-          onPress={() => setIsOpened?.(false)}
+          onPress={onLinkClicked}
         >
           <BadgeContainer>
             <IconComponent
@@ -62,7 +73,7 @@ export const SidebarLink = ({
       href={href}
       aria-label={title}
       className={clsx(styles.listLink, isActive && styles.active)}
-      onPress={() => setIsOpened?.(false)}
+      onPress={onLinkClicked}
     >
       <BadgeContainer>
         <IconComponent size={20} />
