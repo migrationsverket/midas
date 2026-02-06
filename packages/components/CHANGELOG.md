@@ -1,3 +1,9 @@
+## 16.8.0 (2026-02-06)
+
+### 🚀 Features
+
+- **components, layout:** add click-event for sidebar links ([#1040](https://github.com/migrationsverket/midas/pull/1040))
+
 ## 16.7.1 (2026-02-05)
 
 ### 🔧 Maintenance
