@@ -1,7 +1,7 @@
-FROM node:22-alpine
+FROM node:22-slim
 
 # Install basic utilities
-RUN apk add --no-cache git
+RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
@@ -11,6 +11,9 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm ci
+
+# Install Playwright browsers and system dependencies
+RUN npx playwright install --with-deps chromium
 
 # Copy the rest of the application
 COPY . .
