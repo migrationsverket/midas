@@ -1,15 +1,11 @@
-import { ReactNode } from 'react'
 import {
   Breadcrumb as AriaBreadcrumb,
   type BreadcrumbProps as AriaBreadcrumbProps,
-  type BreadcrumbRenderProps,
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import styles from './Breadcrumbs.module.css'
 
 export type BreadcrumbProps = AriaBreadcrumbProps
-
-type RenderProps = BreadcrumbRenderProps & { defaultChildren: ReactNode }
 
 export const Breadcrumb = ({
   className,
@@ -20,7 +16,7 @@ export const Breadcrumb = ({
     className={clsx(className)}
     {...rest}
   >
-    {(renderProps: RenderProps) => {
+    {(renderProps) => {
       const showSeparator = !renderProps.isCurrent
       return (
         <>
