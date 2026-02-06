@@ -1,1 +1,0 @@
-import{d as n}from"./useFocusRing-BVbjxz3f.js";import{r as t}from"./iframe-DQprq_kP.js";function p(s,r){const e=t.useRef(!0),f=t.useRef(null);let u=n(s);t.useEffect(()=>(e.current=!0,()=>{e.current=!1}),[]),t.useEffect(()=>{let c=f.current;e.current?e.current=!1:(!c||r.some((a,o)=>!Object.is(a,c[o])))&&u(),f.current=r},r)}export{p as $};
