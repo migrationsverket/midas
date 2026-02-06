@@ -1,3 +1,9 @@
+## 16.8.1 (2026-02-06)
+
+### 🚀 Features
+
+- **layout:** add boilerplate components ([ab85d70f46](https://github.com/migrationsverket/midas/commit/ab85d70f46))
+
 ## 16.8.0 (2026-02-06)
 
 ### 🚀 Features
