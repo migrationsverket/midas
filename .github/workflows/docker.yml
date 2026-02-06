@@ -1,0 +1,24 @@
+name: 'Docker'
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Dockerfile'
+      - 'docker-compose.yml'
+      - 'package-lock.json'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Verify Docker build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Build Docker image
+        run: docker compose build
