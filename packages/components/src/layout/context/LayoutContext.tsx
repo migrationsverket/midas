@@ -2,7 +2,7 @@ import * as React from 'react'
 import { SidebarLinkGroup, SidebarUser, App } from '../Layout'
 import { Href } from '@react-types/shared'
 
-interface LayoutContextProps {
+export interface LayoutContextProps {
   items: SidebarLinkGroup[]
   title: string
   user: SidebarUser
