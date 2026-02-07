@@ -1,3 +1,10 @@
+## 16.8.2 (2026-02-07)
+
+### 🏭 Refactoring
+
+- **components, breadcrumbs:** remove redundant type ([103ea3a91f](https://github.com/migrationsverket/midas/commit/103ea3a91f))
+- **components,breadcrumbs:** use isCurrent prop to render separator ([9319d4c7ac](https://github.com/migrationsverket/midas/commit/9319d4c7ac))
+
 ## 16.8.1 (2026-02-06)
 
 ### 🚀 Features
