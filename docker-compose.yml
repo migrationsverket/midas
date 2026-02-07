@@ -70,7 +70,7 @@ services:
       - "4873:4873"
     volumes:
       - ./.verdaccio:/verdaccio/conf
-      - verdaccio-storage:/verdaccio/storage
+      - verdaccio-storage:/verdaccio/conf/storage
       - verdaccio-tmp:/verdaccio/tmp
     environment:
       - VERDACCIO_PORT=4873

@@ -38,6 +38,9 @@ security:
       sign:
         expiresIn: 7d
 
+# listen on all interfaces so Docker port mapping works
+listen: 0.0.0.0:4873
+
 # log settings
 log:
   type: stdout
