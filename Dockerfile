@@ -13,7 +13,7 @@ COPY package*.json ./
 RUN npm ci
 
 # Install Playwright browsers and system dependencies
-RUN npx playwright install --with-deps chromium
+RUN npx playwright install --with-deps
 
 # Copy the rest of the application
 COPY . .
