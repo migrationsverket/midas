@@ -1,0 +1,8 @@
+.navigation {
+  background-color: var(--midas-layer-01-base);
+  padding: 1rem;
+
+  ul {
+    padding-left: 1rem;
+  }
+}
