@@ -73,13 +73,19 @@ export const Primary: Story = {
             <NavigationLink
               href='/'
               isActive
+              variant='navbar'
             >
               <House />
               Hem
             </NavigationLink>
           </li>
           <li>
-            <NavigationLink href='/categories'>Kategorier</NavigationLink>
+            <NavigationLink
+              href='/categories'
+              variant='navbar'
+            >
+              Kategorier
+            </NavigationLink>
           </li>
         </ul>
       </Navbar>
