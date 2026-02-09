@@ -4,6 +4,8 @@ import { Header } from '../header'
 import { Panel } from '../panel'
 import { Navbar } from '../navbar'
 import { Navigation } from '../navigation'
+import { NavigationLink } from '../navigation-link'
+import { House } from 'lucide-react'
 
 type Story = StoryObj<typeof Layout>
 
@@ -11,8 +13,10 @@ export default {
   component: Layout,
   subcomponents: {
     Header,
-    Panel,
     Navbar,
+    Navigation,
+    NavigationLink,
+    Panel,
   },
   title: 'Components/Layout/Layout',
   tags: ['autodocs'],
@@ -20,6 +24,9 @@ export default {
     children: 'Content',
   },
   parameters: { layout: 'fullscreen', rootElement: 'div' },
+} satisfies Meta<typeof Layout>
+
+export const Primary: Story = {
   render: ({ children, ...rest }) => (
     <Layout {...rest}>
       <Header>Header</Header>
@@ -27,16 +34,26 @@ export default {
         <Navigation>
           <ul>
             <li>
-              <a href='/'>Hem</a>
+              <NavigationLink
+                href='/'
+                isActive
+              >
+                <House />
+                Hem
+              </NavigationLink>
             </li>
             <li>
-              <a href='/pages'>Sidor</a>
-              <ul>
+              <NavigationLink href='/categories'>Kategorier</NavigationLink>
+              <ul aria-label='Sidor'>
                 <li>
-                  <a href='/page-1'>Sida 1</a>
+                  <NavigationLink href='/categories/products'>
+                    Produkter
+                  </NavigationLink>
                 </li>
                 <li>
-                  <a href='/page-2'>Sida 2</a>
+                  <NavigationLink href='/categories/services'>
+                    Tjänster
+                  </NavigationLink>
                 </li>
               </ul>
             </li>
@@ -50,9 +67,22 @@ export default {
       >
         Panel
       </Panel>
-      <Navbar>Navbar</Navbar>
+      <Navbar>
+        <ul>
+          <li>
+            <NavigationLink
+              href='/'
+              isActive
+            >
+              <House />
+              Hem
+            </NavigationLink>
+          </li>
+          <li>
+            <NavigationLink href='/categories'>Kategorier</NavigationLink>
+          </li>
+        </ul>
+      </Navbar>
     </Layout>
   ),
-} satisfies Meta<typeof Layout>
-
-export const Primary: Story = {}
+}

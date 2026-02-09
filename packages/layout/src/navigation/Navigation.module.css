@@ -1,8 +1,36 @@
 .navigation {
   background-color: var(--midas-layer-01-base);
-  padding: 1rem;
 
   ul {
-    padding-left: 1rem;
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        border-left: 2px solid transparent;
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem 0 1rem 1rem;
+
+        &[data-hovered],
+        &[data-active] {
+          background-color: var(--midas-menu-item-background-hover);
+        }
+
+        &[data-active] {
+          border-color: var(--midas-border-color-tertiary);
+        }
+
+        svg {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  ul ul a {
+    padding-left: 2rem;
   }
 }
