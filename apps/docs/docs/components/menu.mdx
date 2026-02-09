@@ -4,6 +4,7 @@ description: En meny kan användas för att samla ihop funktioner som sällan an
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { PropTable } from '@site/src/components/PropsTable'
 import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
 
@@ -83,11 +84,39 @@ Midas exporterar följande komponenter och typer:
 
 ### Länkar
 
-:::warning
-I React Arias dokumentation visas [exempel på hur menyn kan innehålla länkar](https://react-spectrum.adobe.com/react-aria/Menu.html#links), länkarna uppfyller inte våra krav på tillgänglighet och ska därför undvikas.
+React Arias dokumentation visar [exempel på hur menyn kan innehålla länkar](https://react-spectrum.adobe.com/react-aria/Menu.html#links). Länkar i en meny är tillåtna så länge menyns syfte är tydligt för användaren, exempelvis en meny som blandar handlingar med kontextuella länkar som "Öppna i nytt fönster" eller "Gå till inställningar".
+
+:::info
+Om menyn enbart består av navigationslänkar bör du istället använda en dedikerad navigationskomponent, då `menu`-rollen i ARIA är avsedd för handlingar och kan vara missvisande för skärmläsare.
 :::
 
 ## Riktlinjer
 
 - Använd endast till sekundära handlingar som inte är högt prioriterade.
 - Knappen ska helst ha en titel, annars bör en aria-label användas.
+
+## API
+
+### Menu
+
+<PropTable name='Menu' />
+
+### MenuItem
+
+<PropTable name='MenuItem' defaultOpen={false} />
+
+### MenuPopover
+
+<PropTable name='MenuPopover' defaultOpen={false} />
+
+### MenuSection
+
+<PropTable name='MenuSection' defaultOpen={false} />
+
+### MenuTrigger
+
+<PropTable name='MenuTrigger' defaultOpen={false} />
+
+### Separator
+
+<PropTable name='Separator' defaultOpen={false} />
