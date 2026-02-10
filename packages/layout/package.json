@@ -1,0 +1,41 @@
+{
+  "name": "@midas-ds/layout",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "keywords": [
+    "react",
+    "design system",
+    "migrationsverket"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Midas Layout components",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
+  "version": "0.0.1",
+  "module": "./index.js",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "./"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/layout"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./*/index.js": "./*/index.js",
+    "./*": "./*/index.js"
+  },
+  "dependencies": {
+    "@midas-ds/components": "16.7.0"
+  }
+}

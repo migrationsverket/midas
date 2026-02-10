@@ -23,9 +23,16 @@ Testerna körs sedan via en riktig browser. Läs gärna mer om komponenttestning
 
 ### Kör komponenttester
 
+Lokal installation:
+
 ```bash
-nx test components                         # Lokal installation
-docker compose exec docs nx test components # Docker
+nx test components
+```
+
+Docker:
+
+```bash
+docker compose exec cli npx nx test components
 ```
 
 ## 🧪 Enhetstester
@@ -50,21 +57,35 @@ export default defineProject({
 
 Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent, dessa testas i våra workflows med kommandot:
 
+Lokal installation:
+
 ```bash
-nx a11y storybook                         # Lokal installation
-docker compose exec docs nx a11y storybook # Docker
+nx a11y storybook
+```
+
+Docker:
+
+```bash
+docker compose exec cli npx nx a11y storybook
 ```
 
 Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
 
 För att kontrollera tillgängligheten i dark-mode eller forced-colors:
 
+Lokal installation:
+
 ```bash
 nx run storybook:a11y-dark-mode      # Dark mode
 nx run storybook:a11y-forced-colors  # Forced colors
 ```
 
-För Docker, lägg till `docker compose exec docs` före kommandot.
+Docker:
+
+```bash
+docker compose exec cli npx nx run storybook:a11y-dark-mode      # Dark mode
+docker compose exec cli npx nx run storybook:a11y-forced-colors  # Forced colors
+```
 
 ## 👀 Snapshottester
 

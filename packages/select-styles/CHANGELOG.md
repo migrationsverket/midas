@@ -1,3 +1,46 @@
+## 1.1.16 (2026-02-05)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.6
+
+## 1.1.15 (2026-02-05)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.5
+
+## 1.1.14 (2026-02-04)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.4
+
+## 1.1.13 (2026-02-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.3
+
+## 1.1.12 (2026-01-30)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.2
+
+## 1.1.11 (2026-01-30)
+
+### 🩹 Fixes
+
+- **select-styles, react-select:** push pixels for component parts ([bb79caab3c](https://github.com/migrationsverket/midas/commit/bb79caab3c))
+- **select-styles, react-select:** adjust height ([45695d3f99](https://github.com/migrationsverket/midas/commit/45695d3f99))
+
+## 1.1.10 (2026-01-30)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.1
+
 ## 1.1.9 (2026-01-28)
 
 ### 🧱 Updated Dependencies

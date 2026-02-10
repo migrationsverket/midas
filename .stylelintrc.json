@@ -39,5 +39,6 @@
     "no-descending-specificity": null,
     "media-query-no-invalid": null,
     "selector-id-pattern": null
-  }
+  },
+  "ignoreFiles": ["**/style-dictionary-dist/*.css"]
 }

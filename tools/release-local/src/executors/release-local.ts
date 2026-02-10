@@ -125,7 +125,8 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
 
       // Create htpasswd with bcrypt hash for password "test"
       // bcrypt hash of "test": $2a$10$...
-      const htpasswdContent = 'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
+      const htpasswdContent =
+        'test:{SHA}qUqP5cyxm6YcTAhz05Hph5gvu9M=:autocreated 2023-01-01T00:00:00.000Z\n'
       await fs.writeFile(htpasswdPath, htpasswdContent, 'utf-8')
       logger.info('htpasswd file created with test user')
     } catch (e) {
@@ -133,7 +134,7 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
     }
 
     // Start Verdaccio directly
-    const configPath = path.join(context.root, '.verdaccio/config.yml')
+    const configPath = path.join(context.root, '.verdaccio/config.yaml')
     logger.info(`Starting Verdaccio on port ${port}...`)
 
     verdaccioProcess = spawn(
@@ -155,11 +156,32 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
       logger.info(`[Verdaccio] ${data.toString().trim()}`)
     })
   } else {
-    logger.info('Skipping Verdaccio startup (assuming it\'s already running)')
+    logger.info("Skipping Verdaccio startup (assuming it's already running)")
   }
 
   // Wait for Verdaccio to be ready
   await waitForRegistry(registry)
+
+  // Warm up Verdaccio storage by publishing and unpublishing a dummy package.
+  // On a fresh Verdaccio instance, the first publish can fail while storage
+  // directories are being initialized. This ensures storage is ready.
+  logger.info('Warming up Verdaccio storage...')
+  try {
+    execSync(
+      `npm publish --json --registry=${registry} --access=public`,
+      {
+        cwd: path.join(context.root, 'tools/release-local/src/warmup-package'),
+        stdio: 'pipe',
+      },
+    )
+    execSync(
+      `npm unpublish @midas-ds/warmup --force --registry=${registry}`,
+      { stdio: 'pipe' },
+    )
+    logger.info('Verdaccio storage is ready')
+  } catch {
+    logger.warn('Verdaccio warmup publish failed, continuing anyway')
+  }
 
   // Authenticate with Verdaccio by setting npm credentials directly
   logger.info('Setting npm credentials for local registry...')

@@ -142,7 +142,10 @@ export function Toast<T extends MidasToast>({
         styles[props.toast.content.type],
         className,
       )}
-      style={{ viewTransitionName: props.toast.key }}
+      style={{
+        viewTransitionName: props.toast.key,
+        viewTransitionClass: styles.viewTransition,
+      }}
     >
       <div
         {...contentProps}

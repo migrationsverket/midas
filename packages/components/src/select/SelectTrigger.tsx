@@ -51,7 +51,7 @@ export const SelectTrigger = <
 
       <span
         aria-hidden='true'
-        style={{ display: 'flex' }}
+        className={styles.icon}
       >
         <ChevronDown size={20} />
       </span>

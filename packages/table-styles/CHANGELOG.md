@@ -1,3 +1,95 @@
+## 1.2.25 (2026-02-10)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
+## 1.2.24 (2026-02-07)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.2
+
+## 1.2.23 (2026-02-06)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.1
+
+## 1.2.22 (2026-02-06)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.0
+
+## 1.2.21 (2026-02-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.7.1
+- Updated theme to 3.10.6
+
+## 1.2.20 (2026-02-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.7.0
+- Updated theme to 3.10.5
+
+## 1.2.19 (2026-02-04)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.5
+- Updated theme to 3.10.4
+
+## 1.2.18 (2026-02-02)
+
+### 🔧 Maintenance
+
+- **deps:** update lucide-react to latest ([443a2c7782](https://github.com/migrationsverket/midas/commit/443a2c7782))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.4
+- Updated theme to 3.10.3
+
+## 1.2.17 (2026-01-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.3
+- Updated theme to 3.10.2
+
+## 1.2.16 (2026-01-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.2
+
+## 1.2.15 (2026-01-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.1
+- Updated theme to 3.10.1
+
+## 1.2.14 (2026-01-29)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.6.0
+
+## 1.2.13 (2026-01-29)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.5.5
+
+## 1.2.12 (2026-01-29)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.5.4
+
 ## 1.2.11 (2026-01-28)
 
 This was a version bump only for table-styles to align it with other projects, there were no code changes.

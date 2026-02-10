@@ -1,0 +1,6 @@
+{
+  "name": "@midas-ds/warmup",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Dummy package to warm up Verdaccio storage"
+}

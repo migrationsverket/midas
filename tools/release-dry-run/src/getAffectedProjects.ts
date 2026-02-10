@@ -1,4 +1,4 @@
-import { releaseVersion } from 'nx/release'
+import { releaseVersion } from 'nx/release/index.js'
 
 export const getAffectedProjects = async () => {
   const { projectsVersionData } = await releaseVersion({ dryRun: true })

@@ -1,0 +1,5 @@
+.header {
+  background-color: var(--midas-background-base);
+  grid-area: header;
+  padding: 1rem;
+}

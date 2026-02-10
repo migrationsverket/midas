@@ -1,7 +1,6 @@
 @import url('../../../theme/src/lib/style-dictionary-dist/variables.css');
 
 .select {
-  border-bottom: 1px solid var(--midas-border-color-primary);
   font-family: var(--midas-typography-font-family);
   font-size: var(--midas-typography-font-size-30);
   font-weight: var(--midas-typography-weight-regular);
@@ -13,18 +12,19 @@
     }
 
     .midas__value-container--is-multi {
-      padding: 4px;
+      padding: 4px 0 3px 0;
     }
 
-    .midas__clear-indicator {
-      padding: 0.625rem 0.875rem;
+    .midas__indicator {
+      width: var(--midas-size-130);
     }
   }
 
   .midas__control {
     background-color: var(--midas-field-01-base);
+    border-bottom: 1px solid var(--midas-border-color-primary);
     min-height: var(--midas-size-150);
-    padding: 0 var(--midas-spacing-50);
+    padding: 0 0 0 var(--midas-spacing-50);
 
     &:hover {
       background-color: var(--midas-field-01-hover);
@@ -43,18 +43,16 @@
   }
 
   .midas__value-container--is-multi {
-    padding: 8px 4px;
-    left: -4px;
     display: grid;
+    flex-wrap: wrap;
+    gap: var(--midas-spacing-20);
+    height: 100%;
+    overflow-x: auto;
+    padding: 8px 0 7px 0;
 
     &:not(:has(.midas__placeholder, .midas__single-value)) {
       display: flex;
     }
-
-    height: 100%;
-    flex-wrap: wrap;
-    overflow-x: auto;
-    gap: var(--midas-spacing-20);
   }
 
   .midas__placeholder {
@@ -66,15 +64,16 @@
   }
 
   .midas__multi-value {
-    flex: 0 0 auto;
-    display: inline-flex;
     align-items: center;
-    border-radius: 1.25rem;
     background-color: var(--midas-field-01-base);
-    font-size: var(--midas-typography-font-size-20);
-    font-family: var(--midas-typography-font-family);
+    border-radius: 1.25rem;
     border: 1px solid var(--midas-border-color-primary);
     color: var(--midas-text-primary);
+    display: inline-flex;
+    flex: 0 0 auto;
+    font-family: var(--midas-typography-font-family);
+    font-size: var(--midas-typography-font-size-20);
+    height: var(--midas-size-120);
   }
 
   .midas__multi-value__label {
@@ -121,24 +120,16 @@
     flex: 1 0 5%;
   }
 
-  .midas__clear-indicator {
-    color: var(--midas-icon-primary);
+  .midas__indicator {
+    align-items: center;
+    align-self: stretch;
     background-color: transparent;
     border: none;
+    color: var(--midas-icon-primary);
     cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 0.875rem;
-    align-self: stretch;
-
-    &:hover {
-      background-color: var(--midas-button-icon-hover);
-    }
-
-    &:active {
-      background-color: var(--midas-button-icon-active);
-    }
+    width: var(--midas-size-150);
 
     svg {
       display: none;
@@ -159,9 +150,17 @@
     }
   }
 
-  .midas__dropdown-indicator {
-    cursor: pointer;
+  .midas__clear-indicator {
+    &:hover {
+      background-color: var(--midas-button-icon-hover);
+    }
 
+    &:active {
+      background-color: var(--midas-button-icon-active);
+    }
+  }
+
+  .midas__dropdown-indicator {
     svg {
       display: none;
     }

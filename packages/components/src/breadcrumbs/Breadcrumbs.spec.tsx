@@ -15,3 +15,13 @@ describe('given a Breadcrumbs with a Custom ClassName', async () => {
       .toHaveClass(styles.container, 'test')
   })
 })
+
+describe('given a Breadcrumbs component', async () => {
+  it('should set data-current on the last breadcrumb', async () => {
+    const { getByRole } = await render(<Primary />)
+
+    await expect
+      .element(getByRole('listitem').last())
+      .toHaveAttribute('data-current', 'true')
+  })
+})

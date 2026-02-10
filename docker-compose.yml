@@ -62,6 +62,46 @@ services:
     stdin_open: false
     tty: false
 
+  # Next.js example app
+  next:
+    build: .
+    container_name: midas-next
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - nx-cache:/app/.nx
+      - next-tmp:/tmp
+    command: npx next dev apps/next --hostname 0.0.0.0 --port 3001
+    environment:
+      - NODE_ENV=development
+      - TMPDIR=/tmp
+      - NX_DAEMON=false
+      - NX_BATCH_MODE=true
+      - CI=true
+    stdin_open: false
+    tty: false
+
+  # CLI for running commands (tests, builds, releases, etc.)
+  cli:
+    build: .
+    container_name: midas-cli
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - nx-cache:/app/.nx
+      - cli-tmp:/tmp
+    command: tail -f /dev/null
+    environment:
+      - NODE_ENV=development
+      - TMPDIR=/tmp
+      - NX_DAEMON=false
+      - NX_BATCH_MODE=true
+      - CI=true
+    stdin_open: false
+    tty: false
+
   # Verdaccio local npm registry
   verdaccio:
     image: verdaccio/verdaccio:5
@@ -77,6 +117,8 @@ services:
 
 volumes:
   nx-cache:
+  cli-tmp:
+  next-tmp:
   docs-tmp:
   storybook-tmp:
   playground-tmp:

@@ -16,10 +16,9 @@
   &[data-exceeded] {
     color: var(--midas-text-warning);
   }
-}
 
-[data-readonly] {
-  > .characterCounter {
+  & > [data-readonly],
+  [data-readonly] & {
     color: var(--midas-text-read-only);
   }
 }

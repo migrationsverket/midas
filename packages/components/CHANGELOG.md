@@ -1,3 +1,148 @@
+## 16.8.2 (2026-02-07)
+
+### 🏭 Refactoring
+
+- **components, breadcrumbs:** remove redundant type ([103ea3a91f](https://github.com/migrationsverket/midas/commit/103ea3a91f))
+- **components,breadcrumbs:** use isCurrent prop to render separator ([9319d4c7ac](https://github.com/migrationsverket/midas/commit/9319d4c7ac))
+
+## 16.8.1 (2026-02-06)
+
+### 🚀 Features
+
+- **layout:** add boilerplate components ([ab85d70f46](https://github.com/migrationsverket/midas/commit/ab85d70f46))
+
+## 16.8.0 (2026-02-06)
+
+### 🚀 Features
+
+- **components, layout:** add click-event for sidebar links ([#1040](https://github.com/migrationsverket/midas/pull/1040))
+
+## 16.7.1 (2026-02-05)
+
+### 🔧 Maintenance
+
+- add version export, add e2e version confirmation ([0215e0591c](https://github.com/migrationsverket/midas/commit/0215e0591c))
+
+### 🧪 Tests updated
+
+- add e2e next project ([#1034](https://github.com/migrationsverket/midas/pull/1034))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.6
+
+## 16.7.0 (2026-02-05)
+
+### 🚀 Features
+
+- **components, breadcrumbs:** refactor breadcrumbs into separate components ([cdf22d5ff3](https://github.com/migrationsverket/midas/commit/cdf22d5ff3))
+
+### 📖 Documentation changes
+
+- **breadcrumbs:** update story ([50ea1c6692](https://github.com/migrationsverket/midas/commit/50ea1c6692))
+
+### 🔧 Maintenance
+
+- **components,breadcrumbs:** remove unnecessary exports ([12954b4cac](https://github.com/migrationsverket/midas/commit/12954b4cac))
+- **breadcrumbs:** remove generic constraint ([bea4f078fd](https://github.com/migrationsverket/midas/commit/bea4f078fd))
+- **breadcrumbs:** change semver in deprecation comment ([cac24ef9fc](https://github.com/migrationsverket/midas/commit/cac24ef9fc))
+
+### 🧪 Tests updated
+
+- **components, breadcrumbs:** change locator to getByRole ([b7122715a4](https://github.com/migrationsverket/midas/commit/b7122715a4))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.5
+
+## 16.6.5 (2026-02-04)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.4
+
+## 16.6.4 (2026-02-02)
+
+### 🔧 Maintenance
+
+- **components, layout:** revert refactor and bypass linter ([829a2e1274](https://github.com/migrationsverket/midas/commit/829a2e1274))
+- **deps:** update eslint-plugin-react-hooks to latest ([04d26d69ac](https://github.com/migrationsverket/midas/commit/04d26d69ac))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.3
+
+## 16.6.3 (2026-01-30)
+
+### 🩹 Fixes
+
+- **components:** revert pure css modules comments ([ec0ab554dc](https://github.com/migrationsverket/midas/commit/ec0ab554dc))
+
+### 🔙 Rollback changes
+
+- **components:** Revert "chore(components): install postcss-modules-local-by-default" ([101cac9975](https://github.com/migrationsverket/midas/commit/101cac9975))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.2
+
+## 16.6.2 (2026-01-30)
+
+### 🩹 Fixes
+
+- **components,select:** rotate chevron icon when select is open ([cfdf842027](https://github.com/migrationsverket/midas/commit/cfdf842027))
+
+## 16.6.1 (2026-01-30)
+
+### 🩹 Fixes
+
+- **components, legacy-select:** remove global CSS ([7a5833681d](https://github.com/migrationsverket/midas/commit/7a5833681d))
+- **components, grid:** remove global CSS ([61062eef7f](https://github.com/migrationsverket/midas/commit/61062eef7f))
+- **components, text:** remove global CSS ([b68e989094](https://github.com/migrationsverket/midas/commit/b68e989094))
+
+### 🔧 Maintenance
+
+- **components:** allow global CSS ([6be43d3dce](https://github.com/migrationsverket/midas/commit/6be43d3dce))
+- **components, toast:** allow global CSS ([9d7a2103af](https://github.com/migrationsverket/midas/commit/9d7a2103af))
+- **components:** install postcss-modules-local-by-default ([ebc84f65b5](https://github.com/migrationsverket/midas/commit/ebc84f65b5))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.1
+
+## 16.6.0 (2026-01-29)
+
+### 🚀 Features
+
+- **components, tooltip:** increase font size ([a1baf17d44](https://github.com/migrationsverket/midas/commit/a1baf17d44))
+
+### 🩹 Fixes
+
+- **components, tooltip:** make use of CSS variables ([b10fe08cd9](https://github.com/migrationsverket/midas/commit/b10fe08cd9))
+
+## 16.5.5 (2026-01-29)
+
+### 🩹 Fixes
+
+- **components, date-picker:** adjust icon button height ([67c95768db](https://github.com/migrationsverket/midas/commit/67c95768db))
+
+### 🔧 Maintenance
+
+- stylelint ignore dist files ([6288a30bd5](https://github.com/migrationsverket/midas/commit/6288a30bd5))
+
+## 16.5.4 (2026-01-29)
+
+### 🩹 Fixes
+
+- **components, select:** change horizontal padding ([#1025](https://github.com/migrationsverket/midas/pull/1025))
+
+### 🧪 Tests updated
+
+- **components, toast:** add component tests ([86f0fd5363](https://github.com/migrationsverket/midas/commit/86f0fd5363))
+- **components, popover:** add component tests ([e754520aaf](https://github.com/migrationsverket/midas/commit/e754520aaf))
+- **components, link:** add component tests ([ee02374de4](https://github.com/migrationsverket/midas/commit/ee02374de4))
+- **components, grid:** add component tests ([6f75da4a5c](https://github.com/migrationsverket/midas/commit/6f75da4a5c))
+
 ## 16.5.3 (2026-01-28)
 
 ### 🩹 Fixes

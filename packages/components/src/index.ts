@@ -1,3 +1,5 @@
+'use client'
+
 export * from './accordion'
 export * from './badge'
 export * from './breadcrumbs'
@@ -41,3 +43,5 @@ export * from './tooltip'
 export * from './list-box'
 export * from './menu'
 export { useLocalizedStringFormatter } from './utils/intl'
+export { clsx } from './utils/clsx'
+export { VERSION } from './version'

@@ -15,6 +15,7 @@ export const SidebarLink = ({
   icon: IconComponent,
   active,
   hasBadge,
+  onClick,
 }: SidebarLinkProps) => {
   const { isCollapsed, setIsOpened, clientSideHref } = useLayoutContext()
 
@@ -27,9 +28,20 @@ export const SidebarLink = ({
       const isMatch =
         window.location.pathname === hrefWithBasePath ||
         window.location.pathname.startsWith(hrefWithBasePath + '/')
+      // eslint-disable-next-line
       setIsActive(active ?? isMatch)
     }
   }, [active, hrefWithBasePath])
+
+  const onLinkClicked = () => {
+    setIsOpened?.(false)
+    if (onClick) {
+      onClick({
+        title,
+        href: hrefWithBasePath,
+      })
+    }
+  }
 
   if (isCollapsed)
     return (
@@ -42,7 +54,7 @@ export const SidebarLink = ({
             styles.listLinkCollapsed,
             isActive && styles.active,
           )}
-          onPress={() => setIsOpened?.(false)}
+          onPress={onLinkClicked}
         >
           <BadgeContainer>
             <IconComponent
@@ -61,7 +73,7 @@ export const SidebarLink = ({
       href={href}
       aria-label={title}
       className={clsx(styles.listLink, isActive && styles.active)}
-      onPress={() => setIsOpened?.(false)}
+      onPress={onLinkClicked}
     >
       <BadgeContainer>
         <IconComponent size={20} />

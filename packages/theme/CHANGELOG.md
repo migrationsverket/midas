@@ -1,3 +1,27 @@
+## 3.10.6 (2026-02-05)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.10.5 (2026-02-05)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.10.4 (2026-02-04)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.10.3 (2026-02-02)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.10.2 (2026-01-30)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.10.1 (2026-01-30)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.10.0 (2026-01-28)
 
 ### 🚀 Features

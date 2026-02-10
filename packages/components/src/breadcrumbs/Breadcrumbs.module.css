@@ -7,14 +7,17 @@
   list-style: none;
   margin: 0;
 
-  li:not(:last-child)::after {
-    color: var(--midas-text-disabled);
-    content: '/';
-    alt: ' ';
-    padding: 0 5px;
+  li {
+    display: flex;
+    align-items: baseline;
   }
 
   li[data-current='true'] a {
     cursor: default;
   }
+}
+
+.separator {
+  color: var(--midas-text-disabled);
+  padding: 0 5px;
 }

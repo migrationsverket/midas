@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from '../../utils/clsx'
-import { SidebarLinkGroup } from '../Layout'
+import { SidebarLinkClickData, SidebarLinkGroup } from '../Layout'
 import styles from '../Layout.module.css'
 import { RouterProvider } from 'react-aria-components'
 import { Button } from '../../button'
@@ -12,7 +12,13 @@ import { useLayoutContext } from '../context/LayoutContext'
 import { useLocalizedStringFormatter } from '../../utils/intl'
 import messages from '../intl/translations.json'
 
-export const Sidebar: React.FC = () => {
+type SidebarProps = {
+  onLinkClick?: (e: SidebarLinkClickData) => void
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({
+  onLinkClick,
+}: SidebarProps) => {
   const {
     items,
     app,
@@ -38,7 +44,10 @@ export const Sidebar: React.FC = () => {
               isCollapsed && styles.listItemCollapsed,
             )}
           >
-            <SidebarLink {...link} />
+            <SidebarLink
+              onClick={onLinkClick}
+              {...link}
+            />
           </li>
         ))}
       </ul>

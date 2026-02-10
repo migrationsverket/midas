@@ -2,12 +2,12 @@
   "name": "@midas-ds/release-dry-run",
   "version": "0.0.1",
   "private": true,
-  "type": "commonjs",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "type": "module",
+  "main": "./index.esm.js",
+  "types": "./index.d.ts",
   "dependencies": {
-    "nx": "22.0.4",
-    "@actions/core": "1.11.1",
+    "nx": "^22.3.3",
+    "@actions/core": "^3.0.0",
     "semver": "^7.7.2"
   }
 }

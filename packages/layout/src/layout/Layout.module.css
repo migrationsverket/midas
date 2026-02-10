@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  font-family: var(--midas-typography-font-family);
+  grid-template-areas:
+    'header header header'
+    'panelLeft main panelRight'
+    'navbar navbar navbar';
+  width: 100%;
+}

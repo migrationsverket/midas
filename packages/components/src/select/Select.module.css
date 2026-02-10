@@ -22,8 +22,8 @@
   gap: var(--midas-spacing-20);
   justify-content: space-between;
   min-height: var(--midas-size-150);
-  padding-left: var(--midas-size-70);
-  padding-right: var(--midas-size-70);
+  padding-left: var(--midas-size-80);
+  padding-right: var(--midas-size-80);
   transition: all 100ms ease-in;
 
   &.medium {
@@ -62,8 +62,8 @@
     }
   }
 
-  &[data-open] {
-    .icon svg {
+  &[aria-expanded='true'] {
+    .icon {
       transform: rotate(180deg);
     }
   }
@@ -261,6 +261,11 @@
   }
 }
 
+.icon {
+  display: flex;
+  transition: transform var(--midas-transition-duration-normal) ease;
+}
+
 .tagGroup {
   margin-top: var(--midas-size-40);
 }
@@ -268,7 +273,8 @@
 @media (prefers-reduced-motion) {
   .trigger,
   .popover[data-trigger='Select'],
-  .selectAll {
+  .selectAll,
+  .icon {
     transition: none;
   }
 }

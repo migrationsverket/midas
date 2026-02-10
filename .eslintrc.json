@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "jsx-a11y"],
+  "plugins": ["@nx", "jsx-a11y", "@stylistic"],
   "overrides": [
     {
       "files": ["*.md", "*.mdx"],
@@ -65,7 +65,7 @@
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
       "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
+        "@stylistic/no-extra-semi": "error",
         "no-extra-semi": "off"
       }
     },

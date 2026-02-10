@@ -1,0 +1,18 @@
+.navbar {
+  background-color: var(--midas-layer-01-base);
+  grid-area: navbar;
+  margin-top: 1rem;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      align-items: center;
+      display: flex;
+      list-style: none;
+    }
+  }
+}

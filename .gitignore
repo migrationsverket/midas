@@ -117,6 +117,10 @@ web_modules/
 .cache
 .parcel-cache
 
+# Next.js 
+*.tsbuildinfo
+next-env.d.ts
+
 # Next.js build output
 .next
 out
@@ -202,3 +206,6 @@ playwright-report/
 blob-report/
 playwright/.cache/
 playwright/.auth/
+
+# verdaccio
+.verdaccio/storage

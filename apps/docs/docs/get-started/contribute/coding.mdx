@@ -23,6 +23,7 @@ Detta startar i bakgrunden:
 - **Storybook** på http://localhost:4400
 - **Dokumentation** på http://localhost:3000
 - **Playground** på http://localhost:4200
+- **Next.js** på http://localhost:3001
 
 :::note
 Första uppstarten tar några minuter för att installera beroenden. Följ processen med `docker compose logs -f`.
@@ -37,10 +38,10 @@ docker compose up -d docs       # Endast dokumentation
 ### Kör kommandon
 
 ```bash
-docker compose exec docs nx test components   # Kör tester
-docker compose exec docs nx build components  # Bygg komponenter
-docker compose exec docs npm install <paket>  # Installera beroenden
-docker compose exec docs sh                   # Öppna shell i containern
+docker compose exec cli npx nx test components   # Kör tester
+docker compose exec cli npx nx build components  # Bygg komponenter
+docker compose exec cli npm install <paket>      # Installera beroenden
+docker compose exec cli sh                       # Öppna shell i containern
 ```
 
 ### Stoppa
@@ -119,7 +120,7 @@ För att testa komponentbiblioteket i en annan app kan du publicera det till ett
 **Med Docker:**
 ```bash
 docker compose up -d verdaccio
-docker compose exec docs npx nx run @midas-ds/source:release:local:docker:dev
+docker compose exec cli npx nx run @midas-ds/source:release:local:docker:dev
 ```
 
 **Utan Docker:**
