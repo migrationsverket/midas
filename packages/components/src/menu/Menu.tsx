@@ -11,6 +11,9 @@ import { ExcludeKeysFrom } from '../utils/types'
 
 export { MenuTrigger, type MenuTriggerProps }
 
+/**
+ * @deprecated Links are not enforced in menus.
+ */
 export type MenuItemObject = ExcludeKeysFrom<
   { [prop: string]: unknown },
   'href'
@@ -23,7 +26,7 @@ export interface MenuProps<T> extends AriaMenuProps<T> {
   size?: Size
 }
 
-export const Menu = <T extends MenuItemObject>({
+export const Menu = <T extends object>({
   className,
   size = 'large',
   ...rest
