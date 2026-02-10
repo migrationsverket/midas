@@ -1,0 +1,6 @@
+import{j as n}from"./iframe-xM6GPlxZ.js";import{s as e}from"./GridItem-C-Qn3Lna.js";import{c as l}from"./clsx-Ciqy0D92.js";const i=({children:a,isContained:t=!1,removeMargins:r=!1,...s})=>n.jsx("div",{...s,className:l(e.container,t&&e.contained,r&&e.removeMargins,s.className),children:n.jsx("div",{className:e.flex,children:a})});try{i.displayName="Grid",i.__docgenInfo={description:`Grid based on display: flex;
+Calculates breakpoints and distributes columns according to MV specifications
+
+### Children
+Use GridItem to manage each column.
+GridItem accepts values of 1 through 12 and auto.`,displayName:"Grid",props:{isContained:{defaultValue:{value:"false"},description:"A contained grid has a max-width and centered positioning on large screens.",name:"isContained",required:!1,type:{name:"boolean"}},removeMargins:{defaultValue:{value:"false"},description:"Removes outer margins.",name:"removeMargins",required:!1,type:{name:"boolean"}},tw:{defaultValue:null,description:"Specify styles using Tailwind CSS classes. This feature is currently experimental.\nIf `style` prop is also specified, styles generated with `tw` prop will be overridden.\n\nExample:\n- `tw='w-full h-full bg-blue-200'`\n- `tw='text-9xl'`\n- `tw='text-[80px]'`",name:"tw",required:!1,type:{name:"{string}"}}}}}catch{}export{i as G};
