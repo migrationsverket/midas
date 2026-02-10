@@ -3,16 +3,24 @@
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import ThemedImage from '@theme/ThemedImage'
 
+import { SimpleSearchExample } from '@site/src/components/examples/search-and-filter/SearchExamples'
+
 Detta mönster definierar begreppen sökning och filtrering och beskriver designmönster för respektive situation.
 Tekniskt är det inte någon skillnad på sökning och filtrering, båda är sätt att begränsa mängden data som visas i en tabell eller en lista. Men från användarens perspektiv är detta två olika uppgifter och det är därför vi väljer att skilja på dem.
 
 Definition
 
-- En sökning sker innan det inte finns någon data att ta ställning till. Syftet är att se vad det finns för data att jobba med. Användaren vet inte vilka värden som finns och sökningen är därför oftast mer fri, typiskt ett fritextfält.
+- En sökning sker innan det inte finns någon data att ta ställning till. Syftet med sökningen är att se vad det finns för data. Användaren vet inte vilka värden som finns och sökningen är därför oftast mer fri, typiskt ett fritextfält.
 
 - En filtrering görs efter sökningen, när användaren har tillgång till datan. Syftet är att begränsa mängden data till det som är relevant för användaren. Filtreringen är därför mer styrd och användaren väljer oftast från en uppsättning av fördefinierade val.
 
 ## Sök
+
+Standardfallet vid sökning är ett [Sökfält](/components/search-field) där användaren skriver in en sökterm, tex Dossnummer.
+
+<SimpleSearchExample />
+
+I vissa
 
 ## Filtrering
 
