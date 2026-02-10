@@ -1,0 +1,91 @@
+# Sök och filtrering
+
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import ThemedImage from '@theme/ThemedImage'
+
+Detta mönster definierar begreppen sökning och filtrering och beskriver designmönster för respektive situation.
+Tekniskt är det inte någon skillnad på sökning och filtrering, båda är sätt att begränsa mängden data som visas i en tabell eller en lista. Men från användarens perspektiv är detta två olika uppgifter och det är därför vi väljer att skilja på dem.
+
+Definition
+
+- En sökning sker innan det inte finns någon data att ta ställning till. Syftet är att se vad det finns för data att jobba med. Användaren vet inte vilka värden som finns och sökningen är därför oftast mer fri, typiskt ett fritextfält.
+
+- En filtrering görs efter sökningen, när användaren har tillgång till datan. Syftet är att begränsa mängden data till det som är relevant för användaren. Filtreringen är därför mer styrd och användaren väljer oftast från en uppsättning av fördefinierade val.
+
+## Sök
+
+## Filtrering
+
+Nedan följer ett antal designmönster för filtrering i tabeller och listor
+
+### Inline-filter
+
+Inline-filter innebär att filtren placeras direkt ovanför tabellen och är alltid synliga. Detta gör det enkelt att upptäcka vilka filter som finns tillgängliga, se vilka filter som redan är aktiva samt justera flera filter på en gång utan extra interaktioner. Du kan [se ett exempel på detta mönster här](/dev/tanstack-table/#filtrering)
+
+Använd detta mönster när
+
+- du har ett fåtal filter
+- användaren snabbt behöver kunna justera flera filter på en gång
+- det är viktigt att direkt kunna se vilka filter som är aktiva
+
+<InlineFilter />
+
+Filtren kan vid behov läggas i en [Accordion](/components/accordion) för att kunna fällas ihop och ta mindre plats.
+
+<InlineFilterAccordion />
+### Filter i popover
+
+I detta mönster öppnas filtervalen i en popover via en knapp eller en ikon. Det ger en fokuserad tabellvy och är användbart filtrering inte är användarens primära handling. Inne i popovern läggs filtren i [Accordion](/components/accordion) som kan expanderas och fällas ihop, vilket ger en tydlig och skalbar struktur även när det är många filter.
+
+Använd detta mönster när
+
+- filtreringen inte är en primär uppgift för de flesta användare
+- det finns många filter
+- du vill kunna gruppera filter
+
+<FilterPopup />
+
+export function InlineFilter() {
+  const lightSrc = useBaseUrl('/img/inline-filter-light.svg');
+  const darkSrc = useBaseUrl('/img/inline-filter-dark.svg');
+
+return (
+
+<ThemedImage
+  alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
+
+export function InlineFilterAccordion() {
+  const lightSrc = useBaseUrl('/img/inline-accordion-light.svg');
+  const darkSrc = useBaseUrl('/img/inline-accordion-dark.svg');
+
+return (
+
+<ThemedImage
+  alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
+
+export function FilterPopup() {
+  const lightSrc = useBaseUrl('/img/filter-popover-light.svg');
+  const darkSrc = useBaseUrl('/img/filter-popover-dark.svg');
+
+return (
+
+<ThemedImage
+  alt='Inline filter'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
