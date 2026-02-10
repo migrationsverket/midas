@@ -1,3 +1,7 @@
+## 1.2.25 (2026-02-10)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
 ## 1.2.24 (2026-02-07)
 
 ### 🧱 Updated Dependencies
