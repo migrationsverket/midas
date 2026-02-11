@@ -3,26 +3,30 @@
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import ThemedImage from '@theme/ThemedImage'
 
-import { SimpleSearchExample } from '@site/src/components/examples/search-and-filter/SearchExamples'
+import { SimpleSearchExample, NoHitsExample } from '@site/src/components/examples/search-and-filter/SearchExamples'
 
-Detta mönster definierar begreppen sökning och filtrering och beskriver designmönster för respektive situation.
+På denna sida beskrivs begreppen sökning och filtrering samt designmönster för respektive situation.
 Tekniskt är det inte någon skillnad på sökning och filtrering, båda är sätt att begränsa mängden data som visas i en tabell eller en lista. Men från användarens perspektiv är detta två olika uppgifter och det är därför vi väljer att skilja på dem.
 
-Definition
+Vi definierar en sökning som det användaren gör innan det inte finns någon data att ta ställning till. Syftet med sökningen är att se vad det finns för data. En filtrering görs efter sökningen, när användaren har tillgång till datan. Syftet med filtrering är att begränsa mängden data till det som är relevant för användaren.
 
-- En sökning sker innan det inte finns någon data att ta ställning till. Syftet med sökningen är att se vad det finns för data. Användaren vet inte vilka värden som finns och sökningen är därför oftast mer fri, typiskt ett fritextfält.
+## Sökning
 
-- En filtrering görs efter sökningen, när användaren har tillgång till datan. Syftet är att begränsa mängden data till det som är relevant för användaren. Filtreringen är därför mer styrd och användaren väljer oftast från en uppsättning av fördefinierade val.
+En sökning sker som sagt innan det finns någon data att ta ställning till. Användaren vet inte vilka värden som finns och sökningen är därför oftast mer fri. Standardfallet vid sökning är ett [Sökfält](/components/search-field) där användaren skriver in en sökterm, tex Dossnummer. I vissa fall behövs en mer avancerad sökning med flera alternativ och då använder vi samma designmönster som för filtrering, se nedan.
 
-## Sök
+### Inga träffar
 
-Standardfallet vid sökning är ett [Sökfält](/components/search-field) där användaren skriver in en sökterm, tex Dossnummer.
+:::warning
+OBS: Det är skillnad mellan tekniskt fel och tomt resultat. Om det är ett tekniskt fel så visar vi ett felmeddelande.
+:::
+När användaren söker finns det en risk att de inte får några träffar. Om detta händer visar vi en Infobanner där träffarna skulle ha varit. I meddelandet bör vi också ge användaren konstruktiva förslag på vad de kan göra för att få träffar.
 
-<SimpleSearchExample />
-
-I vissa fall behövs en mer avancerad sökning med flera alternativ. Då använder vi samma designmönster som för filtrering, se nedan.
+<NoHitsExample />
 
 ## Filtrering
+
+Till skillnad från sökning, som är mer utforskande, bygger filtrering oftast på fördefinierade värden. Användaren väljer aktivt vilka kriterier som ska gälla och kan kombinera flera filter för att begränsa träffmängden. Filtrering ska vara tydlig, kontrollerbar och göra det enkelt att förstå vilka urval som påverkar den visade datan.
+Filtreringen är därför mer styrd och användaren väljer oftast från en uppsättning av fördefinierade val.
 
 Nedan följer ett antal designmönster för filtrering i tabeller och listor
 
