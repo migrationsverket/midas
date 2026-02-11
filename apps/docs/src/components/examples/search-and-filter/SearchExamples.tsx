@@ -1,6 +1,5 @@
 import { SearchField, InfoBanner } from '@midas-ds/components'
 import { useState } from 'react'
-import { options } from '@midas-ds/test-utils'
 
 export const SimpleSearchExample = () => {
   const [value, setValue] = useState('')
