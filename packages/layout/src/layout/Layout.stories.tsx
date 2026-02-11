@@ -1,25 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
 import { Layout } from '.'
 import { Header } from '../header'
 import { Panel } from '../panel'
 import { Navbar } from '../navbar'
-import { Navigation } from '../navigation'
-import { NavigationLink } from '../navigation-link'
-import { House, Menu } from 'lucide-react'
+import { House, List, Menu } from 'lucide-react'
 import { Button } from '@midas-ds/components'
 import { useId, useState } from 'react'
+import * as panelStories from '../panel/Panel.stories'
+import { Navigation } from '../navigation'
+
+const { Collapse: CollapsePanel } = composeStories(panelStories)
 
 type Story = StoryObj<typeof Layout>
 
 export default {
   component: Layout,
-  subcomponents: {
-    Header,
-    Navbar,
-    Navigation,
-    NavigationLink,
-    Panel,
-  },
   title: 'Components/Layout/Layout',
   tags: ['autodocs'],
   args: {
@@ -33,6 +28,7 @@ export const Primary: Story = {
     const drawerId = useId()
 
     const [isNavigationOpen, setIsNavigationOpen] = useState(false)
+    const [isNavigationCollapsed, setIsNavigationCollapsed] = useState(false)
 
     const toggleIsNavigationOpen = () => setIsNavigationOpen(x => !x)
 
@@ -48,40 +44,10 @@ export const Primary: Story = {
             variant='icon'
           />
         </Header>
-        <Panel aria-label='left panel'>
-          <Navigation
-            id={drawerId}
-            isOpen={isNavigationOpen}
-            onOpenChange={setIsNavigationOpen}
-          >
-            <ul>
-              <li>
-                <NavigationLink
-                  href='/'
-                  isActive
-                >
-                  <House />
-                  Hem
-                </NavigationLink>
-              </li>
-              <li>
-                <NavigationLink href='/categories'>Kategorier</NavigationLink>
-                <ul aria-label='Sidor'>
-                  <li>
-                    <NavigationLink href='/categories/products'>
-                      Produkter
-                    </NavigationLink>
-                  </li>
-                  <li>
-                    <NavigationLink href='/categories/services'>
-                      Tjänster
-                    </NavigationLink>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </Navigation>
-        </Panel>
+        <CollapsePanel
+          isCollapsed={isNavigationCollapsed}
+          onCollapseChange={setIsNavigationCollapsed}
+        />
         <main style={{ height: '5rem', padding: '1rem' }}>{children}</main>
         <Panel
           aria-label='right panel'
@@ -91,24 +57,21 @@ export const Primary: Story = {
         </Panel>
         <Navbar>
           <ul>
-            <li>
-              <NavigationLink
-                href='/'
-                isActive
-                variant='navbar'
-              >
-                <House />
-                Hem
-              </NavigationLink>
-            </li>
-            <li>
-              <NavigationLink
-                href='/categories'
-                variant='navbar'
-              >
-                Kategorier
-              </NavigationLink>
-            </li>
+            <Navigation.Link
+              href='/'
+              isActive
+              variant='navbar'
+              title='Hem'
+            >
+              <House />
+            </Navigation.Link>
+            <Navigation.Link
+              href='/categories'
+              variant='navbar'
+              title='Kategorier'
+            >
+              <List />
+            </Navigation.Link>
           </ul>
         </Navbar>
       </Layout>

@@ -1,5 +1,30 @@
 .panel {
+  box-sizing: border-box;
   background-color: var(--midas-layer-01-base);
   grid-area: panelLeft;
   padding: 1rem;
+  width: 100%;
+  transition: width var(--midas-transition-duration-fast) ease-out;
+
+  &.collapse {
+    &.collapsed {
+      width: calc(32px + 48px);
+
+      .header {
+        gap: 0;
+      }
+    }
+  }
+
+  .header {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-size: var(--midas-typography-font-size-20);
+      display: block;
+    }
+  }
 }

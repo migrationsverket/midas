@@ -1,0 +1,25 @@
+.navigationListItem {
+  list-style: none;
+
+  &.hasSubmenu {
+    &:has(> .sectionTitle),
+    &.collapsed {
+      margin-top: var(--midas-spacing-50);
+      margin-bottom: var(--midas-spacing-50);
+    }
+
+    &.navigationListItem &.navigationListItem {
+      margin-left: var(--midas-spacing-50);
+
+      &.collapsed {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .sectionTitle {
+    color: var(--midas-text-secondary);
+    font-size: var(--midas-typography-font-size-20);
+    padding: var(--midas-spacing-30);
+  }
+}

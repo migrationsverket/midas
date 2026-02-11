@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { clsx } from '@midas-ds/components'
-import styles from './Navigation.module.css'
-import { Drawer } from './Drawer'
 import { ModalOverlayProps } from 'react-aria-components'
+import { NavigationLink, NavigationSubMenu, Drawer } from './components'
+import styles from './Navigation.module.css'
 
 export interface NavigationProps
   extends
@@ -25,7 +25,7 @@ export const Navigation = ({
       className={clsx(className, styles.navigation)}
       {...rest}
     >
-      {children}
+      <ul>{children}</ul>
     </nav>
     <Drawer
       id={id}
@@ -37,8 +37,11 @@ export const Navigation = ({
         className={clsx(className, styles.navigation)}
         {...rest}
       >
-        {children}
+        <ul>{children}</ul>
       </nav>
     </Drawer>
   </>
 )
+
+Navigation.Link = NavigationLink
+Navigation.SubMenu = NavigationSubMenu

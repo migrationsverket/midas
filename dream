@@ -1,0 +1,28 @@
+export const DreamAPI = () => {
+  return (
+    <Layout>
+      <Header>
+        <Logo />
+        <AppTitle
+          title='Initialärende'
+          subtitle='Asylenheten'
+        />
+        <ActionMenu>
+          <Link>Notiser</Link>
+          <Link>Logga ut</Link>
+        </ActionMenu>
+      </Header>
+      <Panel>
+        <Navigation>
+          <NavigationSection>
+            <Link>Sök på person</Link>
+          </NavigationSection>
+          <NavigationSection title='Ersättningshantering'>
+            <Link>Sök på person</Link>
+          </NavigationSection>
+        </Navigation>
+      </Panel>
+      <Main>{/* ... */}</Main>
+    </Layout>
+  )
+}

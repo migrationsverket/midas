@@ -2,14 +2,7 @@
   background-color: var(--midas-layer-01-base);
 
   ul {
+    margin: 0;
     padding: 0;
-
-    li {
-      list-style: none;
-    }
-  }
-
-  ul ul {
-    padding-left: 2rem;
   }
 }
