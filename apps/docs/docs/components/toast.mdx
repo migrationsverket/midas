@@ -3,9 +3,8 @@ title: Toast
 description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.
 ---
 
-import { PropTable } from '@site/src/components/PropsTable'
-import { GlobalToastRegion, toastQueue, Button, Grid, GridItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { DynamicToastExample } from '@site/src/components/examples/toast/ToastExamples'
 
 <ComponentHeader
   name='Toast'
@@ -13,74 +12,17 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
 />
 
-Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation.
+Komponent för att visa ett kort, tillfälligt meddelande om åtgärder, fel eller andra händelser i en applikation.
 
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <GlobalToastRegion />
-  <Button
-    onPress={() =>
-      toastQueue.add(
-        { type: 'success', message: 'Allt funkar som det ska!' },
-        {
-          timeout: 5000,
-        },
-      )
-    }
-  >
-    {'Tryck här för en notifiering'}
-  </Button>
-</div>
+Toast har fyra varianter: `success`, `info`, `important` och `warning`.
 
-## Varianter
-
-Toast har fyra olika varianter: `success`, `info`, `important` och `warning`.
-
-<div className='card'>
-  <Grid>
-    <GridItem size={3}>
-      <Button
-        onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}
-      >
-        {'Success'}
-      </Button>
-    </GridItem>
-    <GridItem size={3}>
-      <Button
-        onPress={() =>
-          toastQueue.add(
-            { type: 'info', message: 'Här kommer ett meddelande' },
-            {
-              timeout: 5000,
-            },
-          )
-        }
-      >
-        {'Info'}
-      </Button>
-    </GridItem>
-    <GridItem size={3}>
-      <Button onPress={() => toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })}>
-        {'Important'}
-      </Button>
-    </GridItem>
-    <GridItem size={3}>
-      <Button
-        onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000, priority: 1 })}
-      >
-        {'Warning'}
-      </Button>
-    </GridItem>
-  </Grid>
-</div>
+<DynamicToastExample />
 
 ## Implementationer
 
 ### Lokalt
 
-Använd `toastProvider` för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,
+Använd `ToastProvider` för att sätta en kö av toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,
 använd den [globala varianten](#globalt).
 
 ```tsx
@@ -104,13 +46,13 @@ import { GlobalToastRegion, toastQueue } from '@midas-ds/components'
 <GlobalToastRegion />
 //...
 <Button onPress={
-  () => toastQueue.add({type: 'success', message: 'Toast is done'})
+  () => toastQueue.add({type: 'success', message: 'Toasten är klar'}, {timeout: 5000})
 }>Visa notis</Button>
 ```
 
 ## Toastkö
 
-Om det triggas flera Toast sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5. Varje gång en toast läggs till i kön går det att bestämma livslängd och prioritering. Prioritet kan sättas till 1, 2 eller 3. `warning` har dock alltid högsta prioritet och kommer därmed först i kön.
+Om det triggas flera toasts sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5. Varje gång en toast läggs till i kön går det att bestämma livslängd och prioritering. Prioritet kan sättas till 1, 2 eller 3. `warning` har dock alltid högsta prioritet och kommer därmed först i kön.
 
 ```tsx {3}
 .add(
@@ -119,40 +61,83 @@ Om det triggas flera Toast sätts de i en kö för att visas i turordning. Maxim
 )
 ```
 
-## Riktlinjer
+## Programmatisk stängning
 
-Timeout ska av tillgänglighetsskäl vara minst 5000ms:
+`.add()` returnerar en nyckel som kan användas för att stänga en toast programmatiskt med `.close()`. Callbacken `onClose` kan användas för att reagera när en toast stängs, oavsett om det sker manuellt eller via timeout.
 
-```tsx {3}
-.add(
-  {...},
-  { timeout: 5000 }
+```tsx
+const key = toastQueue.add(
+  { type: 'info', message: 'Bearbetar...' }
+)
+
+// Stäng toasten programmatiskt
+toastQueue.close(key)
+```
+
+```tsx
+toastQueue.add(
+  { type: 'success', message: 'Filen sparades' },
+  {
+    timeout: 5000,
+    onClose: () => console.log('Toasten stängdes'),
+  }
 )
 ```
 
+## Tillgänglighet
+
+Toast-regionen renderas som ett landmärke (`role="region"`) som kan nås med tangentbordet via **F6** (framåt) och **Shift+F6** (bakåt). Det gör att användare med hjälpmedel snabbt kan navigera till aktiva toasts utan att behöva tabba genom hela sidan.
+
+När toast-regionen får fokus pausas alla nedräkningstimer automatiskt, så att användaren hinner läsa innehållet. Timern återupptas när fokus lämnar regionen.
+
+:::info[Automatisk stängning]
+Använd automatisk stängning med `timeout` enbart för icke-kritiska meddelanden. Vissa användare kan behöva extra tid att läsa innehållet, och användare med skärmförstoring kan missa toasts helt. Timeout ska vara minst 5000 ms.
+:::
+
 ## API
 
-### Toast
+### MidasToast
 
-<PropTable name='Toast' />
+Innehållet i en toast som skickas till `.add()`.
 
-### ToastRegion
+```tsx
+interface MidasToast {
+  message: string
+  type: 'success' | 'info' | 'important' | 'warning'
+  children?: React.ReactNode
+}
+```
 
-<PropTable
-  name='ToastRegion'
-  defaultOpen={false}
-/>
+### ToastOptions
 
-### GlobalToastRegion
+Inställningar som skickas som andra argument till `.add()`.
 
-<PropTable
-  name='GlobalToastRegion'
-  defaultOpen={false}
-/>
+```tsx
+interface ToastOptions {
+  /** Time in milliseconds before the toast is automatically dismissed. */
+  timeout?: number
+  /** Priority in the queue (1, 2 or 3). */
+  priority?: number
+  /** Callback that is called when the toast is closed. */
+  onClose?: () => void
+}
+```
 
-### ToastProvider
+### ToastState\<MidasToast\>
 
-<PropTable
-  name='ToastProvider'
-  defaultOpen={false}
-/>
+State-objektet som `ToastProvider` ger via render prop.
+
+```tsx
+interface ToastState<T> {
+  /** Adds a toast to the queue. Returns a key. */
+  add(content: T, options?: ToastOptions): string
+  /** Closes a toast by key. */
+  close(key: string): void
+  /** Pauses all timers. */
+  pauseAll(): void
+  /** Resumes all timers. */
+  resumeAll(): void
+  /** The currently visible toasts. */
+  visibleToasts: QueuedToast<T>[]
+}
+```
