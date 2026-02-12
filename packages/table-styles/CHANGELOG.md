@@ -1,3 +1,9 @@
+## 1.2.26 (2026-02-12)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.3
+
 ## 1.2.25 (2026-02-10)
 
 This was a version bump only for table-styles to align it with other projects, there were no code changes.

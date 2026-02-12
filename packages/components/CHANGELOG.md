@@ -1,3 +1,13 @@
+## 16.8.3 (2026-02-12)
+
+### 🩹 Fixes
+
+- **components,toast:** add focus-visible to toast region ([0eae529892](https://github.com/migrationsverket/midas/commit/0eae529892))
+
+### 🔧 Maintenance
+
+- **components,menu:** deprecate `MenuItemObject` ([95b5ef21c1](https://github.com/migrationsverket/midas/commit/95b5ef21c1))
+
 ## 16.8.2 (2026-02-07)
 
 ### 🏭 Refactoring
