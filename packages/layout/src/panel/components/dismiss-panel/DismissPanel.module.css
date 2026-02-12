@@ -1,0 +1,7 @@
+.dismissPanel {
+}
+
+.panelTitle {
+  font-size: var(--midas-typography-font-size-20);
+  display: block;
+}

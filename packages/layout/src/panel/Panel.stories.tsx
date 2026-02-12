@@ -19,8 +19,6 @@ export default {
   },
 } satisfies Meta<typeof Panel>
 
-export const Primary: Story = {}
-
 export const Collapse: Story = {
   args: {
     isCollapsed: false,
@@ -45,7 +43,7 @@ export const Dismiss: Story = {
   args: {
     isOpen: true,
     variant: 'dismiss',
-    title: undefined,
+    title: 'Plats',
   },
   render: args => {
     const [isOpen, setIsOpen] = useState(true)
