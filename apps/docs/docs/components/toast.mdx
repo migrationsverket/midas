@@ -3,6 +3,7 @@ title: Toast
 description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.
 ---
 
+import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DynamicToastExample } from '@site/src/components/examples/toast/ToastExamples'
 
@@ -96,48 +97,27 @@ Använd automatisk stängning med `timeout` enbart för icke-kritiska meddelande
 
 ## API
 
-### MidasToast
+### Toast
 
-Innehållet i en toast som skickas till `.add()`.
+<PropTable name='Toast' />
 
-```tsx
-interface MidasToast {
-  message: string
-  type: 'success' | 'info' | 'important' | 'warning'
-  children?: React.ReactNode
-}
-```
+### ToastRegion
 
-### ToastOptions
+<PropTable
+  name='ToastRegion'
+  defaultOpen={false}
+/>
 
-Inställningar som skickas som andra argument till `.add()`.
+### GlobalToastRegion
 
-```tsx
-interface ToastOptions {
-  /** Time in milliseconds before the toast is automatically dismissed. */
-  timeout?: number
-  /** Priority in the queue (1, 2 or 3). */
-  priority?: number
-  /** Callback that is called when the toast is closed. */
-  onClose?: () => void
-}
-```
+<PropTable
+  name='GlobalToastRegion'
+  defaultOpen={false}
+/>
 
-### ToastState\<MidasToast\>
+### ToastProvider
 
-State-objektet som `ToastProvider` ger via render prop.
-
-```tsx
-interface ToastState<T> {
-  /** Adds a toast to the queue. Returns a key. */
-  add(content: T, options?: ToastOptions): string
-  /** Closes a toast by key. */
-  close(key: string): void
-  /** Pauses all timers. */
-  pauseAll(): void
-  /** Resumes all timers. */
-  resumeAll(): void
-  /** The currently visible toasts. */
-  visibleToasts: QueuedToast<T>[]
-}
-```
+<PropTable
+  name='ToastProvider'
+  defaultOpen={false}
+/>
