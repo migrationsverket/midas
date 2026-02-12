@@ -18,11 +18,6 @@ export interface AccordionProps extends DisclosureGroupProps {
 }
 
 /**
- * @deprecated since v 16.4.1 please use AccordionProps instead
- */
-export type MidasAccordion = AccordionProps
-
-/**
  * Accordions help reduce visual clutter on a page by organizing content into collapsible sections.
  */
 export const Accordion: React.FC<AccordionProps> = ({
