@@ -3,14 +3,12 @@ import styles from './ComboBox.module.css'
 import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
-  ListBoxItemProps,
   ValidationResult,
 } from 'react-aria-components'
 import {
   Button,
   Input,
   ComboBox as AriaComboBox,
-  Collection,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from '../utils/clsx'
@@ -20,11 +18,7 @@ import { FieldError } from '../field-error'
 import { Size } from '../common/types'
 import {
   ListBox,
-  ListBoxItem,
-  ListBoxSection,
   ListBoxPopover,
-  type ListBoxItemElement,
-  type ListBoxSectionElement,
 } from '../list-box'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
@@ -122,28 +116,5 @@ export function ComboBox<T extends object>({
         </ListBox>
       </ListBoxPopover>
     </AriaComboBox>
-  )
-}
-
-/**
- * @deprecated since v15.2.0 please use ListBoxItem instead
- */
-export function ComboBoxItem<T extends ListBoxItemElement>(
-  props: ListBoxItemProps<T>,
-) {
-  return <ListBoxItem {...props} />
-}
-
-/**
- * @deprecated since v15.2.0 please use ListBoxSection instead
- * @see {@link https://designsystem.migrationsverket.se/components/combobox/#sektioner|sektioner i ComboBox}
- */
-export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
-  return (
-    <ListBoxSection {...props}>
-      <Collection items={props.children}>
-        {item => <ComboBoxItem key={item.id}>{item.name}</ComboBoxItem>}
-      </Collection>
-    </ListBoxSection>
   )
 }
