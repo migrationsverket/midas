@@ -9,6 +9,6 @@ describe('given a primary Layout', async () => {
   it('should render', async () => {
     const { getByText } = await render(<Primary />)
 
-    await expect.element(getByText('boilerplate')).toBeVisible()
+    await expect.element(getByText('Content')).toBeVisible()
   })
 })
