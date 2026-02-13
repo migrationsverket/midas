@@ -10,6 +10,7 @@ describe('given a required DatePicker', async () => {
   it('should show an error message if submitted empty', async () => {
     const { getByText } = await render(<Required />)
 
+    await page.getByText('Beskrivning').click()
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.tab()
@@ -31,6 +32,7 @@ describe('given a DatePicker with Custom Validation', async () => {
   it('should show a custom error message if invalid', async () => {
     const { getByText } = await render(<CustomValiation />)
 
+    await page.getByText('Beskrivning').click()
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.tab()
@@ -50,6 +52,7 @@ describe('given a Contolled DatePicker', async () => {
     await render(<ControlledState />)
 
     // Select tomorrows date
+    await page.getByText('Beskrivning').click()
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.tab()
