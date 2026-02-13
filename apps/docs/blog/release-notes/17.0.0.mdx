@@ -3,7 +3,7 @@ slug: 17.0.0
 title: Release 17.0.0
 authors: midas
 tags: [release-notes, v17]
-date: 2026-02-12
+date: 2026-02-13
 ---
 
 Den här releasen fokuserar på att rensa bort utfasad funktionalitet som har varit markerad som deprecated sedan v15.0.0. Vi har även lagt till flera förbättringar och buggfixar sedan v16.3.1. Eftersom releasen innehåller många breaking changes rekommenderar vi att avsätta tid för migreringen — men det är värt det, eftersom v17 lägger grunden för framtida funktioner och fixar.
@@ -25,7 +25,77 @@ I den här releasen har vi tagit bort funktioner som varit markerade som depreca
 
 ## 🔄 Migrering
 
-Alla borttagna exporter har haft dokumenterade ersättningar sedan de markerades som deprecated. Se respektive komponents dokumentation för aktuellt API.
+### Breadcrumbs
+
+I linje med React Arias dokumentation erbjuder vi mer kontroll över renderingen av Breadcrumbs. Detta kräver lite mera kod.
+
+Tidigare:
+
+```tsx
+<Breadcrumbs items={[{ href: '/', title: 'Start' }]} />
+```
+
+Nu med en dynamisk renderingsfunktion:
+
+```tsx {2,3,4,5,6}
+<Breadcrumbs items={[{ href: '/', title: 'Start' }]}>
+  {item => (
+    <Breadcrumb id={item.href}>
+      <Link href={item.href}>{item.title}</Link>
+    </Breadcrumb>
+  )}
+</Breadcrumbs>
+```
+
+eller statiskt enligt:
+
+```tsx {2,3,4}
+<Breadcrumbs>
+  <Breadcrumb id='/'>
+    <Link href='/'>Start</Link>
+  </Breadcrumb>
+</Breadcrumbs>
+```
+
+### Combobox och Select
+
+Combobox och Select består delvis av samma beståndsdelar, använder du sektioner i rullgardinen behöver du justera hur du anger rubriken för sektionen
+
+Tidigare:
+
+```tsx
+<ComboBox>
+  {section => (
+    <ListBoxSection
+      id={section.name}
+      name={section.name}
+    >
+      <Collection items={section.children}>
+        {item => {
+          return <ListBoxItem id={item.id}>{item.name}</ListBoxItem>
+        }}
+      </Collection>
+    </ListBoxSection>
+  )}
+</ComboBox>
+```
+
+Nu:
+
+```tsx {4}
+<ComboBox>
+  {section => (
+    <ListBoxSection id={section.name}>
+      <ListBoxHeader>{section.name}</ListBoxHeader>
+      <Collection items={section.children}>
+        {item => {
+          return <ListBoxItem id={item.id}>{item.name}</ListBoxItem>
+        }}
+      </Collection>
+    </ListBoxSection>
+  )}
+</ComboBox>
+```
 
 ## 🚀 Nya funktioner
 
