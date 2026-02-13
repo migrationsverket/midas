@@ -10,37 +10,9 @@ const {
   Description,
   DescriptionSmall,
   Expressive,
-  Body01,
-  Body02,
 } = composeStories(stories)
 
-describe('given a Text with variant=body-01', async () => {
-  it('should match styles', async () => {
-    const { getByText } = await render(<Body01 />)
-
-    await expect
-      .element(getByText(Body01.args.children as string))
-      .toHaveStyle({
-        fontSize: '16px',
-        lineHeight: '20px',
-      })
-  })
-})
-
-describe('given a Text with variant=body-02', async () => {
-  it('should match styles', async () => {
-    const { getByText } = await render(<Body02 />)
-
-    await expect
-      .element(getByText(Body02.args.children as string))
-      .toHaveStyle({
-        fontSize: '16px',
-        lineHeight: '22px',
-      })
-  })
-})
-
-describe('given a Text with variant=body and isExpressive={true}', async () => {
+describe('given a Text with isExpressive={true}', async () => {
   it('should match styles', async () => {
     const { getByText } = await render(<Expressive />)
 

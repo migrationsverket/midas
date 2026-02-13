@@ -11,12 +11,7 @@ import {
 
 export type { TooltipProps }
 
-/**
- * @deprecated since v16.0.0 please use TooltipProps instead
- */
-export type MidasTooltipProps = TooltipProps
-
-export function Tooltip({ children, className, ...props }: MidasTooltipProps) {
+export function Tooltip({ children, className, ...props }: TooltipProps) {
   return (
     <AriaTooltip
       className={clsx(styles.tooltip, className)}

@@ -1,0 +1,124 @@
+---
+slug: 17.0.0
+title: Release 17.0.0
+authors: midas
+tags: [release-notes, v17]
+date: 2026-02-13
+---
+
+Den här releasen fokuserar på att rensa bort utfasad funktionalitet som har varit markerad som deprecated sedan v15.0.0. Vi har även lagt till flera förbättringar och buggfixar sedan v16.3.1. Eftersom releasen innehåller många breaking changes rekommenderar vi att avsätta tid för migreringen — men det är värt det, eftersom v17 lägger grunden för framtida funktioner och fixar.
+
+**Långlivad version** — Ambitionen är att v17 ska kunna användas under en längre period. Vi planerar att undvika breaking changes så långt det är möjligt.
+
+## 💥 Breaking Changes
+
+I den här releasen har vi tagit bort funktioner som varit markerade som deprecated i tidigare versioner:
+
+- **tooltip:** Type `MidasTooltipProps` är borttagen. Använd `TooltipProps` istället.
+- **accordion:** Type `MidasAccordion` är borttagen. Använd `AccordionProps` istället.
+- **menu:** Type `MenuItemObject` är borttagen.
+- **text:** Prop `variant` och type `TextVariant` är borttagna. Använd `size` prop istället.
+- **breadcrumbs:** Interfacet `BreadcrumbItem` och det automatiska renderingsläget via `items` prop med `{href, title}`-objekt är borttaget. Använd det sammansatta API:et `<Breadcrumbs>` + `<Breadcrumb>` istället.
+- **combobox:** `ComboBoxItem` och `ComboBoxSection` är borttagna. Använd `ListBoxItem` och `ListBoxSection` istället.
+- **list-box:** Types `ListBoxItemElement`, `ListBoxSectionElement` och `ListBoxOption` är borttagna. `name` prop på `ListBoxSection` är borttagen — använd `ListBoxHeader` som children istället.
+- **legacy-select:** Hela `LegacySelect`-komponenten och `LegacySelectProps` är borttagna. Använd `Select`-komponenten istället.
+
+## 🔄 Migrering
+
+### Breadcrumbs
+
+I linje med React Arias dokumentation erbjuder vi mer kontroll över renderingen av Breadcrumbs. Detta kräver lite mera kod.
+
+Tidigare:
+
+```tsx
+<Breadcrumbs items={[{ href: '/', title: 'Start' }]} />
+```
+
+Nu med en dynamisk renderingsfunktion:
+
+```tsx {2,3,4,5,6}
+<Breadcrumbs items={[{ href: '/', title: 'Start' }]}>
+  {item => (
+    <Breadcrumb id={item.href}>
+      <Link href={item.href}>{item.title}</Link>
+    </Breadcrumb>
+  )}
+</Breadcrumbs>
+```
+
+eller statiskt enligt:
+
+```tsx {2,3,4}
+<Breadcrumbs>
+  <Breadcrumb id='/'>
+    <Link href='/'>Start</Link>
+  </Breadcrumb>
+</Breadcrumbs>
+```
+
+### Combobox och Select
+
+Combobox och Select består delvis av samma beståndsdelar, använder du sektioner i rullgardinen behöver du justera hur du anger rubriken för sektionen
+
+Tidigare:
+
+```tsx
+<ComboBox>
+  {section => (
+    <ListBoxSection
+      id={section.name}
+      name={section.name}
+    >
+      <Collection items={section.children}>
+        {item => {
+          return <ListBoxItem id={item.id}>{item.name}</ListBoxItem>
+        }}
+      </Collection>
+    </ListBoxSection>
+  )}
+</ComboBox>
+```
+
+Nu:
+
+```tsx {4}
+<ComboBox>
+  {section => (
+    <ListBoxSection id={section.name}>
+      <ListBoxHeader>{section.name}</ListBoxHeader>
+      <Collection items={section.children}>
+        {item => {
+          return <ListBoxItem id={item.id}>{item.name}</ListBoxItem>
+        }}
+      </Collection>
+    </ListBoxSection>
+  )}
+</ComboBox>
+```
+
+## 🚀 Nya funktioner
+
+- **breadcrumbs:** Breadcrumbs är omstrukturerade till separata komponenter med ett sammansatt API (`<Breadcrumbs>` + `<Breadcrumb>`).
+- **date-field, date-picker, search-field:** Ny rensa-knapp (clear button) för att tömma fält.
+- **button:** Stöd för context props.
+- **tooltip:** Ökad fontstorlek.
+- **layout:** Ny navigeringslänk-variant och klickhändelse för sidopanelslänkar.
+- **theme:** Ny invalid-state stil för formulärfält (box-shadow).
+
+## 🩹 Fixar
+
+- **toast:** Synligt tangentbordsfokus (`focus-visible`) för toast-regionen.
+- **select:** Chevron-ikonen roterar nu korrekt när select är öppen. Justerad horisontell padding.
+- **select-styles:** Justerad höjd och pixelkorrigeringar för react-select-komponenten.
+- **date-picker:** Justerad höjd för ikonknappar. Borttagen fokusindikator för föräldraelementet. Uppdaterade stilar för ikonknappar.
+- **date-field:** Uppdaterade stilar för rensa-knappen. Korrekt invalid-kantlinje och box-shadow.
+- **accordion:** Justerad padding för oinneslutna innehållscontainrar.
+- **tooltip:** Använder nu CSS-variabler för styling.
+- **text, grid:** Borttagen global CSS till förmån för CSS Modules.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v17.0.0](https://github.com/migrationsverket/midas/releases/tag/components@v17.0.0)
