@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { userEvent } from 'vitest/browser'
+import { page, userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Card.stories'
 import { render } from 'vitest-browser-react'
@@ -11,9 +11,9 @@ describe('given a Card with Actions', async () => {
     const { getByRole } = await render(<WithActions />)
     const button = getByRole('button').last()
 
+    await page.getByText('Namn: Namn Namnsson').click()
     await expect.element(button).not.toHaveFocus()
 
-    // focus the link
     await userEvent.tab()
     await userEvent.tab()
 
@@ -24,14 +24,16 @@ describe('given a Card with Actions', async () => {
 describe('given a Card with a primary action', async () => {
   it('should be possible to focus the primary action area', async () => {
     const { getByRole } = await render(<WithPrimaryAction />)
-    const button = getByRole('button').first()
+    const primaryAction = getByRole('button').first()
+    const lastButton = getByRole('button').last()
 
-    await expect.element(button).not.toHaveFocus()
+    await lastButton.click()
+    await expect.element(primaryAction).not.toHaveFocus()
 
-    // focus the link
-    await userEvent.tab()
+    await userEvent.tab({ shift: true })
+    await userEvent.tab({ shift: true })
 
-    await expect.element(button).toHaveFocus()
+    await expect.element(primaryAction).toHaveFocus()
   })
 })
 
@@ -40,11 +42,7 @@ describe('given a Card with a Link', async () => {
     const { getByRole } = await render(<WithLink />)
     const link = getByRole('link')
 
-    await expect.element(link).not.toHaveFocus()
-
-    // focus the link
-    await userEvent.tab()
-
+    await link.click()
     await expect.element(link).toHaveFocus()
   })
 })

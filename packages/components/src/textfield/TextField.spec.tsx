@@ -35,6 +35,7 @@ describe('given a Primary TextField', async () => {
   })
 
   it('should call event handlers once', async () => {
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.tab()
 
@@ -54,6 +55,7 @@ describe('given a Password TextField', async () => {
     const { getByText } = await render(<Password />)
     const password = 'secret'
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.keyboard('secret')
     await userEvent.tab()
@@ -78,6 +80,7 @@ describe('given a required TextField', async () => {
   it('should give a validation error if the user entered no text', async () => {
     const { getByRole } = await render(<Required />)
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
@@ -92,6 +95,7 @@ describe('given a TextField with custom validation', async () => {
 
     await expect.element(getByRole('textbox')).toHaveClass('valid')
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.keyboard('abc')
     await userEvent.tab()
@@ -123,6 +127,7 @@ describe('given a TextField with type="number"', async () => {
   it('should not allow any non number input', async () => {
     const { getByRole } = await render(<Number />)
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.keyboard('abc')
 
@@ -132,6 +137,7 @@ describe('given a TextField with type="number"', async () => {
   it('should not allow numbers below the "min" threshold', async () => {
     const { getByRole } = await render(<Number min={0} />)
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.keyboard('[ArrowDown]')
 

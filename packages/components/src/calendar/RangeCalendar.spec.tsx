@@ -21,8 +21,8 @@ describe('given a primary RangeCalendar', async () => {
     vi.setSystemTime(mockedNow.toDate(getLocalTimeZone()))
     const { getByRole } = await render(<Primary />)
 
-    await userEvent.tab()
-    await userEvent.tab()
+    await getByRole('button', { name: 'Previous' }).first().click()
+    await getByRole('button', { name: 'Next' }).first().click()
     await userEvent.tab()
     await userEvent.keyboard('[Space]')
     await userEvent.keyboard('[ArrowRight]')

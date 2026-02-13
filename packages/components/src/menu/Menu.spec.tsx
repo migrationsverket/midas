@@ -24,7 +24,8 @@ describe('given a primary Menu', async () => {
     )
 
     // open menu
-    await userEvent.tab()
+    await page.getByRole('button').click()
+    await userEvent.keyboard('[Escape]')
     await userEvent.keyboard('[Space]')
   })
 

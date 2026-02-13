@@ -11,7 +11,7 @@ describe('given a primary ColorSchemeSwitch', async () => {
     await render(<Primary />)
 
     // Select "light mode"
-    await userEvent.tab()
+    await page.getByRole('radio').first().click()
     await userEvent.keyboard('[ArrowRight]')
     await userEvent.keyboard('[Space]')
   })

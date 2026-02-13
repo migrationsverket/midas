@@ -28,6 +28,7 @@ describe('given a Primary TextArea', async () => {
   })
 
   it('should call event handlers once', async () => {
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.tab()
 
@@ -46,6 +47,7 @@ describe('given a required TextArea', async () => {
   it('should give a validation error if the user entered no text', async () => {
     const { getByText } = await render(<Required />)
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
@@ -60,6 +62,7 @@ describe('given a TextArea with custom validation', async () => {
   it('should give a validation error if the user entered an unpermitted text', async () => {
     const { getByText } = await render(<CustomValidation />)
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.keyboard('abc')
     await userEvent.tab()
@@ -77,6 +80,7 @@ describe('given a TextArea with maxLength defined', async () => {
     const maxLength = MaxLength.args.maxLength as number
     const randomString = stringOfLength(maxLength + 1)
 
+    await page.getByText('Description').click()
     await userEvent.tab()
     await userEvent.keyboard(randomString)
 
