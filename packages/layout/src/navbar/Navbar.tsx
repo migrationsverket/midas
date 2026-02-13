@@ -6,5 +6,10 @@ export interface Navbar {
 }
 
 export const Navbar = ({ children }: Navbar) => (
-  <nav className={styles.navbar}>{children}</nav>
+  <nav
+    className={styles.navbar}
+    aria-label='bottom navbar'
+  >
+    {children}
+  </nav>
 )
