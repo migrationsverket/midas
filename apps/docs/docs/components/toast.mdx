@@ -53,14 +53,7 @@ import { GlobalToastRegion, toastQueue } from '@midas-ds/components'
 
 ## Toastkö
 
-Om det triggas flera toasts sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5. Varje gång en toast läggs till i kön går det att bestämma livslängd och prioritering. Prioritet kan sättas till 1, 2 eller 3. `warning` har dock alltid högsta prioritet och kommer därmed först i kön.
-
-```tsx {3}
-.add(
-  {...},
-  { priority: 1 }
-)
-```
+Om det triggas flera toasts sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5.
 
 ## Programmatisk stängning
 
