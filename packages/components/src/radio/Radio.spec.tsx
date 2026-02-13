@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { userEvent } from 'vitest/browser'
+import { page, userEvent } from 'vitest/browser'
 import { render } from 'vitest-browser-react'
 import * as stories from './Radio.stories'
 import styles from './Radio.module.css'
@@ -28,6 +28,7 @@ describe('given a required RadioGroup', async () => {
   it('should show a validation error message if the user submitted without selecting anything', async () => {
     const { getByRole, getByText } = await render(<Required />)
 
+    await page.getByText('Välj en frukt').click()
     await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
@@ -43,6 +44,7 @@ describe('given a RadioGroup with custom validation', async () => {
   it('should show the custom error message if the constraints was not satisfied', async () => {
     const { getByText } = await render(<CustomValidation />)
 
+    await page.getByText('Välj en frukt').click()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
     await userEvent.tab()
