@@ -1,10 +1,15 @@
-import { ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Header.module.css'
+import { clsx } from '@midas-ds/components'
 
-export interface HeaderProps {
-  children?: ReactNode
-}
+export type HeaderProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+>
 
-export const Header = ({ children }: HeaderProps) => (
-  <header className={styles.header}>{children}</header>
+export const Header = ({ className, ...rest }: HeaderProps) => (
+  <header
+    className={clsx(className, styles.header)}
+    {...rest}
+  />
 )

@@ -1,6 +1,5 @@
 .navbar {
   background-color: var(--midas-layer-01-base);
-  grid-area: navbar;
   margin-top: 1rem;
 
   ul {

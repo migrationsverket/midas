@@ -1,0 +1,14 @@
+.collapsePanel {
+  &.collapsed {
+    width: calc(32px + 48px);
+  }
+}
+
+.panelHeader {
+  gap: 0;
+}
+
+.panelTitle {
+  font-size: var(--midas-typography-font-size-20);
+  display: block;
+}

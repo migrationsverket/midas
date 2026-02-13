@@ -1,23 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
 import { Layout } from '.'
 import { Header } from '../header'
 import { Panel } from '../panel'
 import { Navbar } from '../navbar'
+import { House, List, Menu } from 'lucide-react'
+import { Button } from '@midas-ds/components'
+import { useId, useState } from 'react'
+import * as panelStories from '../panel/Panel.stories'
 import { Navigation } from '../navigation'
-import { NavigationLink } from '../navigation-link'
-import { House } from 'lucide-react'
+import { Main } from '../main'
+
+const { Collapse: CollapsePanel } = composeStories(panelStories)
 
 type Story = StoryObj<typeof Layout>
 
 export default {
   component: Layout,
-  subcomponents: {
-    Header,
-    Navbar,
-    Navigation,
-    NavigationLink,
-    Panel,
-  },
   title: 'Components/Layout/Layout',
   tags: ['autodocs'],
   args: {
@@ -27,68 +25,77 @@ export default {
 } satisfies Meta<typeof Layout>
 
 export const Primary: Story = {
-  render: ({ children, ...rest }) => (
-    <Layout {...rest}>
-      <Header>Header</Header>
-      <Panel aria-label='left panel'>
-        <Navigation>
-          <ul>
-            <li>
-              <NavigationLink
+  render: ({ children, ...rest }) => {
+    const drawerId = useId()
+
+    const [isNavigationOpen, setIsNavigationOpen] = useState(false)
+    const [isNavigationCollapsed, setIsNavigationCollapsed] = useState(false)
+    const [isRightPanelOpen, setIsRightPanelOpen] = useState(true)
+
+    const toggleIsNavigationOpen = () => setIsNavigationOpen(x => !x)
+
+    return (
+      <Layout
+        {...rest}
+        header={
+          <Header>
+            <Button
+              aria-controls={drawerId}
+              aria-expanded={isNavigationOpen}
+              aria-haspopup='dialog'
+              icon={Menu}
+              onPress={toggleIsNavigationOpen}
+              variant='icon'
+            />
+          </Header>
+        }
+        sidebar={
+          <CollapsePanel
+            isCollapsed={isNavigationCollapsed}
+            onCollapseChange={setIsNavigationCollapsed}
+          />
+        }
+        navbar={
+          <Navbar>
+            <ul>
+              <Navigation.Link
                 href='/'
                 isActive
+                variant='navbar'
+                title='Hem'
               >
                 <House />
-                Hem
-              </NavigationLink>
-            </li>
-            <li>
-              <NavigationLink href='/categories'>Kategorier</NavigationLink>
-              <ul aria-label='Sidor'>
-                <li>
-                  <NavigationLink href='/categories/products'>
-                    Produkter
-                  </NavigationLink>
-                </li>
-                <li>
-                  <NavigationLink href='/categories/services'>
-                    Tjänster
-                  </NavigationLink>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </Navigation>
-      </Panel>
-      <main style={{ height: '5rem', padding: '1rem' }}>{children}</main>
-      <Panel
-        aria-label='right panel'
-        style={{ gridArea: 'panelRight' }}
+              </Navigation.Link>
+              <Navigation.Link
+                href='/categories'
+                variant='navbar'
+                title='Kategorier'
+              >
+                <List />
+              </Navigation.Link>
+            </ul>
+          </Navbar>
+        }
+        dismissPanel={
+          <Panel
+            variant='dismiss'
+            aria-label='right panel'
+            isOpen={isRightPanelOpen}
+            onOpenChange={setIsRightPanelOpen}
+            style={{ gridArea: 'panelRight' }}
+            title='Panel'
+          />
+        }
       >
-        Panel
-      </Panel>
-      <Navbar>
-        <ul>
-          <li>
-            <NavigationLink
-              href='/'
-              isActive
-              variant='navbar'
-            >
-              <House />
-              Hem
-            </NavigationLink>
-          </li>
-          <li>
-            <NavigationLink
-              href='/categories'
-              variant='navbar'
-            >
-              Kategorier
-            </NavigationLink>
-          </li>
-        </ul>
-      </Navbar>
-    </Layout>
-  ),
+        <Main>
+          {children}
+          {!isRightPanelOpen && (
+            <Button onPress={() => setIsRightPanelOpen(true)}>
+              Öppna sidopanel
+            </Button>
+          )}
+        </Main>
+      </Layout>
+    )
+  },
 }

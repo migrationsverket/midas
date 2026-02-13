@@ -1,19 +1,37 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
-import { clsx } from '@midas-ds/components'
-import styles from './Panel.module.css'
+import {
+  PanelBodyProps,
+  CollapsePanel,
+  CollapseTriggerProps,
+  DismissPanel,
+  DismissTriggerProps,
+  PanelTitleProps,
+} from './components'
 
-export interface PanelProps extends DetailedHTMLProps<
-  HTMLAttributes<HTMLElement>,
-  HTMLElement
-> {
-  children?: ReactNode
+export type PanelVariant = 'collapse' | 'dismiss' | undefined
+
+export type PanelTriggerProps<T extends PanelVariant> = T extends 'collapse'
+  ? CollapseTriggerProps
+  : T extends 'dismiss'
+    ? DismissTriggerProps
+    : never
+
+export type PanelProps<T extends PanelVariant = 'collapse'> = PanelBodyProps &
+  Pick<PanelTitleProps, 'title'> &
+  PanelTriggerProps<T> & {
+    variant?: T
+  }
+
+export const Panel = <T extends PanelVariant = 'collapse'>({
+  variant = 'collapse',
+  ...rest
+}: PanelProps<T>) => {
+  if (variant === 'collapse') {
+    return <CollapsePanel {...rest} />
+  }
+
+  if (variant === 'dismiss') {
+    return <DismissPanel {...rest} />
+  }
+
+  return null
 }
-
-export const Panel = ({ children, className, ...rest }: PanelProps) => (
-  <aside
-    className={clsx(className, styles.panel)}
-    {...rest}
-  >
-    {children}
-  </aside>
-)
