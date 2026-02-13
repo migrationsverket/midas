@@ -13,7 +13,107 @@ import 'react-lowlight/common'
 import { Pressable } from 'react-aria-components'
 import { jsdocLinkToMarkdown } from '../utils/jsdocLinkToMarkdown'
 
+interface TypeMember {
+  name: string
+  type: string
+  description: string
+  required: boolean
+  members?: TypeMember[]
+}
+
+function hasMembers(
+  type: PropItem['type'],
+): type is PropItem['type'] & { members: TypeMember[] } {
+  return (
+    Array.isArray((type as any).members) && (type as any).members.length > 0
+  )
+}
+
+/** Renders a type name — clickable with drill-down popover if it has members */
+const DrillableType = ({
+  typeStr,
+  members,
+}: {
+  typeStr: string
+  members?: TypeMember[]
+}) => {
+  if (members && members.length > 0) {
+    return (
+      <DialogTrigger>
+        <Pressable>
+          <span
+            role='button'
+            style={{ cursor: 'pointer' }}
+          >
+            <Lowlight
+              value={typeStr}
+              inline
+              language='typescript'
+              markers={[]}
+            />
+          </span>
+        </Pressable>
+        <Popover style={{ maxWidth: 'min(90vw, 800px)' }}>
+          <MembersTable members={members} />
+        </Popover>
+      </DialogTrigger>
+    )
+  }
+  return (
+    <Lowlight
+      value={typeStr}
+      inline
+      language='typescript'
+      markers={[]}
+    />
+  )
+}
+
+const MembersTable = ({ members }: { members: TypeMember[] }) => (
+  <div className={styles.membersTable}>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {members.map(member => (
+          <tr key={member.name}>
+            <td>
+              <Lowlight
+                value={`${member.name}${member.required ? '' : '?'}`}
+                inline
+                language='typescript'
+                markers={[]}
+              />
+            </td>
+            <td>
+              <DrillableType
+                typeStr={member.type}
+                members={member.members}
+              />
+            </td>
+            <td>{member.description || '-'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)
+
 export const DisplayCompositeTypes = ({ props }: Props) => {
+  if (hasMembers(props.type)) {
+    return (
+      <DrillableType
+        typeStr={props.type.name}
+        members={props.type.members}
+      />
+    )
+  }
+
   switch (props.type.name) {
     case 'enum': {
       return (
@@ -33,19 +133,19 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
           </Pressable>
           <Popover>
             <span className='hljs-code'>
-              {props.type.value.map((r: Record<'value', string>, i: number) => {
-                return (
-                  <span key={`${r.value}${i}`}>
-                    {i === 0 ? ' ' : ' | '}
-                    <Lowlight
-                      value={r.value.replace(/"/g, "'")}
-                      inline
-                      language='typescript'
-                      markers={[]}
-                    />
-                  </span>
-                )
-              })}
+              {props.type.value.map(
+                (r: { value: string; members?: TypeMember[] }, i: number) => {
+                  return (
+                    <span key={`${r.value}${i}`}>
+                      {i === 0 ? ' ' : ' | '}
+                      <DrillableType
+                        typeStr={r.value.replace(/"/g, "'")}
+                        members={r.members}
+                      />
+                    </span>
+                  )
+                },
+              )}
             </span>
           </Popover>
         </DialogTrigger>
