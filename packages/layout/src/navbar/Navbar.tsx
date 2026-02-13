@@ -1,10 +1,15 @@
-import { ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navbar.module.css'
+import { clsx } from '@midas-ds/components'
 
-export interface Navbar {
-  children?: ReactNode
-}
+export type NavbarProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+>
 
-export const Navbar = ({ children }: Navbar) => (
-  <nav className={styles.navbar}>{children}</nav>
+export const Navbar = ({ className, ...rest }: NavbarProps) => (
+  <nav
+    className={clsx(className, styles.navbar)}
+    {...rest}
+  />
 )

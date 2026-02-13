@@ -19,7 +19,7 @@ export const DismissPanel = ({
 }: PanelBodyProps & DismissTriggerProps) => {
   const handlePress = () => onOpenChange?.(!isOpen)
 
-  if (typeof isOpen === 'boolean' && !isOpen) {
+  if (!isOpen) {
     return null
   }
 

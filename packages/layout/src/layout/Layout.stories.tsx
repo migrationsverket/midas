@@ -8,6 +8,7 @@ import { Button } from '@midas-ds/components'
 import { useId, useState } from 'react'
 import * as panelStories from '../panel/Panel.stories'
 import { Navigation } from '../navigation'
+import { Main } from '../main'
 
 const { Collapse: CollapsePanel } = composeStories(panelStories)
 
@@ -29,51 +30,71 @@ export const Primary: Story = {
 
     const [isNavigationOpen, setIsNavigationOpen] = useState(false)
     const [isNavigationCollapsed, setIsNavigationCollapsed] = useState(false)
+    const [isRightPanelOpen, setIsRightPanelOpen] = useState(true)
 
     const toggleIsNavigationOpen = () => setIsNavigationOpen(x => !x)
 
     return (
-      <Layout {...rest}>
-        <Header>
-          <Button
-            aria-controls={drawerId}
-            aria-expanded={isNavigationOpen}
-            aria-haspopup='dialog'
-            icon={Menu}
-            onPress={toggleIsNavigationOpen}
-            variant='icon'
+      <Layout
+        {...rest}
+        header={
+          <Header>
+            <Button
+              aria-controls={drawerId}
+              aria-expanded={isNavigationOpen}
+              aria-haspopup='dialog'
+              icon={Menu}
+              onPress={toggleIsNavigationOpen}
+              variant='icon'
+            />
+          </Header>
+        }
+        sidebar={
+          <CollapsePanel
+            isCollapsed={isNavigationCollapsed}
+            onCollapseChange={setIsNavigationCollapsed}
           />
-        </Header>
-        <CollapsePanel
-          isCollapsed={isNavigationCollapsed}
-          onCollapseChange={setIsNavigationCollapsed}
-        />
-        <main style={{ height: '5rem', padding: '1rem' }}>{children}</main>
-        <Panel
-          aria-label='right panel'
-          style={{ gridArea: 'panelRight' }}
-        >
-          Panel
-        </Panel>
-        <Navbar>
-          <ul>
-            <Navigation.Link
-              href='/'
-              isActive
-              variant='navbar'
-              title='Hem'
-            >
-              <House />
-            </Navigation.Link>
-            <Navigation.Link
-              href='/categories'
-              variant='navbar'
-              title='Kategorier'
-            >
-              <List />
-            </Navigation.Link>
-          </ul>
-        </Navbar>
+        }
+        navbar={
+          <Navbar>
+            <ul>
+              <Navigation.Link
+                href='/'
+                isActive
+                variant='navbar'
+                title='Hem'
+              >
+                <House />
+              </Navigation.Link>
+              <Navigation.Link
+                href='/categories'
+                variant='navbar'
+                title='Kategorier'
+              >
+                <List />
+              </Navigation.Link>
+            </ul>
+          </Navbar>
+        }
+        dismissPanel={
+          <Panel
+            variant='dismiss'
+            aria-label='right panel'
+            isOpen={isRightPanelOpen}
+            onOpenChange={setIsRightPanelOpen}
+            style={{ gridArea: 'panelRight' }}
+            title='Panel'
+          />
+        }
+      >
+        <Main>
+          {children}
+          {!isRightPanelOpen && (
+            <Button onPress={() => setIsRightPanelOpen(true)}>
+              Öppna sidopanel
+            </Button>
+          )}
+        </Main>
       </Layout>
     )
   },

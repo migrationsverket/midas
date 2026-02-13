@@ -1,4 +1,16 @@
 .dismissPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+
+  @media (width < 800px) {
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    top: unset;
+  }
 }
 
 .panelTitle {
