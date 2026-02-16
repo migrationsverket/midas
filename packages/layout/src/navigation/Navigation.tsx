@@ -1,4 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+'use client'
+
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect, useState } from 'react'
 import { clsx } from '@midas-ds/components'
 import { ModalOverlayProps } from 'react-aria-components'
 import { NavigationLink, NavigationSubMenu, Drawer } from './components'
@@ -19,29 +21,39 @@ export const Navigation = ({
   isOpen,
   onOpenChange,
   ...rest
-}: NavigationProps) => (
-  <>
-    <nav
-      className={clsx(className, styles.navigation)}
-      {...rest}
-    >
-      <ul>{children}</ul>
-    </nav>
-    <Drawer
-      id={id}
-      isOpen={isOpen}
-      onOpenChange={onOpenChange}
-    >
+}: NavigationProps) => {
+  const [hasBeenOpened, setHasBeenOpened] = useState(false)
+
+  useEffect(() => {
+    if (isOpen) setHasBeenOpened(true)
+  }, [isOpen])
+
+  return (
+    <>
       <nav
-        id={id}
         className={clsx(className, styles.navigation)}
         {...rest}
       >
         <ul>{children}</ul>
       </nav>
-    </Drawer>
-  </>
-)
+      {hasBeenOpened && (
+        <Drawer
+          id={id}
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+        >
+          <nav
+            id={id}
+            className={clsx(className, styles.navigation)}
+            {...rest}
+          >
+            <ul>{children}</ul>
+          </nav>
+        </Drawer>
+      )}
+    </>
+  )
+}
 
 Navigation.Link = NavigationLink
 Navigation.SubMenu = NavigationSubMenu

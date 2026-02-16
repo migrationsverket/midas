@@ -1,3 +1,5 @@
+'use client'
+
 import { ReactNode, useContext, type ElementType } from 'react'
 import { Link } from 'react-aria-components'
 import {

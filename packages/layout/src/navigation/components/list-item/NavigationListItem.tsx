@@ -1,3 +1,5 @@
+'use client'
+
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, useContext } from 'react'
 import { clsx, Text } from '@midas-ds/components'
 import { PanelContext } from '../../../panel'
