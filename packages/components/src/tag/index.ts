@@ -1,1 +1,3 @@
-export {Tag, TagGroup, type TagGroupProp, type TagProps} from './Tag'
+export * from './Tag'
+export * from './tag-group'
+export * from './tag-list'

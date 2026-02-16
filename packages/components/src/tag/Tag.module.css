@@ -13,17 +13,17 @@
     background-color: var(--midas-button-icon-active);
   }
 
-  &.success[data-hovered],
-  &.warning[data-hovered],
-  &.info[data-hovered],
-  &.important[data-hovered] {
+  &.green[data-hovered],
+  &.red[data-hovered],
+  &.blue[data-hovered],
+  &.yellow[data-hovered] {
     background-color: var(--midas-button-icon-hover);
   }
 
-  &.success[data-pressed],
-  &.warning[data-pressed],
-  &.info[data-pressed],
-  &.important[data-pressed] {
+  &.green[data-pressed],
+  &.red[data-pressed],
+  &.blue[data-pressed],
+  &.yellow[data-pressed] {
     background-color: var(--midas-button-icon-active);
   }
 }
@@ -38,22 +38,22 @@
   border: 1px solid var(--midas-border-color-primary);
   color: var(--midas-text-primary);
 
-  &.success {
+  &.green {
     background-color: var(--midas-support-background-success);
     border: 1px solid var(--midas-support-border-success);
   }
 
-  &.info {
+  &.blue {
     background-color: var(--midas-support-background-info);
     border: 1px solid var(--midas-support-border-info);
   }
 
-  &.important {
+  &.yellow {
     background-color: var(--midas-support-background-important);
     border: 1px solid var(--midas-support-border-important);
   }
 
-  &.warning {
+  &.red {
     background-color: var(--midas-support-background-warning);
     border: 1px solid var(--midas-support-border-warning);
   }
@@ -87,10 +87,4 @@
 
 .dismissable .tagText {
   padding: 7px var(--midas-size-10) 7px var(--midas-size-40);
-}
-
-.tagList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
 }

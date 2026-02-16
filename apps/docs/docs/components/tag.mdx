@@ -4,8 +4,9 @@ description: Statusindikator
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { DynamicExample } from '@site/src/components/examples/tag/TagExamples'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Tag, TagGroup, Card, CardContent, CardTitle, Text, CardActions, Button } from '@midas-ds/components'
+import { Tag, TagGroup, TagList, Card, CardContent, CardTitle, Text, CardActions, Button } from '@midas-ds/components'
 
 <ComponentHeader
   name='Tag'
@@ -16,18 +17,22 @@ import { Tag, TagGroup, Card, CardContent, CardTitle, Text, CardActions, Button 
 Komponent för att visa beskrivande etiketter som kan användas för att kategorisera information.
 
 ```tsx
-import { Tag, TagGroup } from '@midas-ds/components'
+import { Tag, TagGroup, TagList } from '@midas-ds/components'
 ```
 
 ```tsx
-<TagGroup>
-  <Tag>Tag med information</Tag>
+<TagGroup aria-label='Taggar'>
+  <TagList>
+    <Tag>Tag med information</Tag>
+  </TagList>
 </TagGroup>
 ```
 
 <div className='card'>
   <TagGroup aria-label='Taggar'>
-    <Tag>Tag med information</Tag>
+    <TagList>
+      <Tag>Tag med information</Tag>
+    </TagList>
   </TagGroup>
 </div>
 
@@ -40,8 +45,10 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
   <CardContent>
     <CardTitle>Köp frukt</CardTitle>
     <Text>Vi behöver köpa frukt till fika</Text>
-    <TagGroup>
-      <Tag type='info'>Inte påbörjat</Tag>
+    <TagGroup aria-label='Taggar'>
+      <TagList>
+        <Tag color='blue'>Inte påbörjat</Tag>
+      </TagList>
     </TagGroup>
   </CardContent>
   <CardActions>
@@ -55,8 +62,10 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
     <CardContent>
       <CardTitle>Köp frukt</CardTitle>
       <Text>Vi behöver köpa frukt till fika</Text>
-      <TagGroup>
-        <Tag type='info'>Inte påbörjat</Tag>
+      <TagGroup aria-label='Taggar'>
+        <TagList>
+          <Tag color='blue'>Inte påbörjat</Tag>
+        </TagList>
       </TagGroup>
     </CardContent>
     <CardActions>
@@ -65,27 +74,31 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
   </Card>
 </div>
 
-## Varianter
+## Färger
 
-Tag finns i fem varianter.
+Tag finns i fem färger.
 
 ```tsx
-<TagGroup>
-  <Tag>Default</Tag>
-  <Tag type='success'>Success</Tag>
-  <Tag type='info'>Info</Tag>
-  <Tag type='important'>Important</Tag>
-  <Tag type='warning'>Warning</Tag>
+<TagGroup aria-label='Färger'>
+  <TagList>
+    <Tag>Default</Tag>
+    <Tag color='green'>Green</Tag>
+    <Tag color='blue'>Blue</Tag>
+    <Tag color='yellow'>Yellow</Tag>
+    <Tag color='red'>Red</Tag>
+  </TagList>
 </TagGroup>
 ```
 
 <div className='card'>
-  <TagGroup aria-label='Taggar'>
-    <Tag>Default</Tag>
-    <Tag type='success'>Success</Tag>
-    <Tag type='info'>Info</Tag>
-    <Tag type='important'>Important</Tag>
-    <Tag type='warning'>Warning</Tag>
+  <TagGroup aria-label='Färger'>
+    <TagList>
+      <Tag>Default</Tag>
+      <Tag color='green'>Green</Tag>
+      <Tag color='blue'>Blue</Tag>
+      <Tag color='yellow'>Yellow</Tag>
+      <Tag color='red'>Red</Tag>
+    </TagList>
   </TagGroup>
 </div>
 
@@ -94,17 +107,65 @@ Tag finns i fem varianter.
 Det går att göra det möjligt för användaren att stänga tag via `dismissable`.
 
 ```tsx
-<TagGroup>
-  <Tag dismissable>Default</Tag>
+<TagGroup aria-label='Taggar'>
+  <TagList>
+    <Tag dismissable>Default</Tag>
+  </TagList>
 </TagGroup>
 ```
 
 <div className='card'>
   <TagGroup aria-label='Taggar'>
-    <Tag dismissable>Default</Tag>
+    <TagList>
+      <Tag dismissable>Default</Tag>
+    </TagList>
   </TagGroup>
 </div>
 
+## Statiskt och dynamisk innehåll
+
+`TagList` använder React arias API för [Collections](https://react-aria.adobe.com/collections) och kan användas dynamiskt.
+
+```tsx
+import { Tag, TagGroup, TagList } from '@midas-ds/components'
+
+const DynamicExample = () => {
+  const items = [
+    { id: 'green', name: 'Green' },
+    { id: 'blue', name: 'Blue' },
+    { id: 'yellow', name: 'Yellow' },
+    { id: 'red', name: 'Red' },
+  ]
+
+  return (
+    <TagGroup aria-label='Taggar'>
+      <TagList items={items}>
+        {item => (
+          <Tag
+            id={item.id}
+            color={item.id}
+          >
+            {item.name}
+          </Tag>
+        )}
+      </TagList>
+    </TagGroup>
+  )
+}
+```
+
+<DynamicExample />
+
 ## API
 
+### Tag
+
 <PropTable name='Tag' />
+
+### TagGroup
+
+<PropTable name='TagGroup' />
+
+### TagList
+
+<PropTable name='TagList' />
