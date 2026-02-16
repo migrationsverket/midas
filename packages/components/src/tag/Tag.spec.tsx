@@ -57,7 +57,7 @@ describe('deprecated usage', async () => {
     await expect.element(getByRole('row')).toHaveClass(styles.red)
   })
 
-  it('should be render even without a provided TagList', async () => {
+  it('should render even without a provided TagList', async () => {
     const { getByRole } = await render(<WithoutTagList />)
     await expect.element(getByRole('grid')).toBeVisible()
   })
