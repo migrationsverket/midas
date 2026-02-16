@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Select.stories'
 import { options } from '@midas-ds/test-utils'
 import { page, userEvent } from 'vitest/browser'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const {
   Primary,
@@ -20,14 +20,11 @@ const handleSubmit = vi.fn()
 
 describe('given a primary Select', async () => {
   it('should be possible to select an item using the keyboard', async () => {
-    const { getByTestId, getByRole } = await render(<Primary />)
+    const { getByTestId, getByText } = await render(<Primary />)
 
-    // Click description to establish Playwright CDP focus in the iframe
-    await page.getByText('Description').last().click()
-    const trigger = getByRole('button')
     await userEvent.tab()
     await userEvent.keyboard('[Space]')
-    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[Space]')
 
     const selectedValue = options[0].name as string
 
@@ -39,9 +36,7 @@ describe('given a primary Select', async () => {
       )
       .toBeInTheDocument()
 
-    await expect
-      .element(trigger.getByText(selectedValue))
-      .toBeVisible()
+    await expect.element(getByText(selectedValue).first()).toBeVisible()
   })
 })
 
@@ -116,12 +111,9 @@ describe('given a Select with showTags', async () => {
 
 describe('given a Select with select all enabled', async () => {
   it('should be possible to select all items', async () => {
-    const { getByTestId, getByRole } = await render(<SelectAllEnabled />)
+    const { getByTestId } = await render(<SelectAllEnabled />)
 
-    const trigger = getByRole('button')
-    await trigger.click()
-    await userEvent.keyboard('[Escape]')
-
+    await userEvent.tab()
     await userEvent.keyboard('[Space]')
     await userEvent.tab({ shift: true })
     await userEvent.keyboard('[Space]')
@@ -152,12 +144,9 @@ describe('given a sectioned Select ', async () => {
   })
 
   it('It should not warn about missing aria labels when toggling the select open state', async () => {
-    const { getByRole } = await render(<DynamicSections />)
+    await render(<DynamicSections />)
 
-    const trigger = getByRole('button')
-    await trigger.click()
-    await userEvent.keyboard('[Escape]')
-
+    await userEvent.tab()
     await userEvent.keyboard('[Space]')
     await userEvent.keyboard('[Space]')
 
@@ -171,12 +160,9 @@ describe('given a required single Select ', async () => {
   })
 
   it('should give a validation error if the user submitted without selecting an option', async () => {
-    const { getByRole } = await render(<RequiredSingleSelect />)
+    await render(<RequiredSingleSelect />)
 
-    const trigger = getByRole('button').first()
-    await trigger.click()
-    await userEvent.keyboard('[Escape]')
-
+    await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
 
@@ -186,12 +172,9 @@ describe('given a required single Select ', async () => {
 
 describe('given a DS872 ', async () => {
   it('should be possible to select an item with an ID greater than 9', async () => {
-    const { getByTestId, getByRole } = await render(<DS872 />)
+    const { getByTestId } = await render(<DS872 />)
 
-    const trigger = getByRole('button')
-    await trigger.click()
-    await userEvent.keyboard('[Escape]')
-
+    await userEvent.tab()
     await userEvent.keyboard('[Space]')
     await userEvent.keyboard('[Space]')
 

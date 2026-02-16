@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { page, userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './ColorSchemeSwitch.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 
@@ -11,7 +11,7 @@ describe('given a primary ColorSchemeSwitch', async () => {
     await render(<Primary />)
 
     // Select "light mode"
-    await page.getByRole('radio').first().click()
+    await userEvent.tab()
     await userEvent.keyboard('[ArrowRight]')
     await userEvent.keyboard('[Space]')
   })

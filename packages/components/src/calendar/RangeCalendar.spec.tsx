@@ -3,8 +3,8 @@ import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import * as stories from './RangeCalendar.stories'
 import { mockedNow } from '@midas-ds/test-utils'
-import { render } from 'vitest-browser-react'
 import { getLocalTimeZone } from '@internationalized/date'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 
@@ -21,8 +21,8 @@ describe('given a primary RangeCalendar', async () => {
     vi.setSystemTime(mockedNow.toDate(getLocalTimeZone()))
     const { getByRole } = await render(<Primary />)
 
-    await getByRole('button', { name: 'Previous' }).first().click()
-    await getByRole('button', { name: 'Next' }).first().click()
+    await userEvent.tab()
+    await userEvent.tab()
     await userEvent.tab()
     await userEvent.keyboard('[Space]')
     await userEvent.keyboard('[ArrowRight]')

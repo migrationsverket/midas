@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './ComboBox.stories'
 import styles from './ComboBox.module.css'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary, Required, Sectioned } = composeStories(stories)
 

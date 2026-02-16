@@ -1,7 +1,7 @@
 import { describe, expect, it, vi, afterEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './InfoBanner.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Dismissable, Controlled } = composeStories(stories)
 

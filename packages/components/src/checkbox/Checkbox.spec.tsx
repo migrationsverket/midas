@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import styles from './Checkbox.module.css'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 import * as stories from './Checkbox.stories'
 
 const { Primary, Required } = composeStories(stories)

@@ -2,7 +2,7 @@ import { describe, expect, it, beforeEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page } from 'vitest/browser'
 import * as stories from './Text.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const {
   Default,
