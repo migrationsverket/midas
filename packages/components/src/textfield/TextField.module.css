@@ -165,13 +165,12 @@
 }
 
 .passwordButton {
-  background: transparent !important;
-  border-color: transparent !important;
   position: absolute;
-  width: max-content;
   right: 0;
-  top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
   z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
+
+  &[data-pressed] {
+    /* This state adds a background, making the border-bottom of the .input disappear  */
+    background-color: transparent !important;
+  }
 }
