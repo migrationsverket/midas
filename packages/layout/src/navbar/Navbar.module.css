@@ -1,6 +1,5 @@
 .navbar {
   background-color: var(--midas-layer-01-base);
-  margin-top: 1rem;
 
   ul {
     display: flex;
