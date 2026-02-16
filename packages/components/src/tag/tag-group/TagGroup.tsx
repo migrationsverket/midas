@@ -22,6 +22,7 @@ export const TagGroup = forwardRef<HTMLDivElement, TagGroupProps>(
       .filter(isValidElement)
       .find(child => child.type === TagList)
 
+    // @deprecated since v17.0.0
     if (!providedTagList && process.env.NODE_ENV === 'development') {
       console.warn(
         'Using a TagGroup without providing a TagList component is deprecated since v17.0.0, see: https://designsystem.migrationsverket.se/components/tag/',
