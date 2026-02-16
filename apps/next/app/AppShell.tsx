@@ -41,20 +41,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [isDismissPanelOpen, setIsDismissPanelOpen] = useState(false)
 
   return (
-    <Layout
-      header={
-        <Header data-debug='Header'>
-          <Button
-            aria-controls={drawerId}
-            aria-expanded={isDrawerOpen}
-            aria-haspopup='dialog'
-            icon={Menu}
-            onPress={() => setIsDrawerOpen(x => !x)}
-            variant='icon'
-          />
-        </Header>
-      }
-      sidebar={
+    <Layout>
+      <Header data-debug='Header'>
+        <Button
+          aria-controls={drawerId}
+          aria-expanded={isDrawerOpen}
+          aria-haspopup='dialog'
+          icon={Menu}
+          onPress={() => setIsDrawerOpen(x => !x)}
+          variant='icon'
+        />
+      </Header>
+      <Layout.Content>
         <Panel
           variant='collapse'
           title='Next App'
@@ -97,20 +95,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </NavLink>
           </Navigation>
         </Panel>
-      }
-      navbar={
-        <Navbar data-debug='Navbar'>
-          <ul>
-            <NavLink href='/' variant='navbar' title='Home'>
-              <House />
-            </NavLink>
-            <NavLink href='/applications' variant='navbar' title='Applications'>
-              <List />
-            </NavLink>
-          </ul>
-        </Navbar>
-      }
-      dismissPanel={
+        <Main data-debug='Main'>
+          {children}
+          {!isDismissPanelOpen && (
+            <Button onPress={() => setIsDismissPanelOpen(true)}>
+              Open side panel
+            </Button>
+          )}
+        </Main>
         <Panel
           variant='dismiss'
           title='Details'
@@ -119,16 +111,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           isOpen={isDismissPanelOpen}
           onOpenChange={setIsDismissPanelOpen}
         />
-      }
-    >
-      <Main data-debug='Main'>
-        {children}
-        {!isDismissPanelOpen && (
-          <Button onPress={() => setIsDismissPanelOpen(true)}>
-            Open side panel
-          </Button>
-        )}
-      </Main>
+      </Layout.Content>
+      <Navbar data-debug='Navbar'>
+        <ul>
+          <NavLink href='/' variant='navbar' title='Home'>
+            <House />
+          </NavLink>
+          <NavLink href='/applications' variant='navbar' title='Applications'>
+            <List />
+          </NavLink>
+        </ul>
+      </Navbar>
     </Layout>
   )
 }
