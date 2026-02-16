@@ -1,3 +1,13 @@
+# 17.0.0 (2026-02-16)
+
+### 🚀 Features
+
+- **components, select, combobox:** extend type for sections ([1c964f7b40](https://github.com/migrationsverket/midas/commit/1c964f7b40))
+
+### 📖 Documentation changes
+
+- release notes for v17.0.0 ([18f6b788a5](https://github.com/migrationsverket/midas/commit/18f6b788a5))
+
 ## 16.8.6 (2026-02-16)
 
 ### 🧱 Updated Dependencies
