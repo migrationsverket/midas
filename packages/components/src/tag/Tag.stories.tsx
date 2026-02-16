@@ -44,7 +44,7 @@ export const Disabled: Story = {
 }
 
 export const WithoutTagList: Story = {
-  // tags: ['!autodocs', '!dev'],
+  tags: ['!autodocs', '!dev'],
   render: args => (
     <TagGroup aria-label='Taggar'>
       <Tag {...args} />
