@@ -1,3 +1,9 @@
+## 17.0.1 (2026-02-16)
+
+### 🩹 Fixes
+
+- **components,datepicker:** fix calendar icon btn placement in firefox ([1107d2aeea](https://github.com/migrationsverket/midas/commit/1107d2aeea))
+
 # 17.0.0 (2026-02-16)
 
 ### 🚀 Features
