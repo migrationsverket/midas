@@ -1,38 +1,22 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { clsx } from '@midas-ds/components'
 import styles from './Layout.module.css'
 
-export type LayoutProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
-> & {
-  dismissPanel?: ReactNode
-  header?: ReactNode
-  sidebar?: ReactNode
-  navbar?: ReactNode
-}
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export const Layout = ({
-  className,
-  children,
-  dismissPanel,
-  sidebar,
-  header,
-  navbar,
-  ...rest
-}: LayoutProps) => (
-  <div
-    className={clsx(className, styles.layout)}
-    {...rest}
-  >
-    {header}
-    <div className={styles.restContainer}>
-      <div className={styles.mainContainer}>
-        {sidebar}
-        {children}
-      </div>
-      {navbar}
-      {dismissPanel}
-    </div>
+const Content = ({ className, children, ...rest }: DivProps) => (
+  <div className={clsx(className, styles.content)} {...rest}>
+    {children}
   </div>
+)
+
+export type LayoutProps = DivProps
+
+export const Layout = Object.assign(
+  ({ className, children, ...rest }: LayoutProps) => (
+    <div className={clsx(className, styles.layout)} {...rest}>
+      {children}
+    </div>
+  ),
+  { Content },
 )
