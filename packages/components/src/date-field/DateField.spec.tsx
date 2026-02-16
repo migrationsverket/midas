@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DateField.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { WithClearButton } = composeStories(stories)
 

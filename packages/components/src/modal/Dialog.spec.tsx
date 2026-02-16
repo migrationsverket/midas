@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import * as stories from './Dialog.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { DS1282 } = composeStories(stories)
 

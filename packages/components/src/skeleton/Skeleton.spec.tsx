@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Skeleton.stories'
 import * as formStories from './Skeleton.Form.stories'
 import styles from './Skeleton.module.css'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Rectangle, Circle, NoAnimation, IsOnLayer01, DS1191 } =
   composeStories(stories)
