@@ -2,6 +2,7 @@
   "name": "next-e2e",
   "private": true,
   "dependencies": {
-    "@midas-ds/components": "*"
+    "@midas-ds/components": "*",
+    "@midas-ds/layout": "*"
   }
 }

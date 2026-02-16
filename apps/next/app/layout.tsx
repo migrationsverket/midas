@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import { Layout } from '@midas-ds/components'
 import '@midas-ds/components/default.css'
+import './global.css'
+import { AppShell } from './AppShell'
 
 export const metadata: Metadata = {
   title: 'midas components E2E',
@@ -15,20 +16,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Layout
-          items={[]}
-          title={'next app'}
-          user={{
-            name: 'test',
-            title: 'test',
-          }}
-          app={{
-            name: 'test',
-          }}
-          variant='internal'
-        >
-          {children}
-        </Layout>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   )
