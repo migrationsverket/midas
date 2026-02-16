@@ -1,3 +1,13 @@
+## 16.8.5 (2026-02-16)
+
+### 🩹 Fixes
+
+- **components,toast:** rewrite storybook stories and remove fictional priority API ([89e6a160f7](https://github.com/migrationsverket/midas/commit/89e6a160f7))
+
+### 🧪 Tests updated
+
+- **components,toast:** update tests to match rewritten stories ([3a33d26ef3](https://github.com/migrationsverket/midas/commit/3a33d26ef3))
+
 ## 16.8.4 (2026-02-16)
 
 ### 🧱 Updated Dependencies
