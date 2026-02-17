@@ -1,21 +1,16 @@
 .body,
-.body-01,
-.body-02,
 .body-small,
 .description,
 .description-small {
   color: var(--midas-text-primary);
 }
 
-.body,
-.body-02 {
+.body {
+  font: var(--midas-typography-body);
+
   &[data-expressive] {
     line-height: var(--midas-typography-line-height-50);
   }
-}
-
-.body {
-  font: var(--midas-typography-body);
 }
 
 .body-small {
@@ -24,19 +19,6 @@
 
 .description-small {
   font: var(--midas-typography-description-small);
-}
-
-.body-01,
-.body-02 {
-  font: var(--midas-typography-body);
-}
-
-.body-01 {
-  line-height: var(--midas-typography-line-height-30);
-}
-
-.body-02 {
-  line-height: var(--midas-typography-line-height-40);
 }
 
 .bold {

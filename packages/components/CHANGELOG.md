@@ -1,3 +1,47 @@
+## 17.0.2 (2026-02-17)
+
+### 🩹 Fixes
+
+- **components, textfield:** add hover color to password button ([3f2f21971a](https://github.com/migrationsverket/midas/commit/3f2f21971a))
+
+## 17.0.1 (2026-02-16)
+
+### 🩹 Fixes
+
+- **components,datepicker:** fix calendar icon btn placement in firefox ([1107d2aeea](https://github.com/migrationsverket/midas/commit/1107d2aeea))
+
+# 17.0.0 (2026-02-16)
+
+### 🚀 Features
+
+- **components, select, combobox:** extend type for sections ([1c964f7b40](https://github.com/migrationsverket/midas/commit/1c964f7b40))
+
+### 📖 Documentation changes
+
+- release notes for v17.0.0 ([18f6b788a5](https://github.com/migrationsverket/midas/commit/18f6b788a5))
+
+## 16.8.6 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.8
+
+## 16.8.5 (2026-02-16)
+
+### 🩹 Fixes
+
+- **components,toast:** rewrite storybook stories and remove fictional priority API ([89e6a160f7](https://github.com/migrationsverket/midas/commit/89e6a160f7))
+
+### 🧪 Tests updated
+
+- **components,toast:** update tests to match rewritten stories ([3a33d26ef3](https://github.com/migrationsverket/midas/commit/3a33d26ef3))
+
+## 16.8.4 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.7
+
 ## 16.8.3 (2026-02-12)
 
 ### 🩹 Fixes

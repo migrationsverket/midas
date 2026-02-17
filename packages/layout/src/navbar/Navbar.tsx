@@ -9,6 +9,7 @@ export type NavbarProps = DetailedHTMLProps<
 
 export const Navbar = ({ className, ...rest }: NavbarProps) => (
   <nav
+    aria-label='bottom navbar'
     className={clsx(className, styles.navbar)}
     {...rest}
   />
