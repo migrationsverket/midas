@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode, useContext, type ElementType } from 'react'
-import { Link } from 'react-aria-components'
+import { Focusable, Link } from 'react-aria-components'
 import {
   clsx,
   Tooltip,
@@ -42,23 +42,25 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
   return (
     <NavigationListItem>
       <TooltipTrigger isDisabled={!isCollapsed}>
-        <Component
-          aria-current={isActive && 'page'}
-          aria-label={ariaLabel || (isCollapsed ? title : undefined)}
-          className={clsx(
-            className,
-            styles.navigationLink,
-            variant && styles[variant],
-            {
-              [styles.collapsed]: isCollapsed,
-            },
-          )}
-          data-active={isActive || undefined}
-          {...rest}
-        >
-          {children}
-          <span className={styles.title}>{title}</span>
-        </Component>
+        <Focusable>
+          <Component
+            aria-current={isActive && 'page'}
+            aria-label={ariaLabel || (isCollapsed ? title : undefined)}
+            className={clsx(
+              className,
+              styles.navigationLink,
+              variant && styles[variant],
+              {
+                [styles.collapsed]: isCollapsed,
+              },
+            )}
+            data-active={isActive || undefined}
+            {...rest}
+          >
+            {children}
+            <span className={styles.title}>{title}</span>
+          </Component>
+        </Focusable>
         <Tooltip placement='right'>{title}</Tooltip>
       </TooltipTrigger>
     </NavigationListItem>

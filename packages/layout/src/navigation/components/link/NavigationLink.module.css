@@ -10,6 +10,7 @@
   text-decoration: none;
 
   &[data-hovered],
+  &:hover,
   &[data-active] {
     background-color: var(--midas-menu-item-background-hover);
   }
