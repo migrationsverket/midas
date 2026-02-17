@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
 import clsx from 'clsx'
 import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { X } from 'lucide-react'
 import { PanelHeader, PanelBody, PanelBodyProps, PanelTitle } from '..'
 import styles from './DismissPanel.module.css'
 import messages from '../../intl/translations.json'
+import { useControlledState } from '../../../../utils'
 
 export interface DismissTriggerProps {
   isOpen?: boolean
@@ -18,21 +18,20 @@ export const DismissPanel = ({
   children,
   className,
   isOpen: isOpenProp,
-  defaultOpen = true,
+  defaultOpen = false,
   onOpenChange,
   title,
   ...rest
 }: PanelBodyProps & DismissTriggerProps) => {
   const strings = useLocalizedStringFormatter(messages)
-  const [internalOpen, setInternalOpen] = useState(defaultOpen)
-  const isControlled = isOpenProp !== undefined
-  const isOpen = isControlled ? isOpenProp : internalOpen
 
-  const handlePress = () => {
-    const next = !isOpen
-    if (!isControlled) setInternalOpen(next)
-    onOpenChange?.(next)
-  }
+  const [isOpen, setIsOpen] = useControlledState(
+    isOpenProp,
+    defaultOpen,
+    onOpenChange,
+  )
+
+  const handlePress = () => setIsOpen(previouslyOpen => !previouslyOpen)
 
   if (!isOpen) {
     return null

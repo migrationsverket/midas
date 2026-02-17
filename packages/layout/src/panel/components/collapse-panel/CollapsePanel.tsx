@@ -1,15 +1,15 @@
 'use client'
 
-import { useState } from 'react'
 import clsx from 'clsx'
 import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { PanelContext } from '../..'
 import { PanelBody, PanelBodyProps } from '../panel-body/PanelBody'
 import { PanelHeader } from '../panel-header/PanelHeader'
-import styles from './CollapsePanel.module.css'
 import { PanelTitle } from '../panel-title'
 import messages from '../../intl/translations.json'
+import { useControlledState } from '../../../../utils'
+import styles from './CollapsePanel.module.css'
 
 export interface CollapseTriggerProps {
   isCollapsed?: boolean
@@ -27,15 +27,15 @@ export const CollapsePanel = ({
   ...rest
 }: PanelBodyProps & CollapseTriggerProps) => {
   const strings = useLocalizedStringFormatter(messages)
-  const [internalCollapsed, setInternalCollapsed] = useState(defaultCollapsed)
-  const isControlled = isCollapsedProp !== undefined
-  const isCollapsed = isControlled ? isCollapsedProp : internalCollapsed
 
-  const handlePress = () => {
-    const next = !isCollapsed
-    if (!isControlled) setInternalCollapsed(next)
-    onCollapseChange?.(next)
-  }
+  const [isCollapsed, setIsCollapsed] = useControlledState(
+    isCollapsedProp,
+    defaultCollapsed,
+    onCollapseChange,
+  )
+
+  const handlePress = () =>
+    setIsCollapsed(previouslyCollapsed => !previouslyCollapsed)
 
   return (
     <PanelContext.Provider value={{ isCollapsed }}>

@@ -1,15 +1,16 @@
 'use client'
 
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect, useState } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from 'react'
 import { clsx } from '@midas-ds/components'
 import { ModalOverlayProps } from 'react-aria-components'
 import { NavigationLink, NavigationSubMenu, Drawer } from './components'
 import styles from './Navigation.module.css'
+import { useControlledState } from '../../utils'
 
 export interface NavigationProps
   extends
     DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>,
-    Pick<ModalOverlayProps, 'isOpen' | 'onOpenChange'> {
+    Pick<ModalOverlayProps, 'isOpen' | 'onOpenChange' | 'defaultOpen'> {
   children?: ReactNode
   id: string
 }
@@ -18,15 +19,22 @@ export const Navigation = ({
   children,
   className,
   id,
-  isOpen,
+  isOpen: isOpenProp,
+  defaultOpen = false,
   onOpenChange,
   ...rest
 }: NavigationProps) => {
-  const [hasBeenOpened, setHasBeenOpened] = useState(false)
+  const [isOpen, setIsOpen] = useControlledState(
+    isOpenProp,
+    defaultOpen,
+    onOpenChange,
+  )
 
-  useEffect(() => {
-    if (isOpen) setHasBeenOpened(true)
-  }, [isOpen])
+  const [hasBeenOpened, sethasBeenOpened] = useState(false)
+
+  if (!hasBeenOpened && isOpen) {
+    sethasBeenOpened(true)
+  }
 
   return (
     <>
@@ -40,7 +48,7 @@ export const Navigation = ({
         <Drawer
           id={id}
           isOpen={isOpen}
-          onOpenChange={onOpenChange}
+          onOpenChange={setIsOpen}
         >
           <nav
             id={id}

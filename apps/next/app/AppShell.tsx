@@ -30,9 +30,17 @@ function NavLink({
   ...props
 }: ComponentProps<typeof Navigation.Link<typeof NextLink>>) {
   const pathname = usePathname()
-  const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
+  const active =
+    href === '/' ? pathname === '/' : pathname.startsWith(href.toString())
 
-  return <Navigation.Link as={NextLink} href={href} isActive={active} {...props} />
+  return (
+    <Navigation.Link
+      as={NextLink}
+      href={href}
+      isActive={active}
+      {...props}
+    />
+  )
 }
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -63,34 +71,58 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             isOpen={isDrawerOpen}
             onOpenChange={setIsDrawerOpen}
           >
-            <NavLink href='/' title='Hem'>
+            <NavLink
+              href='/'
+              title='Hem'
+            >
               <House />
             </NavLink>
             <Navigation.SubMenu>
-              <NavLink href='/applications' title='Applications'>
+              <NavLink
+                href='/applications'
+                title='Applications'
+              >
                 <FileText />
               </NavLink>
               <Navigation.SubMenu>
-                <NavLink href='/applications/new' title='New application'>
+                <NavLink
+                  href='/applications/new'
+                  title='New application'
+                >
                   <Plus />
                 </NavLink>
-                <NavLink href='/applications/drafts' title='Drafts'>
+                <NavLink
+                  href='/applications/drafts'
+                  title='Drafts'
+                >
                   <Save />
                 </NavLink>
-                <NavLink href='/applications/sent' title='Sent'>
+                <NavLink
+                  href='/applications/sent'
+                  title='Sent'
+                >
                   <Send />
                 </NavLink>
               </Navigation.SubMenu>
             </Navigation.SubMenu>
             <Navigation.SubMenu title='Account'>
-              <NavLink href='/profile' title='Profile'>
+              <NavLink
+                href='/profile'
+                title='Profile'
+              >
                 <User />
               </NavLink>
             </Navigation.SubMenu>
-            <NavLink href='/help' title='Help'>
+            <NavLink
+              href='/help'
+              title='Help'
+            >
               <HelpCircle />
             </NavLink>
-            <NavLink href='/contact' title='Contact'>
+            <NavLink
+              href='/contact'
+              title='Contact'
+            >
               <Mail />
             </NavLink>
           </Navigation>
@@ -114,10 +146,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </Layout.Content>
       <Navbar data-debug='Navbar'>
         <ul>
-          <NavLink href='/' variant='navbar' title='Home'>
+          <NavLink
+            href='/'
+            variant='navbar'
+            title='Home'
+          >
             <House />
           </NavLink>
-          <NavLink href='/applications' variant='navbar' title='Applications'>
+          <NavLink
+            href='/applications'
+            variant='navbar'
+            title='Applications'
+          >
             <List />
           </NavLink>
         </ul>
