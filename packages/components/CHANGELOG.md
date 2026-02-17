@@ -1,3 +1,9 @@
+## 17.0.2 (2026-02-17)
+
+### 🩹 Fixes
+
+- **components, textfield:** add hover color to password button ([3f2f21971a](https://github.com/migrationsverket/midas/commit/3f2f21971a))
+
 ## 17.0.1 (2026-02-16)
 
 ### 🩹 Fixes
