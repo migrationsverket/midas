@@ -3,7 +3,12 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from 'react'
 import { clsx } from '@midas-ds/components'
 import { ModalOverlayProps } from 'react-aria-components'
-import { NavigationLink, NavigationSubMenu, Drawer } from './components'
+import {
+  NavigationLink,
+  NavigationSubMenu,
+  Drawer,
+  NavigationLinkProps,
+} from './components'
 import styles from './Navigation.module.css'
 import { useControlledState } from '../../utils'
 
@@ -65,3 +70,5 @@ export const Navigation = ({
 
 Navigation.Link = NavigationLink
 Navigation.SubMenu = NavigationSubMenu
+
+export type { NavigationLinkProps }

@@ -1,8 +1,6 @@
 'use client'
 
-import { ComponentProps, useState, useId } from 'react'
-import NextLink from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useState, useId, Fragment } from 'react'
 import { Button } from '@midas-ds/components'
 import {
   Layout,
@@ -24,24 +22,71 @@ import {
   HelpCircle,
   Mail,
 } from 'lucide-react'
+import { NavLink } from '../components/NavLink'
 
-function NavLink({
-  href,
-  ...props
-}: ComponentProps<typeof Navigation.Link<typeof NextLink>>) {
-  const pathname = usePathname()
-  const active =
-    href === '/' ? pathname === '/' : pathname.startsWith(href.toString())
-
-  return (
-    <Navigation.Link
-      as={NextLink}
-      href={href}
-      isActive={active}
-      {...props}
-    />
-  )
-}
+const navItems = [
+  {
+    title: '',
+    children: [
+      {
+        href: '/',
+        title: 'Home',
+        icon: <House />,
+      },
+      {
+        href: '/applications',
+        title: 'Applications',
+        icon: <FileText />,
+        children: [
+          {
+            title: '',
+            children: [
+              {
+                href: '/applications/new',
+                title: 'New application',
+                icon: <Plus />,
+              },
+              {
+                href: '/applications/drafts',
+                title: 'Drafts',
+                icon: <Save />,
+              },
+              {
+                href: '/applications/sent',
+                title: 'Sent',
+                icon: <Send />,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Account',
+    children: [
+      {
+        href: '/profile',
+        title: 'Profile',
+        icon: <User />,
+      },
+    ],
+  },
+  {
+    children: [
+      {
+        href: '/help',
+        title: 'Help',
+        icon: <HelpCircle />,
+      },
+      {
+        href: '/mail',
+        title: 'Mail',
+        icon: <Mail />,
+      },
+    ],
+  },
+]
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const drawerId = useId()
@@ -71,60 +116,26 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             isOpen={isDrawerOpen}
             onOpenChange={setIsDrawerOpen}
           >
-            <NavLink
-              href='/'
-              title='Hem'
-            >
-              <House />
-            </NavLink>
-            <Navigation.SubMenu>
-              <NavLink
-                href='/applications'
-                title='Applications'
-              >
-                <FileText />
-              </NavLink>
-              <Navigation.SubMenu>
-                <NavLink
-                  href='/applications/new'
-                  title='New application'
+            {navItems.map(function renderNavItems(item, index) {
+              return (
+                <Navigation.SubMenu
+                  title={item.title}
+                  key={item.title || '' + index}
                 >
-                  <Plus />
-                </NavLink>
-                <NavLink
-                  href='/applications/drafts'
-                  title='Drafts'
-                >
-                  <Save />
-                </NavLink>
-                <NavLink
-                  href='/applications/sent'
-                  title='Sent'
-                >
-                  <Send />
-                </NavLink>
-              </Navigation.SubMenu>
-            </Navigation.SubMenu>
-            <Navigation.SubMenu title='Account'>
-              <NavLink
-                href='/profile'
-                title='Profile'
-              >
-                <User />
-              </NavLink>
-            </Navigation.SubMenu>
-            <NavLink
-              href='/help'
-              title='Help'
-            >
-              <HelpCircle />
-            </NavLink>
-            <NavLink
-              href='/contact'
-              title='Contact'
-            >
-              <Mail />
-            </NavLink>
+                  {item.children?.map(({ href, title, icon, children }) => (
+                    <Fragment key={href}>
+                      <NavLink
+                        href={href}
+                        title={title}
+                      >
+                        {icon}
+                      </NavLink>
+                      {children?.length && children.map(renderNavItems)}
+                    </Fragment>
+                  ))}
+                </Navigation.SubMenu>
+              )
+            })}
           </Navigation>
         </Panel>
         <Main data-debug='Main'>
