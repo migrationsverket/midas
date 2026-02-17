@@ -140,7 +140,7 @@ Använd `allowsEmptyCollection` hos `ComboBox` och rendera bara `ListBoxLoadMore
 ```tsx
 import { useAsyncList } from 'react-stately'
 import { Collection } from 'react-aria-components'
-import { ComboBox, ListBoxItem, ListBoxLoadMoreItem } from '@midas-ds/components'
+import { ComboBox, ListBoxItem, ListBoxLoadMoreItem, ListBoxEmptyState } from '@midas-ds/components'
 
 const list = useAsyncList<{ name: string }>({
   async load({ signal, cursor, filterText }) {
@@ -168,6 +168,12 @@ return (
     onInputChange={list.setFilterText}
     // highlight-next-line
     allowsEmptyCollection
+    listBoxProps={{
+      renderEmptyState: () =>
+        list.isLoading ? null : (
+          <ListBoxEmptyState>Inga träffar</ListBoxEmptyState>
+        )
+    }}
   >
     // highlight-start
     <Collection items={list.items}>
