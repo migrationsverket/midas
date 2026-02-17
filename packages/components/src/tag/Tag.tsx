@@ -16,8 +16,13 @@ export interface TagProps extends AriaTagProps {
   color?: 'green' | 'blue' | 'yellow' | 'red'
   /**
    * Add a button for dismissing the tab
+   * @deprecated since v17.0.0 please use `isDismissable` instead
    */
   dismissable?: boolean
+  /**
+   * Add a button for dismissing the tab
+   */
+  isDismissable?: boolean
   /**
    * @deprecated since v17.0.0 please use the prop `color` instead
    */
@@ -28,14 +33,18 @@ export const Tag = ({
   className,
   color,
   dismissable = false,
+  isDismissable = false,
   type,
   ...props
 }: TagProps) => {
+  const isTagDismissable =
+    isDismissable || (typeof isDismissable === 'undefined' && dismissable)
+
   return (
     <AriaTag
       className={clsx(
         styles.tag,
-        dismissable && styles.dismissable,
+        isTagDismissable && styles.dismissable,
         {
           [styles.green]: color === 'green' || (!color && type === 'success'),
           [styles.blue]: color === 'blue' || (!color && type === 'info'),
@@ -54,7 +63,7 @@ export const Tag = ({
       {composeRenderProps(props.children, children => (
         <>
           <div className={styles.tagText}>{children}</div>
-          {dismissable && (
+          {isTagDismissable && (
             <Button
               variant='icon'
               size='medium'

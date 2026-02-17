@@ -15,7 +15,7 @@ export default {
   args: {
     children: 'Title',
     textValue: 'Title',
-    dismissable: true,
+    isDismissable: true,
     className: 'test-class',
   },
   render: args => {
