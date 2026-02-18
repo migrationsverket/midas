@@ -152,18 +152,6 @@
   }
 }
 
-.passwordText {
-  background-color: var(--midas-field-01-base);
-  position: absolute;
-  display: flex;
-  align-items: center;
-  top: 3px;
-  z-index: var(--midas-z-index-base);
-  left: 1rem;
-  height: calc(100% - 6px);
-  width: calc(100% - 2rem);
-}
-
 .passwordButton {
   position: absolute;
   right: 0;

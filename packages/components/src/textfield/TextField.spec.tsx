@@ -50,19 +50,21 @@ describe('given a Primary TextField', async () => {
 })
 
 describe('given a Password TextField', async () => {
-  it('should toggle the password when clicking "Show" and "Hide"', async () => {
-    const { getByText } = await render(<Password />)
-    const password = 'secret'
+  it('should toggle the input type between password and text', async () => {
+    const { getByRole } = await render(<Password />)
+    const input = getByRole('textbox')
+
+    await expect.element(input).toHaveAttribute('type', 'password')
 
     await userEvent.tab()
     await userEvent.keyboard('secret')
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
 
-    await expect.element(getByText(password)).toBeInTheDocument()
+    await expect.element(input).toHaveAttribute('type', 'text')
 
     await userEvent.keyboard('[Enter]')
-    await expect.element(getByText(password)).not.toBeInTheDocument()
+    await expect.element(input).toHaveAttribute('type', 'password')
   })
 })
 
