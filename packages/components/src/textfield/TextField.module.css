@@ -150,6 +150,10 @@
       border: 1px solid;
     }
   }
+
+  &::-ms-reveal {
+    display: none;
+  }
 }
 
 .passwordText {
@@ -169,8 +173,6 @@
   right: 0;
   z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
 
-  &[data-pressed] {
-    /* This state adds a background, making the border-bottom of the .input disappear  */
-    background-color: transparent !important;
-  }
+  /* The active state adds a background, making the border-bottom of the .input disappear  */
+  border-bottom: none;
 }
