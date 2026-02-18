@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useId, Fragment } from 'react'
+import { useState, useId, Fragment, ReactNode } from 'react'
 import { Button } from '@midas-ds/components'
 import {
   Layout,
@@ -24,9 +24,15 @@ import {
 } from 'lucide-react'
 import { NavLink } from '../components/NavLink'
 
-const navItems = [
+type NavItem = {
+  title?: string
+  href?: string
+  icon?: ReactNode
+  children?: NavItem[]
+}
+
+const navItems: NavItem[] = [
   {
-    title: '',
     children: [
       {
         href: '/',
@@ -39,7 +45,6 @@ const navItems = [
         icon: <FileText />,
         children: [
           {
-            title: '',
             children: [
               {
                 href: '/applications/new',
@@ -124,12 +129,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 >
                   {item.children?.map(({ href, title, icon, children }) => (
                     <Fragment key={href}>
-                      <NavLink
-                        href={href}
-                        title={title}
-                      >
-                        {icon}
-                      </NavLink>
+                      {title && href && (
+                        <NavLink
+                          href={href}
+                          title={title}
+                        >
+                          {icon}
+                        </NavLink>
+                      )}
                       {children?.length && children.map(renderNavItems)}
                     </Fragment>
                   ))}
