@@ -9,12 +9,12 @@ export default {
   component: Tag,
   subcomponents: {
     TagGroup,
+    TagList,
   },
   title: 'Components/Tag',
   tags: ['autodocs'],
   args: {
     children: 'Title',
-    textValue: 'Title',
     isDismissable: true,
     className: 'test-class',
   },
@@ -31,9 +31,27 @@ export default {
 
 export const Primary: Story = {}
 
-export const Status: Story = {
+export const Green: Story = {
   args: {
-    type: 'success',
+    color: 'green',
+  },
+}
+
+export const Blue: Story = {
+  args: {
+    color: 'blue',
+  },
+}
+
+export const Yellow: Story = {
+  args: {
+    color: 'yellow',
+  },
+}
+
+export const Red: Story = {
+  args: {
+    color: 'red',
   },
 }
 
