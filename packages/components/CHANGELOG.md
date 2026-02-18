@@ -1,3 +1,14 @@
+## 17.1.0 (2026-02-18)
+
+### 🚀 Features
+
+- **components, combobox:** add new prop listBoxProps ([#1061](https://github.com/migrationsverket/midas/pull/1061))
+
+### 🧪 Tests updated
+
+- **components:** setup custom render wrapper ([527bc0edf4](https://github.com/migrationsverket/midas/commit/527bc0edf4))
+- **components:** make browser tests pass in headed Playwright mode ([22e76b8727](https://github.com/migrationsverket/midas/commit/22e76b8727))
+
 ## 17.0.2 (2026-02-17)
 
 ### 🩹 Fixes
