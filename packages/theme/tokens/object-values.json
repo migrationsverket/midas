@@ -291,6 +291,50 @@
       }
     }
   },
+  "tag": {
+    "$type": "string",
+    "green": {
+      "background": {
+        "$value": "light-dark({color.signalGreen.20}, {color.signalGreen.180})",
+        "$description": "Tag bakgrund grön"
+      },
+      "borderColor": {
+        "$value": "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
+        "$description": "Tag kantlinje grön"
+      }
+    },
+    "blue": {
+      "background": {
+        "$value": "light-dark({color.signalBlue.10}, {color.signalBlue.180})",
+        "$description": "Tag bakgrund blå"
+      },
+      "borderColor": {
+        "$value": "light-dark({color.signalBlue.100}, {color.signalBlue.100})",
+        "$description": "Tag kantlinje blå"
+      }
+    },
+    "yellow": {
+      "background": {
+        "$value": "light-dark({color.signalYellow.10}, {color.signalYellow.180})",
+        "$description": "Tag bakgrund gul"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.orange.100}",
+        "$description": "Tag kantlinje gul"
+      }
+    },
+    "red": {
+      "background": {
+        "$value": "light-dark({color.signalRed.20}, {color.signalRed.180})",
+        "$description": "Tag bakgrund röd"
+      },
+      "borderColor": {
+        "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})",
+        "$description": "Tag kantlinje röd"
+      }
+    }
+  },
   "text": {
     "$type": "string",
     "primary": {
