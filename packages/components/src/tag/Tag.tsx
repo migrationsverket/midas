@@ -33,7 +33,7 @@ export const Tag = ({
   className,
   color,
   dismissable = false,
-  isDismissable = false,
+  isDismissable,
   type,
   ...props
 }: TagProps) => {
@@ -46,11 +46,10 @@ export const Tag = ({
         styles.tag,
         isTagDismissable && styles.dismissable,
         {
-          [styles.green]: color === 'green' || (!color && type === 'success'),
-          [styles.blue]: color === 'blue' || (!color && type === 'info'),
-          [styles.yellow]:
-            color === 'yellow' || (!color && type === 'important'),
-          [styles.red]: color === 'red' || (!color && type === 'warning'),
+          [styles.green]: color ? color === 'green' : type === 'success',
+          [styles.blue]: color ? color === 'blue' : type === 'info',
+          [styles.yellow]: color ? color === 'yellow' : type === 'important',
+          [styles.red]: color ? color === 'red' : type === 'warning',
         },
         className,
       )}
