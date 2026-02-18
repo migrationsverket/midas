@@ -70,8 +70,23 @@ describe('deprecated usage', async () => {
 
   describe('dismissable', () => {
     it('should be dismissable when using dismissable=true', async () => {
-      const { getByRole } = await render(<Primary dismissable />)
+      const { getByRole } = await render(
+        <Primary
+          dismissable
+          isDismissable={undefined}
+        />,
+      )
       await expect.element(getByRole('button')).toBeVisible()
+    })
+
+    it('should not be dismissable when using dismissable=false', async () => {
+      const { getByRole } = await render(
+        <Primary
+          dismissable={false}
+          isDismissable={undefined}
+        />,
+      )
+      await expect.element(getByRole('row')).not.toHaveClass(styles.dismissable)
     })
 
     it('should be dismissable if the new prop is true and the old is false', async () => {
