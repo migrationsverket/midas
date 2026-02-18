@@ -1,3 +1,35 @@
+## 17.2.0 (2026-02-18)
+
+### 🚀 Features
+
+- **components, tag:** deprecate dismissable prop ([228210703b](https://github.com/migrationsverket/midas/commit/228210703b))
+- **components, tag:** add color prop ([85ed37965d](https://github.com/migrationsverket/midas/commit/85ed37965d))
+
+### 🩹 Fixes
+
+- **components, tag:** replace color tokens ([311347b851](https://github.com/migrationsverket/midas/commit/311347b851))
+
+### 🏭 Refactoring
+
+- **components,tag:** use tag-scoped tokens instead of support tokens ([60a549a2f0](https://github.com/migrationsverket/midas/commit/60a549a2f0))
+
+### 📖 Documentation changes
+
+- **components, tag:** add stories for color variants ([d80920757c](https://github.com/migrationsverket/midas/commit/d80920757c))
+
+### 🔧 Maintenance
+
+- **components, tag:** add deprecation comment for lint tracking ([fa1dbcb0b0](https://github.com/migrationsverket/midas/commit/fa1dbcb0b0))
+
+### 🧪 Tests updated
+
+- **components, tag:** add test for deprecated dismissable prop ([efa39bfb4a](https://github.com/migrationsverket/midas/commit/efa39bfb4a))
+- **components, tag:** typos ([18ff479ba3](https://github.com/migrationsverket/midas/commit/18ff479ba3))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.0
+
 ## 17.1.0 (2026-02-18)
 
 ### 🚀 Features
