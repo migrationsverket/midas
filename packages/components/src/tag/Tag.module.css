@@ -39,23 +39,44 @@
   color: var(--midas-text-primary);
 
   &.green {
-    background-color: var(--midas-support-background-success);
-    border: 1px solid var(--midas-support-border-success);
+    background-color: light-dark(
+      var(--midas-color-signal-green-20),
+      var(--midas-color-signal-green-180)
+    );
+    border-color: light-dark(
+      var(--midas-color-signal-green-100),
+      var(--midas-color-signal-green-100)
+    );
   }
 
   &.blue {
-    background-color: var(--midas-support-background-info);
-    border: 1px solid var(--midas-support-border-info);
+    background-color: light-dark(
+      var(--midas-color-signal-blue-10),
+      var(--midas-color-signal-blue-180)
+    );
+    border-color: light-dark(
+      var(--midas-color-signal-blue-100),
+      var(--midas-color-signal-blue-100)
+    );
   }
 
   &.yellow {
-    background-color: var(--midas-support-background-important);
-    border: 1px solid var(--midas-support-border-important);
+    background-color: light-dark(
+      var(--midas-color-signal-yellow-10),
+      var(--midas-color-signal-yellow-180)
+    );
+    border-color: var(--midas-color-orange-100);
   }
 
   &.red {
-    background-color: var(--midas-support-background-warning);
-    border: 1px solid var(--midas-support-border-warning);
+    background-color: light-dark(
+      var(--midas-color-signal-red-20),
+      var(--midas-color-signal-red-180)
+    );
+    border-color: light-dark(
+      var(--midas-color-signal-red-100),
+      var(--midas-color-signal-red-100)
+    );
   }
 
   &[data-disabled] {
