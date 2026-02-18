@@ -39,44 +39,23 @@
   color: var(--midas-text-primary);
 
   &.green {
-    background-color: light-dark(
-      var(--midas-color-signal-green-20),
-      var(--midas-color-signal-green-180)
-    );
-    border-color: light-dark(
-      var(--midas-color-signal-green-100),
-      var(--midas-color-signal-green-100)
-    );
+    background-color: var(--midas-tag-green-background);
+    border: 1px solid var(--midas-tag-green-border-color);
   }
 
   &.blue {
-    background-color: light-dark(
-      var(--midas-color-signal-blue-10),
-      var(--midas-color-signal-blue-180)
-    );
-    border-color: light-dark(
-      var(--midas-color-signal-blue-100),
-      var(--midas-color-signal-blue-100)
-    );
+    background-color: var(--midas-tag-blue-background);
+    border: 1px solid var(--midas-tag-blue-border-color);
   }
 
   &.yellow {
-    background-color: light-dark(
-      var(--midas-color-signal-yellow-10),
-      var(--midas-color-signal-yellow-180)
-    );
-    border-color: var(--midas-color-orange-100);
+    background-color: var(--midas-tag-yellow-background);
+    border: 1px solid var(--midas-tag-yellow-border-color);
   }
 
   &.red {
-    background-color: light-dark(
-      var(--midas-color-signal-red-20),
-      var(--midas-color-signal-red-180)
-    );
-    border-color: light-dark(
-      var(--midas-color-signal-red-100),
-      var(--midas-color-signal-red-100)
-    );
+    background-color: var(--midas-tag-red-background);
+    border: 1px solid var(--midas-tag-red-border-color);
   }
 
   &[data-disabled] {
