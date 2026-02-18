@@ -4,6 +4,7 @@ import {
   ListBoxItem,
   ListBoxSection,
   ListBoxLoadMoreItem,
+  ListBoxEmptyState,
 } from '@midas-ds/components'
 import React from 'react'
 import { Collection, Key } from 'react-aria-components'
@@ -114,6 +115,12 @@ export const AsyncExample = () => {
       inputValue={list.filterText}
       onInputChange={list.setFilterText}
       allowsEmptyCollection
+      listBoxProps={{
+        renderEmptyState: () =>
+          list.isLoading ? null : (
+            <ListBoxEmptyState>Inga träffar</ListBoxEmptyState>
+          ),
+      }}
     >
       <Collection items={list.items}>
         {item => <ListBoxItem id={item.name}>{item.name}</ListBoxItem>}

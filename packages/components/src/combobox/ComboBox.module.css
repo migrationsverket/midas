@@ -124,13 +124,6 @@
   transition: transform 0.3s ease;
 }
 
-span.emptyState {
-  display: block;
-  line-height: var(--midas-typography-line-height-30);
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-60)
-    var(--midas-size-80);
-}
-
 @media (prefers-reduced-motion) {
   .button,
   .icon {
