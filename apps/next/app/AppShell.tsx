@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useId, Fragment, ReactNode } from 'react'
-import { Button } from '@midas-ds/components'
+import { Button, Logo } from '@midas-ds/components'
 import {
   Layout,
   Header,
@@ -109,6 +109,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           onPress={() => setIsDrawerOpen(x => !x)}
           variant='icon'
         />
+        <Logo />
       </Header>
       <Layout.Content>
         <Panel

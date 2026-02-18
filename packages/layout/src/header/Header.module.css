@@ -1,5 +1,6 @@
 .header {
   background-color: var(--midas-background-base);
+  display: flex;
   flex: 1 0 auto;
   padding: 1rem;
 }

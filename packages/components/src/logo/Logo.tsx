@@ -3,6 +3,8 @@ import clsx from '../utils/clsx'
 import styles from './Logo.module.css'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { useContext } from 'react'
+import { LogoContext } from './LogoContext'
 
 export interface LogoProps extends React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
@@ -22,25 +24,29 @@ export interface LogoProps extends React.DetailedHTMLProps<
 
 export const Logo = ({
   primary = true,
-  size = 'medium',
+  size,
   padding = true,
   className,
   ...rest
-}: LogoProps) => (
-  <div
-    className={clsx(
-      styles.container,
-      padding === false && styles.noPadding,
-      className,
-    )}
-    {...rest}
-  >
-    <SVG
-      size={size}
-      primary={primary}
-    />
-  </div>
-)
+}: LogoProps) => {
+  const context = useContext(LogoContext)
+
+  return (
+    <div
+      className={clsx(
+        styles.container,
+        padding === false && styles.noPadding,
+        className,
+      )}
+      {...rest}
+    >
+      <SVG
+        size={size ?? context.size ?? 'medium'}
+        primary={primary}
+      />
+    </div>
+  )
+}
 
 const SVG = ({ size, primary }: Pick<LogoProps, 'size' | 'primary'>) => {
   const classNames = clsx(

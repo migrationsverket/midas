@@ -1,6 +1,6 @@
 'use client'
 
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, useState } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { clsx } from '@midas-ds/components'
 import { ModalOverlayProps } from 'react-aria-components'
 import {
@@ -10,7 +10,8 @@ import {
   NavigationLinkProps,
 } from './components'
 import styles from './Navigation.module.css'
-import { useControlledState } from '../../utils'
+import { useControlledState } from '../utils/useControlledState'
+import { useIsMobileDevice } from '../utils/useIsMobileDevice'
 
 export interface NavigationProps
   extends
@@ -21,8 +22,6 @@ export interface NavigationProps
 }
 
 export const Navigation = ({
-  children,
-  className,
   id,
   isOpen: isOpenProp,
   defaultOpen = false,
@@ -35,38 +34,33 @@ export const Navigation = ({
     onOpenChange,
   )
 
-  const [hasBeenOpened, sethasBeenOpened] = useState(false)
+  const isMobileDevice = useIsMobileDevice()
 
-  if (!hasBeenOpened && isOpen) {
-    sethasBeenOpened(true)
-  }
-
-  return (
-    <>
-      <nav
-        className={clsx(className, styles.navigation)}
-        {...rest}
-      >
-        <ul>{children}</ul>
-      </nav>
-      {hasBeenOpened && (
-        <Drawer
-          id={id}
-          isOpen={isOpen}
-          onOpenChange={setIsOpen}
-        >
-          <nav
-            id={id}
-            className={clsx(className, styles.navigation)}
-            {...rest}
-          >
-            <ul>{children}</ul>
-          </nav>
-        </Drawer>
-      )}
-    </>
+  return isMobileDevice ? (
+    <Drawer
+      id={id}
+      isOpen={isOpen}
+      onOpenChange={setIsOpen}
+    >
+      <NavigationInner {...rest} />
+    </Drawer>
+  ) : (
+    <NavigationInner {...rest} />
   )
 }
+
+const NavigationInner = ({
+  className,
+  children,
+  ...rest
+}: Omit<NavigationProps, 'id'>) => (
+  <nav
+    className={clsx(className, styles.navigation)}
+    {...rest}
+  >
+    <ul>{children}</ul>
+  </nav>
+)
 
 Navigation.Link = NavigationLink
 Navigation.SubMenu = NavigationSubMenu

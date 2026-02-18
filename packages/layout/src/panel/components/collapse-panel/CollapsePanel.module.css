@@ -2,6 +2,10 @@
   &.collapsed {
     width: calc(32px + 48px);
   }
+
+  @media (width < 768px) {
+    display: none;
+  }
 }
 
 .panelHeader {
