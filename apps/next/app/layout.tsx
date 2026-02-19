@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   description: 'E2E test app for Midas components',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'>
       <body>

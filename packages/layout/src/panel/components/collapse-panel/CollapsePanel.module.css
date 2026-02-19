@@ -3,7 +3,7 @@
     width: calc(32px + 48px);
   }
 
-  @media (width < 768px) {
+  @media (width <= 640px) {
     display: none;
   }
 }
