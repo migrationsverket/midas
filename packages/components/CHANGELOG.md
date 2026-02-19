@@ -1,3 +1,9 @@
+## 17.2.2 (2026-02-19)
+
+### 🩹 Fixes
+
+- **components, textfield:** toggle input type for password ([#1064](https://github.com/migrationsverket/midas/pull/1064))
+
 ## 17.2.1 (2026-02-19)
 
 ### 🩹 Fixes
