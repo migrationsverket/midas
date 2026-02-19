@@ -9,11 +9,11 @@ import {
   Panel,
   Navbar,
   Navigation,
+  Hamburger,
 } from '@midas-ds/layout'
 import {
   House,
   List,
-  Menu,
   FileText,
   Plus,
   Save,
@@ -101,13 +101,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <Layout>
       <Header data-debug='Header'>
-        <Button
+        <Hamburger
           aria-controls={drawerId}
-          aria-expanded={isDrawerOpen}
-          aria-haspopup='dialog'
-          icon={Menu}
+          isOpen={isDrawerOpen}
           onPress={() => setIsDrawerOpen(x => !x)}
-          variant='icon'
         />
         <Logo />
       </Header>

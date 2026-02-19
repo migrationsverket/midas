@@ -1,0 +1,6 @@
+.hamburger {
+  /* TODO: Define this value */
+  @media (width > 640px) {
+    display: none;
+  }
+}
