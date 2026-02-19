@@ -21,6 +21,11 @@ concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
+    if: >-
+      !(
+         startsWith(github.head_ref, 'ops/') ||
+         startsWith(github.head_ref, 'chore/')
+       )
     name: Build Docusaurus and Storybook and deploy PR preview
     runs-on: ubuntu-latest
     steps:
