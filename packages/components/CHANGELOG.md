@@ -1,3 +1,9 @@
+## 17.2.1 (2026-02-19)
+
+### 🩹 Fixes
+
+- **components, textfield:** hide edge password reveal button ([#1063](https://github.com/migrationsverket/midas/pull/1063))
+
 ## 17.2.0 (2026-02-18)
 
 ### 🚀 Features
