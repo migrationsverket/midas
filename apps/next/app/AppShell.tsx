@@ -23,6 +23,7 @@ import {
   Mail,
 } from 'lucide-react'
 import { NavLink } from '../components/NavLink'
+import Link from 'next/link'
 
 type NavItem = {
   title?: string
@@ -106,7 +107,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           isOpen={isDrawerOpen}
           onPress={() => setIsDrawerOpen(x => !x)}
         />
-        <Logo />
+        <Link href='/'>
+          <Logo />
+        </Link>
       </Header>
       <Layout.Content>
         <Panel
