@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useId, Fragment, ReactNode } from 'react'
-import { Button, Logo } from '@midas-ds/components'
+import { Logo } from '@midas-ds/components'
 import {
   Layout,
   Header,
@@ -97,7 +97,6 @@ const navItems: NavItem[] = [
 export function AppShell({ children }: { children: React.ReactNode }) {
   const drawerId = useId()
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  const [isDismissPanelOpen, setIsDismissPanelOpen] = useState(false)
 
   return (
     <Layout>
@@ -145,22 +144,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             })}
           </Navigation>
         </Panel>
-        <Main data-debug='Main'>
-          {children}
-          {!isDismissPanelOpen && (
-            <Button onPress={() => setIsDismissPanelOpen(true)}>
-              Open side panel
-            </Button>
-          )}
-        </Main>
-        <Panel
-          variant='dismiss'
-          title='Details'
-          aria-label='details panel'
-          data-debug='Panel (dismiss)'
-          isOpen={isDismissPanelOpen}
-          onOpenChange={setIsDismissPanelOpen}
-        />
+        {children}
       </Layout.Content>
       <Navbar data-debug='Navbar'>
         <ul>

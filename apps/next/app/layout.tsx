@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '@midas-ds/components/default.css'
 import './global.css'
 import { AppShell } from './AppShell'
+import { Main } from '@midas-ds/layout'
 
 export const metadata: Metadata = {
   title: 'midas components E2E',
@@ -12,7 +13,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'>
       <body>
-        <AppShell>{children}</AppShell>
+        <AppShell>
+          <Main data-debug='Main'>{children}</Main>
+        </AppShell>
       </body>
     </html>
   )

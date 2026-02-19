@@ -1,5 +1,6 @@
 .main {
-  height: 5rem;
-  padding: 1rem;
+  box-sizing: border-box;
   flex: 1 0 auto;
+  height: 100%;
+  padding: 1rem;
 }

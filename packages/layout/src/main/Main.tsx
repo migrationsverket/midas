@@ -1,6 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Main.module.css'
-import { clsx } from '@midas-ds/components'
 
 export type MainProps = DetailedHTMLProps<
   HTMLAttributes<HTMLElement>,
@@ -9,7 +8,7 @@ export type MainProps = DetailedHTMLProps<
 
 export const Main = ({ className, ...rest }: MainProps) => (
   <main
-    className={clsx(className, styles.main)}
+    className={`${className} ${styles.main}`}
     {...rest}
   />
 )
