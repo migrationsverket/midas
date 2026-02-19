@@ -31,8 +31,14 @@ export const NavigationListItem = ({
       })}
       {...rest}
     >
-      {title && !isCollapsed && (
-        <Text className={styles.sectionTitle}>{title}</Text>
+      {title && (
+        <Text
+          className={clsx(styles.sectionTitle, {
+            [styles.collapsed]: isCollapsed,
+          })}
+        >
+          {title}
+        </Text>
       )}
       {children}
     </li>

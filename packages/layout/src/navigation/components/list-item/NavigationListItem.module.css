@@ -2,10 +2,13 @@
   list-style: none;
 
   &.hasSubmenu {
-    &:has(> .sectionTitle),
-    &.collapsed {
+    &:has(> .sectionTitle) {
       margin-top: var(--midas-spacing-50);
       margin-bottom: var(--midas-spacing-50);
+    }
+
+    &.collapsed {
+      margin-bottom: 1rem;
     }
 
     &.navigationListItem &.navigationListItem {
@@ -21,5 +24,9 @@
     color: var(--midas-text-secondary);
     font-size: var(--midas-typography-font-size-20);
     padding: var(--midas-spacing-30);
+
+    &.collapsed {
+      display: none;
+    }
   }
 }
