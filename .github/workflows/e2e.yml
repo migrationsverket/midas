@@ -3,6 +3,8 @@ name: 'e2e'
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -10,7 +12,6 @@ permissions:
 jobs:
   e2e:
     name: E2E registry tests
-    if: contains(github.event.pull_request.labels.*.name, 'e2e')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
