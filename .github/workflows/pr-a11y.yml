@@ -1,0 +1,40 @@
+name: 'PR accessibility checks'
+
+on:
+  pull_request:
+    types:
+      - opened
+      - labeled
+      - reopened
+      - synchronize
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  a11y:
+    if: >
+      (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
+        contains(github.event.pull_request.labels.*.name, 'a11y')
+    name: A11y check components
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install chromium firefox --only-shell
+
+      - name: A11y check packages
+        run: npx nx storybook -t a11y a11y-dark-mode a11y-forced-colors

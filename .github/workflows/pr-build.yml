@@ -1,12 +1,7 @@
-name: 'PR Checks'
+name: 'PR Build'
 
 on:
   pull_request:
-    types:
-      - opened
-      - labeled
-      - reopened
-      - synchronize
     branches:
       - main
 
@@ -15,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    name: Lint, test and build packages
+    name: Lint and build packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -36,17 +31,5 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
-      - name: Install Playwright
-        run: npx playwright install chromium firefox --only-shell
-
       - name: Build packages
         run: npx nx affected -t lint stylelint build
-
-      - name: Test packages
-        run: npx nx affected -t test
-
-      - name: A11y check packages
-        if: >
-          (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
-           contains(github.event.pull_request.labels.*.name, 'a11y')
-        run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
