@@ -1,5 +1,4 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import { clsx } from '@midas-ds/components'
 import styles from './Layout.module.css'
 
 type DivProps = DetailedHTMLProps<
@@ -9,7 +8,7 @@ type DivProps = DetailedHTMLProps<
 
 const Content = ({ className, children, ...rest }: DivProps) => (
   <div
-    className={clsx(className, styles.content)}
+    className={`${className ?? ''} ${styles.content}`}
     {...rest}
   >
     {children}
@@ -21,7 +20,7 @@ export type LayoutProps = DivProps
 export const Layout = Object.assign(
   ({ className, children, ...rest }: LayoutProps) => (
     <div
-      className={clsx(className, styles.layout)}
+      className={`${className ?? ''} ${styles.layout}`}
       {...rest}
     >
       {children}

@@ -1,3 +1,5 @@
+"use client"
+
 import { Button, DialogTrigger } from '@midas-ds/components'
 import { Drawer } from '..'
 import { useControlledState } from '../../utils/useControlledState'

@@ -1,5 +1,4 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import { clsx } from '@midas-ds/components'
 import {
   NavigationLink,
   NavigationSubMenu,
@@ -18,7 +17,7 @@ export const Navigation = ({
   ...rest
 }: NavigationProps) => (
   <nav
-    className={clsx(className, styles.navigation)}
+    className={`${className ?? ''} ${styles.navigation}`}
     {...rest}
   >
     <ul>{children}</ul>

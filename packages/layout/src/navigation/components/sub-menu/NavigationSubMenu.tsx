@@ -1,6 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
-import { clsx } from '@midas-ds/components'
-import { NavigationListItem } from '..'
+import { NavigationListItem } from '../list-item'
 import styles from './NavigationSubMenu.module.css'
 
 export interface NavigationSubMenuProps extends DetailedHTMLProps<
@@ -23,7 +22,7 @@ export const NavigationSubMenu = ({
       title={title}
     >
       <ul
-        className={clsx(className, styles.navigationSubMenu)}
+        className={`${className ?? ''} ${styles.navigationSubMenu}`}
         {...rest}
       >
         {children}

@@ -1,6 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navbar.module.css'
-import { clsx } from '@midas-ds/components'
 
 export type NavbarProps = DetailedHTMLProps<
   HTMLAttributes<HTMLElement>,
@@ -10,7 +9,7 @@ export type NavbarProps = DetailedHTMLProps<
 export const Navbar = ({ className, ...rest }: NavbarProps) => (
   <nav
     aria-label='bottom navbar'
-    className={clsx(className, styles.navbar)}
+    className={`${className ?? ''} ${styles.navbar}`}
     {...rest}
   />
 )

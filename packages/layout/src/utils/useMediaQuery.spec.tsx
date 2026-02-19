@@ -1,3 +1,5 @@
+"use client"
+
 import { describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
 import { useMediaQuery } from './useMediaQuery'
