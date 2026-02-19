@@ -16,6 +16,8 @@ export const PasswordToggle = ({
 
   return (
     <Button
+      aria-label={strings.format('showPassword')}
+      aria-pressed={showPassword}
       variant='tertiary'
       onPress={onToggle}
       className={styles.passwordButton}
