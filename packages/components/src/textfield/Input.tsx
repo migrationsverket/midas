@@ -4,10 +4,10 @@ import {
   useContextProps,
   InputContext,
 } from 'react-aria-components'
-import { forwardRef } from 'react'
+import { forwardRef, useState } from 'react'
 import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
-import { PasswordField } from './PasswordField'
+import { PasswordToggle } from './PasswordToggle'
 
 export interface InputProps extends AriaInputProps {
   /** If the component should use local props and ref instead of a parent context
@@ -25,15 +25,23 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     )
     const ref = skipContext ? localRef : contextRef
     const props = skipContext ? localProps : contextProps
+    const isPassword = props.type === 'password'
+    const [showPassword, setShowPassword] = useState(false)
 
     return (
       <div className={styles.wrap}>
         <AriaInput
           {...props}
           ref={ref}
+          type={isPassword && showPassword ? 'text' : props.type}
           className={clsx(styles.input, props.className)}
         />
-        {props.type === 'password' && <PasswordField {...props} />}
+        {isPassword && (
+          <PasswordToggle
+            showPassword={showPassword}
+            onToggle={() => setShowPassword(prev => !prev)}
+          />
+        )}
       </div>
     )
   },
