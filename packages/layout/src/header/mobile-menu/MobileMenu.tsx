@@ -1,5 +1,5 @@
 import { Button, DialogTrigger } from '@midas-ds/components'
-import { Drawer } from '../../panel/components'
+import { Drawer } from '..'
 import { useControlledState } from '../../utils/useControlledState'
 import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
 import { ReactNode } from 'react'
