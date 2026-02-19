@@ -1,7 +1,11 @@
 'use client'
 
 import { ReactNode, useContext, type ElementType } from 'react'
-import { Focusable, Link } from 'react-aria-components'
+import {
+  Focusable,
+  Link,
+  OverlayTriggerStateContext,
+} from 'react-aria-components'
 import {
   clsx,
   Tooltip,
@@ -48,7 +52,15 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
     )
   }
 
+  const ctx = useContext(OverlayTriggerStateContext)
+
   const Component = as || Link
+
+  const toggle = () => {
+    if (ctx?.isOpen) {
+      ctx?.setOpen(false)
+    }
+  }
 
   return (
     <TooltipTrigger isDisabled={!isCollapsed}>
@@ -66,6 +78,19 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
             },
           )}
           data-active={isActive || undefined}
+          {...(as
+            ? {
+                onClick: e => {
+                  toggle()
+                  rest.onClick?.(e)
+                },
+              }
+            : {
+                onPress: e => {
+                  toggle()
+                  rest.onPress?.(e)
+                },
+              })}
           {...rest}
         >
           {icon}
