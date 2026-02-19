@@ -7,7 +7,6 @@ import { PanelContext } from '../..'
 import { PanelBody, PanelBodyProps } from '../panel-body/PanelBody'
 import { PanelHeader } from '../panel-header/PanelHeader'
 import { PanelTitle } from '../panel-title'
-import { Drawer } from '../drawer'
 import messages from '../../intl/translations.json'
 import { useControlledState } from '../../../utils/useControlledState'
 import { useIsMobileDevice } from '../../../utils/useIsMobileDevice'
@@ -17,26 +16,16 @@ export interface CollapseTriggerProps {
   isCollapsed?: boolean
   defaultCollapsed?: boolean
   onCollapseChange?: (isCollapsed: boolean) => void
-  isDrawerOpen?: boolean
-  defaultDrawerOpen?: boolean
-  onDrawerOpenChange?: (isDrawerOpen: boolean) => void
 }
 
 export const CollapsePanel = ({
-  id,
   children,
   className,
   isCollapsed: isCollapsedProp,
   defaultCollapsed = false,
   onCollapseChange,
-  isDrawerOpen: isDrawerOpenProp,
-  defaultDrawerOpen = false,
-  onDrawerOpenChange,
   title,
   ...rest
-  // TODO: In mobile mode the PanelBodyProps is not the correct type
-  // Either find the common props between aside and dialog
-  // or make an earlier separation between the panels
 }: PanelBodyProps & CollapseTriggerProps) => {
   const strings = useLocalizedStringFormatter(messages)
 
@@ -48,34 +37,10 @@ export const CollapsePanel = ({
     onCollapseChange,
   )
 
-  const [isDrawerOpen, setIsDrawerOpen] = useControlledState(
-    isDrawerOpenProp,
-    defaultDrawerOpen,
-    onDrawerOpenChange,
-  )
-
   const handlePress = () =>
     setIsCollapsed(previouslyCollapsed => !previouslyCollapsed)
 
-  return isMobileDevice ? (
-    <Drawer
-      id={id}
-      isOpen={isDrawerOpen}
-      onOpenChange={setIsDrawerOpen}
-    >
-      <PanelHeader>
-        <div>
-          {title && (
-            <PanelTitle
-              className={styles.panelTitle}
-              title={title}
-            />
-          )}
-        </div>
-      </PanelHeader>
-      {children}
-    </Drawer>
-  ) : (
+  return isMobileDevice ? null : (
     <PanelContext.Provider value={{ isCollapsed }}>
       <PanelBody
         className={clsx(className, styles.collapsePanel, {

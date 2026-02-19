@@ -1,3 +1,5 @@
+'use client'
+
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Header.module.css'
 import { clsx, LogoContext } from '@midas-ds/components'
