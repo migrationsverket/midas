@@ -13,12 +13,12 @@ import styles from './Drawer.module.css'
 export const Drawer = ({
   children,
   id,
-  ...props
+  ...rest
 }: ModalOverlayProps & DOMProps) => (
   <ModalOverlay
     className={styles.overlay}
     isDismissable
-    {...props}
+    {...rest}
   >
     {composeRenderProps(children, children => (
       <Modal className={styles.drawer}>

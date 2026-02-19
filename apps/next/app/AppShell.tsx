@@ -110,15 +110,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </Header>
       <Layout.Content>
         <Panel
-          variant='collapse'
-          title='Next App'
           data-debug='Panel (collapse)'
+          id={drawerId}
+          isDrawerOpen={isDrawerOpen}
+          onDrawerOpenChange={setIsDrawerOpen}
+          title='Next App'
+          variant='collapse'
         >
-          <Navigation
-            id={drawerId}
-            isOpen={isDrawerOpen}
-            onOpenChange={setIsDrawerOpen}
-          >
+          <Navigation>
             {navItems.map(function renderNavItems(item, index) {
               return (
                 <Navigation.SubMenu
