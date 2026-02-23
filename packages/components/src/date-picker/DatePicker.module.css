@@ -8,7 +8,7 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  height: var(--midas-size-150);
+  height: var(--midas-size-control);
   align-items: center;
   background-color: var(--midas-field-01-base);
   border-bottom: 1px solid var(--midas-border-color-primary);
@@ -22,7 +22,7 @@
   }
 
   &.medium {
-    height: var(--midas-size-130);
+    height: var(--midas-size-control-sm);
   }
 
   &[data-disabled] {

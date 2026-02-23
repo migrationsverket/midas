@@ -49,14 +49,14 @@ Importera Midas Tailwind-tema och Tailwind i din CSS-fil:
 Använd Midas semantiska tokens med [arbitrary values](https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values):
 
 ```tsx
-<div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)] p-[var(--midas-spacing-50)]">
-  <div className="text-[length:var(--midas-typography-font-size-80)] mb-[var(--midas-spacing-40)]">
+<div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)] p-[var(--midas-space-medium)]">
+  <div className="text-[length:var(--midas-typography-font-size-80)] mb-[var(--midas-space-small)]">
     Stor text
   </div>
-  <div className="text-[var(--midas-text-secondary)] mb-[var(--midas-spacing-30)]">
+  <div className="text-[var(--midas-text-secondary)] mb-[var(--midas-space-small)]">
     Mindre text med semantiska tokens
   </div>
-  <div className="bg-[var(--midas-layer-01-base)] p-[var(--midas-spacing-40)] border-[var(--midas-border-color-primary)]">
+  <div className="bg-[var(--midas-layer-01-base)] p-[var(--midas-space-small)] border-[var(--midas-border-color-primary)]">
     Innehåll i en nested box
   </div>
 </div>
@@ -73,7 +73,7 @@ Tack vare `tailwind-theme.css` fungerar färger från Midas färgpalett direkt s
 ```
 
 :::tip Sammanfattning
-- **Semantiska tokens** (background-base, text-primary, spacing-50, etc.): Använd `[var(--midas-*)]`
+- **Semantiska tokens** (background-base, text-primary, space-medium, etc.): Använd `[var(--midas-*)]`
 - **Färgpalett** (blue-100, gray-140, signal-red-100, etc.): Fungerar direkt som `bg-blue-100`
 :::
 
@@ -88,8 +88,8 @@ Om du vill skapa egna kortare utility-namn kan du definiera ett `@theme`-block:
   /* Egna namn för tokens */
   --color-primary: var(--midas-color-blue-100);
   --color-bg: var(--midas-background-base);
-  --spacing-sm: var(--midas-spacing-30);
-  --spacing-md: var(--midas-spacing-50);
+  --spacing-sm: var(--midas-space-small);
+  --spacing-md: var(--midas-space-medium);
 }
 ```
 
@@ -121,7 +121,7 @@ Använd Tailwinds [*arbitrary values*](https://tailwindcss.com/docs/adding-custo
 ```tsx
 <div className="bg-[var(--midas-background-base)] text-[var(--midas-text-primary)]">
   <div className="text-[length:var(--midas-typography-font-size-80)]">Stor text</div>
-  <div className="mt-[var(--midas-spacing-50)]">Text som använder Midas tokens</div>
+  <div className="mt-[var(--midas-space-medium)]">Text som använder Midas tokens</div>
 </div>
 ```
 
@@ -147,11 +147,11 @@ export default {
         'midas-bg-base': 'var(--midas-background-base)',
       },
       spacing: {
-        'midas-20': 'var(--midas-spacing-20)',
-        'midas-30': 'var(--midas-spacing-30)',
-        'midas-50': 'var(--midas-spacing-50)',
-        'midas-70': 'var(--midas-spacing-70)',
-        'midas-100': 'var(--midas-spacing-100)',
+        'midas-xsmall': 'var(--midas-space-xsmall)',
+        'midas-small': 'var(--midas-space-small)',
+        'midas-medium': 'var(--midas-space-medium)',
+        'midas-large': 'var(--midas-space-large)',
+        'midas-xlarge': 'var(--midas-space-xlarge)',
       },
     },
   },
@@ -161,7 +161,7 @@ export default {
 
 ```tsx
 <div className="bg-midas-bg-base text-midas-primary">
-  <div className="mt-midas-50">Text med förkonfigurerade Tailwind classes</div>
+  <div className="mt-midas-medium">Text med förkonfigurerade Tailwind classes</div>
 </div>
 ```
 
@@ -186,7 +186,7 @@ export function Card() {
       style={{
         backgroundColor: variables.backgroundBase,
         color: variables.textPrimary,
-        padding: variables.spacing50,
+        padding: variables.spaceMedium,
       }}
     >
       <p>Kort med Midas styling</p>
@@ -205,7 +205,7 @@ import { variables } from '@midas-ds/theme'
 export function Alert() {
   return (
     <div
-      className="p-[var(--midas-spacing-40)]"
+      className="p-[var(--midas-space-small)]"
       style={{
         backgroundColor: variables.colorSignalRed10,
         borderLeft: `4px solid ${variables.colorSignalRed100}`
@@ -244,8 +244,8 @@ Midas theme-paketet innehåller tokens för:
 
 - **Färger** - `--midas-color-*` (blue, gray, signal-red, signal-green, etc.)
 - **Semantiska färger** - `--midas-background-*`, `--midas-text-*`, `--midas-icon-*`, `--midas-border-color-*`
-- **Spacing** - `--midas-spacing-10` till `--midas-spacing-120` (0.125rem till 6rem)
-- **Storlekar** - `--midas-size-10` till `--midas-size-150` (0.125rem till 3rem)
+- **Spacing** - `--midas-space-xsmall/small/medium/large/xlarge` + numeriska steg (t.ex. `--midas-space-10`)
+- **Storlekar** - `--midas-size-icon`, `--midas-size-control`, `--midas-size-option`, etc.
 - **Typografi** - `--midas-typography-font-size-*`, `--midas-typography-line-height-*`, `--midas-typography-weight-*`
 - **Z-index** - `--midas-z-index-base`, `--midas-z-index-modal`, `--midas-z-index-toast`
 - **Breakpoints** - `--midas-window-sizes-sm/md/lg/xl` (480px, 768px, 1024px, 1280px)

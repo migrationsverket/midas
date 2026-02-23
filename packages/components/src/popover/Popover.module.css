@@ -1,7 +1,7 @@
 .popover {
   font-family: var(--midas-typography-font-family);
   font-size: var(--midas-typography-font-size-20);
-  padding: var(--midas-size-80);
+  padding: var(--midas-space-medium);
   color: var(--midas-text-primary);
   background-color: var(--midas-layer-01-base);
   outline: none;

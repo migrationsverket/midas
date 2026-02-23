@@ -15,11 +15,11 @@
 .inputContainer {
   display: flex;
   position: relative;
-  height: var(--midas-size-150);
+  height: var(--midas-size-control);
   width: 100%;
 
   &.medium {
-    height: var(--midas-size-130);
+    height: var(--midas-size-control-sm);
   }
 }
 
@@ -48,7 +48,7 @@
   background-color: transparent;
 
   &.medium {
-    height: var(--midas-size-130);
+    height: var(--midas-size-control-sm);
     padding: 0.625rem 0.875rem;
   }
 }
@@ -61,8 +61,8 @@
   appearance: none;
   background-color: var(--midas-field-01-base);
   width: 100%;
-  height: var(--midas-size-150);
-  padding: var(--midas-size-70) 0 var(--midas-size-70) var(--midas-size-150);
+  height: var(--midas-size-control);
+  padding: var(--midas-space-70) 0 var(--midas-space-70) var(--midas-space-150);
   border-bottom: 1px solid var(--midas-border-color-primary);
 
   @media (forced-colors: active) {
@@ -70,8 +70,8 @@
   }
 
   &.medium {
-    height: var(--midas-size-130);
-    padding: var(--midas-size-50) 0 var(--midas-size-50) var(--midas-size-150);
+    height: var(--midas-size-control-sm);
+    padding: var(--midas-space-50) 0 var(--midas-space-50) var(--midas-space-150);
   }
 
   &:focus-visible {

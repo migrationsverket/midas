@@ -18,7 +18,7 @@
 }
 
 .tab {
-  padding: var(--midas-spacing-30) var(--midas-spacing-50);
+  padding: var(--midas-space-small) var(--midas-space-medium);
   cursor: default;
   outline: none;
   position: relative;
@@ -127,7 +127,7 @@
 }
 
 .tabPanel {
-  padding: var(--midas-size-80);
+  padding: var(--midas-space-medium);
   color: var(--midas-text-primary);
 
   &[data-focus-visible] {
