@@ -161,6 +161,8 @@
   right: 0;
   z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
 
-  /* The active state adds a background, making the border-bottom of the .input disappear  */
-  border-bottom: none;
+  &[data-pressed] {
+    /* This state adds a background, making the border-bottom of the .input disappear  */
+    background-color: transparent !important;
+  }
 }
