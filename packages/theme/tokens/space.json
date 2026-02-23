@@ -1,0 +1,50 @@
+{
+  "space": {
+    "$type": "dimension",
+    "xsmall": {
+      "$value": "{base.20}"
+    },
+    "small": {
+      "$value": "{base.40}"
+    },
+    "medium": {
+      "$value": "{base.80}"
+    },
+    "large": {
+      "$value": "{base.100}"
+    },
+    "xlarge": {
+      "$value": "{base.120}"
+    },
+    "05": {
+      "$value": "{base.05}"
+    },
+    "10": {
+      "$value": "{base.10}"
+    },
+    "30": {
+      "$value": "{base.30}"
+    },
+    "50": {
+      "$value": "{base.50}"
+    },
+    "60": {
+      "$value": "{base.60}"
+    },
+    "70": {
+      "$value": "{base.70}"
+    },
+    "75": {
+      "$value": "{base.75}"
+    },
+    "90": {
+      "$value": "{base.90}"
+    },
+    "130": {
+      "$value": "{base.130}"
+    },
+    "150": {
+      "$value": "{base.150}"
+    }
+  }
+}
