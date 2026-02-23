@@ -1,3 +1,9 @@
+## 17.2.5 (2026-02-23)
+
+### 🩹 Fixes
+
+- **components, textfield:** remove password reveal active background ([0f9750b6bd](https://github.com/migrationsverket/midas/commit/0f9750b6bd))
+
 ## 17.2.4 (2026-02-23)
 
 ### 🧱 Updated Dependencies
