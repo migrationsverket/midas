@@ -304,7 +304,7 @@
   background-color: var(--midas-menu-item-background-selected);
   color: var(--midas-text-primary);
   border-left: 0.125rem solid var(--midas-border-color-tertiary);
-  font-weight: 600;
+  font-weight: var(--midas-typography-weight-medium);
 
   @media (forced-colors: active) {
     transition: none;
