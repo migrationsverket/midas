@@ -114,7 +114,7 @@ export const ClosableTabsExample = () => {
               gap: '0.5rem',
               alignItems: 'center',
               padding: 0,
-              paddingLeft: variables.spacing50,
+              paddingLeft: variables.spaceMedium,
             }}
           >
             {tab.title}
