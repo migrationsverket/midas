@@ -50,7 +50,10 @@ const config: Config = {
       : [
           require.resolve('./docgen-fix-plugin'),
           {
-            src: `${packagesDir}/components/src/**/[A-Z]*.tsx`,
+            src: [
+              `${packagesDir}/components/src/**/[A-Z]*.tsx`,
+              `${packagesDir}/table-styles/src/**/[A-Z]*.tsx`,
+            ],
             parserOptions: {
               shouldExtractValuesFromUnion: true,
               shouldExtractLiteralValuesFromEnum: false,
