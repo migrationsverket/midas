@@ -71,7 +71,8 @@
 
   &.medium {
     height: var(--midas-size-control-sm);
-    padding: var(--midas-space-50) 0 var(--midas-space-50) var(--midas-space-150);
+    padding: var(--midas-space-50) 0 var(--midas-space-50)
+      var(--midas-space-150);
   }
 
   &:focus-visible {
