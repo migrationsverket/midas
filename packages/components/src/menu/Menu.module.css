@@ -21,14 +21,15 @@
       display: flex;
       font-size: var(--midas-typography-font-size-20);
       line-height: var(--midas-typography-line-height-20);
-      padding: var(--midas-space-medium) var(--midas-space-medium) var(--midas-space-10)
-        var(--midas-space-60);
+      padding: var(--midas-space-medium) var(--midas-space-medium)
+        var(--midas-space-10) var(--midas-space-60);
     }
   }
 
   &.medium .menuSection {
     header {
-      padding: var(--midas-space-medium) var(--midas-space-60) var(--midas-space-10);
+      padding: var(--midas-space-medium) var(--midas-space-60)
+        var(--midas-space-10);
     }
   }
 
@@ -41,8 +42,8 @@
     gap: 0;
     justify-content: start;
     line-height: var(--midas-typography-line-height-30);
-    padding: var(--midas-space-50) var(--midas-space-small) var(--midas-space-50)
-      var(--midas-space-medium);
+    padding: var(--midas-space-50) var(--midas-space-small)
+      var(--midas-space-50) var(--midas-space-medium);
 
     &[data-disabled] {
       background-color: var(--midas-menu-item-background-selected);
@@ -137,8 +138,8 @@
   }
 
   &.medium .menuItem {
-    padding: var(--midas-space-30) var(--midas-space-small) var(--midas-space-30)
-      var(--midas-space-medium);
+    padding: var(--midas-space-30) var(--midas-space-small)
+      var(--midas-space-30) var(--midas-space-medium);
 
     &:not([data-has-submenu]) {
       padding-right: var(--midas-space-medium);
