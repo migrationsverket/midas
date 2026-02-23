@@ -1,3 +1,9 @@
+## 17.2.6 (2026-02-23)
+
+### 🩹 Fixes
+
+- **components, layout:** change font weight for active menu items ([9a67f61f63](https://github.com/migrationsverket/midas/commit/9a67f61f63))
+
 ## 17.2.5 (2026-02-23)
 
 ### 🩹 Fixes
