@@ -62,22 +62,22 @@
 }
 
 .formLabel {
-  height: var(--midas-size-90); /* ~20px - typical label height */
+  height: var(--midas-size-icon-sm); /* ~20px - typical label height */
   width: 40%;
-  margin-bottom: var(--midas-spacing-20);
+  margin-bottom: var(--midas-space-xsmall);
 }
 
 .formDescription {
   height: 1.125rem;
   width: 60%;
-  margin-bottom: var(--midas-spacing-30);
+  margin-bottom: var(--midas-space-small);
 }
 
 .formInput {
-  height: var(--midas-size-150); /* 48px - large by default */
+  height: var(--midas-size-control); /* 48px - large by default */
   width: 100%;
 }
 
 .form.medium .formInput {
-  height: var(--midas-size-130); /* 40px */
+  height: var(--midas-size-control-sm); /* 40px */
 }

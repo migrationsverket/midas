@@ -5,7 +5,7 @@
   container-type: inline-size;
   display: flex;
   font-size: var(--midas-typography-font-size-20);
-  height: var(--midas-size-150);
+  height: var(--midas-size-control);
   justify-content: space-between;
   line-height: var(--midas-typography-line-height-30);
 
@@ -20,7 +20,7 @@
 
 .select {
   flex-direction: row;
-  gap: var(--midas-spacing-10);
+  gap: var(--midas-space-10);
 
   label {
     align-items: center;
@@ -39,10 +39,10 @@
 }
 
 .listBoxItem {
-  padding: 0.44rem var(--midas-spacing-50) 0.44rem var(--midas-spacing-50);
+  padding: 0.44rem var(--midas-space-medium) 0.44rem var(--midas-space-medium);
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
-  height: var(--midas-size-120);
+  height: var(--midas-size-option);
   white-space: nowrap;
 
   &[data-selected] {
@@ -58,15 +58,15 @@
 }
 
 .pageSize {
-  padding-left: var(--midas-spacing-50);
+  padding-left: var(--midas-space-medium);
   composes: select;
 
   button {
-    padding: 0 var(--midas-spacing-50) 0 var(--midas-spacing-30);
+    padding: 0 var(--midas-space-medium) 0 var(--midas-space-small);
   }
 
   button + span div {
-    left: var(--midas-spacing-30) !important;
+    left: var(--midas-space-small) !important;
   }
 }
 
@@ -75,7 +75,7 @@
   composes: separator;
   display: flex;
   height: 100%;
-  padding: 0 var(--midas-spacing-50);
+  padding: 0 var(--midas-space-medium);
 
   @container (width < 675px) {
     display: none;
@@ -86,7 +86,7 @@
   align-items: center;
   composes: separator;
   display: flex;
-  padding: 0 var(--midas-spacing-50) 0 0;
+  padding: 0 var(--midas-space-medium) 0 0;
 
   .label {
     white-space: nowrap;
@@ -101,7 +101,7 @@
   composes: select;
 
   button {
-    padding: 0 var(--midas-spacing-30) 0 var(--midas-spacing-50);
+    padding: 0 var(--midas-space-small) 0 var(--midas-space-medium);
   }
 }
 

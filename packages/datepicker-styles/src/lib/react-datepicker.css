@@ -46,12 +46,12 @@
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  min-height: var(--midas-size-150);
+  min-height: var(--midas-size-control);
   outline: none;
   padding: 0 2.5rem 0 1rem;
 
   &.medium {
-    min-height: var(--midas-size-130);
+    min-height: var(--midas-size-control-sm);
   }
 
   &:hover {

@@ -2,8 +2,8 @@
   --border-color: var(--midas-border-color-primary);
 
   display: flex;
-  width: var(--midas-size-80);
-  height: var(--midas-size-80);
+  width: var(--midas-size-icon);
+  height: var(--midas-size-icon);
   box-sizing: border-box;
   border: 1px solid var(--border-color);
   transition:

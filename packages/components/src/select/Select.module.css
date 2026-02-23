@@ -19,15 +19,15 @@
   color: var(--midas-text-primary);
   display: flex;
   font-size: var(--midas-typography-font-size-30);
-  gap: var(--midas-spacing-20);
+  gap: var(--midas-space-xsmall);
   justify-content: space-between;
-  min-height: var(--midas-size-150);
-  padding-left: var(--midas-size-80);
-  padding-right: var(--midas-size-80);
+  min-height: var(--midas-size-control);
+  padding-left: var(--midas-space-medium);
+  padding-right: var(--midas-space-medium);
   transition: all 100ms ease-in;
 
   &.medium {
-    min-height: var(--midas-size-130);
+    min-height: var(--midas-size-control-sm);
   }
 
   &:focus-visible {
@@ -73,7 +73,7 @@
   color: var(--midas-text-primary);
   font-family: var(--midas-typography-font-family);
   line-height: var(--midas-typography-line-height-30);
-  max-width: calc(100% - var(--midas-spacing-90));
+  max-width: calc(100% - var(--midas-space-150));
 
   .placeholder {
     display: flex;
@@ -93,13 +93,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  max-width: calc(100% - var(--midas-spacing-90));
+  max-width: calc(100% - var(--midas-space-150));
 
   .placeholder {
     align-items: center;
     display: flex;
     justify-content: center;
-    left: var(--midas-spacing-50);
+    left: var(--midas-space-medium);
     position: relative;
   }
 
@@ -117,7 +117,7 @@
   display: flex;
   font-size: 0.875rem;
   justify-content: center;
-  left: var(--midas-spacing-30);
+  left: var(--midas-space-small);
   min-height: 1.75rem;
   padding: 0 0.5rem;
   pointer-events: all;
@@ -147,8 +147,8 @@
   border-radius: 100%;
   color: var(--midas-text-on-color);
   display: flex;
-  margin-left: var(--midas-size-10);
-  padding: var(--midas-size-30);
+  margin-left: var(--midas-space-10);
+  padding: var(--midas-space-30);
 
   &:hover {
     background-color: var(--midas-button-background-primary-hover);
@@ -207,7 +207,7 @@
     font-family: var(--midas-typography-font-family);
     line-height: 1;
     margin-bottom: 2px !important;
-    padding: var(--midas-size-80);
+    padding: var(--midas-space-medium);
     transition: background-color 60ms;
 
     &:hover:not([data-disabled]) {
@@ -267,7 +267,7 @@
 }
 
 .tagGroup {
-  margin-top: var(--midas-size-40);
+  margin-top: var(--midas-space-small);
 }
 
 @media (prefers-reduced-motion) {

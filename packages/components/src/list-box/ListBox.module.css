@@ -32,8 +32,8 @@
   background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--midas-spacing-50) var(--midas-spacing-50)
-    var(--midas-spacing-20) var(--midas-spacing-40);
+  padding: var(--midas-space-medium) var(--midas-space-medium)
+    var(--midas-space-xsmall) var(--midas-space-60);
   font-weight: 500;
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
@@ -62,9 +62,9 @@
   justify-content: space-between;
   line-height: var(--midas-typography-line-height-30);
   margin-bottom: 0;
-  padding: var(--midas-size-70) var(--midas-spacing-50);
+  padding: var(--midas-space-70) var(--midas-space-medium);
   transition: background-color 60ms;
-  gap: var(--midas-spacing-50);
+  gap: var(--midas-space-medium);
 
   .textContent {
     hyphens: auto;
@@ -116,10 +116,10 @@
       &::after {
         content: '';
         background-color: var(--midas-text-primary);
-        width: var(--midas-size-80);
-        height: var(--midas-size-80);
+        width: var(--midas-size-icon);
+        height: var(--midas-size-icon);
         mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
-        mask-size: var(--midas-size-80) var(--midas-size-80);
+        mask-size: var(--midas-size-icon) var(--midas-size-icon);
         flex-shrink: 0;
 
         @media (forced-colors: active) {
@@ -131,21 +131,21 @@
 
   &[data-selection-mode='multiple'] {
     justify-content: flex-start;
-    gap: var(--midas-spacing-30);
+    gap: var(--midas-space-small);
 
     &::before {
       transition: all 200ms;
       box-sizing: border-box;
       content: '';
       border: 1px solid var(--midas-border-color-primary);
-      min-width: var(--midas-size-80);
-      height: var(--midas-size-80);
+      min-width: var(--midas-size-icon);
+      height: var(--midas-size-icon);
     }
 
     &[data-selected] {
       &::before {
-        min-width: var(--midas-size-80);
-        min-height: var(--midas-size-80);
+        min-width: var(--midas-size-icon);
+        min-height: var(--midas-size-icon);
         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jaGVjay1pY29uIGx1Y2lkZS1jaGVjayI+PHBhdGggZD0iTTIwIDYgOSAxN2wtNS01Ii8+PC9zdmc+');
         background-size: contain;
         background-color: var(--midas-button-background-primary-base);
@@ -175,10 +175,10 @@
 .listBoxLoadMoreItem {
   align-items: center;
   display: flex;
-  gap: var(--midas-spacing-50);
+  gap: var(--midas-space-medium);
   line-height: var(--midas-typography-line-height-30);
-  padding: var(--midas-spacing-50) var(--midas-spacing-50)
-    var(--midas-spacing-40) var(--midas-spacing-50);
+  padding: var(--midas-space-medium) var(--midas-space-medium)
+    var(--midas-space-60) var(--midas-space-medium);
 }
 
 @media (prefers-reduced-motion) {
