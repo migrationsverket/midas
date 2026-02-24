@@ -25,7 +25,7 @@
   }
 
   &.medium {
-    height: var(--midas-size-control-sm);
+    height: var(--midas-size-control-md);
   }
 
   &[data-hovered],
@@ -96,7 +96,7 @@
   transition: transform 0.3s ease;
 
   &.medium {
-    height: var(--midas-size-control-sm);
+    height: var(--midas-size-control-md);
     padding: var(--midas-space-50) var(--midas-space-70);
   }
 

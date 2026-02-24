@@ -36,7 +36,7 @@
   position: relative;
 
   &.medium {
-    min-height: var(--midas-size-control-sm);
+    min-height: var(--midas-size-control-md);
   }
 
   .dateField:not([data-disabled], [data-readonly]) & :hover {

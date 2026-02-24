@@ -27,8 +27,8 @@
   th,
   & .day {
     text-align: center;
-    width: var(--midas-size-control-sm);
-    height: var(--midas-size-control-sm);
+    width: var(--midas-size-control-md);
+    height: var(--midas-size-control-md);
     box-sizing: border-box;
   }
 
