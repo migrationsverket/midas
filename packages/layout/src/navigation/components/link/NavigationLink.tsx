@@ -8,7 +8,6 @@ import {
   TooltipTrigger,
   type LinkComponentProps,
 } from '@midas-ds/components'
-import { NavigationItem } from '..'
 import { PanelContext } from '../../../panel'
 import styles from './NavigationLink.module.css'
 

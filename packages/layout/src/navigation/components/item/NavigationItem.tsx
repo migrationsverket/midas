@@ -15,7 +15,7 @@ export const NavigationItem = ({ className, ...rest }: NavigationItemProps) => {
 
   return (
     <li
-      className={clsx(className, styles.NavigationItem, {
+      className={clsx(className, styles.navigationItem, {
         [styles.collapsed]: isCollapsed,
       })}
       {...rest}
