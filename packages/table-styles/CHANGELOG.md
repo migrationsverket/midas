@@ -1,3 +1,9 @@
+## 2.0.12 (2026-02-24)
+
+### 📖 Documentation changes
+
+- **components, pagination:** add page for pagination ([6f6246c130](https://github.com/migrationsverket/midas/commit/6f6246c130))
+
 ## 2.0.11 (2026-02-23)
 
 ### 🧱 Updated Dependencies
