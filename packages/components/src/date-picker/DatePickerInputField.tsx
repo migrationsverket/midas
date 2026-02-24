@@ -66,6 +66,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   size = 'large',
   isClearable = false,
 }) => {
+  const strings = useLocalizedStringFormatter(messages)
   return (
     <Group
       className={clsx(styles.inputField, {
@@ -84,6 +85,7 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
           />
           <Button
             variant='icon'
+            aria-label={strings.format('open-calendar')}
             className={clsx(styles.iconButton, {
               [styles.medium]: size === 'medium',
               [styles.readOnly]: isReadOnly,
