@@ -1,5 +1,12 @@
-import { Fragment, ReactNode } from 'react'
-import { Navigation as MidasNavigation } from '@midas-ds/layout'
+'use client'
+
+import { ReactNode } from 'react'
+import {
+  Navigation as MidasNavigation,
+  NavigationHeader,
+  NavigationItem,
+  NavigationSubMenu,
+} from '@midas-ds/layout'
 import {
   House,
   FileText,
@@ -11,99 +18,118 @@ import {
   Mail,
 } from 'lucide-react'
 import { NavLink } from '../NavLink'
+import { Collection, Key } from 'react-aria-components'
 
-type NavItem = {
+type SectionOrItem = Section | Item
+
+type Section = {
+  id: Key
   title?: string
-  href?: string
-  icon?: ReactNode
-  children?: NavItem[]
+  children: SectionOrItem[]
 }
 
-const navItems: NavItem[] = [
+type Item = {
+  id: Key
+  title: string
+  href: string
+  icon?: ReactNode
+  children?: SectionOrItem[]
+}
+
+const navItems: SectionOrItem[] = [
   {
+    id: 0,
     children: [
       {
-        href: '/',
+        id: 1,
         title: 'Home',
+        href: '/',
         icon: <House />,
       },
       {
-        href: '/applications',
+        id: 2,
         title: 'Applications',
+        href: '/applications',
         icon: <FileText />,
         children: [
           {
-            children: [
-              {
-                href: '/applications/new',
-                title: 'New application',
-                icon: <Plus />,
-              },
-              {
-                href: '/applications/drafts',
-                title: 'Drafts',
-                icon: <Save />,
-              },
-              {
-                href: '/applications/sent',
-                title: 'Sent',
-                icon: <Send />,
-              },
-            ],
+            id: 4,
+            title: 'New application',
+            href: '/applications/new',
+            icon: <Plus />,
+          },
+          {
+            id: 5,
+            title: 'Drafts',
+            href: '/applications/drafts',
+            icon: <Save />,
+          },
+          {
+            id: 6,
+            title: 'Sent',
+            href: '/applications/sent',
+            icon: <Send />,
           },
         ],
       },
     ],
   },
   {
+    id: 7,
     title: 'Account',
     children: [
       {
-        href: '/profile',
+        id: 8,
         title: 'Profile',
+        href: '/profile',
         icon: <User />,
       },
     ],
   },
   {
+    id: 9,
     children: [
       {
-        href: '/help',
+        id: 10,
         title: 'Help',
+        href: '/help',
         icon: <HelpCircle />,
       },
       {
-        href: '/mail',
+        id: 11,
         title: 'Mail',
+        href: '/mail',
         icon: <Mail />,
       },
     ],
   },
 ]
 
+const isLink = (sectionOrItem: SectionOrItem): sectionOrItem is Item =>
+  'href' in sectionOrItem && 'title' in sectionOrItem
+
 export const Navigation = () => (
-  <MidasNavigation>
-    {navItems.map(function renderNavItems(item, index) {
+  <MidasNavigation items={navItems}>
+    {function renderItem(item) {
       return (
-        <MidasNavigation.SubMenu
-          title={item.title}
-          key={item.title || '' + index}
-        >
-          {item.children?.map(({ href, title, icon, children }) => (
-            <Fragment key={href}>
-              {title && href && (
-                <NavLink
-                  href={href}
-                  title={title}
-                >
-                  {icon}
-                </NavLink>
-              )}
-              {children?.length && children.map(renderNavItems)}
-            </Fragment>
-          ))}
-        </MidasNavigation.SubMenu>
+        <NavigationItem>
+          {isLink(item) ? (
+            <NavLink
+              href={item.href}
+              title={item.title}
+            >
+              {item.icon}
+            </NavLink>
+          ) : (
+            <NavigationHeader>{item.title}</NavigationHeader>
+          )}
+          {item.children?.length && (
+            <NavigationSubMenu>
+              <Collection items={item.children}>{renderItem}</Collection>
+            </NavigationSubMenu>
+          )}
+        </NavigationItem>
       )
-    })}
+    }}
   </MidasNavigation>
 )

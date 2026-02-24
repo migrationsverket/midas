@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Navigation, NavigationLinkProps } from '@midas-ds/layout'
+import { NavigationLink, NavigationLinkProps } from '@midas-ds/layout'
 
 export const NavLink = ({
   href,
@@ -13,7 +13,7 @@ export const NavLink = ({
     href === '/' ? pathname === '/' : pathname.startsWith(href.toString())
 
   return (
-    <Navigation.Link
+    <NavigationLink
       as={NextLink}
       href={href}
       isActive={active}

@@ -1,7 +1,7 @@
 .navigation {
   background-color: var(--midas-layer-01-base);
 
-  ul {
+  > ul {
     margin: 0;
     padding: 0;
   }

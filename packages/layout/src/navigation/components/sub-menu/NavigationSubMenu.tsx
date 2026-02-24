@@ -1,32 +1,25 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
-import { NavigationListItem } from '../list-item'
+import { useContext, DetailedHTMLProps, HTMLAttributes } from 'react'
+import { clsx } from '@midas-ds/components'
+import { PanelContext } from '../../../panel'
 import styles from './NavigationSubMenu.module.css'
 
-export interface NavigationSubMenuProps extends DetailedHTMLProps<
+export type NavigationSubMenuProps = DetailedHTMLProps<
   HTMLAttributes<HTMLUListElement>,
   HTMLUListElement
-> {
-  children?: ReactNode
-  title?: string
-}
+>
 
 export const NavigationSubMenu = ({
-  children,
   className,
-  title,
   ...rest
 }: NavigationSubMenuProps) => {
+  const { isCollapsed } = useContext(PanelContext)
+
   return (
-    <NavigationListItem
-      hasSubMenu
-      title={title}
-    >
-      <ul
-        className={`${className ?? ''} ${styles.navigationSubMenu}`}
-        {...rest}
-      >
-        {children}
-      </ul>
-    </NavigationListItem>
+    <ul
+      className={clsx(className, styles.navigationSubMenu, {
+        [styles.collapsed]: isCollapsed,
+      })}
+      {...rest}
+    />
   )
 }

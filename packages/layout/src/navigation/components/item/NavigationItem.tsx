@@ -1,0 +1,24 @@
+'use client'
+
+import { DetailedHTMLProps, HTMLAttributes, useContext } from 'react'
+import { clsx } from '@midas-ds/components'
+import { PanelContext } from '../../../panel'
+import styles from './NavigationItem.module.css'
+
+export type NavigationItemProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLLIElement>,
+  HTMLLIElement
+>
+
+export const NavigationItem = ({ className, ...rest }: NavigationItemProps) => {
+  const { isCollapsed } = useContext(PanelContext)
+
+  return (
+    <li
+      className={clsx(className, styles.NavigationItem, {
+        [styles.collapsed]: isCollapsed,
+      })}
+      {...rest}
+    />
+  )
+}

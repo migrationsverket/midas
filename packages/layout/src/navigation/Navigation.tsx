@@ -1,30 +1,24 @@
+'use client'
+
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import {
-  NavigationLink,
-  NavigationSubMenu,
-  NavigationLinkProps,
-} from './components'
+import { NavigationLinkProps } from './components'
 import styles from './Navigation.module.css'
+import { Collection } from 'react-aria-components'
+import { CollectionProps } from '@react-aria/collections'
+import { clsx } from '@midas-ds/components'
 
-export type NavigationProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLElement>,
-  HTMLElement
->
+export type NavigationProps<T extends object> = CollectionProps<T> &
+  Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className'>
 
-export const Navigation = ({
+export const Navigation = <T extends object>({
   className,
-  children,
   ...rest
-}: NavigationProps) => (
-  <nav
-    className={`${className ?? ''} ${styles.navigation}`}
-    {...rest}
-  >
-    <ul>{children}</ul>
+}: NavigationProps<T>) => (
+  <nav className={clsx(className, styles.navigation)}>
+    <ul>
+      <Collection {...rest} />
+    </ul>
   </nav>
 )
-
-Navigation.Link = NavigationLink
-Navigation.SubMenu = NavigationSubMenu
 
 export type { NavigationLinkProps }

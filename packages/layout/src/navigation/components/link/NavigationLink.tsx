@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
   type LinkComponentProps,
 } from '@midas-ds/components'
-import { NavigationListItem } from '..'
+import { NavigationItem } from '..'
 import { PanelContext } from '../../../panel'
 import styles from './NavigationLink.module.css'
 
@@ -40,29 +40,27 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
   const Component = as || Link
 
   return (
-    <NavigationListItem>
-      <TooltipTrigger isDisabled={!isCollapsed}>
-        <Focusable>
-          <Component
-            aria-current={isActive && 'page'}
-            aria-label={ariaLabel || (isCollapsed ? title : undefined)}
-            className={clsx(
-              className,
-              styles.navigationLink,
-              variant && styles[variant],
-              {
-                [styles.collapsed]: isCollapsed,
-              },
-            )}
-            data-active={isActive || undefined}
-            {...rest}
-          >
-            {children}
-            <span className={styles.title}>{title}</span>
-          </Component>
-        </Focusable>
-        <Tooltip placement='right'>{title}</Tooltip>
-      </TooltipTrigger>
-    </NavigationListItem>
+    <TooltipTrigger isDisabled={!isCollapsed}>
+      <Focusable>
+        <Component
+          aria-current={isActive && 'page'}
+          aria-label={ariaLabel || (isCollapsed ? title : undefined)}
+          className={clsx(
+            className,
+            styles.navigationLink,
+            variant && styles[variant],
+            {
+              [styles.collapsed]: isCollapsed,
+            },
+          )}
+          data-active={isActive || undefined}
+          {...rest}
+        >
+          {children}
+          <span className={styles.title}>{title}</span>
+        </Component>
+      </Focusable>
+      <Tooltip placement='right'>{title}</Tooltip>
+    </TooltipTrigger>
   )
 }
