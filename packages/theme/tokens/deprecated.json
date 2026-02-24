@@ -1,0 +1,42 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "xsmall": { "$value": "{space.xsmall}", "$description": "@deprecated Use space.xsmall (--midas-space-xsmall) instead" },
+    "small":  { "$value": "{space.small}",  "$description": "@deprecated Use space.small (--midas-space-small) instead" },
+    "medium": { "$value": "{space.medium}", "$description": "@deprecated Use space.medium (--midas-space-medium) instead" },
+    "large":  { "$value": "{space.large}",  "$description": "@deprecated Use space.large (--midas-space-large) instead" },
+    "xlarge": { "$value": "{space.xlarge}", "$description": "@deprecated Use space.xlarge (--midas-space-xlarge) instead" },
+    "10": { "$value": "{space.10}",      "$description": "@deprecated Use space.10 (--midas-space-10) instead" },
+    "20": { "$value": "{space.xsmall}",  "$description": "@deprecated Use space.xsmall (--midas-space-xsmall) instead" },
+    "30": { "$value": "{space.small}",   "$description": "@deprecated Use space.small (--midas-space-small) instead" },
+    "40": { "$value": "{space.60}",      "$description": "@deprecated Use space.60 (--midas-space-60) instead" },
+    "50": { "$value": "{space.medium}",  "$description": "@deprecated Use space.medium (--midas-space-medium) instead" },
+    "60": { "$value": "{space.large}",   "$description": "@deprecated Use space.large (--midas-space-large) instead" },
+    "70": { "$value": "{space.xlarge}",  "$description": "@deprecated Use space.xlarge (--midas-space-xlarge) instead" },
+    "80": { "$value": "{space.130}",     "$description": "@deprecated Use space.130 (--midas-space-130) instead" },
+    "90": { "$value": "{space.150}",     "$description": "@deprecated Use space.150 (--midas-space-150) instead" }
+  },
+  "size": {
+    "$type": "dimension",
+    "00":  { "$value": "{base.00}",  "$description": "@deprecated Use base.00 (--midas-base-00) instead" },
+    "05":  { "$value": "{base.05}",  "$description": "@deprecated Use base.05 (--midas-base-05) instead" },
+    "10":  { "$value": "{base.10}",  "$description": "@deprecated Use base.10 (--midas-base-10) instead" },
+    "15":  { "$value": "{base.15}",  "$description": "@deprecated Use base.15 (--midas-base-15) instead" },
+    "20":  { "$value": "{base.20}",  "$description": "@deprecated Use base.20 (--midas-base-20) instead" },
+    "30":  { "$value": "{base.30}",  "$description": "@deprecated Use base.30 (--midas-base-30) instead" },
+    "40":  { "$value": "{base.40}",  "$description": "@deprecated Use base.40 (--midas-base-40) instead" },
+    "50":  { "$value": "{base.50}",  "$description": "@deprecated Use base.50 (--midas-base-50) instead" },
+    "60":  { "$value": "{base.60}",  "$description": "@deprecated Use base.60 (--midas-base-60) instead" },
+    "70":  { "$value": "{base.70}",  "$description": "@deprecated Use base.70 (--midas-base-70) instead" },
+    "75":  { "$value": "{base.75}",  "$description": "@deprecated Use base.75 (--midas-base-75) instead" },
+    "80":  { "$value": "{base.80}",  "$description": "@deprecated Use base.80 (--midas-base-80) instead" },
+    "90":  { "$value": "{base.90}",  "$description": "@deprecated Use base.90 (--midas-base-90) instead" },
+    "100": { "$value": "{base.100}", "$description": "@deprecated Use base.100 (--midas-base-100) instead" },
+    "110": { "$value": "{base.110}", "$description": "@deprecated Use base.110 (--midas-base-110) instead" },
+    "120": { "$value": "{base.120}", "$description": "@deprecated Use base.120 (--midas-base-120) instead" },
+    "130": { "$value": "{base.130}", "$description": "@deprecated Use base.130 (--midas-base-130) instead" },
+    "140": { "$value": "{base.140}", "$description": "@deprecated Use base.140 (--midas-base-140) instead" },
+    "150": { "$value": "{base.150}", "$description": "@deprecated Use base.150 (--midas-base-150) instead" },
+    "control-sm": { "$value": "{size.control-md}", "$description": "@deprecated Use size.control-md (--midas-size-control-md) instead" }
+  }
+}
