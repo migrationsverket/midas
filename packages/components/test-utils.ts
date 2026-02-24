@@ -14,6 +14,7 @@ export async function render(
 ): ReturnType<typeof baseRender> {
   const result = await baseRender(...args)
   const focusTarget = document.createElement('div')
+  focusTarget.id = '__vitest_focus_init__'
   focusTarget.style.cssText = 'width:4px;height:4px;overflow:hidden'
   result.container.prepend(focusTarget)
   await userEvent.click(focusTarget)
