@@ -22,7 +22,7 @@
   }
 
   &.medium {
-    height: var(--midas-size-control-sm);
+    height: var(--midas-size-control-md);
   }
 
   &[data-disabled] {

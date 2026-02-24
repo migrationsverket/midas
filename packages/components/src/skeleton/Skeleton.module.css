@@ -79,5 +79,5 @@
 }
 
 .form.medium .formInput {
-  height: var(--midas-size-control-sm); /* 40px */
+  height: var(--midas-size-control-md); /* 40px */
 }

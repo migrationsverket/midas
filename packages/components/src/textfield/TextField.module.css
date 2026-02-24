@@ -91,7 +91,7 @@
 
 .medium {
   .input {
-    min-height: var(--midas-size-control-sm);
+    min-height: var(--midas-size-control-md);
   }
 }
 

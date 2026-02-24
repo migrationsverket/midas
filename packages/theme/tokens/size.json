@@ -10,7 +10,7 @@
     "option": {
       "$value": "{base.120}"
     },
-    "control-sm": {
+    "control-md": {
       "$value": "{base.130}"
     },
     "control": {

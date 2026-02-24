@@ -27,7 +27,7 @@
   transition: all 100ms ease-in;
 
   &.medium {
-    min-height: var(--midas-size-control-sm);
+    min-height: var(--midas-size-control-md);
   }
 
   &:focus-visible {

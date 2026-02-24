@@ -8,7 +8,7 @@
 
   &.medium {
     .midas__control {
-      min-height: var(--midas-size-control-sm);
+      min-height: var(--midas-size-control-md);
     }
 
     .midas__value-container--is-multi {
@@ -16,7 +16,7 @@
     }
 
     .midas__indicator {
-      width: var(--midas-size-control-sm);
+      width: var(--midas-size-control-md);
     }
   }
 

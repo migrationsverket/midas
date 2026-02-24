@@ -19,7 +19,7 @@
   width: 100%;
 
   &.medium {
-    height: var(--midas-size-control-sm);
+    height: var(--midas-size-control-md);
   }
 }
 
@@ -48,7 +48,7 @@
   background-color: transparent;
 
   &.medium {
-    height: var(--midas-size-control-sm);
+    height: var(--midas-size-control-md);
     padding: 0.625rem 0.875rem;
   }
 }
@@ -70,7 +70,7 @@
   }
 
   &.medium {
-    height: var(--midas-size-control-sm);
+    height: var(--midas-size-control-md);
     padding: var(--midas-space-50) 0 var(--midas-space-50)
       var(--midas-space-150);
   }
