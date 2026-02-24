@@ -1,0 +1,1 @@
+import{r as t}from"./iframe-AKYLQdCk.js";const e=t.createContext({isCollapsed:!1});try{e.displayName="PanelContext",e.__docgenInfo={description:"",displayName:"PanelContext",props:{}}}catch{}export{e as P};
