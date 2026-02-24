@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Pagination } from '@midas-ds/table-styles'
+import { Pagination } from './Pagination'
 import {
   useReactTable,
   getCoreRowModel,

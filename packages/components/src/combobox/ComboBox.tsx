@@ -5,27 +5,23 @@ import type {
   ComboBoxProps as AriaComboBoxProps,
   ValidationResult,
 } from 'react-aria-components'
-import {
-  Button,
-  Input,
-  ComboBox as AriaComboBox,
-} from 'react-aria-components'
+import { Button, Input, ComboBox as AriaComboBox } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { Size } from '../common/types'
-import {
-  ListBox,
-  ListBoxPopover,
-} from '../list-box'
+import { ListBox, ListBoxPopover, ListBoxProps } from '../list-box'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { ListBoxEmptyState } from '../list-box/list-box-empty-state/ListBoxEmptyState'
 
-export interface ComboBoxProps<T extends object>
-  extends Omit<AriaComboBoxProps<T>, 'children'> {
+export interface ComboBoxProps<T extends object> extends Omit<
+  AriaComboBoxProps<T>,
+  'children'
+> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
@@ -38,6 +34,7 @@ export interface ComboBoxProps<T extends object>
    * */
   size?: Size
   popover?: InfoPopoverProps
+  listBoxProps?: ListBoxProps<T>
 }
 
 export function ComboBox<T extends object>({
@@ -50,6 +47,7 @@ export function ComboBox<T extends object>({
   errorPosition = 'top',
   size = 'large',
   popover,
+  listBoxProps,
   ...props
 }: ComboBoxProps<T>) {
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -107,10 +105,11 @@ export function ComboBox<T extends object>({
         <ListBox
           items={items}
           renderEmptyState={() => (
-            <Text className={styles.emptyState}>
+            <ListBoxEmptyState>
               {strings.format('noResultsFound')}
-            </Text>
+            </ListBoxEmptyState>
           )}
+          {...listBoxProps}
         >
           {children}
         </ListBox>

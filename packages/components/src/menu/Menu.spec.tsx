@@ -2,7 +2,7 @@ import { describe, expect, it, beforeEach, vi } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Menu.stories'
 import { page, userEvent } from 'vitest/browser'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 
@@ -25,6 +25,7 @@ describe('given a primary Menu', async () => {
 
     // open menu
     await userEvent.tab()
+    await userEvent.keyboard('[Escape]')
     await userEvent.keyboard('[Space]')
   })
 

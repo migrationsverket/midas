@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Tooltip.stories'
 import styles from './Tooltip.module.css'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Open, Placement, PlacementStartRTL } = composeStories(stories)
 

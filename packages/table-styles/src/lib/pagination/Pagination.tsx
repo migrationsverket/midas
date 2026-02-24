@@ -1,7 +1,13 @@
 import { type Key } from 'react-aria-components'
 import type { PaginationState, RowData, Table } from '@tanstack/react-table'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button, ListBoxItem, Select, Text, useLocalizedStringFormatter } from '@midas-ds/components'
+import {
+  Button,
+  ListBoxItem,
+  Select,
+  Text,
+  useLocalizedStringFormatter,
+} from '@midas-ds/components'
 import messages from './intl/translations.json'
 import styles from './Pagination.module.css'
 import { FocusScope, useFocusManager } from 'react-aria'
@@ -58,7 +64,8 @@ const NavigationButtons = <T extends RowData>({
 }
 
 export interface PaginationProps<T extends RowData>
-  extends Pick<
+  extends
+    Pick<
       Table<T>,
       | 'getCanNextPage'
       | 'getCanPreviousPage'

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Button.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary, Secondary } = composeStories(stories)
 

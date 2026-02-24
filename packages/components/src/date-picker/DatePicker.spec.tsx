@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DatePicker.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Required, CustomValiation, ControlledState } = composeStories(stories)
 

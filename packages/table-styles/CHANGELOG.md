@@ -1,3 +1,64 @@
+## 2.0.12 (2026-02-24)
+
+### 📖 Documentation changes
+
+- **components, pagination:** add page for pagination ([6f6246c130](https://github.com/migrationsverket/midas/commit/6f6246c130))
+
+## 2.0.11 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.6
+
+## 2.0.10 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.5
+
+## 2.0.9 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.4
+- Updated theme to 3.11.2
+
+## 2.0.8 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.3
+- Updated theme to 3.11.1
+
+## 2.0.7 (2026-02-19)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.2
+
+## 2.0.6 (2026-02-19)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.1
+
+## 2.0.5 (2026-02-18)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.0
+- Updated theme to 3.11.0
+
+## 2.0.4 (2026-02-18)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.1.0
+
+## 2.0.3 (2026-02-17)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
 ## 2.0.2 (2026-02-17)
 
 ### 🧱 Updated Dependencies

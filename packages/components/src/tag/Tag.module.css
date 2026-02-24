@@ -13,17 +13,17 @@
     background-color: var(--midas-button-icon-active);
   }
 
-  &.success[data-hovered],
-  &.warning[data-hovered],
-  &.info[data-hovered],
-  &.important[data-hovered] {
+  &.green[data-hovered],
+  &.red[data-hovered],
+  &.blue[data-hovered],
+  &.yellow[data-hovered] {
     background-color: var(--midas-button-icon-hover);
   }
 
-  &.success[data-pressed],
-  &.warning[data-pressed],
-  &.info[data-pressed],
-  &.important[data-pressed] {
+  &.green[data-pressed],
+  &.red[data-pressed],
+  &.blue[data-pressed],
+  &.yellow[data-pressed] {
     background-color: var(--midas-button-icon-active);
   }
 }
@@ -38,24 +38,24 @@
   border: 1px solid var(--midas-border-color-primary);
   color: var(--midas-text-primary);
 
-  &.success {
-    background-color: var(--midas-support-background-success);
-    border: 1px solid var(--midas-support-border-success);
+  &.green {
+    background-color: var(--midas-tag-green-background);
+    border: 1px solid var(--midas-tag-green-border-color);
   }
 
-  &.info {
-    background-color: var(--midas-support-background-info);
-    border: 1px solid var(--midas-support-border-info);
+  &.blue {
+    background-color: var(--midas-tag-blue-background);
+    border: 1px solid var(--midas-tag-blue-border-color);
   }
 
-  &.important {
-    background-color: var(--midas-support-background-important);
-    border: 1px solid var(--midas-support-border-important);
+  &.yellow {
+    background-color: var(--midas-tag-yellow-background);
+    border: 1px solid var(--midas-tag-yellow-border-color);
   }
 
-  &.warning {
-    background-color: var(--midas-support-background-warning);
-    border: 1px solid var(--midas-support-border-warning);
+  &.red {
+    background-color: var(--midas-tag-red-background);
+    border: 1px solid var(--midas-tag-red-border-color);
   }
 
   &[data-disabled] {
@@ -87,10 +87,4 @@
 
 .dismissable .tagText {
   padding: 7px var(--midas-size-10) 7px var(--midas-size-40);
-}
-
-.tagList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
 }

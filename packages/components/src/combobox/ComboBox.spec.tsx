@@ -3,7 +3,8 @@ import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './ComboBox.stories'
 import styles from './ComboBox.module.css'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
+import { ComboBox } from './ComboBox'
 
 const { Primary, Required, Sectioned } = composeStories(stories)
 
@@ -53,5 +54,49 @@ describe('given a Sectioned ComboBox', async () => {
     await userEvent.keyboard('[Escape]')
 
     await expect.element(page.getByRole('combobox')).toBeInTheDocument()
+  })
+})
+
+describe('given an async ComboBox with allowsEmptyCollection', async () => {
+  it('should not show "No results found" when the consumer overrides renderEmptyState via listBoxProps', async () => {
+    await render(
+      <ComboBox
+        label='Test'
+        allowsEmptyCollection
+        listBoxProps={{
+          renderEmptyState: () => <span>Fetching data...</span>,
+        }}
+      >
+        {[]}
+      </ComboBox>,
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown]')
+
+    await expect
+      .element(page.getByText('Fetching data...'))
+      .toBeInTheDocument()
+    await expect
+      .element(page.getByText('No results found'))
+      .not.toBeInTheDocument()
+  })
+
+  it('should show "No results found" by default when there are no items', async () => {
+    await render(
+      <ComboBox
+        label='Test'
+        allowsEmptyCollection
+      >
+        {[]}
+      </ComboBox>,
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown]')
+
+    await expect
+      .element(page.getByText('No results found'))
+      .toBeInTheDocument()
   })
 })

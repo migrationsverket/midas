@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Card.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { WithActions, WithPrimaryAction, WithLink } = composeStories(stories)
 
@@ -13,7 +13,6 @@ describe('given a Card with Actions', async () => {
 
     await expect.element(button).not.toHaveFocus()
 
-    // focus the link
     await userEvent.tab()
     await userEvent.tab()
 

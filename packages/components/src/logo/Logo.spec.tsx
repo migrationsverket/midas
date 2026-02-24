@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import styles from './Logo.module.css'
 import * as stories from './Logo.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 

@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/react-vite'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '@midas-ds/test-utils'
 import * as stories from './Calendar.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 

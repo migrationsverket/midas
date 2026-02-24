@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Select.stories'
 import { options } from '@midas-ds/test-utils'
 import { page, userEvent } from 'vitest/browser'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const {
   Primary,

@@ -41,7 +41,7 @@ export const SelectTags = <
       <TagList items={state.selectedItems}>
         {item => (
           <Tag
-            dismissable
+            isDismissable
             id={item.key}
             isDisabled={isDisabled}
             key={item.key}

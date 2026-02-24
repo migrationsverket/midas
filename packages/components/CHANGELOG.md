@@ -1,3 +1,82 @@
+## 17.2.6 (2026-02-23)
+
+### 🩹 Fixes
+
+- **components, layout:** change font weight for active menu items ([9a67f61f63](https://github.com/migrationsverket/midas/commit/9a67f61f63))
+
+## 17.2.5 (2026-02-23)
+
+### 🩹 Fixes
+
+- **components, textfield:** remove password reveal active background ([0f9750b6bd](https://github.com/migrationsverket/midas/commit/0f9750b6bd))
+
+## 17.2.4 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.2
+
+## 17.2.3 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.1
+
+## 17.2.2 (2026-02-19)
+
+### 🩹 Fixes
+
+- **components, textfield:** toggle input type for password ([#1064](https://github.com/migrationsverket/midas/pull/1064))
+
+## 17.2.1 (2026-02-19)
+
+### 🩹 Fixes
+
+- **components, textfield:** hide edge password reveal button ([#1063](https://github.com/migrationsverket/midas/pull/1063))
+
+## 17.2.0 (2026-02-18)
+
+### 🚀 Features
+
+- **components, tag:** deprecate dismissable prop ([228210703b](https://github.com/migrationsverket/midas/commit/228210703b))
+- **components, tag:** add color prop ([85ed37965d](https://github.com/migrationsverket/midas/commit/85ed37965d))
+
+### 🩹 Fixes
+
+- **components, tag:** replace color tokens ([311347b851](https://github.com/migrationsverket/midas/commit/311347b851))
+
+### 🏭 Refactoring
+
+- **components,tag:** use tag-scoped tokens instead of support tokens ([60a549a2f0](https://github.com/migrationsverket/midas/commit/60a549a2f0))
+
+### 📖 Documentation changes
+
+- **components, tag:** add stories for color variants ([d80920757c](https://github.com/migrationsverket/midas/commit/d80920757c))
+
+### 🔧 Maintenance
+
+- **components, tag:** add deprecation comment for lint tracking ([fa1dbcb0b0](https://github.com/migrationsverket/midas/commit/fa1dbcb0b0))
+
+### 🧪 Tests updated
+
+- **components, tag:** add test for deprecated dismissable prop ([efa39bfb4a](https://github.com/migrationsverket/midas/commit/efa39bfb4a))
+- **components, tag:** typos ([18ff479ba3](https://github.com/migrationsverket/midas/commit/18ff479ba3))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.0
+
+## 17.1.0 (2026-02-18)
+
+### 🚀 Features
+
+- **components, combobox:** add new prop listBoxProps ([#1061](https://github.com/migrationsverket/midas/pull/1061))
+
+### 🧪 Tests updated
+
+- **components:** setup custom render wrapper ([527bc0edf4](https://github.com/migrationsverket/midas/commit/527bc0edf4))
+- **components:** make browser tests pass in headed Playwright mode ([22e76b8727](https://github.com/migrationsverket/midas/commit/22e76b8727))
+
 ## 17.0.2 (2026-02-17)
 
 ### 🩹 Fixes

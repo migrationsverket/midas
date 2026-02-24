@@ -1,3 +1,17 @@
+## 3.11.2 (2026-02-23)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.11.1 (2026-02-23)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.11.0 (2026-02-18)
+
+### 🚀 Features
+
+- **theme:** add component-scoped tag color tokens ([481a60bc36](https://github.com/migrationsverket/midas/commit/481a60bc36))
+
 ## 3.10.8 (2026-02-16)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

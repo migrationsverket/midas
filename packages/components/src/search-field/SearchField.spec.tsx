@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import styles from './SearchField.module.css'
 import * as stories from './SearchField.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary, CustomValidation, Invalid } = composeStories(stories)
 

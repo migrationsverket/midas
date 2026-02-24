@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import styles from './Layout.module.css'
 import * as stories from './Layout.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 
