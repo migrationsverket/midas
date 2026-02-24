@@ -1,3 +1,17 @@
+## 0.2.31 (2026-02-24)
+
+### 🚀 Features
+
+- **components,theme:** migrate CSS from --midas-spacing-*/size-[0-9]* to --midas-space-*/size-* ([d770ac0e26](https://github.com/migrationsverket/midas/commit/d770ac0e26))
+
+### 🔧 Maintenance
+
+- **theme:** rename size token control-sm to control-md ([d7c0784e95](https://github.com/migrationsverket/midas/commit/d7c0784e95))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.0
+
 ## 0.2.30 (2026-02-23)
 
 ### 🧱 Updated Dependencies
