@@ -1,0 +1,20 @@
+{
+  "size": {
+    "$type": "dimension",
+    "icon": {
+      "$value": "{base.80}"
+    },
+    "icon-sm": {
+      "$value": "{base.90}"
+    },
+    "option": {
+      "$value": "{base.120}"
+    },
+    "control-md": {
+      "$value": "{base.130}"
+    },
+    "control": {
+      "$value": "{base.150}"
+    }
+  }
+}

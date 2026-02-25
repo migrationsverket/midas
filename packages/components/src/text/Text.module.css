@@ -31,7 +31,7 @@
 
 .description {
   font: var(--midas-typography-description);
-  margin-bottom: var(--midas-spacing-30);
+  margin-bottom: var(--midas-space-small);
 
   & > [data-disabled],
   [data-disabled] & {

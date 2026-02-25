@@ -17,8 +17,8 @@
   line-height: var(--midas-typography-line-height-70);
 
   &[data-margin] {
-    margin-top: var(--midas-spacing-large);
-    margin-bottom: var(--midas-size-50);
+    margin-top: var(--midas-space-large);
+    margin-bottom: var(--midas-space-50);
   }
 
   &[data-expressive] {
@@ -26,8 +26,8 @@
     line-height: var(--midas-typography-line-height-100);
 
     &[data-margin] {
-      margin-top: var(--midas-spacing-xlarge);
-      margin-bottom: var(--midas-size-50);
+      margin-top: var(--midas-space-xlarge);
+      margin-bottom: var(--midas-space-50);
     }
   }
 }
@@ -37,8 +37,8 @@
   line-height: var(--midas-typography-line-height-60);
 
   &[data-margin] {
-    margin-top: var(--midas-spacing-xlarge);
-    margin-bottom: var(--midas-spacing-small);
+    margin-top: var(--midas-space-xlarge);
+    margin-bottom: var(--midas-space-small);
   }
 
   &[data-expressive] {
@@ -47,8 +47,8 @@
     font-weight: var(--midas-typography-weight-medium);
 
     &[data-margin] {
-      margin-top: var(--midas-spacing-large);
-      margin-bottom: var(--midas-size-50);
+      margin-top: var(--midas-space-large);
+      margin-bottom: var(--midas-space-50);
     }
   }
 }
@@ -59,8 +59,8 @@
   font-weight: var(--midas-typography-weight-semi-bold);
 
   &[data-margin] {
-    margin-top: var(--midas-size-90);
-    margin-bottom: var(--midas-spacing-xsmall);
+    margin-top: var(--midas-space-90);
+    margin-bottom: var(--midas-space-xsmall);
   }
 
   &[data-expressive] {
@@ -68,8 +68,8 @@
     line-height: var(--midas-typography-line-height-60);
 
     &[data-margin] {
-      margin-top: var(--midas-spacing-xlarge);
-      margin-bottom: var(--midas-spacing-small);
+      margin-top: var(--midas-space-xlarge);
+      margin-bottom: var(--midas-space-small);
     }
   }
 }
@@ -81,8 +81,8 @@
     font-weight: var(--midas-typography-weight-semi-bold);
 
     &[data-margin] {
-      margin-top: var(--midas-spacing-large);
-      margin-bottom: var(--midas-spacing-small);
+      margin-top: var(--midas-space-large);
+      margin-bottom: var(--midas-space-small);
     }
   }
 }
@@ -94,8 +94,8 @@
     font-weight: var(--midas-typography-weight-semi-bold);
 
     &[data-margin] {
-      margin-top: var(--midas-size-90);
-      margin-bottom: var(--midas-spacing-small);
+      margin-top: var(--midas-space-90);
+      margin-bottom: var(--midas-space-small);
     }
   }
 }

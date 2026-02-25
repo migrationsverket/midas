@@ -1,3 +1,20 @@
+## 2.0.14 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.3.1
+
+## 2.0.13 (2026-02-24)
+
+### 🚀 Features
+
+- **components,theme:** migrate CSS from --midas-spacing-*/size-[0-9]* to --midas-space-*/size-* ([d770ac0e26](https://github.com/migrationsverket/midas/commit/d770ac0e26))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.3.0
+- Updated theme to 3.12.0
+
 ## 2.0.12 (2026-02-24)
 
 ### 📖 Documentation changes

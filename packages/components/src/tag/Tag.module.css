@@ -1,7 +1,7 @@
 .button {
   color: var(--midas-icon-primary);
   min-height: unset !important;
-  padding: var(--midas-size-20) !important;
+  padding: var(--midas-space-xsmall) !important;
   border-radius: 1.5rem;
   border: unset;
 
@@ -82,9 +82,9 @@
 
 .tagText {
   line-height: 1.15;
-  padding: 7px var(--midas-size-40);
+  padding: 7px var(--midas-space-small);
 }
 
 .dismissable .tagText {
-  padding: 7px var(--midas-size-10) 7px var(--midas-size-40);
+  padding: 7px var(--midas-space-10) 7px var(--midas-space-small);
 }

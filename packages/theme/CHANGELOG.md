@@ -1,3 +1,14 @@
+## 3.12.0 (2026-02-24)
+
+### 🚀 Features
+
+- **theme:** rename size→base, spacing→space, add semantic size tokens ([1d34533af6](https://github.com/migrationsverket/midas/commit/1d34533af6))
+
+### 🔧 Maintenance
+
+- **theme:** add deprecated token aliases for renamed spacing and size tokens ([6e4e2833de](https://github.com/migrationsverket/midas/commit/6e4e2833de))
+- **theme:** rename size token control-sm to control-md ([d7c0784e95](https://github.com/migrationsverket/midas/commit/d7c0784e95))
+
 ## 3.11.2 (2026-02-23)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

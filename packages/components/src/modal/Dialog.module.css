@@ -46,7 +46,7 @@
 }
 
 .modalHeader {
-  min-height: var(--midas-size-150);
+  min-height: var(--midas-size-control);
   background-color: var(--midas-layer-01-base);
   display: flex;
   justify-content: space-between;

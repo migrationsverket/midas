@@ -1,3 +1,33 @@
+## 17.3.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- **components:** give focus target a unique id to prevent ambiguous locator ([7cd771d591](https://github.com/migrationsverket/midas/commit/7cd771d591))
+- **components,date-picker:** replace fragile tab-counting with role-based queries in tests ([fb5b0b060a](https://github.com/migrationsverket/midas/commit/fb5b0b060a))
+
+### 🔧 Maintenance
+
+- **components:** move render wrapper focus target outside React container ([3f17dd9030](https://github.com/migrationsverket/midas/commit/3f17dd9030))
+
+### 🔙 Rollback changes
+
+- **components:** restore original render wrapper ([9c6fcdc5a7](https://github.com/migrationsverket/midas/commit/9c6fcdc5a7))
+
+## 17.3.0 (2026-02-24)
+
+### 🚀 Features
+
+- **components,theme:** migrate CSS from --midas-spacing-*/size-[0-9]* to --midas-space-*/size-* ([d770ac0e26](https://github.com/migrationsverket/midas/commit/d770ac0e26))
+
+### 🔧 Maintenance
+
+- **theme:** rename size token control-sm to control-md ([d7c0784e95](https://github.com/migrationsverket/midas/commit/d7c0784e95))
+- **components:** fix prettier formatting after token rename ([a0b1333f96](https://github.com/migrationsverket/midas/commit/a0b1333f96))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.0
+
 ## 17.2.6 (2026-02-23)
 
 ### 🩹 Fixes

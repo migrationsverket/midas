@@ -91,7 +91,7 @@
 
 .medium {
   .input {
-    min-height: var(--midas-size-130);
+    min-height: var(--midas-size-control-md);
   }
 }
 
@@ -108,7 +108,7 @@
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  min-height: var(--midas-size-150);
+  min-height: var(--midas-size-control);
 
   @media (forced-colors: active) {
     border: 1px solid;

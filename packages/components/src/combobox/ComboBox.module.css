@@ -17,7 +17,7 @@
   border-radius: 0;
   font-size: 1rem;
   color: var(--midas-text-primary);
-  height: var(--midas-size-150);
+  height: var(--midas-size-control);
   background-color: var(--midas-field-01-base);
 
   @media (forced-colors: active) {
@@ -25,7 +25,7 @@
   }
 
   &.medium {
-    height: var(--midas-size-130);
+    height: var(--midas-size-control-md);
   }
 
   &[data-hovered],
@@ -86,18 +86,18 @@
   display: flex;
   align-items: center;
   border: none;
-  padding: var(--midas-size-70);
+  padding: var(--midas-space-70);
   color: var(--midas-icon-primary);
   background-color: transparent;
   position: absolute;
   top: 0;
   right: 0;
-  height: var(--midas-size-150);
+  height: var(--midas-size-control);
   transition: transform 0.3s ease;
 
   &.medium {
-    height: var(--midas-size-130);
-    padding: var(--midas-size-50) var(--midas-size-70);
+    height: var(--midas-size-control-md);
+    padding: var(--midas-space-50) var(--midas-space-70);
   }
 
   &[aria-expanded='true'] {
