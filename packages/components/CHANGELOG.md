@@ -1,3 +1,18 @@
+## 17.3.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- **components:** give focus target a unique id to prevent ambiguous locator ([7cd771d591](https://github.com/migrationsverket/midas/commit/7cd771d591))
+- **components,date-picker:** replace fragile tab-counting with role-based queries in tests ([fb5b0b060a](https://github.com/migrationsverket/midas/commit/fb5b0b060a))
+
+### 🔧 Maintenance
+
+- **components:** move render wrapper focus target outside React container ([3f17dd9030](https://github.com/migrationsverket/midas/commit/3f17dd9030))
+
+### 🔙 Rollback changes
+
+- **components:** restore original render wrapper ([9c6fcdc5a7](https://github.com/migrationsverket/midas/commit/9c6fcdc5a7))
+
 ## 17.3.0 (2026-02-24)
 
 ### 🚀 Features
