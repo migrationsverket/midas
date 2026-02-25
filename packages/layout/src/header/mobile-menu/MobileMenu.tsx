@@ -1,11 +1,17 @@
 'use client'
 
-import { Button, DialogTrigger } from '@midas-ds/components'
-import { Drawer } from '..'
-import { useControlledState } from '@react-stately/utils'
-import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
 import { ReactNode } from 'react'
 import { Menu } from 'lucide-react'
+import {
+  composeRenderProps,
+  Dialog,
+  Modal,
+  ModalOverlay,
+} from 'react-aria-components'
+import { useControlledState } from '@react-stately/utils'
+import { Button, DialogTrigger } from '@midas-ds/components'
+import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
+import styles from './MobileMenu.module.css'
 
 export interface MobileMenuProps {
   children?: ReactNode
@@ -41,12 +47,18 @@ export const MobileMenu = ({
         variant='icon'
         onPress={handlePress}
       />
-      <Drawer
+      <ModalOverlay
+        className={styles.overlay}
+        isDismissable
         isOpen={isDrawerOpen}
         onOpenChange={setIsDrawerOpen}
       >
-        {children}
-      </Drawer>
+        {composeRenderProps(children, children => (
+          <Modal className={styles.drawer}>
+            <Dialog>{children}</Dialog>
+          </Modal>
+        ))}
+      </ModalOverlay>
     </DialogTrigger>
   )
 }
