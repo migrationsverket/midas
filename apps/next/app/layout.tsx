@@ -8,6 +8,7 @@ import {
   Navbar,
   Main,
   MobileMenu,
+  LayoutContent,
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
 import '@midas-ds/components/default.css'
@@ -31,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               <Logo />
             </Link>
           </Header>
-          <Layout.Content>
+          <LayoutContent>
             <Panel
               data-debug='Panel (collapse)'
               title='Next App'
@@ -40,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               <SidebarNavigation />
             </Panel>
             <Main data-debug='Main'>{children}</Main>
-          </Layout.Content>
+          </LayoutContent>
           <Navbar data-debug='Navbar'>
             <BottomNavigation />
           </Navbar>

@@ -1,5 +1,5 @@
 import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
-import { Layout } from '.'
+import { Layout, LayoutContent } from '.'
 import { Header } from '../header'
 import { Panel } from '../panel'
 import { Navbar } from '../navbar'
@@ -46,7 +46,7 @@ export const Primary: Story = {
             variant='icon'
           />
         </Header>
-        <Layout.Content>
+        <LayoutContent>
           <CollapsePanel
             isCollapsed={isNavigationCollapsed}
             onCollapseChange={setIsNavigationCollapsed}
@@ -67,7 +67,7 @@ export const Primary: Story = {
             style={{ gridArea: 'panelRight' }}
             title='Panel'
           />
-        </Layout.Content>
+        </LayoutContent>
         <Navbar>
           <ul>
             <Navigation.Link

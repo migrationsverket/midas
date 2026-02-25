@@ -6,7 +6,10 @@ type DivProps = DetailedHTMLProps<
   HTMLDivElement
 >
 
-const Content = ({ className, children, ...rest }: DivProps) => (
+export type LayoutProps = DivProps
+export type LayoutContentProps = DivProps
+
+export const LayoutContent = ({ className, children, ...rest }: DivProps) => (
   <div
     className={`${className ?? ''} ${styles.content}`}
     {...rest}
@@ -15,16 +18,11 @@ const Content = ({ className, children, ...rest }: DivProps) => (
   </div>
 )
 
-export type LayoutProps = DivProps
-
-export const Layout = Object.assign(
-  ({ className, children, ...rest }: LayoutProps) => (
-    <div
-      className={`${className ?? ''} ${styles.layout}`}
-      {...rest}
-    >
-      {children}
-    </div>
-  ),
-  { Content },
+export const Layout = ({ className, children, ...rest }: LayoutProps) => (
+  <div
+    className={`${className ?? ''} ${styles.layout}`}
+    {...rest}
+  >
+    {children}
+  </div>
 )
