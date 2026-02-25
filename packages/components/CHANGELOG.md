@@ -1,3 +1,13 @@
+## 17.4.0 (2026-02-25)
+
+### 🚀 Features
+
+- **components,tabs:** add size prop with large/medium variants ([9a6c169311](https://github.com/migrationsverket/midas/commit/9a6c169311))
+
+### 🧪 Tests updated
+
+- **components, menu:** remove flaky keyboard interactions ([e7fc6cfb6d](https://github.com/migrationsverket/midas/commit/e7fc6cfb6d))
+
 ## 17.3.1 (2026-02-25)
 
 ### 🩹 Fixes
