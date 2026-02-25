@@ -110,16 +110,16 @@ export const SidebarNavigation = () => (
         title={section.title}
         items={section.children}
       >
-        {function renderItem(item) {
+        {function renderItem({ href, icon, title, children }) {
           return (
             <NavigationItem>
               <NavLink
-                href={item.href}
-                title={item.title}
+                href={href}
+                icon={icon}
               >
-                {item.icon}
+                {title}
               </NavLink>
-              <NavigationSubMenu items={item.children}>
+              <NavigationSubMenu items={children}>
                 {renderItem}
               </NavigationSubMenu>
             </NavigationItem>
@@ -135,25 +135,25 @@ export const BottomNavigation = () => (
     <NavigationItem>
       <NavLink
         href='/'
-        title='Home'
+        icon={<House />}
       >
-        <House />
+        Home
       </NavLink>
     </NavigationItem>
     <NavigationItem>
       <NavLink
         href='/applications'
-        title='Applications'
+        icon={<FileText />}
       >
-        <FileText />
+        Applications
       </NavLink>
     </NavigationItem>
     <NavigationItem>
       <NavLink
         href='/profile'
-        title='Profile'
+        icon={<User />}
       >
-        <User />
+        Profile
       </NavLink>
     </NavigationItem>
   </MidasNavigation>

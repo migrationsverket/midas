@@ -12,6 +12,7 @@ import { useControlledState } from '@react-stately/utils'
 import { Button, DialogTrigger } from '@midas-ds/components'
 import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
 import styles from './MobileMenu.module.css'
+import { MobileMenuContext } from './MobileMenuContext'
 
 export interface MobileMenuProps {
   children?: ReactNode
@@ -41,24 +42,26 @@ export const MobileMenu = ({
   }
 
   return (
-    <DialogTrigger>
-      <Button
-        icon={Menu}
-        variant='icon'
-        onPress={handlePress}
-      />
-      <ModalOverlay
-        className={styles.overlay}
-        isDismissable
-        isOpen={isDrawerOpen}
-        onOpenChange={setIsDrawerOpen}
-      >
-        {composeRenderProps(children, children => (
-          <Modal className={styles.drawer}>
-            <Dialog>{children}</Dialog>
-          </Modal>
-        ))}
-      </ModalOverlay>
-    </DialogTrigger>
+    <MobileMenuContext.Provider value={{}}>
+      <DialogTrigger>
+        <Button
+          icon={Menu}
+          variant='icon'
+          onPress={handlePress}
+        />
+        <ModalOverlay
+          className={styles.overlay}
+          isDismissable
+          isOpen={isDrawerOpen}
+          onOpenChange={setIsDrawerOpen}
+        >
+          {composeRenderProps(children, children => (
+            <Modal className={styles.drawer}>
+              <Dialog>{children}</Dialog>
+            </Modal>
+          ))}
+        </ModalOverlay>
+      </DialogTrigger>
+    </MobileMenuContext.Provider>
   )
 }
