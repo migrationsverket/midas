@@ -7,12 +7,11 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
 import { FeedbackStatus } from '../common/types'
-
-export interface InfoBannerProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+import { useControlledState } from '@react-stately/utils'
+export interface InfoBannerProps extends React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> {
   /**
    * Determines the visual style and semantic meaning of the InfoBanner (e.g., success, info, warning, important).
    **/
@@ -55,51 +54,50 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   onOpenChange,
   ...rest
 }) => {
-  const isControlled = typeof controlledIsOpen !== 'undefined'
-
-  const [isOpen, setIsOpen] = React.useState<boolean>(defaultOpen)
+  const [isOpen, setIsOpen] = useControlledState(
+    controlledIsOpen,
+    defaultOpen,
+    onOpenChange,
+  )
 
   const strings = useLocalizedStringFormatter(messages)
 
   const handleClose = () => {
-    onOpenChange?.(false)
-
-    if (!isControlled) {
-      setIsOpen(false)
-    }
+    setIsOpen(false)
   }
 
-  if ((isControlled && controlledIsOpen) || (!isControlled && isOpen))
-    return (
-      <div
-        {...rest}
-        className={clsx(styles.infoBanner, styles[type], rest.className)}
-      >
-        <FeedbackStatusIcon
-          aria-hidden
-          className={styles.icon}
-          status={type}
-        />
-        <div className={styles.content}>
-          {title && <strong className={styles.heading}>{title}</strong>}
-          <div className={styles.text}>
-            {message}
-            {children}
-          </div>
-        </div>
-        {isDismissable && (
-          <div className={styles.dismissable}>
-            <Button
-              variant='icon'
-              aria-label={strings.format('close')}
-              onPress={handleClose}
-            >
-              <X size={20} />
-            </Button>
-          </div>
-        )}
-      </div>
-    )
+  if (!isOpen) {
+    return null
+  }
 
-  return null
+  return (
+    <div
+      {...rest}
+      className={clsx(styles.infoBanner, styles[type], rest.className)}
+    >
+      <FeedbackStatusIcon
+        aria-hidden
+        className={styles.icon}
+        status={type}
+      />
+      <div className={styles.content}>
+        {title && <strong className={styles.heading}>{title}</strong>}
+        <div className={styles.text}>
+          {message}
+          {children}
+        </div>
+      </div>
+      {isDismissable && (
+        <div className={styles.dismissable}>
+          <Button
+            variant='icon'
+            aria-label={strings.format('close')}
+            onPress={handleClose}
+          >
+            <X size={20} />
+          </Button>
+        </div>
+      )}
+    </div>
+  )
 }
