@@ -1,3 +1,9 @@
+## 17.5.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- **components, breadcrumbs:** adjust styling according to spec ([0c08821279](https://github.com/migrationsverket/midas/commit/0c08821279))
+
 ## 17.5.0 (2026-02-25)
 
 ### 🚀 Features
