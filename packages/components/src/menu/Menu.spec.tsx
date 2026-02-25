@@ -1,7 +1,7 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Menu.stories'
-import { page, userEvent } from 'vitest/browser'
+import { page } from 'vitest/browser'
 import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
@@ -10,7 +10,7 @@ const handleAction = vi.fn()
 
 describe('given a primary Menu', async () => {
   beforeEach(async () => {
-    await render(
+    const { getByRole } = await render(
       <Primary
         onAction={handleAction}
         className='test-class'
@@ -24,9 +24,7 @@ describe('given a primary Menu', async () => {
     )
 
     // open menu
-    await userEvent.tab()
-    await userEvent.keyboard('[Escape]')
-    await userEvent.keyboard('[Space]')
+    await getByRole('button').click()
   })
 
   it('should accept a custom className', async () => {
@@ -34,11 +32,7 @@ describe('given a primary Menu', async () => {
   })
 
   it('should call the onAction handler with the ID of the menu item', async () => {
-    // select the third item
-    await userEvent.keyboard('[ArrowDown]')
-    await userEvent.keyboard('[ArrowDown]')
-    await userEvent.keyboard('[Space]')
-
+    await page.getByText('test 2').click()
     expect(handleAction).toHaveBeenCalledWith('testID')
   })
 })
