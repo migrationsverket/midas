@@ -82,7 +82,7 @@ Sätt `isDisabled` på `Link` för att inaktivera en enskild brödsmula.
         href='#'
         isDisabled
       >
-        Du vill förlänga
+        {'Du vill förlänga'}
       </Link>
     </Breadcrumb>
     <Breadcrumb>
@@ -149,17 +149,9 @@ Använd `onAction` på `Breadcrumbs` för att själv hantera interaktionen. Call
 Vid djupa navigationsträd kan det vara lämpligt att dölja mellanliggande brödsmulor bakom en ellipsis-meny. Här är ett exempel på hur detta kan implementeras:
 
 ```tsx
+import { Ellipsis } from 'lucide-react'
 import type { Key } from 'react-aria-components'
-import {
-  Breadcrumbs,
-  Breadcrumb,
-  Link,
-  Button,
-  Menu,
-  MenuItem,
-  MenuPopover,
-  MenuTrigger,
-} from '@midas-ds/components'
+import { Breadcrumbs, Breadcrumb, Link, Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 
 export const CollapsedBreadcrumbs = () => {
   const handleAction = (id: Key) => console.log('Navigera till:', id)
@@ -173,10 +165,10 @@ export const CollapsedBreadcrumbs = () => {
         <MenuTrigger>
           <Button
             aria-label='Fler brödsmulor'
-            style={{ minWidth: 'auto', padding: 0, height: 'auto' }}
             variant='icon'
+            size='medium'
           >
-            …
+            <Ellipsis />
           </Button>
           <MenuPopover>
             <Menu onAction={handleAction}>
