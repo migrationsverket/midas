@@ -18,7 +18,7 @@
 }
 
 .tab {
-  padding: var(--midas-space-small) var(--midas-space-medium);
+  padding: var(--midas-space-70) var(--midas-space-medium);
   cursor: default;
   outline: none;
   position: relative;
@@ -70,6 +70,10 @@
     &:not([data-selected]) + &.contained:not([data-selected]) {
       border-color: var(--midas-border-color-subtle);
     }
+  }
+
+  &.medium {
+    padding: var(--midas-space-50) var(--midas-space-small);
   }
 }
 
@@ -137,5 +141,9 @@
 
   &.contained {
     background-color: var(--midas-layer-01-base);
+  }
+
+  &.medium {
+    padding: var(--midas-space-small);
   }
 }

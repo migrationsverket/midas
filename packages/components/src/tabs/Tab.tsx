@@ -12,7 +12,7 @@ import styles from './Tabs.module.css'
 import { TabsContext } from './TabsContext'
 
 export const Tab: React.FC<TabProps> = ({ className, ...props }) => {
-  const { variant } = React.useContext(TabsContext)
+  const { variant, size } = React.useContext(TabsContext)
 
   return (
     <AriaTab
@@ -21,6 +21,7 @@ export const Tab: React.FC<TabProps> = ({ className, ...props }) => {
         styles.tab,
         {
           [styles.contained]: variant === 'contained',
+          [styles.medium]: size === 'medium',
         },
         className,
       )}
