@@ -1,0 +1,16 @@
+import{r as b,j as e}from"./iframe-8Cp1Y9sE.js";import{$ as x}from"./Link-BPb-CWrA.js";import{c as k}from"./clsx-Ciqy0D92.js";import{e as y}from"./useFocusable-B-HsSGrd.js";import{P as m}from"./PanelContext-j1iGsib0.js";import{T as C,a as N}from"./Tooltip-4VR1dMKg.js";import{H as h}from"./house-Dw5Evnjd.js";import"./preload-helper-PPVm8Dsz.js";import"./utils-DlEPF17n.js";import"./useObjectRef-BvAFkytn.js";import"./clsx-B-dksMZM.js";import"./useFocusRing-CVuxSJk8.js";import"./index-CQNUcSLQ.js";import"./index-BHWdZgLR.js";import"./OverlayArrow-Cf2TuAv-.js";import"./number-DfkVkf0F.js";import"./useResizeObserver-B3a9AYPm.js";import"./useControlledState-DUF8qyUE.js";import"./animation-CxqOZvIB.js";import"./createLucideIcon-BJQalJwk.js";const L="_navigationLink_gck1s_1",j="_sidebar_gck1s_18",P="_navbar_gck1s_25",$="_collapsed_gck1s_38",q="_title_gck1s_41",r={navigationLink:L,sidebar:j,navbar:P,collapsed:$,title:q},n=({as:a,children:u,className:g,isActive:d,title:l,variant:p="sidebar","aria-label":v,...f})=>{const{isCollapsed:c}=b.useContext(m),_=a||x;return e.jsxs(C,{isDisabled:!c,children:[e.jsx(y,{children:e.jsxs(_,{"aria-current":d&&"page","aria-label":v||(c?l:void 0),className:k(g,r.navigationLink,p&&r[p],{[r.collapsed]:c}),"data-active":d||void 0,...f,children:[u,e.jsx("span",{className:r.title,children:l})]})}),e.jsx(N,{placement:"right",children:l})]})};try{n.displayName="NavigationLink",n.__docgenInfo={description:"",displayName:"NavigationLink",props:{isActive:{defaultValue:null,description:"",name:"isActive",required:!1,type:{name:"boolean"}},title:{defaultValue:null,description:"",name:"title",required:!0,type:{name:"string"}},variant:{defaultValue:{value:"sidebar"},description:"",name:"variant",required:!1,type:{name:"enum",value:[{value:'"sidebar"'},{value:'"navbar"'}]}},className:{defaultValue:null,description:"",name:"className",required:!1,type:{name:"string"}},as:{defaultValue:null,description:`Replace base component with any Client Side Routing link instead.
+@see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/ Client side routing}`,name:"as",required:!1,type:{name:"ElementType<any, keyof IntrinsicElements>"}}}}}catch{}const W={component:n,title:"Components/Layout/Navigation/NavigationLink",tags:["autodocs"],args:{title:"Hem",href:"/",children:e.jsx(h,{})},parameters:{layout:"centered"}},s={},t={args:{isActive:!0}},i={args:{isDisabled:!0}},o={render:a=>e.jsx(m.Provider,{value:{isCollapsed:!0},children:e.jsx(n,{...a})})};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:"{}",...s.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  args: {
+    isActive: true
+  }
+}`,...t.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {
+    isDisabled: true
+  }
+}`,...i.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  render: args => <PanelContext.Provider value={{
+    isCollapsed: true
+  }}>
+      <NavigationLink {...args} />
+    </PanelContext.Provider>
+}`,...o.parameters?.docs?.source}}};const X=["Primary","Active","Disabled","Collapsed"];export{t as Active,o as Collapsed,i as Disabled,s as Primary,X as __namedExportsOrder,W as default};
