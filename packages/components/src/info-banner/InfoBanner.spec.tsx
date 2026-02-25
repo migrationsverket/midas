@@ -3,9 +3,21 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './InfoBanner.stories'
 import { render } from '../../test-utils'
 
-const { Dismissable, Controlled } = composeStories(stories)
+const { Success, Dismissable, Controlled } = composeStories(stories)
 
 const handleOpenChange = vi.fn()
+
+describe('given a Success InfoBanner', async () => {
+  it('should be visible by default', async () => {
+    const { getByRole } = await render(<Success />)
+    await expect.element(getByRole('complementary')).toBeVisible()
+  })
+
+  it('should not be in the document if defaultOpen = false', async () => {
+    const { getByRole } = await render(<Success defaultOpen={false} />)
+    await expect.element(getByRole('complementary')).not.toBeInTheDocument()
+  })
+})
 
 describe('given a dismissable InfoBanner', async () => {
   afterEach(() => {
@@ -19,7 +31,7 @@ describe('given a dismissable InfoBanner', async () => {
 
     await getByRole('button').click()
 
-    expect(handleOpenChange).toHaveBeenCalledOnce()
+    expect(handleOpenChange).toHaveBeenCalledExactlyOnceWith(false)
     await expect.element(getByRole('button')).not.toBeInTheDocument()
   })
 })
@@ -36,10 +48,10 @@ describe('given a controlled InfoBanner', async () => {
 
     // close
     await getByRole('button').click()
-    expect(handleOpenChange).toHaveBeenCalledWith(false)
+    expect(handleOpenChange).toHaveBeenCalledExactlyOnceWith(false)
 
     // open
     await getByRole('button').click()
-    expect(handleOpenChange).toHaveBeenCalledOnce()
+    expect(handleOpenChange).toHaveBeenCalledExactlyOnceWith(false)
   })
 })
