@@ -7,7 +7,7 @@ export type NavbarProps = DetailedHTMLProps<
 >
 
 export const Navbar = ({ className, ...rest }: NavbarProps) => (
-  <div
+  <footer
     className={`${className ?? ''} ${styles.navbar}`}
     {...rest}
   />
