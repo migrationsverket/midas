@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
 import { Button, DialogTrigger } from '@midas-ds/components'
 import { Drawer } from '..'
-import { useControlledState } from '../../utils/useControlledState'
+import { useControlledState } from '@react-stately/utils'
 import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
 import { ReactNode } from 'react'
 import { Menu } from 'lucide-react'

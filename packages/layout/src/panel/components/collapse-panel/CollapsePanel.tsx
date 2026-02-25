@@ -8,7 +8,7 @@ import { PanelBody, PanelBodyProps } from '../panel-body/PanelBody'
 import { PanelHeader } from '../panel-header/PanelHeader'
 import { PanelTitle } from '../panel-title'
 import messages from '../../intl/translations.json'
-import { useControlledState } from '../../../utils/useControlledState'
+import { useControlledState } from '@react-stately/utils'
 import { useIsMobileDevice } from '../../../utils/useIsMobileDevice'
 import styles from './CollapsePanel.module.css'
 

@@ -6,7 +6,7 @@ import { X } from 'lucide-react'
 import { PanelHeader, PanelBody, PanelBodyProps, PanelTitle } from '..'
 import styles from './DismissPanel.module.css'
 import messages from '../../intl/translations.json'
-import { useControlledState } from '../../../utils/useControlledState'
+import { useControlledState } from '@react-stately/utils'
 
 export interface DismissTriggerProps {
   isOpen?: boolean
