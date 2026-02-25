@@ -1,0 +1,66 @@
+import{j as r}from"./iframe-BTWMpxaw.js";import{G as s}from"./Grid-BvZ_fnen.js";import{G as t}from"./GridItem-BurjakSD.js";import{T as o}from"./TextField-BYteN3HE.js";import{C as e,a as n,b as i}from"./Card-CPtm7nPk.js";import{T as m}from"./Text-XH9vDvn5.js";import"./preload-helper-PPVm8Dsz.js";import"./clsx-Ciqy0D92.js";import"./clsx-B-dksMZM.js";import"./TextFieldBase-CSj2jSzW.js";import"./utils-C3lx9DX-.js";import"./useObjectRef-CQ0wbjO8.js";import"./FieldError-CapQEyCl.js";import"./Text-AwkOgpRf.js";import"./useFocusRing-D_JbvpzL.js";import"./useFocusable-DroJBjVA.js";import"./index-BcRiH35A.js";import"./index-BRI9nXbv.js";import"./RSPContexts-CgrWNIj5.js";import"./Form-D7825GY6.js";import"./useFormValidation-5p1jo9Ru.js";import"./Group-C-m-Yvp5.js";import"./Input-CLyTT6kk.js";import"./Hidden-BQDZ_Wq1.js";import"./Button-CAgd8sZK.js";import"./number-DfkVkf0F.js";import"./useLabels-Qrrl1VgB.js";import"./useButton-BrhFQfMI.js";import"./useTextField-BZgdgsNE.js";import"./useControlledState-CRbmL-GT.js";import"./useField-WQlJsGjc.js";import"./TextField.module-DdivwlC8.js";import"./Label-Bgsnsyln.js";import"./Dialog-Chll4O9z.js";import"./OverlayArrow-D84MR2MX.js";import"./useResizeObserver-CffUVSIR.js";import"./Collection-B_b2ppV7.js";import"./CollectionBuilder-BLs7TzFW.js";import"./index-BQuq6Vq-.js";import"./Separator-Oy-LEqKf.js";import"./SelectionManager-jBp3qQ-Y.js";import"./useEvent-BLDn_e3Q.js";import"./scrollIntoView-Q7175gbP.js";import"./SelectionIndicator-Db6mgl97.js";import"./useDescription-DVX_PCr4.js";import"./ListKeyboardDelegate-COwUALGh.js";import"./PressResponder-CTGZQkus.js";import"./useLocalizedStringFormatter-CCWRThSu.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./animation-DlxJxUyB.js";import"./getScrollParent-DRdm8xm-.js";import"./VisuallyHidden-BZ8ApsH8.js";import"./Button-B7QanPQQ.js";import"./Button.module-D_C6WeTN.js";import"./useLocalizedStringFormatter-BCu2gt1L.js";import"./createLucideIcon-D3byJH39.js";import"./x-CZObjwQc.js";import"./Heading-CyoT9rFN.js";import"./info-C-coDdpf.js";import"./Popover-DDU0MFJR.js";import"./Link-B106t8fb.js";import"./arrow-right-DMiMhYhE.js";const Nr={component:s,subcomponents:{GridItem:t},title:"Components/Grid",tags:["autodocs"],parameters:{layout:"fullscreen"},argTypes:{isContained:{control:{type:"boolean"}},removeMargins:{control:{type:"boolean"}}}},d={args:{},render:({...a})=>r.jsxs(s,{...a,children:[r.jsx(t,{children:r.jsx(o,{label:"Ditt meddelande",description:"Skriv ett litet meddelande"})}),r.jsx(t,{size:{xs:12,sm:6,md:6},children:r.jsx(e,{children:r.jsxs(n,{children:[r.jsx(i,{children:"Dina uppgifter"}),r.jsx(m,{children:"Namn: Namn Namnsson"})]})})}),r.jsx(t,{size:{xs:12,sm:6,md:12,lg:6,xl:12},children:r.jsx(e,{children:r.jsxs(n,{children:[r.jsx(i,{children:"Dina uppgifter"}),r.jsx(m,{children:"Namn: Namn Namnsson"})]})})}),r.jsx(t,{size:{xs:12,sm:5,md:6},children:r.jsx(o,{label:"Ditt meddelande",description:"Skriv ett litet meddelande"})}),r.jsx(t,{size:{xs:12,sm:5,md:6},children:r.jsx(o,{label:"Ditt meddelande",description:"Skriv ett litet meddelande"})}),r.jsx(t,{size:"auto",children:r.jsx(e,{children:r.jsxs(n,{children:[r.jsx(i,{children:"Dina uppgifter"}),r.jsx(m,{children:"Namn: Namn Namnsson"})]})})}),r.jsx(t,{children:r.jsx(e,{children:r.jsxs(n,{children:[r.jsx(i,{children:"Dina uppgifter"}),r.jsx(m,{children:"Namn: Namn Namnsson"})]})})})]})};d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  args: {},
+  render: ({
+    ...args
+  }) => <Grid {...args}>
+      <GridItem>
+        <TextField label='Ditt meddelande' description='Skriv ett litet meddelande' />
+      </GridItem>
+      <GridItem size={{
+      xs: 12,
+      sm: 6,
+      md: 6
+    }}>
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
+      </GridItem>
+      <GridItem size={{
+      xs: 12,
+      sm: 6,
+      md: 12,
+      lg: 6,
+      xl: 12
+    }}>
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
+      </GridItem>
+      <GridItem size={{
+      xs: 12,
+      sm: 5,
+      md: 6
+    }}>
+        <TextField label='Ditt meddelande' description='Skriv ett litet meddelande' />
+      </GridItem>
+      <GridItem size={{
+      xs: 12,
+      sm: 5,
+      md: 6
+    }}>
+        <TextField label='Ditt meddelande' description='Skriv ett litet meddelande' />
+      </GridItem>
+      <GridItem size='auto'>
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
+      </GridItem>
+      <GridItem>
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
+      </GridItem>
+    </Grid>
+}`,...d.parameters?.docs?.source}}};const Gr=["Primary"];export{d as Primary,Gr as __namedExportsOrder,Nr as default};
