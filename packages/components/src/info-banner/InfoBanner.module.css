@@ -52,6 +52,15 @@
   line-height: var(--midas-typography-line-height-40);
   white-space: pre-line;
   margin: 0;
+
+  ul {
+    margin: var(--midas-space-xsmall) 0 0 var(--midas-space-medium);
+    padding: 0;
+
+    li {
+      margin-bottom: var(--midas-space-60);
+    }
+  }
 }
 
 .icon {
