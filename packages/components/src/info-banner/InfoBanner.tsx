@@ -71,7 +71,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   }
 
   return (
-    <div
+    <aside
       {...rest}
       className={clsx(styles.infoBanner, styles[type], rest.className)}
     >
@@ -98,6 +98,6 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
           </Button>
         </div>
       )}
-    </div>
+    </aside>
   )
 }
