@@ -2,7 +2,7 @@
 
 import { DetailedHTMLProps, HTMLAttributes, useContext } from 'react'
 import { clsx } from '@midas-ds/components'
-import { PanelContext } from '../../../panel'
+import { CollapsePanelContext } from '../../../panel'
 import styles from './NavigationItem.module.css'
 
 export type NavigationItemProps = DetailedHTMLProps<
@@ -11,7 +11,7 @@ export type NavigationItemProps = DetailedHTMLProps<
 >
 
 export const NavigationItem = ({ className, ...rest }: NavigationItemProps) => {
-  const { isCollapsed } = useContext(PanelContext)
+  const { isCollapsed } = useContext(CollapsePanelContext)
 
   return (
     <li

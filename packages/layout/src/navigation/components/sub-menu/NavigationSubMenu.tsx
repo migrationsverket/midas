@@ -3,7 +3,7 @@
 import { useContext, DetailedHTMLProps, HTMLAttributes } from 'react'
 import { Collection, CollectionProps } from '@react-aria/collections'
 import { clsx } from '@midas-ds/components'
-import { PanelContext } from '../../../panel'
+import { CollapsePanelContext } from '../../../panel'
 import styles from './NavigationSubMenu.module.css'
 
 export type NavigationSubMenuProps<T extends object> = CollectionProps<T> &
@@ -15,7 +15,7 @@ export const NavigationSubMenu = <T extends object>({
   items,
   ...rest
 }: NavigationSubMenuProps<T>) => {
-  const { isCollapsed } = useContext(PanelContext)
+  const { isCollapsed } = useContext(CollapsePanelContext)
   const { length: itemLength } = Array.from(items || [])
   const isDynamicCollection = typeof children === 'function'
 

@@ -3,7 +3,7 @@
 import { useContext, DetailedHTMLProps, HTMLAttributes } from 'react'
 import { Collection, CollectionProps } from '@react-aria/collections'
 import { clsx } from '@midas-ds/components'
-import { PanelContext } from '../../../panel'
+import { CollapsePanelContext } from '../../../panel'
 import { NavigationHeader } from '../header'
 import styles from './NavigationSection.module.css'
 import { NavigationItem } from '../item'
@@ -23,7 +23,7 @@ export const NavigationSection = <T extends object>({
   title,
   ...rest
 }: NavigationSectionProps<T>) => {
-  const { isCollapsed } = useContext(PanelContext)
+  const { isCollapsed } = useContext(CollapsePanelContext)
 
   return (
     <NavigationItem>

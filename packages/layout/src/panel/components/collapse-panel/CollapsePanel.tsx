@@ -3,7 +3,7 @@
 import clsx from 'clsx'
 import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
-import { PanelContext } from '../..'
+import { CollapsePanelContext } from '../..'
 import { PanelBody, PanelBodyProps } from '../panel-body/PanelBody'
 import { PanelHeader } from '../panel-header/PanelHeader'
 import { PanelTitle } from '../panel-title'
@@ -41,7 +41,7 @@ export const CollapsePanel = ({
     setIsCollapsed(previouslyCollapsed => !previouslyCollapsed)
 
   return isMobileDevice ? null : (
-    <PanelContext.Provider value={{ isCollapsed }}>
+    <CollapsePanelContext.Provider value={{ isCollapsed }}>
       <PanelBody
         className={clsx(className, styles.collapsePanel, {
           [styles.collapsed]: isCollapsed,
@@ -75,6 +75,6 @@ export const CollapsePanel = ({
         </PanelHeader>
         {children}
       </PanelBody>
-    </PanelContext.Provider>
+    </CollapsePanelContext.Provider>
   )
 }

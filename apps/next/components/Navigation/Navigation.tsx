@@ -3,7 +3,6 @@
 import { ReactNode } from 'react'
 import {
   Navigation as MidasNavigation,
-  NavigationHeader,
   NavigationItem,
   NavigationSection,
   NavigationSubMenu,
@@ -137,8 +136,6 @@ export const BottomNavigation = () => (
       <NavLink
         href='/'
         title='Home'
-        // TODO: could the variant be context aware?
-        variant='navbar'
       >
         <House />
       </NavLink>
@@ -147,8 +144,6 @@ export const BottomNavigation = () => (
       <NavLink
         href='/applications'
         title='Applications'
-        // TODO: could the variant be context aware?
-        variant='navbar'
       >
         <FileText />
       </NavLink>
@@ -157,8 +152,6 @@ export const BottomNavigation = () => (
       <NavLink
         href='/profile'
         title='Profile'
-        // TODO: could the variant be context aware?
-        variant='navbar'
       >
         <User />
       </NavLink>

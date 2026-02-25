@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
   type LinkComponentProps,
 } from '@midas-ds/components'
-import { PanelContext } from '../../../panel'
+import { CollapsePanelContext, PanelContext } from '../../../panel'
 import styles from './NavigationLink.module.css'
 
 export interface NavigationLinkComponentProps<
@@ -30,11 +30,11 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
   className,
   isActive,
   title,
-  variant = 'sidebar',
   'aria-label': ariaLabel,
   ...rest
 }: NavigationLinkProps<C>) => {
-  const { isCollapsed } = useContext(PanelContext)
+  const { variant } = useContext(PanelContext)
+  const { isCollapsed } = useContext(CollapsePanelContext)
 
   const Component = as || Link
 

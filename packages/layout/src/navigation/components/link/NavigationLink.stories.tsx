@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { NavigationLink } from '.'
 import { House } from 'lucide-react'
-import { PanelContext } from '../../../panel'
+import { CollapsePanelContext } from '../../../panel'
 
 type Story = StoryObj<typeof NavigationLink>
 
@@ -27,8 +27,8 @@ export const Disabled: Story = { args: { isDisabled: true } }
 
 export const Collapsed: Story = {
   render: args => (
-    <PanelContext.Provider value={{ isCollapsed: true }}>
+    <CollapsePanelContext.Provider value={{ isCollapsed: true }}>
       <NavigationLink {...args} />
-    </PanelContext.Provider>
+    </CollapsePanelContext.Provider>
   ),
 }
