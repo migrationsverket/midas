@@ -7,7 +7,7 @@ import { House, List, Menu } from 'lucide-react'
 import { Button } from '@midas-ds/components'
 import { useId, useState } from 'react'
 import * as panelStories from '../panel/Panel.stories'
-import { Navigation } from '../navigation'
+import { NavigationLink } from '../navigation'
 import { Main } from '../main'
 
 const { Collapse: CollapsePanel } = composeStories(panelStories)
@@ -70,21 +70,21 @@ export const Primary: Story = {
         </LayoutContent>
         <Navbar>
           <ul>
-            <Navigation.Link
+            <NavigationLink
               href='/'
               isActive
               variant='navbar'
               title='Hem'
             >
               <House />
-            </Navigation.Link>
-            <Navigation.Link
+            </NavigationLink>
+            <NavigationLink
               href='/categories'
               variant='navbar'
               title='Kategorier'
             >
               <List />
-            </Navigation.Link>
+            </NavigationLink>
           </ul>
         </Navbar>
       </Layout>
