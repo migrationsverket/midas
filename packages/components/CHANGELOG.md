@@ -1,3 +1,18 @@
+## 17.5.0 (2026-02-25)
+
+### 🚀 Features
+
+- **components, info-banner:** change HTML element to aside ([e2df5f3877](https://github.com/migrationsverket/midas/commit/e2df5f3877))
+- **components, info-banner:** add styling for unordered lists ([f048a5e9cb](https://github.com/migrationsverket/midas/commit/f048a5e9cb))
+
+### 🏭 Refactoring
+
+- **components, info-banner:** use react-stately controlled state hook ([d813124151](https://github.com/migrationsverket/midas/commit/d813124151))
+
+### 🧪 Tests updated
+
+- **components, info-banner:** add tests ([ddee571e0c](https://github.com/migrationsverket/midas/commit/ddee571e0c))
+
 ## 17.4.0 (2026-02-25)
 
 ### 🚀 Features
