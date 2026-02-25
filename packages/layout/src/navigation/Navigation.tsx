@@ -8,15 +8,29 @@ import { CollectionProps } from '@react-aria/collections'
 import { clsx } from '@midas-ds/components'
 
 export type NavigationProps<T extends object> = CollectionProps<T> &
-  Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className'>
+  Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'>
 
 export const Navigation = <T extends object>({
   className,
+  items,
+  children,
+  dependencies,
+  idScope,
+  addIdAndValue,
   ...rest
 }: NavigationProps<T>) => (
-  <nav className={clsx(className, styles.navigation)}>
-    <ul>
-      <Collection {...rest} />
+  <nav
+    className={clsx(className, styles.navigation)}
+    {...rest}
+  >
+    <ul className={styles.rootList}>
+      <Collection
+        items={items}
+        children={children}
+        dependencies={dependencies}
+        idScope={idScope}
+        addIdAndValue={addIdAndValue}
+      />
     </ul>
   </nav>
 )

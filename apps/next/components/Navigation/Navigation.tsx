@@ -5,6 +5,7 @@ import {
   Navigation as MidasNavigation,
   NavigationHeader,
   NavigationItem,
+  NavigationSection,
   NavigationSubMenu,
 } from '@midas-ds/layout'
 import {
@@ -18,14 +19,12 @@ import {
   Mail,
 } from 'lucide-react'
 import { NavLink } from '../NavLink'
-import { Collection, Key } from 'react-aria-components'
-
-type SectionOrItem = Section | Item
+import { Key } from 'react-aria-components'
 
 type Section = {
   id: Key
   title?: string
-  children: SectionOrItem[]
+  children: Item[]
 }
 
 type Item = {
@@ -33,10 +32,10 @@ type Item = {
   title: string
   href: string
   icon?: ReactNode
-  children?: SectionOrItem[]
+  children?: Item[]
 }
 
-const navItems: SectionOrItem[] = [
+const sections: Section[] = [
   {
     id: 0,
     children: [
@@ -105,31 +104,64 @@ const navItems: SectionOrItem[] = [
   },
 ]
 
-const isLink = (sectionOrItem: SectionOrItem): sectionOrItem is Item =>
-  'href' in sectionOrItem && 'title' in sectionOrItem
+export const SidebarNavigation = () => (
+  <MidasNavigation items={sections}>
+    {section => (
+      <NavigationSection
+        title={section.title}
+        items={section.children}
+      >
+        {function renderItem(item) {
+          return (
+            <NavigationItem>
+              <NavLink
+                href={item.href}
+                title={item.title}
+              >
+                {item.icon}
+              </NavLink>
+              <NavigationSubMenu items={item.children}>
+                {renderItem}
+              </NavigationSubMenu>
+            </NavigationItem>
+          )
+        }}
+      </NavigationSection>
+    )}
+  </MidasNavigation>
+)
 
-export const Navigation = () => (
-  <MidasNavigation items={navItems}>
-    {function renderItem(item) {
-      return (
-        <NavigationItem>
-          {isLink(item) ? (
-            <NavLink
-              href={item.href}
-              title={item.title}
-            >
-              {item.icon}
-            </NavLink>
-          ) : (
-            <NavigationHeader>{item.title}</NavigationHeader>
-          )}
-          {item.children?.length && (
-            <NavigationSubMenu>
-              <Collection items={item.children}>{renderItem}</Collection>
-            </NavigationSubMenu>
-          )}
-        </NavigationItem>
-      )
-    }}
+export const BottomNavigation = () => (
+  <MidasNavigation>
+    <NavigationItem>
+      <NavLink
+        href='/'
+        title='Home'
+        // TODO: could the variant be context aware?
+        variant='navbar'
+      >
+        <House />
+      </NavLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavLink
+        href='/applications'
+        title='Applications'
+        // TODO: could the variant be context aware?
+        variant='navbar'
+      >
+        <FileText />
+      </NavLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavLink
+        href='/profile'
+        title='Profile'
+        // TODO: could the variant be context aware?
+        variant='navbar'
+      >
+        <User />
+      </NavLink>
+    </NavigationItem>
   </MidasNavigation>
 )

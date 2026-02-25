@@ -1,11 +1,6 @@
 .navigationSubMenu {
   padding: 0;
-  margin: 0;
-  margin-bottom: 1rem;
-
-  & .navigationSubMenu {
-    margin-left: 1rem;
-  }
+  margin: 0 0 1rem 1rem;
 
   &.collapsed {
     margin-left: 0;

@@ -2,13 +2,12 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navbar.module.css'
 
 export type NavbarProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLElement>,
-  HTMLElement
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
 >
 
 export const Navbar = ({ className, ...rest }: NavbarProps) => (
-  <nav
-    aria-label='bottom navbar'
+  <div
     className={`${className ?? ''} ${styles.navbar}`}
     {...rest}
   />

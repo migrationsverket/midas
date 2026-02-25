@@ -1,12 +1,17 @@
 import type { Metadata } from 'next'
-import '@midas-ds/components/default.css'
-import './global.css'
 import Link from 'next/link'
 import { Logo } from '@midas-ds/components'
-import { Layout, Header, Panel, Navbar, Main, MobileMenu } from '@midas-ds/layout'
-import { Navigation } from '../components/Navigation'
-import { NavLink } from '../components/NavLink'
-import { House, List } from 'lucide-react'
+import {
+  Layout,
+  Header,
+  Panel,
+  Navbar,
+  Main,
+  MobileMenu,
+} from '@midas-ds/layout'
+import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
+import '@midas-ds/components/default.css'
+import './global.css'
 
 export const metadata: Metadata = {
   title: 'midas components E2E',
@@ -20,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <Layout>
           <Header data-debug='Header'>
             <MobileMenu>
-              <Navigation />
+              <SidebarNavigation />
             </MobileMenu>
             <Link href='/'>
               <Logo />
@@ -32,27 +37,12 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               title='Next App'
               variant='collapse'
             >
-              <Navigation />
+              <SidebarNavigation />
             </Panel>
             <Main data-debug='Main'>{children}</Main>
           </Layout.Content>
           <Navbar data-debug='Navbar'>
-            <ul>
-              <NavLink
-                href='/'
-                variant='navbar'
-                title='Home'
-              >
-                <House />
-              </NavLink>
-              <NavLink
-                href='/applications'
-                variant='navbar'
-                title='Applications'
-              >
-                <List />
-              </NavLink>
-            </ul>
+            <BottomNavigation />
           </Navbar>
         </Layout>
       </body>
