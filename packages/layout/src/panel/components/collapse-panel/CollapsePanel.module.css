@@ -1,4 +1,6 @@
 .collapsePanel {
+  width: 15rem;
+
   &.collapsed {
     width: calc(32px + 48px);
   }
