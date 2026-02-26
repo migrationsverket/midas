@@ -1,5 +1,6 @@
 .dismissPanel {
-  position: absolute;
+  /* important because position:relative is overridden by [data-debug] selector */
+  position: absolute !important;
   top: 0;
   right: 0;
   width: 320px;

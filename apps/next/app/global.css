@@ -10,7 +10,7 @@ body {
   right: 2px;
   font-size: 10px;
   font-family: monospace;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0 0 0 / 60%);
   color: white;
   padding: 1px 4px;
   border-radius: 2px;
@@ -20,5 +20,5 @@ body {
 
 [data-debug] {
   position: relative;
-  outline: 1px dashed rgba(0, 0, 0, 0.2);
+  outline: 1px dashed rgb(0 0 0 / 20%);
 }
