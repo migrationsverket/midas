@@ -8,6 +8,7 @@ import { Button, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Plus } from 'lucide-react'
 import { ButtonContext } from 'react-aria-components'
+import { InactiveExample } from '@site/src/components/examples/button/ButtonExamples'
 
 <ComponentHeader
   name='Button'
@@ -137,6 +138,19 @@ För att visa att systemet laddas kan `isPending` användas, läs mer under [mö
 >
   <Button isPending>Laddar...</Button>
 </div>
+
+### isInactive
+
+För att visa en ej klickbar knapp kan `isInactive` användas. Använd då en tooltip för att förklara vad användaren behöver uppnå för att få knappen att fungera.
+
+```tsx
+<TooltipTrigger shouldCloseOnPress={false}>
+  <Button isInactive>Lägg beställning</Button>
+  <Tooltip>Knappen är inte tillgänglig pga xyz</Tooltip>
+</TooltipTrigger>
+```
+
+<InactiveExample />
 
 ## Grupp av knappar
 

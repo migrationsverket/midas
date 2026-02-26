@@ -7,6 +7,7 @@ import {
   ButtonContext,
   ButtonProps,
   ButtonRenderProps,
+  PressEvent,
   useContextProps,
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
@@ -52,6 +53,11 @@ export interface MidasButtonProps {
         },
       ) => React.ReactNode)
     | string
+  /**
+   * A pseudo-disabled state that enable focus but disables the `onPress` event.
+   * If combined with `isDisabled`, `isDisabled` takes precedence.
+   */
+  isInactive?: boolean
 }
 
 export type MidasButton = MidasButtonProps & ButtonProps
@@ -75,10 +81,19 @@ export const Button = forwardRef<HTMLButtonElement, MidasButton>(
       iconPlacement,
       iconSize,
       isPending,
+      onPress,
       size = 'large',
       variant = 'primary',
       ...rest
     } = mergedProps
+
+    const isInactive = !mergedProps.isDisabled && mergedProps.isInactive
+
+    const handlePress = (event: PressEvent) => {
+      if (!isInactive) {
+        onPress?.(event)
+      }
+    }
 
     return (
       <AriaButton
@@ -94,7 +109,10 @@ export const Button = forwardRef<HTMLButtonElement, MidasButton>(
           iconPlacement === 'right' && styles.iconRight,
           className,
         )}
+        data-inactive={isInactive || undefined}
+        aria-disabled={isInactive}
         ref={mergedRef}
+        onPress={handlePress}
         {...rest}
       >
         <>
