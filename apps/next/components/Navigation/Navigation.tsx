@@ -16,9 +16,11 @@ import {
   User,
   HelpCircle,
   Mail,
+  Bell,
 } from 'lucide-react'
 import { NavLink } from '../NavLink'
 import { Key } from 'react-aria-components'
+import { Badge, BadgeContainer } from '@midas-ds/components'
 
 type Section = {
   id: Key
@@ -27,6 +29,7 @@ type Section = {
 }
 
 type Item = {
+  ariaLabel?: string
   id: Key
   title: string
   href: string
@@ -82,6 +85,18 @@ const sections: Section[] = [
         href: '/profile',
         icon: <User />,
       },
+      {
+        id: 81,
+        ariaLabel: 'Notifications, 12 unread',
+        title: 'Notifications',
+        href: '/notifications',
+        icon: (
+          <BadgeContainer aria-hidden>
+            <Bell />
+            <Badge>12</Badge>
+          </BadgeContainer>
+        ),
+      },
     ],
   },
   {
@@ -110,10 +125,11 @@ export const SidebarNavigation = () => (
         title={section.title}
         items={section.children}
       >
-        {function renderItem({ href, icon, title, children }) {
+        {function renderItem({ ariaLabel, href, icon, title, children }) {
           return (
             <NavigationItem>
               <NavLink
+                aria-label={ariaLabel}
                 href={href}
                 icon={icon}
               >
@@ -154,6 +170,20 @@ export const BottomNavigation = () => (
         icon={<User />}
       >
         Profile
+      </NavLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavLink
+        aria-label='Notifications, 12 unread'
+        href='/notifications'
+        icon={
+          <BadgeContainer aria-hidden>
+            <Bell />
+            <Badge>12</Badge>
+          </BadgeContainer>
+        }
+      >
+        Notifications
       </NavLink>
     </NavigationItem>
   </MidasNavigation>
