@@ -14,3 +14,15 @@
 .empty {
   color: var(--midas-text-secondary);
 }
+
+.skeletons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-xsmall);
+}
+
+.statusCell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-xsmall);
+}

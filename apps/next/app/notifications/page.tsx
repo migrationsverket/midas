@@ -1,6 +1,7 @@
 'use client'
 
-import { Heading, Button } from '@midas-ds/components'
+import { Breadcrumb, Breadcrumbs, Button, Heading } from '@midas-ds/components'
+import Link from 'next/link'
 import { useAppStore, selectUnreadCount } from '../../components/AppProvider/AppContext'
 import panelStyles from '../../components/NotificationsPanel/NotificationsPanel.module.css'
 import styles from './page.module.css'
@@ -13,6 +14,10 @@ export default function Notifications() {
 
   return (
     <div className={styles.page}>
+      <Breadcrumbs>
+        <Breadcrumb><Link href='/'>Home</Link></Breadcrumb>
+        <Breadcrumb>Notifications</Breadcrumb>
+      </Breadcrumbs>
       <div className={styles.header}>
         <Heading level={1}>Notifications</Heading>
         {unreadCount > 0 && (

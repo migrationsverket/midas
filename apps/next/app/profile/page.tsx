@@ -1,16 +1,22 @@
-import { Heading, Text, Card, CardContent, CardTitle } from '@midas-ds/components'
-import { Mail, Phone, MapPin, Building2, Globe } from 'lucide-react'
+import { Breadcrumb, Breadcrumbs, Card, CardContent, CardTitle, Heading, Text } from '@midas-ds/components'
+import { Building2, Globe, Mail, MapPin, Phone } from 'lucide-react'
+import Link from 'next/link'
 import styles from './page.module.css'
 
 export default function Profile() {
   return (
     <div className={styles.page}>
+      <Breadcrumbs>
+        <Breadcrumb><Link href='/'>Home</Link></Breadcrumb>
+        <Breadcrumb>Profile</Breadcrumb>
+      </Breadcrumbs>
+
       <Heading level={1}>Profile</Heading>
 
       <div className={styles.header}>
         <div className={styles.avatar} aria-hidden>AL</div>
         <div className={styles.headerInfo}>
-          <Heading level={2} elementType='p'>Anna Lindgren</Heading>
+          <Heading level={2}>Anna Lindgren</Heading>
           <Text>Case Officer · Immigration Authority</Text>
         </div>
       </div>

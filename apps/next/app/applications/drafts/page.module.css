@@ -14,3 +14,10 @@
 .empty {
   color: var(--midas-text-secondary);
 }
+
+.modalActions {
+  display: flex;
+  gap: var(--midas-space-small);
+  justify-content: flex-end;
+  margin-top: var(--midas-space-medium);
+}

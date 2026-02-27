@@ -20,9 +20,12 @@ export type ApplicationData = {
   reason: string
 }
 
+export type ApplicationStatus = 'pending' | 'approved' | 'rejected'
+
 export type SentApplication = ApplicationData & {
   id: string
   submittedAt: string
+  status: ApplicationStatus
 }
 
 export type Draft = ApplicationData & {
@@ -114,8 +117,47 @@ export const useAppStore = create<AppStore>(set => ({
   currentLanguage: 'sv',
   setLanguage: id => set({ currentLanguage: id }),
 
-  sentApplications: [],
-  submitApplication: data =>
+  sentApplications: [
+    {
+      id: 'seed-1',
+      firstName: 'Ahmed',
+      lastName: 'Hassan',
+      dateOfBirth: '1990-03-15',
+      country: 'Somalia',
+      type: 'residence',
+      duration: 'temporary',
+      reason: 'Seeking protection due to ongoing conflict in home region.',
+      submittedAt: '2026-01-15',
+      status: 'pending',
+    },
+    {
+      id: 'seed-2',
+      firstName: 'Maria',
+      lastName: 'Petrov',
+      dateOfBirth: '1985-07-22',
+      country: 'Ukraine',
+      type: 'work',
+      duration: 'temporary',
+      reason: 'Accepted a job offer at a Swedish technology company.',
+      submittedAt: '2026-01-28',
+      status: 'approved',
+    },
+    {
+      id: 'seed-3',
+      firstName: 'Li',
+      lastName: 'Wei',
+      dateOfBirth: '1998-11-04',
+      country: 'China',
+      type: 'study',
+      duration: 'temporary',
+      reason: 'Enrolled in a Masters programme at KTH Royal Institute of Technology.',
+      submittedAt: '2026-02-03',
+      status: 'rejected',
+    },
+  ],
+  submitApplication: data => {
+    const statuses: ApplicationStatus[] = ['pending', 'approved', 'rejected']
+    const status = statuses[Math.floor(Math.random() * statuses.length)]
     set(state => ({
       sentApplications: [
         ...state.sentApplications,
@@ -123,11 +165,25 @@ export const useAppStore = create<AppStore>(set => ({
           ...data,
           id: String(Date.now()),
           submittedAt: new Date().toLocaleDateString('sv-SE'),
+          status,
         },
       ],
-    })),
+    }))
+  },
 
-  drafts: [],
+  drafts: [
+    {
+      id: 'draft-seed-1',
+      firstName: 'Amara',
+      lastName: 'Diallo',
+      dateOfBirth: '1995-06-20',
+      country: 'Guinea',
+      type: 'residence',
+      duration: '',
+      reason: '',
+      savedAt: '2026-02-10',
+    },
+  ],
   saveDraft: data =>
     set(state => ({
       drafts: [
