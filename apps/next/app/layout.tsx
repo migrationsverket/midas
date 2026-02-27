@@ -26,6 +26,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'>
+      <head>
+        <meta name='color-scheme' content='light dark' />
+      </head>
       <body>
         <AppProvider>
         <GlobalToastRegion />

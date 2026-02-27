@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { Bell, CircleUserRound, Languages } from 'lucide-react'
 import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
 import { HeaderActions } from '@midas-ds/layout'
-import { Badge, BadgeContainer, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import { Badge, BadgeContainer, ColorSchemeSwitch, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { useRouter } from 'next/navigation'
 
 export const AppHeaderActions = () => {
@@ -51,6 +51,7 @@ export const AppHeaderActions = () => {
           </Menu>
         </MenuPopover>
       </MenuTrigger>
+      <ColorSchemeSwitch />
     </HeaderActions>
   )
 }
