@@ -11,6 +11,10 @@ import {
   LayoutContent,
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
+import { AppHeaderActions } from '../components/HeaderActions/HeaderActions'
+import { NotificationsPanel } from '../components/NotificationsPanel/NotificationsPanel'
+import { AppProvider } from '../components/AppProvider/AppContext'
+import { GlobalToastRegion } from '@midas-ds/components'
 import '@midas-ds/components/default.css'
 import './global.css'
 
@@ -23,6 +27,8 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'>
       <body>
+        <AppProvider>
+        <GlobalToastRegion />
         <Layout>
           <Header data-debug='Header'>
             <MobileMenu>
@@ -31,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             <Link href='/'>
               <Logo />
             </Link>
+            <AppHeaderActions />
           </Header>
           <LayoutContent>
             <Panel
@@ -41,11 +48,13 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
               <SidebarNavigation />
             </Panel>
             <Main data-debug='Main'>{children}</Main>
+            <NotificationsPanel />
           </LayoutContent>
           <Navbar data-debug='Navbar'>
             <BottomNavigation />
           </Navbar>
         </Layout>
+        </AppProvider>
       </body>
     </html>
   )
