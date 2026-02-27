@@ -1,7 +1,7 @@
 'use client'
 
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import { NavigationLinkProps } from './components'
+import { NavigationLink, NavigationLinkProps, NavigationSubMenu } from './components'
 import styles from './Navigation.module.css'
 import { Collection } from 'react-aria-components'
 import { CollectionProps } from '@react-aria/collections'
@@ -10,7 +10,7 @@ import { clsx } from '@midas-ds/components'
 export type NavigationProps<T extends object> = CollectionProps<T> &
   Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'>
 
-export const Navigation = <T extends object>({
+const NavigationRoot = <T extends object>({
   className,
   items,
   children,
@@ -34,5 +34,10 @@ export const Navigation = <T extends object>({
     </ul>
   </nav>
 )
+
+export const Navigation = Object.assign(NavigationRoot, {
+  Link: NavigationLink,
+  SubMenu: NavigationSubMenu,
+})
 
 export type { NavigationLinkProps }

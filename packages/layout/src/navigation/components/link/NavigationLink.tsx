@@ -19,11 +19,12 @@ import { MobileMenuContext } from '../../../header'
 export interface NavigationLinkComponentProps<
   C extends ElementType,
 > extends Pick<LinkComponentProps<C>, 'className' | 'as'> {
+  /** The icon to display. */
   children: ReactNode
+  /** The visible label text and tooltip content. */
+  title: string
   isActive?: boolean
   variant?: 'sidebar' | 'navbar'
-  icon: ReactNode
-  textValue?: string
 }
 
 export type NavigationLinkProps<C extends React.ElementType> =
@@ -35,22 +36,13 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
   children,
   className,
   isActive,
+  title,
   'aria-label': ariaLabel,
-  icon,
   ...rest
 }: NavigationLinkProps<C>) => {
   const { variant } = useContext(PanelContext)
   const mobileMenuContext = useContext(MobileMenuContext)
   const { isCollapsed } = useContext(CollapsePanelContext)
-
-  const textValue =
-    typeof children === 'string' ? children : (rest.textValue ?? '')
-
-  if (!textValue && process.env.NODE_ENV !== 'production') {
-    console.warn(
-      'A `textValue` prop is required for <NavigationLink> elements with non-plain text children for accessibility.',
-    )
-  }
 
   const ctx = useContext(OverlayTriggerStateContext)
 
@@ -67,7 +59,7 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
       <Focusable>
         <Component
           aria-current={isActive && 'page'}
-          aria-label={ariaLabel || (isCollapsed ? textValue : undefined)}
+          aria-label={ariaLabel || (isCollapsed ? title : undefined)}
           className={clsx(
             className,
             styles.navigationLink,
@@ -93,11 +85,11 @@ export const NavigationLink = <C extends React.ElementType = typeof Link>({
               })}
           {...rest}
         >
-          {icon}
-          <span className={styles.title}>{children}</span>
+          {children}
+          <span className={styles.title}>{title}</span>
         </Component>
       </Focusable>
-      <Tooltip placement='right'>{children}</Tooltip>
+      <Tooltip placement='right'>{title}</Tooltip>
     </TooltipTrigger>
   )
 }
