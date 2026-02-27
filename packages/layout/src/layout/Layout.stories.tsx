@@ -1,9 +1,9 @@
 import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
 import { Layout, LayoutContent } from '.'
-import { Header } from '../header'
+import { Header, HeaderActions } from '../header'
 import { Panel } from '../panel'
 import { Navbar } from '../navbar'
-import { House, List, Menu } from 'lucide-react'
+import { Bell, House, List, Menu, User } from 'lucide-react'
 import { Button } from '@midas-ds/components'
 import { useId, useState } from 'react'
 import * as panelStories from '../panel/Panel.stories'
@@ -45,6 +45,10 @@ export const Primary: Story = {
             onPress={toggleIsNavigationOpen}
             variant='icon'
           />
+          <HeaderActions>
+            <HeaderActions.Button icon={<Bell />}>Notiser</HeaderActions.Button>
+            <HeaderActions.Button icon={<User />}>Min profil</HeaderActions.Button>
+          </HeaderActions>
         </Header>
         <LayoutContent>
           <CollapsePanel
