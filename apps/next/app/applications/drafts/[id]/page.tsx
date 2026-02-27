@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { use, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {
   Heading,
@@ -15,33 +15,42 @@ import {
   DatePicker,
   toastQueue,
 } from '@midas-ds/components'
-import { useAppStore } from '../../../components/AppProvider/AppContext'
-import styles from './page.module.css'
+import { parseDate } from '@internationalized/date'
+import { useAppStore } from '../../../../components/AppProvider/AppContext'
+import styles from '../../new/page.module.css'
 
-export default function NewApplication() {
+export default function EditDraft({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const router = useRouter()
-  const submitApplication = useAppStore(s => s.submitApplication)
-  const saveDraft = useAppStore(s => s.saveDraft)
 
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [dateOfBirth, setDateOfBirth] = useState('')
-  const [country, setCountry] = useState('')
-  const [applicationType, setApplicationType] = useState<string | null>(null)
-  const [duration, setDuration] = useState('')
-  const [reason, setReason] = useState('')
+  const draft = useAppStore(s => s.drafts.find(d => d.id === id))
+  const submitApplication = useAppStore(s => s.submitApplication)
+  const updateDraft = useAppStore(s => s.updateDraft)
+  const removeDraft = useAppStore(s => s.removeDraft)
+
+  const [firstName, setFirstName] = useState(draft?.firstName ?? '')
+  const [lastName, setLastName] = useState(draft?.lastName ?? '')
+  const [dateOfBirth, setDateOfBirth] = useState(draft?.dateOfBirth ?? '')
+  const [country, setCountry] = useState(draft?.country ?? '')
+  const [applicationType, setApplicationType] = useState<string | null>(draft?.type ?? null)
+  const [duration, setDuration] = useState(draft?.duration ?? '')
+  const [reason, setReason] = useState(draft?.reason ?? '')
+
+  if (!draft) {
+    return (
+      <div className={styles.page}>
+        <Heading level={1}>Draft not found</Heading>
+        <Button variant='secondary' onPress={() => router.push('/applications/drafts')}>Back to drafts</Button>
+      </div>
+    )
+  }
+
+  const formData = () => ({ firstName, lastName, dateOfBirth, country, type: applicationType ?? '', duration, reason })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    submitApplication({
-      firstName,
-      lastName,
-      dateOfBirth,
-      country,
-      type: applicationType ?? '',
-      duration,
-      reason,
-    })
+    submitApplication(formData())
+    removeDraft(id)
     toastQueue.add(
       { type: 'success', message: 'Application submitted successfully' },
       { timeout: 5000 },
@@ -50,9 +59,9 @@ export default function NewApplication() {
   }
 
   const handleSaveAsDraft = () => {
-    saveDraft({ firstName, lastName, dateOfBirth, country, type: applicationType ?? '', duration, reason })
+    updateDraft(id, formData())
     toastQueue.add(
-      { type: 'info', message: 'Application saved as draft' },
+      { type: 'info', message: 'Draft updated' },
       { timeout: 5000 },
     )
     router.push('/applications/drafts')
@@ -60,14 +69,19 @@ export default function NewApplication() {
 
   return (
     <div className={styles.page}>
-      <Heading level={1}>New application</Heading>
+      <Heading level={1}>Edit draft</Heading>
       <form className={styles.form} onSubmit={handleSubmit}>
 
         <fieldset className={styles.fieldset}>
           <legend className={styles.legend}>Personal information</legend>
           <TextField label='First name' isRequired value={firstName} onChange={setFirstName} />
           <TextField label='Last name' isRequired value={lastName} onChange={setLastName} />
-          <DatePicker label='Date of birth' isRequired onChange={val => setDateOfBirth(val?.toString() ?? '')} />
+          <DatePicker
+            label='Date of birth'
+            isRequired
+            defaultValue={draft.dateOfBirth ? parseDate(draft.dateOfBirth) : undefined}
+            onChange={val => setDateOfBirth(val?.toString() ?? '')}
+          />
           <TextField label='Country of citizenship' isRequired value={country} onChange={setCountry} />
         </fieldset>
 
@@ -87,7 +101,7 @@ export default function NewApplication() {
           >
             {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
           </Select>
-          <RadioGroup label='Intended duration' isRequired onChange={setDuration}>
+          <RadioGroup label='Intended duration' isRequired defaultValue={draft.duration || undefined} onChange={setDuration}>
             <Radio value='temporary'>Temporary (up to 2 years)</Radio>
             <Radio value='permanent'>Permanent</Radio>
           </RadioGroup>
@@ -111,7 +125,7 @@ export default function NewApplication() {
         </fieldset>
 
         <div className={styles.actions}>
-          <Button variant='secondary' type='button' onPress={handleSaveAsDraft}>Save as draft</Button>
+          <Button variant='secondary' type='button' onPress={handleSaveAsDraft}>Save draft</Button>
           <Button type='submit'>Submit application</Button>
         </div>
       </form>

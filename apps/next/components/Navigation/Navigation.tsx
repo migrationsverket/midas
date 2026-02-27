@@ -21,6 +21,7 @@ import {
 import { NavLink } from '../NavLink'
 import { Key } from 'react-aria-components'
 import { Badge, BadgeContainer } from '@midas-ds/components'
+import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
 
 type Section = {
   id: Key
@@ -87,15 +88,8 @@ const sections: Section[] = [
       },
       {
         id: 81,
-        ariaLabel: 'Notifications, 12 unread',
         title: 'Notifications',
         href: '/notifications',
-        icon: (
-          <BadgeContainer aria-hidden>
-            <Bell />
-            <Badge>12</Badge>
-          </BadgeContainer>
-        ),
       },
     ],
   },
@@ -118,6 +112,16 @@ const sections: Section[] = [
   },
 ]
 
+const NotificationIcon = () => {
+  const unreadCount = useAppStore(selectUnreadCount)
+  return (
+    <BadgeContainer aria-hidden>
+      <Bell />
+      {unreadCount > 0 && <Badge>{unreadCount}</Badge>}
+    </BadgeContainer>
+  )
+}
+
 export const SidebarNavigation = () => (
   <MidasNavigation items={sections}>
     {section => (
@@ -126,12 +130,17 @@ export const SidebarNavigation = () => (
         items={section.children}
       >
         {function renderItem({ ariaLabel, href, icon, title, children }) {
+          const resolvedIcon = title === 'Notifications' ? <NotificationIcon /> : icon
+          const resolvedAriaLabel = title === 'Notifications'
+            ? undefined  // NotificationIcon handles aria via BadgeContainer
+            : ariaLabel
+
           return (
             <NavigationItem>
               <NavLink
-                aria-label={ariaLabel}
+                aria-label={resolvedAriaLabel}
                 href={href}
-                icon={icon}
+                icon={resolvedIcon}
               >
                 {title}
               </NavLink>
@@ -146,45 +155,34 @@ export const SidebarNavigation = () => (
   </MidasNavigation>
 )
 
-export const BottomNavigation = () => (
-  <MidasNavigation>
-    <NavigationItem>
-      <NavLink
-        href='/'
-        icon={<House />}
-      >
-        Home
-      </NavLink>
-    </NavigationItem>
-    <NavigationItem>
-      <NavLink
-        href='/applications'
-        icon={<FileText />}
-      >
-        Applications
-      </NavLink>
-    </NavigationItem>
-    <NavigationItem>
-      <NavLink
-        href='/profile'
-        icon={<User />}
-      >
-        Profile
-      </NavLink>
-    </NavigationItem>
-    <NavigationItem>
-      <NavLink
-        aria-label='Notifications, 12 unread'
-        href='/notifications'
-        icon={
-          <BadgeContainer aria-hidden>
-            <Bell />
-            <Badge>12</Badge>
-          </BadgeContainer>
-        }
-      >
-        Notifications
-      </NavLink>
-    </NavigationItem>
-  </MidasNavigation>
-)
+export const BottomNavigation = () => {
+  const unreadCount = useAppStore(selectUnreadCount)
+
+  return (
+    <MidasNavigation>
+      <NavigationItem>
+        <NavLink href='/' icon={<House />}>Home</NavLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavLink href='/applications' icon={<FileText />}>Applications</NavLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavLink href='/profile' icon={<User />}>Profile</NavLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavLink
+          aria-label={unreadCount > 0 ? `Notifications, ${unreadCount} unread` : 'Notifications'}
+          href='/notifications'
+          icon={
+            <BadgeContainer aria-hidden>
+              <Bell />
+              {unreadCount > 0 && <Badge>{unreadCount}</Badge>}
+            </BadgeContainer>
+          }
+        >
+          Notifications
+        </NavLink>
+      </NavigationItem>
+    </MidasNavigation>
+  )
+}
