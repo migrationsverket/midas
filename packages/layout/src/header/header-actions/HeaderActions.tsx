@@ -4,8 +4,9 @@ import { forwardRef, type ReactNode } from 'react'
 import { Button, type MidasButton } from '@midas-ds/components'
 import styles from './HeaderActions.module.css'
 
-type HeaderActionsButtonProps = Omit<MidasButton, 'icon'> & {
+type HeaderActionsButtonProps = Omit<MidasButton, 'icon' | 'children'> & {
   icon?: ReactNode
+  children?: ReactNode
 }
 
 const HeaderActionsButton = forwardRef<HTMLButtonElement, HeaderActionsButtonProps>(
