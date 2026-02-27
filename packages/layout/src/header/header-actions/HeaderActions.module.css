@@ -6,7 +6,7 @@
 }
 
 .label {
-  @media (max-width: 640px) {
+  @media (width <= 640px) {
     position: absolute;
     width: 1px;
     height: 1px;
