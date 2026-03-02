@@ -18,6 +18,10 @@ export const Token = ({ token }: { token: DesignToken }) => {
   const isWindowSize = token.path.includes('windowSizes')
   const isDuration = token.$type === 'duration'
   const isTransition = token.$type === 'transition'
+  const isBoxShadow =
+    token.path?.includes('state') &&
+    typeof token.$value === 'string' &&
+    token.$value.includes('0 0 0')
 
   const renderExtraInfo = () => {
     if (isCompositeTypography && typeof token.$value === 'object') {
@@ -168,6 +172,17 @@ export const Token = ({ token }: { token: DesignToken }) => {
       )
     }
 
+    if (isBoxShadow) {
+      return (
+        <div className={styles.statePreviewContainer}>
+          <div
+            className={styles.statePreview}
+            style={{ boxShadow: `var(${getCSSVariableName(token)})` }}
+          />
+        </div>
+      )
+    }
+
     if (isTransition) {
       const displayValue =
         typeof token.$value === 'object'
@@ -207,8 +222,16 @@ export const Token = ({ token }: { token: DesignToken }) => {
   )
 }
 
+const sortEntries = (entries: [string, any][]) =>
+  [...entries].sort(([a], [b]) => {
+    const numA = Number(a)
+    const numB = Number(b)
+    if (!isNaN(numA) && !isNaN(numB)) return numA - numB
+    return a.localeCompare(b)
+  })
+
 const renderTokens = (tokens, level = 0) => {
-  const entries = Object.entries(tokens)
+  const entries = sortEntries(Object.entries(tokens))
 
   const compositeTokens = entries.filter(
     ([, value]) => value.$value && typeof value.$value === 'object',
@@ -259,6 +282,9 @@ const renderTokens = (tokens, level = 0) => {
           >
             {key}
           </div>
+          {value.$description && (
+            <div className={styles.groupDescription}>{value.$description}</div>
+          )}
           <div className={styles.tokenGroup}>
             {renderTokens(value, level + 1)}
           </div>
