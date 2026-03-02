@@ -1,21 +1,47 @@
 {
   "windowSizes": {
+    "$description": "Pixelvärden för skärmstorlekar. Används som referens av breakpoint-tokens. Referera till breakpoints.* i CSS-media-frågor, inte dessa direkt.",
     "$type": "dimension",
-    "sm": { "$value": "480px" },
-    "md": { "$value": "768px" },
-    "lg": { "$value": "1024px" },
-    "xl": { "$value": "1280px" }
+    "sm": {
+      "$value": "480px",
+      "$description": "Liten skärmstorlek. 480px."
+    },
+    "md": {
+      "$value": "768px",
+      "$description": "Mellanstor skärmstorlek. 768px."
+    },
+    "lg": {
+      "$value": "1024px",
+      "$description": "Stor skärmstorlek. 1024px."
+    },
+    "xl": {
+      "$value": "1280px",
+      "$description": "Extra stor skärmstorlek. 1280px."
+    }
   },
   "breakpoints": {
+    "$description": "Färdiga media query-strängar för responsiv design. Används direkt i CSS @media-regler.",
     "$type": "string",
     "category": "breakpoints",
-    "xs": { "$value": "(max-width: calc({windowSizes.sm} - 1px))" },
-    "sm": { "$value": "(min-width: {windowSizes.sm})" },
-    "md": { "$value": "(min-width: {windowSizes.md})" },
-    "lg": { "$value": "(min-width: {windowSizes.lg})" },
+    "xs": {
+      "$value": "(max-width: calc({windowSizes.sm} - 1px))",
+      "$description": "Extra liten skärm. Upp till 479px (max-width)."
+    },
+    "sm": {
+      "$value": "(min-width: {windowSizes.sm})",
+      "$description": "Liten skärm och uppåt. Från 480px (min-width)."
+    },
+    "md": {
+      "$value": "(min-width: {windowSizes.md})",
+      "$description": "Mellanstor skärm och uppåt. Från 768px (min-width)."
+    },
+    "lg": {
+      "$value": "(min-width: {windowSizes.lg})",
+      "$description": "Stor skärm och uppåt. Från 1024px (min-width)."
+    },
     "xl": {
       "$value": "(min-width: {windowSizes.xl})",
-      "$description": "This is the largest breakpoint"
+      "$description": "Extra stor skärm och uppåt. Från 1280px (min-width)."
     }
   }
 }

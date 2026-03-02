@@ -1,5 +1,6 @@
 {
   "base": {
+    "$description": "Intern dimensionsskala i rem. Används som referens av space- och size-tokens. Använd inte --midas-base-* direkt i komponent-CSS – använd space.* eller size.* istället.",
     "$type": "dimension",
     "00": {
       "$type": "dimension",
