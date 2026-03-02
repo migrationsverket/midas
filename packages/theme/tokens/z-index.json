@@ -1,11 +1,30 @@
 {
   "zIndex": {
+    "$description": "Z-index-skala för staplingskontroll av UI-lager. Använd alltid semantiska tokens – hårdkoda aldrig z-index-värden i komponenter.",
     "$type": "number",
-    "base": { "$value": 1 },
-    "above": { "$value": 10 },
-    "sidebar": { "$value": 500 },
-    "modal": { "$value": 1000 },
-    "toast": { "$value": 1100 },
-    "skipToContent": { "$value": 1200 }
+    "base": {
+      "$value": 1,
+      "$description": "Basnivå för normala element. z-index: 1."
+    },
+    "above": {
+      "$value": 10,
+      "$description": "Placerar element ovanför normala element, t.ex. tooltips i flödet. z-index: 10."
+    },
+    "sidebar": {
+      "$value": 500,
+      "$description": "Z-index för sidopaneler och navigationsdrawers. z-index: 500."
+    },
+    "modal": {
+      "$value": 1000,
+      "$description": "Z-index för modaler och dialoger. z-index: 1000."
+    },
+    "toast": {
+      "$value": 1100,
+      "$description": "Z-index för toast-notifikationer, ovanför modaler. z-index: 1100."
+    },
+    "skipToContent": {
+      "$value": 1200,
+      "$description": "Z-index för 'hoppa till innehåll'-länken för tillgänglighet, alltid överst. z-index: 1200."
+    }
   }
 }

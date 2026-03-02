@@ -1,7 +1,9 @@
 {
   "color": {
+    "$description": "Primitiva färgtokens – råa färgvärden i palett form. Referera aldrig till dessa direkt från komponenter; använd semantiska tokens istället.",
     "$type": "color",
     "black": {
+      "$description": "Svart palett med opacitetsvarianter.",
       "base": {
         "$value": "#000",
         "$description": "Black"
@@ -16,6 +18,7 @@
       }
     },
     "white": {
+      "$description": "Vit palett med opacitetsvarianter.",
       "base": {
         "$value": "#fff",
         "$description": "White"
@@ -30,6 +33,7 @@
       }
     },
     "gray": {
+      "$description": "Neutral grå skala. 10 (ljusast) – 200 (mörkast). Används för bakgrunder, lager, kanter och text.",
       "10": {
         "$value": "#f2f2f2"
       },
@@ -92,6 +96,7 @@
       }
     },
     "blue": {
+      "$description": "Primärblå palett. 10 (ljusast) – 150 (mörkast). Används för knappar, fokusringar och interaktiva element.",
       "10": {
         "$value": "#eaf2f6"
       },
@@ -133,6 +138,7 @@
       }
     },
     "purple": {
+      "$description": "Lila palett. Används för besökta länkfärger.",
       "80": {
         "$value": "#b46ab4"
       },
@@ -141,16 +147,19 @@
       }
     },
     "red": {
+      "$description": "Primär varumärkesröd. Används för logotyp och brand-element.",
       "100": {
         "$value": "#b90835"
       }
     },
     "orange": {
+      "$description": "Orange – används för 'viktig'-notifieringar och ikoner.",
       "100": {
         "$value": "oklch(0.66 0.18 45)"
       }
     },
     "signalBlue": {
+      "$description": "Signalblå palett. Används via support.* (info-notifieringar) och tag.* (blå Tag-variant).",
       "10": {
         "$value": "#eaf2f6"
       },
@@ -168,6 +177,7 @@
       }
     },
     "signalGreen": {
+      "$description": "Signalgrön palett. Används via support.* (success-notifieringar), tag.* (grön Tag-variant) och icon.success. OBS: ProgressBar refererar direkt till color.signalGreen.100 – ett känt avvikelse från arkitekturen.",
       "20": {
         "$value": "#d5f2d9"
       },
@@ -188,6 +198,7 @@
       }
     },
     "signalYellow": {
+      "$description": "Signalyellow palett. 10 (ljusast) – 200 (mörkast). Används via support.* (viktig-notifieringar) och tag.* (gul Tag-variant).",
       "10": {
         "$value": "#fff8e2"
       },
@@ -250,6 +261,7 @@
       }
     },
     "signalRed": {
+      "$description": "Signalröd palett. 10 (ljusast) – 200 (mörkast). Används via support.* (varnings-notifieringar), tag.* (röd Tag-variant), icon.warning, text.warning, badge.background och button.background.danger.",
       "10": {
         "$value": "#ffefef"
       },
