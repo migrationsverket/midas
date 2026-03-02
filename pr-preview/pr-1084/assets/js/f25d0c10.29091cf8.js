@@ -1,0 +1,11 @@
+"use strict";
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9136],{
+
+/***/ 75206
+(module) {
+
+module.exports = /*#__PURE__*/JSON.parse('{"metadata":{"permalink":"/pr-preview/pr-1084/release-notes/page/2","page":2,"postsPerPage":10,"totalPages":3,"totalCount":25,"previousPage":"/pr-preview/pr-1084/release-notes","nextPage":"/pr-preview/pr-1084/release-notes/page/3","blogDescription":"Blog","blogTitle":"Blog"}}');
+
+/***/ }
+
+}]);
