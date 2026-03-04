@@ -157,7 +157,7 @@ describe('given a sectioned Select ', async () => {
 
 describe('given a required multiple Select with selectAll', async () => {
   it('should clear invalid state when selectAll is clicked after a failed form submission', async () => {
-    const { getByRole, getByText } = await render(<RequiredMultipleSelectAll />)
+    const { getByRole } = await render(<RequiredMultipleSelectAll />)
 
     // Submit with empty selection to trigger required validation
     await userEvent.click(getByRole('button', { name: 'submit' }))
