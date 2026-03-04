@@ -1,3 +1,13 @@
+## 17.5.5 (2026-03-04)
+
+### 🩹 Fixes
+
+- **components,select:** call commitValidation in SelectAll to clear invalid state after selection ([06be0e034f](https://github.com/migrationsverket/midas/commit/06be0e034f))
+
+### 🔧 Maintenance
+
+- **components,select:** remove unused getByText destructure ([caddd4498d](https://github.com/migrationsverket/midas/commit/caddd4498d))
+
 ## 17.5.4 (2026-03-02)
 
 ### 🧱 Updated Dependencies
