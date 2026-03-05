@@ -1,3 +1,9 @@
+## 17.6.0 (2026-03-05)
+
+### 🚀 Features
+
+- **components,select:** add popoverProps passthrough ([1be0c77656](https://github.com/migrationsverket/midas/commit/1be0c77656))
+
 ## 17.5.5 (2026-03-04)
 
 ### 🩹 Fixes
