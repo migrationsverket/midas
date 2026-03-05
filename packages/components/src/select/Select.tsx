@@ -51,6 +51,10 @@ export interface MidasSelectProps<
    *  @default 'large'
    */
   size?: Size
+  /**
+   * Props passed to the internal Popover element.
+   */
+  popoverProps?: Omit<React.ComponentProps<typeof Popover>, 'children'>
 }
 
 export function Select<T extends object, M extends SelectionMode = 'single'>({
@@ -61,6 +65,7 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
   items,
   label,
   popover,
+  popoverProps,
   size = 'large',
   ...props
 }: MidasSelectProps<T, M>) {
@@ -94,6 +99,7 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
           className={styles.popover}
           offset={0}
           hideArrow
+          {...popoverProps}
         >
           {props.isSelectableAll && <SelectAll />}
           <ListBox
