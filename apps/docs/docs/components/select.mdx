@@ -136,6 +136,20 @@ Vid många val kan alternativen struktureras i sektioner.
   <SectionedExample />
 </div>
 
+## Anpassa popover
+
+Det inbyggda popover-fönstret kan konfigureras via `popoverProps`, som skickas vidare till den underliggande `Popover`-komponenten.
+Ett användbart exempel är `isNonModal`, som gör att ett klick utanför popover-fönstret inte konsumeras — användbart när flera select-komponenter finns sida vid sida och man vill kunna växla direkt mellan dem med ett klick:
+
+```tsx
+<Select
+  label='Land'
+  popoverProps={{ isNonModal: true }}
+>
+  ...
+</Select>
+```
+
 ## API
 
 ### Select
