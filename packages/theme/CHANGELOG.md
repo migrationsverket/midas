@@ -1,3 +1,7 @@
+## 3.12.5 (2026-03-06)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.12.4 (2026-03-06)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.
