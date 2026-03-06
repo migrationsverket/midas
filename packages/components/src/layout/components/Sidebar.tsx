@@ -44,10 +44,22 @@ export const Sidebar: React.FC<SidebarProps> = ({
               isCollapsed && styles.listItemCollapsed,
             )}
           >
-            <SidebarLink
-              onClick={onLinkClick}
-              {...link}
-            />
+            {link.target === '_blank' || !clientSideRouter ? (
+              <SidebarLink
+                onClick={onLinkClick}
+                {...link}
+              />
+            ) : (
+              <RouterProvider
+                navigate={clientSideRouter}
+                useHref={clientSideHref}
+              >
+                <SidebarLink
+                  onClick={onLinkClick}
+                  {...link}
+                />
+              </RouterProvider>
+            )}
           </li>
         ))}
       </ul>
@@ -105,16 +117,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {group.title && !isCollapsed && (
                 <p className={styles.listGroupTitle}>{group.title}</p>
               )}
-              {clientSideRouter ? (
-                <RouterProvider
-                  navigate={clientSideRouter}
-                  useHref={clientSideHref}
-                >
-                  <LinkTree group={group} />
-                </RouterProvider>
-              ) : (
-                <LinkTree group={group} />
-              )}
+              <LinkTree group={group} />
             </li>
           ))}
         </ul>

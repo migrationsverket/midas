@@ -13,6 +13,7 @@ import { LayoutProvider } from './context/LayoutContext'
 import { Backdrop } from './components/Backdrop'
 import { Navbar } from './components/Navbar'
 import clsx from '../utils/clsx'
+import { HTMLAttributeAnchorTarget } from 'react'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -33,6 +34,7 @@ export interface SidebarLinkProps {
   isCollapsed?: boolean
   setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>
   onClick?: (e: SidebarLinkClickData) => void
+  target?: HTMLAttributeAnchorTarget
 }
 
 export interface SidebarUser {
