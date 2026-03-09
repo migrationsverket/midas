@@ -1,3 +1,7 @@
+## 17.6.3 (2026-03-09)
+
+This was a version bump only for components to align it with other projects, there were no code changes.
+
 ## 17.6.2 (2026-03-06)
 
 ### 🧱 Updated Dependencies

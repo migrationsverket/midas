@@ -1,3 +1,7 @@
+## 0.2.37 (2026-03-09)
+
+This was a version bump only for datepicker-styles to align it with other projects, there were no code changes.
+
 ## 0.2.36 (2026-03-06)
 
 ### 🧱 Updated Dependencies
