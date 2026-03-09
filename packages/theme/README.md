@@ -1,7 +1,7 @@
 # @midas-ds/theme
 
 This package contains the design tokens for the Midas Design System, managed by [Style Dictionary](https://style-dictionary.com/).
-It automatically generates theme assets, such as CSS variables and JavaScript modules, from a common set of token definitions.
+It automatically generates theme assets, such as CSS variables and JavaScript modules, from a common set of token definitions!
 
 ## Installation
 
