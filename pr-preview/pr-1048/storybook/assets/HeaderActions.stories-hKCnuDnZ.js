@@ -1,0 +1,13 @@
+import{j as r}from"./iframe-izS6BN6y.js";import{H as o,a as c}from"./Header-CICObwDr.js";import{B as n}from"./bell-Cf4BImxI.js";import{c as l}from"./createLucideIcon-lSEbjSVl.js";import{U as i}from"./user-Cth1qbtf.js";import"./preload-helper-PPVm8Dsz.js";import"./Button-BJYTdbg5.js";import"./Button.module-D_C6WeTN.js";import"./Button-DjOmw-p7.js";import"./utils-Bas1Ofad.js";import"./clsx-B-dksMZM.js";import"./Hidden-DxoOFtw1.js";import"./useFocusRing-B6uM1GPB.js";import"./index-Clqx6h6T.js";import"./index-2wZtggJW.js";import"./useLabels-CepOd2Z4.js";import"./useButton-nZ9At_c5.js";import"./clsx-Ciqy0D92.js";import"./useLocalizedStringFormatter-CiJzgYQ0.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./VisuallyHidden-C7bQWUTs.js";import"./useIsMobileDevice-B2yJjYRQ.js";import"./LogoContext-BCb4WR8v.js";const d=[["path",{d:"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915",key:"1i5ecw"}],["circle",{cx:"12",cy:"12",r:"3",key:"1v7zrd"}]],s=l("settings",d),P={component:o,title:"Components/Layout/Header/HeaderActions",tags:["autodocs"],parameters:{layout:"fullscreen"},decorators:[a=>r.jsx(c,{children:r.jsx(a,{})})]},t={render:()=>r.jsxs(o,{children:[r.jsx(o.Button,{icon:r.jsx(n,{}),children:"Notiser"}),r.jsx(o.Button,{icon:r.jsx(s,{}),children:"Inställningar"}),r.jsx(o.Button,{icon:r.jsx(i,{}),children:"Min profil"})]})},e={render:()=>r.jsxs(o,{children:[r.jsx(o.Button,{"aria-label":"Notiser",icon:r.jsx(n,{})}),r.jsx(o.Button,{"aria-label":"Inställningar",icon:r.jsx(s,{})}),r.jsx(o.Button,{"aria-label":"Min profil",icon:r.jsx(i,{})})]})};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  render: () => <HeaderActions>
+      <HeaderActions.Button icon={<Bell />}>Notiser</HeaderActions.Button>
+      <HeaderActions.Button icon={<Settings />}>Inställningar</HeaderActions.Button>
+      <HeaderActions.Button icon={<User />}>Min profil</HeaderActions.Button>
+    </HeaderActions>
+}`,...t.parameters?.docs?.source}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+  render: () => <HeaderActions>
+      <HeaderActions.Button aria-label='Notiser' icon={<Bell />} />
+      <HeaderActions.Button aria-label='Inställningar' icon={<Settings />} />
+      <HeaderActions.Button aria-label='Min profil' icon={<User />} />
+    </HeaderActions>
+}`,...e.parameters?.docs?.source}}};const v=["Primary","IconOnly"];export{e as IconOnly,t as Primary,v as __namedExportsOrder,P as default};
