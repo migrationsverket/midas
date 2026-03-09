@@ -1,3 +1,9 @@
+## 1.1.29 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.6
+
 ## 1.1.28 (2026-03-09)
 
 This was a version bump only for select-styles to align it with other projects, there were no code changes.
