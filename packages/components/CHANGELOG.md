@@ -1,3 +1,13 @@
+## 17.6.4 (2026-03-09)
+
+### 🩹 Fixes
+
+- **components, layout:** add "target" to SidebarLinkProps ([dead9e36ca](https://github.com/migrationsverket/midas/commit/dead9e36ca))
+
+### 🧪 Tests updated
+
+- **components, layout:** add tests for target="_blank" ([8e97dc9c93](https://github.com/migrationsverket/midas/commit/8e97dc9c93))
+
 ## 17.6.3 (2026-03-09)
 
 This was a version bump only for components to align it with other projects, there were no code changes.
