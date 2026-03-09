@@ -1,3 +1,106 @@
+## 17.6.6 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.7
+
+## 17.6.5 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.6
+
+## 17.6.4 (2026-03-09)
+
+### 🩹 Fixes
+
+- **components, layout:** add "target" to SidebarLinkProps ([dead9e36ca](https://github.com/migrationsverket/midas/commit/dead9e36ca))
+
+### 🧪 Tests updated
+
+- **components, layout:** add tests for target="_blank" ([8e97dc9c93](https://github.com/migrationsverket/midas/commit/8e97dc9c93))
+
+## 17.6.3 (2026-03-09)
+
+This was a version bump only for components to align it with other projects, there were no code changes.
+
+## 17.6.2 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.5
+
+## 17.6.1 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.4
+
+## 17.6.0 (2026-03-05)
+
+### 🚀 Features
+
+- **components,select:** add popoverProps passthrough ([1be0c77656](https://github.com/migrationsverket/midas/commit/1be0c77656))
+
+## 17.5.5 (2026-03-04)
+
+### 🩹 Fixes
+
+- **components,select:** call commitValidation in SelectAll to clear invalid state after selection ([06be0e034f](https://github.com/migrationsverket/midas/commit/06be0e034f))
+
+### 🔧 Maintenance
+
+- **components,select:** remove unused getByText destructure ([caddd4498d](https://github.com/migrationsverket/midas/commit/caddd4498d))
+
+## 17.5.4 (2026-03-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.3
+
+## 17.5.3 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.2
+
+## 17.5.2 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.1
+
+## 17.5.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- **components, breadcrumbs:** adjust styling according to spec ([0c08821279](https://github.com/migrationsverket/midas/commit/0c08821279))
+
+## 17.5.0 (2026-02-25)
+
+### 🚀 Features
+
+- **components, info-banner:** change HTML element to aside ([e2df5f3877](https://github.com/migrationsverket/midas/commit/e2df5f3877))
+- **components, info-banner:** add styling for unordered lists ([f048a5e9cb](https://github.com/migrationsverket/midas/commit/f048a5e9cb))
+
+### 🏭 Refactoring
+
+- **components, info-banner:** use react-stately controlled state hook ([d813124151](https://github.com/migrationsverket/midas/commit/d813124151))
+
+### 🧪 Tests updated
+
+- **components, info-banner:** add tests ([ddee571e0c](https://github.com/migrationsverket/midas/commit/ddee571e0c))
+
+## 17.4.0 (2026-02-25)
+
+### 🚀 Features
+
+- **components,tabs:** add size prop with large/medium variants ([9a6c169311](https://github.com/migrationsverket/midas/commit/9a6c169311))
+
+### 🧪 Tests updated
+
+- **components, menu:** remove flaky keyboard interactions ([e7fc6cfb6d](https://github.com/migrationsverket/midas/commit/e7fc6cfb6d))
+
 ## 17.3.1 (2026-02-25)
 
 ### 🩹 Fixes

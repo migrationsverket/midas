@@ -1,169 +1,204 @@
 {
   "typography": {
+    "$description": "Typografitokens för textstilar, teckenstorlekar, radhöjder och vikter. Använd komposita tokens (body, body-small osv.) direkt i komponenter där möjligt.",
     "font": {
       "family": {
         "$type": "fontFamily",
-        "$value": "Inter, sans-serif"
+        "$value": "Inter, sans-serif",
+        "$description": "Primär typsnittsfamilj för hela design systemet."
       },
       "size": {
+        "$description": "Teckenstorleksskala. Använd komposita typografitokens (body, body-small osv.) i första hand.",
         "$type": "dimension",
         "10": {
           "$value": {
             "value": 0.75,
             "unit": "rem"
-          }
+          },
+          "$description": "0.75rem / 12px."
         },
         "20": {
           "$value": {
             "value": 0.875,
             "unit": "rem"
-          }
+          },
+          "$description": "0.875rem / 14px."
         },
         "30": {
           "$value": {
             "value": 1,
             "unit": "rem"
-          }
+          },
+          "$description": "1rem / 16px."
         },
         "40": {
           "$value": {
             "value": 1.125,
             "unit": "rem"
-          }
+          },
+          "$description": "1.125rem / 18px."
         },
         "50": {
           "$value": {
             "value": 1.25,
             "unit": "rem"
-          }
+          },
+          "$description": "1.25rem / 20px."
         },
         "60": {
           "$value": {
             "value": 1.5,
             "unit": "rem"
-          }
+          },
+          "$description": "1.5rem / 24px."
         },
         "70": {
           "$value": {
             "value": 1.625,
             "unit": "rem"
-          }
+          },
+          "$description": "1.625rem / 26px."
         },
         "80": {
           "$value": {
             "value": 2,
             "unit": "rem"
-          }
+          },
+          "$description": "2rem / 32px."
         },
         "90": {
           "$value": {
             "value": 2.25,
             "unit": "rem"
-          }
+          },
+          "$description": "2.25rem / 36px."
         },
         "100": {
           "$value": {
             "value": 2.625,
             "unit": "rem"
-          }
+          },
+          "$description": "2.625rem / 42px."
         }
       }
     },
     "lineHeight": {
+      "$description": "Radh öjdsskala. Används tillsammans med teckenstorlek. Använd komposita typografitokens i första hand.",
       "$type": "dimension",
       "10": {
         "$value": {
           "value": 1,
           "unit": "rem"
-        }
+        },
+        "$description": "1rem / 16px."
       },
       "20": {
         "$value": {
           "value": 1.125,
           "unit": "rem"
-        }
+        },
+        "$description": "1.125rem / 18px."
       },
       "30": {
         "$value": {
           "value": 1.25,
           "unit": "rem"
-        }
+        },
+        "$description": "1.25rem / 20px."
       },
       "40": {
         "$value": {
           "value": 1.375,
           "unit": "rem"
-        }
+        },
+        "$description": "1.375rem / 22px."
       },
       "50": {
         "$value": {
           "value": 1.5,
           "unit": "rem"
-        }
+        },
+        "$description": "1.5rem / 24px."
       },
       "60": {
         "$value": {
           "value": 1.75,
           "unit": "rem"
-        }
+        },
+        "$description": "1.75rem / 28px."
       },
       "70": {
         "$value": {
           "value": 2,
           "unit": "rem"
-        }
+        },
+        "$description": "2rem / 32px."
       },
       "80": {
         "$value": {
           "value": 2.25,
           "unit": "rem"
-        }
+        },
+        "$description": "2.25rem / 36px."
       },
       "90": {
         "$value": {
           "value": 2.5,
           "unit": "rem"
-        }
+        },
+        "$description": "2.5rem / 40px."
       },
       "100": {
         "$value": {
           "value": 3,
           "unit": "rem"
-        }
+        },
+        "$description": "3rem / 48px."
       }
     },
     "weight": {
+      "$description": "Teckensnittsviktsskala. Använd semantiska namn (regular, bold osv.) istället för numeriska värden direkt.",
       "$type": "fontWeight",
       "thin": {
-        "$value": 100
+        "$value": 100,
+        "$description": "100 – Tunnast möjliga vikt."
       },
       "extraLight": {
-        "$value": 200
+        "$value": 200,
+        "$description": "200 – Extra tunn."
       },
       "light": {
-        "$value": 300
+        "$value": 300,
+        "$description": "300 – Tunn."
       },
       "regular": {
-        "$value": 400
+        "$value": 400,
+        "$description": "400 – Standardvikt för brödtext."
       },
       "medium": {
-        "$value": 500
+        "$value": 500,
+        "$description": "500 – Mellantung, för betoning utan fet stil."
       },
       "semiBold": {
-        "$value": 600
+        "$value": 600,
+        "$description": "600 – Halvfet, för underrubriker och etiketter."
       },
       "bold": {
-        "$value": 700
+        "$value": 700,
+        "$description": "700 – Fet, för rubriker och framhävning."
       },
       "extraBold": {
-        "$value": 800
+        "$value": 800,
+        "$description": "800 – Extra fet."
       },
       "black": {
-        "$value": 900
+        "$value": 900,
+        "$description": "900 – Tyngsta möjliga vikt."
       }
     },
     "body": {
       "$type": "typography",
+      "$description": "Standardtypografi för brödtext. Används i löptext, listor och stycken.",
       "$value": {
         "fontFamily": "{typography.font.family}",
         "fontSize": "{typography.font.size.30}",
@@ -173,6 +208,7 @@
     },
     "body-small": {
       "$type": "typography",
+      "$description": "Liten brödtextstil. Används för kompakt text i t.ex. tabeller och listor.",
       "$value": {
         "fontFamily": "{typography.font.family}",
         "fontSize": "{typography.font.size.20}",
@@ -182,6 +218,7 @@
     },
     "description": {
       "$type": "typography",
+      "$description": "Beskrivningstext, t.ex. för hjälptexter och ledtexter i formulär.",
       "$value": {
         "fontFamily": "{typography.font.family}",
         "fontSize": "{typography.font.size.20}",
@@ -191,6 +228,7 @@
     },
     "description-small": {
       "$type": "typography",
+      "$description": "Liten beskrivningstext, t.ex. för felmeddelanden och teckenräknare i formulär.",
       "$value": {
         "fontFamily": "{typography.font.family}",
         "fontSize": "{typography.font.size.10}",

@@ -1,3 +1,94 @@
+## 2.0.29 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.6
+- Updated theme to 3.12.7
+
+## 2.0.28 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.5
+- Updated theme to 3.12.6
+
+## 2.0.27 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.4
+
+## 2.0.26 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.3
+
+## 2.0.25 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.2
+- Updated theme to 3.12.5
+
+## 2.0.24 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.1
+- Updated theme to 3.12.4
+
+## 2.0.23 (2026-03-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.0
+
+## 2.0.22 (2026-03-04)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.5
+
+## 2.0.21 (2026-03-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.4
+- Updated theme to 3.12.3
+
+## 2.0.20 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.3
+- Updated theme to 3.12.2
+
+## 2.0.19 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.2
+- Updated theme to 3.12.1
+
+## 2.0.18 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.1
+
+## 2.0.17 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.0
+
+## 2.0.16 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.4.0
+
 ## 2.0.15 (2026-02-25)
 
 This was a version bump only for table-styles to align it with other projects, there were no code changes.

@@ -18,8 +18,20 @@ export const tailwindTheme: Format = {
     const { outputReferences } = options
     const header = await fileHeader({ file })
 
-    // Generate @theme block with all tokens using their original names
+    // Generate @theme block with all tokens using their original names.
+    // Excluded:
+    // - Deprecated tokens: still available as CSS vars in variables.css but shouldn't
+    //   get Tailwind utilities since they're on their way out.
+    // - Numeric spacing tokens (e.g. spacing-10, spacing-30): in Tailwind v4,
+    //   --spacing-{n} in @theme overrides the generated spacing scale, so w-30 would
+    //   resolve to our value (~0.5rem) instead of calc(0.25rem * 30) = 7.5rem.
+    //   Named spacing tokens (spacing-small, spacing-xsmall, etc.) are safe to keep.
+    const isDeprecated = (token: (typeof dictionary.allTokens)[number]) =>
+      token.$description?.startsWith('@deprecated')
+    const isTailwindSpacingConflict = (name: string) => /^spacing-\d+$/.test(name)
+
     const themeVariables = dictionary.allTokens
+      .filter((token) => !isDeprecated(token) && !isTailwindSpacingConflict(token.name))
       .map((token) => {
         const name = token.name
         const value = outputReferences && token.original.$value

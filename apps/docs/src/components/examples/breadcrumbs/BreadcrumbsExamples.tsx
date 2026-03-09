@@ -8,6 +8,7 @@ import {
   MenuPopover,
   MenuTrigger,
 } from '@midas-ds/components'
+import { Ellipsis } from 'lucide-react'
 import type { Key } from 'react-aria-components'
 
 export const CollapsedBreadcrumbsExample = () => {
@@ -23,10 +24,10 @@ export const CollapsedBreadcrumbsExample = () => {
           <MenuTrigger>
             <Button
               aria-label='Fler brödsmulor'
-              style={{ minWidth: 'auto', padding: 0, height: 'auto' }}
               variant='icon'
+              size='medium'
             >
-              …
+              <Ellipsis />
             </Button>
             <MenuPopover>
               <Menu onAction={handleAction}>

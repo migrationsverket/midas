@@ -1,3 +1,37 @@
+## 3.12.7 (2026-03-09)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.6 (2026-03-09)
+
+### 🩹 Fixes
+
+- **theme:** bump version to publish tailwind fix ([0a7a7f6066](https://github.com/migrationsverket/midas/commit/0a7a7f6066))
+
+### 🔧 Maintenance
+
+- **theme:** add $description fields to all token files ([73e7db5173](https://github.com/migrationsverket/midas/commit/73e7db5173))
+
+## 3.12.5 (2026-03-06)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.4 (2026-03-06)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.3 (2026-03-02)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.2 (2026-02-26)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.1 (2026-02-26)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.12.0 (2026-02-24)
 
 ### 🚀 Features

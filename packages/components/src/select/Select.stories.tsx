@@ -186,6 +186,28 @@ export const DynamicSections: Story<Section> = {
   },
 }
 
+export const RequiredMultipleSelectAll: Story<Item, 'multiple'> = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    selectionMode: 'multiple',
+    isSelectableAll: true,
+    isRequired: true,
+  },
+  render: args => (
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+      }}
+    >
+      <Select {...args} />
+      <button type='submit'>submit</button>
+    </form>
+  ),
+}
+
 export const RequiredSingleSelect: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
