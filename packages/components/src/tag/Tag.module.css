@@ -81,8 +81,11 @@
 }
 
 .tagText {
+  align-items: center;
+  display: flex;
   line-height: 1.15;
   padding: 7px var(--midas-space-small);
+  gap: var(--midas-space-xsmall);
 }
 
 .dismissable .tagText {
