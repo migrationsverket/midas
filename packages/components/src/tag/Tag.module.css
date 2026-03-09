@@ -1,9 +1,7 @@
 .button {
   color: var(--midas-icon-primary);
-  min-height: unset !important;
   padding: var(--midas-space-xsmall) !important;
   border-radius: 1.5rem;
-  border: unset;
 
   &[data-hovered] {
     background-color: var(--midas-button-icon-hover);
@@ -86,10 +84,11 @@
   align-items: center;
   display: flex;
   gap: var(--midas-space-xsmall);
-  line-height: 1.15;
+  line-height: var(--midas-typography-line-height-20);
   padding: 7px var(--midas-space-small);
 }
 
 .dismissable .tagText {
-  padding: 7px var(--midas-space-10) 7px var(--midas-space-small);
+  padding: var(--midas-space-30) var(--midas-space-10) var(--midas-space-30)
+    var(--midas-space-small);
 }
