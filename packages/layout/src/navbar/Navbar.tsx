@@ -1,15 +1,14 @@
-import { ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navbar.module.css'
 
-export interface Navbar {
-  children?: ReactNode
-}
+export type NavbarProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>
 
-export const Navbar = ({ children }: Navbar) => (
-  <nav
-    className={styles.navbar}
-    aria-label='bottom navbar'
-  >
-    {children}
-  </nav>
+export const Navbar = ({ className, ...rest }: NavbarProps) => (
+  <footer
+    className={`${className ?? ''} ${styles.navbar}`}
+    {...rest}
+  />
 )

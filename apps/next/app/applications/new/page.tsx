@@ -1,0 +1,160 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import {
+  Breadcrumb,
+  Breadcrumbs,
+  Button,
+  Checkbox,
+  ComboBox,
+  DatePicker,
+  DropZone,
+  FileTrigger,
+  Heading,
+  ListBoxItem,
+  Radio,
+  RadioGroup,
+  Select,
+  TextArea,
+  TextField,
+  toastQueue,
+} from '@midas-ds/components'
+import Link from 'next/link'
+import { useAppStore } from '../../../components/AppProvider/AppContext'
+import { COUNTRIES } from '../../../lib/countries'
+import styles from './page.module.css'
+
+export default function NewApplication() {
+  const router = useRouter()
+  const submitApplication = useAppStore(s => s.submitApplication)
+  const saveDraft = useAppStore(s => s.saveDraft)
+
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [dateOfBirth, setDateOfBirth] = useState('')
+  const [country, setCountry] = useState('')
+  const [applicationType, setApplicationType] = useState<string | null>(null)
+  const [duration, setDuration] = useState('')
+  const [reason, setReason] = useState('')
+  const [files, setFiles] = useState<File[]>([])
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    submitApplication({ firstName, lastName, dateOfBirth, country, type: applicationType ?? '', duration, reason })
+    toastQueue.add({ type: 'success', message: 'Application submitted successfully' }, { timeout: 5000 })
+    router.push('/applications/sent')
+  }
+
+  const handleSaveAsDraft = () => {
+    saveDraft({ firstName, lastName, dateOfBirth, country, type: applicationType ?? '', duration, reason })
+    toastQueue.add({ type: 'info', message: 'Application saved as draft' }, { timeout: 5000 })
+    router.push('/applications/drafts')
+  }
+
+  return (
+    <div className={styles.page}>
+      <Breadcrumbs>
+        <Breadcrumb><Link href='/'>Home</Link></Breadcrumb>
+        <Breadcrumb><Link href='/applications'>Applications</Link></Breadcrumb>
+        <Breadcrumb>New application</Breadcrumb>
+      </Breadcrumbs>
+
+      <Heading level={1}>New application</Heading>
+      <form className={styles.form} onSubmit={handleSubmit}>
+
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.legend}>Personal information</legend>
+          <TextField label='First name' isRequired value={firstName} onChange={setFirstName} />
+          <TextField label='Last name' isRequired value={lastName} onChange={setLastName} />
+          <DatePicker label='Date of birth' isRequired onChange={val => setDateOfBirth(val?.toString() ?? '')} />
+          <ComboBox
+            label='Country of citizenship'
+            isRequired
+            onSelectionChange={key => setCountry(key as string)}
+            items={COUNTRIES}
+            popover={{ children: 'If you hold dual citizenship, enter the country whose passport you will use for travel to Sweden.' }}
+          >
+            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+          </ComboBox>
+        </fieldset>
+
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.legend}>Application details</legend>
+          <Select
+            label='Application type'
+            isRequired
+            selectedKey={applicationType}
+            onSelectionChange={key => setApplicationType(key as string)}
+            items={[
+              { id: 'residence', name: 'Residence permit' },
+              { id: 'work', name: 'Work permit' },
+              { id: 'study', name: 'Study permit' },
+              { id: 'family', name: 'Family reunification' },
+            ]}
+          >
+            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+          </Select>
+          <RadioGroup label='Intended duration' isRequired onChange={setDuration}>
+            <Radio value='temporary'>Temporary (up to 2 years)</Radio>
+            <Radio value='permanent'>Permanent</Radio>
+          </RadioGroup>
+          <TextArea
+            label='Reason for application'
+            description='Describe your main reason for applying, including relevant personal circumstances and your connection to Sweden.'
+            isRequired
+            value={reason}
+            onChange={setReason}
+            showCounter
+            maxLength={500}
+            popover={{ children: 'Be specific and honest. A thorough explanation helps case officers process your application more efficiently.' }}
+          />
+        </fieldset>
+
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.legend}>Supporting documents</legend>
+          <DropZone
+            className={styles.dropZone}
+            onDrop={async e => {
+              const fileItems = await Promise.all(
+                e.items.filter(i => i.kind === 'file').map(i => (i as { kind: 'file'; getFile: () => Promise<File> }).getFile())
+              )
+              setFiles(prev => [...prev, ...fileItems])
+            }}
+          >
+            <FileTrigger
+              allowsMultiple
+              acceptedFileTypes={['image/*', 'application/pdf']}
+              onSelect={fileList => {
+                if (fileList) setFiles(prev => [...prev, ...Array.from(fileList)])
+              }}
+            >
+              <Button variant='secondary'>Choose files</Button>
+            </FileTrigger>
+            <p className={styles.dropZoneHint}>or drag and drop PDF or image files here</p>
+            {files.length > 0 && (
+              <ul className={styles.fileList}>
+                {files.map((f, i) => <li key={i}>{f.name}</li>)}
+              </ul>
+            )}
+          </DropZone>
+        </fieldset>
+
+        <fieldset className={styles.fieldset}>
+          <legend className={styles.legend}>Declaration</legend>
+          <Checkbox isRequired>
+            I confirm that the information provided is accurate and complete
+          </Checkbox>
+          <Checkbox isRequired>
+            I have read and accept the terms and conditions
+          </Checkbox>
+        </fieldset>
+
+        <div className={styles.actions}>
+          <Button variant='secondary' type='button' onPress={handleSaveAsDraft}>Save as draft</Button>
+          <Button type='submit'>Submit application</Button>
+        </div>
+      </form>
+    </div>
+  )
+}

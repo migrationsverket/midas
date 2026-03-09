@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+}
+
+/* Debug labels for layout regions */
+[data-debug]::before {
+  content: attr(data-debug);
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 10px;
+  font-family: monospace;
+  background: rgb(0 0 0 / 60%);
+  color: white;
+  padding: 1px 4px;
+  border-radius: 2px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+[data-debug] {
+  position: relative;
+  outline: 1px dashed rgb(0 0 0 / 20%);
+}

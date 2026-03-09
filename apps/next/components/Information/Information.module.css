@@ -1,0 +1,10 @@
+.information {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  svg {
+    stroke: var(--midas-support-border-info);
+  }
+}

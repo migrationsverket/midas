@@ -23,6 +23,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
   const [isOpen, setIsOpen] = React.useState(false)
   const ctx = React.useContext(LabelWrapperContext)
   const strings = useLocalizedStringFormatter(messages)
+  const triggerRef = React.useRef<HTMLButtonElement>(null)
 
   return (
     <DialogTrigger
@@ -30,6 +31,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
       onOpenChange={setIsOpen}
     >
       <Button
+        ref={triggerRef}
         variant='icon'
         size='medium'
         className={styles.labelPopoverTrigger}
@@ -38,7 +40,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
       >
         <Info size={20} />
       </Button>
-      <Popover>{children}</Popover>
+      <Popover triggerRef={triggerRef}>{children}</Popover>
     </DialogTrigger>
   )
 }

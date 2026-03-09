@@ -1,0 +1,67 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--page-height);
+  background: rgba(0 0 0 / 30%);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+
+  &[data-entering] {
+    animation: drawer-blur var(--midas-transition-duration-fast);
+  }
+
+  &[data-exiting] {
+    animation: drawer-blur var(--midas-transition-duration-fast) reverse ease-in;
+  }
+}
+
+.drawer {
+  position: sticky;
+  left: 0;
+  width: 300px;
+
+  /* Extra padding to account for iOS floating browser UI. */
+  top: -100px;
+  height: calc(100dvh + 200px);
+  padding: 100px 0;
+  margin-right: auto;
+  background: var(--overlay-background);
+  outline: none;
+  border-right: 1px solid var(--midas-border-color-secondary);
+  box-shadow: -8px 0 20px rgba(0 0 0 / 10%);
+  font-family: system-ui;
+  font-size: 0.875rem;
+
+  &[data-entering] {
+    animation: drawer-slide var(--midas-transition-duration-fast);
+  }
+
+  &[data-exiting] {
+    animation: drawer-slide var(--midas-transition-duration-fast) reverse
+      ease-in;
+  }
+}
+
+@keyframes drawer-blur {
+  from {
+    background: rgba(0 0 0 / 0%);
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    background: rgba(0 0 0 / 30%);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes drawer-slide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

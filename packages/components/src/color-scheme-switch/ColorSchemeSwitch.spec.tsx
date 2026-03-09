@@ -21,8 +21,8 @@ describe('given a primary ColorSchemeSwitch', async () => {
     expect(lightModeButton).toHaveAttribute('aria-checked', 'true')
   })
 
-  it('color-scheme on body element should be light', async () => {
-    const newColorScheme = document.body.style.colorScheme
+  it('color-scheme on :root element should be light', async () => {
+    const newColorScheme = document.documentElement.dataset.colorScheme
     expect(newColorScheme).toBe('light')
   })
 

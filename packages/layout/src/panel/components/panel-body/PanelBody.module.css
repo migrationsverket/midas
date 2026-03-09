@@ -1,0 +1,7 @@
+.panelBody {
+  background-color: var(--midas-layer-01-base);
+  box-sizing: border-box;
+  padding: 1rem;
+  transition: width var(--midas-transition-duration-fast) ease-out;
+  width: 100%;
+}

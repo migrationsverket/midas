@@ -1,15 +1,8 @@
 .navigation {
   background-color: var(--midas-layer-01-base);
+}
 
-  ul {
-    padding: 0;
-
-    li {
-      list-style: none;
-    }
-  }
-
-  ul ul {
-    padding-left: 2rem;
-  }
+.rootList {
+  margin: 0;
+  padding: 0;
 }
