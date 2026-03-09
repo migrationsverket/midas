@@ -29,40 +29,42 @@
 }
 
 .tag {
-  display: inline-flex;
   align-items: center;
-  border-radius: 1.25rem;
   background-color: var(--midas-field-01-base);
-  font-size: 0.875rem;
-  font-family: var(--midas-typography-font-family);
-  border: 1px solid var(--midas-border-color-primary);
+  border-color: var(--midas-border-color-primary);
+  border-radius: 1.25rem;
+  border-style: solid;
+  border-width: 1px;
   color: var(--midas-text-primary);
+  display: inline-flex;
+  font-family: var(--midas-typography-font-family);
+  font-size: 0.875rem;
 
   &.green {
     background-color: var(--midas-tag-green-background);
-    border: 1px solid var(--midas-tag-green-border-color);
+    border-color: var(--midas-tag-green-border-color);
   }
 
   &.blue {
     background-color: var(--midas-tag-blue-background);
-    border: 1px solid var(--midas-tag-blue-border-color);
+    border-color: var(--midas-tag-blue-border-color);
   }
 
   &.yellow {
     background-color: var(--midas-tag-yellow-background);
-    border: 1px solid var(--midas-tag-yellow-border-color);
+    border-color: var(--midas-tag-yellow-border-color);
   }
 
   &.red {
     background-color: var(--midas-tag-red-background);
-    border: 1px solid var(--midas-tag-red-border-color);
+    border-color: var(--midas-tag-red-border-color);
   }
 
   &[data-disabled] {
+    background-color: var(--midas-field-01-base);
+    border-color: var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
     cursor: not-allowed;
-    border-color: var(--midas-border-color-disabled);
-    background-color: var(--midas-field-01-base);
   }
 
   &[data-focused],
@@ -83,9 +85,9 @@
 .tagText {
   align-items: center;
   display: flex;
+  gap: var(--midas-space-xsmall);
   line-height: 1.15;
   padding: 7px var(--midas-space-small);
-  gap: var(--midas-space-xsmall);
 }
 
 .dismissable .tagText {
