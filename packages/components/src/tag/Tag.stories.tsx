@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-vite'
 import { Tag } from './Tag'
 import { TagGroup } from './tag-group'
 import { TagList } from './tag-list'
+import { ScooterIcon } from 'lucide-react'
 
 type Story = StoryObj<typeof Tag>
 
@@ -58,6 +59,17 @@ export const Red: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+}
+
+export const WithIcon: Story = {
+  args: {
+    isDismissable: false,
+    children: (
+      <>
+        <ScooterIcon /> Scooters
+      </>
+    ),
   },
 }
 
