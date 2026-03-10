@@ -7,6 +7,10 @@ import { page, userEvent } from 'vitest/browser'
 const { Primary, Secondary, Inactive } = composeStories(stories)
 
 const handlePress = vi.fn()
+const handlePressChange = vi.fn()
+const handlePressEnd = vi.fn()
+const handlePressStart = vi.fn()
+const handlePressUp = vi.fn()
 
 describe('given a basic Button', async () => {
   it('should have focus when clicked', async () => {
@@ -37,7 +41,15 @@ describe('given a disabled secondary Button', async () => {
 
 describe('given an inactive Button', async () => {
   beforeEach(async () => {
-    await render(<Inactive onPress={handlePress} />)
+    await render(
+      <Inactive
+        onPress={handlePress}
+        onPressChange={handlePressChange}
+        onPressEnd={handlePressEnd}
+        onPressStart={handlePressStart}
+        onPressUp={handlePressUp}
+      />,
+    )
   })
 
   afterEach(() => {
@@ -49,9 +61,14 @@ describe('given an inactive Button', async () => {
     await expect.element(page.getByRole('tooltip')).toBeVisible()
   })
 
-  it('should not fire the onPress event', async () => {
+  it('should not fire any onPress event', async () => {
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
+
     expect(handlePress).toHaveBeenCalledTimes(0)
+    expect(handlePressChange).toHaveBeenCalledTimes(0)
+    expect(handlePressEnd).toHaveBeenCalledTimes(0)
+    expect(handlePressStart).toHaveBeenCalledTimes(0)
+    expect(handlePressUp).toHaveBeenCalledTimes(0)
   })
 })

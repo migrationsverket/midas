@@ -72,19 +72,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconPlacement,
       iconSize,
       isPending,
-      onPress,
       size = 'large',
       variant = 'primary',
       ...rest
     } = mergedProps
 
     const isInactive = !mergedProps.isDisabled && mergedProps.isInactive
-
-    const handlePress = (event: PressEvent) => {
-      if (!isInactive) {
-        onPress?.(event)
-      }
-    }
 
     return (
       <AriaButton
@@ -103,8 +96,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         data-inactive={isInactive || undefined}
         aria-disabled={isInactive}
         ref={mergedRef}
-        onPress={handlePress}
         {...rest}
+        onPress={e => !isInactive && props.onPress?.(e)}
+        onPressChange={e => !isInactive && props.onPressChange?.(e)}
+        onPressEnd={e => !isInactive && props.onPressEnd?.(e)}
+        onPressStart={e => !isInactive && props.onPressStart?.(e)}
+        onPressUp={e => !isInactive && props.onPressUp?.(e)}
       >
         {composeRenderProps(mergedProps.children, children => (
           <>
