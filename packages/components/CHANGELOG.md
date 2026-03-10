@@ -1,3 +1,17 @@
+## 17.7.0 (2026-03-10)
+
+### 🚀 Features
+
+- **components,tag:** add styles for inline icons ([0d6925f102](https://github.com/migrationsverket/midas/commit/0d6925f102))
+
+### 🩹 Fixes
+
+- **components,tag:** adjust vertical padding ([012e29f69c](https://github.com/migrationsverket/midas/commit/012e29f69c))
+
+### 🏭 Refactoring
+
+- **components,tag:** sort css attributes ([0be146e552](https://github.com/migrationsverket/midas/commit/0be146e552))
+
 ## 17.6.6 (2026-03-09)
 
 ### 🧱 Updated Dependencies
