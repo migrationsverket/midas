@@ -1,3 +1,10 @@
+## 17.7.1 (2026-03-10)
+
+### 🩹 Fixes
+
+- **components, select:** merge provided popover styles ([a381092486](https://github.com/migrationsverket/midas/commit/a381092486))
+- **components, tag:** adjust size of inline svgs ([d668bfdf77](https://github.com/migrationsverket/midas/commit/d668bfdf77))
+
 ## 17.7.0 (2026-03-10)
 
 ### 🚀 Features
