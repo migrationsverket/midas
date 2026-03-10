@@ -86,6 +86,11 @@
   gap: var(--midas-space-xsmall);
   line-height: var(--midas-typography-line-height-20);
   padding: 7px var(--midas-space-small);
+
+  svg {
+    width: var(--midas-size-icon-sm);
+    height: var(--midas-size-icon-sm);
+  }
 }
 
 .dismissable .tagText {
