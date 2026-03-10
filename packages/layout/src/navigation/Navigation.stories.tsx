@@ -65,7 +65,7 @@ export const Primary: Story = {
           </Navigation.SubMenu>
         </Navigation.SubMenu>
 
-        <Navigation.SubMenu title='Dokument och ID'>
+        <Navigation.SubMenu>
           <Navigation.Link
             href='/dokument/id-handling'
             title='ID-handlingar'
@@ -88,7 +88,7 @@ export const Primary: Story = {
           </Navigation.SubMenu>
         </Navigation.SubMenu>
 
-        <Navigation.SubMenu title='Konto och inställningar'>
+        <Navigation.SubMenu>
           <Navigation.Link
             href='/konto/profil'
             title='Min profil'
