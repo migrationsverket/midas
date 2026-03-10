@@ -1,3 +1,9 @@
+## 0.0.5 (2026-03-10)
+
+### 🧪 Tests updated
+
+- **next:** fix build errors for e2e workflow ([be161aa24d](https://github.com/migrationsverket/midas/commit/be161aa24d))
+
 ## 0.0.4 (2026-03-10)
 
 ### 🧱 Updated Dependencies
