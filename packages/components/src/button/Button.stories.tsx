@@ -93,7 +93,7 @@ export const Inactive: Story = {
     isInactive: true,
   },
   render: args => (
-    <TooltipTrigger>
+    <TooltipTrigger shouldCloseOnPress={false}>
       <Button {...args} />
       <Tooltip>Det saknas ett beslut</Tooltip>
     </TooltipTrigger>
