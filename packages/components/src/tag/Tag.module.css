@@ -2,6 +2,7 @@
   color: var(--midas-icon-primary);
   padding: var(--midas-space-xsmall) !important;
   border-radius: 1.5rem;
+  margin-left: var(--midas-space-10);
 
   &[data-hovered] {
     background-color: var(--midas-button-icon-hover);
@@ -36,7 +37,8 @@
   color: var(--midas-text-primary);
   display: inline-flex;
   font-family: var(--midas-typography-font-family);
-  font-size: 0.875rem;
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
 
   &.green {
     background-color: var(--midas-tag-green-background);
@@ -84,8 +86,8 @@
   align-items: center;
   display: flex;
   gap: var(--midas-space-xsmall);
-  line-height: var(--midas-typography-line-height-20);
-  padding: 7px var(--midas-space-small);
+  padding: 5px var(--midas-space-small);
+  height: var(--midas-size-icon-sm);
 
   svg {
     width: var(--midas-size-icon-sm);
@@ -94,6 +96,5 @@
 }
 
 .dismissable .tagText {
-  padding: var(--midas-space-30) var(--midas-space-10) var(--midas-space-30)
-    var(--midas-space-small);
+  padding: 5px 0 5px var(--midas-space-small);
 }
