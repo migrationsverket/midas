@@ -96,10 +96,10 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
         </div>
         {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
         <Popover
-          className={styles.popover}
           offset={0}
           hideArrow
           {...popoverProps}
+          className={clsx(popoverProps?.className, styles.popover)}
         >
           {props.isSelectableAll && <SelectAll />}
           <ListBox
