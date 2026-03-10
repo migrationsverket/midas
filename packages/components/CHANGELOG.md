@@ -1,3 +1,9 @@
+## 17.7.3 (2026-03-10)
+
+### 🩹 Fixes
+
+- **components, tag:** adjust vertical padding when using inline svg ([8258205085](https://github.com/migrationsverket/midas/commit/8258205085))
+
 ## 17.7.2 (2026-03-10)
 
 ### 🧱 Updated Dependencies
