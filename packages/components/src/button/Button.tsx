@@ -52,6 +52,11 @@ export interface MidasButtonProps {
         },
       ) => React.ReactNode)
     | string
+  /**
+   * A pseudo-disabled state that enable focus but disables the `onPress` event.
+   * If combined with `isDisabled`, `isDisabled` takes precedence.
+   */
+  isInactive?: boolean
 }
 
 export type MidasButton = MidasButtonProps & ButtonProps
@@ -80,6 +85,8 @@ export const Button = forwardRef<HTMLButtonElement, MidasButton>(
       ...rest
     } = mergedProps
 
+    const isInactive = !mergedProps.isDisabled && mergedProps.isInactive
+
     return (
       <AriaButton
         className={clsx(
@@ -94,8 +101,15 @@ export const Button = forwardRef<HTMLButtonElement, MidasButton>(
           iconPlacement === 'right' && styles.iconRight,
           className,
         )}
+        data-inactive={isInactive || undefined}
+        aria-disabled={isInactive}
         ref={mergedRef}
         {...rest}
+        onPress={e => !isInactive && props.onPress?.(e)}
+        onPressChange={e => !isInactive && props.onPressChange?.(e)}
+        onPressEnd={e => !isInactive && props.onPressEnd?.(e)}
+        onPressStart={e => !isInactive && props.onPressStart?.(e)}
+        onPressUp={e => !isInactive && props.onPressUp?.(e)}
       >
         <>
           {IconComponent && !isPending && (
