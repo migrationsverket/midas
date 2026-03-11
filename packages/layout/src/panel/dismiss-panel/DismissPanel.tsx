@@ -1,12 +1,13 @@
 'use client'
 
-import clsx from 'clsx'
-import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
+import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
 import { X } from 'lucide-react'
-import { PanelHeader, PanelBody, PanelBodyProps, PanelTitle } from '..'
-import styles from './DismissPanel.module.css'
-import messages from '../../intl/translations.json'
 import { useControlledState } from '@react-stately/utils'
+import { PanelBody, type PanelBodyProps } from '../panel-body'
+import { PanelHeader } from '../panel-header'
+import { PanelTitle } from '../panel-title'
+import messages from '../intl/translations.json'
+import styles from './DismissPanel.module.css'
 
 export interface DismissTriggerProps {
   isOpen?: boolean

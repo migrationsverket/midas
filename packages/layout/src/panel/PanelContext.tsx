@@ -11,12 +11,3 @@ export type PanelContextValue<T extends PanelVariant> = Pick<
 export const PanelContext = createContext<PanelContextValue<PanelVariant>>({
   variant: undefined,
 })
-
-export type CollapsePanelContextValue = Pick<
-  PanelProps<'collapse'>,
-  'isCollapsed'
->
-
-export const CollapsePanelContext = createContext<CollapsePanelContextValue>({
-  isCollapsed: false,
-})
