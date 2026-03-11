@@ -1,13 +1,14 @@
 'use client'
 
-import { useContext, DetailedHTMLProps, HTMLAttributes } from 'react'
+import { useContext } from 'react'
 import { Collection, CollectionProps } from '@react-aria/collections'
 import { clsx } from '@midas-ds/components'
-import { CollapsePanelContext } from '../../../panel'
+import { CollapsePanelContext } from '../../panel'
 import styles from './NavigationSubMenu.module.css'
 
-export type NavigationSubMenuProps<T extends object> = CollectionProps<T> &
-  Pick<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'className'>
+export type NavigationSubMenuProps<T extends object> = CollectionProps<T> & {
+  className?: string
+}
 
 export const NavigationSubMenu = <T extends object>({
   className,

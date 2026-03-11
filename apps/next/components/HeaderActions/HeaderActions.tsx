@@ -3,8 +3,16 @@
 import { useRef } from 'react'
 import { Bell, CircleUserRound, Languages } from 'lucide-react'
 import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
-import { HeaderActions } from '@midas-ds/layout'
-import { Badge, BadgeContainer, ColorSchemeSwitch, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import { HeaderActions, HeaderAction } from '@midas-ds/layout'
+import {
+  Badge,
+  BadgeContainer,
+  ColorSchemeSwitch,
+  Menu,
+  MenuItem,
+  MenuPopover,
+  MenuTrigger,
+} from '@midas-ds/components'
 import { useRouter } from 'next/navigation'
 
 export const AppHeaderActions = () => {
@@ -19,7 +27,7 @@ export const AppHeaderActions = () => {
 
   return (
     <HeaderActions>
-<HeaderActions.Button
+      <HeaderAction
         icon={
           <BadgeContainer aria-hidden>
             <Bell size={20} />
@@ -30,12 +38,20 @@ export const AppHeaderActions = () => {
         onPress={() => setNotificationsOpen(!notificationsOpen)}
       >
         Notifications
-      </HeaderActions.Button>
-      <HeaderActions.Button icon={<CircleUserRound size={20} />} onPress={() => router.push('/profile')}>Profile</HeaderActions.Button>
+      </HeaderAction>
+      <HeaderAction
+        icon={<CircleUserRound size={20} />}
+        onPress={() => router.push('/profile')}
+      >
+        Profile
+      </HeaderAction>
       <MenuTrigger>
-        <HeaderActions.Button ref={languageTriggerRef} icon={<Languages size={20} />}>
+        <HeaderAction
+          ref={languageTriggerRef}
+          icon={<Languages size={20} />}
+        >
           {languages.find(l => l.id === currentLanguage)?.label}
-        </HeaderActions.Button>
+        </HeaderAction>
         <MenuPopover triggerRef={languageTriggerRef}>
           <Menu
             selectionMode='single'
@@ -46,7 +62,12 @@ export const AppHeaderActions = () => {
             }}
           >
             {languages.map(l => (
-              <MenuItem key={l.id} id={l.id}>{l.label}</MenuItem>
+              <MenuItem
+                key={l.id}
+                id={l.id}
+              >
+                {l.label}
+              </MenuItem>
             ))}
           </Menu>
         </MenuPopover>
