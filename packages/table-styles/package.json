@@ -34,7 +34,7 @@
     "@midas-ds/components": "17.7.4",
     "@midas-ds/theme": "3.12.9",
     "lucide-react": "^0.563.0",
-    "react-aria-components": "1.14.0",
+    "react-aria-components": "1.16.0",
     "@tanstack/react-table": "^8.21.3"
   }
 }
