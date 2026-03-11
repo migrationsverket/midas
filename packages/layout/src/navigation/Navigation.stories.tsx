@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Navigation } from '.'
+import { Navigation, NavigationLink, NavigationSubMenu } from '.'
 import {
   Bell,
   BookOpen,
@@ -29,79 +29,79 @@ export const Primary: Story = {
   args: {
     children: (
       <>
-        <Navigation.Link
+        <NavigationLink
           href='/'
           title='Hem'
           isActive
         >
           <House />
-        </Navigation.Link>
-        <Navigation.SubMenu>
-          <Navigation.Link
+        </NavigationLink>
+        <NavigationSubMenu>
+          <NavigationLink
             href='/ansokningar'
             title='Ansökningar'
           >
             <FileText />
-          </Navigation.Link>
-          <Navigation.SubMenu>
-            <Navigation.Link
+          </NavigationLink>
+          <NavigationSubMenu>
+            <NavigationLink
               href='/ansokningar/ny-ansokning'
               title='Skapa ny ansökning'
             >
               <Plus />
-            </Navigation.Link>
-            <Navigation.Link
+            </NavigationLink>
+            <NavigationLink
               href='/ansokningar/utkast'
               title='Sparade utkast'
             >
               <Save />
-            </Navigation.Link>
-            <Navigation.Link
+            </NavigationLink>
+            <NavigationLink
               href='/ansokningar/skickade'
               title='Skickade ansökningar'
             >
               <Send />
-            </Navigation.Link>
-          </Navigation.SubMenu>
-        </Navigation.SubMenu>
+            </NavigationLink>
+          </NavigationSubMenu>
+        </NavigationSubMenu>
 
-        <Navigation.SubMenu>
-          <Navigation.Link
+        <NavigationSubMenu>
+          <NavigationLink
             href='/dokument/id-handling'
             title='ID-handlingar'
           >
             <IdCard />
-          </Navigation.Link>
-          <Navigation.SubMenu>
-            <Navigation.Link
+          </NavigationLink>
+          <NavigationSubMenu>
+            <NavigationLink
               href='/dokument/uppehallstillstand/arbetstillstand'
               title='Arbetstillstånd'
             >
               <Briefcase />
-            </Navigation.Link>
-            <Navigation.Link
+            </NavigationLink>
+            <NavigationLink
               href='/dokument/uppehallstillstand/studiestillstand'
               title='Studiestillstånd'
             >
               <BookOpen />
-            </Navigation.Link>
-          </Navigation.SubMenu>
-        </Navigation.SubMenu>
+            </NavigationLink>
+          </NavigationSubMenu>
+        </NavigationSubMenu>
 
-        <Navigation.SubMenu>
-          <Navigation.Link
+        <NavigationSubMenu>
+          <NavigationLink
             href='/konto/profil'
             title='Min profil'
           >
             <User />
-          </Navigation.Link>
-          <Navigation.Link
+          </NavigationLink>
+          <NavigationLink
             href='/konto/kontaktuppgifter'
             title='Kontaktuppgifter'
           >
             <Phone />
-          </Navigation.Link>
-          <Navigation.Link
+          </NavigationLink>
+          <NavigationLink
             href='/konto/meddelanden'
             title='Meddelanden'
             aria-label='3 olästa meddelanden'
@@ -110,20 +110,20 @@ export const Primary: Story = {
               <Bell />
               <Badge>3</Badge>
             </BadgeContainer>
-          </Navigation.Link>
-        </Navigation.SubMenu>
-        <Navigation.Link
+          </NavigationLink>
+        </NavigationSubMenu>
+        <NavigationLink
           href='/hjalp'
           title='Hjälp och support'
         >
           <HelpCircle />
-        </Navigation.Link>
-        <Navigation.Link
+        </NavigationLink>
+        <NavigationLink
           href='/kontakt'
           title='Kontakta oss'
         >
           <Mail />
-        </Navigation.Link>
+        </NavigationLink>
       </>
     ),
   },

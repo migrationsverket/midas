@@ -1,6 +1,6 @@
 import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
 import { Layout, LayoutContent } from '.'
-import { Header, HeaderActions } from '../header'
+import { Header, HeaderAction, HeaderActions } from '../header'
 import { Panel } from '../panel'
 import { Navbar } from '../navbar'
 import { Bell, House, List, Menu, User } from 'lucide-react'
@@ -46,8 +46,8 @@ export const Primary: Story = {
             variant='icon'
           />
           <HeaderActions>
-            <HeaderActions.Button icon={<Bell />}>Notiser</HeaderActions.Button>
-            <HeaderActions.Button icon={<User />}>Min profil</HeaderActions.Button>
+            <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+            <HeaderAction icon={<User />}>Min profil</HeaderAction>
           </HeaderActions>
         </Header>
         <LayoutContent>

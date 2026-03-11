@@ -10,7 +10,7 @@ import {
 } from 'react-aria-components'
 import { useControlledState } from '@react-stately/utils'
 import { Button, DialogTrigger } from '@midas-ds/components'
-import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
+import { useIsMobileDevice } from '../../utils'
 import styles from './MobileMenu.module.css'
 import { MobileMenuContext } from './MobileMenuContext'
 

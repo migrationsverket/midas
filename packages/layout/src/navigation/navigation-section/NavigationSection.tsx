@@ -3,10 +3,10 @@
 import { useContext, DetailedHTMLProps, HTMLAttributes } from 'react'
 import { Collection, CollectionProps } from '@react-aria/collections'
 import { clsx } from '@midas-ds/components'
-import { CollapsePanelContext } from '../../../panel'
-import { NavigationHeader } from '../header'
+import { CollapsePanelContext } from '../../panel'
+import { NavigationHeader } from '../navigation-header'
 import styles from './NavigationSection.module.css'
-import { NavigationItem } from '../item'
+import { NavigationItem } from '../navigation-item'
 
 export interface NavigationSectionProps<T extends object>
   extends

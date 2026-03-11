@@ -1,15 +1,12 @@
 'use client'
 
-import clsx from 'clsx'
-import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
-import { CollapsePanelContext } from './CollapsePanelContext'
-import { PanelBody, PanelBodyProps } from '../panel-body/PanelBody'
-import { PanelHeader } from '../panel-header/PanelHeader'
-import { PanelTitle } from '../panel-title'
-import messages from '../intl/translations.json'
+import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
 import { useControlledState } from '@react-stately/utils'
-import { useIsMobileDevice } from '../../utils/useIsMobileDevice'
+import { PanelBody, PanelBodyProps, PanelHeader, PanelTitle } from '..'
+import messages from '../intl/translations.json'
+import { useIsMobileDevice } from '../../utils'
+import { CollapsePanelContext } from './CollapsePanelContext'
 import styles from './CollapsePanel.module.css'
 
 export interface CollapseTriggerProps {

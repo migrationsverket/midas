@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Bell, Settings, User } from 'lucide-react'
-import { HeaderActions } from '.'
-import { Header } from '../'
+import { Header } from '../Header'
+import { HeaderActions } from './HeaderActions'
+import { HeaderAction } from '../header-action'
 
 type Story = StoryObj<typeof HeaderActions>
 
@@ -22,9 +23,9 @@ export default {
 export const Primary: Story = {
   render: () => (
     <HeaderActions>
-      <HeaderActions.Button icon={<Bell />}>Notiser</HeaderActions.Button>
-      <HeaderActions.Button icon={<Settings />}>Inställningar</HeaderActions.Button>
-      <HeaderActions.Button icon={<User />}>Min profil</HeaderActions.Button>
+      <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+      <HeaderAction icon={<Settings />}>Inställningar</HeaderAction>
+      <HeaderAction icon={<User />}>Min profil</HeaderAction>
     </HeaderActions>
   ),
 }
@@ -32,9 +33,18 @@ export const Primary: Story = {
 export const IconOnly: Story = {
   render: () => (
     <HeaderActions>
-      <HeaderActions.Button aria-label='Notiser' icon={<Bell />} />
-      <HeaderActions.Button aria-label='Inställningar' icon={<Settings />} />
-      <HeaderActions.Button aria-label='Min profil' icon={<User />} />
+      <HeaderAction
+        aria-label='Notiser'
+        icon={<Bell />}
+      />
+      <HeaderAction
+        aria-label='Inställningar'
+        icon={<Settings />}
+      />
+      <HeaderAction
+        aria-label='Min profil'
+        icon={<User />}
+      />
     </HeaderActions>
   ),
 }

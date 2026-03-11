@@ -130,10 +130,12 @@ export const SidebarNavigation = () => (
         items={section.children}
       >
         {function renderItem({ ariaLabel, href, icon, title, children }) {
-          const resolvedIcon = title === 'Notifications' ? <NotificationIcon /> : icon
-          const resolvedAriaLabel = title === 'Notifications'
-            ? undefined  // NotificationIcon handles aria via BadgeContainer
-            : ariaLabel
+          const resolvedIcon =
+            title === 'Notifications' ? <NotificationIcon /> : icon
+          const resolvedAriaLabel =
+            title === 'Notifications'
+              ? undefined // NotificationIcon handles aria via BadgeContainer
+              : ariaLabel
 
           return (
             <NavigationItem>
@@ -161,17 +163,36 @@ export const BottomNavigation = () => {
   return (
     <MidasNavigation>
       <NavigationItem>
-        <NavLink href='/' title='Home'><House /></NavLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavLink href='/applications' title='Applications'><FileText /></NavLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavLink href='/profile' title='Profile'><User /></NavLink>
+        <NavLink
+          href='/'
+          title='Home'
+        >
+          <House />
+        </NavLink>
       </NavigationItem>
       <NavigationItem>
         <NavLink
-          aria-label={unreadCount > 0 ? `Notifications, ${unreadCount} unread` : 'Notifications'}
+          href='/applications'
+          title='Applications'
+        >
+          <FileText />
+        </NavLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavLink
+          href='/profile'
+          title='Profile'
+        >
+          <User />
+        </NavLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavLink
+          aria-label={
+            unreadCount > 0
+              ? `Notifications, ${unreadCount} unread`
+              : 'Notifications'
+          }
           href='/notifications'
           title='Notifications'
         >

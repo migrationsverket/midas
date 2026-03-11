@@ -2,7 +2,7 @@
 
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { clsx, LogoContext } from '@midas-ds/components'
-import { useIsMobileDevice } from '../utils/useIsMobileDevice'
+import { useIsMobileDevice } from '../utils'
 import styles from './Header.module.css'
 
 export type HeaderProps = DetailedHTMLProps<

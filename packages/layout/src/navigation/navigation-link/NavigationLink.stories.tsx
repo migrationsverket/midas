@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { NavigationLink } from '.'
 import { House } from 'lucide-react'
-import { CollapsePanelContext } from '../../../panel'
+import { CollapsePanelContext } from '../../panel'
 
 type Story = StoryObj<typeof NavigationLink>
 

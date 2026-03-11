@@ -1,36 +1,14 @@
-'use client'
-
-import { forwardRef, type ReactNode } from 'react'
-import { Button, type MidasButton } from '@midas-ds/components'
+import { type DetailedHTMLProps, type HTMLAttributes } from 'react'
 import styles from './HeaderActions.module.css'
 
-type HeaderActionsButtonProps = Omit<MidasButton, 'icon' | 'children'> & {
-  icon?: ReactNode
-  children?: ReactNode
-}
+export type HeaderActionsProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>
 
-const HeaderActionsButton = forwardRef<HTMLButtonElement, HeaderActionsButtonProps>(
-  ({ children, icon, ...props }, ref) => {
-    return (
-      <Button
-        ref={ref}
-        size='medium'
-        variant='tertiary'
-        {...props}
-      >
-        {icon}
-        {children && <span className={styles.label}>{children}</span>}
-      </Button>
-    )
-  },
+export const HeaderActions = ({ className, ...rest }: HeaderActionsProps) => (
+  <div
+    className={`${className} ${styles.headerActions}`}
+    {...rest}
+  />
 )
-
-HeaderActionsButton.displayName = 'HeaderActionsButton'
-
-const HeaderActionsRoot = ({ children }: { children: ReactNode }) => (
-  <div className={styles.headerActions}>{children}</div>
-)
-
-export const HeaderActions = Object.assign(HeaderActionsRoot, {
-  Button: HeaderActionsButton,
-})

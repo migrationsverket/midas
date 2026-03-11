@@ -12,9 +12,9 @@ import {
   TooltipTrigger,
   type LinkComponentProps,
 } from '@midas-ds/components'
-import { CollapsePanelContext, PanelContext } from '../../../panel'
 import styles from './NavigationLink.module.css'
-import { MobileMenuContext } from '../../../header'
+import { CollapsePanelContext, PanelContext } from '../../panel'
+import { MobileMenuContext } from '../../header'
 
 export interface NavigationLinkComponentProps<
   C extends ElementType,
