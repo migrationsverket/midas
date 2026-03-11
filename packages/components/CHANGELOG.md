@@ -1,3 +1,18 @@
+## 17.7.5 (2026-03-11)
+
+### 🩹 Fixes
+
+- **components,table-styles:** update RAC to latest ([e2877fa6e2](https://github.com/migrationsverket/midas/commit/e2877fa6e2))
+
+### 🏭 Refactoring
+
+- **components,label:** remove local state ([f64cb9d51c](https://github.com/migrationsverket/midas/commit/f64cb9d51c))
+- **components,popover:** enable context props ([aeae93325a](https://github.com/migrationsverket/midas/commit/aeae93325a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.10
+
 ## 17.7.4 (2026-03-11)
 
 ### 🧱 Updated Dependencies

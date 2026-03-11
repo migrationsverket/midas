@@ -1,3 +1,14 @@
+## 2.0.35 (2026-03-11)
+
+### 🩹 Fixes
+
+- **components,table-styles:** update RAC to latest ([e2877fa6e2](https://github.com/migrationsverket/midas/commit/e2877fa6e2))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.5
+- Updated theme to 3.12.10
+
 ## 2.0.34 (2026-03-11)
 
 ### 🧱 Updated Dependencies
