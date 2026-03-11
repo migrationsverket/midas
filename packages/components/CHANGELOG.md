@@ -1,3 +1,10 @@
+## 17.7.6 (2026-03-11)
+
+### 🏭 Refactoring
+
+- **layout:** rename folders and adjust module boundaries ([d403b2d226](https://github.com/migrationsverket/midas/commit/d403b2d226))
+- **components, button:** use helper for rendering children functions ([594ee17430](https://github.com/migrationsverket/midas/commit/594ee17430))
+
 ## 17.7.5 (2026-03-11)
 
 ### 🩹 Fixes

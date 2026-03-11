@@ -1,3 +1,18 @@
+## 0.0.8 (2026-03-11)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** adjust css styles ([cbf9917399](https://github.com/migrationsverket/midas/commit/cbf9917399))
+
+### 🏭 Refactoring
+
+- **layout:** rename folders and adjust module boundaries ([d403b2d226](https://github.com/migrationsverket/midas/commit/d403b2d226))
+- **layout, panel:** flatten folder structure ([1d9f8feaf4](https://github.com/migrationsverket/midas/commit/1d9f8feaf4))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.6
+
 ## 0.0.7 (2026-03-11)
 
 ### 🧱 Updated Dependencies
