@@ -17,4 +17,24 @@ describe('given a Popover', async () => {
       .element(getByRole('dialog'))
       .toHaveClass(styles.popover, 'test')
   })
+
+  it('should support a function as children', async () => {
+    const { getByRole } = await render(
+      <Primary>
+        {({ placement, trigger }) => (
+          <>
+            I was triggered by a {trigger} and my placement is {placement}!
+          </>
+        )}
+      </Primary>,
+    )
+
+    await userEvent.click(getByRole('button'))
+
+    await expect
+      .element(getByRole('dialog'))
+      .toHaveTextContent(
+        'I was triggered by a DialogTrigger and my placement is bottom!',
+      )
+  })
 })
