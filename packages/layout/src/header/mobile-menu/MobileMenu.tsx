@@ -9,13 +9,14 @@ import {
   ModalOverlay,
 } from 'react-aria-components'
 import { useControlledState } from '@react-stately/utils'
-import { Button, DialogTrigger } from '@midas-ds/components'
+import { Button, DialogTrigger, Text } from '@midas-ds/components'
 import { useIsMobileDevice } from '../../utils'
-import styles from './MobileMenu.module.css'
 import { MobileMenuContext } from './MobileMenuContext'
+import styles from './MobileMenu.module.css'
 
 export interface MobileMenuProps {
   children?: ReactNode
+  title?: string
   isDrawerOpen?: boolean
   defaultDrawerOpen?: boolean
   onDrawerOpenChange?: (isDrawerOpen: boolean) => void
@@ -23,6 +24,7 @@ export interface MobileMenuProps {
 
 export const MobileMenu = ({
   children,
+  title,
   isDrawerOpen: isDrawerOpenProp,
   defaultDrawerOpen = false,
   onDrawerOpenChange,
@@ -57,7 +59,10 @@ export const MobileMenu = ({
         >
           {composeRenderProps(children, children => (
             <Modal className={styles.drawer}>
-              <Dialog>{children}</Dialog>
+              <Dialog>
+                {title && <Text className={styles.header}>{title}</Text>}
+                {children}
+              </Dialog>
             </Modal>
           ))}
         </ModalOverlay>

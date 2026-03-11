@@ -27,36 +27,39 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'>
       <head>
-        <meta name='color-scheme' content='light dark' />
+        <meta
+          name='color-scheme'
+          content='light dark'
+        />
       </head>
       <body>
         <AppProvider>
-        <GlobalToastRegion />
-        <Layout>
-          <Header data-debug='Header'>
-            <MobileMenu>
-              <SidebarNavigation />
-            </MobileMenu>
-            <Link href='/'>
-              <Logo />
-            </Link>
-            <AppHeaderActions />
-          </Header>
-          <LayoutContent>
-            <Panel
-              data-debug='Panel (collapse)'
-              title='Next App'
-              variant='collapse'
-            >
-              <SidebarNavigation />
-            </Panel>
-            <Main data-debug='Main'>{children}</Main>
-            <NotificationsPanel />
-          </LayoutContent>
-          <Navbar data-debug='Navbar'>
-            <BottomNavigation />
-          </Navbar>
-        </Layout>
+          <GlobalToastRegion />
+          <Layout>
+            <Header data-debug='Header'>
+              <MobileMenu title='Next App'>
+                <SidebarNavigation />
+              </MobileMenu>
+              <Link href='/'>
+                <Logo />
+              </Link>
+              <AppHeaderActions />
+            </Header>
+            <LayoutContent>
+              <Panel
+                data-debug='Panel (collapse)'
+                title='Next App'
+                variant='collapse'
+              >
+                <SidebarNavigation />
+              </Panel>
+              <Main data-debug='Main'>{children}</Main>
+              <NotificationsPanel />
+            </LayoutContent>
+            <Navbar data-debug='Navbar'>
+              <BottomNavigation />
+            </Navbar>
+          </Layout>
         </AppProvider>
       </body>
     </html>
