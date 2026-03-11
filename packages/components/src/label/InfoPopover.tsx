@@ -1,4 +1,4 @@
-import React from 'react'
+import { ReactNode, useContext } from 'react'
 import { Popover } from '../popover'
 import { Button } from '../button'
 import { Info } from 'lucide-react'
@@ -11,27 +11,21 @@ import messages from './intl/translations.json'
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
 export interface InfoPopoverProps {
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  children: React.ReactNode
+  children: ReactNode
   /** An aria-label for the info icon button trigger */
   'aria-label'?: string
 }
 
-export const InfoPopover: React.FC<InfoPopoverProps> = ({
+export const InfoPopover = ({
   children,
   'aria-label': ariaLabel,
-}) => {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const ctx = React.useContext(LabelWrapperContext)
+}: InfoPopoverProps) => {
+  const ctx = useContext(LabelWrapperContext)
   const strings = useLocalizedStringFormatter(messages)
-  const triggerRef = React.useRef<HTMLButtonElement>(null)
 
   return (
-    <DialogTrigger
-      isOpen={isOpen}
-      onOpenChange={setIsOpen}
-    >
+    <DialogTrigger>
       <Button
-        ref={triggerRef}
         variant='icon'
         size='medium'
         className={styles.labelPopoverTrigger}
@@ -40,7 +34,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
       >
         <Info size={20} />
       </Button>
-      <Popover triggerRef={triggerRef}>{children}</Popover>
+      <Popover>{children}</Popover>
     </DialogTrigger>
   )
 }
