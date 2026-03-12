@@ -1,3 +1,10 @@
+## 17.8.0 (2026-03-12)
+
+### 🚀 Features
+
+- **components, radio:** accept function for children prop ([75260130c8](https://github.com/migrationsverket/midas/commit/75260130c8))
+- **components, accordion:** accept function for children prop ([08bc1ba117](https://github.com/migrationsverket/midas/commit/08bc1ba117))
+
 ## 17.7.8 (2026-03-12)
 
 ### 🩹 Fixes
