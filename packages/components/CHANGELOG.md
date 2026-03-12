@@ -1,3 +1,10 @@
+## 17.7.8 (2026-03-12)
+
+### 🩹 Fixes
+
+- **components,list-box:** fix horizontal scrollbar in chromium ([90993805d1](https://github.com/migrationsverket/midas/commit/90993805d1))
+- **components,combobox:** prevent long input text from covering toggle button ([33120ccb81](https://github.com/migrationsverket/midas/commit/33120ccb81))
+
 ## 17.7.7 (2026-03-12)
 
 ### 🧱 Updated Dependencies
