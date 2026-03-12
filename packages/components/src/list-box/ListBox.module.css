@@ -3,7 +3,7 @@
  */
 .listBox {
   max-height: 295px; /* 1 */
-  overflow-y: auto;
+  overflow: hidden auto;
 
   > div {
     /* react aria fiddles with pointer events during scroll
@@ -20,7 +20,6 @@
   /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
   width: var(--trigger-width);
   background: var(--midas-layer-01-base);
-  overflow-y: auto;
   box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
 
   @media (forced-colors: active) {
@@ -34,7 +33,7 @@
   display: block;
   padding: var(--midas-space-medium) var(--midas-space-medium)
     var(--midas-space-xsmall) var(--midas-space-60);
-  font-weight: 500;
+  font-weight: var(--midas-typography-weight-medium);
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
   color: var(--midas-menu-text-section-header);
@@ -44,7 +43,7 @@
   all: unset;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 2px !important;
+  margin-bottom: var(--midas-space-10) !important;
 
   &:focus-visible {
     box-shadow: var(--midas-state-focus-inset);
@@ -110,7 +109,7 @@
   &[data-selection-mode='single'] {
     &[data-selected] {
       .textContent {
-        max-width: calc(100% - 3rem);
+        max-width: calc(100% - var(--midas-space-150));
       }
 
       &::after {
