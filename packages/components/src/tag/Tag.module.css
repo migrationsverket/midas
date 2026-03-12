@@ -84,10 +84,11 @@
 
 .tagText {
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   gap: var(--midas-space-xsmall);
   padding: 5px var(--midas-space-small);
-  height: var(--midas-size-icon-sm);
+  min-height: 1.875rem;
 
   svg {
     width: var(--midas-size-icon-sm);
