@@ -1,0 +1,101 @@
+---
+title: FileList
+description: Lista uppladdade filer
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { FileList, FileListItem } from '@midas-ds/components'
+
+<ComponentHeader
+  name='FileList'
+  friendlyName='Fillista, uppladdade filer'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/GridList.html'
+  overrideHeadlessLinkTitle='GridList — React Aria'
+/>
+
+Komponent för att visa en lista med uppladdade filer. Varje rad visar filnamn, valfri filstorlek och en knapp för att ta bort filen.
+
+```tsx
+import { FileList, FileListItem } from '@midas-ds/components'
+```
+
+```tsx
+<FileList aria-label='Uppladdade filer'>
+  <FileListItem
+    id='1'
+    fileName='CV_Anna_Svensson.pdf'
+    fileSize='1.2 MB'
+    onDelete={() => {}}
+  />
+</FileList>
+```
+
+<div className='card'>
+  <FileList aria-label='Uppladdade filer'>
+    <FileListItem
+      id='1'
+      fileName='CV_Anna_Svensson.pdf'
+      fileSize='1.2 MB'
+      onDelete={() => {}}
+    />
+  </FileList>
+</div>
+
+## Utan filstorlek
+
+`fileSize` är valfritt och kan utelämnas.
+
+```tsx
+<FileList aria-label='Uppladdade filer'>
+  <FileListItem id='1' fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
+</FileList>
+```
+
+<div className='card'>
+  <FileList aria-label='Uppladdade filer'>
+    <FileListItem id='1' fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
+  </FileList>
+</div>
+
+## Utan borttagningsknapp
+
+Utelämna `onDelete` för att visa en skrivskyddad lista.
+
+```tsx
+<FileList aria-label='Bifogade filer'>
+  <FileListItem id='1' fileName='Beslut.pdf' fileSize='512 KB' />
+  <FileListItem id='2' fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
+</FileList>
+```
+
+<div className='card'>
+  <FileList aria-label='Bifogade filer'>
+    <FileListItem id='1' fileName='Beslut.pdf' fileSize='512 KB' />
+    <FileListItem id='2' fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
+  </FileList>
+</div>
+
+## Tillgänglighet
+
+`FileList` är byggd på React Arias [GridList](https://react-spectrum.adobe.com/react-aria/GridList.html) som hanterar tangentbordsnavigation och ARIA-roller automatiskt.
+
+| Tangent | Åtgärd |
+|---------|--------|
+| `↑` / `↓` | Navigera mellan filer |
+| `Tab` | Flytta fokus till borttagningsknappen i markerad rad |
+| `Enter` / `Space` | Aktivera borttagningsknappen |
+| `Escape` | Återgå fokus till raden |
+
+`aria-label` på `FileList` är obligatoriskt och beskriver listans syfte för skärmläsare.
+Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Remove CV_Anna_Svensson.pdf"`.
+
+## API
+
+### FileList
+
+<PropTable name='FileList' />
+
+### FileListItem
+
+<PropTable name='FileListItem' />
