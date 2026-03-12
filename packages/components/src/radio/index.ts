@@ -1,1 +1,1 @@
-export {Radio, RadioGroup, type MVDSRadioGroupProps} from './Radio'
+export * from './Radio'
