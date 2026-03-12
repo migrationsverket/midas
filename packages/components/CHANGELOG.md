@@ -1,3 +1,9 @@
+## 17.7.7 (2026-03-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.11
+
 ## 17.7.6 (2026-03-11)
 
 ### 🏭 Refactoring

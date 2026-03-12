@@ -1,3 +1,9 @@
+## 0.2.43 (2026-03-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.11
+
 ## 0.2.42 (2026-03-11)
 
 ### 🧱 Updated Dependencies
