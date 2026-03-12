@@ -5,6 +5,7 @@ import * as stories from './ComboBox.stories'
 import styles from './ComboBox.module.css'
 import { render } from '../../test-utils'
 import { ComboBox } from './ComboBox'
+import { ListBoxItem } from '../list-box'
 
 const { Primary, Required, Sectioned } = composeStories(stories)
 
@@ -15,6 +16,22 @@ describe('given a primary ComboBox', async () => {
     await expect
       .element(container.querySelector(`.${styles.combobox}`) as HTMLElement)
       .toHaveClass(styles.combobox, 'test')
+  })
+
+  it('should not cover the toggle button when the input value is very long', async () => {
+    const { getByRole } = await render(
+      <ComboBox label='Test' defaultInputValue='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'>
+        <ListBoxItem id='a'>A</ListBoxItem>
+      </ComboBox>,
+    )
+
+    const inputEl = await getByRole('combobox').element()
+    const buttonEl = await getByRole('button').element()
+    const inputRect = inputEl.getBoundingClientRect()
+    const buttonRect = buttonEl.getBoundingClientRect()
+    const paddingRight = parseFloat(window.getComputedStyle(inputEl).paddingRight)
+
+    expect(inputRect.right - paddingRight).toBeLessThanOrEqual(buttonRect.left)
   })
 
   it('should select the text when clicking in a combobox with a selected value (DS1253)', async () => {
