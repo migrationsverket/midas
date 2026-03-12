@@ -11,11 +11,12 @@
 .inputField {
   box-sizing: border-box;
   width: -webkit-fill-available;
-  padding-left: 1rem;
+  padding-left: var(--midas-space-medium);
+  padding-right: calc(var(--midas-size-icon-sm) + 2 * var(--midas-space-70));
   border: none;
   border-bottom: 1px solid var(--midas-border-color-primary);
   border-radius: 0;
-  font-size: 1rem;
+  font-size: var(--midas-typography-font-size-30);
   color: var(--midas-text-primary);
   height: var(--midas-size-control);
   background-color: var(--midas-field-01-base);
@@ -56,7 +57,7 @@
     color: var(--midas-text-disabled);
     background: var(--midas-field-disabled);
     box-shadow: none;
-    border-bottom: 0.063rem solid var(--midas-border-color-disabled);
+    border-bottom: 1px solid var(--midas-border-color-disabled);
     cursor: not-allowed;
   }
 
@@ -72,14 +73,13 @@
 }
 
 .text {
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+  font-size: var(--midas-typography-font-size-20);
+  margin-bottom: var(--midas-space-small);
 }
 
 .wrap {
   grid-area: Input;
   position: relative;
-  gap: 0.5rem;
 }
 
 .button {
