@@ -22,6 +22,13 @@ describe('given a primary RadioGroup', async () => {
       expect(radio).toHaveClass(styles.radio, 'test-radio-class')
     })
   })
+
+  it('should accept a function as children', async () => {
+    const { getByRole } = await render(
+      <Primary>{({ orientation }) => orientation}</Primary>,
+    )
+    await expect.element(getByRole('radiogroup')).toHaveTextContent('vertical')
+  })
 })
 
 describe('given a required RadioGroup', async () => {
