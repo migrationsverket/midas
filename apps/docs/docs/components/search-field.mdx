@@ -5,7 +5,8 @@ description: Sökfält är ett inmatningsfält anpassat för sökning
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { SearchField } from '@midas-ds/components'
+import { SearchField, Button } from '@midas-ds/components'
+import React from 'react'
 
 <ComponentHeader
   name='SearchField'
@@ -18,12 +19,62 @@ Inmatningsfält anpassat för sökning.
 import { SearchField } from '@midas-ds/components'
 ```
 
+:::warning Deprecated: inbyggd sökknapp
+
+`buttonText` och den inbyggda sökknappen är deprecated sedan v17.9.0 och tas bort i nästa major. Komponera en egen `Button` utanför fältet istället — se exemplen nedan.
+
+:::
+
+## Grundläggande användning
+
+Utan en explicit knapp kan fältet användas för realtidsfiltrering via `onChange`, eller för sök-on-submit via `onSubmit` — Enter-tangenten fungerar alltid. Lägg till en knapp (se nedan) enbart när ett explicit submit-steg behövs.
+
 ```tsx
-<SearchField placeholder='Sök efter frukter' />
+{/* Real-time filter */}
+<SearchField placeholder='Filtrera efter namn' onChange={filterResults} />
+
+{/* Keyboard submit (Enter) — no button needed */}
+<SearchField placeholder='Sök efter frukter' onSubmit={handleSubmit} />
 ```
 
 <div className='card'>
-  <SearchField placeholder='Sök efter frukter' />
+  <SearchField
+    placeholder='Sök efter frukter'
+    onSubmit={(v) => console.log('submit:', v)}
+  />
+</div>
+
+## Sök med knapp
+
+Använd ett externt `Button`-element när sökningen ska triggas explicit — t.ex. vid en söksida med serveranrop. Placera knappen bredvid fältet.
+
+```tsx
+const [query, setQuery] = React.useState('')
+
+<SearchField
+  placeholder='Sök efter frukter'
+  onChange={setQuery}
+  onSubmit={handleSubmit}
+/>
+<Button onPress={() => handleSubmit(query)}>Sök</Button>
+```
+
+export const SearchWithButton = () => {
+  const [query, setQuery] = React.useState('')
+  return (
+    <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+      <SearchField
+        placeholder='Sök efter frukter'
+        onChange={setQuery}
+        onSubmit={(v) => console.log('submit:', v)}
+      />
+      <Button onPress={() => console.log('submit:', query)}>Sök</Button>
+    </div>
+  )
+}
+
+<div className='card'>
+  <SearchWithButton />
 </div>
 
 ## API

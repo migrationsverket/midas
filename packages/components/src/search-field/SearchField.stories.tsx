@@ -11,7 +11,6 @@ export default {
     layout: 'centered',
   },
   args: {
-    buttonText: 'Sök',
     errorPosition: 'top',
     className: 'test-class',
     size: 'large',
@@ -44,5 +43,15 @@ export const Disabled: Story = {
   args: {
     placeholder: 'Sök efter dokument',
     isDisabled: true,
+  },
+}
+
+/** @deprecated Use your own Button outside SearchField instead. */
+export const WithDeprecatedButton: Story = {
+  tags: ['!autodocs'],
+  args: {
+    placeholder: 'Sök efter en person',
+    showButton: true,
+    buttonText: 'Sök',
   },
 }
