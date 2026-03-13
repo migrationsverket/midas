@@ -34,6 +34,21 @@ describe('given a primary SearchField', async () => {
     expect(handleSubmit).toHaveBeenCalledWith('hello')
   })
 
+  it('should show a clear button when the input has a value', async () => {
+    await expect
+      .element(page.getByRole('button', { name: 'Clear search' }))
+      .toBeInTheDocument()
+  })
+
+  it('should clear the input and hide the clear button when clear is pressed', async () => {
+    await userEvent.click(page.getByRole('button', { name: 'Clear search' }))
+
+    await expect.element(page.getByRole('searchbox')).toHaveValue('')
+    await expect
+      .element(page.getByRole('button', { name: 'Clear search' }))
+      .not.toBeInTheDocument()
+  })
+
   it('should accept custom classNames', async () => {
     await expect
       .element(document.querySelector(`.${styles.container}`) as HTMLElement)
@@ -112,7 +127,8 @@ describe('given a SearchField with custom validation', async () => {
     )
 
     await userEvent.tab()
-    await userEvent.keyboard('secret[Enter]')
+    await userEvent.keyboard('secret')
+    await userEvent.tab()
 
     expect(handleChange).toHaveBeenCalledWith('secret')
     expect(handleSubmit).not.toHaveBeenCalled()
@@ -130,5 +146,12 @@ describe('given an invalid SearchField', async () => {
     await expect
       .element(getByText(Invalid.args.errorMessage as string))
       .toBeInTheDocument()
+  })
+
+  it('should render the error message below the input when errorPosition is bottom', async () => {
+    await render(<Invalid errorPosition='bottom' />)
+
+    const container = document.querySelector(`.${styles.container}`) as HTMLElement
+    expect(container.lastElementChild?.textContent).toContain(Invalid.args.errorMessage)
   })
 })
