@@ -16,6 +16,13 @@
       ease-in;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    &[data-entering],
+    &[data-exiting] {
+      animation-duration: 1ms;
+    }
+  }
+
   @media (width < 800px) {
     bottom: 0;
     width: 100%;
