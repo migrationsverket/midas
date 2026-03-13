@@ -20,9 +20,27 @@ export interface SearchFieldProps extends AriaSearchFieldProps {
   /** Placeholder text */
   placeholder: string
   /**
-   *  Text displayed on the 'search' button
-   *  @default
-   *  'Sök'
+   * Whether to render a built-in submit button.
+   *
+   * @deprecated since v17.9.0 — compose your own `Button` outside `SearchField` instead.
+   * Use `onSubmit` or `onChange` on your own terms.
+   *
+   * @example
+   * // Before (deprecated):
+   * <SearchField placeholder="Sök" showButton buttonText="Sök" onSubmit={handleSubmit} />
+   *
+   * // After:
+   * <SearchField placeholder="Sök" onSubmit={handleSubmit} />
+   * <Button onPress={() => handleSubmit(value)}>Sök</Button>
+   *
+   * @default false
+   */
+  showButton?: boolean
+  /**
+   * Text displayed on the built-in submit button.
+   *
+   * @deprecated since v17.9.0 — use your own `Button` instead. See `showButton`.
+   * @default 'Sök'
    */
   buttonText?: string
   /**
@@ -45,8 +63,11 @@ function isValidationError(
 export const SearchField: React.FC<SearchFieldProps> = ({
   errorPosition = 'top',
   size = 'large',
+  showButton,
   ...props
 }) => {
+  const shouldShowButton =
+    showButton !== undefined ? showButton : props.buttonText !== undefined
   const { value, setValue } = useSearchFieldState(props)
   const strings = useLocalizedStringFormatter(messages)
 
@@ -138,15 +159,16 @@ export const SearchField: React.FC<SearchFieldProps> = ({
             />
           )}
         </div>
-        <Button
-          size={size}
-          isDisabled={props.isDisabled}
-          excludeFromTabOrder
-          onPress={handleSubmit}
-          type='button'
-        >
-          {props.buttonText ? props.buttonText : strings.format('search')}
-        </Button>
+        {shouldShowButton && (
+          <Button
+            size={size}
+            isDisabled={props.isDisabled}
+            onPress={handleSubmit}
+            type='button'
+          >
+            {props.buttonText ? props.buttonText : strings.format('search')}
+          </Button>
+        )}
       </div>
       {errorPosition === 'bottom' && (
         <FieldError isInvalid={isInvalid}>
