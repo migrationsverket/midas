@@ -1,3 +1,9 @@
+## 17.8.1 (2026-03-13)
+
+### 🩹 Fixes
+
+- **components, tag:** add box-sizing for consistent height ([b66bd4adfd](https://github.com/migrationsverket/midas/commit/b66bd4adfd))
+
 ## 17.8.0 (2026-03-12)
 
 ### 🚀 Features
