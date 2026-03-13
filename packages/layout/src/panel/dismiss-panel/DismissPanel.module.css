@@ -5,6 +5,16 @@
   right: 0;
   width: 320px;
   height: 100%;
+  overflow: hidden;
+
+  &[data-entering] {
+    animation: slide-horizontally var(--midas-transition-duration-fast);
+  }
+
+  &[data-exiting] {
+    animation: slide-horizontally var(--midas-transition-duration-fast) reverse
+      ease-in;
+  }
 
   @media (width < 800px) {
     bottom: 0;
@@ -12,10 +22,39 @@
     height: 25%;
     left: 0;
     top: unset;
+
+    &[data-entering] {
+      animation: slide-vertically var(--midas-transition-duration-fast);
+    }
+
+    &[data-exiting] {
+      animation: slide-vertically var(--midas-transition-duration-fast) reverse
+        ease-in;
+    }
   }
 }
 
 .panelTitle {
   font-size: var(--midas-typography-font-size-20);
   display: block;
+}
+
+@keyframes slide-horizontally {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-vertically {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
