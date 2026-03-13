@@ -5,7 +5,7 @@ import styles from './SearchField.module.css'
 import * as stories from './SearchField.stories'
 import { render } from '../../test-utils'
 
-const { Primary, CustomValidation, Invalid } = composeStories(stories)
+const { Primary, CustomValidation, Invalid, WithDeprecatedButton } = composeStories(stories)
 
 const handleChange = vi.fn()
 const handleSubmit = vi.fn()
@@ -34,6 +34,38 @@ describe('given a primary SearchField', async () => {
     expect(handleSubmit).toHaveBeenCalledWith('hello')
   })
 
+  it('should accept custom classNames', async () => {
+    await expect
+      .element(document.querySelector(`.${styles.container}`) as HTMLElement)
+      .toHaveClass(Primary.args.className as string)
+  })
+})
+
+describe('given a default SearchField with no button props', async () => {
+  it('should not render a submit button', async () => {
+    await render(<Primary />)
+
+    await expect.element(page.getByRole('button')).not.toBeInTheDocument()
+  })
+})
+
+describe('given a SearchField with showButton: true (deprecated)', async () => {
+  beforeEach(async () => {
+    await render(
+      <WithDeprecatedButton
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      />,
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+  })
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
   it('should be possible to submit a search string using the mouse', async () => {
     await userEvent.click(page.getByRole('button').last())
 
@@ -41,10 +73,28 @@ describe('given a primary SearchField', async () => {
     expect(handleSubmit).toHaveBeenCalledWith('hello')
   })
 
-  it('should accept custom classNames', async () => {
-    await expect
-      .element(document.querySelector(`.${styles.container}`) as HTMLElement)
-      .toHaveClass(Primary.args.className as string)
+  it('should render a tabbable submit button', async () => {
+    await userEvent.tab()
+    await userEvent.keyboard('[Space]')
+
+    expect(handleSubmit).toHaveBeenCalledWith('hello')
+  })
+})
+
+describe('given a SearchField with only buttonText set (backward compat)', async () => {
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should show the button when only buttonText is passed', async () => {
+    await render(
+      <Primary
+        buttonText='Find'
+        onSubmit={handleSubmit}
+      />,
+    )
+
+    await expect.element(page.getByRole('button', { name: 'Find' })).toBeInTheDocument()
   })
 })
 
@@ -62,9 +112,7 @@ describe('given a SearchField with custom validation', async () => {
     )
 
     await userEvent.tab()
-    await userEvent.keyboard('secret')
-    await userEvent.tab()
-    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('secret[Enter]')
 
     expect(handleChange).toHaveBeenCalledWith('secret')
     expect(handleSubmit).not.toHaveBeenCalled()
