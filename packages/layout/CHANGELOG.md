@@ -1,3 +1,12 @@
+## 0.0.13 (2026-03-13)
+
+### 🩹 Fixes
+
+- **layout,panel:** suppress animation for prefers-reduced-motion ([b761e5d4f7](https://github.com/migrationsverket/midas/commit/b761e5d4f7))
+- **layout:** add overflow hidden to content to prevent scrollbar during animation ([7078674395](https://github.com/migrationsverket/midas/commit/7078674395))
+- **layout,panel:** add forwardRef to PanelBody for React 18 compat ([a0b06528a6](https://github.com/migrationsverket/midas/commit/a0b06528a6))
+- **layout, panel:** add animations to dismiss-panel ([b0e8733489](https://github.com/migrationsverket/midas/commit/b0e8733489))
+
 ## 0.0.12 (2026-03-13)
 
 ### 🧱 Updated Dependencies
