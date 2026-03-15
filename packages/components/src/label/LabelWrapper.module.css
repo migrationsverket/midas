@@ -1,7 +1,7 @@
 .labelPopover {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--midas-space-xsmall);
 }
 
 .labelPopoverTrigger {

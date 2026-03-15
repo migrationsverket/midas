@@ -31,13 +31,13 @@
   }
 
   &[data-placement='top'] {
-    margin-bottom: 8px;
+    margin-bottom: var(--midas-space-small);
 
     --origin: translateY(4px);
   }
 
   &[data-placement='bottom'] {
-    margin-top: 8px;
+    margin-top: var(--midas-space-small);
 
     --origin: translateY(-4px);
 
@@ -47,7 +47,7 @@
   }
 
   &[data-placement='right'] {
-    margin-left: 8px;
+    margin-left: var(--midas-space-small);
 
     --origin: translateX(-4px);
 
@@ -57,7 +57,7 @@
   }
 
   &[data-placement='left'] {
-    margin-right: 8px;
+    margin-right: var(--midas-space-small);
 
     --origin: translateX(4px);
 

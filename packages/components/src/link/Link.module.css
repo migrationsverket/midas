@@ -4,7 +4,7 @@
   text-decoration: underline;
   display: inline-flex;
   cursor: pointer;
-  gap: 0.25rem;
+  gap: var(--midas-space-xsmall);
   font-weight: 400;
   align-items: center;
 
@@ -54,7 +54,7 @@
 
 .standalone {
   display: inline-flex;
-  gap: 0.5rem;
+  gap: var(--midas-space-small);
   text-decoration: none;
   font-weight: 500;
 
