@@ -43,7 +43,7 @@
 
   font-family: var(--midas-typography-font-family);
   font-weight: var(--midas-typography-weight-regular);
-  gap: 0.5rem;
+  gap: var(--midas-space-small);
   align-items: center;
   display: flex;
   width: max-content;
@@ -154,12 +154,12 @@
   .checkboxList {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--midas-space-small);
   }
 
   .checkbox {
     @media (width <= 479px) {
-      padding: 0.875rem 1rem;
+      padding: var(--midas-space-70) var(--midas-space-medium);
       border: 1px solid var(--midas-border-color-primary);
       width: auto;
 
