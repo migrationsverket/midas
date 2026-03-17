@@ -25,18 +25,16 @@ export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'children'>
   /**
    * Whether to render a built-in submit button.
    *
-   * @deprecated since v17.9.0 — compose your own `Button` outside `SearchField` instead.
-   * Use `onSubmit` or `onChange` on your own terms.
+   * **Future flag:** pass `showButton={false}` to opt into the v18 default today.
+   * In v18 the button will no longer be shown by default — compose your own `Button`
+   * outside `SearchField` instead. This prop will be removed in v18.
    *
    * @example
-   * // Before (deprecated):
-   * <SearchField placeholder="Sök" showButton buttonText="Sök" onSubmit={handleSubmit} />
-   *
-   * // After:
+   * // Opt into v18 behavior now:
    * <SearchField placeholder="Sök" onSubmit={handleSubmit} />
    * <Button onPress={() => handleSubmit(value)}>Sök</Button>
    *
-   * @default false
+   * @default true
    */
   showButton?: boolean
   /**
@@ -77,8 +75,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   const formProps = useSlottedContext(FormContext)
   const resolvedValidationBehavior =
     validationBehavior ?? formProps?.validationBehavior ?? 'aria'
-  const shouldShowButton =
-    showButton !== undefined ? showButton : props.buttonText !== undefined
+  const shouldShowButton = showButton !== false
 
   const handleSubmit = (value: string) => {
     if (!value || props.isInvalid) return
@@ -137,6 +134,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
             {shouldShowButton && (
               <Button
                 slot={null}
+                excludeFromTabOrder
                 size={size}
                 isDisabled={props.isDisabled}
                 type='button'
