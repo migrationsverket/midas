@@ -1,0 +1,29 @@
+/**
+ * Shared overlay animation classes.
+ *
+ * .dropdownAnimation — opacity fade for dropdown overlays (combobox, menu, datepicker, select).
+ *   These always open directly below their trigger so no directional slide is needed.
+ *
+ * For contextual overlays with placement arrows (InfoPopover), see Popover.module.css which
+ * uses a placement-aware slide + fade via the --origin CSS custom property.
+ */
+
+.dropdownAnimation {
+  opacity: 1;
+  transition: opacity var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-out);
+
+  &[data-entering] {
+    opacity: 0;
+  }
+
+  &[data-exiting] {
+    opacity: 0;
+    transition-timing-function: var(--midas-transition-timing-ease-in);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .dropdownAnimation {
+    transition: none;
+  }
+}

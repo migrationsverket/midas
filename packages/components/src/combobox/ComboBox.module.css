@@ -93,7 +93,7 @@
   top: 0;
   right: 0;
   height: var(--midas-size-control);
-  transition: transform 0.3s ease;
+  transition: transform var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-in-out);
 
   &.medium {
     height: var(--midas-size-control-md);
@@ -121,7 +121,7 @@
 .icon {
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-in-out);
 }
 
 @media (prefers-reduced-motion) {
