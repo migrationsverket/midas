@@ -81,7 +81,6 @@
     &[data-hovered] {
       background-color: var(--midas-layer-01-hover);
       cursor: pointer;
-      transition-delay: 60ms;
     }
 
     &[data-open] {
@@ -148,6 +147,8 @@
 }
 
 .menuPopover {
+  composes: dropdownAnimation from '../common/overlay.module.css';
+
   &:focus-visible {
     outline: none;
   }

@@ -41,7 +41,7 @@
     var(--midas-background-inverse),
     transparent
   );
-  animation: wave 2s infinite ease-in-out;
+  animation: wave 2s infinite var(--midas-transition-timing-ease-in-out);
 }
 
 @media (prefers-reduced-motion) {

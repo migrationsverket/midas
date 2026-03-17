@@ -16,6 +16,16 @@
         "$value": "250ms",
         "$type": "duration",
         "$description": "Snabb övergång. 250ms. Används för kortlivade övergångar som tooltips och dropdowns — inte hover."
+      },
+      "quick": {
+        "$value": "150ms",
+        "$type": "duration",
+        "$description": "Kort mikroanimation. 150ms. Används för snabba overlay-rörelser som modaler och select-öppningar som är perceptibelt animerade men ändå snabba."
+      },
+      "instant": {
+        "$value": "100ms",
+        "$type": "duration",
+        "$description": "Omedelbar återkoppling. 100ms. Används för direkta tillståndsförändringar som hover-bakgrunder och färgövergångar — allt längre upplevs som tröghet."
       }
     },
     "timing": {
@@ -28,6 +38,11 @@
         "$value": [0.42, 0, 1, 1],
         "$type": "cubicBezier",
         "$description": "Accelererar mot slutet. Används för element som lämnar vyn."
+      },
+      "easeInOut": {
+        "$value": [0.42, 0, 0.58, 1],
+        "$type": "cubicBezier",
+        "$description": "Accelererar sedan decelererar symmetriskt. Används för element som rör sig mellan två positioner på skärmen."
       }
     },
     "panel": {
