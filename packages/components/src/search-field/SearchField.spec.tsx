@@ -5,7 +5,7 @@ import styles from './SearchField.module.css'
 import * as stories from './SearchField.stories'
 import { render } from '../../test-utils'
 
-const { Primary, CustomValidation, Invalid, WithDeprecatedButton } = composeStories(stories)
+const { Primary, CustomValidation, Invalid, WithoutButton } = composeStories(stories)
 
 const handleChange = vi.fn()
 const handleSubmit = vi.fn()
@@ -56,18 +56,18 @@ describe('given a primary SearchField', async () => {
   })
 })
 
-describe('given a default SearchField with no button props', async () => {
+describe('given a SearchField with showButton={false}', async () => {
   it('should not render a submit button', async () => {
-    await render(<Primary />)
+    await render(<WithoutButton />)
 
     await expect.element(page.getByRole('button')).not.toBeInTheDocument()
   })
 })
 
-describe('given a SearchField with showButton: true (deprecated)', async () => {
+describe('given a SearchField with the default built-in button', async () => {
   beforeEach(async () => {
     await render(
-      <WithDeprecatedButton
+      <Primary
         onChange={handleChange}
         onSubmit={handleSubmit}
       />,
@@ -88,11 +88,14 @@ describe('given a SearchField with showButton: true (deprecated)', async () => {
     expect(handleSubmit).toHaveBeenCalledWith('hello')
   })
 
-  it('should render a tabbable submit button', async () => {
+  it('should not include the submit button in the tab order', async () => {
     await userEvent.tab()
-    await userEvent.keyboard('[Space]')
 
-    expect(handleSubmit).toHaveBeenCalledWith('hello')
+    await expect
+      .element(page.getByRole('searchbox'))
+      .not.toHaveFocus()
+
+    expect(handleSubmit).not.toHaveBeenCalled()
   })
 })
 

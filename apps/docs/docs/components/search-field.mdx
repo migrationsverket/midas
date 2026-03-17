@@ -19,21 +19,11 @@ Inmatningsfält anpassat för sökning.
 import { SearchField } from '@midas-ds/components'
 ```
 
-:::warning Deprecated: inbyggd sökknapp
-
-`buttonText` och den inbyggda sökknappen är deprecated sedan v17.9.0 och tas bort i nästa major. Komponera en egen `Button` utanför fältet istället — se exemplen nedan.
-
-:::
-
 ## Grundläggande användning
 
-Utan en explicit knapp kan fältet användas för realtidsfiltrering via `onChange`, eller för sök-on-submit via `onSubmit` — Enter-tangenten fungerar alltid. Lägg till en knapp (se nedan) enbart när ett explicit submit-steg behövs.
+Fältet renderar en sökknapp som standard. Enter-tangenten fungerar alltid för att trigga `onSubmit`.
 
 ```tsx
-{/* Real-time filter */}
-<SearchField placeholder='Filtrera efter namn' onChange={filterResults} />
-
-{/* Keyboard submit (Enter) — no button needed */}
 <SearchField placeholder='Sök efter frukter' onSubmit={handleSubmit} />
 ```
 
@@ -44,17 +34,37 @@ Utan en explicit knapp kan fältet användas för realtidsfiltrering via `onChan
   />
 </div>
 
-## Sök med knapp
+## Utan knapp
 
-Använd ett externt `Button`-element när sökningen ska triggas explicit — t.ex. vid en söksida med serveranrop. Placera knappen bredvid fältet.
+För realtidsfiltrering eller när ett explicit submit-steg inte behövs kan knappen döljas med `showButton={false}`. Använd `onChange` för att reagera på varje tangenttryckning.
+
+```tsx
+{/* Real-time filter */}
+<SearchField placeholder='Filtrera efter namn' showButton={false} onChange={filterResults} />
+
+{/* Keyboard submit only */}
+<SearchField placeholder='Sök efter frukter' showButton={false} onSubmit={handleSubmit} />
+```
+
+<div className='card'>
+  <SearchField
+    placeholder='Sök efter frukter'
+    showButton={false}
+    onSubmit={(v) => console.log('submit:', v)}
+  />
+</div>
+
+## Sök med extern knapp
+
+När du behöver mer kontroll över knappens placering eller utseende — komponera en egen `Button` bredvid fältet.
 
 ```tsx
 const [query, setQuery] = React.useState('')
 
 <SearchField
   placeholder='Sök efter frukter'
+  showButton={false}
   onChange={setQuery}
-  onSubmit={handleSubmit}
 />
 <Button onPress={() => handleSubmit(query)}>Sök</Button>
 ```
@@ -65,8 +75,8 @@ export const SearchWithButton = () => {
     <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
       <SearchField
         placeholder='Sök efter frukter'
+        showButton={false}
         onChange={setQuery}
-        onSubmit={(v) => console.log('submit:', v)}
       />
       <Button onPress={() => console.log('submit:', query)}>Sök</Button>
     </div>
@@ -76,6 +86,14 @@ export const SearchWithButton = () => {
 <div className='card'>
   <SearchWithButton />
 </div>
+
+:::info Kommande förändring i v18
+
+Den inbyggda sökknappen kommer inte längre att visas som standard i v18. Beteendet med `showButton={false}` ovan är vad som blir standard.
+
+Vill du förbereda dig redan nu? Använd `showButton={false}` och komponera en egen `Button` — se exemplet ovan. Migreringen är en enkel prop-förändring.
+
+:::
 
 ## API
 

@@ -17,6 +17,10 @@ export default {
   },
 } satisfies Meta<typeof SearchField>
 
+/**
+ * Default behavior in v17 — the built-in submit button is shown.
+ * The button is not in the tab order; use Enter to submit or click the button.
+ */
 export const Primary: Story = {
   args: {
     placeholder: 'Sök efter en person',
@@ -46,12 +50,15 @@ export const Disabled: Story = {
   },
 }
 
-/** @deprecated Use your own Button outside SearchField instead. */
-export const WithDeprecatedButton: Story = {
-  tags: ['!autodocs'],
+/**
+ * Future default in v18 — opt in today with `showButton={false}`.
+ * Compose your own `Button` outside `SearchField` for explicit submit.
+ * Enter still works for keyboard submission.
+ */
+export const WithoutButton: Story = {
+  name: 'Without button (v18 default)',
   args: {
     placeholder: 'Sök efter en person',
-    showButton: true,
-    buttonText: 'Sök',
+    showButton: false,
   },
 }
