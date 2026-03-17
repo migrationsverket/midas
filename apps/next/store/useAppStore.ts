@@ -36,8 +36,6 @@ export type Draft = ApplicationData & {
 type AppStore = {
   // Notifications
   notifications: Notification[]
-  notificationsOpen: boolean
-  setNotificationsOpen: (open: boolean) => void
   markAllRead: () => void
   markRead: (id: number) => void
   // Language
@@ -54,9 +52,6 @@ type AppStore = {
 }
 
 export const useAppStore = create<AppStore>(set => ({
-  notificationsOpen: false,
-  setNotificationsOpen: open => set({ notificationsOpen: open }),
-
   notifications: [
     {
       id: 1,
@@ -150,7 +145,8 @@ export const useAppStore = create<AppStore>(set => ({
       country: 'China',
       type: 'study',
       duration: 'temporary',
-      reason: 'Enrolled in a Masters programme at KTH Royal Institute of Technology.',
+      reason:
+        'Enrolled in a Masters programme at KTH Royal Institute of Technology.',
       submittedAt: '2026-02-03',
       status: 'rejected',
     },
@@ -198,7 +194,9 @@ export const useAppStore = create<AppStore>(set => ({
   updateDraft: (id, data) =>
     set(state => ({
       drafts: state.drafts.map(d =>
-        d.id === id ? { ...d, ...data, savedAt: new Date().toLocaleDateString('sv-SE') } : d,
+        d.id === id
+          ? { ...d, ...data, savedAt: new Date().toLocaleDateString('sv-SE') }
+          : d,
       ),
     })),
   removeDraft: id =>

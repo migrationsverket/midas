@@ -54,7 +54,6 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 <SidebarNavigation />
               </Panel>
               <Main data-debug='Main'>{children}</Main>
-              <NotificationsPanel />
             </LayoutContent>
             <Navbar data-debug='Navbar'>
               <BottomNavigation />

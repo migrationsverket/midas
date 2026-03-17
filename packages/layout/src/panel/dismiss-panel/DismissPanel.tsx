@@ -11,11 +11,12 @@ import {
   useExitAnimation,
   useObjectRef,
 } from '@react-aria/utils'
-import { PanelBody, type PanelBodyProps } from '../panel-body'
+import { PanelBody } from '../panel-body'
 import { PanelHeader } from '../panel-header'
 import { PanelTitle } from '../panel-title'
 import messages from '../intl/translations.json'
 import styles from './DismissPanel.module.css'
+import { PanelProps } from '..'
 
 export interface DismissTriggerProps {
   isOpen?: boolean
@@ -23,7 +24,10 @@ export interface DismissTriggerProps {
   onOpenChange?: (isOpen: boolean) => void
 }
 
-export const DismissPanel = (props: PanelBodyProps & DismissTriggerProps) => {
+export type DismissPanelProps = Omit<PanelProps<'dismiss'>, 'variant'> &
+  DismissTriggerProps
+
+export const DismissPanel = (props: DismissPanelProps) => {
   const [isOpen, setIsOpen] = useControlledState(
     props.isOpen,
     props.defaultOpen || false,
@@ -52,11 +56,10 @@ export const DismissPanel = (props: PanelBodyProps & DismissTriggerProps) => {
 
 const DismissPanelInner = forwardRef<
   HTMLElement,
-  PanelBodyProps &
-    DismissTriggerProps & {
-      isExiting: boolean
-      onPress: (e: PressEvent) => void
-    }
+  DismissPanelProps & {
+    isExiting: boolean
+    onPress: (e: PressEvent) => void
+  }
 >(({ className, title, onPress, children, isExiting, ...rest }, ref) => {
   const strings = useLocalizedStringFormatter(messages)
   const objectRef = useObjectRef(ref)
