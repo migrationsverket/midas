@@ -30,7 +30,7 @@ We adopt a **future flag** pattern for managing breaking changes.
 // v17.x — future flag: opt in early
 <SearchField placeholder='Sök' showButton={false} />
 
-// v18 — showButton prop removed, no button by default
+// v18 — showButton prop deprecated, no button by default
 <SearchField placeholder='Sök' />
 ```
 
