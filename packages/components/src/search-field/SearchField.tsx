@@ -29,6 +29,8 @@ export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'children'>
    * In v18 the button will no longer be shown by default — compose your own `Button`
    * outside `SearchField` instead. This prop will be removed in v18.
    *
+   * @see https://github.com/migrationsverket/midas/issues/1109
+   *
    * @example
    * // Opt into v18 behavior now:
    * <SearchField placeholder="Sök" onSubmit={handleSubmit} />
