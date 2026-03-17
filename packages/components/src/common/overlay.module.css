@@ -10,7 +10,8 @@
 
 .dropdownAnimation {
   opacity: 1;
-  transition: opacity var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-out);
+  transition: opacity var(--midas-transition-duration-quick)
+    var(--midas-transition-timing-ease-out);
 
   &[data-entering] {
     opacity: 0;

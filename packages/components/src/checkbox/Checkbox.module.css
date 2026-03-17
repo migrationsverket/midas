@@ -20,7 +20,8 @@
 .checkboxInner svg path {
   stroke-dasharray: 24;
   stroke-dashoffset: 24;
-  transition: stroke-dashoffset var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-in-out);
+  transition: stroke-dashoffset var(--midas-transition-duration-quick)
+    var(--midas-transition-timing-ease-in-out);
 }
 
 .checkbox[data-selected] svg path,

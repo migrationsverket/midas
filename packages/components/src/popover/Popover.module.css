@@ -13,8 +13,10 @@
   overflow-wrap: break-word;
   box-sizing: border-box;
   transition:
-    transform var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-out),
-    opacity var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-out);
+    transform var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out),
+    opacity var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
 
   @media (forced-colors: active) {
     border: 1px solid;
@@ -38,8 +40,10 @@
     transform: var(--origin);
     opacity: 0;
     transition:
-      transform var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-in),
-      opacity var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-in);
+      transform var(--midas-transition-duration-quick)
+        var(--midas-transition-timing-ease-in),
+      opacity var(--midas-transition-duration-quick)
+        var(--midas-transition-timing-ease-in);
   }
 
   &:has(.arrow) {

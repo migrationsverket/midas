@@ -24,7 +24,8 @@
   min-height: var(--midas-size-control);
   padding-left: var(--midas-space-medium);
   padding-right: var(--midas-space-medium);
-  transition: all var(--midas-transition-duration-instant) var(--midas-transition-timing-ease-in);
+  transition: all var(--midas-transition-duration-instant)
+    var(--midas-transition-timing-ease-in);
 
   &.medium {
     min-height: var(--midas-size-control-md);
@@ -33,7 +34,8 @@
   &:focus-visible {
     outline: none;
     box-shadow: var(--midas-state-focus);
-    transition: all var(--midas-transition-duration-instant) var(--midas-transition-timing-ease-out);
+    transition: all var(--midas-transition-duration-instant)
+      var(--midas-transition-timing-ease-out);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -187,7 +189,8 @@
 
     /* Mirrors .dropdownAnimation in overlay.module.css — can't use composes inside a nested rule */
     opacity: 1;
-    transition: opacity var(--midas-transition-duration-quick) var(--midas-transition-timing-ease-out);
+    transition: opacity var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
 
     &[data-entering] {
       opacity: 0;
@@ -261,7 +264,8 @@
 
 .icon {
   display: flex;
-  transition: transform var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-in-out);
+  transition: transform var(--midas-transition-duration-normal)
+    var(--midas-transition-timing-ease-in-out);
 }
 
 .tagGroup {

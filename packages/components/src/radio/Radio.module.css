@@ -39,10 +39,14 @@
     border: 0.0625rem solid var(--midas-border-color-primary);
     border-radius: 1.286rem;
     transition:
-      border-color var(--midas-transition-duration-instant) var(--midas-transition-timing-ease-out),
-      border-width var(--midas-transition-duration-instant) var(--midas-transition-timing-ease-out),
-      background var(--midas-transition-duration-instant) var(--midas-transition-timing-ease-out),
-      padding var(--midas-transition-duration-instant) var(--midas-transition-timing-ease-out);
+      border-color var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out),
+      border-width var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out),
+      background var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out),
+      padding var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out);
 
     @media (forced-colors: active) {
       transition: none;
