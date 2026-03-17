@@ -15,7 +15,6 @@
 
 .listBoxPopover {
   composes: dropdownAnimation from '../common/overlay.module.css';
-
   font-family: var(--midas-typography-font-family);
 
   /* RAC passes this variable via the style prop, making it available during runtime only */
