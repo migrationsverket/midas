@@ -2,12 +2,11 @@
 
 import { Button, Text } from '@midas-ds/components'
 import { Info } from 'lucide-react'
-import { useState } from 'react'
 import styles from './Information.module.css'
-import { Panel } from '@midas-ds/layout'
+import { usePanel } from '@midas-ds/layout'
 
 export const Information = () => {
-  const [isDismissPanelOpen, setIsDismissPanelOpen] = useState(false)
+  const { setPanel } = usePanel()
 
   return (
     <Text className={styles.information}>
@@ -16,20 +15,16 @@ export const Information = () => {
         className={styles.icon}
         variant='icon'
         size='medium'
-        onPress={() => setIsDismissPanelOpen(prev => !prev)}
+        onPress={() =>
+          setPanel({
+            title: 'Details',
+            'aria-label': 'details panel',
+            children: 'More information',
+          })
+        }
       >
         <Info size={20} />
       </Button>
-      <Panel
-        variant='dismiss'
-        title='Details'
-        aria-label='details panel'
-        data-debug='Panel (dismiss)'
-        isOpen={isDismissPanelOpen}
-        onOpenChange={setIsDismissPanelOpen}
-      >
-        More information
-      </Panel>
     </Text>
   )
 }
