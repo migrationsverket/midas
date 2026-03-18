@@ -1,21 +1,18 @@
 'use client'
 
-import { GridList, GridListProps } from 'react-aria-components'
+import type { HTMLAttributes } from 'react'
 import clsx from '../utils/clsx'
 import styles from './FileList.module.css'
 
-export type FileListProps<T extends object> = GridListProps<T>
+export interface FileListProps extends HTMLAttributes<HTMLUListElement> {}
 
-export const FileList = <T extends object>({
-  className,
-  selectionMode = 'none',
-  ...props
-}: FileListProps<T>) => {
+export const FileList = ({ className, children, ...props }: FileListProps) => {
   return (
-    <GridList
+    <ul
       {...props}
-      selectionMode={selectionMode}
       className={clsx(styles.fileList, className)}
-    />
+    >
+      {children}
+    </ul>
   )
 }

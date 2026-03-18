@@ -1,6 +1,5 @@
 'use client'
 
-import { GridListItem } from 'react-aria-components'
 import { Trash2 } from 'lucide-react'
 import { Button } from '../button'
 import { useLocalizedStringFormatter } from '../utils/intl'
@@ -26,9 +25,8 @@ export const FileListItem = ({
   const strings = useLocalizedStringFormatter(messages)
 
   return (
-    <GridListItem
+    <li
       id={id}
-      textValue={fileName}
       className={clsx(styles.fileListItem, className)}
     >
       <span className={styles.fileInfo}>
@@ -38,7 +36,6 @@ export const FileListItem = ({
       {onDelete && (
         <Button
           variant='icon'
-          slot={null}
           onPress={onDelete}
           aria-label={`${strings.format('removeFile')} ${fileName}`}
           className={styles.deleteButton}
@@ -49,6 +46,6 @@ export const FileListItem = ({
           />
         </Button>
       )}
-    </GridListItem>
+    </li>
   )
 }
