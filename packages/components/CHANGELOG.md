@@ -1,3 +1,15 @@
+## 17.8.3 (2026-03-18)
+
+### 🔧 Maintenance
+
+- **components:** fix stylelint formatting errors ([37ec3ea5a0](https://github.com/migrationsverket/midas/commit/37ec3ea5a0))
+- **components,theme:** standardize animation tokens and transitions ([09a2ce6a04](https://github.com/migrationsverket/midas/commit/09a2ce6a04))
+- **components:** replace hardcoded spacing values with tokens ([127194d71c](https://github.com/migrationsverket/midas/commit/127194d71c))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.13
+
 ## 17.8.2 (2026-03-16)
 
 ### 🧱 Updated Dependencies

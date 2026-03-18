@@ -1,3 +1,9 @@
+## 0.0.16 (2026-03-18)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.8.3
+
 ## 0.0.15 (2026-03-17)
 
 This was a version bump only for layout to align it with other projects, there were no code changes.
