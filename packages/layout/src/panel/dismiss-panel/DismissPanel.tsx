@@ -60,37 +60,51 @@ const DismissPanelInner = forwardRef<
     isExiting: boolean
     onPress: (e: PressEvent) => void
   }
->(({ className, title, onPress, children, isExiting, ...rest }, ref) => {
-  const strings = useLocalizedStringFormatter(messages)
-  const objectRef = useObjectRef(ref)
-  const isEntering = useEnterAnimation(objectRef)
+>(
+  (
+    {
+      className,
+      title,
+      onPress,
+      children,
+      isExiting,
+      'aria-hidden': ariaHidden,
+      ...rest
+    },
+    ref,
+  ) => {
+    const strings = useLocalizedStringFormatter(messages)
+    const objectRef = useObjectRef(ref)
+    const isEntering = useEnterAnimation(objectRef)
 
-  return (
-    <PanelBody
-      className={clsx(className, styles.dismissPanel)}
-      ref={objectRef}
-      data-entering={isEntering || undefined}
-      data-exiting={isExiting || undefined}
-      {...filterDOMProps(rest)}
-    >
-      <PanelHeader>
-        <div>
-          {title && (
-            <PanelTitle
-              className={styles.panelTitle}
-              title={title}
-            />
-          )}
-        </div>
-        <Button
-          variant='icon'
-          aria-label={strings.format('closePanel')}
-          onPress={onPress}
-        >
-          <X size={20} />
-        </Button>
-      </PanelHeader>
-      {children}
-    </PanelBody>
-  )
-})
+    return (
+      <PanelBody
+        aria-hidden={ariaHidden || undefined}
+        className={clsx(className, styles.dismissPanel)}
+        ref={objectRef}
+        data-entering={isEntering || undefined}
+        data-exiting={isExiting || undefined}
+        {...filterDOMProps(rest)}
+      >
+        <PanelHeader>
+          <div>
+            {title && (
+              <PanelTitle
+                className={styles.panelTitle}
+                title={title}
+              />
+            )}
+          </div>
+          <Button
+            variant='icon'
+            aria-label={strings.format('closePanel')}
+            onPress={onPress}
+          >
+            <X size={20} />
+          </Button>
+        </PanelHeader>
+        {children}
+      </PanelBody>
+    )
+  },
+)
