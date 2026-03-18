@@ -2,7 +2,7 @@
 
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './LayoutContent.module.css'
-import { usePanel } from '../LayoutContext'
+import { usePanels } from '../LayoutContext'
 import { Panel } from '../../panel'
 import { clsx } from '@midas-ds/components'
 
@@ -16,11 +16,13 @@ export const LayoutContent = ({
   children,
   ...rest
 }: LayoutContentProps) => {
-  const { panel, setPanel } = usePanel()
+  const { panels, setPanels } = usePanels()
 
-  const handleOpenChange = (isOpen: boolean) => {
+  const handleOpenChange = (id: string) => (isOpen: boolean) => {
     if (!isOpen) {
-      setPanel(null)
+      setPanels(openPanels =>
+        openPanels.filter(openPanel => openPanel.id !== id),
+      )
     }
   }
 
@@ -30,13 +32,17 @@ export const LayoutContent = ({
       {...rest}
     >
       {children}
-      <Panel
-        variant='dismiss'
-        data-debug='Panel (dismiss)'
-        isOpen={!!panel}
-        onOpenChange={handleOpenChange}
-        {...panel}
-      />
+      {panels.length > 0 &&
+        panels.map(panel => (
+          <Panel
+            key={panel.id}
+            variant='dismiss'
+            data-debug='Panel (dismiss)'
+            isOpen
+            onOpenChange={handleOpenChange(panel.id)}
+            {...panel}
+          />
+        ))}
     </div>
   )
 }

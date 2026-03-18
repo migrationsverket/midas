@@ -3,10 +3,10 @@
 import { Button, Text } from '@midas-ds/components'
 import { Info } from 'lucide-react'
 import styles from './Information.module.css'
-import { usePanel } from '@midas-ds/layout'
+import { usePanels } from '@midas-ds/layout'
 
 export const Information = () => {
-  const { setPanel } = usePanel()
+  const { setPanels } = usePanels()
 
   return (
     <Text className={styles.information}>
@@ -16,11 +16,15 @@ export const Information = () => {
         variant='icon'
         size='medium'
         onPress={() =>
-          setPanel({
-            title: 'Details',
-            'aria-label': 'details panel',
-            children: 'More information',
-          })
+          setPanels(panels => [
+            ...panels,
+            {
+              id: 'details',
+              title: 'Details',
+              'aria-label': 'details panel',
+              children: 'More information',
+            },
+          ])
         }
       >
         <Info size={20} />

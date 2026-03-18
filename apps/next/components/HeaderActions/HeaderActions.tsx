@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { Bell, CircleUserRound, Languages } from 'lucide-react'
 import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
-import { HeaderActions, HeaderAction, usePanel } from '@midas-ds/layout'
+import { HeaderActions, HeaderAction, usePanels } from '@midas-ds/layout'
 import {
   Badge,
   BadgeContainer,
@@ -23,7 +23,7 @@ export const AppHeaderActions = () => {
   const currentLanguage = useAppStore(s => s.currentLanguage)
   const setLanguage = useAppStore(s => s.setLanguage)
   const languageTriggerRef = useRef<HTMLButtonElement>(null)
-  const { setPanel } = usePanel()
+  const { setPanels } = usePanels()
 
   return (
     <HeaderActions>
@@ -36,10 +36,14 @@ export const AppHeaderActions = () => {
         }
         aria-label={`Notifications, ${unreadCount} unread`}
         onPress={() =>
-          setPanel({
-            title: 'Notifications',
-            children: <NotificationsPanel />,
-          })
+          setPanels(panels => [
+            ...panels,
+            {
+              id: 'Notifications',
+              title: 'Notifications',
+              children: <NotificationsPanel />,
+            },
+          ])
         }
       >
         Notifications
