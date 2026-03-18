@@ -10,8 +10,7 @@ import { FileList, FileListItem } from '@midas-ds/components'
 <ComponentHeader
   name='FileList'
   friendlyName='Fillista, uppladdade filer'
-  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/GridList.html'
-  overrideHeadlessLinkTitle='GridList — React Aria'
+  overrideHeadlessLink=''
 />
 
 Komponent för att visa en lista med uppladdade filer. Varje rad visar filnamn, valfri filstorlek och en knapp för att ta bort filen.
@@ -78,14 +77,14 @@ Utelämna `onDelete` för att visa en skrivskyddad lista.
 
 ## Tillgänglighet
 
-`FileList` är byggd på React Arias [GridList](https://react-spectrum.adobe.com/react-aria/GridList.html) som hanterar tangentbordsnavigation och ARIA-roller automatiskt.
+`FileList` renderar en semantisk `<ul>`-lista där varje borttagningsknapp är direkt nåbar via tangentbordet.
 
 | Tangent | Åtgärd |
 |---------|--------|
-| `↑` / `↓` | Navigera mellan filer |
-| `Tab` | Flytta fokus till borttagningsknappen i markerad rad |
+| `Tab` / `Shift+Tab` | Navigera mellan borttagningsknappar |
 | `Enter` / `Space` | Aktivera borttagningsknappen |
-| `Escape` | Återgå fokus till raden |
+
+Komponenten hanterar inte fokus efter borttagning — det är konsumentens ansvar att flytta fokus när ett objekt faktiskt tas bort från listan.
 
 `aria-label` på `FileList` är obligatoriskt och beskriver listans syfte för skärmläsare.
 Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Remove CV_Anna_Svensson.pdf"`.

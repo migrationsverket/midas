@@ -11,7 +11,7 @@ const { Default, WithoutFileSize } = composeStories(stories)
 describe('FileList', () => {
   it('renders all file items', async () => {
     await render(<Default />)
-    const rows = document.querySelectorAll('[role="row"]')
+    const rows = document.querySelectorAll('li')
     expect(rows).toHaveLength(3)
   })
 
@@ -28,8 +28,8 @@ describe('FileList', () => {
 
   it('does not render file size when not provided', async () => {
     const { getByRole } = await render(<WithoutFileSize />)
-    const grid = getByRole('grid')
-    await expect.element(grid).not.toHaveTextContent('MB')
+    const list = getByRole('list')
+    await expect.element(list).not.toHaveTextContent('MB')
   })
 
   it('calls onDelete when delete button is pressed', async () => {
@@ -51,7 +51,8 @@ describe('FileList', () => {
   it('applies custom className to the list', async () => {
     const { getByRole } = await render(<Default className='custom-class' />)
     await expect
-      .element(getByRole('grid'))
+      .element(getByRole('list'))
       .toHaveClass(styles.fileList, 'custom-class')
   })
+
 })
