@@ -20,10 +20,10 @@ export interface LayoutContextValue {
 
 export const LayoutContext = createContext<LayoutContextValue>({
   panels: [],
-  addPanel: () => {},
-  closePanel: () => {},
-  removePanel: () => {},
-  resetPromoting: () => {},
+  addPanel: () => { /* noop */ },
+  closePanel: () => { /* noop */ },
+  removePanel: () => { /* noop */ },
+  resetPromoting: () => { /* noop */ },
 })
 
 /**
