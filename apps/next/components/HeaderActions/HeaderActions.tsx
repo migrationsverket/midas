@@ -23,7 +23,7 @@ export const AppHeaderActions = () => {
   const currentLanguage = useAppStore(s => s.currentLanguage)
   const setLanguage = useAppStore(s => s.setLanguage)
   const languageTriggerRef = useRef<HTMLButtonElement>(null)
-  const { setPanels } = usePanels()
+  const { addPanel } = usePanels()
 
   return (
     <HeaderActions>
@@ -36,14 +36,11 @@ export const AppHeaderActions = () => {
         }
         aria-label={`Notifications, ${unreadCount} unread`}
         onPress={() =>
-          setPanels(panels => [
-            ...panels,
-            {
-              id: 'Notifications',
-              title: 'Notifications',
-              children: <NotificationsPanel />,
-            },
-          ])
+          addPanel({
+            id: 'Notifications',
+            title: 'Notifications',
+            children: <NotificationsPanel />,
+          })
         }
       >
         Notifications

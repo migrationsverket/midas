@@ -4,7 +4,7 @@ import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
 import { X } from 'lucide-react'
 import { useControlledState } from '@react-stately/utils'
 import { type PressEvent } from 'react-aria-components'
-import { forwardRef, useRef } from 'react'
+import { AnimationEvent, forwardRef, useEffect, useRef } from 'react'
 import {
   filterDOMProps,
   useEnterAnimation,
@@ -22,12 +22,17 @@ export interface DismissTriggerProps {
   isOpen?: boolean
   defaultOpen?: boolean
   onOpenChange?: (isOpen: boolean) => void
+  onExited?: () => void
+  skipEnterAnimation?: boolean
+  promoting?: boolean
+  onPromotionEnd?: () => void
 }
 
 export type DismissPanelProps = Omit<PanelProps<'dismiss'>, 'variant'> &
   DismissTriggerProps
 
 export const DismissPanel = (props: DismissPanelProps) => {
+  const { onExited } = props
   const [isOpen, setIsOpen] = useControlledState(
     props.isOpen,
     props.defaultOpen || false,
@@ -35,10 +40,15 @@ export const DismissPanel = (props: DismissPanelProps) => {
   )
 
   const ref = useRef<HTMLElement>(null)
-
   const isExiting = useExitAnimation(ref, isOpen)
 
   const handlePress = () => setIsOpen(previouslyOpen => !previouslyOpen)
+
+  useEffect(() => {
+    if (!isOpen && !isExiting) {
+      onExited?.()
+    }
+  }, [isOpen, isExiting, onExited])
 
   if (!isOpen && !isExiting) {
     return null
@@ -68,6 +78,13 @@ const DismissPanelInner = forwardRef<
       onPress,
       children,
       isExiting,
+      skipEnterAnimation,
+      promoting,
+      onPromotionEnd,
+      isOpen: _isOpen,
+      defaultOpen: _defaultOpen,
+      onOpenChange: _onOpenChange,
+      onExited: _onExited,
       'aria-hidden': ariaHidden,
       ...rest
     },
@@ -75,7 +92,13 @@ const DismissPanelInner = forwardRef<
   ) => {
     const strings = useLocalizedStringFormatter(messages)
     const objectRef = useObjectRef(ref)
-    const isEntering = useEnterAnimation(objectRef)
+    const isEntering = useEnterAnimation(objectRef, !skipEnterAnimation)
+
+    const handleAnimationEnd = (e: AnimationEvent<HTMLElement>) => {
+      if (e.target === e.currentTarget && promoting) {
+        onPromotionEnd?.()
+      }
+    }
 
     return (
       <PanelBody
@@ -84,6 +107,8 @@ const DismissPanelInner = forwardRef<
         ref={objectRef}
         data-entering={isEntering || undefined}
         data-exiting={isExiting || undefined}
+        data-promoting={promoting || undefined}
+        onAnimationEnd={handleAnimationEnd}
         {...filterDOMProps(rest)}
       >
         <PanelHeader>

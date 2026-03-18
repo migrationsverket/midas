@@ -2,7 +2,7 @@
 
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { usePanels } from '../../layout'
-import { Panel } from '../Panel'
+import { DismissPanel } from '../dismiss-panel'
 
 export type PanelRegionProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
@@ -14,32 +14,32 @@ export const PanelRegion = ({
   className,
   ...rest
 }: PanelRegionProps) => {
-  const { panels, setPanels } = usePanels()
-
-  const handleOpenChange = (id: string) => (isOpen: boolean) => {
-    if (!isOpen) {
-      setPanels(openPanels =>
-        openPanels.filter(openPanel => openPanel.id !== id),
-      )
-    }
-  }
+  const { panels, closePanel, removePanel, resetPromoting } = usePanels()
 
   return (
     <div
       className={className}
       {...rest}
     >
-      {panels.map((panel, index, { length }) => (
-        <Panel
-          aria-hidden={length > 1 && index === 0}
-          key={panel.id}
-          variant='dismiss'
-          data-debug='Panel (dismiss)'
-          isOpen
-          onOpenChange={handleOpenChange(panel.id)}
-          {...panel}
-        />
-      ))}
+      {panels.map(
+        ({ id, isOpen, skipEnterAnimation, promoting, ...panel }, index, { length }) => (
+          <DismissPanel
+            aria-hidden={index < length - 1 || undefined}
+            key={id}
+            id={id}
+            data-debug='Panel (dismiss)'
+            isOpen={isOpen}
+            skipEnterAnimation={skipEnterAnimation}
+            promoting={promoting}
+            onOpenChange={open => {
+              if (!open) closePanel(id)
+            }}
+            onExited={() => removePanel(id)}
+            onPromotionEnd={() => resetPromoting(id)}
+            {...panel}
+          />
+        ),
+      )}
       {children}
     </div>
   )

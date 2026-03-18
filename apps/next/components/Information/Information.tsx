@@ -6,7 +6,7 @@ import styles from './Information.module.css'
 import { usePanels } from '@midas-ds/layout'
 
 export const Information = () => {
-  const { setPanels } = usePanels()
+  const { addPanel } = usePanels()
 
   return (
     <Text className={styles.information}>
@@ -16,15 +16,12 @@ export const Information = () => {
         variant='icon'
         size='medium'
         onPress={() =>
-          setPanels(panels => [
-            ...panels,
-            {
-              id: 'details',
-              title: 'Details',
-              'aria-label': 'details panel',
-              children: 'More information',
-            },
-          ])
+          addPanel({
+            id: 'details',
+            title: 'Details',
+            'aria-label': 'details panel',
+            children: 'More information',
+          })
         }
       >
         <Info size={20} />

@@ -1,4 +1,14 @@
 .dismissPanel {
+  &[data-promoting] {
+    animation: promote var(--midas-transition-duration-fast) ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &[data-promoting] {
+      animation-duration: 1ms;
+    }
+  }
+
   /* important because position:relative is overridden by [data-debug] selector */
   position: absolute !important;
   top: 0;
@@ -44,6 +54,18 @@
 .panelTitle {
   font-size: var(--midas-typography-font-size-20);
   display: block;
+}
+
+@keyframes promote {
+  from {
+    opacity: 0.7;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes slide-horizontally {
