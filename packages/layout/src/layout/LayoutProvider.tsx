@@ -1,46 +1,74 @@
 'use client'
 
-import { ReactNode, SetStateAction } from 'react'
-import { LayoutContext } from './LayoutContext'
-import { DismissPanelProps } from '../panel'
-import { useControlledState } from '@react-stately/utils'
+import { ReactNode, useState } from 'react'
+import { LayoutContext, PanelItem } from './LayoutContext'
 
-export interface LayoutProviderProps<T = DismissPanelProps[]> {
+export type PanelBehavior = 'bring-to-front' | 'pop-to'
+
+export interface LayoutProviderProps {
   children: ReactNode
-  panels?: T
-  defaultPanels?: T
-  setPanels?: (panels: T) => void
+  defaultPanels?: Omit<PanelItem, 'isOpen' | 'skipEnterAnimation' | 'promoting'>[]
+  panelBehavior?: PanelBehavior
 }
 
-export const LayoutProvider = ({ children, ...props }: LayoutProviderProps) => {
-  const [panels, setPanels] = useControlledState(
-    props.panels,
-    props.defaultPanels || [],
-    props.setPanels,
+export const LayoutProvider = ({
+  children,
+  defaultPanels = [],
+  panelBehavior = 'bring-to-front',
+}: LayoutProviderProps) => {
+  const [panels, setPanels] = useState<PanelItem[]>(() =>
+    defaultPanels.map(p => ({ ...p, isOpen: true, skipEnterAnimation: true })),
   )
 
-  const setUniquePanels = (action: SetStateAction<DismissPanelProps[]>) => {
+  const addPanel = (
+    panel: Omit<PanelItem, 'isOpen' | 'skipEnterAnimation' | 'promoting'>,
+  ) => {
     setPanels(prev => {
-      const next = typeof action === 'function' ? action(prev) : action
-      const seen = new Set()
-      const deduped: DismissPanelProps[] = []
+      const existingIndex = prev.findIndex(p => p.id === panel.id)
 
-      for (let i = next.length - 1; i >= 0; i--) {
-        const item = next[i]
-        const { id } = item
-
-        if (!seen.has(id)) {
-          seen.add(id)
-          deduped.unshift(item)
-        }
+      if (existingIndex === -1) {
+        return [...prev, { ...panel, isOpen: true }]
       }
 
-      return deduped
+      if (panelBehavior === 'bring-to-front') {
+        if (existingIndex === prev.length - 1) return prev
+        const existing = prev[existingIndex]
+        return [
+          ...prev.filter(p => p.id !== panel.id),
+          { ...existing, isOpen: true, promoting: true },
+        ]
+      }
+
+      if (panelBehavior === 'pop-to') {
+        return prev.map((p, i) =>
+          i > existingIndex ? { ...p, isOpen: false } : p,
+        )
+      }
+
+      return prev
     })
   }
 
+  const closePanel = (id: string) => {
+    setPanels(prev =>
+      prev.map(p => (p.id === id ? { ...p, isOpen: false } : p)),
+    )
+  }
+
+  const removePanel = (id: string) => {
+    setPanels(prev => prev.filter(p => p.id !== id))
+  }
+
+  const resetPromoting = (id: string) => {
+    setPanels(prev =>
+      prev.map(p => (p.id === id ? { ...p, promoting: false } : p)),
+    )
+  }
+
   return (
-    <LayoutContext.Provider value={{ panels, setPanels: setUniquePanels }}>
+    <LayoutContext.Provider
+      value={{ panels, addPanel, closePanel, removePanel, resetPromoting }}
+    >
       {children}
     </LayoutContext.Provider>
   )
