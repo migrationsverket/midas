@@ -15,12 +15,13 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
       const seen = new Set()
       const deduped: DismissPanelProps[] = []
 
-      for (const item of next) {
+      for (let i = next.length - 1; i >= 0; i--) {
+        const item = next[i]
         const { id } = item
 
         if (!seen.has(id)) {
           seen.add(id)
-          deduped.push(item)
+          deduped.unshift(item)
         }
       }
 
