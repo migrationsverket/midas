@@ -38,10 +38,10 @@ docker compose up -d docs       # Endast dokumentation
 ### Kör kommandon
 
 ```bash
-docker compose exec cli npx nx test components   # Kör tester
-docker compose exec cli npx nx build components  # Bygg komponenter
-docker compose exec cli npm install <paket>      # Installera beroenden
-docker compose exec cli sh                       # Öppna shell i containern
+docker compose exec midas-cli npx nx test components   # Kör tester
+docker compose exec midas-cli npx nx build components  # Bygg komponenter
+docker compose exec midas-cli npm install <paket>      # Installera beroenden
+docker compose exec midas-cli sh                       # Öppna shell i containern
 ```
 
 ### Stoppa
@@ -120,7 +120,7 @@ För att testa komponentbiblioteket i en annan app kan du publicera det till ett
 **Med Docker:**
 ```bash
 docker compose up -d verdaccio
-docker compose exec cli npx nx run @midas-ds/source:release:local:docker:dev
+docker compose exec midas-cli npx nx run @midas-ds/source:release:local:docker:dev
 ```
 
 **Utan Docker:**
