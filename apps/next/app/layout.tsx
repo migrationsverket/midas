@@ -9,6 +9,8 @@ import {
   Main,
   MobileMenu,
   LayoutContent,
+  LayoutProvider,
+  PanelRegion,
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
 import { AppHeaderActions } from '../components/HeaderActions/HeaderActions'
@@ -34,31 +36,42 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       <body>
         <AppProvider>
           <GlobalToastRegion />
-          <Layout>
-            <Header data-debug='Header'>
-              <MobileMenu title='Next App'>
-                <SidebarNavigation />
-              </MobileMenu>
-              <Link href='/'>
-                <Logo />
-              </Link>
-              <AppHeaderActions />
-            </Header>
-            <LayoutContent>
-              <Panel
-                id='sidebar'
-                data-debug='Panel (collapse)'
-                title='Next App'
-                variant='collapse'
-              >
-                <SidebarNavigation />
-              </Panel>
-              <Main data-debug='Main'>{children}</Main>
-            </LayoutContent>
-            <Navbar data-debug='Navbar'>
-              <BottomNavigation />
-            </Navbar>
-          </Layout>
+          <LayoutProvider
+            defaultPanels={[
+              {
+                id: '0',
+                title: 'Testing dismissable panels',
+                children: 'This is a default open panel',
+              },
+            ]}
+          >
+            <Layout>
+              <Header data-debug='Header'>
+                <MobileMenu title='Next App'>
+                  <SidebarNavigation />
+                </MobileMenu>
+                <Link href='/'>
+                  <Logo />
+                </Link>
+                <AppHeaderActions />
+              </Header>
+              <LayoutContent>
+                <Panel
+                  id='sidebar'
+                  data-debug='Panel (collapse)'
+                  title='Next App'
+                  variant='collapse'
+                >
+                  <SidebarNavigation />
+                </Panel>
+                <Main data-debug='Main'>{children}</Main>
+                <PanelRegion />
+              </LayoutContent>
+              <Navbar data-debug='Navbar'>
+                <BottomNavigation />
+              </Navbar>
+            </Layout>
+          </LayoutProvider>
         </AppProvider>
       </body>
     </html>

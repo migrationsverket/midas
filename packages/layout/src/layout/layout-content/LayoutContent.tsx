@@ -1,5 +1,4 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import { PanelRegion } from '../../panel'
 import styles from './LayoutContent.module.css'
 
 export type LayoutContentProps = DetailedHTMLProps<
@@ -7,16 +6,9 @@ export type LayoutContentProps = DetailedHTMLProps<
   HTMLDivElement
 >
 
-export const LayoutContent = ({
-  className,
-  children,
-  ...rest
-}: LayoutContentProps) => (
+export const LayoutContent = ({ className, ...rest }: LayoutContentProps) => (
   <div
     className={`${className ?? ''} ${styles.layoutContent}`}
     {...rest}
-  >
-    {children}
-    <PanelRegion />
-  </div>
+  />
 )

@@ -1,15 +1,25 @@
-import { ReactNode, SetStateAction, useState } from 'react'
+'use client'
+
+import { ReactNode, SetStateAction } from 'react'
 import { LayoutContext } from './LayoutContext'
 import { DismissPanelProps } from '../panel'
+import { useControlledState } from '@react-stately/utils'
 
-export interface LayoutProviderProps {
+export interface LayoutProviderProps<T = DismissPanelProps[]> {
   children: ReactNode
+  panels?: T
+  defaultPanels?: T
+  setPanels?: (panels: T) => void
 }
 
-export const LayoutProvider = ({ children }: LayoutProviderProps) => {
-  const [panels, setPanels] = useState<DismissPanelProps[]>([])
+export const LayoutProvider = ({ children, ...props }: LayoutProviderProps) => {
+  const [panels, setPanels] = useControlledState(
+    props.panels,
+    props.defaultPanels || [],
+    props.setPanels,
+  )
 
-  const setUniqueState = (action: SetStateAction<DismissPanelProps[]>) => {
+  const setUniquePanels = (action: SetStateAction<DismissPanelProps[]>) => {
     setPanels(prev => {
       const next = typeof action === 'function' ? action(prev) : action
       const seen = new Set()
@@ -30,7 +40,7 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
   }
 
   return (
-    <LayoutContext.Provider value={{ panels, setPanels: setUniqueState }}>
+    <LayoutContext.Provider value={{ panels, setPanels: setUniquePanels }}>
       {children}
     </LayoutContext.Provider>
   )
