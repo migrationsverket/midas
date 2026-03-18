@@ -18,19 +18,25 @@ export default {
         id='1'
         fileName='resume.pdf'
         fileSize='1.2 MB'
-        onDelete={() => {}}
+        onDelete={() => {
+          // noop
+        }}
       />
       <FileListItem
         id='2'
         fileName='cover-letter.docx'
         fileSize='45 KB'
-        onDelete={() => {}}
+        onDelete={() => {
+          // noop
+        }}
       />
       <FileListItem
         id='3'
         fileName='references.pdf'
         fileSize='3.4 MB'
-        onDelete={() => {}}
+        onDelete={() => {
+          // noop
+        }}
       />
     </FileList>
   ),
@@ -44,12 +50,16 @@ export const WithoutFileSize: Story = {
       <FileListItem
         id='1'
         fileName='resume.pdf'
-        onDelete={() => {}}
+        onDelete={() => {
+          // noop
+        }}
       />
       <FileListItem
         id='2'
         fileName='cover-letter.docx'
-        onDelete={() => {}}
+        onDelete={() => {
+          // noop
+        }}
       />
     </FileList>
   ),
