@@ -13,7 +13,7 @@
   box-sizing: border-box;
   display: flex;
   font-family: var(--midas-typography-font-family);
-  height: 48px;
+  height: var(--midas-size-control);
   padding-inline-start: var(--midas-space-medium);
 
   &[data-focused],
@@ -42,6 +42,7 @@
 .fileName {
   color: var(--midas-text-primary);
   font-size: var(--midas-typography-font-size-30);
+  font-weight: var(--midas-typography-weight-medium);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -50,7 +51,7 @@
 .fileSize {
   color: var(--midas-text-secondary);
   flex-shrink: 0;
-  font-size: var(--midas-typography-font-size-20);
+  font-size: var(--midas-typography-font-size-30);
 }
 
 .deleteButton {
