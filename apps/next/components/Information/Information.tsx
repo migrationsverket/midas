@@ -1,31 +1,24 @@
 'use client'
 
-import { Button, Text } from '@midas-ds/components'
-import { Info } from 'lucide-react'
-import styles from './Information.module.css'
+import { Button } from '@midas-ds/components'
 import { usePanels } from '@midas-ds/layout'
 
 export const Information = () => {
   const { addPanel } = usePanels()
 
   return (
-    <Text className={styles.information}>
-      This app tests components
-      <Button
-        className={styles.icon}
-        variant='icon'
-        size='medium'
-        onPress={() =>
-          addPanel({
-            id: 'details',
-            title: 'Details',
-            'aria-label': 'details panel',
-            children: 'More information',
-          })
-        }
-      >
-        <Info size={20} />
-      </Button>
-    </Text>
+    <Button
+      variant='secondary'
+      onPress={() =>
+        addPanel({
+          id: 'details',
+          title: 'Details',
+          'aria-label': 'details panel',
+          children: 'More information',
+        })
+      }
+    >
+      Open panel
+    </Button>
   )
 }

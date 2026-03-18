@@ -9,12 +9,12 @@ import {
   Main,
   MobileMenu,
   LayoutContent,
-  LayoutProvider,
   PanelRegion,
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
 import { AppHeaderActions } from '../components/HeaderActions/HeaderActions'
 import { AppProvider } from '../components/AppProvider/AppContext'
+import { AppLayoutProvider } from '../components/AppLayoutProvider/AppLayoutProvider'
 import { GlobalToastRegion } from '@midas-ds/components'
 import '@midas-ds/components/default.css'
 import './global.css'
@@ -36,15 +36,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       <body>
         <AppProvider>
           <GlobalToastRegion />
-          <LayoutProvider
-            defaultPanels={[
-              {
-                id: '0',
-                title: 'Testing dismissable panels',
-                children: 'This is a default open panel',
-              },
-            ]}
-          >
+          <AppLayoutProvider>
             <Layout>
               <Header data-debug='Header'>
                 <MobileMenu title='Next App'>
@@ -71,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 <BottomNavigation />
               </Navbar>
             </Layout>
-          </LayoutProvider>
+          </AppLayoutProvider>
         </AppProvider>
       </body>
     </html>
