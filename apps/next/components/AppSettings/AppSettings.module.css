@@ -1,0 +1,6 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-medium);
+  margin-block-start: var(--midas-space-large);
+}

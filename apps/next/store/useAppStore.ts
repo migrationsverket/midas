@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { PanelBehavior } from '@midas-ds/layout'
 
 type Notification = {
   id: number
@@ -34,10 +35,14 @@ export type Draft = ApplicationData & {
 }
 
 type AppStore = {
+  // Panel behavior
+  panelBehavior: PanelBehavior
+  setPanelBehavior: (behavior: PanelBehavior) => void
   // Notifications
   notifications: Notification[]
   markAllRead: () => void
   markRead: (id: number) => void
+  clearNotifications: (ids: number[]) => void
   // Language
   languages: Language[]
   currentLanguage: string
@@ -52,6 +57,9 @@ type AppStore = {
 }
 
 export const useAppStore = create<AppStore>(set => ({
+  panelBehavior: 'bring-to-front',
+  setPanelBehavior: behavior => set({ panelBehavior: behavior }),
+
   notifications: [
     {
       id: 1,
@@ -100,6 +108,11 @@ export const useAppStore = create<AppStore>(set => ({
       notifications: state.notifications.map(n =>
         n.id === id ? { ...n, read: true } : n,
       ),
+    })),
+
+  clearNotifications: ids =>
+    set(state => ({
+      notifications: state.notifications.filter(n => !ids.includes(n.id)),
     })),
 
   languages: [
