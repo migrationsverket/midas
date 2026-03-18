@@ -1,5 +1,6 @@
 'use client'
 
+import { type Key } from 'react-aria-components'
 import { type CollapseTriggerProps, CollapsePanel } from './collapse-panel'
 import { type DismissTriggerProps, DismissPanel } from './dismiss-panel'
 import { type PanelBodyProps } from './panel-body'
@@ -18,6 +19,7 @@ export type PanelProps<T extends PanelVariant> = PanelBodyProps &
   Pick<PanelTitleProps, 'title'> &
   PanelTriggerProps<T> & {
     variant?: T
+    id: Key
   }
 
 export const Panel = <T extends PanelVariant>({

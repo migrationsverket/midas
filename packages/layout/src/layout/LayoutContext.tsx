@@ -1,16 +1,16 @@
 'use client'
 
-import { createContext, useContext } from 'react'
+import { createContext, Dispatch, SetStateAction, useContext } from 'react'
 import { DismissPanelProps } from '../panel'
 
 export interface LayoutContextValue {
-  panel: DismissPanelProps | null
-  setPanel: (panel: DismissPanelProps | null) => void
+  panels: DismissPanelProps[]
+  setPanels: Dispatch<SetStateAction<DismissPanelProps[]>>
 }
 
 export const LayoutContext = createContext<LayoutContextValue>({
-  panel: null,
-  setPanel: () => {
+  panels: [],
+  setPanels: () => {
     // noop
   },
 })
@@ -19,7 +19,7 @@ export const LayoutContext = createContext<LayoutContextValue>({
  *
  * Append a dismissable panel in your `LayoutContent` component
  */
-export const usePanel = () => {
+export const usePanels = () => {
   const context = useContext(LayoutContext)
   if (!context) throw new Error('usePanel must be used within LayoutProvider')
   return context

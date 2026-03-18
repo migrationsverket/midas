@@ -12,7 +12,6 @@ import {
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
 import { AppHeaderActions } from '../components/HeaderActions/HeaderActions'
-import { NotificationsPanel } from '../components/NotificationsPanel/NotificationsPanel'
 import { AppProvider } from '../components/AppProvider/AppContext'
 import { GlobalToastRegion } from '@midas-ds/components'
 import '@midas-ds/components/default.css'
@@ -47,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             </Header>
             <LayoutContent>
               <Panel
+                id='sidebar'
                 data-debug='Panel (collapse)'
                 title='Next App'
                 variant='collapse'
