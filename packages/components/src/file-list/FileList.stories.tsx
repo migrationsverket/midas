@@ -15,7 +15,6 @@ export default {
   render: args => (
     <FileList {...args}>
       <FileListItem
-        id='1'
         fileName='resume.pdf'
         fileSize='1.2 MB'
         onDelete={() => {
@@ -23,7 +22,6 @@ export default {
         }}
       />
       <FileListItem
-        id='2'
         fileName='cover-letter.docx'
         fileSize='45 KB'
         onDelete={() => {
@@ -31,7 +29,6 @@ export default {
         }}
       />
       <FileListItem
-        id='3'
         fileName='references.pdf'
         fileSize='3.4 MB'
         onDelete={() => {
@@ -48,14 +45,12 @@ export const WithoutFileSize: Story = {
   render: args => (
     <FileList {...args}>
       <FileListItem
-        id='1'
         fileName='resume.pdf'
         onDelete={() => {
           // noop
         }}
       />
       <FileListItem
-        id='2'
         fileName='cover-letter.docx'
         onDelete={() => {
           // noop
