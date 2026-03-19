@@ -1,10 +1,10 @@
 'use client'
 
 import { Button } from '@midas-ds/components'
-import { usePanels } from '@midas-ds/layout'
+import { useDismissPanels } from '@midas-ds/layout'
 
 export const Information = () => {
-  const { addPanel } = usePanels()
+  const { addPanel } = useDismissPanels()
 
   return (
     <Button

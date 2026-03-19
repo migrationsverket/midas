@@ -1,15 +1,12 @@
-import { DetailedHTMLProps, forwardRef, HTMLAttributes } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { clsx } from '@midas-ds/components'
 import styles from './PanelBody.module.css'
 
-export type PanelBodyProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLElement>,
-  HTMLElement
->
+export type PanelBodyProps = HTMLAttributes<HTMLDivElement>
 
-export const PanelBody = forwardRef<HTMLElement, PanelBodyProps>(
+export const PanelBody = forwardRef<HTMLDivElement, PanelBodyProps>(
   ({ className, ...rest }, ref) => (
-    <aside
+    <div
       ref={ref}
       className={clsx(className, styles.panelBody)}
       {...rest}

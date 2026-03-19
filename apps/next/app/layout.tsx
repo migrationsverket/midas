@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import Link from 'next/link'
 import { Logo } from '@midas-ds/components'
 import {
@@ -9,7 +9,7 @@ import {
   Main,
   MobileMenu,
   LayoutContent,
-  PanelRegion,
+  DismissPanelOutlet,
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
 import { AppHeaderActions } from '../components/HeaderActions/HeaderActions'
@@ -24,15 +24,13 @@ export const metadata: Metadata = {
   description: 'E2E test app for Midas components',
 }
 
+export const viewport: Viewport = {
+  colorScheme: 'light dark',
+}
+
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang='en'>
-      <head>
-        <meta
-          name='color-scheme'
-          content='light dark'
-        />
-      </head>
       <body>
         <AppProvider>
           <GlobalToastRegion />
@@ -57,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                   <SidebarNavigation />
                 </Panel>
                 <Main data-debug='Main'>{children}</Main>
-                <PanelRegion />
+                <DismissPanelOutlet />
               </LayoutContent>
               <Navbar data-debug='Navbar'>
                 <BottomNavigation />

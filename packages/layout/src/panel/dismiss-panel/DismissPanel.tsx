@@ -23,7 +23,6 @@ export interface DismissTriggerProps {
   defaultOpen?: boolean
   onOpenChange?: (isOpen: boolean) => void
   onExited?: () => void
-  skipEnterAnimation?: boolean
   promoting?: boolean
   onPromotionEnd?: () => void
 }
@@ -39,7 +38,7 @@ export const DismissPanel = (props: DismissPanelProps) => {
     props.onOpenChange,
   )
 
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isExiting = useExitAnimation(ref, isOpen)
 
   const handlePress = () => setIsOpen(previouslyOpen => !previouslyOpen)
@@ -65,7 +64,7 @@ export const DismissPanel = (props: DismissPanelProps) => {
 }
 
 const DismissPanelInner = forwardRef<
-  HTMLElement,
+  HTMLDivElement,
   DismissPanelProps & {
     isExiting: boolean
     onPress: (e: PressEvent) => void
@@ -78,13 +77,9 @@ const DismissPanelInner = forwardRef<
       onPress,
       children,
       isExiting,
-      skipEnterAnimation,
+      defaultOpen,
       promoting,
       onPromotionEnd,
-      isOpen: _isOpen,
-      defaultOpen: _defaultOpen,
-      onOpenChange: _onOpenChange,
-      onExited: _onExited,
       'aria-hidden': ariaHidden,
       ...rest
     },
@@ -92,9 +87,9 @@ const DismissPanelInner = forwardRef<
   ) => {
     const strings = useLocalizedStringFormatter(messages)
     const objectRef = useObjectRef(ref)
-    const isEntering = useEnterAnimation(objectRef, !skipEnterAnimation)
+    const isEntering = useEnterAnimation(objectRef, !defaultOpen)
 
-    const handleAnimationEnd = (e: AnimationEvent<HTMLElement>) => {
+    const handleAnimationEnd = (e: AnimationEvent<HTMLDivElement>) => {
       if (e.target === e.currentTarget && promoting) {
         onPromotionEnd?.()
       }
