@@ -4,7 +4,7 @@ import type { HTMLAttributes } from 'react'
 import clsx from '../utils/clsx'
 import styles from './FileList.module.css'
 
-export interface FileListProps extends HTMLAttributes<HTMLUListElement> {}
+export type FileListProps = HTMLAttributes<HTMLUListElement>
 
 export const FileList = ({ className, children, ...props }: FileListProps) => {
   return (
