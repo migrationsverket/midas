@@ -1,0 +1,104 @@
+---
+slug: 17.10.0
+title: Release 17.10.0
+authors: midas
+tags: [release-notes, v17]
+date: 2026-03-19
+---
+
+Sedan v17.0.0 har vi släppt en rad förbättringar — en ny komponent, nya props, semantiska förbättringar och ett par viktiga namnbyten på design tokens. Här är det viktigaste.
+
+## 🆕 Ny komponent: FileList
+
+`FileList` och `FileListItem` är nya komponenter för att visa uppladdade filer med stöd för borttagning. Perfekt att kombinera med `FileTrigger`.
+
+```tsx
+import { FileList, FileListItem } from '@midas-ds/components'
+
+<FileList>
+  <FileListItem
+    fileName="dokument.pdf"
+    fileSize={204800}
+    onDelete={() => handleDelete('dokument.pdf')}
+  />
+</FileList>
+```
+
+{/* truncate */}
+
+## 🚀 Nya funktioner
+
+### Tag — ny `color` prop och ikon-stöd
+
+Tag har fått en `color` prop med ett flertal färgvarianter. Det går nu även att placera en ikon inuti taggen med korrekt spacing.
+
+Prop `dismissable` är markerad som deprecated — använd `isDismissable` i stället.
+
+```tsx
+// Före
+<Tag dismissable>Tagg</Tag>
+
+// Efter
+<Tag isDismissable>Tagg</Tag>
+```
+
+### Tabs — ny `size` prop
+
+`Tabs` stödjer nu `size="large"` och `size="medium"` (standard).
+
+```tsx
+<Tabs size="large">...</Tabs>
+```
+
+### InfoBanner — semantisk förbättring och liststöd
+
+`InfoBanner` renderas nu som `<aside>` i stället för `<div>`. Det gör komponenten till ett landmärke som skärmläsare kan identifiera och navigera till — en tydlig tillgänglighetsförbättring. Komponenten hanterar nu även `<ul>`-listor inuti bannern med korrekt stil.
+
+### TextField — lösenordsvisning
+
+`TextField` av typen `password` har fått en visa/dölj-knapp för lösenordsfältet. Edge-webbläsarens inbyggda reveal-knapp döljs automatiskt för att undvika dubbla knappar.
+
+### SearchField — omskriven på React Aria
+
+`SearchField` är omskriven på RAC:s `SearchField`-komponent. Den inbyggda sökknappen är nu deprecated och kommer att tas bort i v18. Använd `showButton={false}` för att opt:a in i v18-beteendet redan idag och lägg till en egen knapp om du behöver en.
+
+```tsx
+// Före
+<SearchField />
+
+// Efter
+<SearchField showButton={false} />
+```
+
+### ColorSchemeSwitch — ny `defaultScheme` prop
+
+Prop `defaultValue` är ersatt av `defaultScheme`. `defaultValue` fungerar fortfarande men är markerad som deprecated.
+
+```tsx
+// Före
+<ColorSchemeSwitch defaultValue={new Set(['light'])} />
+
+// Efter
+<ColorSchemeSwitch defaultScheme="light" />
+```
+
+Fokusringen är nu korrekt synlig även när en redan vald knapp fokuseras via tangentbordet.
+
+### Övriga tillägg
+
+- **ComboBox:** Ny prop `listBoxProps` för att skicka props direkt till listrutan.
+- **Select:** Ny prop `popoverProps` för att skicka props till popoverkontainern.
+- **Select:** `SelectAll` nollställer nu valideringsstatus korrekt.
+- **Radio, Accordion:** `children` kan nu vara en funktion (render prop).
+- **Layout:** `SidebarLinkProps` stödjer nu `target` för att öppna länkar i nytt fönster.
+
+## 🩹 Fixar
+
+- **Breadcrumbs:** Styling justerad efter specifikation.
+- **Layout:** Korrekt font-weight på aktiva menyval.
+- **Textfield:** Hover-färg på lösenordsknappen. Borttagen aktiv bakgrund.
+- **Theme (17.3.0):** CSS-variablerna `--midas-spacing-*` och `--midas-size-[0-9]*` är omdöpta till `--midas-space-*` respektive `--midas-size-*`. Uppdatera i din CSS om du använder dessa direkt.
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v17.10.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.10.0)
