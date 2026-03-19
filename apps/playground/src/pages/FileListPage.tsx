@@ -2,23 +2,22 @@ import { useState } from 'react'
 import { FileList, FileListItem, Heading } from '@midas-ds/components'
 
 interface FileEntry {
-  id: string
   fileName: string
   fileSize: string
 }
 
 const initialFiles: FileEntry[] = [
-  { id: '1', fileName: 'resume.pdf', fileSize: '1.2 MB' },
-  { id: '2', fileName: 'cover-letter.docx', fileSize: '45 KB' },
-  { id: '3', fileName: 'portfolio.zip', fileSize: '12.8 MB' },
-  { id: '4', fileName: 'references.pdf', fileSize: '3.4 MB' },
+  { fileName: 'resume.pdf', fileSize: '1.2 MB' },
+  { fileName: 'cover-letter.docx', fileSize: '45 KB' },
+  { fileName: 'portfolio.zip', fileSize: '12.8 MB' },
+  { fileName: 'references.pdf', fileSize: '3.4 MB' },
 ]
 
 export function FileListPage() {
   const [files, setFiles] = useState<FileEntry[]>(initialFiles)
 
-  const removeFile = (id: string) => {
-    setFiles(prev => prev.filter(f => f.id !== id))
+  const removeFile = (fileName: string) => {
+    setFiles(prev => prev.filter(f => f.fileName !== fileName))
   }
 
   return (
@@ -32,11 +31,10 @@ export function FileListPage() {
       <FileList aria-label='Uploaded files'>
         {files.map(file => (
           <FileListItem
-            key={file.id}
-            id={file.id}
+            key={file.fileName}
             fileName={file.fileName}
             fileSize={file.fileSize}
-            onDelete={() => removeFile(file.id)}
+            onDelete={() => removeFile(file.fileName)}
           />
         ))}
       </FileList>

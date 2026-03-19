@@ -37,7 +37,6 @@ describe('FileList', () => {
     const { getByRole } = await render(
       <FileList aria-label='Test'>
         <FileListItem
-          id='1'
           fileName='resume.pdf'
           fileSize='1.2 MB'
           onDelete={onDelete}
