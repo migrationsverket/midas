@@ -2,8 +2,12 @@
   padding: calc(var(--midas-space-60) - 1px);
   position: relative;
 
-  &[data-selected] {
+  &[data-selected]:not([data-focus-visible]) {
     box-shadow: none;
+  }
+
+  &[data-focus-visible] {
+    box-shadow: var(--midas-state-focus);
   }
 }
 
