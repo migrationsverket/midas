@@ -1,29 +1,27 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { LayoutContext, PanelItem } from './LayoutContext'
+import { type PanelItem, DismissPanelContext } from './DismissPanelContext'
 
 export type PanelBehavior = 'bring-to-front' | 'pop-to'
 
-export interface LayoutProviderProps {
+export interface DismissPanelProviderProps {
   children: ReactNode
-  defaultPanels?: Omit<PanelItem, 'isOpen' | 'skipEnterAnimation' | 'promoting'>[]
+  defaultPanels?: PanelItem[]
   panelBehavior?: PanelBehavior
 }
 
-export const LayoutProvider = ({
+export const DismissPanelProvider = ({
   children,
   defaultPanels = [],
   panelBehavior = 'bring-to-front',
-}: LayoutProviderProps) => {
-  const [panels, setPanels] = useState<PanelItem[]>(() =>
-    defaultPanels.map(p => ({ ...p, isOpen: true, skipEnterAnimation: true })),
+}: DismissPanelProviderProps) => {
+  const [panels, setPanels] = useState<PanelItem[]>(
+    defaultPanels.map(p => ({ ...p, isOpen: true, defaultOpen: true })),
   )
 
-  const addPanel = (
-    panel: Omit<PanelItem, 'isOpen' | 'skipEnterAnimation' | 'promoting'>,
-  ) => {
-    setPanels(prev => {
+  const addPanel = (panel: PanelItem) => {
+    setPanels((prev): PanelItem[] => {
       const existingIndex = prev.findIndex(p => p.id === panel.id)
 
       if (existingIndex === -1) {
@@ -66,10 +64,10 @@ export const LayoutProvider = ({
   }
 
   return (
-    <LayoutContext.Provider
+    <DismissPanelContext.Provider
       value={{ panels, addPanel, closePanel, removePanel, resetPromoting }}
     >
       {children}
-    </LayoutContext.Provider>
+    </DismissPanelContext.Provider>
   )
 }

@@ -48,32 +48,34 @@ export const CollapsePanel = ({
         })}
         {...rest}
       >
-        <PanelHeader>
-          <div>
-            {!isCollapsed && title && (
-              <PanelTitle
-                className={styles.panelTitle}
-                title={title}
-              />
-            )}
-          </div>
-          <Button
-            variant='icon'
-            aria-label={
-              isCollapsed
-                ? strings.format('expandSidebar')
-                : strings.format('collapseSidebar')
-            }
-            onPress={handlePress}
-          >
-            {isCollapsed ? (
-              <PanelLeftOpen size={20} />
-            ) : (
-              <PanelLeftClose size={20} />
-            )}
-          </Button>
-        </PanelHeader>
-        {children}
+        <aside>
+          <PanelHeader>
+            <div>
+              {!isCollapsed && title && (
+                <PanelTitle
+                  className={styles.panelTitle}
+                  title={title}
+                />
+              )}
+            </div>
+            <Button
+              variant='icon'
+              aria-label={
+                isCollapsed
+                  ? strings.format('expandSidebar')
+                  : strings.format('collapseSidebar')
+              }
+              onPress={handlePress}
+            >
+              {isCollapsed ? (
+                <PanelLeftOpen size={20} />
+              ) : (
+                <PanelLeftClose size={20} />
+              )}
+            </Button>
+          </PanelHeader>
+          {children}
+        </aside>
       </PanelBody>
     </CollapsePanelContext.Provider>
   )

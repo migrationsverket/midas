@@ -8,7 +8,7 @@ export type MainProps = DetailedHTMLProps<
 
 export const Main = ({ className, ...rest }: MainProps) => (
   <main
-    className={`${className} ${styles.main}`}
+    className={[className, styles.main].filter(Boolean).join(' ')}
     {...rest}
   />
 )
