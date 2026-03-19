@@ -8,7 +8,6 @@ import styles from './FileList.module.css'
 import messages from './intl/translations.json'
 
 export interface FileListItemProps {
-  id: string
   fileName: string
   fileSize?: string
   onDelete?: () => void
@@ -16,7 +15,6 @@ export interface FileListItemProps {
 }
 
 export const FileListItem = ({
-  id: _id,
   fileName,
   fileSize,
   onDelete,

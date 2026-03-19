@@ -27,7 +27,6 @@ export const FileListExample = () => {
           {files.map(file => (
             <FileListItem
               key={file.name}
-              id={file.name}
               fileName={file.name}
               fileSize={`${(file.size / 1024).toFixed(1)} KB`}
               onDelete={() => handleDelete(file.name)}
