@@ -1,3 +1,18 @@
 .button {
-  padding: var(--midas-space-70);
+  padding: calc(var(--midas-space-60) - 1px);
+  position: relative;
+
+  &[data-selected] {
+    box-shadow: none;
+  }
+}
+
+.selectionIndicator {
+  background-color: var(--midas-border-color-tertiary);
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transition: translate var(--midas-transition-duration-fast) ease;
 }

@@ -4,6 +4,7 @@ import { Laptop, Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key } from 'react-aria-components'
+import { SelectionIndicator } from 'react-aria-components'
 import { ToggleButton, ToggleButtonGroup } from '../toggle-button'
 import styles from './ColorSchemeSwitch.module.css'
 import { useLocalizedStringFormatter } from '../utils/intl'
@@ -69,6 +70,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Laptop />
         <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
       <ToggleButton
         id='light'
@@ -76,6 +78,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Sun />
         <VisuallyHidden>{strings.format('lightMode')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
       <ToggleButton
         id='dark'
@@ -83,6 +86,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Moon />
         <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
     </ToggleButtonGroup>
   )
