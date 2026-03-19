@@ -22,7 +22,6 @@ import { FileList, FileListItem } from '@midas-ds/components'
 ```tsx
 <FileList aria-label='Uppladdade filer'>
   <FileListItem
-    id='1'
     fileName='CV_Anna_Svensson.pdf'
     fileSize='1.2 MB'
     onDelete={() => {}}
@@ -33,7 +32,6 @@ import { FileList, FileListItem } from '@midas-ds/components'
 <div className='card'>
   <FileList aria-label='Uppladdade filer'>
     <FileListItem
-      id='1'
       fileName='CV_Anna_Svensson.pdf'
       fileSize='1.2 MB'
       onDelete={() => {}}
@@ -47,13 +45,13 @@ import { FileList, FileListItem } from '@midas-ds/components'
 
 ```tsx
 <FileList aria-label='Uppladdade filer'>
-  <FileListItem id='1' fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
+  <FileListItem fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
 </FileList>
 ```
 
 <div className='card'>
   <FileList aria-label='Uppladdade filer'>
-    <FileListItem id='1' fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
+    <FileListItem fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
   </FileList>
 </div>
 
@@ -63,15 +61,15 @@ Utelämna `onDelete` för att visa en skrivskyddad lista.
 
 ```tsx
 <FileList aria-label='Bifogade filer'>
-  <FileListItem id='1' fileName='Beslut.pdf' fileSize='512 KB' />
-  <FileListItem id='2' fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
+  <FileListItem fileName='Beslut.pdf' fileSize='512 KB' />
+  <FileListItem fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
 </FileList>
 ```
 
 <div className='card'>
   <FileList aria-label='Bifogade filer'>
-    <FileListItem id='1' fileName='Beslut.pdf' fileSize='512 KB' />
-    <FileListItem id='2' fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
+    <FileListItem fileName='Beslut.pdf' fileSize='512 KB' />
+    <FileListItem fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
   </FileList>
 </div>
 
