@@ -1,5 +1,10 @@
 {
   "label": "Komponenter",
   "position": 4,
-  "className": "chapter-end"
+  "className": "chapter-end",
+  "link": {
+    "type": "generated-index",
+    "title": "Komponenter",
+    "description": "Alla komponenter i Midas designsystem."
+  }
 }
