@@ -1,3 +1,32 @@
+## 17.10.0 (2026-03-19)
+
+### 🚀 Features
+
+- **components,file-list:** localize delete button aria-label ([30410e821d](https://github.com/migrationsverket/midas/commit/30410e821d))
+- **components,docs:** add FileList component ([dae5f056c2](https://github.com/migrationsverket/midas/commit/dae5f056c2))
+- **components,color-scheme-switch:** deprecate defaultValue in favor of defaultScheme ([1c48d0b7f1](https://github.com/migrationsverket/midas/commit/1c48d0b7f1))
+
+### 🩹 Fixes
+
+- **components,file-list:** remove id prop from FileListItem ([688bb0b04a](https://github.com/migrationsverket/midas/commit/688bb0b04a))
+- **components,file-list:** don't forward id to li element ([214378b006](https://github.com/migrationsverket/midas/commit/214378b006))
+- **components,file-list:** correct font size and weight tokens for file name and size ([0ae7b21451](https://github.com/migrationsverket/midas/commit/0ae7b21451))
+- **components,color-scheme-switch:** show focus ring on selected button ([b112b5f823](https://github.com/migrationsverket/midas/commit/b112b5f823))
+
+### 🏭 Refactoring
+
+- **components,docs,file-list:** replace GridList with plain list ([6046308cb3](https://github.com/migrationsverket/midas/commit/6046308cb3))
+
+### 🔧 Maintenance
+
+- **components,docs,file-list:** remove leftover id props from docs, spec and playground ([4439e37443](https://github.com/migrationsverket/midas/commit/4439e37443))
+- **components,file-list:** remove id prop from stories ([0fb0bba495](https://github.com/migrationsverket/midas/commit/0fb0bba495))
+- **components,file-list:** fix trailing blank line in css ([39b8525728](https://github.com/migrationsverket/midas/commit/39b8525728))
+- **components,file-list:** fix empty interface lint error ([405d702ee9](https://github.com/migrationsverket/midas/commit/405d702ee9))
+- **components,file-list:** fix lint errors ([d175b49ea4](https://github.com/migrationsverket/midas/commit/d175b49ea4))
+- **components,color-scheme-switch:** fix button sizing and selected state styles ([fe5b1dc132](https://github.com/migrationsverket/midas/commit/fe5b1dc132))
+- **components,color-scheme-switch:** replace hardcoded padding with space token ([3f29552fe2](https://github.com/migrationsverket/midas/commit/3f29552fe2))
+
 ## 17.9.0 (2026-03-19)
 
 ### 🚀 Features
