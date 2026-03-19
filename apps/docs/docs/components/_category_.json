@@ -4,6 +4,7 @@
   "className": "chapter-end",
   "link": {
     "type": "generated-index",
+    "slug": "/components",
     "title": "Komponenter",
     "description": "Alla komponenter i Midas designsystem."
   }
