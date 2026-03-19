@@ -3,8 +3,11 @@ import DocCardList from '@theme-original/DocCardList'
 import type DocCardListType from '@theme/DocCardList'
 import type { WrapperProps } from '@docusaurus/types'
 import type { PropSidebarItemLink } from '@docusaurus/plugin-content-docs'
+import { useDocById } from '@docusaurus/plugin-content-docs/client'
 import Link from '@docusaurus/Link'
+import { SearchField } from '@midas-ds/components'
 import styles from './styles.module.css'
+import { illustrations, FallbackIllustration } from './ComponentIllustrations'
 
 type Props = WrapperProps<typeof DocCardListType>
 
@@ -14,20 +17,32 @@ function isLinkItem(item: unknown): item is PropSidebarItemLink {
   return (item as PropSidebarItemLink)?.type === 'link'
 }
 
-function getGroup(item: PropSidebarItemLink): string {
-  return (item.customProps as { group?: string })?.group ?? 'Övrigt'
+function getGroups(item: PropSidebarItemLink): string[] {
+  const props = item.customProps as { groups?: string[] }
+  return props?.groups ?? ['Övrigt']
 }
 
 function ComponentCard({ item }: { item: PropSidebarItemLink }) {
+  const doc = useDocById(item.docId ?? undefined)
+  const description = item.description ?? doc?.description
+  const Illustration = illustrations[item.label]
   return (
     <Link
       to={item.href}
       className={styles.card}
     >
-      <span className={styles.cardTitle}>{item.label}</span>
-      {item.description && (
-        <span className={styles.cardDescription}>{item.description}</span>
-      )}
+      <div className={styles.cardIllustration}>
+        {Illustration
+          ? <Illustration className={styles.illustration} />
+          : <FallbackIllustration className={styles.illustration} />
+        }
+      </div>
+      <div className={styles.cardBody}>
+        <span className={styles.cardTitle}>{item.label}</span>
+        {description && (
+          <span className={styles.cardDescription}>{description}</span>
+        )}
+      </div>
     </Link>
   )
 }
@@ -44,22 +59,23 @@ export default function DocCardListWrapper(props: Props): ReactNode {
 
   const filtered = linkItems.filter(item => {
     if (search) return item.label.toLowerCase().includes(search.toLowerCase())
-    return activeGroup === 'Alla' || getGroup(item) === activeGroup
+    return activeGroup === 'Alla' || getGroups(item).includes(activeGroup)
   })
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.controls}>
-        <input
-          className={styles.search}
-          type='search'
+        <SearchField
           placeholder='Sök komponent...'
+          showButton={false}
+          size='medium'
           value={search}
-          onChange={e => {
-            setSearch(e.target.value)
+          onChange={val => {
+            setSearch(val)
             setActiveGroup('Alla')
           }}
-          aria-label='Sök komponent'
+          onClear={() => setSearch('')}
+          className={styles.search}
         />
         <div
           className={styles.groups}
