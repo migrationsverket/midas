@@ -16,7 +16,7 @@ export interface FileListItemProps {
 }
 
 export const FileListItem = ({
-  id,
+  id: _id,
   fileName,
   fileSize,
   onDelete,
@@ -26,7 +26,6 @@ export const FileListItem = ({
 
   return (
     <li
-      id={id}
       className={clsx(styles.fileListItem, className)}
     >
       <span className={styles.fileInfo}>
