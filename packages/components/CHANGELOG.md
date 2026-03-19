@@ -1,3 +1,21 @@
+## 17.9.0 (2026-03-19)
+
+### 🚀 Features
+
+- **components,search-field:** deprecate built-in submit button, fix a11y ([717b9b34ab](https://github.com/migrationsverket/midas/commit/717b9b34ab))
+
+### 🩹 Fixes
+
+- **components,search-field:** make built-in button non-breaking, add future flag ([4c6a0b985e](https://github.com/migrationsverket/midas/commit/4c6a0b985e))
+
+### 🏭 Refactoring
+
+- **components,search-field:** rebuild on RAC SearchField component ([86de78182e](https://github.com/migrationsverket/midas/commit/86de78182e))
+
+### 📖 Documentation changes
+
+- **components,search-field:** link v18 tracking issue from showButton JSDoc ([51c90e03b7](https://github.com/migrationsverket/midas/commit/51c90e03b7))
+
 ## 17.8.3 (2026-03-18)
 
 ### 🔧 Maintenance
