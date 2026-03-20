@@ -1,0 +1,1 @@
+import{r as t}from"./iframe-C5o5Abe9.js";const o=t.createContext({size:void 0});try{o.displayName="LogoContext",o.__docgenInfo={description:"",displayName:"LogoContext",props:{}}}catch{}export{o as L};
