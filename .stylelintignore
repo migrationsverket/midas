@@ -3,3 +3,6 @@ packages/theme/**/*/variables.css
 
 # next build
 .next
+
+#example apps
+examples/**/*.css
