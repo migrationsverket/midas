@@ -11,7 +11,7 @@ import { illustrations, FallbackIllustration } from './ComponentIllustrations'
 
 type Props = WrapperProps<typeof DocCardListType>
 
-const STATIC_GROUPS = ['Alla', 'Övrigt']
+const ALL_LABEL = 'Alla'
 
 function isLinkItem(item: unknown): item is PropSidebarItemLink {
   return (item as PropSidebarItemLink)?.type === 'link'
@@ -50,7 +50,7 @@ function ComponentCard({ item }: { item: PropSidebarItemLink }) {
 
 export default function DocCardListWrapper(props: Props): ReactNode {
   const [search, setSearch] = useState('')
-  const [activeGroup, setActiveGroup] = useState('Alla')
+  const [activeGroup, setActiveGroup] = useState(ALL_LABEL)
 
   if (!props.items) {
     return <DocCardList {...props} />
@@ -58,13 +58,11 @@ export default function DocCardListWrapper(props: Props): ReactNode {
 
   const linkItems = props.items.filter(isLinkItem)
 
-  const foundGroups = linkItems.map(getGroups).flat().sort()
-
-  const groups = Array.from(new Set([...STATIC_GROUPS, ...foundGroups]))
+  const groups = [ALL_LABEL, ...Array.from(new Set(linkItems.flatMap(getGroups))).sort()]
 
   const filtered = linkItems.filter(item => {
     if (search) return item.label.toLowerCase().includes(search.toLowerCase())
-    return activeGroup === 'Alla' || getGroups(item).includes(activeGroup)
+    return activeGroup === ALL_LABEL || getGroups(item).includes(activeGroup)
   })
 
   return (
@@ -77,7 +75,7 @@ export default function DocCardListWrapper(props: Props): ReactNode {
           value={search}
           onChange={val => {
             setSearch(val)
-            setActiveGroup('Alla')
+            setActiveGroup(ALL_LABEL)
           }}
           onClear={() => setSearch('')}
           className={styles.search}
