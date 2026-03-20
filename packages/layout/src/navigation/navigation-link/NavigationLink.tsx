@@ -1,37 +1,40 @@
 'use client'
 
-import { ReactNode, useContext, type ElementType } from 'react'
+import {
+  ReactNode,
+  useContext,
+  type ElementType,
+  type ComponentProps,
+} from 'react'
 import {
   Focusable,
   Link,
   OverlayTriggerStateContext,
 } from 'react-aria-components'
-import {
-  clsx,
-  Tooltip,
-  TooltipTrigger,
-  type LinkComponentProps,
-} from '@midas-ds/components'
+import { clsx, Tooltip, TooltipTrigger } from '@midas-ds/components'
 import styles from './NavigationLink.module.css'
 import { CollapsePanelContext, PanelContext } from '../../panel'
 import { MobileMenuContext } from '../../header'
 
-export interface NavigationLinkComponentProps<
-  C extends ElementType,
-> extends Pick<LinkComponentProps<C>, 'className' | 'as'> {
+export interface NavigationLinkComponentProps<C extends ElementType> {
   /** The icon to display. */
   children: ReactNode
   /** The visible label text and tooltip content. */
   title: string
   isActive?: boolean
   variant?: 'sidebar' | 'navbar'
+  className?: string
+  /** Replace base component with any Client Side Routing link instead.
+   * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
+   */
+  as?: C
 }
 
-export type NavigationLinkProps<C extends React.ElementType> =
+export type NavigationLinkProps<C extends ElementType> =
   NavigationLinkComponentProps<C> &
-    Omit<React.ComponentProps<C>, keyof LinkComponentProps<C>>
+    Omit<ComponentProps<C>, keyof NavigationLinkComponentProps<C>>
 
-export const NavigationLink = <C extends React.ElementType = typeof Link>({
+export const NavigationLink = <C extends ElementType = typeof Link>({
   as,
   children,
   className,
