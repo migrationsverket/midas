@@ -11,7 +11,7 @@ import { illustrations, FallbackIllustration } from './ComponentIllustrations'
 
 type Props = WrapperProps<typeof DocCardListType>
 
-const GROUPS = ['Alla', 'Formulär', 'Navigation', 'Feedback', 'Overlay', 'Layout', 'Typografi', 'Övrigt']
+const STATIC_GROUPS = ['Alla', 'Övrigt']
 
 function isLinkItem(item: unknown): item is PropSidebarItemLink {
   return (item as PropSidebarItemLink)?.type === 'link'
@@ -32,10 +32,11 @@ function ComponentCard({ item }: { item: PropSidebarItemLink }) {
       className={styles.card}
     >
       <div className={styles.cardIllustration}>
-        {Illustration
-          ? <Illustration className={styles.illustration} />
-          : <FallbackIllustration className={styles.illustration} />
-        }
+        {Illustration ? (
+          <Illustration className={styles.illustration} />
+        ) : (
+          <FallbackIllustration className={styles.illustration} />
+        )}
       </div>
       <div className={styles.cardBody}>
         <span className={styles.cardTitle}>{item.label}</span>
@@ -56,6 +57,10 @@ export default function DocCardListWrapper(props: Props): ReactNode {
   }
 
   const linkItems = props.items.filter(isLinkItem)
+
+  const foundGroups = linkItems.map(getGroups).flat().sort()
+
+  const groups = Array.from(new Set([...STATIC_GROUPS, ...foundGroups]))
 
   const filtered = linkItems.filter(item => {
     if (search) return item.label.toLowerCase().includes(search.toLowerCase())
@@ -82,7 +87,7 @@ export default function DocCardListWrapper(props: Props): ReactNode {
           role='group'
           aria-label='Filtrera efter kategori'
         >
-          {GROUPS.map(group => (
+          {groups.map(group => (
             <button
               key={group}
               className={`${styles.groupButton} ${activeGroup === group && !search ? styles.active : ''}`}
@@ -97,19 +102,18 @@ export default function DocCardListWrapper(props: Props): ReactNode {
           ))}
         </div>
       </div>
-      {filtered.length > 0
-        ? (
-          <div className={styles.grid}>
-            {filtered.map(item => (
-              <ComponentCard
-                key={item.href}
-                item={item}
-              />
-            ))}
-          </div>
-          )
-        : <p className={styles.empty}>Inga komponenter hittades.</p>
-      }
+      {filtered.length > 0 ? (
+        <div className={styles.grid}>
+          {filtered.map(item => (
+            <ComponentCard
+              key={item.href}
+              item={item}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className={styles.empty}>Inga komponenter hittades.</p>
+      )}
     </div>
   )
 }
