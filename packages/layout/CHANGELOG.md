@@ -1,3 +1,14 @@
+## 0.0.19 (2026-03-20)
+
+### 🩹 Fixes
+
+- **layout, panel:** rename context provider ([6996c35755](https://github.com/migrationsverket/midas/commit/6996c35755))
+- **layout:** replace setPanels with addPanel/closePanel API and add bring-to-front behavior ([a151c18a8c](https://github.com/migrationsverket/midas/commit/a151c18a8c))
+- **layout, panel:** add controlled state support ([d7d5777852](https://github.com/migrationsverket/midas/commit/d7d5777852))
+- **layout, panel:** unshift and aria hide nested panels ([21c7b4ba91](https://github.com/migrationsverket/midas/commit/21c7b4ba91))
+- **layout, panel:** change api to support multiple panels ([9987fe9ebe](https://github.com/migrationsverket/midas/commit/9987fe9ebe))
+- **layout, panel:** make dismiss panel globally configurable ([eadc5621b2](https://github.com/migrationsverket/midas/commit/eadc5621b2))
+
 ## 0.0.18 (2026-03-19)
 
 ### 🧱 Updated Dependencies
