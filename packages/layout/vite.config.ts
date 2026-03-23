@@ -60,6 +60,7 @@ export default defineConfig({
         /@react-stately/,
         /@internationalized/,
         '@midas-ds/theme',
+        '@midas-ds/components',
       ],
       output: {
         assetFileNames: 'assets/[name][extname]',
