@@ -1,3 +1,9 @@
+## 0.0.20 (2026-03-23)
+
+### 🩹 Fixes
+
+- **layout, navigation:** decouple navigation-link from link component ([d33aa75a22](https://github.com/migrationsverket/midas/commit/d33aa75a22))
+
 ## 0.0.19 (2026-03-20)
 
 ### 🩹 Fixes
