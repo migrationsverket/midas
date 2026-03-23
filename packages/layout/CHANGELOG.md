@@ -1,3 +1,11 @@
+## 0.0.21 (2026-03-23)
+
+### 🩹 Fixes
+
+- **layout, panel:** move transition css to collapse-panel ([5f45327752](https://github.com/migrationsverket/midas/commit/5f45327752))
+- **layout, panel:** remove conflicting css of same specificity ([09410df703](https://github.com/migrationsverket/midas/commit/09410df703))
+- **layout:** externalize components dependency ([3647b3fb11](https://github.com/migrationsverket/midas/commit/3647b3fb11))
+
 ## 0.0.20 (2026-03-23)
 
 ### 🩹 Fixes
