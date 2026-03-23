@@ -1,5 +1,6 @@
 .collapsePanel {
   width: 15rem;
+  transition: width var(--midas-transition-duration-fast) ease-out;
 
   &.collapsed {
     width: calc(32px + 48px);
