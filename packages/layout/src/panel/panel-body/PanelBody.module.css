@@ -3,5 +3,4 @@
   box-sizing: border-box;
   padding: 1rem;
   transition: width var(--midas-transition-duration-fast) ease-out;
-  width: 100%;
 }
