@@ -6,5 +6,5 @@ outputs:
     description: The affected projects and their old and new versions.
 
 runs:
-  using: node20
+  using: node24
   main: index.esm.js
