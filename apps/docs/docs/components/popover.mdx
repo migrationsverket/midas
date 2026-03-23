@@ -69,25 +69,41 @@ Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text.
 <PopoverTextExample />
 
 ```tsx
-<DialogTrigger>
-  <Button
-    variant='icon'
-    aria-label='Tillgänglighetsinställningar'
-  >
-    <UserCog />
-  </Button>
-  <Popover>
-    <CheckboxGroup
-      description='Justera inställningar för att förbättra din användarupplevelse.'
-      label='Tillgänglighetsinställningar'
+const Example = () => {
+  const [isOpen, setOpen] = React.useState(false)
+
+  return (
+    <DialogTrigger
+      isOpen={isOpen}
+      onOpenChange={setOpen}
     >
-      <Checkbox value='compact'>Kompakt läge</Checkbox>
-      <Checkbox value='animations'>Animationer</Checkbox>
-      <Checkbox value='contrast'>Högkontrastläge</Checkbox>
-      <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
-    </CheckboxGroup>
-  </Popover>
-</DialogTrigger>
+      <Button
+        variant='icon'
+        aria-label='Tillgänglighetsinställningar'
+      >
+        <UserCog />
+      </Button>
+      <Popover>
+        <CheckboxGroup
+          description='Justera inställningar för att förbättra din användarupplevelse.'
+          label='Tillgänglighetsinställningar'
+        >
+          <Checkbox value='compact'>Kompakt läge</Checkbox>
+          <Checkbox value='animations'>Animationer</Checkbox>
+          <Checkbox value='contrast'>Högkontrastläge</Checkbox>
+          <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
+        </CheckboxGroup>
+        <Button
+          fullwidth
+          style={{ marginTop: '0.5rem' }}
+          onPress={() => setOpen(false)}
+        >
+          Spara
+        </Button>
+      </Popover>
+    </DialogTrigger>
+  )
+}
 ```
 
 <PopoverFormExample />
