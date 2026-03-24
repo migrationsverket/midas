@@ -1,3 +1,9 @@
+## 17.10.1 (2026-03-24)
+
+### 🏭 Refactoring
+
+- **components, layout:** remove es2022 array method ([c75c7ace5d](https://github.com/migrationsverket/midas/commit/c75c7ace5d))
+
 ## 17.10.0 (2026-03-19)
 
 ### 🚀 Features
