@@ -53,7 +53,7 @@
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--midas-space-small);
   border: none;
   width: calc(100% - 2rem);
   z-index: var(--midas-z-index-toast);
@@ -77,7 +77,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--midas-space-medium);
   color: var(--midas-text-primary);
   padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
@@ -145,7 +145,7 @@
   padding: 0.875rem 0;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: var(--midas-space-medium);
 }
 
 .toastMessage {

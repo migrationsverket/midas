@@ -1,0 +1,53 @@
+---
+title: ColorSchemeSwitch
+description: Växlare för färgschema (ljust, mörkt, systemets inställning)
+---
+
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { ColorSchemeSwitch } from '@midas-ds/components'
+import { PropTable } from '@site/src/components/PropsTable'
+import { SelectorExample } from '@site/src/components/examples/color-scheme-switch/ColorSchemeSwitchExamples'
+
+<ComponentHeader
+  name='ColorSchemeSwitch'
+  friendlyName='Färgschemaväxlare'
+  overrideHeadlessLink=''
+/>
+
+`ColorSchemeSwitch` låter användaren välja mellan ljust läge, mörkt läge eller att följa systemets inställning.
+
+```tsx
+import { ColorSchemeSwitch } from '@midas-ds/components'
+```
+
+```tsx
+<ColorSchemeSwitch />
+```
+
+<div className='card'>
+  <ColorSchemeSwitch />
+</div>
+
+## Selector
+
+Som standard påverkas `:root`, men du kan rikta mot ett annat element med `selector`-propen. Det är användbart om du bara vill byta färgschema för en avgränsad del av sidan.
+
+```tsx
+<ColorSchemeSwitch selector='#min-widget' />
+```
+
+<div className='card'>
+  <SelectorExample />
+</div>
+
+## Standardvärde
+
+`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att systemets inställning används.
+
+```tsx
+<ColorSchemeSwitch defaultScheme='dark' />
+```
+
+## API
+
+<PropTable name='ColorSchemeSwitch' />

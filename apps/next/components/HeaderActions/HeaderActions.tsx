@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { Bell, CircleUserRound, Languages } from 'lucide-react'
 import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
-import { HeaderActions, HeaderAction } from '@midas-ds/layout'
+import { HeaderActions, HeaderAction, useDismissPanels } from '@midas-ds/layout'
 import {
   Badge,
   BadgeContainer,
@@ -14,16 +14,16 @@ import {
   MenuTrigger,
 } from '@midas-ds/components'
 import { useRouter } from 'next/navigation'
+import { NotificationsPanel } from '../NotificationsPanel/NotificationsPanel'
 
 export const AppHeaderActions = () => {
   const router = useRouter()
-  const notificationsOpen = useAppStore(s => s.notificationsOpen)
-  const setNotificationsOpen = useAppStore(s => s.setNotificationsOpen)
   const unreadCount = useAppStore(selectUnreadCount)
   const languages = useAppStore(s => s.languages)
   const currentLanguage = useAppStore(s => s.currentLanguage)
   const setLanguage = useAppStore(s => s.setLanguage)
   const languageTriggerRef = useRef<HTMLButtonElement>(null)
+  const { addPanel } = useDismissPanels()
 
   return (
     <HeaderActions>
@@ -35,7 +35,13 @@ export const AppHeaderActions = () => {
           </BadgeContainer>
         }
         aria-label={`Notifications, ${unreadCount} unread`}
-        onPress={() => setNotificationsOpen(!notificationsOpen)}
+        onPress={() =>
+          addPanel({
+            id: 'Notifications',
+            title: 'Notifications',
+            children: <NotificationsPanel />,
+          })
+        }
       >
         Notifications
       </HeaderAction>

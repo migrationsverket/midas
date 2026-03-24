@@ -1,42 +1,107 @@
 'use client'
 
-import { Panel } from '@midas-ds/layout'
+import { useState } from 'react'
+import { GridList, GridListItem, Selection } from 'react-aria-components'
+import { Button, Checkbox, clsx } from '@midas-ds/components'
+import { Check } from 'lucide-react'
 import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
 import styles from './NotificationsPanel.module.css'
 
 export const NotificationsPanel = () => {
-  const notificationsOpen = useAppStore(s => s.notificationsOpen)
-  const setNotificationsOpen = useAppStore(s => s.setNotificationsOpen)
   const notifications = useAppStore(s => s.notifications)
   const markAllRead = useAppStore(s => s.markAllRead)
   const markRead = useAppStore(s => s.markRead)
+  const clearNotifications = useAppStore(s => s.clearNotifications)
   const unreadCount = useAppStore(selectUnreadCount)
+  const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set())
+
+  const unreadIds = new Set(notifications.filter(n => !n.read).map(n => n.id))
+
+  const selectedIds =
+    selectedKeys === 'all'
+      ? notifications.map(n => n.id)
+      : ([...selectedKeys] as number[])
+
+  const selectedUnreadCount = selectedIds.filter(id => unreadIds.has(id)).length
+
+  const markSelectedRead = () => {
+    selectedIds.filter(id => unreadIds.has(id)).forEach(id => markRead(id))
+    setSelectedKeys(new Set())
+  }
+
+  const clearSelected = () => {
+    clearNotifications(selectedIds)
+    setSelectedKeys(new Set())
+  }
 
   return (
-    <Panel
-      variant='dismiss'
-      title='Notifications'
-      isOpen={notificationsOpen}
-      onOpenChange={setNotificationsOpen}
-    >
-      <ul className={styles.list}>
-        {notifications.map(n => (
-          <li
-            key={n.id}
-            className={`${styles.item} ${!n.read ? styles.unread : ''}`}
-            onClick={() => markRead(n.id)}
+    <>
+      <GridList
+        className={styles.list}
+        selectionMode='multiple'
+        selectedKeys={selectedKeys}
+        onSelectionChange={setSelectedKeys}
+        items={notifications}
+        aria-label='Notifications'
+      >
+        {n => (
+          <GridListItem
+            id={n.id}
+            textValue={n.title}
+            className={({ isSelected }) =>
+              clsx(styles.item, !n.read && styles.unread, isSelected && styles.selected)
+            }
           >
-            <strong className={styles.title}>{n.title}</strong>
-            <span className={styles.body}>{n.body}</span>
-            <span className={styles.timestamp}>{n.timestamp}</span>
-          </li>
-        ))}
-      </ul>
-      {unreadCount > 0 && (
+            <Checkbox slot='selection' />
+            <div className={styles.content}>
+              <strong className={styles.title}>{n.title}</strong>
+              <span className={styles.body}>{n.body}</span>
+              <span className={styles.timestamp}>{n.timestamp}</span>
+            </div>
+            {!n.read && (
+              <Button
+                variant='icon'
+                size='medium'
+                onPress={() => markRead(n.id)}
+                aria-label='Mark as read'
+              >
+                <Check size={16} />
+              </Button>
+            )}
+          </GridListItem>
+        )}
+      </GridList>
+      {(selectedIds.length > 0 || unreadCount > 0) && (
         <div className={styles.footer}>
-          <button className={styles.markAll} onClick={markAllRead}>Mark all as read</button>
+          {selectedUnreadCount > 0 && (
+            <Button
+              variant='tertiary'
+              size='medium'
+              onPress={markSelectedRead}
+            >
+              Mark {selectedUnreadCount} as read
+            </Button>
+          )}
+          {selectedIds.length > 0 && (
+            <Button
+              variant='tertiary'
+              size='medium'
+              onPress={clearSelected}
+            >
+              Clear {selectedIds.length} selected
+            </Button>
+          )}
+          {unreadCount > 0 && (
+            <Button
+              variant='tertiary'
+              size='medium'
+              onPress={markAllRead}
+            >
+              Mark all as read
+            </Button>
+          )}
         </div>
       )}
-    </Panel>
+    </>
   )
 }

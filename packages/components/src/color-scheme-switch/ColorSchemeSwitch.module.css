@@ -1,3 +1,22 @@
 .button {
-  padding: 0.685rem;
+  padding: calc(var(--midas-space-60) - 1px);
+  position: relative;
+
+  &[data-selected]:not([data-focus-visible]) {
+    box-shadow: none;
+  }
+
+  &[data-focus-visible] {
+    box-shadow: var(--midas-state-focus);
+  }
+}
+
+.selectionIndicator {
+  background-color: var(--midas-border-color-tertiary);
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transition: translate var(--midas-transition-duration-fast) ease;
 }

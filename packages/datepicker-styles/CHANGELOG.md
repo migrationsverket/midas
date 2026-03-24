@@ -1,3 +1,19 @@
+## 0.2.46 (2026-03-18)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.13
+
+## 0.2.45 (2026-03-17)
+
+This was a version bump only for datepicker-styles to align it with other projects, there were no code changes.
+
+## 0.2.44 (2026-03-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.12
+
 ## 0.2.43 (2026-03-12)
 
 ### 🧱 Updated Dependencies

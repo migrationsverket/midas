@@ -22,6 +22,7 @@ docker compose up -d
 ```
 
 Detta startar:
+
 - **Storybook** på http://localhost:4400
 - **Dokumentation** på http://localhost:3000
 - **Playground** på http://localhost:4200
@@ -30,7 +31,7 @@ Detta startar:
 
 ### 💻 Lokal installation
 
-Kräver Node.js `^22.12.0` och [Nx](https://nx.dev).
+Kräver Node.js `^24` och [Nx](https://nx.dev).
 
 ```bash
 npm install --global nx@latest
@@ -40,13 +41,13 @@ nx serve storybook
 
 ## 📦 Paket
 
-| Paket | Version | Beskrivning |
-|-------|---------|-------------|
-| [@midas-ds/components](https://www.npmjs.com/package/@midas-ds/components) | [![npm](https://img.shields.io/npm/v/@midas-ds/components)](https://www.npmjs.com/package/@midas-ds/components) | React-komponenter |
-| [@midas-ds/theme](https://www.npmjs.com/package/@midas-ds/theme) | [![npm](https://img.shields.io/npm/v/@midas-ds/theme)](https://www.npmjs.com/package/@midas-ds/theme) | Design tokens och CSS |
+| Paket                                                                                    | Version                                                                                                                       | Beskrivning                  |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| [@midas-ds/components](https://www.npmjs.com/package/@midas-ds/components)               | [![npm](https://img.shields.io/npm/v/@midas-ds/components)](https://www.npmjs.com/package/@midas-ds/components)               | React-komponenter            |
+| [@midas-ds/theme](https://www.npmjs.com/package/@midas-ds/theme)                         | [![npm](https://img.shields.io/npm/v/@midas-ds/theme)](https://www.npmjs.com/package/@midas-ds/theme)                         | Design tokens och CSS        |
 | [@midas-ds/datepicker-styles](https://www.npmjs.com/package/@midas-ds/datepicker-styles) | [![npm](https://img.shields.io/npm/v/@midas-ds/datepicker-styles)](https://www.npmjs.com/package/@midas-ds/datepicker-styles) | Styling för react-datepicker |
-| [@midas-ds/select-styles](https://www.npmjs.com/package/@midas-ds/select-styles) | [![npm](https://img.shields.io/npm/v/@midas-ds/select-styles)](https://www.npmjs.com/package/@midas-ds/select-styles) | Styling för react-select |
-| [@midas-ds/table-styles](https://www.npmjs.com/package/@midas-ds/table-styles) | [![npm](https://img.shields.io/npm/v/@midas-ds/table-styles)](https://www.npmjs.com/package/@midas-ds/table-styles) | Styling för TanStack Table |
+| [@midas-ds/select-styles](https://www.npmjs.com/package/@midas-ds/select-styles)         | [![npm](https://img.shields.io/npm/v/@midas-ds/select-styles)](https://www.npmjs.com/package/@midas-ds/select-styles)         | Styling för react-select     |
+| [@midas-ds/table-styles](https://www.npmjs.com/package/@midas-ds/table-styles)           | [![npm](https://img.shields.io/npm/v/@midas-ds/table-styles)](https://www.npmjs.com/package/@midas-ds/table-styles)           | Styling för TanStack Table   |
 
 ## 🤝 Bidra
 

@@ -1,3 +1,13 @@
+## 3.12.13 (2026-03-18)
+
+### 🔧 Maintenance
+
+- **components,theme:** standardize animation tokens and transitions ([09a2ce6a04](https://github.com/migrationsverket/midas/commit/09a2ce6a04))
+
+## 3.12.12 (2026-03-16)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.12.11 (2026-03-12)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

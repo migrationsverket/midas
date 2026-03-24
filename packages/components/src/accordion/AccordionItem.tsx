@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useContext, useEffect } from 'react'
 import {
+  composeRenderProps,
   Disclosure,
   DisclosurePanel,
   DisclosureProps,
@@ -17,10 +18,9 @@ import {
   FeedbackStatusIconProps,
 } from '../common/FeedbackStatusIcon'
 
-export interface AccordionItemProps extends Omit<DisclosureProps, 'children'> {
+export interface AccordionItemProps extends DisclosureProps {
   /** The text displayed in the collapsed state. If a ReactNode is provided, a heading will not be automatically added, and you must provide one yourself. */
   title?: string | React.ReactNode
-  children?: React.ReactNode
   /** Adjust the heading level of the title to match your document's heading tag structure */
   headingLevel?: HeadingProps['elementType']
   /** Display an accordion item with different type styles. */
@@ -41,7 +41,7 @@ export interface AccordionItemProps extends Omit<DisclosureProps, 'children'> {
   iconAriaLabel?: FeedbackStatusIconProps['aria-label']
 }
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({
+export const AccordionItem = ({
   title,
   children,
   className,
@@ -52,7 +52,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   isContained: isContainedFromProp,
   iconAriaLabel,
   ...props
-}) => {
+}: AccordionItemProps) => {
   const context = useContext(AccordionContext)
   const isContained = isContainedFromProp ?? context?.isContained ?? false
   const titleIsReactNode = typeof title === 'object'
@@ -76,48 +76,52 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
         className,
       )}
     >
-      <div className={itemStyles.trigger}>
-        <Button
-          className={itemStyles.triggerButton}
-          slot='trigger'
-          variant='icon'
-        >
-          <ChevronDown
-            size={20}
-            className={itemStyles.chevronIcon}
-          />
-          <div className={itemStyles.triggerMainContent}>
-            {titleIsReactNode ? (
-              title
-            ) : (
-              <Heading
-                level={3}
-                elementType={headingLevel}
-                className={itemStyles.triggerText}
-              >
-                {title}
-              </Heading>
-            )}
+      {composeRenderProps(children, children => (
+        <>
+          <div className={itemStyles.trigger}>
+            <Button
+              className={itemStyles.triggerButton}
+              slot='trigger'
+              variant='icon'
+            >
+              <ChevronDown
+                size={20}
+                className={itemStyles.chevronIcon}
+              />
+              <div className={itemStyles.triggerMainContent}>
+                {titleIsReactNode ? (
+                  title
+                ) : (
+                  <Heading
+                    level={3}
+                    elementType={headingLevel}
+                    className={itemStyles.triggerText}
+                  >
+                    {title}
+                  </Heading>
+                )}
+              </div>
+              {type && (
+                <FeedbackStatusIcon
+                  aria-label={iconAriaLabel}
+                  className={itemStyles.statusIcon}
+                  status={type}
+                />
+              )}
+            </Button>
           </div>
-          {type && (
-            <FeedbackStatusIcon
-              aria-label={iconAriaLabel}
-              className={itemStyles.statusIcon}
-              status={type}
-            />
-          )}
-        </Button>
-      </div>
-      <DisclosurePanel className={itemStyles.panel}>
-        <div
-          className={clsx(
-            itemStyles.content,
-            hasBackground && itemStyles.hasBackground,
-          )}
-        >
-          {children}
-        </div>
-      </DisclosurePanel>
+          <DisclosurePanel className={itemStyles.panel}>
+            <div
+              className={clsx(
+                itemStyles.content,
+                hasBackground && itemStyles.hasBackground,
+              )}
+            >
+              {children}
+            </div>
+          </DisclosurePanel>
+        </>
+      ))}
     </Disclosure>
   )
 }

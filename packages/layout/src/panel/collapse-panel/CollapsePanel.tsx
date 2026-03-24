@@ -3,7 +3,7 @@
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
 import { useControlledState } from '@react-stately/utils'
-import { PanelBody, PanelBodyProps, PanelHeader, PanelTitle } from '..'
+import { PanelBody, PanelHeader, PanelProps, PanelTitle } from '..'
 import messages from '../intl/translations.json'
 import { useIsMobileDevice } from '../../utils'
 import { CollapsePanelContext } from './CollapsePanelContext'
@@ -15,6 +15,9 @@ export interface CollapseTriggerProps {
   onCollapseChange?: (isCollapsed: boolean) => void
 }
 
+export type CollapsePanelProps = Omit<PanelProps<'collapse'>, 'variant'> &
+  CollapseTriggerProps
+
 export const CollapsePanel = ({
   children,
   className,
@@ -23,7 +26,7 @@ export const CollapsePanel = ({
   onCollapseChange,
   title,
   ...rest
-}: PanelBodyProps & CollapseTriggerProps) => {
+}: CollapsePanelProps) => {
   const strings = useLocalizedStringFormatter(messages)
 
   const isMobileDevice = useIsMobileDevice()
@@ -45,32 +48,34 @@ export const CollapsePanel = ({
         })}
         {...rest}
       >
-        <PanelHeader>
-          <div>
-            {!isCollapsed && title && (
-              <PanelTitle
-                className={styles.panelTitle}
-                title={title}
-              />
-            )}
-          </div>
-          <Button
-            variant='icon'
-            aria-label={
-              isCollapsed
-                ? strings.format('expandSidebar')
-                : strings.format('collapseSidebar')
-            }
-            onPress={handlePress}
-          >
-            {isCollapsed ? (
-              <PanelLeftOpen size={20} />
-            ) : (
-              <PanelLeftClose size={20} />
-            )}
-          </Button>
-        </PanelHeader>
-        {children}
+        <aside>
+          <PanelHeader>
+            <div>
+              {!isCollapsed && title && (
+                <PanelTitle
+                  className={styles.panelTitle}
+                  title={title}
+                />
+              )}
+            </div>
+            <Button
+              variant='icon'
+              aria-label={
+                isCollapsed
+                  ? strings.format('expandSidebar')
+                  : strings.format('collapseSidebar')
+              }
+              onPress={handlePress}
+            >
+              {isCollapsed ? (
+                <PanelLeftOpen size={20} />
+              ) : (
+                <PanelLeftClose size={20} />
+              )}
+            </Button>
+          </PanelHeader>
+          {children}
+        </aside>
       </PanelBody>
     </CollapsePanelContext.Provider>
   )

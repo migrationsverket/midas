@@ -17,7 +17,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--midas-space-small);
 
   &[data-focus-visible],
   &:focus-visible {
@@ -80,7 +80,7 @@
   &[data-disabled] {
     color: var(--midas-text-disabled);
     cursor: not-allowed;
-    background-color: white;
+    background-color: transparent;
   }
 
   &[data-pressed]:not([aria-expanded='true'], [aria-haspopup='true']) {

@@ -35,7 +35,8 @@
 
         .sortIconNeutral {
           opacity: 0;
-          transition: opacity 0.2s ease-in-out;
+          transition: opacity var(--midas-transition-duration-quick)
+            var(--midas-transition-timing-ease-in-out);
 
           @media (prefers-reduced-motion) {
             transition: none;

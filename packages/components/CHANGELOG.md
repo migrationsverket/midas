@@ -1,3 +1,87 @@
+## 17.10.1 (2026-03-24)
+
+### 🏭 Refactoring
+
+- **components, layout:** remove es2022 array method ([c75c7ace5d](https://github.com/migrationsverket/midas/commit/c75c7ace5d))
+
+## 17.10.0 (2026-03-19)
+
+### 🚀 Features
+
+- **components,file-list:** localize delete button aria-label ([30410e821d](https://github.com/migrationsverket/midas/commit/30410e821d))
+- **components,docs:** add FileList component ([dae5f056c2](https://github.com/migrationsverket/midas/commit/dae5f056c2))
+- **components,color-scheme-switch:** deprecate defaultValue in favor of defaultScheme ([1c48d0b7f1](https://github.com/migrationsverket/midas/commit/1c48d0b7f1))
+
+### 🩹 Fixes
+
+- **components,file-list:** remove id prop from FileListItem ([688bb0b04a](https://github.com/migrationsverket/midas/commit/688bb0b04a))
+- **components,file-list:** don't forward id to li element ([214378b006](https://github.com/migrationsverket/midas/commit/214378b006))
+- **components,file-list:** correct font size and weight tokens for file name and size ([0ae7b21451](https://github.com/migrationsverket/midas/commit/0ae7b21451))
+- **components,color-scheme-switch:** show focus ring on selected button ([b112b5f823](https://github.com/migrationsverket/midas/commit/b112b5f823))
+
+### 🏭 Refactoring
+
+- **components,docs,file-list:** replace GridList with plain list ([6046308cb3](https://github.com/migrationsverket/midas/commit/6046308cb3))
+
+### 🔧 Maintenance
+
+- **components,docs,file-list:** remove leftover id props from docs, spec and playground ([4439e37443](https://github.com/migrationsverket/midas/commit/4439e37443))
+- **components,file-list:** remove id prop from stories ([0fb0bba495](https://github.com/migrationsverket/midas/commit/0fb0bba495))
+- **components,file-list:** fix trailing blank line in css ([39b8525728](https://github.com/migrationsverket/midas/commit/39b8525728))
+- **components,file-list:** fix empty interface lint error ([405d702ee9](https://github.com/migrationsverket/midas/commit/405d702ee9))
+- **components,file-list:** fix lint errors ([d175b49ea4](https://github.com/migrationsverket/midas/commit/d175b49ea4))
+- **components,color-scheme-switch:** fix button sizing and selected state styles ([fe5b1dc132](https://github.com/migrationsverket/midas/commit/fe5b1dc132))
+- **components,color-scheme-switch:** replace hardcoded padding with space token ([3f29552fe2](https://github.com/migrationsverket/midas/commit/3f29552fe2))
+
+## 17.9.0 (2026-03-19)
+
+### 🚀 Features
+
+- **components,search-field:** deprecate built-in submit button, fix a11y ([717b9b34ab](https://github.com/migrationsverket/midas/commit/717b9b34ab))
+
+### 🩹 Fixes
+
+- **components,search-field:** make built-in button non-breaking, add future flag ([4c6a0b985e](https://github.com/migrationsverket/midas/commit/4c6a0b985e))
+
+### 🏭 Refactoring
+
+- **components,search-field:** rebuild on RAC SearchField component ([86de78182e](https://github.com/migrationsverket/midas/commit/86de78182e))
+
+### 📖 Documentation changes
+
+- **components,search-field:** link v18 tracking issue from showButton JSDoc ([51c90e03b7](https://github.com/migrationsverket/midas/commit/51c90e03b7))
+
+## 17.8.3 (2026-03-18)
+
+### 🔧 Maintenance
+
+- **components:** fix stylelint formatting errors ([37ec3ea5a0](https://github.com/migrationsverket/midas/commit/37ec3ea5a0))
+- **components,theme:** standardize animation tokens and transitions ([09a2ce6a04](https://github.com/migrationsverket/midas/commit/09a2ce6a04))
+- **components:** replace hardcoded spacing values with tokens ([127194d71c](https://github.com/migrationsverket/midas/commit/127194d71c))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.13
+
+## 17.8.2 (2026-03-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.12
+
+## 17.8.1 (2026-03-13)
+
+### 🩹 Fixes
+
+- **components, tag:** add box-sizing for consistent height ([b66bd4adfd](https://github.com/migrationsverket/midas/commit/b66bd4adfd))
+
+## 17.8.0 (2026-03-12)
+
+### 🚀 Features
+
+- **components, radio:** accept function for children prop ([75260130c8](https://github.com/migrationsverket/midas/commit/75260130c8))
+- **components, accordion:** accept function for children prop ([08bc1ba117](https://github.com/migrationsverket/midas/commit/08bc1ba117))
+
 ## 17.7.8 (2026-03-12)
 
 ### 🩹 Fixes

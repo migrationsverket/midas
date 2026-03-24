@@ -37,11 +37,13 @@
   height: var(--visual-viewport-height);
 
   &[data-entering] {
-    animation: modal-fade 150ms;
+    animation: modal-fade var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
   }
 
   &[data-exiting] {
-    animation: modal-fade 150ms reverse;
+    animation: modal-fade var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-in) reverse;
   }
 }
 

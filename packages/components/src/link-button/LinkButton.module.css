@@ -14,7 +14,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--midas-space-small);
   text-decoration: none;
   line-height: 1;
 

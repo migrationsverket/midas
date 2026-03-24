@@ -14,6 +14,7 @@
 }
 
 .listBoxPopover {
+  composes: dropdownAnimation from '../common/overlay.module.css';
   font-family: var(--midas-typography-font-family);
 
   /* RAC passes this variable via the style prop, making it available during runtime only */
@@ -62,7 +63,6 @@
   line-height: var(--midas-typography-line-height-30);
   margin-bottom: 0;
   padding: var(--midas-space-70) var(--midas-space-medium);
-  transition: background-color 60ms;
   gap: var(--midas-space-medium);
 
   .textContent {
@@ -74,7 +74,6 @@
   &:hover:not([data-disabled]) {
     background-color: var(--midas-layer-01-hover);
     cursor: pointer;
-    transition-delay: 60ms;
   }
 
   &[data-disabled] {
@@ -87,7 +86,6 @@
 
     &:hover:not([data-disabled]) {
       background-color: var(--midas-layer-01-selected-hover);
-      transition-delay: 60ms;
     }
   }
 

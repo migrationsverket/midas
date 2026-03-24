@@ -4,31 +4,39 @@ import { Laptop, Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key } from 'react-aria-components'
+import { SelectionIndicator } from 'react-aria-components'
 import { ToggleButton, ToggleButtonGroup } from '../toggle-button'
 import styles from './ColorSchemeSwitch.module.css'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
+export type ColorScheme = 'light' | 'dark' | 'light dark'
+
 export interface ColorSchemeSwitchProps {
-  /** Choose what element that should be affected by the scheme switch.
-   * @default :root
+  /** The CSS selector for the element to apply the color scheme to.
+   * @default ':root'
    */
   selector?: string
-  /** Set the default value for the color scheme. Default is "light dark" meaning follow system settings
-   *
-   * @default new Set(['light dark'])
+  /** The default color scheme. Use `'light dark'` to follow the system setting.
+   * @default 'light dark'
    */
-  defaultValue?: Set<'light' | 'dark' | 'light dark'>
+  defaultScheme?: ColorScheme
+  /**
+   * @deprecated since v17.9.0 Use `defaultScheme` instead.
+   */
+  defaultValue?: Set<ColorScheme>
   className?: string
 }
 
 export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
   selector = ':root',
-  defaultValue = new Set(['light dark']),
+  defaultScheme = 'light dark',
+  defaultValue,
   className,
 }) => {
-  // set hard to light or dark or "light dark" for system
-  const [colorScheme, setColorScheme] = React.useState<Set<Key>>(defaultValue)
+  const [colorScheme, setColorScheme] = React.useState<Set<Key>>(
+    defaultValue ?? new Set([defaultScheme]),
+  )
 
   React.useEffect(() => {
     const targetElement = document.querySelector<HTMLElement>(selector)
@@ -62,6 +70,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Laptop />
         <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
       <ToggleButton
         id='light'
@@ -69,6 +78,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Sun />
         <VisuallyHidden>{strings.format('lightMode')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
       <ToggleButton
         id='dark'
@@ -76,6 +86,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Moon />
         <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
     </ToggleButtonGroup>
   )

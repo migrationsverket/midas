@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { PanelBehavior } from '@midas-ds/layout'
 
 type Notification = {
   id: number
@@ -34,12 +35,14 @@ export type Draft = ApplicationData & {
 }
 
 type AppStore = {
+  // Panel behavior
+  panelBehavior: PanelBehavior
+  setPanelBehavior: (behavior: PanelBehavior) => void
   // Notifications
   notifications: Notification[]
-  notificationsOpen: boolean
-  setNotificationsOpen: (open: boolean) => void
   markAllRead: () => void
   markRead: (id: number) => void
+  clearNotifications: (ids: number[]) => void
   // Language
   languages: Language[]
   currentLanguage: string
@@ -54,8 +57,8 @@ type AppStore = {
 }
 
 export const useAppStore = create<AppStore>(set => ({
-  notificationsOpen: false,
-  setNotificationsOpen: open => set({ notificationsOpen: open }),
+  panelBehavior: 'bring-to-front',
+  setPanelBehavior: behavior => set({ panelBehavior: behavior }),
 
   notifications: [
     {
@@ -107,6 +110,11 @@ export const useAppStore = create<AppStore>(set => ({
       ),
     })),
 
+  clearNotifications: ids =>
+    set(state => ({
+      notifications: state.notifications.filter(n => !ids.includes(n.id)),
+    })),
+
   languages: [
     { id: 'sv', label: 'Svenska' },
     { id: 'en', label: 'English' },
@@ -150,7 +158,8 @@ export const useAppStore = create<AppStore>(set => ({
       country: 'China',
       type: 'study',
       duration: 'temporary',
-      reason: 'Enrolled in a Masters programme at KTH Royal Institute of Technology.',
+      reason:
+        'Enrolled in a Masters programme at KTH Royal Institute of Technology.',
       submittedAt: '2026-02-03',
       status: 'rejected',
     },
@@ -198,7 +207,9 @@ export const useAppStore = create<AppStore>(set => ({
   updateDraft: (id, data) =>
     set(state => ({
       drafts: state.drafts.map(d =>
-        d.id === id ? { ...d, ...data, savedAt: new Date().toLocaleDateString('sv-SE') } : d,
+        d.id === id
+          ? { ...d, ...data, savedAt: new Date().toLocaleDateString('sv-SE') }
+          : d,
       ),
     })),
   removeDraft: id =>

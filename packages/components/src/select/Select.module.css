@@ -24,7 +24,8 @@
   min-height: var(--midas-size-control);
   padding-left: var(--midas-space-medium);
   padding-right: var(--midas-space-medium);
-  transition: all 100ms ease-in;
+  transition: all var(--midas-transition-duration-instant)
+    var(--midas-transition-timing-ease-in);
 
   &.medium {
     min-height: var(--midas-size-control-md);
@@ -33,7 +34,8 @@
   &:focus-visible {
     outline: none;
     box-shadow: var(--midas-state-focus);
-    transition: all 100ms ease-out;
+    transition: all var(--midas-transition-duration-instant)
+      var(--midas-transition-timing-ease-out);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -184,10 +186,11 @@
     /* RAC passes this variable via the style prop, making it available during runtime only */
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
     min-width: var(--trigger-width);
-    transition:
-      transform 0.2s ease-in-out,
-      opacity 0.2s ease-in-out;
+
+    /* Mirrors .dropdownAnimation in overlay.module.css — can't use composes inside a nested rule */
     opacity: 1;
+    transition: opacity var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
 
     &[data-entering] {
       opacity: 0;
@@ -195,6 +198,7 @@
 
     &[data-exiting] {
       opacity: 0;
+      transition-timing-function: var(--midas-transition-timing-ease-in);
     }
   }
 
@@ -208,12 +212,10 @@
     line-height: 1;
     margin-bottom: 2px !important;
     padding: var(--midas-space-medium);
-    transition: background-color 60ms;
 
     &:hover:not([data-disabled]) {
       background-color: var(--midas-layer-01-hover);
       cursor: pointer;
-      transition-delay: 60ms;
 
       & div {
         border-color: var(--midas-text-primary);
@@ -230,7 +232,6 @@
 
       &:hover:not([data-disabled]) {
         background-color: var(--midas-layer-01-selected-hover);
-        transition-delay: 60ms;
 
         & div {
           border-color: transparent;
@@ -263,7 +264,8 @@
 
 .icon {
   display: flex;
-  transition: transform var(--midas-transition-duration-normal) ease;
+  transition: transform var(--midas-transition-duration-normal)
+    var(--midas-transition-timing-ease-in-out);
 }
 
 .tagGroup {
@@ -273,7 +275,6 @@
 @media (prefers-reduced-motion) {
   .trigger,
   .popover[data-trigger='Select'],
-  .selectAll,
   .icon {
     transition: none;
   }
