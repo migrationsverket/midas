@@ -17,26 +17,26 @@ En sökning sker alltså innan det finns någon data att ta ställning till. Anv
 ### Inga träffar
 
 :::warning
-OBS: Det är skillnad mellan tekniskt fel och tomt resultat. Om det är ett tekniskt fel så visar vi ett felmeddelande.
+OBS: Det är skillnad mellan ett tekniskt fel och ett tomt sökresultat. Om det är ett tekniskt fel visar vi ett felmeddelande istället.
 :::
-När användaren söker finns det en risk att de inte får några träffar. Om detta händer visar vi en Infobanner där träffarna skulle ha varit. I meddelandet bör vi också ge användaren konstruktiva förslag på vad de kan göra för att få träffar.
+
+När användaren söker och inte får några sökträffar, visar vi en Infobanner där träffarna skulle ha varit. Där det är tillämpbart bör vi i meddelandet också ge användaren konstruktiva förslag på vad de kan göra för att få träffar.
 
 <NoHitsExample />
 
 ## Filtrering
 
-Till skillnad från sökning, som är mer utforskande, bygger filtrering oftast på fördefinierade värden. Användaren väljer aktivt vilka kriterier som ska gälla och kan kombinera flera filter för att begränsa träffmängden. Filtrering ska vara tydlig, kontrollerbar och göra det enkelt att förstå vilka urval som påverkar den visade datan.
-Filtreringen är därför mer styrd och användaren väljer oftast från en uppsättning av fördefinierade val.
+Till skillnad från sökning, som är mer utforskande, bygger filtrering ofta på fördefinierade värden. Användaren väljer aktivt vilka filtreringskriterier som ska gälla och kan kombinera flera kriterier för att begränsa träffmängden. Filtreringsalternativen ska vara tydliga och det ska vara enkelt att förstå vilka kriterier som påverkat urvalet av data.
 
-Nedan följer ett antal designmönster för filtrering i tabeller och listor
+Här följer ett antal designmönster för filtrering i tabeller och listor
 
 ### Inline-filter
 
-Inline-filter innebär att filtren placeras direkt ovanför tabellen och är alltid synliga. Detta gör det enkelt att upptäcka vilka filter som finns tillgängliga, se vilka filter som redan är aktiva samt justera flera filter på en gång utan extra interaktioner. Du kan [se ett exempel på detta mönster här](/dev/tanstack-table/#filtrering)
+Inline-filter innebär att filtren placeras direkt ovanför tabellen och alltid är synliga. Det gör det enkelt att se vilka filter som finns tillgängliga och vilka som redan är aktiva, samt att justera flera filter på en gång utan extra interaktioner. Du kan [se ett exempel på detta mönster här](/dev/tanstack-table/#filtrering)
 
 Använd detta mönster när
 
-- du har ett fåtal filter
+- det bara finns ett fåtal filter
 - användaren snabbt behöver kunna justera flera filter på en gång
 - det är viktigt att direkt kunna se vilka filter som är aktiva
 
