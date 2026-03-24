@@ -1,3 +1,86 @@
+## 3.12.11 (2026-03-12)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.10 (2026-03-11)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.9 (2026-03-11)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.8 (2026-03-10)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.7 (2026-03-09)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.6 (2026-03-09)
+
+### 🩹 Fixes
+
+- **theme:** bump version to publish tailwind fix ([0a7a7f6066](https://github.com/migrationsverket/midas/commit/0a7a7f6066))
+
+### 🔧 Maintenance
+
+- **theme:** add $description fields to all token files ([73e7db5173](https://github.com/migrationsverket/midas/commit/73e7db5173))
+
+## 3.12.5 (2026-03-06)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.4 (2026-03-06)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.3 (2026-03-02)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.2 (2026-02-26)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.1 (2026-02-26)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.0 (2026-02-24)
+
+### 🚀 Features
+
+- **theme:** rename size→base, spacing→space, add semantic size tokens ([1d34533af6](https://github.com/migrationsverket/midas/commit/1d34533af6))
+
+### 🔧 Maintenance
+
+- **theme:** add deprecated token aliases for renamed spacing and size tokens ([6e4e2833de](https://github.com/migrationsverket/midas/commit/6e4e2833de))
+- **theme:** rename size token control-sm to control-md ([d7c0784e95](https://github.com/migrationsverket/midas/commit/d7c0784e95))
+
+## 3.11.2 (2026-02-23)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.11.1 (2026-02-23)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.11.0 (2026-02-18)
+
+### 🚀 Features
+
+- **theme:** add component-scoped tag color tokens ([481a60bc36](https://github.com/migrationsverket/midas/commit/481a60bc36))
+
+## 3.10.8 (2026-02-16)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.10.7 (2026-02-16)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.10.6 (2026-02-05)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

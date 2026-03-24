@@ -11,7 +11,7 @@ import messages from './intl/translations.json'
 
 export interface ColorSchemeSwitchProps {
   /** Choose what element that should be affected by the scheme switch.
-   * @default body
+   * @default :root
    */
   selector?: string
   /** Set the default value for the color scheme. Default is "light dark" meaning follow system settings
@@ -23,7 +23,7 @@ export interface ColorSchemeSwitchProps {
 }
 
 export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
-  selector = 'body',
+  selector = ':root',
   defaultValue = new Set(['light dark']),
   className,
 }) => {
@@ -34,10 +34,13 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
     const targetElement = document.querySelector<HTMLElement>(selector)
 
     if (targetElement) {
-      targetElement.style.setProperty(
-        'color-scheme',
-        Array.from(colorScheme).join(' '),
-      )
+      const scheme = Array.from(colorScheme).join(' ')
+      targetElement.style.removeProperty('color-scheme')
+      if (scheme === 'light dark') {
+        delete targetElement.dataset.colorScheme
+      } else {
+        targetElement.dataset.colorScheme = scheme
+      }
     } else {
       console.warn(`No element found for selector: "${selector}"`)
     }

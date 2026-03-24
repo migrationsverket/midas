@@ -1,27 +1,33 @@
 {
   "transition": {
+    "$description": "Animationstokens för övergångar och rörelser i UI:t. Kombinera duration- och timing-tokens för att bygga konsekventa animationer.",
     "duration": {
       "slow": {
         "$value": "500ms",
-        "$type": "duration"
+        "$type": "duration",
+        "$description": "Långsam övergång. 500ms. Används för större layoutförändringar som sidopaneler och expanderbara sektioner."
       },
       "normal": {
         "$value": "300ms",
-        "$type": "duration"
+        "$type": "duration",
+        "$description": "Normal övergångshastighet. 300ms. Standardval för de flesta animationer."
       },
       "fast": {
         "$value": "250ms",
-        "$type": "duration"
+        "$type": "duration",
+        "$description": "Snabb övergång. 250ms. Används för kortlivade övergångar som tooltips och dropdowns — inte hover."
       }
     },
     "timing": {
       "easeOut": {
         "$value": [0, 0, 0.58, 1],
-        "$type": "cubicBezier"
+        "$type": "cubicBezier",
+        "$description": "Decelererar mot slutet. Används för element som glider in i vyn."
       },
       "easeIn": {
         "$value": [0.42, 0, 1, 1],
-        "$type": "cubicBezier"
+        "$type": "cubicBezier",
+        "$description": "Accelererar mot slutet. Används för element som lämnar vyn."
       }
     },
     "panel": {
@@ -31,7 +37,8 @@
           "duration": "{transition.duration.normal}",
           "timingFunction": "{transition.timing.easeOut}"
         },
-        "$type": "transition"
+        "$type": "transition",
+        "$description": "Komprimerar en panel med easeOut-timing. Används i Accordion och expanderbara ytor."
       },
       "expand": {
         "$value": {
@@ -39,7 +46,8 @@
           "duration": "{transition.duration.normal}",
           "timingFunction": "{transition.timing.easeIn}"
         },
-        "$type": "transition"
+        "$type": "transition",
+        "$description": "Expanderar en panel med easeIn-timing. Används i Accordion och expanderbara ytor."
       }
     }
   }

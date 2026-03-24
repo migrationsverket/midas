@@ -13,7 +13,7 @@
   grid-template-columns: 1fr auto;
   gap: 1rem;
   margin-bottom: 0.5rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--ifm-color-emphasis-200);
   padding: 1rem;
   width: 100%;
   overflow: hidden;
@@ -97,7 +97,7 @@
 
 .compositeTypographyPreview {
   padding: 0.5rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 4px;
   background-color: var(--ifm-background-surface-color);
   word-break: break-word;
@@ -114,7 +114,7 @@
 
 .dimensionBar {
   height: 1rem;
-  background-color: #ccc;
+  background-color: var(--ifm-color-emphasis-300);
   max-width: 100%;
 }
 
@@ -130,7 +130,7 @@
 
 .windowSizeBar {
   height: 1rem;
-  background-color: #ccc;
+  background-color: var(--ifm-color-emphasis-300);
   max-width: 100%;
 }
 
@@ -173,6 +173,21 @@
   animation: fillBar var(--duration, 1s) ease-out infinite;
 }
 
+.statePreviewContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.statePreview {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
 .genericValue {
   font-size: 0.875rem;
   font-family: monospace;
@@ -194,6 +209,14 @@
   margin-bottom: 0.5rem;
   color: var(--ifm-color-primary);
   text-transform: capitalize;
+}
+
+.groupDescription {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.75rem;
+  margin-top: -0.25rem;
+  max-width: 72ch;
 }
 
 .usageExample {

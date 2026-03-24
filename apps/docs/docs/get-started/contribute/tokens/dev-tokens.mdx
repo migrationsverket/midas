@@ -5,13 +5,20 @@ sidebar_label: Tokens list reference
 ---
 
 import { tokenDictionary } from '@midas-ds/theme'
-import { TokenList } from '@site/src/components/tokens'
+import { TokenList, CompactTokenTable, ColorPaletteTable } from '@site/src/components/tokens'
 
-Den här sidan listar alla tillgängliga designtokens i Midas Design System. Dessa tokens kan importeras och användas i dina applikationer via CSS-variabler eller JavaScript.
+Alla tillgängliga designtokens i Midas Design System. Tokens finns som CSS-variabler (`--midas-*`) och kan också importeras som JS-objekt från `@midas-ds/theme`.
 
-## Typography
+Tokens är organiserade i tre nivåer:
+- **Primitiver** (`color.*`, `base.*`) – råa värden som semantiska tokens refererar till.
+- **Semantiska tokens** (`background.*`, `text.*`, `button.*` osv.) – tokens kopplade till specifika roller i gränssnittet.
+- **CSS-variabler** (`--midas-*`) – genererade CSS custom properties från de semantiska tokens.
 
-### Composite Typography
+## Typografi
+
+### Komposit typografi
+
+Varje komposit token samlar `fontFamily`, `fontSize`, `fontWeight` och `lineHeight` i ett värde. Används i: Text, Heading, Button, Label m.fl.
 
 <TokenList tokens={{
   body: tokenDictionary.typography.body,
@@ -20,124 +27,211 @@ Den här sidan listar alla tillgängliga designtokens i Midas Design System. Des
   'description-small': tokenDictionary.typography['description-small']
 }} />
 
-### Font Family
+### Typsnittsfamilj
 
-<TokenList tokens={tokenDictionary.typography.font} filter="family" />
+<CompactTokenTable tokens={tokenDictionary.typography.font} filter="family" />
 
-### Font Size
+### Teckenstorlek
 
-<TokenList tokens={tokenDictionary.typography.font} filter="size" />
+<CompactTokenTable tokens={tokenDictionary.typography.font} filter="size" />
 
-### Font Weight
+### Teckensnittsvikt
 
-<TokenList tokens={tokenDictionary.typography} filter="weight" />
+<CompactTokenTable tokens={tokenDictionary.typography} filter="weight" />
 
-### Line Height
+### Radhöjd
 
-<TokenList tokens={tokenDictionary.typography} filter="lineHeight" />
+<CompactTokenTable tokens={tokenDictionary.typography} filter="lineHeight" />
 
-## Colors
+## Färger
 
-### Base Colors
+### Neutrala & varumärkesfärger
 
-<TokenList tokens={tokenDictionary} filter="color" />
+Gråskala, primärblå, svart/vit, lila och varumärkesröd. Semantiska tokens refererar till dessa som bas.
 
-### Background
+<ColorPaletteTable tokens={{
+  gray: tokenDictionary.color.gray,
+  blue: tokenDictionary.color.blue,
+  black: tokenDictionary.color.black,
+  white: tokenDictionary.color.white,
+  red: tokenDictionary.color.red,
+  purple: tokenDictionary.color.purple,
+}} />
+
+### Signalfärger
+
+Råa palettfärger som semantiska tokens refererar till. `support.*` och `tag.*` använder samma primitiver men i olika syften:
+
+- **Feedback & status** — via `support.*` (Toast, InfoBanner, invalida formulärfält)
+- **Dekorativa färgvarianter** — via `tag.*` (Tag-komponenten)
+
+Exempel:
+- `support.background.success` → `color.signalGreen.20` / `color.signalGreen.180`
+- `tag.green.background` → `color.signalGreen.20` / `color.signalGreen.180`
+- `icon.success` → `color.signalGreen.100`
+
+<ColorPaletteTable tokens={{
+  signalGreen: tokenDictionary.color.signalGreen,
+  signalBlue: tokenDictionary.color.signalBlue,
+  signalYellow: tokenDictionary.color.signalYellow,
+  signalRed: tokenDictionary.color.signalRed,
+  orange: tokenDictionary.color.orange,
+}} />
+
+### Bakgrund
+
+Sidans baslager. Används i: samtliga sidor och layouts som sidbakgrund.
 
 <TokenList tokens={tokenDictionary} filter="background" />
 
-### Layers
+### Lager
+
+Ytor som staplas ovanpå bakgrunden. `layer.01` används direkt på `background`, `layer.02` ovanpå `layer.01`. Används i: Card, Table, Modal, Popover, Select, ListBox, Accordion, Calendar, Tooltip, Checkbox (hover på mobil).
 
 <TokenList tokens={tokenDictionary} filter="layer" />
 
-### Layer Accents
+### Lageraccentfärger
+
+Accentfärger som kompletterar respektive lager. Används i: Table (zebra-rankning), ProgressBar (bakgrundsspår).
 
 <TokenList tokens={tokenDictionary} filter="layerAccent" />
 
-### Brand
+### Varumärke
+
+Används i: Logo.
 
 <TokenList tokens={tokenDictionary} filter="brand" />
 
-### Borders
+### Kanter
+
+Tre kontrastnivåer: `primary` för formulärfält, `secondary` för kort och paneler, `subtle` för separatorer och läsbara fält. Används i: TextField, TextArea, Checkbox, Radio, ComboBox, SearchField, Card, Accordion, Table, Calendar, DateField, DatePicker, Tag, ListBox, FileUpload, ToggleButton.
 
 <TokenList tokens={tokenDictionary} filter="border" />
 
-### Fields
+### Fält
+
+Bakgrundsfärger för formulärfält. `field.01` används på `background`, `field.02` på `layer.01`. Används i: TextField, TextArea, Tag, ComboBox, SearchField, DateField, DatePicker, Calendar, Select.
 
 <TokenList tokens={tokenDictionary} filter="field" />
 
-### Icons
+### Ikoner
+
+`icon.success`, `icon.warning` och `icon.info` baseras på signalfärger. Används i: Button, Toast, InfoBanner, SearchField, Radio, ComboBox, Spinner, Menu, Accordion, Checkbox, Tag, LinkButton, ListBox.
 
 <TokenList tokens={tokenDictionary} filter="icon" />
 
-### Links
+### Länkar
+
+Används i: Link.
 
 <TokenList tokens={tokenDictionary} filter="link" />
 
-### Support Colors
+### Supportfärger
+
+Semantiska tokens för statuskommunikation, byggda ovanpå signalfärgsprimitiver. Finns i fyra varianter: `success`, `info`, `important` och `warning`. En ändring av t.ex. `color.signalGreen.20` slår igenom på alla `support.*`-tokens som refererar till den. Används i: Toast, InfoBanner, Checkbox (invalid), Radio (invalid), ComboBox (invalid), SearchField (invalid), Label.
 
 <TokenList tokens={tokenDictionary} filter="support" />
 
 ### Text
 
+`text.primary` är standardvärdet och används i nästan alla komponenter. Används i: Text, Heading, Link, Button, Checkbox, Radio, Badge, Toast, InfoBanner, TextField, Select, ComboBox, DateField, Card, Tab, Menu, ListBox, Accordion, Table m.fl.
+
 <TokenList tokens={tokenDictionary} filter="text" />
 
 ### Badge
 
+Används i: Badge.
+
 <TokenList tokens={tokenDictionary} filter="badge" />
 
-### Calendar
+### Kalender
 
-<TokenList tokens={tokenDictionary} filter="calendar" />
+Används i: DatePicker, DateRangePicker.
 
-### Logo
+<TokenList tokens={tokenDictionary.calendar.date.background} />
+
+### Logotyp
+
+Används i: Logo.
 
 <TokenList tokens={tokenDictionary} filter="logo" />
 
-### Menu
+### Meny
+
+Används i: Menu, NavigationMenu.
 
 <TokenList tokens={tokenDictionary} filter="menu" />
 
-## Sizing & Spacing
+## Storlekar & avstånd
 
-### Size
+### Basdimensioner
 
-<TokenList tokens={tokenDictionary} filter="size" />
+Intern dimensionsskala som `space.*` och `size.*` bygger på. `--midas-base-*` används inte direkt i komponent-CSS.
 
-### Spacing
+<CompactTokenTable tokens={tokenDictionary} filter="base" />
 
-<TokenList tokens={tokenDictionary} filter="spacing" />
+### Storlek
+
+`width`/`height` på interaktiva element och ikoner. Används i: Button (icon), Checkbox, Radio, TextField, Select, ComboBox, ListBox (option-höjd).
+
+<CompactTokenTable tokens={{
+  icon: tokenDictionary.size.icon,
+  'icon-sm': tokenDictionary.size['icon-sm'],
+  option: tokenDictionary.size.option,
+  'control-md': tokenDictionary.size['control-md'],
+  control: tokenDictionary.size.control
+}} />
+
+### Avstånd
+
+`padding`, `gap` och `margin`. Semantiska namn (`xsmall`–`xlarge`) täcker de vanligaste fallen; numeriska steg finns för mellanvärden.
+
+<CompactTokenTable tokens={tokenDictionary} filter="space" />
 
 ## Layout
 
-### Window Sizes
+### Fönsterstorlekar
 
-<TokenList tokens={tokenDictionary} filter="windowSizes" />
+Pixelvärden för skärmstorlekar. `breakpoints.*` används i `@media`-regler.
 
-### Breakpoints
+<CompactTokenTable tokens={tokenDictionary} filter="windowSizes" />
 
-<TokenList tokens={tokenDictionary} filter="breakpoints" />
+### Brytpunkter
 
-## Interactive Elements
+Media query-strängar för responsiv design. Används direkt i CSS `@media`-regler.
 
-### Buttons
+<CompactTokenTable tokens={tokenDictionary} filter="breakpoints" />
+
+## Interaktiva element
+
+### Knappar
+
+Täcker alla varianter (primary, secondary, tertiary, danger) och tillstånd. Används i: Button, Tag (knappläge), Checkbox, LinkButton, Card.
 
 <TokenList tokens={tokenDictionary} filter="button" />
 
-### States
+### Tillstånd
+
+Fokusringar och invalid-markeringar. Kopplade till WCAG-krav för fokussynlighet. Används i: Button, TextField, Checkbox, Radio, Link, Tag, ComboBox, SearchField, Toast, DateField, DateSegment, Tooltip, Popover, Modal.
 
 <TokenList tokens={tokenDictionary} filter="state" />
 
 ### Skeleton
 
+`skeleton.01` på `background`, `skeleton.02` på `layer.01`. Används i: Skeleton.
+
 <TokenList tokens={tokenDictionary} filter="skeleton" />
 
-## Motion
+## Rörelse
 
-### Transitions
+`duration`- och `timing`-tokens kombineras för övergångar. Används i: Radio (border-transition), Accordion (expand/collapse), Select, Tooltip.
+
+### Övergångar
 
 <TokenList tokens={tokenDictionary} filter="transition" />
 
-## Z-Index
+## Z-index
 
-<TokenList tokens={tokenDictionary} filter="zIndex" />
+Staplingskontroll för UI-lager. Används i: Toast (`toast`), Modal/Dialog (`modal`), TextField lösenordsknapp (`base`/`above`), Link (stretched-variant, `base`).
+
+<CompactTokenTable tokens={tokenDictionary} filter="zIndex" />

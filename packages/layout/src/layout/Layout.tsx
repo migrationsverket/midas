@@ -1,10 +1,28 @@
-import { ReactNode } from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Layout.module.css'
 
-export interface LayoutProps {
-  children?: ReactNode
-}
+type DivProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>
 
-export const Layout = ({ children }: LayoutProps) => (
-  <div className={styles.layout}>{children}</div>
+export type LayoutProps = DivProps
+export type LayoutContentProps = DivProps
+
+export const LayoutContent = ({ className, children, ...rest }: DivProps) => (
+  <div
+    className={`${className ?? ''} ${styles.content}`}
+    {...rest}
+  >
+    {children}
+  </div>
+)
+
+export const Layout = ({ className, children, ...rest }: LayoutProps) => (
+  <div
+    className={`${className ?? ''} ${styles.layout}`}
+    {...rest}
+  >
+    {children}
+  </div>
 )

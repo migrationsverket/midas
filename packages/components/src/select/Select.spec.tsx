@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Select.stories'
 import { options } from '@midas-ds/test-utils'
 import { page, userEvent } from 'vitest/browser'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const {
   Primary,
@@ -13,6 +13,7 @@ const {
   SelectAllEnabled,
   DynamicSections,
   RequiredSingleSelect,
+  RequiredMultipleSelectAll,
   DS872,
 } = composeStories(stories)
 
@@ -151,6 +152,30 @@ describe('given a sectioned Select ', async () => {
     await userEvent.keyboard('[Space]')
 
     expect(warn).toHaveBeenCalledTimes(0)
+  })
+})
+
+describe('given a required multiple Select with selectAll', async () => {
+  it('should clear invalid state when selectAll is clicked after a failed form submission', async () => {
+    const { getByRole } = await render(<RequiredMultipleSelectAll />)
+
+    // Submit with empty selection to trigger required validation
+    await userEvent.click(getByRole('button', { name: 'submit' }))
+
+    // Trigger should now be invalid
+    await expect
+      .element(getByRole('button', { name: 'Label' }))
+      .toHaveAttribute('data-invalid')
+
+    // Open the dropdown and click Select all
+    await userEvent.click(getByRole('button', { name: 'Label' }))
+    await userEvent.click(page.getByRole('dialog', { name: 'Label' }).getByText('Select all'))
+    await userEvent.keyboard('[Escape]')
+
+    // Trigger should no longer be invalid
+    await expect
+      .element(getByRole('button', { name: 'Label' }))
+      .not.toHaveAttribute('data-invalid')
   })
 })
 

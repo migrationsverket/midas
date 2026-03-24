@@ -1,2 +1,5 @@
 # auto generated files
 packages/theme/**/*/variables.css
+
+# next build
+.next

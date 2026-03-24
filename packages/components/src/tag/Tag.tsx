@@ -1,67 +1,79 @@
-import * as React from 'react'
-import styles from './Tag.module.css'
 import {
   Tag as AriaTag,
-  TagGroup as AriaTagGroup,
-  TagGroupProps as AriaTagGroupProps,
-  TagList,
   TagProps as AriaTagProps,
+  composeRenderProps,
 } from 'react-aria-components'
 import { X } from 'lucide-react'
 import { Button } from '../button'
 import clsx from '../utils/clsx'
-
 import { FeedbackStatus } from '../common/types'
-
-export interface TagGroupProp extends AriaTagGroupProps {
-  children: React.ReactNode
-}
+import styles from './Tag.module.css'
 
 export interface TagProps extends AriaTagProps {
-  children: React.ReactNode
+  /**
+   * Sets the background and border color of the tag
+   */
+  color?: 'green' | 'blue' | 'yellow' | 'red'
+  /**
+   * Add a button for dismissing the tab
+   * @deprecated since v17.0.0 please use `isDismissable` instead
+   */
   dismissable?: boolean
+  /**
+   * Add a button for dismissing the tab
+   */
+  isDismissable?: boolean
+  /**
+   * @deprecated since v17.0.0 please use the prop `color` instead
+   */
   type?: FeedbackStatus
 }
 
-export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
-  return (
-    <AriaTagGroup {...rest}>
-      <TagList className={styles.tagList}>{children}</TagList>
-    </AriaTagGroup>
-  )
-}
-
-export const Tag: React.FC<TagProps> = ({
-  children,
-  dismissable,
+export const Tag = ({
   className,
+  color,
+  dismissable = false,
+  isDismissable,
   type,
   ...props
-}) => {
+}: TagProps) => {
+  const isTagDismissable =
+    isDismissable || (typeof isDismissable === 'undefined' && dismissable)
+
   return (
     <AriaTag
       className={clsx(
         styles.tag,
-        dismissable && styles.dismissable,
-        type === 'success' && styles.success,
-        type === 'info' && styles.info,
-        type === 'important' && styles.important,
-        type === 'warning' && styles.warning,
+        isTagDismissable && styles.dismissable,
+        {
+          [styles.green]: color ? color === 'green' : type === 'success',
+          [styles.blue]: color ? color === 'blue' : type === 'info',
+          [styles.yellow]: color ? color === 'yellow' : type === 'important',
+          [styles.red]: color ? color === 'red' : type === 'warning',
+        },
         className,
       )}
       {...props}
+      textValue={
+        props.textValue ||
+        (typeof props.children === 'string' ? props.children : undefined)
+      }
     >
-      <div className={styles.tagText}>{children}</div>
-      {dismissable && (
-        <Button
-          variant='icon'
-          size='medium'
-          className={styles.button}
-          slot='remove'
-        >
-          <X size={20} />
-        </Button>
-      )}
+      {composeRenderProps(props.children, children => (
+        <>
+          <div className={styles.tagText}>{children}</div>
+          {isTagDismissable && (
+            <Button
+              variant='icon'
+              size='medium'
+              className={styles.button}
+              slot='remove'
+            >
+              <X size={20} />
+            </Button>
+          )}
+        </>
+      ))}
     </AriaTag>
   )
 }

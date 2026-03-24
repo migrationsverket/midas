@@ -25,7 +25,7 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  min-height: var(--midas-size-150);
+  min-height: var(--midas-size-control);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +36,7 @@
   position: relative;
 
   &.medium {
-    min-height: var(--midas-size-130);
+    min-height: var(--midas-size-control-md);
   }
 
   .dateField:not([data-disabled], [data-readonly]) & :hover {

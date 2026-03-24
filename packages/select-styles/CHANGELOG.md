@@ -1,3 +1,117 @@
+## 1.1.34 (2026-03-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.11
+
+## 1.1.33 (2026-03-11)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.10
+
+## 1.1.32 (2026-03-11)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.9
+
+## 1.1.31 (2026-03-10)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.8
+
+## 1.1.30 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.7
+
+## 1.1.29 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.6
+
+## 1.1.28 (2026-03-09)
+
+This was a version bump only for select-styles to align it with other projects, there were no code changes.
+
+## 1.1.27 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.5
+
+## 1.1.26 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.4
+
+## 1.1.25 (2026-03-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.3
+
+## 1.1.24 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.2
+
+## 1.1.23 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.1
+
+## 1.1.22 (2026-02-24)
+
+### 🚀 Features
+
+- **components,theme:** migrate CSS from --midas-spacing-*/size-[0-9]* to --midas-space-*/size-* ([d770ac0e26](https://github.com/migrationsverket/midas/commit/d770ac0e26))
+
+### 🔧 Maintenance
+
+- **theme:** rename size token control-sm to control-md ([d7c0784e95](https://github.com/migrationsverket/midas/commit/d7c0784e95))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.0
+
+## 1.1.21 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.2
+
+## 1.1.20 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.1
+
+## 1.1.19 (2026-02-18)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.0
+
+## 1.1.18 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.8
+
+## 1.1.17 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.7
+
 ## 1.1.16 (2026-02-05)
 
 ### 🧱 Updated Dependencies

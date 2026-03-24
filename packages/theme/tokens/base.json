@@ -1,0 +1,121 @@
+{
+  "base": {
+    "$description": "Intern dimensionsskala i rem. Används som referens av space- och size-tokens. Använd inte --midas-base-* direkt i komponent-CSS – använd space.* eller size.* istället.",
+    "$type": "dimension",
+    "00": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "rem"
+      }
+    },
+    "05": {
+      "$value": {
+        "value": 0.063,
+        "unit": "rem"
+      }
+    },
+    "10": {
+      "$value": {
+        "value": 0.125,
+        "unit": "rem"
+      }
+    },
+    "15": {
+      "$value": {
+        "value": 0.188,
+        "unit": "rem"
+      }
+    },
+    "20": {
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "30": {
+      "$value": {
+        "value": 0.375,
+        "unit": "rem"
+      }
+    },
+    "40": {
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "50": {
+      "$value": {
+        "value": 0.625,
+        "unit": "rem"
+      }
+    },
+    "60": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "70": {
+      "$value": {
+        "value": 0.875,
+        "unit": "rem"
+      }
+    },
+    "75": {
+      "$value": {
+        "value": 0.938,
+        "unit": "rem"
+      }
+    },
+    "80": {
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      }
+    },
+    "90": {
+      "$value": {
+        "value": 1.25,
+        "unit": "rem"
+      }
+    },
+    "100": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
+    },
+    "110": {
+      "$value": {
+        "value": 1.75,
+        "unit": "rem"
+      }
+    },
+    "120": {
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      }
+    },
+    "130": {
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      }
+    },
+    "140": {
+      "$value": {
+        "value": 2.75,
+        "unit": "rem"
+      }
+    },
+    "150": {
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      }
+    }
+  }
+}

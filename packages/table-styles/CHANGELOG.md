@@ -1,3 +1,282 @@
+## 2.0.38 (2026-03-12)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.8
+
+## 2.0.37 (2026-03-12)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.7
+- Updated theme to 3.12.11
+
+## 2.0.36 (2026-03-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.6
+
+## 2.0.35 (2026-03-11)
+
+### 🩹 Fixes
+
+- **components,table-styles:** update RAC to latest ([e2877fa6e2](https://github.com/migrationsverket/midas/commit/e2877fa6e2))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.5
+- Updated theme to 3.12.10
+
+## 2.0.34 (2026-03-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.4
+- Updated theme to 3.12.9
+
+## 2.0.33 (2026-03-10)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.3
+
+## 2.0.32 (2026-03-10)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.2
+- Updated theme to 3.12.8
+
+## 2.0.31 (2026-03-10)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.1
+
+## 2.0.30 (2026-03-10)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.7.0
+
+## 2.0.29 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.6
+- Updated theme to 3.12.7
+
+## 2.0.28 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.5
+- Updated theme to 3.12.6
+
+## 2.0.27 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.4
+
+## 2.0.26 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.3
+
+## 2.0.25 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.2
+- Updated theme to 3.12.5
+
+## 2.0.24 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.1
+- Updated theme to 3.12.4
+
+## 2.0.23 (2026-03-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.6.0
+
+## 2.0.22 (2026-03-04)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.5
+
+## 2.0.21 (2026-03-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.4
+- Updated theme to 3.12.3
+
+## 2.0.20 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.3
+- Updated theme to 3.12.2
+
+## 2.0.19 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.2
+- Updated theme to 3.12.1
+
+## 2.0.18 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.1
+
+## 2.0.17 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.5.0
+
+## 2.0.16 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.4.0
+
+## 2.0.15 (2026-02-25)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
+## 2.0.14 (2026-02-25)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.3.1
+
+## 2.0.13 (2026-02-24)
+
+### 🚀 Features
+
+- **components,theme:** migrate CSS from --midas-spacing-*/size-[0-9]* to --midas-space-*/size-* ([d770ac0e26](https://github.com/migrationsverket/midas/commit/d770ac0e26))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.3.0
+- Updated theme to 3.12.0
+
+## 2.0.12 (2026-02-24)
+
+### 📖 Documentation changes
+
+- **components, pagination:** add page for pagination ([6f6246c130](https://github.com/migrationsverket/midas/commit/6f6246c130))
+
+## 2.0.11 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.6
+
+## 2.0.10 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.5
+
+## 2.0.9 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.4
+- Updated theme to 3.11.2
+
+## 2.0.8 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.3
+- Updated theme to 3.11.1
+
+## 2.0.7 (2026-02-19)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.2
+
+## 2.0.6 (2026-02-19)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.1
+
+## 2.0.5 (2026-02-18)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.2.0
+- Updated theme to 3.11.0
+
+## 2.0.4 (2026-02-18)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.1.0
+
+## 2.0.3 (2026-02-17)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
+## 2.0.2 (2026-02-17)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.0.2
+
+## 2.0.1 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.0.1
+
+# 2.0.0 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.0.0
+
+## 1.2.29 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.6
+- Updated theme to 3.10.8
+
+## 1.2.28 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.5
+
+## 1.2.27 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.4
+- Updated theme to 3.10.7
+
+## 1.2.26 (2026-02-12)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 16.8.3
+
 ## 1.2.25 (2026-02-10)
 
 This was a version bump only for table-styles to align it with other projects, there were no code changes.

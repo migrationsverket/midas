@@ -35,6 +35,32 @@ Docker:
 docker compose exec cli npx nx test components
 ```
 
+### Kör tester för en specifik komponent
+
+```bash
+nx test components -- toast/Toast.spec
+```
+
+Docker:
+
+```bash
+docker compose exec cli npx nx test components -- toast/Toast.spec
+```
+
+### Kör tester med synlig webbläsare (headed)
+
+Användbart vid felsökning. Kräver WSLg eller en X-server om du kör WSL2.
+
+```bash
+nx test components --browser.headless=false
+```
+
+Headed mode kan kombineras med ett specifikt test:
+
+```bash
+nx test components -- toast/Toast.spec --browser.headless=false
+```
+
 ## 🧪 Enhetstester
 
 För att testa JavaScriptmoduler i nodemiljö används [vitest](https://vitest.dev/guide/).

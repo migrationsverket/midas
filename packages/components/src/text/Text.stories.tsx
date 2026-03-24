@@ -48,21 +48,4 @@ export const Expressive: Story = {
   },
 }
 
-export const Body01: Story = {
-  name: 'Body01 (deprecated)',
-  tags: ['deprecated'],
-  args: {
-    variant: 'body-01',
-    children: 'I am a paragraph with the variant of "body-01" (deprecated)',
-  },
-}
-
-export const Body02: Story = {
-  name: 'Body02 (deprecated)',
-  tags: ['deprecated'],
-  args: {
-    variant: 'body-02',
-    children: 'I am a paragraph with the variant of "body-02" (deprecated)',
-  },
-}
 export default meta

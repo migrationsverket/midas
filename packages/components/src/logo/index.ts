@@ -1,1 +1,2 @@
-export {Logo} from './Logo'
+export { Logo } from './Logo'
+export * from './LogoContext'

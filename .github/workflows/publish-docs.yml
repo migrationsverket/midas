@@ -11,11 +11,12 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   publish-docs:
-    if: >-
-      github.event_name == 'workflow_dispatch' ||
-      !contains(github.event.head_commit.message, 'chore(release)')
     name: Publish docs
     runs-on: ubuntu-latest
     steps:

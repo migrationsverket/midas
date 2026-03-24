@@ -1,0 +1,73 @@
+.overlay {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0 0 0 / 30%);
+  height: var(--page-height);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &[data-entering] {
+    animation: drawer-blur var(--midas-transition-duration-fast);
+  }
+
+  &[data-exiting] {
+    animation: drawer-blur var(--midas-transition-duration-fast) reverse ease-in;
+  }
+}
+
+.drawer {
+  background-color: var(--midas-background-base);
+  left: 0;
+  position: sticky;
+  width: clamp(10rem, 15rem, 90%);
+  border-right: 1px solid var(--midas-border-color-subtle);
+  box-shadow: -8px 0 20px rgba(0 0 0 / 10%);
+  height: calc(100dvh + 200px);
+  margin-right: auto;
+  outline: none;
+  overflow-y: auto;
+
+  /* Extra padding to account for iOS floating browser UI. */
+  top: -100px;
+
+  &[data-entering] {
+    animation: drawer-slide var(--midas-transition-duration-fast);
+  }
+
+  &[data-exiting] {
+    animation: drawer-slide var(--midas-transition-duration-fast) reverse
+      ease-in;
+  }
+}
+
+.header {
+  background-color: var(--midas-background-base);
+  display: block;
+  margin-bottom: var(--midas-space-medium);
+  padding: var(--midas-space-medium);
+  position: sticky;
+  top: 0;
+}
+
+@keyframes drawer-blur {
+  from {
+    background: rgba(0 0 0 / 0%);
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    background: rgba(0 0 0 / 30%);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes drawer-slide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

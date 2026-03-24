@@ -1,0 +1,26 @@
+{
+  "size": {
+    "$description": "Storlekstokens för bredd och höjd på interaktiva element och ikoner. Används för width/height, inte för spacing.",
+    "$type": "dimension",
+    "icon": {
+      "$value": "{base.80}",
+      "$description": "Standardstorlek för ikoner. 1rem / 16px."
+    },
+    "icon-sm": {
+      "$value": "{base.90}",
+      "$description": "Liten ikonstorlek. 1.25rem / 20px."
+    },
+    "option": {
+      "$value": "{base.120}",
+      "$description": "Höjd för alternativ i dropdown-listor, t.ex. Select och Combobox. 2rem / 32px."
+    },
+    "control-md": {
+      "$value": "{base.130}",
+      "$description": "Medelstor interaktiv kontrollhöjd. 2.5rem / 40px."
+    },
+    "control": {
+      "$value": "{base.150}",
+      "$description": "Standardhöjd för interaktiva kontroller, t.ex. TextField och Button. 3rem / 48px."
+    }
+  }
+}

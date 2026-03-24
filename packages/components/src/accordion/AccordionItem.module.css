@@ -1,7 +1,7 @@
 .item {
   --item-padding: 0;
-  --content-padding: var(--midas-spacing-30) var(--midas-spacing-50)
-    var(--midas-spacing-50) 1.85rem;
+  --content-padding: var(--midas-space-small) var(--midas-space-medium)
+    var(--midas-space-medium) 1.85rem;
   --border: none;
   --accordion-background: transparent;
   --accordion-background-hover: transparent;
@@ -16,17 +16,17 @@
 }
 
 .contained {
-  --gap: var(--midas-spacing-20);
-  --item-padding: calc(var(--midas-spacing-40) - 2px) var(--midas-spacing-40);
-  --content-padding: var(--midas-spacing-40) var(--midas-spacing-50)
-    var(--midas-spacing-50) var(--midas-spacing-50);
+  --gap: var(--midas-space-xsmall);
+  --item-padding: calc(var(--midas-space-60) - 2px) var(--midas-space-60);
+  --content-padding: var(--midas-space-60) var(--midas-space-medium)
+    var(--midas-space-medium) var(--midas-space-medium);
   --border-color: var(--midas-border-color-secondary);
   --border: 1px solid;
   --accordion-background: var(--midas-layer-01-base);
   --accordion-background-hover: var(--midas-layer-01-hover);
 
   &.medium {
-    --item-padding: calc(var(--midas-spacing-30) - 2px) var(--midas-spacing-40);
+    --item-padding: calc(var(--midas-space-small) - 2px) var(--midas-space-60);
   }
 }
 
@@ -94,12 +94,12 @@
 .chevronIcon {
   transform: rotate(0deg);
   transition: transform var(--midas-transition-duration-normal) ease;
-  padding: var(--midas-spacing-10) 0;
+  padding: var(--midas-space-10) 0;
 }
 
 .statusIcon {
   color: var(--icon-color);
-  padding: var(--midas-spacing-10) 0;
+  padding: var(--midas-space-10) 0;
 
   @media (forced-colors: active) {
     color: currentColor;

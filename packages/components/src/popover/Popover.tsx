@@ -1,42 +1,51 @@
+import { forwardRef } from 'react'
+import {
+  composeRenderProps,
+  OverlayArrow,
+  Popover as AriaPopover,
+  PopoverContext,
+  PopoverProps as AriaPopoverProps,
+  useContextProps,
+} from 'react-aria-components'
 import clsx from '../utils/clsx'
 import styles from './Popover.module.css'
-import * as React from 'react'
-import {
-  PopoverProps,
-  Popover as AriaPopover,
-  OverlayArrow,
-} from 'react-aria-components'
 
-export interface MidasPopoverProps extends Omit<PopoverProps, 'children'> {
-  children: React.ReactNode
+export interface PopoverProps extends AriaPopoverProps {
   hideArrow?: boolean
 }
 
-export function Popover({
-  children,
-  className,
-  offset = 4,
-  hideArrow = false,
-  ...props
-}: MidasPopoverProps) {
+/**
+ * @deprecated since v17.0.0 please use `PopoverProps` instead
+ */
+export type MidasPopoverProps = PopoverProps
+
+export const Popover = forwardRef<HTMLElement, PopoverProps>((props, ref) => {
+  const [mergedProps, mergedRef] = useContextProps(props, ref, PopoverContext)
+  const { className, hideArrow = false, offset = 4, ...rest } = mergedProps
+
   return (
     <AriaPopover
-      {...props}
-      offset={offset}
       className={clsx(styles.popover, className)}
+      offset={offset}
+      ref={mergedRef}
+      {...rest}
     >
-      {!hideArrow && (
-        <OverlayArrow className={styles.arrow}>
-          <svg
-            width={16}
-            height={16}
-            viewBox='0 0 16 16'
-          >
-            <path d='M0 0 L8 8 L16 0' />
-          </svg>
-        </OverlayArrow>
-      )}
-      {children}
+      {composeRenderProps(mergedProps.children, children => (
+        <>
+          {!hideArrow && (
+            <OverlayArrow className={styles.arrow}>
+              <svg
+                height={16}
+                viewBox='0 0 16 16'
+                width={16}
+              >
+                <path d='M0 0 L8 8 L16 0' />
+              </svg>
+            </OverlayArrow>
+          )}
+          {children}
+        </>
+      ))}
     </AriaPopover>
   )
-}
+})

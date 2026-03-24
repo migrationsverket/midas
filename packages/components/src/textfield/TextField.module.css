@@ -91,7 +91,7 @@
 
 .medium {
   .input {
-    min-height: var(--midas-size-130);
+    min-height: var(--midas-size-control-md);
   }
 }
 
@@ -108,7 +108,7 @@
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  min-height: var(--midas-size-150);
+  min-height: var(--midas-size-control);
 
   @media (forced-colors: active) {
     border: 1px solid;
@@ -150,28 +150,19 @@
       border: 1px solid;
     }
   }
-}
 
-.passwordText {
-  background-color: var(--midas-field-01-base);
-  position: absolute;
-  display: flex;
-  align-items: center;
-  top: 3px;
-  z-index: var(--midas-z-index-base);
-  left: 1rem;
-  height: calc(100% - 6px);
-  width: calc(100% - 2rem);
+  &::-ms-reveal {
+    display: none;
+  }
 }
 
 .passwordButton {
-  background: transparent !important;
-  border-color: transparent !important;
   position: absolute;
-  width: max-content;
   right: 0;
-  top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
   z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
+
+  &[data-pressed] {
+    /* This state adds a background, making the border-bottom of the .input disappear  */
+    background-color: transparent !important;
+  }
 }

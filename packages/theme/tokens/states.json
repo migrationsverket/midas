@@ -19,7 +19,7 @@
       },
       "offset": {
         "$value": "2px",
-        "$description": "Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.."
+        "$description": "Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active."
       }
     },
     "invalid": {

@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi, afterEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DropZone.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Default } = composeStories(stories)
 const handleSelect = vi.fn()

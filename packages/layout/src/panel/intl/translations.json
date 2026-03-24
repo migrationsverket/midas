@@ -1,0 +1,12 @@
+{
+  "en": {
+    "expandSidebar": "Expand sidebar",
+    "collapseSidebar": "Collapse sidebar",
+    "closePanel": "Close panel"
+  },
+  "sv": {
+    "expandSidebar": "Expandera sidopanel",
+    "collapseSidebar": "Minimera sidopanel",
+    "closePanel": "Stäng panel"
+  }
+}

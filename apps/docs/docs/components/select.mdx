@@ -34,17 +34,6 @@ import { Select, ListBoxItem } from '@midas-ds/components'
 Midas Select är en implementation av [React Aria Components Select](https://react-spectrum.adobe.com/react-aria/Select.html).
 Den här dokumentationen innehåller främst enklare exempel och användningsfall. För mer avancerad funktionalitet och fördjupad information, se den officiella dokumentationen.
 
-:::warning
-Från och med v15.0.0 har Select uppdaterats för att överensstämma bättre med React Arias API. Det innebär vissa breaking changes. Under en övergångsperiod går det att använda den gamla versionen av komponenten, som nu heter `LegacySelect` och kan importeras enligt nedan.
-
-<br />
-
-```tsx
-import { LegacySelect } from '@midas-ds/components'
-```
-
-:::
-
 ## Statiskt och dynamiskt innehåll
 
 `Select` använder internt `ListBox`-komponenten som följer React Arias mönster för [Collections](https://react-aria.adobe.com/collections?component=Select).
@@ -146,6 +135,20 @@ Vid många val kan alternativen struktureras i sektioner.
 <div className='card'>
   <SectionedExample />
 </div>
+
+## Anpassa popover
+
+Det inbyggda popover-fönstret kan konfigureras via `popoverProps`, som skickas vidare till den underliggande `Popover`-komponenten.
+Ett användbart exempel är `isNonModal`, som gör att ett klick utanför popover-fönstret inte konsumeras — användbart när flera select-komponenter finns sida vid sida och man vill kunna växla direkt mellan dem med ett klick:
+
+```tsx
+<Select
+  label='Land'
+  popoverProps={{ isNonModal: true }}
+>
+  ...
+</Select>
+```
 
 ## API
 

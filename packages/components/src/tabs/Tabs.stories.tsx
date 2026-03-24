@@ -38,9 +38,13 @@ export default {
   component: Tabs,
   title: 'Components/Tabs',
   tags: ['autodocs'],
+  argTypes: {
+    size: { control: 'radio', options: ['large', 'medium'] },
+  },
   args: {
     orientation: 'horizontal',
     variant: 'uncontained',
+    size: 'large',
   },
   render: args => (
     <Tabs {...args}>
@@ -68,6 +72,10 @@ export default {
 } satisfies Meta<typeof Tabs>
 
 export const Primary: Story = {}
+
+export const Medium: Story = {
+  args: { size: 'medium' },
+}
 
 export const Contained: Story = {
   args: {

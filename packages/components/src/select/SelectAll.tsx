@@ -10,12 +10,14 @@ export const SelectAll = () => {
 
   const strings = useLocalizedStringFormatter(messages)
 
-  const handleChange = () =>
+  const handleChange = () => {
     state?.setValue(
       state?.selectionManager.isSelectAll
         ? null
         : Array.from(state.collection.getKeys()),
     )
+    state?.commitValidation()
+  }
 
   return (
     <Checkbox

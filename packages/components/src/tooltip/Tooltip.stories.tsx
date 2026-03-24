@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Save } from 'lucide-react'
 import { I18nProvider } from 'react-aria-components'
-import { MidasTooltipProps, Tooltip, TooltipTrigger } from './Tooltip'
+import { type TooltipProps, Tooltip, TooltipTrigger } from './Tooltip'
 import { Button } from '../button'
 
 type Story = StoryObj<typeof Tooltip>
 
 // Vitest runner ignores our  centered layout
 // Here we make some space for the tooltip around the button
-const Render = (args: MidasTooltipProps) => (
+const Render = (args: TooltipProps) => (
   <div
     style={{
       padding: '5rem',

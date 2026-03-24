@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 import * as stories from './Badge.stories'
 
 const { NoLabel } = composeStories(stories)

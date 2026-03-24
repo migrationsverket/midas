@@ -1,23 +1,34 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
-import { clsx } from '@midas-ds/components'
+'use client'
+
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navigation.module.css'
+import { Collection } from 'react-aria-components'
+import { CollectionProps } from '@react-aria/collections'
 
-export interface NavigationProps extends DetailedHTMLProps<
-  HTMLAttributes<HTMLElement>,
-  HTMLElement
-> {
-  children?: ReactNode
-}
+export type NavigationProps<T extends object> = CollectionProps<T> &
+  Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'>
 
-export const Navigation = ({
-  children,
+export const Navigation = <T extends object>({
   className,
+  items,
+  children,
+  dependencies,
+  idScope,
+  addIdAndValue,
   ...rest
-}: NavigationProps) => (
+}: NavigationProps<T>) => (
   <nav
-    className={clsx(className, styles.navigation)}
+    className={className}
     {...rest}
   >
-    {children}
+    <ul className={styles.rootList}>
+      <Collection
+        items={items}
+        children={children}
+        dependencies={dependencies}
+        idScope={idScope}
+        addIdAndValue={addIdAndValue}
+      />
+    </ul>
   </nav>
 )

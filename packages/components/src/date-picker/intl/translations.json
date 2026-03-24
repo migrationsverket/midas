@@ -1,8 +1,10 @@
 {
   "en": {
-    "clear": "Clear date"
+    "clear": "Clear date",
+    "open-calendar": "Open calendar"
   },
   "sv": {
-    "clear": "Rensa datum"
+    "clear": "Rensa datum",
+    "open-calendar": "Öppna kalender"
   }
 }

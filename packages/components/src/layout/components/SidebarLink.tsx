@@ -16,6 +16,7 @@ export const SidebarLink = ({
   active,
   hasBadge,
   onClick,
+  target,
 }: SidebarLinkProps) => {
   const { isCollapsed, setIsOpened, clientSideHref } = useLayoutContext()
 
@@ -55,6 +56,7 @@ export const SidebarLink = ({
             isActive && styles.active,
           )}
           onPress={onLinkClicked}
+          target={target}
         >
           <BadgeContainer>
             <IconComponent
@@ -74,6 +76,7 @@ export const SidebarLink = ({
       aria-label={title}
       className={clsx(styles.listLink, isActive && styles.active)}
       onPress={onLinkClicked}
+      target={target}
     >
       <BadgeContainer>
         <IconComponent size={20} />
