@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { Bell, CircleUserRound, Languages } from 'lucide-react'
 import { useAppStore, selectUnreadCount } from '../AppProvider/AppContext'
-import { HeaderActions, HeaderAction, useDismissPanels } from '@midas-ds/layout'
+import { HeaderActions, HeaderAction, usePanels } from '@midas-ds/layout'
 import {
   Badge,
   BadgeContainer,
@@ -23,7 +23,7 @@ export const AppHeaderActions = () => {
   const currentLanguage = useAppStore(s => s.currentLanguage)
   const setLanguage = useAppStore(s => s.setLanguage)
   const languageTriggerRef = useRef<HTMLButtonElement>(null)
-  const { addPanel } = useDismissPanels()
+  const { addPanel } = usePanels()
 
   return (
     <HeaderActions>

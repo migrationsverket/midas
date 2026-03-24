@@ -13,8 +13,8 @@ import {
 } from 'react-aria-components'
 import { clsx, Tooltip, TooltipTrigger } from '@midas-ds/components'
 import styles from './NavigationLink.module.css'
-import { CollapsePanelContext, PanelContext } from '../../panel'
 import { MobileMenuContext } from '../../header'
+import { SidebarContext } from '../../sidebar'
 
 export interface NavigationLinkComponentProps<C extends ElementType> {
   /** The icon to display. */
@@ -43,9 +43,9 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
   'aria-label': ariaLabel,
   ...rest
 }: NavigationLinkProps<C>) => {
-  const { variant } = useContext(PanelContext)
   const mobileMenuContext = useContext(MobileMenuContext)
-  const { isCollapsed } = useContext(CollapsePanelContext)
+  const sidebarContext = useContext(SidebarContext)
+  const isCollapsed = sidebarContext?.isCollapsed
 
   const ctx = useContext(OverlayTriggerStateContext)
 
@@ -63,15 +63,10 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
         <Component
           aria-current={isActive && 'page'}
           aria-label={ariaLabel || (isCollapsed ? title : undefined)}
-          className={clsx(
-            className,
-            styles.navigationLink,
-            variant && styles[variant],
-            mobileMenuContext && styles.collapse,
-            {
-              [styles.collapsed]: isCollapsed,
-            },
-          )}
+          className={clsx(className, styles.navigationLink, {
+            [styles.sidebar]: sidebarContext || mobileMenuContext,
+            [styles.collapsed]: isCollapsed,
+          })}
           data-active={isActive || undefined}
           {...(as
             ? {

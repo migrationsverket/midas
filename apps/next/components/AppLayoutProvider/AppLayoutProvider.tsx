@@ -2,13 +2,13 @@
 
 import { ReactNode } from 'react'
 import { useAppStore } from '../../store/useAppStore'
-import { DismissPanelProvider } from '@midas-ds/layout'
+import { PanelProvider } from '@midas-ds/layout'
 
 export const AppLayoutProvider = ({ children }: { children: ReactNode }) => {
   const panelBehavior = useAppStore(s => s.panelBehavior)
 
   return (
-    <DismissPanelProvider
+    <PanelProvider
       panelBehavior={panelBehavior}
       defaultPanels={[
         {
@@ -19,6 +19,6 @@ export const AppLayoutProvider = ({ children }: { children: ReactNode }) => {
       ]}
     >
       {children}
-    </DismissPanelProvider>
+    </PanelProvider>
   )
 }

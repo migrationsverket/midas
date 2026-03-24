@@ -1,4 +1,4 @@
-import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
+import { type Meta, type StoryObj } from '@storybook/react-vite'
 import { Layout, LayoutContent } from '.'
 import { Header, HeaderAction, HeaderActions } from '../header'
 import { Panel } from '../panel'
@@ -6,11 +6,8 @@ import { Navbar } from '../navbar'
 import { Bell, House, List, Menu, User } from 'lucide-react'
 import { Button } from '@midas-ds/components'
 import { useId, useState } from 'react'
-import * as panelStories from '../panel/Panel.stories'
 import { NavigationLink } from '../navigation'
 import { Main } from '../main'
-
-const { Collapse: CollapsePanel } = composeStories(panelStories)
 
 type Story = StoryObj<typeof Layout>
 
@@ -29,7 +26,6 @@ export const Primary: Story = {
     const drawerId = useId()
 
     const [isNavigationOpen, setIsNavigationOpen] = useState(false)
-    const [isNavigationCollapsed, setIsNavigationCollapsed] = useState(false)
     const [isRightPanelOpen, setIsRightPanelOpen] = useState(true)
 
     const toggleIsNavigationOpen = () => setIsNavigationOpen(x => !x)
@@ -51,10 +47,6 @@ export const Primary: Story = {
           </HeaderActions>
         </Header>
         <LayoutContent>
-          <CollapsePanel
-            isCollapsed={isNavigationCollapsed}
-            onCollapseChange={setIsNavigationCollapsed}
-          />
           <Main>
             {children}
             {!isRightPanelOpen && (
@@ -64,7 +56,7 @@ export const Primary: Story = {
             )}
           </Main>
           <Panel
-            variant='dismiss'
+            id='panel'
             aria-label='right panel'
             isOpen={isRightPanelOpen}
             onOpenChange={setIsRightPanelOpen}
