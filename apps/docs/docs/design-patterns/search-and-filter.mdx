@@ -8,11 +8,11 @@ import { NoHitsExample } from '@site/src/components/examples/search-and-filter/S
 På denna sida beskrivs begreppen sökning och filtrering samt designmönster för respektive situation.
 Tekniskt är det inte någon skillnad på sökning och filtrering, båda är sätt att begränsa mängden data som visas i en tabell eller en lista. Men från användarens perspektiv är detta två olika uppgifter och det är därför vi väljer att skilja på dem.
 
-Vi definierar en sökning som det användaren gör innan det inte finns någon data att ta ställning till. Syftet med sökningen är att se vad det finns för data. En filtrering görs efter sökningen, när användaren har tillgång till datan. Syftet med filtrering är att begränsa mängden data till det som är relevant för användaren.
+Vi definierar en sökning som det användaren gör innan det finns någon data att ta ställning till. Syftet med sökningen är att se vad det finns för data. En filtrering görs efter sökningen, när användaren har tillgång till datan. Syftet med filtrering är att begränsa mängden data till det som är relevant för användaren.
 
 ## Sökning
 
-En sökning sker som sagt innan det finns någon data att ta ställning till. Användaren vet inte vilka värden som finns och sökningen är därför öppen och ostrukturerad, vanligtvis i form av där användaren själv formulerar sin sökterm. I vissa fall behövs dock en mer avancerad sökning med flera alternativ och då använder vi samma designmönster som för filtrering, se nedan.
+En sökning sker alltså innan det finns någon data att ta ställning till. Användaren vet inte vilka värden som finns och sökningen är därför öppen och ostrukturerad, vanligtvis formulerar användaren själv söktermen. I vissa fall krävs en avancerad sökning med flera alternativ och då använder vi samma designmönster som för filtrering.
 
 ### Inga träffar
 
