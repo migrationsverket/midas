@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import { clsx } from '@midas-ds/components'
+import clsx from 'clsx'
 import styles from './PanelHeader.module.css'
 
 export type PanelHeaderProps = DetailedHTMLProps<

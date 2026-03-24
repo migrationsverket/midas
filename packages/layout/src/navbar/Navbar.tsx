@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navbar.module.css'
 
@@ -8,7 +9,7 @@ export type NavbarProps = DetailedHTMLProps<
 
 export const Navbar = ({ className, ...rest }: NavbarProps) => (
   <footer
-    className={`${className ?? ''} ${styles.navbar}`}
+    className={clsx(className, styles.navbar)}
     {...rest}
   />
 )
