@@ -1,65 +1,48 @@
 'use client'
 
-import { ReactNode } from 'react'
 import { Menu } from 'lucide-react'
 import {
   composeRenderProps,
   Dialog,
   Modal,
   ModalOverlay,
+  ModalOverlayProps,
 } from 'react-aria-components'
-import { useControlledState } from '@react-stately/utils'
-import { Button, DialogTrigger, Text } from '@midas-ds/components'
+import { Button, clsx, DialogTrigger, Text } from '@midas-ds/components'
 import { useIsMobileDevice } from '../../utils'
 import { MobileMenuContext } from './MobileMenuContext'
 import styles from './MobileMenu.module.css'
 
-export interface MobileMenuProps {
-  children?: ReactNode
+export interface MobileMenuProps extends ModalOverlayProps {
+  /**
+   * A visible title for the menu
+   */
   title?: string
-  isDrawerOpen?: boolean
-  defaultDrawerOpen?: boolean
-  onDrawerOpenChange?: (isDrawerOpen: boolean) => void
 }
 
 export const MobileMenu = ({
   children,
+  className,
   title,
-  isDrawerOpen: isDrawerOpenProp,
-  defaultDrawerOpen = false,
-  onDrawerOpenChange,
+  ...rest
 }: MobileMenuProps) => {
   const isMobile = useIsMobileDevice()
 
-  const [isDrawerOpen, setIsDrawerOpen] = useControlledState(
-    isDrawerOpenProp,
-    defaultDrawerOpen,
-    onDrawerOpenChange,
-  )
-
-  const handlePress = () => setIsDrawerOpen(prev => !prev)
-
-  if (!isMobile) {
-    return null
-  }
-
-  return (
+  return isMobile ? (
     <MobileMenuContext.Provider value={{}}>
       <DialogTrigger>
         <Button
           icon={Menu}
           variant='icon'
-          onPress={handlePress}
         />
         <ModalOverlay
-          className={styles.overlay}
+          className={clsx(className, styles.overlay)}
           isDismissable
-          isOpen={isDrawerOpen}
-          onOpenChange={setIsDrawerOpen}
+          {...rest}
         >
           {composeRenderProps(children, children => (
             <Modal className={styles.drawer}>
-              <Dialog>
+              <Dialog className={styles.dialog}>
                 {title && <Text className={styles.header}>{title}</Text>}
                 {children}
               </Dialog>
@@ -68,5 +51,5 @@ export const MobileMenu = ({
         </ModalOverlay>
       </DialogTrigger>
     </MobileMenuContext.Provider>
-  )
+  ) : null
 }
