@@ -1,33 +1,129 @@
 'use client'
 
-import { type Key } from 'react-aria-components'
-import { type CollapseTriggerProps, CollapsePanel } from './collapse-panel'
-import { type DismissTriggerProps, DismissPanel } from './dismiss-panel'
-import { type PanelBodyProps } from './panel-body'
-import { type PanelTitleProps } from './panel-title'
-import { PanelContext } from './PanelContext'
+import clsx from 'clsx'
+import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
+import { X } from 'lucide-react'
+import { useControlledState } from '@react-stately/utils'
+import { type PressEvent } from 'react-aria-components'
+import { AnimationEvent, forwardRef, useEffect, useRef } from 'react'
+import {
+  filterDOMProps,
+  useEnterAnimation,
+  useExitAnimation,
+  useObjectRef,
+} from '@react-aria/utils'
+import { PanelBody, PanelBodyProps } from './panel-body'
+import { PanelHeader } from './panel-header'
+import { PanelTitle, PanelTitleProps } from './panel-title'
+import messages from './intl/translations.json'
+import styles from './Panel.module.css'
 
-export type PanelVariant = 'collapse' | 'dismiss' | undefined
+export interface PanelProps
+  extends PanelBodyProps, Pick<PanelTitleProps, 'title'> {
+  id: string
+  isOpen?: boolean
+  defaultOpen?: boolean
+  onOpenChange?: (isOpen: boolean) => void
+  onExited?: () => void
+  promoting?: boolean
+  onPromotionEnd?: () => void
+}
 
-export type PanelTriggerProps<T extends PanelVariant> = T extends 'collapse'
-  ? CollapseTriggerProps
-  : T extends 'dismiss'
-    ? DismissTriggerProps
-    : never
+export const Panel = (props: PanelProps) => {
+  const { onExited } = props
+  const [isOpen, setIsOpen] = useControlledState(
+    props.isOpen,
+    props.defaultOpen || false,
+    props.onOpenChange,
+  )
 
-export type PanelProps<T extends PanelVariant> = PanelBodyProps &
-  Pick<PanelTitleProps, 'title'> &
-  PanelTriggerProps<T> & {
-    variant?: T
-    id: Key
+  const ref = useRef<HTMLDivElement>(null)
+  const isExiting = useExitAnimation(ref, isOpen)
+
+  const handlePress = () => setIsOpen(previouslyOpen => !previouslyOpen)
+
+  useEffect(() => {
+    if (!isOpen && !isExiting) {
+      onExited?.()
+    }
+  }, [isOpen, isExiting, onExited])
+
+  if (!isOpen && !isExiting) {
+    return null
   }
 
-export const Panel = <T extends PanelVariant>({
-  variant = 'collapse',
-  ...rest
-}: PanelProps<T>) => (
-  <PanelContext.Provider value={{ variant }}>
-    {variant === 'collapse' && <CollapsePanel {...rest} />}
-    {variant === 'dismiss' && <DismissPanel {...rest} />}
-  </PanelContext.Provider>
+  return (
+    <PanelInner
+      isExiting={isExiting}
+      onPress={handlePress}
+      ref={ref}
+      {...props}
+    />
+  )
+}
+
+const PanelInner = forwardRef<
+  HTMLDivElement,
+  PanelProps & {
+    isExiting: boolean
+    onPress: (e: PressEvent) => void
+  }
+>(
+  (
+    {
+      className,
+      title,
+      onPress,
+      children,
+      isExiting,
+      defaultOpen,
+      promoting,
+      onPromotionEnd,
+      'aria-hidden': ariaHidden,
+      ...rest
+    },
+    ref,
+  ) => {
+    const strings = useLocalizedStringFormatter(messages)
+    const objectRef = useObjectRef(ref)
+    const isEntering = useEnterAnimation(objectRef, !defaultOpen)
+
+    const handleAnimationEnd = (e: AnimationEvent<HTMLDivElement>) => {
+      if (e.target === e.currentTarget && promoting) {
+        onPromotionEnd?.()
+      }
+    }
+
+    return (
+      <PanelBody
+        aria-hidden={ariaHidden || undefined}
+        className={clsx(className, styles.panel)}
+        ref={objectRef}
+        data-entering={isEntering || undefined}
+        data-exiting={isExiting || undefined}
+        data-promoting={promoting || undefined}
+        onAnimationEnd={handleAnimationEnd}
+        {...filterDOMProps(rest)}
+      >
+        <PanelHeader>
+          <div>
+            {title && (
+              <PanelTitle
+                className={styles.panelTitle}
+                title={title}
+              />
+            )}
+          </div>
+          <Button
+            variant='icon'
+            aria-label={strings.format('closePanel')}
+            onPress={onPress}
+          >
+            <X size={20} />
+          </Button>
+        </PanelHeader>
+        {children}
+      </PanelBody>
+    )
+  },
 )

@@ -18,7 +18,7 @@
     background-color: var(--midas-menu-item-background-hover);
   }
 
-  &.collapse {
+  &.sidebar {
     flex-direction: row;
     justify-content: flex-start;
     padding: 0.625rem var(--midas-spacing-30);

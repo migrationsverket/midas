@@ -1,21 +1,21 @@
 'use client'
 
 import { ReactNode, useState } from 'react'
-import { type PanelItem, DismissPanelContext } from './DismissPanelContext'
+import { PanelContext, type PanelItem } from './PanelContext'
 
 export type PanelBehavior = 'bring-to-front' | 'pop-to'
 
-export interface DismissPanelProviderProps {
+export interface PanelProviderProps {
   children: ReactNode
   defaultPanels?: PanelItem[]
   panelBehavior?: PanelBehavior
 }
 
-export const DismissPanelProvider = ({
+export const PanelProvider = ({
   children,
   defaultPanels = [],
   panelBehavior = 'bring-to-front',
-}: DismissPanelProviderProps) => {
+}: PanelProviderProps) => {
   const [panels, setPanels] = useState<PanelItem[]>(
     defaultPanels.map(p => ({ ...p, isOpen: true, defaultOpen: true })),
   )
@@ -64,10 +64,10 @@ export const DismissPanelProvider = ({
   }
 
   return (
-    <DismissPanelContext.Provider
+    <PanelContext.Provider
       value={{ panels, addPanel, closePanel, removePanel, resetPromoting }}
     >
       {children}
-    </DismissPanelContext.Provider>
+    </PanelContext.Provider>
   )
 }

@@ -9,7 +9,8 @@ import {
   Main,
   MobileMenu,
   LayoutContent,
-  DismissPanelOutlet,
+  PanelRegion,
+  Sidebar,
 } from '@midas-ds/layout'
 import { BottomNavigation, SidebarNavigation } from '../components/Navigation'
 import { AppHeaderActions } from '../components/HeaderActions/HeaderActions'
@@ -46,16 +47,14 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                 <AppHeaderActions />
               </Header>
               <LayoutContent>
-                <Panel
-                  id='sidebar'
-                  data-debug='Panel (collapse)'
+                <Sidebar
+                  data-debug='Sidebar'
                   title='Next App'
-                  variant='collapse'
                 >
                   <SidebarNavigation />
-                </Panel>
+                </Sidebar>
                 <Main data-debug='Main'>{children}</Main>
-                <DismissPanelOutlet />
+                <PanelRegion />
               </LayoutContent>
               <Navbar data-debug='Navbar'>
                 <BottomNavigation />
