@@ -1,7 +1,7 @@
 'use client'
 
+import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes, useContext } from 'react'
-import { clsx } from '@midas-ds/components'
 import { CollapsePanelContext } from '../../panel'
 import styles from './NavigationItem.module.css'
 

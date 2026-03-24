@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { type DetailedHTMLProps, type HTMLAttributes } from 'react'
 import styles from './HeaderActions.module.css'
 
@@ -8,7 +9,7 @@ export type HeaderActionsProps = DetailedHTMLProps<
 
 export const HeaderActions = ({ className, ...rest }: HeaderActionsProps) => (
   <div
-    className={`${className} ${styles.headerActions}`}
+    className={clsx(className, styles.headerActions)}
     {...rest}
   />
 )

@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Main.module.css'
 
@@ -8,7 +9,7 @@ export type MainProps = DetailedHTMLProps<
 
 export const Main = ({ className, ...rest }: MainProps) => (
   <main
-    className={[className, styles.main].filter(Boolean).join(' ')}
+    className={clsx(className, styles.main)}
     {...rest}
   />
 )

@@ -1,9 +1,12 @@
 'use client'
 
-import { HTMLAttributes } from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { DismissPanel, useDismissPanels } from '.'
 
-export type PanelRegionProps = HTMLAttributes<HTMLElement>
+export type PanelRegionProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+>
 
 export const DismissPanelOutlet = ({
   children,

@@ -1,8 +1,8 @@
 'use client'
 
+import clsx from 'clsx'
 import { useContext } from 'react'
 import { Collection, CollectionProps } from '@react-aria/collections'
-import { clsx } from '@midas-ds/components'
 import { CollapsePanelContext } from '../../panel'
 import styles from './NavigationSubMenu.module.css'
 

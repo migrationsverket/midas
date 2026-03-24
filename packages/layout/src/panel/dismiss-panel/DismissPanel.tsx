@@ -1,6 +1,7 @@
 'use client'
 
-import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
+import clsx from 'clsx'
+import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { X } from 'lucide-react'
 import { useControlledState } from '@react-stately/utils'
 import { type PressEvent } from 'react-aria-components'

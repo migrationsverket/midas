@@ -1,7 +1,8 @@
 'use client'
 
+import clsx from 'clsx'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
-import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
+import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { useControlledState } from '@react-stately/utils'
 import { PanelBody, PanelHeader, PanelProps, PanelTitle } from '..'
 import messages from '../intl/translations.json'
