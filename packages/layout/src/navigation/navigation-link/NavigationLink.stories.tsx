@@ -10,9 +10,9 @@ export default {
   title: 'Components/Layout/Navigation/NavigationLink',
   tags: ['autodocs'],
   args: {
-    title: 'Hem',
+    children: 'Hem',
     href: '/',
-    children: <House />,
+    icon: <House />,
   },
   parameters: {
     layout: 'centered',

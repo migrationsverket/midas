@@ -17,10 +17,10 @@ import { MobileMenuContext } from '../../header'
 import { SidebarContext } from '../../sidebar'
 
 export interface NavigationLinkComponentProps<C extends ElementType> {
-  /** The icon to display. */
-  children: ReactNode
   /** The visible label text and tooltip content. */
-  title: string
+  children?: ReactNode
+  /** The icon to display. */
+  icon: ReactNode
   isActive?: boolean
   variant?: 'sidebar' | 'navbar'
   className?: string
@@ -39,7 +39,7 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
   children,
   className,
   isActive,
-  title,
+  icon,
   'aria-label': ariaLabel,
   ...rest
 }: NavigationLinkProps<C>) => {
@@ -57,8 +57,16 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
     }
   }
 
+  const title = typeof children === 'string' ? children : undefined
+
+  if (!title && !ariaLabel && process.env.NODE_ENV !== 'production') {
+    console.warn(
+      "An 'aria-label' is required for <NavigationLink> elements with non plain text children",
+    )
+  }
+
   return (
-    <TooltipTrigger isDisabled={!isCollapsed}>
+    <TooltipTrigger isDisabled={!isCollapsed || (!title && !ariaLabel)}>
       <Focusable>
         <Component
           aria-current={isActive && 'page'}
@@ -83,8 +91,8 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
               })}
           {...rest}
         >
-          {children}
-          <span className={styles.title}>{title}</span>
+          {icon}
+          <span className={styles.title}>{children}</span>
         </Component>
       </Focusable>
       <Tooltip placement='right'>{title}</Tooltip>
