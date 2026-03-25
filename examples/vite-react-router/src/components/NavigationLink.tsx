@@ -1,18 +1,13 @@
 import {
   NavigationLink as MidasNavigationLink,
-  type NavigationLinkComponentProps,
+  type NavigationLinkProps,
 } from '@midas-ds/layout'
-import type { ComponentProps } from 'react'
 import { Link, useLocation } from 'react-router'
 
-// TODO: Something wonky about this type in @midas-ds/layout
-type NavigationLinkProps = NavigationLinkComponentProps<typeof Link> &
-  Omit<
-    ComponentProps<typeof Link>,
-    keyof NavigationLinkComponentProps<typeof Link>
-  >
-
-export const NavigationLink = ({ to, ...props }: NavigationLinkProps) => {
+export const NavigationLink = ({
+  to,
+  ...props
+}: NavigationLinkProps<typeof Link>) => {
   const { pathname } = useLocation()
   const active =
     to === '/' ? pathname === '/' : pathname.startsWith(to.toString())
