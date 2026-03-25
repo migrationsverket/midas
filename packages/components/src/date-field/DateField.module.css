@@ -39,7 +39,7 @@
     min-height: var(--midas-size-control-md);
   }
 
-  .dateField:not([data-disabled], [data-readonly]) & :hover {
+  .dateField:not([data-disabled], [data-readonly]) & [data-hovered] {
     background-color: var(--midas-field-01-hover);
   }
 }
