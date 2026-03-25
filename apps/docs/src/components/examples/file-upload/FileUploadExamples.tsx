@@ -1,4 +1,12 @@
-import { Button, DropZone, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
+import {
+  Button,
+  DropZone,
+  FileList,
+  FileListItem,
+  FileTrigger,
+  Text,
+} from '@midas-ds/components'
+import { ArrowUpFromLine } from 'lucide-react'
 import React from 'react'
 import { DropEvent } from 'react-aria'
 
@@ -19,7 +27,10 @@ export const FileListExample = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <FileTrigger allowsMultiple onSelect={handleSelect}>
+      <FileTrigger
+        allowsMultiple
+        onSelect={handleSelect}
+      >
         <Button>Välj filer</Button>
       </FileTrigger>
       {files.length > 0 && (
@@ -39,31 +50,57 @@ export const FileListExample = () => {
 }
 
 export const DropZoneExample = () => {
-  const [files, setFiles] = React.useState<string[]>([])
+  const [files, setFiles] = React.useState<File[]>([])
+
+  const setUniqueFiles = (newFiles: File[]) => {
+    setFiles(oldFiles => {
+      const existingNames = new Set(oldFiles.map(f => f.name))
+      return [...oldFiles, ...newFiles.filter(f => !existingNames.has(f.name))]
+    })
+  }
 
   const handleDrop = async (e: DropEvent) => {
     const fileItems = e.items.filter(item => item.kind === 'file')
     const droppedFiles: File[] = await Promise.all(
       fileItems.map(item => item.getFile()),
     )
-    const filenames = droppedFiles.map(file => file.name)
-    setFiles(prev => [...prev, ...filenames])
+    setUniqueFiles(droppedFiles)
   }
 
   const handleSelect = (e: FileList | null) => {
     const selectedFiles = e ? Array.from(e) : []
-    const filenames = selectedFiles.map(file => file.name)
-    setFiles(prev => [...prev, ...filenames])
+    setUniqueFiles(selectedFiles)
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
   }
 
   return (
-    <DropZone onDrop={handleDrop}>
-      <FileTrigger allowsMultiple onSelect={handleSelect}>
-        <Button>Select files</Button>
-      </FileTrigger>
-      <Text slot="label" style={{ display: 'block' }}>
-        {files.length > 0 ? files.join(', ') : 'Drop files here'}
-      </Text>
-    </DropZone>
+    <>
+      <DropZone onDrop={handleDrop}>
+        <FileTrigger
+          allowsMultiple
+          onSelect={handleSelect}
+        >
+          <Button variant='secondary'>
+            <ArrowUpFromLine /> Välj fil
+          </Button>
+        </FileTrigger>
+        <Text slot='label'>Dra och släpp filer här</Text>
+      </DropZone>
+      {files.length > 0 && (
+        <FileList style={{ marginTop: '1rem' }}>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
+    </>
   )
 }
