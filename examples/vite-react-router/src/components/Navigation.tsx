@@ -7,17 +7,17 @@ export const Navigation = () => (
     <NavigationItem>
       <NavigationLink
         to='/'
-        title='Home'
+        icon={<House />}
       >
-        <House />
+        Home
       </NavigationLink>
     </NavigationItem>
     <NavigationItem>
       <NavigationLink
         to='/applications'
-        title='Applications'
+        icon={<FileText />}
       >
-        <FileText />
+        Applications
       </NavigationLink>
     </NavigationItem>
   </MidasNavigation>

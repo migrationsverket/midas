@@ -142,9 +142,9 @@ export const SidebarNavigation = () => (
               <NavLink
                 aria-label={resolvedAriaLabel}
                 href={href}
-                title={title}
+                icon={resolvedIcon}
               >
-                {resolvedIcon}
+                {title}
               </NavLink>
               <NavigationSubMenu items={children}>
                 {renderItem}
@@ -165,25 +165,25 @@ export const BottomNavigation = () => {
       <NavigationItem>
         <NavLink
           href='/'
-          title='Home'
+          icon={<House />}
         >
-          <House />
+          Home
         </NavLink>
       </NavigationItem>
       <NavigationItem>
         <NavLink
           href='/applications'
-          title='Applications'
+          icon={<FileText />}
         >
-          <FileText />
+          Applications
         </NavLink>
       </NavigationItem>
       <NavigationItem>
         <NavLink
           href='/profile'
-          title='Profile'
+          icon={<User />}
         >
-          <User />
+          Profile
         </NavLink>
       </NavigationItem>
       <NavigationItem>
@@ -194,12 +194,12 @@ export const BottomNavigation = () => {
               : 'Notifications'
           }
           href='/notifications'
-          title='Notifications'
-        >
-          <BadgeContainer aria-hidden>
+          icon={<BadgeContainer aria-hidden>
             <Bell />
             {unreadCount > 0 && <Badge>{unreadCount}</Badge>}
-          </BadgeContainer>
+          </BadgeContainer>}
+        >
+          Notifications
         </NavLink>
       </NavigationItem>
     </MidasNavigation>

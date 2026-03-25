@@ -31,36 +31,36 @@ export const Primary: Story = {
       <>
         <NavigationLink
           href='/'
-          title='Hem'
+          icon={<House />}
           isActive
         >
-          <House />
+          Hem
         </NavigationLink>
         <NavigationSubMenu>
           <NavigationLink
             href='/ansokningar'
-            title='Ansökningar'
+            icon={<FileText />}
           >
-            <FileText />
+            Ansökningar
           </NavigationLink>
           <NavigationSubMenu>
             <NavigationLink
               href='/ansokningar/ny-ansokning'
-              title='Skapa ny ansökning'
+              icon={<Plus />}
             >
-              <Plus />
+              Skapa ny ansökning
             </NavigationLink>
             <NavigationLink
               href='/ansokningar/utkast'
-              title='Sparade utkast'
+              icon={<Save />}
             >
-              <Save />
+              Sparade utkast
             </NavigationLink>
             <NavigationLink
               href='/ansokningar/skickade'
-              title='Skickade ansökningar'
+              icon={<Send />}
             >
-              <Send />
+              Skickade ansökningar
             </NavigationLink>
           </NavigationSubMenu>
         </NavigationSubMenu>
@@ -68,22 +68,22 @@ export const Primary: Story = {
         <NavigationSubMenu>
           <NavigationLink
             href='/dokument/id-handling'
-            title='ID-handlingar'
+            icon={<IdCard />}
           >
-            <IdCard />
+            ID-handlingar
           </NavigationLink>
           <NavigationSubMenu>
             <NavigationLink
               href='/dokument/uppehallstillstand/arbetstillstand'
-              title='Arbetstillstånd'
+              icon={<Briefcase />}
             >
-              <Briefcase />
+              Arbetstillstånd
             </NavigationLink>
             <NavigationLink
               href='/dokument/uppehallstillstand/studiestillstand'
-              title='Studiestillstånd'
+              icon={<BookOpen />}
             >
-              <BookOpen />
+              Studiestillstånd
             </NavigationLink>
           </NavigationSubMenu>
         </NavigationSubMenu>
@@ -91,38 +91,40 @@ export const Primary: Story = {
         <NavigationSubMenu>
           <NavigationLink
             href='/konto/profil'
-            title='Min profil'
+            icon={<User />}
           >
-            <User />
+            Min profil
           </NavigationLink>
           <NavigationLink
             href='/konto/kontaktuppgifter'
-            title='Kontaktuppgifter'
+            icon={<Phone />}
           >
-            <Phone />
+            Kontaktuppgifter
           </NavigationLink>
           <NavigationLink
             href='/konto/meddelanden'
-            title='Meddelanden'
+            icon={
+              <BadgeContainer>
+                <Bell />
+                <Badge>3</Badge>
+              </BadgeContainer>
+            }
             aria-label='3 olästa meddelanden'
           >
-            <BadgeContainer>
-              <Bell />
-              <Badge>3</Badge>
-            </BadgeContainer>
+            Meddelanden
           </NavigationLink>
         </NavigationSubMenu>
         <NavigationLink
           href='/hjalp'
-          title='Hjälp och support'
+          icon={<HelpCircle />}
         >
-          <HelpCircle />
+          Hjälp och support
         </NavigationLink>
         <NavigationLink
           href='/kontakt'
-          title='Kontakta oss'
+          icon={<Mail />}
         >
-          <Mail />
+          Kontakta oss
         </NavigationLink>
       </>
     ),
