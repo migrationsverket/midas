@@ -71,7 +71,7 @@
     width: 100%;
   }
 
-  &:hover:not([data-disabled]) {
+  &[data-hovered]:not([data-disabled]) {
     background-color: var(--midas-layer-01-hover);
     cursor: pointer;
   }
@@ -84,7 +84,7 @@
   &[data-selected] {
     background-color: var(--midas-layer-01-selected);
 
-    &:hover:not([data-disabled]) {
+    &[data-hovered]:not([data-disabled]) {
       background-color: var(--midas-layer-01-selected-hover);
     }
   }
