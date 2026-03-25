@@ -1,0 +1,13 @@
+import{j as r}from"./iframe-C-K27eAl.js";import{H as n,a as e,b as l}from"./HeaderAction-C_Vbph2m.js";import{B as t}from"./bell-C-TwZIuW.js";import{c as d}from"./createLucideIcon-3jo47RrT.js";import{U as s}from"./user-Cln45-HP.js";import"./preload-helper-PPVm8Dsz.js";import"./clsx-B-dksMZM.js";import"./LogoContext-CrhvX9Vo.js";import"./utils-CJaZGGf7.js";import"./Button-BIatrZTr.js";import"./Button-BT6WGe3E.js";import"./Hidden-Vwjx6V0Q.js";import"./useFocusRing-DxSA2Sop.js";import"./index-BKKwvpcz.js";import"./index-DBCMJ7yJ.js";import"./useLabels-bQBwCpKg.js";import"./useButton-UoBuyatd.js";import"./clsx-Ciqy0D92.js";import"./Button.module-BB7N-cLd.js";import"./useLocalizedStringFormatter-CVaM3I0e.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./VisuallyHidden-u6B1l6x2.js";const m=[["path",{d:"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915",key:"1i5ecw"}],["circle",{cx:"12",cy:"12",r:"3",key:"1v7zrd"}]],a=d("settings",m),P={component:n,title:"Components/Layout/Header/HeaderActions",tags:["autodocs"],parameters:{layout:"fullscreen"},decorators:[c=>r.jsx(l,{children:r.jsx(c,{})})]},o={render:()=>r.jsxs(n,{children:[r.jsx(e,{icon:r.jsx(t,{}),children:"Notiser"}),r.jsx(e,{icon:r.jsx(a,{}),children:"Inställningar"}),r.jsx(e,{icon:r.jsx(s,{}),children:"Min profil"})]})},i={render:()=>r.jsxs(n,{children:[r.jsx(e,{"aria-label":"Notiser",icon:r.jsx(t,{})}),r.jsx(e,{"aria-label":"Inställningar",icon:r.jsx(a,{})}),r.jsx(e,{"aria-label":"Min profil",icon:r.jsx(s,{})})]})};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  render: () => <HeaderActions>
+      <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+      <HeaderAction icon={<Settings />}>Inställningar</HeaderAction>
+      <HeaderAction icon={<User />}>Min profil</HeaderAction>
+    </HeaderActions>
+}`,...o.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  render: () => <HeaderActions>
+      <HeaderAction aria-label='Notiser' icon={<Bell />} />
+      <HeaderAction aria-label='Inställningar' icon={<Settings />} />
+      <HeaderAction aria-label='Min profil' icon={<User />} />
+    </HeaderActions>
+}`,...i.parameters?.docs?.source}}};const v=["Primary","IconOnly"];export{i as IconOnly,o as Primary,v as __namedExportsOrder,P as default};
