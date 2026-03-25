@@ -1,1 +1,0 @@
-import{$ as n}from"./scrollIntoView-Yjo_y5ur.js";function c(l,t){let e=l;for(n(e,t)&&(e=e.parentElement);e&&!n(e,t);)e=e.parentElement;return e||document.scrollingElement||document.documentElement}export{c as $};
