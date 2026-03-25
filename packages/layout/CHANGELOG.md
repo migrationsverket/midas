@@ -1,3 +1,11 @@
+## 0.0.23 (2026-03-25)
+
+### 🩹 Fixes
+
+- **layout:** rename CollapsePanel -> Sidebar ([b3627562f0](https://github.com/migrationsverket/midas/commit/b3627562f0))
+- **layout:** utilize clsx function ([e5bbb1a937](https://github.com/migrationsverket/midas/commit/e5bbb1a937))
+- **layout, mobile-menu:** remove custom state ([e4cc4f9b1e](https://github.com/migrationsverket/midas/commit/e4cc4f9b1e))
+
 ## 0.0.22 (2026-03-24)
 
 ### 🧱 Updated Dependencies
