@@ -6,7 +6,7 @@ import { render } from '../../test-utils'
 const { SelectionModeSingle } = composeStories(stories)
 
 describe('given a ListBoxItem in a ListBox with selectionMode="single"', async () => {
-  it('should change change cursor on hover', async () => {
+  it('should change cursor on hover', async () => {
     const { getByRole } = await render(<SelectionModeSingle />)
     const firstOption = getByRole('option').first()
     await firstOption.hover()
