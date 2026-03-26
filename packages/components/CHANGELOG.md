@@ -1,3 +1,15 @@
+## 17.10.8 (2026-03-26)
+
+### 🧪 Tests updated
+
+- **components,menu:** clean up spec — remove duplicate test, drop wip comments ([c76b524d28](https://github.com/migrationsverket/midas/commit/c76b524d28))
+- **components,menu:** migrate RAC test-utils experiment to use composeStories ([e55e27f2bd](https://github.com/migrationsverket/midas/commit/e55e27f2bd))
+- **components,menu:** migrate spec to use composeStories ([5ffaf78336](https://github.com/migrationsverket/midas/commit/5ffaf78336))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.15
+
 ## 17.10.7 (2026-03-26)
 
 ### 🩹 Fixes
