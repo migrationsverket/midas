@@ -24,6 +24,7 @@
       &[data-allows-sorting] {
         cursor: pointer;
         user-select: none;
+        touch-action: manipulation;
 
         .sortIndicator {
           display: inline-flex;

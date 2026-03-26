@@ -46,6 +46,7 @@
 .midas-tanstack-table .sortable-header {
   cursor: pointer;
   user-select: none;
+  touch-action: manipulation;
 }
 
 .midas-tanstack-table .sort-icon-neutral {
