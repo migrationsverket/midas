@@ -1,3 +1,9 @@
+## 2.0.55 (2026-03-26)
+
+### 🩹 Fixes
+
+- **table-styles:** wrap row hover in @media (hover: hover) and add :active touch fallback ([813b06b84c](https://github.com/migrationsverket/midas/commit/813b06b84c))
+
 ## 2.0.54 (2026-03-26)
 
 ### 🧱 Updated Dependencies
