@@ -1,3 +1,21 @@
+## 17.10.2 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components, list-box:** replace css :hover selector ([98fe486cb4](https://github.com/migrationsverket/midas/commit/98fe486cb4))
+
+### 🏭 Refactoring
+
+- **components, list-box:** utilize composeRenderProps helper ([2d67426360](https://github.com/migrationsverket/midas/commit/2d67426360))
+
+### 📖 Documentation changes
+
+- **components, file-trigger:** update dropzone example ([5e47955539](https://github.com/migrationsverket/midas/commit/5e47955539))
+
+### 🧪 Tests updated
+
+- **components, list-box:** add stories and tests ([e951065c3d](https://github.com/migrationsverket/midas/commit/e951065c3d))
+
 ## 17.10.1 (2026-03-24)
 
 ### 🏭 Refactoring
