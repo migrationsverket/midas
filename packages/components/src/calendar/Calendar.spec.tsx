@@ -37,6 +37,13 @@ describe('given a Primary Calendar', async () => {
       )
       .toHaveAttribute('aria-selected', 'true')
   })
+
+  it('should set data-hovered on the month buttons when hovered', async () => {
+    const { getByRole } = await render(<Primary />)
+    const previousMonth = getByRole('button').first()
+    await previousMonth.hover()
+    await expect.element(previousMonth).toHaveAttribute('data-hovered')
+  })
 })
 
 describe('DS1141', async () => {
