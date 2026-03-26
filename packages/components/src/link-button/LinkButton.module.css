@@ -18,7 +18,7 @@
   text-decoration: none;
   line-height: 1;
 
-  &[data-hovered]:not(:disabled, [data-disabled]) {
+  &[data-hovered]:not([data-disabled]) {
     text-decoration: none;
     background-color: var(--midas-button-background-primary-hover);
     color: var(--midas-text-on-color);
@@ -29,7 +29,7 @@
   }
 
   @media (hover: hover) {
-    &:hover:not(:disabled, [data-disabled]) {
+    &:hover:not(:disabled) {
       text-decoration: none;
       background-color: var(--midas-button-background-primary-hover);
       color: var(--midas-text-on-color);
@@ -77,7 +77,7 @@
     }
   }
 
-  &[data-hovered]:not(:disabled, [data-disabled]) {
+  &[data-hovered]:not([data-disabled]) {
     color: var(--midas-text-tertiary);
     background-color: var(--midas-button-background-secondary-hover);
 
@@ -91,7 +91,7 @@
   }
 
   @media (hover: hover) {
-    &:hover:not(:disabled, [data-disabled]) {
+    &:hover:not(:disabled) {
       color: var(--midas-text-tertiary);
       background-color: var(--midas-button-background-secondary-hover);
 
@@ -129,7 +129,7 @@
     background-color: canvas;
   }
 
-  &[data-hovered]:not(:disabled, [data-disabled]) {
+  &[data-hovered]:not([data-disabled]) {
     color: var(--midas-text-tertiary);
     background-color: var(--midas-button-background-tertiary-hover);
 
@@ -140,7 +140,7 @@
   }
 
   @media (hover: hover) {
-    &:hover:not(:disabled, [data-disabled]) {
+    &:hover:not(:disabled) {
       color: var(--midas-text-tertiary);
       background-color: var(--midas-button-background-tertiary-hover);
 
@@ -162,12 +162,12 @@
   background-color: var(--midas-button-background-danger-base);
   opacity: 1;
 
-  &[data-hovered]:not(:disabled, [data-disabled]) {
+  &[data-hovered]:not([data-disabled]) {
     background-color: var(--midas-button-background-danger-hover);
   }
 
   @media (hover: hover) {
-    &:hover:not(:disabled, [data-disabled]) {
+    &:hover:not(:disabled) {
       background-color: var(--midas-button-background-danger-hover);
     }
   }
@@ -186,12 +186,12 @@
   display: flex;
   align-items: center;
 
-  &[data-hovered]:not(:disabled, [data-disabled]) {
+  &[data-hovered]:not([data-disabled]) {
     background-color: var(--midas-button-icon-hover);
   }
 
   @media (hover: hover) {
-    &:hover:not(:disabled, [data-disabled]) {
+    &:hover:not(:disabled) {
       background-color: var(--midas-button-icon-hover);
     }
   }
