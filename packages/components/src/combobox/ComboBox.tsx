@@ -1,6 +1,6 @@
 'use client'
 import styles from './ComboBox.module.css'
-import React from 'react'
+import { type ReactNode, type PointerEventHandler, useRef } from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ValidationResult,
@@ -26,7 +26,7 @@ export interface ComboBoxProps<T extends object> extends Omit<
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   items?: Iterable<T>
-  children: React.ReactNode | ((item: T) => React.ReactNode)
+  children: ReactNode | ((item: T) => ReactNode)
   placeholder?: string
   errorPosition?: 'top' | 'bottom'
   /** Component size (large: height 48px, medium: height 40px)
@@ -50,10 +50,10 @@ export function ComboBox<T extends object>({
   listBoxProps,
   ...props
 }: ComboBoxProps<T>) {
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const strings = useLocalizedStringFormatter(messages)
 
-  const handleMouseUp: React.MouseEventHandler<HTMLInputElement> = event => {
+  const handlePointerUp: PointerEventHandler<HTMLInputElement> = event => {
     if (event.currentTarget.value) {
       inputRef.current?.select()
     }
@@ -78,7 +78,7 @@ export function ComboBox<T extends object>({
             [styles.medium]: size === 'medium',
           })}
           data-readonly={props.isReadOnly || undefined}
-          onMouseUp={handleMouseUp}
+          onPointerUp={handlePointerUp}
           ref={inputRef}
         />
         <Button
