@@ -41,6 +41,10 @@
           @media (prefers-reduced-motion) {
             transition: none;
           }
+
+          @media (hover: none) {
+            opacity: 0.3;
+          }
         }
 
         &:hover .sortIconNeutral {
