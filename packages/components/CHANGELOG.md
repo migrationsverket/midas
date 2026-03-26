@@ -1,3 +1,13 @@
+## 17.10.7 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,calendar:** add data-pressed state to day cells ([061d652521](https://github.com/migrationsverket/midas/commit/061d652521))
+
+### 🔧 Maintenance
+
+- **components,calendar:** remove dead flex properties on .calendar ([cfbf658aaf](https://github.com/migrationsverket/midas/commit/cfbf658aaf))
+
 ## 17.10.6 (2026-03-26)
 
 ### 🩹 Fixes
