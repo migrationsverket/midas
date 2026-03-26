@@ -1,3 +1,9 @@
+## 17.10.6 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,list-box:** add data-pressed state to ListBox items ([75df20d026](https://github.com/migrationsverket/midas/commit/75df20d026))
+
 ## 17.10.5 (2026-03-26)
 
 ### 🩹 Fixes
