@@ -47,8 +47,6 @@
   background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: inline-block;
-  flex-direction: column;
-  align-items: center;
   margin: auto;
   color: var(--midas-text-primary);
 
