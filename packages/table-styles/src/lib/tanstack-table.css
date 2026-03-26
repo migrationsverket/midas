@@ -24,16 +24,22 @@
     var(--midas-space-75);
 }
 
-.midas-tanstack-table tbody tr:hover {
-  background-color: var(--midas-layer-01-hover);
-}
-
 .midas-tanstack-table tbody tr:nth-child(even) {
   background-color: var(--midas-layer-01-base);
 }
 
-.midas-tanstack-table tbody tr:nth-child(even):hover {
+.midas-tanstack-table tbody tr:active {
   background-color: var(--midas-layer-01-hover);
+}
+
+@media (hover: hover) {
+  .midas-tanstack-table tbody tr:hover {
+    background-color: var(--midas-layer-01-hover);
+  }
+
+  .midas-tanstack-table tbody tr:nth-child(even):hover {
+    background-color: var(--midas-layer-01-hover);
+  }
 }
 
 /* Sorting styles */
