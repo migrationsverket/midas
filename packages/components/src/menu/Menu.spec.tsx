@@ -1,15 +1,9 @@
 import { describe, expect, it, vi, afterEach } from 'vitest'
-import { MenuTrigger } from 'react-aria-components'
-import { MenuIcon } from 'lucide-react'
 import { page, userEvent } from 'vitest/browser'
 import { User } from '@react-aria/test-utils'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Menu.stories'
 import { render } from '../../test-utils'
-import { Button } from '../button'
-import { Menu } from './Menu'
-import { MenuItem } from './MenuItem'
-import { MenuPopover } from './MenuPopover'
 
 const { Primary } = composeStories(stories)
 
@@ -41,20 +35,7 @@ describe('given a primary Menu', async () => {
 // --- @react-aria/test-utils experiment ---
 
 const renderMenu = async (props = {}) => {
-  render(
-    <MenuTrigger>
-      <Button aria-label='Menu' variant='icon'>
-        <MenuIcon size={20} />
-      </Button>
-      <MenuPopover>
-        <Menu onAction={handleAction} {...props}>
-          <MenuItem id='open'>Open</MenuItem>
-          <MenuItem id='rename'>Rename...</MenuItem>
-          <MenuItem id='delete'>Delete...</MenuItem>
-        </Menu>
-      </MenuPopover>
-    </MenuTrigger>,
-  )
+  await render(<Primary onAction={handleAction} {...props} />)
 
   const trigger = page.getByRole('button', { name: 'Menu' })
   await expect.element(trigger).toBeInTheDocument()
@@ -78,14 +59,14 @@ describe('given a Menu [RAC test-utils experiment]', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
     await menuTester.selectOption({ option: 'Open' })
-    expect(handleAction).toHaveBeenCalledWith('open')
+    expect(handleAction).toHaveBeenCalledWith(0)
   })
 
   it('should select an item by index and call onAction', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
     await menuTester.selectOption({ option: 1 })
-    expect(handleAction).toHaveBeenCalledWith('rename')
+    expect(handleAction).toHaveBeenCalledWith(1)
   })
 
   it('should close after selecting an item', async () => {
@@ -99,6 +80,6 @@ describe('given a Menu [RAC test-utils experiment]', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
     await menuTester.selectOption({ option: 'Open', interactionType: 'keyboard' })
-    expect(handleAction).toHaveBeenCalledWith('open')
+    expect(handleAction).toHaveBeenCalledWith(0)
   })
 })
