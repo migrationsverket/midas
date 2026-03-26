@@ -76,6 +76,10 @@
     cursor: pointer;
   }
 
+  &[data-pressed]:not([data-disabled]) {
+    background-color: var(--midas-layer-01-hover);
+  }
+
   &[data-disabled] {
     color: var(--midas-text-disabled);
     cursor: not-allowed;
