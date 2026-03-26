@@ -1,3 +1,9 @@
+## 17.10.3 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,date-field:** replace :hover with data-hovered on date segments ([b3746d7ba4](https://github.com/migrationsverket/midas/commit/b3746d7ba4))
+
 ## 17.10.2 (2026-03-26)
 
 ### 🩹 Fixes
