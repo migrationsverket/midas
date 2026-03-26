@@ -13,8 +13,14 @@
     flex-flow: row wrap;
   }
 
-  &:has(.cardLink:hover) {
+  &:has(.cardLink[data-hovered]) {
     background-color: var(--midas-layer-01-hover);
+  }
+
+  @media (hover: hover) {
+    &:has(.cardLink:hover) {
+      background-color: var(--midas-layer-01-hover);
+    }
   }
 }
 
