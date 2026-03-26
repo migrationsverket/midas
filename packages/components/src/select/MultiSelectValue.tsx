@@ -39,6 +39,9 @@ export const MultiSelectValue = <
     >
       {({ isPlaceholder, selectedItems, selectedText }) =>
         isPlaceholder ? (
+          // this empty fragment prevents rendering double placeholders for multiselect
+          // we need a falsy value, null or undefined won't do the trick
+          // eslint-disable-next-line
           <></>
         ) : (
           <div
