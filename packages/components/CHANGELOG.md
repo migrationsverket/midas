@@ -1,3 +1,9 @@
+## 17.10.5 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components, combobox:** replace onMouseuUp with onPointerUp ([2422daff1b](https://github.com/migrationsverket/midas/commit/2422daff1b))
+
 ## 17.10.4 (2026-03-26)
 
 ### 🩹 Fixes
