@@ -13,8 +13,6 @@ afterEach(() => {
   vi.resetAllMocks()
 })
 
-// --- existing tests (unchanged) ---
-
 describe('given a primary Menu', async () => {
   it('should accept a custom className', async () => {
     await render(<Primary className='test-class' />)
@@ -22,17 +20,7 @@ describe('given a primary Menu', async () => {
     await userEvent.click(page.getByRole('button', { name: 'Menu' }))
     await expect.element(page.getByRole('menu')).toHaveClass('test-class')
   })
-
-  it('should call the onAction handler with the ID of the menu item', async () => {
-    await render(<Primary onAction={handleAction} />)
-
-    await userEvent.click(page.getByRole('button', { name: 'Menu' }))
-    await page.getByRole('menuitem', { name: 'Open' }).click()
-    expect(handleAction).toHaveBeenCalledWith(0)
-  })
 })
-
-// --- @react-aria/test-utils experiment ---
 
 const renderMenu = async (props = {}) => {
   await render(<Primary onAction={handleAction} {...props} />)
@@ -48,7 +36,7 @@ const renderMenu = async (props = {}) => {
   return { menuTester }
 }
 
-describe('given a Menu [RAC test-utils experiment]', async () => {
+describe('given a Menu with @react-aria/test-utils', async () => {
   it('should open when the trigger is clicked', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
