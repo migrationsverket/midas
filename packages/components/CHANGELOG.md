@@ -1,3 +1,16 @@
+## 17.10.4 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,checkbox:** replace :hover with [data-hovered] in compound states ([c4ea630b64](https://github.com/migrationsverket/midas/commit/c4ea630b64))
+- **components, card:** add data-hovered selector for links ([aac30dc97f](https://github.com/migrationsverket/midas/commit/aac30dc97f))
+- **components, select:** use data-hovered selector for buttons ([449cef9b27](https://github.com/migrationsverket/midas/commit/449cef9b27))
+- **components, calendar:** use data-hovered selector for month buttons ([ee12d1434d](https://github.com/migrationsverket/midas/commit/ee12d1434d))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.14
+
 ## 17.10.3 (2026-03-26)
 
 ### 🩹 Fixes
