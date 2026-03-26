@@ -4,7 +4,8 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Card.stories'
 import { render } from '../../test-utils'
 
-const { WithActions, WithPrimaryAction, WithLink } = composeStories(stories)
+const { WithActions, WithPrimaryAction, WithLink, WithCustomLink } =
+  composeStories(stories)
 
 describe('given a Card with Actions', async () => {
   it('should be possible to focus the button', async () => {
@@ -45,5 +46,21 @@ describe('given a Card with a Link', async () => {
     await userEvent.tab()
 
     await expect.element(link).toHaveFocus()
+  })
+
+  it('should set data-hovered on the link when hovered', async () => {
+    const { getByRole } = await render(<WithLink />)
+    const link = getByRole('link')
+    await link.hover()
+    await expect.element(link).toHaveAttribute('data-hovered')
+  })
+})
+
+describe('given a Card with a custom Link', async () => {
+  it('should not set data-hovered on the link when hovered', async () => {
+    const { getByRole } = await render(<WithCustomLink />)
+    const link = getByRole('link')
+    await link.hover()
+    await expect.element(link).not.toHaveAttribute('data-hovered')
   })
 })
