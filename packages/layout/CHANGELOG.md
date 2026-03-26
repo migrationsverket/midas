@@ -1,3 +1,9 @@
+## 0.0.25 (2026-03-26)
+
+### 🩹 Fixes
+
+- **layout:** match API for NavigationLink and HeaderAction ([dffda24844](https://github.com/migrationsverket/midas/commit/dffda24844))
+
 ## 0.0.24 (2026-03-25)
 
 This was a version bump only for layout to align it with other projects, there were no code changes.
