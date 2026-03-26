@@ -87,6 +87,8 @@
     padding: var(--midas-space-xsmall) !important;
     border-radius: 1.5rem;
     border: unset;
+    user-select: none;
+    touch-action: manipulation;
 
     &:hover {
       cursor: pointer;
@@ -127,6 +129,8 @@
     border: none;
     color: var(--midas-icon-primary);
     cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
     display: flex;
     justify-content: center;
     width: var(--midas-size-control);
@@ -214,6 +218,8 @@
     gap: var(--midas-space-medium);
     hyphens: auto;
     overflow-wrap: break-word;
+    user-select: none;
+    touch-action: manipulation;
   }
 
   .midas__option {

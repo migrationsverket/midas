@@ -76,6 +76,8 @@
   position: absolute;
   right: 10px;
   cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
 
   &:hover + input {
     background-color: var(--midas-layer-01-hover);
@@ -146,6 +148,8 @@
   position: absolute;
   text-indent: -999em;
   cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
   transition:
     opacity 0.1s ease,
     background-color 0.1s ease;
@@ -243,6 +247,8 @@
   padding: 0.5rem 0;
   border: 2px solid transparent;
   cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
   font-size: 1rem;
   line-height: initial;
   border-radius: 0;
