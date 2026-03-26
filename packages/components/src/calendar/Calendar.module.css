@@ -101,7 +101,7 @@
     background-color: var(--midas-layer-01-base);
     cursor: pointer;
 
-    &:hover:not([data-disabled]) {
+    &[data-hovered]:not([data-disabled]) {
       background-color: var(--midas-field-01-hover);
     }
 
