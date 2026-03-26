@@ -135,6 +135,11 @@
     border-color: var(--midas-field-01-hover);
   }
 
+  &[data-pressed]:not([data-unavailable], [data-disabled]) {
+    background-color: var(--midas-field-01-active);
+    border-color: var(--midas-field-01-active);
+  }
+
   &[data-selected='true'] {
     color: var(--midas-text-inverse);
     background-color: var(--midas-calendar-date-background-selected);
