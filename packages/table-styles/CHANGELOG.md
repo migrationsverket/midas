@@ -1,3 +1,13 @@
+## 2.0.57 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table-styles,datepicker-styles,select-styles:** add user-select and touch-action to non-RAC interactive elements ([248294fd3e](https://github.com/migrationsverket/midas/commit/248294fd3e))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.10
+
 ## 2.0.56 (2026-03-27)
 
 ### 🧱 Updated Dependencies
