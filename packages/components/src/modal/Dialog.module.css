@@ -3,7 +3,7 @@
   position: fixed;
   max-width: 75%;
   min-width: 300px;
-  max-height: 90vh;
+  max-height: min(90dvh, 90vh);
   overflow-y: auto;
   background-color: var(--midas-background-base);
   color: var(--midas-text-primary);
