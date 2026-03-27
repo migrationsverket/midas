@@ -2,7 +2,7 @@
  * 1. Represents max ~5 options in the list.
  */
 .listBox {
-  max-height: 295px; /* 1 */
+  max-height: min(295px, 50dvh); /* 1 */
   overflow: hidden auto;
 
   > div {
