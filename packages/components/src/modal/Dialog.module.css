@@ -19,6 +19,15 @@
   @media (forced-colors: active) {
     outline: 2px solid;
   }
+
+  @media (width <= 479px) {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    max-height: 100dvh;
+    margin: 0;
+    border-radius: 0;
+  }
 }
 
 .overlay {
