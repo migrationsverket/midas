@@ -1,3 +1,9 @@
+## 0.0.33 (2026-03-27)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.9
+
 ## 0.0.32 (2026-03-26)
 
 ### 🧱 Updated Dependencies

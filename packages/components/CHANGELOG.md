@@ -1,3 +1,16 @@
+## 17.10.9 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table:** bump sort icon touch opacity to 0.5 for WCAG contrast ([22adcd40fd](https://github.com/migrationsverket/midas/commit/22adcd40fd))
+- **components,table:** show sort icon at low opacity on touch devices ([2b3f27b6b5](https://github.com/migrationsverket/midas/commit/2b3f27b6b5))
+- **components,link-button:** consolidate hover rules under @media (hover: hover) ([6c6c2d9cd6](https://github.com/migrationsverket/midas/commit/6c6c2d9cd6))
+- **components,link-button:** move redundant :hover rules under @media (hover: hover) ([c200e16ebe](https://github.com/migrationsverket/midas/commit/c200e16ebe))
+
+### 🔧 Maintenance
+
+- **components,link-button:** clean up disabled selector specificity in hover rules ([973a51e507](https://github.com/migrationsverket/midas/commit/973a51e507))
+
 ## 17.10.8 (2026-03-26)
 
 ### 🧪 Tests updated
