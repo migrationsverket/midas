@@ -4,8 +4,8 @@
   display: flex;
   font-size: 1rem;
   flex-direction: row;
-  gap: 1rem;
-  padding: 1rem;
+  gap: var(--midas-space-medium);
+  padding: var(--midas-space-medium);
   line-height: 1.3;
 
   &.success {
@@ -45,13 +45,22 @@
 
 .heading {
   font-weight: 500;
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--midas-space-xsmall);
 }
 
 .text {
   line-height: var(--midas-typography-line-height-40);
   white-space: pre-line;
   margin: 0;
+
+  ul {
+    margin: var(--midas-space-xsmall) 0 0 var(--midas-space-medium);
+    padding: 0;
+
+    li {
+      margin-bottom: var(--midas-space-60);
+    }
+  }
 }
 
 .icon {

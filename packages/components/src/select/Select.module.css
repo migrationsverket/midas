@@ -19,21 +19,23 @@
   color: var(--midas-text-primary);
   display: flex;
   font-size: var(--midas-typography-font-size-30);
-  gap: var(--midas-spacing-20);
+  gap: var(--midas-space-xsmall);
   justify-content: space-between;
-  min-height: var(--midas-size-150);
-  padding-left: var(--midas-size-80);
-  padding-right: var(--midas-size-80);
-  transition: all 100ms ease-in;
+  min-height: var(--midas-size-control);
+  padding-left: var(--midas-space-medium);
+  padding-right: var(--midas-space-medium);
+  transition: all var(--midas-transition-duration-instant)
+    var(--midas-transition-timing-ease-in);
 
   &.medium {
-    min-height: var(--midas-size-130);
+    min-height: var(--midas-size-control-md);
   }
 
   &:focus-visible {
     outline: none;
     box-shadow: var(--midas-state-focus);
-    transition: all 100ms ease-out;
+    transition: all var(--midas-transition-duration-instant)
+      var(--midas-transition-timing-ease-out);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -41,7 +43,7 @@
     }
   }
 
-  &:hover {
+  &[data-hovered] {
     background-color: var(--midas-field-01-hover);
     cursor: pointer;
   }
@@ -73,7 +75,7 @@
   color: var(--midas-text-primary);
   font-family: var(--midas-typography-font-family);
   line-height: var(--midas-typography-line-height-30);
-  max-width: calc(100% - var(--midas-spacing-90));
+  max-width: calc(100% - var(--midas-space-150));
 
   .placeholder {
     display: flex;
@@ -93,13 +95,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  max-width: calc(100% - var(--midas-spacing-90));
+  max-width: calc(100% - var(--midas-space-150));
 
   .placeholder {
     align-items: center;
     display: flex;
     justify-content: center;
-    left: var(--midas-spacing-50);
+    left: var(--midas-space-medium);
     position: relative;
   }
 
@@ -117,7 +119,7 @@
   display: flex;
   font-size: 0.875rem;
   justify-content: center;
-  left: var(--midas-spacing-30);
+  left: var(--midas-space-small);
   min-height: 1.75rem;
   padding: 0 0.5rem;
   pointer-events: all;
@@ -147,10 +149,10 @@
   border-radius: 100%;
   color: var(--midas-text-on-color);
   display: flex;
-  margin-left: var(--midas-size-10);
-  padding: var(--midas-size-30);
+  margin-left: var(--midas-space-10);
+  padding: var(--midas-space-30);
 
-  &:hover {
+  &[data-hovered] {
     background-color: var(--midas-button-background-primary-hover);
     cursor: pointer;
   }
@@ -184,10 +186,11 @@
     /* RAC passes this variable via the style prop, making it available during runtime only */
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
     min-width: var(--trigger-width);
-    transition:
-      transform 0.2s ease-in-out,
-      opacity 0.2s ease-in-out;
+
+    /* Mirrors .dropdownAnimation in overlay.module.css — can't use composes inside a nested rule */
     opacity: 1;
+    transition: opacity var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
 
     &[data-entering] {
       opacity: 0;
@@ -195,6 +198,7 @@
 
     &[data-exiting] {
       opacity: 0;
+      transition-timing-function: var(--midas-transition-timing-ease-in);
     }
   }
 
@@ -207,13 +211,11 @@
     font-family: var(--midas-typography-font-family);
     line-height: 1;
     margin-bottom: 2px !important;
-    padding: var(--midas-size-80);
-    transition: background-color 60ms;
+    padding: var(--midas-space-medium);
 
-    &:hover:not([data-disabled]) {
+    &[data-hovered]:not([data-disabled]) {
       background-color: var(--midas-layer-01-hover);
       cursor: pointer;
-      transition-delay: 60ms;
 
       & div {
         border-color: var(--midas-text-primary);
@@ -228,9 +230,8 @@
     &[data-selected] {
       background-color: var(--midas-layer-01-selected-hover);
 
-      &:hover:not([data-disabled]) {
+      &[data-hovered]:not([data-disabled]) {
         background-color: var(--midas-layer-01-selected-hover);
-        transition-delay: 60ms;
 
         & div {
           border-color: transparent;
@@ -263,17 +264,17 @@
 
 .icon {
   display: flex;
-  transition: transform var(--midas-transition-duration-normal) ease;
+  transition: transform var(--midas-transition-duration-normal)
+    var(--midas-transition-timing-ease-in-out);
 }
 
 .tagGroup {
-  margin-top: var(--midas-size-40);
+  margin-top: var(--midas-space-small);
 }
 
 @media (prefers-reduced-motion) {
   .trigger,
   .popover[data-trigger='Select'],
-  .selectAll,
   .icon {
     transition: none;
   }

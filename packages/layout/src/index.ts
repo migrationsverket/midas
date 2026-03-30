@@ -1,4 +1,7 @@
 export * from './header'
 export * from './layout'
+export * from './main'
+export * from './navigation'
 export * from './panel'
+export * from './sidebar'
 export * from './navbar'

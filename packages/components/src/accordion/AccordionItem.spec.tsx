@@ -1,9 +1,23 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './AccordionItem.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
-const { Success, Info, Warning, Important } = composeStories(stories)
+const { Default, Success, Info, Warning, Important } = composeStories(stories)
+
+describe('given a Default AccordionItem', async () => {
+  it('should accept a function as children', async () => {
+    const { getByRole, getByText } = await render(
+      <Default>
+        {({ isExpanded }) => (isExpanded ? 'Im expanded' : 'Im not expanded')}
+      </Default>,
+    )
+    await expect.element(getByText('Im not expanded')).toBeInTheDocument()
+    await getByRole('button').click()
+    await expect.element(getByText('Im not expanded')).not.toBeInTheDocument()
+    await expect.element(getByText('Im expanded')).toBeVisible()
+  })
+})
 
 describe('given an AccordionItem with type = "success"', async () => {
   it('should provide an aria-label for the icon', async () => {

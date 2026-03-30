@@ -63,7 +63,7 @@ import { ColorSchemeSwitch } from '@midas-ds/components'
   <div id='dark-mode-target' />
 </div>
 
-ColorSchemeSwitch justerar `color-scheme` värdet på body-elementet. Du kan justera vilken selector som ska användas
+ColorSchemeSwitch justerar `color-scheme` på `:root` som standard. Du kan justera vilken selector som ska användas
 om color-scheme i din applikation är definierad på en annan DOM-nod. Detta kan du göra genom att skicka in en egen
 selector i `selector`.
 
@@ -71,12 +71,12 @@ selector i `selector`.
 <ColorSchemeSwitch selector='main' />
 ```
 
-Komponenten accepterar tre värden. `light`, `dark`, och `light dark` dvs enbart ljust läge, enbart mörkt läge eller
+Komponenten accepterar tre värden: `light`, `dark` och `light dark` — enbart ljust läge, enbart mörkt läge eller
 att följa systemets inställningar. Default är `light dark`. Om du vill att ett specifikt tema är förvalt
-kan du skicka in standardvärdet direkt i `defaultValue`.
+kan du skicka in standardvärdet direkt i `defaultScheme`.
 
 ```tsx
-<ColorSchemeSwitch defaultValue='dark' />
+<ColorSchemeSwitch defaultScheme='dark' />
 ```
 
 ## Tokens

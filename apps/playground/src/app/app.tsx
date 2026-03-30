@@ -1,5 +1,5 @@
-import { TableBasicPage } from '../pages/TableBasicPage';
+import { FileListPage } from '../pages/FileListPage';
 
 export default function App() {
-  return <TableBasicPage />;
+  return <FileListPage />;
 }

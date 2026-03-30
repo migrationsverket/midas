@@ -6,6 +6,11 @@
   text-align: center;
   background-color: var(--midas-background-base);
 
+  [slot='label'] {
+    margin-top: 1rem;
+    display: block;
+  }
+
   &[data-drop-target] {
     background: var(--midas-background-hover);
     border: 1px solid var(--midas-border-color-primary);

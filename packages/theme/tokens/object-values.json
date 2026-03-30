@@ -1,5 +1,6 @@
 {
   "background": {
+    "$description": "Bakgrundsfärger för applikationers övergripande yta. Används som sidbakgrund eller baslager under alla lager. Används i: samtliga sidor och layouts.",
     "$type": "string",
     "base": {
       "$value": "light-dark({color.white.base}, {color.gray.200})",
@@ -15,6 +16,7 @@
     }
   },
   "layer": {
+    "$description": "Lagerfärger för ytor som staplas ovanpå bakgrunden. layer.01 används direkt på background, layer.02 används ovanpå layer.01. Används i: Card, Table, Modal, Popover, Select, ListBox, Accordion, Calendar, Tooltip, Checkbox (hover på mobil).",
     "$type": "string",
     "01": {
       "base": {
@@ -54,6 +56,7 @@
     }
   },
   "layerAccent": {
+    "$description": "Accentfärger som kompletterar respektive lager. Används i: Table (zebra-rankning), ProgressBar (bakgrundsspår).",
     "$type": "string",
     "01": {
       "base": {
@@ -85,6 +88,7 @@
     }
   },
   "brand": {
+    "$description": "Primär varumärkesfärg för Midas Design System. Används sparsamt för att markera identitet, t.ex. i logotyp och fokusade varumärkeselement.",
     "$type": "string",
     "primary": {
       "$value": "light-dark({color.red.100}, {color.red.100})",
@@ -92,6 +96,7 @@
     }
   },
   "border": {
+    "$description": "Kantlinjetokens i tre kontrastnivåer. primary för formulärfält, secondary för kort/paneler, subtle för separatorer och läs-bara fält. Används i: TextField, TextArea, Checkbox, Radio, ComboBox, SearchField, Card, Accordion, Table, Calendar, DateField, DatePicker, Tag, ListBox, FileUpload, ToggleButton.",
     "color": {
       "$type": "string",
       "primary": {
@@ -124,6 +129,7 @@
     }
   },
   "field": {
+    "$description": "Bakgrundsfärger för formulärfält. field.01 används på background, field.02 används på layer.01. Att ändra dessa påverkar alla formulärkomponenter. Används i: TextField, TextArea, Tag, ComboBox, SearchField, DateField, DatePicker, Calendar, Select.",
     "$type": "string",
     "01": {
       "base": {
@@ -142,7 +148,7 @@
     "02": {
       "base": {
         "$value": "light-dark({color.white.base}, {color.gray.160})",
-        "$description": "Sekundf\u00e4rf\u00e4rg f\u00f6r f\u00e4lt, som ligger p\u00e5 layer01"
+        "$description": "Sekundärfärg för fält, som ligger på layer01"
       },
       "hover": {
         "$value": "light-dark({color.white.hover}, {color.gray.150})",
@@ -159,6 +165,7 @@
     }
   },
   "skeleton": {
+    "$description": "Färger för Skeleton-laddningskomponenten. skeleton.01 används på background, skeleton.02 används på layer.01.",
     "$type": "string",
     "01": {
       "$value": "light-dark({color.gray.10}, {color.gray.180})",
@@ -170,6 +177,7 @@
     }
   },
   "icon": {
+    "$description": "Ikonfärger för olika kontexter och tillstånd. icon.success/warning/info baseras på signalfärger. Används i: Button, Toast, InfoBanner, SearchField, Radio, ComboBox, Spinner, Menu, Accordion, Checkbox, Tag, LinkButton, ListBox.",
     "$type": "string",
     "primary": {
       "$value": "light-dark({color.gray.200}, {color.gray.10})",
@@ -180,7 +188,8 @@
       "$description": "Sekund\u00e4r ikonf\u00e4rg"
     },
     "tertiary": {
-      "$value": "light-dark({color.blue.150}, {color.gray.10})"
+      "$value": "light-dark({color.blue.150}, {color.gray.10})",
+      "$description": "Tertiär ikonfärg, används för ikoner i tertiary-knappar och länkikoner"
     },
     "inverse": {
       "$value": "light-dark({color.white.base}, {color.gray.200})",
@@ -196,7 +205,7 @@
     },
     "success": {
       "$value": "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
-      "$description": "Ikonf\u00e4r f\u00f6r success state"
+      "$description": "Ikonfärg för success state"
     },
     "info": {
       "$value": "light-dark({color.signalBlue.100}, {color.signalBlue.100})",
@@ -217,6 +226,7 @@
     }
   },
   "link": {
+    "$description": "Färger för länkar i alla tillstånd. Används i Link-komponenten och inline-länktext.",
     "$type": "string",
     "enabled": {
       "$value": "light-dark({color.blue.120}, {color.blue.70})",
@@ -236,6 +246,7 @@
     }
   },
   "support": {
+    "$description": "Semantiskt lager ovanpå signalfärgsprimitiver för statuskommunikation. Dessa är tokens komponenter faktiskt använder – de refererar till color.signal* bakom kulisserna. Fyra varianter: success, info, important, warning. Att ändra en signalfärg påverkar automatiskt motsvarande support.*-token. Används i: Toast, InfoBanner, Checkbox (invalid), Radio (invalid), ComboBox (invalid), SearchField (invalid), Label.",
     "$type": "string",
     "border": {
       "success": {
@@ -291,7 +302,53 @@
       }
     }
   },
+  "tag": {
+    "$description": "Semantiskt lager ovanpå signalfärgsprimitiver för Tag-komponenten. Färgerna är dekorativa utan statusbetydelse — de delar primitiver med support.* men har ett helt annat syfte. Fyra varianter: grön, blå, gul, röd. Används i: Tag.",
+    "$type": "string",
+    "green": {
+      "background": {
+        "$value": "light-dark({color.signalGreen.20}, {color.signalGreen.180})",
+        "$description": "Tag bakgrund grön"
+      },
+      "borderColor": {
+        "$value": "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
+        "$description": "Tag kantlinje grön"
+      }
+    },
+    "blue": {
+      "background": {
+        "$value": "light-dark({color.signalBlue.10}, {color.signalBlue.180})",
+        "$description": "Tag bakgrund blå"
+      },
+      "borderColor": {
+        "$value": "light-dark({color.signalBlue.100}, {color.signalBlue.100})",
+        "$description": "Tag kantlinje blå"
+      }
+    },
+    "yellow": {
+      "background": {
+        "$value": "light-dark({color.signalYellow.10}, {color.signalYellow.180})",
+        "$description": "Tag bakgrund gul"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.orange.100}",
+        "$description": "Tag kantlinje gul"
+      }
+    },
+    "red": {
+      "background": {
+        "$value": "light-dark({color.signalRed.20}, {color.signalRed.180})",
+        "$description": "Tag bakgrund röd"
+      },
+      "borderColor": {
+        "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})",
+        "$description": "Tag kantlinje röd"
+      }
+    }
+  },
   "text": {
+    "$description": "Textfärger för alla kontexter och tillstånd. text.primary används i nästintill alla komponenter – ändra med försiktighet. Används i: Text, Heading, Link, Button, Checkbox, Radio, Badge, Toast, InfoBanner, TextField, Select, ComboBox, DateField, Card, Tab, Menu, ListBox, Accordion, Table m.fl.",
     "$type": "string",
     "primary": {
       "$value": "light-dark({color.gray.200}, {color.gray.10})",
@@ -331,34 +388,43 @@
     }
   },
   "badge": {
+    "$description": "Färger för Badge-komponenten som visar notifikationsantal, t.ex. på ikoner i navigationsfält.",
     "$type": "string",
     "background": {
-      "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})"
+      "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})",
+      "$description": "Bakgrundsfärg för badge"
     }
   },
   "calendar": {
+    "$description": "Färger för kalenderkomponenten (DatePicker, DateRangePicker) – datumceller, markerade datum och intervallval.",
     "$type": "string",
     "date": {
       "background": {
         "hover": {
-          "$value": "light-dark(#0000001a, #ffffff1a)"
+          "$value": "light-dark(#0000001a, #ffffff1a)",
+          "$description": "Hover-bakgrund för datumcell"
         },
         "selected": {
-          "$value": "light-dark({color.blue.150}, {color.blue.80})"
+          "$value": "light-dark({color.blue.150}, {color.blue.80})",
+          "$description": "Bakgrund för ett valt datum"
         },
         "startRange": {
-          "$value": "light-dark({color.blue.150}, {color.blue.80})"
+          "$value": "light-dark({color.blue.150}, {color.blue.80})",
+          "$description": "Bakgrund för det första datumet i ett intervallval"
         },
         "inRange": {
-          "$value": "light-dark({color.blue.20}, {color.blue.150})"
+          "$value": "light-dark({color.blue.20}, {color.blue.150})",
+          "$description": "Bakgrund för datum som ligger inom ett valt intervall"
         },
         "endRange": {
-          "$value": "light-dark({color.blue.150}, {color.blue.80})"
+          "$value": "light-dark({color.blue.150}, {color.blue.80})",
+          "$description": "Bakgrund för det sista datumet i ett intervallval"
         }
       }
     }
   },
   "logo": {
+    "$description": "Färger för logotypen i ljust och mörkt läge.",
     "$type": "string",
     "primary": {
       "$value": "light-dark({color.red.100}, {color.white.base})",
@@ -366,6 +432,7 @@
     }
   },
   "menu": {
+    "$description": "Färger för navigationsmenyn och dess menyobjekt.",
     "$type": "string",
     "item": {
       "background": {
@@ -381,7 +448,8 @@
     },
     "text": {
       "sectionHeader": {
-        "$value": "light-dark({color.gray.140}, {color.gray.70})"
+        "$value": "light-dark({color.gray.140}, {color.gray.70})",
+        "$description": "Textfärg för sektionsrubriker i navigationsmenyn"
       }
     }
   }

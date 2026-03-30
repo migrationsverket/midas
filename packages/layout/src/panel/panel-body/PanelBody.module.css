@@ -1,0 +1,5 @@
+.panelBody {
+  background-color: var(--midas-background-base);
+  box-sizing: border-box;
+  padding: 1rem;
+}

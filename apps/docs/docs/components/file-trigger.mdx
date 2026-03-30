@@ -6,7 +6,7 @@ description: Åtkomst till filsystemet
 import { Button } from '@midas-ds/components'
 import { FileTrigger } from 'react-aria-components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Example, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
 import { PropTable } from '@site/src/components/PropsTable'
 
 <ComponentHeader
@@ -22,31 +22,53 @@ FileTrigger är en komponent utan utseende och går att använda direkt från Re
 har en enkelt stylad yta men med samma beteende som React Aria.
 
 ```tsx
-
-import { Button } from '@midas-ds/components'
-import { FileTrigger } from 'react-aria-components'
+import { Button, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
 import React from 'react'
 
-export const Example = () => {
-  let [file, setFile] = React.useState(null);
+export const FileListExample = () => {
+  const [files, setFiles] = React.useState<File[]>([])
+
+  const handleSelect = (e: FileList | null) => {
+    const selected = e ? Array.from(e) : []
+    setFiles(prev => {
+      const existingNames = new Set(prev.map(f => f.name))
+      return [...prev, ...selected.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
 
   return (
     <>
       <FileTrigger
-        onSelect={(e) => {
-          let files = e ? Array.from(e) : [];
-          let filenames = files.map((file) => file.name);
-          setFile(filenames);
-        }}>
-        <Button>Välj fil</Button>
+        allowsMultiple
+        onSelect={handleSelect}
+      >
+        <Button>Välj filer</Button>
       </FileTrigger>
-      {file && file}
+      {files.length > 0 && (
+        <FileList>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
     </>
   )
 }
 ```
-<div className={'card'}>
-  <Example/>
+
+Se [FileList](/components/file-list) för dokumentation av listkomponenten.
+
+<div className='card'>
+  <FileListExample />
 </div>
 
 ## Varianter
@@ -61,38 +83,61 @@ för att tillåta val av filer via drag & drop.
 
 ```tsx
 export const DropZoneExample = () => {
-  let [files, setFiles] = React.useState(null);
+  const [files, setFiles] = React.useState<File[]>([])
+
+  const setUniqueFiles = (newFiles: File[]) => {
+    setFiles(oldFiles => {
+      const existingNames = new Set(oldFiles.map(f => f.name))
+      return [...oldFiles, ...newFiles.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDrop = async (e: DropEvent) => {
+    const fileItems = e.items.filter(item => item.kind === 'file')
+    const droppedFiles: File[] = await Promise.all(fileItems.map(item => item.getFile()))
+    setUniqueFiles(droppedFiles)
+  }
+
+  const handleSelect = (e: FileList | null) => {
+    const selectedFiles = e ? Array.from(e) : []
+    setUniqueFiles(selectedFiles)
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
+
   return (
     <>
-      <DropZone
-        onDrop={(e) => {
-          let files = e.items.filter((file) =>
-            file.kind === 'file'
-          ) as FileDropItem[];
-          let filenames = files.map((file) => file.name);
-          setFiles(filenames.join(', '));
-        }}
-      >
+      <DropZone onDrop={handleDrop}>
         <FileTrigger
           allowsMultiple
-          onSelect={(e) => {
-            let files = Array.from(e);
-            let filenames = files.map((file) => file.name);
-            setFiles(filenames.join(', '));
-          }}
+          onSelect={handleSelect}
         >
-          <Button>Select files</Button>
+          <Button variant='secondary'>
+            <ArrowUpFromLine /> Välj filer
+          </Button>
         </FileTrigger>
-        <Text slot="label" style={{ display: 'block' }}>
-          {files || 'Drop files here'}
-        </Text>
+        <Text slot='label'>Dra och släpp filer här</Text>
       </DropZone>
+      {files.length > 0 && (
+        <FileList style={{ marginTop: '1rem' }}>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
     </>
   )
 }
 ```
 
-<DropZoneExample/>
+<DropZoneExample />
 
 ### Alternativ
 
@@ -116,14 +161,12 @@ används.
   </FileTrigger>
 </div>
 
-
-
 ## API
 
 ### FileTrigger
+
 <PropTable name='FileTrigger' />
 
 ### DropZone
+
 <PropTable name='DropZone' />
-
-

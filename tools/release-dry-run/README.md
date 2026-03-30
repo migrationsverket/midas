@@ -5,6 +5,7 @@ A GitHub Action that runs `nx release --dry-run` and posts a formatted comment o
 ## What It Does
 
 This tool:
+
 1. Runs `nx release --dry-run` to determine which packages would be released
 2. Formats the version changes into a readable markdown report
 3. Posts the report as a sticky comment on pull requests to `main`
@@ -13,6 +14,7 @@ This tool:
 
 ```markdown
 ## NX release report
+
 :bug: **@midas-ds/button** was `1.0.0` and will be updated to `1.0.1`.
 :sparkles: **@midas-ds/input** was `2.3.0` and will be updated to `2.4.0`.
 :boom: **@midas-ds/theme** was `1.5.2` and will be updated to `2.0.0`.
@@ -25,8 +27,10 @@ This tool:
 - :boom: **Major** (x.0.0) - Breaking changes
 
 If no packages will be versioned:
+
 ```markdown
 ## NX release report
+
 No version bumps :disappointed:
 ```
 
@@ -66,12 +70,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
           cache: npm
@@ -173,16 +177,19 @@ src/
 ### Key Functions
 
 **`getAffectedProjects()`**
+
 - Calls `nx releaseVersion({ dryRun: true })`
 - Filters projects to only those with `newVersion` set
 - Returns array of `{ name, versionData }` objects
 
 **`getBumpMessage(projects)`**
+
 - Takes array of affected projects
 - Determines bump type (patch/minor/major) using `semver.diff()`
 - Returns formatted markdown string with icons
 
 **`index.ts`**
+
 - GitHub Action entry point
 - Calls `getAffectedProjects()` and `getBumpMessage()`
 - Sets output using `@actions/core.setOutput()`
@@ -216,6 +223,7 @@ permissions:
 ### Incorrect Version Detection
 
 The tool relies on NX's release logic. Check:
+
 1. Conventional commit format in the PR
 2. NX release configuration in `nx.json`
 3. Project dependencies in `project.json` files

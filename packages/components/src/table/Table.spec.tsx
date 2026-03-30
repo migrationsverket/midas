@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import { page } from 'vitest/browser'
 import * as stories from './Table.stories'
 import styles from './Table.module.css'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Striped, Virtualized } = composeStories(stories)
 

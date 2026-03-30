@@ -9,7 +9,7 @@ interface DatePickerPopoverProps {
 export const DatePickerPopover: React.FC<DatePickerPopoverProps> = ({
   children,
 }) => (
-  <Popover>
+  <Popover className={styles.popover}>
     <Dialog className={styles.dialog}>{children}</Dialog>
   </Popover>
 )

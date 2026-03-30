@@ -1,9 +1,8 @@
 .button {
   color: var(--midas-icon-primary);
-  min-height: unset !important;
-  padding: var(--midas-size-20) !important;
+  padding: var(--midas-space-xsmall) !important;
   border-radius: 1.5rem;
-  border: unset;
+  margin-left: var(--midas-space-10);
 
   &[data-hovered] {
     background-color: var(--midas-button-icon-hover);
@@ -13,56 +12,59 @@
     background-color: var(--midas-button-icon-active);
   }
 
-  &.success[data-hovered],
-  &.warning[data-hovered],
-  &.info[data-hovered],
-  &.important[data-hovered] {
+  &.green[data-hovered],
+  &.red[data-hovered],
+  &.blue[data-hovered],
+  &.yellow[data-hovered] {
     background-color: var(--midas-button-icon-hover);
   }
 
-  &.success[data-pressed],
-  &.warning[data-pressed],
-  &.info[data-pressed],
-  &.important[data-pressed] {
+  &.green[data-pressed],
+  &.red[data-pressed],
+  &.blue[data-pressed],
+  &.yellow[data-pressed] {
     background-color: var(--midas-button-icon-active);
   }
 }
 
 .tag {
-  display: inline-flex;
   align-items: center;
-  border-radius: 1.25rem;
   background-color: var(--midas-field-01-base);
-  font-size: 0.875rem;
-  font-family: var(--midas-typography-font-family);
-  border: 1px solid var(--midas-border-color-primary);
+  border-color: var(--midas-border-color-primary);
+  border-radius: 1.25rem;
+  border-style: solid;
+  border-width: 1px;
   color: var(--midas-text-primary);
+  display: inline-flex;
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
 
-  &.success {
-    background-color: var(--midas-support-background-success);
-    border: 1px solid var(--midas-support-border-success);
+  &.green {
+    background-color: var(--midas-tag-green-background);
+    border-color: var(--midas-tag-green-border-color);
   }
 
-  &.info {
-    background-color: var(--midas-support-background-info);
-    border: 1px solid var(--midas-support-border-info);
+  &.blue {
+    background-color: var(--midas-tag-blue-background);
+    border-color: var(--midas-tag-blue-border-color);
   }
 
-  &.important {
-    background-color: var(--midas-support-background-important);
-    border: 1px solid var(--midas-support-border-important);
+  &.yellow {
+    background-color: var(--midas-tag-yellow-background);
+    border-color: var(--midas-tag-yellow-border-color);
   }
 
-  &.warning {
-    background-color: var(--midas-support-background-warning);
-    border: 1px solid var(--midas-support-border-warning);
+  &.red {
+    background-color: var(--midas-tag-red-background);
+    border-color: var(--midas-tag-red-border-color);
   }
 
   &[data-disabled] {
+    background-color: var(--midas-field-01-base);
+    border-color: var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
     cursor: not-allowed;
-    border-color: var(--midas-border-color-disabled);
-    background-color: var(--midas-field-01-base);
   }
 
   &[data-focused],
@@ -81,16 +83,19 @@
 }
 
 .tagText {
-  line-height: 1.15;
-  padding: 7px var(--midas-size-40);
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--midas-space-xsmall);
+  padding: 5px var(--midas-space-small);
+  min-height: 1.875rem;
+
+  svg {
+    width: var(--midas-size-icon-sm);
+    height: var(--midas-size-icon-sm);
+  }
 }
 
 .dismissable .tagText {
-  padding: 7px var(--midas-size-10) 7px var(--midas-size-40);
-}
-
-.tagList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
+  padding: 5px 0 5px var(--midas-space-small);
 }

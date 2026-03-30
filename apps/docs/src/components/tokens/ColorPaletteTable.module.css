@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.familyName {
+  font-family: monospace;
+  font-size: 0.8rem;
+  width: 7rem;
+  flex-shrink: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.swatch {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0 0.2rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  overflow: hidden;
+}
+
+.swatch:hover {
+  transform: scale(1.15);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.copyIcon {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  line-height: 1;
+  display: flex;
+}
+
+.swatch:hover .copyIcon,
+.swatch.copied .copyIcon {
+  opacity: 1;
+}
+
+.step {
+  font-size: 0.5rem;
+  line-height: 1;
+  pointer-events: none;
+}

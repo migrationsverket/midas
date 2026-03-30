@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/react-vite'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '@midas-ds/test-utils'
 import * as stories from './Calendar.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
 const { Primary } = composeStories(stories)
 
@@ -36,6 +36,13 @@ describe('given a Primary Calendar', async () => {
         }).element().parentElement,
       )
       .toHaveAttribute('aria-selected', 'true')
+  })
+
+  it('should set data-hovered on the month buttons when hovered', async () => {
+    const { getByRole } = await render(<Primary />)
+    const previousMonth = getByRole('button').first()
+    await previousMonth.hover()
+    await expect.element(previousMonth).toHaveAttribute('data-hovered')
   })
 })
 

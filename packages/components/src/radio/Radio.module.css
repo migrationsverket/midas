@@ -12,13 +12,13 @@
   .wrap {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--midas-space-small);
     align-items: start;
   }
 
   &[aria-orientation='horizontal'] .wrap {
     flex-direction: row;
-    gap: 1rem;
+    gap: var(--midas-space-medium);
   }
 }
 
@@ -26,7 +26,7 @@
   font-size: var(--midas-typography-font-size-30);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--midas-space-small);
   color: var(--midas-text-primary);
   cursor: pointer;
 
@@ -38,7 +38,15 @@
     box-sizing: border-box;
     border: 0.0625rem solid var(--midas-border-color-primary);
     border-radius: 1.286rem;
-    transition: all var(--midas-transition-duration-fast);
+    transition:
+      border-color var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out),
+      border-width var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out),
+      background var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out),
+      padding var(--midas-transition-duration-instant)
+        var(--midas-transition-timing-ease-out);
 
     @media (forced-colors: active) {
       transition: none;
@@ -119,7 +127,7 @@
   }
 
   @media (width <= 479px) {
-    padding: 0.875rem 1rem;
+    padding: var(--midas-space-70) var(--midas-space-medium);
     border: 1px solid var(--midas-border-color-primary);
     width: auto;
 

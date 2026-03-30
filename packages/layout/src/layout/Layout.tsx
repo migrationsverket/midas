@@ -1,10 +1,17 @@
-import { ReactNode } from 'react'
+import clsx from 'clsx'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Layout.module.css'
 
-export interface LayoutProps {
-  children?: ReactNode
-}
+export type LayoutProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+>
 
-export const Layout = ({ children }: LayoutProps) => (
-  <div className={styles.layout}>{children}</div>
-)
+export const Layout = ({ className, ...rest }: LayoutProps) => {
+  return (
+    <div
+      className={clsx(className, styles.layout)}
+      {...rest}
+    />
+  )
+}

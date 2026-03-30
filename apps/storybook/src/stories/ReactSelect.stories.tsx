@@ -3,7 +3,7 @@ import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
 import { options } from '@midas-ds/test-utils'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/lib/react-select.css'
-import { Label, Text } from '@midas-ds/components'
+import { Button, DialogTrigger, Label, Modal, Text } from '@midas-ds/components'
 
 type Story = StoryObj<typeof Select>
 
@@ -65,4 +65,22 @@ export const MultiSelectMedium: Story = {
     ...MultiSelect.args,
     className: 'select medium',
   },
+}
+
+export const InModal: Story = {
+  args: {
+    menuPosition: 'fixed',
+  },
+  render: args => (
+    <DialogTrigger>
+      <Button>Öppna modal</Button>
+      <Modal title='Rubrik'>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Label htmlFor={inputId}>Label</Label>
+          <Text slot='description'>Description</Text>
+          <Select {...args} />
+        </div>
+      </Modal>
+    </DialogTrigger>
+  ),
 }

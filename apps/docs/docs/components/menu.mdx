@@ -7,6 +7,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
 import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
+import { OnActionExample } from '@site/src/components/examples/menu/MenuExamples'
 
 export const Example = () => {
   return (
@@ -81,6 +82,30 @@ Midas exporterar följande komponenter och typer:
 - `MenuSection` & `MenuSectionProps`
 - `Separator` & `SeparatorProps`
 - `MenuTrigger` & `MenuTriggerProps`
+
+### Hantera handlingar
+
+<div className='card' style={{ display: 'block' }}>
+  <OnActionExample />
+</div>
+
+Använd `onAction` på `Menu` för att lyssna på vilket menyval användaren väljer. Callbacken tar emot `id`-värdet från det valda `MenuItem`-elementet — se till att sätta ett `id` på varje `MenuItem`.
+
+```tsx
+<Menu onAction={key => console.log(key)}>
+  <MenuItem id='open'>Open</MenuItem>
+  <MenuItem id='rename'>Rename...</MenuItem>
+</Menu>
+```
+
+`onAction` kan också sättas direkt på ett enskilt `MenuItem` om du vill koppla specifik logik till ett alternativ:
+
+```tsx
+<Menu>
+  <MenuItem id='open' onAction={() => openFile()}>Open</MenuItem>
+  <MenuItem id='delete' onAction={() => deleteFile()}>Delete...</MenuItem>
+</Menu>
+```
 
 ### Länkar
 

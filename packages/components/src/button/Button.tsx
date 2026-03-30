@@ -1,21 +1,27 @@
 'use client'
 
-import * as React from 'react'
-import styles from './Button.module.css'
+import { forwardRef } from 'react'
 import {
   Button as AriaButton,
   ButtonContext,
-  ButtonProps,
-  ButtonRenderProps,
+  ButtonProps as AriaButtonProps,
+  composeRenderProps,
   useContextProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
 import { LucideIcon } from 'lucide-react'
+import clsx from '../utils/clsx'
 import { Size } from '../common/types'
 import { Spinner } from '../spinner'
-import { forwardRef } from 'react'
+import styles from './Button.module.css'
 
-export interface MidasButtonProps {
+/**
+ * Button to perform various actions.
+ *
+ * @interface ButtonProps
+ *
+ * @see {@link https://designsystem.migrationsverket.se/components/button}
+ */
+export interface ButtonProps extends AriaButtonProps {
   /**
    * Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label
    *
@@ -44,31 +50,22 @@ export interface MidasButtonProps {
   iconSize?: number
   /** Display the icon on the left or right side of the button text */
   iconPlacement?: 'left' | 'right'
-  children?:
-    | React.ReactNode
-    | ((
-        values: ButtonRenderProps & {
-          defaultChildren: React.ReactNode | undefined
-        },
-      ) => React.ReactNode)
-    | string
+  /**
+   * A pseudo-disabled state that enable focus but disables the `onPress` event.
+   * If combined with `isDisabled`, `isDisabled` takes precedence.
+   */
+  isInactive?: boolean
 }
 
-export type MidasButton = MidasButtonProps & ButtonProps
-
 /**
- * Button to perform various actions.
- *
- * @interface MidasButton
- *
- * @see {@link https://designsystem.migrationsverket.se/components/button}
+ * @deprecated since v17.0.0 please use `ButtonProps` instead
  */
+export type MidasButton = ButtonProps
 
-export const Button = forwardRef<HTMLButtonElement, MidasButton>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const [mergedProps, mergedRef] = useContextProps(props, ref, ButtonContext)
     const {
-      children,
       className,
       fullwidth,
       icon: IconComponent,
@@ -79,6 +76,8 @@ export const Button = forwardRef<HTMLButtonElement, MidasButton>(
       variant = 'primary',
       ...rest
     } = mergedProps
+
+    const isInactive = !mergedProps.isDisabled && mergedProps.isInactive
 
     return (
       <AriaButton
@@ -94,20 +93,31 @@ export const Button = forwardRef<HTMLButtonElement, MidasButton>(
           iconPlacement === 'right' && styles.iconRight,
           className,
         )}
+        data-inactive={isInactive || undefined}
+        aria-disabled={isInactive}
         ref={mergedRef}
         {...rest}
+        onPress={e => !isInactive && props.onPress?.(e)}
+        onPressChange={e => !isInactive && props.onPressChange?.(e)}
+        onPressEnd={e => !isInactive && props.onPressEnd?.(e)}
+        onPressStart={e => !isInactive && props.onPressStart?.(e)}
+        onPressUp={e => !isInactive && props.onPressUp?.(e)}
       >
-        <>
-          {IconComponent && !isPending && (
-            <IconComponent
-              aria-hidden
-              size={iconSize ?? 20}
-            />
-          )}
-          {isPending && <Spinner small />}
-          {children}
-        </>
+        {composeRenderProps(mergedProps.children, children => (
+          <>
+            {IconComponent && !isPending && (
+              <IconComponent
+                aria-hidden
+                size={iconSize ?? 20}
+              />
+            )}
+            {isPending && <Spinner small />}
+            {children}
+          </>
+        ))}
       </AriaButton>
     )
   },
 )
+
+Button.displayName = 'Button'

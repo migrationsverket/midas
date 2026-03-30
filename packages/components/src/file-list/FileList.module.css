@@ -1,0 +1,46 @@
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-small);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fileListItem {
+  align-items: center;
+  background-color: var(--midas-layer-01-base);
+  box-sizing: border-box;
+  display: flex;
+  font-family: var(--midas-typography-font-family);
+  height: var(--midas-size-control);
+  padding-inline-start: var(--midas-space-medium);
+}
+
+.fileInfo {
+  align-items: baseline;
+  display: flex;
+  flex: 1;
+  gap: var(--midas-space-small);
+  min-width: 0;
+}
+
+.fileName {
+  color: var(--midas-text-primary);
+  font-size: var(--midas-typography-font-size-30);
+  font-weight: var(--midas-typography-weight-medium);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileSize {
+  color: var(--midas-text-secondary);
+  flex-shrink: 0;
+  font-size: var(--midas-typography-font-size-30);
+}
+
+.deleteButton {
+  color: var(--midas-icon-primary);
+  flex-shrink: 0;
+}

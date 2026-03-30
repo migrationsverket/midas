@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Link.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 import { userEvent } from 'vitest/browser'
 
 const { PrimaryDisabled } = composeStories(stories)

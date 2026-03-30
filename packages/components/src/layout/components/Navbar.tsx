@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
   const { items, clientSideRouter, clientSideHref } = useLayoutContext()
   const strings = useLocalizedStringFormatter(messages)
 
-  const navBarGroup = items.at(0)?.items
+  const navBarGroup = items?.[0]?.items
 
   return (
     <nav

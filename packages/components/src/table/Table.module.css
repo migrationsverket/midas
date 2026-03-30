@@ -13,32 +13,38 @@
       background-color: var(--midas-layer-accent-01-base);
       color: var(--midas-text-primary);
       font-weight: 500;
-      padding: var(--midas-size-75) var(--midas-size-80);
+      padding: var(--midas-space-75) var(--midas-space-medium);
       text-align: left;
 
       &[data-focus-visible] {
-        outline: var(--midas-size-10) solid var(--midas-border-color-primary);
+        outline: var(--midas-space-10) solid var(--midas-border-color-primary);
         outline-offset: -4px;
       }
 
       &[data-allows-sorting] {
         cursor: pointer;
         user-select: none;
+        touch-action: manipulation;
 
         .sortIndicator {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          margin-left: var(--midas-size-20);
+          margin-left: var(--midas-space-xsmall);
           vertical-align: text-bottom;
         }
 
         .sortIconNeutral {
           opacity: 0;
-          transition: opacity 0.2s ease-in-out;
+          transition: opacity var(--midas-transition-duration-quick)
+            var(--midas-transition-timing-ease-in-out);
 
           @media (prefers-reduced-motion) {
             transition: none;
+          }
+
+          @media (hover: none) {
+            opacity: 0.5;
           }
         }
 
@@ -57,7 +63,7 @@
     background-color: var(--midas-layer-01-base);
 
     &[data-focused] {
-      outline: var(--midas-size-10) solid var(--midas-border-color-primary);
+      outline: var(--midas-space-10) solid var(--midas-border-color-primary);
       outline-offset: -4px;
     }
 
@@ -74,12 +80,12 @@
     .cell {
       border-bottom: 1px var(--midas-border-color-subtle) solid;
       color: var(--midas-text-primary);
-      padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
-        var(--midas-size-75);
+      padding: calc(var(--midas-space-75) - 1px) var(--midas-space-medium)
+        var(--midas-space-75);
 
       &[data-focus-visible] {
         outline-offset: -4px;
-        outline: var(--midas-size-10) solid var(--midas-border-color-primary);
+        outline: var(--midas-space-10) solid var(--midas-border-color-primary);
       }
 
       .selection {
@@ -93,7 +99,7 @@
     line-height: var(--midas-typography-line-height-10);
 
     .column {
-      padding: var(--midas-size-20) var(--midas-size-80);
+      padding: var(--midas-space-xsmall) var(--midas-space-medium);
       height: 14px;
 
       .selection {
@@ -102,8 +108,8 @@
     }
 
     .cell {
-      padding: calc(var(--midas-size-20) - 1px) var(--midas-size-80)
-        var(--midas-size-20);
+      padding: calc(var(--midas-space-xsmall) - 1px) var(--midas-space-medium)
+        var(--midas-space-xsmall);
 
       .selection {
         height: 16px;
@@ -113,12 +119,12 @@
 
   &.medium:not(.narrow) {
     .column {
-      padding: calc(var(--midas-size-60) - 1px) var(--midas-size-80);
+      padding: calc(var(--midas-space-60) - 1px) var(--midas-space-medium);
     }
 
     .cell {
-      padding: calc(var(--midas-size-60) - 2px) var(--midas-size-80)
-        calc(var(--midas-size-60) - 1px);
+      padding: calc(var(--midas-space-60) - 2px) var(--midas-space-medium)
+        calc(var(--midas-space-60) - 1px);
     }
   }
 

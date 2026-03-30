@@ -12,7 +12,7 @@
   background-color: var(--midas-layer-accent-01-base);
   color: var(--midas-text-primary);
   font-weight: 500;
-  padding: var(--midas-size-75) var(--midas-size-80);
+  padding: var(--midas-space-75) var(--midas-space-medium);
   text-align: left;
   position: relative;
 }
@@ -20,26 +20,33 @@
 .midas-tanstack-table td {
   border-bottom: 1px var(--midas-border-color-subtle) solid;
   color: var(--midas-text-primary);
-  padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
-    var(--midas-size-75);
-}
-
-.midas-tanstack-table tbody tr:hover {
-  background-color: var(--midas-layer-01-hover);
+  padding: calc(var(--midas-space-75) - 1px) var(--midas-space-medium)
+    var(--midas-space-75);
 }
 
 .midas-tanstack-table tbody tr:nth-child(even) {
   background-color: var(--midas-layer-01-base);
 }
 
-.midas-tanstack-table tbody tr:nth-child(even):hover {
+.midas-tanstack-table tbody tr:active {
   background-color: var(--midas-layer-01-hover);
+}
+
+@media (hover: hover) {
+  .midas-tanstack-table tbody tr:hover {
+    background-color: var(--midas-layer-01-hover);
+  }
+
+  .midas-tanstack-table tbody tr:nth-child(even):hover {
+    background-color: var(--midas-layer-01-hover);
+  }
 }
 
 /* Sorting styles */
 .midas-tanstack-table .sortable-header {
   cursor: pointer;
   user-select: none;
+  touch-action: manipulation;
 }
 
 .midas-tanstack-table .sort-icon-neutral {

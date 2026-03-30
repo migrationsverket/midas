@@ -54,12 +54,17 @@ export const PopoverTextExample = () => {
 }
 
 export const PopoverFormExample = () => {
+  const [isOpen, setOpen] = React.useState(false)
+
   return (
     <div
       className='card'
       style={{ display: 'block' }}
     >
-      <DialogTrigger>
+      <DialogTrigger
+        isOpen={isOpen}
+        onOpenChange={setOpen}
+      >
         <Button
           variant='icon'
           aria-label='Tillgänglighetsinställningar'
@@ -76,6 +81,13 @@ export const PopoverFormExample = () => {
             <Checkbox value='contrast'>Högkontrastläge</Checkbox>
             <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
           </CheckboxGroup>
+          <Button
+            fullwidth
+            style={{ marginTop: '0.5rem' }}
+            onPress={() => setOpen(false)}
+          >
+            Spara
+          </Button>
         </Popover>
       </DialogTrigger>
     </div>

@@ -7,7 +7,7 @@ import styles from './Tabs.module.css'
 import { TabsContext } from './TabsContext'
 
 export const TabPanel: React.FC<TabPanelProps> = ({ className, ...props }) => {
-  const { variant } = React.useContext(TabsContext)
+  const { variant, size } = React.useContext(TabsContext)
 
   return (
     <AriaTabPanel
@@ -15,6 +15,7 @@ export const TabPanel: React.FC<TabPanelProps> = ({ className, ...props }) => {
         styles.tabPanel,
         {
           [styles.contained]: variant === 'contained',
+          [styles.medium]: size === 'medium',
         },
         className,
       )}

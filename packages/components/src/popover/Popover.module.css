@@ -1,7 +1,7 @@
 .popover {
   font-family: var(--midas-typography-font-family);
   font-size: var(--midas-typography-font-size-20);
-  padding: var(--midas-size-80);
+  padding: var(--midas-space-medium);
   color: var(--midas-text-primary);
   background-color: var(--midas-layer-01-base);
   outline: none;
@@ -13,8 +13,10 @@
   overflow-wrap: break-word;
   box-sizing: border-box;
   transition:
-    transform 200ms,
-    opacity 200ms;
+    transform var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out),
+    opacity var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
 
   @media (forced-colors: active) {
     border: 1px solid;
@@ -29,11 +31,19 @@
     }
   }
 
-  &[data-entering],
+  &[data-entering] {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
   &[data-exiting] {
     transform: var(--origin);
-    transition: transform 200ms ease-in-out;
     opacity: 0;
+    transition:
+      transform var(--midas-transition-duration-quick)
+        var(--midas-transition-timing-ease-in),
+      opacity var(--midas-transition-duration-quick)
+        var(--midas-transition-timing-ease-in);
   }
 
   &:has(.arrow) {

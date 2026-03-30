@@ -20,6 +20,7 @@ docker compose up -d
 ```
 
 Detta startar i bakgrunden:
+
 - **Storybook** på http://localhost:4400
 - **Dokumentation** på http://localhost:3000
 - **Playground** på http://localhost:4200
@@ -30,6 +31,7 @@ Första uppstarten tar några minuter för att installera beroenden. Följ proce
 :::
 
 **Starta en specifik app:**
+
 ```bash
 docker compose up -d storybook  # Endast Storybook
 docker compose up -d docs       # Endast dokumentation
@@ -38,10 +40,10 @@ docker compose up -d docs       # Endast dokumentation
 ### Kör kommandon
 
 ```bash
-docker compose exec cli npx nx test components   # Kör tester
-docker compose exec cli npx nx build components  # Bygg komponenter
-docker compose exec cli npm install <paket>      # Installera beroenden
-docker compose exec cli sh                       # Öppna shell i containern
+docker compose exec midas-cli npx nx test components   # Kör tester
+docker compose exec midas-cli npx nx build components  # Bygg komponenter
+docker compose exec midas-cli npm install <paket>      # Installera beroenden
+docker compose exec midas-cli sh                       # Öppna shell i containern
 ```
 
 ### Stoppa
@@ -57,6 +59,7 @@ docker compose down
 **Ändringar syns inte:** Kontrollera loggarna med `docker compose logs -f <service>` eller starta om med `docker compose restart <service>`.
 
 **Bygga om efter beroendeändringar:**
+
 ```bash
 docker compose down
 docker compose build --no-cache
@@ -64,6 +67,7 @@ docker compose up -d
 ```
 
 **Ren omstart:**
+
 ```bash
 docker compose down -v
 docker compose build --no-cache
@@ -76,7 +80,7 @@ docker compose up -d
 
 Om du föredrar att köra allt lokalt behöver du:
 
-Node version `^22.12.0` krävs. Installera [Nx](https://nx.dev) globalt: `npm install --global nx@latest`
+Node version `^24` krävs. Installera [Nx](https://nx.dev) globalt: `npm install --global nx@latest`
 
 ### Nx
 
@@ -118,12 +122,14 @@ För att testa komponentbiblioteket i en annan app kan du publicera det till ett
 ### Publicera till lokalt registry
 
 **Med Docker:**
+
 ```bash
 docker compose up -d verdaccio
-docker compose exec cli npx nx run @midas-ds/source:release:local:docker:dev
+docker compose exec midas-cli npx nx run @midas-ds/source:release:local:docker:dev
 ```
 
 **Utan Docker:**
+
 ```bash
 nx run @midas-ds/source:release:local:dev
 ```
@@ -136,9 +142,11 @@ npm install @midas-ds/components@latest --registry=http://localhost:4873/
 
 :::warning
 Skriptet ändrar `package.json`-filer med temporära versioner (t.ex. `15.2.7-local.0`). **Committa inte dessa ändringar!** Återställ efter testning:
+
 ```bash
 git checkout -- packages/*/package.json
 ```
+
 :::
 
 ---

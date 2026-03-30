@@ -27,8 +27,8 @@
   th,
   & .day {
     text-align: center;
-    width: var(--midas-size-130);
-    height: var(--midas-size-130);
+    width: var(--midas-size-control-md);
+    height: var(--midas-size-control-md);
     box-sizing: border-box;
   }
 
@@ -47,8 +47,6 @@
   background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: inline-block;
-  flex-direction: column;
-  align-items: center;
   margin: auto;
   color: var(--midas-text-primary);
 
@@ -101,7 +99,7 @@
     background-color: var(--midas-layer-01-base);
     cursor: pointer;
 
-    &:hover:not([data-disabled]) {
+    &[data-hovered]:not([data-disabled]) {
       background-color: var(--midas-field-01-hover);
     }
 
@@ -133,6 +131,11 @@
   &[data-hovered]:not([data-unavailable], [data-disabled], [data-selected]) {
     background-color: var(--midas-field-01-hover);
     border-color: var(--midas-field-01-hover);
+  }
+
+  &[data-pressed]:not([data-unavailable], [data-disabled]) {
+    background-color: var(--midas-field-01-active);
+    border-color: var(--midas-field-01-active);
   }
 
   &[data-selected='true'] {

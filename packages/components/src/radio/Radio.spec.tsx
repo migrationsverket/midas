@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 import * as stories from './Radio.stories'
 import styles from './Radio.module.css'
 
@@ -21,6 +21,13 @@ describe('given a primary RadioGroup', async () => {
     radios.forEach(async radio => {
       expect(radio).toHaveClass(styles.radio, 'test-radio-class')
     })
+  })
+
+  it('should accept a function as children', async () => {
+    const { getByRole } = await render(
+      <Primary>{({ orientation }) => orientation}</Primary>,
+    )
+    await expect.element(getByRole('radiogroup')).toHaveTextContent('vertical')
   })
 })
 

@@ -2,9 +2,18 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DateField.stories'
-import { render } from 'vitest-browser-react'
+import { render } from '../../test-utils'
 
-const { WithClearButton } = composeStories(stories)
+const { Primary, WithClearButton } = composeStories(stories)
+
+describe('given a DateField', async () => {
+  it('should set data-hovered on a segment when hovered', async () => {
+    await render(<Primary />)
+    const segment = page.getByRole('spinbutton').first()
+    await segment.hover()
+    await expect.element(segment).toHaveAttribute('data-hovered')
+  })
+})
 
 describe('given a clearable DateField ', async () => {
   beforeEach(async () => {

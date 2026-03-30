@@ -1,2 +1,2 @@
-export { Button, type MidasButtonProps, type MidasButton } from './Button'
-export { ButtonGroup } from './ButtonGroup'
+export * from './Button'
+export * from './ButtonGroup'

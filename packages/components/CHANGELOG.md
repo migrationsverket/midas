@@ -1,3 +1,529 @@
+## 17.10.12 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.16
+
+## 17.10.11 (2026-03-30)
+
+### 🩹 Fixes
+
+- **components, select, combobox:** add relative max height to list-box ([de0767e0dc](https://github.com/migrationsverket/midas/commit/de0767e0dc))
+
+## 17.10.10 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table-styles,datepicker-styles,select-styles:** add user-select and touch-action to non-RAC interactive elements ([248294fd3e](https://github.com/migrationsverket/midas/commit/248294fd3e))
+
+## 17.10.9 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table:** bump sort icon touch opacity to 0.5 for WCAG contrast ([22adcd40fd](https://github.com/migrationsverket/midas/commit/22adcd40fd))
+- **components,table:** show sort icon at low opacity on touch devices ([2b3f27b6b5](https://github.com/migrationsverket/midas/commit/2b3f27b6b5))
+- **components,link-button:** consolidate hover rules under @media (hover: hover) ([6c6c2d9cd6](https://github.com/migrationsverket/midas/commit/6c6c2d9cd6))
+- **components,link-button:** move redundant :hover rules under @media (hover: hover) ([c200e16ebe](https://github.com/migrationsverket/midas/commit/c200e16ebe))
+
+### 🔧 Maintenance
+
+- **components,link-button:** clean up disabled selector specificity in hover rules ([973a51e507](https://github.com/migrationsverket/midas/commit/973a51e507))
+
+## 17.10.8 (2026-03-26)
+
+### 🧪 Tests updated
+
+- **components,menu:** clean up spec — remove duplicate test, drop wip comments ([c76b524d28](https://github.com/migrationsverket/midas/commit/c76b524d28))
+- **components,menu:** migrate RAC test-utils experiment to use composeStories ([e55e27f2bd](https://github.com/migrationsverket/midas/commit/e55e27f2bd))
+- **components,menu:** migrate spec to use composeStories ([5ffaf78336](https://github.com/migrationsverket/midas/commit/5ffaf78336))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.15
+
+## 17.10.7 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,calendar:** add data-pressed state to day cells ([061d652521](https://github.com/migrationsverket/midas/commit/061d652521))
+
+### 🔧 Maintenance
+
+- **components,calendar:** remove dead flex properties on .calendar ([cfbf658aaf](https://github.com/migrationsverket/midas/commit/cfbf658aaf))
+
+## 17.10.6 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,list-box:** add data-pressed state to ListBox items ([75df20d026](https://github.com/migrationsverket/midas/commit/75df20d026))
+
+## 17.10.5 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components, combobox:** replace onMouseuUp with onPointerUp ([2422daff1b](https://github.com/migrationsverket/midas/commit/2422daff1b))
+
+## 17.10.4 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,checkbox:** replace :hover with [data-hovered] in compound states ([c4ea630b64](https://github.com/migrationsverket/midas/commit/c4ea630b64))
+- **components, card:** add data-hovered selector for links ([aac30dc97f](https://github.com/migrationsverket/midas/commit/aac30dc97f))
+- **components, select:** use data-hovered selector for buttons ([449cef9b27](https://github.com/migrationsverket/midas/commit/449cef9b27))
+- **components, calendar:** use data-hovered selector for month buttons ([ee12d1434d](https://github.com/migrationsverket/midas/commit/ee12d1434d))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.14
+
+## 17.10.3 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,date-field:** replace :hover with data-hovered on date segments ([b3746d7ba4](https://github.com/migrationsverket/midas/commit/b3746d7ba4))
+
+## 17.10.2 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components, list-box:** replace css :hover selector ([98fe486cb4](https://github.com/migrationsverket/midas/commit/98fe486cb4))
+
+### 🏭 Refactoring
+
+- **components, list-box:** utilize composeRenderProps helper ([2d67426360](https://github.com/migrationsverket/midas/commit/2d67426360))
+
+### 📖 Documentation changes
+
+- **components, file-trigger:** update dropzone example ([5e47955539](https://github.com/migrationsverket/midas/commit/5e47955539))
+
+### 🧪 Tests updated
+
+- **components, list-box:** add stories and tests ([e951065c3d](https://github.com/migrationsverket/midas/commit/e951065c3d))
+
+## 17.10.1 (2026-03-24)
+
+### 🏭 Refactoring
+
+- **components, layout:** remove es2022 array method ([c75c7ace5d](https://github.com/migrationsverket/midas/commit/c75c7ace5d))
+
+## 17.10.0 (2026-03-19)
+
+### 🚀 Features
+
+- **components,file-list:** localize delete button aria-label ([30410e821d](https://github.com/migrationsverket/midas/commit/30410e821d))
+- **components,docs:** add FileList component ([dae5f056c2](https://github.com/migrationsverket/midas/commit/dae5f056c2))
+- **components,color-scheme-switch:** deprecate defaultValue in favor of defaultScheme ([1c48d0b7f1](https://github.com/migrationsverket/midas/commit/1c48d0b7f1))
+
+### 🩹 Fixes
+
+- **components,file-list:** remove id prop from FileListItem ([688bb0b04a](https://github.com/migrationsverket/midas/commit/688bb0b04a))
+- **components,file-list:** don't forward id to li element ([214378b006](https://github.com/migrationsverket/midas/commit/214378b006))
+- **components,file-list:** correct font size and weight tokens for file name and size ([0ae7b21451](https://github.com/migrationsverket/midas/commit/0ae7b21451))
+- **components,color-scheme-switch:** show focus ring on selected button ([b112b5f823](https://github.com/migrationsverket/midas/commit/b112b5f823))
+
+### 🏭 Refactoring
+
+- **components,docs,file-list:** replace GridList with plain list ([6046308cb3](https://github.com/migrationsverket/midas/commit/6046308cb3))
+
+### 🔧 Maintenance
+
+- **components,docs,file-list:** remove leftover id props from docs, spec and playground ([4439e37443](https://github.com/migrationsverket/midas/commit/4439e37443))
+- **components,file-list:** remove id prop from stories ([0fb0bba495](https://github.com/migrationsverket/midas/commit/0fb0bba495))
+- **components,file-list:** fix trailing blank line in css ([39b8525728](https://github.com/migrationsverket/midas/commit/39b8525728))
+- **components,file-list:** fix empty interface lint error ([405d702ee9](https://github.com/migrationsverket/midas/commit/405d702ee9))
+- **components,file-list:** fix lint errors ([d175b49ea4](https://github.com/migrationsverket/midas/commit/d175b49ea4))
+- **components,color-scheme-switch:** fix button sizing and selected state styles ([fe5b1dc132](https://github.com/migrationsverket/midas/commit/fe5b1dc132))
+- **components,color-scheme-switch:** replace hardcoded padding with space token ([3f29552fe2](https://github.com/migrationsverket/midas/commit/3f29552fe2))
+
+## 17.9.0 (2026-03-19)
+
+### 🚀 Features
+
+- **components,search-field:** deprecate built-in submit button, fix a11y ([717b9b34ab](https://github.com/migrationsverket/midas/commit/717b9b34ab))
+
+### 🩹 Fixes
+
+- **components,search-field:** make built-in button non-breaking, add future flag ([4c6a0b985e](https://github.com/migrationsverket/midas/commit/4c6a0b985e))
+
+### 🏭 Refactoring
+
+- **components,search-field:** rebuild on RAC SearchField component ([86de78182e](https://github.com/migrationsverket/midas/commit/86de78182e))
+
+### 📖 Documentation changes
+
+- **components,search-field:** link v18 tracking issue from showButton JSDoc ([51c90e03b7](https://github.com/migrationsverket/midas/commit/51c90e03b7))
+
+## 17.8.3 (2026-03-18)
+
+### 🔧 Maintenance
+
+- **components:** fix stylelint formatting errors ([37ec3ea5a0](https://github.com/migrationsverket/midas/commit/37ec3ea5a0))
+- **components,theme:** standardize animation tokens and transitions ([09a2ce6a04](https://github.com/migrationsverket/midas/commit/09a2ce6a04))
+- **components:** replace hardcoded spacing values with tokens ([127194d71c](https://github.com/migrationsverket/midas/commit/127194d71c))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.13
+
+## 17.8.2 (2026-03-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.12
+
+## 17.8.1 (2026-03-13)
+
+### 🩹 Fixes
+
+- **components, tag:** add box-sizing for consistent height ([b66bd4adfd](https://github.com/migrationsverket/midas/commit/b66bd4adfd))
+
+## 17.8.0 (2026-03-12)
+
+### 🚀 Features
+
+- **components, radio:** accept function for children prop ([75260130c8](https://github.com/migrationsverket/midas/commit/75260130c8))
+- **components, accordion:** accept function for children prop ([08bc1ba117](https://github.com/migrationsverket/midas/commit/08bc1ba117))
+
+## 17.7.8 (2026-03-12)
+
+### 🩹 Fixes
+
+- **components,list-box:** fix horizontal scrollbar in chromium ([90993805d1](https://github.com/migrationsverket/midas/commit/90993805d1))
+- **components,combobox:** prevent long input text from covering toggle button ([33120ccb81](https://github.com/migrationsverket/midas/commit/33120ccb81))
+
+## 17.7.7 (2026-03-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.11
+
+## 17.7.6 (2026-03-11)
+
+### 🏭 Refactoring
+
+- **layout:** rename folders and adjust module boundaries ([d403b2d226](https://github.com/migrationsverket/midas/commit/d403b2d226))
+- **components, button:** use helper for rendering children functions ([594ee17430](https://github.com/migrationsverket/midas/commit/594ee17430))
+
+## 17.7.5 (2026-03-11)
+
+### 🩹 Fixes
+
+- **components,table-styles:** update RAC to latest ([e2877fa6e2](https://github.com/migrationsverket/midas/commit/e2877fa6e2))
+
+### 🏭 Refactoring
+
+- **components,label:** remove local state ([f64cb9d51c](https://github.com/migrationsverket/midas/commit/f64cb9d51c))
+- **components,popover:** enable context props ([aeae93325a](https://github.com/migrationsverket/midas/commit/aeae93325a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.10
+
+## 17.7.4 (2026-03-11)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.9
+
+## 17.7.3 (2026-03-10)
+
+### 🩹 Fixes
+
+- **components, tag:** adjust vertical padding when using inline svg ([8258205085](https://github.com/migrationsverket/midas/commit/8258205085))
+
+## 17.7.2 (2026-03-10)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.8
+
+## 17.7.1 (2026-03-10)
+
+### 🩹 Fixes
+
+- **components, select:** merge provided popover styles ([a381092486](https://github.com/migrationsverket/midas/commit/a381092486))
+- **components, tag:** adjust size of inline svgs ([d668bfdf77](https://github.com/migrationsverket/midas/commit/d668bfdf77))
+
+## 17.7.0 (2026-03-10)
+
+### 🚀 Features
+
+- **components,tag:** add styles for inline icons ([0d6925f102](https://github.com/migrationsverket/midas/commit/0d6925f102))
+
+### 🩹 Fixes
+
+- **components,tag:** adjust vertical padding ([012e29f69c](https://github.com/migrationsverket/midas/commit/012e29f69c))
+
+### 🏭 Refactoring
+
+- **components,tag:** sort css attributes ([0be146e552](https://github.com/migrationsverket/midas/commit/0be146e552))
+
+## 17.6.6 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.7
+
+## 17.6.5 (2026-03-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.6
+
+## 17.6.4 (2026-03-09)
+
+### 🩹 Fixes
+
+- **components, layout:** add "target" to SidebarLinkProps ([dead9e36ca](https://github.com/migrationsverket/midas/commit/dead9e36ca))
+
+### 🧪 Tests updated
+
+- **components, layout:** add tests for target="_blank" ([8e97dc9c93](https://github.com/migrationsverket/midas/commit/8e97dc9c93))
+
+## 17.6.3 (2026-03-09)
+
+This was a version bump only for components to align it with other projects, there were no code changes.
+
+## 17.6.2 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.5
+
+## 17.6.1 (2026-03-06)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.4
+
+## 17.6.0 (2026-03-05)
+
+### 🚀 Features
+
+- **components,select:** add popoverProps passthrough ([1be0c77656](https://github.com/migrationsverket/midas/commit/1be0c77656))
+
+## 17.5.5 (2026-03-04)
+
+### 🩹 Fixes
+
+- **components,select:** call commitValidation in SelectAll to clear invalid state after selection ([06be0e034f](https://github.com/migrationsverket/midas/commit/06be0e034f))
+
+### 🔧 Maintenance
+
+- **components,select:** remove unused getByText destructure ([caddd4498d](https://github.com/migrationsverket/midas/commit/caddd4498d))
+
+## 17.5.4 (2026-03-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.3
+
+## 17.5.3 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.2
+
+## 17.5.2 (2026-02-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.1
+
+## 17.5.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- **components, breadcrumbs:** adjust styling according to spec ([0c08821279](https://github.com/migrationsverket/midas/commit/0c08821279))
+
+## 17.5.0 (2026-02-25)
+
+### 🚀 Features
+
+- **components, info-banner:** change HTML element to aside ([e2df5f3877](https://github.com/migrationsverket/midas/commit/e2df5f3877))
+- **components, info-banner:** add styling for unordered lists ([f048a5e9cb](https://github.com/migrationsverket/midas/commit/f048a5e9cb))
+
+### 🏭 Refactoring
+
+- **components, info-banner:** use react-stately controlled state hook ([d813124151](https://github.com/migrationsverket/midas/commit/d813124151))
+
+### 🧪 Tests updated
+
+- **components, info-banner:** add tests ([ddee571e0c](https://github.com/migrationsverket/midas/commit/ddee571e0c))
+
+## 17.4.0 (2026-02-25)
+
+### 🚀 Features
+
+- **components,tabs:** add size prop with large/medium variants ([9a6c169311](https://github.com/migrationsverket/midas/commit/9a6c169311))
+
+### 🧪 Tests updated
+
+- **components, menu:** remove flaky keyboard interactions ([e7fc6cfb6d](https://github.com/migrationsverket/midas/commit/e7fc6cfb6d))
+
+## 17.3.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- **components:** give focus target a unique id to prevent ambiguous locator ([7cd771d591](https://github.com/migrationsverket/midas/commit/7cd771d591))
+- **components,date-picker:** replace fragile tab-counting with role-based queries in tests ([fb5b0b060a](https://github.com/migrationsverket/midas/commit/fb5b0b060a))
+
+### 🔧 Maintenance
+
+- **components:** move render wrapper focus target outside React container ([3f17dd9030](https://github.com/migrationsverket/midas/commit/3f17dd9030))
+
+### 🔙 Rollback changes
+
+- **components:** restore original render wrapper ([9c6fcdc5a7](https://github.com/migrationsverket/midas/commit/9c6fcdc5a7))
+
+## 17.3.0 (2026-02-24)
+
+### 🚀 Features
+
+- **components,theme:** migrate CSS from --midas-spacing-*/size-[0-9]* to --midas-space-*/size-* ([d770ac0e26](https://github.com/migrationsverket/midas/commit/d770ac0e26))
+
+### 🔧 Maintenance
+
+- **theme:** rename size token control-sm to control-md ([d7c0784e95](https://github.com/migrationsverket/midas/commit/d7c0784e95))
+- **components:** fix prettier formatting after token rename ([a0b1333f96](https://github.com/migrationsverket/midas/commit/a0b1333f96))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.0
+
+## 17.2.6 (2026-02-23)
+
+### 🩹 Fixes
+
+- **components, layout:** change font weight for active menu items ([9a67f61f63](https://github.com/migrationsverket/midas/commit/9a67f61f63))
+
+## 17.2.5 (2026-02-23)
+
+### 🩹 Fixes
+
+- **components, textfield:** remove password reveal active background ([0f9750b6bd](https://github.com/migrationsverket/midas/commit/0f9750b6bd))
+
+## 17.2.4 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.2
+
+## 17.2.3 (2026-02-23)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.1
+
+## 17.2.2 (2026-02-19)
+
+### 🩹 Fixes
+
+- **components, textfield:** toggle input type for password ([#1064](https://github.com/migrationsverket/midas/pull/1064))
+
+## 17.2.1 (2026-02-19)
+
+### 🩹 Fixes
+
+- **components, textfield:** hide edge password reveal button ([#1063](https://github.com/migrationsverket/midas/pull/1063))
+
+## 17.2.0 (2026-02-18)
+
+### 🚀 Features
+
+- **components, tag:** deprecate dismissable prop ([228210703b](https://github.com/migrationsverket/midas/commit/228210703b))
+- **components, tag:** add color prop ([85ed37965d](https://github.com/migrationsverket/midas/commit/85ed37965d))
+
+### 🩹 Fixes
+
+- **components, tag:** replace color tokens ([311347b851](https://github.com/migrationsverket/midas/commit/311347b851))
+
+### 🏭 Refactoring
+
+- **components,tag:** use tag-scoped tokens instead of support tokens ([60a549a2f0](https://github.com/migrationsverket/midas/commit/60a549a2f0))
+
+### 📖 Documentation changes
+
+- **components, tag:** add stories for color variants ([d80920757c](https://github.com/migrationsverket/midas/commit/d80920757c))
+
+### 🔧 Maintenance
+
+- **components, tag:** add deprecation comment for lint tracking ([fa1dbcb0b0](https://github.com/migrationsverket/midas/commit/fa1dbcb0b0))
+
+### 🧪 Tests updated
+
+- **components, tag:** add test for deprecated dismissable prop ([efa39bfb4a](https://github.com/migrationsverket/midas/commit/efa39bfb4a))
+- **components, tag:** typos ([18ff479ba3](https://github.com/migrationsverket/midas/commit/18ff479ba3))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.11.0
+
+## 17.1.0 (2026-02-18)
+
+### 🚀 Features
+
+- **components, combobox:** add new prop listBoxProps ([#1061](https://github.com/migrationsverket/midas/pull/1061))
+
+### 🧪 Tests updated
+
+- **components:** setup custom render wrapper ([527bc0edf4](https://github.com/migrationsverket/midas/commit/527bc0edf4))
+- **components:** make browser tests pass in headed Playwright mode ([22e76b8727](https://github.com/migrationsverket/midas/commit/22e76b8727))
+
+## 17.0.2 (2026-02-17)
+
+### 🩹 Fixes
+
+- **components, textfield:** add hover color to password button ([3f2f21971a](https://github.com/migrationsverket/midas/commit/3f2f21971a))
+
+## 17.0.1 (2026-02-16)
+
+### 🩹 Fixes
+
+- **components,datepicker:** fix calendar icon btn placement in firefox ([1107d2aeea](https://github.com/migrationsverket/midas/commit/1107d2aeea))
+
+# 17.0.0 (2026-02-16)
+
+### 🚀 Features
+
+- **components, select, combobox:** extend type for sections ([1c964f7b40](https://github.com/migrationsverket/midas/commit/1c964f7b40))
+
+### 📖 Documentation changes
+
+- release notes for v17.0.0 ([18f6b788a5](https://github.com/migrationsverket/midas/commit/18f6b788a5))
+
+## 16.8.6 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.8
+
+## 16.8.5 (2026-02-16)
+
+### 🩹 Fixes
+
+- **components,toast:** rewrite storybook stories and remove fictional priority API ([89e6a160f7](https://github.com/migrationsverket/midas/commit/89e6a160f7))
+
+### 🧪 Tests updated
+
+- **components,toast:** update tests to match rewritten stories ([3a33d26ef3](https://github.com/migrationsverket/midas/commit/3a33d26ef3))
+
+## 16.8.4 (2026-02-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.10.7
+
+## 16.8.3 (2026-02-12)
+
+### 🩹 Fixes
+
+- **components,toast:** add focus-visible to toast region ([0eae529892](https://github.com/migrationsverket/midas/commit/0eae529892))
+
+### 🔧 Maintenance
+
+- **components,menu:** deprecate `MenuItemObject` ([95b5ef21c1](https://github.com/migrationsverket/midas/commit/95b5ef21c1))
+
 ## 16.8.2 (2026-02-07)
 
 ### 🏭 Refactoring
