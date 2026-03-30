@@ -45,6 +45,10 @@
   /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
   height: var(--visual-viewport-height);
 
+  @media (width <= 479px) {
+    align-items: flex-start;
+  }
+
   &[data-entering] {
     animation: modal-fade var(--midas-transition-duration-quick)
       var(--midas-transition-timing-ease-out);
