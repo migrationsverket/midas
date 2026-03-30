@@ -1,3 +1,15 @@
+## 3.12.16 (2026-03-30)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.15 (2026-03-26)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.14 (2026-03-26)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.12.13 (2026-03-18)
 
 ### 🔧 Maintenance

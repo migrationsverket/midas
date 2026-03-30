@@ -1,52 +1,55 @@
 'use client'
 
+import clsx from 'clsx'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
-import { Button, useLocalizedStringFormatter, clsx } from '@midas-ds/components'
+import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { useControlledState } from '@react-stately/utils'
-import { PanelBody, PanelHeader, PanelProps, PanelTitle } from '..'
-import messages from '../intl/translations.json'
-import { useIsMobileDevice } from '../../utils'
-import { CollapsePanelContext } from './CollapsePanelContext'
-import styles from './CollapsePanel.module.css'
+import { filterDOMProps } from '@react-aria/utils'
+import {
+  PanelBody,
+  PanelBodyProps,
+  PanelHeader,
+  PanelTitle,
+  PanelTitleProps,
+} from '../panel'
+import messages from './intl/translations.json'
+import { useIsMobileDevice } from '../utils'
+import { SidebarContext } from './SidebarContext'
+import styles from './Sidebar.module.css'
 
-export interface CollapseTriggerProps {
+export interface SidebarProps
+  extends PanelBodyProps, Pick<PanelTitleProps, 'title'> {
   isCollapsed?: boolean
   defaultCollapsed?: boolean
   onCollapseChange?: (isCollapsed: boolean) => void
 }
 
-export type CollapsePanelProps = Omit<PanelProps<'collapse'>, 'variant'> &
-  CollapseTriggerProps
-
-export const CollapsePanel = ({
+export const Sidebar = ({
   children,
   className,
-  isCollapsed: isCollapsedProp,
-  defaultCollapsed = false,
-  onCollapseChange,
   title,
-  ...rest
-}: CollapsePanelProps) => {
+  ...props
+}: SidebarProps) => {
   const strings = useLocalizedStringFormatter(messages)
 
   const isMobileDevice = useIsMobileDevice()
 
   const [isCollapsed, setIsCollapsed] = useControlledState(
-    isCollapsedProp,
-    defaultCollapsed,
-    onCollapseChange,
+    props.isCollapsed,
+    props.defaultCollapsed || false,
+    props.onCollapseChange,
   )
 
   const handlePress = () =>
     setIsCollapsed(previouslyCollapsed => !previouslyCollapsed)
 
   return isMobileDevice ? null : (
-    <CollapsePanelContext.Provider value={{ isCollapsed }}>
+    <SidebarContext.Provider value={{ isCollapsed }}>
       <PanelBody
-        className={clsx(className, styles.collapsePanel, {
+        className={clsx(className, styles.sidebar, {
           [styles.collapsed]: isCollapsed,
         })}
-        {...rest}
+        {...filterDOMProps(props)}
       >
         <aside>
           <PanelHeader>
@@ -77,6 +80,6 @@ export const CollapsePanel = ({
           {children}
         </aside>
       </PanelBody>
-    </CollapsePanelContext.Provider>
+    </SidebarContext.Provider>
   )
 }

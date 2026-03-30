@@ -1,20 +1,17 @@
+'use client'
+
 import { useContext } from 'react'
 import { clsx, Text, TextProps } from '@midas-ds/components'
-import { CollapsePanelContext } from '../../panel'
+import { SidebarContext } from '../../sidebar'
 import styles from './NavigationHeader.module.css'
 
-export type NavigationHeaderProps = TextProps
-
-export const NavigationHeader = ({
-  className,
-  ...rest
-}: NavigationHeaderProps) => {
-  const { isCollapsed } = useContext(CollapsePanelContext)
+export const NavigationHeader = ({ className, ...rest }: TextProps) => {
+  const sidebarContext = useContext(SidebarContext)
 
   return (
     <Text
       className={clsx(className, styles.navigationHeader, {
-        [styles.collapsed]: isCollapsed,
+        [styles.collapsed]: sidebarContext?.isCollapsed,
       })}
       {...rest}
     />

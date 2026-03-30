@@ -1,9 +1,9 @@
 'use client'
 
+import clsx from 'clsx'
 import { useContext } from 'react'
 import { Collection, CollectionProps } from '@react-aria/collections'
-import { clsx } from '@midas-ds/components'
-import { CollapsePanelContext } from '../../panel'
+import { SidebarContext } from '../../sidebar'
 import styles from './NavigationSubMenu.module.css'
 
 export type NavigationSubMenuProps<T extends object> = CollectionProps<T> & {
@@ -16,7 +16,7 @@ export const NavigationSubMenu = <T extends object>({
   items,
   ...rest
 }: NavigationSubMenuProps<T>) => {
-  const { isCollapsed } = useContext(CollapsePanelContext)
+  const sidebarContext = useContext(SidebarContext)
   const { length: itemLength } = Array.from(items || [])
   const isDynamicCollection = typeof children === 'function'
 
@@ -27,7 +27,7 @@ export const NavigationSubMenu = <T extends object>({
   return (
     <ul
       className={clsx(className, styles.navigationSubMenu, {
-        [styles.collapsed]: isCollapsed,
+        [styles.collapsed]: sidebarContext?.isCollapsed,
       })}
     >
       <Collection

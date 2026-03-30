@@ -1,3 +1,105 @@
+## 17.10.12 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.16
+
+## 17.10.11 (2026-03-30)
+
+### 🩹 Fixes
+
+- **components, select, combobox:** add relative max height to list-box ([de0767e0dc](https://github.com/migrationsverket/midas/commit/de0767e0dc))
+
+## 17.10.10 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table-styles,datepicker-styles,select-styles:** add user-select and touch-action to non-RAC interactive elements ([248294fd3e](https://github.com/migrationsverket/midas/commit/248294fd3e))
+
+## 17.10.9 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table:** bump sort icon touch opacity to 0.5 for WCAG contrast ([22adcd40fd](https://github.com/migrationsverket/midas/commit/22adcd40fd))
+- **components,table:** show sort icon at low opacity on touch devices ([2b3f27b6b5](https://github.com/migrationsverket/midas/commit/2b3f27b6b5))
+- **components,link-button:** consolidate hover rules under @media (hover: hover) ([6c6c2d9cd6](https://github.com/migrationsverket/midas/commit/6c6c2d9cd6))
+- **components,link-button:** move redundant :hover rules under @media (hover: hover) ([c200e16ebe](https://github.com/migrationsverket/midas/commit/c200e16ebe))
+
+### 🔧 Maintenance
+
+- **components,link-button:** clean up disabled selector specificity in hover rules ([973a51e507](https://github.com/migrationsverket/midas/commit/973a51e507))
+
+## 17.10.8 (2026-03-26)
+
+### 🧪 Tests updated
+
+- **components,menu:** clean up spec — remove duplicate test, drop wip comments ([c76b524d28](https://github.com/migrationsverket/midas/commit/c76b524d28))
+- **components,menu:** migrate RAC test-utils experiment to use composeStories ([e55e27f2bd](https://github.com/migrationsverket/midas/commit/e55e27f2bd))
+- **components,menu:** migrate spec to use composeStories ([5ffaf78336](https://github.com/migrationsverket/midas/commit/5ffaf78336))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.15
+
+## 17.10.7 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,calendar:** add data-pressed state to day cells ([061d652521](https://github.com/migrationsverket/midas/commit/061d652521))
+
+### 🔧 Maintenance
+
+- **components,calendar:** remove dead flex properties on .calendar ([cfbf658aaf](https://github.com/migrationsverket/midas/commit/cfbf658aaf))
+
+## 17.10.6 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,list-box:** add data-pressed state to ListBox items ([75df20d026](https://github.com/migrationsverket/midas/commit/75df20d026))
+
+## 17.10.5 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components, combobox:** replace onMouseuUp with onPointerUp ([2422daff1b](https://github.com/migrationsverket/midas/commit/2422daff1b))
+
+## 17.10.4 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,checkbox:** replace :hover with [data-hovered] in compound states ([c4ea630b64](https://github.com/migrationsverket/midas/commit/c4ea630b64))
+- **components, card:** add data-hovered selector for links ([aac30dc97f](https://github.com/migrationsverket/midas/commit/aac30dc97f))
+- **components, select:** use data-hovered selector for buttons ([449cef9b27](https://github.com/migrationsverket/midas/commit/449cef9b27))
+- **components, calendar:** use data-hovered selector for month buttons ([ee12d1434d](https://github.com/migrationsverket/midas/commit/ee12d1434d))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.14
+
+## 17.10.3 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components,date-field:** replace :hover with data-hovered on date segments ([b3746d7ba4](https://github.com/migrationsverket/midas/commit/b3746d7ba4))
+
+## 17.10.2 (2026-03-26)
+
+### 🩹 Fixes
+
+- **components, list-box:** replace css :hover selector ([98fe486cb4](https://github.com/migrationsverket/midas/commit/98fe486cb4))
+
+### 🏭 Refactoring
+
+- **components, list-box:** utilize composeRenderProps helper ([2d67426360](https://github.com/migrationsverket/midas/commit/2d67426360))
+
+### 📖 Documentation changes
+
+- **components, file-trigger:** update dropzone example ([5e47955539](https://github.com/migrationsverket/midas/commit/5e47955539))
+
+### 🧪 Tests updated
+
+- **components, list-box:** add stories and tests ([e951065c3d](https://github.com/migrationsverket/midas/commit/e951065c3d))
+
 ## 17.10.1 (2026-03-24)
 
 ### 🏭 Refactoring

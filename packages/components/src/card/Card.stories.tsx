@@ -11,6 +11,7 @@ import {
 } from './Card'
 import { Text } from '../text'
 import { Button } from '../button'
+import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react'
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -119,9 +120,30 @@ export const WithLink: Story = {
   args: {
     children: (
       <CardContent>
+        <CardLink href='#'>
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>
+        <Text>Namn: Namn Namnsson</Text>
+      </CardContent>
+    ),
+  },
+}
+
+const CustomLink = (
+  props: DetailedHTMLProps<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  >,
+) => <a {...props}>{props.children}</a>
+
+export const WithCustomLink: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    children: (
+      <CardContent>
         <CardLink
+          as={CustomLink}
           href='#'
-          data-testid='card-link'
         >
           <CardTitle>Dina uppgifter</CardTitle>
         </CardLink>
@@ -142,10 +164,7 @@ export const WithImage: Story = {
           alt='Ananas'
         />
         <CardContent>
-          <CardLink
-            href='#'
-            data-testid='card-link'
-          >
+          <CardLink href='#'>
             <CardTitle>Dina uppgifter</CardTitle>
           </CardLink>
           <Text>Namn: Namn Namnsson</Text>
@@ -161,10 +180,7 @@ export const WithContainedImage: Story = {
     style: { maxWidth: 300 },
     children: (
       <CardContent>
-        <CardLink
-          href='#'
-          data-testid='card-link'
-        >
+        <CardLink href='#'>
           <CardTitle>Dina uppgifter</CardTitle>
         </CardLink>{' '}
         <CardImage

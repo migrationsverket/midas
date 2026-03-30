@@ -1,3 +1,86 @@
+## 2.0.59 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.12
+- Updated theme to 3.12.16
+
+## 2.0.58 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.11
+
+## 2.0.57 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table-styles,datepicker-styles,select-styles:** add user-select and touch-action to non-RAC interactive elements ([248294fd3e](https://github.com/migrationsverket/midas/commit/248294fd3e))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.10
+
+## 2.0.56 (2026-03-27)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.9
+
+## 2.0.55 (2026-03-26)
+
+### 🩹 Fixes
+
+- **table-styles:** wrap row hover in @media (hover: hover) and add :active touch fallback ([813b06b84c](https://github.com/migrationsverket/midas/commit/813b06b84c))
+
+## 2.0.54 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.8
+- Updated theme to 3.12.15
+
+## 2.0.53 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.7
+
+## 2.0.52 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.6
+
+## 2.0.51 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.5
+
+## 2.0.50 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.4
+- Updated theme to 3.12.14
+
+## 2.0.49 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.3
+
+## 2.0.48 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.2
+
+## 2.0.47 (2026-03-25)
+
+This was a version bump only for table-styles to align it with other projects, there were no code changes.
+
 ## 2.0.46 (2026-03-24)
 
 ### 🧱 Updated Dependencies

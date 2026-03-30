@@ -80,8 +80,8 @@
     border-color: var(--checkbox-base-color);
   }
 
-  &[data-selected]:hover .checkboxInner,
-  &[data-indeterminate]:hover .checkboxInner {
+  &[data-selected][data-hovered] .checkboxInner,
+  &[data-indeterminate][data-hovered] .checkboxInner {
     background: var(--checkbox-hover-color);
     border-color: var(--checkbox-hover-color);
   }
@@ -98,7 +98,7 @@
     outline-offset: -2px;
   }
 
-  &[data-invalid]:hover .checkboxInner {
+  &[data-invalid][data-hovered] .checkboxInner {
     opacity: 0.5;
     transition: opacity 50ms ease;
   }

@@ -1,3 +1,27 @@
+## 1.1.41 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.16
+
+## 1.1.40 (2026-03-27)
+
+### 🩹 Fixes
+
+- **components,table-styles,datepicker-styles,select-styles:** add user-select and touch-action to non-RAC interactive elements ([248294fd3e](https://github.com/migrationsverket/midas/commit/248294fd3e))
+
+## 1.1.39 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.15
+
+## 1.1.38 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.14
+
 ## 1.1.37 (2026-03-18)
 
 ### 🧱 Updated Dependencies

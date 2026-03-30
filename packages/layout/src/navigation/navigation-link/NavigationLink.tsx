@@ -13,14 +13,14 @@ import {
 } from 'react-aria-components'
 import { clsx, Tooltip, TooltipTrigger } from '@midas-ds/components'
 import styles from './NavigationLink.module.css'
-import { CollapsePanelContext, PanelContext } from '../../panel'
 import { MobileMenuContext } from '../../header'
+import { SidebarContext } from '../../sidebar'
 
 export interface NavigationLinkComponentProps<C extends ElementType> {
-  /** The icon to display. */
-  children: ReactNode
   /** The visible label text and tooltip content. */
-  title: string
+  children?: ReactNode
+  /** The icon to display. */
+  icon: ReactNode
   isActive?: boolean
   variant?: 'sidebar' | 'navbar'
   className?: string
@@ -39,13 +39,13 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
   children,
   className,
   isActive,
-  title,
+  icon,
   'aria-label': ariaLabel,
   ...rest
 }: NavigationLinkProps<C>) => {
-  const { variant } = useContext(PanelContext)
   const mobileMenuContext = useContext(MobileMenuContext)
-  const { isCollapsed } = useContext(CollapsePanelContext)
+  const sidebarContext = useContext(SidebarContext)
+  const isCollapsed = sidebarContext?.isCollapsed
 
   const ctx = useContext(OverlayTriggerStateContext)
 
@@ -57,21 +57,24 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
     }
   }
 
+  const title = typeof children === 'string' ? children : undefined
+
+  if (!title && !ariaLabel && process.env.NODE_ENV !== 'production') {
+    console.warn(
+      "An 'aria-label' is required for <NavigationLink> elements with non plain text children",
+    )
+  }
+
   return (
-    <TooltipTrigger isDisabled={!isCollapsed}>
+    <TooltipTrigger isDisabled={!isCollapsed || (!title && !ariaLabel)}>
       <Focusable>
         <Component
           aria-current={isActive && 'page'}
           aria-label={ariaLabel || (isCollapsed ? title : undefined)}
-          className={clsx(
-            className,
-            styles.navigationLink,
-            variant && styles[variant],
-            mobileMenuContext && styles.collapse,
-            {
-              [styles.collapsed]: isCollapsed,
-            },
-          )}
+          className={clsx(className, styles.navigationLink, {
+            [styles.sidebar]: sidebarContext || mobileMenuContext,
+            [styles.collapsed]: isCollapsed,
+          })}
           data-active={isActive || undefined}
           {...(as
             ? {
@@ -88,8 +91,8 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
               })}
           {...rest}
         >
-          {children}
-          <span className={styles.title}>{title}</span>
+          {icon}
+          <span className={styles.title}>{children}</span>
         </Component>
       </Focusable>
       <Tooltip placement='right'>{title}</Tooltip>

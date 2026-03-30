@@ -24,6 +24,7 @@
       &[data-allows-sorting] {
         cursor: pointer;
         user-select: none;
+        touch-action: manipulation;
 
         .sortIndicator {
           display: inline-flex;
@@ -40,6 +41,10 @@
 
           @media (prefers-reduced-motion) {
             transition: none;
+          }
+
+          @media (hover: none) {
+            opacity: 0.5;
           }
         }
 

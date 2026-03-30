@@ -1,13 +1,32 @@
 'use client'
 
 import { createContext } from 'react'
-import { PanelProps, PanelVariant } from '.'
+import { PanelProps } from './Panel'
 
-export type PanelContextValue<T extends PanelVariant> = Pick<
-  PanelProps<T>,
-  'variant'
->
+export interface PanelItem extends PanelProps {
+  promoting?: boolean
+}
 
-export const PanelContext = createContext<PanelContextValue<PanelVariant>>({
-  variant: undefined,
+export interface PanelContextValue {
+  panels: PanelItem[]
+  addPanel: (panel: Omit<PanelItem, 'isOpen' | 'defaultOpen'>) => void
+  closePanel: (id: string) => void
+  removePanel: (id: string) => void
+  resetPromoting: (id: string) => void
+}
+
+export const PanelContext = createContext<PanelContextValue>({
+  panels: [],
+  addPanel: () => {
+    /* noop */
+  },
+  closePanel: () => {
+    /* noop */
+  },
+  removePanel: () => {
+    /* noop */
+  },
+  resetPromoting: () => {
+    /* noop */
+  },
 })

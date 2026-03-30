@@ -42,7 +42,10 @@ export const FileListExample = () => {
 
   return (
     <>
-      <FileTrigger allowsMultiple onSelect={handleSelect}>
+      <FileTrigger
+        allowsMultiple
+        onSelect={handleSelect}
+      >
         <Button>Välj filer</Button>
       </FileTrigger>
       {files.length > 0 && (
@@ -80,38 +83,61 @@ för att tillåta val av filer via drag & drop.
 
 ```tsx
 export const DropZoneExample = () => {
-  let [files, setFiles] = React.useState(null);
+  const [files, setFiles] = React.useState<File[]>([])
+
+  const setUniqueFiles = (newFiles: File[]) => {
+    setFiles(oldFiles => {
+      const existingNames = new Set(oldFiles.map(f => f.name))
+      return [...oldFiles, ...newFiles.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDrop = async (e: DropEvent) => {
+    const fileItems = e.items.filter(item => item.kind === 'file')
+    const droppedFiles: File[] = await Promise.all(fileItems.map(item => item.getFile()))
+    setUniqueFiles(droppedFiles)
+  }
+
+  const handleSelect = (e: FileList | null) => {
+    const selectedFiles = e ? Array.from(e) : []
+    setUniqueFiles(selectedFiles)
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
+
   return (
     <>
-      <DropZone
-        onDrop={(e) => {
-          let files = e.items.filter((file) =>
-            file.kind === 'file'
-          ) as FileDropItem[];
-          let filenames = files.map((file) => file.name);
-          setFiles(filenames.join(', '));
-        }}
-      >
+      <DropZone onDrop={handleDrop}>
         <FileTrigger
           allowsMultiple
-          onSelect={(e) => {
-            let files = Array.from(e);
-            let filenames = files.map((file) => file.name);
-            setFiles(filenames.join(', '));
-          }}
+          onSelect={handleSelect}
         >
-          <Button>Select files</Button>
+          <Button variant='secondary'>
+            <ArrowUpFromLine /> Välj filer
+          </Button>
         </FileTrigger>
-        <Text slot="label" style={{ display: 'block' }}>
-          {files || 'Drop files here'}
-        </Text>
+        <Text slot='label'>Dra och släpp filer här</Text>
       </DropZone>
+      {files.length > 0 && (
+        <FileList style={{ marginTop: '1rem' }}>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
     </>
   )
 }
 ```
 
-<DropZoneExample/>
+<DropZoneExample />
 
 ### Alternativ
 
@@ -135,14 +161,12 @@ används.
   </FileTrigger>
 </div>
 
-
-
 ## API
 
 ### FileTrigger
+
 <PropTable name='FileTrigger' />
 
 ### DropZone
+
 <PropTable name='DropZone' />
-
-

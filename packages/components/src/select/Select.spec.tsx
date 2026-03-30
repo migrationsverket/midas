@@ -39,6 +39,13 @@ describe('given a primary Select', async () => {
 
     await expect.element(getByText(selectedValue).first()).toBeVisible()
   })
+
+  it('should set data-hovered on the trigger when hovered', async () => {
+    const { getByRole } = await render(<Primary />)
+    const trigger = getByRole('button').first()
+    await trigger.hover()
+    await expect.element(trigger).toHaveAttribute('data-hovered')
+  })
 })
 
 describe('given a Select with a default value', async () => {
@@ -78,6 +85,13 @@ describe('given a Select with all keys selected as default', async () => {
     })
 
     await expect.element(visibleValue).toBeVisible()
+  })
+
+  it('should set data-hovered on the clear button when hovered', async () => {
+    const { getByRole } = await render(<AllKeysSelected />)
+    const clearButton = getByRole('button').nth(1)
+    await clearButton.hover()
+    await expect.element(clearButton).toHaveAttribute('data-hovered')
   })
 })
 
@@ -135,6 +149,14 @@ describe('given a Select with select all enabled', async () => {
 
     await expect.element(visibleValue).toBeVisible()
   })
+
+  it('should set data-hovered on the select all checkbox when hovered', async () => {
+    const { getByRole, getByText } = await render(<SelectAllEnabled />)
+    await getByRole('button').first().click()
+    const selectAllLabel = getByText('Select all')
+    await selectAllLabel.hover()
+    await expect.element(selectAllLabel).toHaveAttribute('data-hovered')
+  })
 })
 
 describe('given a sectioned Select ', async () => {
@@ -169,7 +191,9 @@ describe('given a required multiple Select with selectAll', async () => {
 
     // Open the dropdown and click Select all
     await userEvent.click(getByRole('button', { name: 'Label' }))
-    await userEvent.click(page.getByRole('dialog', { name: 'Label' }).getByText('Select all'))
+    await userEvent.click(
+      page.getByRole('dialog', { name: 'Label' }).getByText('Select all'),
+    )
     await userEvent.keyboard('[Escape]')
 
     // Trigger should no longer be invalid

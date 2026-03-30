@@ -1,16 +1,20 @@
 'use client'
 
-import { HTMLAttributes } from 'react'
-import { DismissPanel, useDismissPanels } from '.'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { Panel } from './Panel'
+import { usePanels } from './usePanels'
 
-export type PanelRegionProps = HTMLAttributes<HTMLElement>
+export type PanelRegionProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+>
 
-export const DismissPanelOutlet = ({
+export const PanelRegion = ({
   children,
   className,
   ...rest
 }: PanelRegionProps) => {
-  const { panels, closePanel, removePanel, resetPromoting } = useDismissPanels()
+  const { panels, closePanel, removePanel, resetPromoting } = usePanels()
 
   return (
     <aside
@@ -18,11 +22,11 @@ export const DismissPanelOutlet = ({
       {...rest}
     >
       {panels.map(({ id, ...panel }, index, { length }) => (
-        <DismissPanel
+        <Panel
           aria-hidden={index < length - 1 || undefined}
           key={id}
           id={id}
-          data-debug='Panel (dismiss)'
+          data-debug='Panel'
           onOpenChange={open => {
             if (!open) closePanel(id)
           }}

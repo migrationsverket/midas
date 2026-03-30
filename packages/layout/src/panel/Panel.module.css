@@ -1,4 +1,4 @@
-.dismissPanel {
+.panel {
   &[data-promoting] {
     animation: promote var(--midas-transition-duration-fast) ease-out;
   }

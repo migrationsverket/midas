@@ -1,3 +1,87 @@
+## 0.0.36 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.12
+
+## 0.0.35 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.11
+
+## 0.0.34 (2026-03-27)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.10
+
+## 0.0.33 (2026-03-27)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.9
+
+## 0.0.32 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.8
+
+## 0.0.31 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.7
+
+## 0.0.30 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.6
+
+## 0.0.29 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.5
+
+## 0.0.28 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.4
+
+## 0.0.27 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.3
+
+## 0.0.26 (2026-03-26)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.2
+
+## 0.0.25 (2026-03-26)
+
+### 🩹 Fixes
+
+- **layout:** match API for NavigationLink and HeaderAction ([dffda24844](https://github.com/migrationsverket/midas/commit/dffda24844))
+
+## 0.0.24 (2026-03-25)
+
+This was a version bump only for layout to align it with other projects, there were no code changes.
+
+## 0.0.23 (2026-03-25)
+
+### 🩹 Fixes
+
+- **layout:** rename CollapsePanel -> Sidebar ([b3627562f0](https://github.com/migrationsverket/midas/commit/b3627562f0))
+- **layout:** utilize clsx function ([e5bbb1a937](https://github.com/migrationsverket/midas/commit/e5bbb1a937))
+- **layout, mobile-menu:** remove custom state ([e4cc4f9b1e](https://github.com/migrationsverket/midas/commit/e4cc4f9b1e))
+
 ## 0.0.22 (2026-03-24)
 
 ### 🧱 Updated Dependencies

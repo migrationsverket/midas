@@ -41,6 +41,12 @@
   }
 }
 
+.dialog {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
 .header {
   background-color: var(--midas-background-base);
   display: block;

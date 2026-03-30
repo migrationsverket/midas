@@ -1,4 +1,4 @@
-.collapsePanel {
+.sidebar {
   width: 15rem;
   transition: width var(--midas-transition-duration-fast) ease-out;
 
@@ -11,11 +11,11 @@
   }
 }
 
-.panelHeader {
+.sidebarHeader {
   gap: 0;
 }
 
-.panelTitle {
+.sidebarTitle {
   font-size: var(--midas-typography-font-size-20);
   display: block;
 }
