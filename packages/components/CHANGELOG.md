@@ -1,3 +1,11 @@
+## 17.10.13 (2026-03-30)
+
+### 🩹 Fixes
+
+- **components,link:** wrap hover rules in @media (hover: hover) to match LinkButton ([c71848b659](https://github.com/migrationsverket/midas/commit/c71848b659))
+- **components,link:** consolidate hover rules to match LinkButton pattern ([0fa6c2ab09](https://github.com/migrationsverket/midas/commit/0fa6c2ab09))
+- **components,link:** move redundant :hover rules under @media (hover: hover) ([cf8e2114a4](https://github.com/migrationsverket/midas/commit/cf8e2114a4))
+
 ## 17.10.12 (2026-03-30)
 
 ### 🧱 Updated Dependencies
