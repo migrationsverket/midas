@@ -1,3 +1,9 @@
+## 17.10.11 (2026-03-30)
+
+### 🩹 Fixes
+
+- **components, select, combobox:** add relative max height to list-box ([de0767e0dc](https://github.com/migrationsverket/midas/commit/de0767e0dc))
+
 ## 17.10.10 (2026-03-27)
 
 ### 🩹 Fixes
