@@ -43,7 +43,7 @@
     }
   }
 
-  &:hover {
+  &[data-hovered] {
     background-color: var(--midas-field-01-hover);
     cursor: pointer;
   }
@@ -156,7 +156,7 @@
   margin-left: var(--midas-space-10);
   padding: var(--midas-space-30);
 
-  &:hover {
+  &[data-hovered] {
     background-color: var(--midas-button-background-primary-hover);
     cursor: pointer;
   }
@@ -217,7 +217,7 @@
     margin-bottom: 2px !important;
     padding: var(--midas-space-medium);
 
-    &:hover:not([data-disabled]) {
+    &[data-hovered]:not([data-disabled]) {
       background-color: var(--midas-layer-01-hover);
       cursor: pointer;
 
@@ -234,7 +234,7 @@
     &[data-selected] {
       background-color: var(--midas-layer-01-selected-hover);
 
-      &:hover:not([data-disabled]) {
+      &[data-hovered]:not([data-disabled]) {
         background-color: var(--midas-layer-01-selected-hover);
 
         & div {
