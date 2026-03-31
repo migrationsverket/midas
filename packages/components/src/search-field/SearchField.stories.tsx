@@ -62,3 +62,18 @@ export const WithoutButton: Story = {
     showButton: false,
   },
 }
+
+export const InputModeSearch: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Use inputMode="search" to activate the search keyboard on mobile, which shows a "Search" or "Go" action key instead of "Return".',
+      },
+    },
+  },
+  args: {
+    placeholder: 'Sök efter en person',
+    inputMode: 'search',
+  },
+}
