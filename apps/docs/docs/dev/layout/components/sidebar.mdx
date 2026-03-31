@@ -1,0 +1,64 @@
+---
+title: Sidebar
+description: Kollapsbar sidomeny för desktop.
+---
+
+# Sidebar
+
+En kollapsbar sidomeny som visas på desktop. På mobil döljs den automatiskt — använd `MobileMenu` i `Header` för mobilnavigering.
+
+## Grundläggande användning
+
+```tsx
+import { Sidebar, Navigation, NavigationLink } from '@midas-ds/layout'
+import { House, Settings } from 'lucide-react'
+
+<Sidebar title='Min applikation'>
+  <Navigation>
+    <NavigationLink href='/' icon={<House />} isActive>Hem</NavigationLink>
+    <NavigationLink href='/installningar' icon={<Settings />}>Inställningar</NavigationLink>
+  </Navigation>
+</Sidebar>
+```
+
+## Kollapsläge
+
+Sidomenyn kan kollapsa ihop till enbart ikoner. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
+
+### Okontrollerat
+
+```tsx
+<Sidebar title='Min applikation' defaultCollapsed={false}>
+  ...
+</Sidebar>
+```
+
+### Kontrollerat
+
+```tsx
+const [isCollapsed, setIsCollapsed] = useState(false)
+
+<Sidebar
+  title='Min applikation'
+  isCollapsed={isCollapsed}
+  onCollapseChange={setIsCollapsed}
+>
+  ...
+</Sidebar>
+```
+
+:::note
+
+När sidomenyn är kollapsad visas etiketten i `NavigationLink` som en tooltip vid hover. Se till att varje länk alltid har en `children`-prop (etikett) — den är nödvändig för tillgänglighet i kollapsad vy.
+
+:::
+
+## Props
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `title` | `string` | — | Titel som visas högst upp i sidomenyn (dold vid kollaps) |
+| `isCollapsed` | `boolean` | — | Kontrollerat kollapsläge |
+| `defaultCollapsed` | `boolean` | `false` | Starttillstånd för okontrollerat läge |
+| `onCollapseChange` | `(isCollapsed: boolean) => void` | — | Callback vid kollaps/expansion |
+| `children` | `ReactNode` | — | Sidomenysinnehåll (typiskt `Navigation`) |

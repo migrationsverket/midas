@@ -1,0 +1,114 @@
+---
+title: Navigation
+description: Navigationskomponenter för sidomeny och navbar.
+---
+
+# Navigation
+
+Navigationskomponenterna används både i `Sidebar` och i `Navbar`. De är identiska — kontexten avgör utseendet.
+
+## Navigation
+
+Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statiska barn och dynamisk rendering via Collections.
+
+```tsx
+import { Navigation, NavigationLink } from '@midas-ds/layout'
+import { House, Settings } from 'lucide-react'
+
+<Navigation>
+  <NavigationLink href='/' icon={<House />} isActive>Hem</NavigationLink>
+  <NavigationLink href='/installningar' icon={<Settings />}>Inställningar</NavigationLink>
+</Navigation>
+```
+
+## NavigationLink
+
+En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt efter om den befinner sig i en `Sidebar` eller `Navbar`.
+
+```tsx
+<NavigationLink
+  href='/mina-arenden'
+  icon={<FileText />}
+  isActive={pathname === '/mina-arenden'}
+>
+  Mina ärenden
+</NavigationLink>
+```
+
+### Routing
+
+Använd `as`-propen för att byta ut grundkomponenten mot din routers länkkomponent:
+
+```tsx
+import { Link as RouterLink } from 'react-router'
+
+<NavigationLink as={RouterLink} to='/mina-arenden' icon={<FileText />}>
+  Mina ärenden
+</NavigationLink>
+```
+
+:::note
+
+När du använder `as` ersätts `href` av den anpassade komponentens egenskaper. I exemplet ovan används `to` istället för `href` eftersom det är vad React Router förväntar sig.
+
+:::
+
+### Props
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `icon` | `ReactNode` | — | **Obligatorisk.** Ikon för länken |
+| `children` | `ReactNode` | — | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
+| `isActive` | `boolean` | `false` | Markerar länken som aktiv sida |
+| `href` | `string` | — | URL (standard) |
+| `as` | `ElementType` | — | Ersättningskomponent (t.ex. Next.js `Link`) |
+| `aria-label` | `string` | — | Krävs om `children` inte är ren text |
+
+## NavigationSection
+
+Grupperar navigeringslänkar under en valfri rubrik.
+
+```tsx
+import { Navigation, NavigationLink, NavigationSection } from '@midas-ds/layout'
+
+<Navigation>
+  <NavigationLink href='/' icon={<House />}>Hem</NavigationLink>
+
+  <NavigationSection title='Ansökan'>
+    <NavigationLink href='/ny-ansokan' icon={<Plus />}>Ny ansökan</NavigationLink>
+    <NavigationLink href='/mina-arenden' icon={<FileText />}>Mina ärenden</NavigationLink>
+  </NavigationSection>
+</Navigation>
+```
+
+## NavigationSubMenu
+
+Nästlad undermeny för hierarkisk navigationsstruktur.
+
+```tsx
+<NavigationSection title='Administration'>
+  <NavigationSubMenu>
+    <NavigationLink href='/anvandare' icon={<Users />}>Användare</NavigationLink>
+    <NavigationLink href='/roller' icon={<Shield />}>Roller</NavigationLink>
+  </NavigationSubMenu>
+</NavigationSection>
+```
+
+## Dynamisk rendering
+
+Alla navigationskomponenter stödjer React Arias Collection API för dynamisk rendering från data:
+
+```tsx
+const navItems = [
+  { id: 'hem', href: '/', label: 'Hem', icon: <House /> },
+  { id: 'installningar', href: '/installningar', label: 'Inställningar', icon: <Settings /> },
+]
+
+<Navigation items={navItems}>
+  {item => (
+    <NavigationLink key={item.id} href={item.href} icon={item.icon}>
+      {item.label}
+    </NavigationLink>
+  )}
+</Navigation>
+```
