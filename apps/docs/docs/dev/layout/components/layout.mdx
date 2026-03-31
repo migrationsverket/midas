@@ -1,0 +1,71 @@
+---
+title: Layout, LayoutContent & Main
+description: Grundläggande strukturkomponenter för sidor.
+---
+
+# Layout, LayoutContent & Main
+
+Dessa tre komponenter utgör grundstommen i en sida.
+
+## Layout
+
+Yttersta wrappern. Sätter upp CSS Grid för sidstrukturen och ger plats åt `Header`, `LayoutContent` och `Navbar`.
+
+```tsx
+import { Layout } from '@midas-ds/layout'
+
+<Layout>
+  {/* Header, LayoutContent, Navbar */}
+</Layout>
+```
+
+## LayoutContent
+
+Wrapper för innehållsraden — det vill säga `Sidebar`, `Main` och eventuell `Panel` sida vid sida.
+
+```tsx
+import { Layout, LayoutContent, Main } from '@midas-ds/layout'
+
+<Layout>
+  <LayoutContent>
+    <Sidebar>...</Sidebar>
+    <Main>...</Main>
+  </LayoutContent>
+</Layout>
+```
+
+## Main
+
+Semantiskt `<main>`-element för sidans huvudinnehåll. Bör alltid finnas på sidan för tillgänglighet.
+
+```tsx
+import { Main } from '@midas-ds/layout'
+
+<Main>
+  <h1>Rubrik</h1>
+  <p>Sidans innehåll</p>
+</Main>
+```
+
+:::tip Tillgänglighet
+
+`<Main>` renderar ett semantiskt `<main>`-element. Varje sida bör ha exakt ett `<main>` — skärmläsare och tangentbordsanvändare navigerar dit direkt.
+
+:::
+
+## Komplett exempel
+
+```tsx
+import { Layout, LayoutContent, Main, Header, Sidebar, Navbar } from '@midas-ds/layout'
+
+<Layout>
+  <Header>...</Header>
+  <LayoutContent>
+    <Sidebar>...</Sidebar>
+    <Main>
+      {/* Ditt innehåll */}
+    </Main>
+  </LayoutContent>
+  <Navbar>...</Navbar>
+</Layout>
+```

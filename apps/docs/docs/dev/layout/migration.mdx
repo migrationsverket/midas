@@ -1,0 +1,136 @@
+---
+title: Migrationsguide
+description: Hur du går över från Layout i @midas-ds/components till @midas-ds/layout.
+sidebar_position: 2
+---
+
+# Migrationsguide
+
+`Layout` från `@midas-ds/components` och `@midas-ds/layout` kan användas parallellt — du behöver inte migrera allt på en gång. Ta det i din egen takt.
+
+## Vad är nytt?
+
+Den gamla `Layout` är en monolitisk komponent som konfigureras med en enda stor props-struktur. Det nya paketet är komponentbaserat — du sätter ihop strukturen med JSX istället för dataobjekt.
+
+| Aspekt | Gammalt (`@midas-ds/components`) | Nytt (`@midas-ds/layout`) |
+|--------|----------------------------------|---------------------------|
+| Menystruktur | `items`-array med dataobjekt | `Navigation` + `NavigationLink` i JSX |
+| Användarinfo | `user`-prop (`name`, `title`) | Ditt eget innehåll i `HeaderActions` |
+| Appnamn | `app`-prop (`name`, `color`) | Ditt eget innehåll i `Header` |
+| Routing | `clientSideRouter` + `clientSideHref` | `as`-prop på `NavigationLink` |
+| Mobil | `variant="external"` för navbar-layout | `Navbar` + `Sidebar` hanteras automatiskt |
+| Sidopanel | Finns inte | `Panel` + `PanelProvider` |
+| State | Hanteras internt | Context-baserat, du styr |
+
+## Steg för steg
+
+### 1. Installera det nya paketet
+
+```bash
+npm install @midas-ds/layout
+```
+
+### 2. Byt ut import
+
+```tsx
+// Gammalt
+import { Layout } from '@midas-ds/components'
+
+// Nytt
+import { Layout, LayoutContent, Main, Header, ... } from '@midas-ds/layout'
+```
+
+### 3. Bygg om strukturen
+
+**Gammalt — konfiguration via props:**
+
+```tsx
+<Layout
+  variant='internal'
+  items={[
+    {
+      items: [
+        { title: 'Hem', href: '/', icon: House },
+      ],
+    },
+    {
+      title: 'Ansökan',
+      items: [
+        { title: 'Skapa ansökan', href: '/ansökan', icon: Plus },
+      ],
+    },
+  ]}
+  title='Min app'
+  user={{ name: 'Anna Andersson', title: 'Handläggare' }}
+  app={{ name: 'Min applikation' }}
+>
+  {/* innehåll */}
+</Layout>
+```
+
+**Nytt — komposition med JSX:**
+
+```tsx
+<Layout>
+  <Header>
+    <HeaderActions>
+      <HeaderAction icon={<User />}>Anna Andersson</HeaderAction>
+    </HeaderActions>
+  </Header>
+
+  <LayoutContent>
+    <Sidebar title='Min applikation'>
+      <Navigation>
+        <NavigationLink href='/' icon={<House />}>Hem</NavigationLink>
+        <NavigationSection title='Ansökan'>
+          <NavigationLink href='/ansökan' icon={<Plus />}>Skapa ansökan</NavigationLink>
+        </NavigationSection>
+      </Navigation>
+    </Sidebar>
+
+    <Main>
+      {/* innehåll */}
+    </Main>
+  </LayoutContent>
+
+  <Navbar>
+    <ul>
+      <NavigationLink href='/' icon={<House />}>Hem</NavigationLink>
+    </ul>
+  </Navbar>
+</Layout>
+```
+
+### 4. Migrera routing
+
+**Gammalt:**
+
+```tsx
+<Layout
+  clientSideRouter={navigate}
+  clientSideHref={useHref}
+  ...
+>
+```
+
+**Nytt** — använd `as`-propen på `NavigationLink`:
+
+```tsx
+import { Link as RouterLink } from 'react-router'
+
+<NavigationLink as={RouterLink} to='/' icon={<House />}>
+  Hem
+</NavigationLink>
+```
+
+### 5. Ta bort `variant="external"`
+
+Den externa varianten (navbar längst ned på mobil) hanteras automatiskt av det nya paketet. Lägg till `Navbar` i din struktur — `Sidebar` döljer sig automatiskt på mobil.
+
+```tsx
+<Layout>
+  ...
+  <Sidebar>...</Sidebar>   {/* syns bara på desktop */}
+  <Navbar>...</Navbar>     {/* syns bara på mobil */}
+</Layout>
+```

@@ -1,0 +1,126 @@
+---
+title: Panel
+description: Animerad sidopanel för att visa extra innehåll bredvid huvudinnehållet.
+---
+
+# Panel
+
+En animerad sidopanel som visas bredvid `Main` i `LayoutContent`. Vanlig användning är för detaljvyer, formulär eller annan kontextuell information.
+
+## Enkel panel
+
+```tsx
+import { Layout, LayoutContent, Main, Panel } from '@midas-ds/layout'
+import { useState } from 'react'
+import { Button } from '@midas-ds/components'
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <Layout>
+      <LayoutContent>
+        <Main>
+          <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
+        </Main>
+
+        <Panel
+          id='detaljer'
+          title='Detaljer'
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+          style={{ gridArea: 'panelRight' }}
+        >
+          {/* Panelinnehåll */}
+        </Panel>
+      </LayoutContent>
+    </Layout>
+  )
+}
+```
+
+:::note
+
+`id` är obligatoriskt och måste vara unikt på sidan. Det används internt för att hantera panelens tillstånd.
+
+:::
+
+## Flera paneler med PanelProvider
+
+När du har flera paneler som kan öppnas och stängas oberoende av varandra, använd `PanelProvider` och `usePanels`-hooken.
+
+```tsx
+import { PanelProvider, Panel, usePanels } from '@midas-ds/layout'
+import { Button } from '@midas-ds/components'
+
+function PanelControls() {
+  const { addPanel, closePanel } = usePanels()
+
+  return (
+    <>
+      <Button onPress={() => addPanel({ id: 'panel-a', title: 'Panel A' })}>
+        Öppna Panel A
+      </Button>
+      <Button onPress={() => addPanel({ id: 'panel-b', title: 'Panel B' })}>
+        Öppna Panel B
+      </Button>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <PanelProvider panelBehavior='bring-to-front'>
+      <Layout>
+        <LayoutContent>
+          <Main>
+            <PanelControls />
+          </Main>
+          <Panel id='panel-a' title='Panel A' style={{ gridArea: 'panelRight' }} />
+          <Panel id='panel-b' title='Panel B' style={{ gridArea: 'panelRight' }} />
+        </LayoutContent>
+      </Layout>
+    </PanelProvider>
+  )
+}
+```
+
+### panelBehavior
+
+Styr vad som händer när man öppnar en panel som redan är öppen:
+
+| Värde | Beteende |
+|-------|----------|
+| `bring-to-front` (standard) | Panelen flyttas framåt i ordningen |
+| `pop-to` | Alla paneler ovanför stängs, den klickade visas |
+
+## usePanels
+
+Hook för att komma åt `PanelContext` och hantera panelernas tillstånd programmatiskt.
+
+```tsx
+const { panels, addPanel, closePanel, removePanel } = usePanels()
+```
+
+| Metod | Beskrivning |
+|-------|-------------|
+| `addPanel(panel)` | Öppnar eller aktiverar en panel |
+| `closePanel(id)` | Stänger en panel (animeras ut) |
+| `removePanel(id)` | Tar permanent bort en panel från tillståndet |
+
+## Props — Panel
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `id` | `string` | — | **Obligatorisk.** Unikt id |
+| `title` | `string` | — | Panelrubrik |
+| `isOpen` | `boolean` | — | Kontrollerat öppet-läge |
+| `defaultOpen` | `boolean` | — | Okontrollerat starttillstånd |
+| `onOpenChange` | `(isOpen: boolean) => void` | — | Callback vid öppning/stängning |
+
+## Props — PanelProvider
+
+| Prop | Typ | Standard | Beskrivning |
+|------|-----|----------|-------------|
+| `panelBehavior` | `'bring-to-front' \| 'pop-to'` | `'bring-to-front'` | Beteende vid aktivering av befintlig panel |
+| `defaultPanels` | `PanelItem[]` | — | Förhandsöppnade paneler |
