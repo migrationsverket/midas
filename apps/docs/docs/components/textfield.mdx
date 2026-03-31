@@ -191,6 +191,35 @@ Använd `type="password"` för att aktivera en knapp för att visa/dölja inmata
   />
 </div>
 
+## type, inputMode och autoComplete
+
+`type` kan användas för att aktivera inbyggd validering av fältet. `type="email"` kräver att det som skrivs in är en giltig e-postadress.
+
+`inputMode` kan användas för att ge mobilanvändare rätt tangentbord.
+`inputMode="email"` visar ett virtuellt tangentbord som är anpassat för e-postinmatning.
+
+`autoComplete` kan användas för att aktivera autofyll för både desktop och mobil.
+
+```tsx
+<TextField
+  label='E-post'
+  type='email'
+  inputMode='email'
+  autoComplete='email'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='E-post'
+    type='email'
+    inputMode='email'
+    autoComplete='email'
+  />
+</div>
+
+Se [MDN — inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) och [MDN — autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) för alla tillgängliga värden.
+
 ## API
 
 ### TextField
