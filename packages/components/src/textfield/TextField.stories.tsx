@@ -84,6 +84,20 @@ export const Number: Story = {
   },
 }
 
+export const Numeric: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Use `inputMode="numeric"` for numeric input without the built-in validation and increment/decrement controls of `type="number"`.',
+      },
+    },
+  },
+  args: {
+    inputMode: 'numeric',
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
