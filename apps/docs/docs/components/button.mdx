@@ -138,6 +138,17 @@ För att visa att systemet laddas kan `isPending` användas, läs mer under [mö
   <Button isPending>Laddar...</Button>
 </div>
 
+### isInvisible
+
+Vi vill använda så disablade knappar så lite som möjligt eftersom dessa inte är tillgängliga för en skärmläsare. Men i vissa fall är det inte lämpligt för användaren att klicka på knappen. Då kan vi använda `isInvisible`. Den gör knappen helt osynlig för användaren, men uppfyller alla krav i WCAG 26.4.1. En osynlig knapp läses upp som "osynlig" av skärmläsare och syns i elementlistan, men är som sagt helt osynlig för seende användare.
+
+<div
+  className='card'
+  style={{ display: 'block', color: 'white' }}
+>
+  Grattis, du hittade vårt aprilskämt!
+</div>
+
 ## Grupp av knappar
 
 För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
