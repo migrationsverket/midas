@@ -1,3 +1,14 @@
+## 17.10.14 (2026-04-01)
+
+### 🩹 Fixes
+
+- **components, search-field:** set inputMode='search' as default ([4a0fe1a9bc](https://github.com/migrationsverket/midas/commit/4a0fe1a9bc))
+
+### 📖 Documentation changes
+
+- **components, textfield:** add numeric example ([8ae48988af](https://github.com/migrationsverket/midas/commit/8ae48988af))
+- **components:** add autocomplete and inputmode stories ([7babb670fd](https://github.com/migrationsverket/midas/commit/7babb670fd))
+
 ## 17.10.13 (2026-03-30)
 
 ### 🩹 Fixes
