@@ -20,7 +20,7 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { FocusScope } from '@react-aria/focus'
 import { useFocusManager } from '@react-aria/focus'
 
-export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
+export interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
@@ -37,12 +37,9 @@ export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   isClearable?: boolean
 }
 
-const DateFieldClearButton: React.FC<DateFieldProps> = ({
-  isClearable,
-  size,
-  isDisabled,
-  isReadOnly,
-}) => {
+const DateFieldClearButton: React.FC<
+  Pick<DateFieldProps<DateValue>, 'isClearable' | 'size' | 'isDisabled' | 'isReadOnly'>
+> = ({ isClearable, size, isDisabled, isReadOnly }) => {
   const strings = useLocalizedStringFormatter(messages)
   const state = React.useContext(DateFieldStateContext)
   const focusManager = useFocusManager()
@@ -67,7 +64,7 @@ const DateFieldClearButton: React.FC<DateFieldProps> = ({
   ) : null
 }
 
-export const DateField: React.FC<DateFieldProps> = ({
+export const DateField = <T extends DateValue>({
   className,
   description,
   errorMessage,
@@ -79,7 +76,7 @@ export const DateField: React.FC<DateFieldProps> = ({
   isReadOnly,
   isDisabled,
   ...rest
-}) => {
+}: DateFieldProps<T>) => {
   return (
     <AriaDateField
       {...rest}
