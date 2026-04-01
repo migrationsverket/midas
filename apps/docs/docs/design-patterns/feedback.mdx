@@ -1,0 +1,107 @@
+import {
+  InactiveButtonExample,
+  ButtonInfobannerExample,
+  ErrorMessageListExample,
+  DisabledButtonExample,
+} from '@site/src/components/examples/feedback-pattern/FeedbackExamples'
+
+# Handlingar och återkoppling
+
+Detta mönster beskriver hur vi hanterar användarhandlingar i våra gränssnitt/system. Mönstret definierar tre olika typer av handlingar, hur vi bekräftar användarens intention och vilken typ av återkoppling vi ger i respektive fall.
+
+## Handlingar
+
+### Definition
+
+Vi använder handling för att beskriva ett medvetet initiativ av användaren för att få systemet att göra något. Handlingar utförs typiskt genom knappar eller menyalternativ.
+
+### Typer av Handlingar
+
+Vi skiljer mellan tre sorters handlingar:
+
+- [Tillgängliga handlingar](#tillgängliga-handlingar): handlingar som alltid är möjliga att utföra och som systemet sedan utvärderar
+- [Villkorade handlingar](#förutsättningsstyrda-handlingar): handlingar som kräver specifika förutsättningar för att kunna utföras
+- [Otillgängliga handlingar](#otillgänglig-handling): handlingar som inte är möjliga att utföra
+
+### Från handling till återkoppling
+
+Interaktionen följer alltid samma logik:
+
+1. Användaren försöker utföra en handling
+2. Handlingstypen avgör om och när handlingen kan utföras
+3. Ett återkopplingsmönster avgör hur systemet svarar användaren
+
+## Tillgängliga handlingar
+
+Denna sortens handling utförs alltid när den initieras av användaren. Därefter utvärderar systemet resultatet genom validering eller affärslogik. Fel eller saknade förutsättningar kommuniceras efter användarens försök att genomföra handling, inte genom att hindra handlingen.
+
+### Användning
+
+- När användaren skickar in ett formulär
+- När användaren sparar data
+
+### Krav på återkoppling
+
+- Resultatet ska kommuniceras tydligt
+- Eventuella fel ska kopplas till relevant innehåll/kontroll och vara tillgängliga för hjälpmedel
+
+### Mönster för återkoppling
+
+I formulär, tex etjänster, använder vi oss av en felmeddelandelista för att visa eventuella fel som användaren måste rätta till. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+
+<ErrorMessageListExample />
+
+## Villkorade handlingar
+
+En villkorad handling är endast möjlig att utföra när vissa krav är uppfyllda. Om kraven inte är uppfyllda ska handlingen inte kunna utföras, men användaren ska få tydlig vägledning om vad som krävs för att kunna göra det.
+
+### Användning
+
+- När det inte är meningsfullt eller tillåtet att utföra handlingen om inte kraven är uppfyllda
+- När ett minsta antal val krävs (t.ex. markera minst ett objekt)
+
+### Krav på återkoppling
+
+- Återkopplingen ska vara omedelbar
+- Återkoppling ska vara tillgänglig även för skärmläsaranvändare
+- Det ska tydligt framgå vad som saknas och hur användaren går vidare
+
+### Mönster för återkoppling
+
+:::note
+Notera att vi inte använder `isDisabled` eftersom detta gör triggerelementet otillgängligt för skärmläsaranvändare. Vi låter den istället vara visuellt aktiva och tar bort onPress-händelsen.
+:::
+
+Ovanstående krav uppfyllas på följande två sätt:
+
+Alternativ 1: Visa en tooltip på hover och fokus. För att göra detta tillgängligt för skärmläsaranvändare behöver vi även sätta trigger som `aria-disabled` för att indikera för skärmläsaranvändare att knappen är inaktiv
+
+<InactiveButtonExample />
+
+Alternativ 2: Visa en infobanner eller en modal vid klick. Detta är lämpligt när det finns flera krav som måste uppfyllas eller när kraven är mer komplexa.
+
+<ButtonInfobannerExample />
+
+## Otillgänglig handling
+
+:::warning
+I våra externa system ska det inte finnas några otillgängliga handlingar.
+:::
+
+En otillgänglig åtgärd är en handling som användaren inte kan utföra i aktuell kontext och där användaren själv inte kan uppfylla kraven för att handlingen ska vara möjlig.
+
+### Användning
+
+- När användaren inte har rätt behörighetsnivå
+- När funktionaliteten är avstängd i systemet
+
+### Krav på återkoppling
+
+- En förklaring ska alltid finnas i direkt anslutning till triggerkomponenten
+- Förklaringen ska vara tillgänglig utan hover
+
+### Mönster för återkoppling
+
+Vi använder `isDisabled` för att indikera att en handling är otillgänglig. Enligt ovanstånde krav måste vi även ha en förklaring i direkt anslutning till triggerkomponenten.
+
+<DisabledButtonExample />

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Plus, X } from 'lucide-react'
 import { Button } from './Button'
+import { Tooltip, TooltipTrigger } from '../tooltip'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -81,4 +82,20 @@ export const Danger: Story = {
     children: 'Button',
     variant: 'danger',
   },
+}
+
+export const Inactive: Story = {
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    children: 'Lägg till',
+    isInactive: true,
+  },
+  render: args => (
+    <TooltipTrigger shouldCloseOnPress={false}>
+      <Button {...args} />
+      <Tooltip>Det saknas ett beslut</Tooltip>
+    </TooltipTrigger>
+  ),
 }
