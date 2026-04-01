@@ -19,7 +19,7 @@ import styles from './TimeField.module.css'
 import { type Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
 
-export interface TimeFieldProps extends AriaTimeFieldProps<TimeValue> {
+export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
@@ -37,7 +37,7 @@ export interface TimeFieldProps extends AriaTimeFieldProps<TimeValue> {
 }
 
 const TimeFieldClearButton: React.FC<
-  Pick<TimeFieldProps, 'isClearable' | 'size' | 'isDisabled' | 'isReadOnly'>
+  Pick<TimeFieldProps<TimeValue>, 'isClearable' | 'size' | 'isDisabled' | 'isReadOnly'>
 > = ({ isClearable, size, isDisabled, isReadOnly }) => {
   const strings = useLocalizedStringFormatter(messages)
   const state = React.useContext(TimeFieldStateContext)
@@ -63,7 +63,7 @@ const TimeFieldClearButton: React.FC<
   ) : null
 }
 
-export const TimeField: React.FC<TimeFieldProps> = ({
+export const TimeField = <T extends TimeValue>({
   className,
   description,
   errorMessage,
@@ -75,7 +75,7 @@ export const TimeField: React.FC<TimeFieldProps> = ({
   isReadOnly,
   isDisabled,
   ...rest
-}) => {
+}: TimeFieldProps<T>) => {
   return (
     <AriaTimeField
       {...rest}
@@ -92,7 +92,7 @@ export const TimeField: React.FC<TimeFieldProps> = ({
         className={clsx(styles.inputField, {
           [styles.medium]: size === 'medium',
         })}
-        data-testid='time-field_input-field'
+
       >
         <FocusScope>
           <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
