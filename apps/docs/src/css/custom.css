@@ -128,6 +128,11 @@
   }
 }
 
+#april-fools {
+  display: block;
+  color: var(--ifm-card-background-color);
+}
+
 .card-image {
   text-align: center;
   padding: 24px;
