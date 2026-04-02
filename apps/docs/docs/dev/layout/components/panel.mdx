@@ -50,7 +50,7 @@ function App() {
 När du har flera paneler som kan öppnas och stängas oberoende av varandra, använd `PanelProvider` och `usePanels`-hooken.
 
 ```tsx
-import { PanelProvider, Panel, usePanels } from '@midas-ds/layout'
+import { PanelProvider, PanelRegion, usePanels } from '@midas-ds/layout'
 import { Button } from '@midas-ds/components'
 
 function PanelControls() {
@@ -76,8 +76,7 @@ function App() {
           <Main>
             <PanelControls />
           </Main>
-          <Panel id='panel-a' title='Panel A' style={{ gridArea: 'panelRight' }} />
-          <Panel id='panel-b' title='Panel B' style={{ gridArea: 'panelRight' }} />
+          <PanelRegion />
         </LayoutContent>
       </Layout>
     </PanelProvider>
