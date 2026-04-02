@@ -64,6 +64,10 @@
     }
   }
 
+  &[data-pressed] {
+    background-color: var(--midas-field-01-active);
+  }
+
   &[aria-expanded='true'] {
     .icon {
       transform: rotate(180deg);
