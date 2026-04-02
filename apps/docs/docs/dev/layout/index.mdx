@@ -1,0 +1,203 @@
+---
+title: Layout
+description: Modulärt layoutpaket för att sätta ihop sidstruktur med komponenter.
+sidebar_position: 1
+---
+
+# Layout
+
+<div style={{display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16}}>
+  <a href="https://www.npmjs.com/package/@midas-ds/layout" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/npm/v/@midas-ds/layout?style=flat-square&label=npm&color=cb3837" alt="npm version" />
+  </a>
+  <a href="https://www.npmjs.com/package/@midas-ds/layout" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/npm/dm/@midas-ds/layout?style=flat-square&label=downloads&color=informational" alt="npm downloads" />
+  </a>
+  <a href="https://www.npmjs.com/package/@midas-ds/layout" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/npm/last-update/@midas-ds/layout?style=flat-square&label=senast+publicerad&color=success" alt="Last publish date" />
+  </a>
+  <a href="https://github.com/migrationsverket/midas/tree/main/packages/layout" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/source-GitHub-24292e?style=flat-square&logo=github" alt="Source on GitHub" />
+  </a>
+</div>
+
+:::caution Beta
+
+`@midas-ds/layout` är i beta. Paketet är installationsbart och redo att användas, men visuell design och vissa API:er kan förändras innan stabil release.
+
+:::
+
+`@midas-ds/layout` är ett nytt, modulärt layoutpaket som ersätter `Layout` från `@midas-ds/components`. Istället för en enda stor komponent som konfigureras via props sätter du ihop strukturen med mindre, utbytbara komponenter — du väljer vilka delar du behöver.
+
+## Struktur
+
+Skissen nedan visar ett exempel på hur komponenterna kan sättas ihop. Vilket upplägg som passar din applikation är upp till dig.
+
+<div style={{
+  fontSize: '0.8rem',
+  border: '2px solid var(--ifm-color-emphasis-300)',
+  overflow: 'hidden',
+  maxWidth: '100%',
+  userSelect: 'none',
+  color: 'var(--ifm-color-content)',
+}}>
+
+  {/* Header */}
+  <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--ifm-color-emphasis-100)', borderBottom: '2px solid var(--ifm-color-emphasis-300)', padding: '8px 16px'}}>
+    <span style={{fontWeight: 'bold'}}>Header</span>
+    <div style={{display: 'flex', gap: 8}}>
+      <a href="/dev/layout/components/header" style={{display: 'flex', alignItems: 'center', gap: 6, border: '1px dashed var(--ifm-color-emphasis-300)', padding: '4px 8px', textDecoration: 'none', color: 'inherit'}}>
+        <span style={{fontSize: '0.65rem', color: 'var(--ifm-color-content-secondary)'}}>HeaderActions</span>
+        <div style={{background: 'var(--ifm-color-emphasis-200)', border: '1px solid var(--ifm-color-emphasis-300)', padding: '3px 8px', fontSize: '0.75rem'}}>HeaderAction</div>
+        <div style={{background: 'var(--ifm-color-emphasis-200)', border: '1px solid var(--ifm-color-emphasis-300)', padding: '3px 8px', fontSize: '0.75rem'}}>HeaderAction</div>
+      </a>
+    </div>
+  </div>
+
+  {/* Content row */}
+  <div style={{display: 'flex', minHeight: 180}}>
+
+    {/* Sidebar */}
+    <div style={{display: 'flex', flexDirection: 'column', width: 140, background: 'var(--ifm-color-emphasis-100)', borderRight: '2px solid var(--ifm-color-emphasis-300)', flexShrink: 0}}>
+      <a href="/dev/layout/components/sidebar" style={{display: 'block', fontWeight: 'bold', fontSize: '0.7rem', color: 'var(--ifm-color-content-secondary)', padding: '10px 10px 4px', textDecoration: 'none'}}>Sidebar</a>
+      <a href="/dev/layout/components/navigation" style={{display: 'flex', flexDirection: 'column', gap: 6, flex: 1, border: '1px dashed var(--ifm-color-emphasis-300)', margin: '0 8px 10px', padding: '8px', textDecoration: 'none', color: 'inherit'}}>
+        <span style={{fontSize: '0.65rem', color: 'var(--ifm-color-content-secondary)', marginBottom: 2}}>Navigation</span>
+        {[0,1,2].map(i => (
+          <div key={i} style={{background: 'var(--ifm-color-emphasis-200)', border: '1px solid var(--ifm-color-emphasis-300)', padding: '3px 8px', fontSize: '0.7rem'}}>NavigationLink</div>
+        ))}
+      </a>
+    </div>
+
+    {/* Main */}
+    <a href="/dev/layout/components/layout" style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--ifm-background-color)', padding: 16, textDecoration: 'none', color: 'var(--ifm-color-content-secondary)'}}>
+      <span style={{fontWeight: 'bold'}}>Main</span>
+    </a>
+
+    {/* Panel */}
+    <a href="/dev/layout/components/panel" style={{display: 'flex', flexDirection: 'column', width: 110, background: 'var(--ifm-color-emphasis-100)', borderLeft: '2px solid var(--ifm-color-emphasis-300)', padding: '12px 10px', textDecoration: 'none', color: 'inherit', flexShrink: 0}}>
+      <span style={{fontWeight: 'bold', fontSize: '0.7rem', color: 'var(--ifm-color-content-secondary)'}}>Panel</span>
+    </a>
+
+  </div>
+
+  {/* Navbar */}
+  <div style={{background: 'var(--ifm-color-emphasis-100)', borderTop: '2px solid var(--ifm-color-emphasis-300)', padding: '8px 16px'}}>
+    <a href="/dev/layout/components/navbar" style={{display: 'block', fontWeight: 'bold', fontSize: '0.7rem', color: 'var(--ifm-color-content-secondary)', textDecoration: 'none', marginBottom: 6}}>Navbar</a>
+    <a href="/dev/layout/components/navigation" style={{display: 'flex', justifyContent: 'center', gap: 8, border: '1px dashed var(--ifm-color-emphasis-300)', padding: '6px', textDecoration: 'none', color: 'inherit'}}>
+      <span style={{fontSize: '0.65rem', color: 'var(--ifm-color-content-secondary)', alignSelf: 'center', marginRight: 8}}>Navigation</span>
+      {[0,1,2].map(i => (
+        <div key={i} style={{background: 'var(--ifm-color-emphasis-200)', border: '1px solid var(--ifm-color-emphasis-300)', padding: '4px 14px', fontSize: '0.75rem'}}>NavigationLink</div>
+      ))}
+    </a>
+  </div>
+
+</div>
+
+
+## Installation
+
+```bash
+npm install @midas-ds/layout
+```
+
+## Snabbstart
+
+Så här ser ett komplett upplägg ut med sidhuvud, sidomeny, huvudinnehåll och navbar:
+
+<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
+<div className="snabbstart">
+
+```tsx
+import {
+  Layout,
+  LayoutContent,
+  Main,
+  Header,
+  HeaderActions,
+  HeaderAction,
+  Sidebar,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  Navbar,
+} from '@midas-ds/layout'
+import { House, Settings, Bell, User } from 'lucide-react'
+
+export default function App() {
+  return (
+    <Layout>
+      <Header>
+        <HeaderActions>
+          <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+          <HeaderAction icon={<User />}>Min profil</HeaderAction>
+        </HeaderActions>
+      </Header>
+
+      <LayoutContent>
+        <Sidebar title='Min applikation'>
+          <Navigation>
+            <NavigationItem>
+              <NavigationLink href='/' icon={<House />} isActive>
+                Hem
+              </NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink href='/installningar' icon={<Settings />}>
+                Inställningar
+              </NavigationLink>
+            </NavigationItem>
+          </Navigation>
+        </Sidebar>
+
+        <Main>
+          {/* Ditt innehåll */}
+        </Main>
+      </LayoutContent>
+
+      <Navbar>
+        <Navigation>
+          <NavigationItem>
+            <NavigationLink href='/' icon={<House />} isActive>
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+          <NavigationItem>
+            <NavigationLink href='/installningar' icon={<Settings />}>
+              Inställningar
+            </NavigationLink>
+          </NavigationItem>
+        </Navigation>
+      </Navbar>
+    </Layout>
+  )
+}
+```
+
+</div>
+
+## Exempelapp
+
+Vi håller på att ta fram en fristående exempelapp med Vite som visar paketet i ett realistiskt sammanhang. Under tiden finns [`apps/next`](https://github.com/migrationsverket/midas/tree/main/apps/next) i monorepon — en Next.js-app som använder paketet fullt ut och är öppen att titta på för inspiration.
+
+:::info Next.js / SSR
+
+Vissa komponenter i paketet (bl.a. `Header`) kräver `'use client'` i Next.js App Router. Använd dem i klientkomponenter eller wrappa dem i en egen `'use client'`-komponent. Se [`apps/next`](https://github.com/migrationsverket/midas/tree/main/apps/next) för ett fungerande exempel.
+
+:::
+
+## Komponenter
+
+Paketet exporterar komponenter organiserade i grupper. Välj de du behöver — du behöver inte använda allt.
+
+| Grupp | Komponenter |
+|-------|-------------|
+| [Layout](./components/layout) | `Layout`, `LayoutContent`, `Main` |
+| [Header](./components/header) | `Header`, `HeaderActions`, `HeaderAction`, `MobileMenu` |
+| [Navigation](./components/navigation) | `Navigation`, `NavigationLink`, `NavigationSection`, `NavigationSubMenu`, `NavigationItem`, `NavigationHeader` |
+| [Sidebar](./components/sidebar) | `Sidebar` |
+| [Panel](./components/panel) | `Panel`, `PanelProvider`, `PanelBody`, `usePanels` |
+| [Navbar](./components/navbar) | `Navbar` |
+
+## Migrera från gamla Layout
+
+Använder du `Layout` från `@midas-ds/components` idag? Se [migrationsguiden](./migration) för hur du går över till det nya paketet.

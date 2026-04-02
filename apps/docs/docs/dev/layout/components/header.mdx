@@ -1,0 +1,109 @@
+---
+title: Header
+description: Sidhuvud med stöd för logotyp, åtgärdsknappar och mobilmeny.
+---
+
+# Header
+
+Sidhuvudet innehåller logotypen och plats för åtgärdsknappar. På mobil används `MobileMenu` för att visa navigationen som ett drawer-mönster.
+
+## Header
+
+Semantiskt `<header>`-element. Tillhandahåller kontext för logotypstorlek (responsiv).
+
+```tsx
+import { Header } from '@midas-ds/layout'
+import { Logo } from '@midas-ds/components'
+
+<Header>
+  <Logo />
+</Header>
+```
+
+## HeaderActions & HeaderAction
+
+`HeaderActions` är en container för knappar längst till höger i sidhuvudet. `HeaderAction` är en enskild knapp med ikon och/eller etikett.
+
+```tsx
+import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
+import { Bell, User } from 'lucide-react'
+
+<Header>
+  <HeaderActions>
+    <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+    <HeaderAction icon={<User />}>Min profil</HeaderAction>
+  </HeaderActions>
+</Header>
+```
+
+:::note
+
+`HeaderAction` renderar som en `tertiary`-knapp av storlek `medium`. Om du utelämnar både `icon` och `children` får du en varning i development-läge.
+
+:::
+
+## MobileMenu
+
+En drawer-meny som bara visas på mobila enheter. Används för att ge mobilanvändare tillgång till navigationen.
+
+```tsx
+import { Header, MobileMenu, Navigation, NavigationLink } from '@midas-ds/layout'
+import { Menu, House } from 'lucide-react'
+import { Button } from '@midas-ds/components'
+import { useId, useState } from 'react'
+
+function AppHeader() {
+  const menuId = useId()
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <Header>
+      <Button
+        variant='icon'
+        icon={Menu}
+        aria-controls={menuId}
+        aria-expanded={isOpen}
+        aria-haspopup='dialog'
+        onPress={() => setIsOpen(true)}
+      />
+      <MobileMenu
+        id={menuId}
+        title='Meny'
+        isOpen={isOpen}
+        onOpenChange={setIsOpen}
+      >
+        <Navigation>
+          <NavigationLink href='/' icon={<House />} isActive>Hem</NavigationLink>
+        </Navigation>
+      </MobileMenu>
+    </Header>
+  )
+}
+```
+
+:::note
+
+`MobileMenu` renderar ingenting på desktop — den är villkorsstyrd via `useIsMobileDevice()`. Det är alltså säkert att alltid inkludera den i trädet.
+
+Exemplet ovan använder kontrollerat läge (`isOpen` + `onOpenChange`) för programmatisk kontroll. Om du inte behöver styra tillståndet utifrån kan du utelämna dessa props och låta `MobileMenu` hantera det själv.
+
+:::
+
+## Props
+
+### HeaderAction
+
+| Prop | Typ | Beskrivning |
+|------|-----|-------------|
+| `icon` | `ReactNode` | Valfri ikon |
+| `children` | `ReactNode` | Etikett |
+| `aria-label` | `string` | Krävs om varken ikon eller etikett anges |
+
+### MobileMenu
+
+| Prop | Typ | Beskrivning |
+|------|-----|-------------|
+| `title` | `string` | Rubrik i menyn |
+| `isOpen` | `boolean` | Kontrollerat öppet-läge |
+| `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
+| `children` | `ReactNode` | Menyinnehåll |
