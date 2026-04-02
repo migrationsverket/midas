@@ -1,0 +1,145 @@
+---
+title: TimeField
+description: Använd ett tidsfält när användaren ska fylla i en tid.
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import { TimeField } from '@midas-ds/components'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { TimeFieldControlled } from '@site/src/components/examples/time-field/TimeFieldExamples'
+import { Time } from '@internationalized/date'
+
+export const Example = props => (
+  <div className='card'>
+    <TimeField
+      label='Etikett'
+      description='Beskrivning'
+      {...props}
+    />
+  </div>
+)
+
+<ComponentHeader
+  name='TimeField'
+  friendlyName='Tidsfält'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TimeField.html'
+/>
+
+Tidsfält används när användaren ska fylla i en tid. Komponenten bygger på React Arias [TimeField](https://react-spectrum.adobe.com/react-aria/TimeField.html).
+In- och utdata bygger på [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) — samma bibliotek som används av `DateField` och `DatePicker`.
+
+```tsx
+import { TimeField } from '@midas-ds/components'
+```
+
+```tsx
+<TimeField
+  label='Etikett'
+  description='Beskrivning'
+/>
+```
+
+<Example />
+
+## Användning
+
+TimeField fungerar som andra formulärskomponenter och kan integreras i vanliga HTML-forms via `name` eller valideras via `validate` och `isInvalid`.
+
+### Förvalt värde (uncontrolled)
+
+Använd `defaultValue` med `Time` från `@internationalized/date`.
+
+```tsx
+import { Time } from '@internationalized/date'
+```
+
+```tsx
+<TimeField
+  label='Etikett'
+  defaultValue={new Time(14, 30)}
+/>
+```
+
+<Example
+  defaultValue={new Time(14, 30)}
+/>
+
+### Controlled value
+
+```tsx
+import { TimeField } from '@midas-ds/components'
+import { Time } from '@internationalized/date'
+
+export const TimeFieldControlled = () => {
+  const [time, setTime] = React.useState(new Time(9, 0))
+  return (
+    <>
+      <TimeField
+        label='Välj en tid'
+        value={time}
+        onChange={setTime}
+      />
+      <pre>Vald tid: {time?.toString()}</pre>
+    </>
+  )
+}
+```
+
+<TimeFieldControlled />
+
+## Varianter
+
+### isClearable
+
+Visar en knapp som tömmer fältet. Knappen visas bara när fältet har ett komplett värde.
+
+```tsx
+<TimeField
+  isClearable
+  defaultValue={new Time(14, 30)}
+  label='Etikett'
+/>
+```
+
+<Example
+  isClearable
+  defaultValue={new Time(14, 30)}
+/>
+
+### Sekunder
+
+Använd `granularity="second"` för att även visa sekunder.
+
+```tsx
+<TimeField
+  granularity='second'
+  defaultValue={new Time(14, 30, 45)}
+  label='Etikett'
+/>
+```
+
+<Example
+  granularity='second'
+  defaultValue={new Time(14, 30, 45)}
+/>
+
+### 12-timmarsformat
+
+Använd `hourCycle={12}` för AM/PM-format.
+
+```tsx
+<TimeField
+  hourCycle={12}
+  defaultValue={new Time(14, 30)}
+  label='Etikett'
+/>
+```
+
+<Example
+  hourCycle={12}
+  defaultValue={new Time(14, 30)}
+/>
+
+## API
+
+<PropTable name='TimeField' />

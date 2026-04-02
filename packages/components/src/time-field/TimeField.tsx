@@ -1,47 +1,46 @@
 import * as React from 'react'
 import {
-  DateField as AriaDateField,
-  type DateFieldProps as AriaDateFieldProps,
-  type DateValue,
+  TimeField as AriaTimeField,
+  type TimeFieldProps as AriaTimeFieldProps,
+  type TimeValue,
   type ValidationResult,
-  DateFieldStateContext,
+  TimeFieldStateContext,
 } from 'react-aria-components'
+import { FocusScope, useFocusManager } from '@react-aria/focus'
 import clsx from '../utils/clsx'
 import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
-import { InfoPopoverProps, Label } from '../label'
+import { type InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { ClearButton } from '../clear-button'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
-import styles from './DateField.module.css'
-import { Size } from '../common/types'
+import styles from './TimeField.module.css'
+import { type Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
-import { FocusScope } from '@react-aria/focus'
-import { useFocusManager } from '@react-aria/focus'
 
-export interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
+export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   label?: string
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'
-   * */
+   */
   size?: Size
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
-  /** Show a clear button to remove the selected date
+  /** Show a clear button to remove the selected time
    * @default false
    */
   isClearable?: boolean
 }
 
-const DateFieldClearButton: React.FC<
-  Pick<DateFieldProps<DateValue>, 'isClearable' | 'size' | 'isDisabled' | 'isReadOnly'>
+const TimeFieldClearButton: React.FC<
+  Pick<TimeFieldProps<TimeValue>, 'isClearable' | 'size' | 'isDisabled' | 'isReadOnly'>
 > = ({ isClearable, size, isDisabled, isReadOnly }) => {
   const strings = useLocalizedStringFormatter(messages)
-  const state = React.useContext(DateFieldStateContext)
+  const state = React.useContext(TimeFieldStateContext)
   const focusManager = useFocusManager()
 
   const handlePress = () => {
@@ -64,7 +63,7 @@ const DateFieldClearButton: React.FC<
   ) : null
 }
 
-export const DateField = <T extends DateValue>({
+export const TimeField = <T extends TimeValue>({
   className,
   description,
   errorMessage,
@@ -76,13 +75,13 @@ export const DateField = <T extends DateValue>({
   isReadOnly,
   isDisabled,
   ...rest
-}: DateFieldProps<T>) => {
+}: TimeFieldProps<T>) => {
   return (
-    <AriaDateField
+    <AriaTimeField
       {...rest}
       isReadOnly={isReadOnly}
       isDisabled={isDisabled}
-      className={clsx(styles.dateField, className)}
+      className={clsx(styles.timeField, className)}
     >
       <LabelWrapper popover={popover}>
         {label && <Label>{label}</Label>}
@@ -93,11 +92,11 @@ export const DateField = <T extends DateValue>({
         className={clsx(styles.inputField, {
           [styles.medium]: size === 'medium',
         })}
-        data-testid='date-field_input-field'
+
       >
         <FocusScope>
           <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-          <DateFieldClearButton
+          <TimeFieldClearButton
             isClearable={isClearable}
             size={size}
             isDisabled={isDisabled}
@@ -106,6 +105,6 @@ export const DateField = <T extends DateValue>({
         </FocusScope>
       </div>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-    </AriaDateField>
+    </AriaTimeField>
   )
 }
