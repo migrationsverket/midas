@@ -44,7 +44,7 @@ Skissen nedan visar ett exempel på hur komponenterna kan sättas ihop. Vilket u
 
   {/* Header */}
   <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'var(--ifm-color-emphasis-100)', borderBottom: '2px solid var(--ifm-color-emphasis-300)', padding: '8px 16px'}}>
-    <span style={{fontWeight: 'bold'}}>Logo</span>
+    <span style={{fontWeight: 'bold'}}>Header</span>
     <div style={{display: 'flex', gap: 8}}>
       <a href="/dev/layout/components/header" style={{display: 'flex', alignItems: 'center', gap: 6, border: '1px dashed var(--ifm-color-emphasis-300)', padding: '4px 8px', textDecoration: 'none', color: 'inherit'}}>
         <span style={{fontSize: '0.65rem', color: 'var(--ifm-color-content-secondary)'}}>HeaderActions</span>
@@ -117,6 +117,7 @@ import {
   HeaderAction,
   Sidebar,
   Navigation,
+  NavigationItem,
   NavigationLink,
   Navbar,
 } from '@midas-ds/layout'
@@ -135,12 +136,16 @@ export default function App() {
       <LayoutContent>
         <Sidebar title='Min applikation'>
           <Navigation>
-            <NavigationLink href='/' icon={<House />} isActive>
-              Hem
-            </NavigationLink>
-            <NavigationLink href='/installningar' icon={<Settings />}>
-              Inställningar
-            </NavigationLink>
+            <NavigationItem>
+              <NavigationLink href='/' icon={<House />} isActive>
+                Hem
+              </NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink href='/installningar' icon={<Settings />}>
+                Inställningar
+              </NavigationLink>
+            </NavigationItem>
           </Navigation>
         </Sidebar>
 
@@ -150,14 +155,18 @@ export default function App() {
       </LayoutContent>
 
       <Navbar>
-        <ul>
-          <NavigationLink href='/' icon={<House />} isActive>
-            Hem
-          </NavigationLink>
-          <NavigationLink href='/installningar' icon={<Settings />}>
-            Inställningar
-          </NavigationLink>
-        </ul>
+        <Navigation>
+          <NavigationItem>
+            <NavigationLink href='/' icon={<House />} isActive>
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+          <NavigationItem>
+            <NavigationLink href='/installningar' icon={<Settings />}>
+              Inställningar
+            </NavigationLink>
+          </NavigationItem>
+        </Navigation>
       </Navbar>
     </Layout>
   )

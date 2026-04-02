@@ -13,9 +13,10 @@ Semantiskt `<header>`-element. Tillhandahåller kontext för logotypstorlek (res
 
 ```tsx
 import { Header } from '@midas-ds/layout'
+import { Logo } from '@midas-ds/components'
 
 <Header>
-  {/* Logotyp renderas automatiskt */}
+  <Logo />
 </Header>
 ```
 
@@ -83,6 +84,8 @@ function AppHeader() {
 :::note
 
 `MobileMenu` renderar ingenting på desktop — den är villkorsstyrd via `useIsMobileDevice()`. Det är alltså säkert att alltid inkludera den i trädet.
+
+Exemplet ovan använder kontrollerat läge (`isOpen` + `onOpenChange`) för programmatisk kontroll. Om du inte behöver styra tillståndet utifrån kan du utelämna dessa props och låta `MobileMenu` hantera det själv.
 
 :::
 
