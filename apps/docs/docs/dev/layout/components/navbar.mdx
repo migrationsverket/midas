@@ -5,7 +5,7 @@ description: Navigationsbar längst ned på sidan för mobila enheter.
 
 # Navbar
 
-En navigationsbar längst ned på sidan, primärt avsedd för mobilanvändare. Används parallellt med `Sidebar` — på desktop visas sidomenyn, på mobil visas navbaren.
+En navigationsbar längst ned på sidan, primärt avsedd för mobilanvändare. Håll antalet länkar till 3–5 för att undvika trängsel på små skärmar.
 
 ## Användning
 
@@ -48,15 +48,10 @@ export default function App() {
 }
 ```
 
-:::tip
-
-Håll antalet länkar i navbaren till 3-5. Fler alternativ gör det svårt att trycka rätt på en liten skärm.
-
-:::
 
 ## Sidebar och Navbar tillsammans
 
-`Sidebar` döljer sig automatiskt på mobil och `Navbar` är synlig. På desktop är det tvärtom. Du behöver alltså inkludera båda — de tar hand om responsiviteten själva.
+`Sidebar` döljer sig automatiskt på mobila enheter. `Navbar` renderar alltid — du ansvarar själv för att visa eller dölja den beroende på skärmstorlek.
 
 ```tsx
 <Layout>
