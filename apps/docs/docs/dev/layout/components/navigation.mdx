@@ -12,13 +12,32 @@ Navigationskomponenterna används både i `Sidebar` och i `Navbar`. De är ident
 Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statiska barn och dynamisk rendering via Collections.
 
 ```tsx
-import { Navigation, NavigationLink } from '@midas-ds/layout'
+import { Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
 import { House, Settings } from 'lucide-react'
 
-<Navigation>
-  <NavigationLink href='/' icon={<House />} isActive>Hem</NavigationLink>
-  <NavigationLink href='/installningar' icon={<Settings />}>Inställningar</NavigationLink>
-</Navigation>
+export default function App() {
+  return (
+    <Navigation>
+      <NavigationItem>
+        <NavigationLink
+          href='/'
+          icon={<House />}
+          isActive
+        >
+          Hem
+        </NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationLink
+          href='/installningar'
+          icon={<Settings />}
+        >
+          Inställningar
+        </NavigationLink>
+      </NavigationItem>
+    </Navigation>
+  )
+}
 ```
 
 ## NavigationLink
@@ -41,8 +60,14 @@ Använd `as`-propen för att byta ut grundkomponenten mot din routers länkkompo
 
 ```tsx
 import { Link as RouterLink } from 'react-router'
+```
 
-<NavigationLink as={RouterLink} to='/mina-arenden' icon={<FileText />}>
+```tsx
+<NavigationLink
+  as={RouterLink}
+  to='/mina-arenden'
+  icon={<FileText />}
+>
   Mina ärenden
 </NavigationLink>
 ```
@@ -55,28 +80,51 @@ När du använder `as` ersätts `href` av den anpassade komponentens egenskaper.
 
 ### Props
 
-| Prop | Typ | Standard | Beskrivning |
-|------|-----|----------|-------------|
-| `icon` | `ReactNode` | — | **Obligatorisk.** Ikon för länken |
-| `children` | `ReactNode` | — | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
-| `isActive` | `boolean` | `false` | Markerar länken som aktiv sida |
-| `href` | `string` | — | URL (standard) |
-| `as` | `ElementType` | — | Ersättningskomponent (t.ex. Next.js `Link`) |
-| `aria-label` | `string` | — | Krävs om `children` inte är ren text |
+| Prop         | Typ           | Standard | Beskrivning                                                        |
+| ------------ | ------------- | -------- | ------------------------------------------------------------------ |
+| `icon`       | `ReactNode`   | —        | **Obligatorisk.** Ikon för länken                                  |
+| `children`   | `ReactNode`   | —        | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
+| `isActive`   | `boolean`     | `false`  | Markerar länken som aktiv sida                                     |
+| `href`       | `string`      | —        | URL (standard)                                                     |
+| `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
+| `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
 
 ## NavigationSection
 
 Grupperar navigeringslänkar under en valfri rubrik.
 
 ```tsx
-import { Navigation, NavigationLink, NavigationSection } from '@midas-ds/layout'
+import { Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
+import { FileText, House, Plus } from 'lucide-react'
+```
 
+```tsx
 <Navigation>
-  <NavigationLink href='/' icon={<House />}>Hem</NavigationLink>
-
+  <NavigationItem>
+    <NavigationLink
+      href='/'
+      icon={<House />}
+    >
+      Hem
+    </NavigationLink>
+  </NavigationItem>
   <NavigationSection title='Ansökan'>
-    <NavigationLink href='/ny-ansokan' icon={<Plus />}>Ny ansökan</NavigationLink>
-    <NavigationLink href='/mina-arenden' icon={<FileText />}>Mina ärenden</NavigationLink>
+    <NavigationItem>
+      <NavigationLink
+        href='/ny-ansokan'
+        icon={<Plus />}
+      >
+        Ny ansökan
+      </NavigationLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavigationLink
+        href='/mina-arenden'
+        icon={<FileText />}
+      >
+        Mina ärenden
+      </NavigationLink>
+    </NavigationItem>
   </NavigationSection>
 </Navigation>
 ```
@@ -88,27 +136,123 @@ Nästlad undermeny för hierarkisk navigationsstruktur.
 ```tsx
 <NavigationSection title='Administration'>
   <NavigationSubMenu>
-    <NavigationLink href='/anvandare' icon={<Users />}>Användare</NavigationLink>
-    <NavigationLink href='/roller' icon={<Shield />}>Roller</NavigationLink>
+    <NavigationItem>
+      <NavigationLink
+        href='/anvandare'
+        icon={<Users />}
+      >
+        Användare
+      </NavigationLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavigationLink
+        href='/roller'
+        icon={<Shield />}
+      >
+        Roller
+      </NavigationLink>
+    </NavigationItem>
   </NavigationSubMenu>
 </NavigationSection>
 ```
 
 ## Dynamisk rendering
 
-Alla navigationskomponenter stödjer React Arias Collection API för dynamisk rendering från data:
+Alla navigationskomponenter stödjer React Arias Collection API för dynamisk rendering från data. Nedan följer ett exempel med submenyer och rekursiv rendering.
 
 ```tsx
-const navItems = [
-  { id: 'hem', href: '/', label: 'Hem', icon: <House /> },
-  { id: 'installningar', href: '/installningar', label: 'Inställningar', icon: <Settings /> },
+import { Navigation, NavigationItem, NavigationLink, NavigationSection, NavigationSubMenu } from '@midas-ds/layout'
+import { Bell, FileText, House, Plus, Save, User } from 'lucide-react'
+
+type Section = {
+  id: number
+  title?: string
+  children: Item[]
+}
+
+type Item = {
+  id: number
+  title: string
+  href: string
+  icon: React.ReactNode
+  children?: Item[]
+}
+
+const sections: Section[] = [
+  {
+    id: 0,
+    children: [
+      {
+        id: 1,
+        title: 'Home',
+        href: '/',
+        icon: <House />,
+      },
+      {
+        id: 2,
+        title: 'Applications',
+        href: '/applications',
+        icon: <FileText />,
+        children: [
+          {
+            id: 3,
+            title: 'New application',
+            href: '/applications/new',
+            icon: <Plus />,
+          },
+          {
+            id: 4,
+            title: 'Drafts',
+            href: '/applications/drafts',
+            icon: <Save />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: 'Account',
+    children: [
+      {
+        id: 6,
+        title: 'Profile',
+        href: '/profile',
+        icon: <User />,
+      },
+      {
+        id: 7,
+        title: 'Notifications',
+        href: '/notifications',
+      },
+    ],
+  },
 ]
 
-<Navigation items={navItems}>
-  {item => (
-    <NavigationLink key={item.id} href={item.href} icon={item.icon}>
-      {item.label}
-    </NavigationLink>
-  )}
-</Navigation>
+export default function App() {
+  return (
+    <Navigation items={sections}>
+      {section => (
+        <NavigationSection
+          title={section.title}
+          items={section.children}
+        >
+          {function renderItem(item) {
+            return (
+              <NavigationItem>
+                <NavigationLink
+                  href={item.href}
+                  icon={item.icon}
+                >
+                  {item.title}
+                </NavigationLink>
+                <NavigationSubMenu items={item.children}>{renderItem}</NavigationSubMenu>
+              </NavigationItem>
+            )
+          }}
+        </NavigationSection>
+      )}
+    </Navigation>
+  )
+}
 ```
