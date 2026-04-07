@@ -1,5 +1,8 @@
+'use client'
+
 import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { useIsMobileDevice } from '../utils'
 import styles from './Navbar.module.css'
 
 export type NavbarProps = DetailedHTMLProps<
@@ -7,9 +10,13 @@ export type NavbarProps = DetailedHTMLProps<
   HTMLDivElement
 >
 
-export const Navbar = ({ className, ...rest }: NavbarProps) => (
-  <footer
-    className={clsx(className, styles.navbar)}
-    {...rest}
-  />
-)
+export const Navbar = ({ className, ...rest }: NavbarProps) => {
+  const isMobileDevice = useIsMobileDevice()
+
+  return isMobileDevice ? (
+    <footer
+      className={clsx(className, styles.navbar)}
+      {...rest}
+    />
+  ) : null
+}
