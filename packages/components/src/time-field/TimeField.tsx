@@ -63,48 +63,53 @@ const TimeFieldClearButton: React.FC<
   ) : null
 }
 
-export const TimeField = <T extends TimeValue>({
-  className,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  label,
-  size = 'large',
-  popover,
-  isClearable = false,
-  isReadOnly,
-  isDisabled,
-  ...rest
-}: TimeFieldProps<T>) => {
-  return (
-    <AriaTimeField
-      {...rest}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
-      className={clsx(styles.timeField, className)}
-    >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <div
-        className={clsx(styles.inputField, {
-          [styles.medium]: size === 'medium',
-        })}
-
+export const TimeField = React.forwardRef(
+  <T extends TimeValue>(
+    {
+      className,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      label,
+      size = 'large',
+      popover,
+      isClearable = false,
+      isReadOnly,
+      isDisabled,
+      ...rest
+    }: TimeFieldProps<T>,
+    ref: React.ForwardedRef<HTMLDivElement>
+  ) => {
+    return (
+      <AriaTimeField
+        {...rest}
+        ref={ref}
+        isReadOnly={isReadOnly}
+        isDisabled={isDisabled}
+        className={clsx(styles.timeField, className)}
       >
-        <FocusScope>
-          <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-          <TimeFieldClearButton
-            isClearable={isClearable}
-            size={size}
-            isDisabled={isDisabled}
-            isReadOnly={isReadOnly}
-          />
-        </FocusScope>
-      </div>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-    </AriaTimeField>
-  )
-}
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <div
+          className={clsx(styles.inputField, {
+            [styles.medium]: size === 'medium',
+          })}
+        >
+          <FocusScope>
+            <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+            <TimeFieldClearButton
+              isClearable={isClearable}
+              size={size}
+              isDisabled={isDisabled}
+              isReadOnly={isReadOnly}
+            />
+          </FocusScope>
+        </div>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+      </AriaTimeField>
+    )
+  }
+) as <T extends TimeValue>(props: TimeFieldProps<T> & { ref?: React.Ref<HTMLDivElement> }) => React.ReactElement | null
