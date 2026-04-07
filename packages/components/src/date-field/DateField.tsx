@@ -64,48 +64,54 @@ const DateFieldClearButton: React.FC<
   ) : null
 }
 
-export const DateField = <T extends DateValue>({
-  className,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  label,
-  size = 'large',
-  popover,
-  isClearable = false,
-  isReadOnly,
-  isDisabled,
-  ...rest
-}: DateFieldProps<T>) => {
-  return (
-    <AriaDateField
-      {...rest}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
-      className={clsx(styles.dateField, className)}
-    >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <div
-        className={clsx(styles.inputField, {
-          [styles.medium]: size === 'medium',
-        })}
-        data-testid='date-field_input-field'
+export const DateField = React.forwardRef(
+  <T extends DateValue>(
+    {
+      className,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      label,
+      size = 'large',
+      popover,
+      isClearable = false,
+      isReadOnly,
+      isDisabled,
+      ...rest
+    }: DateFieldProps<T>,
+    ref: React.ForwardedRef<HTMLDivElement>
+  ) => {
+    return (
+      <AriaDateField
+        {...rest}
+        ref={ref}
+        isReadOnly={isReadOnly}
+        isDisabled={isDisabled}
+        className={clsx(styles.dateField, className)}
       >
-        <FocusScope>
-          <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-          <DateFieldClearButton
-            isClearable={isClearable}
-            size={size}
-            isDisabled={isDisabled}
-            isReadOnly={isReadOnly}
-          />
-        </FocusScope>
-      </div>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-    </AriaDateField>
-  )
-}
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <div
+          className={clsx(styles.inputField, {
+            [styles.medium]: size === 'medium',
+          })}
+          data-testid='date-field_input-field'
+        >
+          <FocusScope>
+            <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+            <DateFieldClearButton
+              isClearable={isClearable}
+              size={size}
+              isDisabled={isDisabled}
+              isReadOnly={isReadOnly}
+            />
+          </FocusScope>
+        </div>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+      </AriaDateField>
+    )
+  }
+) as <T extends DateValue>(props: DateFieldProps<T> & { ref?: React.Ref<HTMLDivElement> }) => React.ReactElement | null
