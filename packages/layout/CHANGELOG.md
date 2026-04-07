@@ -1,3 +1,19 @@
+## 0.0.42 (2026-04-07)
+
+### 🩹 Fixes
+
+- **layout, navbar:** add conditional rendering ([d7719091d7](https://github.com/migrationsverket/midas/commit/d7719091d7))
+- **layout, mobile-menu:** support controlled state ([ec0e718648](https://github.com/migrationsverket/midas/commit/ec0e718648))
+
+### 📖 Documentation changes
+
+- **docs,layout:** add @midas-ds/layout documentation ([63a7eb4e46](https://github.com/migrationsverket/midas/commit/63a7eb4e46))
+
+### 🔙 Rollback changes
+
+- **layout,mobile-menu:** remove controlled state, update docs to reflect actual behavior ([9445142647](https://github.com/migrationsverket/midas/commit/9445142647))
+- **layout, navbar:** Revert "fix(layout, navbar): add conditional rendering" ([a93b6719cf](https://github.com/migrationsverket/midas/commit/a93b6719cf))
+
 ## 0.0.41 (2026-04-07)
 
 ### 🧱 Updated Dependencies
