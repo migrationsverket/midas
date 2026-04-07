@@ -1,10 +1,20 @@
+import React from 'react'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DateField.stories'
 import { render } from '../../test-utils'
+import { DateField } from './DateField'
 
 const { Primary, WithClearButton } = composeStories(stories)
+
+describe('given a DateField with a ref', async () => {
+  it('should forward the ref to the underlying element', async () => {
+    const ref = React.createRef<HTMLDivElement>()
+    await render(<DateField label='Date' ref={ref} />)
+    expect(ref.current).not.toBeNull()
+  })
+})
 
 describe('given a DateField', async () => {
   it('should set data-hovered on a segment when hovered', async () => {

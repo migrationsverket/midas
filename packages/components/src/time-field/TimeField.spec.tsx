@@ -1,10 +1,20 @@
+import React from 'react'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './TimeField.stories'
 import { render } from '../../test-utils'
+import { TimeField } from './TimeField'
 
 const { Primary, WithClearButton } = composeStories(stories)
+
+describe('given a TimeField with a ref', async () => {
+  it('should forward the ref to the underlying element', async () => {
+    const ref = React.createRef<HTMLDivElement>()
+    await render(<TimeField label='Time' ref={ref} />)
+    expect(ref.current).not.toBeNull()
+  })
+})
 
 describe('given a TimeField', async () => {
   it('should set data-hovered on a segment when hovered', async () => {
