@@ -48,26 +48,15 @@ En drawer-meny som bara visas på mobila enheter. Används för att ge mobilanv�
 
 ```tsx
 import { Header, MobileMenu, Navigation, NavigationLink } from '@midas-ds/layout'
-import { Menu, House } from 'lucide-react'
-import { Button } from '@midas-ds/components'
-import { useId, useState } from 'react'
+import { House } from 'lucide-react'
+import { useState } from 'react'
 
 function AppHeader() {
-  const menuId = useId()
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <Header>
-      <Button
-        variant='icon'
-        icon={Menu}
-        aria-controls={menuId}
-        aria-expanded={isOpen}
-        aria-haspopup='dialog'
-        onPress={() => setIsOpen(true)}
-      />
       <MobileMenu
-        id={menuId}
         title='Meny'
         isOpen={isOpen}
         onOpenChange={setIsOpen}

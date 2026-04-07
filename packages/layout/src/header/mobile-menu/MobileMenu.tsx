@@ -24,9 +24,17 @@ export const MobileMenu = ({
   children,
   className,
   title,
+  isOpen,
+  onOpenChange,
   ...rest
 }: MobileMenuProps) => {
   const isMobile = useIsMobileDevice()
+
+  const handlePress = () => {
+    if (typeof onOpenChange === 'function' && typeof isOpen === 'boolean') {
+      onOpenChange(!isOpen)
+    }
+  }
 
   return isMobile ? (
     <MobileMenuContext.Provider value={{}}>
@@ -34,10 +42,13 @@ export const MobileMenu = ({
         <Button
           icon={Menu}
           variant='icon'
+          onPress={handlePress}
         />
         <ModalOverlay
           className={clsx(className, styles.overlay)}
           isDismissable
+          onOpenChange={onOpenChange}
+          isOpen={isOpen}
           {...rest}
         >
           {composeRenderProps(children, children => (
