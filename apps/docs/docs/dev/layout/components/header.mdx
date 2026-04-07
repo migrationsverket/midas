@@ -47,7 +47,7 @@ import { Bell, User } from 'lucide-react'
 En drawer-meny som bara visas på mobila enheter. Används för att ge mobilanvändare tillgång till navigationen.
 
 ```tsx
-import { Header, MobileMenu, Navigation, NavigationLink } from '@midas-ds/layout'
+import { Header, MobileMenu, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
 import { House } from 'lucide-react'
 import { useState } from 'react'
 
@@ -62,7 +62,15 @@ function AppHeader() {
         onOpenChange={setIsOpen}
       >
         <Navigation>
-          <NavigationLink href='/' icon={<House />} isActive>Hem</NavigationLink>
+          <NavigationItem>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
+              Hem
+            </NavigationLink>
+          </NavigationItem>
         </Navigation>
       </MobileMenu>
     </Header>
@@ -82,17 +90,17 @@ Exemplet ovan använder kontrollerat läge (`isOpen` + `onOpenChange`) för prog
 
 ### HeaderAction
 
-| Prop | Typ | Beskrivning |
-|------|-----|-------------|
-| `icon` | `ReactNode` | Valfri ikon |
-| `children` | `ReactNode` | Etikett |
-| `aria-label` | `string` | Krävs om varken ikon eller etikett anges |
+| Prop         | Typ         | Beskrivning                              |
+| ------------ | ----------- | ---------------------------------------- |
+| `icon`       | `ReactNode` | Valfri ikon                              |
+| `children`   | `ReactNode` | Etikett                                  |
+| `aria-label` | `string`    | Krävs om varken ikon eller etikett anges |
 
 ### MobileMenu
 
-| Prop | Typ | Beskrivning |
-|------|-----|-------------|
-| `title` | `string` | Rubrik i menyn |
-| `isOpen` | `boolean` | Kontrollerat öppet-läge |
+| Prop           | Typ                         | Beskrivning                    |
+| -------------- | --------------------------- | ------------------------------ |
+| `title`        | `string`                    | Rubrik i menyn                 |
+| `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
 | `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
-| `children` | `ReactNode` | Menyinnehåll |
+| `children`     | `ReactNode`                 | Menyinnehåll                   |
