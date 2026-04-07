@@ -89,7 +89,9 @@ function AppHeader() {
 
 ### MobileMenu
 
-| Prop       | Typ         | Beskrivning  |
-| ---------- | ----------- | ------------ |
-| `title`    | `string`    | Rubrik i menyn |
-| `children` | `ReactNode` | Menyinnehåll |
+| Prop           | Typ                         | Beskrivning                    |
+| -------------- | --------------------------- | ------------------------------ |
+| `title`        | `string`                    | Rubrik i menyn                 |
+| `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
+| `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
+| `children`     | `ReactNode`                 | Menyinnehåll                   |
