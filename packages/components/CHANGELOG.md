@@ -1,3 +1,22 @@
+## 17.11.0 (2026-04-08)
+
+### 🚀 Features
+
+- **components:** add TimeField component ([3c88d5371d](https://github.com/migrationsverket/midas/commit/3c88d5371d))
+
+### 🩹 Fixes
+
+- **components,time-field:** make TimeFieldProps generic, remove React.FC and data-testid ([73599aadbd](https://github.com/migrationsverket/midas/commit/73599aadbd))
+
+### 🏭 Refactoring
+
+- **components,date-field,time-field:** wrap DateField and TimeField in forwardRef ([7bd91d2d07](https://github.com/migrationsverket/midas/commit/7bd91d2d07))
+- **components,date-field:** make DateFieldProps generic and remove React.FC ([eefb171f3e](https://github.com/migrationsverket/midas/commit/eefb171f3e))
+
+### 🧪 Tests updated
+
+- **components,date-field,time-field:** add forwardRef tests for DateField and TimeField ([83f63f8692](https://github.com/migrationsverket/midas/commit/83f63f8692))
+
 ## 17.10.17 (2026-04-07)
 
 ### 🧱 Updated Dependencies
