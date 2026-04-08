@@ -4,6 +4,7 @@ import { Menu } from 'lucide-react'
 import {
   composeRenderProps,
   Dialog,
+  DialogTriggerProps,
   Modal,
   ModalOverlay,
   ModalOverlayProps,
@@ -20,7 +21,12 @@ import { MobileMenuContext } from './MobileMenuContext'
 import messages from './intl/translations.json'
 import styles from './MobileMenu.module.css'
 
-export interface MobileMenuProps extends ModalOverlayProps {
+type StateValues = 'isOpen' | 'defaultOpen' | 'onOpenChange'
+
+export interface MobileMenuProps
+  extends
+    Omit<ModalOverlayProps, StateValues>,
+    Pick<DialogTriggerProps, StateValues> {
   /**
    * A visible title for the menu
    */
@@ -30,6 +36,7 @@ export interface MobileMenuProps extends ModalOverlayProps {
 export const MobileMenu = ({
   children,
   className,
+  defaultOpen,
   isOpen,
   onOpenChange,
   title,
@@ -38,26 +45,21 @@ export const MobileMenu = ({
   const isMobile = useIsMobileDevice()
   const strings = useLocalizedStringFormatter(messages)
 
-  const handlePress = () => {
-    if (typeof onOpenChange === 'function' && typeof isOpen === 'boolean') {
-      onOpenChange(!isOpen)
-    }
-  }
-
   return isMobile ? (
     <MobileMenuContext.Provider value={{}}>
-      <DialogTrigger>
+      <DialogTrigger
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        defaultOpen={defaultOpen}
+      >
         <Button
           aria-label={strings.format('openMenu')}
           icon={Menu}
-          onPress={handlePress}
           variant='icon'
         />
         <ModalOverlay
           className={clsx(className, styles.overlay)}
           isDismissable
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
           {...rest}
         >
           {composeRenderProps(children, children => (
