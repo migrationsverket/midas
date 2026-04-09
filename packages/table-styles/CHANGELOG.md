@@ -1,3 +1,10 @@
+## 2.0.66 (2026-04-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.1
+- Updated theme to 3.12.20
+
 ## 2.0.65 (2026-04-08)
 
 ### 🧱 Updated Dependencies
