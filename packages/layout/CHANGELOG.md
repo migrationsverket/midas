@@ -1,3 +1,9 @@
+## 0.0.44 (2026-04-09)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** add controlled state support ([4343a1d3ed](https://github.com/migrationsverket/midas/commit/4343a1d3ed))
+
 ## 0.0.43 (2026-04-08)
 
 ### 🧱 Updated Dependencies
