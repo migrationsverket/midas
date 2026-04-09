@@ -1,0 +1,12 @@
+.skipToContent {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  z-index: var(--midas-z-index-skip-to-content);
+
+  &[data-focus-visible] {
+    right: auto;
+    left: 5px;
+    top: 5px;
+  }
+}
