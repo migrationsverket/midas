@@ -1,0 +1,229 @@
+---
+slug: 17.11.0
+title: Release 17.11.0
+authors: midas
+tags: [release-notes, v17]
+date: 2026-07-10
+---
+
+Den här posten samlar det viktigaste sedan 17.10.0 — ett nytt layoutpaket, flera nya komponenter och en hel del förbättringar.
+
+| Paket | Version |
+|---|---|
+| `@midas-ds/components` | `17.17.3` |
+| `@midas-ds/layout` | `0.2.11` |
+| `@midas-ds/theme` | `3.15.4` |
+
+## 📦 @midas-ds/layout — nu i beta
+
+`@midas-ds/layout` är tillgängligt och redo att börja användas. Det är det nya sättet att bygga layouter i Midas — ett komponentbaserat API där du sätter ihop strukturen med JSX i stället för att konfigurera en enda stor komponent via props.
+
+```tsx
+import {
+  Layout, LayoutContent, Main,
+  Header, HeaderActions, HeaderAction,
+  Sidebar, Navigation, NavigationLink,
+  Navbar,
+} from '@midas-ds/layout'
+
+<Layout>
+  <Header>
+    <HeaderActions>
+      <HeaderAction icon={<User />}>Anna Andersson</HeaderAction>
+    </HeaderActions>
+  </Header>
+
+  <LayoutContent>
+    <Sidebar title='Min applikation'>
+      <Navigation>
+        <NavigationLink href='/' icon={<House />} isActive>
+          Hem
+        </NavigationLink>
+      </Navigation>
+    </Sidebar>
+    <Main>{/* ditt innehåll */}</Main>
+  </LayoutContent>
+
+  <Navbar>
+    <Navigation>
+      <NavigationLink href='/' icon={<House />} isActive>
+        Hem
+      </NavigationLink>
+    </Navigation>
+  </Navbar>
+</Layout>
+```
+
+{/* truncate */}
+
+Paketet är redo att ta i bruk — men räkna med att API, design och UX kan förändras under arbetets gång. Vi tar gärna emot feedback.
+
+```bash
+npm install @midas-ds/layout
+```
+
+Se [dokumentationen](/dev/layout) och [migrationsguiden](/dev/layout/migration) för mer information.
+
+### Vad händer med gamla Layout?
+
+`Layout` från `@midas-ds/components` fortsätter att fungera, men kommer inte att få nya funktioner. Nya projekt bör använda `@midas-ds/layout`.
+
+### Panel
+
+`Panel` är en ny komponent i `@midas-ds/layout` för detaljvyer och sidopaneler. Den stöder två lägen:
+
+- **overlay** — öppnar som ett lager ovanpå innehållet
+- **push** — skjuter undan innehållet och tar upp plats i layouten
+
+```tsx
+import { Panel, PanelContent } from '@midas-ds/layout'
+
+<Panel id='details' title='Detaljer' variant='push'>
+  <PanelContent>...</PanelContent>
+</Panel>
+```
+
+Panel har sedan utökats med en `actions`-prop för att placera knappar i rubrikraden:
+
+```tsx
+import { Button } from '@midas-ds/components'
+import { Panel, PanelContent } from '@midas-ds/layout'
+
+<Panel
+  id='details'
+  title='Detaljer'
+  variant='push'
+  actions={<Button variant='secondary'>Redigera</Button>}
+>
+  <PanelContent>...</PanelContent>
+</Panel>
+```
+
+### Sidebar-animationer
+
+Sidomenyn animerar nu titeln och navigationsrubrikerna mjukt vid kollaps och expansion. Animationen är omgjord för bättre prestanda.
+
+### Övrigt i layoutpaketet
+
+Paketet har även fått en `Header`-komponent med stöd för logotyp, systemnamn och åtgärdsknappar.
+
+## 🚀 Nya funktioner
+
+### @midas-ds/components
+
+#### TimeField
+
+[`TimeField`](/components/timefield) är en ny komponent för att mata in klockslag. Den delar API och stil med `DateField`.
+
+```tsx
+import { TimeField } from '@midas-ds/components'
+
+<TimeField label='Starttid' />
+```
+
+#### Card — CardHeader och CardBody
+
+`Card` har fått `CardHeader` och `CardBody` som ersätter de gamla slot-baserade mönstren. Det gamla API:et är markerat som deprecated.
+
+```tsx
+// Före
+<Card heading='Rubrik'>Innehåll</Card>
+
+// Efter
+<Card>
+  <CardHeader>Rubrik</CardHeader>
+  <CardBody>Innehåll</CardBody>
+</Card>
+```
+
+#### ColorSchemeSwitch — kontrollerat läge
+
+`ColorSchemeSwitch` stöder nu kontrollerat läge via `scheme` och `onSchemeChange`. Använd det när du vill spara valet externt, t.ex. i `localStorage` eller i serverstatus.
+
+```tsx
+const [scheme, setScheme] = useState<ColorScheme>('light dark')
+
+<ColorSchemeSwitch
+  scheme={scheme}
+  onSchemeChange={setScheme}
+/>
+```
+
+#### ColorSchemeSwitchMenu — kompakt dropdown
+
+`ColorSchemeSwitchMenu` är en ny kompakt variant av `ColorSchemeSwitch` avsedd för att bäddas in i menyer — t.ex. i en `MobileMenu` eller en headeråtgärd.
+
+```tsx
+import { ColorSchemeSwitchMenu } from '@midas-ds/components'
+
+<ColorSchemeSwitchMenu />
+```
+
+#### Övriga tillägg
+
+- **ContrastFilled:** Nytt ikon för att signalera kontrastläge — `import { ContrastFilled } from '@midas-ds/components'`.
+- **ComboBox:** Ny prop `listBoxProps` för att skicka props direkt till listrutan.
+- **Select:** Ny prop `popoverProps` för att skicka props till popoverkontainern.
+- **Select:** `SelectAll` nollställer nu valideringsstatus korrekt.
+- **Radio, Accordion:** `children` kan nu vara en funktion (render prop).
+
+## 🩹 Fixar
+
+### @midas-ds/components
+
+- **Modal** ♿ — Fokusringen visas nu korrekt på dialogen vid tangentbordsnavigering, så att det är tydligt var fokus befinner sig för tangentbordsanvändare.
+- **Modal** — Scrollbar-gap i dialogen är fixat — `overflow-y` är nu satt på dialogelementet.
+- **Tag** — Färgtokens har fått dedikerade primitiver i temat för bättre separation.
+- **DateField, TimeField** — Båda är nu wrappade i `forwardRef`.
+- **Select** — Obligatorisk validering aktiveras nu korrekt när alla valda alternativ rensas.
+- **Select, ComboBox** — Listrutan har nu en relativ maxhöjd och scrollar korrekt i trånga layouter.
+- **SearchField** — Skickar nu formuläret på Enter-tangent även utan `onSubmit`-prop.
+- **SearchField** — `inputMode="search"` satt som standard.
+- **Card** — Marginal-kollaps inuti `CardBody` är förhindrad.
+- **Card** ♿ — Rubriknivån i horisontellt läge är korrigerad för korrekt dokumentstruktur, vilket påverkar skärmläsares navigation.
+- **Calendar** — Chevronstorlek i `CalendarHeader` är satt till korrekt 20 px.
+- **Grid** — Flex-wrap-beteendet för kolumner är korrigerat.
+- **Link** ♿ — Nytt visuellt dolt label på ikonerna "öppnas i nytt fönster" och "ladda ner", så att skärmläsare får ett meningsfullt alternativ till den visuella ikonen.
+- **Accordion** — `type`-prop ignoreras nu korrekt när `isContained` är false.
+- **Table** ♿ 📱 — Sorteringsikonen visas nu vid låg opacitet på pekenheter och uppfyller WCAG 1.4.11-kravet på 3:1 kontrast för UI-element.
+- **Flera komponenter** 📱 — Hover- och tryckstilar är förbättrade på pekskärmar: `:hover` ersatt med `[data-hovered]` och hover-regler wrappade i `@media (hover: hover)`, så att knappar inte fastnar i hover-tillstånd efter tryck. Berörda: `Checkbox`, `Card`, `Select`, `Calendar`, `DateField`, `ListBox`, `LinkButton`, `Link`.
+
+### @midas-ds/layout
+
+- **Sidebar** — Kollapsa/expandera-animationen är omgjord för bättre prestanda.
+- **Main** — Padding på huvudinnehållet är korrigerad.
+- **MobileMenu** 📱 — Overlay-bakgrunden visas nu korrekt på mobil.
+- **Panel** 📱 — Push-varianten fungerar nu korrekt på mobil med höjdövergång.
+- **Layout** — Paketet exporterar nu en reset-CSS som kan importeras separat.
+
+### @midas-ds/theme
+
+- **Button** — Opacitetstokens används nu för hover/aktiva tillstånd på sekundär- och tertiärknappar, samt för `disabled`-bakgrunden.
+- **Icons** — Värdena för `icon` och `icon-sm` storlekstokens är korrigerade — de var förväxlade.
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v17.11.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.11.0)
+- [components@v17.12.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.12.0)
+- [components@v17.13.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.13.0)
+- [components@v17.14.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.14.0)
+- [components@v17.15.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.15.0)
+- [components@v17.16.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.16.0)
+- [components@v17.17.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.17.0)
+- [components@v17.17.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.17.1)
+- [components@v17.17.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.17.2)
+- [components@v17.17.3](https://github.com/migrationsverket/midas/releases/tag/components%40v17.17.3)
+- [layout@v0.0.44](https://github.com/migrationsverket/midas/releases/tag/layout%400.0.44)
+- [layout@v0.1.0](https://github.com/migrationsverket/midas/releases/tag/layout%400.1.0)
+- [layout@v0.2.0](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.0)
+- [layout@v0.2.1](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.1)
+- [layout@v0.2.2](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.2)
+- [layout@v0.2.3](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.3)
+- [layout@v0.2.4](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.4)
+- [layout@v0.2.5](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.5)
+- [layout@v0.2.6](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.6)
+- [layout@v0.2.7](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.7)
+- [layout@v0.2.8](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.8)
+- [layout@v0.2.9](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.9)
+- [layout@v0.2.10](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.10)
+- [layout@v0.2.11](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.11)
