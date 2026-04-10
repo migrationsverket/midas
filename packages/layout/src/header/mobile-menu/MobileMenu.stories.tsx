@@ -5,14 +5,17 @@ import { useState } from 'react'
 
 type Story = StoryObj<typeof MobileMenu>
 
-const { Primary: PrimaryNavigation } = composeStories(navigationStories)
+const { Nested: NestedNavigation } = composeStories(navigationStories)
 
 export default {
   component: MobileMenu,
-  title: 'Components/Layout/MobileMenu',
+  title: 'Layout/Header/MobileMenu',
   tags: ['autodocs'],
+  globals: {
+    viewport: { value: 'small' },
+  },
   args: {
-    children: <PrimaryNavigation />,
+    children: <NestedNavigation />,
   },
 } satisfies Meta<typeof MobileMenu>
 
