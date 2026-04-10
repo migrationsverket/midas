@@ -7,7 +7,7 @@ type Story = StoryObj<typeof NavigationLink>
 
 export default {
   component: NavigationLink,
-  title: 'Components/Layout/Navigation/NavigationLink',
+  title: 'Layout/Navigation/NavigationLink',
   tags: ['autodocs'],
   args: {
     children: 'Hem',

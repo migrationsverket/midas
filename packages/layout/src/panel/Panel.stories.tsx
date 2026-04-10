@@ -1,36 +1,52 @@
 import { type Meta, type StoryObj } from '@storybook/react-vite'
-import { Panel } from '.'
 import { useState } from 'react'
 import { Button } from '@midas-ds/components'
+import { Layout, LayoutContent } from '../layout'
+import { Main } from '../main'
+import { Panel } from '.'
 
 type Story = StoryObj<typeof Panel>
 
 export default {
   component: Panel,
-  title: 'Components/Layout/Panel',
+  title: 'Layout/Panel',
   tags: ['autodocs'],
+  parameters: { layout: 'fullscreen', rootElement: 'div' },
   args: {
-    isOpen: false,
     title: 'App name',
   },
+  decorators: [
+    Story => (
+      <Layout>
+        <LayoutContent>
+          <Story />
+        </LayoutContent>
+      </Layout>
+    ),
+  ],
 } satisfies Meta<typeof Panel>
 
 export const Primary: Story = {
   args: {
-    isOpen: true,
-    title: 'Plats',
+    defaultOpen: true,
   },
+}
+
+export const Controlled: Story = {
   render: args => {
     const [isOpen, setIsOpen] = useState(true)
 
-    return isOpen ? (
-      <Panel
-        {...args}
-        isOpen={isOpen}
-        onOpenChange={setIsOpen}
-      />
-    ) : (
-      <Button onPress={() => setIsOpen(true)}>Re open</Button>
+    return (
+      <>
+        <Main>
+          <Button onPress={() => setIsOpen(true)}>Open panel</Button>
+        </Main>
+        <Panel
+          {...args}
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+        />
+      </>
     )
   },
 }
