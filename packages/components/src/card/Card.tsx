@@ -89,9 +89,8 @@ export const CardTitle: React.FC<HeadingProps> = ({
 
   return (
     <Heading
-      level={horizontal ? 5 : 3}
+      level={3}
       elementType={elementType}
-      isExpressive={horizontal}
       className={clsx(styles.cardTitle, horizontal && styles.horizontal)}
       id={titleId}
     >
