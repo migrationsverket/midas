@@ -13,6 +13,7 @@ import {
   useObjectRef,
 } from '@react-aria/utils'
 import { PanelBody, PanelBodyProps } from './panel-body'
+import { PanelContent } from './panel-content'
 import { PanelHeader } from './panel-header'
 import { PanelTitle, PanelTitleProps } from './panel-title'
 import messages from './intl/translations.json'
@@ -106,23 +107,24 @@ const PanelInner = forwardRef<
         {...filterDOMProps(rest)}
       >
         <PanelHeader>
-          <div>
-            {title && (
-              <PanelTitle
-                className={styles.panelTitle}
-                title={title}
-              />
-            )}
-          </div>
+          {title ? (
+            <PanelTitle
+              className={styles.panelTitle}
+              title={title}
+            />
+          ) : (
+            <div />
+          )}
           <Button
-            variant='icon'
             aria-label={strings.format('closePanel')}
             onPress={onPress}
+            size='medium'
+            variant='icon'
           >
             <X size={20} />
           </Button>
         </PanelHeader>
-        {children}
+        <PanelContent>{children}</PanelContent>
       </PanelBody>
     )
   },

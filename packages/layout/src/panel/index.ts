@@ -1,4 +1,5 @@
 export * from './panel-body'
+export * from './panel-content'
 export * from './panel-header'
 export * from './panel-title'
 export * from './Panel'
