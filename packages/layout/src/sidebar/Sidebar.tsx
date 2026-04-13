@@ -51,7 +51,6 @@ export const Sidebar = ({
           [styles.collapsed]: isCollapsed,
         })}
         {...filterDOMProps(props)}
-        role='complementary'
       >
         <PanelHeader
           className={clsx(styles.sidebarHeader, {

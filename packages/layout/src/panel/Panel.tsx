@@ -38,7 +38,7 @@ export const Panel = (props: PanelProps) => {
     props.onOpenChange,
   )
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const isExiting = useExitAnimation(ref, isOpen)
 
   const handlePress = () => setIsOpen(previouslyOpen => !previouslyOpen)
@@ -64,7 +64,7 @@ export const Panel = (props: PanelProps) => {
 }
 
 const PanelInner = forwardRef<
-  HTMLDivElement,
+  HTMLElement,
   PanelProps & {
     isExiting: boolean
     onPress: (e: PressEvent) => void
@@ -89,7 +89,7 @@ const PanelInner = forwardRef<
     const objectRef = useObjectRef(ref)
     const isEntering = useEnterAnimation(objectRef, !defaultOpen)
 
-    const handleAnimationEnd = (e: AnimationEvent<HTMLDivElement>) => {
+    const handleAnimationEnd = (e: AnimationEvent<HTMLElement>) => {
       if (e.target === e.currentTarget && promoting) {
         onPromotionEnd?.()
       }

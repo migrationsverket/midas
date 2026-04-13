@@ -5,8 +5,8 @@ import { Panel } from './Panel'
 import { usePanels } from './usePanels'
 
 export type PanelRegionProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLElement>,
-  HTMLElement
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
 >
 
 export const PanelRegion = ({
@@ -17,7 +17,7 @@ export const PanelRegion = ({
   const { panels, closePanel, removePanel, resetPromoting } = usePanels()
 
   return (
-    <aside
+    <div
       className={className}
       {...rest}
     >
@@ -36,6 +36,6 @@ export const PanelRegion = ({
         />
       ))}
       {children}
-    </aside>
+    </div>
   )
 }
