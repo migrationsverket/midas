@@ -1,4 +1,15 @@
 .panel {
+  background: var(--midas-background-base);
+
+  /* important because position:relative is overridden by [data-debug] selector */
+  height: 100%;
+  overflow: hidden;
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  width: 320px;
+  border-left: 1px solid var(--midas-border-color-subtle);
+
   &[data-promoting] {
     animation: promote var(--midas-transition-duration-fast) ease-out;
   }
@@ -8,14 +19,6 @@
       animation-duration: 1ms;
     }
   }
-
-  /* important because position:relative is overridden by [data-debug] selector */
-  position: absolute !important;
-  top: 0;
-  right: 0;
-  width: 320px;
-  height: 100%;
-  overflow: hidden;
 
   &[data-entering] {
     animation: slide-horizontally var(--midas-transition-duration-fast);
@@ -39,6 +42,8 @@
     height: 25%;
     left: 0;
     top: unset;
+    border-left: none;
+    border-top: 1px solid var(--midas-border-color-subtle);
 
     &[data-entering] {
       animation: slide-vertically var(--midas-transition-duration-fast);
@@ -52,7 +57,9 @@
 }
 
 .panelTitle {
-  font-size: var(--midas-typography-font-size-20);
+  font-size: var(--midas-typography-font-size-30);
+  font-weight: var(--midas-typography-weight-semi-bold);
+  line-height: var(--midas-typography-line-height-50);
   display: block;
 }
 
