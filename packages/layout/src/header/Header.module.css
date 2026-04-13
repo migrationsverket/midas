@@ -1,6 +1,6 @@
 .header {
   background-color: var(--midas-background-base);
+  border-bottom: 1px solid var(--midas-border-color-subtle);
   display: flex;
-  flex: 1 0 auto;
-  padding: 1rem;
+  gap: var(--midas-space-xlarge);
 }
