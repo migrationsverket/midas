@@ -100,6 +100,20 @@ Skissen nedan visar ett exempel på hur komponenterna kan sättas ihop. Vilket u
 npm install @midas-ds/layout
 ```
 
+Uppdatera er globala css med:
+
+```css
+html {
+  /* döljer scrollbars vid animation av paneler */
+  overflow: hidden;
+}
+
+body {
+  /* eventuell marginal hanteras av Midas layout */
+  margin: 0;
+}
+```
+
 ## Snabbstart
 
 Så här ser ett komplett upplägg ut med sidhuvud, sidomeny, huvudinnehåll och navbar:

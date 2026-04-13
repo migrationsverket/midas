@@ -14,6 +14,9 @@ export default function Home() {
       <span data-midas-version={VERSION} />
       <Information />
       <AppSettings />
+      <div style={{ marginTop: 1000 }}>
+        Some content in the bottom of the page to create a scroll
+      </div>
     </>
   )
 }
