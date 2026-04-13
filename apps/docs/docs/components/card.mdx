@@ -65,17 +65,17 @@ import { Card, CardContent, CardTitle, Text } from '@midas-ds/components'
 
 ### Titel
 
-Titeln har alltid samma storlek rent grafiskt och är som standard en `<h2>` men för korrekt semantik kan den ändras med `elementType`. I exemplet nedan har titeln samma grafiska utseende som innan men beroende på vart kortet används kan semantiken behöva justeras.
+Titeln är som standard en semantisk `<h2>` som ser ut som en `<h3>` (`<h5>` i horisontell layout). Korrigera det semantiska elementet med `elementType` vid behov.
 
 ```tsx
 <Card>
   <CardContent>
     <CardTitle
       // highlight-start
-      elementType='h3'
+      elementType='h4'
       // highlight-end
     >
-      Här är en titel
+      Här är en h4-titel för att det följer rubrikstrukturen i min kontext
     </CardTitle>
     <Text>Här är lite innehåll</Text>
   </CardContent>
