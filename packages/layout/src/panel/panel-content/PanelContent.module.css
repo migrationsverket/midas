@@ -1,3 +1,4 @@
 .panelContent {
-  padding: var(--midas-space-medium);
+  padding: var(--midas-space-small) var(--midas-space-medium)
+    var(--midas-space-medium) var(--midas-space-medium);
 }

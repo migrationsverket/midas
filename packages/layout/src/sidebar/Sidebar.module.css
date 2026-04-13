@@ -1,6 +1,8 @@
 .sidebar {
-  width: 15rem;
+  background-color: var(--midas-background-base);
+  border-right: 1px solid var(--midas-border-color-subtle);
   transition: width var(--midas-transition-duration-fast) ease-out;
+  width: 15rem;
 
   &.collapsed {
     width: calc(32px + 48px);
@@ -13,9 +15,18 @@
 
 .sidebarHeader {
   gap: 0;
+
+  &.collapsed {
+    justify-content: center;
+    padding: var(--midas-space-small);
+  }
 }
 
 .sidebarTitle {
   font-size: var(--midas-typography-font-size-20);
   display: block;
+}
+
+.sidebarContent {
+  padding: var(--midas-space-small);
 }
