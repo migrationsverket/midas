@@ -1,3 +1,19 @@
+## 0.0.46 (2026-04-13)
+
+### 📖 Documentation changes
+
+- **layout:** add stories for components ([7c2f86b92a](https://github.com/migrationsverket/midas/commit/7c2f86b92a))
+
+### 🧪 Tests updated
+
+- **layout:** add skip to content test ([358610480c](https://github.com/migrationsverket/midas/commit/358610480c))
+- **layout:** create multiple viewport setups ([a88c5d7ab1](https://github.com/migrationsverket/midas/commit/a88c5d7ab1))
+- **layout:** migrate legacy tests ([8bbed7fadc](https://github.com/migrationsverket/midas/commit/8bbed7fadc))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.2
+
 ## 0.0.45 (2026-04-09)
 
 ### 🧱 Updated Dependencies
