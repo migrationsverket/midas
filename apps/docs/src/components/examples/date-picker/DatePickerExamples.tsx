@@ -21,9 +21,7 @@ export const DatePickerExample = () => {
       <DatePicker
         label='Date (controlled)'
         value={value}
-        onChange={newValue =>
-          setValue(newValue ? parseDate(newValue.toString()) : null)
-        }
+        onChange={setValue}
       />
       <pre>Du valde datum: {value?.toString()}</pre>
     </>
