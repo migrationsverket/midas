@@ -452,5 +452,17 @@
         "$description": "Textfärg för sektionsrubriker i navigationsmenyn"
       }
     }
+  },
+  "overlay": {
+    "background": {
+      "$type": "color",
+      "$value": "rgba(0 0 0 / 30%)",
+      "$description": "Bakrundsfärg för overlays"
+    },
+    "blur": {
+      "$type": "string",
+      "$value": "blur(2px)",
+      "$description": "Blur för overlays"
+    }
   }
 }
