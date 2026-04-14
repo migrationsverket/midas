@@ -1,3 +1,9 @@
+## 17.11.3 (2026-04-14)
+
+### 🩹 Fixes
+
+- **components, grid:** change flex-wrap behavior for columns ([fee8817287](https://github.com/migrationsverket/midas/commit/fee8817287))
+
 ## 17.11.2 (2026-04-13)
 
 ### 🧱 Updated Dependencies
