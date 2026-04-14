@@ -32,6 +32,7 @@
   },
   "exports": {
     ".": "./index.js",
+    "./default.css": "./assets/default.css",
     "./*/index.js": "./*/index.js",
     "./*": "./*/index.js"
   },

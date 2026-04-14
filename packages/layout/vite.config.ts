@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url'
 import preserveUseClientDirective from 'rollup-plugin-preserve-use-client'
 
 const src = resolve(__dirname, 'src')
+const defaultCss = resolve(src, 'default.css')
 
 export default defineConfig({
   root: __dirname,
@@ -36,6 +37,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: resolve(src, 'index.ts'),
+        default: defaultCss,
         ...Object.fromEntries(
           globSync(`${src}/*/index.ts`).map(file => [
             relative(src, file.slice(0, file.length - extname(file).length)),
