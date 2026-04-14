@@ -1,11 +1,3 @@
-html {
-  overflow: hidden;
-}
-
-body {
-  margin: 0;
-}
-
 /* Debug labels for layout regions */
 [data-debug]::before {
   content: attr(data-debug);

@@ -1,0 +1,9 @@
+html {
+  /* hide scrollbars when animating panels */
+  overflow: hidden;
+}
+
+body {
+  /* remove browser default margin */
+  margin: 0;
+}

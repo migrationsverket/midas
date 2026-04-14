@@ -100,18 +100,10 @@ Skissen nedan visar ett exempel på hur komponenterna kan sättas ihop. Vilket u
 npm install @midas-ds/layout
 ```
 
-Uppdatera er globala css med:
+Importera `default.css`. Denna fil innehåller global css för att layout-komponenterna ska få rätt utseende. Importera filen i roten av din applikation:
 
-```css
-html {
-  /* döljer scrollbars vid animation av paneler */
-  overflow: hidden;
-}
-
-body {
-  /* eventuell marginal hanteras av Midas layout */
-  margin: 0;
-}
+```tsx title="main.tsx"
+import '@midas-ds/layout/default.css'
 ```
 
 ## Snabbstart

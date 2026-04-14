@@ -4,7 +4,6 @@ import { Logo } from '@midas-ds/components'
 import {
   Layout,
   Header,
-  Panel,
   Navbar,
   Main,
   MobileMenu,
@@ -18,6 +17,7 @@ import { AppProvider } from '../components/AppProvider/AppContext'
 import { AppLayoutProvider } from '../components/AppLayoutProvider/AppLayoutProvider'
 import { GlobalToastRegion } from '@midas-ds/components'
 import '@midas-ds/components/default.css'
+import '@midas-ds/layout/default.css'
 import './global.css'
 
 export const metadata: Metadata = {
