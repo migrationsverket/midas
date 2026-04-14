@@ -1,0 +1,45 @@
+.modalOverlay {
+  align-items: center;
+  backdrop-filter: var(--midas-overlay-blur);
+  background: var(--midas-overlay-background);
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--midas-z-index-modal);
+
+  /* RAC passes this variable via the style prop, making it available during runtime only */
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  height: var(--visual-viewport-height);
+
+  &[data-entering] {
+    animation: modal-fade var(--midas-transition-duration-quick)
+      var(--midas-transition-timing-ease-out);
+  }
+
+  &[data-exiting] {
+    animation: modal-fade var(--midas-transition-duration-quick) reverse
+      var(--midas-transition-timing-ease-in);
+  }
+
+  @media (prefers-reduced-motion) {
+    &[data-entering],
+    &[data-exiting] {
+      animation: none;
+    }
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: var(--midas-overlay-blur);
+  }
+}
