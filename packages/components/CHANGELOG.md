@@ -1,3 +1,9 @@
+## 17.11.4 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.22
+
 ## 17.11.3 (2026-04-14)
 
 ### 🩹 Fixes
