@@ -1,9 +1,7 @@
 import {
   DialogTrigger,
   Modal as AriaModal,
-  ModalOverlay,
   Dialog as AriaDialog,
-  ModalOverlayProps,
 } from 'react-aria-components'
 import * as React from 'react'
 import { Button } from '../button'
@@ -12,11 +10,10 @@ import { X } from 'lucide-react'
 import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
-import clsx from '../utils/clsx'
+import { ModalOverlay, type ModalOverlayProps } from './modal-overlay'
 
 export interface ModalProps
-  extends ModalOverlayProps,
-    React.RefAttributes<HTMLDivElement> {
+  extends ModalOverlayProps, React.RefAttributes<HTMLDivElement> {
   /**
    * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
    */
@@ -34,16 +31,12 @@ export const Modal: React.FC<ModalProps> = ({
   children,
   title,
   hideCloseButton = false,
-  className,
   ...props
 }) => {
   const strings = useLocalizedStringFormatter(messages)
 
   return (
-    <ModalOverlay
-      {...props}
-      className={clsx(styles.overlay, className)}
-    >
+    <ModalOverlay {...props}>
       <AriaModal className={styles.modal}>
         <AriaDialog>
           <div className={styles.modalHeader}>
