@@ -1,3 +1,12 @@
+## 0.0.51 (2026-04-14)
+
+### 🩹 Fixes
+
+- **layout, panel, sidebar:** change aria role ([53790fa951](https://github.com/migrationsverket/midas/commit/53790fa951))
+- **layout, sidebar:** update css according to spec ([d9feb0970d](https://github.com/migrationsverket/midas/commit/d9feb0970d))
+- **layout, panel:** update css according to spec ([e047aa7526](https://github.com/migrationsverket/midas/commit/e047aa7526))
+- **layout, header:** update css according to spec ([b950921455](https://github.com/migrationsverket/midas/commit/b950921455))
+
 ## 0.0.50 (2026-04-14)
 
 ### 🩹 Fixes
