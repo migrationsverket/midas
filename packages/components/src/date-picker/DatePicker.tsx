@@ -19,7 +19,9 @@ import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
 
-export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
+export interface DatePickerProps<
+  T extends DateValue,
+> extends AriaDatePickerProps<T> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
@@ -36,44 +38,52 @@ export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   isClearable?: boolean
 }
 
-export const DatePicker: React.FC<DatePickerProps> = ({
-  className,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  label,
-  popover,
-  isClearable = false,
-  isReadOnly,
-  isDisabled,
-  size,
-  ...rest
-}) => {
-  return (
-    <AriaDatePicker
-      className={clsx(styles.datePicker, className)}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
-      {...rest}
-    >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerInputField
-        isClearable={isClearable}
+export const DatePicker = React.forwardRef(
+  <T extends DateValue>(
+    {
+      className,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      label,
+      popover,
+      isClearable = false,
+      isReadOnly,
+      isDisabled,
+      size,
+      ...rest
+    }: DatePickerProps<T>,
+    ref: React.ForwardedRef<HTMLDivElement>,
+  ) => {
+    return (
+      <AriaDatePicker
+        className={clsx(styles.datePicker, className)}
         isReadOnly={isReadOnly}
         isDisabled={isDisabled}
-        size={size}
+        ref={ref}
         {...rest}
       >
-        <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-      </DatePickerInputField>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerPopover>
-        <Calendar />
-      </DatePickerPopover>
-    </AriaDatePicker>
-  )
-}
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <DatePickerInputField
+          isClearable={isClearable}
+          isReadOnly={isReadOnly}
+          isDisabled={isDisabled}
+          size={size}
+          {...rest}
+        >
+          <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+        </DatePickerInputField>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        <DatePickerPopover>
+          <Calendar />
+        </DatePickerPopover>
+      </AriaDatePicker>
+    )
+  },
+) as <T extends DateValue>(
+  props: DatePickerProps<T> & { ref?: React.Ref<HTMLDivElement> },
+) => React.ReactElement | null
