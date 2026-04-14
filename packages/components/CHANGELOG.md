@@ -1,3 +1,9 @@
+## 17.11.6 (2026-04-14)
+
+### 🩹 Fixes
+
+- **components, date-picker:** add forwardRef and generic type ([eba8d627dac](https://github.com/migrationsverket/midas/commit/eba8d627dac))
+
 ## 17.11.5 (2026-04-14)
 
 ### 🩹 Fixes
