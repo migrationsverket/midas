@@ -1,18 +1,11 @@
 .overlay {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0 0 0 / 30%);
-  height: var(--page-height);
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-
   &[data-entering] {
-    animation: drawer-blur var(--midas-transition-duration-fast);
+    animation: drawer-blur var(--midas-transition-duration-quick);
   }
 
   &[data-exiting] {
-    animation: drawer-blur var(--midas-transition-duration-fast) reverse ease-in;
+    animation: drawer-blur var(--midas-transition-duration-quick) reverse
+      var(--midas-transition-timing-ease-in);
   }
 }
 
@@ -32,12 +25,12 @@
   top: -100px;
 
   &[data-entering] {
-    animation: drawer-slide var(--midas-transition-duration-fast);
+    animation: drawer-slide var(--midas-transition-duration-quick);
   }
 
   &[data-exiting] {
-    animation: drawer-slide var(--midas-transition-duration-fast) reverse
-      ease-in;
+    animation: drawer-slide var(--midas-transition-duration-quick) reverse
+      var(--midas-transition-timing-ease-in);
   }
 }
 
@@ -63,8 +56,8 @@
   }
 
   to {
-    background: rgba(0 0 0 / 30%);
-    backdrop-filter: blur(10px);
+    background: var(--midas-overlay-background);
+    backdrop-filter: var(--midas-overlay-blur);
   }
 }
 

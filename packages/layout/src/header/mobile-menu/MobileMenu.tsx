@@ -6,8 +6,6 @@ import {
   Dialog,
   DialogTriggerProps,
   Modal,
-  ModalOverlay,
-  ModalOverlayProps,
 } from 'react-aria-components'
 import {
   Button,
@@ -15,6 +13,8 @@ import {
   DialogTrigger,
   Text,
   useLocalizedStringFormatter,
+  ModalOverlay,
+  ModalOverlayProps,
 } from '@midas-ds/components'
 import { useIsMobileDevice } from '../../utils'
 import { MobileMenuContext } from './MobileMenuContext'
