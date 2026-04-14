@@ -1,3 +1,9 @@
+## 0.0.50 (2026-04-14)
+
+### 🩹 Fixes
+
+- **layout:** create and export a reset css ([1b7c31bcc4](https://github.com/migrationsverket/midas/commit/1b7c31bcc4))
+
 ## 0.0.49 (2026-04-14)
 
 ### 🧱 Updated Dependencies
