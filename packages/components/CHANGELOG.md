@@ -1,3 +1,9 @@
+## 17.11.5 (2026-04-14)
+
+### 🩹 Fixes
+
+- **components, card:** change horizontal heading level ([26fe0e0241](https://github.com/migrationsverket/midas/commit/26fe0e0241))
+
 ## 17.11.4 (2026-04-14)
 
 ### 🧱 Updated Dependencies
