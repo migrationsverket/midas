@@ -1,3 +1,20 @@
+## 17.12.0 (2026-04-15)
+
+### 🚀 Features
+
+- **components, modal:** create common modal-overlay component ([60a350bfe5e](https://github.com/migrationsverket/midas/commit/60a350bfe5e))
+
+### 🩹 Fixes
+
+- **components, modal:** move ref to modal element ([2cf8f0a7dc3](https://github.com/migrationsverket/midas/commit/2cf8f0a7dc3))
+- **components,modal:** move overflow-y to dialog to fix scrollbar gap ([edb606f78cc](https://github.com/migrationsverket/midas/commit/edb606f78cc))
+- **components, modal:** show keyboard focus indicator for the dialog ([5eda6a088e5](https://github.com/migrationsverket/midas/commit/5eda6a088e5))
+- **components, modal:** use forwardRef ([1e6f94c27f0](https://github.com/migrationsverket/midas/commit/1e6f94c27f0))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.0
+
 ## 17.11.6 (2026-04-14)
 
 ### 🩹 Fixes

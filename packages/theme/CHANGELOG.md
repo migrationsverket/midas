@@ -1,3 +1,9 @@
+## 3.13.0 (2026-04-15)
+
+### 🚀 Features
+
+- **theme:** add overlay background and blur ([ce6d91b3a93](https://github.com/migrationsverket/midas/commit/ce6d91b3a93))
+
 ## 3.12.22 (2026-04-14)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

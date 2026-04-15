@@ -1,3 +1,13 @@
+## 0.0.53 (2026-04-15)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** use common modal overlay component ([8db2e833f7b](https://github.com/migrationsverket/midas/commit/8db2e833f7b))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.12.0
+
 ## 0.0.52 (2026-04-14)
 
 ### 🧱 Updated Dependencies
