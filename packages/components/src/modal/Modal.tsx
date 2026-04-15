@@ -31,12 +31,12 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     const strings = useLocalizedStringFormatter(messages)
 
     return (
-      <ModalOverlay
-        ref={ref}
-        {...rest}
-      >
+      <ModalOverlay {...rest}>
         {composeRenderProps(children, children => (
-          <AriaModal className={styles.modal}>
+          <AriaModal
+            className={styles.modal}
+            ref={ref}
+          >
             <AriaDialog className={styles.dialog}>
               <div className={styles.modalHeader}>
                 <div className={styles.modalTitle}>
