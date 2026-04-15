@@ -4,7 +4,6 @@
   max-width: 75%;
   min-width: 300px;
   max-height: 90vh;
-  overflow-y: auto;
   color: var(--midas-text-primary);
   border: none;
 
@@ -24,6 +23,8 @@
 
 .dialog {
   background-color: var(--midas-background-base);
+  overflow-y: auto;
+  max-height: inherit;
 
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
@@ -42,7 +43,7 @@
   justify-content: space-between;
   align-items: flex-start;
   position: sticky;
-  top: -4px;
+  top: 0;
   z-index: var(--midas-z-index-above);
 }
 
