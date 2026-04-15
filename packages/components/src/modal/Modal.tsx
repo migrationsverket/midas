@@ -37,7 +37,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       >
         {composeRenderProps(children, children => (
           <AriaModal className={styles.modal}>
-            <AriaDialog>
+            <AriaDialog className={styles.dialog}>
               <div className={styles.modalHeader}>
                 <div className={styles.modalTitle}>
                   {title && (

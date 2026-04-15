@@ -5,10 +5,11 @@
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: var(--midas-background-base);
   color: var(--midas-text-primary);
   border: none;
-  padding: 0;
+
+  /* make space for focus indicator (.dialog:focus-visible) */
+  padding: 4px;
   margin: auto;
 
   &[data-entering] {
@@ -21,6 +22,19 @@
   }
 }
 
+.dialog {
+  background-color: var(--midas-background-base);
+
+  &:focus-visible {
+    box-shadow: var(--midas-state-focus);
+    outline: none;
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight;
+    }
+  }
+}
+
 .modalHeader {
   min-height: var(--midas-size-control);
   background-color: var(--midas-layer-01-base);
@@ -28,7 +42,7 @@
   justify-content: space-between;
   align-items: flex-start;
   position: sticky;
-  top: 0;
+  top: -4px;
   z-index: var(--midas-z-index-above);
 }
 
