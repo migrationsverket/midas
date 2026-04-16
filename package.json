@@ -109,7 +109,7 @@
     "react-docgen-typescript": "^2.2.2",
     "rollup-plugin-preserve-use-client": "^3.0.1",
     "storybook": "^10.1.11",
-    "style-dictionary": "^5.0.4",
+    "style-dictionary": "^5.4.0",
     "stylelint": "^16.21.1",
     "stylelint-config-css-modules": "^4.4.0",
     "stylelint-config-recommended": "^14.0.1",
