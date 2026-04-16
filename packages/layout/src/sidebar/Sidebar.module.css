@@ -1,6 +1,7 @@
 .sidebar {
   background-color: var(--midas-background-base);
   border-right: 1px solid var(--midas-border-color-subtle);
+  flex-shrink: 0;
   transition: width var(--midas-transition-duration-fast) ease-out;
   width: 15rem;
 
