@@ -50,13 +50,13 @@ const sections: Section[] = [
       },
       {
         id: 2,
-        title: 'Applications',
+        title: 'My Very Important Applications And Other Stuff',
         href: '/applications',
         icon: <FileText />,
         children: [
           {
             id: 4,
-            title: 'New application',
+            title: 'Submit A Brand New Application',
             href: '/applications/new',
             icon: <Plus />,
           },
@@ -68,7 +68,7 @@ const sections: Section[] = [
           },
           {
             id: 6,
-            title: 'Sent',
+            title: 'Previously Sent Applications',
             href: '/applications/sent',
             icon: <Send />,
           },
@@ -82,7 +82,7 @@ const sections: Section[] = [
     children: [
       {
         id: 8,
-        title: 'Profile',
+        title: 'My Personal Profile Settings',
         href: '/profile',
         icon: <User />,
       },
@@ -98,7 +98,7 @@ const sections: Section[] = [
     children: [
       {
         id: 10,
-        title: 'Help',
+        title: 'Help And Support Center',
         href: '/help',
         icon: <HelpCircle />,
       },
