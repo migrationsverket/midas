@@ -23,7 +23,8 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 0.625rem var(--midas-spacing-30);
-    transition: padding-inline-start var(--midas-transition-duration-fast) ease-out;
+    transition: padding-inline-start var(--midas-transition-duration-fast)
+      ease-out;
 
     &[data-active] {
       border-color: var(--midas-border-color-tertiary);
