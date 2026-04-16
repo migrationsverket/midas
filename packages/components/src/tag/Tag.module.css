@@ -12,16 +12,24 @@
     background-color: var(--midas-button-icon-active);
   }
 
-  &.green[data-hovered],
-  &.red[data-hovered],
   &.blue[data-hovered],
+  &.green[data-hovered],
+  &.lagoonblue[data-hovered],
+  &.orange[data-hovered],
+  &.purple[data-hovered],
+  &.red[data-hovered],
+  &.teal[data-hovered],
   &.yellow[data-hovered] {
     background-color: var(--midas-button-icon-hover);
   }
 
-  &.green[data-pressed],
-  &.red[data-pressed],
   &.blue[data-pressed],
+  &.green[data-pressed],
+  &.lagoonblue[data-pressed],
+  &.orange[data-pressed],
+  &.purple[data-pressed],
+  &.red[data-pressed],
+  &.teal[data-pressed],
   &.yellow[data-pressed] {
     background-color: var(--midas-button-icon-active);
   }
@@ -40,24 +48,44 @@
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
 
-  &.green {
-    background-color: var(--midas-tag-green-background);
-    border-color: var(--midas-tag-green-border-color);
-  }
-
   &.blue {
     background-color: var(--midas-tag-blue-background);
     border-color: var(--midas-tag-blue-border-color);
   }
 
-  &.yellow {
-    background-color: var(--midas-tag-yellow-background);
-    border-color: var(--midas-tag-yellow-border-color);
+  &.green {
+    background-color: var(--midas-tag-green-background);
+    border-color: var(--midas-tag-green-border-color);
+  }
+
+  &.lagoonblue {
+    background-color: var(--midas-tag-lagoonblue-background);
+    border-color: var(--midas-tag-lagoonblue-border-color);
+  }
+
+  &.orange {
+    background-color: var(--midas-tag-orange-background);
+    border-color: var(--midas-tag-orange-border-color);
+  }
+
+  &.purple {
+    background-color: var(--midas-tag-purple-background);
+    border-color: var(--midas-tag-purple-border-color);
   }
 
   &.red {
     background-color: var(--midas-tag-red-background);
     border-color: var(--midas-tag-red-border-color);
+  }
+
+  &.teal {
+    background-color: var(--midas-tag-teal-background);
+    border-color: var(--midas-tag-teal-border-color);
+  }
+
+  &.yellow {
+    background-color: var(--midas-tag-yellow-background);
+    border-color: var(--midas-tag-yellow-border-color);
   }
 
   &[data-disabled] {
