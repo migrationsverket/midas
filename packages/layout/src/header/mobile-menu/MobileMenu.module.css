@@ -1,4 +1,6 @@
 .overlay {
+  display: block;
+
   &[data-entering] {
     animation: drawer-blur var(--midas-transition-duration-quick);
   }
