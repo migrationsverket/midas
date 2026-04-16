@@ -13,7 +13,15 @@ export interface TagProps extends AriaTagProps {
   /**
    * Sets the background and border color of the tag
    */
-  color?: 'green' | 'blue' | 'yellow' | 'red'
+  color?:
+    | 'blue'
+    | 'green'
+    | 'lagoonblue'
+    | 'orange'
+    | 'purple'
+    | 'red'
+    | 'teal'
+    | 'yellow'
   /**
    * Add a button for dismissing the tab
    * @deprecated since v17.0.0 please use `isDismissable` instead
@@ -46,10 +54,14 @@ export const Tag = ({
         styles.tag,
         isTagDismissable && styles.dismissable,
         {
-          [styles.green]: color ? color === 'green' : type === 'success',
           [styles.blue]: color ? color === 'blue' : type === 'info',
-          [styles.yellow]: color ? color === 'yellow' : type === 'important',
+          [styles.green]: color ? color === 'green' : type === 'success',
+          [styles.lagoonblue]: color === 'lagoonblue',
+          [styles.orange]: color === 'orange',
+          [styles.purple]: color === 'purple',
           [styles.red]: color ? color === 'red' : type === 'warning',
+          [styles.teal]: color === 'teal',
+          [styles.yellow]: color ? color === 'yellow' : type === 'important',
         },
         className,
       )}
