@@ -76,6 +76,8 @@ Exempel:
   signalYellow: tokenDictionary.color.signalYellow,
   signalRed: tokenDictionary.color.signalRed,
   orange: tokenDictionary.color.orange,
+  teal: tokenDictionary.color.teal,
+  lagoonblue: tokenDictionary.color.lagoonblue,
 }} />
 
 ### Bakgrund
@@ -131,6 +133,12 @@ Används i: Link.
 Semantiska tokens för statuskommunikation, byggda ovanpå signalfärgsprimitiver. Finns i fyra varianter: `success`, `info`, `important` och `warning`. En ändring av t.ex. `color.signalGreen.20` slår igenom på alla `support.*`-tokens som refererar till den. Används i: Toast, InfoBanner, Checkbox (invalid), Radio (invalid), ComboBox (invalid), SearchField (invalid), Label.
 
 <TokenList tokens={tokenDictionary} filter="support" />
+
+### Tag
+
+Semantiska färgtokens för Tag-komponenten. Byggda ovanpå primitiva paletter — signalfärger för `blue`, `green`, `red`, `yellow` samt dedikerade paletter för `teal`, `lagoonblue`, `orange` och `purple`. Används i: Tag.
+
+<TokenList tokens={tokenDictionary} filter="tag" />
 
 ### Text
 

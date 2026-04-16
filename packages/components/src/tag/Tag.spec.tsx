@@ -35,6 +35,26 @@ describe('given a Primary Tag', async () => {
       const { getByRole } = await render(<Primary color='red' />)
       await expect.element(getByRole('row')).toHaveClass(styles.red)
     })
+
+    it('should be lagoonblue when using color=lagoonblue', async () => {
+      const { getByRole } = await render(<Primary color='lagoonblue' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.lagoonblue)
+    })
+
+    it('should be orange when using color=orange', async () => {
+      const { getByRole } = await render(<Primary color='orange' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.orange)
+    })
+
+    it('should be purple when using color=purple', async () => {
+      const { getByRole } = await render(<Primary color='purple' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.purple)
+    })
+
+    it('should be teal when using color=teal', async () => {
+      const { getByRole } = await render(<Primary color='teal' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.teal)
+    })
   })
 
   describe('isDismissable', () => {

@@ -303,86 +303,93 @@
     }
   },
   "tag": {
-    "$description": "Semantiskt lager ovanpå signalfärgsprimitiver för Tag-komponenten. Färgerna är dekorativa utan statusbetydelse — de delar primitiver med support.* men har ett helt annat syfte. Fyra varianter: grön, blå, gul, röd. Används i: Tag.",
+    "$description": "Semantiskt lager ovanpå primitiva färgtokens för Tag-komponenten. Färgerna är dekorativa utan statusbetydelse — de delar primitiver med support.* men har ett helt annat syfte. Åtta varianter: grön, blå, lagunblå, orange, lila, röd, blågrön, gul. Används i: Tag.",
     "$type": "string",
     "blue": {
       "background": {
-        "$value": "light-dark(#cde6f3, #101037)",
+        "$value": "light-dark({color.signalBlue.15}, {color.signalBlue.175})",
         "$description": "Tag bakgrund blå"
       },
       "borderColor": {
-        "$value": "#4a95df",
+        "$type": "color",
+        "$value": "{color.signalBlue.80}",
         "$description": "Tag kantlinje blå"
       }
     },
     "green": {
       "background": {
-        "$value": "light-dark(#d5f2d9, #07270b)",
+        "$value": "light-dark({color.signalGreen.20}, {color.signalGreen.185})",
         "$description": "Tag bakgrund grön"
       },
       "borderColor": {
-        "$value": "#75b47d",
+        "$type": "color",
+        "$value": "{color.signalGreen.65}",
         "$description": "Tag kantlinje grön"
       }
     },
     "lagoonblue": {
       "background": {
-        "$value": "light-dark(#d2daf9, #0a1332)",
+        "$value": "light-dark({color.lagoonblue.20}, {color.lagoonblue.180})",
         "$description": "Tag bakgrund lagunblå"
       },
       "borderColor": {
-        "$value": "#7088e0",
+        "$type": "color",
+        "$value": "{color.lagoonblue.100}",
         "$description": "Tag kantlinje lagunblå"
       }
     },
     "orange": {
       "background": {
-        "$value": "light-dark(#ffe6d9, #421d0a)",
+        "$value": "light-dark({color.orange.20}, {color.orange.180})",
         "$description": "Tag bakgrund orange"
       },
       "borderColor": {
-        "$value": "#e87031",
+        "$type": "color",
+        "$value": "{color.orange.110}",
         "$description": "Tag kantlinje orange"
       }
     },
     "purple": {
       "background": {
-        "$value": "light-dark(#f6d0f9, #391c3b)",
+        "$value": "light-dark({color.purple.20}, {color.purple.180})",
         "$description": "Tag bakgrund lila"
       },
       "borderColor": {
-        "$value": "#b77dbc",
+        "$type": "color",
+        "$value": "{color.purple.75}",
         "$description": "Tag kantlinje lila"
       }
     },
     "red": {
       "background": {
-        "$value": "light-dark(#ffe0e0, #431919)",
+        "$value": "light-dark({color.signalRed.25}, {color.signalRed.175})",
         "$description": "Tag bakgrund röd"
       },
       "borderColor": {
-        "$value": "#f17575",
+        "$type": "color",
+        "$value": "{color.signalRed.75}",
         "$description": "Tag kantlinje röd"
       }
     },
     "teal": {
       "background": {
-        "$value": "light-dark(#cdf2f2, #0d2c2c)",
+        "$value": "light-dark({color.teal.20}, {color.teal.180})",
         "$description": "Tag bakgrund blågrön"
       },
       "borderColor": {
-        "$value": "#43bcbc",
+        "$type": "color",
+        "$value": "{color.teal.100}",
         "$description": "Tag kantlinje blågrön"
       }
     },
     "yellow": {
       "background": {
-        "$value": "light-dark(#fff5db, #2c2719)",
+        "$value": "light-dark({color.signalYellow.15}, {color.signalYellow.182})",
         "$description": "Tag bakgrund gul"
       },
       "borderColor": {
         "$type": "color",
-        "$value": "#ecbe4a",
+        "$value": "{color.signalYellow.85}",
         "$description": "Tag kantlinje gul"
       }
     }
