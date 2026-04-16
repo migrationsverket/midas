@@ -77,16 +77,20 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
 
 ## Färger
 
-Tag finns i fem färger.
+Tag finns i nio färger.
 
 ```tsx
 <TagGroup aria-label='Färger'>
   <TagList>
     <Tag>Default</Tag>
-    <Tag color='green'>Green</Tag>
     <Tag color='blue'>Blue</Tag>
-    <Tag color='yellow'>Yellow</Tag>
+    <Tag color='green'>Green</Tag>
+    <Tag color='lagoonblue'>Lagoonblue</Tag>
+    <Tag color='orange'>Orange</Tag>
+    <Tag color='purple'>Purple</Tag>
     <Tag color='red'>Red</Tag>
+    <Tag color='teal'>Teal</Tag>
+    <Tag color='yellow'>Yellow</Tag>
   </TagList>
 </TagGroup>
 ```
@@ -95,10 +99,14 @@ Tag finns i fem färger.
   <TagGroup aria-label='Färger'>
     <TagList>
       <Tag>Default</Tag>
-      <Tag color='green'>Green</Tag>
       <Tag color='blue'>Blue</Tag>
-      <Tag color='yellow'>Yellow</Tag>
+      <Tag color='green'>Green</Tag>
+      <Tag color='lagoonblue'>Lagoonblue</Tag>
+      <Tag color='orange'>Orange</Tag>
+      <Tag color='purple'>Purple</Tag>
       <Tag color='red'>Red</Tag>
+      <Tag color='teal'>Teal</Tag>
+      <Tag color='yellow'>Yellow</Tag>
     </TagList>
   </TagGroup>
 </div>
@@ -152,14 +160,18 @@ Ikoner kan användas inuti en tag.
 `TagList` använder React arias API för [Collections](https://react-aria.adobe.com/collections) och kan användas dynamiskt.
 
 ```tsx
-import { Tag, TagGroup, TagList } from '@midas-ds/components'
+import { Tag, TagGroup, TagList, type TagProps } from '@midas-ds/components'
 
 const DynamicExample = () => {
-  const items = [
-    { id: 'green', name: 'Green' },
+  const items: { id: TagProps['color']; name: string }[] = [
     { id: 'blue', name: 'Blue' },
-    { id: 'yellow', name: 'Yellow' },
+    { id: 'green', name: 'Green' },
+    { id: 'lagoonblue', name: 'Lagoonblue' },
+    { id: 'orange', name: 'Orange' },
+    { id: 'purple', name: 'Purple' },
     { id: 'red', name: 'Red' },
+    { id: 'teal', name: 'Teal' },
+    { id: 'yellow', name: 'Yellow' },
   ]
 
   return (

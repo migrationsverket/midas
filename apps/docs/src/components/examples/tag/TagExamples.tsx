@@ -1,11 +1,15 @@
-import { Tag, TagGroup, TagList } from '@midas-ds/components'
+import { Tag, TagGroup, TagList, type TagProps } from '@midas-ds/components'
 
 export const DynamicExample = () => {
-  const items = [
-    { id: 'green', name: 'Green' },
+  const items: { id: TagProps['color']; name: string }[] = [
     { id: 'blue', name: 'Blue' },
-    { id: 'yellow', name: 'Yellow' },
+    { id: 'green', name: 'Green' },
+    { id: 'lagoonblue', name: 'Lagoonblue' },
+    { id: 'orange', name: 'Orange' },
+    { id: 'purple', name: 'Purple' },
     { id: 'red', name: 'Red' },
+    { id: 'teal', name: 'Teal' },
+    { id: 'yellow', name: 'Yellow' },
   ]
 
   return (
