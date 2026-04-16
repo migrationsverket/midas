@@ -16,11 +16,7 @@ const addImportPath = (path: string) => (moduleName: string) => [
   `${path}/${moduleName}`,
 ]
 
-export default (
-  phase: PHASE_TYPE,
-  { defaultConfig }: { defaultConfig: NextConfig },
-): NextConfig => ({
-  ...defaultConfig,
+export default (phase: PHASE_TYPE): NextConfig => ({
   turbopack: {
     root: workspaceRoot,
     resolveAlias:
