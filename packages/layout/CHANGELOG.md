@@ -1,3 +1,9 @@
+## 0.0.55 (2026-04-17)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** add display block to modal overlay ([e2cc226d4e1](https://github.com/migrationsverket/midas/commit/e2cc226d4e1))
+
 ## 0.0.54 (2026-04-16)
 
 ### 🧱 Updated Dependencies
