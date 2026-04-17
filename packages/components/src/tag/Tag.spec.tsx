@@ -21,9 +21,19 @@ describe('given a Primary Tag', async () => {
       await expect.element(getByRole('row')).toHaveClass(styles.green)
     })
 
+    it('should be mint when using color=mint', async () => {
+      const { getByRole } = await render(<Primary color='mint' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.mint)
+    })
+
     it('should be blue when using color=blue', async () => {
       const { getByRole } = await render(<Primary color='blue' />)
       await expect.element(getByRole('row')).toHaveClass(styles.blue)
+    })
+
+    it('should be sky when using color=sky', async () => {
+      const { getByRole } = await render(<Primary color='sky' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.sky)
     })
 
     it('should be yellow when using color=yellow', async () => {
@@ -31,9 +41,19 @@ describe('given a Primary Tag', async () => {
       await expect.element(getByRole('row')).toHaveClass(styles.yellow)
     })
 
+    it('should be cream when using color=cream', async () => {
+      const { getByRole } = await render(<Primary color='cream' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.cream)
+    })
+
     it('should be red when using color=red', async () => {
       const { getByRole } = await render(<Primary color='red' />)
       await expect.element(getByRole('row')).toHaveClass(styles.red)
+    })
+
+    it('should be pippin when using color=pippin', async () => {
+      const { getByRole } = await render(<Primary color='pippin' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.pippin)
     })
 
     it('should be lagoonblue when using color=lagoonblue', async () => {
@@ -41,14 +61,29 @@ describe('given a Primary Tag', async () => {
       await expect.element(getByRole('row')).toHaveClass(styles.lagoonblue)
     })
 
+    it('should be lagoon when using color=lagoon', async () => {
+      const { getByRole } = await render(<Primary color='lagoon' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.lagoon)
+    })
+
     it('should be orange when using color=orange', async () => {
       const { getByRole } = await render(<Primary color='orange' />)
       await expect.element(getByRole('row')).toHaveClass(styles.orange)
     })
 
+    it('should be peach when using color=peach', async () => {
+      const { getByRole } = await render(<Primary color='peach' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.peach)
+    })
+
     it('should be purple when using color=purple', async () => {
       const { getByRole } = await render(<Primary color='purple' />)
       await expect.element(getByRole('row')).toHaveClass(styles.purple)
+    })
+
+    it('should be lavender when using color=lavender', async () => {
+      const { getByRole } = await render(<Primary color='lavender' />)
+      await expect.element(getByRole('row')).toHaveClass(styles.lavender)
     })
 
     it('should be teal when using color=teal', async () => {
