@@ -303,72 +303,72 @@
     }
   },
   "tag": {
-    "$description": "Semantiskt lager ovanpå primitiva färgtokens för Tag-komponenten. Färgerna är dekorativa utan statusbetydelse — de delar primitiver med support.* men har ett helt annat syfte. Åtta varianter: grön, blå, lagunblå, orange, lila, röd, blågrön, gul. Används i: Tag.",
+    "$description": "Semantiskt lager ovanpå primitiva färgtokens för Tag-komponenten. Färgerna är dekorativa utan statusbetydelse — varje variant har ett dedikerat primitivt palett. Kanoniska namn: sky, mint, cream, teal, lagoon, lavender, peach, pippin. Gamla namn (blue, green, yellow, red, lagoonblue, purple, orange) är bevarade för bakåtkompatibilitet och bör ej användas i ny kod. Används i: Tag.",
     "$type": "string",
-    "blue": {
+    "sky": {
       "background": {
-        "$value": "light-dark({color.signalBlue.15}, {color.signalBlue.175})",
+        "$value": "light-dark({color.sky.20}, {color.sky.180})",
         "$description": "Tag bakgrund blå"
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.signalBlue.80}",
+        "$value": "{color.sky.60}",
         "$description": "Tag kantlinje blå"
       }
     },
-    "green": {
+    "blue": {
       "background": {
-        "$value": "light-dark({color.signalGreen.20}, {color.signalGreen.185})",
+        "$value": "light-dark({color.sky.20}, {color.sky.180})",
+        "$description": "@deprecated Använd tag.sky istället."
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.sky.60}",
+        "$description": "@deprecated Använd tag.sky istället."
+      }
+    },
+    "mint": {
+      "background": {
+        "$value": "light-dark({color.mint.20}, {color.mint.180})",
         "$description": "Tag bakgrund grön"
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.signalGreen.65}",
+        "$value": "{color.mint.60}",
         "$description": "Tag kantlinje grön"
       }
     },
-    "lagoonblue": {
+    "green": {
       "background": {
-        "$value": "light-dark({color.lagoonblue.20}, {color.lagoonblue.180})",
-        "$description": "Tag bakgrund lagunblå"
+        "$value": "light-dark({color.mint.20}, {color.mint.180})",
+        "$description": "@deprecated Använd tag.mint istället."
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.lagoonblue.100}",
-        "$description": "Tag kantlinje lagunblå"
+        "$value": "{color.mint.60}",
+        "$description": "@deprecated Använd tag.mint istället."
       }
     },
-    "orange": {
+    "cream": {
       "background": {
-        "$value": "light-dark({color.orange.20}, {color.orange.180})",
-        "$description": "Tag bakgrund orange"
+        "$value": "light-dark({color.cream.20}, {color.cream.180})",
+        "$description": "Tag bakgrund gul"
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.orange.110}",
-        "$description": "Tag kantlinje orange"
+        "$value": "{color.cream.60}",
+        "$description": "Tag kantlinje gul"
       }
     },
-    "purple": {
+    "yellow": {
       "background": {
-        "$value": "light-dark({color.purple.20}, {color.purple.180})",
-        "$description": "Tag bakgrund lila"
+        "$value": "light-dark({color.cream.20}, {color.cream.180})",
+        "$description": "@deprecated Använd tag.cream istället."
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.purple.75}",
-        "$description": "Tag kantlinje lila"
-      }
-    },
-    "red": {
-      "background": {
-        "$value": "light-dark({color.signalRed.25}, {color.signalRed.175})",
-        "$description": "Tag bakgrund röd"
-      },
-      "borderColor": {
-        "$type": "color",
-        "$value": "{color.signalRed.75}",
-        "$description": "Tag kantlinje röd"
+        "$value": "{color.cream.60}",
+        "$description": "@deprecated Använd tag.cream istället."
       }
     },
     "teal": {
@@ -378,19 +378,96 @@
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.teal.100}",
+        "$value": "{color.teal.60}",
         "$description": "Tag kantlinje blågrön"
       }
     },
-    "yellow": {
+    "lagoon": {
       "background": {
-        "$value": "light-dark({color.signalYellow.15}, {color.signalYellow.182})",
-        "$description": "Tag bakgrund gul"
+        "$value": "light-dark({color.lagoon.20}, {color.lagoon.180})",
+        "$description": "Tag bakgrund lagunblå"
       },
       "borderColor": {
         "$type": "color",
-        "$value": "{color.signalYellow.85}",
-        "$description": "Tag kantlinje gul"
+        "$value": "{color.lagoon.60}",
+        "$description": "Tag kantlinje lagunblå"
+      }
+    },
+    "lagoonblue": {
+      "background": {
+        "$value": "light-dark({color.lagoon.20}, {color.lagoon.180})",
+        "$description": "@deprecated Använd tag.lagoon istället."
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.lagoon.60}",
+        "$description": "@deprecated Använd tag.lagoon istället."
+      }
+    },
+    "lavender": {
+      "background": {
+        "$value": "light-dark({color.lavender.20}, {color.lavender.180})",
+        "$description": "Tag bakgrund lila"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.lavender.60}",
+        "$description": "Tag kantlinje lila"
+      }
+    },
+    "purple": {
+      "background": {
+        "$value": "light-dark({color.lavender.20}, {color.lavender.180})",
+        "$description": "@deprecated Använd tag.lavender istället."
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.lavender.60}",
+        "$description": "@deprecated Använd tag.lavender istället."
+      }
+    },
+    "peach": {
+      "background": {
+        "$value": "light-dark({color.peach.20}, {color.peach.180})",
+        "$description": "Tag bakgrund orange"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.peach.60}",
+        "$description": "Tag kantlinje orange"
+      }
+    },
+    "orange": {
+      "background": {
+        "$value": "light-dark({color.peach.20}, {color.peach.180})",
+        "$description": "@deprecated Använd tag.peach istället."
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.peach.60}",
+        "$description": "@deprecated Använd tag.peach istället."
+      }
+    },
+    "pippin": {
+      "background": {
+        "$value": "light-dark({color.pippin.20}, {color.pippin.180})",
+        "$description": "Tag bakgrund röd"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.pippin.60}",
+        "$description": "Tag kantlinje röd"
+      }
+    },
+    "red": {
+      "background": {
+        "$value": "light-dark({color.pippin.20}, {color.pippin.180})",
+        "$description": "@deprecated Använd tag.pippin istället."
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.pippin.60}",
+        "$description": "@deprecated Använd tag.pippin istället."
       }
     }
   },

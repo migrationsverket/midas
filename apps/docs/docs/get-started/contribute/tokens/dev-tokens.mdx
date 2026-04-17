@@ -60,14 +60,10 @@ Gråskala, primärblå, svart/vit, lila och varumärkesröd. Semantiska tokens r
 
 ### Signalfärger
 
-Råa palettfärger som semantiska tokens refererar till. `support.*` och `tag.*` använder samma primitiver men i olika syften:
-
-- **Feedback & status** — via `support.*` (Toast, InfoBanner, invalida formulärfält)
-- **Dekorativa färgvarianter** — via `tag.*` (Tag-komponenten)
+Råa palettfärger som semantiska tokens refererar till. Används exklusivt via `support.*` (Toast, InfoBanner, invalida formulärfält).
 
 Exempel:
 - `support.background.success` → `color.signalGreen.20` / `color.signalGreen.180`
-- `tag.green.background` → `color.signalGreen.20` / `color.signalGreen.180`
 - `icon.success` → `color.signalGreen.100`
 
 <ColorPaletteTable tokens={{
@@ -76,8 +72,21 @@ Exempel:
   signalYellow: tokenDictionary.color.signalYellow,
   signalRed: tokenDictionary.color.signalRed,
   orange: tokenDictionary.color.orange,
+}} />
+
+### Tag-paletter
+
+Dedikerade primitiva paletter för Tag-komponentens färgvarianter. Varje palett har tre steg: `.20` (ljus bakgrund), `.60` (kantlinje), `.180` (mörk bakgrund).
+
+<ColorPaletteTable tokens={{
+  sky: tokenDictionary.color.sky,
+  mint: tokenDictionary.color.mint,
+  cream: tokenDictionary.color.cream,
   teal: tokenDictionary.color.teal,
-  lagoonblue: tokenDictionary.color.lagoonblue,
+  lagoon: tokenDictionary.color.lagoon,
+  lavender: tokenDictionary.color.lavender,
+  peach: tokenDictionary.color.peach,
+  pippin: tokenDictionary.color.pippin,
 }} />
 
 ### Bakgrund
@@ -136,7 +145,7 @@ Semantiska tokens för statuskommunikation, byggda ovanpå signalfärgsprimitive
 
 ### Tag
 
-Semantiska färgtokens för Tag-komponenten. Byggda ovanpå primitiva paletter — signalfärger för `blue`, `green`, `red`, `yellow` samt dedikerade paletter för `teal`, `lagoonblue`, `orange` och `purple`. Används i: Tag.
+Semantiska färgtokens för Tag-komponenten. Varje variant har ett dedikerat primitivt palett — `sky`, `mint`, `cream`, `teal`, `lagoon`, `lavender`, `peach`, `pippin`. Används i: Tag.
 
 <TokenList tokens={tokenDictionary} filter="tag" />
 

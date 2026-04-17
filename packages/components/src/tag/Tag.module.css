@@ -18,34 +18,22 @@
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
 
+  &.sky,
   &.blue {
-    background-color: var(--midas-tag-blue-background);
-    border-color: var(--midas-tag-blue-border-color);
+    background-color: var(--midas-tag-sky-background);
+    border-color: var(--midas-tag-sky-border-color);
   }
 
+  &.mint,
   &.green {
-    background-color: var(--midas-tag-green-background);
-    border-color: var(--midas-tag-green-border-color);
+    background-color: var(--midas-tag-mint-background);
+    border-color: var(--midas-tag-mint-border-color);
   }
 
-  &.lagoonblue {
-    background-color: var(--midas-tag-lagoonblue-background);
-    border-color: var(--midas-tag-lagoonblue-border-color);
-  }
-
-  &.orange {
-    background-color: var(--midas-tag-orange-background);
-    border-color: var(--midas-tag-orange-border-color);
-  }
-
-  &.purple {
-    background-color: var(--midas-tag-purple-background);
-    border-color: var(--midas-tag-purple-border-color);
-  }
-
-  &.red {
-    background-color: var(--midas-tag-red-background);
-    border-color: var(--midas-tag-red-border-color);
+  &.cream,
+  &.yellow {
+    background-color: var(--midas-tag-cream-background);
+    border-color: var(--midas-tag-cream-border-color);
   }
 
   &.teal {
@@ -53,9 +41,28 @@
     border-color: var(--midas-tag-teal-border-color);
   }
 
-  &.yellow {
-    background-color: var(--midas-tag-yellow-background);
-    border-color: var(--midas-tag-yellow-border-color);
+  &.lagoon,
+  &.lagoonblue {
+    background-color: var(--midas-tag-lagoon-background);
+    border-color: var(--midas-tag-lagoon-border-color);
+  }
+
+  &.lavender,
+  &.purple {
+    background-color: var(--midas-tag-lavender-background);
+    border-color: var(--midas-tag-lavender-border-color);
+  }
+
+  &.peach,
+  &.orange {
+    background-color: var(--midas-tag-peach-background);
+    border-color: var(--midas-tag-peach-border-color);
+  }
+
+  &.pippin,
+  &.red {
+    background-color: var(--midas-tag-pippin-background);
+    border-color: var(--midas-tag-pippin-border-color);
   }
 
   &[data-disabled] {

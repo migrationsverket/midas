@@ -48,7 +48,7 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
     <Text>Vi behöver köpa frukt till fika</Text>
     <TagGroup aria-label='Taggar'>
       <TagList>
-        <Tag color='blue'>Inte påbörjat</Tag>
+        <Tag color='sky'>Inte påbörjat</Tag>
       </TagList>
     </TagGroup>
   </CardContent>
@@ -65,7 +65,7 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
       <Text>Vi behöver köpa frukt till fika</Text>
       <TagGroup aria-label='Taggar'>
         <TagList>
-          <Tag color='blue'>Inte påbörjat</Tag>
+          <Tag color='sky'>Inte påbörjat</Tag>
         </TagList>
       </TagGroup>
     </CardContent>
@@ -83,14 +83,14 @@ Tag finns i nio färger.
 <TagGroup aria-label='Färger'>
   <TagList>
     <Tag>Default</Tag>
-    <Tag color='blue'>Blue</Tag>
-    <Tag color='green'>Green</Tag>
-    <Tag color='lagoonblue'>Lagoonblue</Tag>
-    <Tag color='orange'>Orange</Tag>
-    <Tag color='purple'>Purple</Tag>
-    <Tag color='red'>Red</Tag>
+    <Tag color='sky'>Sky</Tag>
+    <Tag color='mint'>Mint</Tag>
+    <Tag color='cream'>Cream</Tag>
     <Tag color='teal'>Teal</Tag>
-    <Tag color='yellow'>Yellow</Tag>
+    <Tag color='lagoon'>Lagoon</Tag>
+    <Tag color='lavender'>Lavender</Tag>
+    <Tag color='peach'>Peach</Tag>
+    <Tag color='pippin'>Pippin</Tag>
   </TagList>
 </TagGroup>
 ```
@@ -99,14 +99,14 @@ Tag finns i nio färger.
   <TagGroup aria-label='Färger'>
     <TagList>
       <Tag>Default</Tag>
-      <Tag color='blue'>Blue</Tag>
-      <Tag color='green'>Green</Tag>
-      <Tag color='lagoonblue'>Lagoonblue</Tag>
-      <Tag color='orange'>Orange</Tag>
-      <Tag color='purple'>Purple</Tag>
-      <Tag color='red'>Red</Tag>
+      <Tag color='sky'>Sky</Tag>
+      <Tag color='mint'>Mint</Tag>
+      <Tag color='cream'>Cream</Tag>
       <Tag color='teal'>Teal</Tag>
-      <Tag color='yellow'>Yellow</Tag>
+      <Tag color='lagoon'>Lagoon</Tag>
+      <Tag color='lavender'>Lavender</Tag>
+      <Tag color='peach'>Peach</Tag>
+      <Tag color='pippin'>Pippin</Tag>
     </TagList>
   </TagGroup>
 </div>
@@ -164,14 +164,14 @@ import { Tag, TagGroup, TagList, type TagProps } from '@midas-ds/components'
 
 const DynamicExample = () => {
   const items: { id: TagProps['color']; name: string }[] = [
-    { id: 'blue', name: 'Blue' },
-    { id: 'green', name: 'Green' },
-    { id: 'lagoonblue', name: 'Lagoonblue' },
-    { id: 'orange', name: 'Orange' },
-    { id: 'purple', name: 'Purple' },
-    { id: 'red', name: 'Red' },
+    { id: 'sky', name: 'Sky' },
+    { id: 'mint', name: 'Mint' },
+    { id: 'cream', name: 'Cream' },
     { id: 'teal', name: 'Teal' },
-    { id: 'yellow', name: 'Yellow' },
+    { id: 'lagoon', name: 'Lagoon' },
+    { id: 'lavender', name: 'Lavender' },
+    { id: 'peach', name: 'Peach' },
+    { id: 'pippin', name: 'Pippin' },
   ]
 
   return (

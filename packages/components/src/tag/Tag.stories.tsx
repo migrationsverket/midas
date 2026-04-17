@@ -33,37 +33,37 @@ export const Primary: Story = {}
 
 export const Blue: Story = {
   args: {
-    color: 'blue',
+    color: 'sky',
   },
 }
 
 export const Green: Story = {
   args: {
-    color: 'green',
+    color: 'mint',
   },
 }
 
 export const Lagoonblue: Story = {
   args: {
-    color: 'lagoonblue',
+    color: 'lagoon',
   },
 }
 
 export const Orange: Story = {
   args: {
-    color: 'orange',
+    color: 'peach',
   },
 }
 
 export const Purple: Story = {
   args: {
-    color: 'purple',
+    color: 'lavender',
   },
 }
 
 export const Red: Story = {
   args: {
-    color: 'red',
+    color: 'pippin',
   },
 }
 
@@ -75,7 +75,7 @@ export const Teal: Story = {
 
 export const Yellow: Story = {
   args: {
-    color: 'yellow',
+    color: 'cream',
   },
 }
 

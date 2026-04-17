@@ -14,13 +14,20 @@ export interface TagProps extends AriaTagProps {
    * Sets the background and border color of the tag
    */
   color?:
+    | 'sky'
+    | 'mint'
+    | 'cream'
+    | 'teal'
+    | 'lagoon'
+    | 'lavender'
+    | 'peach'
+    | 'pippin'
     | 'blue'
     | 'green'
     | 'lagoonblue'
     | 'orange'
     | 'purple'
     | 'red'
-    | 'teal'
     | 'yellow'
   /**
    * Add a button for dismissing the tab
@@ -54,14 +61,21 @@ export const Tag = ({
         styles.tag,
         isTagDismissable && styles.dismissable,
         {
-          [styles.blue]: color ? color === 'blue' : type === 'info',
-          [styles.green]: color ? color === 'green' : type === 'success',
-          [styles.lagoonblue]: color === 'lagoonblue',
-          [styles.orange]: color === 'orange',
-          [styles.purple]: color === 'purple',
-          [styles.red]: color ? color === 'red' : type === 'warning',
+          [styles.sky]: color === 'sky',
+          [styles.blue]: color === 'blue' || (!color && type === 'info'),
+          [styles.mint]: color === 'mint',
+          [styles.green]: color === 'green' || (!color && type === 'success'),
+          [styles.cream]: color === 'cream',
+          [styles.yellow]: color === 'yellow' || (!color && type === 'important'),
           [styles.teal]: color === 'teal',
-          [styles.yellow]: color ? color === 'yellow' : type === 'important',
+          [styles.lagoon]: color === 'lagoon',
+          [styles.lagoonblue]: color === 'lagoonblue',
+          [styles.lavender]: color === 'lavender',
+          [styles.purple]: color === 'purple',
+          [styles.peach]: color === 'peach',
+          [styles.orange]: color === 'orange',
+          [styles.pippin]: color === 'pippin',
+          [styles.red]: color === 'red' || (!color && type === 'warning'),
         },
         className,
       )}
