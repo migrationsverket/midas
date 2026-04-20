@@ -57,9 +57,11 @@ export const Sidebar = ({
             [styles.collapsed]: isCollapsed,
           })}
         >
-          {!isCollapsed && title ? (
+          {title ? (
             <PanelTitle
-              className={styles.panelTitle}
+              className={clsx(styles.sidebarTitle, {
+                [styles.collapsed]: isCollapsed,
+              })}
               title={title}
             />
           ) : (

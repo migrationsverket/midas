@@ -24,8 +24,27 @@
 }
 
 .sidebarTitle {
-  font-size: var(--midas-typography-font-size-20);
   display: block;
+  font-size: var(--midas-typography-font-size-20);
+  height: auto;
+  interpolate-size: allow-keywords;
+  opacity: 1;
+  overflow: hidden;
+  transition:
+    display var(--midas-transition-duration-fast) allow-discrete,
+    height var(--midas-transition-duration-fast) ease-out,
+    opacity var(--midas-transition-duration-instant) ease-out;
+
+  @starting-style {
+    height: 0;
+    opacity: 0;
+  }
+
+  &.collapsed {
+    display: none;
+    height: 0;
+    opacity: 0;
+  }
 }
 
 .sidebarContent {
