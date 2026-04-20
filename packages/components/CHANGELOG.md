@@ -1,3 +1,22 @@
+## 17.13.0 (2026-04-20)
+
+### 🚀 Features
+
+- **theme,components,docs:** add dedicated primitives for tag color tokens ([a1b26d9a5fc](https://github.com/migrationsverket/midas/commit/a1b26d9a5fc))
+- **components, tag:** add colors ([5817843f908](https://github.com/migrationsverket/midas/commit/5817843f908))
+
+### 🩹 Fixes
+
+- **theme,components,docs:** fix tag token architecture and add missing tests ([0e2bda65f86](https://github.com/migrationsverket/midas/commit/0e2bda65f86))
+
+### 🏭 Refactoring
+
+- **components, tag:** remove redundant css ([387b4758188](https://github.com/migrationsverket/midas/commit/387b4758188))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.0
+
 ## 17.12.1 (2026-04-16)
 
 ### 🧱 Updated Dependencies
