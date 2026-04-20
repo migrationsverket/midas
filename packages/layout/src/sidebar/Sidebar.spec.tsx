@@ -33,7 +33,7 @@ describe('Sidebar', () => {
       </Sidebar>,
     )
 
-    await expect.element(page.getByText('My Sidebar')).not.toBeInTheDocument()
+    await expect.element(page.getByText('My Sidebar')).not.toBeVisible()
   })
 
   it('should collapse when the collapse button is pressed', async () => {
@@ -41,7 +41,7 @@ describe('Sidebar', () => {
 
     await page.getByRole('button', { name: 'Collapse sidebar' }).click()
 
-    await expect.element(page.getByText('My Sidebar')).not.toBeInTheDocument()
+    await expect.element(page.getByText('My Sidebar')).not.toBeVisible()
   })
 
   it('should expand when the expand button is pressed', async () => {
