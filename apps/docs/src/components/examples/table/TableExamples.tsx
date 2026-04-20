@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Selection, SortDescriptor } from 'react-aria-components'
+import type { Key, Selection, SortDescriptor } from 'react-aria-components'
 import {
   Cell,
   Column,
@@ -95,6 +95,73 @@ export const ControlledExample: React.FC<TableProps> = props => {
       />
       Valda rader: {Array.from(selectedKeys).join(', ')}
     </>
+  )
+}
+
+export const RowOnActionExample = () => {
+  const [lastClicked, setLastClicked] = React.useState<(typeof rows)[0] | null>(
+    null,
+  )
+
+  return (
+    <div className='card'>
+      <Table aria-label='Fruit'>
+        <TableHeader columns={columns}>
+          {column => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+          )}
+        </TableHeader>
+        <TableBody items={rows}>
+          {item => (
+            <Row
+              columns={columns}
+              onAction={() => setLastClicked(item)}
+            >
+              {column => <Cell>{item[column.id]}</Cell>}
+            </Row>
+          )}
+        </TableBody>
+      </Table>
+      {lastClicked && (
+        <p style={{ marginTop: '0.75rem' }}>
+          Klickad rad: <strong>{lastClicked.name}</strong>
+        </p>
+      )}
+    </div>
+  )
+}
+
+export const TableOnRowActionExample = () => {
+  const [lastKey, setLastKey] = React.useState<Key | null>(null)
+
+  return (
+    <div className='card'>
+      <Table
+        aria-label='Fruit'
+        onRowAction={setLastKey}
+      >
+        <TableHeader columns={columns}>
+          {column => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+          )}
+        </TableHeader>
+        <TableBody items={rows}>
+          {item => (
+            <Row
+              id={item.id}
+              columns={columns}
+            >
+              {column => <Cell>{item[column.id]}</Cell>}
+            </Row>
+          )}
+        </TableBody>
+      </Table>
+      {lastKey && (
+        <p style={{ marginTop: '0.75rem' }}>
+          Klickad nyckel: <strong>{String(lastKey)}</strong>
+        </p>
+      )}
+    </div>
   )
 }
 

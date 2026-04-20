@@ -9,6 +9,8 @@ import {
   BasicExample,
   FullExample,
   ControlledExample,
+  RowOnActionExample,
+  TableOnRowActionExample,
   SortingExample,
 } from '@site/src/components/examples/table/TableExamples'
 
@@ -193,6 +195,47 @@ const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set(['appl
 ```
 
 <ControlledExample />
+
+## Radåtgärder
+
+Det finns två sätt att hantera klick på en rad.
+
+### onAction på Row
+
+Sätt `onAction` direkt på varje `Row`. Callbacken är `() => void` — ingen nyckel behövs eftersom raddatan redan finns i scope via closure.
+
+```tsx
+<TableBody items={rows}>
+  {item => (
+    // highlight-next-line
+    <Row columns={columns} onAction={() => console.log(item)}>
+      {column => <Cell>{item[column.id]}</Cell>}
+    </Row>
+  )}
+</TableBody>
+```
+
+<RowOnActionExample />
+
+### onRowAction på Table
+
+Använd `onRowAction` på `Table`-komponenten för en enda hanterare för hela tabellen. Den tar emot radens `id` som nyckel, så raderna måste ha ett explicit `id`-prop.
+
+```tsx
+// highlight-next-line
+<Table aria-label='Fruit' onRowAction={(key) => console.log(key)}>
+  <TableBody items={rows}>
+    {item => (
+      // highlight-next-line
+      <Row id={item.id} columns={columns}>
+        {column => <Cell>{item[column.id]}</Cell>}
+      </Row>
+    )}
+  </TableBody>
+</Table>
+```
+
+<TableOnRowActionExample />
 
 ## Sortering
 
