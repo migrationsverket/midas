@@ -1,3 +1,20 @@
+## 0.1.0 (2026-04-22)
+
+### 🚀 Features
+
+- **layout,sidebar:** animate PanelTitle on collapse ([58f4491068a](https://github.com/migrationsverket/midas/commit/58f4491068a))
+
+### 🩹 Fixes
+
+- **layout,sidebar:** remove deferred display transition to prevent end-of-animation jump ([63b910fa3d1](https://github.com/migrationsverket/midas/commit/63b910fa3d1))
+- **layout,sidebar:** update tests to reflect in-DOM title animation ([136a2a9863e](https://github.com/migrationsverket/midas/commit/136a2a9863e))
+- **layout,navigation:** animate nav label collapse in sidebar ([98018f0ae41](https://github.com/migrationsverket/midas/commit/98018f0ae41))
+- **layout,sidebar:** prevent width shift when scrollbar appears ([a50f58c1b9f](https://github.com/migrationsverket/midas/commit/a50f58c1b9f))
+
+### 🔧 Maintenance
+
+- **layout:** fix prettier formatting in NavigationLink.module.css ([22830c62173](https://github.com/migrationsverket/midas/commit/22830c62173))
+
 ## 0.0.58 (2026-04-22)
 
 ### 🧱 Updated Dependencies
