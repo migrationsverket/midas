@@ -1,3 +1,7 @@
+## 1.1.51 (2026-04-22)
+
+This was a version bump only for select-styles to align it with other projects, there were no code changes.
+
 ## 1.1.50 (2026-04-20)
 
 ### 🧱 Updated Dependencies

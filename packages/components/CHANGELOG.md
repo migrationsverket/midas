@@ -1,3 +1,7 @@
+## 17.13.1 (2026-04-22)
+
+This was a version bump only for components to align it with other projects, there were no code changes.
+
 ## 17.13.0 (2026-04-20)
 
 ### 🚀 Features
