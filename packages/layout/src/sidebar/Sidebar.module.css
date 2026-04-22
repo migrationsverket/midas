@@ -31,7 +31,6 @@
   opacity: 1;
   overflow: hidden;
   transition:
-    display var(--midas-transition-duration-fast) allow-discrete,
     height var(--midas-transition-duration-fast) ease-out,
     opacity var(--midas-transition-duration-instant) ease-out;
 
