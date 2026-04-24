@@ -1,3 +1,9 @@
+## 17.13.3 (2026-04-24)
+
+### 🩹 Fixes
+
+- **components,layout:** add missing @react-aria and @react-stately dependencies ([2ae139e8c88](https://github.com/migrationsverket/midas/commit/2ae139e8c88))
+
 ## 17.13.2 (2026-04-22)
 
 ### 🧱 Updated Dependencies
