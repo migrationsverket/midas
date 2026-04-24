@@ -37,6 +37,9 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@midas-ds/components": "17.13.2"
+    "@midas-ds/components": "17.13.2",
+    "@react-aria/collections": "^3.0.3",
+    "@react-aria/utils": "^3.33.1",
+    "@react-stately/utils": "^3.11.0"
   }
 }

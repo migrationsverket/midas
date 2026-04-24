@@ -42,6 +42,9 @@
   },
   "dependencies": {
     "@midas-ds/theme": "3.14.1",
+    "@react-aria/focus": "^3.21.5",
+    "@react-stately/toggle": "^3.9.5",
+    "@react-stately/utils": "^3.11.0",
     "react-aria-components": "1.16.0"
   }
 }
