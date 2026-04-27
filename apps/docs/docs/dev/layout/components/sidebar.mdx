@@ -14,6 +14,8 @@ import { Sidebar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/l
 import { House, Settings } from 'lucide-react'
 
 export default function App() {
+  const pathname = usePathname() // or equivalent for your router
+
   return (
     <Sidebar title='Min applikation'>
       <Navigation>
@@ -21,7 +23,7 @@ export default function App() {
           <NavigationLink
             href='/'
             icon={<House />}
-            isActive
+            isActive={pathname === '/'}
           >
             Hem
           </NavigationLink>
@@ -30,6 +32,7 @@ export default function App() {
           <NavigationLink
             href='/installningar'
             icon={<Settings />}
+            isActive={pathname === '/installningar'}
           >
             Inställningar
           </NavigationLink>
