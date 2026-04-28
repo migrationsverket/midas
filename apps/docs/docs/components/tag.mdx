@@ -42,7 +42,7 @@ import { Tag, TagGroup, TagList } from '@midas-ds/components'
 Tag används som en del av [Select](/components/select) om `showTags` är aktiverat men kan också användas fristående eller inuti andra komponenter.
 
 ```tsx
-<Card horizontal>
+<Card>
   <CardContent>
     <CardTitle>Köp frukt</CardTitle>
     <Text>Vi behöver köpa frukt till fika</Text>
@@ -51,15 +51,15 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
         <Tag color='sky'>Inte påbörjat</Tag>
       </TagList>
     </TagGroup>
+    <CardActions>
+      <Button variant='tertiary'>Utför uppgift</Button>
+    </CardActions>
   </CardContent>
-  <CardActions>
-    <Button variant='tertiary'>Utför uppgift</Button>
-  </CardActions>
 </Card>
 ```
 
 <div className='card'>
-  <Card horizontal>
+  <Card>
     <CardContent>
       <CardTitle>Köp frukt</CardTitle>
       <Text>Vi behöver köpa frukt till fika</Text>
@@ -68,10 +68,10 @@ Tag används som en del av [Select](/components/select) om `showTags` är aktive
           <Tag color='sky'>Inte påbörjat</Tag>
         </TagList>
       </TagGroup>
+      <CardActions>
+        <Button variant='tertiary'>Utför uppgift</Button>
+      </CardActions>
     </CardContent>
-    <CardActions>
-      <Button variant='tertiary'>Utför uppgift</Button>
-    </CardActions>
   </Card>
 </div>
 
