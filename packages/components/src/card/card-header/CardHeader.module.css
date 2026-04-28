@@ -1,0 +1,22 @@
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--midas-space-medium) var(--midas-space-30) 0
+    var(--midas-space-medium);
+  margin-bottom: var(--midas-space-medium);
+
+  &:has(+ [data-card-image]) {
+    margin-bottom: var(--midas-space-small);
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  padding-right: var(--midas-space-medium);
+}
+
+.subHeading {
+  margin-bottom: 0;
+}

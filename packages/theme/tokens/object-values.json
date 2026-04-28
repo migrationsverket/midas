@@ -588,5 +588,19 @@
       "$value": "blur(2px)",
       "$description": "Blur för overlays"
     }
+  },
+  "card": {
+    "background": {
+      "$type": "string",
+      "base": {
+        "$value": "light-dark({color.white.base}, {color.gray.180})",
+        "$description": "Bakrundsfärg för Card"
+      }
+    },
+    "shadow": {
+      "$type": "string",
+      "$value": "0 3px 5px 0 rgba(0, 0, 0, 0.30)",
+      "$description": "Skugga för Card"
+    }
   }
 }
