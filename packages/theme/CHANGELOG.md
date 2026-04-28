@@ -1,3 +1,9 @@
+## 3.14.2 (2026-04-28)
+
+### 🚀 Features
+
+- **components,card:** add CardHeader and CardBody, deprecate legacy patterns ([b5d2489d632](https://github.com/migrationsverket/midas/commit/b5d2489d632))
+
 ## 3.14.1 (2026-04-22)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

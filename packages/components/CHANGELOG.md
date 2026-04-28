@@ -1,3 +1,17 @@
+## 17.14.0 (2026-04-28)
+
+### 🚀 Features
+
+- **components,card:** add CardHeader and CardBody, deprecate legacy patterns ([b5d2489d632](https://github.com/migrationsverket/midas/commit/b5d2489d632))
+
+### 🧪 Tests updated
+
+- **components,card:** update and extend card tests ([4a00f46e7bf](https://github.com/migrationsverket/midas/commit/4a00f46e7bf))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.2
+
 ## 17.13.3 (2026-04-24)
 
 ### 🩹 Fixes
