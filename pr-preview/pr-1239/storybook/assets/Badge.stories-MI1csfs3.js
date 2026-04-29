@@ -1,0 +1,9 @@
+import{j as r}from"./iframe-D2jWlRbY.js";import{B as t,a as i}from"./BadgeContainer-CN8FmWdf.js";import{B as m}from"./bell-nVTqlynJ.js";import{B as p}from"./Button-Cx6hm3Pz.js";import"./preload-helper-PPVm8Dsz.js";import"./clsx-Ciqy0D92.js";import"./clsx-B-dksMZM.js";import"./createLucideIcon-3nESSKIe.js";import"./Button-C20mW5cN.js";import"./utils-BgILje6T.js";import"./Hidden-BQ9eCogI.js";import"./useFocusRing-DCfgz9z-.js";import"./index-BIIWHLUG.js";import"./index-CZEA3OWg.js";import"./useLabel-Dsg-DSz8.js";import"./useLabels-GFu7dakN.js";import"./useButton-Z6COahNx.js";import"./Button.module-BB7N-cLd.js";import"./useLocalizedStringFormatter-BadNQPEc.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./VisuallyHidden-DcHq__qP.js";const O={component:t,title:"Components/Badge",tags:["autodocs"],parameters:{layout:"centered"},args:{},render:s=>r.jsx(p,{variant:"tertiary","aria-label":"Notiser",children:r.jsxs(i,{children:[r.jsx(m,{}),r.jsx(t,{...s,"data-testid":"badge"})]})})},e={},o={args:{children:"1"}},a={args:{children:"123"}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:"{}",...e.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: '1'
+  }
+}`,...o.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: '123'
+  }
+}`,...a.parameters?.docs?.source}}};const R=["NoLabel","WithLabel","LongLabel"];export{a as LongLabel,e as NoLabel,o as WithLabel,R as __namedExportsOrder,O as default};
