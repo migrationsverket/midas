@@ -14,7 +14,9 @@ import { Example, ExampleControlled, StatusExample } from '@site/src/components/
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html'
 />
 
-Utfällbar komponent som används för att minska informationsmängden som direkt presenteras för användaren.
+Utfällbar komponent som används för att minska informationsmängden som presenteras för användaren.
+**Accordion** bygger på React Arias [DisclosureGroup](https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html)
+medan **AccordionItem** är motsvarande [Disclosure](https://react-spectrum.adobe.com/react-aria/Disclosure.html).
 
 ```tsx
 import { Accordion, AccordionItem } from '@midas-ds/components'
@@ -45,19 +47,31 @@ import { Accordion, AccordionItem } from '@midas-ds/components'
 
 <Example />
 
-## Beskrivning
+## Varianter
 
-**Accordion** bygger på React Arias [DisclosureGroup](https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html)
-medan **AccordionItem** är motsvarande [Disclosure](https://react-spectrum.adobe.com/react-aria/Disclosure.html). Se
-dokumentation för respektive komponent för fler detaljer.
+Accordion finns i två varianter, uncontained och contained.
 
-## Egenskaper
+### Uncontained
 
-Accordion har flertalet varianter och egenskaper.
+Accordion är uncontained som standard. När accordion är uncontained har `AccordionItem` inte någon bakgrund.
+
+```tsx
+<Accordion>
+  {/* more items */}
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+</Accordion>
+```
+
+<Example />
 
 ### Contained
 
-En tydligare variant av layouten när det finns en tydlig gräns mellan varje sektion.
+Contained accordion används för att ge en mer framträdande presentation av innehållet. När accordion är contained har varje `AccordionItem` bakgrundsfärg och kantlinje samt möjlighet att ha en status. Kontrolleras av `isContained` på `Accordion`.
 
 ```tsx
 <Accordion isContained>
@@ -73,36 +87,13 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
 
 <Example isContained />
 
-### Size
+#### Status
 
-I kombination med `isContained` kan storleken justeras med `size` där `'large'` är default.
-
-```tsx
-<Accordion
-  isContained
-  size='medium'
->
-  {/* more items */}
-  <AccordionItem
-    id='mandarin'
-    title='Mandarin'
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-</Accordion>
-```
-
-<Example
-  isContained
-  size='medium'
-/>
-
-### Varianter med bakgrund
-
-AccordionItems kan ha en `type` för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla
-uppmärksamhet till att det t.ex finns fler åtgärder att utföra. Använd endast `type` tillsammans med `isContained`.
-`AcordionItem` har bakgrund på innehållet som standard.
-Man kan ta bort den genom att sätta `hasBackground={false}`.
+:::warning
+Använd endast `type` tillsammans med `isContained`.
+:::
+Contained accordion kan ha en `type` för att förmedla en status för innehållet. Det primära användningsområdet för detta är när Accordion används som expanderbara sektioner i en process, där varje sektion innehåller formulär eller uppgifter som behöver slutföras.
+`AccordionItem` har som standard samma bakgrund på innehållet som på titeln. Bakgrunden på innehållet kan tas bort genom att sätta `hasBackground={false}`.
 
 ```tsx {6,13,20,28}
 <Accordion isContained>
@@ -140,9 +131,35 @@ Man kan ta bort den genom att sätta `hasBackground={false}`.
 
 <StatusExample />
 
+#### Size
+
+Contained accordion finns i två storlekar, `'medium'` och `'large'`, där `'large'` är standard. Storleken anges med `size` på `Accordion`.
+
+```tsx
+<Accordion
+  isContained
+  size='medium'
+>
+  {/* more items */}
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+</Accordion>
+```
+
+<Example
+  isContained
+  size='medium'
+/>
+
+## Implementering
+
 ### Multiple
 
-En accordion har som standard bara en öppet samtidigt och stänger automatiskt andra sektioner när en ny öppnas.
+En accordion har som standard bara en öppen samtidigt och stänger automatiskt andra sektioner när en ny öppnas.
 Detta kan ändras genom att sätta prop `allowsMultipleExpanded`.
 
 ```tsx
