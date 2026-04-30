@@ -1,6 +1,6 @@
 ---
 title: Breadcrumbs
-description: Brödsmulor används för att visa användaren vart hen är i ett navigationsträd.
+description: Brödsmulor används för att visa användaren var hen är i ett navigationsträd.
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
@@ -47,7 +47,67 @@ import { Breadcrumbs, Breadcrumb, Link } from '@midas-ds/components'
   </Breadcrumbs>
 </div>
 
-## Varianter
+## Riktlinjer
+
+Breadcrumbs ska inte användas som huvudnavigation på en sida. De är endast avsedda att användas som sekundär navigation för att visa användaren var den är i ett navigationsträd, inte för att navigera till andra delar av webbplatsen.
+
+## Beteenden
+
+### Overflow
+
+Om det är fler än fyra breadcrumbs eller om alla breadcrumbs inte får plats på en rad ska alla brödsmulor utom första och sista kollapsas till en [meny](/components/menu/) med [Button](/components/button/) som har `variant='icon'`, `size='medium'` och ikonen `<Ellipsis>` som trigger.
+
+```tsx
+import { Ellipsis } from 'lucide-react'
+import type { Key } from 'react-aria-components'
+import {
+  Breadcrumbs,
+  Breadcrumb,
+  Link,
+  Button,
+  Menu,
+  MenuItem,
+  MenuPopover,
+  MenuTrigger,
+} from '@midas-ds/components'
+
+export const CollapsedBreadcrumbs = () => {
+  const handleAction = (id: Key) => console.log('Navigera till:', id)
+
+  return (
+    <Breadcrumbs onAction={handleAction}>
+      <Breadcrumb id='start'>
+        <Link>Start</Link>
+      </Breadcrumb>
+      <Breadcrumb>
+        <MenuTrigger>
+          <Button
+            aria-label='Fler brödsmulor'
+            variant='icon'
+            size='medium'
+          >
+            <Ellipsis />
+          </Button>
+          <MenuPopover>
+            <Menu onAction={handleAction}>
+              <MenuItem id='produkter'>Produkter</MenuItem>
+              <MenuItem id='kategori'>Kategori</MenuItem>
+              <MenuItem id='underkategori'>Underkategori</MenuItem>
+            </Menu>
+          </MenuPopover>
+        </MenuTrigger>
+      </Breadcrumb>
+      <Breadcrumb id='artikel'>
+        <Link>Artikel</Link>
+      </Breadcrumb>
+    </Breadcrumbs>
+  )
+}
+```
+
+<CollapsedBreadcrumbsExample />
+
+## Tillstånd
 
 ### Inaktiverad länk
 
@@ -90,6 +150,8 @@ Sätt `isDisabled` på `Link` för att inaktivera en enskild brödsmula.
     </Breadcrumb>
   </Breadcrumbs>
 </div>
+
+## Implementering
 
 ### Dynamiskt innehåll
 
@@ -143,71 +205,6 @@ Använd `onAction` på `Breadcrumbs` för att själv hantera interaktionen. Call
   <Breadcrumb id='studera'>Studera</Breadcrumb>
 </Breadcrumbs>
 ```
-
-### Kollapsade brödsmulor
-
-Vid djupa navigationsträd kan det vara lämpligt att dölja mellanliggande brödsmulor bakom en ellipsis-meny. Här är ett exempel på hur detta kan implementeras:
-
-```tsx
-import { Ellipsis } from 'lucide-react'
-import type { Key } from 'react-aria-components'
-import { Breadcrumbs, Breadcrumb, Link, Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
-
-export const CollapsedBreadcrumbs = () => {
-  const handleAction = (id: Key) => console.log('Navigera till:', id)
-
-  return (
-    <Breadcrumbs onAction={handleAction}>
-      <Breadcrumb id='start'>
-        <Link>Start</Link>
-      </Breadcrumb>
-      <Breadcrumb>
-        <MenuTrigger>
-          <Button
-            aria-label='Fler brödsmulor'
-            variant='icon'
-            size='medium'
-          >
-            <Ellipsis />
-          </Button>
-          <MenuPopover>
-            <Menu onAction={handleAction}>
-              <MenuItem id='produkter'>Produkter</MenuItem>
-              <MenuItem id='kategori'>Kategori</MenuItem>
-              <MenuItem id='underkategori'>Underkategori</MenuItem>
-            </Menu>
-          </MenuPopover>
-        </MenuTrigger>
-      </Breadcrumb>
-      <Breadcrumb id='artikel'>
-        <Link>Artikel</Link>
-      </Breadcrumb>
-    </Breadcrumbs>
-  )
-}
-```
-
-<CollapsedBreadcrumbsExample />
-
-## Tillgänglighet
-
-:::info[Navigationslandmärke]
-När brödsmulor används som huvudnavigation på en sida bör de placeras i ett `<nav>`-element med ett beskrivande `aria-label`. Detta skapar ett navigationslandmärke som hjälper användare med hjälpmedel att snabbt hitta till rätt del av sidan.
-
-```tsx
-<nav aria-label='Brödsmulor'>
-  <Breadcrumbs>
-    <Breadcrumb>
-      <Link href='/'>Start</Link>
-    </Breadcrumb>
-    <Breadcrumb>
-      <Link href='/om'>Om oss</Link>
-    </Breadcrumb>
-  </Breadcrumbs>
-</nav>
-```
-
-:::
 
 ## API
 
