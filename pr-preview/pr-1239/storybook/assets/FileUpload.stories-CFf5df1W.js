@@ -1,5 +1,0 @@
-import{D as r}from"./FileUpload-DTaPkuuh.js";import"./iframe-CZvMPihu.js";import"./preload-helper-PPVm8Dsz.js";import"./utils-Cqj1DeIe.js";import"./clsx-B-dksMZM.js";import"./intlStrings-ZMTSFH_M.js";import"./Text-Dw0gnghQ.js";import"./useFocusRing-B8JnrIcb.js";import"./index-GihrdCeH.js";import"./index-BkbhKg_o.js";import"./useLabels-DwUdsAUl.js";import"./useDescription-Di037rLQ.js";import"./useLocalizedStringFormatter-DcVcSICC.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./useButton-DBJlOvpF.js";import"./VisuallyHidden-CgB8hx88.js";import"./Input-Mf2rTIYQ.js";import"./Hidden-DWCJo24h.js";import"./PressResponder-DGNkfhIq.js";import"./clsx-Ciqy0D92.js";const C={component:r,title:"Components/DropZone",tags:["autodocs"],args:{}},o={args:{children:"Drop something here"}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
-  args: {
-    children: 'Drop something here'
-  }
-}`,...o.parameters?.docs?.source}}};const E=["DropIt"];export{o as DropIt,E as __namedExportsOrder,C as default};
