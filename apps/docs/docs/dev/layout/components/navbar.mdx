@@ -1,0 +1,72 @@
+---
+title: Navbar
+description: Navigationsbar längst ned på sidan för mobila enheter.
+---
+
+# Navbar
+
+En navigationsbar längst ned på sidan, primärt avsedd för mobilanvändare. Håll antalet länkar till 3–5 för att undvika trängsel på små skärmar.
+
+## Användning
+
+```tsx
+import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
+import { House, Search, User } from 'lucide-react'
+
+export default function App() {
+  return (
+    <Navbar>
+      <Navigation>
+        <NavigationItem>
+          <NavigationLink
+            href='/'
+            icon={<House />}
+            isActive
+          >
+            Hem
+          </NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink
+            href='/sok'
+            icon={<Search />}
+          >
+            Sök
+          </NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink
+            href='/profil'
+            icon={<User />}
+          >
+            Profil
+          </NavigationLink>
+        </NavigationItem>
+      </Navigation>
+    </Navbar>
+  )
+}
+```
+
+
+## Sidebar och Navbar tillsammans
+
+`Sidebar` döljer sig automatiskt på mobila enheter. `Navbar` renderar alltid — du ansvarar själv för att visa eller dölja den beroende på skärmstorlek.
+
+```tsx
+<Layout>
+  <Header>...</Header>
+  <LayoutContent>
+    <Sidebar>
+      <Navigation>{/* Fullständig navigering på desktop */}</Navigation>
+    </Sidebar>
+    <Main>...</Main>
+  </LayoutContent>
+
+  <Navbar>
+    <Navigation>{/* Komprimerad navigering på mobil */}</Navigation>
+  </Navbar>
+</Layout>
+```
+
+`Navbar` renderar ett semantiskt `<footer>`-element.

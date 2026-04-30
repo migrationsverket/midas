@@ -159,7 +159,7 @@
       }
     },
     "signalBlue": {
-      "$description": "Signalblå palett. Används via support.* (info-notifieringar) och tag.* (blå Tag-variant).",
+      "$description": "Signalblå palett. Används via support.* (info-notifieringar).",
       "10": {
         "$value": "#eaf2f6"
       },
@@ -177,7 +177,7 @@
       }
     },
     "signalGreen": {
-      "$description": "Signalgrön palett. Används via support.* (success-notifieringar), tag.* (grön Tag-variant) och icon.success. OBS: ProgressBar refererar direkt till color.signalGreen.100 – ett känt avvikelse från arkitekturen.",
+      "$description": "Signalgrön palett. Används via support.* (success-notifieringar) och icon.success. OBS: ProgressBar refererar direkt till color.signalGreen.100 – ett känt avvikelse från arkitekturen.",
       "20": {
         "$value": "#d5f2d9"
       },
@@ -198,7 +198,7 @@
       }
     },
     "signalYellow": {
-      "$description": "Signalyellow palett. 10 (ljusast) – 200 (mörkast). Används via support.* (viktig-notifieringar) och tag.* (gul Tag-variant).",
+      "$description": "Signalyellow palett. 10 (ljusast) – 200 (mörkast). Används via support.* (viktig-notifieringar).",
       "10": {
         "$value": "#fff8e2"
       },
@@ -261,7 +261,7 @@
       }
     },
     "signalRed": {
-      "$description": "Signalröd palett. 10 (ljusast) – 200 (mörkast). Används via support.* (varnings-notifieringar), tag.* (röd Tag-variant), icon.warning, text.warning, badge.background och button.background.danger.",
+      "$description": "Signalröd palett. 10 (ljusast) – 200 (mörkast). Används via support.* (varnings-notifieringar), icon.warning, text.warning, badge.background och button.background.danger.",
       "10": {
         "$value": "#ffefef"
       },
@@ -321,6 +321,102 @@
       },
       "200": {
         "$value": "#150303"
+      }
+    },
+    "sky": {
+      "$description": "Himmelsblå palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (blå Tag-variant).",
+      "20": {
+        "$value": "#cde6f3"
+      },
+      "60": {
+        "$value": "#4a95df"
+      },
+      "180": {
+        "$value": "#101037"
+      }
+    },
+    "mint": {
+      "$description": "Mintgrön palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (grön Tag-variant).",
+      "20": {
+        "$value": "#d5f2d9"
+      },
+      "60": {
+        "$value": "#75b47d"
+      },
+      "180": {
+        "$value": "#07270b"
+      }
+    },
+    "cream": {
+      "$description": "Cremegul palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (gul Tag-variant).",
+      "20": {
+        "$value": "#fff5db"
+      },
+      "60": {
+        "$value": "#ecbe4a"
+      },
+      "180": {
+        "$value": "#2c2719"
+      }
+    },
+    "teal": {
+      "$description": "Blågrön palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (blågrön Tag-variant).",
+      "20": {
+        "$value": "#cdf2f2"
+      },
+      "60": {
+        "$value": "#43bcbc"
+      },
+      "180": {
+        "$value": "#0d2c2c"
+      }
+    },
+    "lagoon": {
+      "$description": "Lagunblå palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (lagunblå Tag-variant).",
+      "20": {
+        "$value": "#d2daf9"
+      },
+      "60": {
+        "$value": "#7088e0"
+      },
+      "180": {
+        "$value": "#0a1332"
+      }
+    },
+    "lavender": {
+      "$description": "Lavendelviolett palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (lila Tag-variant).",
+      "20": {
+        "$value": "#f6d0f9"
+      },
+      "60": {
+        "$value": "#b77dbc"
+      },
+      "180": {
+        "$value": "#391c3b"
+      }
+    },
+    "peach": {
+      "$description": "Persikaorange palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (orange Tag-variant).",
+      "20": {
+        "$value": "#ffe6d9"
+      },
+      "60": {
+        "$value": "#e87031"
+      },
+      "180": {
+        "$value": "#421d0a"
+      }
+    },
+    "pippin": {
+      "$description": "Ljusröd palett. Tre steg: 20 (ljus bakgrund), 60 (kantlinje), 180 (mörk bakgrund). Används via tag.* (röd Tag-variant).",
+      "20": {
+        "$value": "#ffe0e0"
+      },
+      "60": {
+        "$value": "#f17575"
+      },
+      "180": {
+        "$value": "#431919"
       }
     }
   }

@@ -3,13 +3,13 @@ import { DetailedHTMLProps, forwardRef, HTMLAttributes } from 'react'
 import styles from './PanelBody.module.css'
 
 export type PanelBodyProps = DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
 >
 
-export const PanelBody = forwardRef<HTMLDivElement, PanelBodyProps>(
+export const PanelBody = forwardRef<HTMLElement, PanelBodyProps>(
   ({ className, ...rest }, ref) => (
-    <div
+    <aside
       ref={ref}
       className={clsx(className, styles.panelBody)}
       {...rest}

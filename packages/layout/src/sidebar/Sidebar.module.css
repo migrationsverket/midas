@@ -1,6 +1,9 @@
 .sidebar {
-  width: 15rem;
+  background-color: var(--midas-background-base);
+  border-right: 1px solid var(--midas-border-color-subtle);
+  flex-shrink: 0;
   transition: width var(--midas-transition-duration-fast) ease-out;
+  width: 15rem;
 
   &.collapsed {
     width: calc(32px + 48px);
@@ -13,9 +16,36 @@
 
 .sidebarHeader {
   gap: 0;
+
+  &.collapsed {
+    justify-content: center;
+    padding: var(--midas-space-small);
+  }
 }
 
 .sidebarTitle {
-  font-size: var(--midas-typography-font-size-20);
   display: block;
+  font-size: var(--midas-typography-font-size-20);
+  height: auto;
+  interpolate-size: allow-keywords;
+  opacity: 1;
+  overflow: hidden;
+  transition:
+    height var(--midas-transition-duration-fast) ease-out,
+    opacity var(--midas-transition-duration-instant) ease-out;
+
+  @starting-style {
+    height: 0;
+    opacity: 0;
+  }
+
+  &.collapsed {
+    display: none;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.sidebarContent {
+  padding: var(--midas-space-small);
 }

@@ -1,132 +1,128 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Navigation, NavigationLink, NavigationSubMenu } from '.'
 import {
-  Bell,
-  BookOpen,
-  Briefcase,
-  FileText,
-  HelpCircle,
-  House,
-  IdCard,
-  Mail,
-  Phone,
-  Plus,
-  Save,
-  Send,
-  User,
-} from 'lucide-react'
-import { Badge, BadgeContainer } from '@midas-ds/components'
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  NavigationSection,
+  NavigationSubMenu,
+} from '.'
+import { FileText, House, Plus, Save, Send, User } from 'lucide-react'
+import { type Key } from 'react-aria-components'
+import { ReactNode } from 'react'
 
-type Story = StoryObj<typeof Navigation>
+type Story<T extends object = Item> = StoryObj<typeof Navigation<T>>
+
+type Section = {
+  id: Key
+  title?: string
+  children: Item[]
+}
+
+type Item = {
+  id: Key
+  title: string
+  href: string
+  icon?: ReactNode
+  children?: Item[]
+}
+
+const items: Record<string, Item> = {
+  home: {
+    id: 'home',
+    title: 'Home',
+    href: '/',
+    icon: <House />,
+  },
+  applications: {
+    id: 'applications',
+    title: 'Applications',
+    href: '/applications',
+    icon: <FileText />,
+  },
+  newApplication: {
+    id: 'new-application',
+    title: 'New',
+    href: '/applications/new',
+    icon: <Plus />,
+  },
+  sentApplications: {
+    id: 'sent-applications',
+    title: 'Sent',
+    href: '/applications/sent',
+    icon: <Send />,
+  },
+  savedApplications: {
+    id: 'saved-applications',
+    title: 'Saved',
+    href: '/applications/saved',
+    icon: <Save />,
+  },
+  profile: {
+    id: 'profile',
+    title: 'Profile',
+    href: '/profile',
+    icon: <User />,
+  },
+} as const
+
+const renderItem = ({ href, icon, title, children }: Item) => {
+  return (
+    <NavigationItem>
+      <NavigationLink
+        isActive={href === '/'}
+        href={href}
+        icon={icon}
+      >
+        {title}
+      </NavigationLink>
+      <NavigationSubMenu items={children}>{renderItem}</NavigationSubMenu>
+    </NavigationItem>
+  )
+}
 
 export default {
   component: Navigation,
-  title: 'Components/Layout/Navigation',
-  tags: ['autodocs'],
-} satisfies Meta<typeof Navigation>
+  title: 'Layout/Navigation',
+  // Navigation is context dependent and is best demonstrated in the Navbar or Sidebar
+  tags: ['!autodocs', '!dev'],
+} satisfies Meta<typeof Navigation<Item>>
 
-export const Primary: Story = {
+export const Flat: Story = {
   args: {
-    children: (
-      <>
-        <NavigationLink
-          href='/'
-          icon={<House />}
-          isActive
-        >
-          Hem
-        </NavigationLink>
-        <NavigationSubMenu>
-          <NavigationLink
-            href='/ansokningar'
-            icon={<FileText />}
-          >
-            Ansökningar
-          </NavigationLink>
-          <NavigationSubMenu>
-            <NavigationLink
-              href='/ansokningar/ny-ansokning'
-              icon={<Plus />}
-            >
-              Skapa ny ansökning
-            </NavigationLink>
-            <NavigationLink
-              href='/ansokningar/utkast'
-              icon={<Save />}
-            >
-              Sparade utkast
-            </NavigationLink>
-            <NavigationLink
-              href='/ansokningar/skickade'
-              icon={<Send />}
-            >
-              Skickade ansökningar
-            </NavigationLink>
-          </NavigationSubMenu>
-        </NavigationSubMenu>
+    items: [items.home, items.profile, items.applications],
+    children: renderItem,
+  },
+}
 
-        <NavigationSubMenu>
-          <NavigationLink
-            href='/dokument/id-handling'
-            icon={<IdCard />}
-          >
-            ID-handlingar
-          </NavigationLink>
-          <NavigationSubMenu>
-            <NavigationLink
-              href='/dokument/uppehallstillstand/arbetstillstand'
-              icon={<Briefcase />}
-            >
-              Arbetstillstånd
-            </NavigationLink>
-            <NavigationLink
-              href='/dokument/uppehallstillstand/studiestillstand'
-              icon={<BookOpen />}
-            >
-              Studiestillstånd
-            </NavigationLink>
-          </NavigationSubMenu>
-        </NavigationSubMenu>
-
-        <NavigationSubMenu>
-          <NavigationLink
-            href='/konto/profil'
-            icon={<User />}
-          >
-            Min profil
-          </NavigationLink>
-          <NavigationLink
-            href='/konto/kontaktuppgifter'
-            icon={<Phone />}
-          >
-            Kontaktuppgifter
-          </NavigationLink>
-          <NavigationLink
-            href='/konto/meddelanden'
-            icon={
-              <BadgeContainer>
-                <Bell />
-                <Badge>3</Badge>
-              </BadgeContainer>
-            }
-            aria-label='3 olästa meddelanden'
-          >
-            Meddelanden
-          </NavigationLink>
-        </NavigationSubMenu>
-        <NavigationLink
-          href='/hjalp'
-          icon={<HelpCircle />}
-        >
-          Hjälp och support
-        </NavigationLink>
-        <NavigationLink
-          href='/kontakt'
-          icon={<Mail />}
-        >
-          Kontakta oss
-        </NavigationLink>
-      </>
+export const Nested: Story<Section> = {
+  args: {
+    items: [
+      {
+        id: 'general',
+        children: [items.home, items.profile],
+      },
+      {
+        id: 'applications',
+        title: 'Applications',
+        children: [
+          {
+            ...items.applications,
+            children: [
+              items.newApplication,
+              items.sentApplications,
+              items.savedApplications,
+            ],
+          },
+        ],
+      },
+    ],
+    children: section => (
+      <NavigationSection
+        title={section.title}
+        items={section.children}
+      >
+        {renderItem}
+      </NavigationSection>
     ),
   },
 }

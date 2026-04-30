@@ -111,6 +111,59 @@ Komponenten kan valideras med en egen funktion `validate()`.
 
 Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
 
+### inputMode och autoComplete
+
+:::tip Mobilvänlig inmatning
+
+Använd `inputMode` för att visa rätt virtuellt tangentbord på mobil, och `autoComplete` för att aktivera autofyll. Se exemplen nedan för vanliga kombinationer.
+
+:::
+
+`inputMode` kan användas för att ge mobilanvändare rätt tangentbord.
+`inputMode="email"` visar ett virtuellt tangentbord som är anpassat för e-postinmatning.
+
+`autoComplete` kan användas för att aktivera autofyll för både desktop och mobil.
+
+Använd en kombination av `type`, `inputMode` och `autoComplete` för validering, korrekt virtuellt tangentbord och autofyll.
+
+```tsx
+<TextField
+  label='E-post'
+  type='email'
+  inputMode='email'
+  autoComplete='email'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='E-post'
+    type='email'
+    inputMode='email'
+    autoComplete='email'
+  />
+</div>
+
+Använd `inputMode="numeric"` för att visa ett numeriskt tangentbord på mobil utan att aktivera inbyggd validering av fältet.
+
+```tsx
+<TextField
+  label='Kreditkortsnummer'
+  inputMode='numeric'
+  autoComplete='cc-number'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='Kreditkortsnummer'
+    inputMode='numeric'
+    autoComplete='cc-number'
+  />
+</div>
+
+Se [MDN — inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) och [MDN — autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) för alla tillgängliga värden.
+
 ## Varianter
 
 ### Storlek

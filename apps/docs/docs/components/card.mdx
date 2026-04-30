@@ -3,7 +3,6 @@ title: Card
 description: Ett card är en modulär komponent som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
 ---
 
-import { PropTable } from '@site/src/components/PropsTable'
 import { Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
@@ -13,6 +12,7 @@ import {
   LinkExample,
   ImageExample,
   HorizontalExample,
+  MenuExample,
 } from '@site/src/components/examples/card/CardExamples'
 
 <ComponentHeader
@@ -21,108 +21,163 @@ import {
   overrideHeadlessLink=''
 />
 
-Komponent som är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt samt länka till innehållet.
+Komponent som används för att gruppera flera olika typer av relaterad information.
 
 ```tsx
-import { Card } from '@midas-ds/components'
-```
-
-```tsx
-<Card>Kort</Card>
-```
-
-<div className='card'>
-  <Card>Kort</Card>
-</div>
-
-## Användning
-
-Kort börjar med en grundläggande komponent som endast definierar kortytan. Sedan finns flertalet underkomponenter som kan användas för att flexibelt bygga upp kortet med olika innehåll.
-
-| Komponent          | Beskrivning                                                                   |
-| ------------------ | ----------------------------------------------------------------------------- |
-| `<CardContent>`    | Läggs runt content i ett kort.                                                |
-| `<CardTitle>`      | Bidrar med konsekvent style för titel på kort.                                |
-| `<CardActions>`    | Skapar en yta för knappar eller annat som användaren kan klicka på på kortet. |
-| `<CardImage>`      | Används för att visa media på kortet.                                         |
-| `<CardActionArea>` | Gör hela kortytan klickbar.                                                   |
-| `<CardLink>`       | Läggs runt `<CardTitle>` för att skapa en länk.                               |
-
-```tsx
-import { Card, CardContent, CardTitle, Text } from '@midas-ds/components'
+import { Card, CardHeader, CardBody, Text } from '@midas-ds/components'
 ```
 
 ```tsx
 <Card>
-  <CardContent>
-    <CardTitle>Här är en titel</CardTitle>
-    <Text>Här är lite innehåll</Text>
-  </CardContent>
+  <CardHeader heading='Sven Svensson' />
+  <CardBody>
+    <Text>Sven är en designer på Migrationsverket</Text>
+  </CardBody>
 </Card>
 ```
 
 <BasicExample />
 
-### Titel
+## Användning
 
-Titeln har alltid samma storlek rent grafiskt och är som standard en `<h2>` men för korrekt semantik kan den ändras med `elementType`. I exemplet nedan har titeln samma grafiska utseende som innan men beroende på vart kortet används kan semantiken behöva justeras.
+Kortet byggs upp av flera underkomponenter.
+
+| Komponent       | Beskrivning                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `<CardHeader>`  | Plats för rubrik och eventuell underrubrik. Måste alltid finnas på kortet |
+| `<CardBody>`    | Wrapper för kortets huvudsakliga innehåll.                                |
+| `<CardActions>` | Skapar en yta för kortets handlingar.                                     |
+| `<CardImage>`   | Används för att visa en bild på kortet.                                   |
+| `<CardLink>`    | Läggs runt `<CardTitle>` för att skapa en länk.                           |
+
+## Varianter
+
+### Kort med handlingar
+
+`<CardActions>` används för att gruppera kortets primära handlingar. Om kortet har många möjliga handlingar lägger vi de två eller tre mest relevanta handlingarna på kortet och övriga i en [Meny](/components/card/#kort-med-meny).
 
 ```tsx
 <Card>
-  <CardContent>
-    <CardTitle
-      // highlight-start
-      elementType='h3'
-      // highlight-end
+  <CardHeader heading='Inköpslista' />
+  <CardBody>
+    <Text>
+      <ul>
+        <li>3 Apelsiner</li>
+        <li>5 bananer</li>
+        <li>2 Kiwi</li>
+      </ul>
+    </Text>
+  </CardBody>
+  <CardActions>
+    <Button
+      variant='secondary'
+      icon={Pen}
     >
-      Här är en titel
-    </CardTitle>
-    <Text>Här är lite innehåll</Text>
-  </CardContent>
-</Card>
-```
-
-### Actions
-
-`<CardActions>` används för att gruppera knappar eller andra interaktiva element i kortet. Det är viktigt att tänka på att inte överbelasta kortet med för många knappar, utan istället fokusera på de mest relevanta åtgärderna.
-
-```tsx
-import { Card, CardContent, CardActions, CardTitle, Button, Text } from '@midas-ds/components'
-```
-
-```tsx
-<Card>
-  <CardContent>
-    <CardTitle>Här är en titel</CardTitle>
-    <Text>Här är lite innehåll</Text>
-    <CardActions>
-      <Button
-        variant='icon'
-        icon={Pen}
-      >
-        Ändra
-      </Button>
-      <Button
-        variant='icon'
-        icon={X}
-      >
-        Avbryt
-      </Button>
-    </CardActions>
-  </CardContent>
+      Redigera
+    </Button>
+    <Button
+      variant='tertiary'
+      icon={Trash2}
+    >
+      Ta bort
+    </Button>
+  </CardActions>
 </Card>
 ```
 
 <ActionExample />
 
-### Primär action
+### Kort med bild
 
-Ett kort kan även ha en primär action med `<CardActionArea>` som är den mest relevanta åtgärden för kortet. Denna gör att hela ytan blir klickbar. En `<CardActionArea>` bör alltid innehålla en `<CardTitle>` för att ge en beskrivning av vad kortet innebär för skärmläsare.
+Använd `<CardImage>` för att visa en bild på kortet. Bilden ska antingen ligga överst eller direkt under `<CardHeader>` om den ligger överst.
 
 ```tsx
-import { Card, CardTitle, Text, CardActions, Button, CardActionArea } from '@midas-ds/components'
-import { Pen, X } from 'lucide-react'
+<Card>
+  <CardImage
+    src={imgSrc}
+    alt='Illustration av en ung man'
+  />
+  <CardHeader heading='Sven Svensson' />
+  <CardBody>
+    <Text>Sven är en designer på Migrationsverket</Text>
+  </CardBody>
+</Card>
 ```
+
+<ImageExample />
+
+### Kort med meny
+
+Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en meny i ett kort används [Menu](/components/menu) i `<CardHeader>`.
+
+```tsx
+<Card>
+  <CardHeader
+    heading='Sven Svensson'
+    subHeading='Designer på Migrationsverket'
+  >
+    <MenuTrigger>
+      <Button
+        aria-label='Menu'
+        variant='icon'
+        size='medium'
+      >
+        <EllipsisVertical size={20} />
+      </Button>
+      <MenuPopover>
+        <Menu>
+          <MenuItem id='spara'>Spara kontaktuppgifter</MenuItem>
+          <MenuItem id='epost'>Skicka e-post</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  </CardHeader>
+  <CardImage src={imgSrc} />
+  <CardBody>
+    <Text>
+      Prata med Sven om du har frågor om design tokens
+    </Text>
+  </CardBody>
+  <CardActions>
+    <Button
+      variant='secondary'
+      icon={Phone}
+    >
+      Boka möte
+    </Button>
+  </CardActions>
+</Card>
+```
+
+<MenuExample />
+
+### Länkkort
+
+I de flesta fall räcker texten på [Link](/components/link) eller [Link button](/components/link-button) för att beskriva var länken leder och vad de kan förvänta sig när de trycker på den. Men i de fall där användaren behöver mer information om var länken leder kan vi använda `<CardLink>` för att göra hela kortet till en länk.
+
+```tsx
+<Card>
+  <CardContent>
+    <CardLink href='#'>
+      <CardTitle>Min sida</CardTitle>
+    </CardLink>
+    <Text>
+      På min sida kan du ändra dina uppgifter
+      och se status på dina ansökningar
+    </Text>
+  </CardContent>
+</Card>
+```
+
+<LinkExample />
+
+### Primär handling
+
+:::warning
+Sedan version 17.14 fasar vi ut primär handling och `CardActionArea`, vänligen använd `CardActions` istället.
+:::
+
+Ett kort kan även ha en primär handling med `<CardActionArea>` som är den mest relevanta åtgärden för kortet. Denna gör att hela ytan blir klickbar. En `<CardActionArea>` bör alltid innehålla en `<CardTitle>` för att ge en beskrivning av vad kortet innebär för skärmläsare.
 
 ```tsx
 <Card>
@@ -151,53 +206,11 @@ import { Pen, X } from 'lucide-react'
 
 <ActionAreaExample />
 
-### Länk
+### Horisontell layout
 
-Det går även bra att kombinera standalone Link med card för att få en hel klickbar yta om kortet ska länka till något snarare än att göra något på sidan.
-
-```tsx
-import { Card, CardTitle, Text, CardActions, Link } from '@midas-ds/components'
-```
-
-```tsx
-<Card>
-  <CardContent>
-    <CardLink>
-      <CardTitle>Här är en titel</CardTitle>
-    </CardLink>
-    <Text>Här är lite innehåll</Text>
-  </CardContent>
-</Card>
-```
-
-<LinkExample />
-
-### Media
-
-`<CardImage>` används för att visa bilder på kortet.
-
-```tsx
-import { Card, CardImage, CardContent, CardTitle, Text } from '@midas-ds/components'
-```
-
-```tsx
-<Card>
-  <CardImage
-    src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
-    alt='Ananas'
-  />
-  <CardContent>
-    <CardLink href='#'>
-      <CardTitle>Dina uppgifter</CardTitle>
-    </CardLink>
-    <Text>Namn: Namn Namnsson</Text>
-  </CardContent>
-</Card>
-```
-
-<ImageExample />
-
-## Horisontell layout
+:::warning
+Sedan version 17.14 fasar vi ut horisontella kort, vänligen gå över till ett vertikalt orienterat kort.
+:::
 
 Card stödjer även horisontell layout för att visa korten som en avlång rad. Detta kan vara användbart för att visa flera kort ovanpå varandra, som en lista med mycket detaljer och information. Använder du underkomponenterna för Card kommer dessa att justeras automatiskt när Card sätts i horisontellt läge.
 
@@ -228,6 +241,3 @@ Card stödjer även horisontell layout för att visa korten som en avlång rad. 
 
 Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/client-side-routing).
 
-## API
-
-<PropTable name='Card' />

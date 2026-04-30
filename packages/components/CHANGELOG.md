@@ -1,3 +1,167 @@
+## 17.14.0 (2026-04-28)
+
+### 🚀 Features
+
+- **components,card:** add CardHeader and CardBody, deprecate legacy patterns ([b5d2489d632](https://github.com/migrationsverket/midas/commit/b5d2489d632))
+
+### 🧪 Tests updated
+
+- **components,card:** update and extend card tests ([4a00f46e7bf](https://github.com/migrationsverket/midas/commit/4a00f46e7bf))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.2
+
+## 17.13.3 (2026-04-24)
+
+### 🩹 Fixes
+
+- **components,layout:** add missing @react-aria and @react-stately dependencies ([2ae139e8c88](https://github.com/migrationsverket/midas/commit/2ae139e8c88))
+
+## 17.13.2 (2026-04-22)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.1
+
+## 17.13.1 (2026-04-22)
+
+This was a version bump only for components to align it with other projects, there were no code changes.
+
+## 17.13.0 (2026-04-20)
+
+### 🚀 Features
+
+- **theme,components,docs:** add dedicated primitives for tag color tokens ([a1b26d9a5fc](https://github.com/migrationsverket/midas/commit/a1b26d9a5fc))
+- **components, tag:** add colors ([5817843f908](https://github.com/migrationsverket/midas/commit/5817843f908))
+
+### 🩹 Fixes
+
+- **theme,components,docs:** fix tag token architecture and add missing tests ([0e2bda65f86](https://github.com/migrationsverket/midas/commit/0e2bda65f86))
+
+### 🏭 Refactoring
+
+- **components, tag:** remove redundant css ([387b4758188](https://github.com/migrationsverket/midas/commit/387b4758188))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.0
+
+## 17.12.1 (2026-04-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.1
+
+## 17.12.0 (2026-04-15)
+
+### 🚀 Features
+
+- **components, modal:** create common modal-overlay component ([60a350bfe5e](https://github.com/migrationsverket/midas/commit/60a350bfe5e))
+
+### 🩹 Fixes
+
+- **components, modal:** move ref to modal element ([2cf8f0a7dc3](https://github.com/migrationsverket/midas/commit/2cf8f0a7dc3))
+- **components,modal:** move overflow-y to dialog to fix scrollbar gap ([edb606f78cc](https://github.com/migrationsverket/midas/commit/edb606f78cc))
+- **components, modal:** show keyboard focus indicator for the dialog ([5eda6a088e5](https://github.com/migrationsverket/midas/commit/5eda6a088e5))
+- **components, modal:** use forwardRef ([1e6f94c27f0](https://github.com/migrationsverket/midas/commit/1e6f94c27f0))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.0
+
+## 17.11.6 (2026-04-14)
+
+### 🩹 Fixes
+
+- **components, date-picker:** add forwardRef and generic type ([eba8d627dac](https://github.com/migrationsverket/midas/commit/eba8d627dac))
+
+## 17.11.5 (2026-04-14)
+
+### 🩹 Fixes
+
+- **components, card:** change horizontal heading level ([26fe0e0241](https://github.com/migrationsverket/midas/commit/26fe0e0241))
+
+## 17.11.4 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.22
+
+## 17.11.3 (2026-04-14)
+
+### 🩹 Fixes
+
+- **components, grid:** change flex-wrap behavior for columns ([fee8817287](https://github.com/migrationsverket/midas/commit/fee8817287))
+
+## 17.11.2 (2026-04-13)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.21
+
+## 17.11.1 (2026-04-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.20
+
+## 17.11.0 (2026-04-08)
+
+### 🚀 Features
+
+- **components:** add TimeField component ([3c88d5371d](https://github.com/migrationsverket/midas/commit/3c88d5371d))
+
+### 🩹 Fixes
+
+- **components,time-field:** make TimeFieldProps generic, remove React.FC and data-testid ([73599aadbd](https://github.com/migrationsverket/midas/commit/73599aadbd))
+
+### 🏭 Refactoring
+
+- **components,date-field,time-field:** wrap DateField and TimeField in forwardRef ([7bd91d2d07](https://github.com/migrationsverket/midas/commit/7bd91d2d07))
+- **components,date-field:** make DateFieldProps generic and remove React.FC ([eefb171f3e](https://github.com/migrationsverket/midas/commit/eefb171f3e))
+
+### 🧪 Tests updated
+
+- **components,date-field,time-field:** add forwardRef tests for DateField and TimeField ([83f63f8692](https://github.com/migrationsverket/midas/commit/83f63f8692))
+
+## 17.10.17 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.19
+
+## 17.10.16 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.18
+
+## 17.10.15 (2026-04-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.17
+
+## 17.10.14 (2026-04-01)
+
+### 🩹 Fixes
+
+- **components, search-field:** set inputMode='search' as default ([4a0fe1a9bc](https://github.com/migrationsverket/midas/commit/4a0fe1a9bc))
+
+### 📖 Documentation changes
+
+- **components, textfield:** add numeric example ([8ae48988af](https://github.com/migrationsverket/midas/commit/8ae48988af))
+- **components:** add autocomplete and inputmode stories ([7babb670fd](https://github.com/migrationsverket/midas/commit/7babb670fd))
+
+## 17.10.13 (2026-03-30)
+
+### 🩹 Fixes
+
+- **components,link:** wrap hover rules in @media (hover: hover) to match LinkButton ([c71848b659](https://github.com/migrationsverket/midas/commit/c71848b659))
+- **components,link:** consolidate hover rules to match LinkButton pattern ([0fa6c2ab09](https://github.com/migrationsverket/midas/commit/0fa6c2ab09))
+- **components,link:** move redundant :hover rules under @media (hover: hover) ([cf8e2114a4](https://github.com/migrationsverket/midas/commit/cf8e2114a4))
+
 ## 17.10.12 (2026-03-30)
 
 ### 🧱 Updated Dependencies

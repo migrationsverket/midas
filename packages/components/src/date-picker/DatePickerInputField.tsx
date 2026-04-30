@@ -3,6 +3,7 @@ import {
   Group,
   DatePickerStateContext,
   DateRangePickerStateContext,
+  DateValue,
 } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
@@ -15,11 +16,10 @@ import { FocusScope, useFocusManager } from '@react-aria/focus'
 import { isRangePickerState } from './utils'
 import { Button } from '../button'
 
-interface DatePickerInputFieldProps
-  extends Pick<
-    DatePickerProps,
-    'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size' | 'isClearable'
-  > {
+interface DatePickerInputFieldProps extends Pick<
+  DatePickerProps<DateValue>,
+  'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size' | 'isClearable'
+> {
   children?: React.ReactNode
 }
 
@@ -58,14 +58,14 @@ const DatePickerClearButton = ({
   ) : null
 }
 
-export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
+export const DatePickerInputField = ({
   children,
   isDisabled,
   isInvalid,
   isReadOnly,
   size = 'large',
   isClearable = false,
-}) => {
+}: DatePickerInputFieldProps) => {
   const strings = useLocalizedStringFormatter(messages)
   return (
     <Group

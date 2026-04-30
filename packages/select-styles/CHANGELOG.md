@@ -1,3 +1,73 @@
+## 1.1.53 (2026-04-28)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.2
+
+## 1.1.52 (2026-04-22)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.1
+
+## 1.1.51 (2026-04-22)
+
+This was a version bump only for select-styles to align it with other projects, there were no code changes.
+
+## 1.1.50 (2026-04-20)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.0
+
+## 1.1.49 (2026-04-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.1
+
+## 1.1.48 (2026-04-15)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.0
+
+## 1.1.47 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.22
+
+## 1.1.46 (2026-04-13)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.21
+
+## 1.1.45 (2026-04-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.20
+
+## 1.1.44 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.19
+
+## 1.1.43 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.18
+
+## 1.1.42 (2026-04-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.17
+
 ## 1.1.41 (2026-03-30)
 
 ### 🧱 Updated Dependencies

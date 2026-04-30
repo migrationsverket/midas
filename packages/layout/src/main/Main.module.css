@@ -4,5 +4,16 @@
   min-width: 0;
   height: 100%;
   overflow: hidden auto;
+  scrollbar-gutter: stable;
   padding: 1rem;
+
+  &:focus-visible {
+    box-shadow: var(--midas-state-focus-inset);
+    outline: none;
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight;
+      outline-offset: calc(var(--midas-state-focus-contrast-mode-outline) * -1);
+    }
+  }
 }

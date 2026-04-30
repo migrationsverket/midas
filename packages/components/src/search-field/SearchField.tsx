@@ -12,14 +12,16 @@ import TextFieldStyles from '../textfield/TextField.module.css'
 import { Button } from '../button'
 import styles from './SearchField.module.css'
 import clsx from '../utils/clsx'
-import * as React from 'react'
 import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
 import { FieldError } from '../field-error'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
-export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'children'> {
+export interface SearchFieldProps extends Omit<
+  AriaSearchFieldProps,
+  'children'
+> {
   /** Placeholder text */
   placeholder: string
   /**
@@ -63,7 +65,7 @@ function isValidationError(
   return !!(error as ValidationError)?.length
 }
 
-export const SearchField: React.FC<SearchFieldProps> = ({
+export const SearchField = ({
   errorPosition = 'top',
   size = 'large',
   showButton,
@@ -71,8 +73,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   errorMessage,
   placeholder,
   validationBehavior,
+  inputMode = 'search',
   ...props
-}) => {
+}: SearchFieldProps) => {
   const strings = useLocalizedStringFormatter(messages)
   const formProps = useSlottedContext(FormContext)
   const resolvedValidationBehavior =
@@ -88,6 +91,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   return (
     <AriaSearchField
       {...props}
+      inputMode={inputMode}
       onSubmit={handleSubmit}
       aria-label={props['aria-label'] ?? placeholder}
       className={clsx(styles.container, className)}
@@ -97,7 +101,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         <>
           {errorPosition === 'top' && (
             <FieldError>
-              {({ validationErrors }) => errorMessage ?? validationErrors.join(' ')}
+              {({ validationErrors }) =>
+                errorMessage ?? validationErrors.join(' ')
+              }
             </FieldError>
           )}
           <div className={styles.inner}>
@@ -112,11 +118,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
               />
               <AriaInput
                 placeholder={placeholder}
-                className={clsx(
-                  TextFieldStyles.input,
-                  styles.input,
-                  { [styles.medium]: size === 'medium' },
-                )}
+                className={clsx(TextFieldStyles.input, styles.input, {
+                  [styles.medium]: size === 'medium',
+                })}
               />
               {state.value.length > 0 && (
                 <Button
@@ -148,7 +152,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           </div>
           {errorPosition === 'bottom' && (
             <FieldError>
-              {({ validationErrors }) => errorMessage ?? validationErrors.join(' ')}
+              {({ validationErrors }) =>
+                errorMessage ?? validationErrors.join(' ')
+              }
             </FieldError>
           )}
         </>

@@ -8,11 +8,6 @@ import { createAliases } from './aliases'
 const packagesDir = path.resolve(__dirname, '../../packages')
 const toolsDir = path.resolve(__dirname, '../../tools')
 
-// eslint-disable-next-line
-const version: string = require(
-  `${packagesDir}/components/package.json`,
-).version
-
 const isUnreleased = !!process.env.UNRELEASED
 
 const packageAliases = {
@@ -165,9 +160,7 @@ const config: Config = {
         {
           type: 'html',
           position: 'right',
-          value: isUnreleased
-            ? `<code class="unreleased">Version ${version} (unreleased)</code>`
-            : `<a href="https://github.com/migrationsverket/midas/releases" target="_blank" rel="noopener noreferrer"><code>Version ${version}</code></a>`,
+          value: `<a href="https://www.npmjs.com/package/@midas-ds/components" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;"><img src="https://img.shields.io/npm/v/@midas-ds/components?label=components&style=flat-square" alt="npm version" /></a>`,
         },
         {
           href:

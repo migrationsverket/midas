@@ -13,6 +13,7 @@ import {
   useObjectRef,
 } from '@react-aria/utils'
 import { PanelBody, PanelBodyProps } from './panel-body'
+import { PanelContent } from './panel-content'
 import { PanelHeader } from './panel-header'
 import { PanelTitle, PanelTitleProps } from './panel-title'
 import messages from './intl/translations.json'
@@ -37,7 +38,7 @@ export const Panel = (props: PanelProps) => {
     props.onOpenChange,
   )
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLElement>(null)
   const isExiting = useExitAnimation(ref, isOpen)
 
   const handlePress = () => setIsOpen(previouslyOpen => !previouslyOpen)
@@ -63,7 +64,7 @@ export const Panel = (props: PanelProps) => {
 }
 
 const PanelInner = forwardRef<
-  HTMLDivElement,
+  HTMLElement,
   PanelProps & {
     isExiting: boolean
     onPress: (e: PressEvent) => void
@@ -88,7 +89,7 @@ const PanelInner = forwardRef<
     const objectRef = useObjectRef(ref)
     const isEntering = useEnterAnimation(objectRef, !defaultOpen)
 
-    const handleAnimationEnd = (e: AnimationEvent<HTMLDivElement>) => {
+    const handleAnimationEnd = (e: AnimationEvent<HTMLElement>) => {
       if (e.target === e.currentTarget && promoting) {
         onPromotionEnd?.()
       }
@@ -106,23 +107,24 @@ const PanelInner = forwardRef<
         {...filterDOMProps(rest)}
       >
         <PanelHeader>
-          <div>
-            {title && (
-              <PanelTitle
-                className={styles.panelTitle}
-                title={title}
-              />
-            )}
-          </div>
+          {title ? (
+            <PanelTitle
+              className={styles.panelTitle}
+              title={title}
+            />
+          ) : (
+            <div />
+          )}
           <Button
-            variant='icon'
             aria-label={strings.format('closePanel')}
             onPress={onPress}
+            size='medium'
+            variant='icon'
           >
             <X size={20} />
           </Button>
         </PanelHeader>
-        {children}
+        <PanelContent>{children}</PanelContent>
       </PanelBody>
     )
   },

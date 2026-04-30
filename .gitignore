@@ -209,3 +209,6 @@ playwright/.auth/
 
 # verdaccio
 .verdaccio/storage
+
+# claude
+.claude/

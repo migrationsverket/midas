@@ -44,7 +44,7 @@ const preview: Preview = {
           : customLightTheme,
     },
     viewport: {
-      viewports: customViewports,
+      options: customViewports,
     },
     options: {
       storySort: {

@@ -18,6 +18,7 @@ export default {
     description: 'Description',
     errorPosition: 'top',
     size: 'large',
+    inputMode: 'text',
   },
 } satisfies Meta<typeof TextField>
 
@@ -80,6 +81,20 @@ export const CustomValidation: Story = {
 export const Number: Story = {
   args: {
     type: 'number',
+  },
+}
+
+export const Numeric: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Use `inputMode="numeric"` for numeric input without the built-in validation and increment/decrement controls of `type="number"`.',
+      },
+    },
+  },
+  args: {
+    inputMode: 'numeric',
   },
 }
 
@@ -158,5 +173,22 @@ export const WithHelpPopover: Story = {
         'An assistive text that helps the user understand the field better.',
       'aria-label': 'Mer information',
     },
+  },
+}
+
+export const Email: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'This example combines type="email" with autoComplete and inputMode for format validation and an optimized keyboard for mobile devices.',
+      },
+    },
+  },
+  args: {
+    label: 'Email',
+    type: 'email',
+    autoComplete: 'email',
+    inputMode: 'email',
   },
 }

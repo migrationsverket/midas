@@ -6,7 +6,10 @@ import { Button, ButtonProps, Link } from 'react-aria-components'
 import { ArrowRight } from 'lucide-react'
 
 export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
-  /** Stack content in card vertical or horizontal */
+  /**
+   * Stack content in card vertical or horizontal
+   * @deprecated since v17.14.0 please stack content vertically instead
+   */
   horizontal?: boolean
   /** Card content, usually wrap with CardContent */
   children: React.ReactNode
@@ -40,6 +43,8 @@ const CardContext = React.createContext<MidasCardContext>({
   titleId: undefined,
 })
 
+const CardContentContext = React.createContext<object | undefined>(undefined)
+
 export const Card: React.FC<MidasCard> = ({
   horizontal,
   className,
@@ -72,28 +77,36 @@ export const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   const { horizontal } = React.useContext(CardContext)
 
   return (
-    <div
-      {...rest}
-      className={clsx(styles.cardContent, horizontal && styles.horizontal)}
-    >
-      {children}
-    </div>
+    <CardContentContext.Provider value={{}}>
+      <div
+        {...rest}
+        className={clsx(styles.cardContent, horizontal && styles.horizontal)}
+      >
+        {children}
+      </div>
+    </CardContentContext.Provider>
   )
 }
 
 export const CardTitle: React.FC<HeadingProps> = ({
   elementType = 'h2',
   children,
+  className,
+  ...rest
 }) => {
   const { horizontal, titleId } = React.useContext(CardContext)
 
   return (
     <Heading
-      level={horizontal ? 5 : 3}
+      level={3}
       elementType={elementType}
-      isExpressive={horizontal}
-      className={clsx(styles.cardTitle, horizontal && styles.horizontal)}
+      className={clsx(
+        className,
+        styles.cardTitle,
+        horizontal && styles.horizontal,
+      )}
       id={titleId}
+      {...rest}
     >
       {children}
     </Heading>
@@ -105,17 +118,26 @@ export const CardActions: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...rest
 }) => {
   const { horizontal } = React.useContext(CardContext)
+  const isDeprecatedUsage = !!React.useContext(CardContentContext)
 
   return (
     <div
       {...rest}
-      className={clsx(styles.cardActions, horizontal && styles.horizontal)}
+      className={clsx(
+        styles.cardActions,
+        horizontal && styles.horizontal,
+        isDeprecatedUsage && styles.deprecated,
+      )}
     >
       {children}
     </div>
   )
 }
 
+/**
+ *
+ * @deprecated since v17.14.0 please use `CardActions` instead
+ */
 export const CardActionArea: React.FC<
   ButtonProps & React.RefAttributes<HTMLButtonElement>
 > = ({ children, className, ...rest }) => {
@@ -140,6 +162,7 @@ export const CardImage: React.FC<MidasCardImage> = ({
   return (
     <ImageComponent
       {...rest}
+      data-card-image
       className={clsx(styles.cardImage, className)}
     />
   )

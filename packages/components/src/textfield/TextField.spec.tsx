@@ -14,6 +14,7 @@ const {
   Number,
   ShowCounter,
   DS1243,
+  Email,
 } = composeStories(stories)
 
 const handleBlur = vi.fn()
@@ -158,5 +159,16 @@ describe('given a TextField with showCounter', async () => {
         .element(getByText('HEJ'.length.toString()))
         .toBeInTheDocument()
     })
+  })
+})
+
+describe('given an Email TextField', async () => {
+  it('should have the correct attributes', async () => {
+    const { getByRole } = await render(<Email />)
+
+    const input = getByRole('textbox')
+    await expect.element(input).toHaveAttribute('type', 'email')
+    await expect.element(input).toHaveAttribute('autoComplete', 'email')
+    await expect.element(input).toHaveAttribute('inputMode', 'email')
   })
 })

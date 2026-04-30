@@ -8,6 +8,7 @@ import { filterDOMProps } from '@react-aria/utils'
 import {
   PanelBody,
   PanelBodyProps,
+  PanelContent,
   PanelHeader,
   PanelTitle,
   PanelTitleProps,
@@ -51,34 +52,41 @@ export const Sidebar = ({
         })}
         {...filterDOMProps(props)}
       >
-        <aside>
-          <PanelHeader>
-            <div>
-              {!isCollapsed && title && (
-                <PanelTitle
-                  className={styles.panelTitle}
-                  title={title}
-                />
-              )}
-            </div>
-            <Button
-              variant='icon'
-              aria-label={
-                isCollapsed
-                  ? strings.format('expandSidebar')
-                  : strings.format('collapseSidebar')
-              }
-              onPress={handlePress}
-            >
-              {isCollapsed ? (
-                <PanelLeftOpen size={20} />
-              ) : (
-                <PanelLeftClose size={20} />
-              )}
-            </Button>
-          </PanelHeader>
+        <PanelHeader
+          className={clsx(styles.sidebarHeader, {
+            [styles.collapsed]: isCollapsed,
+          })}
+        >
+          {title ? (
+            <PanelTitle
+              className={clsx(styles.sidebarTitle, {
+                [styles.collapsed]: isCollapsed,
+              })}
+              title={title}
+            />
+          ) : (
+            <div />
+          )}
+          <Button
+            aria-label={
+              isCollapsed
+                ? strings.format('expandSidebar')
+                : strings.format('collapseSidebar')
+            }
+            onPress={handlePress}
+            variant='icon'
+            size={isCollapsed ? 'large' : 'medium'}
+          >
+            {isCollapsed ? (
+              <PanelLeftOpen size={20} />
+            ) : (
+              <PanelLeftClose size={20} />
+            )}
+          </Button>
+        </PanelHeader>
+        <PanelContent className={styles.sidebarContent}>
           {children}
-        </aside>
+        </PanelContent>
       </PanelBody>
     </SidebarContext.Provider>
   )

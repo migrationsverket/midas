@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { parseDate, CalendarDate } from '@internationalized/date'
 import { DatePicker } from './DatePicker'
 
-const meta: Meta<typeof DatePicker> = {
+const meta: Meta<typeof DatePicker<CalendarDate>> = {
   component: DatePicker,
   title: 'Components/DatePicker',
   tags: ['autodocs'],
@@ -32,7 +32,7 @@ const meta: Meta<typeof DatePicker> = {
   },
 }
 export default meta
-type Story = StoryObj<typeof DatePicker>
+type Story = StoryObj<typeof DatePicker<CalendarDate>>
 
 export const Primary: Story = {}
 
@@ -108,13 +108,12 @@ export const ControlledState: Story = {
     const [value, setValue] = React.useState<CalendarDate | null>(
       parseDate('2026-05-29'),
     )
+
     return (
       <DatePicker
         {...args}
         value={value}
-        onChange={newValue =>
-          setValue(newValue ? parseDate(newValue.toString()) : null)
-        }
+        onChange={setValue}
       />
     )
   },

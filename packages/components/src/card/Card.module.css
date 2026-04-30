@@ -1,8 +1,8 @@
 .card {
   font-family: var(--midas-typography-font-family);
   position: relative;
-  background-color: var(--midas-layer-01-base);
-  border-bottom: 1px solid var(--midas-border-color-secondary);
+  background-color: var(--midas-card-background-base);
+  box-shadow: var(--midas-card-shadow);
 
   @media (forced-colors: active) {
     border: 1px solid;
@@ -28,7 +28,7 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem 1rem;
+  gap: var(--midas-space-medium);
   flex-grow: 1;
 
   &.horizontal {
@@ -47,9 +47,19 @@
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+  margin-top: var(--midas-space-medium);
+  padding: 0 var(--midas-space-medium) var(--midas-space-medium)
+    var(--midas-space-medium);
 
   &.horizontal {
+    margin-top: 0;
     margin-left: auto;
+  }
+
+  /* We used to recommend placing CardActions inside of CardContent, remove the padding for backwards compability */
+  &.deprecated {
+    margin-top: 0;
+    padding: 0;
   }
 }
 

@@ -1,3 +1,195 @@
+## 0.1.2 (2026-04-28)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.0
+
+## 0.1.1 (2026-04-24)
+
+### 🩹 Fixes
+
+- **components,layout:** add missing @react-aria and @react-stately dependencies ([2ae139e8c88](https://github.com/migrationsverket/midas/commit/2ae139e8c88))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.13.3
+
+## 0.1.0 (2026-04-22)
+
+### 🚀 Features
+
+- **layout,sidebar:** animate PanelTitle on collapse ([58f4491068a](https://github.com/migrationsverket/midas/commit/58f4491068a))
+
+### 🩹 Fixes
+
+- **layout,sidebar:** remove deferred display transition to prevent end-of-animation jump ([63b910fa3d1](https://github.com/migrationsverket/midas/commit/63b910fa3d1))
+- **layout,sidebar:** update tests to reflect in-DOM title animation ([136a2a9863e](https://github.com/migrationsverket/midas/commit/136a2a9863e))
+- **layout,navigation:** animate nav label collapse in sidebar ([98018f0ae41](https://github.com/migrationsverket/midas/commit/98018f0ae41))
+- **layout,sidebar:** prevent width shift when scrollbar appears ([a50f58c1b9f](https://github.com/migrationsverket/midas/commit/a50f58c1b9f))
+
+### 🔧 Maintenance
+
+- **layout:** fix prettier formatting in NavigationLink.module.css ([22830c62173](https://github.com/migrationsverket/midas/commit/22830c62173))
+
+## 0.0.58 (2026-04-22)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.13.2
+
+## 0.0.57 (2026-04-22)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.13.1
+
+## 0.0.56 (2026-04-20)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.13.0
+
+## 0.0.55 (2026-04-17)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** add display block to modal overlay ([e2cc226d4e1](https://github.com/migrationsverket/midas/commit/e2cc226d4e1))
+
+## 0.0.54 (2026-04-16)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.12.1
+
+## 0.0.53 (2026-04-15)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** use common modal overlay component ([8db2e833f7b](https://github.com/migrationsverket/midas/commit/8db2e833f7b))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.12.0
+
+## 0.0.52 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.6
+
+## 0.0.51 (2026-04-14)
+
+### 🩹 Fixes
+
+- **layout, panel, sidebar:** change aria role ([53790fa951](https://github.com/migrationsverket/midas/commit/53790fa951))
+- **layout, sidebar:** update css according to spec ([d9feb0970d](https://github.com/migrationsverket/midas/commit/d9feb0970d))
+- **layout, panel:** update css according to spec ([e047aa7526](https://github.com/migrationsverket/midas/commit/e047aa7526))
+- **layout, header:** update css according to spec ([b950921455](https://github.com/migrationsverket/midas/commit/b950921455))
+
+## 0.0.50 (2026-04-14)
+
+### 🩹 Fixes
+
+- **layout:** create and export a reset css ([1b7c31bcc4](https://github.com/migrationsverket/midas/commit/1b7c31bcc4))
+
+## 0.0.49 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.5
+
+## 0.0.48 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.4
+
+## 0.0.47 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.3
+
+## 0.0.46 (2026-04-13)
+
+### 📖 Documentation changes
+
+- **layout:** add stories for components ([7c2f86b92a](https://github.com/migrationsverket/midas/commit/7c2f86b92a))
+
+### 🧪 Tests updated
+
+- **layout:** add skip to content test ([358610480c](https://github.com/migrationsverket/midas/commit/358610480c))
+- **layout:** create multiple viewport setups ([a88c5d7ab1](https://github.com/migrationsverket/midas/commit/a88c5d7ab1))
+- **layout:** migrate legacy tests ([8bbed7fadc](https://github.com/migrationsverket/midas/commit/8bbed7fadc))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.2
+
+## 0.0.45 (2026-04-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.1
+
+## 0.0.44 (2026-04-09)
+
+### 🩹 Fixes
+
+- **layout, mobile-menu:** add controlled state support ([4343a1d3ed](https://github.com/migrationsverket/midas/commit/4343a1d3ed))
+
+## 0.0.43 (2026-04-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.11.0
+
+## 0.0.42 (2026-04-07)
+
+### 🩹 Fixes
+
+- **layout, navbar:** add conditional rendering ([d7719091d7](https://github.com/migrationsverket/midas/commit/d7719091d7))
+- **layout, mobile-menu:** support controlled state ([ec0e718648](https://github.com/migrationsverket/midas/commit/ec0e718648))
+
+### 📖 Documentation changes
+
+- **docs,layout:** add @midas-ds/layout documentation ([63a7eb4e46](https://github.com/migrationsverket/midas/commit/63a7eb4e46))
+
+### 🔙 Rollback changes
+
+- **layout,mobile-menu:** remove controlled state, update docs to reflect actual behavior ([9445142647](https://github.com/migrationsverket/midas/commit/9445142647))
+- **layout, navbar:** Revert "fix(layout, navbar): add conditional rendering" ([a93b6719cf](https://github.com/migrationsverket/midas/commit/a93b6719cf))
+
+## 0.0.41 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.17
+
+## 0.0.40 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.16
+
+## 0.0.39 (2026-04-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.15
+
+## 0.0.38 (2026-04-01)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.14
+
+## 0.0.37 (2026-03-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.10.13
+
 ## 0.0.36 (2026-03-30)
 
 ### 🧱 Updated Dependencies

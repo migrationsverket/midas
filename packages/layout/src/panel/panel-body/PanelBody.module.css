@@ -1,5 +1,7 @@
 .panelBody {
   background-color: var(--midas-background-base);
   box-sizing: border-box;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-medium);
 }

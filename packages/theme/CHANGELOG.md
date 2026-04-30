@@ -1,3 +1,58 @@
+## 3.14.2 (2026-04-28)
+
+### 🚀 Features
+
+- **components,card:** add CardHeader and CardBody, deprecate legacy patterns ([b5d2489d632](https://github.com/migrationsverket/midas/commit/b5d2489d632))
+
+## 3.14.1 (2026-04-22)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.14.0 (2026-04-20)
+
+### 🚀 Features
+
+- **theme,components,docs:** add dedicated primitives for tag color tokens ([a1b26d9a5fc](https://github.com/migrationsverket/midas/commit/a1b26d9a5fc))
+- **theme:** add tag colors ([439fdd0ece0](https://github.com/migrationsverket/midas/commit/439fdd0ece0))
+
+### 🩹 Fixes
+
+- **theme,components,docs:** fix tag token architecture and add missing tests ([0e2bda65f86](https://github.com/migrationsverket/midas/commit/0e2bda65f86))
+
+## 3.13.1 (2026-04-16)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.13.0 (2026-04-15)
+
+### 🚀 Features
+
+- **theme:** add overlay background and blur ([ce6d91b3a93](https://github.com/migrationsverket/midas/commit/ce6d91b3a93))
+
+## 3.12.22 (2026-04-14)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.21 (2026-04-13)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.20 (2026-04-09)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.19 (2026-04-07)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.18 (2026-04-07)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
+## 3.12.17 (2026-04-02)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.12.16 (2026-03-30)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

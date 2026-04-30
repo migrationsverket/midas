@@ -9,11 +9,13 @@ export const ComponentHeader = ({
   friendlyName,
   overrideHeadlessLink,
   overrideHeadlessLinkTitle,
+  hideStorybookLink,
 }: {
   name: string
   friendlyName: string
   overrideHeadlessLink?: string
   overrideHeadlessLinkTitle?: string
+  hideStorybookLink?: boolean
 }) => {
   const baseUrl = useBaseUrl
   const componentPath = `?path=/docs/components-${name.toLowerCase()}--docs`
@@ -32,22 +34,24 @@ export const ComponentHeader = ({
         >
           <b>{friendlyName}</b>
         </GridItem>
-        <GridItem
-          size='auto'
-          className='headerLink'
-        >
-          <LinkButton
-            href={storybookLink}
-            variant='tertiary'
-            icon={EmptyIcon as any}
+        {!hideStorybookLink && (
+          <GridItem
+            size='auto'
+            className='headerLink'
           >
-            <StorybookIcon
-              size={24}
-              color='#FF4785'
-            />
-            Storybook
-          </LinkButton>
-        </GridItem>
+            <LinkButton
+              href={storybookLink}
+              variant='tertiary'
+              icon={EmptyIcon as any}
+            >
+              <StorybookIcon
+                size={24}
+                color='#FF4785'
+              />
+              Storybook
+            </LinkButton>
+          </GridItem>
+        )}
         <GridItem
           size='auto'
           className='headerLink'

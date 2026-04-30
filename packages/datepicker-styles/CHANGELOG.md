@@ -1,3 +1,73 @@
+## 0.2.62 (2026-04-28)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.2
+
+## 0.2.61 (2026-04-22)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.1
+
+## 0.2.60 (2026-04-22)
+
+This was a version bump only for datepicker-styles to align it with other projects, there were no code changes.
+
+## 0.2.59 (2026-04-20)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.0
+
+## 0.2.58 (2026-04-16)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.1
+
+## 0.2.57 (2026-04-15)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.13.0
+
+## 0.2.56 (2026-04-14)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.22
+
+## 0.2.55 (2026-04-13)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.21
+
+## 0.2.54 (2026-04-09)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.20
+
+## 0.2.53 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.19
+
+## 0.2.52 (2026-04-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.18
+
+## 0.2.51 (2026-04-02)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.12.17
+
 ## 0.2.50 (2026-03-30)
 
 ### 🧱 Updated Dependencies

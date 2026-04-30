@@ -3,28 +3,6 @@
   padding: var(--midas-space-xsmall) !important;
   border-radius: 1.5rem;
   margin-left: var(--midas-space-10);
-
-  &[data-hovered] {
-    background-color: var(--midas-button-icon-hover);
-  }
-
-  &[data-pressed] {
-    background-color: var(--midas-button-icon-active);
-  }
-
-  &.green[data-hovered],
-  &.red[data-hovered],
-  &.blue[data-hovered],
-  &.yellow[data-hovered] {
-    background-color: var(--midas-button-icon-hover);
-  }
-
-  &.green[data-pressed],
-  &.red[data-pressed],
-  &.blue[data-pressed],
-  &.yellow[data-pressed] {
-    background-color: var(--midas-button-icon-active);
-  }
 }
 
 .tag {
@@ -40,24 +18,51 @@
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
 
-  &.green {
-    background-color: var(--midas-tag-green-background);
-    border-color: var(--midas-tag-green-border-color);
-  }
-
+  &.sky,
   &.blue {
-    background-color: var(--midas-tag-blue-background);
-    border-color: var(--midas-tag-blue-border-color);
+    background-color: var(--midas-tag-sky-background);
+    border-color: var(--midas-tag-sky-border-color);
   }
 
+  &.mint,
+  &.green {
+    background-color: var(--midas-tag-mint-background);
+    border-color: var(--midas-tag-mint-border-color);
+  }
+
+  &.cream,
   &.yellow {
-    background-color: var(--midas-tag-yellow-background);
-    border-color: var(--midas-tag-yellow-border-color);
+    background-color: var(--midas-tag-cream-background);
+    border-color: var(--midas-tag-cream-border-color);
   }
 
+  &.teal {
+    background-color: var(--midas-tag-teal-background);
+    border-color: var(--midas-tag-teal-border-color);
+  }
+
+  &.lagoon,
+  &.lagoonblue {
+    background-color: var(--midas-tag-lagoon-background);
+    border-color: var(--midas-tag-lagoon-border-color);
+  }
+
+  &.lavender,
+  &.purple {
+    background-color: var(--midas-tag-lavender-background);
+    border-color: var(--midas-tag-lavender-border-color);
+  }
+
+  &.peach,
+  &.orange {
+    background-color: var(--midas-tag-peach-background);
+    border-color: var(--midas-tag-peach-border-color);
+  }
+
+  &.pippin,
   &.red {
-    background-color: var(--midas-tag-red-background);
-    border-color: var(--midas-tag-red-border-color);
+    background-color: var(--midas-tag-pippin-background);
+    border-color: var(--midas-tag-pippin-border-color);
   }
 
   &[data-disabled] {

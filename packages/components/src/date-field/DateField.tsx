@@ -20,7 +20,7 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { FocusScope } from '@react-aria/focus'
 import { useFocusManager } from '@react-aria/focus'
 
-export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
+export interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
@@ -37,12 +37,9 @@ export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   isClearable?: boolean
 }
 
-const DateFieldClearButton: React.FC<DateFieldProps> = ({
-  isClearable,
-  size,
-  isDisabled,
-  isReadOnly,
-}) => {
+const DateFieldClearButton: React.FC<
+  Pick<DateFieldProps<DateValue>, 'isClearable' | 'size' | 'isDisabled' | 'isReadOnly'>
+> = ({ isClearable, size, isDisabled, isReadOnly }) => {
   const strings = useLocalizedStringFormatter(messages)
   const state = React.useContext(DateFieldStateContext)
   const focusManager = useFocusManager()
@@ -67,48 +64,54 @@ const DateFieldClearButton: React.FC<DateFieldProps> = ({
   ) : null
 }
 
-export const DateField: React.FC<DateFieldProps> = ({
-  className,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  label,
-  size = 'large',
-  popover,
-  isClearable = false,
-  isReadOnly,
-  isDisabled,
-  ...rest
-}) => {
-  return (
-    <AriaDateField
-      {...rest}
-      isReadOnly={isReadOnly}
-      isDisabled={isDisabled}
-      className={clsx(styles.dateField, className)}
-    >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <div
-        className={clsx(styles.inputField, {
-          [styles.medium]: size === 'medium',
-        })}
-        data-testid='date-field_input-field'
+export const DateField = React.forwardRef(
+  <T extends DateValue>(
+    {
+      className,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      label,
+      size = 'large',
+      popover,
+      isClearable = false,
+      isReadOnly,
+      isDisabled,
+      ...rest
+    }: DateFieldProps<T>,
+    ref: React.ForwardedRef<HTMLDivElement>
+  ) => {
+    return (
+      <AriaDateField
+        {...rest}
+        ref={ref}
+        isReadOnly={isReadOnly}
+        isDisabled={isDisabled}
+        className={clsx(styles.dateField, className)}
       >
-        <FocusScope>
-          <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-          <DateFieldClearButton
-            isClearable={isClearable}
-            size={size}
-            isDisabled={isDisabled}
-            isReadOnly={isReadOnly}
-          />
-        </FocusScope>
-      </div>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-    </AriaDateField>
-  )
-}
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <div
+          className={clsx(styles.inputField, {
+            [styles.medium]: size === 'medium',
+          })}
+          data-testid='date-field_input-field'
+        >
+          <FocusScope>
+            <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+            <DateFieldClearButton
+              isClearable={isClearable}
+              size={size}
+              isDisabled={isDisabled}
+              isReadOnly={isReadOnly}
+            />
+          </FocusScope>
+        </div>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+      </AriaDateField>
+    )
+  }
+) as <T extends DateValue>(props: DateFieldProps<T> & { ref?: React.Ref<HTMLDivElement> }) => React.ReactElement | null

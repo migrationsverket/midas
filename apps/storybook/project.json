@@ -70,6 +70,18 @@
         }
       }
     },
+    "a11y-mobile": {
+      "executor": "@nx/vitest:test",
+      "options": {
+        "config": "apps/storybook/vitest.config.mobile.ts",
+        "project": "storybook:mobile"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
+        }
+      }
+    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],

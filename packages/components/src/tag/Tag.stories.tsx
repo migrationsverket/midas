@@ -29,30 +29,53 @@ export default {
     )
   },
 } as Meta<typeof Tag>
-
 export const Primary: Story = {}
-
-export const Green: Story = {
-  args: {
-    color: 'green',
-  },
-}
 
 export const Blue: Story = {
   args: {
-    color: 'blue',
+    color: 'sky',
   },
 }
 
-export const Yellow: Story = {
+export const Green: Story = {
   args: {
-    color: 'yellow',
+    color: 'mint',
+  },
+}
+
+export const Lagoonblue: Story = {
+  args: {
+    color: 'lagoon',
+  },
+}
+
+export const Orange: Story = {
+  args: {
+    color: 'peach',
+  },
+}
+
+export const Purple: Story = {
+  args: {
+    color: 'lavender',
   },
 }
 
 export const Red: Story = {
   args: {
-    color: 'red',
+    color: 'pippin',
+  },
+}
+
+export const Teal: Story = {
+  args: {
+    color: 'teal',
+  },
+}
+
+export const Yellow: Story = {
+  args: {
+    color: 'cream',
   },
 }
 

@@ -4,21 +4,28 @@ import {
   customDarkTheme,
   getPreferredColorScheme,
 } from './custom-theme'
-import { version } from '../../../packages/components/package.json'
+import { version as componentsVersion } from '../../../packages/components/package.json'
+import { version as layoutVersion } from '../../../packages/layout/package.json'
 
 addons.setConfig({
   theme:
     getPreferredColorScheme() === 'dark' ? customDarkTheme : customLightTheme,
   sidebar: {
     showRoots: true,
-    renderLabel: item => {
-      if (item.name === 'Components') {
-        return `Components - v.${version} ${
-          window.location.pathname.includes('unreleased') ? '(unreleased)' : ''
-        }`
+    renderLabel: ({ name, depth }) => {
+      if (depth !== 0) {
+        return name
       }
 
-      return item.name
+      if (name === 'Components') {
+        return `${name} - v.${componentsVersion}`
+      }
+
+      if (name === 'Layout') {
+        return `${name} - v.${layoutVersion}`
+      }
+
+      return name
     },
   },
 })

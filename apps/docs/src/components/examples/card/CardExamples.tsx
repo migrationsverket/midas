@@ -7,18 +7,27 @@ import {
   CardImage,
   CardLink,
   CardTitle,
+  CardBody,
+  CardHeader,
+  Grid,
+  GridItem,
   Text,
+  MenuTrigger,
+  Menu,
+  MenuItem,
+  MenuPopover,
 } from '@midas-ds/components'
-import { Pen, X } from 'lucide-react'
+import { Pen, Trash2, X, EllipsisVertical, Phone } from 'lucide-react'
 import React from 'react'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 export const BasicExample: React.FC = () => (
   <div className='card'>
     <Card style={{ maxWidth: '320px' }}>
-      <CardContent>
-        <CardTitle>Här är en titel</CardTitle>
-        <Text>Här är lite innehåll</Text>
-      </CardContent>
+      <CardHeader heading='Sven Svensson' />
+      <CardBody>
+        <Text>Sven är en designer på Migrationsverket</Text>
+      </CardBody>
     </Card>
   </div>
 )
@@ -26,24 +35,30 @@ export const BasicExample: React.FC = () => (
 export const ActionExample: React.FC = () => (
   <div className='card'>
     <Card style={{ maxWidth: '320px' }}>
-      <CardContent>
-        <CardTitle>Här är en titel</CardTitle>
-        <Text>Här är lite innehåll</Text>
-        <CardActions>
-          <Button
-            variant='icon'
-            icon={Pen}
-          >
-            Ändra
-          </Button>
-          <Button
-            variant='icon'
-            icon={X}
-          >
-            Avbryt
-          </Button>
-        </CardActions>
-      </CardContent>
+      <CardHeader heading='Inköpslista' />
+      <CardBody>
+        <Text>
+          <ul>
+            <li>3 Apelsiner</li>
+            <li>5 bananer</li>
+            <li>2 Kiwi</li>
+          </ul>
+        </Text>
+      </CardBody>
+      <CardActions>
+        <Button
+          variant='secondary'
+          icon={Pen}
+        >
+          Redigera
+        </Button>
+        <Button
+          variant='tertiary'
+          icon={Trash2}
+        >
+          Ta bort
+        </Button>
+      </CardActions>
     </Card>
   </div>
 )
@@ -83,30 +98,94 @@ export const LinkExample: React.FC = () => (
     <Card style={{ maxWidth: '320px' }}>
       <CardContent>
         <CardLink href='#'>
-          <CardTitle>Dina uppgifter</CardTitle>
+          <CardTitle>Min sida</CardTitle>
         </CardLink>
-        <Text>Här är lite innehåll</Text>
+        <Text>
+          På min sida kan du ändra dina uppgifter och se status på dina
+          ansökningar
+        </Text>
       </CardContent>
     </Card>
   </div>
 )
 
-export const ImageExample: React.FC = () => (
-  <div className='card'>
-    <Card style={{ maxWidth: '320px' }}>
-      <CardImage
-        src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
-        alt='Ananas'
-      />
-      <CardContent>
-        <CardLink href='#'>
-          <CardTitle>Dina uppgifter</CardTitle>
-        </CardLink>
-        <Text>Namn: Namn Namnsson</Text>
-      </CardContent>
-    </Card>
-  </div>
-)
+export const ImageExample: React.FC = () => {
+  const imgSrc = useBaseUrl('/img/CardImage.jpg')
+
+  return (
+    <div className='card'>
+      <Grid>
+        <GridItem>
+          <Card style={{ maxWidth: '320px' }}>
+            <CardImage
+              src={imgSrc}
+              alt='Illustration av en ung man'
+            />
+            <CardHeader heading='Sven Svensson' />
+            <CardBody>
+              <Text>Sven är en designer på Migrationsverket</Text>
+            </CardBody>
+          </Card>
+        </GridItem>
+        <GridItem>
+          <Card style={{ maxWidth: '320px' }}>
+            <CardHeader heading='Sven Svensson' />
+            <CardImage
+              src={imgSrc}
+              alt='Illustration av en ung man'
+            />
+            <CardBody>
+              <Text>Sven är en designer på Migrationsverket</Text>
+            </CardBody>
+          </Card>
+        </GridItem>
+      </Grid>
+    </div>
+  )
+}
+
+export const MenuExample: React.FC = () => {
+  const imgSrc = useBaseUrl('/img/CardImage.jpg')
+
+  return (
+    <div className='card'>
+      <Card style={{ maxWidth: '320px' }}>
+        <CardHeader
+          heading='Sven Svensson'
+          subHeading='Designer på Migrationsverket'
+        >
+          <MenuTrigger>
+            <Button
+              aria-label='Menu'
+              variant='icon'
+              size='medium'
+            >
+              <EllipsisVertical size={20} />
+            </Button>
+            <MenuPopover>
+              <Menu>
+                <MenuItem id='spara'>Spara kontaktuppgifter</MenuItem>
+                <MenuItem id='epost'>Skicka e-post</MenuItem>
+              </Menu>
+            </MenuPopover>
+          </MenuTrigger>
+        </CardHeader>
+        <CardImage src={imgSrc} />
+        <CardBody>
+          <Text>Prata med Sven Svensson om du har frågor om design tokens</Text>
+        </CardBody>
+        <CardActions>
+          <Button
+            variant='secondary'
+            icon={Phone}
+          >
+            Boka möte
+          </Button>
+        </CardActions>
+      </Card>
+    </div>
+  )
+}
 
 export const HorizontalExample: React.FC = () => (
   <div className='card'>
