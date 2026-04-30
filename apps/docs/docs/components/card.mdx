@@ -108,7 +108,7 @@ Använd `<CardImage>` för att visa en bild på kortet. Bilden ska antingen ligg
 
 ### Kort med meny
 
-Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en meny i ett kort används [Menu](/components/menu) i `<CardHeader>`.
+Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en meny i ett kort används [Menu](/components/menu) i `<CardHeader>` med en [Button](/components/button) med `variant='icon'` och `size='medium'`, med ikonen `<EllipsisVertical>` som trigger.
 
 ```tsx
 <Card>
@@ -134,9 +134,7 @@ Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en me
   </CardHeader>
   <CardImage src={imgSrc} />
   <CardBody>
-    <Text>
-      Prata med Sven om du har frågor om design tokens
-    </Text>
+    <Text>Prata med Sven om du har frågor om design tokens</Text>
   </CardBody>
   <CardActions>
     <Button
@@ -161,10 +159,7 @@ I de flesta fall räcker texten på [Link](/components/link) eller [Link button]
     <CardLink href='#'>
       <CardTitle>Min sida</CardTitle>
     </CardLink>
-    <Text>
-      På min sida kan du ändra dina uppgifter
-      och se status på dina ansökningar
-    </Text>
+    <Text>På min sida kan du ändra dina uppgifter och se status på dina ansökningar</Text>
   </CardContent>
 </Card>
 ```
@@ -240,4 +235,3 @@ Card stödjer även horisontell layout för att visa korten som en avlång rad. 
 ## Client Side Routing
 
 Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/client-side-routing).
-
