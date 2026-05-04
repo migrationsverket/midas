@@ -9,7 +9,7 @@ Navigationskomponenterna används både i `Sidebar` och i `Navbar`. De är ident
 
 ## Navigation
 
-Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statiska barn och dynamisk rendering via Collections.
+Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statisk och dynamisk rendering via Collections.
 
 ```tsx
 import { Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -56,30 +56,6 @@ En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt ef
   Mina ärenden
 </NavigationLink>
 ```
-
-### Routing
-
-Använd `as`-propen för att byta ut grundkomponenten mot din routers länkkomponent:
-
-```tsx
-import { Link as RouterLink } from 'react-router'
-```
-
-```tsx
-<NavigationLink
-  as={RouterLink}
-  to='/mina-arenden'
-  icon={<FileText />}
->
-  Mina ärenden
-</NavigationLink>
-```
-
-:::note
-
-När du använder `as` ersätts `href` av den anpassade komponentens egenskaper. I exemplet ovan används `to` istället för `href` eftersom det är vad React Router förväntar sig.
-
-:::
 
 ### Props
 
@@ -158,6 +134,49 @@ Nästlad undermeny för hierarkisk navigationsstruktur.
   </NavigationSubMenu>
 </NavigationSection>
 ```
+
+## Routing
+
+`NavigationLink` hanterar navigering och aktivt läge via `href` och `isActive`. I en applikation med client-side routing måste dessa kopplas ihop med din router — utan det fungerar inte det aktiva läget och användaren ser aldrig vilken sida hen är på.
+
+Skapa en wrapper-komponent som sköter kopplingen. Här är ett exempel med React Router:
+
+```tsx title="NavLink.tsx"
+import { Link, useMatch } from 'react-router'
+import { NavigationLink } from '@midas-ds/layout'
+
+type NavLinkProps = {
+  path: string
+  icon: React.ReactNode
+  children: React.ReactNode
+}
+
+export function NavLink({ path, icon, children }: NavLinkProps) {
+  const match = useMatch(path)
+  return (
+    <NavigationLink
+      as={Link}
+      to={path}
+      icon={icon}
+      isActive={!!match}
+    >
+      {children}
+    </NavigationLink>
+  )
+}
+```
+
+```tsx
+<NavLink path='/mina-arenden' icon={<FileText />}>
+  Mina ärenden
+</NavLink>
+```
+
+:::note
+
+Samma mönster fungerar med andra routrar — byt ut `Link` och `useMatch` mot motsvarande för din router, t.ex. `usePathname` + jämförelse i Next.js eller `useMatchRoute` i TanStack Router.
+
+:::
 
 ## Dynamisk rendering
 
