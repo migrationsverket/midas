@@ -1,3 +1,9 @@
+## 17.14.1 (2026-05-04)
+
+### 🩹 Fixes
+
+- **components,select:** import TagList from midas instead of react-aria-components ([f844b425f7b](https://github.com/migrationsverket/midas/commit/f844b425f7b))
+
 ## 17.14.0 (2026-04-28)
 
 ### 🚀 Features
