@@ -60,36 +60,34 @@ I tjänster som primärt är formulär som användaren ska fylla i, t.ex. e-ans�
 
 Det viktiga är att `href` i listan matchar `id` på det fält det länkar till — det är så ankarlänken fungerar och hjälpmedel kan navigera direkt till fältet.
 
-```tsx
-const [name, setName] = useState('')
-const [isInvalid, setIsInvalid] = useState(false)
-const errorMessage = 'Du måste ange ett förnamn'
+:::info
+Det exakta sättet att hålla koll på vilka fält som är ogiltiga beror på vilket formulärbibliotek som används. Med t.ex. [React Hook Form](https://react-hook-form.com/) eller [Zod](https://zod.dev/) sköter biblioteket validering och felhantering — principen för felmeddelandelistan är densamma oavsett.
+:::
 
-<Form onSubmit={e => {
-  e.preventDefault()
-  setIsInvalid(name.trim() === '')
-}}>
-  {isInvalid && (
+```tsx
+const [validationErrors, setValidationErrors] = useState({})
+
+<Form
+  validationErrors={validationErrors}
+  onSubmit={e => {
+    e.preventDefault()
+    // Beräkna fel och uppdatera state — hur detta görs beror på formulärbibliotek
+    setValidationErrors(errs)
+    if (Object.keys(errs).length === 0) alert('Skickat!')
+  }}
+>
+  {/* href måste matcha id på respektive fält */}
+  {Object.keys(validationErrors).length > 0 && (
     <InfoBanner type='warning' title='Justera dessa fält'>
       <ul>
-        <li>
-          {/* href måste matcha id på fältet nedan */}
-          <Link href='#fornamn'>{errorMessage}</Link>
-        </li>
+        {Object.entries(validationErrors).map(([field, msg]) => (
+          <li key={field}><Link href={`#${field}`}>{msg}</Link></li>
+        ))}
       </ul>
     </InfoBanner>
   )}
-  <TextField
-    id='fornamn'
-    label='Förnamn'
-    isInvalid={isInvalid}
-    errorMessage={errorMessage}
-    value={name}
-    onChange={value => {
-      setName(value)
-      if (value.trim() !== '') setIsInvalid(false)
-    }}
-  />
+  <TextField id='name' name='name' label='Namn' />
+  <TextField id='email' name='email' label='E-postadress' />
   <Button type='submit'>Skicka</Button>
 </Form>
 ```
