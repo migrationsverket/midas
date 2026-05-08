@@ -1,64 +1,97 @@
-import { Grid, GridItem, TextField } from '@midas-ds/components'
-
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import ThemedImage from '@theme/ThemedImage'
+import {
+  ErrorMessagePositionExample,
+  ValidateAfterSubmitExample,
+  DirectValidationExample,
+  ErrorMessageListExample,
+  DatabaseValidationExample,
+} from '@site/src/components/examples/validation/ValidationExamples'
 
 # Validering i formulär
 
-Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
+Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa.
 
-<div className='card'>
-  <Grid>
-    <GridItem size={6}>
-      <TextField
-        label='Ange förnamn'
-        errorMessage={'Du måste ange ett förnamn'}
-        isInvalid='true'
-        errorPosition='top'
-      />
-    </GridItem>
-    <GridItem size={6}>
-      <TextField
-        label='Ange förnamn'
-        errorMessage={'Du måste ange ett förnamn'}
-        isInvalid='true'
-        errorPosition='bottom'
-      />
-    </GridItem>
-  </Grid>
-</div>
+## När och hur ska vi validera?
 
-## Direktvalidering
+För att undvika att användaren blir överväldigad av felmeddelanden krävs att vi har en balans mellan att ge snabb återkoppling och låta användaren jobba ostört. Vissa fält ska ge omedelbar återkoppling när användaren lämnar dem, medan andra bara ska valideras vid efter att formuläret skickats.
 
-Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsregel eller kan validera mot en databas, ska valideras när användaren lämnar fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
+### Fält som är obligatoriska men inte kan valideras mot format
 
-<div className='card'>
+Fält som användaren måste fylla i men inte har ett bestämt format eller regel valideras efter att användaren försökt skicka in formuläret. Det finns inget "fel" förrän fältet är tomt vid inskick så att validera dessa fält när användaren lämnar dem här riskerar att ge onödig stress och distraktion.
+
+Exempel: Namn, fritextfält
+
+<ValidateAfterSubmitExample />
+
+### Fält med validerbart format eller regel
+
+Fält där vi har ett bestämt format eller regel valideras när användaren lämnat fältet. Eftersom vi direkt kan avgöra om värdet är ogiltigt kan vi snabbt ge återkoppling, vilket sparar tid för
+användaren och förhindrar fel längre fram. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
+
+Exempel: e-postadress, telefonnummer, organisationsnummer/personnummer och postnummer
+
+<DirectValidationExample />
+
+### Fält som kräver kontroll mot databas eller extern källa
+
+Fält som kontrolleras mot databas eller extern källa valideras efter användaren lämnat fältet. [Visa en spinner om systemet behöver ladda.](./page-loading.mdx#spinner-bredvid-ett-fält)
+
+Exempel: Kontrollera om kortnummer är giltigt
+
+<DatabaseValidationExample />
+
+## Återkoppling
+
+### Felmeddelande
+
+Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
+
+<ErrorMessagePositionExample />
+
+### Riktlinjer för felmeddelandet
+
+- Försök så långt det går att beskriva vad användaren ska göra för att det ska bli rätt. Undvik att skriva generiska felmeddelanden som ”fel format”.
+- Undvik teknisk jargong och använd ett språk som användare förstår och känner igen.
+- Använd en positiv och en icke dömande ton, undvik att skylla på eller antyda att användaren har gjort fel. Undvik till exempel ord som ogiltigt, otillåtet eller felaktigt.
+- Använd samma ord i felmeddelandet som i övriga användargränssnittet.
+
+## Felmeddelandelista
+
+I tjänster som primärt är formulär som användaren ska fylla i, t.ex. e-ansökningar, använder vi förutom felmeddelande på varje kontroll även en Felmeddelandelista ovanför formuläret. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till.
+
+Det viktiga är att `href` i listan matchar `id` på det fält det länkar till — det är så ankarlänken fungerar och hjälpmedel kan navigera direkt till fältet.
+
+```tsx
+const [name, setName] = useState('')
+const [isInvalid, setIsInvalid] = useState(false)
+const errorMessage = 'Du måste ange ett förnamn'
+
+<Form onSubmit={e => {
+  e.preventDefault()
+  setIsInvalid(name.trim() === '')
+}}>
+  {isInvalid && (
+    <InfoBanner type='warning' title='Justera dessa fält'>
+      <ul>
+        <li>
+          {/* href måste matcha id på fältet nedan */}
+          <Link href='#fornamn'>{errorMessage}</Link>
+        </li>
+      </ul>
+    </InfoBanner>
+  )}
   <TextField
-    type='email'
-    label='Ange din epostadress'
-    description='Epostadressen måste innehålla @ och domän (t.ex. example@example.com)'
-    errorMessage={'Du måste ha @ och domän med i din epostadress'}
-    errorPosition='top'
+    id='fornamn'
+    label='Förnamn'
+    isInvalid={isInvalid}
+    errorMessage={errorMessage}
+    value={name}
+    onChange={value => {
+      setName(value)
+      if (value.trim() !== '') setIsInvalid(false)
+    }}
   />
-</div>
+  <Button type='submit'>Skicka</Button>
+</Form>
+```
 
-## Post submit-validering
-
-Om det finns obligatoriska fält användaren inte fyllt i eller fält med valideringsfel efter att användaren skickat in formuläret, så ska dessa sammanfattas i en `Felmeddelandelista` som visas högst upp på sidan. Felmeddelandelistan är inte någon egen komponent. Den består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
-
-<ErrorMessageList />
-
-export function ErrorMessageList() {
-  const lightSrc = useBaseUrl('/img/error-message-list-light.svg');
-  const darkSrc = useBaseUrl('/img/error-message-list-dark.svg');
-
-return (
-
-<ThemedImage
-  alt='Felmeddelandelista'
-  sources={{
-    light: lightSrc,
-    dark: darkSrc,
-  }}
-/>
-); }
+<ErrorMessageListExample />
