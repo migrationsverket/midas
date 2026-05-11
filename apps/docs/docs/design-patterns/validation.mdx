@@ -58,10 +58,9 @@ Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfe
 
 I tjänster som primärt är formulär som användaren ska fylla i, t.ex. e-ansökningar, använder vi förutom felmeddelande på varje kontroll även en Felmeddelandelista ovanför formuläret. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till.
 
-Det viktiga är att `href` i listan matchar `id` på det fält det länkar till för att hjälpmedel ska kunna navigera direkt till fältet.
-
 :::info
-Metoden för att hålla koll på vilka fält som är ogiltiga beror på vilket formulärbibliotek som används. Med t.ex. [React Hook Form](https://react-hook-form.com/) eller [Zod](https://zod.dev/) sköter biblioteket validering och felhantering, men principen för felmeddelandelistan är densamma oavsett.
+Metoden för att hålla koll på vilka fält som är ogiltiga beror på vilket formulärbibliotek som används. Med t.ex. [React Hook Form](https://react-hook-form.com/) eller [Zod](https://zod.dev/) sköter biblioteket validering och felhantering, men principen för felmeddelandelistan är densamma oavsett. Det viktiga är att `href` i listan matchar `id` på det fält det länkar till för att hjälpmedel ska kunna navigera direkt till fältet.
+
 :::
 
 ```tsx
