@@ -1,3 +1,9 @@
+## 17.14.6 (2026-05-11)
+
+### 🩹 Fixes
+
+- **components,card:** prevent CardBody margin-bottom from collapsing out of card ([6ef863330bb](https://github.com/migrationsverket/midas/commit/6ef863330bb))
+
 ## 17.14.5 (2026-05-11)
 
 ### 🩹 Fixes
