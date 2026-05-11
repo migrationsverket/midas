@@ -12,7 +12,7 @@
   box-sizing: border-box;
   width: -webkit-fill-available;
   padding-left: var(--midas-space-medium);
-  padding-right: calc(var(--midas-size-icon-sm) + 2 * var(--midas-space-70));
+  padding-right: calc(var(--midas-size-icon) + 2 * var(--midas-space-70));
   border: none;
   border-bottom: 1px solid var(--midas-border-color-primary);
   border-radius: 0;
