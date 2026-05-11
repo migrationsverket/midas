@@ -10,15 +10,17 @@ export const ComponentHeader = ({
   overrideHeadlessLink,
   overrideHeadlessLinkTitle,
   hideStorybookLink,
+  overrideStorybookPath,
 }: {
   name: string
   friendlyName: string
   overrideHeadlessLink?: string
   overrideHeadlessLinkTitle?: string
   hideStorybookLink?: boolean
+  overrideStorybookPath?: string
 }) => {
   const baseUrl = useBaseUrl
-  const componentPath = `?path=/docs/components-${name.toLowerCase()}--docs`
+  const componentPath = overrideStorybookPath ?? `?path=/docs/components-${name.toLowerCase()}--docs`
   const storybookHost =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4400'
