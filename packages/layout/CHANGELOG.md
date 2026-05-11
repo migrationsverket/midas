@@ -1,3 +1,13 @@
+## 0.1.9 (2026-05-11)
+
+### 🩹 Fixes
+
+- **components,layout:** add badge pattern to navigation docs and fix sidebar transition ([b46ae8a3141](https://github.com/migrationsverket/midas/commit/b46ae8a3141))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.7
+
 ## 0.1.8 (2026-05-11)
 
 ### 🧱 Updated Dependencies

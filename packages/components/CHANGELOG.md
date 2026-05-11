@@ -1,3 +1,14 @@
+## 17.14.7 (2026-05-11)
+
+### 🩹 Fixes
+
+- **components, search-field:** submit parent form on Enter when no onSubmit is provided ([aa984e2a998](https://github.com/migrationsverket/midas/commit/aa984e2a998))
+- **components,layout:** add badge pattern to navigation docs and fix sidebar transition ([b46ae8a3141](https://github.com/migrationsverket/midas/commit/b46ae8a3141))
+
+### 🧪 Tests updated
+
+- **components, search-field:** add form submission behaviour tests ([0a04b3e0024](https://github.com/migrationsverket/midas/commit/0a04b3e0024))
+
 ## 17.14.6 (2026-05-11)
 
 ### 🩹 Fixes
