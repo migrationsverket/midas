@@ -3,12 +3,12 @@
     "$description": "Storlekstokens för bredd och höjd på interaktiva element och ikoner. Används för width/height, inte för spacing.",
     "$type": "dimension",
     "icon": {
-      "$value": "{base.80}",
-      "$description": "Standardstorlek för ikoner. 1rem / 16px."
+      "$value": "{base.90}",
+      "$description": "Standardstorlek för ikoner. 1.25rem / 20px."
     },
     "icon-sm": {
-      "$value": "{base.90}",
-      "$description": "Liten ikonstorlek. 1.25rem / 20px."
+      "$value": "{base.80}",
+      "$description": "Liten ikonstorlek för kompakta kontexter. 1rem / 16px."
     },
     "option": {
       "$value": "{base.120}",

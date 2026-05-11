@@ -62,7 +62,7 @@
 }
 
 .formLabel {
-  height: var(--midas-size-icon-sm); /* ~20px - typical label height */
+  height: var(--midas-typography-line-height-30);
   width: 40%;
   margin-bottom: var(--midas-space-xsmall);
 }
