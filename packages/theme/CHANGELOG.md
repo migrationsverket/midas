@@ -1,3 +1,9 @@
+## 3.14.6 (2026-05-11)
+
+### 🩹 Fixes
+
+- **theme,components,select-styles:** swap icon and icon-sm size token values ([25a693d3ea2](https://github.com/migrationsverket/midas/commit/25a693d3ea2))
+
 ## 3.14.5 (2026-05-11)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.
