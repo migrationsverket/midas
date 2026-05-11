@@ -1,6 +1,7 @@
 .card {
   font-family: var(--midas-typography-font-family);
   position: relative;
+  display: flow-root;
   background-color: var(--midas-card-background-base);
   box-shadow: var(--midas-card-shadow);
 
