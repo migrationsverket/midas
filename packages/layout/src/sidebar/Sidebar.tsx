@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import clsx from 'clsx'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
@@ -41,8 +42,18 @@ export const Sidebar = ({
     props.onCollapseChange,
   )
 
-  const handlePress = () =>
+  const [isTransitioning, setIsTransitioning] = React.useState(false)
+
+  const handlePress = () => {
+    setIsTransitioning(true)
     setIsCollapsed(previouslyCollapsed => !previouslyCollapsed)
+  }
+
+  const handleTransitionEnd = (e: React.TransitionEvent<HTMLElement>) => {
+    if (e.propertyName === 'width' && e.target === e.currentTarget) {
+      setIsTransitioning(false)
+    }
+  }
 
   return isMobileDevice ? null : (
     <SidebarContext.Provider value={{ isCollapsed }}>
@@ -50,6 +61,8 @@ export const Sidebar = ({
         className={clsx(className, styles.sidebar, {
           [styles.collapsed]: isCollapsed,
         })}
+        data-transitioning={isTransitioning || undefined}
+        onTransitionEnd={handleTransitionEnd}
         {...filterDOMProps(props)}
       >
         <PanelHeader

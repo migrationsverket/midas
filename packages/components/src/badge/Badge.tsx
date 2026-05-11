@@ -11,6 +11,7 @@ export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
 
   return (
     <span
+      data-badge
       className={clsx(
         styles.badge,
         hasChildren && styles.hasChildren,

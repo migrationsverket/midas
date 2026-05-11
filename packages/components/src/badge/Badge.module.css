@@ -18,6 +18,7 @@
 
 .badgeContainer {
   display: flex;
+  min-width: 0;
   position: relative;
 
   .badge {
