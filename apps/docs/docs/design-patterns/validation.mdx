@@ -12,11 +12,11 @@ Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är 
 
 ## När och hur ska vi validera?
 
-För att undvika att användaren blir överväldigad av felmeddelanden krävs att vi har en balans mellan att ge snabb återkoppling och låta användaren jobba ostört. Vissa fält ska ge omedelbar återkoppling när användaren lämnar dem, medan andra bara ska valideras vid efter att formuläret skickats.
+För att undvika att användaren blir överväldigad av felmeddelanden krävs att vi har en balans mellan att ge snabb återkoppling och att låta användaren jobba ostört. Vissa fält ska ge omedelbar återkoppling när användaren lämnar dem, medan andra bara ska valideras efter att formuläret skickats.
 
 ### Fält som är obligatoriska men inte kan valideras mot format
 
-Fält som användaren måste fylla i men inte har ett bestämt format eller regel valideras efter att användaren försökt skicka in formuläret. Det finns inget "fel" förrän fältet är tomt vid inskick så att validera dessa fält när användaren lämnar dem här riskerar att ge onödig stress och distraktion.
+Fält som användaren måste fylla i men inte har ett bestämt format eller regel valideras efter att användaren försökt skicka in formuläret. Att validera dessa fält när användaren lämnar dem här riskerar att ge onödig stress och distraktion.
 
 Exempel: Namn, fritextfält
 
@@ -24,7 +24,7 @@ Exempel: Namn, fritextfält
 
 ### Fält med validerbart format eller regel
 
-Fält där vi har ett bestämt format eller regel valideras när användaren lämnat fältet. Eftersom vi direkt kan avgöra om värdet är ogiltigt kan vi snabbt ge återkoppling, vilket sparar tid för
+Fält där vi har ett bestämt format eller regel valideras när användaren lämnat fältet. Eftersom det går att avgöra direkt om värdet är ogiltigt kan snabb återkoppling ges, vilket sparar tid för
 användaren och förhindrar fel längre fram. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
 
 Exempel: e-postadress, telefonnummer, organisationsnummer/personnummer och postnummer
