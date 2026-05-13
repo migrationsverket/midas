@@ -7,6 +7,8 @@ import {
   InfoBanner,
   Link,
   Spinner,
+  toastQueue,
+  GlobalToastRegion,
 } from '@midas-ds/components'
 import { Form } from 'react-aria-components'
 
@@ -101,6 +103,7 @@ export const ErrorMessageListExample = () => {
 
   return (
     <div className='card'>
+      <GlobalToastRegion />
       <Form
         validationErrors={validationErrors}
         onSubmit={e => {
@@ -111,7 +114,12 @@ export const ErrorMessageListExample = () => {
               .filter(([, msg]) => msg),
           ) as Record<string, string>
           setValidationErrors(errs)
-          if (Object.keys(errs).length === 0) alert('Skickat!')
+          if (Object.keys(errs).length === 0)
+            // Show success toast
+            toastQueue.add(
+              { message: 'Formuläret skickades!', type: 'success' },
+              { timeout: 5000 },
+            )
         }}
       >
         <Grid>
