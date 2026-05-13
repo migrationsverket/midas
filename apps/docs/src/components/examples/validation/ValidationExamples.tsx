@@ -89,12 +89,15 @@ export const DirectValidationExample = () => {
 
 export const ErrorMessageListExample = () => {
   const [values, setValues] = useState({ name: '', email: '' })
-  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({})
+  const [validationErrors, setValidationErrors] = useState<
+    Record<string, string>
+  >({})
 
-  const validators: Record<keyof typeof values, (v: string) => string | null> = {
-    name: v => (v.trim() === '' ? 'Du måste ange ett namn' : null),
-    email: v => (v.trim() === '' ? 'Du måste ange en e-postadress' : null),
-  }
+  const validators: Record<keyof typeof values, (v: string) => string | null> =
+    {
+      name: v => (v.trim() === '' ? 'Du måste ange ett namn' : null),
+      email: v => (v.trim() === '' ? 'Du måste ange en e-postadress' : null),
+    }
 
   return (
     <div className='card'>
@@ -178,6 +181,8 @@ export const DatabaseValidationExample = () => {
   async function handleSubmit() {
     if (value.trim() === '') {
       setError('Du måste fylla i ditt kortnummer för att kunna gå vidare')
+      return
+    } else if (error) {
       return
     }
     setError('')
