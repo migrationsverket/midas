@@ -33,7 +33,7 @@ Exempel: e-postadress, telefonnummer, organisationsnummer/personnummer och postn
 
 ### Fält som kräver kontroll mot databas eller extern källa
 
-Fält som kontrolleras mot databas eller extern källa valideras efter användaren lämnat fältet. [Visa en spinner om systemet behöver ladda.](./page-loading.mdx#spinner-bredvid-ett-fält)
+Fält som kontrolleras mot databas eller extern källa valideras efter att användaren lämnat fältet. [Visa en spinner om systemet behöver ladda.](./page-loading.mdx#spinner-bredvid-ett-fält)
 
 Exempel: Kontrollera om kortnummer är giltigt
 
@@ -43,22 +43,22 @@ Exempel: Kontrollera om kortnummer är giltigt
 
 ### Felmeddelande
 
-Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
+Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under inmatningsfältet. Som standard visas felmeddelandet ovanför fältet, vilket också är det som rekommenderas eftersom det ger en logisk läsordning.
 
 <ErrorMessagePositionExample />
 
 ### Riktlinjer för felmeddelandet
 
-- Försök så långt det går att beskriva vad användaren ska göra för att det ska bli rätt. Undvik att skriva generiska felmeddelanden som ”fel format”.
+- Försök så långt det är möjligt att beskriva vad användaren ska göra för att det ska bli rätt. Undvik att skriva generella felmeddelanden som ”fel format”.
 - Undvik teknisk jargong och använd ett språk som användare förstår och känner igen.
-- Använd en positiv och en icke dömande ton, undvik att skylla på eller antyda att användaren har gjort fel. Undvik till exempel ord som ogiltigt, otillåtet eller felaktigt.
+- Använd en positiv och en inte dömande ton, undvik att skylla på eller antyda att användaren har gjort fel. Undvik till exempel ord som ogiltigt, otillåtet eller felaktigt.
 - Använd samma ord i felmeddelandet som i övriga användargränssnittet.
 
 ### Felmeddelandelista
 
-I tjänster som primärt är formulär som användaren ska fylla i, t.ex. e-ansökningar, använder vi förutom felmeddelande på varje kontroll även en Felmeddelandelista ovanför formuläret. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till.
+I tjänster som primärt består av formulär som användaren ska fylla i, t.ex. e-ansökningar, ska det utöver felmeddelande på varje kontroll även visas en Felmeddelandelista ovanför formuläret. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till.
 
-I exemplet är båda fälten obligatoriska men valideras först när användaren försöker skicka in formuläret. När det finns valideringsfel visas en felmeddelandelista.
+I exemplet är båda fälten obligatoriska men valideras först när användaren försöker skicka in formuläret. När det finns valideringsfel visas Felmeddelandelistan.
 :::info
 Metoden för att hålla koll på vilka fält som är ogiltiga beror på vilket formulärbibliotek som används. Med t.ex. [React Hook Form](https://react-hook-form.com/) eller [Zod](https://zod.dev/) sköter biblioteket validering och felhantering, men principen för felmeddelandelistan är densamma oavsett. Det viktiga är att `href` i listan matchar `id` på det fält det länkar till för att hjälpmedel ska kunna navigera direkt till fältet.
 
