@@ -137,7 +137,7 @@ export const BehaviorReplace: Story = {
       </PanelProvider>
     ),
   ],
-  render: () => <></>,
+  render: () => <span />,
 }
 
 export const BehaviorBringToFront: Story = {
@@ -153,7 +153,7 @@ export const BehaviorBringToFront: Story = {
       </PanelProvider>
     ),
   ],
-  render: () => <></>,
+  render: () => <span />,
 }
 
 export const BehaviorPopTo: Story = {
@@ -169,7 +169,7 @@ export const BehaviorPopTo: Story = {
       </PanelProvider>
     ),
   ],
-  render: () => <></>,
+  render: () => <span />,
 }
 
 export const VariantOverlay: Story = {
@@ -185,7 +185,7 @@ export const VariantOverlay: Story = {
       </PanelProvider>
     ),
   ],
-  render: () => <></>,
+  render: () => <span />,
 }
 
 export const VariantPush: Story = {
@@ -201,5 +201,5 @@ export const VariantPush: Story = {
       </PanelProvider>
     ),
   ],
-  render: () => <></>,
+  render: () => <span />,
 }
