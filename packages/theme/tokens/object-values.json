@@ -602,5 +602,12 @@
       "$value": "0 3px 5px 0 rgba(0, 0, 0, 0.30)",
       "$description": "Skugga för Card"
     }
+  },
+  "panel": {
+    "shadow": {
+      "$type": "string",
+      "$value": "-2px 0px 12px -2px rgba(0, 0, 0, 0.10)",
+      "$description": "Skugga för Panel"
+    }
   }
 }
