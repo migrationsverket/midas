@@ -1,0 +1,18 @@
+.push {
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: width var(--midas-transition-duration-fast);
+  width: 0;
+}
+
+.push[data-open] {
+  width: var(--panel-width);
+}
+
+@media (width < 800px) {
+  .push[data-open] {
+    width: 100%;
+  }
+}

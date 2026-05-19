@@ -1,13 +1,16 @@
+:root {
+  --panel-width: 320px;
+}
+
 .panel {
   background: var(--midas-background-base);
-
-  /* important because position:relative is overridden by [data-debug] selector */
+  box-shadow: var(--midas-panel-shadow);
   height: 100%;
   overflow: hidden;
-  position: absolute !important;
+  position: absolute;
   right: 0;
   top: 0;
-  width: 320px;
+  width: var(--panel-width);
   border-left: 1px solid var(--midas-border-color-subtle);
 
   &[data-promoting] {
@@ -54,6 +57,12 @@
         ease-in;
     }
   }
+}
+
+.panelActions {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
 }
 
 .panelTitle {

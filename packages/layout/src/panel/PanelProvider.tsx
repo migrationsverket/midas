@@ -3,18 +3,21 @@
 import { ReactNode, useState } from 'react'
 import { PanelContext, type PanelItem } from './PanelContext'
 
-export type PanelBehavior = 'bring-to-front' | 'pop-to'
+export type PanelBehavior = 'replace' | 'bring-to-front' | 'pop-to'
+export type PanelVariant = 'overlay' | 'push'
 
 export interface PanelProviderProps {
   children: ReactNode
   defaultPanels?: PanelItem[]
   panelBehavior?: PanelBehavior
+  panelVariant?: PanelVariant
 }
 
 export const PanelProvider = ({
   children,
   defaultPanels = [],
-  panelBehavior = 'bring-to-front',
+  panelBehavior = 'replace',
+  panelVariant = 'overlay',
 }: PanelProviderProps) => {
   const [panels, setPanels] = useState<PanelItem[]>(
     defaultPanels.map(p => ({ ...p, isOpen: true, defaultOpen: true })),
@@ -22,6 +25,10 @@ export const PanelProvider = ({
 
   const addPanel = (panel: PanelItem) => {
     setPanels((prev): PanelItem[] => {
+      if (panelBehavior === 'replace') {
+        return [{ ...panel, isOpen: true }]
+      }
+
       const existingIndex = prev.findIndex(p => p.id === panel.id)
 
       if (existingIndex === -1) {
@@ -65,7 +72,7 @@ export const PanelProvider = ({
 
   return (
     <PanelContext.Provider
-      value={{ panels, addPanel, closePanel, removePanel, resetPromoting }}
+      value={{ panels, panelVariant, addPanel, closePanel, removePanel, resetPromoting }}
     >
       {children}
     </PanelContext.Provider>

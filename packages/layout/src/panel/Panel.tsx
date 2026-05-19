@@ -5,7 +5,7 @@ import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { X } from 'lucide-react'
 import { useControlledState } from '@react-stately/utils'
 import { type PressEvent } from 'react-aria-components'
-import { AnimationEvent, forwardRef, useEffect, useRef } from 'react'
+import { AnimationEvent, forwardRef, ReactNode, useEffect, useRef } from 'react'
 import {
   filterDOMProps,
   useEnterAnimation,
@@ -28,6 +28,7 @@ export interface PanelProps
   onExited?: () => void
   promoting?: boolean
   onPromotionEnd?: () => void
+  actions?: ReactNode
 }
 
 export const Panel = (props: PanelProps) => {
@@ -74,6 +75,7 @@ const PanelInner = forwardRef<
     {
       className,
       title,
+      actions,
       onPress,
       children,
       isExiting,
@@ -98,6 +100,7 @@ const PanelInner = forwardRef<
     return (
       <PanelBody
         aria-hidden={ariaHidden || undefined}
+        aria-label={title}
         className={clsx(className, styles.panel)}
         ref={objectRef}
         data-entering={isEntering || undefined}
@@ -115,14 +118,17 @@ const PanelInner = forwardRef<
           ) : (
             <div />
           )}
-          <Button
-            aria-label={strings.format('closePanel')}
-            onPress={onPress}
-            size='medium'
-            variant='icon'
-          >
-            <X size={20} />
-          </Button>
+          <div className={styles.panelActions}>
+            {actions}
+            <Button
+              aria-label={strings.format('closePanel')}
+              onPress={onPress}
+              size='medium'
+              variant='icon'
+            >
+              <X size={20} />
+            </Button>
+          </div>
         </PanelHeader>
         <PanelContent>{children}</PanelContent>
       </PanelBody>

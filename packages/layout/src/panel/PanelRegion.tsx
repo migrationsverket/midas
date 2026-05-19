@@ -1,8 +1,10 @@
 'use client'
 
+import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { Panel } from './Panel'
 import { usePanels } from './usePanels'
+import styles from './PanelRegion.module.css'
 
 export type PanelRegionProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
@@ -14,11 +16,13 @@ export const PanelRegion = ({
   className,
   ...rest
 }: PanelRegionProps) => {
-  const { panels, closePanel, removePanel, resetPromoting } = usePanels()
+  const { panels, panelVariant, closePanel, removePanel, resetPromoting } = usePanels()
+  const hasOpenPanels = panels.length > 0
 
   return (
     <div
-      className={className}
+      className={clsx(className, panelVariant === 'push' && styles.push)}
+      data-open={panelVariant === 'push' && hasOpenPanels ? true : undefined}
       {...rest}
     >
       {panels.map(({ id, ...panel }, index, { length }) => (
@@ -26,8 +30,7 @@ export const PanelRegion = ({
           aria-hidden={index < length - 1 || undefined}
           key={id}
           id={id}
-          data-debug='Panel'
-          onOpenChange={open => {
+onOpenChange={open => {
             if (!open) closePanel(id)
           }}
           onExited={() => removePanel(id)}
