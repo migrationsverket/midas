@@ -30,7 +30,7 @@ export const PanelRegion = ({
           aria-hidden={index < length - 1 || undefined}
           key={id}
           id={id}
-onOpenChange={open => {
+          onOpenChange={open => {
             if (!open) closePanel(id)
           }}
           onExited={() => removePanel(id)}

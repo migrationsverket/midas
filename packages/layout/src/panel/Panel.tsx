@@ -15,13 +15,13 @@ import {
 import { PanelBody, PanelBodyProps } from './panel-body'
 import { PanelContent } from './panel-content'
 import { PanelHeader } from './panel-header'
-import { PanelTitle, PanelTitleProps } from './panel-title'
+import { PanelTitle } from './panel-title'
 import messages from './intl/translations.json'
 import styles from './Panel.module.css'
 
-export interface PanelProps
-  extends PanelBodyProps, Pick<PanelTitleProps, 'title'> {
+export interface PanelProps extends PanelBodyProps {
   id: string
+  title: string
   isOpen?: boolean
   defaultOpen?: boolean
   onOpenChange?: (isOpen: boolean) => void
@@ -110,14 +110,10 @@ const PanelInner = forwardRef<
         {...filterDOMProps(rest)}
       >
         <PanelHeader>
-          {title ? (
-            <PanelTitle
-              className={styles.panelTitle}
-              title={title}
-            />
-          ) : (
-            <div />
-          )}
+          <PanelTitle
+            className={styles.panelTitle}
+            title={title}
+          />
           <div className={styles.panelActions}>
             {actions}
             <Button

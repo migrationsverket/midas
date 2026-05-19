@@ -1,4 +1,16 @@
 .panelContent {
+  flex: 1 1 auto;
+  overflow: hidden auto;
   padding: var(--midas-space-small) var(--midas-space-medium)
     var(--midas-space-medium) var(--midas-space-medium);
+
+  &:focus-visible {
+    box-shadow: var(--midas-state-focus-inset);
+    outline: none;
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight;
+      outline-offset: calc(var(--midas-state-focus-contrast-mode-outline) * -1);
+    }
+  }
 }
