@@ -2,6 +2,7 @@
 
 import { createContext } from 'react'
 import { PanelProps } from './Panel'
+import { PanelVariant } from './PanelProvider'
 
 export interface PanelItem extends PanelProps {
   promoting?: boolean
@@ -9,6 +10,7 @@ export interface PanelItem extends PanelProps {
 
 export interface PanelContextValue {
   panels: PanelItem[]
+  panelVariant: PanelVariant
   addPanel: (panel: Omit<PanelItem, 'isOpen' | 'defaultOpen'>) => void
   closePanel: (id: string) => void
   removePanel: (id: string) => void
@@ -17,6 +19,7 @@ export interface PanelContextValue {
 
 export const PanelContext = createContext<PanelContextValue>({
   panels: [],
+  panelVariant: 'overlay',
   addPanel: () => {
     /* noop */
   },

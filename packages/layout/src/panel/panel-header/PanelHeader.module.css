@@ -2,6 +2,6 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: var(--midas-space-small) var(--midas-space-small)
+  padding: var(--midas-space-small) var(--midas-space-30)
     var(--midas-space-small) var(--midas-space-medium);
 }
