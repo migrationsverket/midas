@@ -3,7 +3,7 @@
   height: 100%;
   overflow: hidden;
   position: relative;
-  transition: width var(--midas-transition-duration-fast);
+  transition: width var(--midas-transition-duration-slow);
   width: 0;
 }
 
@@ -12,7 +12,14 @@
 }
 
 @media (width < 800px) {
+  .push {
+    height: 0;
+    width: 100%;
+    transition: height var(--midas-transition-duration-slow);
+  }
+
   .push[data-open] {
+    height: var(--panel-height-mobile);
     width: 100%;
   }
 }
