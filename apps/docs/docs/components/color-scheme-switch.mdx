@@ -48,6 +48,35 @@ Som standard påverkas `:root`, men du kan rikta mot ett annat element med `sele
 <ColorSchemeSwitch defaultScheme='dark' />
 ```
 
+## Spara val i localStorage
+
+Använd `onSchemeChange` för att reagera på användarens val — till exempel för att spara det i `localStorage` och återställa det vid nästa sidladdning.
+
+```tsx
+const savedScheme = localStorage.getItem('color-scheme') as ColorScheme | null
+
+<ColorSchemeSwitch
+  defaultScheme={savedScheme ?? 'light dark'}
+  onSchemeChange={scheme => localStorage.setItem('color-scheme', scheme)}
+/>
+```
+
+För ett fullt kontrollerat flöde, kombinera `scheme` med `onSchemeChange`:
+
+```tsx
+const [scheme, setScheme] = useState<ColorScheme>(
+  () => (localStorage.getItem('color-scheme') as ColorScheme) ?? 'light dark'
+)
+
+<ColorSchemeSwitch
+  scheme={scheme}
+  onSchemeChange={s => {
+    setScheme(s)
+    localStorage.setItem('color-scheme', s)
+  }}
+/>
+```
+
 ## API
 
 <PropTable name='ColorSchemeSwitch' />
