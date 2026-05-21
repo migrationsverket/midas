@@ -1,8 +1,9 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { page, userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './ColorSchemeSwitch.stories'
 import { render } from '../../test-utils'
+import { ColorSchemeSwitch } from './ColorSchemeSwitch'
 
 const { Primary } = composeStories(stories)
 
@@ -30,5 +31,16 @@ describe('given a primary ColorSchemeSwitch', async () => {
     expect(page.getByRole('radiogroup')).toHaveClass(
       Primary.args.className as string,
     )
+  })
+})
+
+describe('given a ColorSchemeSwitch with onSchemeChange', () => {
+  it('should call onSchemeChange with the selected scheme', async () => {
+    const onSchemeChange = vi.fn()
+    await render(<ColorSchemeSwitch onSchemeChange={onSchemeChange} />)
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowRight]')
+    await userEvent.keyboard('[Space]')
+    expect(onSchemeChange).toHaveBeenCalledWith('light')
   })
 })

@@ -21,6 +21,10 @@ export interface ColorSchemeSwitchProps {
    * @default 'light dark'
    */
   defaultScheme?: ColorScheme
+  /** The controlled color scheme. When provided, the component becomes controlled — pair with `onSchemeChange` to update it. */
+  scheme?: ColorScheme
+  /** Called when the user selects a new color scheme. Use this to persist the selection, e.g. to `localStorage`. */
+  onSchemeChange?: (scheme: ColorScheme) => void
   /**
    * @deprecated since v17.9.0 Use `defaultScheme` instead.
    */
@@ -31,36 +35,46 @@ export interface ColorSchemeSwitchProps {
 export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
   selector = ':root',
   defaultScheme = 'light dark',
+  scheme,
+  onSchemeChange,
   defaultValue,
   className,
 }) => {
   const [colorScheme, setColorScheme] = React.useState<Set<Key>>(
-    defaultValue ?? new Set([defaultScheme]),
+    defaultValue ?? new Set([scheme ?? defaultScheme]),
   )
+
+  const resolvedKeys = scheme ? new Set<Key>([scheme]) : colorScheme
 
   React.useEffect(() => {
     const targetElement = document.querySelector<HTMLElement>(selector)
 
     if (targetElement) {
-      const scheme = Array.from(colorScheme).join(' ')
+      const resolved = Array.from(resolvedKeys).join(' ')
       targetElement.style.removeProperty('color-scheme')
-      if (scheme === 'light dark') {
+      if (resolved === 'light dark') {
         delete targetElement.dataset.colorScheme
       } else {
-        targetElement.dataset.colorScheme = scheme
+        targetElement.dataset.colorScheme = resolved
       }
     } else {
       console.warn(`No element found for selector: "${selector}"`)
     }
-  }, [colorScheme, selector])
+  }, [resolvedKeys, selector])
 
   const strings = useLocalizedStringFormatter(messages)
+
+  const handleSelectionChange = (keys: Set<Key>) => {
+    const next = Array.from(keys)[0] as ColorScheme
+    setColorScheme(keys)
+    onSchemeChange?.(next)
+  }
 
   return (
     <ToggleButtonGroup
       selectionMode='single'
-      selectedKeys={colorScheme}
-      onSelectionChange={setColorScheme}
+      selectedKeys={resolvedKeys}
+      onSelectionChange={handleSelectionChange}
       disallowEmptySelection
       className={className}
     >
