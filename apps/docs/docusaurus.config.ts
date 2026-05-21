@@ -48,6 +48,7 @@ const config: Config = {
             src: [
               `${packagesDir}/components/src/**/[A-Z]*.tsx`,
               `${packagesDir}/table-styles/src/**/[A-Z]*.tsx`,
+              `${packagesDir}/layout/src/**/[A-Z]*.tsx`,
             ],
             parserOptions: {
               shouldExtractValuesFromUnion: true,

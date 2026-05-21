@@ -4,6 +4,7 @@ description: Animerad sidopanel för att visa extra innehåll bredvid huvudinneh
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { PropTable } from '@site/src/components/PropsTable'
 
 <ComponentHeader
   name='Panel'
@@ -97,7 +98,14 @@ function App() {
 När du har flera paneler som kan öppnas och stängas oberoende av varandra, använd `PanelProvider` och `usePanels`-hooken.
 
 ```tsx
-import { Layout, LayoutContent, Main, PanelProvider, PanelRegion, usePanels } from '@midas-ds/layout'
+import {
+  Layout,
+  LayoutContent,
+  Main,
+  PanelProvider,
+  PanelRegion,
+  usePanels,
+} from '@midas-ds/layout'
 import { Button } from '@midas-ds/components'
 
 function PanelControls() {
@@ -105,15 +113,19 @@ function PanelControls() {
 
   return (
     <>
-      <Button onPress={() => addPanel({ id: 'panel-a', title: 'Panel A' })}>Öppna Panel A</Button>
-      <Button onPress={() => addPanel({ id: 'panel-b', title: 'Panel B' })}>Öppna Panel B</Button>
+      <Button onPress={() => addPanel({ id: 'panel-a', title: 'Panel A' })}>
+        Öppna Panel A
+      </Button>
+      <Button onPress={() => addPanel({ id: 'panel-b', title: 'Panel B' })}>
+        Öppna Panel B
+      </Button>
     </>
   )
 }
 
 function App() {
   return (
-    <PanelProvider panelBehavior='bring-to-front'>
+    <PanelProvider>
       <Layout>
         <LayoutContent>
           <Main>
@@ -127,16 +139,91 @@ function App() {
 }
 ```
 
-### panelBehavior
+`replace` är standard och rekommenderas för de flesta fall. I applikationer där flera paneler ska kunna leva parallellt kan `panelBehavior` sättas till `bring-to-front` eller `pop-to` för att styra hur panelerna hanteras när de aktiveras.
 
-Styr vad som händer när man öppnar en panel som redan är öppen:
+```tsx
+<PanelProvider panelBehavior='bring-to-front'> {/* replace | bring-to-front | pop-to */}
+```
 
-| Värde                       | Beteende                                        |
-| --------------------------- | ----------------------------------------------- |
-| `bring-to-front` (standard) | Panelen flyttas framåt i ordningen              |
-| `pop-to`                    | Alla paneler ovanför stängs, den klickade visas |
+## Detaljvy — byta innehåll utan animation
 
-## usePanels
+Använd ett stabilt `id` när du anropar `addPanel` för att uppdatera panelinnehållet på plats utan att animera om. React känner igen id:t och uppdaterar titel och innehåll direkt.
+
+```tsx
+import {
+  Layout,
+  LayoutContent,
+  Main,
+  PanelProvider,
+  PanelRegion,
+  usePanels,
+} from '@midas-ds/layout'
+
+const items = [
+  { id: '1', name: 'Ansökan #1042', status: 'Inlämnad' },
+  { id: '2', name: 'Ansökan #1043', status: 'Under granskning' },
+  { id: '3', name: 'Ansökan #1044', status: 'Beviljad' },
+]
+
+function ItemList() {
+  const { addPanel } = usePanels()
+
+  return (
+    <ul>
+      {items.map(item => (
+        <li key={item.id}>
+          <button
+            onClick={() =>
+              addPanel({
+                id: 'detail',       // same id every time → no re-animation
+                title: item.name,
+                children: <p>Status: {item.status}</p>,
+              })
+            }
+          >
+            {item.name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+function App() {
+  return (
+    <PanelProvider panelBehavior='replace'>
+      <Layout>
+        <LayoutContent>
+          <Main>
+            <ItemList />
+          </Main>
+          <PanelRegion />
+        </LayoutContent>
+      </Layout>
+    </PanelProvider>
+  )
+}
+```
+
+:::tip
+
+Använd **`id: 'detail'`** (stabilt) — inte **`id: item.id`** (unikt per rad). Med ett unikt id monteras panelen om för varje val och animeringen spelas upp på nytt.
+
+Se storyn **DetailView** i Storybook för ett fullständigt exempel.
+
+:::
+
+## API
+
+### Panel
+
+<PropTable name='Panel' />
+
+### PanelProvider
+
+<PropTable name='PanelProvider' />
+
+### usePanels
 
 Hook för att komma åt `PanelContext` och hantera panelernas tillstånd programmatiskt.
 
@@ -144,48 +231,4 @@ Hook för att komma åt `PanelContext` och hantera panelernas tillstånd program
 const { panels, addPanel, closePanel, removePanel } = usePanels()
 ```
 
-| Metod             | Beskrivning                                  |
-| ----------------- | -------------------------------------------- |
-| `addPanel(panel)` | Öppnar eller aktiverar en panel              |
-| `closePanel(id)`  | Stänger en panel (animeras ut)               |
-| `removePanel(id)` | Tar permanent bort en panel från tillståndet |
-
-## Props — Panel
-
-| Prop           | Typ                         | Standard | Beskrivning                    |
-| -------------- | --------------------------- | -------- | ------------------------------ |
-| `id`           | `string`                    | —        | **Obligatorisk.** Unikt id     |
-| `title`        | `string`                    | —        | Panelrubrik                    |
-| `actions`      | `ReactNode`                 | —        | Egna åtgärder i headern        |
-| `isOpen`       | `boolean`                   | —        | Kontrollerat öppet-läge        |
-| `defaultOpen`  | `boolean`                   | —        | Okontrollerat starttillstånd   |
-| `onOpenChange` | `(isOpen: boolean) => void` | —        | Callback vid öppning/stängning |
-
-## Props — PanelProvider
-
-| Prop            | Typ                                          | Standard    | Beskrivning                                                                 |
-| --------------- | -------------------------------------------- | ----------- | --------------------------------------------------------------------------- |
-| `panelBehavior` | `'replace' \| 'bring-to-front' \| 'pop-to'` | `'replace'` | Beteende när en panel öppnas                                                |
-| `panelVariant`  | `'overlay' \| 'push'`                        | `'overlay'` | Hur panelen visas i förhållande till huvudinnehållet                        |
-| `defaultPanels` | `PanelItem[]`                                | —           | Förhandsöppnade paneler                                                     |
-
-### panelBehavior
-
-| Värde             | Beteende                                                                         |
-| ----------------- | -------------------------------------------------------------------------------- |
-| `replace`         | Ny panel ersätter alla befintliga. Rekommenderas för de flesta användningsfall.  |
-| `bring-to-front`  | Paneler staplas. Öppnar man en befintlig panel flyttas den framåt i ordningen.   |
-| `pop-to`          | Öppnar man en befintlig panel stängs alla paneler ovanför den.                   |
-
-:::info
-
-Det rekommenderas att visa en panel åt gången. Standardvärdet `replace` speglar detta. `bring-to-front` och `pop-to` finns tillgängliga för situationer där flera paneler är välmotiverade.
-
-:::
-
-### panelVariant
-
-| Värde     | Beteende                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------- |
-| `overlay` | Panelen lägger sig ovanpå huvudinnehållet utan att påverka dess bredd.                      |
-| `push`    | Panelen skjuter undan huvudinnehållet och minskar dess tillgängliga bredd.                  |
+<PropTable name='usePanels' />
