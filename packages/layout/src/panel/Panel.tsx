@@ -20,14 +20,21 @@ import messages from './intl/translations.json'
 import styles from './Panel.module.css'
 
 export interface PanelProps extends PanelBodyProps {
+  /** Required unique id used to manage panel state. */
   id: string
+  /** Panel title displayed in the header. */
   title: string
+  /** Controlled open state. */
   isOpen?: boolean
+  /** Uncontrolled initial open state. */
   defaultOpen?: boolean
+  /** Callback fired when the panel opens or closes. */
   onOpenChange?: (isOpen: boolean) => void
+  /** Callback fired when the exit animation completes. */
   onExited?: () => void
   promoting?: boolean
   onPromotionEnd?: () => void
+  /** Custom actions rendered in the panel header, to the right of the title. */
   actions?: ReactNode
 }
 

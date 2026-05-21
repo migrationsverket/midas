@@ -8,8 +8,29 @@ export type PanelVariant = 'overlay' | 'push'
 
 export interface PanelProviderProps {
   children: ReactNode
+  /** Panels to open on mount. */
   defaultPanels?: PanelItem[]
+  /**
+   * Behaviour when opening a panel that is already open.
+   *
+   * - `replace` — Replaces all existing panels. Recommended for most use cases.
+   * - `bring-to-front` — Panels stack; opening an existing panel moves it to the front.
+   * - `pop-to` — Opening an existing panel closes all panels above it.
+   *
+   * Showing one panel at a time is recommended. `replace` reflects this as the default.
+   * Use `bring-to-front` or `pop-to` only when multiple simultaneous panels are justified.
+   *
+   * @default 'replace'
+   */
   panelBehavior?: PanelBehavior
+  /**
+   * How the panel is displayed relative to the main content.
+   *
+   * - `overlay` — Panel overlays the main content without affecting its width.
+   * - `push` — Panel pushes the main content aside, reducing its available width.
+   *
+   * @default 'overlay'
+   */
   panelVariant?: PanelVariant
 }
 
