@@ -31,8 +31,8 @@ export const ControlledExample = () => {
       <ComboBox
         label='Välj din favoritfrukt'
         description='Du kan bara välja en'
-        selectedKey={selectedFruit}
-        onSelectionChange={setSelectedFruit}
+        value={selectedFruit}
+        onChange={setSelectedFruit}
       >
         <ListBoxItem id='Lime'>Lime</ListBoxItem>
         <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
