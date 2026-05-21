@@ -203,3 +203,72 @@ export const VariantPush: Story = {
   ],
   render: () => <span />,
 }
+
+const items = [
+  { id: '1', name: 'Application #1042', status: 'Pending', date: '2026-03-12', notes: 'Awaiting document submission from applicant.' },
+  { id: '2', name: 'Application #1043', status: 'Approved', date: '2026-03-14', notes: 'All documents verified. Decision letter sent.' },
+  { id: '3', name: 'Application #1044', status: 'Under review', date: '2026-03-15', notes: 'Assigned to case officer. Background check in progress.' },
+  { id: '4', name: 'Application #1045', status: 'Rejected', date: '2026-03-18', notes: 'Missing supporting documents. Applicant notified.' },
+]
+
+function DetailViewControls() {
+  const { addPanel } = usePanels()
+
+  return (
+    <Main style={{ padding: '1rem' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
+        <thead>
+          <tr style={{ textAlign: 'left', borderBottom: '1px solid #ccc' }}>
+            <th style={{ padding: '0.5rem' }}>Name</th>
+            <th style={{ padding: '0.5rem' }}>Status</th>
+            <th style={{ padding: '0.5rem' }}>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map(item => (
+            <tr
+              key={item.id}
+              style={{ borderBottom: '1px solid #eee', cursor: 'pointer' }}
+              onClick={() =>
+                addPanel({
+                  id: 'detail',
+                  title: item.name,
+                  children: (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.875rem' }}>
+                      <div><strong>Status:</strong> {item.status}</div>
+                      <div><strong>Date:</strong> {item.date}</div>
+                      <div><strong>Notes:</strong> {item.notes}</div>
+                    </div>
+                  ),
+                })
+              }
+            >
+              <td style={{ padding: '0.5rem' }}>{item.name}</td>
+              <td style={{ padding: '0.5rem' }}>{item.status}</td>
+              <td style={{ padding: '0.5rem' }}>{item.date}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </Main>
+  )
+}
+
+export const DetailView: Story = {
+  decorators: [
+    _Story => (
+      <PanelProvider
+        panelBehavior='replace'
+        panelVariant='push'
+      >
+        <Layout>
+          <LayoutContent>
+            <DetailViewControls />
+            <PanelRegion />
+          </LayoutContent>
+        </Layout>
+      </PanelProvider>
+    ),
+  ],
+  render: () => <span />,
+}
