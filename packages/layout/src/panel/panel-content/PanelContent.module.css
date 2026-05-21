@@ -1,8 +1,7 @@
 .panelContent {
   flex: 1 1 auto;
   overflow: hidden auto;
-  padding: var(--midas-space-small) var(--midas-space-medium)
-    var(--midas-space-medium) var(--midas-space-medium);
+  padding: var(--midas-space-small) var(--midas-space-medium) 0;
 
   &:focus-visible {
     box-shadow: var(--midas-state-focus-inset);
