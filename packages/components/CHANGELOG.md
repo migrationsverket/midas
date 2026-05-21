@@ -1,3 +1,9 @@
+## 17.15.0 (2026-05-21)
+
+### 🚀 Features
+
+- **components,color-scheme-switch:** add scheme and onSchemeChange props ([428780719c2](https://github.com/migrationsverket/midas/commit/428780719c2))
+
 ## 17.14.9 (2026-05-21)
 
 ### 🧱 Updated Dependencies
