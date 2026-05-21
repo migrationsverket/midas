@@ -43,8 +43,7 @@ import { ComboBox, ListBoxItem } from '@midas-ds/components'
 
 ## Kontrollerat val
 
-Använd attributet `id` och eventet `onSelectionChange` för att använda controlled value på ComboBox.
-Den valda ListBoxItems värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
+Använd `value` och `onChange` för att styra det valda värdet i ComboBox.
 
 ```tsx
 import React from 'react'
@@ -56,8 +55,8 @@ return (
   <ComboBox
     label='Välj din favoritfrukt eller grönsak'
     description='Du kan bara välja en'
-    selectedKey={selectedFruit}
-    onSelectionChange={setSelectedFruit}
+    value={selectedFruit}
+    onChange={setSelectedFruit}
   >
     <ListBoxItem id='Lime'>Lime</ListBoxItem>
     <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
