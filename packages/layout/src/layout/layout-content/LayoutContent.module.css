@@ -3,4 +3,8 @@
   position: relative;
   height: 100%;
   overflow: hidden;
+
+  @media (width < 800px) {
+    flex-direction: column;
+  }
 }

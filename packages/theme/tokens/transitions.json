@@ -3,9 +3,9 @@
     "$description": "Animationstokens för övergångar och rörelser i UI:t. Kombinera duration- och timing-tokens för att bygga konsekventa animationer.",
     "duration": {
       "slow": {
-        "$value": "500ms",
+        "$value": "400ms",
         "$type": "duration",
-        "$description": "Långsam övergång. 500ms. Används för större layoutförändringar som sidopaneler och expanderbara sektioner."
+        "$description": "Långsam övergång. 400ms. Används för större layoutförändringar som sidopaneler och expanderbara sektioner."
       },
       "normal": {
         "$value": "300ms",

@@ -1,5 +1,6 @@
 :root {
   --panel-width: 300px;
+  --panel-height-mobile: 40vh;
 }
 
 .panel {
@@ -14,7 +15,7 @@
   border-left: 1px solid var(--midas-border-color-subtle);
 
   &[data-promoting] {
-    animation: promote var(--midas-transition-duration-fast) ease-out;
+    animation: promote var(--midas-transition-duration-slow) ease-out;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -24,11 +25,11 @@
   }
 
   &[data-entering] {
-    animation: slide-horizontally var(--midas-transition-duration-fast);
+    animation: slide-horizontally var(--midas-transition-duration-slow);
   }
 
   &[data-exiting] {
-    animation: slide-horizontally var(--midas-transition-duration-fast) reverse
+    animation: slide-horizontally var(--midas-transition-duration-slow) reverse
       ease-in;
   }
 
@@ -42,18 +43,18 @@
   @media (width < 800px) {
     bottom: 0;
     width: 100%;
-    height: 25%;
+    height: var(--panel-height-mobile);
     left: 0;
     top: unset;
     border-left: none;
     border-top: 1px solid var(--midas-border-color-subtle);
 
     &[data-entering] {
-      animation: slide-vertically var(--midas-transition-duration-fast);
+      animation: slide-vertically var(--midas-transition-duration-slow);
     }
 
     &[data-exiting] {
-      animation: slide-vertically var(--midas-transition-duration-fast) reverse
+      animation: slide-vertically var(--midas-transition-duration-slow) reverse
         ease-in;
     }
   }
