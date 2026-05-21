@@ -20,7 +20,7 @@ const loremParagraphs = [
 ]
 
 const loremIpsum = loremParagraphs.map((text, i) => (
-  <p key={i} style={{ marginBottom: '1rem' }}>{text}</p>
+  <p key={i} style={{ margin: '0 0 1rem' }}>{text}</p>
 ))
 
 export default {
