@@ -1,1 +1,0 @@
-._push_nuktp_1{flex-shrink:0;height:100%;overflow:hidden;position:relative;transition:width var(--midas-transition-duration-fast);width:0}._push_nuktp_1[data-open]{width:var(--panel-width)}@media(width<800px){._push_nuktp_1{height:0;width:100%;transition:height var(--midas-transition-duration-fast)}._push_nuktp_1[data-open]{height:var(--panel-height-mobile);width:100%}}
