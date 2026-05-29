@@ -4,7 +4,7 @@ description: Växlare för färgschema (ljust, mörkt, systemets inställning)
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ColorSchemeSwitch } from '@midas-ds/components'
+import { ColorSchemeSwitch, ColorSchemeSwitchMenu } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
 import { SelectorExample } from '@site/src/components/examples/color-scheme-switch/ColorSchemeSwitchExamples'
 
@@ -77,6 +77,33 @@ const [scheme, setScheme] = useState<ColorScheme>(
 />
 ```
 
+## Kompakt variant
+
+`ColorSchemeSwitchMenu` är en kompakt variant som visar det aktiva lägets ikon och öppnar en dropdown vid klick — lämplig i platsbegränsade ytor som ett sidhuvud.
+
+```tsx
+import { ColorSchemeSwitchMenu } from '@midas-ds/components'
+```
+
+```tsx
+<ColorSchemeSwitchMenu />
+```
+
+<div className='card' style={{ padding: 0, overflow: 'hidden' }}>
+  <div style={{ display: 'flex', alignItems: 'center', padding: '0.5rem 1rem', borderBottom: '1px solid var(--midas-border-color-subtle)', gap: '0.5rem' }}>
+    <span style={{ flex: 1, fontWeight: 500 }}>Min applikation</span>
+    <ColorSchemeSwitchMenu />
+  </div>
+</div>
+
+API:t är identiskt med `ColorSchemeSwitch` — `selector`, `defaultScheme`, `scheme` och `onSchemeChange` fungerar på samma sätt.
+
 ## API
 
+### ColorSchemeSwitch
+
 <PropTable name='ColorSchemeSwitch' />
+
+### ColorSchemeSwitchMenu
+
+<PropTable name='ColorSchemeSwitchMenu' />

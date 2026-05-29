@@ -5,14 +5,23 @@ import { ColorSchemeSwitchMenu } from './ColorSchemeSwitchMenu'
 
 const meta: Meta<typeof ColorSchemeSwitchMenu> = {
   component: ColorSchemeSwitchMenu,
-  title: 'Components/ColorSchemeSwitchMenu',
+  title: 'Components/ColorSchemeSwitch/Menu',
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
 }
 
 export default meta
 type Story = StoryObj<typeof ColorSchemeSwitchMenu>
 
 export const Primary: Story = {}
+
+export const DefaultDark: Story = {
+  args: {
+    defaultScheme: 'dark',
+  },
+}
 
 export const WithCallback: Story = {
   render: () => {
