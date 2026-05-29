@@ -1,17 +1,17 @@
 'use client'
 
-import { ChevronDown, ChevronUp, Laptop, Moon, Sun } from 'lucide-react'
+import { ChevronDown, Laptop, Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key, MenuItem as AriaMenuItem } from 'react-aria-components'
 import { Button } from '../button'
-import { Menu, MenuTrigger } from '../menu'
-import { MenuPopover } from '../menu'
+import { Menu, MenuTrigger, MenuPopover } from '../menu'
 import clsx from '../utils/clsx'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import type { ColorScheme, ColorSchemeSwitchProps } from './ColorSchemeSwitch'
 import styles from './ColorSchemeSwitchMenu.module.css'
 import messages from './intl/translations.json'
+import { useColorScheme } from './useColorScheme'
 
 const schemeIcon: Record<ColorScheme, React.ElementType> = {
   light: Sun,
@@ -31,14 +31,8 @@ export const ColorSchemeSwitchMenu: React.FC<
   onSchemeChange,
   className,
 }) => {
-  const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
-    scheme ?? defaultScheme,
-  )
-  const [isOpen, setIsOpen] = React.useState(false)
-
-  const resolved = scheme ?? colorScheme
+  const { resolved, onChange } = useColorScheme({ selector, defaultScheme, scheme, onSchemeChange })
   const Icon = schemeIcon[resolved]
-  const Chevron = isOpen ? ChevronUp : ChevronDown
 
   React.useEffect(() => {
     const targetElement = document.querySelector<HTMLElement>(selector)
@@ -55,17 +49,10 @@ export const ColorSchemeSwitchMenu: React.FC<
 
   const strings = useLocalizedStringFormatter(messages)
 
-  const handleAction = (key: Key) => {
-    const next = key as ColorScheme
-    setColorScheme(next)
-    onSchemeChange?.(next)
-  }
+  const handleAction = (key: Key) => onChange(key as ColorScheme)
 
   return (
-    <MenuTrigger
-      isOpen={isOpen}
-      onOpenChange={setIsOpen}
-    >
+    <MenuTrigger>
       <Button
         variant='icon'
         size='medium'
@@ -73,7 +60,10 @@ export const ColorSchemeSwitchMenu: React.FC<
         aria-label={strings.format(schemeKey(resolved))}
       >
         <Icon size={20} />
-        <Chevron size={20} />
+        <ChevronDown
+          size={20}
+          className={styles.chevron}
+        />
       </Button>
       <MenuPopover placement='bottom start'>
         <Menu

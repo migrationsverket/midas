@@ -1,6 +1,17 @@
 .trigger {
   gap: var(--midas-space-50);
   padding-inline-end: 0;
+
+  &[aria-expanded='true'] {
+    .chevron {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.chevron {
+  transition: transform var(--midas-transition-duration-instant)
+    var(--midas-transition-timing-ease-in-out);
 }
 
 .menu {
