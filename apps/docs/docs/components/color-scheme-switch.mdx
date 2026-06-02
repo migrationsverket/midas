@@ -46,7 +46,7 @@ Den fullstora `ColorSchemeSwitch` visar alla tre alternativen (ljust, mörkt, sy
 
 ### Kompakt
 
-`ColorSchemeSwitchMenu` är en kompakt variant som visar det aktiva läget. Den är lämplig att använda i situationer när det är ont om plats, t.ex. i [Header](/dev/layout/components/header/).
+`ColorSchemeSwitchMenu` är en kompakt variant som bara visar det aktiva läget. Valet görs via en meny. Den är lämplig att använda i situationer när det är ont om plats, t.ex. i [Header](/dev/layout/components/header/).
 
 ```tsx
 import { ColorSchemeSwitchMenu } from '@midas-ds/components'
@@ -80,7 +80,7 @@ API:t är identiskt i båda varianter. `selector`, `defaultScheme`, `scheme` och
 
 ### Standardvärde
 
-`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att systemets inställning används.
+`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att operativsystemets/webbläsarens inställning används.
 
 ```tsx
 <ColorSchemeSwitch defaultScheme='dark' />
@@ -88,7 +88,7 @@ API:t är identiskt i båda varianter. `selector`, `defaultScheme`, `scheme` och
 
 ### Selector
 
-Som standard påverkas `:root`, men du kan rikta mot ett annat element med `selector`-propen. Det är användbart om du bara vill byta färgschema för en avgränsad del av sidan.
+Som standard påverkas `:root`, men det går att rikta mot ett annat element med `selector`-propen. Det kan användas för att bara byta färgschema på en avgränsad del av sidan.
 
 ```tsx
 <ColorSchemeSwitch selector='#min-widget' />
@@ -100,7 +100,7 @@ Som standard påverkas `:root`, men du kan rikta mot ett annat element med `sele
 
 ### Spara val i localStorage
 
-Använd `onSchemeChange` för att reagera på användarens val — till exempel för att spara det i `localStorage` och återställa det vid nästa sidladdning.
+Använd `onSchemeChange` för att reagera på användarens val. Det kan till exempel användas för att spara valet i `localStorage` och återställa det vid nästa sidladdning.
 
 ```tsx
 const savedScheme = localStorage.getItem('color-scheme') as ColorScheme | null
