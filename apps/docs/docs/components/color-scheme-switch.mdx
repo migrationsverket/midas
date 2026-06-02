@@ -78,6 +78,14 @@ import { ColorSchemeSwitchMenu } from '@midas-ds/components'
 
 API:t är identiskt i båda varianter. `selector`, `defaultScheme`, `scheme` och `onSchemeChange` fungerar på samma sätt.
 
+### Standardvärde
+
+`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att systemets inställning används.
+
+```tsx
+<ColorSchemeSwitch defaultScheme='dark' />
+```
+
 ### Selector
 
 Som standard påverkas `:root`, men du kan rikta mot ett annat element med `selector`-propen. Det är användbart om du bara vill byta färgschema för en avgränsad del av sidan.
@@ -89,14 +97,6 @@ Som standard påverkas `:root`, men du kan rikta mot ett annat element med `sele
 <div className='card'>
   <SelectorExample />
 </div>
-
-### Standardvärde
-
-`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att systemets inställning används.
-
-```tsx
-<ColorSchemeSwitch defaultScheme='dark' />
-```
 
 ### Spara val i localStorage
 
