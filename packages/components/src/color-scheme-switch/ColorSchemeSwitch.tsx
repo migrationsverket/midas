@@ -1,6 +1,6 @@
 'use client'
 
-import { SunMoon, Moon, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key, SelectionIndicator } from 'react-aria-components'
@@ -9,6 +9,7 @@ import styles from './ColorSchemeSwitch.module.css'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { useColorScheme } from './useColorScheme'
+import { ColorSwitchIcon } from '../icons/ColorSwitchIcon'
 
 export type ColorScheme = 'light' | 'dark' | 'light dark'
 
@@ -83,7 +84,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
         id='light dark'
         className={styles.button}
       >
-        <SunMoon size={20} />
+        <ColorSwitchIcon />
         <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
         <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>

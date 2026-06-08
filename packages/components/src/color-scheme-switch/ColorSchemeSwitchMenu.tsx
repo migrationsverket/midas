@@ -12,10 +12,11 @@ import type { ColorScheme, ColorSchemeSwitchProps } from './ColorSchemeSwitch'
 import styles from './ColorSchemeSwitchMenu.module.css'
 import messages from './intl/translations.json'
 import { useColorScheme } from './useColorScheme'
+import { ColorSwitchIcon } from '../icons/ColorSwitchIcon'
 
 const schemeIcon: Record<ColorScheme, React.ElementType> = {
   light: Sun,
-  'light dark': SunMoon,
+  'light dark': ColorSwitchIcon,
   dark: Moon,
 }
 
@@ -97,7 +98,7 @@ export const ColorSchemeSwitchMenu: React.FC<
             textValue={strings.format('system')}
             className={styles.menuItem}
           >
-            <SunMoon size={20} />
+            <ColorSwitchIcon />
             <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
           </AriaMenuItem>
         </Menu>
