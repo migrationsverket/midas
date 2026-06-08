@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDown, SunMoon, Moon, Sun } from 'lucide-react'
+import { ChevronDown, Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key, MenuItem as AriaMenuItem } from 'react-aria-components'
