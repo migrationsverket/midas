@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronDown, Laptop, Moon, Sun } from 'lucide-react'
+import { ChevronDown, SunMoon, Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key, MenuItem as AriaMenuItem } from 'react-aria-components'
@@ -15,7 +15,7 @@ import { useColorScheme } from './useColorScheme'
 
 const schemeIcon: Record<ColorScheme, React.ElementType> = {
   light: Sun,
-  'light dark': Laptop,
+  'light dark': SunMoon,
   dark: Moon,
 }
 
@@ -31,7 +31,12 @@ export const ColorSchemeSwitchMenu: React.FC<
   onSchemeChange,
   className,
 }) => {
-  const { resolved, onChange } = useColorScheme({ selector, defaultScheme, scheme, onSchemeChange })
+  const { resolved, onChange } = useColorScheme({
+    selector,
+    defaultScheme,
+    scheme,
+    onSchemeChange,
+  })
   const Icon = schemeIcon[resolved]
 
   React.useEffect(() => {
@@ -78,14 +83,7 @@ export const ColorSchemeSwitchMenu: React.FC<
             <Sun size={20} />
             <VisuallyHidden>{strings.format('lightMode')}</VisuallyHidden>
           </AriaMenuItem>
-          <AriaMenuItem
-            id='light dark'
-            textValue={strings.format('system')}
-            className={styles.menuItem}
-          >
-            <Laptop size={20} />
-            <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
-          </AriaMenuItem>
+
           <AriaMenuItem
             id='dark'
             textValue={strings.format('darkMode')}
@@ -93,6 +91,14 @@ export const ColorSchemeSwitchMenu: React.FC<
           >
             <Moon size={20} />
             <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
+          </AriaMenuItem>
+          <AriaMenuItem
+            id='light dark'
+            textValue={strings.format('system')}
+            className={styles.menuItem}
+          >
+            <SunMoon size={20} />
+            <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
           </AriaMenuItem>
         </Menu>
       </MenuPopover>

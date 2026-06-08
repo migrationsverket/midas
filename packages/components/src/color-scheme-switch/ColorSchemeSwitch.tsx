@@ -1,6 +1,6 @@
 'use client'
 
-import { Laptop, Moon, Sun } from 'lucide-react'
+import { SunMoon, Moon, Sun } from 'lucide-react'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Key, SelectionIndicator } from 'react-aria-components'
@@ -42,7 +42,9 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
 }) => {
   const { resolved, onChange } = useColorScheme({
     selector,
-    defaultScheme: defaultValue ? (Array.from(defaultValue)[0] as ColorScheme) : defaultScheme,
+    defaultScheme: defaultValue
+      ? (Array.from(defaultValue)[0] as ColorScheme)
+      : defaultScheme,
     scheme,
     onSchemeChange,
   })
@@ -62,14 +64,6 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       className={className}
     >
       <ToggleButton
-        id='light dark'
-        className={styles.button}
-      >
-        <Laptop />
-        <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
-        <SelectionIndicator className={styles.selectionIndicator} />
-      </ToggleButton>
-      <ToggleButton
         id='light'
         className={styles.button}
       >
@@ -83,6 +77,14 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Moon />
         <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
+      </ToggleButton>
+      <ToggleButton
+        id='light dark'
+        className={styles.button}
+      >
+        <SunMoon />
+        <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
         <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
     </ToggleButtonGroup>
