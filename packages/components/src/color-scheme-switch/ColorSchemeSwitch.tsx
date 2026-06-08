@@ -67,7 +67,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
         id='light'
         className={styles.button}
       >
-        <Sun />
+        <Sun size={20} />
         <VisuallyHidden>{strings.format('lightMode')}</VisuallyHidden>
         <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
@@ -75,7 +75,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
         id='dark'
         className={styles.button}
       >
-        <Moon />
+        <Moon size={20} />
         <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
         <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
@@ -83,7 +83,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
         id='light dark'
         className={styles.button}
       >
-        <SunMoon />
+        <SunMoon size={20} />
         <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
         <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
