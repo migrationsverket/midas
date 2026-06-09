@@ -1,3 +1,9 @@
+## 0.1.14 (2026-06-09)
+
+### 🩹 Fixes
+
+- **layout,main:** correct main content padding ([6efe4f7e25e](https://github.com/migrationsverket/midas/commit/6efe4f7e25e))
+
 ## 0.1.13 (2026-06-01)
 
 ### 🧱 Updated Dependencies
