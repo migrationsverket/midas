@@ -39,21 +39,24 @@ export const ActionExample: React.FC = () => (
       <CardBody>
         <Text>
           <ul>
-            <li>3 Apelsiner</li>
-            <li>5 bananer</li>
-            <li>2 Kiwi</li>
+            <li>3 bananer</li>
+            <li>2 meloner</li>
+            <li>4 kiwi</li>
+            <li>2 citroner</li>
           </ul>
         </Text>
       </CardBody>
       <CardActions>
         <Button
           variant='secondary'
+          aria-label='Redigera inköpslista'
           icon={Pen}
         >
           Redigera
         </Button>
         <Button
           variant='tertiary'
+          aria-label='Ta bort inköpslista'
           icon={Trash2}
         >
           Ta bort
@@ -177,6 +180,7 @@ export const MenuExample: React.FC = () => {
         <CardActions>
           <Button
             variant='secondary'
+            aria-label='Boka möte med Sven Svensson'
             icon={Phone}
           >
             Boka möte

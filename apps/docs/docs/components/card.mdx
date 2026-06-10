@@ -3,7 +3,6 @@ title: Card
 description: Ett card är en modulär komponent som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
 ---
 
-import { Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   BasicExample,
@@ -21,7 +20,7 @@ import {
   overrideHeadlessLink=''
 />
 
-Komponent som används för att gruppera flera olika typer av relaterad information.
+Komponent som samlar logiskt relaterad information om ett ämne i en visuellt distinkt och avgränsad enhet. Ett kort består alltid av minst två olika typer av innehåll: en rubrik och därutöver något mer, till exempel en bild, en text, metadata eller en knapp. Syftet är vanligtvis att ge en kortfattad representation av ett ämne och leda användaren vidare till mer detaljerad information.
 
 ```tsx
 import { Card, CardHeader, CardBody, Text } from '@midas-ds/components'
@@ -38,23 +37,29 @@ import { Card, CardHeader, CardBody, Text } from '@midas-ds/components'
 
 <BasicExample />
 
-## Användning
+## Användningsområden
 
-Kortet byggs upp av flera underkomponenter.
+Kort passar särskilt bra i följande två situationer:
 
-| Komponent       | Beskrivning                                                               |
-| --------------- | ------------------------------------------------------------------------- |
-| `<CardHeader>`  | Plats för rubrik och eventuell underrubrik. Måste alltid finnas på kortet |
-| `<CardBody>`    | Wrapper för kortets huvudsakliga innehåll.                                |
-| `<CardActions>` | Skapar en yta för kortets handlingar.                                     |
-| `<CardImage>`   | Används för att visa en bild på kortet.                                   |
-| `<CardLink>`    | Läggs runt `<CardTitle>` för att skapa en länk.                           |
+- Samlingar av objekt, till exempel artiklar, produkter, personer eller inlägg
+- Dataöversikter och dashboards
+
+### Samlingar av objekt
+
+Om du vill visa en samling objekt av samma typ med återkommande innehållsdelar bör du i första hand överväga en lista, särskilt om det är viktigt att användaren ska kunna jämföra objekten. Är objekten mer heterogena eller innehåller bilder, kan kort vara ett lämpligt val.
+
+När kort används bör de struktureras i en [grid-layout](/components/grid) som gör det enkelt för användaren att läsa av samlingen. Det underlättas av att korten placeras i raka kolumner och rader. En utmaning med grid-layouter är varierad höjd på korten. Är variationen liten kan du fylla ut med whitespace så att korten får samma höjd och innehållet linjerar. Är variationen stor kan det behövas en maxhöjd i kombination med trunkering av texter.
+
+### Dataöversikter och dashboards
+
+I en dataöversikt eller en dashboard kan kort användas för att dela upp och presentera olika datamängder i separata, lättöverskådliga enheter. Varje kort representerar ett avgränsat informationsområde, vilket gör det enkelt för användaren att snabbt få en överblick och identifiera det som är relevant.
+Kort i dashboards behöver inte ha samma storlek. Anpassa storleken efter innehållet, till exempel kan ett nyckeltal rymmas i ett litet kort medan ett diagram eller en tabell kan kräva mer utrymme. Använd ett [grid-layout](/components/grid) för att skapa ordning och struktur.
 
 ## Varianter
 
 ### Kort med handlingar
 
-`<CardActions>` används för att gruppera kortets primära handlingar. Om kortet har många möjliga handlingar lägger vi de två eller tre mest relevanta handlingarna på kortet och övriga i en [Meny](/components/card/#kort-med-meny).
+`<CardActions>` används för att gruppera kortets primära handlingar. Om kortet har många möjliga handlingar lägger vi de två eller tre mest relevanta handlingarna på kortet och övriga i en [Meny](/components/card/#kort-med-meny). För att säkerställa att användare som använder hjälpmedel t.ex. skärmläsare ska få en tydlig förståelse för kortets handlingar är det lämpligt att inkludera kortets rubrik i handlingens aria-label.
 
 ```tsx
 <Card>
@@ -62,21 +67,24 @@ Kortet byggs upp av flera underkomponenter.
   <CardBody>
     <Text>
       <ul>
-        <li>3 Apelsiner</li>
-        <li>5 bananer</li>
-        <li>2 Kiwi</li>
+        <li>3 bananer</li>
+        <li>2 meloner</li>
+        <li>4 kiwi</li>
+        <li>2 citroner</li>
       </ul>
     </Text>
   </CardBody>
   <CardActions>
     <Button
       variant='secondary'
+      aria-label='Redigera inköpslista'
       icon={Pen}
     >
       Redigera
     </Button>
     <Button
       variant='tertiary'
+      aria-label='Ta bort inköpslista'
       icon={Trash2}
     >
       Ta bort
@@ -89,7 +97,7 @@ Kortet byggs upp av flera underkomponenter.
 
 ### Kort med bild
 
-Använd `<CardImage>` för att visa en bild på kortet. Bilden ska antingen ligga överst eller direkt under `<CardHeader>` om den ligger överst.
+Använd `<CardImage>` för att visa en bild på kortet. Om bilden är den tydligaste identifieraren kan den placeras först, annars placeras rubriken alltid överst och bilden direkt under.
 
 ```tsx
 <Card>
@@ -108,7 +116,7 @@ Använd `<CardImage>` för att visa en bild på kortet. Bilden ska antingen ligg
 
 ### Kort med meny
 
-Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en meny i ett kort används [Menu](/components/menu) i `<CardHeader>` med en [Button](/components/button) med `variant='icon'` och `size='medium'`, med ikonen `<EllipsisVertical>` som trigger.
+Om kortet rymmer många handlingar kan de sekundära handlingarna placeras i en meny. För att skapa en meny i ett kort används [Menu](/components/menu) i `<CardHeader>` med en [Button](/components/button) med `variant='icon'` och `size='medium'`, med ikonen `<EllipsisVertical>` som trigger.
 
 ```tsx
 <Card>
@@ -139,6 +147,7 @@ Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en me
   <CardActions>
     <Button
       variant='secondary'
+      aria-label='Boka möte med Sven Svensson'
       icon={Phone}
     >
       Boka möte
@@ -151,7 +160,7 @@ Ett kort kan innehålla en meny för sekundära handlingar. För att skapa en me
 
 ### Länkkort
 
-I de flesta fall räcker texten på [Link](/components/link) eller [Link button](/components/link-button) för att beskriva var länken leder och vad de kan förvänta sig när de trycker på den. Men i de fall där användaren behöver mer information om var länken leder kan vi använda `<CardLink>` för att göra hela kortet till en länk.
+I de flesta fall räcker texten på [Link](/components/link) eller [Link button](/components/link-button) för att beskriva var länken leder och vad de kan förvänta sig när de trycker på den. Men i de fall där användaren behöver mer information om var länken leder kan `<CardLink>` användas för att göra hela kortet till en länk.
 
 ```tsx
 <Card>
@@ -209,8 +218,6 @@ Sedan version 17.14 fasar vi ut horisontella kort, vänligen gå över till ett 
 
 Card stödjer även horisontell layout för att visa korten som en avlång rad. Detta kan vara användbart för att visa flera kort ovanpå varandra, som en lista med mycket detaljer och information. Använder du underkomponenterna för Card kommer dessa att justeras automatiskt när Card sätts i horisontellt läge.
 
-<HorizontalExample />
-
 ```tsx
 <Card
   //highlight-start
@@ -232,6 +239,20 @@ Card stödjer även horisontell layout för att visa korten som en avlång rad. 
 </Card>
 ```
 
-## Client Side Routing
+<HorizontalExample />
+
+## Implementation
+
+Kortet byggs upp av flera underkomponenter.
+
+| Komponent       | Beskrivning                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `<CardHeader>`  | Plats för rubrik och eventuell underrubrik. Måste alltid finnas på kortet |
+| `<CardBody>`    | Wrapper för kortets huvudsakliga innehåll.                                |
+| `<CardActions>` | Skapar en yta för kortets handlingar.                                     |
+| `<CardImage>`   | Används för att visa en bild på kortet.                                   |
+| `<CardLink>`    | Läggs runt `<CardTitle>` för att skapa en länk.                           |
+
+### Client Side Routing
 
 Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/client-side-routing).
