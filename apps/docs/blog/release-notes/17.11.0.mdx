@@ -1,0 +1,93 @@
+---
+slug: 17.11.0
+title: Release 17.11.0
+authors: midas
+tags: [release-notes, v17]
+date: 2026-04-09
+---
+
+Den här releasen innehåller:
+
+- `@midas-ds/layout` lanseras i beta
+- Ny komponent: `TimeField`
+- Förbättrat stöd för pekskärmar — ett pågående arbete
+
+## 📦 @midas-ds/layout — nu i beta
+
+`@midas-ds/layout` är nu officiellt tillgängligt och redo att börja användas. Det ersätter `Layout` från `@midas-ds/components` med ett komponentbaserat API — du sätter ihop strukturen med JSX i stället för att konfigurera en enda stor komponent via props.
+
+```tsx
+import {
+  Layout, LayoutContent, Main,
+  Header, HeaderActions, HeaderAction,
+  Sidebar, Navigation, NavigationLink,
+  Navbar,
+} from '@midas-ds/layout'
+
+<Layout>
+  <Header>
+    <HeaderActions>
+      <HeaderAction icon={<User />}>Anna Andersson</HeaderAction>
+    </HeaderActions>
+  </Header>
+
+  <LayoutContent>
+    <Sidebar title='Min applikation'>
+      <Navigation>
+        <NavigationLink href='/' icon={<House />} isActive>
+          Hem
+        </NavigationLink>
+      </Navigation>
+    </Sidebar>
+    <Main>{/* ditt innehåll */}</Main>
+  </LayoutContent>
+
+  <Navbar>
+    <Navigation>
+      <NavigationLink href='/' icon={<House />} isActive>
+        Hem
+      </NavigationLink>
+    </Navigation>
+  </Navbar>
+</Layout>
+```
+
+{/* truncate */}
+
+Paketet är redo att ta i bruk — men räkna med att API, design och UX kan förändras under arbetets gång. Vi tar gärna emot feedback från er som provar det.
+
+```bash
+npm install @midas-ds/layout
+```
+
+Se [dokumentationen](/dev/layout) och [migrationsguiden](/dev/layout/migration) för mer information.
+
+### Vad händer med gamla Layout?
+
+`Layout` från `@midas-ds/components` fortsätter att fungera, men kommer inte att få nya funktioner. Nya projekt bör använda `@midas-ds/layout`. Migrera i din egen takt — de två paketen kan användas parallellt.
+
+## 🆕 Ny komponent: TimeField
+
+[`TimeField`](/components/timefield) är en ny komponent för att mata in klockslag. Den delar API och stil med `DateField`.
+
+```tsx
+import { TimeField } from '@midas-ds/components'
+
+<TimeField label="Starttid" />
+```
+
+## 🚀 Nya funktioner
+
+- **DateField, TimeField:** Båda är nu wrappade i `forwardRef`.
+
+## 🩹 Fixar
+
+- **Flera komponenter:** Hover- och tryckstilar är förbättrade på pekskärmar — `:hover` ersatt med `[data-hovered]` och hover-regler wrappade i `@media (hover: hover)`. Berörda komponenter: `Checkbox`, `Card`, `Select`, `Calendar`, `DateField`, `ListBox`, `LinkButton`, `Link`.
+- **Table:** Sorteringsikonen visas nu vid låg opacitet på pekenheter och uppfyller WCAG-kontrastkrav.
+- **Select, ComboBox:** Listrutan har nu en relativ maxhöjd och scrollar korrekt i trånga layouter.
+- **SearchField:** `inputMode="search"` satt som standard.
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v17.11.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.11.0)
+- [layout@v0.0.44](https://github.com/migrationsverket/midas/releases/tag/layout%400.0.44)
