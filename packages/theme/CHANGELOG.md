@@ -1,3 +1,13 @@
+## 3.15.0 (2026-06-10)
+
+### 🚀 Features
+
+- **theme:** add panel shadow token ([cba9e2c709d](https://github.com/migrationsverket/midas/commit/cba9e2c709d))
+
+### 🩹 Fixes
+
+- **layout,panel:** fix push variant on mobile with height transition ([10f74a57f9e](https://github.com/migrationsverket/midas/commit/10f74a57f9e))
+
 ## 3.14.9 (2026-06-01)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

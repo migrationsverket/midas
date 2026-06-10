@@ -1,3 +1,33 @@
+## 0.2.0 (2026-06-10)
+
+### 🚀 Features
+
+- **layout,panel:** visual polish, actions prop, push variant and replace behavior ([1211ac8899c](https://github.com/migrationsverket/midas/commit/1211ac8899c))
+
+### 🩹 Fixes
+
+- **layout,panel:** fix push variant on mobile with height transition ([10f74a57f9e](https://github.com/migrationsverket/midas/commit/10f74a57f9e))
+- **layout,panel:** fix header gap, panel width and content padding ([78f682e5400](https://github.com/migrationsverket/midas/commit/78f682e5400))
+- **layout,panel:** a11y improvements and remove data-debug ([b817a0d4a0b](https://github.com/migrationsverket/midas/commit/b817a0d4a0b))
+
+### 📖 Documentation changes
+
+- **layout,panel:** document detail view pattern with stable panel id ([dae5474d423](https://github.com/migrationsverket/midas/commit/dae5474d423))
+
+### 🔧 Maintenance
+
+- **layout,panel:** reset paragraph margin in scrollable story ([9875af7e685](https://github.com/migrationsverket/midas/commit/9875af7e685))
+- **layout,panel:** fix CI lint errors ([ee2ccb4d122](https://github.com/migrationsverket/midas/commit/ee2ccb4d122))
+
+### 🧪 Tests updated
+
+- **layout,panel:** add DetailView story for in-place content updates ([1ca23991169](https://github.com/migrationsverket/midas/commit/1ca23991169))
+- **layout,panel:** add panel stories and spec ([2d5d43a66ec](https://github.com/migrationsverket/midas/commit/2d5d43a66ec))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.2
+
 ## 0.1.14 (2026-06-09)
 
 ### 🩹 Fixes
