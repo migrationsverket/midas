@@ -14,7 +14,7 @@ import { ButtonContext } from 'react-aria-components'
   friendlyName='Knapp'
 />
 
-Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
+Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär. När användaren interagerar med en knapp händer något på sidan.
 
 ```tsx
 import { Button, ButtonGroup } from '@midas-ds/components'
@@ -25,7 +25,6 @@ import { Button, ButtonGroup } from '@midas-ds/components'
   <Button>Primary</Button>
   <Button variant='secondary'>Secondary</Button>
   <Button variant='tertiary'>Tertiary</Button>
-  <Button isDisabled>Disabled</Button>
 </ButtonGroup>
 ```
 
@@ -34,7 +33,24 @@ import { Button, ButtonGroup } from '@midas-ds/components'
     <Button>Primary</Button>
     <Button variant='secondary'>Secondary</Button>
     <Button variant='tertiary'>Tertiary</Button>
-    <Button isDisabled>Disabled</Button>
+  </ButtonGroup>
+</div>
+
+## Riktlinjer
+
+Knappar placeras i regel i nedre vänstra hörnet av en sida, sektion eller tydligt avgränsad yta. Vi sätter alltid den primära knappen längst till vänster om det finns flera knappar (OK-Cancel).
+
+```tsx
+<ButtonGroup aria-label='Skicka formulär'>
+  <Button>Skicka</Button>
+  <Button variant='secondary'>Avbryt</Button>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Skicka formulär'>
+    <Button>Skicka</Button>
+    <Button variant='secondary'>Avbryt</Button>
   </ButtonGroup>
 </div>
 
@@ -42,7 +58,7 @@ import { Button, ButtonGroup } from '@midas-ds/components'
 
 ### Primär
 
-En primär knapp används för den primära eller positiva handlingen i ett flöde (OK, Skicka, Nästa). Det bör endast finnas en primärknapp per sida, sektion eller tydligt avgränsad yta.
+Primärknappen används för den mest prioriterade handlingen (t.ex. Skicka eller Slutför) eller den positiva handlingen i ett flöde (t.ex. OK eller Nästa) och är därför utformad för att dra användarens uppmärksamhet till sig. För att ge användaren tydlig vägledning i gränssnittet bör antalet primärknappar i en och samma vy begränsas. Button har som standard `variant='primary'`.
 
 ```tsx
 <Button>Slutför</Button>
@@ -57,7 +73,7 @@ En primär knapp används för den primära eller positiva handlingen i ett flö
 
 ### Sekundär
 
-En sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka). Används alltid tillsammans med en primär knapp.
+Sekundärknappen används för vanliga handlingar som inte är lika viktiga som primära handlingar eller för den negativa handlingen i ett flöde (t.ex. Avbryt eller Tillbaka).
 
 ```tsx
 <ButtonGroup aria-label='Välj knapp'>
@@ -75,7 +91,7 @@ En sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, T
 
 ### Tertiär
 
-Den tertiära knappen kan användas tillsammans med primär- och sekundär knapp där det finns behov av ett ytterligare val
+Den tertiära knappen används för de minst prioriterade handlingarna, t.ex. Ta bort eller Redigera.
 
 ```tsx
 <ButtonGroup aria-label='Hantera anmälan'>
@@ -93,8 +109,7 @@ Den tertiära knappen kan användas tillsammans med primär- och sekundär knapp
   </ButtonGroup>
 </div>
 
-Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
-Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
+Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`. Vilken sida om texten som ikonen ska vara på styrs av `iconPlacement`.
 
 ```tsx
 <Button
@@ -123,6 +138,10 @@ Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
 ## Tillstånd
 
+### isDisabled
+
+För att indikera att en handling inte är möjlig att utföra i aktuell kontext kan `isDisabled` användas. Av tillgänglighetsskäl är dock det bäst att undvika att använda `isDisabled`.
+
 ### isPending
 
 För att visa att systemet laddas kan `isPending` användas, läs mer under [mönster för laddningsindikatorer](/design-patterns/page-loading/#spinner-i-button).
@@ -138,9 +157,11 @@ För att visa att systemet laddas kan `isPending` användas, läs mer under [mö
   <Button isPending>Laddar...</Button>
 </div>
 
-## Grupp av knappar
+## Implementation
 
-För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
+### Grupp av knappar
+
+För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas. Kom ihåg att sätta en aria-label på `ButtonGroup` för att beskriva vad knapparna gör.
 
 ```tsx
 import { ButtonGroup } from '@midas-ds/components'
@@ -150,7 +171,6 @@ import { ButtonGroup } from '@midas-ds/components'
 <ButtonGroup aria-label='Välj en frukt'>
   <Button>Pineapple</Button>
   <Button variant='secondary'>Apple</Button>
-  <Button isDisabled>Orange</Button>
 </ButtonGroup>
 ```
 
@@ -158,29 +178,6 @@ import { ButtonGroup } from '@midas-ds/components'
   <ButtonGroup aria-label='Välj en frukt'>
     <Button>Pineapple</Button>
     <Button variant='secondary'>Apple</Button>
-    <Button isDisabled>Orange</Button>
-  </ButtonGroup>
-</div>
-
-### Label
-
-För god tillgänglighet bör du sätta en aria-label på `ButtonGroup` för att beskriva vad knapparna gör.
-
-```tsx
-// highlight-start
-<ButtonGroup aria-label='Välj en frukt'>
-  // highlight-end
-  <Button>Pear</Button>
-  <Button variant='secondary'>Apple</Button>
-  <Button isDisabled>Grape</Button>
-</ButtonGroup>
-```
-
-<div className='card'>
-  <ButtonGroup aria-label='Välj en frukt'>
-    <Button>Pear</Button>
-    <Button variant='secondary'>Apple</Button>
-    <Button isDisabled>Grape</Button>
   </ButtonGroup>
 </div>
 
@@ -194,12 +191,11 @@ import { ButtonContext } from 'react-aria-components'
 
 ```tsx
 // highlight-start
-<ButtonContext.Provider value={{ isDisabled: true }}>
+<ButtonContext.Provider value={{ isPending: true }}>
   // highlight-end
   <ButtonGroup>
     <Button>Grape</Button>
     <Button variant='secondary'>Pear</Button>
-    <Button variant='tertiary'>Banana</Button>
   </ButtonGroup>
   // highlight-start
 </ButtonContext.Provider>
@@ -207,42 +203,12 @@ import { ButtonContext } from 'react-aria-components'
 ```
 
 <div className='card'>
-  <ButtonContext.Provider value={{ isDisabled: true }}>
+  <ButtonContext.Provider value={{ isPending: true }}>
     <ButtonGroup>
       <Button>Grape</Button>
       <Button variant='secondary'>Pear</Button>
-      <Button variant='tertiary'>Banana</Button>
     </ButtonGroup>
   </ButtonContext.Provider>
-</div>
-
-## Riktlinjer
-
-### Val av komponent
-
-Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
-
-### Generella riktlinjer
-
-- Undvik inaktiva knappar. Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven, t.ex för att gå till nästa sida i en e-tjänst, ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
-- Undvik att ha för många knappar på samma sida.
-
-### Placering och ordning
-
-Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster.
-
-```tsx
-<ButtonGroup aria-label='Skicka formulär'>
-  <Button>Skicka</Button>
-  <Button variant='secondary'>Avbryt</Button>
-</ButtonGroup>
-```
-
-<div className='card'>
-  <ButtonGroup aria-label='Skicka formulär'>
-    <Button>Skicka</Button>
-    <Button variant='secondary'>Avbryt</Button>
-  </ButtonGroup>
 </div>
 
 ## API
