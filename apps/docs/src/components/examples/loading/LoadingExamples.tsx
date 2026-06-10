@@ -54,14 +54,26 @@ export const ButtonLoadingExample = () => {
 
 export const InlineSpinnerExample = () => {
   const [isChecking, setIsChecking] = useState(false)
+  const [value, setValue] = useState('')
+  const [error, setError] = useState('')
 
   async function handleBlur() {
-    setIsChecking(true)
+    if (!error && value.trim() !== '') {
+      setIsChecking(true)
+      // Simulate an async database check
+      await new Promise(resolve => setTimeout(resolve, 2500))
 
-    // Simulate an async database check
-    await new Promise(resolve => setTimeout(resolve, 2500))
+      setIsChecking(false)
+    }
+  }
 
-    setIsChecking(false)
+  async function handleSubmit() {
+    if (value.trim() === '') {
+      setError('Detta fält är obligatoriskt')
+      return
+    }
+    setError('')
+    alert(`Du fyllde i ditt kortnummer och det är ${value}`)
   }
 
   return (
@@ -72,14 +84,24 @@ export const InlineSpinnerExample = () => {
             <TextField
               label='Ange ditt kortnummer'
               description='Ditt kortnummer kontrolleras mot databasen. Det kan ta en liten stund'
+              value={value}
+              onChange={newValue => {
+                setValue(newValue)
+                if (error) setError('')
+              }}
               onBlur={handleBlur}
+              isInvalid={!!error}
+              errorMessage={error}
             />
             <div className='spinner-box'>{isChecking && <Spinner small />}</div>
           </div>
         </GridItem>
         <GridItem size='auto'>
-          <Button isDisabled={isChecking}>
-            {isChecking ? 'Skicka' : 'Skicka'}
+          <Button
+            isDisabled={isChecking}
+            onPress={handleSubmit}
+          >
+            Skicka
           </Button>
         </GridItem>
       </Grid>
