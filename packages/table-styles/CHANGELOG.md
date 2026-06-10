@@ -1,3 +1,56 @@
+## 2.0.89 (2026-06-01)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.1
+- Updated theme to 3.14.9
+
+## 2.0.88 (2026-05-21)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.0
+
+## 2.0.87 (2026-05-21)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.9
+- Updated theme to 3.14.8
+
+## 2.0.86 (2026-05-12)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.8
+- Updated theme to 3.14.7
+
+## 2.0.85 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.7
+
+## 2.0.84 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.6
+
+## 2.0.83 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.5
+- Updated theme to 3.14.6
+
+## 2.0.82 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.4
+- Updated theme to 3.14.5
+
 ## 2.0.81 (2026-05-08)
 
 ### 🧱 Updated Dependencies

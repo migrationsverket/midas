@@ -1,3 +1,61 @@
+## 0.1.14 (2026-06-09)
+
+### 🩹 Fixes
+
+- **layout,main:** correct main content padding ([6efe4f7e25e](https://github.com/migrationsverket/midas/commit/6efe4f7e25e))
+
+## 0.1.13 (2026-06-01)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.1
+
+## 0.1.12 (2026-05-21)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.0
+
+## 0.1.11 (2026-05-21)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.9
+
+## 0.1.10 (2026-05-12)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.8
+
+## 0.1.9 (2026-05-11)
+
+### 🩹 Fixes
+
+- **components,layout:** add badge pattern to navigation docs and fix sidebar transition ([b46ae8a3141](https://github.com/migrationsverket/midas/commit/b46ae8a3141))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.7
+
+## 0.1.8 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.6
+
+## 0.1.7 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.5
+
+## 0.1.6 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.14.4
+
 ## 0.1.5 (2026-05-08)
 
 ### 🧱 Updated Dependencies

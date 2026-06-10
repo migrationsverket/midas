@@ -49,3 +49,20 @@
 .sidebarContent {
   padding: var(--midas-space-small);
 }
+
+.sidebar[data-transitioning] :global([data-badge]) {
+  opacity: 0;
+  transition: none;
+}
+
+.sidebar :global([data-badge]) {
+  transition: opacity var(--midas-transition-duration-normal) ease
+    var(--midas-transition-duration-fast);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar[data-transitioning] :global([data-badge]),
+  .sidebar :global([data-badge]) {
+    transition: none;
+  }
+}

@@ -121,6 +121,15 @@ export const SearchField = ({
                 className={clsx(TextFieldStyles.input, styles.input, {
                   [styles.medium]: size === 'medium',
                 })}
+                onKeyDown={!props.onSubmit ? e => {
+                  // React Aria calls preventDefault on Enter inside SearchField,
+                  // blocking native form submission. When no onSubmit is provided
+                  // the component should behave like a plain input — restore the
+                  // expected behaviour by submitting the parent form directly.
+                  if (e.key === 'Enter' && state.value && !props.isInvalid) {
+                    ;(e.currentTarget as HTMLInputElement).form?.requestSubmit()
+                  }
+                } : undefined}
               />
               {state.value.length > 0 && (
                 <Button

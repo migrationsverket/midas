@@ -1,3 +1,60 @@
+## 17.15.1 (2026-06-01)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.9
+
+## 17.15.0 (2026-05-21)
+
+### 🚀 Features
+
+- **components,color-scheme-switch:** add scheme and onSchemeChange props ([428780719c2](https://github.com/migrationsverket/midas/commit/428780719c2))
+
+## 17.14.9 (2026-05-21)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.8
+
+## 17.14.8 (2026-05-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.7
+
+## 17.14.7 (2026-05-11)
+
+### 🩹 Fixes
+
+- **components, search-field:** submit parent form on Enter when no onSubmit is provided ([aa984e2a998](https://github.com/migrationsverket/midas/commit/aa984e2a998))
+- **components,layout:** add badge pattern to navigation docs and fix sidebar transition ([b46ae8a3141](https://github.com/migrationsverket/midas/commit/b46ae8a3141))
+
+### 🧪 Tests updated
+
+- **components, search-field:** add form submission behaviour tests ([0a04b3e0024](https://github.com/migrationsverket/midas/commit/0a04b3e0024))
+
+## 17.14.6 (2026-05-11)
+
+### 🩹 Fixes
+
+- **components,card:** prevent CardBody margin-bottom from collapsing out of card ([6ef863330bb](https://github.com/migrationsverket/midas/commit/6ef863330bb))
+
+## 17.14.5 (2026-05-11)
+
+### 🩹 Fixes
+
+- **theme,components,select-styles:** swap icon and icon-sm size token values ([25a693d3ea2](https://github.com/migrationsverket/midas/commit/25a693d3ea2))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.6
+
+## 17.14.4 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.5
+
 ## 17.14.3 (2026-05-08)
 
 ### 🧱 Updated Dependencies

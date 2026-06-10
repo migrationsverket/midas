@@ -5,7 +5,7 @@
   height: 100%;
   overflow: hidden auto;
   scrollbar-gutter: stable;
-  padding: 1rem;
+  padding: var(--midas-space-xlarge);
 
   &:focus-visible {
     box-shadow: var(--midas-state-focus-inset);

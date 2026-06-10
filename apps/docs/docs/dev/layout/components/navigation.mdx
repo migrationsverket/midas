@@ -3,6 +3,16 @@ title: Navigation
 description: Navigationskomponenter för sidomeny och navbar.
 ---
 
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { NavigationBadgeExample } from '@site/src/components/examples/layout/NavigationExamples'
+
+<ComponentHeader
+  name='NavigationLink'
+  friendlyName='Sidolänk, Navlänk'
+  overrideStorybookPath='?path=/docs/layout-navigation-navigationlink--docs'
+  overrideHeadlessLink=''
+/>
+
 # Navigation
 
 Navigationskomponenterna används både i `Sidebar` och i `Navbar`. De är identiska — kontexten avgör utseendet.
@@ -67,6 +77,32 @@ En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt ef
 | `href`       | `string`      | —        | URL (standard)                                                     |
 | `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
 | `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
+
+### Notisindikator (Badge)
+
+Skicka in `BadgeContainer` som `icon`-prop för att visa en notisindikator på länken.
+
+<NavigationBadgeExample />
+
+```tsx
+import { Badge, BadgeContainer } from '@midas-ds/components'
+import { Bell } from 'lucide-react'
+
+<NavigationItem>
+  <NavigationLink
+    href='/meddelanden'
+    icon={
+      <BadgeContainer>
+        <Bell />
+        <Badge>12</Badge>
+      </BadgeContainer>
+    }
+    isActive={pathname === '/meddelanden'}
+  >
+    Meddelanden
+  </NavigationLink>
+</NavigationItem>
+```
 
 ## NavigationSection
 

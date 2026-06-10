@@ -96,8 +96,8 @@
   min-height: 1.875rem;
 
   svg {
-    width: var(--midas-size-icon-sm);
-    height: var(--midas-size-icon-sm);
+    width: var(--midas-size-icon);
+    height: var(--midas-size-icon);
   }
 }
 

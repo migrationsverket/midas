@@ -1,3 +1,37 @@
+## 1.1.60 (2026-06-01)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.9
+
+## 1.1.59 (2026-05-21)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.8
+
+## 1.1.58 (2026-05-12)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.7
+
+## 1.1.57 (2026-05-11)
+
+### 🩹 Fixes
+
+- **theme,components,select-styles:** swap icon and icon-sm size token values ([25a693d3ea2](https://github.com/migrationsverket/midas/commit/25a693d3ea2))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.6
+
+## 1.1.56 (2026-05-11)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.14.5
+
 ## 1.1.55 (2026-05-08)
 
 ### 🧱 Updated Dependencies

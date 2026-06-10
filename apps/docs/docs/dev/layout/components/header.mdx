@@ -3,6 +3,15 @@ title: Header
 description: Sidhuvud med stöd för logotyp, åtgärdsknappar och mobilmeny.
 ---
 
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
+<ComponentHeader
+  name='Header'
+  friendlyName='Sidhuvud, Applikationshuvud'
+  overrideStorybookPath='?path=/docs/layout-header--docs'
+  overrideHeadlessLink=''
+/>
+
 # Header
 
 Sidhuvudet innehåller logotypen och plats för åtgärdsknappar. På mobil används `MobileMenu` för att visa navigationen som ett drawer-mönster.

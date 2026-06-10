@@ -17,6 +17,7 @@ jobs:
   build:
     name: Lint, test and build packages
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -36,8 +37,22 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v5
 
-      - name: Install Playwright
-        run: npx playwright install chromium firefox --only-shell
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install chromium --with-deps
+        env:
+          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
+
+      - name: Install Playwright system deps
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
 
       - name: Build packages
         run: npx nx affected -t lint stylelint build

@@ -158,3 +158,166 @@ describe('given an invalid SearchField', async () => {
     expect(container.lastElementChild?.textContent).toContain(Invalid.args.errorMessage)
   })
 })
+
+// --- Form submission behaviour ---
+// These tests cover how SearchField interacts with a parent <form>.
+// The core contract: if onSubmit is provided, SearchField owns the submit
+// interaction and the form must not submit. If onSubmit is omitted,
+// SearchField should behave like a native <input> and let the form submit.
+
+describe('given a SearchField with onSubmit inside a <form>', async () => {
+  const handleFormSubmit = vi.fn()
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should fire onSubmit and NOT submit the form when Enter is pressed', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary onSubmit={handleSubmit} />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleSubmit).toHaveBeenCalledWith('hello')
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+
+  it('should fire onSubmit and NOT submit the form when the search button is clicked', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary onSubmit={handleSubmit} />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.click(page.getByRole('button').last())
+
+    expect(handleSubmit).toHaveBeenCalledWith('hello')
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+
+  it('should NOT fire onSubmit or submit the form when the value is empty', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary onSubmit={handleSubmit} />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleSubmit).not.toHaveBeenCalled()
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+
+  it('should NOT fire onSubmit or submit the form when isInvalid is true', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary onSubmit={handleSubmit} isInvalid />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleSubmit).not.toHaveBeenCalled()
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+})
+
+describe('given a SearchField without onSubmit inside a <form>', async () => {
+  const handleFormSubmit = vi.fn()
+
+  afterEach(() => {
+    vi.resetAllMocks()
+  })
+
+  it('should submit the form when Enter is pressed with a value', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleFormSubmit).toHaveBeenCalledOnce()
+  })
+
+  it('should NOT submit the form when Enter is pressed with an empty value', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+
+  it('should NOT submit the form when isInvalid is true', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary isInvalid />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+
+  it('should submit the form on Enter when showButton is false', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary showButton={false} />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.keyboard('[Enter]')
+
+    expect(handleFormSubmit).toHaveBeenCalledOnce()
+  })
+
+  it('should NOT submit the form when the search button is clicked (type=button)', async () => {
+    await render(
+      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+        <Primary />
+      </form>
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.click(page.getByRole('button').last())
+
+    expect(handleFormSubmit).not.toHaveBeenCalled()
+  })
+})
+
+describe('given a SearchField without onSubmit outside a <form>', async () => {
+  it('should do nothing when Enter is pressed', async () => {
+    // No errors should be thrown and no side effects should occur.
+    await render(<Primary />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('hello')
+    await userEvent.keyboard('[Enter]')
+
+    await expect.element(page.getByRole('searchbox')).toHaveValue('hello')
+  })
+})
