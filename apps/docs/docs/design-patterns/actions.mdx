@@ -1,0 +1,64 @@
+# Handlingar
+
+Detta mönster beskriver hur vi hanterar handlingar i våra system. Vi använder begreppet _handling_ för att beskriva ett medvetet initiativ från användaren för att göra något i systemet. Handlingar utförs typiskt via knappar eller menyalternativ.
+
+Vi skiljer mellan tre sorters handlingar:
+
+- tillgängliga handlingar: handlingar som alltid är möjliga att utföra
+- villkorade handlingar: handlingar som kräver specifika förutsättningar för att kunna utföras
+- otillgängliga handlingar: handlingar som inte är möjliga att utföra.
+
+## Tillgängliga handlingar
+
+Tillgängliga handlingar är den vanligaste typen. Den sortens handling utförs alltid när den initieras av användaren. Fel eller saknade förutsättningar kommuniceras efter användarens försök att utföra handlingen.
+
+### Användning
+
+De flesta tillgängliga handlingar behöver inte valideras, utan kan utföras direkt när användaren initierar dem.
+
+Typiska exempel på handlingar som inte behöver valideras:
+
+- användaren klickar på en knapp för att skapa ett nytt ärende
+- användaren väljer Ta bort i en kontextmeny och får en bekräftelsemodal.
+
+Typiska exempel på tillgängliga handlingar som kräver validering:
+
+- användaren skickar in ett formulär
+- användaren sparar data.
+
+### Krav på återkoppling
+
+- Eventuella fel ska, visuellt och i kod, kopplas till relevant innehåll/kontroll och vara tillgängliga för hjälpmedel.
+
+## Villkorade handlingar
+
+En villkorad handling är endast möjlig att utföra när vissa villkor är uppfyllda. Om villkoren inte är uppfyllda ska handlingen inte kunna utföras, men användaren ska få tydlig vägledning om vad som krävs för att kunna göra det.
+
+### Användning
+
+- När det inte är meningsfullt eller tillåtet att utföra handlingen om inte villkoren är uppfyllda.
+- När ett minsta antal val krävs av användaren (t.ex. markera minst ett objekt).
+
+### Krav på återkoppling
+
+- Återkopplingen ska visas omedelbart efter att användaren försökt utföra handlingen.
+- Återkopplingen ska vara tillgänglig för hjälpmedel.
+- Det ska tydligt framgå vad som saknas och hur användaren går vidare.
+
+## Otillgängliga handlingar
+
+:::warning
+En designriktlinje är att det inte ska finnas några otillgängliga handlingar i våra externa system och tjänster.
+:::
+
+En otillgänglig handling är en handling som användaren inte kan utföra i aktuell kontext och där användaren själv inte kan uppfylla kraven för att handlingen ska vara möjlig.
+
+### Användning
+
+- När användaren inte har rätt behörighetsnivå.
+- När funktionaliteten är avstängd i systemet.
+
+### Krav på återkoppling
+
+- En förklaring av varför handlingen är otillgänglig ska alltid finnas i direkt anslutning till komponenten som utför handlingen.
+- Förklaringen ska vara tillgänglig utan hover.
