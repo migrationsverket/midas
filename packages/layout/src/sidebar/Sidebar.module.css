@@ -3,10 +3,13 @@
   border-right: 1px solid var(--midas-border-color-subtle);
   flex-shrink: 0;
   transition: width var(--midas-transition-duration-fast) ease-out;
-  width: 15rem;
+  width: 300px;
 
   &.collapsed {
-    width: calc(32px + 48px);
+    width: calc(
+      var(--midas-size-icon) + 2 * var(--midas-space-70) +
+        var(--midas-space-10) + 2 * var(--midas-space-small)
+    );
   }
 
   @media (width <= 640px) {
@@ -25,24 +28,24 @@
 
 .sidebarTitle {
   display: block;
-  font-size: var(--midas-typography-font-size-20);
-  height: auto;
-  interpolate-size: allow-keywords;
+  font-size: var(--midas-typography-font-size-30);
+  font-weight: var(--midas-typography-weight-semi-bold);
+  line-height: var(--midas-typography-line-height-50);
   opacity: 1;
   overflow: hidden;
-  transition:
-    height var(--midas-transition-duration-fast) ease-out,
-    opacity var(--midas-transition-duration-instant) ease-out;
-
-  @starting-style {
-    height: 0;
-    opacity: 0;
-  }
+  white-space: nowrap;
 
   &.collapsed {
-    display: none;
-    height: 0;
     opacity: 0;
+    width: 0;
+  }
+}
+
+.collapseButton {
+  display: inline-flex;
+
+  &.collapsed {
+    transform: scaleX(-1);
   }
 }
 
@@ -61,6 +64,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    transition: none;
+  }
+
   .sidebar[data-transitioning] :global([data-badge]),
   .sidebar :global([data-badge]) {
     transition: none;
