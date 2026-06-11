@@ -39,7 +39,7 @@ export const ButtonLoadingExample = () => {
             description='Både för och efternamn'
           />
         </GridItem>
-        <GridItem size={{ xs: 12, sm: 12, md: 2, lg: 2 }}>
+        <GridItem size={{ xs: 12, sm: 12, md: 'auto', lg: 'auto' }}>
           <Button
             isPending={isPending}
             onPress={handlePress}
@@ -78,9 +78,7 @@ export const InlineSpinnerExample = () => {
           </div>
         </GridItem>
         <GridItem size='auto'>
-          <Button isDisabled={isChecking}>
-            {isChecking ? 'Skicka' : 'Skicka'}
-          </Button>
+          <Button isDisabled={isChecking}>Skicka</Button>
         </GridItem>
       </Grid>
     </div>
@@ -126,10 +124,10 @@ export const SkeletonExample = () => {
             <TextField label='Ange ditt namn' />
           )}
         </GridItem>
-        <GridItem size={3}>
+        <GridItem size='auto'>
           {isLoading ? (
             <Skeleton
-              width='100%'
+              width='120px'
               height='48px'
               isAnimated
             />
