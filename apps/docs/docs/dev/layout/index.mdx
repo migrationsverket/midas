@@ -252,7 +252,7 @@ Skissen nedan visar var komponenterna renderas
 
 ## Exempel
 
-Så här ser ett komplett upplägg ut med sidhuvud, sidomeny, huvudinnehåll och navbar:
+Så här ser ett komplett upplägg ut med sidhuvud, sidomeny och huvudinnehåll:
 
 <style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
 
@@ -270,7 +270,6 @@ import {
   Navigation,
   NavigationItem,
   NavigationLink,
-  Navbar,
 } from '@midas-ds/layout'
 import { House, Settings, Bell, User } from 'lucide-react'
 
@@ -309,28 +308,6 @@ export default function App() {
 
         <Main>{/* Ditt innehåll */}</Main>
       </LayoutContent>
-
-      <Navbar>
-        <Navigation>
-          <NavigationItem>
-            <NavigationLink
-              href='/'
-              icon={<House />}
-              isActive
-            >
-              Hem
-            </NavigationLink>
-          </NavigationItem>
-          <NavigationItem>
-            <NavigationLink
-              href='/installningar'
-              icon={<Settings />}
-            >
-              Inställningar
-            </NavigationLink>
-          </NavigationItem>
-        </Navigation>
-      </Navbar>
     </Layout>
   )
 }
