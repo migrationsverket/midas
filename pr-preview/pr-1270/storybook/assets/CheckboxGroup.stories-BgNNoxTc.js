@@ -1,0 +1,39 @@
+import{j as e}from"./iframe-D6gs3wS5.js";import{C as m}from"./CheckboxGroup-D_Vw4HEU.js";import{C as p}from"./Checkbox-mNyRrkkc.js";import"./preload-helper-PPVm8Dsz.js";import"./FieldError-Bf6pWkxo.js";import"./utils-DJQYVgmX.js";import"./clsx-B-dksMZM.js";import"./Text-BlJm85ZR.js";import"./useFocusRing-CFifySwi.js";import"./index-eJbc0aTW.js";import"./index-Ce1ePnt0.js";import"./clsx-Ciqy0D92.js";import"./Text-DqH78Bzr.js";import"./Label-DQtpeuL0.js";import"./Button-CbEqyxyu.js";import"./Hidden-Chxa0iBH.js";import"./useLabel-cgRMBKD-.js";import"./useLabels-5rE94Eky.js";import"./useButton--ll78HR1.js";import"./Dialog-C98XP9pU.js";import"./RSPContexts-h4eiuWjg.js";import"./OverlayArrow-Cu6bIr93.js";import"./useResizeObserver-DN7Cfe0F.js";import"./useControlledState-CUa1KmDW.js";import"./Collection-BPj3IxkI.js";import"./index-MBhbw5TK.js";import"./Separator-DFBkIcjx.js";import"./SelectionManager-D39yDHWQ.js";import"./useEvent-BmTKd3HL.js";import"./scrollIntoView-RTV5yabh.js";import"./SelectionIndicator-BbY2R1af.js";import"./useDescription-ChQWj-NI.js";import"./ListKeyboardDelegate-B-UkNWQd.js";import"./PressResponder-65KHhKmn.js";import"./useLocalizedStringFormatter-lMnXoQqL.js";import"./LocalizedStringFormatter-wnoc2RuQ.js";import"./animation-CdlQofa4.js";import"./getScrollParent-Do3-zmpB.js";import"./VisuallyHidden-DqFWHqpC.js";import"./ModalOverlay-Dy0Gqqwj.js";import"./x-JmNjUnkH.js";import"./createLucideIcon-Cx44WpFS.js";import"./useLocalizedStringFormatter-CkggrktT.js";import"./Heading-DzMuGclR.js";import"./Button-BVEXhnip.js";import"./Button.module-BB7N-cLd.js";import"./info-CHS89hJ0.js";import"./Popover-BFkht2ft.js";import"./Form-9Z_XXzsk.js";import"./useField-D_VgcOBp.js";import"./check-Cp-d3wef.js";import"./useToggleState-9Ois5ZbV.js";const pr={title:"Components/Checkbox/CheckboxGroup",component:m,parameters:{layout:"centered"},args:{isInvalid:!1,isDisabled:!1,isRequired:!1,isReadOnly:!1,label:"Etikett",description:"Beskrivning",errorMessage:"Du måste välja en frukt",errorPosition:"top",children:["Banan","Apple","Mango"].map(r=>e.jsx(p,{value:r,children:r},r))},tags:["autodocs"]},o={},a={args:{showSelectAll:!0}},t={args:{showSelectAll:!0,selectAllLabel:"SELECT ALL"},tags:["!dev","!autodocs","!snapshot"],parameters:{chromatic:{disableSnapshot:!0}},render:({...r})=>e.jsxs(m,{...r,children:[e.jsx(p,{value:"banana",children:"Banana"}),e.jsx(p,{value:"apple",children:"Apple"}),e.jsx("div",{children:"I'm not a checkbox"})]})},s={args:{isDisabled:!0}},i={args:{isReadOnly:!0,showSelectAll:!0,value:["Mango"]}},n={args:{isInvalid:!0}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:"{}",...o.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {
+    showSelectAll: true
+  }
+}`,...a.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  args: {
+    showSelectAll: true,
+    selectAllLabel: 'SELECT ALL'
+  },
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  render: ({
+    ...args
+  }) => {
+    return <CheckboxGroup {...args}>
+        <Checkbox value='banana'>Banana</Checkbox>
+        <Checkbox value='apple'>Apple</Checkbox>
+        <div>I'm not a checkbox</div>
+      </CheckboxGroup>;
+  }
+}`,...t.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {
+    isDisabled: true
+  }
+}`,...s.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {
+    isReadOnly: true,
+    showSelectAll: true,
+    value: ['Mango']
+  }
+}`,...i.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`{
+  args: {
+    isInvalid: true
+  }
+}`,...n.parameters?.docs?.source}}};const mr=["Primary","ShowSelectAll","SelectAllInteraction","Disabled","ReadOnly","Invalid"];export{s as Disabled,n as Invalid,o as Primary,i as ReadOnly,t as SelectAllInteraction,a as ShowSelectAll,mr as __namedExportsOrder,pr as default};
