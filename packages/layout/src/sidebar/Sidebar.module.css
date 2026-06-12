@@ -6,10 +6,7 @@
   width: 300px;
 
   &.collapsed {
-    width: calc(
-      var(--midas-size-icon) + 2 * var(--midas-space-70) +
-        var(--midas-space-10) + 2 * var(--midas-space-small)
-    );
+    width: calc(var(--midas-size-icon) + 4 * var(--midas-space-small));
   }
 
   @media (width <= 640px) {
@@ -22,7 +19,7 @@
 
   &.collapsed {
     justify-content: center;
-    padding: var(--midas-space-small);
+    padding: var(--midas-space-small) var(--midas-space-30);
   }
 }
 

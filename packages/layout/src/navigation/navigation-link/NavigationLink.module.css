@@ -32,6 +32,7 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: var(--midas-space-50) var(--midas-space-small);
+    padding-inline-start: var(--midas-space-30);
     width: 100%;
 
     &[data-active] {
@@ -40,9 +41,6 @@
     }
 
     &.collapsed {
-      padding-inline-start: calc(
-        var(--midas-space-70) + var(--midas-space-10) / 2
-      );
       width: 100%;
     }
   }
