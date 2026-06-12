@@ -14,10 +14,13 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 # Navbar
 
-En navigationsbar längst ned på sidan, primärt avsedd för mobilanvändare. Håll antalet länkar till 3–5 för att undvika trängsel på små skärmar.
-`Navbar` renderar ett semantiskt `<footer>`-element.
+En navigation som ligger längst ned på sidan. Används för att få applikationen att likna en mobilapp. `Navbar` renderar ett semantiskt `<footer>`-element.
 
-## Användning
+## Riktlinjer
+
+Navbar ska inte användas om applikationen behöver mer än 5 länkar eftersom det gör det för trångt på små skärmar.
+
+## Exempel
 
 ```tsx
 import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
