@@ -86,6 +86,17 @@ import '@midas-ds/layout/default.css'
 
 Detta mönster passar för applikationer som inte har någon navigation.
 
+```tsx
+import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
+import { Bell, User } from 'lucide-react'
+;<Header>
+  <HeaderActions>
+    <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+    <HeaderAction icon={<User />}>Min profil</HeaderAction>
+  </HeaderActions>
+</Header>
+```
+
 ### Header och Sidebar
 
 [Header](./components/header) med [Sidebar](./components/sidebar) är ett av det vanligaste kombinationerna i våra applikationer. Det ger möjlighet att ha många navigationslänkar i Sidebar och handlingar (tex logga ut och inställningar) i Header
