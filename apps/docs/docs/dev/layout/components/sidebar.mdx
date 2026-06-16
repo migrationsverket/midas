@@ -14,7 +14,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 # Sidebar
 
-En kollapsbar sidomeny som visas på desktop. På mobil döljs den automatiskt — använd `MobileMenu` i `Header` för mobilnavigering.
+Sidebar är huvudnavigationen i layoutpaketet. På mobil döljs Sidebar automatiskt. Använd `MobileMenu` i `Header` för mobilnavigering.
 
 ## Grundläggande användning
 
@@ -52,9 +52,9 @@ export default function App() {
 }
 ```
 
-## Kollapsläge
+## Ihopfällt läge
 
-Sidomenyn kan kollapsa ihop till enbart ikoner. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
+Sidomenyn kan fällas ihop ihop till enbart ikoner. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
 
 ### Okontrollerat
 
@@ -83,7 +83,7 @@ const [isCollapsed, setIsCollapsed] = useState(false)
 
 :::note
 
-När sidomenyn är kollapsad visas etiketten i `NavigationLink` som en tooltip vid hover. Se till att varje länk alltid har en `children`-prop (etikett) — den är nödvändig för tillgänglighet i kollapsad vy.
+När sidomenyn är kollapsad visas etiketten i `NavigationLink` som en tooltip vid hover. Se till att varje länk alltid har en `children`-prop (etikett) eftersom det är nödvändigt för tillgänglighet.
 
 :::
 
