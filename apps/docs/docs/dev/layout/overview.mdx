@@ -105,13 +105,144 @@ import { Bell, User } from 'lucide-react'
 
 Kombinationen [Header](./components/header), [Sidebar](./components/sidebar) och [Panel](./components/panel) det mest kompletta mönstret. Det är det vanligaste för våra mer avancerade applikationer, där Panel används för att visa kontextuell information t.ex. notifieringar eller mer infomation om element i en lista.
 
+<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
+
+<div className="snabbstart">
+
+```tsx
+import {
+  Layout,
+  LayoutContent,
+  Main,
+  Header,
+  HeaderActions,
+  HeaderAction,
+  Sidebar,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  PanelProvider,
+  PanelRegion,
+} from '@midas-ds/layout'
+import { House, Settings, Bell, User } from 'lucide-react'
+
+export default function App() {
+  return (
+    <PanelProvider panelBehavior='replace'>
+      <Layout>
+        <Header>
+          <HeaderActions>
+            <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
+            <HeaderAction icon={<User />}>Min profil</HeaderAction>
+          </HeaderActions>
+        </Header>
+
+        <LayoutContent>
+          <Sidebar title='Min applikation'>
+            <Navigation>
+              <NavigationItem>
+                <NavigationLink
+                  href='/'
+                  icon={<House />}
+                  isActive
+                >
+                  Hem
+                </NavigationLink>
+              </NavigationItem>
+              <NavigationItem>
+                <NavigationLink
+                  href='/installningar'
+                  icon={<Settings />}
+                >
+                  Inställningar
+                </NavigationLink>
+              </NavigationItem>
+            </Navigation>
+          </Sidebar>
+
+          <Main>{/* Ditt innehåll */}</Main>
+          <PanelRegion />
+        </LayoutContent>
+      </Layout>
+    </PanelProvider>
+  )
+}
+```
+
+</div>
+
 ### Header och Navbar
 
 Detta mönster är reserverat för applikationer som ska upplevas som mobilappar t.ex. Min Sida och inte tänkt för interna desktopapplikationer. Här ersätts Sidebar med [Navbar](./components/navbar) som ligger längst ner på sidan. [Navbar](./components/navbar) har endast plats för ett begränsat antal (max 5) menyalternativ eftersom det inte får plats fler på en liten skärm.
 
 ### Header, Navbar och Panel
 
-Analogt med möstret för Header, Sidebar och Panel men Sidebar är utbytt mot [Navbar](./components/navbar).
+Analogt med möstret för Header, Sidebar och Panel.
+
+<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
+
+<div className="snabbstart">
+
+```tsx
+import {
+  Layout,
+  LayoutContent,
+  Main,
+  Header,
+  HeaderActions,
+  HeaderAction,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  Navbar,
+  PanelProvider,
+  PanelRegion,
+} from '@midas-ds/layout'
+import { House, Settings, Bell, User } from 'lucide-react'
+
+export default function App() {
+  return (
+    <PanelProvider panelBehavior='replace'>
+      <Layout>
+        <Header>
+          <HeaderActions>
+            <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+            <HeaderAction icon={<User />}>Min profil</HeaderAction>
+          </HeaderActions>
+        </Header>
+
+        <LayoutContent>
+          <Main>{/* Ditt innehåll */}</Main>
+          <PanelRegion />
+        </LayoutContent>
+        <Navbar>
+          <Navigation>
+            <NavigationItem>
+              <NavigationLink
+                href='/'
+                icon={<House />}
+                isActive
+              >
+                Hem
+              </NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink
+                href='/installningar'
+                icon={<Settings />}
+              >
+                Inställningar
+              </NavigationLink>
+            </NavigationItem>
+          </Navigation>
+        </Navbar>
+      </Layout>
+    </PanelProvider>
+  )
+}
+```
+
+</div>
 
 ## Struktur
 
@@ -264,67 +395,6 @@ Skissen nedan visar var komponenterna renderas
 ## Exempel
 
 Så här ser ett komplett upplägg ut med sidhuvud, sidomeny och huvudinnehåll:
-
-<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
-
-<div className="snabbstart">
-
-```tsx
-import {
-  Layout,
-  LayoutContent,
-  Main,
-  Header,
-  HeaderActions,
-  HeaderAction,
-  Sidebar,
-  Navigation,
-  NavigationItem,
-  NavigationLink,
-} from '@midas-ds/layout'
-import { House, Settings, Bell, User } from 'lucide-react'
-
-export default function App() {
-  return (
-    <Layout>
-      <Header>
-        <HeaderActions>
-          <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
-          <HeaderAction icon={<User />}>Min profil</HeaderAction>
-        </HeaderActions>
-      </Header>
-
-      <LayoutContent>
-        <Sidebar title='Min applikation'>
-          <Navigation>
-            <NavigationItem>
-              <NavigationLink
-                href='/'
-                icon={<House />}
-                isActive
-              >
-                Hem
-              </NavigationLink>
-            </NavigationItem>
-            <NavigationItem>
-              <NavigationLink
-                href='/installningar'
-                icon={<Settings />}
-              >
-                Inställningar
-              </NavigationLink>
-            </NavigationItem>
-          </Navigation>
-        </Sidebar>
-
-        <Main>{/* Ditt innehåll */}</Main>
-      </LayoutContent>
-    </Layout>
-  )
-}
-```
-
-</div>
 
 ## Exempelapp
 
