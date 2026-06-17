@@ -6,11 +6,13 @@ sidebar_position: 2
 
 # Header och Sidebar
 
-[Header](./components/header) med [Sidebar](./components/sidebar) är standardmönstret för enklare desktopapplikationer. Det ger möjlighet att ha navigation via Sidebar och globala handlingar i Header.
+Kombinationen [Header](/dev/layout/components/header) och [Sidebar](/dev/layout/components/sidebar) är standardmönstret för enklare desktopapplikationer. Det ger möjlighet att ha navigation via Sidebar och globala handlingar i Header.
 
-:::caution
-På mobila enheter göms Sidebar automatiskt. Därför måste navigation via `MobileMenu` alltid inkluderas i trädet. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`.
-:::
+## Navigation
+
+När fönstret eller skärmen är under 640px i bredd göms Sidebar automatiskt. För att stödja navigation för alla fönster- och skärmstorlekar måste navigation via [MobileMenu](/dev/layout/components/header/#mobilemenu) alltid inkluderas i trädet. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. För att undvika kodduplicering rekommenderas att lägga navigationsinnehållet i en delad komponent och använda den till MobileMenu och Sidebar.
+
+## Exempel
 
 <style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
 
