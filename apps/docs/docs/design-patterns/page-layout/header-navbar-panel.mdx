@@ -1,0 +1,74 @@
+---
+id: header-navbar-panel
+title: Header, Navbar och Panel
+sidebar_position: 5
+---
+
+# Header, Navbar och Panel
+
+Analogt med möstret för Header, Sidebar och Panel.
+
+<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
+
+<div className="snabbstart">
+
+```tsx
+import {
+  Layout,
+  LayoutContent,
+  Main,
+  Header,
+  HeaderActions,
+  HeaderAction,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  Navbar,
+  PanelProvider,
+  PanelRegion,
+} from '@midas-ds/layout'
+import { House, Settings, Bell, User } from 'lucide-react'
+
+export default function App() {
+  return (
+    <PanelProvider panelBehavior='replace'>
+      <Layout>
+        <Header>
+          <HeaderActions>
+            <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+            <HeaderAction icon={<User />}>Min profil</HeaderAction>
+          </HeaderActions>
+        </Header>
+
+        <LayoutContent>
+          <Main>{/* Ditt innehåll */}</Main>
+          <PanelRegion />
+        </LayoutContent>
+        <Navbar>
+          <Navigation>
+            <NavigationItem>
+              <NavigationLink
+                href='/'
+                icon={<House />}
+                isActive
+              >
+                Hem
+              </NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink
+                href='/installningar'
+                icon={<Settings />}
+              >
+                Inställningar
+              </NavigationLink>
+            </NavigationItem>
+          </Navigation>
+        </Navbar>
+      </Layout>
+    </PanelProvider>
+  )
+}
+```
+
+</div>

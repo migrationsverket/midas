@@ -1,0 +1,19 @@
+---
+id: header
+title: Bara Header
+sidebar_position: 1
+---
+
+# Bara Header
+
+Sidlayout för applikationer som inte har någon navigation.
+
+```tsx
+import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
+import { LogOut } from 'lucide-react'
+;<Header>
+  <HeaderActions>
+    <HeaderAction icon={<LogOut />}>Logga ut</HeaderAction>
+  </HeaderActions>
+</Header>
+```
