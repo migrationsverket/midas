@@ -15,9 +15,7 @@ import { PropTable } from '@site/src/components/PropsTable'
 
 # Panel
 
-En animerad sidopanel som visas bredvid `Main` i `LayoutContent`. Vanlig användning är för detaljvyer eller annan kontextuell information.
-
-## Enkel panel
+Komponent som används för att kunna visa fördjupande information eller ge plats för sekundära verktyg som till exempel filter, utan att behöva navigera bort från huvudinnehållet. Panelen visas alltid till höger om huvudinnehållet.
 
 ```tsx
 import { Layout, LayoutContent, Main, Panel } from '@midas-ds/layout'
@@ -54,7 +52,21 @@ function App() {
 
 :::
 
-## Panel med egna åtgärder
+## Riktlinjer
+
+- Panelen stängs endast av panelens stängknapp, inte när användaren trycker utanför panelen. Ett av panelen syften är att användaren ska kunna vara kvar vid huvudinnehållet och interagera med det samtidigt som man visar den fördjupande informationen i panelen.
+- Standardbeteendet för `panelBehavior` är `replace` och detta rekommenderas för de flesta fall. Vi vill undvika att en ny panel läggs ovanpå en tidigare panel, eftersom det gör att användaren måste stänga flera paneler efter varandra för att komma till ursprungsläget.
+
+## Varianter
+
+Komponenten finns i två olika varianter. `overlay` där panelen lägger sig ovanför huvudinnehållet och `push` som ligger i samma nivå som huvudinnehållet och trycker ihop innehållet. Välj variant, overaly eller push baserat på vad som fungerar bäst utifrån användningssituationen, innehållshierarkin och användningsflödet.
+
+- `overlay` passar bäst när panelens innehåll behöver få tillfälligt fokus jämfört med huvudinnehållet.
+- `push` passar bäst när panelens innehåll behöver vara tillgängligt under längre tid, i mer ihållande flöden. Det kan dock vara lämpligt att växla till `overlay` vid smalare brytpunkter som en del i en responsiv design.
+
+## Implementation
+
+### Panel med egna åtgärder
 
 Använd `actions`-propen för att lägga till egna knappar i panelens header, till höger om titeln och till vänster om stängknappen.
 
@@ -80,7 +92,11 @@ function App() {
           isOpen={isOpen}
           onOpenChange={setIsOpen}
           actions={
-            <Button variant='icon' size='medium' aria-label='Fler alternativ'>
+            <Button
+              variant='icon'
+              size='medium'
+              aria-label='Fler alternativ'
+            >
               <Ellipsis size={20} />
             </Button>
           }
@@ -93,19 +109,12 @@ function App() {
 }
 ```
 
-## Flera paneler med PanelProvider
+### Flera paneler med PanelProvider
 
 När du har flera paneler som kan öppnas och stängas oberoende av varandra, använd `PanelProvider` och `usePanels`-hooken.
 
 ```tsx
-import {
-  Layout,
-  LayoutContent,
-  Main,
-  PanelProvider,
-  PanelRegion,
-  usePanels,
-} from '@midas-ds/layout'
+import { Layout, LayoutContent, Main, PanelProvider, PanelRegion, usePanels } from '@midas-ds/layout'
 import { Button } from '@midas-ds/components'
 
 function PanelControls() {
@@ -113,12 +122,8 @@ function PanelControls() {
 
   return (
     <>
-      <Button onPress={() => addPanel({ id: 'panel-a', title: 'Panel A' })}>
-        Öppna Panel A
-      </Button>
-      <Button onPress={() => addPanel({ id: 'panel-b', title: 'Panel B' })}>
-        Öppna Panel B
-      </Button>
+      <Button onPress={() => addPanel({ id: 'panel-a', title: 'Panel A' })}>Öppna Panel A</Button>
+      <Button onPress={() => addPanel({ id: 'panel-b', title: 'Panel B' })}>Öppna Panel B</Button>
     </>
   )
 }
@@ -139,25 +144,16 @@ function App() {
 }
 ```
 
-`replace` är standard och rekommenderas för de flesta fall. I applikationer där flera paneler ska kunna leva parallellt kan `panelBehavior` sättas till `bring-to-front` eller `pop-to` för att styra hur panelerna hanteras när de aktiveras.
-
 ```tsx
-<PanelProvider panelBehavior='bring-to-front'> {/* replace | bring-to-front | pop-to */}
+<PanelProvider panelBehavior='replace'> {/* replace | bring-to-front | pop-to */}
 ```
 
-## Detaljvy — byta innehåll utan animation
+### Byt innehåll utan animation
 
 Använd ett stabilt `id` när du anropar `addPanel` för att uppdatera panelinnehållet på plats utan att animera om. React känner igen id:t och uppdaterar titel och innehåll direkt.
 
 ```tsx
-import {
-  Layout,
-  LayoutContent,
-  Main,
-  PanelProvider,
-  PanelRegion,
-  usePanels,
-} from '@midas-ds/layout'
+import { Layout, LayoutContent, Main, PanelProvider, PanelRegion, usePanels } from '@midas-ds/layout'
 
 const items = [
   { id: '1', name: 'Ansökan #1042', status: 'Inlämnad' },
@@ -175,7 +171,7 @@ function ItemList() {
           <button
             onClick={() =>
               addPanel({
-                id: 'detail',       // same id every time → no re-animation
+                id: 'detail', // same id every time → no re-animation
                 title: item.name,
                 children: <p>Status: {item.status}</p>,
               })
