@@ -45,9 +45,9 @@ import { Bell, User } from 'lucide-react'
 </Header>
 ```
 
-### MobileMenu
+## Navigering på små skärmar/fönster
 
-För att ge mobilanvändare tillgång till navigationen används `MobileMenu`. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. Det är därmed säkert att alltid inkludera den i trädet.
+Navigering på små skärmar/webbläsarfönster görs via Header och komponenten `MobileMenu`. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. Det är därmed säkert att alltid inkludera den i trädet.
 
 ```tsx
 import { Header, MobileMenu, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
