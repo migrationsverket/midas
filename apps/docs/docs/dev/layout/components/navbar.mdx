@@ -1,6 +1,6 @@
 ---
 title: Navbar
-description: Navigationsbar längst ned på sidan för mobila enheter.
+description: Navigationsbar längst ned på sidan
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -14,9 +14,13 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 # Navbar
 
-En navigationsbar längst ned på sidan, primärt avsedd för mobilanvändare. Håll antalet länkar till 3–5 för att undvika trängsel på små skärmar.
+En navigation som ligger längst ned på sidan. Används för att få applikationen att likna en mobilapp. `Navbar` renderar ett semantiskt `<footer>`-element.
 
-## Användning
+## Riktlinjer
+
+Navbar ska inte användas om applikationen behöver mer än 5 länkar eftersom det gör det för trångt på små skärmar.
+
+## Exempel
 
 ```tsx
 import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -56,26 +60,3 @@ export default function App() {
   )
 }
 ```
-
-
-## Sidebar och Navbar tillsammans
-
-`Sidebar` döljer sig automatiskt på mobila enheter. `Navbar` renderar alltid — du ansvarar själv för att visa eller dölja den beroende på skärmstorlek.
-
-```tsx
-<Layout>
-  <Header>...</Header>
-  <LayoutContent>
-    <Sidebar>
-      <Navigation>{/* Fullständig navigering på desktop */}</Navigation>
-    </Sidebar>
-    <Main>...</Main>
-  </LayoutContent>
-
-  <Navbar>
-    <Navigation>{/* Komprimerad navigering på mobil */}</Navigation>
-  </Navbar>
-</Layout>
-```
-
-`Navbar` renderar ett semantiskt `<footer>`-element.
