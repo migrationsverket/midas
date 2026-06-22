@@ -27,6 +27,24 @@ import { Logo } from '@midas-ds/components'
 </Header>
 ```
 
+## Globala handlingar
+
+I Header läggs globala handlingar, alltså handlingar som användaren ska kunna komma åt från alla sidor i applikationen. Typiska globala handlingar är Logga ut och Inställningar. Dessa läggs till i Header via `HeaderActions`. Varje global handling (`HeaderAction`) ska ha en ikon och en beskrivande etikett.
+
+```tsx
+import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
+import { Bell, User } from 'lucide-react'
+```
+
+```tsx
+<Header>
+  <HeaderActions>
+    <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
+    <HeaderAction icon={<User />}>Min profil</HeaderAction>
+  </HeaderActions>
+</Header>
+```
+
 ### MobileMenu
 
 För att ge mobilanvändare tillgång till navigationen används `MobileMenu`. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. Det är därmed säkert att alltid inkludera den i trädet.
@@ -54,24 +72,6 @@ function AppHeader() {
     </Header>
   )
 }
-```
-
-## Globala handlingar
-
-I Header läggs globala handlingar, alltså handlingar som användaren ska kunna komma åt från alla sidor i applikationen. Typiska handlingar är Logga ut, Inställningar och språkväxlare. Dessa styrs via `HeaderActions`. `HeaderAction` är en enskild knapp med ikon och/eller etikett.
-
-```tsx
-import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
-import { Bell, User } from 'lucide-react'
-```
-
-```tsx
-<Header>
-  <HeaderActions>
-    <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
-    <HeaderAction icon={<User />}>Min profil</HeaderAction>
-  </HeaderActions>
-</Header>
 ```
 
 ## Props
