@@ -228,6 +228,17 @@ Skissen nedan visar var komponenterna renderas
 
 </div>
 
+## Val av sidlayout
+
+Tabellen nedan beskriver vilken sidlayout som ska användas för olika typer av applikationer.
+
+| Typ av applikation                                                 | Sidlayout                                                                      |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| En enkel one-page applikation utan navigation (t.ex. ett formulär) | [Endast Header](/design-patterns/page-layout/only-header)                      |
+| Intern desktopapplikation                                          | [Header, Sidebar och Panel](/design-patterns/page-layout/header-sidenar-panel) |
+| Extern desktopapplikation                                          | [Header, Sidebar och Panel](/design-patterns/page-layout/header-sidenar-panel) |
+| Extern applikation som ska upplevas som en mobilapp                | [Header, Navbar och Panel](/design-patterns/page-layout/header-sidenar-panel)  |
+
 ## Exempelapp
 
 Vi håller på att ta fram en fristående exempelapp med Vite som visar paketet i ett realistiskt sammanhang. Under tiden finns [`apps/next`](https://github.com/migrationsverket/midas/tree/main/apps/next) i monorepon, en Next.js-app som använder paketet fullt ut och är öppen att titta på för inspiration.
