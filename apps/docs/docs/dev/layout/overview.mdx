@@ -228,6 +228,74 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
 
 </div>
 
+## Grundstrukturen
+
+För att bygga en fungerande sida behöver använda tre grundkomponenter som utgör stommen i ramverket. Genom att kombinera grundstrukturen med övriga komponenter i ramverket är det enkelt att bygga [de rekommenderade sidlayouterna](#val-av-sidlayout).
+
+### Layout
+
+Den yttersta wrappern som sätter upp det globala CSS-gridet för skärmen. Den ser till på att `Header` hamnar i toppen och om det finns en `Navbar` så läggs den längst ner på skärmen.
+
+```tsx
+import { Layout } from '@midas-ds/layout'
+```
+
+```tsx
+<Layout>{/* Header, LayoutContent, Navbar */}</Layout>
+```
+
+### LayoutContent
+
+En wrapper som ligger inuti `Layout`. Den ansvarar för att lägga `Sidebar`, huvudinnehållet och `Panel` bredvid varandra.
+
+```tsx
+import { Layout, LayoutContent, Main } from '@midas-ds/layout'
+```
+
+```tsx
+<Layout>
+  <LayoutContent>
+    <Sidebar>...</Sidebar>
+    <Main>...</Main>
+  </LayoutContent>
+</Layout>
+```
+
+### Main
+
+Här läggs sidans huvudinnehåll. Detta renderar ett semantiskt `<main>`-element.
+
+```tsx
+import { Main } from '@midas-ds/layout'
+```
+
+```tsx
+<Main>
+  <h1>Rubrik</h1>
+  <p>Sidans innehåll</p>
+</Main>
+```
+
+## Exempel
+
+Här är ett exempel på det minsta som krävs för att komma igång:
+
+```tsx
+import { Layout, LayoutContent, Main, Header } from '@midas-ds/layout'
+
+export const AppSkeleton = () => {
+  return (
+    <Layout>
+      <Header>{/* Logotyp, globala handlingar och navigering på små skärmar*/}</Header>
+
+      <LayoutContent>
+        <Main>{/* Applikationens huvudinnehåll */}</Main>
+      </LayoutContent>
+    </Layout>
+  )
+}
+```
+
 ## Val av sidlayout
 
 Tabellen nedan beskriver vilken sidlayout som ska användas för olika typer av applikationer.
@@ -248,3 +316,7 @@ Vi håller på att ta fram en fristående exempelapp med Vite som visar paketet 
 Vissa komponenter i paketet (bl.a. `Header`) kräver `'use client'` i Next.js App Router. Använd dem i klientkomponenter eller wrappa dem i en egen `'use client'`-komponent. Se [`apps/next`](https://github.com/migrationsverket/midas/tree/main/apps/next) för ett fungerande exempel.
 
 :::
+
+```
+
+```
