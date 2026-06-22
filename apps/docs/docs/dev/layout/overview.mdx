@@ -228,6 +228,17 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
 
 </div>
 
+## Val av sidlayout
+
+Tabellen nedan beskriver vilken sidlayout som ska användas för olika typer av applikationer.
+
+| Typ av applikation                                                 | Sidlayout                                                                      |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| En enkel one-page applikation utan navigation (t.ex. ett formulär) | [Endast Header](/design-patterns/page-layout/only-header)                      |
+| Intern desktopapplikation                                          | [Header, Sidebar och Panel](/design-patterns/page-layout/header-sidenar-panel) |
+| Extern desktopapplikation                                          | [Header, Sidebar och Panel](/design-patterns/page-layout/header-sidenar-panel) |
+| Extern applikation som ska upplevas som en mobilapp                | [Header, Navbar och Panel](/design-patterns/page-layout/header-sidenar-panel)  |
+
 ## Grundstrukturen
 
 För att bygga en fungerande sida behöver använda tre grundkomponenter som utgör stommen i ramverket. Genom att kombinera grundstrukturen med övriga komponenter i ramverket är det enkelt att bygga [de rekommenderade sidlayouterna](#val-av-sidlayout).
@@ -295,17 +306,6 @@ export const AppSkeleton = () => {
   )
 }
 ```
-
-## Val av sidlayout
-
-Tabellen nedan beskriver vilken sidlayout som ska användas för olika typer av applikationer.
-
-| Typ av applikation                                                 | Sidlayout                                                                      |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| En enkel one-page applikation utan navigation (t.ex. ett formulär) | [Endast Header](/design-patterns/page-layout/only-header)                      |
-| Intern desktopapplikation                                          | [Header, Sidebar och Panel](/design-patterns/page-layout/header-sidenar-panel) |
-| Extern desktopapplikation                                          | [Header, Sidebar och Panel](/design-patterns/page-layout/header-sidenar-panel) |
-| Extern applikation som ska upplevas som en mobilapp                | [Header, Navbar och Panel](/design-patterns/page-layout/header-sidenar-panel)  |
 
 ## Exempelapp
 
