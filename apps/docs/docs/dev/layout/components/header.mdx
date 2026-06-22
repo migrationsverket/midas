@@ -19,7 +19,10 @@ Sidhuvudet innehåller logotypen och plats för globala handlingar. Renderar ett
 ```tsx
 import { Header } from '@midas-ds/layout'
 import { Logo } from '@midas-ds/components'
-;<Header>
+```
+
+```tsx
+<Header>
   <Logo />
 </Header>
 ```
@@ -60,7 +63,10 @@ I Header läggs globala handlingar, alltså handlingar som användaren ska kunna
 ```tsx
 import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
 import { Bell, User } from 'lucide-react'
-;<Header>
+```
+
+```tsx
+<Header>
   <HeaderActions>
     <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
     <HeaderAction icon={<User />}>Min profil</HeaderAction>
