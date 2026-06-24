@@ -4,7 +4,7 @@ description: Navigationskomponenter för sidomeny och navbar.
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { NavigationBadgeExample, NavigationExample } from '@site/src/components/examples/layout/NavigationExamples'
+import { NavigationBadgeExample } from '@site/src/components/examples/layout/NavigationExamples'
 
 <ComponentHeader
   name='NavigationLink'
@@ -13,7 +13,13 @@ import { NavigationBadgeExample, NavigationExample } from '@site/src/components/
   overrideHeadlessLink=''
 />
 
-Navigationskomponent som används både i [Sidebar](/dev/layout/components/sidebar), [Navbar](/dev/layout/components/navbar) och [MobileMenu](/dev/layout/components/header/#mobilemenu) men med olika utseende beroende på kontext. Navigation anpassar automatiskt utseendet efter var den befinner sig.
+# Navigation
+
+Navigationskomponenterna används både i `Sidebar` och i `Navbar`. De är identiska — kontexten avgör utseendet.
+
+## Navigation
+
+Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statisk och dynamisk rendering via Collections.
 
 ```tsx
 import { Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -47,11 +53,9 @@ export default function App() {
 }
 ```
 
-## Skapa en navigeringsmeny
+## NavigationLink
 
-För att skapa en navigeringsmeny behövs tre komponenter: `Navigation`, `NavigationItem` och `NavigationLink`. `Navigation` är en wrapper som renderar ett `<nav>`-element med `<ul>` inuti. Den stödjer både statisk och dynamisk rendering via Collections. `NavigationItem` är en wrapper som renderar ett `<li>`-element och används för att gruppera `NavigationLinks` och eventuella undermenyer.
-
-`NavigationLink` är själva länken som renderas som `<a>`-element och representerar ett menyalternativ i navigationen. De ska alltid ha både ikon och etikett.
+En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt efter om den befinner sig i en `Sidebar` eller `Navbar`.
 
 ```tsx
 <NavigationLink
@@ -63,44 +67,22 @@ För att skapa en navigeringsmeny behövs tre komponenter: `Navigation`, `Naviga
 </NavigationLink>
 ```
 
-<NavigationExample />
+### Props
 
-### Undermenyer
-
-För att skapa undermenyer används `NavigationSubMenu` för de underliggande länkarna och placeras under ett överordnat `NavigationItem`.
-
-```tsx
-<NavigationItem>
-  <NavigationLink
-    href='/administration'
-    icon={<Settings />}
-  >
-    Administration
-  </NavigationLink>
-  <NavigationSubMenu>
-    <NavigationItem>
-      <NavigationLink
-        href='/anvandare'
-        icon={<Users />}
-      >
-        Användare
-      </NavigationLink>
-    </NavigationItem>
-    <NavigationItem>
-      <NavigationLink
-        href='/roller'
-        icon={<Shield />}
-      >
-        Roller
-      </NavigationLink>
-    </NavigationItem>
-  </NavigationSubMenu>
-</NavigationItem>
-```
+| Prop         | Typ           | Standard | Beskrivning                                                        |
+| ------------ | ------------- | -------- | ------------------------------------------------------------------ |
+| `icon`       | `ReactNode`   | —        | **Obligatorisk.** Ikon för länken                                  |
+| `children`   | `ReactNode`   | —        | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
+| `isActive`   | `boolean`     | `false`  | Markerar länken som aktiv sida                                     |
+| `href`       | `string`      | —        | URL (standard)                                                     |
+| `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
+| `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
 
 ### Notisindikator (Badge)
 
-För att visa en notisindikator på ett menyalternativ kan du använda [Badge](/components/badge) genom att skicka in `BadgeContainer` runt ikonen och `Badge` till NavigationLinks `icon`-prop.
+Skicka in `BadgeContainer` som `icon`-prop för att visa en notisindikator på länken.
+
+<NavigationBadgeExample />
 
 ```tsx
 import { Badge, BadgeContainer } from '@midas-ds/components'
@@ -121,11 +103,9 @@ import { Bell } from 'lucide-react'
 </NavigationItem>
 ```
 
-<NavigationBadgeExample />
+## NavigationSection
 
-### Gruppera menyalternativ
-
-För att gruppera menyalternativ under en rubrik används `NavigationSection`
+Grupperar navigeringslänkar under en valfri rubrik.
 
 ```tsx
 import { Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
@@ -161,6 +141,33 @@ import { FileText, House, Plus } from 'lucide-react'
     </NavigationItem>
   </NavigationSection>
 </Navigation>
+```
+
+## NavigationSubMenu
+
+Nästlad undermeny för hierarkisk navigationsstruktur.
+
+```tsx
+<NavigationSection title='Administration'>
+  <NavigationSubMenu>
+    <NavigationItem>
+      <NavigationLink
+        href='/anvandare'
+        icon={<Users />}
+      >
+        Användare
+      </NavigationLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavigationLink
+        href='/roller'
+        icon={<Shield />}
+      >
+        Roller
+      </NavigationLink>
+    </NavigationItem>
+  </NavigationSubMenu>
+</NavigationSection>
 ```
 
 ## Routing
@@ -309,16 +316,3 @@ export default function App() {
   )
 }
 ```
-
-## API
-
-### NavigationLink
-
-| Prop         | Typ           | Standard | Beskrivning                                                        |
-| ------------ | ------------- | -------- | ------------------------------------------------------------------ |
-| `icon`       | `ReactNode`   | —        | **Obligatorisk.** Ikon för länken                                  |
-| `children`   | `ReactNode`   | —        | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
-| `isActive`   | `boolean`     | `false`  | Markerar länken som aktiv sida                                     |
-| `href`       | `string`      | —        | URL (standard)                                                     |
-| `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
-| `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
