@@ -13,9 +13,7 @@ import { NavigationBadgeExample } from '@site/src/components/examples/layout/Nav
   overrideHeadlessLink=''
 />
 
-# Navigation
-
-Navigationskomponenterna används både i `Sidebar` och i `Navbar`. De är identiska — kontexten avgör utseendet.
+Navigationskomponent som används både i `Sidebar` och i `Navbar`. De har identiskt API men kontexten avgör hur de ser ut. Navigation består av tre komponenter: Navigation, NavigationSection och NavigationLink.
 
 ## Navigation
 
@@ -87,8 +85,7 @@ Skicka in `BadgeContainer` som `icon`-prop för att visa en notisindikator på l
 ```tsx
 import { Badge, BadgeContainer } from '@midas-ds/components'
 import { Bell } from 'lucide-react'
-
-<NavigationItem>
+;<NavigationItem>
   <NavigationLink
     href='/meddelanden'
     icon={
@@ -203,7 +200,10 @@ export function NavLink({ path, icon, children }: NavLinkProps) {
 ```
 
 ```tsx
-<NavLink path='/mina-arenden' icon={<FileText />}>
+<NavLink
+  path='/mina-arenden'
+  icon={<FileText />}
+>
   Mina ärenden
 </NavLink>
 ```
