@@ -65,6 +65,39 @@ NavigationLink representerar ett menyalternativ i navigationen. De ska alltid ha
 </NavigationLink>
 ```
 
+### Undermenyer
+
+För att skapa undermenyer används `NavigationSubMenu` för de underliggande länkarna och placeras under ett överordnat `NavigationItem`.
+
+```tsx
+<NavigationItem>
+  <NavigationLink
+    href='/administration'
+    icon={<Settings />}
+  >
+    Administration
+  </NavigationLink>
+  <NavigationSubMenu>
+    <NavigationItem>
+      <NavigationLink
+        href='/anvandare'
+        icon={<Users />}
+      >
+        Användare
+      </NavigationLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavigationLink
+        href='/roller'
+        icon={<Shield />}
+      >
+        Roller
+      </NavigationLink>
+    </NavigationItem>
+  </NavigationSubMenu>
+</NavigationItem>
+```
+
 ### Notisindikator (Badge)
 
 För att visa en notisindikator på ett menyalternativ kan du använda [Badge](/components/badge) genom att skicka in `BadgeContainer` runt ikonen och `Badge` till NavigationLinks `icon`-prop.
@@ -89,6 +122,7 @@ import { Bell } from 'lucide-react'
 ```
 
 <NavigationBadgeExample />
+
 ## NavigationSection
 
 Grupperar navigeringslänkar under en valfri rubrik.
@@ -127,33 +161,6 @@ import { FileText, House, Plus } from 'lucide-react'
     </NavigationItem>
   </NavigationSection>
 </Navigation>
-```
-
-## NavigationSubMenu
-
-Nästlad undermeny för hierarkisk navigationsstruktur.
-
-```tsx
-<NavigationSection title='Administration'>
-  <NavigationSubMenu>
-    <NavigationItem>
-      <NavigationLink
-        href='/anvandare'
-        icon={<Users />}
-      >
-        Användare
-      </NavigationLink>
-    </NavigationItem>
-    <NavigationItem>
-      <NavigationLink
-        href='/roller'
-        icon={<Shield />}
-      >
-        Roller
-      </NavigationLink>
-    </NavigationItem>
-  </NavigationSubMenu>
-</NavigationSection>
 ```
 
 ## Routing
