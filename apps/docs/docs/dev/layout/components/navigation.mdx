@@ -65,17 +65,6 @@ En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt ef
 </NavigationLink>
 ```
 
-### Props
-
-| Prop         | Typ           | Standard | Beskrivning                                                        |
-| ------------ | ------------- | -------- | ------------------------------------------------------------------ |
-| `icon`       | `ReactNode`   | —        | **Obligatorisk.** Ikon för länken                                  |
-| `children`   | `ReactNode`   | —        | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
-| `isActive`   | `boolean`     | `false`  | Markerar länken som aktiv sida                                     |
-| `href`       | `string`      | —        | URL (standard)                                                     |
-| `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
-| `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
-
 ### Notisindikator (Badge)
 
 Skicka in `BadgeContainer` som `icon`-prop för att visa en notisindikator på länken.
@@ -314,3 +303,16 @@ export default function App() {
   )
 }
 ```
+
+## API
+
+### NavigationLink
+
+| Prop         | Typ           | Standard | Beskrivning                                                        |
+| ------------ | ------------- | -------- | ------------------------------------------------------------------ |
+| `icon`       | `ReactNode`   | —        | **Obligatorisk.** Ikon för länken                                  |
+| `children`   | `ReactNode`   | —        | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
+| `isActive`   | `boolean`     | `false`  | Markerar länken som aktiv sida                                     |
+| `href`       | `string`      | —        | URL (standard)                                                     |
+| `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
+| `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
