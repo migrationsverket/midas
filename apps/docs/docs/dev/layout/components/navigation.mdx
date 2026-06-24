@@ -15,10 +15,6 @@ import { NavigationBadgeExample } from '@site/src/components/examples/layout/Nav
 
 Navigationskomponent som används både i [Sidebar](/dev/layout/components/sidebar), [Navbar](/dev/layout/components/navbar) och [MobileMenu](/dev/layout/components/mobilemenu) men med olika utseende beroende på kontext. Navigation anpassar automatiskt utseendet efter var den befinner sig.
 
-## Navigation
-
-Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statisk och dynamisk rendering via Collections.
-
 ```tsx
 import { Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
 import { House, Settings } from 'lucide-react'
@@ -50,6 +46,10 @@ export default function App() {
   )
 }
 ```
+
+## Navigation
+
+Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statisk och dynamisk rendering via Collections.
 
 ## NavigationLink
 
