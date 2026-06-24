@@ -47,13 +47,11 @@ export default function App() {
 }
 ```
 
-## Navigation
+## Skapa en navigationsmeny
 
-Wrapper-komponent som renderar ett `<nav>`-element med `<ul>` inuti. Stödjer både statisk och dynamisk rendering via Collections.
+För att skapa en navigationsmeny behövs tre komponenter: `Navigation`, `NavigationItem` och `NavigationLink`. `Navigation` är en wrapper som renderar ett `<nav>`-element med `<ul>` inuti. Den stödjer både statisk och dynamisk rendering via Collections. `NavigationItem` är en wrapper som renderar ett `<li>`-element och används för att gruppera `NavigationLinks` och eventuella undermenyer.
 
-## NavigationLink
-
-NavigationLink representerar ett menyalternativ i navigationen. De ska alltid ha både ikon och etikett.
+`NavigationLink` är själva länken som renderas som `<a>`-element och representerar ett menyalternativ i navigationen. De ska alltid ha både ikon och etikett.
 
 ```tsx
 <NavigationLink
