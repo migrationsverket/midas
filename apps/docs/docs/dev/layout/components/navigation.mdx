@@ -13,7 +13,7 @@ import { NavigationBadgeExample } from '@site/src/components/examples/layout/Nav
   overrideHeadlessLink=''
 />
 
-Navigationskomponent som används både i `Sidebar` och i `Navbar`. De har identiskt API men kontexten avgör hur de ser ut. Navigation består av tre komponenter: Navigation, NavigationSection och NavigationLink.
+Navigationskomponent som används både i [Sidebar](/dev/layout/components/sidebar), [Navbar](/dev/layout/components/navbar) och [MobileMenu](/dev/layout/components/mobilemenu) men med olika utseende beroende på kontext. Navigation anpassar automatiskt utseendet efter var den befinner sig. Den består av tre komponenter: `Navigation`, `NavigationLink` och `NavigationSection`.
 
 ## Navigation
 
@@ -53,7 +53,7 @@ export default function App() {
 
 ## NavigationLink
 
-En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt efter om den befinner sig i en `Sidebar` eller `Navbar`.
+NavigationLink representerar ett menyalternativ i navigationen. De ska alltid ha både ikon och etikett.
 
 ```tsx
 <NavigationLink
@@ -67,7 +67,7 @@ En enskild länk med ikon, etikett och aktivt läge. Anpassar sig automatiskt ef
 
 ### Notisindikator (Badge)
 
-Skicka in `BadgeContainer` som `icon`-prop för att visa en notisindikator på länken.
+För att visa en notisindikator på ett menyalternativ kan du använda [Badge](/components/badge) genom att skicka in `BadgeContainer` runt ikonen och `Badge` till NavigationLinks `icon`-prop.
 
 <NavigationBadgeExample />
 
