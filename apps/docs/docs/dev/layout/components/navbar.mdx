@@ -14,11 +14,20 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 # Navbar
 
-En navigation som ligger längst ned på sidan. Används för att få applikationen att likna en mobilapp. `Navbar` renderar ett semantiskt `<footer>`-element.
+Navigationskomponent som används som ersättare för [Sidebar](/dev/layout/components/sidebar). `Navbar` renderar ett semantiskt `<footer>`-element.
 
-## Riktlinjer
+## Användning
 
-Navbar ska inte användas om applikationen behöver mer än 5 länkar eftersom det gör det för trångt på små skärmar.
+Syftet med Navbar är att få applikationen att likna en native mobilapp, som oftast har navigation i botten av appen. Navbar ska inte användas tillsammans med Sidebar, utan Navbar ersätter Sidebar som applikationens huvudnavigation.
+
+### Använd Navbar:
+
+- När applikationen ska upplevas som en mobilapp.
+
+### Använd inte Navbar:
+
+- Om applikationen behöver mer än 5 menyalternativ i navigationen, eftersom det gör det för trångt på små skärmar.
+- Om applikationen behöver undermenyer eller komplex navigering.
 
 ## Exempel
 
