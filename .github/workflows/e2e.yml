@@ -56,6 +56,9 @@ jobs:
       - name: Remove dist files
         run: rm -rf dist
 
+      - name: Build Next.js app
+        run: npx nx build next
+
       - name: Build and test e2e project
         run: npx nx e2e next
         env:
