@@ -103,7 +103,7 @@
       "inputs": [
         "default",
         "^production",
-        "{workspaceRoot}/vitest.workspace.ts"
+        "{workspaceRoot}/vitest.config.ts"
       ],
       "cache": true
     },
@@ -124,8 +124,10 @@
     "@nx/eslint:lint": {
       "inputs": [
         "default",
+        "^default",
         "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore"
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/tools/eslint-rules/**/*"
       ],
       "cache": true
     },
@@ -249,13 +251,7 @@
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
       }
-    },
-    {
-      "plugin": "nx-stylelint/plugin",
-      "options": {
-        "targetName": "stylelint",
-        "extensions": ["css"]
-      }
     }
-  ]
+  ],
+  "analytics": false
 }

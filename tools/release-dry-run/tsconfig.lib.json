@@ -2,6 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "outDir": "../../dist/out-tsc",
     "declaration": true,
     "types": ["node"]
