@@ -14,10 +14,10 @@
     "@midas-ds/layout": "*",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router": "^7.15.0"
+    "react-router": "^7.15.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
+    "@babel/core": "^7.29.6",
     "@eslint/js": "^9.39.4",
     "@rolldown/plugin-babel": "^0.2.1",
     "@types/babel__core": "^7.20.5",
@@ -26,7 +26,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^1.0.0",
-    "eslint": "^9.39.4",
+    "eslint": "^10.6.0",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
