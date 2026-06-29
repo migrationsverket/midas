@@ -103,7 +103,7 @@
       "inputs": [
         "default",
         "^production",
-        "{workspaceRoot}/vitest.workspace.ts"
+        "{workspaceRoot}/vitest.config.ts"
       ],
       "cache": true
     },
@@ -252,5 +252,6 @@
         "watchDepsTargetName": "watch-deps"
       }
     }
-  ]
+  ],
+  "analytics": false
 }
