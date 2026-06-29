@@ -1,0 +1,23 @@
+import{a as e,i as t,s as n}from"./preload-helper-CT_b8DTk.js";import{t as r}from"./react-CP_JPyt4.js";import{bi as i,t as a,yi as o}from"./iframe-B0o6TMgu.js";import{Fn as s,In as c,t as ee}from"./import-Bj_AVAcm.js";import{t as l}from"./clsx-Bo-5EjDQ.js";import{It as te,J as ne,b as re,f as ie,i as ae,t as oe,v as u}from"./lucide-react-BJU7mAvS.js";import{t as se}from"./src-C7b6LEkl.js";import{t as ce}from"./Text-DN4YyPd6.js";import{f as d,l as f,n as le,t as ue}from"./navigation-link-BuQHFvIu.js";var p,m,de=t((()=>{p=`_rootList_l3v98_1`,m={rootList:p}})),h,g,_=t((()=>{de(),ee(),h=a(),g=({className:e,items:t,children:n,dependencies:r,idScope:i,addIdAndValue:a,...o})=>(0,h.jsx)(`nav`,{className:e,...o,children:(0,h.jsx)(`ul`,{className:m.rootList,children:(0,h.jsx)(c,{items:t,children:n,dependencies:r,idScope:i,addIdAndValue:a})})})})),v,y,b,fe=t((()=>{v=`_navigationHeader_j94pq_1`,y=`_collapsed_j94pq_6`,b={navigationHeader:v,collapsed:y}})),x,S,C,pe=t((()=>{x=n(r(),1),se(),f(),fe(),S=a(),C=({className:e,...t})=>{let n=(0,x.useContext)(d);return(0,S.jsx)(ce,{className:l(e,b.navigationHeader,{[b.collapsed]:n?.isCollapsed}),...t})}})),w=t((()=>{pe()})),T,E,me=t((()=>{T=`_navigationItem_1jt2l_1`,E={navigationItem:T}})),D,O,k,A=t((()=>{i(),D=n(r(),1),f(),me(),O=a(),k=({className:e,...t})=>{let n=(0,D.useContext)(d);return(0,O.jsx)(`li`,{className:o(e,E.navigationItem,{[E.collapsed]:n?.isCollapsed}),...t})}})),j=t((()=>{A()})),M,N,P,F=t((()=>{M=`_navigationSection_1ae77_1`,N=`_collapsed_1ae77_5`,P={navigationSection:M,collapsed:N}})),I,L,R,z=t((()=>{i(),I=n(r(),1),s(),w(),j(),f(),F(),L=a(),R=({className:e,title:t,...n})=>{let r=(0,I.useContext)(d);return(0,L.jsx)(k,{children:(0,L.jsxs)(`ul`,{className:o(e,P.navigationSection,{[P.collapsed]:r?.isCollapsed}),children:[t&&(0,L.jsx)(C,{children:t}),(0,L.jsx)(c,{...n})]})})}})),he=t((()=>{z()})),B,V,H,ge=t((()=>{B=`_navigationSubMenu_vfyl6_1`,V=`_collapsed_vfyl6_5`,H={navigationSubMenu:B,collapsed:V}})),U,W,G,_e=t((()=>{i(),U=n(r(),1),s(),f(),ge(),W=a(),G=({className:e,children:t,items:n,...r})=>{let i=(0,U.useContext)(d),{length:a}=Array.from(n||[]);return typeof t==`function`&&a===0?null:(0,W.jsx)(`ul`,{className:o(e,H.navigationSubMenu,{[H.collapsed]:i?.isCollapsed}),children:(0,W.jsx)(c,{items:n,...r,children:t})})}})),ve=t((()=>{_e()})),K=t((()=>{_(),w(),j(),ue(),he(),ve()})),ye=e({Flat:()=>Z,Nested:()=>Q,__namedExportsOrder:()=>$,default:()=>X}),q,J,Y,X,Z,Q,$,be=t((()=>{K(),oe(),q=a(),J={home:{id:`home`,title:`Home`,href:`/`,icon:(0,q.jsx)(te,{})},applications:{id:`applications`,title:`Applications`,href:`/applications`,icon:(0,q.jsx)(ne,{})},newApplication:{id:`new-application`,title:`New`,href:`/applications/new`,icon:(0,q.jsx)(re,{})},sentApplications:{id:`sent-applications`,title:`Sent`,href:`/applications/sent`,icon:(0,q.jsx)(ie,{})},savedApplications:{id:`saved-applications`,title:`Saved`,href:`/applications/saved`,icon:(0,q.jsx)(u,{})},profile:{id:`profile`,title:`Profile`,href:`/profile`,icon:(0,q.jsx)(ae,{})}},Y=({href:e,icon:t,title:n,children:r})=>(0,q.jsxs)(k,{children:[(0,q.jsx)(le,{isActive:e===`/`,href:e,icon:t,children:n}),(0,q.jsx)(G,{items:r,children:Y})]}),X={component:g,title:`Layout/Navigation`,tags:[`!autodocs`,`!dev`]},Z={args:{items:[J.home,J.profile,J.applications],children:Y}},Q={args:{items:[{id:`general`,children:[J.home,J.profile]},{id:`applications`,title:`Applications`,children:[{...J.applications,children:[J.newApplication,J.sentApplications,J.savedApplications]}]}],children:e=>(0,q.jsx)(R,{title:e.title,items:e.children,children:Y})}},Z.parameters={...Z.parameters,docs:{...Z.parameters?.docs,source:{originalSource:`{
+  args: {
+    items: [items.home, items.profile, items.applications],
+    children: renderItem
+  }
+}`,...Z.parameters?.docs?.source}}},Q.parameters={...Q.parameters,docs:{...Q.parameters?.docs,source:{originalSource:`{
+  args: {
+    items: [{
+      id: 'general',
+      children: [items.home, items.profile]
+    }, {
+      id: 'applications',
+      title: 'Applications',
+      children: [{
+        ...items.applications,
+        children: [items.newApplication, items.sentApplications, items.savedApplications]
+      }]
+    }],
+    children: section => <NavigationSection title={section.title} items={section.children}>
+        {renderItem}
+      </NavigationSection>
+  }
+}`,...Q.parameters?.docs?.source}}},$=[`Flat`,`Nested`]}));export{z as a,g as c,R as i,_ as l,be as n,k as o,K as r,A as s,ye as t};
