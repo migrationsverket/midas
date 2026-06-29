@@ -55,6 +55,9 @@
     "zustand": "^5.0.11",
     "rollup": "4.62.2"
   },
+  "overrides": {
+    "piscina": "4.9.3"
+  },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
     "@babel/core": "^7.28.0",
