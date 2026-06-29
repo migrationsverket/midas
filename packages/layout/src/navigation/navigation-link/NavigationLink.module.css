@@ -13,30 +13,35 @@
   text-decoration: none;
 
   &[data-hovered],
-  &:hover,
+  &:hover {
+    background-color: var(--midas-navigation-link-background-hover);
+  }
+
   &[data-active] {
-    background-color: var(--midas-menu-item-background-hover);
+    background-color: var(--midas-navigation-link-background-selected);
+  }
+
+  &[data-active][data-hovered],
+  &[data-active]:hover {
+    background-color: var(--midas-navigation-link-background-selected-hover);
   }
 
   &.sidebar {
     align-items: flex-start;
+    box-sizing: border-box;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 0.625rem var(--midas-spacing-30);
-    transition: padding-inline-start var(--midas-transition-duration-fast)
-      ease-out;
+    padding: var(--midas-space-50) var(--midas-space-small);
+    padding-inline-start: var(--midas-space-30);
+    width: 100%;
 
     &[data-active] {
       border-color: var(--midas-border-color-tertiary);
-      font-weight: var(--midas-typography-weight-bold);
+      font-weight: var(--midas-typography-weight-medium);
     }
 
     &.collapsed {
-      /* Center the icon within the collapsed sidebar width (80px)
-         minus sidebar content padding on both sides */
-      padding-inline-start: calc(
-        (80px - 2 * var(--midas-space-small) - var(--midas-size-90)) / 2
-      );
+      width: 100%;
     }
   }
 
@@ -47,27 +52,31 @@
   }
 
   .title {
-    display: block;
-    height: auto;
-    interpolate-size: allow-keywords;
     opacity: 1;
     overflow: hidden;
-    transition:
-      display var(--midas-transition-duration-fast) allow-discrete,
-      height var(--midas-transition-duration-fast) ease-out,
-      opacity var(--midas-transition-duration-instant) ease-out;
+    white-space: nowrap;
 
-    @starting-style {
-      height: 0;
-      opacity: 0;
-    }
+    /* fade in after the sidebar width finishes expanding */
+    transition: opacity var(--midas-transition-duration-quick) ease-out
+      var(--midas-transition-duration-fast);
   }
 
   &.collapsed {
     .title {
       display: none;
-      height: 0;
       opacity: 0;
+
+      /* fade out immediately — text gone before the width animation starts */
+      transition:
+        display var(--midas-transition-duration-instant) allow-discrete,
+        opacity var(--midas-transition-duration-instant) ease-out;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigationLink .title,
+  .navigationLink.collapsed .title {
+    transition: none;
   }
 }

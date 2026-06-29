@@ -1,14 +1,62 @@
-import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
+import { type Meta, type StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
 import { Badge, BadgeContainer, Button } from '@midas-ds/components'
 import { Sidebar } from './Sidebar'
-import * as navigationStories from '../navigation/Navigation.stories'
 import { Navigation, NavigationItem, NavigationLink, NavigationSection } from '../navigation'
-import { Bell, FileText, House, Settings } from 'lucide-react'
+import { Bell, CalendarPlus2, CalendarX, Candy, Car, Caravan, Settings } from 'lucide-react'
 
 type Story = StoryObj<typeof Sidebar>
 
-const { Nested: NestedNavigation } = composeStories(navigationStories)
+const ExampleNavigation = () => (
+  <Navigation>
+    <NavigationSection>
+      <NavigationItem>
+        <NavigationLink
+          href='/add-event'
+          icon={<CalendarPlus2 />}
+        >
+          Add event
+        </NavigationLink>
+      </NavigationItem>
+    </NavigationSection>
+    <NavigationSection title='Dates'>
+      <NavigationItem>
+        <NavigationLink
+          href='/remove-event'
+          icon={<CalendarX />}
+        >
+          Remove event
+        </NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationLink
+          href='/vehicle'
+          icon={<Car />}
+        >
+          Vehicle information
+        </NavigationLink>
+      </NavigationItem>
+    </NavigationSection>
+    <NavigationSection title='Travel'>
+      <NavigationItem>
+        <NavigationLink
+          href='/treats'
+          icon={<Candy />}
+        >
+          Treats
+        </NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationLink
+          href='/road-trip'
+          icon={<Caravan />}
+        >
+          Road trip
+        </NavigationLink>
+      </NavigationItem>
+    </NavigationSection>
+  </Navigation>
+)
 
 export default {
   component: Sidebar,
@@ -19,8 +67,8 @@ export default {
     rootElement: 'div',
   },
   args: {
-    title: 'My app',
-    children: <NestedNavigation />,
+    title: 'Navigation',
+    children: <ExampleNavigation />,
   },
 } satisfies Meta<typeof Sidebar>
 
@@ -34,27 +82,16 @@ export const Collapsed: Story = {
 
 export const WithBadge: Story = {
   render: args => (
-    <Sidebar
-      {...args}
-      title='My app'
-    >
+    <Sidebar {...args}>
       <Navigation>
         <NavigationSection>
           <NavigationItem>
             <NavigationLink
-              href='/'
-              icon={<House />}
+              href='/add-event'
+              icon={<CalendarPlus2 />}
               isActive
             >
-              Hem
-            </NavigationLink>
-          </NavigationItem>
-          <NavigationItem>
-            <NavigationLink
-              href='/arenden'
-              icon={<FileText />}
-            >
-              Ärenden
+              Add event
             </NavigationLink>
           </NavigationItem>
           <NavigationItem>
@@ -87,19 +124,16 @@ export const WithBadge: Story = {
 export const WithBadgeCollapsed: Story = {
   args: { defaultCollapsed: true },
   render: args => (
-    <Sidebar
-      {...args}
-      title='My app'
-    >
+    <Sidebar {...args}>
       <Navigation>
         <NavigationSection>
           <NavigationItem>
             <NavigationLink
-              href='/'
-              icon={<House />}
+              href='/add-event'
+              icon={<CalendarPlus2 />}
               isActive
             >
-              Hem
+              Add event
             </NavigationLink>
           </NavigationItem>
           <NavigationItem>
