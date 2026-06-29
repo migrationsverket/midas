@@ -35,14 +35,9 @@ jobs:
           key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install Playwright browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
         env:
           PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
-
-      - name: Install Playwright system deps
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
 
       - name: Start Verdaccio
         run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
