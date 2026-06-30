@@ -7,7 +7,32 @@ sidebar_position: 1
 
 Här beskriver vi hur du sätter upp din utvecklingsmiljö för att kunna bidra till Midas.
 
-## 🐳 Docker (Rekommenderat)
+## 1. Forka och klona repot
+
+Källkoden finns på [GitHub](https://github.com/migrationsverket/midas). Eftersom du troligtvis inte har skrivrättigheter till repot direkt behöver du först **forka** det — det vill säga skapa en egen kopia på ditt GitHub-konto.
+
+1. Gå till [github.com/migrationsverket/midas](https://github.com/migrationsverket/midas)
+2. Klicka på **Fork** uppe till höger
+3. Klona din fork lokalt:
+
+```bash
+git clone https://github.com/<ditt-användarnamn>/midas.git
+cd midas
+```
+
+4. Lägg till originalrepot som `upstream` så att du kan hämta senaste ändringar:
+
+```bash
+git remote add upstream https://github.com/migrationsverket/midas.git
+```
+
+Nu är du redo att sätta upp din utvecklingsmiljö nedan.
+
+---
+
+## 2. Sätt upp utvecklingsmiljön
+
+### 🐳 Docker (Rekommenderat)
 
 Det snabbaste sättet att komma igång är med Docker. Då behöver du inte installera Node.js, npm eller några beroenden lokalt - allt körs i en isolerad miljö med exakt rätt versioner.
 
@@ -76,7 +101,7 @@ docker compose up -d
 
 ---
 
-## 💻 Lokal installation (Alternativ)
+### 💻 Lokal installation (Alternativ)
 
 Om du föredrar att köra allt lokalt behöver du:
 
@@ -115,7 +140,7 @@ nx build docs    # Produktionsbygge
 
 ---
 
-## 🧪 Testa lokalt end-to-end
+## 3. Testa lokalt end-to-end
 
 För att testa komponentbiblioteket i en annan app kan du publicera det till ett lokalt Verdaccio-registry.
 
