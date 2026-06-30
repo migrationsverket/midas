@@ -51,7 +51,12 @@ nx serve storybook
 
 ## 🤝 Bidra
 
-Vi välkomnar bidrag! Läs vår [guide för att bidra](https://designsystem.migrationsverket.se/get-started/contribute/) för att komma igång.
+Vi välkomnar bidrag av alla slag — buggar, idéer, kod och dokumentation.
+
+- 🐛 **Hittat en bugg eller har ett förslag?** Öppna ett [Issue](https://github.com/migrationsverket/midas/issues/new/choose)
+- 💻 **Bidra med kod?** Klona repot, skapa en branch och öppna en Pull Request
+
+Läs vår fullständiga [bidragsguide](https://designsystem.migrationsverket.se/get-started/contribute/) för mer information.
 
 ## 📄 Licens
 
