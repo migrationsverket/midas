@@ -26,7 +26,7 @@ export interface AccordionItemProps extends DisclosureProps {
   /** Display an accordion item with different type styles. */
   type?: FeedbackStatus
   /**
-   * Adds a background element to the content, set to false for a transparent look
+   * Adds a neutral background to the content area. When using `type`, set to `false` to let the status color show through the content area as well.
    * @default true
    **/
   hasBackground?: boolean

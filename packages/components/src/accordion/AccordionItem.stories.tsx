@@ -74,3 +74,19 @@ export const StatusDisabled: Story = {
     isContained: true,
   },
 }
+
+export const HasBackground: Story = {
+  args: {
+    type: 'success',
+    isContained: true,
+    hasBackground: true,
+  },
+}
+
+export const NoBackground: Story = {
+  args: {
+    type: 'success',
+    isContained: true,
+    hasBackground: false,
+  },
+}
