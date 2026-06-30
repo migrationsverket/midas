@@ -84,7 +84,7 @@ export const DropZoneExample = () => {
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <ArrowUpFromLine /> Välj fil
+            <ArrowUpFromLine size={20} /> Välj fil
           </Button>
         </FileTrigger>
         <Text slot='label'>Dra och släpp filer här</Text>
