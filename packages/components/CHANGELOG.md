@@ -1,3 +1,9 @@
+## 17.15.5 (2026-06-30)
+
+### 🩹 Fixes
+
+- **components,accordion:** ignore type prop when isContained is false ([29cf59b557c](https://github.com/migrationsverket/midas/commit/29cf59b557c))
+
 ## 17.15.4 (2026-06-30)
 
 ### 🩹 Fixes

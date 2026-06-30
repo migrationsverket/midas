@@ -1,3 +1,9 @@
+## 2.0.93 (2026-06-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.5
+
 ## 2.0.92 (2026-06-30)
 
 ### 🔧 Maintenance
