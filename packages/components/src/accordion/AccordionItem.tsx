@@ -70,7 +70,7 @@ export const AccordionItem = ({
       {...props}
       className={clsx(
         itemStyles.item,
-        type && itemStyles[type],
+        type && isContained && itemStyles[type],
         (size === 'medium' || context?.size === 'medium') && itemStyles.medium,
         isContained && itemStyles.contained,
         className,
@@ -101,7 +101,7 @@ export const AccordionItem = ({
                   </Heading>
                 )}
               </div>
-              {type && (
+              {type && isContained && (
                 <FeedbackStatusIcon
                   aria-label={iconAriaLabel}
                   className={itemStyles.statusIcon}
