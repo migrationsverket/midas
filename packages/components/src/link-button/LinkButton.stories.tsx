@@ -83,3 +83,11 @@ export const Danger: Story = {
     variant: 'danger',
   },
 }
+
+export const NewTab: Story = {
+  args: {
+    children: 'Öppnas i ny flik',
+    href: 'https://example.com',
+    target: '_blank',
+  },
+}
