@@ -34,7 +34,7 @@ export function FieldLayerPage() {
           <h2 style={{ margin: 0, fontSize: '1rem' }}>On page background (field-01)</h2>
           <TextField label='Namn' placeholder='Anna Andersson' />
           <TextField label='E-post' type='email' placeholder='anna@example.com' />
-          <SearchField label='Sök' placeholder='Sök...' />
+          <SearchField placeholder='Sök...' />
           <Select label='Välj alternativ'>
             <ListBoxItem id='a'>Alternativ A</ListBoxItem>
             <ListBoxItem id='b'>Alternativ B</ListBoxItem>
@@ -55,7 +55,7 @@ export function FieldLayerPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <TextField label='Namn' placeholder='Anna Andersson' />
               <TextField label='E-post' type='email' placeholder='anna@example.com' />
-              <SearchField label='Sök' placeholder='Sök...' />
+              <SearchField placeholder='Sök...' />
               <Select label='Välj alternativ'>
                 <ListBoxItem id='a'>Alternativ A</ListBoxItem>
                 <ListBoxItem id='b'>Alternativ B</ListBoxItem>
@@ -80,7 +80,7 @@ export function FieldLayerPage() {
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <TextField label='Namn' placeholder='Anna Andersson' />
-            <SearchField label='Sök' placeholder='Sök...' />
+            <SearchField placeholder='Sök...' />
             <Select label='Välj alternativ'>
               <ListBoxItem id='a'>Alternativ A</ListBoxItem>
               <ListBoxItem id='b'>Alternativ B</ListBoxItem>

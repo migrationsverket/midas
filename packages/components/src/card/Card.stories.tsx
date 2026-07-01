@@ -341,16 +341,13 @@ export const WithFormFields: Story = {
   },
   render: () => (
     <Card style={{ maxWidth: 400 }}>
-      <CardHeader>Formulär</CardHeader>
+      <CardHeader heading='Formulär' />
       <CardBody>
         <TextField
           label='Namn'
           placeholder='Anna Andersson'
         />
-        <SearchField
-          label='Sök'
-          placeholder='Sök...'
-        />
+        <SearchField placeholder='Sök...' />
         <Select label='Välj alternativ'>
           <ListBoxItem id='a'>Alternativ A</ListBoxItem>
           <ListBoxItem id='b'>Alternativ B</ListBoxItem>
