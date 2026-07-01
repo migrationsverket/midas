@@ -207,7 +207,7 @@ export const OnCard: Story = {
   },
   render: args => (
     <Card style={{ maxWidth: 400 }}>
-      <CardHeader>Formulär</CardHeader>
+      <CardHeader heading='Formulär' />
       <CardBody>
         <TextField {...args} />
       </CardBody>
