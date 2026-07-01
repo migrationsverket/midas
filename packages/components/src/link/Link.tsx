@@ -2,6 +2,7 @@
 
 import styles from './Link.module.css'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
+import { VisuallyHidden } from 'react-aria'
 import clsx from '../utils/clsx'
 import {
   ArrowDownToLine,
@@ -10,6 +11,8 @@ import {
   SquareArrowOutUpRight,
   type LucideIcon,
 } from 'lucide-react'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface LinkComponentProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -42,15 +45,17 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
 }: LinkProps<C>) => {
   const Component = as || AriaLink
 
-  const getIcon = (): LucideIcon | null => {
-    if (customIcon) return customIcon
-    if (download) return ArrowDownToLine
-    if (target === '_blank') return SquareArrowOutUpRight
-    if (standalone) return ArrowRight
+  const strings = useLocalizedStringFormatter(messages)
+
+  const getIcon = (): { icon: LucideIcon; label?: string } | null => {
+    if (customIcon) return { icon: customIcon }
+    if (download) return { icon: ArrowDownToLine, label: strings.format('downloadsFile') }
+    if (target === '_blank') return { icon: SquareArrowOutUpRight, label: strings.format('opensInNewTab') }
+    if (standalone) return { icon: ArrowRight }
     return null
   }
 
-  const icon = getIcon()
+  const iconConfig = getIcon()
 
   return (
     <Component
@@ -62,17 +67,20 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
       )}
       {...rest}
       target={target}
+      download={download}
     >
-      <>
-        {children}
-        {icon ? (
+      {children}
+      {iconConfig ? (
+        <>
           <Icon
             className={styles.icon}
-            icon={icon}
+            icon={iconConfig.icon}
             size={16}
+            aria-hidden={true}
           />
-        ) : null}
-      </>
+          {iconConfig.label && <VisuallyHidden>{iconConfig.label}</VisuallyHidden>}
+        </>
+      ) : null}
     </Component>
   )
 }
