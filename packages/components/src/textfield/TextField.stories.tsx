@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
 import { TextField } from './TextField'
+import { Card } from '../card/Card'
+import { CardBody } from '../card/card-body'
+import { CardHeader } from '../card/card-header'
 
 type Story = StoryObj<typeof TextField>
 
@@ -191,4 +194,23 @@ export const Email: Story = {
     autoComplete: 'email',
     inputMode: 'email',
   },
+}
+
+export const OnCard: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'When placed inside a `Card`, the field automatically uses the correct field layer token — no extra props needed.',
+      },
+    },
+  },
+  render: args => (
+    <Card style={{ maxWidth: 400 }}>
+      <CardHeader>Formulär</CardHeader>
+      <CardBody>
+        <TextField {...args} />
+      </CardBody>
+    </Card>
+  ),
 }
