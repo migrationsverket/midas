@@ -4,7 +4,7 @@ description: Växlare för färgschema (ljust, mörkt, systemets inställning)
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ColorSchemeSwitch } from '@midas-ds/components'
+import { ColorSchemeSwitch, ColorSchemeSwitchMenu } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
 import { SelectorExample } from '@site/src/components/examples/color-scheme-switch/ColorSchemeSwitchExamples'
 
@@ -14,7 +14,7 @@ import { SelectorExample } from '@site/src/components/examples/color-scheme-swit
   overrideHeadlessLink=''
 />
 
-`ColorSchemeSwitch` låter användaren välja mellan ljust läge, mörkt läge eller att följa systemets inställning.
+`ColorSchemeSwitch` låter användaren välja att visa applikationen i ljust läge, mörkt läge eller enligt inställningarna i webbläsaren/operativsystemet.
 
 ```tsx
 import { ColorSchemeSwitch } from '@midas-ds/components'
@@ -28,9 +28,67 @@ import { ColorSchemeSwitch } from '@midas-ds/components'
   <ColorSchemeSwitch />
 </div>
 
-## Selector
+## Varianter
 
-Som standard påverkas `:root`, men du kan rikta mot ett annat element med `selector`-propen. Det är användbart om du bara vill byta färgschema för en avgränsad del av sidan.
+ColorSchemeSwitch finns i två varianter: en version som visar alla tre alternativen och en kompakt version som bara visar det aktiva läget.
+
+### Fullstor
+
+Den fullstora `ColorSchemeSwitch` visar alla tre alternativen (ljust, mörkt, system) i en rad. Den är lämplig att använda i situationer där det finns gott om plats, t.ex. i en inställningspanel.
+
+```tsx
+<ColorSchemeSwitch />
+```
+
+<div className='card'>
+  <ColorSchemeSwitch />
+</div>
+
+### Kompakt
+
+`ColorSchemeSwitchMenu` är en kompakt variant som bara visar det aktiva läget. Valet görs via en meny. Den är lämplig att använda i situationer när det är ont om plats, t.ex. i [Header](/dev/layout/components/header/).
+
+```tsx
+import { ColorSchemeSwitchMenu } from '@midas-ds/components'
+```
+
+```tsx
+<ColorSchemeSwitchMenu />
+```
+
+<div
+  className='card'
+  style={{ padding: 0, overflow: 'hidden' }}
+>
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      padding: '0.5rem 1rem',
+      borderBottom: '1px solid var(--midas-border-color-subtle)',
+      gap: '0.5rem',
+    }}
+  >
+    <span style={{ flex: 1, fontWeight: 500 }}>Min applikation</span>
+    <ColorSchemeSwitchMenu />
+  </div>
+</div>
+
+## Implementation
+
+API:t är identiskt i båda varianter. `selector`, `defaultScheme`, `scheme` och `onSchemeChange` fungerar på samma sätt.
+
+### Standardvärde
+
+`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att operativsystemets/webbläsarens inställning används.
+
+```tsx
+<ColorSchemeSwitch defaultScheme='dark' />
+```
+
+### Selector
+
+Som standard påverkas `:root`, men det går att rikta mot ett annat element med `selector`-propen. Det kan användas för att bara byta färgschema på en avgränsad del av sidan.
 
 ```tsx
 <ColorSchemeSwitch selector='#min-widget' />
@@ -40,17 +98,9 @@ Som standard påverkas `:root`, men du kan rikta mot ett annat element med `sele
   <SelectorExample />
 </div>
 
-## Standardvärde
+### Spara val i localStorage
 
-`defaultScheme` styr vilket läge som är förvalt. Standardvärdet är `'light dark'`, vilket innebär att systemets inställning används.
-
-```tsx
-<ColorSchemeSwitch defaultScheme='dark' />
-```
-
-## Spara val i localStorage
-
-Använd `onSchemeChange` för att reagera på användarens val — till exempel för att spara det i `localStorage` och återställa det vid nästa sidladdning.
+Använd `onSchemeChange` för att reagera på användarens val. Det kan till exempel användas för att spara valet i `localStorage` och återställa det vid nästa sidladdning.
 
 ```tsx
 const savedScheme = localStorage.getItem('color-scheme') as ColorScheme | null
@@ -79,4 +129,10 @@ const [scheme, setScheme] = useState<ColorScheme>(
 
 ## API
 
+### ColorSchemeSwitch
+
 <PropTable name='ColorSchemeSwitch' />
+
+### ColorSchemeSwitchMenu
+
+<PropTable name='ColorSchemeSwitchMenu' />
