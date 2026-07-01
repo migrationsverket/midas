@@ -15,6 +15,10 @@
       "opacity5": {
         "$value": "#0000000d",
         "$description": "Black with 5% opacity"
+      },
+      "opacity10": {
+        "$value": "#0000001a",
+        "$description": "Black with 10% opacity"
       }
     },
     "white": {
@@ -30,6 +34,10 @@
       "opacity13": {
         "$value": "#ffffff21",
         "$description": "White with 13% opacity"
+      },
+      "opacity15": {
+        "$value": "#ffffff26",
+        "$description": "White with 15% opacity"
       }
     },
     "gray": {
