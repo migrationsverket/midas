@@ -23,11 +23,11 @@
           "$description": "Färg på sekundärknapp"
         },
         "hover": {
-          "$value": "light-dark({color.white.hover}, {color.gray.190})",
+          "$value": "light-dark({color.black.opacity5}, {color.white.opacity13})",
           "$description": "Hover state på sekundärknapp"
         },
         "active": {
-          "$value": "light-dark({color.gray.30}, {color.gray.180})",
+          "$value": "light-dark({color.black.opacity10}, {color.white.opacity15})",
           "$description": "Active state för sekundärknapp"
         }
       },
@@ -37,7 +37,7 @@
           "$description": "Hover state för tertiär knapp"
         },
         "active": {
-          "$value": "light-dark({color.gray.30}, {color.gray.180})",
+          "$value": "light-dark({color.black.opacity10}, {color.white.opacity15})",
           "$description": "Active state för tertiär knapp"
         }
       },
