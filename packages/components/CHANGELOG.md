@@ -1,3 +1,13 @@
+## 17.15.6 (2026-07-02)
+
+### 🧪 Tests updated
+
+- **components,accordion:** replace misleading AccordionHasBackground story and add JSDoc ([8b6168f252a](https://github.com/migrationsverket/midas/commit/8b6168f252a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.15.2
+
 ## 17.15.5 (2026-06-30)
 
 ### 🩹 Fixes
