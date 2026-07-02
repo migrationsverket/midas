@@ -1,3 +1,9 @@
+## 17.15.7 (2026-07-02)
+
+### 🩹 Fixes
+
+- **components,link:** add visually hidden label for new-tab and download icons ([afebdc4e492](https://github.com/migrationsverket/midas/commit/afebdc4e492))
+
 ## 17.15.6 (2026-07-02)
 
 ### 🧪 Tests updated
