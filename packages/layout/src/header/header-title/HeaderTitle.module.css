@@ -1,0 +1,9 @@
+.headerTitle {
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-30);
+  font-weight: var(--midas-typography-weight-semi-bold);
+  line-height: var(--midas-typography-line-height-50);
+  color: var(--midas-text-primary);
+  white-space: nowrap;
+  margin-inline-start: var(--midas-space-medium);
+}

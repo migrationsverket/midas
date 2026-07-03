@@ -1,5 +1,5 @@
-import { FileListPage } from '../pages/FileListPage';
+import { HeaderPage } from '../pages/HeaderPage';
 
 export default function App() {
-  return <FileListPage />;
+  return <HeaderPage />;
 }

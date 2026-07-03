@@ -1,5 +1,10 @@
-.label {
-  @media (width <= 640px) {
+.headerAction {
+  color: var(--midas-text-primary);
+  position: relative;
+}
+
+@media (width <= 768px) {
+  .label {
     position: absolute;
     width: 1px;
     height: 1px;
