@@ -31,7 +31,8 @@
 
 .tokenName {
   font-weight: bold;
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .tokenVariable {
@@ -44,7 +45,8 @@
 }
 
 .tokenDescription {
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .tokenPreview {
@@ -68,7 +70,8 @@
 }
 
 .typographyPreview {
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
   max-width: 100%;
 }
 
@@ -87,7 +90,8 @@
   padding: 0.5rem;
   background-color: var(--ifm-code-background);
   border-radius: 4px;
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .compositeTypographyDetails > div {
@@ -100,7 +104,8 @@
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 4px;
   background-color: var(--ifm-background-surface-color);
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
   max-width: 100%;
 }
 
@@ -191,7 +196,8 @@
 .genericValue {
   font-size: 0.875rem;
   font-family: monospace;
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
   overflow-wrap: break-word;
 }
 
