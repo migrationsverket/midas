@@ -48,12 +48,12 @@
     "react-router": "^7.12.0",
     "react-select": "^5.10.2",
     "react-stately": "^3.43.0",
+    "rollup": "4.62.2",
     "typescript": "5.9.3",
     "vite": "8.1.0",
     "vite-plugin-dts": "~4.5.0",
     "vite-plugin-lib-inject-css": "^2.2.2",
-    "zustand": "^5.0.11",
-    "rollup": "4.62.2"
+    "zustand": "^5.0.11"
   },
   "overrides": {
     "piscina": "4.9.3"
@@ -105,7 +105,7 @@
     "jsonc-eslint-parser": "^2.1.0",
     "mockdate": "^3.0.5",
     "nx": "23.0.1",
-    "nx-stylelint": "^18.0.0",
+    "nx-stylelint": "^19.0.0",
     "playwright": "^1.60.0",
     "prettier": "^3.8.1",
     "prism-react-renderer": "^2.3.1",
@@ -113,10 +113,10 @@
     "rollup-plugin-preserve-use-client": "^3.0.1",
     "storybook": "^10.4.6",
     "style-dictionary": "^5.4.0",
-    "stylelint": "^16.21.1",
-    "stylelint-config-css-modules": "^4.4.0",
-    "stylelint-config-recommended": "^14.0.1",
-    "stylelint-config-standard": "^36.0.1",
+    "stylelint": "^17.14.0",
+    "stylelint-config-css-modules": "^4.6.0",
+    "stylelint-config-recommended": "^18.0.0",
+    "stylelint-config-standard": "^40.0.0",
     "stylelint-prettier": "^5.0.2",
     "stylelint-value-no-unknown-custom-properties": "^6.0.1",
     "tailwindcss": "^4.1.18",

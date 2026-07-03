@@ -17,7 +17,7 @@
   position: sticky;
   width: clamp(10rem, 15rem, 90%);
   border-right: 1px solid var(--midas-border-color-subtle);
-  box-shadow: -8px 0 20px rgba(0 0 0 / 10%);
+  box-shadow: -8px 0 20px rgb(0 0 0 / 10%);
   height: calc(100dvh + 200px);
   margin-right: auto;
   outline: none;
@@ -53,7 +53,7 @@
 
 @keyframes drawer-blur {
   from {
-    background: rgba(0 0 0 / 0%);
+    background: rgb(0 0 0 / 0%);
     backdrop-filter: blur(0);
   }
 
