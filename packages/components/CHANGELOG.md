@@ -1,3 +1,9 @@
+## 17.16.0 (2026-07-03)
+
+### 🚀 Features
+
+- **components,icons:** add ContrastFilled custom icon ([29e29ef5f05](https://github.com/migrationsverket/midas/commit/29e29ef5f05))
+
 ## 17.15.7 (2026-07-02)
 
 ### 🩹 Fixes
