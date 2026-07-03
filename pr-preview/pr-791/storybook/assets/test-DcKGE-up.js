@@ -1,1 +1,0 @@
-const t=(r,e,a)=>a?a==="dark"?e:r:window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?e:r,s=r=>{const e=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(r);return e?`rgb(${parseInt(e[1],16)}, ${parseInt(e[2],16)}, ${parseInt(e[3],16)})`:""};export{s as h,t as l};
