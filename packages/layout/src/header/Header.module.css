@@ -2,5 +2,7 @@
   background-color: var(--midas-background-base);
   border-bottom: 1px solid var(--midas-border-color-subtle);
   display: flex;
-  gap: var(--midas-space-xlarge);
+  align-items: center;
+  min-height: 4.5rem;
+  padding-inline: var(--midas-space-medium);
 }

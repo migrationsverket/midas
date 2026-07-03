@@ -1,0 +1,15 @@
+.mobile {
+  flex-shrink: 0;
+
+  @media (width > 640px) {
+    display: none;
+  }
+}
+
+.desktop {
+  flex-shrink: 0;
+
+  @media (width <= 640px) {
+    display: none;
+  }
+}
