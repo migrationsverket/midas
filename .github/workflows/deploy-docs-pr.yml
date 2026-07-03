@@ -6,7 +6,6 @@ on:
       - opened
       - reopened
       - synchronize
-      - closed
 
 permissions:
   contents: write
@@ -39,15 +38,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        if: github.event.action != 'closed'
         run: npm ci
 
       - name: Lint, test and build website
-        if: github.event.action != 'closed'
         run: npx nx run-many -t lint,test,build --projects=docs
 
       - name: Build storybook
-        if: github.event.action != 'closed'
         run: npx nx run storybook:build:ci --skip-nx-cache
 
       - name: Deploy preview
