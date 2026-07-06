@@ -1,0 +1,47 @@
+.trigger {
+  gap: var(--midas-space-50);
+  padding-inline-end: 0;
+
+  &[aria-expanded='true'] {
+    .chevron {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.chevron {
+  transition: transform var(--midas-transition-duration-instant)
+    var(--midas-transition-timing-ease-in-out);
+}
+
+.menu {
+  width: var(--midas-size-control);
+}
+
+.menuItem {
+  align-items: center;
+  background-color: var(--midas-layer-01-base);
+  color: var(--midas-icon-primary);
+  cursor: pointer;
+  display: flex;
+  height: var(--midas-size-control);
+  justify-content: center;
+  outline: none;
+  width: 100%;
+
+  &[data-hovered] {
+    background-color: var(--midas-layer-01-hover);
+  }
+
+  &[data-focus-visible] {
+    background-color: var(--midas-menu-item-background-selected);
+    box-shadow: var(--midas-state-focus-inset);
+  }
+
+  &[data-focused] {
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight;
+      outline-offset: calc(var(--midas-state-focus-contrast-mode-outline) * -1);
+    }
+  }
+}
