@@ -1,3 +1,9 @@
+## 3.15.3 (2026-07-06)
+
+### 🩹 Fixes
+
+- **layout,sidebar:** rework collapse/expand animation ([03a1331aa36](https://github.com/migrationsverket/midas/commit/03a1331aa36))
+
 ## 3.15.2 (2026-07-02)
 
 ### 🩹 Fixes
