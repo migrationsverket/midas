@@ -122,7 +122,7 @@ export const TrailingExample = () => (
               </Tag>
             </TagList>
           </TagGroup>
-          <Button variant="icon" aria-label={`Åtgärd för ${item.name}`} onPress={() => {}}>
+          <Button variant="icon" aria-label={`Åtgärd för ${item.name}`}>
             <Star size={16} />
           </Button>
         </ListItem.Trailing>
