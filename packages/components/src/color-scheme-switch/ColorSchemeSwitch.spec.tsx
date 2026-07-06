@@ -11,14 +11,13 @@ describe('given a primary ColorSchemeSwitch', async () => {
   beforeEach(async () => {
     await render(<Primary />)
 
-    // Select "light mode"
+    // Select "light mode" — light is now first in the DOM
     await userEvent.tab()
-    await userEvent.keyboard('[ArrowRight]')
     await userEvent.keyboard('[Space]')
   })
 
   it('should be possible to tab to a button and select it', async () => {
-    const lightModeButton = page.getByRole('radio').nth(1)
+    const lightModeButton = page.getByRole('radio').nth(0)
     expect(lightModeButton).toHaveAttribute('aria-checked', 'true')
   })
 
@@ -39,7 +38,6 @@ describe('given a ColorSchemeSwitch with onSchemeChange', () => {
     const onSchemeChange = vi.fn()
     await render(<ColorSchemeSwitch onSchemeChange={onSchemeChange} />)
     await userEvent.tab()
-    await userEvent.keyboard('[ArrowRight]')
     await userEvent.keyboard('[Space]')
     expect(onSchemeChange).toHaveBeenCalledWith('light')
   })
