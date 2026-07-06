@@ -235,10 +235,13 @@ export const LinkMenuExample: React.FC = () => {
               </MenuPopover>
             </MenuTrigger>
           </CardHeader>
+
+          <CardBody>
+            <Text>
+              Prata med Sven Svensson om du har frågor om design tokens
+            </Text>
+          </CardBody>
         </CardLink>
-        <CardBody>
-          <Text>Prata med Sven Svensson om du har frågor om design tokens</Text>
-        </CardBody>
       </Card>
     </div>
   )
