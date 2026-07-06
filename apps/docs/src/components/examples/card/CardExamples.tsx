@@ -209,3 +209,37 @@ export const HorizontalExample: React.FC = () => (
     </Card>
   </div>
 )
+
+export const LinkMenuExample: React.FC = () => {
+  return (
+    <div className='card'>
+      <Card style={{ maxWidth: '320px' }}>
+        <CardLink href='https://www.migrationsverket.se'>
+          <CardHeader
+            heading='Sven Svensson'
+            subHeading='Designer på Migrationsverket'
+          >
+            <MenuTrigger>
+              <Button
+                aria-label='Menu'
+                variant='icon'
+                size='medium'
+              >
+                <EllipsisVertical size={20} />
+              </Button>
+              <MenuPopover>
+                <Menu>
+                  <MenuItem id='spara'>Spara kontaktuppgifter</MenuItem>
+                  <MenuItem id='epost'>Skicka e-post</MenuItem>
+                </Menu>
+              </MenuPopover>
+            </MenuTrigger>
+          </CardHeader>
+        </CardLink>
+        <CardBody>
+          <Text>Prata med Sven Svensson om du har frågor om design tokens</Text>
+        </CardBody>
+      </Card>
+    </div>
+  )
+}
