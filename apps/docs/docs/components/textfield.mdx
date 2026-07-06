@@ -14,7 +14,7 @@ import { ControlledValue } from '@site/src/components/examples/form/TextFieldExa
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
-Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller e-postadress. För längre inmatning används [TextArea](/components/textarea).
+Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller mejladress. För längre inmatning används [TextArea](/components/textarea).
 
 ```tsx
 import { TextField } from '@midas-ds/components'
@@ -124,7 +124,7 @@ Använd `inputMode` för att visa rätt virtuellt tangentbord på mobil, och `au
 :::
 
 `inputMode` kan användas för att ge mobilanvändare rätt tangentbord.
-`inputMode="email"` visar ett virtuellt tangentbord som är anpassat för e-postinmatning.
+`inputMode="email"` visar ett virtuellt tangentbord som är anpassat för mejladressinmatning.
 
 `autoComplete` kan användas för att aktivera autofyll för både desktop och mobil.
 
@@ -132,7 +132,7 @@ Använd en kombination av `type`, `inputMode` och `autoComplete` för validering
 
 ```tsx
 <TextField
-  label='E-post'
+  label='Mejladress'
   type='email'
   inputMode='email'
   autoComplete='email'
@@ -141,7 +141,7 @@ Använd en kombination av `type`, `inputMode` och `autoComplete` för validering
 
 <div className='card'>
   <TextField
-    label='E-post'
+    label='Mejladress'
     type='email'
     inputMode='email'
     autoComplete='email'

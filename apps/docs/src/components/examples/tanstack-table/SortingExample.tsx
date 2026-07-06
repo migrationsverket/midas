@@ -27,7 +27,7 @@ const columns: ColumnDef<Employee>[] = [
   },
   {
     accessorKey: 'email',
-    header: 'E-post',
+    header: 'Mejladress',
   },
   {
     accessorKey: 'department',

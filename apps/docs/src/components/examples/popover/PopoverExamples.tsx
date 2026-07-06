@@ -35,7 +35,7 @@ export const PopoverExample = () => {
               <Text>Välj hur du vill dela din inköpslista</Text>
             </div>
             <ButtonGroup>
-              <Button>Maila</Button>
+              <Button>Mejla</Button>
               <Button variant='secondary'>Kopiera texten</Button>
             </ButtonGroup>
           </div>
@@ -181,8 +181,8 @@ export const PopoverContentExample = () => {
   return (
     <div className='card'>
       <TextField
-        label='E-post'
-        description='Ange din e-postadress för att få nyhetsbrev.'
+        label='Mejladress'
+        description='Ange din mejladress för att få nyhetsbrev.'
         popover={{
           children: 'Vi kommer att skicka nyhetsbrev till den här adressen.',
         }}
