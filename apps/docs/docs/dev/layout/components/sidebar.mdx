@@ -15,54 +15,89 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 Sidebar är en sidopanel med plats för applikationens navigation. Själva navigationen sker via [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
 
 ```tsx
-import { Sidebar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
+import { Sidebar, Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
 import { House, Settings } from 'lucide-react'
 
 export default function App() {
   const pathname = usePathname() // or equivalent for your router
 
   return (
-    <Sidebar title='Min applikation'>
+    <Sidebar title='Navigation'>
       <Navigation>
-        <NavigationItem>
-          <NavigationLink
-            href='/'
-            icon={<House />}
-            isActive={pathname === '/'}
-          >
-            Hem
-          </NavigationLink>
-        </NavigationItem>
-        <NavigationItem>
-          <NavigationLink
-            href='/installningar'
-            icon={<Settings />}
-            isActive={pathname === '/installningar'}
-          >
-            Inställningar
-          </NavigationLink>
-        </NavigationItem>
+        <NavigationSection>
+          <NavigationItem>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive={pathname === '/'}
+            >
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+          <NavigationItem>
+            <NavigationLink
+              href='/installningar'
+              icon={<Settings />}
+              isActive={pathname === '/installningar'}
+            >
+              Inställningar
+            </NavigationLink>
+          </NavigationItem>
+        </NavigationSection>
       </Navigation>
     </Sidebar>
   )
 }
 ```
 
-## Ihopfällt läge
+## Sektioner
 
-:::note
+Använd `NavigationSection` med `title`-prop för att dela upp navigeringen i namngivna grupper.
 
-När Sidebar är ihopfälld visas etiketten i `NavigationLink` som en tooltip vid hover. Därför är det viktigt att varje länk alltid har en `children`-prop (etikett) eftersom det är nödvändigt för tillgänglighet.
+```tsx
+<Sidebar title='Navigation'>
+  <Navigation>
+    <NavigationSection title='Huvudmeny'>
+      <NavigationItem>
+        <NavigationLink
+          href='/'
+          icon={<House />}
+        >
+          Hem
+        </NavigationLink>
+      </NavigationItem>
+    </NavigationSection>
+    <NavigationSection title='Inställningar'>
+      <NavigationItem>
+        <NavigationLink
+          href='/konto'
+          icon={<User />}
+        >
+          Konto
+        </NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationLink
+          href='/system'
+          icon={<Settings />}
+        >
+          System
+        </NavigationLink>
+      </NavigationItem>
+    </NavigationSection>
+  </Navigation>
+</Sidebar>
+```
 
-:::
+## Kollapsläge
 
-Sidebar kan fällas ihop ihop till enbart ikoner för att användaren ska kunna se mer av huvudinnehållet. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
+Sidomenyn kan kollapsa ihop till enbart ikoner. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
 
 ### Okontrollerat
 
 ```tsx
 <Sidebar
-  title='Min applikation'
+  title='Navigation'
   defaultCollapsed={false}
 >
   ...
@@ -75,7 +110,7 @@ Sidebar kan fällas ihop ihop till enbart ikoner för att användaren ska kunna 
 const [isCollapsed, setIsCollapsed] = useState(false)
 
 <Sidebar
-  title='Min applikation'
+  title='Navigation'
   isCollapsed={isCollapsed}
   onCollapseChange={setIsCollapsed}
 >
@@ -83,12 +118,29 @@ const [isCollapsed, setIsCollapsed] = useState(false)
 </Sidebar>
 ```
 
+:::info Tillgänglighet
+
+Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn — välj ett namn som beskriver menyns syfte, inte applikationens namn.
+
+I kollapsad vy döljs textetiketterna och visas istället som tooltips. Se till att varje `NavigationLink` alltid har en `children`-prop så att tooltip och tillgänglig etikett fungerar korrekt.
+
+:::
+
 ## Props
 
-| Prop               | Typ                              | Standard | Beskrivning                                              |
-| ------------------ | -------------------------------- | -------- | -------------------------------------------------------- |
-| `title`            | `string`                         | —        | Titel som visas högst upp i sidomenyn (dold vid kollaps) |
-| `isCollapsed`      | `boolean`                        | —        | Kontrollerat kollapsläge                                 |
-| `defaultCollapsed` | `boolean`                        | `false`  | Starttillstånd för okontrollerat läge                    |
-| `onCollapseChange` | `(isCollapsed: boolean) => void` | —        | Callback vid kollaps/expansion                           |
-| `children`         | `ReactNode`                      | —        | Sidomenysinnehåll (typiskt `Navigation`)                 |
+### Sidebar
+
+| Prop               | Typ                              | Standard | Beskrivning                                                                   |
+| ------------------ | -------------------------------- | -------- | ----------------------------------------------------------------------------- |
+| `title`            | `string`                         | —        | **Obligatorisk.** Namn på sidomenyn, används som tillgängligt landmärkesnamn. |
+| `isCollapsed`      | `boolean`                        | —        | Kontrollerat kollapsläge                                                      |
+| `defaultCollapsed` | `boolean`                        | `false`  | Starttillstånd för okontrollerat läge                                         |
+| `onCollapseChange` | `(isCollapsed: boolean) => void` | —        | Callback vid kollaps/expansion                                                |
+| `children`         | `ReactNode`                      | —        | Sidomenysinnehåll (typiskt `Navigation`)                                      |
+
+### NavigationSection
+
+| Prop       | Typ         | Standard | Beskrivning                 |
+| ---------- | ----------- | -------- | --------------------------- |
+| `title`    | `string`    | —        | Synlig rubrik för sektionen |
+| `children` | `ReactNode` | —        | `NavigationItem`-element    |

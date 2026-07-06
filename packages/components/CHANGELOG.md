@@ -1,3 +1,13 @@
+## 17.17.0 (2026-07-06)
+
+### 🚀 Features
+
+- **components,color-scheme-switch:** add ColorSchemeSwitchMenu compact dropdown variant ([e8dfb8e67dd](https://github.com/migrationsverket/midas/commit/e8dfb8e67dd))
+
+### 🔧 Maintenance
+
+- **workspace:** upgrade nx-stylelint to v19 and stylelint to v17 ([072ccfd0975](https://github.com/migrationsverket/midas/commit/072ccfd0975))
+
 ## 17.16.0 (2026-07-03)
 
 ### 🚀 Features
