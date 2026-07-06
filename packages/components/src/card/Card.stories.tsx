@@ -181,6 +181,40 @@ export const CardWithImageAndAction: Story = {
   ),
 }
 
+export const CardLinkWithMenuTrigger: Story = {
+  tags: ['!snapshot'],
+  render: args => (
+    <Card
+      {...args}
+      style={{ maxWidth: 360 }}
+    >
+      <CardHeader
+        heading='Ansökan 2024-001'
+        subHeading='Status: Under handläggning'
+      >
+        <MenuTrigger>
+          <Button
+            aria-label='Fler alternativ'
+            variant='icon'
+          >
+            <EllipsisVertical size={20} />
+          </Button>
+          <MenuPopover>
+            <Menu>
+              <MenuItem id='edit'>Redigera</MenuItem>
+              <MenuItem id='delete'>Ta bort</MenuItem>
+            </Menu>
+          </MenuPopover>
+        </MenuTrigger>
+      </CardHeader>
+      <CardBody>
+        <Text>Kortets innehåll.</Text>
+      </CardBody>
+      <CardLink href='#'>Visa detaljer</CardLink>
+    </Card>
+  ),
+}
+
 // ─── Legacy API (CardContent) — kept for backward compat ─────────────────────
 
 export const LegacyExample: Story = {

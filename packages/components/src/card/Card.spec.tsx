@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { userEvent } from 'vitest/browser'
+import { page, userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Card.stories'
 import { render } from '../../test-utils'
@@ -9,6 +9,7 @@ import { CardHeader } from './card-header'
 const {
   Example,
   WithHeaderAndBody,
+  CardLinkWithMenuTrigger,
   LegacyWithActions,
   LegacyWithPrimaryAction,
   LegacyWithLink,
@@ -109,5 +110,15 @@ describe('given a Card with a custom Link', async () => {
     const link = getByRole('link')
     await link.hover()
     await expect.element(link).not.toHaveAttribute('data-hovered')
+  })
+})
+
+describe('given a Card with CardLink and a MenuTrigger in CardHeader', async () => {
+  it('menu trigger should be clickable when CardLink cover is present', async () => {
+    await render(<CardLinkWithMenuTrigger />)
+
+    await userEvent.click(page.getByRole('button', { name: 'Fler alternativ' }))
+
+    await expect.element(page.getByRole('menu')).toBeVisible()
   })
 })
