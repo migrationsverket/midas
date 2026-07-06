@@ -1,3 +1,38 @@
+## 2.0.96 (2026-07-03)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.16.0
+
+## 2.0.95 (2026-07-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.7
+
+## 2.0.94 (2026-07-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.6
+- Updated theme to 3.15.2
+
+## 2.0.93 (2026-06-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.5
+
+## 2.0.92 (2026-06-30)
+
+### 🔧 Maintenance
+
+- **workspace:** migrate Nx to 23.0.1 ([82bdb31fc57](https://github.com/migrationsverket/midas/commit/82bdb31fc57))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.4
+
 ## 2.0.91 (2026-06-11)
 
 ### 🧱 Updated Dependencies

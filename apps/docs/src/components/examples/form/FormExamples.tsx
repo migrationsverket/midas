@@ -37,7 +37,7 @@ export const UncontrolledForm = () => {
           isRequired
         />
         <TextField
-          label='E-post'
+          label='Mejladress'
           type='email'
           name='email'
           isRequired

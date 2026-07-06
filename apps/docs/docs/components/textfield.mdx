@@ -14,7 +14,7 @@ import { ControlledValue } from '@site/src/components/examples/form/TextFieldExa
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
-Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller e-postadress. För längre inmatning används [TextArea](/components/textarea).
+Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller mejladress. För längre inmatning används [TextArea](/components/textarea).
 
 ```tsx
 import { TextField } from '@midas-ds/components'
@@ -95,6 +95,10 @@ TextField kan valideras precis som en standard `<input>` via **HTML constraint v
 `type="email"`, `isRequired`, `minLength` etc, eller ett eget `pattern` för godtycklig regular expression. Felmeddelanden
 renderas automatiskt på valt språk i browsern. Se [API](#api) för möjliga varianter.
 
+### Felmeddelanden
+
+`errorMessage` accepterar en sträng eller en funktion för constraint-specifika meddelanden. Se [Formulär — Felmeddelanden](/dev/forms#constraint-specifika-felmeddelanden) för mer info och exempel.
+
 ### Egen validering
 
 Komponenten kan valideras med en egen funktion `validate()`.
@@ -120,7 +124,7 @@ Använd `inputMode` för att visa rätt virtuellt tangentbord på mobil, och `au
 :::
 
 `inputMode` kan användas för att ge mobilanvändare rätt tangentbord.
-`inputMode="email"` visar ett virtuellt tangentbord som är anpassat för e-postinmatning.
+`inputMode="email"` visar ett virtuellt tangentbord som är anpassat för mejladressinmatning.
 
 `autoComplete` kan användas för att aktivera autofyll för både desktop och mobil.
 
@@ -128,7 +132,7 @@ Använd en kombination av `type`, `inputMode` och `autoComplete` för validering
 
 ```tsx
 <TextField
-  label='E-post'
+  label='Mejladress'
   type='email'
   inputMode='email'
   autoComplete='email'
@@ -137,7 +141,7 @@ Använd en kombination av `type`, `inputMode` och `autoComplete` för validering
 
 <div className='card'>
   <TextField
-    label='E-post'
+    label='Mejladress'
     type='email'
     inputMode='email'
     autoComplete='email'

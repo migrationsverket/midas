@@ -10,7 +10,7 @@ export default defineConfig(() => ({
   build: {
     outDir: '../../dist/packages/select-styles',
     emptyOutDir: true,
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         'react-select': path.join(__dirname, 'src/lib/react-select.css'),
       },

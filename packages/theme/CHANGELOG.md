@@ -1,3 +1,9 @@
+## 3.15.2 (2026-07-02)
+
+### 🩹 Fixes
+
+- **theme:** use opacity tokens for secondary and tertiary button hover/active states ([e29f07fe140](https://github.com/migrationsverket/midas/commit/e29f07fe140))
+
 ## 3.15.1 (2026-06-11)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

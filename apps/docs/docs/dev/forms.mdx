@@ -9,6 +9,7 @@ import {
   RealtimeValidation,
   ServerValidation,
 } from '@site/src/components/examples/form/FormExamples'
+import { ErrorMessageExample } from '@site/src/components/examples/form/TextFieldExamples'
 
 # Formulär
 
@@ -73,7 +74,7 @@ export const UncontrolledForm = () => {
           isRequired
         />
         <TextField
-          label='E-post'
+          label='Mejladress'
           type='email'
           name='email'
           isRequired
@@ -184,6 +185,29 @@ export const RealtimeValidation = () => {
 :::info
 Felmeddelande kan presenteras under eller över formulärskomponenten via `errorPosition`.
 :::
+
+### Constraint-specifika felmeddelanden
+
+Prop `errorMessage` accepterar antingen en sträng eller en funktion — `(validation: ValidationResult) => string`.
+
+Strängen räcker i de flesta fall. Funktionen är användbar när du kombinerar flera HTML constraint-regler och vill ge användaren ett specifikt meddelande beroende på _varför_ fältet är ogiltigt. Funktionen tar emot ett `ValidationResult`-objekt med `validationDetails` som berättar exakt vilket krav som bröts:
+
+```tsx
+<TextField
+  label='Användarnamn'
+  minLength={3}
+  isRequired
+  errorMessage={({ validationDetails }) => {
+    if (validationDetails.tooShort) return 'Minst 3 tecken krävs'
+    if (validationDetails.valueMissing) return 'Fältet är obligatoriskt'
+    return 'Ogiltigt värde'
+  }}
+/>
+```
+
+<div className='card'>
+  <ErrorMessageExample />
+</div>
 
 ### Server validation
 

@@ -1,3 +1,41 @@
+## 17.16.0 (2026-07-03)
+
+### 🚀 Features
+
+- **components,icons:** add ContrastFilled custom icon ([29e29ef5f05](https://github.com/migrationsverket/midas/commit/29e29ef5f05))
+
+## 17.15.7 (2026-07-02)
+
+### 🩹 Fixes
+
+- **components,link:** add visually hidden label for new-tab and download icons ([afebdc4e492](https://github.com/migrationsverket/midas/commit/afebdc4e492))
+
+## 17.15.6 (2026-07-02)
+
+### 🧪 Tests updated
+
+- **components,accordion:** replace misleading AccordionHasBackground story and add JSDoc ([8b6168f252a](https://github.com/migrationsverket/midas/commit/8b6168f252a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.15.2
+
+## 17.15.5 (2026-06-30)
+
+### 🩹 Fixes
+
+- **components,accordion:** ignore type prop when isContained is false ([29cf59b557c](https://github.com/migrationsverket/midas/commit/29cf59b557c))
+
+## 17.15.4 (2026-06-30)
+
+### 🩹 Fixes
+
+- **components,calendar:** set chevron icon size to 20 in CalendarHeader ([10c24cb47dc](https://github.com/migrationsverket/midas/commit/10c24cb47dc))
+
+### 🔧 Maintenance
+
+- **workspace:** migrate Nx to 23.0.1 ([82bdb31fc57](https://github.com/migrationsverket/midas/commit/82bdb31fc57))
+
 ## 17.15.3 (2026-06-11)
 
 ### 🧱 Updated Dependencies

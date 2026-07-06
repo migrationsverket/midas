@@ -20,9 +20,12 @@ export default defineConfig(() => ({
     outDir: '../../dist/packages/datepicker-styles',
     emptyOutDir: true,
     reportCompressedSize: true,
-    rollupOptions: {
+    rolldownOptions: {
       input: {
-        'react-datepicker': path.join(__dirname, 'src/lib/react-datepicker.css'),
+        'react-datepicker': path.join(
+          __dirname,
+          'src/lib/react-datepicker.css',
+        ),
       },
       output: {
         assetFileNames: '[name][extname]',
