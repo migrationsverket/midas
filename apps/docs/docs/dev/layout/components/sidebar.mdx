@@ -12,11 +12,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-# Sidebar
-
-En kollapsbar sidomeny som visas på desktop. På mobil döljs den automatiskt — använd `MobileMenu` i `Header` för mobilnavigering.
-
-## Grundläggande användning
+Sidebar är en sidopanel med plats för applikationens navigation. Själva navigationen sker via [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
 
 ```tsx
 import { Sidebar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -52,9 +48,15 @@ export default function App() {
 }
 ```
 
-## Kollapsläge
+## Ihopfällt läge
 
-Sidomenyn kan kollapsa ihop till enbart ikoner. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
+:::note
+
+När Sidebar är ihopfälld visas etiketten i `NavigationLink` som en tooltip vid hover. Därför är det viktigt att varje länk alltid har en `children`-prop (etikett) eftersom det är nödvändigt för tillgänglighet.
+
+:::
+
+Sidebar kan fällas ihop ihop till enbart ikoner för att användaren ska kunna se mer av huvudinnehållet. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
 
 ### Okontrollerat
 
@@ -80,12 +82,6 @@ const [isCollapsed, setIsCollapsed] = useState(false)
   ...
 </Sidebar>
 ```
-
-:::note
-
-När sidomenyn är kollapsad visas etiketten i `NavigationLink` som en tooltip vid hover. Se till att varje länk alltid har en `children`-prop (etikett) — den är nödvändig för tillgänglighet i kollapsad vy.
-
-:::
 
 ## Props
 
