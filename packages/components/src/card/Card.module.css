@@ -107,9 +107,8 @@
 }
 
 .cardLink {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
+  position: relative;
   text-decoration: none;
 
   &[data-focused],
@@ -129,7 +128,8 @@
     content: '';
   }
 
-  .cardLinkIcon {
-    color: var(--midas-icon-primary);
+  > * {
+    position: relative;
+    z-index: var(--midas-z-index-above);
   }
 }

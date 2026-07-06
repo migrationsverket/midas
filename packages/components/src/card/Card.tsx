@@ -3,7 +3,6 @@ import styles from './Card.module.css'
 import * as React from 'react'
 import { Heading, HeadingProps } from '../heading'
 import { Button, ButtonProps, Link } from 'react-aria-components'
-import { ArrowRight } from 'lucide-react'
 
 export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -181,10 +180,6 @@ export const CardLink = <C extends React.ElementType = typeof Link>({
       className={clsx(styles.cardLink, rest.className)}
     >
       {children}
-      <ArrowRight
-        className={styles.cardLinkIcon}
-        size={24}
-      />
     </Component>
   )
 }
