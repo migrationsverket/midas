@@ -1,3 +1,13 @@
+## 0.2.7 (2026-07-06)
+
+### 🔧 Maintenance
+
+- **workspace:** upgrade nx-stylelint to v19 and stylelint to v17 ([072ccfd0975](https://github.com/migrationsverket/midas/commit/072ccfd0975))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.17.0
+
 ## 0.2.6 (2026-07-03)
 
 ### 🧱 Updated Dependencies
