@@ -75,6 +75,68 @@ export const WithHeaderAndBody: Story = {
   ),
 }
 
+export const WithCardLink: Story = {
+  render: args => (
+    <Card
+      {...args}
+      style={{ maxWidth: 320 }}
+    >
+      <CardLink href='#'>
+        <CardTitle>Min sida</CardTitle>
+      </CardLink>
+      <CardBody>
+        <Text>På Min Sida kan du ändra dina uppgifter m.m.</Text>
+      </CardBody>
+    </Card>
+  ),
+}
+
+export const WithCardLinkAndMenu: Story = {
+  tags: ['!snapshot'],
+  render: args => (
+    <Card
+      {...args}
+      style={{ maxWidth: 360 }}
+    >
+      <div
+        style={{
+          padding:
+            'var(--midas-space-medium) var(--midas-space-30) 0 var(--midas-space-medium)',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <CardLink
+            href='#'
+            style={{ flex: 1, padding: 0 }}
+          >
+            <CardTitle>Ansökan 2024-001</CardTitle>
+          </CardLink>
+          <div style={{ position: 'relative', zIndex: 10, flexShrink: 0 }}>
+            <MenuTrigger>
+              <Button
+                aria-label='Fler alternativ'
+                variant='icon'
+              >
+                <EllipsisVertical size={20} />
+              </Button>
+              <MenuPopover>
+                <Menu>
+                  <MenuItem id='edit'>Redigera</MenuItem>
+                  <MenuItem id='delete'>Ta bort</MenuItem>
+                </Menu>
+              </MenuPopover>
+            </MenuTrigger>
+          </div>
+        </div>
+        <Text slot='description'>Status: Under handläggning</Text>
+      </div>
+      <CardBody>
+        <Text>Kortets innehåll.</Text>
+      </CardBody>
+    </Card>
+  ),
+}
+
 export const WithHeaderImageAndBody: Story = {
   tags: ['!snapshot'],
   render: args => (
