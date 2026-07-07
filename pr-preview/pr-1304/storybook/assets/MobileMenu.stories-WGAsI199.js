@@ -1,6 +1,0 @@
-import{a as e,i as t,s as n}from"./preload-helper-CT_b8DTk.js";import{t as r}from"./react-CP_JPyt4.js";import{t as i}from"./iframe-CmhAZ4DG.js";import{n as a,t as o}from"./dist-Ba4wu9MB.js";import{o as s,s as c}from"./navigation-link-DSgEJ6n_.js";import{n as l,t as u}from"./Navigation.stories-D_GM2Uav.js";var d=e({Controlled:()=>_,Primary:()=>g,__namedExportsOrder:()=>v,default:()=>h}),f,p,m,h,g,_,v,y=t((()=>{o(),l(),s(),f=n(r(),1),p=i(),{Nested:m}=a(u),h={component:c,title:`Layout/Header/MobileMenu`,tags:[`autodocs`],globals:{viewport:{value:`small`}},args:{children:(0,p.jsx)(m,{})}},g={},_={render:e=>{let[t,n]=(0,f.useState)(!1);return(0,p.jsx)(c,{isOpen:t,onOpenChange:n,...e})}},g.parameters={...g.parameters,docs:{...g.parameters?.docs,source:{originalSource:`{}`,...g.parameters?.docs?.source}}},_.parameters={..._.parameters,docs:{..._.parameters?.docs,source:{originalSource:`{
-  render: args => {
-    const [isOpen, setIsOpen] = useState(false);
-    return <MobileMenu isOpen={isOpen} onOpenChange={setIsOpen} {...args} />;
-  }
-}`,..._.parameters?.docs?.source}}},v=[`Primary`,`Controlled`]}));export{y as n,d as t};
