@@ -1,3 +1,9 @@
+## 3.15.4 (2026-07-08)
+
+### 🩹 Fixes
+
+- **theme,button:** use opacity token for disabled background ([8d3f9c2ff07](https://github.com/migrationsverket/midas/commit/8d3f9c2ff07))
+
 ## 3.15.3 (2026-07-06)
 
 ### 🩹 Fixes
