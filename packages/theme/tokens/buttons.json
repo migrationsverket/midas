@@ -56,7 +56,7 @@
         }
       },
       "disabled": {
-        "$value": "light-dark({color.gray.10}, {color.gray.180})",
+        "$value": "light-dark({color.black.opacity5},{color.white.opacity13})",
         "$description": "Disabled state för knappar"
       }
     },
