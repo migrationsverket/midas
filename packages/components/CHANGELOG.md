@@ -1,3 +1,9 @@
+## 17.17.2 (2026-07-08)
+
+### 🩹 Fixes
+
+- **components,select:** trigger required validation when clearing all selected items ([c883b438aac](https://github.com/migrationsverket/midas/commit/c883b438aac))
+
 ## 17.17.1 (2026-07-06)
 
 ### 🧱 Updated Dependencies
