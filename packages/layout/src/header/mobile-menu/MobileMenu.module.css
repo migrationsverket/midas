@@ -1,3 +1,7 @@
+.triggerButton {
+  margin-inline-start: calc(-1 * var(--midas-space-50));
+}
+
 .overlay {
   display: block;
 

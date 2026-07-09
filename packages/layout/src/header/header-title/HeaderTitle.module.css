@@ -6,4 +6,5 @@
   color: var(--midas-text-primary);
   white-space: nowrap;
   margin-inline-start: var(--midas-space-medium);
+  padding-inline-end: var(--midas-space-medium);
 }
