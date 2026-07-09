@@ -56,6 +56,8 @@ export const MobileMenu = ({
           aria-label={strings.format('openMenu')}
           icon={Menu}
           variant='icon'
+          size='medium'
+          className={styles.triggerButton}
         />
         <ModalOverlay
           className={clsx(className, styles.overlay)}

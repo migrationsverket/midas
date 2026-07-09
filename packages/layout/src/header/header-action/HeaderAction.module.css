@@ -15,4 +15,8 @@
     white-space: nowrap;
     border-width: 0;
   }
+
+  .headerAction {
+    padding-inline: calc(var(--midas-space-50) - var(--border-width));
+  }
 }
