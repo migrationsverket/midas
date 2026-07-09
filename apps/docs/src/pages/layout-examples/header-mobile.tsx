@@ -1,13 +1,10 @@
-import { Bell, House, Settings, User } from 'lucide-react'
+import { Bell, House, User } from 'lucide-react'
 import {
   Header,
   HeaderAction,
   HeaderActions,
   HeaderLogo,
   HeaderTitle,
-  Layout,
-  LayoutContent,
-  Main,
   MobileMenu,
   Navigation,
   NavigationItem,
@@ -16,7 +13,8 @@ import {
 
 export default function HeaderMobileExample() {
   return (
-    <Layout>
+    <>
+      <style>{`.navbar, .footer { display: none !important; } .main-wrapper { padding-top: 0 !important; }`}</style>
       <Header>
         <MobileMenu title='Mitt system'>
           <Navigation>
@@ -30,14 +28,8 @@ export default function HeaderMobileExample() {
         <HeaderActions>
           <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
           <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
-          <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
         </HeaderActions>
       </Header>
-      <LayoutContent>
-        <Main>
-          <div style={{ height: '100%', border: 'dashed 2px var(--midas-border-color-subtle)', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--midas-text-subtle)' }}>App-innehåll</div>
-        </Main>
-      </LayoutContent>
-    </Layout>
+    </>
   )
 }
