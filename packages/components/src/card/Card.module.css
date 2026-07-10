@@ -18,10 +18,23 @@
     background-color: var(--midas-layer-01-hover);
   }
 
+  &:has(.cardLink[data-pressed]) {
+    background-color: var(--midas-button-icon-active);
+  }
+
+  &:has(.cardLink[data-focused]) {
+    box-shadow: var(--midas-state-focus);
+  }
+
   @media (hover: hover) {
     &:has(.cardLink:hover) {
       background-color: var(--midas-layer-01-hover);
     }
+  }
+
+  & > .cardLink {
+    padding: 0 var(--midas-space-medium);
+    margin: var(--midas-space-medium) 0;
   }
 }
 
@@ -115,11 +128,15 @@
   &[data-focused],
   &:focus {
     outline: none;
-    box-shadow: var(--midas-state-focus);
 
     @media (forced-colors: active) {
       outline: 2px solid highlight;
     }
+  }
+
+  &[data-pressed],
+  &:active {
+    color: inherit;
   }
 
   &::after {

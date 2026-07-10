@@ -160,20 +160,24 @@ Om kortet rymmer många handlingar kan de sekundära handlingarna placeras i en 
 
 ### Länkkort
 
-I de flesta fall räcker texten på [Link](/components/link) eller [Link button](/components/link-button) för att beskriva var länken leder och vad de kan förvänta sig när de trycker på den. Men i de fall där användaren behöver mer information om var länken leder kan `<CardLink>` användas för att göra hela kortet till en länk.
+`<CardLink>` gör hela kortets yta klickbar via ett `::after`-element som täcker kortet. Placera `<CardLink>` som direkt underkomponent till `<Card>` — länktexten och pilen är den visuella affordansen, men det är hela kortet som är klickbart.
 
 ```tsx
 <Card>
-  <CardContent>
-    <CardLink href='#'>
-      <CardTitle>Min sida</CardTitle>
-    </CardLink>
+  <CardLink href='#'>
+    <CardTitle>Min sida</CardTitle>
+  </CardLink>
+  <CardBody>
     <Text>På min sida kan du ändra dina uppgifter och se status på dina ansökningar</Text>
-  </CardContent>
+  </CardBody>
 </Card>
 ```
 
 <LinkExample />
+
+:::tip
+Placera `<CardLink>` som direkt underkomponent till `<Card>`, inte runt kortets övriga innehåll. Det är hela kortet som är klickbart — inte bara länktexten.
+:::
 
 ### Primär handling
 
@@ -251,7 +255,7 @@ Kortet byggs upp av flera underkomponenter.
 | `<CardBody>`    | Wrapper för kortets huvudsakliga innehåll.                                |
 | `<CardActions>` | Skapar en yta för kortets handlingar.                                     |
 | `<CardImage>`   | Används för att visa en bild på kortet.                                   |
-| `<CardLink>`    | Läggs runt `<CardTitle>` för att skapa en länk.                           |
+| `<CardLink>`    | Gör hela kortet klickbart. Placeras som direkt underkomponent till `<Card>`.  |
 
 ### Client Side Routing
 

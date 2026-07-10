@@ -183,7 +183,7 @@ export const CardLink = <C extends React.ElementType = typeof Link>({
       {children}
       <ArrowRight
         className={styles.cardLinkIcon}
-        size={24}
+        size={20}
       />
     </Component>
   )

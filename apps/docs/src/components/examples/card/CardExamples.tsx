@@ -99,15 +99,15 @@ export const ActionAreaExample: React.FC = () => (
 export const LinkExample: React.FC = () => (
   <div className='card'>
     <Card style={{ maxWidth: '320px' }}>
-      <CardContent>
-        <CardLink href='#'>
-          <CardTitle>Min sida</CardTitle>
-        </CardLink>
+      <CardLink href='#'>
+        <CardTitle>Min sida</CardTitle>
+      </CardLink>
+      <CardBody>
         <Text>
           På min sida kan du ändra dina uppgifter och se status på dina
           ansökningar
         </Text>
-      </CardContent>
+      </CardBody>
     </Card>
   </div>
 )

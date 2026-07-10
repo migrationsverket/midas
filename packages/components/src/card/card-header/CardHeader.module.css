@@ -17,6 +17,11 @@
   padding-right: var(--midas-space-medium);
 }
 
+.cardHeader > :not(.textContainer) {
+  position: relative;
+  z-index: var(--midas-z-index-above);
+}
+
 .subHeading {
   margin-bottom: 0;
 }
