@@ -3,6 +3,16 @@
   position: relative;
   display: flow-root;
   background-color: var(--midas-card-background-base);
+
+  --midas-field-base: light-dark(
+    var(--midas-field-01-base),
+    var(--midas-field-02-base)
+  );
+  --midas-field-hover: light-dark(
+    var(--midas-field-01-hover),
+    var(--midas-field-02-hover)
+  );
+
   box-shadow: var(--midas-card-shadow);
 
   @media (forced-colors: active) {
