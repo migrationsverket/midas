@@ -1,3 +1,13 @@
+## 0.2.11 (2026-07-10)
+
+### 🚀 Features
+
+- **layout,header:** responsive header with HeaderLogo, HeaderActions, live docs examples ([33a1a41691e](https://github.com/migrationsverket/midas/commit/33a1a41691e))
+
+### 🩹 Fixes
+
+- **layout,header:** fix left edge spacing, system name padding, action gap, and mobile icon sizing ([18422bbafd6](https://github.com/migrationsverket/midas/commit/18422bbafd6))
+
 ## 0.2.10 (2026-07-08)
 
 ### 🧱 Updated Dependencies
