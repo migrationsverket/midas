@@ -79,7 +79,7 @@ const SelectClearButton = <
 
   const handlePress = () => {
     focusManager?.focusFirst()
-    state?.setValue(null)
+    state?.selectionManager.clearSelection()
   }
 
   return (

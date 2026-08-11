@@ -25,7 +25,7 @@ export default {
       entry: ['src/index.ts', 'src/lib/tanstack-table.css'],
       formats: ['es'],
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: [
         'react',
         'react-dom',

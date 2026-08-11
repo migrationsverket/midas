@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
+import { VisuallyHidden } from 'react-aria'
 import styles from './LinkButton.module.css'
 import clsx from '../utils/clsx'
 import {
@@ -12,6 +13,8 @@ import {
   SquareArrowOutUpRight,
 } from 'lucide-react'
 import { Size } from '../common/types'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface LinkButtonComponentProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -66,14 +69,16 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
 }: LinkButtonProps<C>) => {
   const Component = as || AriaLink
 
-  const getIcon = (): LucideIcon => {
-    if (customIcon) return customIcon
-    if (rest.target === '_blank') return SquareArrowOutUpRight
-    if (iconPlacement === 'left') return ArrowLeft
-    return ArrowRight
+  const strings = useLocalizedStringFormatter(messages)
+
+  const getIcon = (): { icon: LucideIcon; label?: string } => {
+    if (customIcon) return { icon: customIcon }
+    if (rest.target === '_blank') return { icon: SquareArrowOutUpRight, label: strings.format('opensInNewTab') }
+    if (iconPlacement === 'left') return { icon: ArrowLeft }
+    return { icon: ArrowRight }
   }
 
-  const icon = getIcon()
+  const iconConfig = getIcon()
 
   return (
     <Component
@@ -94,9 +99,11 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
       {children}
       <Icon
         className={styles.icon}
-        icon={icon}
+        icon={iconConfig.icon}
         size={20}
+        aria-hidden={true}
       />
+      {iconConfig.label && <VisuallyHidden>{iconConfig.label}</VisuallyHidden>}
     </Component>
   )
 }

@@ -2,5 +2,15 @@
   "name": "next",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "tags": ["apps"]
+  "tags": ["apps"],
+  "targets": {
+    "start": {
+      "dependsOn": ["build"],
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/next",
+        "command": "next start -p 5000"
+      }
+    }
+  }
 }

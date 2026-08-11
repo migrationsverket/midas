@@ -3,7 +3,20 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './LinkButton.stories'
 import { render } from '../../test-utils'
 
-const { Primary, Secondary, Tertiary, Danger, Disabled } = composeStories(stories)
+const { Primary, Secondary, Tertiary, Danger, Disabled, NewTab } = composeStories(stories)
+
+describe('given a LinkButton that opens in a new tab', async () => {
+  it('should include visually hidden text for the new tab icon', async () => {
+    const { getByText } = await render(<NewTab />)
+    expect(getByText('Opens in new tab')).toBeDefined()
+  })
+
+  it('should hide the icon from the accessibility tree', async () => {
+    const { container } = await render(<NewTab />)
+    const icon = container.querySelector('svg')
+    expect(icon?.getAttribute('aria-hidden')).toBe('true')
+  })
+})
 
 describe('given a disabled LinkButton', async () => {
   it('should have cursor not allowed when disabled', async () => {

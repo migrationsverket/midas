@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import '@midas-ds/components/default.css'
+import '@midas-ds/layout/default.css'
 
 import App from './app/app';
 
