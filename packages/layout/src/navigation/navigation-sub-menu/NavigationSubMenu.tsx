@@ -2,7 +2,7 @@
 
 import clsx from 'clsx'
 import { useContext } from 'react'
-import { Collection, CollectionProps } from '@react-aria/collections'
+import { Collection, CollectionProps } from 'react-aria-components'
 import { SidebarContext } from '../../sidebar'
 import styles from './NavigationSubMenu.module.css'
 
