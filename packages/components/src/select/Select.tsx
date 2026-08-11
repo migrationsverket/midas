@@ -4,7 +4,7 @@ import {
   ValidationResult,
   Select as AriaSelect,
 } from 'react-aria-components'
-import { FocusScope } from '@react-aria/focus'
+import { FocusScope } from 'react-aria'
 import { Label, type InfoPopoverProps } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import clsx from '../utils/clsx'
