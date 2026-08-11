@@ -46,28 +46,28 @@ describe('given a Menu with @react-aria/test-utils', async () => {
   it('should select an item by text and call onAction', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
-    await menuTester.selectOption({ option: 'Open' })
-    expect(handleAction).toHaveBeenCalledWith(0)
+    await menuTester.toggleOptionSelection({ option: 'Open' })
+    expect(handleAction).toHaveBeenCalledWith(0, { id: 0, name: 'Open' })
   })
 
   it('should select an item by index and call onAction', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
-    await menuTester.selectOption({ option: 1 })
-    expect(handleAction).toHaveBeenCalledWith(1)
+    await menuTester.toggleOptionSelection({ option: 1 })
+    expect(handleAction).toHaveBeenCalledWith(1, { id: 1, name: 'Rename...' })
   })
 
   it('should close after selecting an item', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
-    await menuTester.selectOption({ option: 'Delete...' })
+    await menuTester.toggleOptionSelection({ option: 'Delete...' })
     await expect.element(page.getByRole('menu')).not.toBeInTheDocument()
   })
 
   it('should be operable by keyboard', async () => {
     const { menuTester } = await renderMenu()
     await menuTester.open()
-    await menuTester.selectOption({ option: 'Open', interactionType: 'keyboard' })
-    expect(handleAction).toHaveBeenCalledWith(0)
+    await menuTester.toggleOptionSelection({ option: 'Open', interactionType: 'keyboard' })
+    expect(handleAction).toHaveBeenCalledWith(0, { id: 0, name: 'Open' })
   })
 })
