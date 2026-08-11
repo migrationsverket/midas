@@ -186,6 +186,45 @@ export const DynamicSections: Story<Section> = {
   },
 }
 
+export const RequiredMultipleWithTags: Story<Item, 'multiple'> = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    selectionMode: 'multiple',
+    isRequired: true,
+    showTags: true,
+    errorMessage: 'Obligatoriskt fält',
+    defaultValue: ['ananas', 'kiwi'],
+  },
+  render: args => (
+    <form onSubmit={e => e.preventDefault()}>
+      <Select {...args} />
+      <button type='submit'>submit</button>
+    </form>
+  ),
+}
+
+export const RequiredMultipleWithClearAll: Story<Item, 'multiple'> = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    selectionMode: 'multiple',
+    isRequired: true,
+    errorMessage: 'Obligatoriskt fält',
+    defaultValue: ['ananas', 'kiwi'],
+  },
+  render: args => (
+    <form onSubmit={e => e.preventDefault()}>
+      <Select {...args} />
+      <button type='submit'>submit</button>
+    </form>
+  ),
+}
+
 export const RequiredMultipleSelectAll: Story<Item, 'multiple'> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {

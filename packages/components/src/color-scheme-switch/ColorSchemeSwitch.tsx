@@ -1,14 +1,15 @@
 'use client'
 
-import { Laptop, Moon, Sun } from 'lucide-react'
+import { Moon, Sun } from 'lucide-react'
+import { ContrastFilled } from '../icons'
 import * as React from 'react'
 import { VisuallyHidden } from 'react-aria'
-import { Key } from 'react-aria-components'
-import { SelectionIndicator } from 'react-aria-components'
+import { Key, SelectionIndicator } from 'react-aria-components'
 import { ToggleButton, ToggleButtonGroup } from '../toggle-button'
 import styles from './ColorSchemeSwitch.module.css'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { useColorScheme } from './useColorScheme'
 
 export type ColorScheme = 'light' | 'dark' | 'light dark'
 
@@ -40,52 +41,30 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
   defaultValue,
   className,
 }) => {
-  const [colorScheme, setColorScheme] = React.useState<Set<Key>>(
-    defaultValue ?? new Set([scheme ?? defaultScheme]),
-  )
-
-  const resolvedKeys = scheme ? new Set<Key>([scheme]) : colorScheme
-
-  React.useEffect(() => {
-    const targetElement = document.querySelector<HTMLElement>(selector)
-
-    if (targetElement) {
-      const resolved = Array.from(resolvedKeys).join(' ')
-      targetElement.style.removeProperty('color-scheme')
-      if (resolved === 'light dark') {
-        delete targetElement.dataset.colorScheme
-      } else {
-        targetElement.dataset.colorScheme = resolved
-      }
-    } else {
-      console.warn(`No element found for selector: "${selector}"`)
-    }
-  }, [resolvedKeys, selector])
+  const { resolved, onChange } = useColorScheme({
+    selector,
+    defaultScheme: defaultValue
+      ? (Array.from(defaultValue)[0] as ColorScheme)
+      : defaultScheme,
+    scheme,
+    onSchemeChange,
+  })
 
   const strings = useLocalizedStringFormatter(messages)
 
   const handleSelectionChange = (keys: Set<Key>) => {
-    const next = Array.from(keys)[0] as ColorScheme
-    setColorScheme(keys)
-    onSchemeChange?.(next)
+    onChange(Array.from(keys)[0] as ColorScheme)
   }
 
   return (
     <ToggleButtonGroup
       selectionMode='single'
-      selectedKeys={resolvedKeys}
+      selectedKeys={new Set<Key>([resolved])}
       onSelectionChange={handleSelectionChange}
       disallowEmptySelection
+      aria-label={strings.format('colorScheme')}
       className={className}
     >
-      <ToggleButton
-        id='light dark'
-        className={styles.button}
-      >
-        <Laptop />
-        <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
-        <SelectionIndicator className={styles.selectionIndicator} />
-      </ToggleButton>
       <ToggleButton
         id='light'
         className={styles.button}
@@ -100,6 +79,14 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       >
         <Moon />
         <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
+        <SelectionIndicator className={styles.selectionIndicator} />
+      </ToggleButton>
+      <ToggleButton
+        id='light dark'
+        className={styles.button}
+      >
+        <ContrastFilled />
+        <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
         <SelectionIndicator className={styles.selectionIndicator} />
       </ToggleButton>
     </ToggleButtonGroup>

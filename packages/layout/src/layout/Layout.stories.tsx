@@ -6,7 +6,7 @@ import { Main } from '../main'
 import { Layout, LayoutContent } from '.'
 import { Panel } from '../panel'
 
-const { Primary: PrimaryHeader, WithMobileMenu: HeaderWithMobileMenu } =
+const { Desktop: PrimaryHeader, Mobile: HeaderWithMobileMenu } =
   composeStories(headerStories)
 const { Primary: PrimarySidebar } = composeStories(sidebarStories)
 const { Primary: PrimaryNavbar } = composeStories(navbarStories)

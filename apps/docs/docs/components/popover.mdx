@@ -10,7 +10,7 @@ import {
   PopoverPlacement,
   ControlledPopover,
   CustomTriggerPopover,
-  PopoverTextExample,
+  InfoPopoverExample,
   PopoverFormExample,
   PopoverContentExample,
 } from '@site/src/components/examples/popover/PopoverExamples'
@@ -20,53 +20,98 @@ import {
   friendlyName='Hjälptext, hjälpinnehåll'
 />
 
-Popover kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen. Till skillnad från [Tooltip](../tooltip) så triggas Popover på klick istället för hover och är öppen tills användare klickar bort från den. Popover kan även fyllas med vad som helst till skillnad från Tooltip som bara tar en kort hjälptext.
+Komponent som används när användaren behöver extra information eller en liten uppsättning åtgärder utan att lämna den aktuella sidan. Till skillnad från [Tooltip](../tooltip) öppnas den vid klick och kan innehålla mer än bara en kort text, till exempel knappar, formulär eller andra interaktiva element.
 
 ```tsx
-import { Popover, DialogTrigger, Button } from '@midas-ds/components'
-import { Save } from 'lucide-react'
+import { Popover, DialogTrigger, Button, ButtonGroup, Heading, Text } from '@midas-ds/components'
 ```
 
 ```tsx
 <DialogTrigger>
   <Button
-    variant='icon'
-    aria-label='Spara'
+    variant='secondary'
+    icon={Share2}
   >
-    <Save />
+    Dela
   </Button>
-  <Popover>Spara</Popover>
+  <Popover>
+    <Heading>Dela inköpslista</Heading>
+    <Text>Välj hur du vill dela din inköpslista</Text>
+    <ButtonGroup>
+      <Button>Mejla</Button>
+      <Button variant='secondary'>Kopiera texten</Button>
+    </ButtonGroup>
+  </Popover>
 </DialogTrigger>
 ```
 
 <PopoverExample />
 
-## Funktioner
+## Användning
 
-Popover är byggd på [React Aria Popover](https://react-spectrum.adobe.com/react-aria/Popover.html) och med det
-följer inbyggd tillgänglighet som till exempel sammankoppling mellan trigger och popover. För mer detaljerad
-dokumentation hänvisas till React Aria.
+Använd Popover när informationen är relevant men inte tillräckligt viktig för att alltid visas.
 
-### Layout
+### Använd Popover för:
 
-Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text. Innehållet kan t.ex förtydligas med rubriknivåer, bekräftelseknappar eller andra interaktiva komponenter.
+- För inställningar, förklaringar eller kompletterande åtgärder som hör till en specifik del av sidan.
+
+### Använd inte Popover för:
+
+- Information som alltid bör vara synlig utan att användaren behöver öppna den.
+- Viktig information eller kritiska åtgärder som användaren måste se eller agera på.
+- Stora mängder text eller innehåll som bättre passar på en egen sida.
+
+## Exempel
+
+### Informationspopover
+
+I de fall där det finns mer information men där informationen inte är kritisk eller viktig nog att alltid visas, kan en informationspopover användas. Då används `<Info />` som trigger för att indikera att det finns mer information att ta del av. När användaren klickar på ikonen öppnas popovern med ytterligare information.
 
 ```tsx
+<Text>Hemkatalog</Text>
 <DialogTrigger>
-  <Button
-    variant='icon'
-    aria-label='Din dator'
-  >
-    <Laptop />
-  </Button>
+  <Pressable>
+    <Info
+      size={20}
+      aria-label='Mer information om hemkatalogen'
+    />
+  </Pressable>
   <Popover>
-    <Heading>Hårddiskutrymme</Heading>
-    <Text>Din dator har 150gb kvar i hemkatalogen.</Text>
+    <Heading>Hemkatalog</Heading>
+    <Text>
+      I din hemkatalog kan du spara filer och dokument som du vill ha
+      snabb åtkomst till. Det är en bra plats att organisera dina
+      viktiga filer och hålla dem lättillgängliga.
+    </Text>
   </Popover>
 </DialogTrigger>
 ```
 
-<PopoverTextExample />
+<InfoPopoverExample />
+
+#### Tillsammans med inputkomponenter
+
+Samtliga inmatningskomponenter har inbyggt stöd för informationspopover. Använd `popover` för att visa information som inte får plats i en label eller beskrivning. Detta visar en `<Info />` bredvid rubriken. Innehållet i popover styrs av `children` och visas när användaren klickar på ikonen.
+
+```tsx
+import { TextField } from '@midas-ds/components'
+```
+
+```tsx
+<TextField
+  label='Mejladress'
+  description='Ange din mejladress för att få nyhetsbrev.'
+  popover={{
+    children: 'Vi kommer att skicka nyhetsbrev till den här adressen.',
+  }}
+/>
+```
+
+<PopoverContentExample />
+
+### Popover med inställningar
+
+För att ge användaren möjlighet att justera inställningar eller göra val utan att lämna sidan kan en popover med formulär användas.
 
 ```tsx
 const Example = () => {
@@ -94,8 +139,7 @@ const Example = () => {
           <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
         </CheckboxGroup>
         <Button
-          fullwidth
-          style={{ marginTop: '0.5rem' }}
+          style={{ marginTop: '1rem' }}
           onPress={() => setOpen(false)}
         >
           Spara
@@ -108,7 +152,13 @@ const Example = () => {
 
 <PopoverFormExample />
 
-### Placement
+## Implementation
+
+Popover är byggd på [React Aria Popover](https://react-spectrum.adobe.com/react-aria/Popover.html) och med det
+följer inbyggd tillgänglighet som till exempel sammankoppling mellan trigger och popover. För mer detaljerad
+dokumentation hänvisas till React Aria.
+
+### Placering
 
 Placering av Popover i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
 
@@ -188,33 +238,6 @@ Observera att element under `<Pressable>` måste ha en ARIA-roll eller använda 
 så att skärmläsare kan läsa upp innehållet i verktygstipset. Detta gäller bara element som inte redan är _focusable_
 eller _pressable_. Se [React Aria Popover Custom trigger](https://react-spectrum.adobe.com/react-aria/Popover.html#custom-trigger)
 för referens.
-
-### Med inputfält
-
-Popover är inbyggt i samtliga inputfält i Midas. Det innebär att du kan använda Popover för att ge mer information om vad går att göra med label eller description. Använd propertyn `popover` på inputfältet för att visa en Popover med mer information på ett enhetligt sätt.
-
-```tsx
-import { TextField } from '@midas-ds/components'
-```
-
-```tsx
-<TextField
-  label='E-post'
-  description='Ange din e-postadress för att få nyhetsbrev.'
-  popover={{
-    children: 'Vi kommer att skicka nyhetsbrev till den här adressen.',
-  }}
-/>
-```
-
-<PopoverContentExample />
-
-## Riktlinjer
-
-- I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Popover är till för en design där detta
-  inte är möjligt och vi måste gömma undan informationen.
-- Popover kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
-- Eftersom Popover kan husera vilka komponenter som helst kan det vara ett bra alternativ till Modal när det inte är mer komplext än t.ex en bekräftelseruta för fortsätt eller avbryt.
 
 ## API
 

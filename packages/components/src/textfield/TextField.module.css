@@ -47,7 +47,7 @@
   padding: 1rem 1rem 1.25rem;
   background-color: var(--midas-field-01-base);
   box-sizing: border-box;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   width: 100%;
   resize: both;
   overflow: auto;
