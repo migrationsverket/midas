@@ -127,7 +127,7 @@ export const Required: Story = {
     isRequired: true,
   },
   render: args => (
-    <form>
+    <form onSubmit={e => e.preventDefault()}>
       <RadioGroup {...args} />
       <button type='submit'>Submit</button>
     </form>
@@ -148,7 +148,7 @@ export const CustomValidation: Story = {
       value?.includes('Äpple') ? 'Inga äpplen är tillåtna' : true,
   },
   render: args => (
-    <form>
+    <form onSubmit={e => e.preventDefault()}>
       <RadioGroup {...args} />
       <button type='submit'>Submit</button>
     </form>
