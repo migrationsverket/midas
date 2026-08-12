@@ -1,18 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
-import { CalendarDate, isWeekend } from '@internationalized/date'
+import {
+  CalendarDate,
+  getLocalTimeZone,
+  isWeekend,
+  today,
+} from '@internationalized/date'
 import { RunOptions } from 'axe-core'
 import { Calendar } from './Calendar'
 
-type Story = StoryObj<typeof Calendar>
+type Story = StoryObj<typeof Calendar<'single'>>
 
 export default {
   component: Calendar,
   render: args => {
     const [selectedDate, setSelectedDate] = useState<DateValue | null>(null)
     return (
-      <Calendar
+      <Calendar<'single'>
         value={selectedDate}
         onChange={setSelectedDate}
         {...args}
@@ -21,7 +26,7 @@ export default {
   },
   title: 'Components/Calendar',
   tags: ['autodocs'],
-} satisfies Meta<typeof Calendar>
+} satisfies Meta<typeof Calendar<'single'>>
 
 export const Primary: Story = {}
 
@@ -67,5 +72,26 @@ export const Invalid: Story = {
 export const UnavailableWeekends: Story = {
   args: {
     isDateUnavailable: date => isWeekend(date, 'sv-SE'),
+  },
+}
+
+export const MultiSelect: StoryObj<typeof Calendar<'multiple'>> = {
+  tags: ['!autodocs', '!snapshot'],
+  render: args => {
+    const [selectedDates, setSelectedDates] = useState<readonly DateValue[]>(
+      [],
+    )
+    return (
+      <div>
+        <Calendar<'multiple'>
+          {...args}
+          selectionMode='multiple'
+          value={selectedDates}
+          onChange={setSelectedDates}
+          defaultFocusedValue={today(getLocalTimeZone())}
+        />
+        <p>{selectedDates.length} valda datum</p>
+      </div>
+    )
   },
 }
