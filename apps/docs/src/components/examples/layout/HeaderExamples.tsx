@@ -18,7 +18,10 @@ const collapsibleActions = [
 ]
 
 export const BasicHeaderExample: React.FC = () => (
-  <div className='card' style={{ overflow: 'hidden', padding: 0 }}>
+  <div
+    className='card'
+    style={{ overflow: 'hidden', padding: 0 }}
+  >
     <Header>
       <HeaderLogo />
       <HeaderTitle>Mitt system</HeaderTitle>
@@ -35,7 +38,10 @@ export const OverflowHeaderExample: React.FC = () => {
   const isNarrow = useMediaQuery('(max-width: 700px)')
 
   return (
-    <div className='card' style={{ overflow: 'hidden', padding: 0 }}>
+    <div
+      className='card'
+      style={{ overflow: 'hidden', padding: 0 }}
+    >
       <Header>
         <HeaderLogo />
         <HeaderTitle>Mitt system</HeaderTitle>
@@ -50,7 +56,10 @@ export const OverflowHeaderExample: React.FC = () => {
               <MenuPopover>
                 <Menu>
                   {collapsibleActions.map(action => (
-                    <MenuItem key={action.id} id={action.id}>
+                    <MenuItem
+                      key={action.id}
+                      id={action.id}
+                    >
                       {action.label}
                     </MenuItem>
                   ))}
@@ -59,7 +68,10 @@ export const OverflowHeaderExample: React.FC = () => {
             </MenuTrigger>
           ) : (
             collapsibleActions.map(action => (
-              <HeaderAction key={action.id} icon={action.icon}>
+              <HeaderAction
+                key={action.id}
+                icon={action.icon}
+              >
                 {action.label}
               </HeaderAction>
             ))
@@ -75,11 +87,14 @@ export const MobileHeaderExample: React.FC = () => {
   return (
     <div
       className='card'
-      style={{ overflow: 'hidden', padding: 0, maxWidth: 480 }}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
     >
       <iframe
         title='Header with mobile menu example'
-        style={{ width: '100%', height: 72, border: 'none', display: 'block' }}
+        style={{ width: '60%', height: 72, border: 'none', display: 'block' }}
         src={url}
       />
     </div>
