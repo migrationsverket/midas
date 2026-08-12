@@ -4,15 +4,21 @@ title: Desktopapplikationer
 sidebar_position: 2
 ---
 
+import { DesktopAppExample } from '@site/src/components/examples/layout/PageLayoutExamples'
+
 # Desktopapplikationer
 
 Kombinationen [Header](/dev/layout/components/header), [Sidebar](/dev/layout/components/sidebar) och [Panel](/dev/layout/components/panel) innehåller alla ramverkskomponenter för desktopapplikationer. Header innehåller globala handlingar och navigation på små skärmar, Sidebar används som standardnavigation och Panel används för att visa kontextuell information t.ex. notifieringar eller mer information om element i en lista.
+
+<DesktopAppExample />
 
 ## Navigation
 
 När fönstret eller skärmen är under 640px i bredd göms Sidebar automatiskt. För att stödja navigation för alla fönster- och skärmstorlekar måste navigation via [MobileMenu](/dev/layout/components/header/#mobilemenu) alltid inkluderas i trädet. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. För att undvika kodduplicering rekommenderas att lägga navigationsinnehållet i en delad komponent och använda den till MobileMenu och Sidebar.
 
-## Exempel
+## Exempelkod
+
+Exempelkoden visar en applikation med bara en Panel. Om applikationen behöver fler paneler används [PanelProvider och usePanels-hooken](/dev/layout/components/panel/#flera-paneler-med-panelprovider)
 
 <style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
 
@@ -20,81 +26,71 @@ När fönstret eller skärmen är under 640px i bredd göms Sidebar automatiskt.
 
 ```tsx
 import {
+  Header,
+  HeaderAction,
+  HeaderActions,
+  HeaderLogo,
+  HeaderTitle,
   Layout,
   LayoutContent,
   Main,
-  Header,
-  HeaderActions,
-  HeaderAction,
   Sidebar,
   Navigation,
   NavigationItem,
   NavigationLink,
-  PanelProvider,
-  PanelRegion,
+  Panel,
+  MobileMenu,
 } from '@midas-ds/layout'
-import { House, Settings, Bell, User } from 'lucide-react'
+import { House, Bell } from 'lucide-react'
+import { useState } from 'react'
+
+export const NavigationContent = () => (
+  <Navigation>
+    <NavigationItem>
+      <NavigationLink
+        href='/'
+        icon={<House />}
+        isActive
+      >
+        Hem
+      </NavigationLink>
+    </NavigationItem>
+    {/* Fler länkar */}
+  </Navigation>
+)
 
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <PanelProvider panelBehavior='replace'>
-      <Layout>
-        <Header>
-          <MobileMenu title='Meny'>
-            <Navigation>
-              <NavigationItem>
-                <NavigationLink
-                  href='/'
-                  icon={<House />}
-                  isActive
-                >
-                  Hem
-                </NavigationLink>
-              </NavigationItem>
-              <NavigationItem>
-                <NavigationLink
-                  href='/installningar'
-                  icon={<Settings />}
-                >
-                  Inställningar
-                </NavigationLink>
-              </NavigationItem>
-            </Navigation>
-          </MobileMenu>
-          <HeaderActions>
-            <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
-            <HeaderAction icon={<User />}>Min profil</HeaderAction>
-          </HeaderActions>
-        </Header>
-
-        <LayoutContent>
-          <Sidebar title='Navigation'>
-            <Navigation>
-              <NavigationItem>
-                <NavigationLink
-                  href='/'
-                  icon={<House />}
-                  isActive
-                >
-                  Hem
-                </NavigationLink>
-              </NavigationItem>
-              <NavigationItem>
-                <NavigationLink
-                  href='/installningar'
-                  icon={<Settings />}
-                >
-                  Inställningar
-                </NavigationLink>
-              </NavigationItem>
-            </Navigation>
-          </Sidebar>
-
-          <Main>{/* Ditt innehåll */}</Main>
-          <PanelRegion />
-        </LayoutContent>
-      </Layout>
-    </PanelProvider>
+    <Layout>
+      <Header>
+        <MobileMenu title='Meny'>
+          <NavigationContent />
+        </MobileMenu>
+        <HeaderLogo />
+        <HeaderTitle>Mitt system</HeaderTitle>
+        <HeaderActions>
+          <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
+          {/* Fler actions */}
+        </HeaderActions>
+      </Header>
+      <LayoutContent>
+        <Sidebar title='Navigation'>
+          <NavigationContent />
+        </Sidebar>
+        <Main>
+          <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
+        </Main>
+        <Panel
+          id='detaljer'
+          title='Detaljer'
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+        >
+          {/* Panelinnehåll */}
+        </Panel>
+      </LayoutContent>
+    </Layout>
   )
 }
 ```
