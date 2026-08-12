@@ -171,6 +171,14 @@ export const StaticSections: Story = {
   },
 }
 
+export const NotVirtualized: Story = {
+  tags: ['!autodocs', '!snapshot'],
+  args: {
+    ...StaticSections.args,
+    listBoxProps: { virtualized: false },
+  },
+}
+
 export const DynamicSections: Story<Section> = {
   args: {
     ...Primary.args,

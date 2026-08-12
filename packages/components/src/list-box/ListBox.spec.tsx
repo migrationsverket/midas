@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './ListBox.stories'
 import { render } from '../../test-utils'
 
-const { SelectionModeSingle } = composeStories(stories)
+const { SelectionModeSingle, NotVirtualized } = composeStories(stories)
 
 describe('given a ListBoxItem in a ListBox with selectionMode="single"', async () => {
   it('should change cursor on hover', async () => {
@@ -28,5 +28,26 @@ describe('given a ListBoxItem in a ListBox with selectionMode="single"', async (
     observer.disconnect()
 
     expect(pressedAtSomePoint).toBe(true)
+  })
+})
+
+describe('given a ListBox with virtualized (default)', async () => {
+  it('should render items through the Virtualizer', async () => {
+    const { container } = await render(<SelectionModeSingle />)
+    expect(
+      container.querySelector('[style*="contain: size layout style"]'),
+    ).toBeTruthy()
+  })
+})
+
+describe('given a ListBox with virtualized={false}', async () => {
+  it('should render all items in a section without the Virtualizer', async () => {
+    const { container, getByText } = await render(<NotVirtualized />)
+
+    await expect.element(getByText('Item 1')).toBeInTheDocument()
+    await expect.element(getByText('Item 2')).toBeInTheDocument()
+    expect(
+      container.querySelector('[style*="contain: size layout style"]'),
+    ).toBeFalsy()
   })
 })

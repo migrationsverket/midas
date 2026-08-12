@@ -1,30 +1,44 @@
 import {
   ListBox as AriaListBox,
-  ListBoxProps,
+  type ListBoxProps as AriaListBoxProps,
   Virtualizer,
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import { SectionedListLayout } from './SectionedListLayout'
 import styles from './ListBox.module.css'
 
-export type { ListBoxProps }
+export interface ListBoxProps<T extends object> extends AriaListBoxProps<T> {
+  /** @default true */
+  virtualized?: boolean
+}
 
 export const ListBox = <T extends object>({
   className,
   children,
+  virtualized = true,
   ...rest
-}: ListBoxProps<T>) => (
-  <Virtualizer
-    layout={SectionedListLayout}
-    layoutOptions={{
-      headingHeight: 38,
-    }}
-  >
+}: ListBoxProps<T>) => {
+  const listBox = (
     <AriaListBox
       className={clsx(styles.listBox, className)}
       {...rest}
     >
       {children}
     </AriaListBox>
-  </Virtualizer>
-)
+  )
+
+  if (!virtualized) {
+    return listBox
+  }
+
+  return (
+    <Virtualizer
+      layout={SectionedListLayout}
+      layoutOptions={{
+        headingHeight: 38,
+      }}
+    >
+      {listBox}
+    </Virtualizer>
+  )
+}
