@@ -138,6 +138,14 @@
   }
 }
 
+.checkboxWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--midas-space-05);
+  width: 100%;
+}
+
 /* ===========================
    Checkbox Group
 =========================== */
