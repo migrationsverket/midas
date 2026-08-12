@@ -66,3 +66,10 @@ export const WithClearButton: Story = {
     },
   },
 }
+
+export const MaxRangeDuration: Story = {
+  args: {
+    isDateUnavailable: (date, anchorDate) =>
+      anchorDate !== null && Math.abs(date.compare(anchorDate)) > 7,
+  },
+}
