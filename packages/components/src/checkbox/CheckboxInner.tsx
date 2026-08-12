@@ -1,8 +1,11 @@
 import { forwardRef } from 'react'
 import { mergeProps, VisuallyHidden } from 'react-aria'
+import { FieldErrorContext } from 'react-aria-components'
 import { clsx } from 'clsx'
 import { Minus, Check } from 'lucide-react'
 import { CheckboxInnerProps } from './types'
+import { FieldError } from '../field-error'
+import { Text } from '../text'
 import styles from './Checkbox.module.css'
 import { variables } from '@midas-ds/theme'
 
@@ -24,6 +27,13 @@ export const CheckboxInner = forwardRef<HTMLLabelElement, CheckboxInnerProps>(
       inputProps,
       inputRef,
       children,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      descriptionProps,
+      errorMessageProps,
+      validationErrors,
+      validationDetails,
     },
     ref,
   ) => {
@@ -31,11 +41,11 @@ export const CheckboxInner = forwardRef<HTMLLabelElement, CheckboxInnerProps>(
     const { pressProps, isPressed } = pressResult
     const { isFocused, isFocusVisible, focusProps } = focusRingAria
 
-    return (
+    const checkboxRow = (
       <label
         ref={ref}
         {...mergeProps(hoverProps, pressProps, labelProps)}
-        slot={slot || undefined}
+        slot={description || errorMessage ? undefined : slot || undefined}
         className={clsx(styles.checkbox, className)}
         data-hovered={isHovered || undefined}
         data-selected={isSelected || undefined}
@@ -69,6 +79,37 @@ export const CheckboxInner = forwardRef<HTMLLabelElement, CheckboxInnerProps>(
         </VisuallyHidden>
         {children}
       </label>
+    )
+
+    if (!description && !errorMessage) {
+      return checkboxRow
+    }
+
+    const errorElement = errorMessage && (
+      <FieldErrorContext.Provider
+        value={{ isInvalid: !!isInvalid, validationErrors, validationDetails }}
+      >
+        <FieldError {...errorMessageProps}>{errorMessage}</FieldError>
+      </FieldErrorContext.Provider>
+    )
+
+    return (
+      <div
+        className={styles.checkboxWrapper}
+        slot={slot || undefined}
+      >
+        {description && (
+          <Text
+            slot='description'
+            {...descriptionProps}
+          >
+            {description}
+          </Text>
+        )}
+        {errorPosition === 'top' && errorElement}
+        {checkboxRow}
+        {errorPosition === 'bottom' && errorElement}
+      </div>
     )
   },
 )
