@@ -14,6 +14,7 @@ import {
   NavigationLink,
   Panel,
   MobileMenu,
+  Navbar,
 } from '@midas-ds/layout'
 import { Bell, House, Settings, User } from 'lucide-react'
 import { Button } from '@midas-ds/components'
@@ -113,6 +114,63 @@ export const DesktopAppExample = () => {
             Panel med detaljer
           </Panel>
         </LayoutContent>
+      </Layout>
+    </div>
+  )
+}
+
+export const MobileAppExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <div
+      className='card'
+      style={{ padding: 0 }}
+    >
+      <Layout>
+        <Header>
+          <HeaderLogo />
+          <HeaderTitle>Mitt system</HeaderTitle>
+          <HeaderActions>
+            <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
+            <HeaderAction icon={<User />}>Min profil</HeaderAction>
+          </HeaderActions>
+        </Header>
+
+        <LayoutContent>
+          <Main>
+            <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
+          </Main>
+          <Panel
+            id='detaljer'
+            title='Detaljer'
+            isOpen={isOpen}
+            onOpenChange={setIsOpen}
+          >
+            Panel med detaljer
+          </Panel>
+        </LayoutContent>
+        <Navbar>
+          <Navigation>
+            <NavigationItem>
+              <NavigationLink
+                href='#'
+                icon={<House />}
+                isActive
+              >
+                Hem
+              </NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink
+                href='#'
+                icon={<Settings />}
+              >
+                Inställningar
+              </NavigationLink>
+            </NavigationItem>
+          </Navigation>
+        </Navbar>
       </Layout>
     </div>
   )
