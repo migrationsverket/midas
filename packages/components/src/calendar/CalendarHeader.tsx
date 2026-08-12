@@ -17,7 +17,7 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
       size='medium'
       data-readonly={isReadOnly || undefined}
     >
-      <ChevronLeft />
+      <ChevronLeft size={20} />
     </Button>
     <Heading
       level={3}
@@ -29,7 +29,7 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
       size='medium'
       data-readonly={isReadOnly || undefined}
     >
-      <ChevronRight />
+      <ChevronRight size={20} />
     </Button>
   </header>
 )

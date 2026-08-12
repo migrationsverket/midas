@@ -158,25 +158,3 @@ const ExpandableStuff = () => {
   )
 }
 
-export const AccordionHasBackground: Story = {
-  args: {
-    isContained: true,
-    children: ITEMS.map((item, i) => (
-      <AccordionItem
-        id={item}
-        key={item}
-        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
-        type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
-      >
-        Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Repellendus perspiciatis officia,
-        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
-        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Impedit dolorem tempora
-        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
-        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
-        illum consequuntur?
-      </AccordionItem>
-    )),
-  },
-}

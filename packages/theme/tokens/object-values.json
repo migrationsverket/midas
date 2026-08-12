@@ -577,6 +577,24 @@
       }
     }
   },
+  "navigationLink": {
+    "$description": "Bakgrundsfärger för navigationslänkar i sidomenyn.",
+    "$type": "string",
+    "background": {
+      "hover": {
+        "$value": "light-dark({color.gray.20}, {color.gray.190})",
+        "$description": "Bakgrundsfärg vid hover"
+      },
+      "selected": {
+        "$value": "light-dark({color.gray.10}, {color.gray.180})",
+        "$description": "Bakgrundsfärg för aktiv länk"
+      },
+      "selectedHover": {
+        "$value": "light-dark({color.gray.20}, {color.gray.190})",
+        "$description": "Bakgrundsfärg vid hover på aktiv länk"
+      }
+    }
+  },
   "overlay": {
     "background": {
       "$type": "color",

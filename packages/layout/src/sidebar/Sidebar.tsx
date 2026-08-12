@@ -2,7 +2,7 @@
 
 import React from 'react'
 import clsx from 'clsx'
-import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
+import { PanelLeftClose } from 'lucide-react'
 import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
 import { useControlledState } from '@react-stately/utils'
 import { filterDOMProps } from '@react-aria/utils'
@@ -12,15 +12,14 @@ import {
   PanelContent,
   PanelHeader,
   PanelTitle,
-  PanelTitleProps,
 } from '../panel'
 import messages from './intl/translations.json'
 import { useIsMobileDevice } from '../utils'
 import { SidebarContext } from './SidebarContext'
 import styles from './Sidebar.module.css'
 
-export interface SidebarProps
-  extends PanelBodyProps, Pick<PanelTitleProps, 'title'> {
+export interface SidebarProps extends PanelBodyProps {
+  title: string
   isCollapsed?: boolean
   defaultCollapsed?: boolean
   onCollapseChange?: (isCollapsed: boolean) => void
@@ -70,16 +69,12 @@ export const Sidebar = ({
             [styles.collapsed]: isCollapsed,
           })}
         >
-          {title ? (
-            <PanelTitle
-              className={clsx(styles.sidebarTitle, {
-                [styles.collapsed]: isCollapsed,
-              })}
-              title={title}
-            />
-          ) : (
-            <div />
-          )}
+          <PanelTitle
+            className={clsx(styles.sidebarTitle, {
+              [styles.collapsed]: isCollapsed,
+            })}
+            title={title}
+          />
           <Button
             aria-label={
               isCollapsed
@@ -88,13 +83,15 @@ export const Sidebar = ({
             }
             onPress={handlePress}
             variant='icon'
-            size={isCollapsed ? 'large' : 'medium'}
+            size='medium'
           >
-            {isCollapsed ? (
-              <PanelLeftOpen size={20} />
-            ) : (
+            <span
+              className={clsx(styles.collapseButton, {
+                [styles.collapsed]: isCollapsed,
+              })}
+            >
               <PanelLeftClose size={20} />
-            )}
+            </span>
           </Button>
         </PanelHeader>
         <PanelContent className={styles.sidebarContent}>

@@ -1,8 +1,9 @@
-import { Logo } from '@midas-ds/components'
 import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
 import * as headerActionsStories from './header-actions/HeaderActions.stories'
 import * as MobileMenuStories from './mobile-menu/MobileMenu.stories'
 import { Header } from './Header'
+import { HeaderLogo } from './header-logo'
+import { HeaderTitle } from './header-title'
 
 type Story = StoryObj<typeof Header>
 
@@ -16,20 +17,23 @@ export default {
   parameters: { layout: 'fullscreen', rootElement: 'div' },
 } satisfies Meta<typeof Header>
 
-export const Primary: Story = {
+export const Desktop: Story = {
   render: () => (
     <Header>
-      <Logo />
+      <HeaderLogo />
+      <HeaderTitle>System name</HeaderTitle>
       <PrimaryHeaderActions />
     </Header>
   ),
 }
 
-export const WithMobileMenu: Story = {
+export const Mobile: Story = {
+  globals: { viewport: { value: 'small' } },
   render: () => (
     <Header>
       <PrimaryMobileMenu />
-      <Logo />
+      <HeaderLogo />
+      <HeaderTitle>System name</HeaderTitle>
       <PrimaryHeaderActions />
     </Header>
   ),

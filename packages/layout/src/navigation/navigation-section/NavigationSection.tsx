@@ -24,12 +24,12 @@ export const NavigationSection = <T extends object>({
 
   return (
     <NavigationItem>
+      {title && <NavigationHeader>{title}</NavigationHeader>}
       <ul
         className={clsx(className, styles.navigationSection, {
           [styles.collapsed]: sidebarContext?.isCollapsed,
         })}
       >
-        {title && <NavigationHeader>{title}</NavigationHeader>}
         <Collection {...rest} />
       </ul>
     </NavigationItem>

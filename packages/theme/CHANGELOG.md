@@ -1,3 +1,21 @@
+## 3.15.4 (2026-07-08)
+
+### 🩹 Fixes
+
+- **theme,button:** use opacity token for disabled background ([8d3f9c2ff07](https://github.com/migrationsverket/midas/commit/8d3f9c2ff07))
+
+## 3.15.3 (2026-07-06)
+
+### 🩹 Fixes
+
+- **layout,sidebar:** rework collapse/expand animation ([03a1331aa36](https://github.com/migrationsverket/midas/commit/03a1331aa36))
+
+## 3.15.2 (2026-07-02)
+
+### 🩹 Fixes
+
+- **theme:** use opacity tokens for secondary and tertiary button hover/active states ([e29f07fe140](https://github.com/migrationsverket/midas/commit/e29f07fe140))
+
 ## 3.15.1 (2026-06-11)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

@@ -1,4 +1,6 @@
 export * from './header-actions'
 export * from './header-action'
+export * from './header-logo'
+export * from './header-title'
 export * from './mobile-menu'
 export * from './Header'

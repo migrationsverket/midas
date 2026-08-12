@@ -1,7 +1,8 @@
 .navigationHeader {
   color: var(--midas-text-secondary);
   font-size: var(--midas-typography-font-size-20);
-  padding: var(--midas-spacing-30);
+  padding: var(--midas-space-60) var(--midas-space-small)
+    var(--midas-space-xsmall);
 
   &.collapsed {
     display: none;

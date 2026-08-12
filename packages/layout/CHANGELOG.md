@@ -1,3 +1,79 @@
+## 0.2.11 (2026-07-10)
+
+### 🚀 Features
+
+- **layout,header:** responsive header with HeaderLogo, HeaderActions, live docs examples ([33a1a41691e](https://github.com/migrationsverket/midas/commit/33a1a41691e))
+
+### 🩹 Fixes
+
+- **layout,header:** fix left edge spacing, system name padding, action gap, and mobile icon sizing ([18422bbafd6](https://github.com/migrationsverket/midas/commit/18422bbafd6))
+
+## 0.2.10 (2026-07-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.17.3
+
+## 0.2.9 (2026-07-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.17.2
+
+## 0.2.8 (2026-07-06)
+
+### 🩹 Fixes
+
+- **layout,sidebar:** rework collapse/expand animation ([03a1331aa36](https://github.com/migrationsverket/midas/commit/03a1331aa36))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.17.1
+
+## 0.2.7 (2026-07-06)
+
+### 🔧 Maintenance
+
+- **workspace:** upgrade nx-stylelint to v19 and stylelint to v17 ([072ccfd0975](https://github.com/migrationsverket/midas/commit/072ccfd0975))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.17.0
+
+## 0.2.6 (2026-07-03)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.16.0
+
+## 0.2.5 (2026-07-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.7
+
+## 0.2.4 (2026-07-02)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.6
+
+## 0.2.3 (2026-06-30)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.5
+
+## 0.2.2 (2026-06-30)
+
+### 🔧 Maintenance
+
+- **workspace:** migrate Nx to 23.0.1 ([82bdb31fc57](https://github.com/migrationsverket/midas/commit/82bdb31fc57))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.15.4
+
 ## 0.2.1 (2026-06-11)
 
 ### 🧱 Updated Dependencies

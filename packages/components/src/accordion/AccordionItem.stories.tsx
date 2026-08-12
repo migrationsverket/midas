@@ -60,6 +60,13 @@ export const Important: Story = {
   },
 }
 
+export const TypeWithoutContained: Story = {
+  args: {
+    type: 'success',
+    isContained: false,
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
@@ -72,5 +79,21 @@ export const StatusDisabled: Story = {
     isDisabled: true,
     type: 'success',
     isContained: true,
+  },
+}
+
+export const HasBackground: Story = {
+  args: {
+    type: 'success',
+    isContained: true,
+    hasBackground: true,
+  },
+}
+
+export const NoBackground: Story = {
+  args: {
+    type: 'success',
+    isContained: true,
+    hasBackground: false,
   },
 }

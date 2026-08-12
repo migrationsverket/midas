@@ -1,12 +1,20 @@
 {
   "en": {
-    "darkMode": "Dark Mode",
-    "lightMode": "Light Mode",
-    "system": "System Setting"
+    "colorScheme": "Color scheme",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "system": "Follows system",
+    "triggerDarkMode": "Color scheme: Dark mode",
+    "triggerLightMode": "Color scheme: Light mode",
+    "triggerSystem": "Color scheme: Follows system"
   },
   "sv": {
+    "colorScheme": "Färgschema",
     "darkMode": "Mörkt läge",
     "lightMode": "Ljust läge",
-    "system": "Systeminställning"
+    "system": "Följer systemet",
+    "triggerDarkMode": "Färgschema: Mörkt läge",
+    "triggerLightMode": "Färgschema: Ljust läge",
+    "triggerSystem": "Färgschema: Följer systemet"
   }
 }
