@@ -22,7 +22,7 @@ import {
 Sidhuvudet innehåller logotypen och plats för globala handlingar. Renderar ett semantiskt `<header>`-element och tillhandahåller kontext för logotypstorlek (responsiv).
 
 ```tsx
-import { Header } from '@midas-ds/layout'
+import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
 import { Logo } from '@midas-ds/components'
 ```
 
@@ -38,14 +38,35 @@ import { Logo } from '@midas-ds/components'
 </Header>
 ```
 
+<BasicHeaderExample />
+
+## Logotyp
+
+Logotypen läggs till i Header via `<HeaderLogo>`. Header hanterar responsiv storlek automatiskt och visar en kompakt variant på små skärmar (≤ 640px). Logotypen kan länka till startsidan genom att wrappas i den routing-komponent som används i applikationen.
+
+```tsx
+// Vanilla HTML
+
+;<a href='/'>
+  <HeaderLogo />
+</a>
+
+// Next.js
+import Link from 'next/link'
+;<Link href='/'>
+  <HeaderLogo />
+</Link>
+
+// React Router
+import { Link } from 'react-router-dom'
+;<Link to='/'>
+  <HeaderLogo />
+</Link>
+```
+
 ## Globala handlingar
 
 I Header läggs globala handlingar, alltså handlingar som användaren ska kunna komma åt från alla sidor i applikationen. Typiska globala handlingar är Logga ut och Inställningar. Dessa läggs till i Header via `HeaderActions`. Varje global handling (`HeaderAction`) ska ha en ikon och en beskrivande etikett.
-
-```tsx
-import { Header, HeaderActions, HeaderAction } from '@midas-ds/layout'
-import { Bell, User } from 'lucide-react'
-```
 
 ```tsx
 <Header>
@@ -70,9 +91,9 @@ import { Bell, User } from 'lucide-react'
 </Header>
 ```
 
-## Navigering på små skärmar/fönster
+### Overflow
 
-Navigering på små skärmar/webbläsarfönster görs via Header och komponenten `MobileMenu`. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. Det är därmed säkert att alltid inkludera den i trädet.
+HeaderActions hanterar inte overflow automatiskt. Om applikationen har många handlingar behöver dessa läggas i en overflow-meny på små skärmar. Det görs via en mediaquery. Prova att ändra bredden på fönstret nedan för att se beteendet:
 
 ```tsx
 import { useMediaQuery } from '@react-spectrum/utils'
@@ -127,6 +148,55 @@ function AppHeader() {
 }
 ```
 
+<OverflowHeaderExample />
+
+## Navigering på små skärmar/fönster
+
+Navigering på små skärmar/webbläsarfönster (≤ 640px) görs via Header och komponenten `MobileMenu`. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. Det är därmed säkert att alltid inkludera den i trädet.
+
+```tsx
+import {
+  Header,
+  HeaderLogo,
+  HeaderTitle,
+  HeaderActions,
+  HeaderAction,
+  MobileMenu,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+} from '@midas-ds/layout'
+import { Bell, User, House } from 'lucide-react'
+
+export const MobileHeaderExample = () => {
+  return (
+    <Header>
+      <MobileMenu title='Mitt system'>
+        <Navigation>
+          <NavigationItem>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+        </Navigation>
+      </MobileMenu>
+      <HeaderLogo />
+      <HeaderTitle>Mitt system</HeaderTitle>
+      <HeaderActions>
+        <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+        <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+      </HeaderActions>
+    </Header>
+  )
+}
+```
+
+<MobileHeaderExample />
+
 ## Props
 
 ### HeaderAction
@@ -159,3 +229,7 @@ function AppHeader() {
 | `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
 | `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
 | `children`     | `ReactNode`                 | Menyinnehåll                   |
+
+```
+
+```
