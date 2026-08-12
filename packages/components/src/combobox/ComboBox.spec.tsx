@@ -7,7 +7,7 @@ import { render } from '../../test-utils'
 import { ComboBox } from './ComboBox'
 import { ListBoxItem } from '../list-box'
 
-const { Primary, Required, Sectioned } = composeStories(stories)
+const { Primary, Required, Sectioned, NotVirtualized } = composeStories(stories)
 
 describe('given a primary ComboBox', async () => {
   it('it should preserve its classNames when being passed new ones', async () => {
@@ -121,5 +121,19 @@ describe('given an async ComboBox with allowsEmptyCollection', async () => {
     await expect
       .element(page.getByText('No results found'))
       .toBeInTheDocument()
+  })
+})
+
+describe('given a ComboBox with listBoxProps={{ virtualized: false }}', async () => {
+  it('should render items in every section', async () => {
+    await render(<NotVirtualized />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown]')
+
+    const listbox = page.getByRole('listbox')
+    await expect.element(listbox.getByText('Ananas')).toBeVisible()
+    await expect.element(listbox.getByText('Kokosnöt')).toBeVisible()
+    await expect.element(listbox.getByText('Päron')).toBeVisible()
   })
 })
