@@ -100,11 +100,28 @@ Skissen nedan visar ett exempel på hur komponenterna kan sättas ihop. Vilket u
 npm install @midas-ds/layout
 ```
 
-Importera `default.css`. Denna fil innehåller global css för att layout-komponenterna ska få rätt utseende. Importera filen i roten av din applikation:
+Importera `default.css` i roten av din applikation. Denna fil innehåller global CSS som krävs för att layout-komponenterna ska fylla hela viewporten korrekt — bland annat `body { margin: 0 }` och `html { overflow: hidden }` för att förhindra att sidans scrollning konkurrerar med layoutens egna scrollbara regioner.
 
 ```tsx title="main.tsx"
 import '@midas-ds/layout/default.css'
 ```
+
+:::tip Avancerad installation
+
+Använder du den avancerade installationen och importerar `variables.css`, `fonts.css` och `color-scheme.css` separat istället för `default.css`? Kom då ihåg att lägga till nedanstående i din rot-CSS manuellt.
+
+:::
+
+```css title="index.css"
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+```
+
 
 ## Snabbstart
 

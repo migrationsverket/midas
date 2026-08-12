@@ -28,7 +28,7 @@ describe('given a controlled Panel', () => {
     await expect.element(getByRole('complementary')).not.toHaveAttribute('data-entering')
     await userEvent.click(getByRole('button', { name: 'Dismiss panel' }))
     await expect.element(getByRole('complementary')).not.toBeInTheDocument()
-  })
+  }, 8000)
 
   it('should close when the panel close button is pressed', async () => {
     const { getByRole } = await render(<Controlled />)

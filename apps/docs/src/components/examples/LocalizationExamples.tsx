@@ -78,7 +78,7 @@ function CurrentDate() {
 export const ErrorMessageExample = () => {
   return (
     <TextField
-      label='Skriv e-post'
+      label='Skriv din mejladress'
       type='email'
       description='Validering och felmeddelanden beror av inställningarna i webbläsaren'
     />

@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from 'clsx'
 import { forwardRef, ReactNode } from 'react'
 import { composeRenderProps } from 'react-aria-components'
 import { type ButtonProps, Button } from '@midas-ds/components'
@@ -10,7 +11,7 @@ export interface HeaderActionProps extends Omit<ButtonProps, 'icon'> {
 }
 
 export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(
-  ({ children, icon, ...props }, ref) => {
+  ({ children, icon, className, ...props }, ref) => {
     if (
       !children &&
       !props['aria-label'] &&
@@ -26,6 +27,7 @@ export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(
         ref={ref}
         size='medium'
         variant='tertiary'
+        className={clsx(styles.headerAction, className)}
         {...props}
       >
         {composeRenderProps(children, children => (

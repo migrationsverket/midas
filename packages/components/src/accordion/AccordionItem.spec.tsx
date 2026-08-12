@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './AccordionItem.stories'
 import { render } from '../../test-utils'
 
-const { Default, Success, Info, Warning, Important } = composeStories(stories)
+const { Default, Success, Info, Warning, Important, TypeWithoutContained } = composeStories(stories)
 
 describe('given a Default AccordionItem', async () => {
   it('should accept a function as children', async () => {
@@ -53,5 +53,12 @@ describe('given an AccordionItem with type = "important"', async () => {
     await expect
       .element(getByLabelText('important information'))
       .toBeInTheDocument()
+  })
+})
+
+describe('given an AccordionItem with type but without isContained', async () => {
+  it('should not render the status icon', async () => {
+    const { container } = await render(<TypeWithoutContained />)
+    expect(container.querySelector('svg[aria-label]')).toBeNull()
   })
 })
