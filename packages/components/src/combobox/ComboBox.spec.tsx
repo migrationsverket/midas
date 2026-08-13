@@ -126,9 +126,9 @@ describe('given an async ComboBox with allowsEmptyCollection', async () => {
 
 describe('given a ComboBox with listBoxProps={{ virtualized: false }}', async () => {
   it('should render items in every section', async () => {
-    await render(<NotVirtualized />)
+    const { getByRole } = await render(<NotVirtualized />)
 
-    await userEvent.tab()
+    await userEvent.click(getByRole('combobox'))
     await userEvent.keyboard('[ArrowDown]')
 
     const listbox = page.getByRole('listbox')
