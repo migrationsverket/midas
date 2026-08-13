@@ -1,3 +1,14 @@
+## 17.19.0 (2026-08-13)
+
+### 🚀 Features
+
+- **components,list-box:** add virtualized opt-out to ListBox/Select/ComboBox ([fc140394ec9](https://github.com/migrationsverket/midas/commit/fc140394ec9))
+
+### 🩹 Fixes
+
+- **components,combobox:** stop relying on ArrowDown to open in CI ([9b40aeb068a](https://github.com/migrationsverket/midas/commit/9b40aeb068a))
+- **components,combobox:** fix flaky virtualized opt-out test in CI ([8b4f9bffe21](https://github.com/migrationsverket/midas/commit/8b4f9bffe21))
+
 ## 17.18.0 (2026-08-13)
 
 ### 🚀 Features
