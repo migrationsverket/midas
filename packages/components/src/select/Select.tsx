@@ -4,7 +4,7 @@ import {
   ValidationResult,
   Select as AriaSelect,
 } from 'react-aria-components'
-import { FocusScope } from '@react-aria/focus'
+import { FocusScope } from 'react-aria'
 import { Label, type InfoPopoverProps } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import clsx from '../utils/clsx'
@@ -13,7 +13,7 @@ import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { SelectAll } from './SelectAll'
 import { MultiSelectValue } from './MultiSelectValue'
-import { ListBox } from '../list-box'
+import { ListBox, type ListBoxProps } from '../list-box'
 import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
@@ -55,6 +55,10 @@ export interface MidasSelectProps<
    * Props passed to the internal Popover element.
    */
   popoverProps?: Omit<React.ComponentProps<typeof Popover>, 'children'>
+  /**
+   * Props passed to the internal ListBox element.
+   */
+  listBoxProps?: Omit<ListBoxProps<T>, 'items' | 'children'>
 }
 
 export function Select<T extends object, M extends SelectionMode = 'single'>({
@@ -66,6 +70,7 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
   label,
   popover,
   popoverProps,
+  listBoxProps,
   size = 'large',
   ...props
 }: MidasSelectProps<T, M>) {
@@ -105,6 +110,7 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
           <ListBox
             escapeKeyBehavior='none'
             items={items}
+            {...listBoxProps}
           >
             {children}
           </ListBox>

@@ -57,3 +57,13 @@ export const ReadOnly: Story = {
     },
   },
 }
+
+export const MaxRangeDuration: Story = {
+  args: {
+    // The second argument (anchorDate) is the first date the user picked.
+    // It's null until a selection has started, so dates are only restricted
+    // once there's something to measure the 7-day window from.
+    isDateUnavailable: (date, anchorDate) =>
+      anchorDate !== null && Math.abs(date.compare(anchorDate)) > 7,
+  },
+}

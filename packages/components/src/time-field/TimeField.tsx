@@ -6,7 +6,7 @@ import {
   type ValidationResult,
   TimeFieldStateContext,
 } from 'react-aria-components'
-import { FocusScope, useFocusManager } from '@react-aria/focus'
+import { FocusScope, useFocusManager } from 'react-aria'
 import clsx from '../utils/clsx'
 import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'

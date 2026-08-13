@@ -33,7 +33,7 @@ export const MultiSelectValue = <
   }
 
   return (
-    <SelectValue
+    <SelectValue<T>
       className={styles.multiSelectValue}
       data-disabled={isDisabled || undefined}
     >

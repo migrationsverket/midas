@@ -2,8 +2,7 @@
 
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import styles from './Navigation.module.css'
-import { Collection } from 'react-aria-components'
-import { CollectionProps } from '@react-aria/collections'
+import { Collection, CollectionProps } from 'react-aria-components'
 
 export type NavigationProps<T extends object> = CollectionProps<T> &
   Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'>
