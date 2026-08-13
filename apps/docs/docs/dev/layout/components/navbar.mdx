@@ -14,7 +14,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-Navigationskomponent som kan användas istället för [Sidebar](/dev/layout/components/sidebar). `Navbar` renderar ett semantiskt `<footer>`-element.
+Navigationskomponent som ligger längst ned på sidan och är gjort för att likna navigationen i native mobilappar. `Navbar` renderar ett semantiskt `<footer>`-element.
 
 ```tsx
 import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -62,14 +62,14 @@ export const Example = () => {
 
 ## Användning
 
-Syftet med Navbar är att få applikationen att likna en native mobilapp, som oftast har navigation i botten av appen. Navbar ska inte användas tillsammans med Sidebar och MobileMenu, utan Navbar används som den enda navigationen.
+Syftet med Navbar är att få applikationen att likna en native mobilapp, som oftast har navigation i botten av appen. Navbar ska inte användas samtidigt som [MobileMenu](/dev/layout/components/header), utan Navbar används som den enda navigationen på små skärmar. Navbar kan användas tillsammans med [Sidebar](/dev/layout/components/sidebar), men då används de inte samtidigt utan Navbar används endast för små skärmar och är dold på stora skärmar.
 
 ### Använd Navbar:
 
-- När applikationen ska upplevas som en mobilapp.
+- När applikationen ska upplevas som en mobilapp på små skärmar.
 
 ### Använd inte Navbar:
 
 - Om applikationen behöver mer än 5 menyalternativ i navigationen, eftersom det gör det för trångt på små skärmar.
 - Om applikationen behöver undermenyer eller komplex navigering.
-- Tillsammans med Sidebar eller MobileMenu
+- Tillsammans med MobileMenu. Navbar ersätter MobileMenu på små skärmar.
