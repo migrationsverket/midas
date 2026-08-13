@@ -1,21 +1,22 @@
 import type { UserConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default {
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/table-styles',
+  resolve: {
+    tsconfigPaths: true,
+  },
   plugins: [
-    nxViteTsPaths(),
     libInjectCss(),
     dts({
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
       pathsToAliases: false,
     }),
-    nxCopyAssetsPlugin(['*.md']),
+    viteStaticCopy({ targets: [{ src: '*.md', dest: '.' }] }),
   ],
   build: {
     outDir: '../../dist/packages/table-styles',

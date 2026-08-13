@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
-import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
@@ -15,10 +14,12 @@ const defaultCss = resolve(src, 'default.css')
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/layout',
+  resolve: {
+    tsconfigPaths: true,
+  },
   plugins: [
     react(),
-    nxViteTsPaths(),
-    nxCopyAssetsPlugin(['*.md']),
+    viteStaticCopy({ targets: [{ src: '*.md', dest: '.' }] }),
     dts({
       entryRoot: 'src',
       tsconfigPath: join(__dirname, 'tsconfig.lib.json'),
