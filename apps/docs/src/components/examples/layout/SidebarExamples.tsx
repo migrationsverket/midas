@@ -43,16 +43,14 @@ export const SectionExample = () => {
       <div style={{ width: 240 }}>
         <Sidebar title='Navigation'>
           <Navigation>
-            <NavigationSection title='Huvudmeny'>
-              <NavigationItem>
-                <NavigationLink
-                  href='/'
-                  icon={<House />}
-                >
-                  Hem
-                </NavigationLink>
-              </NavigationItem>
-            </NavigationSection>
+            <NavigationItem>
+              <NavigationLink
+                href='/'
+                icon={<House />}
+              >
+                Hem
+              </NavigationLink>
+            </NavigationItem>
             <NavigationSection title='Inställningar'>
               <NavigationItem>
                 <NavigationLink
@@ -67,7 +65,7 @@ export const SectionExample = () => {
                   href='/'
                   icon={<Settings />}
                 >
-                  System
+                  Systeminställningar
                 </NavigationLink>
               </NavigationItem>
             </NavigationSection>
