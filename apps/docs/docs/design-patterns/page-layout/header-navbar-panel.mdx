@@ -4,17 +4,27 @@ title: Applikationer som ska upplevas som mobilappar
 sidebar_position: 3
 ---
 
-import { MobileAppExample } from '@site/src/components/examples/layout/PageLayoutExamples'
+import {
+  MobileAppOnlyNavbarExample,
+  MobileAppSidebarNavbarExample,
+} from '@site/src/components/examples/layout/PageLayoutExamples'
 
 # Applikationer som ska upplevas som mobilappar
 
-Detta mönster är till för applikationer som ska upplevas som mobilappar t.ex. Min Sida och inte tänkt för interna desktopapplikationer. Här används endast [Navbar](/dev/layout/components/navbar) för navigation. Navbar har endast plats för ett begränsat antal (max 5) menyalternativ eftersom det inte får plats fler på en liten skärm.
+Detta mönster är till för applikationer som ska upplevas som mobilappar t.ex. Min Sida och inte tänkt för interna desktopapplikationer. Det finns två varianter av detta mönster:
 
-<MobileAppExample />
+- Endast [Navbar](/dev/layout/components/navbar)
+- [Sidebar](/dev/layout/components/sidebar) på stora skärmar och [Navbar](/dev/layout/components/navbar) på små skärmar.
 
-## Exempelkod
+Gemensamt för båda varianter är det endast finns plats för ett begränsat antal (max 5) menyalternativ eftersom det inte får plats fler i Navbar på en liten skärm.
 
-Exempelkoden visar en applikation med bara en Panel. Om applikationen behöver fler paneler används [PanelProvider och usePanels-hooken](/dev/layout/components/panel/#flera-paneler-med-panelprovider)
+## Endast navbar
+
+<MobileAppOnlyNavbarExample />
+
+### Exempelkod
+
+Exempelkoden till båda exempel visar en applikation med bara en Panel. Om applikationen behöver fler paneler används [PanelProvider och usePanels-hooken](/dev/layout/components/panel/#flera-paneler-med-panelprovider)
 
 <style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
 
@@ -84,3 +94,94 @@ export default function App() {
 ```
 
 </div>
+
+## Sidebar och Navbar
+
+Sidebar och Navbar ska inte användas samtidigt eftersom det blir dubbla navigeringar, så i denna variant används Navbar på små skärmar och Sidebar på stora skärmar. Sidebar är automatiskt dold på skärmar som är mindre än 640px, medan Navbar behöver döljas på skärmar större än 640px. Använd `useMediaQuery` för att göra det.
+
+<MobileAppSidebarNavbarExample />
+
+### Exempelkod
+
+<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
+
+<div className="snabbstart"> 
+```tsx
+import {
+  Header,
+  HeaderAction,
+  HeaderActions,
+  HeaderLogo,
+  HeaderTitle,
+  Layout,
+  LayoutContent,
+  Main,
+  Navbar,
+  Sidebar,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  Panel,
+} from '@midas-ds/layout'
+import { House, Bell } from 'lucide-react'
+import { useState } from 'react'
+
+const NavigationContent = () => (
+
+<Navigation>
+  <NavigationItem>
+    <NavigationLink
+      href='#'
+      icon={<House />}
+      isActive
+    >
+      Hem
+    </NavigationLink>
+  </NavigationItem>
+  {/* Fler länkar */}
+</Navigation>
+)
+
+export const MobileAppSidebarNavbarExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const showNavbar = useMediaQuery('(max-width: 640px)')
+  return (
+    <Layout>
+      <Header>
+        <HeaderLogo />
+        <HeaderTitle>Mitt system</HeaderTitle>
+        <HeaderActions>
+          <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
+          {/* Fler actions */}
+        </HeaderActions>
+      </Header>
+
+      <LayoutContent>
+        <Sidebar title='Navigation'>
+          <NavigationContent />
+        </Sidebar>
+        <Main>
+          <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
+        </Main>
+        <Panel
+          id='detaljer'
+          title='Detaljer'
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+        >
+          {/* Panelinnehåll */}
+        </Panel>
+      </LayoutContent>
+      {showNavbar && (
+        <Navbar>
+          <NavigationContent />
+        </Navbar>
+      )}
+    </Layout>
+
+)
+}
+
+```
+</div>
+```
