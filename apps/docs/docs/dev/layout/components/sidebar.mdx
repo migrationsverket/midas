@@ -4,6 +4,7 @@ description: Kollapsbar sidomeny för desktop.
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { BasicExample, SectionExample } from '@site/src/components/examples/layout/SidebarExamples'
 
 <ComponentHeader
   name='Sidebar'
@@ -12,7 +13,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-Sidopanel med plats för applikationens navigation. Själva navigationen sker via [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
+Sidopanel som används som huvudnavigation i våra desktopapplikationer. Själva navigationen styrs av [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
 
 ```tsx
 import { Sidebar, Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
@@ -50,23 +51,27 @@ export default function App() {
 }
 ```
 
+<BasicExample />
+
+## Titel
+
+Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn och ska därför ett namn som beskriver menyns syfte, inte applikationens namn. Oftast är "Navigation" ett bra alternativ.
+
 ## Sektioner
 
-Använd `NavigationSection` för att dela upp navigeringen i namngivna grupper.
+Använd `NavigationSection` för att dela upp navigeringen i grupper.
 
 ```tsx
 <Sidebar title='Navigation'>
   <Navigation>
-    <NavigationSection title='Huvudmeny'>
-      <NavigationItem>
-        <NavigationLink
-          href='/'
-          icon={<House />}
-        >
-          Hem
-        </NavigationLink>
-      </NavigationItem>
-    </NavigationSection>
+    <NavigationItem>
+      <NavigationLink
+        href='/'
+        icon={<House />}
+      >
+        Hem
+      </NavigationLink>
+    </NavigationItem>
     <NavigationSection title='Inställningar'>
       <NavigationItem>
         <NavigationLink
@@ -81,13 +86,15 @@ Använd `NavigationSection` för att dela upp navigeringen i namngivna grupper.
           href='/system'
           icon={<Settings />}
         >
-          System
+          Systeminställningar
         </NavigationLink>
       </NavigationItem>
     </NavigationSection>
   </Navigation>
 </Sidebar>
 ```
+
+<SectionExample />
 
 ## Ihopfällt läge
 
@@ -123,12 +130,6 @@ const [isCollapsed, setIsCollapsed] = useState(false)
   ...
 </Sidebar>
 ```
-
-:::info Tillgänglighet
-
-Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn, välj därför ett namn som beskriver menyns syfte, inte applikationens namn. Oftast är Navigation ett bra alternativ.
-
-:::
 
 ## Props
 
