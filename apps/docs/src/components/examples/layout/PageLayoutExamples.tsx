@@ -19,6 +19,7 @@ import {
 import { Bell, House, Settings, User } from 'lucide-react'
 import { Button } from '@midas-ds/components'
 import { useState } from 'react'
+import { useMediaQuery } from '@react-spectrum/utils'
 
 export const OnlyHeaderExample: React.FC = () => (
   <div
@@ -119,7 +120,7 @@ export const DesktopAppExample = () => {
   )
 }
 
-export const MobileAppExample = () => {
+export const MobileAppOnlyNavbarExample = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -171,6 +172,50 @@ export const MobileAppExample = () => {
             </NavigationItem>
           </Navigation>
         </Navbar>
+      </Layout>
+    </div>
+  )
+}
+
+export const MobileAppSidebarNavbarExample = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const showNavbar = useMediaQuery('(max-width: 640px)')
+  return (
+    <div
+      className='card'
+      style={{ padding: 0 }}
+    >
+      <Layout>
+        <Header>
+          <HeaderLogo />
+          <HeaderTitle>Mitt system</HeaderTitle>
+          <HeaderActions>
+            <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
+            <HeaderAction icon={<User />}>Min profil</HeaderAction>
+          </HeaderActions>
+        </Header>
+
+        <LayoutContent>
+          <Sidebar title='Navigation'>
+            <NavigationContent />
+          </Sidebar>
+          <Main>
+            <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
+          </Main>
+          <Panel
+            id='detaljer'
+            title='Detaljer'
+            isOpen={isOpen}
+            onOpenChange={setIsOpen}
+          >
+            Panel med detaljer
+          </Panel>
+        </LayoutContent>
+        {showNavbar && (
+          <Navbar>
+            <NavigationContent />
+          </Navbar>
+        )}
       </Layout>
     </div>
   )
