@@ -58,6 +58,27 @@ export const Selected: Story = {
   },
 }
 
+export const WithDescription: Story = {
+  args: {
+    description: 'Du kan när som helst ändra detta i dina kontoinställningar',
+  },
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+}
+
+export const WithErrorMessage: Story = {
+  args: {
+    isInvalid: true,
+    errorMessage: 'Du måste godkänna villkoren',
+  },
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+}
+
 export const Required: Story = {
   args: {
     isRequired: true,

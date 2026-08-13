@@ -5,12 +5,15 @@ import type {
   HoverResult,
   PressResult,
 } from 'react-aria'
-import type { SlotProps } from 'react-aria-components'
+import type { SlotProps, ValidationResult } from 'react-aria-components'
 import { CheckboxGroupState } from 'react-stately'
 
 export type CheckboxProps = AriaCheckboxProps &
   SlotProps & {
     className?: string
+    description?: string
+    errorMessage?: string | ((validation: ValidationResult) => string)
+    errorPosition?: 'top' | 'bottom'
   }
 
 export interface CheckboxComponentProps extends CheckboxProps {

@@ -17,8 +17,8 @@ import messages from './intl/translations.json'
 import styles from './DateField.module.css'
 import { Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
-import { FocusScope } from '@react-aria/focus'
-import { useFocusManager } from '@react-aria/focus'
+import { FocusScope } from 'react-aria'
+import { useFocusManager } from 'react-aria'
 
 export interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
   description?: string

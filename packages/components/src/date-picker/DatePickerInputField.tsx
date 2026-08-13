@@ -12,7 +12,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import styles from './DatePicker.module.css'
 import { DatePickerProps } from './DatePicker'
-import { FocusScope, useFocusManager } from '@react-aria/focus'
+import { FocusScope, useFocusManager } from 'react-aria'
 import { isRangePickerState } from './utils'
 import { Button } from '../button'
 

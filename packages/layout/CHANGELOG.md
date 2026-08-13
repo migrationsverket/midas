@@ -1,3 +1,13 @@
+## 0.2.12 (2026-08-13)
+
+### 🩹 Fixes
+
+- **layout,navigation:** migrate off unresolvable @react-aria/collections dependency ([2322e21ef9a](https://github.com/migrationsverket/midas/commit/2322e21ef9a))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.18.0
+
 ## 0.2.11 (2026-07-10)
 
 ### 🚀 Features

@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import { useCheckbox } from 'react-aria'
-import { useToggleState } from '@react-stately/toggle'
+import { useToggleState } from 'react-stately'
 import type { CheckboxComponentProps } from './types'
 import { CheckboxInner } from './CheckboxInner'
 
