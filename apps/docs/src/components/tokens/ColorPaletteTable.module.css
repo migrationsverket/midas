@@ -29,23 +29,24 @@
   position: relative;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgb(0 0 0 / 12%);
   border-radius: 4px;
   cursor: pointer;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 0.25rem 0 0.2rem;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
   overflow: hidden;
 }
 
 .swatch:hover {
   transform: scale(1.15);
   z-index: 1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
 }
 
 .copyIcon {

@@ -1,21 +1,22 @@
 ---
 id: tokens
-title: Tokens
-sidebar_label: Tokens
+title: Färger
+sidebar_label: Färger
 sidebar_position: 2
 ---
 
 import { tokenDictionary } from '@midas-ds/theme'
-import { TokenList, Layers, ColorSpectrum, TokenNaming } from '@site/src/components/tokens'
+import { TokenList, Layers, TokenNaming } from '@site/src/components/tokens'
 
 Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för
 våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår
 primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt,
-tillgängligt och konsekvent uttryck i hela designsystemet.
+tillgängligt och konsekvent uttryck i hela designsystemet. För att säkerställa konsekvent användning av färger använder vi designtokens, variabler som representerar färgernas syfte
+snarare än deras exakta värde.
 
-<ColorSpectrum />
+## Kom igång
 
-Tokens är tillgängliga som typescriptvariabler via:
+Färgtokens är tillgängliga som typescriptvariabler via:
 
 ```tsx
 import { variables } from '@midas-ds/theme'
@@ -34,33 +35,29 @@ import '@midas-ds/theme/variables.css'
 }
 ```
 
-## Färgtokens
+## Struktur
 
-För att säkerställa konsekvent användning av färger använder vi designtokens, variabler som representerar färgernas syfte
-snarare än deras exakta värde. Våra färgtokens är uppdelade i två grupper: referenstokens och semantiska tokens.
+Våra färgtokens är uppdelade i två grupper: referenstokens och semantiska tokens.
 
 ### Referenstokens
 
 Referenstokens är direkt kopplade till färger och används för att bygga upp våra paletter. Referenstokens används
-endast som byggstenar och ska inte refereras till i koden. Där används istället semantiska tokens.
+endast som byggstenar och ska inte refereras till i koden.
 
 ### Semantiska tokens
 
-Semantiska tokens är kopplade till referenstokens och är döpta för att beskriva var de bör användas. De flesta börjar
-med ett prefix som anger deras syfte, t.ex "layer", "text" eller "border". Varje semantisk token har två referenstokens
-kopplade till sig, en för ljust och en för mörk läge.
+Semantiska tokens refererar till referenstokens och är döpta för att beskriva var de bör användas. De flesta börjar
+med ett prefix som anger deras syfte, t.ex "layer", "text" eller "border". Varje semantisk token refererar till två referenstokens, en för ljust och en för mörkt läge.
 
 <TokenNaming />
 
-## Lager
+### Lager
 
-Vissa av våra tokens är kopplade till ett specifikt lager, vilket indikeras av att de slutar med 01 eller 02.
-Tokens med samma nummer används alltid tillsammans när vi bygger komponenter. Numreringen används också för att avgöra
-vilka tokens som ska användas beroende på vilket lager en komponent ligger på. Tokens som slutar på 01 (t.ex. `field01`)
-används när en komponent ligger på `background` och tokens som slutar på 02 används när komponenten ligger på `layer01`.
+Vissa färgtokens är kopplade till ett specifikt lager, vilket indikeras av att de har 01 eller 02 i namnet. Numreringen används för att avgöra
+vilka tokens som ska användas beroende på vilket lager en komponent ligger på. Tokens som har 01 i namnet (t.ex. `field01Base`)
+används när en komponent ligger på `backgroundBase` och tokens som har 02 i namnet (t.ex. `field02Base`) används när komponenten ligger på `layer01Base`.
 
-I ljust läge växlar färgerna mellan vitt och grått för varje lager medan varje nytt lager i mörkt läge får en ljusare
-grå nyans än det föregående, se exempel nedan.
+I ljust läge är varannat lager vitt och varannat grått. I mörkt läge blir varje lager ljusare, se exempel nedan.
 
 <Layers />
 

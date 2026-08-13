@@ -168,7 +168,7 @@ export const MenuExample: React.FC = () => {
             <MenuPopover>
               <Menu>
                 <MenuItem id='spara'>Spara kontaktuppgifter</MenuItem>
-                <MenuItem id='epost'>Skicka e-post</MenuItem>
+                <MenuItem id='epost'>Skicka mejl</MenuItem>
               </Menu>
             </MenuPopover>
           </MenuTrigger>

@@ -14,6 +14,8 @@ const {
   DynamicSections,
   RequiredSingleSelect,
   RequiredMultipleSelectAll,
+  RequiredMultipleWithTags,
+  RequiredMultipleWithClearAll,
   DS872,
 } = composeStories(stories)
 
@@ -234,5 +236,34 @@ describe('given a DS872 ', async () => {
         }),
       )
       .toBeInTheDocument()
+  })
+})
+
+describe('given a required multiple Select with tags (DS-1817)', async () => {
+  it('should show invalid state when all tags are removed via dismiss buttons', async () => {
+    const { getByRole } = await render(<RequiredMultipleWithTags />)
+
+    const tagGrid = page.getByRole('grid')
+    await expect.element(tagGrid).toBeVisible()
+
+    const count = (await tagGrid.getByRole('button').elements()).length
+
+    for (let i = 0; i < count; i++) {
+      await userEvent.click(tagGrid.getByRole('button').first())
+    }
+
+    await expect
+      .element(getByRole('button', { name: 'Label' }))
+      .toHaveAttribute('data-invalid')
+  })
+
+  it('should show invalid state when all items are cleared via the clear-all button', async () => {
+    const { getByRole } = await render(<RequiredMultipleWithClearAll />)
+
+    await userEvent.click(getByRole('button', { name: 'Clear all' }))
+
+    await expect
+      .element(getByRole('button', { name: 'Label' }))
+      .toHaveAttribute('data-invalid')
   })
 })

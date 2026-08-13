@@ -7,8 +7,9 @@ import {
   DialogTrigger,
   Text,
   TextField,
+  ButtonGroup,
 } from '@midas-ds/components'
-import { ArrowUp, ArrowLeft, Save, Laptop, UserCog } from 'lucide-react'
+import { ArrowUp, ArrowLeft, Info, UserCog, Share2 } from 'lucide-react'
 import React from 'react'
 import { Pressable } from 'react-aria-components'
 
@@ -20,35 +21,55 @@ export const PopoverExample = () => {
     >
       <DialogTrigger>
         <Button
-          variant='icon'
-          aria-label='Spara'
+          variant='secondary'
+          icon={Share2}
         >
-          <Save />
+          Dela
         </Button>
-        <Popover>Spara</Popover>
+        <Popover>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+          >
+            <div>
+              <Heading>Dela inköpslista</Heading>
+              <Text>Välj hur du vill dela din inköpslista</Text>
+            </div>
+            <ButtonGroup>
+              <Button>Mejla</Button>
+              <Button variant='secondary'>Kopiera texten</Button>
+            </ButtonGroup>
+          </div>
+        </Popover>
       </DialogTrigger>
     </div>
   )
 }
 
-export const PopoverTextExample = () => {
+export const InfoPopoverExample = () => {
   return (
     <div
       className='card'
       style={{ display: 'block' }}
     >
-      <DialogTrigger>
-        <Button
-          variant='icon'
-          aria-label='Din dator'
-        >
-          <Laptop />
-        </Button>
-        <Popover>
-          <Heading>Hårddiskutrymme</Heading>
-          <Text>Din dator har 150gb kvar i hemkatalogen.</Text>
-        </Popover>
-      </DialogTrigger>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+        <Text>Hemkatalog</Text>
+        <DialogTrigger>
+          <Pressable>
+            <Info
+              size={20}
+              aria-label='Mer information om hemkatalogen'
+            />
+          </Pressable>
+          <Popover>
+            <Heading>Hemkatalog</Heading>
+            <Text>
+              I din hemkatalog kan du spara filer och dokument som du vill ha
+              snabb åtkomst till. Det är en bra plats att organisera dina
+              viktiga filer och hålla dem lättillgängliga.
+            </Text>
+          </Popover>
+        </DialogTrigger>
+      </div>
     </div>
   )
 }
@@ -82,8 +103,7 @@ export const PopoverFormExample = () => {
             <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
           </CheckboxGroup>
           <Button
-            fullwidth
-            style={{ marginTop: '0.5rem' }}
+            style={{ marginTop: '1rem' }}
             onPress={() => setOpen(false)}
           >
             Spara
@@ -161,8 +181,8 @@ export const PopoverContentExample = () => {
   return (
     <div className='card'>
       <TextField
-        label='E-post'
-        description='Ange din e-postadress för att få nyhetsbrev.'
+        label='Mejladress'
+        description='Ange din mejladress för att få nyhetsbrev.'
         popover={{
           children: 'Vi kommer att skicka nyhetsbrev till den här adressen.',
         }}

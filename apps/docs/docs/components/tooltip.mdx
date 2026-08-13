@@ -5,35 +5,20 @@ description: Tooltip kan användas för att förklara en knapp eller annan inter
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Button, Tooltip, TooltipTrigger } from '@midas-ds/components'
-import { Save } from 'lucide-react'
 import {
   TooltipDelay,
   TooltipPlacement,
   ControlledTooltip,
   CustomTriggerTooltip,
+  SimpleExample,
 } from '@site/src/components/examples/tooltip/TooltipExamples'
-
-export const Example = props => {
-  return (
-    <TooltipTrigger isOpen>
-      <Button
-        variant='icon'
-        aria-label='Spara'
-      >
-        <Save />
-      </Button>
-      <Tooltip>Spara</Tooltip>
-    </TooltipTrigger>
-  )
-}
 
 <ComponentHeader
   name='Tooltip'
   friendlyName='Hjälptext'
 />
 
-Tooltip kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen.
+Komponent som användas för att visa kort, temporär och icke-essentiell information när användaren hovrar över eller fokuserar på ett element.
 
 ```tsx
 import { Tooltip, TooltipTrigger, Button } from '@midas-ds/components'
@@ -41,7 +26,7 @@ import { Save } from 'lucide-react'
 ```
 
 ```tsx
-<TooltipTrigger isOpen>
+<TooltipTrigger>
   <Button
     variant='icon'
     aria-label='Spara'
@@ -52,14 +37,28 @@ import { Save } from 'lucide-react'
 </TooltipTrigger>
 ```
 
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <Example />
-</div>
+<SimpleExample />
 
-## Funktioner
+## Användning
+
+Typiska användningsområden för Tooltip är för att förklara ikoner, för att visa kortkommandon eller för att beskriva en term. Tooltips ska inte användas för att visa information som användaren behöver för att kunna använda en komponent eller slutföra en uppgift. Om det finns mer information att visa än vad som ryms i en Tooltip, om det behövs interaktiva element eller om informationen är viktig för användaren används [Popover](/components/popover).
+
+### Använd Tooltip för:
+
+- Kort, stödjande information som är extra och inte nödvändig för att förstå eller slutföra en uppgift.
+
+### Använd inte Tooltip för:
+
+- Viktig information, felmeddelanden eller instruktioner som användaren måste se för att kunna fortsätta.
+
+## Riktlinjer
+
+- Håll texten kort och konkret
+- Se till att tooltipen beskriver samma sak som triggern visar.
+- Lägg inte längre text i en Tooltip än vad som är lätt att läsa på en gång.
+- Använd inte Tooltip som enda sätt att göra en funktion synlig eller förståelig
+
+## Implementation
 
 Tooltip är byggd på [React Aria Tooltip](https://react-spectrum.adobe.com/react-aria/Tooltip.html) och med det
 följer inbyggd tillgänglighet som till exempel sammankoppling mellan trigger och tooltip. För mer detaljerad
@@ -86,7 +85,7 @@ innan de för muspekaren över ett annat element, startar uppvärmningstimern om
 
 <TooltipDelay />
 
-### Placement
+### Placering
 
 Placering av Tooltip i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
 
@@ -165,12 +164,6 @@ Observera att element under `<Focusable>` måste ha en ARIA-roll eller använda 
 så att skärmläsare kan läsa upp innehållet i verktygstipset. Detta gäller bara element som inte redan är _focusable_
 eller _pressable_. Se [React Aria Tooltip Custom trigger](https://react-spectrum.adobe.com/react-aria/Tooltip.html#custom-trigger)
 för referens.
-
-## Riktlinjer
-
-- I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Tooltip är till för en design där detta
-  inte är möjligt och vi måste gömma undan informationen.
-- Tooltips kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
 
 ## API
 
