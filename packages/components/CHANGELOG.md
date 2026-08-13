@@ -1,3 +1,32 @@
+## 17.18.0 (2026-08-13)
+
+### 🚀 Features
+
+- **components,calendar:** make Calendar generic over selection mode ([8d5d4074ff7](https://github.com/migrationsverket/midas/commit/8d5d4074ff7))
+- **components,deps:** bump react-aria-components to 1.20.0 ([b38ce4d3001](https://github.com/migrationsverket/midas/commit/b38ce4d3001))
+
+### 🩹 Fixes
+
+- **components,checkbox:** keep Checkbox functional with the new RAC API ([59b959a2238](https://github.com/migrationsverket/midas/commit/59b959a2238))
+- **components,select:** thread generic type through SelectValue for RAC 1.20 ([9dac80b4a3d](https://github.com/migrationsverket/midas/commit/9dac80b4a3d))
+- **components,date-picker:** drop unnecessary Dialog wrapper around Calendar popover ([#10430](https://github.com/migrationsverket/midas/issues/10430))
+- **components,checkbox,radio:** use Space instead of Enter in keyboard tests ([0440d5274d4](https://github.com/migrationsverket/midas/commit/0440d5274d4))
+
+### 📖 Documentation changes
+
+- **components,date-picker:** add DateRangePicker story for anchor-date-aware isDateUnavailable ([157ca1e7740](https://github.com/migrationsverket/midas/commit/157ca1e7740))
+- **components,calendar:** add RangeCalendar story for anchor-date-aware isDateUnavailable ([c4828b8f6b5](https://github.com/migrationsverket/midas/commit/c4828b8f6b5))
+
+### 🧪 Tests updated
+
+- **components,table:** verify interactive cell content works with RAC 1.20 ([08accacef11](https://github.com/migrationsverket/midas/commit/08accacef11))
+- **components,combobox:** tolerate sub-pixel layout rounding in toggle-button overlap check ([46403b50321](https://github.com/migrationsverket/midas/commit/46403b50321))
+- **components,menu:** update test-utils API for RAC 1.20 ([a2bc23753f0](https://github.com/migrationsverket/midas/commit/a2bc23753f0))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.15.5
+
 ## 17.17.3 (2026-07-08)
 
 ### 🧱 Updated Dependencies
