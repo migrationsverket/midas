@@ -1,6 +1,8 @@
 .container {
   font-family: var(--midas-typography-font-family);
   color: var(--midas-text-primary);
+  display: flex;
+  flex-direction: column;
 
   &[data-disabled] {
     cursor: not-allowed;
