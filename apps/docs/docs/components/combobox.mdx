@@ -130,6 +130,10 @@ return (
   <SectionedExample />
 </div>
 
+:::info
+`ListBox` renderas alltid via React Arias `Virtualizer`, vilket kräver en riktig webbläsares layoutmotor. I miljöer utan detta (t.ex. `happy-dom` eller `jsdom`, vanligt vid testning) kan sektionerade listor sluta rendera alternativ efter den första sektionens rubrik. Sätt `listBoxProps={{ virtualized: false }}` för att stänga av virtualisering, av testskäl eller andra anledningar.
+:::
+
 ## Asynkron laddning
 
 Om data finns på en server kan en laddningsindikator visas med en `ListBoxLoadMoreItem`-komponent.

@@ -136,6 +136,10 @@ Vid många val kan alternativen struktureras i sektioner.
   <SectionedExample />
 </div>
 
+:::info
+`ListBox` renderas alltid via React Arias `Virtualizer`, vilket kräver en riktig webbläsares layoutmotor. I miljöer utan detta (t.ex. `happy-dom` eller `jsdom`, vanligt vid testning) kan sektionerade listor sluta rendera alternativ efter den första sektionens rubrik. Sätt `listBoxProps={{ virtualized: false }}` för att stänga av virtualisering, av testskäl eller andra anledningar.
+:::
+
 ## Anpassa popover
 
 Det inbyggda popover-fönstret kan konfigureras via `popoverProps`, som skickas vidare till den underliggande `Popover`-komponenten.
