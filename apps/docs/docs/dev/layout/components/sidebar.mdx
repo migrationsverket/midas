@@ -57,45 +57,6 @@ export default function App() {
 
 Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn och ska därför ett namn som beskriver menyns syfte, inte applikationens namn. Oftast är "Navigation" ett bra alternativ.
 
-## Sektioner
-
-Använd `NavigationSection` för att dela upp navigeringen i grupper.
-
-```tsx
-<Sidebar title='Navigation'>
-  <Navigation>
-    <NavigationItem>
-      <NavigationLink
-        href='/'
-        icon={<House />}
-      >
-        Hem
-      </NavigationLink>
-    </NavigationItem>
-    <NavigationSection title='Inställningar'>
-      <NavigationItem>
-        <NavigationLink
-          href='/konto'
-          icon={<User />}
-        >
-          Konto
-        </NavigationLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavigationLink
-          href='/system'
-          icon={<Settings />}
-        >
-          Systeminställningar
-        </NavigationLink>
-      </NavigationItem>
-    </NavigationSection>
-  </Navigation>
-</Sidebar>
-```
-
-<SectionExample />
-
 ## Ihopfällt läge
 
 :::note

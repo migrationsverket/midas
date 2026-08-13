@@ -6,7 +6,7 @@ import {
   NavigationSection,
   Sidebar,
 } from '@midas-ds/layout'
-import { House, Settings, User } from 'lucide-react'
+import { House, Settings } from 'lucide-react'
 
 export const BasicExample = () => (
   <div className='card'>
@@ -36,42 +36,3 @@ export const BasicExample = () => (
     </div>
   </div>
 )
-
-export const SectionExample = () => {
-  return (
-    <div className='card'>
-      <div style={{ width: 240 }}>
-        <Sidebar title='Navigation'>
-          <Navigation>
-            <NavigationItem>
-              <NavigationLink
-                href='/'
-                icon={<House />}
-              >
-                Hem
-              </NavigationLink>
-            </NavigationItem>
-            <NavigationSection title='Inställningar'>
-              <NavigationItem>
-                <NavigationLink
-                  href='/'
-                  icon={<User />}
-                >
-                  Konto
-                </NavigationLink>
-              </NavigationItem>
-              <NavigationItem>
-                <NavigationLink
-                  href='/'
-                  icon={<Settings />}
-                >
-                  Systeminställningar
-                </NavigationLink>
-              </NavigationItem>
-            </NavigationSection>
-          </Navigation>
-        </Sidebar>
-      </div>
-    </div>
-  )
-}
