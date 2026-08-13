@@ -15,6 +15,9 @@ import clsx from '../utils/clsx'
 import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
 import { FieldError } from '../field-error'
+import { Text } from '../text'
+import { InfoPopoverProps, Label } from '../label'
+import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
@@ -24,6 +27,11 @@ export interface SearchFieldProps extends Omit<
 > {
   /** Placeholder text */
   placeholder: string
+  /** Specify label displayed above the SearchField */
+  label?: string
+  /** Specify description displayed below the label */
+  description?: string
+  popover?: InfoPopoverProps
   /**
    * Whether to render a built-in submit button.
    *
@@ -72,6 +80,9 @@ export const SearchField = ({
   className,
   errorMessage,
   placeholder,
+  label,
+  description,
+  popover,
   validationBehavior,
   inputMode = 'search',
   ...props
@@ -93,12 +104,16 @@ export const SearchField = ({
       {...props}
       inputMode={inputMode}
       onSubmit={handleSubmit}
-      aria-label={props['aria-label'] ?? placeholder}
+      aria-label={label ? props['aria-label'] : (props['aria-label'] ?? placeholder)}
       className={clsx(styles.container, className)}
       validationBehavior={resolvedValidationBehavior}
     >
       {({ state }) => (
         <>
+          <LabelWrapper popover={popover}>
+            {label && <Label>{label}</Label>}
+          </LabelWrapper>
+          {description && <Text slot='description'>{description}</Text>}
           {errorPosition === 'top' && (
             <FieldError>
               {({ validationErrors }) =>
