@@ -12,7 +12,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-Sidebar är en sidopanel med plats för applikationens navigation. Själva navigationen sker via [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
+Sidopanel med plats för applikationens navigation. Själva navigationen sker via [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
 
 ```tsx
 import { Sidebar, Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
@@ -52,7 +52,7 @@ export default function App() {
 
 ## Sektioner
 
-Använd `NavigationSection` med `title`-prop för att dela upp navigeringen i namngivna grupper.
+Använd `NavigationSection` för att dela upp navigeringen i namngivna grupper.
 
 ```tsx
 <Sidebar title='Navigation'>
@@ -89,11 +89,11 @@ Använd `NavigationSection` med `title`-prop för att dela upp navigeringen i na
 </Sidebar>
 ```
 
-## Kollapsläge
+## Ihopfällt läge
 
 :::note
 
-När Sidebar är ihopfälld visas etiketten i `NavigationLink` som en tooltip vid hover. Därför är det viktigt att varje länk alltid har en `children`-prop (etikett) eftersom det är nödvändigt för tillgänglighet.
+När Sidebar är ihopfälld visas etiketten i `NavigationLink` som en tooltip vid hover. Därför är det viktigt att varje länk har en `children`-prop (etikett) eftersom det är nödvändigt för tillgänglighet.
 
 :::
 
@@ -126,9 +126,7 @@ const [isCollapsed, setIsCollapsed] = useState(false)
 
 :::info Tillgänglighet
 
-Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn — välj ett namn som beskriver menyns syfte, inte applikationens namn.
-
-I kollapsad vy döljs textetiketterna och visas istället som tooltips. Se till att varje `NavigationLink` alltid har en `children`-prop så att tooltip och tillgänglig etikett fungerar korrekt.
+Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn, välj därför ett namn som beskriver menyns syfte, inte applikationens namn. Oftast är Navigation ett bra alternativ.
 
 :::
 
