@@ -122,8 +122,7 @@ describe('given a ComboBox with listBoxProps={{ virtualized: false }}', async ()
   it('should render items in every section', async () => {
     const { getByRole } = await render(<NotVirtualized />)
 
-    await userEvent.click(getByRole('combobox'))
-    await userEvent.keyboard('[ArrowDown]')
+    await userEvent.click(getByRole('button'))
 
     const listbox = page.getByRole('listbox')
     await expect.element(listbox.getByText('Ananas')).toBeVisible()
