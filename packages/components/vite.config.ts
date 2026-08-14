@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
@@ -14,11 +15,12 @@ const defaultCss = resolve(src, 'default.css')
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/components',
-  resolve: {
-    tsconfigPaths: true,
-  },
   plugins: [
     react(),
+    // Keep the Nx plugin: native resolve.tsconfigPaths and the standalone
+    // vite-tsconfig-paths package both fail to resolve non-.ts subpath
+    // aliases (e.g. '@midas-ds/components/default.css') during dev/test.
+    nxViteTsPaths(),
     viteStaticCopy({ targets: [{ src: '*.md', dest: '.' }] }),
     dts({
       entryRoot: 'src',
