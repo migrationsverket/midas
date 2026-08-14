@@ -109,6 +109,19 @@ export const WithBadge: Story = {
           </NavigationItem>
           <NavigationItem>
             <NavigationLink
+              href='/erbjudanden'
+              icon={
+                <BadgeContainer>
+                  <Candy />
+                  <Badge />
+                </BadgeContainer>
+              }
+            >
+              Erbjudanden
+            </NavigationLink>
+          </NavigationItem>
+          <NavigationItem>
+            <NavigationLink
               href='/installningar'
               icon={<Settings />}
             >
@@ -147,6 +160,19 @@ export const WithBadgeCollapsed: Story = {
               }
             >
               Meddelanden
+            </NavigationLink>
+          </NavigationItem>
+          <NavigationItem>
+            <NavigationLink
+              href='/erbjudanden'
+              icon={
+                <BadgeContainer>
+                  <Candy />
+                  <Badge />
+                </BadgeContainer>
+              }
+            >
+              Erbjudanden
             </NavigationLink>
           </NavigationItem>
           <NavigationItem>
