@@ -159,6 +159,15 @@ import { Star } from 'lucide-react'
 
 ### `onAction`
 
+Om syftet är att visa en detaljvy när en rad klickas, använd
+`onSelectionChange` och rendera detaljvyn utifrån `selectedKeys`. Det ger
+ett enda klick utan krav på dubbelklick.
+
+Kombinera `onAction` med `selectionMode="single"` när handlingen är tyngre
+än att bara visa vald rad — till exempel fullständig navigering till en ny
+sida, eller att öppna en modal — där ett extra steg minskar risken för att
+användaren råkar trigga handlingen av misstag.
+
 `onAction` aktiveras på enkelt klick utan `selectionMode`; med `selectionMode="single"` aktiveras det på dubbelklick.
 
 ```tsx
@@ -177,13 +186,22 @@ import { Star } from 'lucide-react'
   <RowActionExample />
 </div>
 
+### Använd `onAction` + `selectionMode="single"` för:
+
+- Tyngre handlingar där ett extra steg är önskvärt, t.ex. navigering bort från listan eller att öppna en modal.
+
+### Använd inte `onAction` + `selectionMode="single"` för:
+
+- Att visa en detaljvy eller förhandsgranskning vid klick — använd `onSelectionChange` och `selectedKeys` istället, det ger enkelklick utan dubbelklickskrav.
+
 :::info Beteende med urval
 
-`onAction` och `selectionMode` kan kombineras, men beteendet skiljer sig:
+`onAction` och `selectionMode` kan kombineras, men beteendet skiljer sig mellan mus och pekskärm:
 
-- **Utan `selectionMode`** — `onAction` aktiveras på enkelt klick.
+- **Utan `selectionMode`** — `onAction` aktiveras på enkelt klick/tryck.
 - **`selectionMode="multiple"`** — klick på raden aktiverar `onAction`; klick på kryssrutan väljer raden.
-- **`selectionMode="single"`** — enkelt klick väljer raden; `onAction` aktiveras på dubbelklick.
+- **`selectionMode="single"`, mus** — enkelt klick väljer raden; `onAction` aktiveras på dubbelklick.
+- **`selectionMode="single"`, pekskärm** — enkelt tryck aktiverar `onAction` direkt; långtryck växlar tillfälligt till urvalsläge för att välja raden istället.
 
 :::
 
