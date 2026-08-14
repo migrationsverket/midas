@@ -1,3 +1,13 @@
+## 0.2.14 (2026-08-14)
+
+### 🩹 Fixes
+
+- **components,badge:** pin badge to icon corner in width-constrained containers ([b1d8e302d10](https://github.com/migrationsverket/midas/commit/b1d8e302d10))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.20.0
+
 ## 0.2.13 (2026-08-13)
 
 ### 🧱 Updated Dependencies

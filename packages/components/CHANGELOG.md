@@ -1,3 +1,13 @@
+## 17.20.0 (2026-08-14)
+
+### 🚀 Features
+
+- **components,search-field:** add label and description support ([96dcf586333](https://github.com/migrationsverket/midas/commit/96dcf586333))
+
+### 🩹 Fixes
+
+- **components,badge:** pin badge to icon corner in width-constrained containers ([b1d8e302d10](https://github.com/migrationsverket/midas/commit/b1d8e302d10))
+
 ## 17.19.0 (2026-08-13)
 
 ### 🚀 Features
