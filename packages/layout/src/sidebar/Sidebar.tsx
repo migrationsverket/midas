@@ -62,7 +62,7 @@ export const Sidebar = ({
         })}
         data-transitioning={isTransitioning || undefined}
         onTransitionEnd={handleTransitionEnd}
-        {...filterDOMProps(props)}
+        {...filterDOMProps(props, { propNames: new Set(['style']) })}
       >
         <PanelHeader
           className={clsx(styles.sidebarHeader, {

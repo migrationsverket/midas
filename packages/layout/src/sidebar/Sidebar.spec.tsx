@@ -1,7 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
 import { page } from 'vitest/browser'
+import type { CSSProperties } from 'react'
 import { Sidebar } from './Sidebar'
+import styles from './Sidebar.module.css'
 
 describe('Sidebar', () => {
   beforeEach(({ skip, task }) => {
@@ -57,5 +59,41 @@ describe('Sidebar', () => {
     await page.getByRole('button', { name: 'Expand sidebar' }).click()
 
     await expect.element(page.getByText('My Sidebar')).toBeVisible()
+  })
+
+  it('should default to 300px width', async () => {
+    const { container } = await render(<Sidebar title='Test'>Content</Sidebar>)
+
+    const el = container.querySelector(`.${styles.sidebar}`) as HTMLElement
+    expect(getComputedStyle(el).width).toBe('300px')
+  })
+
+  it('should use --midas-sidebar-width when set, bypassing CSS cascade order entirely', async () => {
+    const { container } = await render(
+      <Sidebar
+        title='Test'
+        style={{ '--midas-sidebar-width': '400px' } as CSSProperties}
+      >
+        Content
+      </Sidebar>,
+    )
+
+    const el = container.querySelector(`.${styles.sidebar}`) as HTMLElement
+    expect(getComputedStyle(el).width).toBe('400px')
+  })
+
+  it('should use --midas-sidebar-collapsed-width when collapsed and set', async () => {
+    const { container } = await render(
+      <Sidebar
+        title='Test'
+        defaultCollapsed
+        style={{ '--midas-sidebar-collapsed-width': '80px' } as CSSProperties}
+      >
+        Content
+      </Sidebar>,
+    )
+
+    const el = container.querySelector(`.${styles.sidebar}`) as HTMLElement
+    expect(getComputedStyle(el).width).toBe('80px')
   })
 })
