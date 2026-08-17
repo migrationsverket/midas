@@ -1,3 +1,9 @@
+## 0.2.15 (2026-08-17)
+
+### 🩹 Fixes
+
+- **layout,sidebar:** allow overriding width via CSS custom properties ([5cead0c5c7a](https://github.com/migrationsverket/midas/commit/5cead0c5c7a))
+
 ## 0.2.14 (2026-08-14)
 
 ### 🩹 Fixes
