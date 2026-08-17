@@ -4,7 +4,7 @@ description: Interaktiv lista med stöd för urval och radåtgärder.
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample, SingleSelectExample, MultiSelectExample, ZebraExample, RowActionsExample, ItemCountExample, DeleteActionExample, RowActionExample, TrailingExample } from '@site/src/components/examples/list/ListExamples'
+import { BasicExample, SingleSelectExample, MultiSelectExample, ZebraExample, RowActionsExample, ItemCountExample, RowActionExample, TrailingExample } from '@site/src/components/examples/list/ListExamples'
 import { PropTable } from '@site/src/components/PropsTable'
 
 <ComponentHeader
@@ -159,16 +159,7 @@ import { Star } from 'lucide-react'
 
 ### `onAction`
 
-Om syftet är att visa en detaljvy när en rad klickas, använd
-`onSelectionChange` och rendera detaljvyn utifrån `selectedKeys`. Det ger
-ett enda klick utan krav på dubbelklick.
-
-Kombinera `onAction` med `selectionMode="single"` när handlingen är tyngre
-än att bara visa vald rad — till exempel fullständig navigering till en ny
-sida, eller att öppna en modal — där ett extra steg minskar risken för att
-användaren råkar trigga handlingen av misstag.
-
-`onAction` aktiveras på enkelt klick utan `selectionMode`; med `selectionMode="single"` aktiveras det på dubbelklick.
+`onAction` aktiveras på enkelt klick.
 
 ```tsx
 <List
@@ -186,22 +177,9 @@ användaren råkar trigga handlingen av misstag.
   <RowActionExample />
 </div>
 
-### Använd `onAction` + `selectionMode="single"` för:
-
-- Tyngre handlingar där ett extra steg är önskvärt, t.ex. navigering bort från listan eller att öppna en modal.
-
-### Använd inte `onAction` + `selectionMode="single"` för:
-
-- Att visa en detaljvy eller förhandsgranskning vid klick — använd `onSelectionChange` och `selectedKeys` istället, det ger enkelklick utan dubbelklickskrav.
-
 :::info Beteende med urval
 
-`onAction` och `selectionMode` kan kombineras, men beteendet skiljer sig mellan mus och pekskärm:
-
-- **Utan `selectionMode`** — `onAction` aktiveras på enkelt klick/tryck.
-- **`selectionMode="multiple"`** — klick på raden aktiverar `onAction`; klick på kryssrutan väljer raden.
-- **`selectionMode="single"`, mus** — enkelt klick väljer raden; `onAction` aktiveras på dubbelklick.
-- **`selectionMode="single"`, pekskärm** — enkelt tryck aktiverar `onAction` direkt; långtryck växlar tillfälligt till urvalsläge för att välja raden istället.
+`onAction` och `selectionMode="multiple"` kan kombineras: klick på raden aktiverar `onAction`, klick på kryssrutan väljer raden.
 
 :::
 
@@ -224,45 +202,6 @@ användaren råkar trigga handlingen av misstag.
 
 <div className='card'>
   <ItemCountExample />
-</div>
-
-### Radåtgärder — enkel knapp
-
-Enkelt klick väljer raden, dubbelklick aktiverar `onAction`, och knappen i raden är helt fristående från radmarkeringen.
-
-```tsx
-import { Button, List, ListItem } from '@midas-ds/components'
-import { Star } from 'lucide-react'
-import type { Selection } from 'react-aria-components'
-
-const [selected, setSelected] = useState<Selection>(new Set())
-const [rowAction, setRowAction] = useState<string | null>(null)
-const [buttonAction, setButtonAction] = useState<string | null>(null)
-
-<List
-  aria-label="Sökresultat"
-  label="Sökresultat"
-  selectionMode="single"
-  selectedKeys={selected}
-  onSelectionChange={setSelected}
-  onAction={key => setRowAction(String(key))}
-  striped
->
-  {items.map(item => (
-    <ListItem key={item.id} id={item.id} textValue={item.name}>
-      {item.name}
-      <ListItem.Trailing>
-        <Button variant="icon" aria-label={`Åtgärd för ${item.name}`} onPress={() => setButtonAction(item.name)}>
-          <Star size={16} />
-        </Button>
-      </ListItem.Trailing>
-    </ListItem>
-  ))}
-</List>
-```
-
-<div className='card'>
-  <DeleteActionExample />
 </div>
 
 ### Radåtgärder — kontextmeny
