@@ -3,10 +3,13 @@
   border-right: 1px solid var(--midas-border-color-subtle);
   flex-shrink: 0;
   transition: width var(--midas-transition-duration-fast) ease-out;
-  width: 300px;
+  width: var(--midas-sidebar-width, 300px);
 
   &.collapsed {
-    width: calc(var(--midas-size-icon) + 4 * var(--midas-space-small));
+    width: var(
+      --midas-sidebar-collapsed-width,
+      calc(var(--midas-size-icon) + 4 * var(--midas-space-small))
+    );
   }
 
   @media (width <= 640px) {
