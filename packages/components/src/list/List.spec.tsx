@@ -4,8 +4,14 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './List.stories'
 import { render } from '../../test-utils'
 
-const { Default, ZebraStripes, SingleSelect, MultiSelect, WithDisabledItems } =
-  composeStories(stories)
+const {
+  Default,
+  ZebraStripes,
+  SingleSelect,
+  MultiSelect,
+  MultiSelectWithSelectAll,
+  WithDisabledItems,
+} = composeStories(stories)
 
 describe('given a Default List', () => {
   it('renders items as rows', async () => {
@@ -95,6 +101,24 @@ describe('given a MultiSelect List', () => {
     await expect
       .element(page.getByRole('row').nth(0))
       .toHaveAttribute('aria-selected', 'false')
+  })
+})
+
+describe('given a MultiSelect List with a select-all checkbox', () => {
+  it('gives the select-all checkbox an accessible name', async () => {
+    await render(<MultiSelectWithSelectAll selectAllLabel='Markera alla' />)
+    await expect
+      .element(page.getByRole('checkbox', { name: 'Markera alla' }))
+      .toBeInTheDocument()
+  })
+
+  it('selects all items when the select-all checkbox is checked', async () => {
+    await render(<MultiSelectWithSelectAll selectAllLabel='Markera alla' />)
+    await page.getByRole('checkbox', { name: 'Markera alla' }).click({ force: true })
+    const rows = await page.getByRole('row').all()
+    for (const row of rows) {
+      await expect.element(row).toHaveAttribute('aria-selected', 'true')
+    }
   })
 })
 

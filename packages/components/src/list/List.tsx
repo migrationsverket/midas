@@ -21,6 +21,11 @@ export interface ListProps<T extends object>
   /** Renders a select-all checkbox in the header. Requires `label` and `selectionMode="multiple"`. */
   showSelectAll?: boolean
   /**
+   * Accessible name for the select-all checkbox.
+   * @default 'Markera alla'
+   */
+  selectAllLabel?: string
+  /**
    * Content rendered on the right side of the header. Pass a ReactNode for static content,
    * or a function to access `selectedCount` and `totalCount` from the list's internal state.
    * Requires `label`.
@@ -36,6 +41,7 @@ export const List = <T extends object>({
   striped = false,
   label,
   showSelectAll = false,
+  selectAllLabel,
   headerSlot,
   className,
   children,
@@ -59,6 +65,7 @@ export const List = <T extends object>({
         <ListHeader
           label={label}
           showSelectAll={showSelectAll && selectionMode === 'multiple'}
+          selectAllLabel={selectAllLabel}
           isSelectAllSelected={isAllSelected}
           isSelectAllIndeterminate={isPartial}
           onSelectAllChange={checked =>
