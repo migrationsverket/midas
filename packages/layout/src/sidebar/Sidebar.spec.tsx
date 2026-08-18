@@ -1,7 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
 import { page } from 'vitest/browser'
-import type { CSSProperties } from 'react'
 import { Sidebar } from './Sidebar'
 import styles from './Sidebar.module.css'
 
@@ -72,7 +71,7 @@ describe('Sidebar', () => {
     const { container } = await render(
       <Sidebar
         title='Test'
-        style={{ '--midas-sidebar-width': '400px' } as CSSProperties}
+        style={{ '--midas-sidebar-width': '400px' }}
       >
         Content
       </Sidebar>,
@@ -87,7 +86,7 @@ describe('Sidebar', () => {
       <Sidebar
         title='Test'
         defaultCollapsed
-        style={{ '--midas-sidebar-collapsed-width': '80px' } as CSSProperties}
+        style={{ '--midas-sidebar-collapsed-width': '80px' }}
       >
         Content
       </Sidebar>,
