@@ -1,0 +1,29 @@
+import{i as e}from"./preload-helper-CT_b8DTk.js";import{Xn as t,nr as n}from"./iframe-BfHpmBHc.js";import{n as r,t as i}from"./DateRangePicker-Rw5iDHll.js";var a,o,s,c,l,u,d,f;e((()=>{t(),r(),a={component:i,title:`Components/DatePicker/DateRangePicker`,tags:[`autodocs`],parameters:{a11y:{config:{rules:[{id:`color-contrast`,selector:`[data-placeholder="true"]`,enabled:!1}]},options:{rules:{"color-contrast":{enabled:!1}}}}},args:{label:`Välj datum`,description:`Beskrivning`,errorMessage:`Felmeddelande`,errorPosition:`top`}},o={},s={args:{isDisabled:!0}},c={args:{isReadOnly:!0,defaultValue:{start:new n(1995,5,29),end:new n(2025,5,29)}}},l={args:{isInvalid:!0}},u={args:{isClearable:!0,defaultValue:{start:new n(1995,5,29),end:new n(2025,5,29)}}},d={args:{isDateUnavailable:(e,t)=>t!==null&&Math.abs(e.compare(t))>7}},o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{}`,...o.parameters?.docs?.source}}},s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {
+    isDisabled: true
+  }
+}`,...s.parameters?.docs?.source}}},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`{
+  args: {
+    isReadOnly: true,
+    defaultValue: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(2025, 5, 29)
+    }
+  }
+}`,...c.parameters?.docs?.source}}},l.parameters={...l.parameters,docs:{...l.parameters?.docs,source:{originalSource:`{
+  args: {
+    isInvalid: true
+  }
+}`,...l.parameters?.docs?.source}}},u.parameters={...u.parameters,docs:{...u.parameters?.docs,source:{originalSource:`{
+  args: {
+    isClearable: true,
+    defaultValue: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(2025, 5, 29)
+    }
+  }
+}`,...u.parameters?.docs?.source}}},d.parameters={...d.parameters,docs:{...d.parameters?.docs,source:{originalSource:`{
+  args: {
+    isDateUnavailable: (date, anchorDate) => anchorDate !== null && Math.abs(date.compare(anchorDate)) > 7
+  }
+}`,...d.parameters?.docs?.source}}},f=[`Primary`,`Disabled`,`ReadOnly`,`Invalid`,`WithClearButton`,`MaxRangeDuration`]}))();export{s as Disabled,l as Invalid,d as MaxRangeDuration,o as Primary,c as ReadOnly,u as WithClearButton,f as __namedExportsOrder,a as default};
