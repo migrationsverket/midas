@@ -101,7 +101,15 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
         </div>
         {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
         <Popover
-          offset={0}
+          // offset={0} looks flush, but React Aria floors the popover's
+          // computed `top` to a whole pixel while leaving the trigger's own
+          // (often fractional) width/position unrounded. When the trigger's
+          // true bottom edge lands on a fractional pixel — common with
+          // flex/grid-distributed widths — the popover can end up rendered
+          // ~1px too high, covering the trigger's bottom border. offset={1}
+          // adds enough buffer to absorb that rounding error.
+          // See https://github.com/adobe/react-spectrum/issues/8857
+          offset={1}
           hideArrow
           {...popoverProps}
           className={clsx(popoverProps?.className, styles.popover)}
