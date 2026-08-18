@@ -1,3 +1,9 @@
+## 17.21.1 (2026-08-18)
+
+### 🩹 Fixes
+
+- **components,select:** prevent popover from covering trigger's bottom border ([99c49d61f3e](https://github.com/migrationsverket/midas/commit/99c49d61f3e))
+
 ## 17.21.0 (2026-08-18)
 
 ### 🚀 Features

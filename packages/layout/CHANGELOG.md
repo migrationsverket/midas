@@ -1,3 +1,13 @@
+## 0.2.18 (2026-08-18)
+
+### 🩹 Fixes
+
+- **layout,navigation-section:** use type intersection instead of interface extends for props ([335fc8f437c](https://github.com/migrationsverket/midas/commit/335fc8f437c))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.21.1
+
 ## 0.2.17 (2026-08-18)
 
 ### 🩹 Fixes
