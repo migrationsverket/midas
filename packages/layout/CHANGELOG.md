@@ -1,3 +1,9 @@
+## 0.2.17 (2026-08-18)
+
+### 🩹 Fixes
+
+- **layout,sidebar:** widen style prop type to accept CSS custom properties ([2d038fffe8d](https://github.com/migrationsverket/midas/commit/2d038fffe8d))
+
 ## 0.2.16 (2026-08-18)
 
 ### 🧱 Updated Dependencies
