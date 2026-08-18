@@ -1,3 +1,9 @@
+## 17.21.0 (2026-08-18)
+
+### 🚀 Features
+
+- **components, select:** add pressed state for trigger ([273c9f27673](https://github.com/migrationsverket/midas/commit/273c9f27673))
+
 ## 17.20.0 (2026-08-14)
 
 ### 🚀 Features
