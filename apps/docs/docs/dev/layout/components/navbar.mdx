@@ -14,7 +14,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-Navigationskomponent som ligger längst ned på sidan och är gjort för att likna navigationen i native mobilappar. `Navbar` renderar ett semantiskt `<footer>`-element.
+Navigationskomponent som ligger längst ned på sidan och är gjord för att likna navigationen i native mobilappar. `Navbar` renderar ett semantiskt `<footer>`-element.
 
 ```tsx
 import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -73,3 +73,25 @@ Syftet med Navbar är att få applikationen att likna en native mobilapp, som of
 - Om applikationen behöver mer än 5 menyalternativ i navigationen, eftersom det gör det för trångt på små skärmar.
 - Om applikationen behöver undermenyer eller komplex navigering.
 - Tillsammans med MobileMenu. Navbar ersätter MobileMenu på små skärmar.
+
+## Implementation
+
+### Exempel på användning i en layout
+
+Detta kodexempel visar hur Navbar kan användas tillsammans med Sidebar i en layout.
+
+```tsx
+<Layout>
+  <Header>...</Header>
+  <LayoutContent>
+    <Sidebar>
+      <Navigation>{/* Navigering på stora skärmar */}</Navigation>
+    </Sidebar>
+    <Main>...</Main>
+  </LayoutContent>
+
+  <Navbar>
+    <Navigation>{/* Navigering på mobil/små skärmar */}</Navigation>
+  </Navbar>
+</Layout>
+```
