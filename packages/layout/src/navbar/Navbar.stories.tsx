@@ -11,6 +11,9 @@ export default {
   title: 'Layout/Navbar',
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen', rootElement: 'div' },
+  globals: {
+    viewport: { value: 'small' },
+  },
   args: {
     children: <FlatNavigation />,
   },
