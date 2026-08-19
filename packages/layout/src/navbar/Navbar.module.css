@@ -1,6 +1,10 @@
 .navbar {
   background-color: var(--midas-layer-01-base);
 
+  @media (width > 640px) {
+    display: none;
+  }
+
   ul {
     display: flex;
     justify-content: center;
