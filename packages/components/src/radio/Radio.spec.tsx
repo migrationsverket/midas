@@ -51,7 +51,7 @@ describe('given a RadioGroup with custom validation', async () => {
     const { getByText } = await render(<CustomValidation />)
 
     await userEvent.tab()
-    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[Space]')
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
 

@@ -1,4 +1,4 @@
-import { CheckboxGroupState } from '@react-stately/checkbox'
+import { CheckboxGroupState } from 'react-stately'
 import React from 'react'
 
 export const CheckboxGroupContext =

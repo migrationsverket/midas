@@ -2,15 +2,13 @@
 
 import clsx from 'clsx'
 import { useContext } from 'react'
-import { Collection, CollectionProps } from '@react-aria/collections'
+import { Collection, CollectionProps } from 'react-aria-components'
 import { NavigationHeader } from '../navigation-header'
 import { NavigationItem } from '../navigation-item'
 import { SidebarContext } from '../../sidebar'
 import styles from './NavigationSection.module.css'
 
-export interface NavigationSectionProps<
-  T extends object,
-> extends CollectionProps<T> {
+export type NavigationSectionProps<T extends object> = CollectionProps<T> & {
   title?: string
   className?: string
 }

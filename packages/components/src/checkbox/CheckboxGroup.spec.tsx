@@ -52,9 +52,9 @@ describe('given a Checkbox with select all enabled', async () => {
 
     await userEvent.tab()
     await userEvent.tab()
-    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[Space]')
     await userEvent.tab()
-    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[Space]')
 
     expect(
       (getByRole('checkbox').first().element() as HTMLInputElement).checked,
@@ -66,7 +66,7 @@ describe('given a Checkbox with select all enabled', async () => {
 
     await userEvent.tab()
     await userEvent.tab()
-    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[Space]')
 
     expect(
       (getByRole('checkbox').first().element() as HTMLInputElement)

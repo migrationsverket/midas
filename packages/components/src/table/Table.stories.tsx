@@ -7,6 +7,8 @@ import {
 import { useState } from 'react'
 import { Cell, Column, Row, Table, TableBody, TableHeader } from './Table'
 import { Link } from '../link'
+import { Button } from '../button'
+import { TextField } from '../textfield'
 
 type Story = StoryObj<typeof Table>
 
@@ -156,6 +158,39 @@ export const StripedWithLink: Story = {
             <Link href='#'>Link</Link>
           </Cell>
         </Row>
+      </TableBody>
+    </Table>
+  ),
+}
+
+export const InteractiveCells: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: args => (
+    <Table
+      {...args}
+      selectionMode='none'
+      keyboardNavigationBehavior='tab'
+    >
+      <TableHeader>
+        <Column isRowHeader>Name</Column>
+        <Column>Note</Column>
+        <Column>Actions</Column>
+      </TableHeader>
+      <TableBody items={rows}>
+        {item => (
+          <Row>
+            <Cell>{item.name}</Cell>
+            <Cell>
+              <TextField aria-label={`Note for ${item.name}`} />
+            </Cell>
+            <Cell>
+              <Button>Edit</Button>
+            </Cell>
+          </Row>
+        )}
       </TableBody>
     </Table>
   ),

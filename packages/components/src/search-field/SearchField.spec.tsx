@@ -5,7 +5,14 @@ import styles from './SearchField.module.css'
 import * as stories from './SearchField.stories'
 import { render } from '../../test-utils'
 
-const { Primary, CustomValidation, Invalid, WithoutButton } = composeStories(stories)
+const {
+  Primary,
+  CustomValidation,
+  Invalid,
+  WithoutButton,
+  WithHelpPopover,
+  WithLabelAndDescription,
+} = composeStories(stories)
 
 const handleChange = vi.fn()
 const handleSubmit = vi.fn()
@@ -151,11 +158,29 @@ describe('given an invalid SearchField', async () => {
       .toBeInTheDocument()
   })
 
+  it('should render the error message above the input when errorPosition is top', async () => {
+    const { getByRole, getByText } = await render(<Invalid errorPosition='top' />)
+
+    const errorRect = getByText(Invalid.args.errorMessage as string)
+      .element()
+      .getBoundingClientRect()
+    const inputRect = getByRole('searchbox').element().getBoundingClientRect()
+
+    expect(errorRect.bottom).toBeLessThanOrEqual(inputRect.top)
+  })
+
   it('should render the error message below the input when errorPosition is bottom', async () => {
-    await render(<Invalid errorPosition='bottom' />)
+    const { getByRole, getByText } = await render(<Invalid errorPosition='bottom' />)
 
     const container = document.querySelector(`.${styles.container}`) as HTMLElement
     expect(container.lastElementChild?.textContent).toContain(Invalid.args.errorMessage)
+
+    const inputRect = getByRole('searchbox').element().getBoundingClientRect()
+    const errorRect = getByText(Invalid.args.errorMessage as string)
+      .element()
+      .getBoundingClientRect()
+
+    expect(inputRect.bottom).toBeLessThanOrEqual(errorRect.top)
   })
 })
 
@@ -319,5 +344,70 @@ describe('given a SearchField without onSubmit outside a <form>', async () => {
     await userEvent.keyboard('[Enter]')
 
     await expect.element(page.getByRole('searchbox')).toHaveValue('hello')
+  })
+})
+
+describe('given a SearchField with a label', async () => {
+  it('should render the label and use it as the accessible name', async () => {
+    const { getByRole, getByText } = await render(<WithLabelAndDescription />)
+
+    await expect
+      .element(getByText(WithLabelAndDescription.args.label as string))
+      .toBeVisible()
+    await expect
+      .element(getByRole('searchbox'))
+      .toHaveAccessibleName(WithLabelAndDescription.args.label as string)
+  })
+})
+
+describe('given a SearchField with a description', async () => {
+  it('should render the description and associate it via aria-describedby', async () => {
+    const { getByRole, getByText } = await render(<WithLabelAndDescription />)
+
+    await expect
+      .element(getByText(WithLabelAndDescription.args.description as string))
+      .toBeVisible()
+    await expect
+      .element(getByRole('searchbox'))
+      .toHaveAccessibleDescription(WithLabelAndDescription.args.description as string)
+  })
+})
+
+describe('given a SearchField with a label and description', async () => {
+  it('should stack them vertically instead of rendering inline', async () => {
+    const { getByText, getByRole } = await render(<WithLabelAndDescription />)
+
+    const labelRect = getByText(WithLabelAndDescription.args.label as string)
+      .element()
+      .getBoundingClientRect()
+    const descriptionRect = getByText(
+      WithLabelAndDescription.args.description as string,
+    )
+      .element()
+      .getBoundingClientRect()
+    const inputRect = getByRole('searchbox').element().getBoundingClientRect()
+
+    expect(labelRect.bottom).toBeLessThanOrEqual(descriptionRect.top)
+    expect(descriptionRect.bottom).toBeLessThanOrEqual(inputRect.top)
+  })
+})
+
+describe('given a SearchField without a label', async () => {
+  it('should fall back to placeholder as the accessible name', async () => {
+    const { getByRole } = await render(<Primary />)
+
+    await expect
+      .element(getByRole('searchbox'))
+      .toHaveAccessibleName(Primary.args.placeholder as string)
+  })
+})
+
+describe('given a SearchField with a help popover', async () => {
+  it('should render the popover trigger', async () => {
+    const { getByRole } = await render(<WithHelpPopover />)
+
+    await expect
+      .element(getByRole('button', { name: 'Mer information' }))
+      .toBeInTheDocument()
   })
 })

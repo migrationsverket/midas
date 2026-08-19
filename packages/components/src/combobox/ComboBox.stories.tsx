@@ -153,6 +153,26 @@ export const Sectioned: Story<Section> = {
   ),
 }
 
+export const NotVirtualized: Story<Section> = {
+  tags: ['!autodocs', '!snapshot'],
+  args: {
+    ...Sectioned.args,
+    listBoxProps: { virtualized: false },
+  },
+  render: args => (
+    <ComboBox {...args}>
+      {section => (
+        <ListBoxSection id={section.name}>
+          <ListBoxHeader>{section.name}</ListBoxHeader>
+          <Collection items={section.children}>
+            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+          </Collection>
+        </ListBoxSection>
+      )}
+    </ComboBox>
+  ),
+}
+
 export const PerformanceTest: Story = {
   tags: ['!dev', '!autodocs'],
   parameters: {

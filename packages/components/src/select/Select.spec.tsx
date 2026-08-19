@@ -12,6 +12,7 @@ const {
   WithTags,
   SelectAllEnabled,
   DynamicSections,
+  NotVirtualized,
   RequiredSingleSelect,
   RequiredMultipleSelectAll,
   RequiredMultipleWithTags,
@@ -176,6 +177,25 @@ describe('given a sectioned Select ', async () => {
     await userEvent.keyboard('[Space]')
 
     expect(warn).toHaveBeenCalledTimes(0)
+  })
+})
+
+describe('given a Select with listBoxProps={{ virtualized: false }}', async () => {
+  it('should render items in every section', async () => {
+    const { getByRole } = await render(<NotVirtualized />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[Space]')
+
+    const listbox = page.getByRole('listbox')
+    await expect.element(listbox.getByText('Apple')).toBeVisible()
+    await expect.element(listbox.getByText('Banana')).toBeVisible()
+    await expect.element(listbox.getByText('Cabbage')).toBeVisible()
+    await expect.element(listbox.getByText('Broccoli')).toBeVisible()
+
+    expect(getByRole('listbox').element().innerHTML).not.toContain(
+      'contain: size layout style',
+    )
   })
 })
 
