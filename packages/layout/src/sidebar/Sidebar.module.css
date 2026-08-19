@@ -3,10 +3,13 @@
   border-right: 1px solid var(--midas-border-color-subtle);
   flex-shrink: 0;
   transition: width var(--midas-transition-duration-fast) ease-out;
-  width: 300px;
+  width: var(--midas-sidebar-width, 300px);
 
   &.collapsed {
-    width: calc(var(--midas-size-icon) + 4 * var(--midas-space-small));
+    width: var(
+      --midas-sidebar-collapsed-width,
+      calc(var(--midas-size-icon) + 4 * var(--midas-space-small))
+    );
   }
 
   @media (width <= 640px) {
@@ -53,16 +56,6 @@
   padding: var(--midas-space-small);
 }
 
-.sidebar[data-transitioning] :global([data-badge]) {
-  opacity: 0;
-  transition: none;
-}
-
-.sidebar :global([data-badge]) {
-  transition: opacity var(--midas-transition-duration-normal) ease
-    var(--midas-transition-duration-fast);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .sidebar {
     transition: none;
@@ -70,11 +63,6 @@
 
   .sidebarHeader,
   .sidebarTitle {
-    transition: none;
-  }
-
-  .sidebar[data-transitioning] :global([data-badge]),
-  .sidebar :global([data-badge]) {
     transition: none;
   }
 }

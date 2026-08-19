@@ -62,3 +62,30 @@ export const WithoutButton: Story = {
     showButton: false,
   },
 }
+
+export const WithHelpPopover: Story = {
+  args: {
+    ...Primary.args,
+    label: 'Sök person',
+    popover: {
+      children:
+        'An assistive text that helps the user understand the field better.',
+      'aria-label': 'Mer information',
+    },
+  },
+}
+
+export const WithLabelAndDescription: Story = {
+  args: {
+    ...Primary.args,
+    label: 'Sök person',
+    description: 'Ange namn, personnummer eller ärendenummer',
+  },
+}
+
+export const WithLabelAndDescriptionWithoutButton: Story = {
+  args: {
+    ...WithLabelAndDescription.args,
+    showButton: false,
+  },
+}

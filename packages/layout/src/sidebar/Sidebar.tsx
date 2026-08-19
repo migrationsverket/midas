@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { type CSSProperties } from 'react'
 import clsx from 'clsx'
 import { PanelLeftClose } from 'lucide-react'
 import { Button, useLocalizedStringFormatter } from '@midas-ds/components'
@@ -18,11 +18,19 @@ import { useIsMobileDevice } from '../utils'
 import { SidebarContext } from './SidebarContext'
 import styles from './Sidebar.module.css'
 
-export interface SidebarProps extends PanelBodyProps {
+// @types/react's CSSProperties intentionally has no index signature for
+// custom properties (see its own doc comment) — widen it here so consumers
+// can pass `--midas-sidebar-width` etc. via `style` without a cast.
+type CSSPropertiesWithCustomProperties = CSSProperties & {
+  [key: `--${string}`]: string | number | undefined
+}
+
+export interface SidebarProps extends Omit<PanelBodyProps, 'style'> {
   title: string
   isCollapsed?: boolean
   defaultCollapsed?: boolean
   onCollapseChange?: (isCollapsed: boolean) => void
+  style?: CSSPropertiesWithCustomProperties
 }
 
 export const Sidebar = ({
@@ -62,7 +70,7 @@ export const Sidebar = ({
         })}
         data-transitioning={isTransitioning || undefined}
         onTransitionEnd={handleTransitionEnd}
-        {...filterDOMProps(props)}
+        {...filterDOMProps(props, { propNames: new Set(['style']) })}
       >
         <PanelHeader
           className={clsx(styles.sidebarHeader, {

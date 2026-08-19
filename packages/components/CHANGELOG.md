@@ -1,3 +1,36 @@
+## 17.21.1 (2026-08-18)
+
+### 🩹 Fixes
+
+- **components,select:** prevent popover from covering trigger's bottom border ([99c49d61f3e](https://github.com/migrationsverket/midas/commit/99c49d61f3e))
+
+## 17.21.0 (2026-08-18)
+
+### 🚀 Features
+
+- **components, select:** add pressed state for trigger ([273c9f27673](https://github.com/migrationsverket/midas/commit/273c9f27673))
+
+## 17.20.0 (2026-08-14)
+
+### 🚀 Features
+
+- **components,search-field:** add label and description support ([96dcf586333](https://github.com/migrationsverket/midas/commit/96dcf586333))
+
+### 🩹 Fixes
+
+- **components,badge:** pin badge to icon corner in width-constrained containers ([b1d8e302d10](https://github.com/migrationsverket/midas/commit/b1d8e302d10))
+
+## 17.19.0 (2026-08-13)
+
+### 🚀 Features
+
+- **components,list-box:** add virtualized opt-out to ListBox/Select/ComboBox ([fc140394ec9](https://github.com/migrationsverket/midas/commit/fc140394ec9))
+
+### 🩹 Fixes
+
+- **components,combobox:** stop relying on ArrowDown to open in CI ([9b40aeb068a](https://github.com/migrationsverket/midas/commit/9b40aeb068a))
+- **components,combobox:** fix flaky virtualized opt-out test in CI ([8b4f9bffe21](https://github.com/migrationsverket/midas/commit/8b4f9bffe21))
+
 ## 17.18.0 (2026-08-13)
 
 ### 🚀 Features

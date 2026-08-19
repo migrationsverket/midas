@@ -13,7 +13,7 @@ import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { SelectAll } from './SelectAll'
 import { MultiSelectValue } from './MultiSelectValue'
-import { ListBox } from '../list-box'
+import { ListBox, type ListBoxProps } from '../list-box'
 import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
@@ -55,6 +55,10 @@ export interface MidasSelectProps<
    * Props passed to the internal Popover element.
    */
   popoverProps?: Omit<React.ComponentProps<typeof Popover>, 'children'>
+  /**
+   * Props passed to the internal ListBox element.
+   */
+  listBoxProps?: Omit<ListBoxProps<T>, 'items' | 'children'>
 }
 
 export function Select<T extends object, M extends SelectionMode = 'single'>({
@@ -66,6 +70,7 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
   label,
   popover,
   popoverProps,
+  listBoxProps,
   size = 'large',
   ...props
 }: MidasSelectProps<T, M>) {
@@ -96,7 +101,15 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
         </div>
         {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
         <Popover
-          offset={0}
+          // offset={0} looks flush, but React Aria floors the popover's
+          // computed `top` to a whole pixel while leaving the trigger's own
+          // (often fractional) width/position unrounded. When the trigger's
+          // true bottom edge lands on a fractional pixel — common with
+          // flex/grid-distributed widths — the popover can end up rendered
+          // ~1px too high, covering the trigger's bottom border. offset={1}
+          // adds enough buffer to absorb that rounding error.
+          // See https://github.com/adobe/react-spectrum/issues/8857
+          offset={1}
           hideArrow
           {...popoverProps}
           className={clsx(popoverProps?.className, styles.popover)}
@@ -105,6 +118,7 @@ export function Select<T extends object, M extends SelectionMode = 'single'>({
           <ListBox
             escapeKeyBehavior='none'
             items={items}
+            {...listBoxProps}
           >
             {children}
           </ListBox>
