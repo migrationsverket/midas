@@ -1,6 +1,13 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import { Bell, House, MoreHorizontal, Settings, User } from 'lucide-react'
+import {
+  Bell,
+  HelpCircle,
+  House,
+  MoreHorizontal,
+  Settings,
+  User,
+} from 'lucide-react'
 import { useMediaQuery } from '@react-spectrum/utils'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import {
