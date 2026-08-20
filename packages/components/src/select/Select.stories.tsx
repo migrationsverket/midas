@@ -145,6 +145,16 @@ export const SelectAllEnabledWithSections: Story<Item, 'multiple'> = {
   },
 }
 
+export const SelectAllEnabledWithPreselectedDisabledItem: Story<
+  Item,
+  'multiple'
+> = {
+  args: {
+    ...SelectAllEnabledWithSections.args,
+    defaultValue: ['Banana'],
+  },
+}
+
 export const DS872: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {

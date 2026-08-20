@@ -1,8 +1,9 @@
 import { Select, ListBoxHeader, ListBoxItem, ListBoxSection } from '@midas-ds/components'
 
-// Repro for the SelectAll bug: click "Select all" and the count reads "8 selected"
-// instead of "3" — Apple, Cabbage, Broccoli are the only real, selectable items
-// (Banana is disabled, and the two section + two header nodes aren't items at all).
+// Repro for the SelectAll fix: Banana starts pre-selected and disabled.
+// "Select all" should add Apple/Cabbage/Broccoli without dropping Banana (4
+// selected), and toggling it back off should clear those three but leave
+// Banana selected — it has no way to have been deselected by the user.
 export const SelectAllSectionsBugPage = () => (
   <div style={{ padding: 48, maxWidth: 320 }}>
     <Select
@@ -10,6 +11,7 @@ export const SelectAllSectionsBugPage = () => (
       selectionMode='multiple'
       isSelectableAll
       disabledKeys={['Banana']}
+      defaultValue={['Banana']}
     >
       <ListBoxSection>
         <ListBoxHeader>Fruit</ListBoxHeader>
