@@ -1,3 +1,9 @@
+## 0.2.19 (2026-08-20)
+
+### 🩹 Fixes
+
+- **layout,main:** establish Main as a CSS positioning context ([092f5e7cbce](https://github.com/migrationsverket/midas/commit/092f5e7cbce))
+
 ## 0.2.18 (2026-08-18)
 
 ### 🩹 Fixes
