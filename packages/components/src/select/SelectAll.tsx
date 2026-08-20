@@ -11,12 +11,19 @@ export const SelectAll = () => {
   const strings = useLocalizedStringFormatter(messages)
 
   const handleChange = () => {
-    state?.setValue(
-      state?.selectionManager.isSelectAll
-        ? null
-        : Array.from(state.collection.getKeys()),
+    if (!state) return
+
+    // `collection.getKeys()` returns every node (sections, headers, items),
+    // so it's filtered down to selectable items — same rule react-stately's
+    // own (private) getSelectAllKeys() uses internally.
+    const selectableKeys = Array.from(state.collection.getKeys()).filter(
+      key =>
+        state.collection.getItem(key)?.type === 'item' &&
+        state.selectionManager.canSelectItem(key),
     )
-    state?.commitValidation()
+
+    state.setValue(state.selectionManager.isSelectAll ? null : selectableKeys)
+    state.commitValidation()
   }
 
   return (
