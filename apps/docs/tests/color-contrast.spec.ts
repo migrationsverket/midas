@@ -11,7 +11,7 @@ const pages = [
   'get-started/contribute/tokens',
   'get-started/contribute/tokens/dev-tokens',
   'basics/principles',
-  'basics/tokens',
+  'basics/color',
   'basics/accessibility',
   'basics/language',
   'design-patterns/buttons-and-links',

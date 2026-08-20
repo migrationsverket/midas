@@ -1,0 +1,69 @@
+---
+id: color
+title: Färger
+sidebar_label: Färger
+sidebar_position: 2
+---
+
+import { tokenDictionary } from '@midas-ds/theme'
+import { TokenList, Layers, TokenNaming } from '@site/src/components/tokens'
+
+Vi använder i huvudsak en gråskala och en blå skala som grund för
+våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår
+primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt,
+tillgängligt och konsekvent uttryck i hela designsystemet.
+
+För att säkerställa konsekvent användning av färger används endast våra semantiska färgtokens, variabler som representerar färgernas syfte
+snarare än deras exakta värde, när vi bygger komponenter och gränssnitt.
+
+## Användning
+
+:::info
+I de fall ni inte kan referera till tokens direkt i kod (CSS-variabler eller JS-import) finns en [fullständig tokenreferens med färgkoder här](/get-started/contribute/tokens/dev-tokens).
+:::
+
+Eftersom komponenterna redan är byggda med tokens används generellt bara de tokens som är bundna till UI-element som inte är komponenter. Dessa är beskrivna i [listan över semantiska färgtokens](#lista-över-semantiska-färgtokens).
+
+Våra färgtokens finns i två hierariska nivåer: referenstokens och semantiska tokens. Referenstokens är variabler som är kopplade direkt till ett färgvärde, medan semantiska tokens är kopplade till referenstokens och det är dessa som vi använder i komponenter och UI-element. Varje semantisk token är namngiven för att beskriva var den ska användas och kopplad till två referenstokens, en för ljust och en för mörkt läge, vilket gör att vi kan byta färgtema utan att behöva ändra något i kod.
+
+<TokenNaming />
+
+### Lager
+
+Vissa färgtokens är kopplade till ett specifikt lager, vilket indikeras av att de har 01 eller 02 i namnet. Numreringen används för att avgöra
+vilka tokens som ska användas beroende på vilket lager en komponent ligger på. Tokens som har 01 i namnet (t.ex. `field01Base`)
+används när en komponent ligger på `backgroundBase` och tokens som har 02 i namnet (t.ex. `field02Base`) används när komponenten ligger på `layer01Base`.
+
+I ljust läge är varannat lager vitt och varannat grått. I mörkt läge blir varje lager ljusare, se exempel nedan.
+
+<Layers />
+
+## Lista över semantiska färgtokens
+
+### Bakgrund
+
+<TokenList tokens={tokenDictionary.background} />
+
+### Lager
+
+<TokenList tokens={tokenDictionary.layer} />
+
+### Kantlinje
+
+<TokenList tokens={tokenDictionary.border.color} />
+
+### Ikoner
+
+<TokenList tokens={tokenDictionary.icon} />
+
+### Text
+
+<TokenList tokens={tokenDictionary.text} />
+
+### Notifikationer
+
+<TokenList tokens={tokenDictionary.support} />
+
+### Varumärke
+
+<TokenList tokens={tokenDictionary.brand} />
