@@ -1,3 +1,9 @@
+## 0.2.20 (2026-08-20)
+
+### 🩹 Fixes
+
+- **layout:** correct broken documentation link in README ([a7788332bbd](https://github.com/migrationsverket/midas/commit/a7788332bbd))
+
 ## 0.2.19 (2026-08-20)
 
 ### 🩹 Fixes
