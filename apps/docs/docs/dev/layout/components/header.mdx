@@ -8,6 +8,7 @@ import {
   BasicHeaderExample,
   MobileHeaderExample,
   OverflowHeaderExample,
+  HeaderActionsExample,
 } from '@site/src/components/examples/layout/HeaderExamples'
 
 <ComponentHeader
@@ -17,55 +18,11 @@ import {
   overrideHeadlessLink=''
 />
 
-# Header
-
-Sidhuvudet innehåller logotypen och plats för globala handlingar. Renderar ett semantiskt `<header>`-element och tillhandahåller kontext för logotypstorlek (responsiv).
+Sidhuvud med logotyp, navigation på små skärmar samt plats för globala handlingar. Renderar ett semantiskt `<header>`-element och tillhandahåller kontext för logotypstorlek (responsiv).
 
 ```tsx
 import { Header, HeaderActions, HeaderAction, HeaderLogo } from '@midas-ds/layout'
 ```
-
-```tsx
-<Header>
-  <HeaderLogo />
-  <HeaderTitle>Mitt system</HeaderTitle>
-  <HeaderActions>
-    <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
-    <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
-    <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
-  </HeaderActions>
-</Header>
-```
-
-<BasicHeaderExample />
-
-## Logotyp
-
-Logotypen läggs till i Header via `<HeaderLogo>`. Header hanterar responsiv storlek automatiskt och visar en kompakt variant på små skärmar (≤ 640px). Logotypen kan länka till startsidan genom att wrappas i den routing-komponent som används i applikationen.
-
-```tsx
-// No router
-
-;<a href='/'>
-  <HeaderLogo />
-</a>
-
-// Next.js
-import Link from 'next/link'
-;<Link href='/'>
-  <HeaderLogo />
-</Link>
-
-// React Router
-import { Link } from 'react-router-dom'
-;<Link to='/'>
-  <HeaderLogo />
-</Link>
-```
-
-## Globala handlingar
-
-I Header läggs globala handlingar, alltså handlingar som användaren ska kunna komma åt från alla sidor i applikationen. Typiska globala handlingar är Logga ut och Inställningar. Dessa läggs till i Header via `HeaderActions`. Varje global handling (`HeaderAction`) ska ha en ikon och en beskrivande etikett.
 
 ```tsx
 <Header>
@@ -90,9 +47,51 @@ I Header läggs globala handlingar, alltså handlingar som användaren ska kunna
 </Header>
 ```
 
+<BasicHeaderExample />
+
+## Logotyp
+
+Logotypen läggs till i Header via `<HeaderLogo>`. Header hanterar responsiv storlek automatiskt och visar en kompakt variant på små skärmar (≤ 640px). Logotypen kan länka till startsidan genom att wrappas i den routing-komponent som används i applikationen.
+
+```tsx
+// No router
+;<a href='/'>
+  <HeaderLogo />
+</a>
+
+// Next.js
+import Link from 'next/link'
+;<Link href='/'>
+  <HeaderLogo />
+</Link>
+
+// React Router
+import { Link } from 'react-router-dom'
+;<Link to='/'>
+  <HeaderLogo />
+</Link>
+```
+
+## Globala handlingar
+
+I Header läggs globala handlingar, alltså handlingar som användaren ska kunna komma åt från alla sidor i applikationen. Typiska globala handlingar är Logga ut och Inställningar. Dessa läggs till i Header via `<HeaderActions>`. Varje global handling ska ha en ikon och en beskrivande etikett.
+
+```tsx
+<Header>
+  <HeaderLogo />
+  <HeaderTitle>Mitt system</HeaderTitle>
+  <HeaderActions>
+    <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+    <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+    <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+  </HeaderActions>
+</Header>
+```
+
+<HeaderActionsExample />
 ### Overflow
 
-HeaderActions hanterar inte overflow automatiskt. Om applikationen har många handlingar behöver dessa läggas i en overflow-meny på små skärmar. Det görs via en mediaquery. Prova att ändra bredden på fönstret nedan för att se beteendet:
+HeaderActions hanterar inte overflow automatiskt. Om applikationen har många globala handlingar behöver dessa läggas i en overflow-meny på små skärmar. Det görs via en mediaquery. Prova att ändra bredden på fönstret nedan för att se beteendet:
 
 ```tsx
 import { useMediaQuery } from '@react-spectrum/utils'
@@ -228,7 +227,3 @@ export const MobileHeaderExample = () => {
 | `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
 | `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
 | `children`     | `ReactNode`                 | Menyinnehåll                   |
-
-```
-
-```
