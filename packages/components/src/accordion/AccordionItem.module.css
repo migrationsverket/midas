@@ -24,6 +24,8 @@
   --border: 1px solid;
   --accordion-background: var(--midas-layer-01-base);
   --accordion-background-hover: var(--midas-layer-01-hover);
+  --midas-field-base: var(--midas-field-02-base);
+  --midas-field-hover: var(--midas-field-02-hover);
 
   &.medium {
     --item-padding: calc(var(--midas-space-small) - 2px) var(--midas-space-60);
@@ -134,6 +136,9 @@
 
 .hasBackground {
   background-color: var(--midas-background-base);
+
+  --midas-field-base: var(--midas-field-01-base);
+  --midas-field-hover: var(--midas-field-01-hover);
 }
 
 .header {

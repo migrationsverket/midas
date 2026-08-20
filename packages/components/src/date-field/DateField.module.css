@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--midas-field-01-base);
+  background-color: var(--midas-field-base, var(--midas-field-01-base));
   border: 1px solid transparent;
   border-bottom-color: var(--midas-border-color-primary);
   padding: 0 0 0 1rem;
@@ -40,7 +40,7 @@
   }
 
   .dateField:not([data-disabled], [data-readonly]) & [data-hovered] {
-    background-color: var(--midas-field-01-hover);
+    background-color: var(--midas-field-hover, var(--midas-field-01-hover));
   }
 }
 

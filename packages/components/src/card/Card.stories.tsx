@@ -16,6 +16,11 @@ import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '../menu'
 import { CardHeader } from './card-header'
 import { CardBody } from './card-body'
+import { TextField } from '../textfield'
+import { SearchField } from '../search-field'
+import { Select } from '../select'
+import { ComboBox } from '../combobox'
+import { ListBoxItem } from '../list-box'
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -322,6 +327,38 @@ export const LegacyWithImage: Story = {
       </>
     ),
   },
+}
+
+export const WithFormFields: Story = {
+  tags: ['!autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Field components inside a `Card` automatically use the correct field layer token — no extra props needed.',
+      },
+    },
+  },
+  render: () => (
+    <Card style={{ maxWidth: 400 }}>
+      <CardHeader heading='Formulär' />
+      <CardBody>
+        <TextField
+          label='Namn'
+          placeholder='Anna Andersson'
+        />
+        <SearchField placeholder='Sök...' />
+        <Select label='Välj alternativ'>
+          <ListBoxItem id='a'>Alternativ A</ListBoxItem>
+          <ListBoxItem id='b'>Alternativ B</ListBoxItem>
+        </Select>
+        <ComboBox label='Kombinationsruta'>
+          <ListBoxItem id='x'>Val X</ListBoxItem>
+          <ListBoxItem id='y'>Val Y</ListBoxItem>
+        </ComboBox>
+      </CardBody>
+    </Card>
+  ),
 }
 
 export const LegacyWithContainedImage: Story = {

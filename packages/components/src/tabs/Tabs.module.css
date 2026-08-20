@@ -141,6 +141,9 @@
 
   &.contained {
     background-color: var(--midas-layer-01-base);
+
+    --midas-field-base: var(--midas-field-02-base);
+    --midas-field-hover: var(--midas-field-02-hover);
   }
 
   &.medium {

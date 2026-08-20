@@ -19,7 +19,7 @@
   font-size: var(--midas-typography-font-size-30);
   color: var(--midas-text-primary);
   height: var(--midas-size-control);
-  background-color: var(--midas-field-01-base);
+  background-color: var(--midas-field-base, var(--midas-field-01-base));
 
   @media (forced-colors: active) {
     border: 1px solid;
@@ -31,7 +31,7 @@
 
   &[data-hovered],
   &:has(+ [data-hovered]) {
-    background-color: var(--midas-field-01-hover);
+    background-color: var(--midas-field-hover, var(--midas-field-01-hover));
   }
 
   &::placeholder {

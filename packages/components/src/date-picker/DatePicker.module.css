@@ -10,7 +10,7 @@
   width: 100%;
   height: var(--midas-size-control);
   align-items: center;
-  background-color: var(--midas-field-01-base);
+  background-color: var(--midas-field-base, var(--midas-field-01-base));
   border-bottom: 1px solid var(--midas-border-color-primary);
   padding-left: 1rem;
   display: flex;
