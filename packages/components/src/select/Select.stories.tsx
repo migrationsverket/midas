@@ -123,6 +123,28 @@ export const SelectAllEnabled: Story<Item, 'multiple'> = {
   },
 }
 
+export const SelectAllEnabledWithSections: Story<Item, 'multiple'> = {
+  args: {
+    selectionMode: 'multiple',
+    isSelectableAll: true,
+    disabledKeys: ['Banana'],
+    children: (
+      <>
+        <ListBoxSection>
+          <ListBoxHeader>Fruit</ListBoxHeader>
+          <ListBoxItem id='Apple'>Apple</ListBoxItem>
+          <ListBoxItem id='Banana'>Banana</ListBoxItem>
+        </ListBoxSection>
+        <ListBoxSection>
+          <ListBoxHeader>Vegetables</ListBoxHeader>
+          <ListBoxItem id='Cabbage'>Cabbage</ListBoxItem>
+          <ListBoxItem id='Broccoli'>Broccoli</ListBoxItem>
+        </ListBoxSection>
+      </>
+    ),
+  },
+}
+
 export const DS872: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {

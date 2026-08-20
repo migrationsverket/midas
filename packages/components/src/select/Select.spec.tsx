@@ -11,6 +11,7 @@ const {
   AllKeysSelected,
   WithTags,
   SelectAllEnabled,
+  SelectAllEnabledWithSections,
   DynamicSections,
   NotVirtualized,
   RequiredSingleSelect,
@@ -159,6 +160,19 @@ describe('given a Select with select all enabled', async () => {
     const selectAllLabel = getByText('Select all')
     await selectAllLabel.hover()
     await expect.element(selectAllLabel).toHaveAttribute('data-hovered')
+  })
+
+  it('should only select real, selectable items — not section headers or disabled items', async () => {
+    const { getByRole, getByText } = await render(
+      <SelectAllEnabledWithSections />,
+    )
+    await getByRole('button').first().click()
+    await getByText('Select all').click()
+    await userEvent.keyboard('[Escape]')
+
+    // Apple, Cabbage, Broccoli — Banana is disabled and the two ListBoxSection
+    // nodes aren't selectable items, so none of those should count.
+    await expect.element(page.getByText('3 selected')).toBeVisible()
   })
 })
 
