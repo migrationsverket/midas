@@ -59,6 +59,32 @@ export const SelectAllInteraction: Story = {
   },
 }
 
+export const SelectAllWithPreselectedDisabledItem: Story = {
+  args: {
+    showSelectAll: true,
+    selectAllLabel: 'SELECT ALL',
+    defaultValue: ['Mango'],
+  },
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: ({ ...args }) => {
+    return (
+      <CheckboxGroup {...args}>
+        <Checkbox value='banana'>Banana</Checkbox>
+        <Checkbox value='apple'>Apple</Checkbox>
+        <Checkbox
+          value='Mango'
+          isDisabled
+        >
+          Mango
+        </Checkbox>
+      </CheckboxGroup>
+    )
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,

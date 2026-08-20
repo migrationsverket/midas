@@ -4,7 +4,8 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './CheckboxGroup.stories'
 import { render } from '../../test-utils'
 
-const { Primary, SelectAllInteraction } = composeStories(stories)
+const { Primary, SelectAllInteraction, SelectAllWithPreselectedDisabledItem } =
+  composeStories(stories)
 
 const Required = () => (
   <Primary
@@ -72,5 +73,31 @@ describe('given a Checkbox with select all enabled', async () => {
       (getByRole('checkbox').first().element() as HTMLInputElement)
         .indeterminate,
     ).toBe(true)
+  })
+
+  it('should preserve a pre-selected disabled item through select-all and clear-all', async () => {
+    const { getByRole, getByText } = await render(
+      <SelectAllWithPreselectedDisabledItem />,
+    )
+
+    const selectAllLabel = getByText('SELECT ALL')
+    const mango = getByRole('checkbox', { name: 'Mango' })
+    const banana = getByRole('checkbox', { name: 'Banana' })
+    const apple = getByRole('checkbox', { name: 'Apple' })
+
+    expect((mango.element() as HTMLInputElement).checked).toBe(true)
+
+    // select-all should add Banana/Apple without dropping the disabled Mango
+    await selectAllLabel.click()
+    expect((banana.element() as HTMLInputElement).checked).toBe(true)
+    expect((apple.element() as HTMLInputElement).checked).toBe(true)
+    expect((mango.element() as HTMLInputElement).checked).toBe(true)
+
+    // clear-all can't touch Mango either — it has no way to have been
+    // deselected by the user
+    await selectAllLabel.click()
+    expect((banana.element() as HTMLInputElement).checked).toBe(false)
+    expect((apple.element() as HTMLInputElement).checked).toBe(false)
+    expect((mango.element() as HTMLInputElement).checked).toBe(true)
   })
 })

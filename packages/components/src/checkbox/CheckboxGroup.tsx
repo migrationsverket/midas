@@ -30,13 +30,15 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
     state,
   )
 
-  const { allSelected, someSelected, checkboxValues } = useSelectAll(
-    props.children,
-    state,
-  )
+  const { allSelected, someSelected, checkboxValues, disabledSelectedValues } =
+    useSelectAll(props.children, state)
 
   const handleChange = (checked: boolean) => {
-    state.setValue(checked ? checkboxValues : [])
+    state.setValue(
+      checked
+        ? [...checkboxValues, ...disabledSelectedValues]
+        : disabledSelectedValues,
+    )
   }
 
   return (
