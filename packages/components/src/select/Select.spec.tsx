@@ -12,6 +12,7 @@ const {
   WithTags,
   SelectAllEnabled,
   SelectAllEnabledWithSections,
+  SelectAllEnabledWithPreselectedDisabledItem,
   DynamicSections,
   NotVirtualized,
   RequiredSingleSelect,
@@ -173,6 +174,26 @@ describe('given a Select with select all enabled', async () => {
     // Apple, Cabbage, Broccoli — Banana is disabled and the two ListBoxSection
     // nodes aren't selectable items, so none of those should count.
     await expect.element(page.getByText('3 selected')).toBeVisible()
+  })
+
+  it('should preserve a pre-selected disabled item through select-all and clear-all', async () => {
+    const { getByRole, getByText } = await render(
+      <SelectAllEnabledWithPreselectedDisabledItem />,
+    )
+    await getByRole('button').first().click()
+
+    // Banana starts pre-selected and disabled — select-all should add the
+    // three enabled items without dropping it.
+    await getByText('Select all').click()
+    await userEvent.keyboard('[Escape]')
+    await expect.element(page.getByText('4 selected')).toBeVisible()
+
+    // Clear-all can't touch Banana either — it has no way to have been
+    // deselected by the user, so it should still be selected afterwards.
+    await getByRole('button').first().click()
+    await getByText('Select all').click()
+    await userEvent.keyboard('[Escape]')
+    await expect.element(page.getByText('Banana').first()).toBeVisible()
   })
 })
 

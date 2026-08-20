@@ -22,7 +22,18 @@ export const SelectAll = () => {
         state.selectionManager.canSelectItem(key),
     )
 
-    state.setValue(state.selectionManager.isSelectAll ? null : selectableKeys)
+    // A disabled item can't be toggled individually, so bulk select/clear
+    // shouldn't be able to touch it either — whatever selection state it's
+    // already in is preserved regardless of which way this toggles.
+    const preservedDisabledKeys = Array.from(
+      state.selectionManager.selectedKeys,
+    ).filter(key => !state.selectionManager.canSelectItem(key))
+
+    state.setValue(
+      state.selectionManager.isSelectAll
+        ? preservedDisabledKeys
+        : [...selectableKeys, ...preservedDisabledKeys],
+    )
     state.commitValidation()
   }
 
