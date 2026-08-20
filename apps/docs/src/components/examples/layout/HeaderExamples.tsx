@@ -1,6 +1,6 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import { Bell, HelpCircle, MoreHorizontal, Settings, User } from 'lucide-react'
+import { Bell, House, MoreHorizontal, Settings, User } from 'lucide-react'
 import { useMediaQuery } from '@react-spectrum/utils'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import {
@@ -9,6 +9,10 @@ import {
   HeaderActions,
   HeaderLogo,
   HeaderTitle,
+  MobileMenu,
+  NavigationItem,
+  NavigationLink,
+  Navigation,
 } from '@midas-ds/layout'
 
 const collapsibleActions = [
@@ -23,12 +27,23 @@ export const BasicHeaderExample: React.FC = () => (
     style={{ overflow: 'hidden', padding: 0 }}
   >
     <Header>
+      <MobileMenu title='Mitt system'>
+        <Navigation>
+          <NavigationItem>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+        </Navigation>
+      </MobileMenu>
       <HeaderLogo />
       <HeaderTitle>Mitt system</HeaderTitle>
       <HeaderActions>
         <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
-        <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
-        <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
       </HeaderActions>
     </Header>
   </div>
