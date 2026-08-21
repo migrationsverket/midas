@@ -1,20 +1,20 @@
 ---
 id: header-sidebar-panel
-title: Desktopapplikationer
+title: Applikationer med sidomeny
 sidebar_position: 2
 ---
 
 import { DesktopAppExample } from '@site/src/components/examples/layout/PageLayoutExamples'
 
-# Desktopapplikationer
+# Applikationer med sidomeny
 
-Mönstret för desktopapplikationer innehåller [Header](/dev/layout/components/header), [Sidebar](/dev/layout/components/sidebar) och [Panel](/dev/layout/components/panel). Header innehåller globala handlingar och navigation på små skärmar, Sidebar används som huvudnavigation och Panel används för att visa kontextuell information t.ex. notifieringar eller mer information om element i en lista.
+Detta mönster passar applikationer med flera navigeringsalternativ och ett innehåll som behöver visas på en större skärm.
 
 <DesktopAppExample />
 
 ## Navigation
 
-När fönstret eller skärmen är under 640px i bredd göms Sidebar automatiskt. För att stödja navigation för alla fönster- och skärmstorlekar måste navigation via [MobileMenu](/dev/layout/components/header/#mobilemenu) alltid inkluderas i trädet. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. För att undvika kodduplicering rekommenderas att lägga navigationsinnehållet i en delad komponent och använda den till MobileMenu och Sidebar.
+För att stödja navigation för alla fönster- och skärmstorlekar måste navigation via [MobileMenu](/dev/layout/components/header/#med-mobilemenu) alltid inkluderas i trädet. `Sidebar` och `MobileMenu` visas respektive döljs automatiskt vid brytpunkten 640px. För att undvika kodduplicering rekommenderas att lägga navigationsinnehållet i en delad komponent och använda den till MobileMenu och Sidebar.
 
 ## Exempelkod
 
