@@ -40,7 +40,7 @@
     }
   }
 
-  @media (width < 800px) {
+  @media (width <= 640px) {
     bottom: 0;
     width: 100%;
     height: var(--panel-height-mobile);

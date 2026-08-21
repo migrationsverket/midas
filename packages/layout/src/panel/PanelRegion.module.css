@@ -11,7 +11,7 @@
   width: var(--panel-width);
 }
 
-@media (width < 800px) {
+@media (width <= 640px) {
   .push {
     height: 0;
     width: 100%;
