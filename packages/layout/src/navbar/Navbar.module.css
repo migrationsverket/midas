@@ -1,5 +1,6 @@
 .navbar {
-  background-color: var(--midas-layer-01-base);
+  background-color: var(--midas-background-base);
+  border-top: 1px solid var(--midas-border-color-subtle);
 
   @media (width > 640px) {
     display: none;
