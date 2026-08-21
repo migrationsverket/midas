@@ -1,6 +1,6 @@
 ---
 id: header-navbar-panel
-title: Applikationer som ska upplevas som mobilappar
+title: Mobilorienterade applikationer
 sidebar_position: 3
 ---
 
@@ -9,99 +9,19 @@ import {
   MobileAppSidebarNavbarExample,
 } from '@site/src/components/examples/layout/PageLayoutExamples'
 
-# Applikationer som ska upplevas som mobilappar
+# Mobilorienterade applikationer
 
-Detta mönster är till för applikationer som ska upplevas som mobilappar t.ex. Min Sida och inte tänkt för interna desktopapplikationer. Det finns två varianter av detta mönster:
-
-- Endast [Navbar](/dev/layout/components/navbar)
-- [Sidebar](/dev/layout/components/sidebar) på stora skärmar och [Navbar](/dev/layout/components/navbar) på små skärmar.
-
-Gemensamt för båda varianter är det endast finns plats för ett begränsat antal (max 5) menyalternativ eftersom det inte får plats fler i Navbar på en liten skärm.
-
-## Endast navbar
-
-<MobileAppOnlyNavbarExample />
-
-### Exempelkod
-
-Exempelkoden till båda exempel visar en applikation med bara en Panel. Om applikationen behöver fler paneler används [PanelProvider och usePanels-hooken](/dev/layout/components/panel/#flera-paneler-med-panelprovider)
-
-<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
-
-<div className="snabbstart">
-
-```tsx
-import {
-  Header,
-  HeaderAction,
-  HeaderActions,
-  HeaderLogo,
-  HeaderTitle,
-  Layout,
-  LayoutContent,
-  Main,
-  Navbar,
-  Navigation,
-  NavigationItem,
-  NavigationLink,
-  Panel,
-} from '@midas-ds/layout'
-import { House, Bell } from 'lucide-react'
-import { useState } from 'react'
-
-export default function App() {
-  const [isOpen, setIsOpen] = useState(false)
-  return (
-    <Layout>
-      <Header>
-        <HeaderLogo />
-        <HeaderTitle>Mitt system</HeaderTitle>
-        <HeaderActions>
-          <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
-          {/* Fler actions */}
-        </HeaderActions>
-      </Header>
-      <LayoutContent>
-        <Main>
-          <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
-        </Main>
-        <Panel
-          id='detaljer'
-          title='Detaljer'
-          isOpen={isOpen}
-          onOpenChange={setIsOpen}
-        >
-          {/* Panelinnehåll */}
-        </Panel>
-      </LayoutContent>
-      <Navbar>
-        <Navigation>
-          <NavigationItem>
-            <NavigationLink
-              href='/'
-              icon={<House />}
-              isActive
-            >
-              Hem
-            </NavigationLink>
-          </NavigationItem>
-          {/* Fler länkar */}
-        </Navigation>
-      </Navbar>
-    </Layout>
-  )
-}
-```
-
-</div>
-
-## Sidebar och Navbar
-
-Sidebar och Navbar ska inte användas samtidigt eftersom det blir dubbla navigeringar, så i denna variant används Navbar på små skärmar och Sidebar på stora skärmar. Sidebar är automatiskt dold på skärmar som är mindre än 640px, medan Navbar behöver döljas på skärmar större än 640px. Använd `useMediaQuery` för att göra det.
+Detta mönster är till för applikationer som främst används på mobila enheter och där ska upplevas som native-appar. Det använder [Navbar](/dev/layout/components/navbar) för navigering på små skärmar och [Sidebar](/dev/layout/components/sidebar) för navigering på större skärmar. Navbar har endast plats för ett begränsat antal navigeringsalternativ och är därför inte en generell ersättare för [MobileMenu](/dev/layout/components/header/#med-mobilemenu) på små skärmar.
 
 <MobileAppSidebarNavbarExample />
 
+## Navigation
+
+För att stödja navigation för alla fönster- och skärmstorlekar måste både Navbar och Sidebar inkluderas i trädet. Sidebar och Navbar visas respektive döljs automatiskt vid brytpunkten 640px. För att undvika kodduplicering rekommenderas att lägga navigationsinnehållet i en delad komponent och använda den till Navbar och Sidebar.
+
 ### Exempelkod
+
+Exempelkoden visar en applikation med bara en Panel. Om applikationen behöver fler paneler används [PanelProvider och usePanels-hooken](/dev/layout/components/panel/#flera-paneler-med-panelprovider)
 
 <style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
 
