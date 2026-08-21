@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
-import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
@@ -17,8 +17,11 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/packages/layout',
   plugins: [
     react(),
+    // Keep the Nx plugin: native resolve.tsconfigPaths and the standalone
+    // vite-tsconfig-paths package both fail to resolve non-.ts subpath
+    // aliases (e.g. '@midas-ds/components/default.css') during dev/test.
     nxViteTsPaths(),
-    nxCopyAssetsPlugin(['*.md']),
+    viteStaticCopy({ targets: [{ src: '*.md', dest: '.' }] }),
     dts({
       entryRoot: 'src',
       tsconfigPath: join(__dirname, 'tsconfig.lib.json'),

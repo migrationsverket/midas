@@ -24,5 +24,8 @@ export default defineConfig({
     host: 'localhost',
   },
 
+  // Keep the Nx plugin: native resolve.tsconfigPaths and the standalone
+  // vite-tsconfig-paths package both fail to resolve non-.ts subpath
+  // aliases (e.g. '@midas-ds/components/default.css') during dev/test.
   plugins: [react(), nxViteTsPaths()],
 })

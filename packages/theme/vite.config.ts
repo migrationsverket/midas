@@ -1,19 +1,33 @@
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import type { UserConfig } from 'vite'
-import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
 export default {
   root: __dirname,
   cacheDir: '../../node_modules/.vite/packages/theme',
   plugins: [
+    // Keep the Nx plugin: native resolve.tsconfigPaths and the standalone
+    // vite-tsconfig-paths package both fail to resolve non-.ts subpath
+    // aliases (e.g. '@midas-ds/components/default.css') during dev/test.
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
       pathsToAliases: false,
     }),
-    nxCopyAssetsPlugin(['*.md']),
+    viteStaticCopy({
+      targets: [
+        { src: '*.md', dest: '.' },
+        // lightningcss doesn't recognize Tailwind v4's `@theme` at-rule and
+        // can't minify it — copy as-is instead of bundling through build.lib.
+        {
+          src: 'src/lib/style-dictionary-dist/tailwind-theme.css',
+          dest: '.',
+          rename: { stripBase: true },
+        },
+      ],
+    }),
   ],
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
@@ -27,7 +41,6 @@ export default {
         'src/lib/fonts.css',
         'src/lib/color-scheme.css',
         'src/lib/style-dictionary-dist/variables.css',
-        'src/lib/style-dictionary-dist/tailwind-theme.css',
       ],
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
