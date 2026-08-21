@@ -1,3 +1,15 @@
+## 0.2.22 (2026-08-21)
+
+### 🩹 Fixes
+
+- **layout:** show Navbar in WithNavbar story at its default viewport ([3baf928b415](https://github.com/migrationsverket/midas/commit/3baf928b415))
+- **layout:** unify mobile breakpoint at 640px across Sidebar, Navbar, Panel ([f7e5b8f6f29](https://github.com/migrationsverket/midas/commit/f7e5b8f6f29))
+- **layout,navbar:** hide Navbar on desktop via CSS ([8f8f211ce0e](https://github.com/migrationsverket/midas/commit/8f8f211ce0e))
+
+### 🧪 Tests updated
+
+- **layout:** add breakpoint coverage for Panel, PanelRegion, and LayoutContent ([4cf8b8348a5](https://github.com/migrationsverket/midas/commit/4cf8b8348a5))
+
 ## 0.2.21 (2026-08-21)
 
 ### 🧱 Updated Dependencies
