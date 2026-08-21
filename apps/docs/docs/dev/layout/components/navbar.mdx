@@ -1,7 +1,9 @@
 ---
 title: Navbar
-description: Navigationsbar längst ned på sidan för mobila enheter.
+description: Navigationsbar längst ned på sidan
 ---
+
+import { BasicExample } from '@site/src/components/examples/layout/NavbarExamples'
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -12,17 +14,16 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-# Navbar
-
-En navigationsbar längst ned på sidan, primärt avsedd för mobilanvändare. Håll antalet länkar till 3–5 för att undvika trängsel på små skärmar.
-
-## Användning
+Navigationskomponent som ligger längst ned på sidan och är gjord för att likna navigationen i native mobilappar. `Navbar` renderar ett semantiskt `<footer>`-element.
 
 ```tsx
 import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
+```
+
+```tsx
 import { House, Search, User } from 'lucide-react'
 
-export default function App() {
+export const Example = () => {
   return (
     <Navbar>
       <Navigation>
@@ -57,25 +58,40 @@ export default function App() {
 }
 ```
 
+<BasicExample />
 
-## Sidebar och Navbar tillsammans
+## Användning
 
-`Sidebar` döljer sig automatiskt på mobila enheter. `Navbar` renderar alltid — du ansvarar själv för att visa eller dölja den beroende på skärmstorlek.
+Syftet med Navbar är att få applikationen att likna en native mobilapp, som oftast har navigation i botten av appen. Navbar ska inte användas samtidigt som [MobileMenu](/dev/layout/components/header), utan Navbar används som den enda navigationen på små skärmar. Navbar kan användas tillsammans med [Sidebar](/dev/layout/components/sidebar), men då används de inte samtidigt utan Navbar används endast för små skärmar och är dold på stora skärmar.
+
+### Använd Navbar:
+
+- När applikationen ska upplevas som en mobilapp på små skärmar.
+
+### Använd inte Navbar:
+
+- Om applikationen behöver mer än 5 menyalternativ i navigationen, eftersom det gör det för trångt på små skärmar.
+- Om applikationen behöver undermenyer eller komplex navigering.
+- Tillsammans med MobileMenu. Navbar ersätter MobileMenu på små skärmar.
+
+## Implementation
+
+### Exempel på användning i en layout
+
+Detta kodexempel visar hur Navbar kan användas tillsammans med Sidebar i en layout.
 
 ```tsx
 <Layout>
   <Header>...</Header>
   <LayoutContent>
     <Sidebar>
-      <Navigation>{/* Fullständig navigering på desktop */}</Navigation>
+      <Navigation>{/* Navigering på stora skärmar */}</Navigation>
     </Sidebar>
     <Main>...</Main>
   </LayoutContent>
 
   <Navbar>
-    <Navigation>{/* Komprimerad navigering på mobil */}</Navigation>
+    <Navigation>{/* Navigering på mobil/små skärmar */}</Navigation>
   </Navbar>
 </Layout>
 ```
-
-`Navbar` renderar ett semantiskt `<footer>`-element.
