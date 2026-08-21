@@ -1,0 +1,98 @@
+---
+id: header-sidebar-panel
+title: Applikationer med sidomeny
+sidebar_position: 2
+---
+
+import { DesktopAppExample } from '@site/src/components/examples/layout/PageLayoutExamples'
+
+# Applikationer med sidomeny
+
+Detta mönster passar applikationer med flera navigeringsalternativ och ett innehåll som behöver visas på en större skärm.
+
+<DesktopAppExample />
+
+## Navigation
+
+För att stödja navigation för alla fönster- och skärmstorlekar måste navigation via [MobileMenu](/dev/layout/components/header/#med-mobilemenu) alltid inkluderas i trädet. `Sidebar` och `MobileMenu` visas respektive döljs automatiskt vid brytpunkten 640px. För att undvika kodduplicering rekommenderas att lägga navigationsinnehållet i en delad komponent och använda den till MobileMenu och Sidebar.
+
+## Exempelkod
+
+Exempelkoden visar en applikation med bara en Panel. Om applikationen behöver fler paneler används [PanelProvider och usePanels-hooken](/dev/layout/components/panel/#flera-paneler-med-panelprovider)
+
+<style>{`.snabbstart .theme-code-block { max-height: none; }`}</style>
+
+<div className="snabbstart">
+
+```tsx
+import {
+  Header,
+  HeaderAction,
+  HeaderActions,
+  HeaderLogo,
+  HeaderTitle,
+  Layout,
+  LayoutContent,
+  Main,
+  Sidebar,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+  Panel,
+  MobileMenu,
+} from '@midas-ds/layout'
+import { House, Bell } from 'lucide-react'
+import { useState } from 'react'
+
+export const NavigationContent = () => (
+  <Navigation>
+    <NavigationItem>
+      <NavigationLink
+        href='/'
+        icon={<House />}
+        isActive
+      >
+        Hem
+      </NavigationLink>
+    </NavigationItem>
+    {/* Fler länkar */}
+  </Navigation>
+)
+
+export default function App() {
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <Layout>
+      <Header>
+        <MobileMenu title='Meny'>
+          <NavigationContent />
+        </MobileMenu>
+        <HeaderLogo />
+        <HeaderTitle>Mitt system</HeaderTitle>
+        <HeaderActions>
+          <HeaderAction icon={<Bell />}>Notifieringar</HeaderAction>
+          {/* Fler actions */}
+        </HeaderActions>
+      </Header>
+      <LayoutContent>
+        <Sidebar title='Navigation'>
+          <NavigationContent />
+        </Sidebar>
+        <Main>
+          <Button onPress={() => setIsOpen(true)}>Öppna panel</Button>
+        </Main>
+        <Panel
+          id='detaljer'
+          title='Detaljer'
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+        >
+          {/* Panelinnehåll */}
+        </Panel>
+      </LayoutContent>
+    </Layout>
+  )
+}
+```
+
+</div>
