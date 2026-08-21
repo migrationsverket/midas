@@ -4,6 +4,7 @@ description: Kollapsbar sidomeny för desktop.
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { BasicExample } from '@site/src/components/examples/layout/SidebarExamples'
 
 <ComponentHeader
   name='Sidebar'
@@ -12,11 +13,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-# Sidebar
-
-En kollapsbar sidomeny som visas på desktop. På mobil döljs den automatiskt — använd `MobileMenu` i `Header` för mobilnavigering.
-
-## Grundläggande användning
+Sidopanel som används som huvudnavigation i våra desktopapplikationer. Själva navigationen styrs av [navigationskomponenterna](/dev/layout/components/navigation) `Navigation`, `NavigationItem` och `NavigationLink`.
 
 ```tsx
 import { Sidebar, Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
@@ -54,33 +51,21 @@ export default function App() {
 }
 ```
 
-## Sektioner
+<BasicExample />
 
-Använd `NavigationSection` med `title`-prop för att dela upp navigeringen i namngivna grupper.
+## Titel
 
-```tsx
-<Sidebar title='Navigation'>
-  <Navigation>
-    <NavigationSection title='Huvudmeny'>
-      <NavigationItem>
-        <NavigationLink href='/' icon={<House />}>Hem</NavigationLink>
-      </NavigationItem>
-    </NavigationSection>
-    <NavigationSection title='Inställningar'>
-      <NavigationItem>
-        <NavigationLink href='/konto' icon={<User />}>Konto</NavigationLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavigationLink href='/system' icon={<Settings />}>System</NavigationLink>
-      </NavigationItem>
-    </NavigationSection>
-  </Navigation>
-</Sidebar>
-```
+Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn och ska därför ett namn som beskriver menyns syfte, inte applikationens namn. Oftast är "Navigation" ett bra alternativ.
 
-## Kollapsläge
+## Ihopfällt läge
 
-Sidomenyn kan kollapsa ihop till enbart ikoner. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
+:::note
+
+När Sidebar är ihopfälld visas etiketten i `NavigationLink` som en tooltip vid hover. Därför är det viktigt att varje länk har en `children`-prop (etikett) eftersom det är nödvändigt för tillgänglighet.
+
+:::
+
+Sidebar kan fällas ihop ihop till enbart ikoner för att användaren ska kunna se mer av huvudinnehållet. Det kan styras antingen okontrollerat (internt tillstånd) eller kontrollerat av föräldrakomponenten.
 
 ### Okontrollerat
 
@@ -107,29 +92,21 @@ const [isCollapsed, setIsCollapsed] = useState(false)
 </Sidebar>
 ```
 
-:::info Tillgänglighet
-
-Sidomenyn renderas som ett `<aside>`-landmärke. `title` används som landmärkets tillgängliga namn — välj ett namn som beskriver menyns syfte, inte applikationens namn.
-
-I kollapsad vy döljs textetiketterna och visas istället som tooltips. Se till att varje `NavigationLink` alltid har en `children`-prop så att tooltip och tillgänglig etikett fungerar korrekt.
-
-:::
-
 ## Props
 
 ### Sidebar
 
-| Prop               | Typ                              | Standard | Beskrivning                                                                        |
-| ------------------ | -------------------------------- | -------- | ---------------------------------------------------------------------------------- |
-| `title`            | `string`                         | —        | **Obligatorisk.** Namn på sidomenyn, används som tillgängligt landmärkesnamn.     |
-| `isCollapsed`      | `boolean`                        | —        | Kontrollerat kollapsläge                                                           |
-| `defaultCollapsed` | `boolean`                        | `false`  | Starttillstånd för okontrollerat läge                                              |
-| `onCollapseChange` | `(isCollapsed: boolean) => void` | —        | Callback vid kollaps/expansion                                                     |
-| `children`         | `ReactNode`                      | —        | Sidomenysinnehåll (typiskt `Navigation`)                                           |
+| Prop               | Typ                              | Standard | Beskrivning                                                                   |
+| ------------------ | -------------------------------- | -------- | ----------------------------------------------------------------------------- |
+| `title`            | `string`                         | —        | **Obligatorisk.** Namn på sidomenyn, används som tillgängligt landmärkesnamn. |
+| `isCollapsed`      | `boolean`                        | —        | Kontrollerat kollapsläge                                                      |
+| `defaultCollapsed` | `boolean`                        | `false`  | Starttillstånd för okontrollerat läge                                         |
+| `onCollapseChange` | `(isCollapsed: boolean) => void` | —        | Callback vid kollaps/expansion                                                |
+| `children`         | `ReactNode`                      | —        | Sidomenysinnehåll (typiskt `Navigation`)                                      |
 
 ### NavigationSection
 
-| Prop       | Typ         | Standard | Beskrivning                                    |
-| ---------- | ----------- | -------- | ---------------------------------------------- |
-| `title`    | `string`    | —        | Synlig rubrik för sektionen                    |
-| `children` | `ReactNode` | —        | `NavigationItem`-element                       |
+| Prop       | Typ         | Standard | Beskrivning                 |
+| ---------- | ----------- | -------- | --------------------------- |
+| `title`    | `string`    | —        | Synlig rubrik för sektionen |
+| `children` | `ReactNode` | —        | `NavigationItem`-element    |
