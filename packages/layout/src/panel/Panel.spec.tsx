@@ -4,6 +4,7 @@ import { render } from 'vitest-browser-react'
 import { userEvent } from 'vitest/browser'
 import * as stories from './Panel.stories'
 import styles from './PanelRegion.module.css'
+import panelStyles from './Panel.module.css'
 
 const {
   Controlled,
@@ -35,6 +36,22 @@ describe('given a controlled Panel', () => {
     await userEvent.click(getByRole('button', { name: 'Open panel' }))
     await userEvent.click(getByRole('button', { name: 'Close panel' }))
     await expect.element(getByRole('complementary')).not.toBeInTheDocument()
+  })
+
+  it('should render as a bottom sheet on mobile and a side panel on desktop', async ({ task }) => {
+    const { getByRole, container } = await render(<Controlled />)
+    await userEvent.click(getByRole('button', { name: 'Open panel' }))
+
+    const panel = container.querySelector(`.${panelStyles.panel}`) as HTMLElement
+    const computed = getComputedStyle(panel)
+
+    if (task.file.projectName === 'mobile') {
+      expect(computed.bottom).toBe('0px')
+      expect(computed.borderTopWidth).not.toBe('0px')
+    } else {
+      expect(computed.top).toBe('0px')
+      expect(computed.borderLeftWidth).not.toBe('0px')
+    }
   })
 })
 
@@ -110,5 +127,18 @@ describe('given a PanelProvider with push variant', () => {
 
     await userEvent.click(getByRole('button', { name: 'Open Panel A' }))
     expect(region.dataset.open).toBe('true')
+  })
+
+  it('should grow horizontally on desktop and vertically on mobile', async ({ task }) => {
+    const { getByRole, container } = await render(<VariantPush />)
+    const region = container.querySelector(`.${styles.push}`) as HTMLElement
+
+    await userEvent.click(getByRole('button', { name: 'Open Panel A' }))
+
+    if (task.file.projectName === 'mobile') {
+      await expect.poll(() => getComputedStyle(region).height).not.toBe('0px')
+    } else {
+      await expect.poll(() => getComputedStyle(region).width).not.toBe('0px')
+    }
   })
 })
