@@ -1,3 +1,15 @@
+## 17.21.2 (2026-08-21)
+
+### 🩹 Fixes
+
+- **components,checkbox:** apply same disabled-item rule to CheckboxGroup select-all ([6b77e5a6e43](https://github.com/migrationsverket/midas/commit/6b77e5a6e43))
+- **components,select:** preserve disabled items' selection through select-all/clear-all ([7f5ab431c09](https://github.com/migrationsverket/midas/commit/7f5ab431c09))
+- **components,select:** only select real items in SelectAll ([0cab89d4283](https://github.com/migrationsverket/midas/commit/0cab89d4283))
+
+### 🧪 Tests updated
+
+- **components,select:** reproduce SelectAll bug with sections and disabled items ([458e1305dd6](https://github.com/migrationsverket/midas/commit/458e1305dd6))
+
 ## 17.21.1 (2026-08-18)
 
 ### 🩹 Fixes
