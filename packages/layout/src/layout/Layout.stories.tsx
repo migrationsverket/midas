@@ -41,6 +41,7 @@ export const WithMobileMenu: Story = {
 }
 
 export const WithNavbar: Story = {
+  globals: { viewport: { value: 'small' } },
   render: args => (
     <Layout {...args}>
       <PrimaryHeader />
