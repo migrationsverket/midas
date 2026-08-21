@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { NavbarContext } from './NavbarContext'
