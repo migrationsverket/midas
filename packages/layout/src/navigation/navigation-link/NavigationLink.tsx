@@ -14,6 +14,7 @@ import {
 import { clsx, Tooltip, TooltipTrigger } from '@midas-ds/components'
 import styles from './NavigationLink.module.css'
 import { MobileMenuContext } from '../../header'
+import { NavbarContext } from '../../navbar'
 import { SidebarContext } from '../../sidebar'
 
 export interface NavigationLinkComponentProps<C extends ElementType> {
@@ -22,7 +23,6 @@ export interface NavigationLinkComponentProps<C extends ElementType> {
   /** The icon to display. */
   icon: ReactNode
   isActive?: boolean
-  variant?: 'sidebar' | 'navbar'
   className?: string
   /** Replace base component with any Client Side Routing link instead.
    * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
@@ -45,6 +45,7 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
 }: NavigationLinkProps<C>) => {
   const mobileMenuContext = useContext(MobileMenuContext)
   const sidebarContext = useContext(SidebarContext)
+  const navbarContext = useContext(NavbarContext)
   const isCollapsed = sidebarContext?.isCollapsed
 
   const ctx = useContext(OverlayTriggerStateContext)
@@ -73,6 +74,7 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
           aria-label={ariaLabel || (isCollapsed ? title : undefined)}
           className={clsx(className, styles.navigationLink, {
             [styles.sidebar]: sidebarContext || mobileMenuContext,
+            [styles.navbar]: navbarContext,
             [styles.collapsed]: isCollapsed,
           })}
           data-active={isActive || undefined}

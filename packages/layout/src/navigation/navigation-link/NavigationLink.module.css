@@ -45,6 +45,18 @@
     }
   }
 
+  &.navbar {
+    border-left: 0;
+    border-top: var(--midas-size-10) solid transparent;
+    color: var(--midas-text-secondary);
+
+    &[data-active] {
+      border-color: var(--midas-border-color-tertiary);
+      color: var(--midas-text-primary);
+      font-weight: var(--midas-typography-weight-semi-bold);
+    }
+  }
+
   svg {
     flex-shrink: 0;
     height: var(--midas-size-90);
