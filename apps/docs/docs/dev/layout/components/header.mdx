@@ -110,6 +110,7 @@ HeaderActions hanterar inte overflow automatiskt. Om applikationen har många gl
 ```tsx
 import { useMediaQuery } from '@react-spectrum/utils'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import { Header, HeaderActions, HeaderAction, HeaderLogo, HeaderTitle } from '@midas-ds/layout'
 import { Bell, MoreHorizontal, Settings, User } from 'lucide-react'
 
 const collapsibleActions = [
@@ -123,6 +124,8 @@ function AppHeader() {
 
   return (
     <Header>
+      <HeaderLogo />
+      <HeaderTitle>Mitt system</HeaderTitle>
       <HeaderActions>
         <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
         {isNarrow ? (
