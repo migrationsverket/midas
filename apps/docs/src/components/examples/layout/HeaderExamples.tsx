@@ -1,6 +1,13 @@
 import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import { Bell, HelpCircle, MoreHorizontal, Settings, User } from 'lucide-react'
+import {
+  Bell,
+  HelpCircle,
+  House,
+  MoreHorizontal,
+  Settings,
+  User,
+} from 'lucide-react'
 import { useMediaQuery } from '@react-spectrum/utils'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import {
@@ -9,6 +16,10 @@ import {
   HeaderActions,
   HeaderLogo,
   HeaderTitle,
+  MobileMenu,
+  NavigationItem,
+  NavigationLink,
+  Navigation,
 } from '@midas-ds/layout'
 
 const collapsibleActions = [
@@ -18,14 +29,28 @@ const collapsibleActions = [
 ]
 
 export const BasicHeaderExample: React.FC = () => (
-  <div className='card' style={{ overflow: 'hidden', padding: 0 }}>
+  <div
+    className='card'
+    style={{ overflow: 'hidden', padding: 0 }}
+  >
     <Header>
+      <MobileMenu title='Mitt system'>
+        <Navigation>
+          <NavigationItem>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+        </Navigation>
+      </MobileMenu>
       <HeaderLogo />
       <HeaderTitle>Mitt system</HeaderTitle>
       <HeaderActions>
         <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
-        <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
-        <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
       </HeaderActions>
     </Header>
   </div>
@@ -35,7 +60,10 @@ export const OverflowHeaderExample: React.FC = () => {
   const isNarrow = useMediaQuery('(max-width: 700px)')
 
   return (
-    <div className='card' style={{ overflow: 'hidden', padding: 0 }}>
+    <div
+      className='card'
+      style={{ overflow: 'hidden', padding: 0 }}
+    >
       <Header>
         <HeaderLogo />
         <HeaderTitle>Mitt system</HeaderTitle>
@@ -50,7 +78,10 @@ export const OverflowHeaderExample: React.FC = () => {
               <MenuPopover>
                 <Menu>
                   {collapsibleActions.map(action => (
-                    <MenuItem key={action.id} id={action.id}>
+                    <MenuItem
+                      key={action.id}
+                      id={action.id}
+                    >
                       {action.label}
                     </MenuItem>
                   ))}
@@ -59,11 +90,35 @@ export const OverflowHeaderExample: React.FC = () => {
             </MenuTrigger>
           ) : (
             collapsibleActions.map(action => (
-              <HeaderAction key={action.id} icon={action.icon}>
+              <HeaderAction
+                key={action.id}
+                icon={action.icon}
+              >
                 {action.label}
               </HeaderAction>
             ))
           )}
+        </HeaderActions>
+      </Header>
+    </div>
+  )
+}
+
+export const HeaderActionsExample: React.FC = () => {
+  return (
+    <div
+      className='card'
+      style={{ overflow: 'hidden', padding: 0 }}
+    >
+      <Header>
+        <HeaderLogo />
+        <HeaderTitle>Mitt system</HeaderTitle>
+        <HeaderActions>
+          <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+          <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+          <HeaderAction icon={<Settings size={20} />}>
+            Inställningar
+          </HeaderAction>
         </HeaderActions>
       </Header>
     </div>
@@ -75,11 +130,14 @@ export const MobileHeaderExample: React.FC = () => {
   return (
     <div
       className='card'
-      style={{ overflow: 'hidden', padding: 0, maxWidth: 480 }}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
     >
       <iframe
         title='Header with mobile menu example'
-        style={{ width: '100%', height: 72, border: 'none', display: 'block' }}
+        style={{ width: '60%', height: 72, border: 'none', display: 'block' }}
         src={url}
       />
     </div>
