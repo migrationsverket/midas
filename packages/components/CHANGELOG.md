@@ -1,3 +1,13 @@
+## 17.22.0 (2026-08-24)
+
+### 🚀 Features
+
+- **components:** auto-select field token based on surface layer ([02e2915179c](https://github.com/migrationsverket/midas/commit/02e2915179c))
+
+### 🩹 Fixes
+
+- **components:** fix TS errors in WithFormFields and OnCard stories ([d2f63832cc0](https://github.com/migrationsverket/midas/commit/d2f63832cc0))
+
 ## 17.21.2 (2026-08-21)
 
 ### 🩹 Fixes
