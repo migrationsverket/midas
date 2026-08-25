@@ -1,0 +1,54 @@
+.dropzone {
+  --dropzone-border-color: var(--midas-border-color-primary);
+  --dropzone-border-width: 2px;
+
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
+  background-color: var(--midas-background-base);
+  box-sizing: border-box;
+  border: var(--dropzone-border-width) dashed var(--dropzone-border-color);
+  padding: calc(var(--midas-space-90) - var(--dropzone-border-width));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  [slot='label'] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 6.25rem;
+  }
+
+  [slot='errorMessage']::before {
+    margin: 0;
+  }
+
+  &[data-drop-target] {
+    --dropzone-border-color: var(--midas-support-border-success);
+  }
+
+  &[data-focus-visible] {
+    outline: none;
+    box-shadow: var(--midas-state-focus);
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
+  }
+
+  &[data-invalid] {
+    --dropzone-border-color: var(--midas-support-border-warning);
+  }
+
+  &[data-disabled] {
+    color: var(--midas-text-disabled);
+
+    --dropzone-border-color: var(--midas-border-color-disabled);
+
+    cursor: not-allowed;
+  }
+}
