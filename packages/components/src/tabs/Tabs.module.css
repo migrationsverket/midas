@@ -97,8 +97,11 @@
 
 .selectionIndicator {
   position: absolute;
-  transition-duration: var(--midas-transition-duration-normal);
-  transition-property: translate, width, height;
+
+  &.animated {
+    transition-duration: var(--midas-transition-duration-normal);
+    transition-property: translate, width, height;
+  }
 }
 
 [data-orientation='horizontal'] .tab .selectionIndicator {
