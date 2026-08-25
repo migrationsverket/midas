@@ -32,7 +32,8 @@
       "@midas-ds/storybook/*": ["apps/storybook/src/*"],
       "@midas-ds/test-utils": ["tools/test-utils/src/index.ts"],
       "@midas-ds/layout": ["packages/layout/src/index.ts"],
-      "@midas-ds/layout/*": ["packages/layout/src/*"]
+      "@midas-ds/layout/*": ["packages/layout/src/*"],
+      "@midas-ds/css-aliases": ["tools/css-aliases/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

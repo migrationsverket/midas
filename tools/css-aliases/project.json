@@ -1,0 +1,18 @@
+{
+  "name": "css-aliases",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/css-aliases/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "options": {
+        "main": "tools/css-aliases/src/index.ts",
+        "outputPath": "dist/tools/css-aliases",
+        "tsConfig": "tools/css-aliases/tsconfig.lib.json",
+        "sourceMap": true
+      }
+    }
+  }
+}
