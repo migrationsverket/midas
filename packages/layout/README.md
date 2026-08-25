@@ -13,4 +13,4 @@ npm install @midas-ds/layout
 
 ## Dokumentation
 
-Se [designsystem.migrationsverket.se](https://designsystem.migrationsverket.se/dev/layout) för fullständig dokumentation, API-referens och exempelkod.
+Se [designsystem.migrationsverket.se](https://designsystem.migrationsverket.se/dev/layout/get-started) för fullständig dokumentation, API-referens och exempelkod.
