@@ -1,0 +1,138 @@
+---
+title: DropZone
+description: Ett generellt mål för drag & drop — inte begränsat till filuppladdning.
+---
+
+import { DropZone, FileTrigger, Button, Text, FieldError, Label } from '@midas-ds/components'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { PropTable } from '@site/src/components/PropsTable'
+
+<ComponentHeader
+  name='DropZone'
+  friendlyName='Dra och släpp'
+/>
+
+[DropZone](https://react-spectrum.adobe.com/react-aria/DropZone.html) från React Aria är en yta som ett eller flera
+objekt kan dras och släppas på. Den är inte begränsad till filuppladdning — kombinera den med [FileTrigger](/components/file-trigger)
+för filval, eller använd `onDrop` direkt för att hantera andra typer av dragen data.
+
+```tsx
+<DropZone onDrop={handleDrop}>
+  <Text slot='label'>Släpp filer här</Text>
+</DropZone>
+```
+
+<div className='card'>
+  <DropZone style={{ width: '100%', maxWidth: 480 }}>
+    <Text slot='label'>Släpp filer här</Text>
+  </DropZone>
+</div>
+
+## Beskrivning
+
+DropZone renderas som en vanlig `<div>` med en dold knapp för tangentbords- och skärmläsaråtkomst. Innehållet är helt
+fritt komponerbart — MIDAS lägger bara till styling ovanpå React Arias beteende. Följande tillstånd stylas enligt
+designsystemet och matchar React Arias render props:
+
+- `isDropTarget` — något dras just nu över ytan
+- `isFocusVisible` — ytan är tangentbordsfokuserad
+- `isDisabled` — ytan är inaktiverad
+- `isInvalid` — MIDAS-specifik prop, se [Validering](#validering)
+
+## Varianter
+
+### Etikett
+
+Placera en `<Text slot='label'>` inuti DropZone för att ge ytan sitt tillgängliga namn — React Aria kopplar automatiskt
+ihop den med den dolda knappen. Ska DropZone användas som ett fält bland andra i ett formulär, komplettera med en yttre
+`<Label>` och koppla ihop den via `aria-labelledby`; båda texterna blir då en del av det tillgängliga namnet.
+
+```tsx
+<Label id='upload-label'>Ladda upp filer</Label>
+<DropZone aria-labelledby='upload-label'>
+  <Text slot='label'>Släpp filer här</Text>
+</DropZone>
+```
+
+<div className='card'>
+  <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+    <Label id='upload-label-docs'>Ladda upp filer</Label>
+    <DropZone aria-labelledby='upload-label-docs'>
+      <Text slot='label'>Släpp filer här</Text>
+    </DropZone>
+  </div>
+</div>
+
+### Validering
+
+DropZone har ingen inbyggd formulärsvalidering (till skillnad från till exempel [TextField](/components/textfield)) —
+`onDrop`/`onSelect` avgör om det som släpptes eller valdes är giltigt. Sätt `isInvalid` för att visa det, och komponera
+en [FieldError](/components/textfield#felmeddelanden) för felmeddelandet. Placera den inuti DropZone för ett meddelande
+i hörnet, eller som ett syskon under för ett fristående meddelande.
+
+```tsx
+<DropZone isInvalid>
+  <Text slot='label'>Släpp filer här</Text>
+  <FieldError style={{ alignSelf: 'flex-start', width: '100%' }}>
+    Filen är för stor
+  </FieldError>
+</DropZone>
+```
+
+<div className='card'>
+  <DropZone
+    isInvalid
+    style={{ width: '100%', maxWidth: 480 }}
+  >
+    <Text slot='label'>Släpp filer här</Text>
+    <FieldError style={{ alignSelf: 'flex-start', width: '100%' }}>
+      Filen är för stor
+    </FieldError>
+  </DropZone>
+</div>
+
+### Filuppladdning
+
+Kombinera med [FileTrigger](/components/file-trigger) för att låta användaren dra och släppa eller klicka för att välja
+filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för ett komplett exempel med filhantering.
+
+```tsx
+<DropZone onDrop={handleDrop}>
+  <FileTrigger onSelect={handleSelect}>
+    <Button variant='secondary'>Välj filer</Button>
+  </FileTrigger>
+  <Text slot='label'>Dra och släpp filer här</Text>
+</DropZone>
+```
+
+<div className='card'>
+  <DropZone style={{ width: '100%', maxWidth: 480 }}>
+    <FileTrigger>
+      <Button variant='secondary'>Välj filer</Button>
+    </FileTrigger>
+    <Text slot='label'>Dra och släpp filer här</Text>
+  </DropZone>
+</div>
+
+### Inaktiverad
+
+```tsx
+<DropZone isDisabled>
+  <Text slot='label'>Släpp filer här</Text>
+</DropZone>
+```
+
+<div className='card'>
+  <DropZone
+    isDisabled
+    style={{ width: '100%', maxWidth: 480 }}
+  >
+    <Text slot='label'>Släpp filer här</Text>
+  </DropZone>
+</div>
+
+## API
+
+### DropZone
+
+<PropTable name='DropZone' />
