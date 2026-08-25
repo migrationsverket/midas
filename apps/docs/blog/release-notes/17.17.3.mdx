@@ -8,11 +8,11 @@ date: 2026-07-10
 
 Den här posten samlar det viktigaste sedan 17.10.0 — ett nytt layoutpaket, flera nya komponenter och en hel del förbättringar.
 
-| Paket | Version |
-|---|---|
+| Paket                  | Version   |
+| ---------------------- | --------- |
 | `@midas-ds/components` | `17.17.3` |
-| `@midas-ds/layout` | `0.2.11` |
-| `@midas-ds/theme` | `3.15.4` |
+| `@midas-ds/layout`     | `0.2.11`  |
+| `@midas-ds/theme`      | `3.15.4`  |
 
 ## 📦 @midas-ds/layout — nu i beta
 
@@ -20,9 +20,15 @@ Den här posten samlar det viktigaste sedan 17.10.0 — ett nytt layoutpaket, fl
 
 ```tsx
 import {
-  Layout, LayoutContent, Main,
-  Header, HeaderActions, HeaderAction,
-  Sidebar, Navigation, NavigationLink,
+  Layout,
+  LayoutContent,
+  Main,
+  Header,
+  HeaderActions,
+  HeaderAction,
+  Sidebar,
+  Navigation,
+  NavigationLink,
   Navbar,
 } from '@midas-ds/layout'
 
@@ -36,7 +42,11 @@ import {
   <LayoutContent>
     <Sidebar title='Min applikation'>
       <Navigation>
-        <NavigationLink href='/' icon={<House />} isActive>
+        <NavigationLink
+          href='/'
+          icon={<House />}
+          isActive
+        >
           Hem
         </NavigationLink>
       </Navigation>
@@ -46,7 +56,11 @@ import {
 
   <Navbar>
     <Navigation>
-      <NavigationLink href='/' icon={<House />} isActive>
+      <NavigationLink
+        href='/'
+        icon={<House />}
+        isActive
+      >
         Hem
       </NavigationLink>
     </Navigation>
@@ -62,7 +76,7 @@ Paketet är redo att ta i bruk — men räkna med att API, design och UX kan fö
 npm install @midas-ds/layout
 ```
 
-Se [dokumentationen](/dev/layout) och [migrationsguiden](/dev/layout/migration) för mer information.
+Se [dokumentationen](/dev/layout/get-started) och [migrationsguiden](/dev/layout/migration) för mer information.
 
 ### Vad händer med gamla Layout?
 
@@ -78,7 +92,11 @@ Se [dokumentationen](/dev/layout) och [migrationsguiden](/dev/layout/migration) 
 ```tsx
 import { Panel, PanelContent } from '@midas-ds/layout'
 
-<Panel id='details' title='Detaljer' variant='push'>
+<Panel
+  id='details'
+  title='Detaljer'
+  variant='push'
+>
   <PanelContent>...</PanelContent>
 </Panel>
 ```
