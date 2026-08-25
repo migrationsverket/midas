@@ -1,0 +1,37 @@
+---
+id: header
+title: Applikationer utan huvudmeny
+sidebar_position: 1
+---
+
+import { OnlyHeaderExample } from '@site/src/components/examples/layout/PageLayoutExamples'
+
+# Applikationer utan huvudmeny
+
+Detta mönster är till för applikationer som inte behöver en meny för att navigera mellan flera delar. Headern kan innehålla globala handlingar, till exempel notifieringar, profil och inställningar.
+
+<OnlyHeaderExample />
+
+## Exempelkod
+
+```tsx
+import { Bell, Settings, User } from 'lucide-react'
+import { Header, HeaderAction, HeaderActions, HeaderLogo, HeaderTitle } from '@midas-ds/layout'
+
+export default function App() {
+  return (
+    <>
+      <Header>
+        <HeaderLogo />
+        <HeaderTitle>Mitt system</HeaderTitle>
+        <HeaderActions>
+          <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+          <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+          <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+        </HeaderActions>
+      </Header>
+      {/* Resten av applikationen */}
+    </>
+  )
+}
+```
