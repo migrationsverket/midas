@@ -249,6 +249,23 @@
       "$description": "F\u00e4rg f\u00f6r bes\u00f6kta l\u00e4nkar"
     }
   },
+  "progressBar": {
+    "$description": "Färger för progress bar.",
+    "track": {
+      "background": {
+        "$type": "string",
+        "$value": "light-dark({color.gray.30}, {color.gray.160})",
+        "$description": "Bakgrundsfärg för progress bar track"
+      }
+    },
+    "indicator": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.signalGreen.100}",
+        "$description": "Bakgrundsfärg för progress bar indicator"
+      }
+    }
+  },
   "support": {
     "$description": "Färger för statuskommunikation. Fyra varianter: success, info, important, warning. Att ändra en signalfärg påverkar automatiskt motsvarande support.*-token. Används i: Toast, InfoBanner, Checkbox (invalid), Radio (invalid), ComboBox (invalid), SearchField (invalid), Label.",
     "$type": "string",
