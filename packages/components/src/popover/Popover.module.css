@@ -4,6 +4,11 @@
   padding: var(--midas-space-medium);
   color: var(--midas-text-primary);
   background-color: var(--midas-layer-01-base);
+
+  --midas-field-base: var(--midas-field-02-base);
+  --midas-field-hover: var(--midas-field-02-hover);
+  --midas-field-disabled: var(--midas-field-02-disabled);
+
   outline: none;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
