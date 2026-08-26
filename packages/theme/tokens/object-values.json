@@ -143,6 +143,10 @@
       "active": {
         "$value": "light-dark({color.gray.30}, {color.gray.160})",
         "$description": "Active state f\u00f6r field01"
+      },
+      "disabled": {
+        "$value": "light-dark({color.gray.10}, {color.gray.180})",
+        "$description": "Disabled state för fält som ligger på Background"
       }
     },
     "02": {
@@ -157,11 +161,11 @@
       "active": {
         "$value": "light-dark({color.gray.30}, {color.gray.140})",
         "$description": "Active state f\u00f6r field02"
+      },
+      "disabled": {
+        "$value": "light-dark({color.white.base}, {color.gray.160})",
+        "$description": "Disabled state för fält som ligger på layer 01"
       }
-    },
-    "disabled": {
-      "$value": "light-dark({color.gray.10}, {color.gray.180})",
-      "$description": "Disabled state f\u00f6r f\u00e4lt"
     }
   },
   "skeleton": {

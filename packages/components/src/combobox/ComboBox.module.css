@@ -55,7 +55,7 @@
 
   &[data-disabled] {
     color: var(--midas-text-disabled);
-    background: var(--midas-field-disabled);
+    background: var(--midas-field-disabled, var(--midas-field-01-disabled));
     box-shadow: none;
     border-bottom: 1px solid var(--midas-border-color-disabled);
     cursor: not-allowed;
