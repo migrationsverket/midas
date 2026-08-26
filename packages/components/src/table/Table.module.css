@@ -69,7 +69,8 @@
 
     height: 100%;
 
-    &[data-href] {
+    &[data-href],
+    &[data-react-aria-pressable] {
       cursor: pointer;
     }
 
