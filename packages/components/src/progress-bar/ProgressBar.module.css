@@ -3,7 +3,7 @@
   gap: 0.5rem;
   grid-template-areas:
     'label value'
-    'bar bar';
+    'track track';
   grid-template-columns: 1fr auto;
 
   .label {
@@ -16,9 +16,9 @@
     margin: 0;
   }
 
-  .bar {
-    background: var(--midas-layer-accent-01-base);
-    grid-area: bar;
+  .track {
+    background: var(--midas-progress-bar-track-background);
+    grid-area: track;
     height: 0.25rem;
     overflow: hidden;
 
@@ -26,8 +26,8 @@
       border: 1px solid;
     }
 
-    .fill {
-      background: var(--midas-color-signal-green-100);
+    .indicator {
+      background: var(--midas-progress-bar-indicator-background);
       height: 100%;
 
       @media (forced-colors: active) {
@@ -37,9 +37,9 @@
   }
 
   &:not([aria-valuenow]) {
-    .fill {
+    .indicator {
       will-change: transform;
-      background: var(--midas-color-signal-green-100);
+      background: var(--midas-progress-bar-indicator-background);
       height: 100%;
       animation: 2s var(--midas-transition-timing-ease-in-out) infinite
         indeterminate;
@@ -62,7 +62,7 @@
 }
 
 @media (prefers-reduced-motion) {
-  .progressBar:not([aria-valuenow]) .fill {
+  .progressBar:not([aria-valuenow]) .indicator {
     animation-duration: 6s;
   }
 }
