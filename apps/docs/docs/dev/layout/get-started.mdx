@@ -246,6 +246,18 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
 
 </div>
 
+## Val av applikationslayout
+
+Tabellen nedan beskriver vilken kombination av komponenter som rekommenderas för olika typer av applikationer. Applikationslayouterna ska ses som startpunkter och kan utökas med fler layoutkomponenter när applikationen växer.
+
+| Typ av applikation                                                              | Rekommenderad layout                                                  |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Applikation utan huvudnavigation (t.ex. ett formulär)                           | [Endast Header](/design-patterns/page-layout/header)                  |
+| Applikationen med flera delar, undermenyer eller många navigeringsalternativ    | [Header & Sidebar](/design-patterns/page-layout/header-sidebar-panel) |
+| Applikation som främst används på mobil och ska upplevas som en native mobilapp | [Header & Navbar](/design-patterns/page-layout/header-navbar-panel)   |
+
+[Panel](./components/panel) är ett valfritt tillägg i alla layouter. Använd den för sekundärt innehåll, till exempel detaljer, filter eller verktyg som behöver visas bredvid huvudinnehållet.
+
 ## Grundstrukturen
 
 För att bygga en fungerande sida behövs tre grundkomponenter som utgör stommen i ramverket. Genom att kombinera grundstrukturen med övriga komponenter i ramverket är det enkelt att bygga de sidlayouter som passar din applikation.
@@ -300,6 +312,7 @@ Här är ett exempel med sidhuvud, sidomeny, huvudinnehåll och navbar. `Sidebar
 automatiskt beroende på skärmstorlek, så det är säkert att inkludera båda i trädet samtidigt.
 
 <style>{`.komplett-exempel .theme-code-block { max-height: none; }`}</style>
+
 <div className="komplett-exempel">
 
 ```tsx
@@ -336,12 +349,19 @@ export const App = () => {
         <Sidebar title='Navigation'>
           <Navigation>
             <NavigationItem>
-              <NavigationLink href='/' icon={<House />} isActive>
+              <NavigationLink
+                href='/'
+                icon={<House />}
+                isActive
+              >
                 Hem
               </NavigationLink>
             </NavigationItem>
             <NavigationItem>
-              <NavigationLink href='/installningar' icon={<Settings />}>
+              <NavigationLink
+                href='/installningar'
+                icon={<Settings />}
+              >
                 Inställningar
               </NavigationLink>
             </NavigationItem>
@@ -354,12 +374,19 @@ export const App = () => {
       <Navbar>
         <Navigation>
           <NavigationItem>
-            <NavigationLink href='/' icon={<House />} isActive>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
               Hem
             </NavigationLink>
           </NavigationItem>
           <NavigationItem>
-            <NavigationLink href='/installningar' icon={<Settings />}>
+            <NavigationLink
+              href='/installningar'
+              icon={<Settings />}
+            >
               Inställningar
             </NavigationLink>
           </NavigationItem>
