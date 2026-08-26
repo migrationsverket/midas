@@ -57,6 +57,11 @@ export default {
     size: {
       control: false,
     },
+    selectionMode: {
+      options: ['none', 'single', 'multiple'],
+      control: { type: 'radio' },
+      defaultValue: 'multiple',
+    },
   },
 
   render: args => {
