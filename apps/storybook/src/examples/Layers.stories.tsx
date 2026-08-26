@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { DialogTrigger } from 'react-aria-components'
 import {
-  Card,
-  CardHeader,
-  CardBody,
+  Popover,
   TextField,
   SearchField,
   Select,
   ListBoxItem,
   Heading,
+  Button,
 } from '@midas-ds/components'
 
 const meta: Meta = {
@@ -18,7 +18,7 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          'Formulärfält väljer automatiskt rätt bakgrundsfärg beroende på vilken yta de ligger på — `field-01` direkt på sidbakgrunden, `field-02` på en yta som `Card`. Detta sker via en CSS-variabelkedja, utan att komponenterna behöver några extra props. Samma auto-val gäller `isDisabled`.',
+          'Formulärfält väljer automatiskt rätt bakgrundsfärg beroende på vilken yta de ligger på — `field-01` direkt på sidbakgrunden, `field-02` på en yta som `Popover`. Detta sker via en CSS-variabelkedja, utan att komponenterna behöver några extra props. Samma auto-val gäller `isDisabled`.',
       },
     },
   },
@@ -65,16 +65,21 @@ export const FieldLayers: Story = {
         <LayerFields isDisabled />
       </div>
 
-      <Card>
-        <CardHeader heading='På Card-yta (field-02)' />
-        <CardBody
-          style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
-        >
-          <LayerFields />
-          <Heading level={4}>Inaktiverad</Heading>
-          <LayerFields isDisabled />
-        </CardBody>
-      </Card>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <Heading level={3}>I Popover (field-02)</Heading>
+        <DialogTrigger defaultOpen>
+          <Button variant='secondary'>Öppna popover</Button>
+          <Popover placement='bottom start'>
+            <div
+              style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+            >
+              <LayerFields />
+              <Heading level={4}>Inaktiverad</Heading>
+              <LayerFields isDisabled />
+            </div>
+          </Popover>
+        </DialogTrigger>
+      </div>
     </div>
   ),
 }
