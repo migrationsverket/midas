@@ -1,3 +1,17 @@
+## 17.23.0 (2026-08-27)
+
+### 🚀 Features
+
+- **components,theme:** add layer-aware disabled field tokens ([e5626da5829](https://github.com/migrationsverket/midas/commit/e5626da5829))
+
+### 🩹 Fixes
+
+- **components,popover:** wire up field-02 layer tokens for Popover ([3a3eeb5c3bf](https://github.com/migrationsverket/midas/commit/3a3eeb5c3bf))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.16.0
+
 ## 17.22.0 (2026-08-24)
 
 ### 🚀 Features

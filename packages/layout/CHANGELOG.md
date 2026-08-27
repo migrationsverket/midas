@@ -1,3 +1,13 @@
+## 0.2.24 (2026-08-27)
+
+### 📖 Documentation changes
+
+- **layout:** add getting started page for the layout framework ([6570033cd32](https://github.com/migrationsverket/midas/commit/6570033cd32))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.0
+
 ## 0.2.23 (2026-08-24)
 
 ### 🧱 Updated Dependencies
