@@ -1,3 +1,9 @@
+## 17.23.1 (2026-08-27)
+
+### 🩹 Fixes
+
+- **components,tabs:** remove animation when used in a dialog ([faecf1b0cae](https://github.com/migrationsverket/midas/commit/faecf1b0cae))
+
 ## 17.23.0 (2026-08-27)
 
 ### 🚀 Features
