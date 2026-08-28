@@ -79,7 +79,7 @@
   box-shadow: none !important;
 
   /* border: 1px solid var(--ifm-color-emphasis-200); */
-  max-height: 600px;
+  max-height: 800px;
   overflow-y: auto;
 }
 

@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router';
 import '@midas-ds/components/default.css'
 import '@midas-ds/layout/default.css'
 
@@ -10,6 +11,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
