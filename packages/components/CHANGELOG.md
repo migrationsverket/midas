@@ -1,3 +1,9 @@
+## 17.23.2 (2026-08-28)
+
+### 🩹 Fixes
+
+- **components,table:** add cursor:pointer for selectable rows ([c21cec7e6f4](https://github.com/migrationsverket/midas/commit/c21cec7e6f4))
+
 ## 17.23.1 (2026-08-27)
 
 ### 🩹 Fixes
