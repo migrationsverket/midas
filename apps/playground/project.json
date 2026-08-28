@@ -25,6 +25,7 @@
     "preview": {
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "playground:build"
       },
@@ -35,14 +36,6 @@
         "production": {
           "buildTarget": "playground:build:production"
         }
-      },
-      "dependsOn": ["build"]
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/playground/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "serve-static": {

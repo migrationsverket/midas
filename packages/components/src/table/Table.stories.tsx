@@ -12,13 +12,13 @@ import { TextField } from '../textfield'
 
 type Story = StoryObj<typeof Table>
 
-interface Column {
+interface IColumn {
   name: string
-  id: keyof Row
+  id: keyof IRow
   isRowHeader?: boolean
 }
 
-interface Row {
+interface IRow {
   id: number
   name: string
   date: string
@@ -29,14 +29,14 @@ const columns = [
   { name: 'Name', id: 'name', isRowHeader: true },
   { name: 'Type', id: 'type' },
   { name: 'Date Modified', id: 'date' },
-] satisfies Column[]
+] satisfies IColumn[]
 
 const rows = [
   { id: 1, name: 'Games', date: '6/7/2020', type: 'File folder' },
   { id: 2, name: 'Program Files', date: '4/7/2021', type: 'File folder' },
   { id: 3, name: 'bootmgr', date: '11/20/2010', type: 'System file' },
   { id: 4, name: 'log.txt', date: '1/18/2016', type: 'Text Document' },
-] satisfies Row[]
+] satisfies IRow[]
 
 export default {
   component: Table,
@@ -209,8 +209,8 @@ export const Sorting: Story = {
     })
 
     const sortedRows = [...rows].sort((a, b) => {
-      const first = a[sortDescriptor.column as keyof Row]
-      const second = b[sortDescriptor.column as keyof Row]
+      const first = a[sortDescriptor.column as keyof IRow]
+      const second = b[sortDescriptor.column as keyof IRow]
       let cmp = 0
 
       if (typeof first === 'string' && typeof second === 'string') {

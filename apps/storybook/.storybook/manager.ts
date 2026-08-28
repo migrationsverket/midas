@@ -1,3 +1,4 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 import { addons } from 'storybook/manager-api'
 import {
   customLightTheme,

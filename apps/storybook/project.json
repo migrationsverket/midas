@@ -81,13 +81,6 @@
           "watch": true
         }
       }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/storybook/**/*.{ts,tsx,js,jsx}"]
-      }
     }
   }
 }
