@@ -5,6 +5,12 @@ import figma from 'figma'
 
 const instance = figma.selectedInstance
 const label = instance.getString('label')
+const showIcon = instance.getBoolean('showIcon')
+const icon = showIcon ? instance.getInstanceSwap('icon') : null
+let iconCode
+if (icon && icon.type === 'INSTANCE') {
+  iconCode = icon.executeTemplate().example
+}
 const size = instance.getEnum('size', {
   large: 'large',
   medium: 'medium',
@@ -38,6 +44,7 @@ export default {
   iconPlacement="${iconPlacement}"
   isPending={${isPending}}
   ${state === 'disabled' ? 'isDisabled' : ''}
+  ${iconCode ? figma.code`icon={${iconCode}}` : ''}
 >
   ${label}
 </Button>`,
