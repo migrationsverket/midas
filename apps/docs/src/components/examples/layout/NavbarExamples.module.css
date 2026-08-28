@@ -1,0 +1,10 @@
+.desktopNotice {
+  display: none;
+  color: var(--ifm-color-emphasis-700);
+}
+
+@media (width > 640px) {
+  .desktopNotice {
+    display: block;
+  }
+}
