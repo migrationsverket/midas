@@ -4,13 +4,5 @@
   "sourceRoot": "packages/layout/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["packages/layout/**/*.{ts,tsx,js,jsx}"]
-      }
-    }
-  }
+  "targets": {}
 }

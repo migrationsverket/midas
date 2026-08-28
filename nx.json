@@ -100,19 +100,11 @@
       "inputs": ["default", "^production"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/vitest.config.ts"
-      ],
+      "inputs": ["default", "^production", "{workspaceRoot}/vitest.config.ts"],
       "cache": true
     },
     "lint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore"
-      ],
+      "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
       "cache": true
     },
     "nx-release-publish": {
@@ -125,8 +117,7 @@
       "inputs": [
         "default",
         "^default",
-        "{workspaceRoot}/.eslintrc.json",
-        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.mjs",
         "{workspaceRoot}/tools/eslint-rules/**/*"
       ],
       "cache": true
@@ -163,7 +154,7 @@
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.mjs",
       "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
       "!{projectRoot}/.storybook/**/*",
       "!{projectRoot}/src/test-setup.[jt]s",
@@ -251,6 +242,22 @@
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
       }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      },
+      "include": [
+        "apps/docs/**/*",
+        "apps/next/**/*",
+        "apps/playground/**/*",
+        "apps/storybook/**/*",
+        "packages/components/**/*",
+        "packages/layout/**/*",
+        "packages/select-styles/**/*",
+        "packages/table-styles/**/*"
+      ]
     }
   ],
   "analytics": false

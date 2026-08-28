@@ -33,7 +33,12 @@
       "@midas-ds/test-utils": ["tools/test-utils/src/index.ts"],
       "@midas-ds/layout": ["packages/layout/src/index.ts"],
       "@midas-ds/layout/*": ["packages/layout/src/*"]
-    }
+    },
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "types": ["*"],
+    "esModuleInterop": false,
+    "ignoreDeprecations": "6.0"
   },
   "exclude": ["node_modules", "tmp"]
 }

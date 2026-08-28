@@ -7,24 +7,17 @@
   "targets": {
     "build": {
       "executor": "@midas-ds/docusaurus:browser",
+      "dependsOn": ["theme:style-dictionary-generate", "^build"],
       "options": {
         "outputPath": "dist/docs",
         "minify": false
-      },
-      "dependsOn": ["theme:style-dictionary-generate", "^build"]
+      }
     },
     "serve": {
       "executor": "@midas-ds/docusaurus:dev-server",
       "options": {
         "hideApi": false,
         "port": 3000
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/docs/**/*.{ts,tsx,js,jsx,mdx}"]
       }
     },
     "contrast-check": {
