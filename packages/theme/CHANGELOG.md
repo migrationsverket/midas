@@ -1,3 +1,9 @@
+## 3.17.0 (2026-08-28)
+
+### 🚀 Features
+
+- **theme:** add semantic tokens for progress-bar colors ([0702e5e9e19](https://github.com/migrationsverket/midas/commit/0702e5e9e19))
+
 ## 3.16.0 (2026-08-27)
 
 ### 🚀 Features

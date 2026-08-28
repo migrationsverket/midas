@@ -1,3 +1,13 @@
+## 0.2.27 (2026-08-28)
+
+### 🩹 Fixes
+
+- **layout,navbar:** correct wrongly implemented design ([ee7393c75c3](https://github.com/migrationsverket/midas/commit/ee7393c75c3))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.3
+
 ## 0.2.26 (2026-08-28)
 
 ### 🧱 Updated Dependencies

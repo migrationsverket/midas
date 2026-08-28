@@ -1,3 +1,13 @@
+## 17.23.3 (2026-08-28)
+
+### 🩹 Fixes
+
+- **components,progress-bar:** use semantic tokens for background colors ([d5a3ad50bb5](https://github.com/migrationsverket/midas/commit/d5a3ad50bb5))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.0
+
 ## 17.23.2 (2026-08-28)
 
 ### 🩹 Fixes
