@@ -16,7 +16,6 @@
   "license": "CC0-1.0",
   "version": "0.2.76",
   "main": "./index.js",
-  "types": "./index.d.ts",
   "exports": {
     "./react-datepicker.css": {
       "import": "./react-datepicker.css"
