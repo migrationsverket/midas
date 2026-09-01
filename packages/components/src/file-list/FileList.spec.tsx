@@ -6,7 +6,14 @@ import { render } from '../../test-utils'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
 
-const { Default, WithoutFileSize } = composeStories(stories)
+const {
+  Default,
+  WithoutFileSize,
+  UploadingDeterminate,
+  Uploading,
+  Success,
+  Error: ErrorStory,
+} = composeStories(stories)
 
 describe('FileList', () => {
   it('renders all file items', async () => {
@@ -52,6 +59,38 @@ describe('FileList', () => {
     await expect
       .element(getByRole('list'))
       .toHaveClass(styles.fileList, 'custom-class')
+  })
+
+  it('shows determinate upload progress', async () => {
+    const { getByRole } = await render(<UploadingDeterminate />)
+    await expect
+      .element(getByRole('progressbar'))
+      .toHaveAttribute('aria-valuenow', '40')
+  })
+
+  it('shows indeterminate upload progress when no value is given', async () => {
+    const { getByRole } = await render(<Uploading />)
+    await expect
+      .element(getByRole('progressbar'))
+      .not.toHaveProperty('aria-valuenow')
+  })
+
+  it('labels the delete button as cancel while uploading', async () => {
+    const { getByRole } = await render(<UploadingDeterminate />)
+    await expect
+      .element(getByRole('button', { name: /cancel large-video\.mp4/i }))
+      .toBeVisible()
+  })
+
+  it('shows a success indicator and announces completion', async () => {
+    const { getByRole, getByText } = await render(<Success />)
+    await expect.element(getByRole('button', { name: /remove/i })).toBeVisible()
+    await expect.element(getByText('Upload complete')).toBeInTheDocument()
+  })
+
+  it('shows the error message and marks the row invalid', async () => {
+    const { getByText } = await render(<ErrorStory />)
+    await expect.element(getByText('Det gick inte bra')).toBeVisible()
   })
 
 })

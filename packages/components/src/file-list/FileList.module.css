@@ -8,12 +8,30 @@
 }
 
 .fileListItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
   align-items: center;
   background-color: var(--midas-layer-01-base);
   box-sizing: border-box;
   display: flex;
   font-family: var(--midas-typography-font-family);
+  gap: var(--midas-space-small);
   height: var(--midas-size-control);
+  padding-inline-start: var(--midas-space-medium);
+}
+
+.row.error {
+  box-shadow: var(--midas-state-invalid);
+}
+
+.statusIcon {
+  flex-shrink: 0;
+}
+
+.error {
   padding-inline-start: var(--midas-space-medium);
 }
 

@@ -1,8 +1,14 @@
 {
   "en": {
-    "removeFile": "Remove"
+    "removeFile": "Remove",
+    "cancelUpload": "Cancel",
+    "uploading": "Uploading",
+    "uploadComplete": "Upload complete"
   },
   "sv": {
-    "removeFile": "Ta bort"
+    "removeFile": "Ta bort",
+    "cancelUpload": "Avbryt",
+    "uploading": "Laddar upp",
+    "uploadComplete": "Uppladdning klar"
   }
 }

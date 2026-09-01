@@ -3,7 +3,8 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './ProgressBar.stories'
 import { render } from '../../test-utils'
 
-const { Primary, WithoutLabels, IsIndeterminate } = composeStories(stories)
+const { Primary, WithoutLabels, IsIndeterminate, Circular, CircularIndeterminate } =
+  composeStories(stories)
 
 describe('given a primary ProgressBar', async () => {
   it('should provide an information about the progress for screen readers', async () => {
@@ -41,6 +42,28 @@ describe('given a ProgressBar without visual labels', async () => {
 describe('given an indeterminate ProgressBar', async () => {
   it('should not have an aria-valuenow property', async () => {
     const { getByRole } = await render(<IsIndeterminate />)
+
+    await expect
+      .element(getByRole('progressbar'))
+      .not.toHaveProperty('aria-valuenow')
+  })
+})
+
+describe('given a circular ProgressBar', async () => {
+  it('should expose the same accessible progress information as the linear shape', async () => {
+    const { getByRole } = await render(<Circular />)
+    const progressBar = getByRole('progressbar')
+
+    await expect
+      .element(progressBar)
+      .toHaveAttribute('aria-valuenow', `${Circular.args.value}`)
+    await expect
+      .element(progressBar)
+      .toHaveAccessibleName(Circular.args['aria-label'])
+  })
+
+  it('should not have an aria-valuenow property when indeterminate', async () => {
+    const { getByRole } = await render(<CircularIndeterminate />)
 
     await expect
       .element(getByRole('progressbar'))
