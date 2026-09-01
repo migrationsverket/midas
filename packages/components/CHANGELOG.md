@@ -1,3 +1,14 @@
+## 17.23.4 (2026-09-01)
+
+### 🩹 Fixes
+
+- **components,link:** re-export RouterProvider explicitly to survive tree-shaking ([d8abaffc8f0](https://github.com/migrationsverket/midas/commit/d8abaffc8f0))
+
+### 🔧 Maintenance
+
+- **vite:** migrate off deprecated Nx vite plugins ([0c1d3e92996](https://github.com/migrationsverket/midas/commit/0c1d3e92996))
+- **deps:** update nx to latest ([9876a06b4cf](https://github.com/migrationsverket/midas/commit/9876a06b4cf))
+
 ## 17.23.3 (2026-08-28)
 
 ### 🩹 Fixes

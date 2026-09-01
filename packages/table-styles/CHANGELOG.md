@@ -1,3 +1,14 @@
+## 2.0.112 (2026-09-01)
+
+### 🔧 Maintenance
+
+- **vite:** migrate off deprecated Nx vite plugins ([0c1d3e92996](https://github.com/migrationsverket/midas/commit/0c1d3e92996))
+- **deps:** update nx to latest ([9876a06b4cf](https://github.com/migrationsverket/midas/commit/9876a06b4cf))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.4
+
 ## 2.0.111 (2026-08-28)
 
 ### 🧱 Updated Dependencies
