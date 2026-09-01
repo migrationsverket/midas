@@ -1,6 +1,6 @@
 .progressBar {
+  column-gap: 0.5rem;
   display: grid;
-  gap: 0.5rem;
   grid-template-areas:
     'label value'
     'track track';
@@ -8,12 +8,12 @@
 
   .label {
     grid-area: label;
-    margin: 0;
+    margin: 0 0 0.5rem;
   }
 
   .value {
     grid-area: value;
-    margin: 0;
+    margin: 0 0 0.5rem;
   }
 
   .track {
@@ -49,6 +49,51 @@
       }
     }
   }
+
+  .circular {
+    grid-area: track;
+    height: 1.25rem;
+    transform: rotate(-90deg);
+    width: 1.25rem;
+
+    &.circularSmall {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+  }
+
+  .circularTrack {
+    fill: none;
+    stroke: var(--midas-progress-bar-track-background);
+    stroke-width: 2;
+
+    @media (forced-colors: active) {
+      stroke: CanvasText;
+    }
+  }
+
+  .circularIndicator {
+    fill: none;
+    stroke: var(--midas-progress-bar-indicator-background);
+    stroke-linecap: round;
+    stroke-width: 2;
+    transition: stroke-dashoffset var(--midas-transition-duration-normal)
+      var(--midas-transition-timing-ease-out);
+
+    @media (forced-colors: active) {
+      stroke: highlight;
+    }
+
+    &.circularIndeterminate {
+      animation: circularRotate 1s linear infinite;
+      stroke-linecap: square;
+      transform-origin: 50% 50%;
+
+      @media (prefers-reduced-motion) {
+        animation-duration: 2s;
+      }
+    }
+  }
 }
 
 @keyframes indeterminate {
@@ -58,6 +103,16 @@
 
   100% {
     transform: translate(200%);
+  }
+}
+
+@keyframes circularRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
