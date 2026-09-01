@@ -175,6 +175,21 @@ I de flesta fall räcker texten på [Link](/components/link) eller [Link button]
 
 <LinkExample />
 
+`CardLink` stöder även egenskapen `as` för att ersätta grundkomponenten med länken från ditt ramverk, för client-side routing. Se [Routing på klientnivå](/dev/client-side-routing) för mer information.
+
+```tsx
+import { Link as ReactRouterLink } from 'react-router'
+
+<Card>
+  <CardContent>
+    <CardLink as={ReactRouterLink} to='/min-sida'>
+      <CardTitle>Min sida</CardTitle>
+    </CardLink>
+    <Text>På min sida kan du ändra dina uppgifter och se status på dina ansökningar</Text>
+  </CardContent>
+</Card>
+```
+
 ### Primär handling
 
 :::warning
