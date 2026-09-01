@@ -1,3 +1,9 @@
+## 0.2.29 (2026-09-01)
+
+### 🩹 Fixes
+
+- **layout,navigation-link:** dim text and icon for disabled state ([d3166481c8f](https://github.com/migrationsverket/midas/commit/d3166481c8f))
+
 ## 0.2.28 (2026-09-01)
 
 ### 🔧 Maintenance
