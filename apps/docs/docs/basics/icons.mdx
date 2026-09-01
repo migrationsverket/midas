@@ -37,7 +37,31 @@ import {
 import { CopyButton } from '@site/src/components/CopyButton'
 import { Tooltip, TooltipTrigger } from '@midas-ds/components'
 
-Ikoner används som ett komplement till text för att underlätta för användaren. Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
+Ikoner används som ett komplement till text för att underlätta för användaren, inte för enbart dekoration. Rätt använda kan ikoner göra funktioner och innehåll tydligare och hjälpa användare att snabbt hitta rätt i grännssnittet.
+
+Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
+
+## Riktlinjer
+
+- För att undvika tvetydighet, använd en och samma symbol per funktion. Vi har en uppsättning standardikoner som ska användas på samma sätt i alla system.
+- Färgen på ikoner sätts via våra [iconfärger](/basics/color/#ikoner). Inga egna färger utanför tokens används.
+- Standardstorleken på ikonerna är `20px` (`1.25rem`). Om textstorleken är liten eller ikonen används i en tabell kan `16px` (`1rem`) användas istället.
+- Ikonen ligger som standard till vänster om texten.
+- Om en text används tillsammans med ikonen bör ikonen döljas för skärmläsare för att undvika att texten läses upp två gånger.
+- Om en ikon används fristående måste vi se till att den är läsbar för skärmläsare
+
+### Ikoner i externa tjänster
+
+För externa tjänster används ikoner restriktivt. När de används så ska de alltid kombineras med text. Till exempel i menyer för navigering, funktionsknappar eller infomeddelanden.
+
+### Ikoner i interna tjänster
+
+För interna tjänster där användarna är bekanta med gränssnittet och återkommer till det ofta kan fristående ikoner användas för att effektivisera och spara plats. Men rekommendationen är att kombinera ikonen med text och att vara försiktig med ikoner som inte är allmänt vedertagna. Testa med användare om du är osäker.
+
+### Färger på ikoner
+
+När ikoner används tillsammans med text bör de ha samma färg som den kompletterande texten.
+När en ikon används för att kommunicera status används färgerna som specificeras av icon/success, icon/info, icon/important respektive icon/warning. Tänk på att inte enbart använda färg för att komunicera status och att färgen måste ha tillräcklig kontrast mot bakgrunden (4,5:1).
 
 :::info[Egna ikoner]
 Om du har behov av en ikon som inte finns i Lucide icons, kontakta Midas-teamet för analys av behovet och möjliga lösningar.
