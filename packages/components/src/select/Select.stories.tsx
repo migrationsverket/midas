@@ -226,6 +226,16 @@ export const DynamicSections: Story<Section> = {
   },
 }
 
+export const WithHelpPopover: Story = {
+  args: {
+    popover: {
+      children:
+        'An assistive text that helps the user understand the field better.',
+      'aria-label': 'Mer information',
+    },
+  },
+}
+
 export const RequiredMultipleWithTags: Story<Item, 'multiple'> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
