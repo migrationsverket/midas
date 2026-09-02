@@ -1,0 +1,60 @@
+.tree {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--midas-typography-font-family);
+}
+
+.treeItem {
+  box-sizing: border-box;
+  color: var(--midas-text-primary);
+  cursor: default;
+  outline: none;
+
+  &[data-hovered] {
+    background-color: var(--midas-layer-01-hover);
+  }
+
+  &[data-focus-visible] {
+    box-shadow: var(--midas-state-focus-inset);
+  }
+}
+
+.rowContent {
+  align-items: center;
+  display: flex;
+  gap: var(--midas-space-small);
+  padding-block: var(--midas-space-70);
+
+  /* RAC sets --tree-item-level inline per row (1 = top level), uncapped —
+   * scales to any tree depth, not just the levels a given consumer happens
+   * to use. */
+  padding-inline: calc(var(--tree-item-level, 1) * var(--midas-space-150))
+    var(--midas-space-medium);
+}
+
+.chevron {
+  all: unset;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+
+  &[data-focus-visible] {
+    box-shadow: var(--midas-state-focus-inset);
+  }
+}
+
+.chevronIcon {
+  transform: rotate(0deg);
+  transition: transform var(--midas-transition-duration-normal) ease;
+}
+
+.treeItem[data-expanded] .chevronIcon {
+  transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion) {
+  .chevronIcon {
+    transition: none;
+  }
+}
