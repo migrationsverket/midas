@@ -1,7 +1,7 @@
 ---
 title: Kom igång
 description: Modulärt layoutpaket för att sätta ihop sidstruktur med komponenter.
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 import { Link } from '@site/src/components/Link'
@@ -57,7 +57,7 @@ import { Link } from '@site/src/components/Link'
 
 :::
 
-`@midas-ds/layout` är ett modulärt layoutpaket som ersätter `Layout` från `@midas-ds/components`. Om du använder det gamla paketet idag så kan du följa [migrationsguiden](/dev/layout/migration) för att gå över till det nya paketet.
+`@midas-ds/layout` är ett modulärt layoutpaket som ersätter `Layout` från `@midas-ds/components`. Om du använder det [gamla paketet](/components/layout/legacy) idag så kan du följa [migrationsguiden](/components/layout/migration) för att gå över till det nya paketet.
 
 ## Installation
 
@@ -91,14 +91,14 @@ body {
 
 Layoutpaketet innehåller ett antal komponenter som tillsammans används för att bygga upp de sidlayouter som används i våra applikationer.
 
-| Grupp                                           | Komponenter                                                                                                    |
-| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| [Layout](/dev/layout/components/layout)         | `Layout`, `LayoutContent`, `Main`                                                                              |
-| [Header](/dev/layout/components/header)         | `Header`, `HeaderActions`, `HeaderAction`, `MobileMenu`                                                        |
-| [Navigation](/dev/layout/components/navigation) | `Navigation`, `NavigationLink`, `NavigationSection`, `NavigationSubMenu`, `NavigationItem`, `NavigationHeader` |
-| [Sidebar](/dev/layout/components/sidebar)       | `Sidebar`                                                                                                      |
-| [Panel](/dev/layout/components/panel)           | `Panel`, `PanelProvider`, `PanelBody`, `usePanels`                                                             |
-| [Navbar](/dev/layout/components/navbar)         | `Navbar`                                                                                                       |
+| Grupp                                | Komponenter                                                                                                    |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| Layout                               | `Layout`, `LayoutContent`, `Main`                                                                              |
+| [Header](/components/layout/header)         | `Header`, `HeaderActions`, `HeaderAction`, `MobileMenu`                                                        |
+| [Navigation](/components/layout/navigation) | `Navigation`, `NavigationLink`, `NavigationSection`, `NavigationSubMenu`, `NavigationItem`, `NavigationHeader` |
+| [Sidebar](/components/layout/sidebar)       | `Sidebar`                                                                                                      |
+| [Panel](/components/layout/panel)           | `Panel`, `PanelProvider`, `PanelBody`, `usePanels`                                                             |
+| [Navbar](/components/layout/navbar)         | `Navbar`                                                                                                       |
 
 I skissen nedan visas var på skärmen som komponenterna renderas.
 
@@ -126,7 +126,7 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
   <span style={{ fontWeight: 'bold' }}>Header</span>
   <div style={{ display: 'flex', gap: 8 }}>
     <Link
-      href='/dev/layout/components/header'
+      href='/components/layout/header'
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -168,8 +168,8 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
 
     {/* Sidebar */}
     <div style={{display: 'flex', flexDirection: 'column', width: 140, background: 'var(--ifm-color-emphasis-100)', borderRight: '2px solid var(--ifm-color-emphasis-300)', flexShrink: 0}}>
-      <Link href="/dev/layout/components/sidebar" style={{display: 'block', fontWeight: 'bold', fontSize: '0.7rem', color: 'var(--ifm-color-content-secondary)', padding: '10px 10px 4px', textDecoration: 'none'}}>Sidebar</Link>
-      <Link href="/dev/layout/components/navigation" style={{display: 'flex', flexDirection: 'column', gap: 6, flex: 1, border: '1px dashed var(--ifm-color-emphasis-300)', margin: '0 8px 10px', padding: '8px', textDecoration: 'none', color: 'inherit'}}>
+      <Link href="/components/layout/sidebar" style={{display: 'block', fontWeight: 'bold', fontSize: '0.7rem', color: 'var(--ifm-color-content-secondary)', padding: '10px 10px 4px', textDecoration: 'none'}}>Sidebar</Link>
+      <Link href="/components/layout/navigation" style={{display: 'flex', flexDirection: 'column', gap: 6, flex: 1, border: '1px dashed var(--ifm-color-emphasis-300)', margin: '0 8px 10px', padding: '8px', textDecoration: 'none', color: 'inherit'}}>
         <span style={{fontSize: '0.65rem', color: 'var(--ifm-color-content-secondary)', marginBottom: 2}}>Navigation</span>
         {[0,1,2].map(i => (
           <div key={i} style={{background: 'var(--ifm-color-emphasis-200)', border: '1px solid var(--ifm-color-emphasis-300)', padding: '3px 8px', fontSize: '0.7rem'}}>NavigationLink</div>
@@ -178,12 +178,12 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
     </div>
 
     {/* Main */}
-    <Link href="/dev/layout/components/layout" style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--ifm-background-color)', padding: 16, textDecoration: 'none', color: 'var(--ifm-color-content-secondary)'}}>
+    <Link href="/components/layout/get-started" style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--ifm-background-color)', padding: 16, textDecoration: 'none', color: 'var(--ifm-color-content-secondary)'}}>
       <span style={{fontWeight: 'bold'}}>Main</span>
     </Link>
 
     {/* Panel */}
-    <Link href="/dev/layout/components/panel" style={{display: 'flex', flexDirection: 'column', width: 110, background: 'var(--ifm-color-emphasis-100)', borderLeft: '2px solid var(--ifm-color-emphasis-300)', padding: '12px 10px', textDecoration: 'none', color: 'inherit', flexShrink: 0}}>
+    <Link href="/components/layout/panel" style={{display: 'flex', flexDirection: 'column', width: 110, background: 'var(--ifm-color-emphasis-100)', borderLeft: '2px solid var(--ifm-color-emphasis-300)', padding: '12px 10px', textDecoration: 'none', color: 'inherit', flexShrink: 0}}>
       <span style={{fontWeight: 'bold', fontSize: '0.7rem', color: 'var(--ifm-color-content-secondary)'}}>Panel</span>
     </Link>
 
@@ -199,7 +199,7 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
   }}
 >
   <Link
-    href='/dev/layout/components/navbar'
+    href='/components/layout/navbar'
     style={{
       display: 'block',
       fontWeight: 'bold',
@@ -212,7 +212,7 @@ I skissen nedan visas var på skärmen som komponenterna renderas.
     Navbar
   </Link>
   <Link
-    href='/dev/layout/components/navigation'
+    href='/components/layout/navigation'
     style={{
       display: 'flex',
       justifyContent: 'center',
@@ -300,6 +300,7 @@ Här är ett exempel med sidhuvud, sidomeny, huvudinnehåll och navbar. `Sidebar
 automatiskt beroende på skärmstorlek, så det är säkert att inkludera båda i trädet samtidigt.
 
 <style>{`.komplett-exempel .theme-code-block { max-height: none; }`}</style>
+
 <div className="komplett-exempel">
 
 ```tsx
@@ -336,12 +337,19 @@ export const App = () => {
         <Sidebar title='Navigation'>
           <Navigation>
             <NavigationItem>
-              <NavigationLink href='/' icon={<House />} isActive>
+              <NavigationLink
+                href='/'
+                icon={<House />}
+                isActive
+              >
                 Hem
               </NavigationLink>
             </NavigationItem>
             <NavigationItem>
-              <NavigationLink href='/installningar' icon={<Settings />}>
+              <NavigationLink
+                href='/installningar'
+                icon={<Settings />}
+              >
                 Inställningar
               </NavigationLink>
             </NavigationItem>
@@ -354,12 +362,19 @@ export const App = () => {
       <Navbar>
         <Navigation>
           <NavigationItem>
-            <NavigationLink href='/' icon={<House />} isActive>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
               Hem
             </NavigationLink>
           </NavigationItem>
           <NavigationItem>
-            <NavigationLink href='/installningar' icon={<Settings />}>
+            <NavigationLink
+              href='/installningar'
+              icon={<Settings />}
+            >
               Inställningar
             </NavigationLink>
           </NavigationItem>

@@ -1,6 +1,7 @@
 ---
 title: Navigation
 description: Navigationskomponenter för sidomeny och navbar.
+sidebar_position: 3
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -13,7 +14,7 @@ import { NavigationBadgeExample, NavigationExample } from '@site/src/components/
   overrideHeadlessLink=''
 />
 
-Navigationskomponent som används både i [Sidebar](/dev/layout/components/sidebar), [Navbar](/dev/layout/components/navbar) och [MobileMenu](/dev/layout/components/header/#mobilemenu) men med olika utseende beroende på kontext. Navigation anpassar automatiskt utseendet efter var den befinner sig.
+Navigationskomponent som används både i [Sidebar](/components/layout/sidebar), [Navbar](/components/layout/navbar) och [MobileMenu](/components/layout/header/#mobilemenu) men med olika utseende beroende på kontext. Navigation anpassar automatiskt utseendet efter var den befinner sig.
 
 ```tsx
 import { Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
@@ -105,6 +106,7 @@ För att visa en notisindikator på ett menyalternativ kan du använda [Badge](/
 ```tsx
 import { Badge, BadgeContainer } from '@midas-ds/components'
 import { Bell } from 'lucide-react'
+
 <NavigationItem>
   <NavigationLink
     href='/meddelanden'
