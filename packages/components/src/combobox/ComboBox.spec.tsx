@@ -7,7 +7,8 @@ import { render } from '../../test-utils'
 import { ComboBox } from './ComboBox'
 import { ListBoxItem } from '../list-box'
 
-const { Primary, Required, Sectioned, NotVirtualized } = composeStories(stories)
+const { Primary, Required, Sectioned, NotVirtualized, WithHelpPopover } =
+  composeStories(stories)
 
 describe('given a primary ComboBox', async () => {
   it('it should preserve its classNames when being passed new ones', async () => {
@@ -20,7 +21,10 @@ describe('given a primary ComboBox', async () => {
 
   it('should not cover the toggle button when the input value is very long', async () => {
     const { getByRole } = await render(
-      <ComboBox label='Test' defaultInputValue='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'>
+      <ComboBox
+        label='Test'
+        defaultInputValue='AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+      >
         <ListBoxItem id='a'>A</ListBoxItem>
       </ComboBox>,
     )
@@ -29,7 +33,9 @@ describe('given a primary ComboBox', async () => {
     const buttonEl = await getByRole('button').element()
     const inputRect = inputEl.getBoundingClientRect()
     const buttonRect = buttonEl.getBoundingClientRect()
-    const paddingRight = parseFloat(window.getComputedStyle(inputEl).paddingRight)
+    const paddingRight = parseFloat(
+      window.getComputedStyle(inputEl).paddingRight,
+    )
 
     // Small tolerance for sub-pixel layout rounding, which varies slightly
     // between browser engine versions. Confirmed visually in Storybook that
@@ -97,9 +103,7 @@ describe('given an async ComboBox with allowsEmptyCollection', async () => {
     await userEvent.tab()
     await userEvent.keyboard('[ArrowDown]')
 
-    await expect
-      .element(page.getByText('Fetching data...'))
-      .toBeInTheDocument()
+    await expect.element(page.getByText('Fetching data...')).toBeInTheDocument()
     await expect
       .element(page.getByText('No results found'))
       .not.toBeInTheDocument()
@@ -118,9 +122,7 @@ describe('given an async ComboBox with allowsEmptyCollection', async () => {
     await userEvent.tab()
     await userEvent.keyboard('[ArrowDown]')
 
-    await expect
-      .element(page.getByText('No results found'))
-      .toBeInTheDocument()
+    await expect.element(page.getByText('No results found')).toBeInTheDocument()
   })
 })
 
@@ -134,5 +136,13 @@ describe('given a ComboBox with listBoxProps={{ virtualized: false }}', async ()
     await expect.element(listbox.getByText('Ananas')).toBeVisible()
     await expect.element(listbox.getByText('Kokosnöt')).toBeVisible()
     await expect.element(listbox.getByText('Päron')).toBeVisible()
+  })
+})
+
+describe('given a ComboBox with a help popover', async () => {
+  it('should be possible to focus the popover trigger using the keyboard', async () => {
+    const { getByRole } = await render(<WithHelpPopover />)
+    await userEvent.tab()
+    await expect.element(getByRole('button').first()).toHaveFocus()
   })
 })
