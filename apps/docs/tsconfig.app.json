@@ -19,5 +19,5 @@
     ]
   },
   "include": ["**/*"],
-  "exclude": ["**/*.test.*", "**/*.spec.*"]
+  "exclude": ["**/*.test.*", "**/*.spec.*", "eslint.config.mjs"]
 }

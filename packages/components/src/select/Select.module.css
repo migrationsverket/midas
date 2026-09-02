@@ -50,7 +50,7 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    background: var(--midas-field-disabled);
+    background: var(--midas-field-disabled, var(--midas-field-01-disabled));
     color: var(--midas-text-disabled);
     border-color: var(--midas-border-color-disabled);
   }
@@ -134,7 +134,10 @@
   }
 
   &[data-disabled] {
-    background-color: var(--midas-field-disabled);
+    background-color: var(
+      --midas-field-disabled,
+      var(--midas-field-01-disabled)
+    );
     border: 1px solid var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
     pointer-events: none;

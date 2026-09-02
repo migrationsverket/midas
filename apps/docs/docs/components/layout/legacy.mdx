@@ -1,0 +1,186 @@
+---
+title: Legacy Layout
+description: En skalkomponent för att få en simpel sidomeny och sidhuvud.
+sidebar_position: 7
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { BasicExample, ExternalExample } from '@site/src/components/examples/layout/LayoutExamples'
+
+:::warning Ersätts av nytt paket
+
+`Layout` från `@midas-ds/components` ersätts av [`@midas-ds/layout`](/components/layout/get-started) — ett nytt, modulärt layoutpaket. Det gamla paketet fungerar fortfarande men rekommenderas inte för nya projekt. Se [migrationsguiden](/components/layout/migration) för hur du går över.
+
+:::
+
+<ComponentHeader
+  name='Layout'
+  friendlyName='Meny, baslayout, sidomeny, sidhuvud'
+  overrideHeadlessLink=''
+/>
+
+En skalkomponent för att få en simpel sidomeny och sidhuvud.
+
+```tsx
+import { Layout } from '@midas-ds/components'
+```
+
+```tsx
+<Layout
+  variant='internal'
+  items={[
+    {
+      items: [
+        {
+          title: 'Översikt',
+          href: '#',
+          icon: House,
+        },
+      ],
+    },
+    {
+      title: 'Ansökan',
+      items: [
+        {
+          title: 'Skapa ansökan',
+          href: '#',
+          icon: Plus,
+        },
+        {
+          title: 'Beslut',
+          href: '#',
+          icon: Gavel,
+        },
+      ],
+    },
+    {
+      title: 'Kort och konto',
+      items: [
+        {
+          title: 'LMA-kort',
+          href: '#',
+          icon: Calendar,
+        },
+        {
+          title: 'Avvikelser',
+          href: '#',
+          icon: ClipboardList,
+          hasBadge: true,
+        },
+      ],
+    },
+  ]}
+  title='Skapa ansökningar'
+  user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+  app={{ name: 'Namn på applikationen' }}
+  headerChildren={
+    <LinkButton
+      variant='tertiary'
+      target='_blank'
+    >
+      Öppna annan tjänst
+    </LinkButton>
+  }
+>
+  {/* Din applikation */}
+</Layout>
+```
+
+<BasicExample />
+
+## Extern variant
+
+Använd `variant="external"` för en förenklad version av Layout med Navbar i botten av fönstret i mobilt läge.
+
+```tsx
+<Layout
+  // highlight-start
+  variant='external'
+  // highlight-end
+  items={[
+    {
+      items: [
+        {
+          title: 'Hem',
+          href: '#',
+          icon: House,
+          active: true,
+        },
+        {
+          title: 'Ansökan',
+          href: '#',
+          icon: Search,
+        },
+        {
+          title: 'Boka',
+          href: '#',
+          icon: Calendar,
+          hasBadge: true,
+        },
+        {
+          title: 'Profil',
+          href: '#',
+          icon: User,
+        },
+        {
+          title: 'Kontakt',
+          href: '#',
+          icon: Plus,
+        },
+      ],
+    },
+    {
+      title: 'Kort och konto',
+      items: [
+        {
+          title: 'LMA-kort',
+          href: '#',
+          icon: Calendar,
+        },
+        {
+          title: 'Avvikelser',
+          href: '#',
+          icon: ClipboardList,
+          hasBadge: true,
+        },
+      ],
+    },
+  ]}
+  title='Skapa ansökningar'
+  user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+  app={{ name: 'Namn på applikationen' }}
+  headerChildren={
+    <LinkButton
+      variant='tertiary'
+      target='_blank'
+    >
+      Öppna annan tjänst
+    </LinkButton>
+  }
+>
+  {/* Din applikation */}
+</Layout>
+```
+
+<ExternalExample />
+
+## Separat användning
+
+Det går att importera sidomenyn samt sidhuvudet som separata komponenter om så önskas, det är dock rekommenderat att använda hela Layoutkomponenten.
+
+```tsx
+import { Layout.Header, Layout.Sidebar } from '@midas-ds/components'
+```
+
+## Client Side Routing
+
+Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/client-side-routing).
+
+## Riktlinjer
+
+Kommer snart
+
+## API
+
+<PropTable name='Layout' />

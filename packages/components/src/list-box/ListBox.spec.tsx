@@ -16,13 +16,16 @@ describe('given a ListBoxItem in a ListBox with selectionMode="single"', async (
   it('should set data-pressed on the item while being pressed', async () => {
     const { getByRole } = await render(<SelectionModeSingle />)
     const firstOption = getByRole('option').first()
-    const el = firstOption.element()!
+    const el = firstOption.element()
 
     let pressedAtSomePoint = false
     const observer = new MutationObserver(() => {
       if (el.hasAttribute('data-pressed')) pressedAtSomePoint = true
     })
-    observer.observe(el, { attributes: true, attributeFilter: ['data-pressed'] })
+    observer.observe(el, {
+      attributes: true,
+      attributeFilter: ['data-pressed'],
+    })
 
     await firstOption.click()
     observer.disconnect()

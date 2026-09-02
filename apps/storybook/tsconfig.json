@@ -7,7 +7,8 @@
     "strict": true,
     "types": ["vite/client"],
     "resolveJsonModule": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0"
   },
   "files": [],
   "include": [],

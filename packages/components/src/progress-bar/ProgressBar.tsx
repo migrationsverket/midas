@@ -56,9 +56,9 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
               {valueLabel}
             </Label>
           )}
-          <div className={styles.bar}>
+          <div className={styles.track}>
             <div
-              className={styles.fill}
+              className={styles.indicator}
               style={{ width: `${isIndeterminate ? 50 : percentage}%` }}
             />
           </div>

@@ -1,0 +1,247 @@
+---
+title: Header
+description: Sidhuvud med stöd för logotyp, systemnamn, åtgärdsknappar och mobilmeny.
+sidebar_position: 1
+---
+
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import {
+  BasicHeaderExample,
+  MobileHeaderExample,
+  OverflowHeaderExample,
+  HeaderActionsExample,
+} from '@site/src/components/examples/layout/HeaderExamples'
+
+<ComponentHeader
+  name='Header'
+  friendlyName='Sidhuvud, Applikationshuvud'
+  overrideStorybookPath='?path=/docs/layout-header--docs'
+  overrideHeadlessLink=''
+/>
+
+Sidhuvud med logotyp, navigation på små skärmar samt plats för globala handlingar. Renderar ett semantiskt `<header>`-element och tillhandahåller kontext för logotypstorlek (responsiv).
+
+```tsx
+import {
+  Header,
+  HeaderActions,
+  HeaderAction,
+  HeaderLogo,
+  HeaderTitle,
+  MobileMenu,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+} from '@midas-ds/layout'
+import { Bell, House } from 'lucide-react'
+```
+
+```tsx
+<Header>
+  <MobileMenu title='Mitt system'>
+    <Navigation>
+      <NavigationItem>
+        <NavigationLink
+          href='/'
+          icon={<House />}
+          isActive
+        >
+          Hem
+        </NavigationLink>
+      </NavigationItem>
+    </Navigation>
+  </MobileMenu>
+  <HeaderLogo />
+  <HeaderTitle>Mitt system</HeaderTitle>
+  <HeaderActions>
+    <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+  </HeaderActions>
+</Header>
+```
+
+<BasicHeaderExample />
+
+## Logotyp
+
+Logotypen läggs till i Header via `<HeaderLogo>`. Header hanterar responsiv storlek automatiskt och visar en kompakt variant på små skärmar (≤ 640px). Logotypen kan länka till startsidan genom att wrappas i den routing-komponent som används i applikationen.
+
+```tsx
+// No router
+<a href='/'>
+  <HeaderLogo />
+</a>
+
+// Next.js
+import Link from 'next/link'
+
+<Link href='/'>
+  <HeaderLogo />
+</Link>
+
+// React Router
+import { Link } from 'react-router'
+
+<Link to='/'>
+  <HeaderLogo />
+</Link>
+```
+
+## Globala handlingar
+
+I Header läggs globala handlingar, alltså handlingar som användaren ska kunna komma åt från alla sidor i applikationen. Typiska globala handlingar är Logga ut och Inställningar. Dessa läggs till i Header via `<HeaderActions>`. Varje global handling ska ha en ikon och en beskrivande etikett.
+
+```tsx
+<Header>
+  <HeaderLogo />
+  <HeaderTitle>Mitt system</HeaderTitle>
+  <HeaderActions>
+    <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+    <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+    <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+  </HeaderActions>
+</Header>
+```
+
+<HeaderActionsExample />
+
+### Overflow
+
+HeaderActions hanterar inte overflow automatiskt. Om applikationen har många globala handlingar behöver dessa läggas i en overflow-meny på små skärmar. Det görs via en mediaquery. Prova att ändra bredden på fönstret nedan för att se beteendet:
+
+```tsx
+import { useMediaQuery } from '@react-spectrum/utils'
+import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import { Header, HeaderActions, HeaderAction, HeaderLogo, HeaderTitle } from '@midas-ds/layout'
+import { Bell, MoreHorizontal, Settings, User } from 'lucide-react'
+
+const collapsibleActions = [
+  { id: 'profile', label: 'Min profil', icon: <User size={20} /> },
+  { id: 'settings', label: 'Inställningar', icon: <Settings size={20} /> },
+]
+
+function AppHeader() {
+  // Välj den breakpoint som passar din app
+  const isNarrow = useMediaQuery('(max-width: 700px)')
+
+  return (
+    <Header>
+      <HeaderLogo />
+      <HeaderTitle>Mitt system</HeaderTitle>
+      <HeaderActions>
+        <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+        {isNarrow ? (
+          <MenuTrigger>
+            <HeaderAction
+              aria-label='Fler alternativ'
+              icon={<MoreHorizontal size={20} />}
+            />
+            <MenuPopover>
+              <Menu>
+                {collapsibleActions.map(action => (
+                  <MenuItem
+                    key={action.id}
+                    id={action.id}
+                  >
+                    {action.label}
+                  </MenuItem>
+                ))}
+              </Menu>
+            </MenuPopover>
+          </MenuTrigger>
+        ) : (
+          collapsibleActions.map(action => (
+            <HeaderAction
+              key={action.id}
+              icon={action.icon}
+            >
+              {action.label}
+            </HeaderAction>
+          ))
+        )}
+      </HeaderActions>
+    </Header>
+  )
+}
+```
+
+<OverflowHeaderExample />
+
+## Navigering på små skärmar/fönster
+
+Navigering på små skärmar/webbläsarfönster (≤ 640px) görs via Header och komponenten `MobileMenu`. `MobileMenu` renderar ingenting på desktop eftersom den är villkorsstyrd via `useIsMobileDevice()`. Det är därmed säkert att alltid inkludera den i trädet.
+
+```tsx
+import {
+  Header,
+  HeaderLogo,
+  HeaderTitle,
+  HeaderActions,
+  HeaderAction,
+  MobileMenu,
+  Navigation,
+  NavigationItem,
+  NavigationLink,
+} from '@midas-ds/layout'
+import { Bell, User, House } from 'lucide-react'
+
+export const MobileHeaderExample = () => {
+  return (
+    <Header>
+      <MobileMenu title='Mitt system'>
+        <Navigation>
+          <NavigationItem>
+            <NavigationLink
+              href='/'
+              icon={<House />}
+              isActive
+            >
+              Hem
+            </NavigationLink>
+          </NavigationItem>
+        </Navigation>
+      </MobileMenu>
+      <HeaderLogo />
+      <HeaderTitle>Mitt system</HeaderTitle>
+      <HeaderActions>
+        <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+        <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+      </HeaderActions>
+    </Header>
+  )
+}
+```
+
+<MobileHeaderExample />
+
+## Props
+
+### HeaderAction
+
+| Prop         | Typ         | Beskrivning                                            |
+| ------------ | ----------- | ------------------------------------------------------ |
+| `icon`       | `ReactNode` | Valfri ikon                                            |
+| `children`   | `ReactNode` | Etikett — visas på desktop, döljs som sr-only på mobil |
+| `aria-label` | `string`    | Alternativt om `children` inte används                 |
+
+### HeaderTitle
+
+| Prop        | Typ         | Beskrivning     |
+| ----------- | ----------- | --------------- |
+| `children`  | `ReactNode` | Systemnamnet    |
+| `className` | `string`    | Extra CSS-klass |
+
+### HeaderLogo
+
+| Prop      | Typ       | Standard | Beskrivning                 |
+| --------- | --------- | -------- | --------------------------- |
+| `primary` | `boolean` | `true`   | Monokrom variant om `false` |
+
+### MobileMenu
+
+| Prop           | Typ                         | Beskrivning                    |
+| -------------- | --------------------------- | ------------------------------ |
+| `title`        | `string`                    | Rubrik i menyn                 |
+| `defaultOpen`  | `boolean`                   | Okontrollerat starttillstånd   |
+| `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
+| `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
+| `children`     | `ReactNode`                 | Menyinnehåll                   |

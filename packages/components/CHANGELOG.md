@@ -1,3 +1,39 @@
+## 17.23.3 (2026-08-28)
+
+### 🩹 Fixes
+
+- **components,progress-bar:** use semantic tokens for background colors ([d5a3ad50bb5](https://github.com/migrationsverket/midas/commit/d5a3ad50bb5))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.0
+
+## 17.23.2 (2026-08-28)
+
+### 🩹 Fixes
+
+- **components,table:** add cursor:pointer for selectable rows ([c21cec7e6f4](https://github.com/migrationsverket/midas/commit/c21cec7e6f4))
+
+## 17.23.1 (2026-08-27)
+
+### 🩹 Fixes
+
+- **components,tabs:** remove animation when used in a dialog ([faecf1b0cae](https://github.com/migrationsverket/midas/commit/faecf1b0cae))
+
+## 17.23.0 (2026-08-27)
+
+### 🚀 Features
+
+- **components,theme:** add layer-aware disabled field tokens ([e5626da5829](https://github.com/migrationsverket/midas/commit/e5626da5829))
+
+### 🩹 Fixes
+
+- **components,popover:** wire up field-02 layer tokens for Popover ([3a3eeb5c3bf](https://github.com/migrationsverket/midas/commit/3a3eeb5c3bf))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.16.0
+
 ## 17.22.0 (2026-08-24)
 
 ### 🚀 Features

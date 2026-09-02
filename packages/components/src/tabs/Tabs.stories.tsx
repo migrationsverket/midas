@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Key } from 'react-aria-components'
+import { DialogTrigger, Key } from 'react-aria-components'
 import React from 'react'
 import { Tabs } from './Tabs'
+import { Modal } from '../modal'
 import { Button } from '../button'
 import { TabList } from './TabList'
 import { Tab } from './Tab'
@@ -112,6 +113,17 @@ export const DisabledTabs: Story = {
         </TabPanel>
       ))}
     </Tabs>
+  ),
+}
+
+export const InModal: Story = {
+  decorators: Story => (
+    <DialogTrigger>
+      <Button>Open</Button>
+      <Modal title='A modal with tabs'>
+        <Story />
+      </Modal>
+    </DialogTrigger>
   ),
 }
 

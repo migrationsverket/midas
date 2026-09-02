@@ -77,7 +77,10 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    background-color: var(--midas-field-disabled);
+    background-color: var(
+      --midas-field-disabled,
+      var(--midas-field-01-disabled)
+    );
     border: none;
     border-bottom: 1px solid var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
@@ -142,7 +145,10 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    background-color: var(--midas-field-disabled);
+    background-color: var(
+      --midas-field-disabled,
+      var(--midas-field-01-disabled)
+    );
     border: none;
     border-bottom: 1px solid var(--midas-border-color-disabled);
 

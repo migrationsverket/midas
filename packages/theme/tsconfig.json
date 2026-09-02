@@ -6,7 +6,8 @@
     "isolatedModules": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "strict": true
+    "strict": true,
+    "ignoreDeprecations": "6.0"
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
   "references": [

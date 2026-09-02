@@ -12,6 +12,10 @@
     var(--midas-field-01-hover),
     var(--midas-field-02-hover)
   );
+  --midas-field-disabled: light-dark(
+    var(--midas-field-01-disabled),
+    var(--midas-field-02-disabled)
+  );
 
   box-shadow: var(--midas-card-shadow);
 

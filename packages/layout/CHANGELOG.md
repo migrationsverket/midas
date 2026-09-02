@@ -1,3 +1,35 @@
+## 0.2.27 (2026-08-28)
+
+### 🩹 Fixes
+
+- **layout,navbar:** correct wrongly implemented design ([ee7393c75c3](https://github.com/migrationsverket/midas/commit/ee7393c75c3))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.3
+
+## 0.2.26 (2026-08-28)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.2
+
+## 0.2.25 (2026-08-27)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.1
+
+## 0.2.24 (2026-08-27)
+
+### 📖 Documentation changes
+
+- **layout:** add getting started page for the layout framework ([6570033cd32](https://github.com/migrationsverket/midas/commit/6570033cd32))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.0
+
 ## 0.2.23 (2026-08-24)
 
 ### 🧱 Updated Dependencies

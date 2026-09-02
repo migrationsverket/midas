@@ -1,3 +1,19 @@
+## 3.17.0 (2026-08-28)
+
+### 🚀 Features
+
+- **theme:** add semantic tokens for progress-bar colors ([0702e5e9e19](https://github.com/migrationsverket/midas/commit/0702e5e9e19))
+
+## 3.16.0 (2026-08-27)
+
+### 🚀 Features
+
+- **components,theme:** add layer-aware disabled field tokens ([e5626da5829](https://github.com/migrationsverket/midas/commit/e5626da5829))
+
+### 📖 Documentation changes
+
+- **theme,color:** rename tokens page to color and scope to color tokens ([718ff125918](https://github.com/migrationsverket/midas/commit/718ff125918))
+
 ## 3.15.5 (2026-08-13)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.

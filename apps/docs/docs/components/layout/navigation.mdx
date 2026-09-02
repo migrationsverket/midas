@@ -1,0 +1,326 @@
+---
+title: Navigation
+description: Navigationskomponenter för sidomeny och navbar.
+sidebar_position: 3
+---
+
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { NavigationBadgeExample, NavigationExample } from '@site/src/components/examples/layout/NavigationExamples'
+
+<ComponentHeader
+  name='NavigationLink'
+  friendlyName='Sidolänk, Navlänk'
+  overrideStorybookPath='?path=/docs/layout-navigation-navigationlink--docs'
+  overrideHeadlessLink=''
+/>
+
+Navigationskomponent som används både i [Sidebar](/components/layout/sidebar), [Navbar](/components/layout/navbar) och [MobileMenu](/components/layout/header/#mobilemenu) men med olika utseende beroende på kontext. Navigation anpassar automatiskt utseendet efter var den befinner sig.
+
+```tsx
+import { Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
+import { House, Settings } from 'lucide-react'
+
+export default function App() {
+  const pathname = usePathname() // or equivalent for your router
+
+  return (
+    <Navigation>
+      <NavigationItem>
+        <NavigationLink
+          href='/'
+          icon={<House />}
+          isActive={pathname === '/'}
+        >
+          Hem
+        </NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationLink
+          href='/installningar'
+          icon={<Settings />}
+          isActive={pathname === '/installningar'}
+        >
+          Inställningar
+        </NavigationLink>
+      </NavigationItem>
+    </Navigation>
+  )
+}
+```
+
+## Skapa en navigeringsmeny
+
+För att skapa en navigeringsmeny behövs tre komponenter: `Navigation`, `NavigationItem` och `NavigationLink`. `Navigation` är en wrapper som renderar ett `<nav>`-element med `<ul>` inuti. Den stödjer både statisk och dynamisk rendering via Collections. `NavigationItem` är en wrapper som renderar ett `<li>`-element och används för att gruppera `NavigationLinks` och eventuella undermenyer.
+
+`NavigationLink` är själva länken som renderas som `<a>`-element och representerar ett menyalternativ i navigationen. De ska alltid ha både ikon och etikett.
+
+```tsx
+<NavigationLink
+  href='/mina-arenden'
+  icon={<FileText />}
+  isActive={pathname === '/mina-arenden'}
+>
+  Mina ärenden
+</NavigationLink>
+```
+
+<NavigationExample />
+
+### Undermenyer
+
+För att skapa undermenyer används `NavigationSubMenu` för de underliggande länkarna och placeras under ett överordnat `NavigationItem`.
+
+```tsx
+<NavigationItem>
+  <NavigationLink
+    href='/administration'
+    icon={<Settings />}
+  >
+    Administration
+  </NavigationLink>
+  <NavigationSubMenu>
+    <NavigationItem>
+      <NavigationLink
+        href='/anvandare'
+        icon={<Users />}
+      >
+        Användare
+      </NavigationLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavigationLink
+        href='/roller'
+        icon={<Shield />}
+      >
+        Roller
+      </NavigationLink>
+    </NavigationItem>
+  </NavigationSubMenu>
+</NavigationItem>
+```
+
+### Notisindikator (Badge)
+
+För att visa en notisindikator på ett menyalternativ kan du använda [Badge](/components/badge) genom att skicka in `BadgeContainer` runt ikonen och `Badge` till NavigationLinks `icon`-prop.
+
+```tsx
+import { Badge, BadgeContainer } from '@midas-ds/components'
+import { Bell } from 'lucide-react'
+
+<NavigationItem>
+  <NavigationLink
+    href='/meddelanden'
+    icon={
+      <BadgeContainer>
+        <Bell />
+        <Badge>12</Badge>
+      </BadgeContainer>
+    }
+    isActive={pathname === '/meddelanden'}
+  >
+    Meddelanden
+  </NavigationLink>
+</NavigationItem>
+```
+
+<NavigationBadgeExample />
+
+### Gruppera menyalternativ
+
+För att gruppera menyalternativ under en rubrik används `NavigationSection`
+
+```tsx
+import { Navigation, NavigationItem, NavigationLink, NavigationSection } from '@midas-ds/layout'
+import { FileText, House, Plus } from 'lucide-react'
+```
+
+```tsx
+<Navigation>
+  <NavigationItem>
+    <NavigationLink
+      href='/'
+      icon={<House />}
+    >
+      Hem
+    </NavigationLink>
+  </NavigationItem>
+  <NavigationSection title='Ansökan'>
+    <NavigationItem>
+      <NavigationLink
+        href='/ny-ansokan'
+        icon={<Plus />}
+      >
+        Ny ansökan
+      </NavigationLink>
+    </NavigationItem>
+    <NavigationItem>
+      <NavigationLink
+        href='/mina-arenden'
+        icon={<FileText />}
+      >
+        Mina ärenden
+      </NavigationLink>
+    </NavigationItem>
+  </NavigationSection>
+</Navigation>
+```
+
+## Routing
+
+`NavigationLink` hanterar navigering och aktivt läge via `href` och `isActive`. I en applikation med client-side routing måste dessa kopplas ihop med din router — utan det fungerar inte det aktiva läget och användaren ser aldrig vilken sida hen är på.
+
+Skapa en wrapper-komponent som sköter kopplingen. Här är ett exempel med React Router:
+
+```tsx title="NavLink.tsx"
+import { Link, useMatch } from 'react-router'
+import { NavigationLink } from '@midas-ds/layout'
+
+type NavLinkProps = {
+  path: string
+  icon: React.ReactNode
+  children: React.ReactNode
+}
+
+export function NavLink({ path, icon, children }: NavLinkProps) {
+  const match = useMatch(path)
+  return (
+    <NavigationLink
+      as={Link}
+      to={path}
+      icon={icon}
+      isActive={!!match}
+    >
+      {children}
+    </NavigationLink>
+  )
+}
+```
+
+```tsx
+<NavLink
+  path='/mina-arenden'
+  icon={<FileText />}
+>
+  Mina ärenden
+</NavLink>
+```
+
+:::note
+
+Samma mönster fungerar med andra routrar — byt ut `Link` och `useMatch` mot motsvarande för din router, t.ex. `usePathname` + jämförelse i Next.js eller `useMatchRoute` i TanStack Router.
+
+:::
+
+## Dynamisk rendering
+
+Alla navigationskomponenter stödjer React Arias Collection API för dynamisk rendering från data. Nedan följer ett exempel med submenyer och rekursiv rendering.
+
+```tsx
+import { Navigation, NavigationItem, NavigationLink, NavigationSection, NavigationSubMenu } from '@midas-ds/layout'
+import { Bell, FileText, House, Plus, Save, User } from 'lucide-react'
+
+type Section = {
+  id: number
+  title?: string
+  children: Item[]
+}
+
+type Item = {
+  id: number
+  title: string
+  href: string
+  icon: React.ReactNode
+  children?: Item[]
+}
+
+const sections: Section[] = [
+  {
+    id: 0,
+    children: [
+      {
+        id: 1,
+        title: 'Home',
+        href: '/',
+        icon: <House />,
+      },
+      {
+        id: 2,
+        title: 'Applications',
+        href: '/applications',
+        icon: <FileText />,
+        children: [
+          {
+            id: 3,
+            title: 'New application',
+            href: '/applications/new',
+            icon: <Plus />,
+          },
+          {
+            id: 4,
+            title: 'Drafts',
+            href: '/applications/drafts',
+            icon: <Save />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: 'Account',
+    children: [
+      {
+        id: 6,
+        title: 'Profile',
+        href: '/profile',
+        icon: <User />,
+      },
+      {
+        id: 7,
+        title: 'Notifications',
+        href: '/notifications',
+      },
+    ],
+  },
+]
+
+export default function App() {
+  return (
+    <Navigation items={sections}>
+      {section => (
+        <NavigationSection
+          title={section.title}
+          items={section.children}
+        >
+          {function renderItem(item) {
+            return (
+              <NavigationItem>
+                <NavigationLink
+                  href={item.href}
+                  icon={item.icon}
+                >
+                  {item.title}
+                </NavigationLink>
+                <NavigationSubMenu items={item.children}>{renderItem}</NavigationSubMenu>
+              </NavigationItem>
+            )
+          }}
+        </NavigationSection>
+      )}
+    </Navigation>
+  )
+}
+```
+
+## API
+
+### NavigationLink
+
+| Prop         | Typ           | Standard | Beskrivning                                                        |
+| ------------ | ------------- | -------- | ------------------------------------------------------------------ |
+| `icon`       | `ReactNode`   | —        | **Obligatorisk.** Ikon för länken                                  |
+| `children`   | `ReactNode`   | —        | Etikett (visas i sidebar, används som tooltip i kollapsad sidebar) |
+| `isActive`   | `boolean`     | `false`  | Markerar länken som aktiv sida                                     |
+| `href`       | `string`      | —        | URL (standard)                                                     |
+| `as`         | `ElementType` | —        | Ersättningskomponent (t.ex. Next.js `Link`)                        |
+| `aria-label` | `string`      | —        | Krävs om `children` inte är ren text                               |
