@@ -98,9 +98,7 @@ describe('given a SearchField with the default built-in button', async () => {
   it('should not include the submit button in the tab order', async () => {
     await userEvent.tab()
 
-    await expect
-      .element(page.getByRole('searchbox'))
-      .not.toHaveFocus()
+    await expect.element(page.getByRole('searchbox')).not.toHaveFocus()
 
     expect(handleSubmit).not.toHaveBeenCalled()
   })
@@ -119,7 +117,9 @@ describe('given a SearchField with only buttonText set (backward compat)', async
       />,
     )
 
-    await expect.element(page.getByRole('button', { name: 'Find' })).toBeInTheDocument()
+    await expect
+      .element(page.getByRole('button', { name: 'Find' }))
+      .toBeInTheDocument()
   })
 })
 
@@ -159,7 +159,9 @@ describe('given an invalid SearchField', async () => {
   })
 
   it('should render the error message above the input when errorPosition is top', async () => {
-    const { getByRole, getByText } = await render(<Invalid errorPosition='top' />)
+    const { getByRole, getByText } = await render(
+      <Invalid errorPosition='top' />,
+    )
 
     const errorRect = getByText(Invalid.args.errorMessage as string)
       .element()
@@ -170,10 +172,16 @@ describe('given an invalid SearchField', async () => {
   })
 
   it('should render the error message below the input when errorPosition is bottom', async () => {
-    const { getByRole, getByText } = await render(<Invalid errorPosition='bottom' />)
+    const { getByRole, getByText } = await render(
+      <Invalid errorPosition='bottom' />,
+    )
 
-    const container = document.querySelector(`.${styles.container}`) as HTMLElement
-    expect(container.lastElementChild?.textContent).toContain(Invalid.args.errorMessage)
+    const container = document.querySelector(
+      `.${styles.container}`,
+    ) as HTMLElement
+    expect(container.lastElementChild?.textContent).toContain(
+      Invalid.args.errorMessage,
+    )
 
     const inputRect = getByRole('searchbox').element().getBoundingClientRect()
     const errorRect = getByText(Invalid.args.errorMessage as string)
@@ -199,9 +207,14 @@ describe('given a SearchField with onSubmit inside a <form>', async () => {
 
   it('should fire onSubmit and NOT submit the form when Enter is pressed', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary onSubmit={handleSubmit} />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -214,9 +227,14 @@ describe('given a SearchField with onSubmit inside a <form>', async () => {
 
   it('should fire onSubmit and NOT submit the form when the search button is clicked', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary onSubmit={handleSubmit} />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -229,9 +247,14 @@ describe('given a SearchField with onSubmit inside a <form>', async () => {
 
   it('should NOT fire onSubmit or submit the form when the value is empty', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary onSubmit={handleSubmit} />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -243,9 +266,17 @@ describe('given a SearchField with onSubmit inside a <form>', async () => {
 
   it('should NOT fire onSubmit or submit the form when isInvalid is true', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
-        <Primary onSubmit={handleSubmit} isInvalid />
-      </form>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
+        <Primary
+          onSubmit={handleSubmit}
+          isInvalid
+        />
+      </form>,
     )
 
     await userEvent.tab()
@@ -266,9 +297,14 @@ describe('given a SearchField without onSubmit inside a <form>', async () => {
 
   it('should submit the form when Enter is pressed with a value', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -280,9 +316,14 @@ describe('given a SearchField without onSubmit inside a <form>', async () => {
 
   it('should NOT submit the form when Enter is pressed with an empty value', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -293,9 +334,14 @@ describe('given a SearchField without onSubmit inside a <form>', async () => {
 
   it('should NOT submit the form when isInvalid is true', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary isInvalid />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -307,9 +353,14 @@ describe('given a SearchField without onSubmit inside a <form>', async () => {
 
   it('should submit the form on Enter when showButton is false', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary showButton={false} />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -321,9 +372,14 @@ describe('given a SearchField without onSubmit inside a <form>', async () => {
 
   it('should NOT submit the form when the search button is clicked (type=button)', async () => {
     await render(
-      <form onSubmit={e => { e.preventDefault(); handleFormSubmit() }}>
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          handleFormSubmit()
+        }}
+      >
         <Primary />
-      </form>
+      </form>,
     )
 
     await userEvent.tab()
@@ -369,7 +425,9 @@ describe('given a SearchField with a description', async () => {
       .toBeVisible()
     await expect
       .element(getByRole('searchbox'))
-      .toHaveAccessibleDescription(WithLabelAndDescription.args.description as string)
+      .toHaveAccessibleDescription(
+        WithLabelAndDescription.args.description as string,
+      )
   })
 })
 
@@ -409,5 +467,11 @@ describe('given a SearchField with a help popover', async () => {
     await expect
       .element(getByRole('button', { name: 'Mer information' }))
       .toBeInTheDocument()
+  })
+
+  it('should be possible to focus the popover trigger using the keyboard', async () => {
+    const { getByRole } = await render(<WithHelpPopover />)
+    await userEvent.tab()
+    await expect.element(getByRole('button').first()).toHaveFocus()
   })
 })
