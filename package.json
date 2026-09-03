@@ -17,7 +17,7 @@
     "@docusaurus/theme-mermaid": "^3.10.2",
     "@docusaurus/tsconfig": "^3.10.2",
     "@docusaurus/types": "^3.10.2",
-    "@faker-js/faker": "^10.0.0",
+    "@faker-js/faker": "^10.5.0",
     "@mermaid-js/layout-elk": "^0.1.9",
     "@react-spectrum/utils": "^3.12.11",
     "@react-stately/utils": "^3.12.1",
