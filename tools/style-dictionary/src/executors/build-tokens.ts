@@ -1,9 +1,9 @@
 import { PromiseExecutor } from '@nx/devkit'
-import { BuildTokensExecutorSchema } from './schema'
+import { BuildTokensExecutorSchema } from './schema.js'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 import { Config } from 'style-dictionary/types'
-import { dimensionToUnit } from './transforms/dimensionToUnit'
-import { tailwindTheme } from './formats/tailwindTheme'
+import { dimensionToUnit } from './transforms/dimensionToUnit.js'
+import { tailwindTheme } from './formats/tailwindTheme.js'
 import StyleDictionary from 'style-dictionary'
 
 StyleDictionary.registerTransform(dimensionToUnit)

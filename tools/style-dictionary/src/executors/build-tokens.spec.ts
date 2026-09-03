@@ -1,8 +1,8 @@
 import { ExecutorContext } from '@nx/devkit'
 import { describe, expect, it } from 'vitest'
 
-import { BuildTokensExecutorSchema } from './schema'
-import executor from './build-tokens'
+import { BuildTokensExecutorSchema } from './schema.js'
+import executor from './build-tokens.js'
 
 const options: BuildTokensExecutorSchema = {}
 const context: ExecutorContext = {
