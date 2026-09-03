@@ -213,6 +213,72 @@ describe('given a Tree navigated by keyboard', async () => {
   })
 })
 
+describe('given a Tree with onAction wired to toggleKey', async () => {
+  // onAction gives a one-step keyboard/mouse toggle without the ArrowRight
+  // drill-in — RAC fires it for Enter or a click on plain row content, but
+  // correctly excludes clicks on nested interactive elements (chevron,
+  // checkbox) so the checkbox's own independent onChange keeps working
+  // unchanged alongside it. selectionMode stays 'none' throughout — this
+  // never touches RAC's native selection.
+
+  it('Enter on a focused row toggles it directly, with no ArrowRight drill-in', async () => {
+    const { getByRole } = await render(<CascadeSelection />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown][ArrowDown]') // Grupp A -> Tropiska frukter -> Ananas
+    await expect.element(getByRole('row', { name: 'Ananas' })).toHaveFocus()
+
+    await userEvent.keyboard('[Enter]')
+
+    expect(isChecked(getByRole('checkbox', { name: 'Ananas' }))).toBe(true)
+  })
+
+  it('toggling a parent via Enter cascades to its children, same as a mouse click', async () => {
+    const { getByRole } = await render(<CascadeSelection />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown][Enter]') // Tropiska frukter
+
+    for (const name of ['Ananas', 'Banan', 'Mango', 'Papaya']) {
+      expect(isChecked(getByRole('checkbox', { name }))).toBe(true)
+    }
+  })
+
+  it('a sequence of ArrowDown+Enter toggles multiple rows with no backing-out step between them', async () => {
+    const { getByRole } = await render(<CascadeSelection />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown][ArrowDown]') // Ananas
+    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[ArrowDown]') // Banan — no ArrowLeft/backing-out needed
+    await userEvent.keyboard('[Enter]')
+    await userEvent.keyboard('[ArrowDown]') // Mango
+    await userEvent.keyboard('[Enter]')
+
+    for (const name of ['Ananas', 'Banan', 'Mango']) {
+      expect(isChecked(getByRole('checkbox', { name }))).toBe(true)
+    }
+    expect(isChecked(getByRole('checkbox', { name: 'Papaya' }))).toBe(false)
+  })
+
+  it('a disabled row is skipped during ArrowDown navigation', async () => {
+    const { getByRole } = await render(<DisabledNode />)
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown][ArrowDown]') // Tropiska frukter -> would be Ananas, but it's disabled
+
+    await expect.element(getByRole('row', { name: 'Banan' })).toHaveFocus()
+  })
+
+  it('does not toggle a disabled row even when clicked directly (defense in depth beyond nav-skipping)', async () => {
+    const { getByRole } = await render(<DisabledNode />)
+
+    await getByRole('row', { name: 'Ananas' }).click({ force: true })
+
+    expect(isChecked(getByRole('checkbox', { name: 'Ananas' }))).toBe(false)
+  })
+})
+
 describe('given a plain Tree with no cascade wiring', async () => {
   it('renders without any checkbox, since children never compose one', async () => {
     const { container } = await render(<Default />)

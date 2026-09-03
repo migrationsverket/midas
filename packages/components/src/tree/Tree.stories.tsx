@@ -1,3 +1,19 @@
+// ⚠️ Read before judging the wiring in these stories: this is a deliberately
+// low-level, unopinionated PRIMITIVE — Tree, TreeItem, and useTreeSelection
+// are cascade-selection building blocks, not a finished checkbox-tree
+// component. Every story here wires them together a different way on
+// purpose (independent checkbox, badges, controlled state, disabled nodes,
+// the onAction one-step interaction) specifically to prove the primitive
+// stays generic. If this looks like a lot of setup for "just a checkbox
+// tree," that's intentional for right now — a convenience layer (a
+// ready-to-use cascade-checkbox component, encoding the onAction +
+// disabledKeys recipe these stories arrive at) is the planned next step on
+// top of this, the same relationship Select already has to ListBox in this
+// codebase: ListBox stays generic and independently usable, Select is the
+// batteries-included composite built from it. See the plan file for the
+// Tree POC (ask Jakob/Claude if you can't find it) for the full writeup —
+// this isn't the whole story on its own, just the foundation.
+
 import { useState, type ReactNode } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useTreeData, type Key } from 'react-aria-components'
@@ -39,7 +55,15 @@ export default {
   subcomponents: { TreeItem },
   tags: ['autodocs'],
   title: 'Internal/Tree',
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'Deliberately low-level primitive, not a finished checkbox-tree component. `Tree`/`TreeItem`/`useTreeSelection` are cascade-selection building blocks — the stories below each wire them together differently on purpose, to prove the primitive stays generic. The visible setup (the `onAction` + `disabledKeys` recipe, `getCheckedState`-driven `Checkbox`) is what a planned convenience layer will encapsulate for the common "just give me a cascading checkbox tree" case — the same relationship `Select` already has to `ListBox` in this codebase. Not a sign this API is meant to be used this verbosely day to day.',
+      },
+    },
+  },
 } satisfies Meta<typeof Tree>
 
 type Story = StoryObj<typeof Tree>
@@ -57,8 +81,8 @@ const renderPlainNode = (node: DemoNode): ReactNode => (
     key={node.id}
     id={node.id}
     textValue={node.name}
+    content={node.name}
   >
-    {node.name}
     {node.children?.map(renderPlainNode)}
   </TreeItem>
 )
@@ -156,14 +180,16 @@ const CascadeSelectionDemo = ({
       key={node.id}
       id={node.id}
       textValue={node.name}
+      content={
+        <Checkbox
+          isSelected={getCheckedState(node.id) === 'checked'}
+          isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+          onChange={() => toggleKey(node.id)}
+        >
+          {node.name}
+        </Checkbox>
+      }
     >
-      <Checkbox
-        isSelected={getCheckedState(node.id) === 'checked'}
-        isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
-        onChange={() => toggleKey(node.id)}
-      >
-        {node.name}
-      </Checkbox>
       {node.children?.map(renderNode)}
     </TreeItem>
   )
@@ -173,6 +199,7 @@ const CascadeSelectionDemo = ({
       aria-label='Cascade selection tree'
       selectionMode='none'
       defaultExpandedKeys={allBranchKeys}
+      onAction={key => toggleKey(key)}
     >
       {treeItems.map(renderNode)}
     </Tree>
@@ -211,14 +238,16 @@ const ControlledCascadeSelectionDemo = () => {
       key={node.id}
       id={node.id}
       textValue={node.name}
+      content={
+        <Checkbox
+          isSelected={getCheckedState(node.id) === 'checked'}
+          isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+          onChange={() => toggleKey(node.id)}
+        >
+          {node.name}
+        </Checkbox>
+      }
     >
-      <Checkbox
-        isSelected={getCheckedState(node.id) === 'checked'}
-        isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
-        onChange={() => toggleKey(node.id)}
-      >
-        {node.name}
-      </Checkbox>
       {node.children?.map(renderNode)}
     </TreeItem>
   )
@@ -230,6 +259,7 @@ const ControlledCascadeSelectionDemo = () => {
         aria-label='Controlled cascade selection tree'
         selectionMode='none'
         defaultExpandedKeys={allBranchKeys}
+        onAction={key => toggleKey(key)}
       >
         {treeItems.map(renderNode)}
       </Tree>
@@ -264,15 +294,17 @@ const DisabledNodeDemo = () => {
         key={node.id}
         id={node.id}
         textValue={node.name}
+        content={
+          <Checkbox
+            isSelected={getCheckedState(node.id) === 'checked'}
+            isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+            isDisabled={isDisabled}
+            onChange={() => toggleKey(node.id)}
+          >
+            {node.name}
+          </Checkbox>
+        }
       >
-        <Checkbox
-          isSelected={getCheckedState(node.id) === 'checked'}
-          isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
-          isDisabled={isDisabled}
-          onChange={() => toggleKey(node.id)}
-        >
-          {node.name}
-        </Checkbox>
         {node.children?.map(renderNode)}
       </TreeItem>
     )
@@ -283,6 +315,8 @@ const DisabledNodeDemo = () => {
       aria-label='Tree with disabled nodes'
       selectionMode='none'
       defaultExpandedKeys={allBranchKeys}
+      disabledKeys={disabledLeafId ? [disabledLeafId] : undefined}
+      onAction={key => toggleKey(key)}
     >
       {treeItems.map(renderNode)}
     </Tree>
@@ -296,7 +330,7 @@ export const DisabledNode: Story = {
 // POC for a real ask: show each branch's selected-leaf count as a Badge.
 // Deliberately built entirely from what's already exported — collectDescendantLeaves
 // (from useTreeSelection.ts) plus checkedKeys — no new API needed. This is
-// exactly the "free composition" TreeItem's children are designed for.
+// exactly the "free composition" TreeItem's `content` prop is designed for.
 const SelectionCountBadgeDemo = () => {
   const tree = useTreeData<DemoNode>({
     initialItems: treeItems,
@@ -321,19 +355,23 @@ const SelectionCountBadgeDemo = () => {
             ? `${node.name}, ${checkedCount} av ${leaves.length} valda`
             : node.name
         }
+        content={
+          <>
+            <Checkbox
+              isSelected={getCheckedState(node.id) === 'checked'}
+              isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+              onChange={() => toggleKey(node.id)}
+            >
+              {node.name}
+            </Checkbox>
+            {node.children && checkedCount > 0 && (
+              <Badge>
+                {checkedCount}/{leaves.length}
+              </Badge>
+            )}
+          </>
+        }
       >
-        <Checkbox
-          isSelected={getCheckedState(node.id) === 'checked'}
-          isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
-          onChange={() => toggleKey(node.id)}
-        >
-          {node.name}
-        </Checkbox>
-        {node.children && checkedCount > 0 && (
-          <Badge>
-            {checkedCount}/{leaves.length}
-          </Badge>
-        )}
         {node.children?.map(renderNode)}
       </TreeItem>
     )
@@ -344,6 +382,7 @@ const SelectionCountBadgeDemo = () => {
       aria-label='Tree with a selected-count badge per branch'
       selectionMode='none'
       defaultExpandedKeys={allBranchKeys}
+      onAction={key => toggleKey(key)}
     >
       {treeItems.map(renderNode)}
     </Tree>
