@@ -1,3 +1,17 @@
+## 17.23.5 (2026-09-03)
+
+### 🩹 Fixes
+
+- **components,combobox,date-picker,select,search-field:** fix help popover button action ([1d62a6cf2ed](https://github.com/migrationsverket/midas/commit/1d62a6cf2ed))
+
+### 📖 Documentation changes
+
+- **components,checkbox,date-field,radio,time-field:** add story with help popover ([94e9cb6a98a](https://github.com/migrationsverket/midas/commit/94e9cb6a98a))
+
+### 🧪 Tests updated
+
+- **components,select,date-picker,search-field:** add test case for help popover ([1288ab6d49e](https://github.com/migrationsverket/midas/commit/1288ab6d49e))
+
 ## 17.23.4 (2026-09-01)
 
 ### 🩹 Fixes
