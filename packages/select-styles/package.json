@@ -22,7 +22,6 @@
     }
   },
   "dependencies": {
-    "@midas-ds/theme": "3.17.0",
-    "react-select": "^5.10.2"
+    "@midas-ds/theme": "3.17.0"
   }
 }
