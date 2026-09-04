@@ -1,31 +1,18 @@
 #!/usr/bin/env node
 /**
- * Catches a real, recurring failure mode: our Vite/Rollup build externalizes
- * imports matching known patterns (react-aria-components, /@react-aria/,
- * /@react-stately/, /@internationalized/, ...) so they aren't bundled twice
- * across Midas packages. That's correct for imports written directly in our
- * own src/. But when a *bundled* (non-externalized) dependency — e.g.
- * @react-spectrum/utils — itself imports something matching an external
- * pattern, that import survives in the published chunk as a bare specifier
- * with nothing in package.json requiring it. It works locally by accident
- * (something else in this monorepo's tree happens to provide it) and breaks
- * for real consumers the moment that accidental transitive path changes.
+ * Verifies every bare (non-relative) import in a package's built output has
+ * a matching entry in that package's own package.json dependencies or
+ * peerDependencies. Our build externalizes imports matching known patterns
+ * (react-aria-components, /@react-aria/, /@react-stately/,
+ * /@internationalized/, ...) rather than bundling them — correct for our own
+ * src/ code, but if a *bundled* dependency (e.g. @react-spectrum/utils)
+ * itself imports something matching an external pattern, that import
+ * survives in the output as an undeclared runtime dependency, satisfied only
+ * by accident if something else in this monorepo's tree happens to provide
+ * it transitively.
  *
- * This happened for real: @react-aria/ssr was pulled in by
- * useIsMobileDevice.ts (via @react-spectrum/utils's useMediaQuery) but never
- * declared in packages/layout/package.json — it only worked because
- * react-aria-components used to depend on @react-aria/ssr itself. When that
- * upstream dependency was dropped, consumers' builds broke with
- * "Failed to resolve import @react-aria/ssr". A manual audit the same day
- * found four more instances across layout and components — and running this
- * script for the very first time immediately caught a sixth, in
- * table-styles, that the manual audit had missed.
- *
- * This script builds nothing itself — it scans whatever's already in
- * dist/packages/<name>/ (run this after `nx build`/`nx affected -t build`,
- * so it naturally scopes to whatever a CI run actually built) and verifies
- * every bare import specifier in the output has a matching entry in that
- * package's own package.json dependencies or peerDependencies.
+ * Builds nothing itself — run it after `nx build`/`nx affected -t build`,
+ * against whatever's already in dist/packages/<name>/.
  */
 
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs'
