@@ -6,7 +6,11 @@
 
 .labelPopoverTrigger {
   padding: 0 !important;
-  margin-bottom: 0.125rem;
+
+  /* Must be >= the focus ring's outward extent (--midas-state-focus is a
+   * 4px box-shadow) or the ring's bottom edge gets painted over by
+   * whatever field/input immediately follows the label row. */
+  margin-bottom: var(--midas-space-xsmall);
 
   svg {
     stroke: var(--midas-support-border-info);
