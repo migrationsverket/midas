@@ -16,8 +16,10 @@
  * declared in packages/layout/package.json — it only worked because
  * react-aria-components used to depend on @react-aria/ssr itself. When that
  * upstream dependency was dropped, consumers' builds broke with
- * "Failed to resolve import @react-aria/ssr". An audit the same day found
- * four more instances of the identical gap across layout and components.
+ * "Failed to resolve import @react-aria/ssr". A manual audit the same day
+ * found four more instances across layout and components — and running this
+ * script for the very first time immediately caught a sixth, in
+ * table-styles, that the manual audit had missed.
  *
  * This script builds nothing itself — it scans whatever's already in
  * dist/packages/<name>/ (run this after `nx build`/`nx affected -t build`,
