@@ -1,3 +1,13 @@
+## 0.2.31 (2026-09-04)
+
+### 🩹 Fixes
+
+- **components,layout:** declare undeclared runtime deps bundled from react-aria packages ([d74be6643f6](https://github.com/migrationsverket/midas/commit/d74be6643f6))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.6
+
 ## 0.2.30 (2026-09-03)
 
 ### 🧱 Updated Dependencies
