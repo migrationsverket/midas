@@ -5,15 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "options": {
-        "main": "tools/release-dry-run/src/index.ts",
-        "assets": ["tools/release-dry-run/src/action.yml"],
-        "outputPath": "dist/tools/release-dry-run",
-        "tsConfig": "tools/release-dry-run/tsconfig.lib.json",
-        "sourceMap": true
-      }
-    }
+    "build": {}
   }
 }
