@@ -13,23 +13,28 @@
         "port": 4400
       }
     },
+    "//": {
+      "nx:run-commands": "Running build with @nx/storybook fails with 'Cache output is outside the workspace: ../../dist/storybook/ui'"
+    },
     "build": {
-      "outputs": [
-        "{projectRoot}/{options.output-dir}",
-        "{projectRoot}/storybook-static",
-        "{options.output-dir}",
-        "{options.outputDir}",
-        "{options.o}"
-      ],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/storybook/ui"],
       "options": {
+        "command": "npx storybook build",
+        "cwd": "apps/storybook",
         "config-dir": ".storybook",
         "output-dir": "../../dist/storybook/ui"
-      },
-      "configurations": {
-        "ci": {
-          "stats-json": "../../dist/docs/storybook",
-          "output-dir": "../../dist/docs/storybook"
-        }
+      }
+    },
+    "build:ci": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/docs/storybook"],
+      "options": {
+        "command": "npx storybook build",
+        "cwd": "apps/storybook",
+        "config-dir": ".storybook",
+        "stats-json": "../../dist/docs/storybook",
+        "output-dir": "../../dist/docs/storybook"
       }
     },
     "test": {
