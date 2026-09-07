@@ -13,22 +13,7 @@
       }
     },
     "build": {
-      "dependsOn": ["style-dictionary-generate"],
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/packages/theme"
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
-        }
-      }
+      "dependsOn": ["style-dictionary-generate"]
     },
     "lint": {
       "executor": "nx:run-commands",
