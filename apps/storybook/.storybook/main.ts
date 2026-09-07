@@ -31,26 +31,10 @@ export default {
     },
   },
   staticDirs: [join(basePath, 'static')],
-  managerHead: head => `${head}<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`,
-  previewHead: head => `${head}<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`,
-  typescript: {
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      tsconfigPath: join(basePath, 'tsconfig.storybook.json'),
-      propFilter: prop => {
-        if (prop.parent) {
-          return !(
-            prop.parent.fileName.includes('@types/react') ||
-            prop.parent.fileName.includes('dom.d.ts')
-          )
-        }
-        return true
-      },
-      savePropValueAsString: true,
-      shouldExtractLiteralValuesFromEnum: true,
-      shouldRemoveUndefinedFromOptional: true,
-    },
-  },
+  managerHead: head =>
+    `${head}<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`,
+  previewHead: head =>
+    `${head}<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />`,
 } satisfies StorybookConfig
 
 // To customize your Vite configuration you can use the viteFinal field.
