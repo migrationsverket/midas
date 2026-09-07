@@ -273,7 +273,8 @@
         "packages/theme/**/*",
         "packages/components/**/*",
         "packages/datepicker-styles/**/*",
-        "packages/select-styles/**/*"
+        "packages/select-styles/**/*",
+        "packages/table-styles/**/*"
       ]
     }
   ],
