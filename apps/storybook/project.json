@@ -14,17 +14,21 @@
       }
     },
     "build": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "outputs": [
+        "{projectRoot}/{options.output-dir}",
+        "{projectRoot}/storybook-static",
+        "{options.output-dir}",
+        "{options.outputDir}",
+        "{options.o}"
+      ],
       "options": {
-        "outputDir": "dist/storybook/ui",
-        "configDir": "apps/storybook/.storybook"
+        "config-dir": ".storybook",
+        "output-dir": "../../dist/storybook/ui"
       },
       "configurations": {
         "ci": {
-          "quiet": true,
-          "outputDir": "dist/docs/storybook",
-          "webpackStatsJson": "dist/docs/storybook"
+          "stats-json": "../../dist/docs/storybook",
+          "output-dir": "../../dist/docs/storybook"
         }
       }
     },
@@ -35,9 +39,8 @@
       }
     },
     "a11y": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.ts",
+        "config": "vitest.config.ts",
         "project": "storybook"
       },
       "configurations": {
@@ -47,9 +50,8 @@
       }
     },
     "a11y-dark-mode": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.dark.ts",
+        "config": "vitest.config.dark.ts",
         "project": "storybook:dark-mode"
       },
       "configurations": {
@@ -59,9 +61,8 @@
       }
     },
     "a11y-forced-colors": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.forced-colors.ts",
+        "config": "vitest.config.forced-colors.ts",
         "project": "storybook:forced-colors"
       },
       "configurations": {
@@ -71,9 +72,8 @@
       }
     },
     "a11y-mobile": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.mobile.ts",
+        "config": "vitest.config.mobile.ts",
         "project": "storybook:mobile"
       },
       "configurations": {
