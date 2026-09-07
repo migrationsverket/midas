@@ -6,39 +6,15 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/packages/components"
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
-        }
-      }
+      "dependsOn": ["^build"]
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
+      "dependsOn": ["^build"],
       "options": {
         "lintFilePatterns": ["packages/components/**/*.css"],
         "formatter": "unix"
-      },
-      "dependsOn": ["^build"]
-    },
-    "compile": {
-      "executor": "@nx/js:tsc",
-      "options": {
-        "main": "packages/components/src/index.ts",
-        "outputPath": "dist/tsc",
-        "tsConfig": "packages/components/tsconfig.lib.json",
-        "watch": true,
-        "generatePackageJson": false
       }
     }
   }
