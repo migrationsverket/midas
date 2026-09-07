@@ -269,7 +269,11 @@
         "devTargetName": "dev",
         "typecheckTargetName": "typecheck"
       },
-      "include": ["packages/theme/**/*", "packages/components/**/*"]
+      "include": [
+        "packages/theme/**/*",
+        "packages/components/**/*",
+        "packages/datepicker-styles/**/*"
+      ]
     }
   ],
   "analytics": false
