@@ -258,6 +258,18 @@
         "packages/select-styles/**/*",
         "packages/table-styles/**/*"
       ]
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "devTargetName": "dev",
+        "typecheckTargetName": "typecheck"
+      },
+      "include": ["packages/theme/**/*"]
     }
   ],
   "analytics": false
