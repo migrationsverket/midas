@@ -274,7 +274,8 @@
         "packages/components/**/*",
         "packages/datepicker-styles/**/*",
         "packages/select-styles/**/*",
-        "packages/table-styles/**/*"
+        "packages/table-styles/**/*",
+        "apps/playground/**/*"
       ]
     },
     {
