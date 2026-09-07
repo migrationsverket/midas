@@ -269,7 +269,7 @@
         "devTargetName": "dev",
         "typecheckTargetName": "typecheck"
       },
-      "include": ["packages/theme/**/*"]
+      "include": ["packages/theme/**/*", "packages/components/**/*"]
     }
   ],
   "analytics": false
