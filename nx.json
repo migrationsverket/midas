@@ -272,7 +272,8 @@
       "include": [
         "packages/theme/**/*",
         "packages/components/**/*",
-        "packages/datepicker-styles/**/*"
+        "packages/datepicker-styles/**/*",
+        "packages/select-styles/**/*"
       ]
     }
   ],
