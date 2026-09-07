@@ -281,8 +281,7 @@
       "plugin": "@nx/rollup/plugin",
       "options": {
         "buildTargetName": "build"
-      },
-      "include": ["tools/release-dry-run/**/*"]
+      }
     }
   ],
   "analytics": false
