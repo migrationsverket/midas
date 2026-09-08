@@ -1,3 +1,13 @@
+## 2.0.116 (2026-09-08)
+
+### 🔧 Maintenance
+
+- **table-styles:** migrate to nx inferred tasks ([b2393fd394b](https://github.com/migrationsverket/midas/commit/b2393fd394b))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.8
+
 ## 2.0.115 (2026-09-08)
 
 ### 🧱 Updated Dependencies

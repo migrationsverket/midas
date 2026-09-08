@@ -1,3 +1,17 @@
+## 17.23.8 (2026-09-08)
+
+### 🩹 Fixes
+
+- **components,list-box,select,combobox:** remove fixed heading height ([8ebed768e6a](https://github.com/migrationsverket/midas/commit/8ebed768e6a))
+
+### 📖 Documentation changes
+
+- **components,list-box:** add story with long section headers ([c6ae188d36c](https://github.com/migrationsverket/midas/commit/c6ae188d36c))
+
+### 🔧 Maintenance
+
+- **components:** migrate to nx inferred tasks ([5dd289e7821](https://github.com/migrationsverket/midas/commit/5dd289e7821))
+
 ## 17.23.7 (2026-09-08)
 
 ### 🩹 Fixes
