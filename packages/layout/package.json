@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@midas-ds/components": "17.23.8",
+    "@midas-ds/theme": "3.17.0",
     "@react-aria/collections": "^3.0.3",
     "@react-aria/ssr": "^3.9.10",
     "@react-aria/utils": "^3.33.1",

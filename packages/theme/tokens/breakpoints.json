@@ -17,6 +17,10 @@
     "xl": {
       "$value": "1280px",
       "$description": "Extra stor skärmstorlek. 1280px."
+    },
+    "layoutSplit": {
+      "$value": "640px",
+      "$description": "Brytpunkt för layout-komponenters mobil/skrivbords-växling (Sidebar, Navbar, HeaderLogo). 640px. Eget värde, inte på den generella skärmstorleksskalan."
     }
   },
   "breakpoints": {
