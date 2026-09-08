@@ -1,3 +1,9 @@
+## 17.23.7 (2026-09-08)
+
+### 🩹 Fixes
+
+- **components,label:** fix InfoPopover focus ring clipped by following field ([d6786518e5b](https://github.com/migrationsverket/midas/commit/d6786518e5b))
+
 ## 17.23.6 (2026-09-04)
 
 ### 🩹 Fixes
