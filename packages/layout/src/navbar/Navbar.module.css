@@ -6,6 +6,20 @@
     display: none;
   }
 
+  /*
+   * Only present when a consumer overrides the default breakpoint via
+   * <Layout breakpoint>. !important is needed to win over the @media rule
+   * above, whose 640px is checked against packages/theme/tokens/breakpoints.json
+   * by Navbar.breakpoint-consistency.spec.ts.
+   */
+  &[data-breakpoint-mode='mobile'] {
+    display: block !important;
+  }
+
+  &[data-breakpoint-mode='desktop'] {
+    display: none !important;
+  }
+
   ul {
     display: flex;
     justify-content: space-between;

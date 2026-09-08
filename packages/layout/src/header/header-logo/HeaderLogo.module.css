@@ -6,6 +6,20 @@
   @media (width > 640px) {
     display: none;
   }
+
+  /*
+   * Only present when a consumer overrides the default breakpoint via
+   * <Layout breakpoint>. !important is needed to win over the @media rule
+   * above, whose 640px is checked against packages/theme/tokens/breakpoints.json
+   * by HeaderLogo.breakpoint-consistency.spec.ts.
+   */
+  &[data-breakpoint-mode='mobile'] {
+    display: inline-flex !important;
+  }
+
+  &[data-breakpoint-mode='desktop'] {
+    display: none !important;
+  }
 }
 
 .desktop {
@@ -15,5 +29,13 @@
 
   @media (width <= 640px) {
     display: none;
+  }
+
+  &[data-breakpoint-mode='mobile'] {
+    display: none !important;
+  }
+
+  &[data-breakpoint-mode='desktop'] {
+    display: inline-flex !important;
   }
 }

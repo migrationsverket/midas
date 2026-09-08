@@ -3,6 +3,7 @@ import * as navigationStories from '../navigation/Navigation.stories'
 import { Navbar } from './Navbar'
 import { Navigation, NavigationItem, NavigationLink } from '../navigation'
 import { Plus } from 'lucide-react'
+import { Layout } from '../layout'
 
 type Story = StoryObj<typeof Navbar>
 
@@ -22,6 +23,22 @@ export default {
 } satisfies Meta<typeof Navbar>
 
 export const Primary: Story = {}
+
+export const OverriddenBreakpoint: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Wrapping Navbar in `<Layout breakpoint={900}>` moves the mobile/desktop split from the default 640px to 900px. Resize the viewport to see the Navbar stay visible up to 900px instead of 640px.',
+      },
+    },
+  },
+  render: args => (
+    <Layout breakpoint={900}>
+      <Navbar {...args} />
+    </Layout>
+  ),
+}
 
 export const FiveItems: Story = {
   args: {
