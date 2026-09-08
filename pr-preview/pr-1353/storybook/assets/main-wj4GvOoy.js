@@ -1,0 +1,1 @@
+import{i as e}from"./preload-helper-CT_b8DTk.js";import{mn as t,pn as n,t as r}from"./iframe-BW2g9V1x.js";var i,a,o=e((()=>{i=`_main_1cmhi_1`,a={main:i}})),s,c,l=e((()=>{t(),o(),s=r(),c=({className:e,...t})=>(0,s.jsx)(`main`,{className:n(e,a.main),...t}),c.__docgenInfo={description:``,methods:[],displayName:`Main`}})),u=e((()=>{l()}));export{c as n,l as r,u as t};
