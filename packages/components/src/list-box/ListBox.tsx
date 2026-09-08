@@ -34,9 +34,7 @@ export const ListBox = <T extends object>({
   return (
     <Virtualizer
       layout={SectionedListLayout}
-      layoutOptions={{
-        headingHeight: 38,
-      }}
+      layoutOptions={{ estimatedHeadingSize: 38 }}
     >
       {listBox}
     </Virtualizer>
