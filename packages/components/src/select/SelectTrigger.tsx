@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react'
 import styles from './Select.module.css'
 import { Size } from '../common/types'
 import { MidasSelectProps } from './Select'
-import { SelectionMode } from '.'
+import type { SelectionMode } from '../common/types'
 
 interface SelectTriggerProps<
   T extends object,

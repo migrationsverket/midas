@@ -18,8 +18,7 @@ import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
 import styles from './Select.module.css'
-
-export type SelectionMode = 'single' | 'multiple'
+import type { SelectionMode } from '../common/types'
 
 export interface MidasSelectProps<
   T extends object,

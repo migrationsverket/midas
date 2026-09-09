@@ -1,40 +1,34 @@
 import { useContext } from 'react'
-import { type Key, SelectStateContext } from 'react-aria-components'
+import { type Key, ComboBoxStateContext } from 'react-aria-components'
 import { Tag, TagGroup, TagList } from '../tag'
 import { useLocalizedStringFormatter } from '../utils/intl'
-import { MidasSelectProps } from './'
-import messages from './intl/translations.json'
 import type { SelectionMode } from '../common/types'
-import styles from './Select.module.css'
+import messages from './intl/translations.json'
 
-type SelectTagsProps<
-  T extends object,
-  M extends SelectionMode = 'single',
-> = Pick<MidasSelectProps<T, M>, 'showTags' | 'isDisabled'>
+interface ComboBoxTagsProps {
+  selectionMode?: SelectionMode
+  isDisabled?: boolean
+}
 
-export const SelectTags = <
-  T extends object,
-  M extends SelectionMode = 'single',
->({
-  showTags,
+export const ComboBoxTags = ({
+  selectionMode,
   isDisabled,
-}: SelectTagsProps<T, M>) => {
+}: ComboBoxTagsProps) => {
   const strings = useLocalizedStringFormatter(messages)
 
-  const state = useContext(SelectStateContext)
+  const state = useContext(ComboBoxStateContext)
 
   const handleRemove = (keys: Set<Key>) => {
     state?.selectionManager.toggleSelection(Array.from(keys)[0])
   }
 
-  if (!state?.selectedItems.length || !showTags) {
+  if (selectionMode !== 'multiple' || !state?.selectedItems.length) {
     return null
   }
 
   return (
     <TagGroup
       aria-label={strings.format('selectedItems')}
-      className={styles.tagGroup}
       onRemove={handleRemove}
       selectionBehavior='toggle'
     >

@@ -3,8 +3,9 @@ import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '@midas-ds/test-utils'
 import { useState } from 'react'
 import { Collection, type Key } from 'react-aria-components'
-import { Select, SelectionMode } from './Select'
+import { Select } from './Select'
 import { ListBoxHeader, ListBoxItem, ListBoxSection } from '../list-box'
+import type { SelectionMode } from '../common/types'
 
 type Story<
   T extends object = Item,
