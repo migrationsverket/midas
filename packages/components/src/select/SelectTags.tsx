@@ -4,7 +4,7 @@ import { Tag, TagGroup, TagList } from '../tag'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { MidasSelectProps } from './'
 import messages from './intl/translations.json'
-import { SelectionMode } from './'
+import type { SelectionMode } from '../common/types'
 import styles from './Select.module.css'
 
 type SelectTagsProps<

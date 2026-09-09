@@ -5,7 +5,7 @@ import type {
   ComboBoxProps as AriaComboBoxProps,
   ValidationResult,
 } from 'react-aria-components'
-import { Button, Input, ComboBox as AriaComboBox } from 'react-aria-components'
+import { Button, Group, ComboBox as AriaComboBox } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
@@ -17,11 +17,14 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ListBoxEmptyState } from '../list-box/list-box-empty-state/ListBoxEmptyState'
+import { ComboBoxTags } from './ComboBoxTags'
+import { ComboBoxInput } from './ComboBoxInput'
+import type { SelectionMode } from '../common/types'
 
-export interface ComboBoxProps<T extends object> extends Omit<
-  AriaComboBoxProps<T>,
-  'children'
-> {
+export interface ComboBoxProps<
+  T extends object,
+  M extends SelectionMode = 'single',
+> extends Omit<AriaComboBoxProps<T, M>, 'children'> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
@@ -37,7 +40,7 @@ export interface ComboBoxProps<T extends object> extends Omit<
   listBoxProps?: ListBoxProps<T>
 }
 
-export function ComboBox<T extends object>({
+export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
   label,
   description,
   errorMessage,
@@ -49,7 +52,7 @@ export function ComboBox<T extends object>({
   popover,
   listBoxProps,
   ...props
-}: ComboBoxProps<T>) {
+}: ComboBoxProps<T, M>) {
   const inputRef = useRef<HTMLInputElement>(null)
   const strings = useLocalizedStringFormatter(messages)
 
@@ -57,6 +60,17 @@ export function ComboBox<T extends object>({
     if (event.currentTarget.value) {
       inputRef.current?.select()
     }
+  }
+
+  const handleFieldPointerUp: PointerEventHandler<HTMLDivElement> = event => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('[role="grid"]') || target.closest('button')) {
+      return
+    }
+
+    inputRef.current?.focus()
+    inputRef.current?.select()
   }
 
   return (
@@ -72,15 +86,31 @@ export function ComboBox<T extends object>({
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
-      <div className={styles.wrap}>
-        <Input
-          className={clsx(styles.inputField, {
+      <Group
+        className={styles.wrap}
+        data-readonly={props.isReadOnly || undefined}
+        onPointerUp={handleFieldPointerUp}
+      >
+        <div
+          className={clsx(styles.fieldContent, {
             [styles.medium]: size === 'medium',
+            [styles.disabled]: props.isDisabled,
           })}
-          data-readonly={props.isReadOnly || undefined}
-          onPointerUp={handlePointerUp}
-          ref={inputRef}
-        />
+        >
+          <ComboBoxTags
+            selectionMode={props.selectionMode}
+            isDisabled={props.isDisabled}
+          />
+          <ComboBoxInput
+            className={clsx(styles.inputField, {
+              [styles.medium]: size === 'medium',
+              [styles.multi]: props.selectionMode !== 'single',
+            })}
+            data-readonly={props.isReadOnly || undefined}
+            onPointerUp={handlePointerUp}
+            ref={inputRef}
+          />
+        </div>
         <Button
           className={clsx(styles.button, {
             [styles.medium]: size === 'medium',
@@ -97,7 +127,7 @@ export function ComboBox<T extends object>({
             />
           </div>
         </Button>
-      </div>
+      </Group>
       {errorPosition === 'bottom' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
