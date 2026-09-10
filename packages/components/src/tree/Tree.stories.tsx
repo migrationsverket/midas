@@ -10,13 +10,19 @@
 // disabledKeys recipe these stories arrive at) is the planned next step on
 // top of this, the same relationship Select already has to ListBox in this
 // codebase: ListBox stays generic and independently usable, Select is the
-// batteries-included composite built from it. See the plan file for the
-// Tree POC (ask Jakob/Claude if you can't find it) for the full writeup —
-// this isn't the whole story on its own, just the foundation.
+// batteries-included composite built from it. Ask Jakob for the full writeup
+// on the searchable/filterable-tree next step — this isn't the whole story
+// on its own, just the foundation.
 
-import { useState, type ReactNode } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { useTreeData, type Key } from 'react-aria-components'
+import {
+  Input,
+  SearchField,
+  useTreeData,
+  type Key,
+} from 'react-aria-components'
+import { FocusScope } from 'react-aria'
 import { optionsWithSections } from '@midas-ds/test-utils'
 import { Checkbox } from '../checkbox'
 import { Badge } from '../badge'
@@ -24,6 +30,8 @@ import { Button } from '../button'
 import { Tree } from './Tree'
 import { TreeItem } from './TreeItem'
 import { collectDescendantLeaves, useTreeSelection } from './useTreeSelection'
+import { useFilteredTree } from './useFilteredTree'
+import { useTreeFocusBridge } from './useTreeFocusBridge'
 
 interface DemoNode {
   id: Key
@@ -391,4 +399,98 @@ const SelectionCountBadgeDemo = () => {
 
 export const WithSelectionCountBadge: Story = {
   render: () => <SelectionCountBadgeDemo />,
+}
+
+// ---------------------------------------------------------------------------
+// Reference example for useFilteredTree + useTreeFocusBridge — see the plan
+// linked at the top of this file for the full writeup of why this shape
+// (real focus movement, not RAC's <Autocomplete>) is necessary for Tree.
+// ---------------------------------------------------------------------------
+
+const FilterableTreeDemo = () => {
+  const [query, setQuery] = useState('')
+  const treeRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const tree = useTreeData<DemoNode>({
+    initialItems: treeItems,
+    getKey: item => item.id,
+    getChildren: item => item.children ?? [],
+  })
+
+  const { getCheckedState, toggleKey } = useTreeSelection({
+    tree,
+  })
+
+  const { visibleKeys, expandedKeys, onExpandedChange } = useFilteredTree({
+    tree,
+    filterText: query,
+    getTextValue: item => item.name,
+    defaultExpandedKeys: allBranchKeys,
+  })
+
+  const { inputKeyboardProps, treeKeyboardProps } = useTreeFocusBridge({
+    treeRef,
+    inputRef,
+  })
+
+  const renderNode = (node: DemoNode): ReactNode => {
+    if (visibleKeys && !visibleKeys.has(node.id)) return null
+    return (
+      <TreeItem
+        key={node.id}
+        id={node.id}
+        textValue={node.name}
+        content={
+          <Checkbox
+            isSelected={getCheckedState(node.id) === 'checked'}
+            isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+            onChange={() => toggleKey(node.id)}
+          >
+            {node.name}
+          </Checkbox>
+        }
+      >
+        {node.children?.map(renderNode)}
+      </TreeItem>
+    )
+  }
+
+  return (
+    <>
+      <SearchField
+        aria-label='Filter tree'
+        value={query}
+        onChange={setQuery}
+      >
+        <Input
+          {...inputKeyboardProps}
+          ref={inputRef}
+          placeholder='Filter…'
+          style={{ display: 'block', marginBottom: 8, padding: 8 }}
+        />
+      </SearchField>
+      <div {...treeKeyboardProps}>
+        <Tree
+          ref={treeRef}
+          aria-label='Filterable tree'
+          selectionMode='none'
+          expandedKeys={expandedKeys}
+          onExpandedChange={onExpandedChange}
+          onAction={key => toggleKey(key)}
+        >
+          {treeItems.map(renderNode)}
+        </Tree>
+      </div>
+    </>
+  )
+}
+
+export const FilterableTree: Story = {
+  tags: ['!autodocs', '!snapshot'],
+  render: () => (
+    <FocusScope>
+      <FilterableTreeDemo />
+    </FocusScope>
+  ),
 }
