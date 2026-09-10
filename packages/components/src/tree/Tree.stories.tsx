@@ -22,11 +22,12 @@ import {
   useTreeData,
   type Key,
 } from 'react-aria-components'
-import { FocusScope } from 'react-aria'
+import { mergeProps, useInteractOutside, useKeyboard } from 'react-aria'
 import { optionsWithSections } from '@midas-ds/test-utils'
 import { Checkbox } from '../checkbox'
 import { Badge } from '../badge'
 import { Button } from '../button'
+import { Popover } from '../popover'
 import { Tree } from './Tree'
 import { TreeItem } from './TreeItem'
 import { collectDescendantLeaves, useTreeSelection } from './useTreeSelection'
@@ -488,9 +489,166 @@ const FilterableTreeDemo = () => {
 
 export const FilterableTree: Story = {
   tags: ['!autodocs', '!snapshot'],
-  render: () => (
-    <FocusScope>
-      <FilterableTreeDemo />
-    </FocusScope>
-  ),
+  render: () => <FilterableTreeDemo />,
+}
+
+// ---------------------------------------------------------------------------
+// Same building blocks (useFilteredTree + useTreeFocusBridge), now composed
+// behind a real popover instead of inline — the piece the plan gist left
+// open. Two things only show up once the tree is *actually* portalled out of
+// the input's own DOM subtree, which is what a non-modal Popover does:
+//
+// 1. `useTreeFocusBridge` still works unmodified. It moves focus with a
+//    plain `treeRef.current?.focus()` (Tree's root carries `tabindex="0"`
+//    until a row is focused, and handing it real DOM focus natively lands on
+//    the first *focusable* row — RAC's own roving-tabindex bookkeeping,
+//    confirmed to correctly skip a disabled first row). That's a plain DOM
+//    ref, not scoped to a `FocusScope`, so it doesn't care that the tree
+//    lives in a portal the input isn't inside.
+// 2. Popover's `isNonModal` (required here — a modal popover steals focus on
+//    open, which would cut off typing after the first keystroke) also turns
+//    off RAC's built-in outside-click dismissal as a side effect
+//    (`usePopover` wires `isDismissable: !isNonModal` into `useOverlay`).
+//    Restored with `useInteractOutside` — the same hook `useOverlay` itself
+//    uses internally for this, so it's still genuinely RAC-native, just
+//    called directly instead of picked up for free.
+// ---------------------------------------------------------------------------
+
+const PopoverFilterableTreeDemo = () => {
+  const [query, setQuery] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
+  const treeRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const popoverRef = useRef<HTMLElement>(null)
+
+  const tree = useTreeData<DemoNode>({
+    initialItems: treeItems,
+    getKey: item => item.id,
+    getChildren: item => item.children ?? [],
+  })
+
+  const { getCheckedState, toggleKey } = useTreeSelection({
+    tree,
+  })
+
+  const { visibleKeys, expandedKeys, onExpandedChange } = useFilteredTree({
+    tree,
+    filterText: query,
+    getTextValue: item => item.name,
+    defaultExpandedKeys: allBranchKeys,
+  })
+
+  const { inputKeyboardProps, treeKeyboardProps } = useTreeFocusBridge({
+    treeRef,
+    inputRef,
+  })
+
+  // useTreeFocusBridge's ArrowDown always calls treeRef.current?.focus() —
+  // fine once the popover is open, a no-op (nothing to focus) while it's
+  // closed. So opening on ArrowDown/ArrowUp when closed is this demo's own
+  // concern, composed alongside the bridge's props rather than inside it.
+  const { keyboardProps: openOnArrowKeyboardProps } = useKeyboard({
+    shortcuts: {
+      ArrowDown: () => {
+        if (!isOpen) setIsOpen(true)
+      },
+      ArrowUp: () => {
+        if (!isOpen) setIsOpen(true)
+      },
+    },
+  })
+
+  // The bridge's own Escape only refocuses the input (its job stops at
+  // focus, not open state) — closing the popover is composed in here.
+  const { keyboardProps: closeOnEscapeKeyboardProps } = useKeyboard({
+    shortcuts: {
+      Escape: () => setIsOpen(false),
+    },
+  })
+
+  useInteractOutside({
+    ref: popoverRef,
+    isDisabled: !isOpen,
+    onInteractOutside: () => setIsOpen(false),
+  })
+
+  const renderNode = (node: DemoNode): ReactNode => {
+    if (visibleKeys && !visibleKeys.has(node.id)) return null
+    return (
+      <TreeItem
+        key={node.id}
+        id={node.id}
+        textValue={node.name}
+        content={
+          <Checkbox
+            isSelected={getCheckedState(node.id) === 'checked'}
+            isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+            onChange={() => toggleKey(node.id)}
+          >
+            {node.name}
+          </Checkbox>
+        }
+      >
+        {node.children?.map(renderNode)}
+      </TreeItem>
+    )
+  }
+
+  return (
+    <>
+      <SearchField
+        aria-label='Filter tree'
+        value={query}
+        onChange={value => {
+          setQuery(value)
+          if (value) setIsOpen(true)
+        }}
+      >
+        <Input
+          {...mergeProps(
+            inputKeyboardProps,
+            openOnArrowKeyboardProps,
+            closeOnEscapeKeyboardProps,
+          )}
+          ref={inputRef}
+          placeholder='Filter…'
+          style={{ display: 'block', padding: 8 }}
+        />
+      </SearchField>
+      <Button
+        ref={triggerRef}
+        onPress={() => setIsOpen(open => !open)}
+        style={{ marginTop: 8 }}
+      >
+        Toggle
+      </Button>
+      <Popover
+        isNonModal
+        isOpen={isOpen}
+        onOpenChange={setIsOpen}
+        triggerRef={triggerRef}
+        ref={popoverRef}
+        hideArrow
+      >
+        <div {...treeKeyboardProps}>
+          <Tree
+            ref={treeRef}
+            aria-label='Filterable tree'
+            selectionMode='none'
+            expandedKeys={expandedKeys}
+            onExpandedChange={onExpandedChange}
+            onAction={key => toggleKey(key)}
+          >
+            {treeItems.map(renderNode)}
+          </Tree>
+        </div>
+      </Popover>
+    </>
+  )
+}
+
+export const PopoverFilterableTree: Story = {
+  tags: ['!autodocs', '!snapshot'],
+  render: () => <PopoverFilterableTreeDemo />,
 }

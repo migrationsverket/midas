@@ -1,5 +1,5 @@
 import type { RefObject } from 'react'
-import { useFocusManager, useKeyboard } from 'react-aria'
+import { useKeyboard } from 'react-aria'
 
 export interface UseTreeFocusBridgeOptions {
   /** Ref to the tree's root element (e.g. `<Tree ref={treeRef}>`). */
@@ -25,33 +25,33 @@ export interface UseTreeFocusBridgeResult {
  * every other keyboard behavior — arrows, Home/End, typeahead, Left/Right
  * expand/collapse — is `Tree`'s own existing, unmodified native handling.
  *
- * Built from `useKeyboard`/`useFocusManager` rather than a raw
- * `onKeyDown`/`querySelector` — the same primitives `useSelectableCollection`
- * itself uses internally for collection keyboard handling.
+ * Entering the tree is just `treeRef.current?.focus()` — Tree's root carries
+ * `tabindex="0"` until a row has been focused (confirmed empirically: RAC
+ * hands real DOM focus straight to the first *focusable* row, correctly
+ * skipping a disabled one, via its own roving-tabindex bookkeeping, the same
+ * thing that already powers Tab-into-Tree). No `focusManager`/`FocusScope`
+ * needed for this — which also means it isn't limited to one shared
+ * `FocusScope`: `treeRef` is a plain DOM ref, so this still works when
+ * `Tree` is mounted inside a portalled overlay (e.g. a non-modal `Popover`)
+ * that the input sits outside of.
  *
- * Requires a `<FocusScope>` ancestor (for `useFocusManager`). Doesn't touch
- * filtering, open/close state, or popover chrome — compose with
- * `useFilteredTree` and your own trigger/popover as needed.
+ * Built from `useKeyboard` rather than a raw `onKeyDown` chain — the same
+ * primitive `useSelectableCollection` itself uses internally for collection
+ * keyboard handling.
+ *
+ * Doesn't touch filtering or popover chrome (open/close state, outside-click
+ * dismissal) — compose with `useFilteredTree` and your own trigger/popover
+ * as needed.
  */
 export const useTreeFocusBridge = ({
   treeRef,
   inputRef,
 }: UseTreeFocusBridgeOptions): UseTreeFocusBridgeResult => {
-  const focusManager = useFocusManager()
-
   const { keyboardProps: inputKeyboardProps } = useKeyboard({
     shortcuts: {
       ArrowDown: e => {
         e.preventDefault()
-        // focusFirst() ignores `from` entirely (only focusNext/focusPrevious
-        // accept it) and always jumps to the absolute first focusable element
-        // in the whole FocusScope — the search input itself, since it comes
-        // first in DOM order. focusNext({ from: treeRef.current }) walks
-        // forward *from* the tree's own root instead, landing on its first row.
-        focusManager?.focusNext({
-          from: treeRef.current ?? undefined,
-          tabbable: false,
-        })
+        treeRef.current?.focus()
       },
     },
   })
