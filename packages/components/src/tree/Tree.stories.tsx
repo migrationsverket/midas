@@ -14,7 +14,12 @@
 // on the searchable/filterable-tree next step — this isn't the whole story
 // on its own, just the foundation.
 
-import { useRef, useState, type ReactNode } from 'react'
+import {
+  useRef,
+  useState,
+  type FocusEventHandler,
+  type ReactNode,
+} from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   Input,
@@ -23,14 +28,19 @@ import {
   type Key,
 } from 'react-aria-components'
 import { mergeProps, useInteractOutside, useKeyboard } from 'react-aria'
+import { ChevronDown } from 'lucide-react'
 import { optionsWithSections } from '@midas-ds/test-utils'
 import { Checkbox } from '../checkbox'
 import { Badge } from '../badge'
 import { Button } from '../button'
 import { Popover } from '../popover'
+import { Label } from '../label'
+import { Text } from '../text'
+import { Tag, TagGroup, TagList } from '../tag'
 import { Tree } from './Tree'
 import { TreeItem } from './TreeItem'
 import { collectDescendantLeaves, useTreeSelection } from './useTreeSelection'
+import popoverFieldStyles from './PopoverFilterableTree.stories.module.css'
 import { useFilteredTree } from './useFilteredTree'
 import { useTreeFocusBridge } from './useTreeFocusBridge'
 
@@ -521,6 +531,13 @@ const PopoverFilterableTreeDemo = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
   const popoverRef = useRef<HTMLElement>(null)
+  // Popover positions/sizes itself relative to whatever `triggerRef` points
+  // at. The chevron button alone is narrow and sits at the field's right
+  // edge, so anchoring to it directly put the popover off to the right
+  // instead of under the whole field — this ref (the field's full-width
+  // wrap) is for *positioning* only; `triggerRef` (the button) still owns
+  // focus-restoration on Tab.
+  const fieldWrapRef = useRef<HTMLDivElement>(null)
 
   const tree = useTreeData<DemoNode>({
     initialItems: treeItems,
@@ -528,7 +545,7 @@ const PopoverFilterableTreeDemo = () => {
     getChildren: item => item.children ?? [],
   })
 
-  const { getCheckedState, toggleKey } = useTreeSelection({
+  const { checkedKeys, getCheckedState, toggleKey } = useTreeSelection({
     tree,
   })
 
@@ -538,6 +555,17 @@ const PopoverFilterableTreeDemo = () => {
     getTextValue: item => item.name,
     defaultExpandedKeys: allBranchKeys,
   })
+
+  // Closed-field summary — mirrors SelectTags.tsx's "selected items as
+  // dismissable tags" recipe, driven by our own checkedKeys instead of
+  // SelectStateContext. Leaves only (not branches): a branch's badge already
+  // shows its own aggregate, a tag per branch would double up on it.
+  const checkedLeafItems = Array.from(checkedKeys)
+    .map(key => ({ key, node: tree.getItem(key)?.value }))
+    .filter(
+      (item): item is { key: Key; node: DemoNode } =>
+        item.node != null && !item.node.children,
+    )
 
   const { inputKeyboardProps, treeKeyboardProps } = useTreeFocusBridge({
     treeRef,
@@ -573,21 +601,72 @@ const PopoverFilterableTreeDemo = () => {
     onInteractOutside: () => setIsOpen(false),
   })
 
+  // Tab while focus is inside the (portalled) tree: without this, Tab falls
+  // through to the *portal's* raw DOM position, not the field's logical
+  // position on the page — real focus, not virtual focus, is what's inside
+  // Tree (the reason this whole bridge exists). `usePopover` does close the
+  // popover for free on any outside blur (`shouldCloseOnBlur: true`, even
+  // when `isNonModal`), but that alone doesn't relocate focus anywhere
+  // useful — confirmed empirically: removing this and relying solely on
+  // react-aria's own Tab handling regressed the "lands on the next real
+  // element" behavior below.
+  const { keyboardProps: tabToExitKeyboardProps } = useKeyboard({
+    shortcuts: {
+      Tab: () => {
+        setIsOpen(false)
+        triggerRef.current?.focus()
+        return false
+      },
+    },
+  })
+
+  // Shift+Tab specifically can't be handled the same way: react-aria's own
+  // FocusScope installs a *document-level, capture-phase* native listener
+  // for Tab (`useRestoreFocus`, for its own "restore focus on tab-out of a
+  // portalled overlay" feature) — confirmed via instrumentation that for
+  // Shift+Tab specifically it calls stopPropagation before the keydown ever
+  // reaches any handler of ours (React or native), on this exact focused
+  // row, landing focus on document.body instead of anywhere useful. Rather
+  // than fight a document-level listener from inside a child component,
+  // this reacts to the *result* instead: if focus ends up lost (no
+  // relatedTarget, or the popover's own onBlurWithin already decided to
+  // close and focus fell to body), recover by returning it to the input.
+  const handleTreeBlur: FocusEventHandler<HTMLDivElement> = e => {
+    const next = e.relatedTarget
+    if (!next || next === document.body) {
+      setIsOpen(false)
+      inputRef.current?.focus()
+    }
+  }
+
   const renderNode = (node: DemoNode): ReactNode => {
     if (visibleKeys && !visibleKeys.has(node.id)) return null
+    const leaves = node.children ? collectDescendantLeaves(tree, node.id) : []
+    const checkedCount = leaves.filter(key => checkedKeys.has(key)).length
     return (
       <TreeItem
         key={node.id}
         id={node.id}
-        textValue={node.name}
+        textValue={
+          node.children
+            ? `${node.name}, ${checkedCount} av ${leaves.length} valda`
+            : node.name
+        }
         content={
-          <Checkbox
-            isSelected={getCheckedState(node.id) === 'checked'}
-            isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
-            onChange={() => toggleKey(node.id)}
-          >
-            {node.name}
-          </Checkbox>
+          <>
+            <Checkbox
+              isSelected={getCheckedState(node.id) === 'checked'}
+              isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+              onChange={() => toggleKey(node.id)}
+            >
+              {node.name}
+            </Checkbox>
+            {node.children && checkedCount > 0 && (
+              <Badge>
+                {checkedCount}/{leaves.length}
+              </Badge>
+            )}
+          </>
         }
       >
         {node.children?.map(renderNode)}
@@ -596,7 +675,9 @@ const PopoverFilterableTreeDemo = () => {
   }
 
   return (
-    <>
+    <div className={popoverFieldStyles.field}>
+      <Label>Enheter, ort, byggnader eller sektion</Label>
+      <Text slot='description'>Sök eller bläddra i trädet</Text>
       <SearchField
         aria-label='Filter tree'
         value={query}
@@ -605,33 +686,48 @@ const PopoverFilterableTreeDemo = () => {
           if (value) setIsOpen(true)
         }}
       >
-        <Input
-          {...mergeProps(
-            inputKeyboardProps,
-            openOnArrowKeyboardProps,
-            closeOnEscapeKeyboardProps,
-          )}
-          ref={inputRef}
-          placeholder='Filter…'
-          style={{ display: 'block', padding: 8 }}
-        />
+        <div
+          ref={fieldWrapRef}
+          className={popoverFieldStyles.wrap}
+        >
+          <Input
+            {...mergeProps(
+              inputKeyboardProps,
+              openOnArrowKeyboardProps,
+              closeOnEscapeKeyboardProps,
+            )}
+            ref={inputRef}
+            placeholder='Lägg till enheter'
+            className={popoverFieldStyles.inputField}
+          />
+          <button
+            ref={triggerRef}
+            type='button'
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Dölj träd' : 'Visa träd'}
+            className={popoverFieldStyles.button}
+            onClick={() => setIsOpen(open => !open)}
+          >
+            <ChevronDown
+              size={20}
+              aria-hidden
+            />
+          </button>
+        </div>
       </SearchField>
-      <Button
-        ref={triggerRef}
-        onPress={() => setIsOpen(open => !open)}
-        style={{ marginTop: 8 }}
-      >
-        Toggle
-      </Button>
       <Popover
         isNonModal
         isOpen={isOpen}
         onOpenChange={setIsOpen}
-        triggerRef={triggerRef}
+        triggerRef={fieldWrapRef}
         ref={popoverRef}
         hideArrow
+        className={popoverFieldStyles.popoverContent}
       >
-        <div {...treeKeyboardProps}>
+        <div
+          {...mergeProps(treeKeyboardProps, tabToExitKeyboardProps)}
+          onBlur={handleTreeBlur}
+        >
           <Tree
             ref={treeRef}
             aria-label='Filterable tree'
@@ -644,11 +740,261 @@ const PopoverFilterableTreeDemo = () => {
           </Tree>
         </div>
       </Popover>
-    </>
+      {/* Always rendered, matching SelectTags.tsx's own convention (tags
+          reflect selection regardless of open state) — while open, the
+          floating popover naturally covers this same area anyway, the same
+          way any dropdown covers what's beneath it. Gating on `isOpen`
+          instead would mount/unmount tags on every toggle: a visible flicker,
+          and content appearing/disappearing isn't clean for screen readers
+          either. */}
+      {checkedLeafItems.length > 0 && (
+        <TagGroup
+          aria-label='Valda enheter'
+          className={popoverFieldStyles.tagGroup}
+          onRemove={keys => toggleKey(Array.from(keys)[0])}
+          selectionBehavior='toggle'
+        >
+          <TagList items={checkedLeafItems}>
+            {item => (
+              <Tag
+                isDismissable
+                id={item.key}
+                textValue={item.node.name}
+              >
+                {item.node.name}
+              </Tag>
+            )}
+          </TagList>
+        </TagGroup>
+      )}
+    </div>
   )
 }
 
 export const PopoverFilterableTree: Story = {
   tags: ['!autodocs', '!snapshot'],
-  render: () => <PopoverFilterableTreeDemo />,
+  render: () => (
+    <>
+      <PopoverFilterableTreeDemo />
+      {/* Sentinel to prove Tab exits to the field's real page position, not
+          the portal's raw DOM position — see the Tab/Shift+Tab handling in
+          PopoverFilterableTreeDemo. */}
+      <button type='button'>Next field</button>
+    </>
+  ),
+}
+
+// ---------------------------------------------------------------------------
+// Same building blocks yet again, this time folded into a plain CSS-
+// positioned panel instead of a Popover — no portal. Short version:
+// `position: absolute` on the panel + `position: relative` on its wrap gets
+// the same "floats over the page" look as PopoverFilterableTree, but Tab
+// order, focus order, and the accessibility tree all follow *DOM* position,
+// which this never changes — only visual position moves. That's why none of
+// PopoverFilterableTreeDemo's Tab/Shift+Tab handling, blur-recovery, or
+// useCloseOnScroll workaround show up below: there's no portal boundary for
+// any of that machinery to react to in the first place. Ask Jakob for the
+// full comparison writeup.
+// ---------------------------------------------------------------------------
+
+const DropdownFilterableTreeDemo = () => {
+  const [query, setQuery] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
+  const treeRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const controlRef = useRef<HTMLDivElement>(null)
+
+  const tree = useTreeData<DemoNode>({
+    initialItems: treeItems,
+    getKey: item => item.id,
+    getChildren: item => item.children ?? [],
+  })
+
+  const { checkedKeys, getCheckedState, toggleKey } = useTreeSelection({
+    tree,
+  })
+
+  const { visibleKeys, expandedKeys, onExpandedChange } = useFilteredTree({
+    tree,
+    filterText: query,
+    getTextValue: item => item.name,
+    defaultExpandedKeys: allBranchKeys,
+  })
+
+  const checkedLeafItems = Array.from(checkedKeys)
+    .map(key => ({ key, node: tree.getItem(key)?.value }))
+    .filter(
+      (item): item is { key: Key; node: DemoNode } =>
+        item.node != null && !item.node.children,
+    )
+
+  const { inputKeyboardProps, treeKeyboardProps } = useTreeFocusBridge({
+    treeRef,
+    inputRef,
+  })
+
+  const { keyboardProps: openOnArrowKeyboardProps } = useKeyboard({
+    shortcuts: {
+      ArrowDown: () => {
+        if (!isOpen) setIsOpen(true)
+      },
+      ArrowUp: () => {
+        if (!isOpen) setIsOpen(true)
+      },
+    },
+  })
+
+  const { keyboardProps: closeOnEscapeKeyboardProps } = useKeyboard({
+    shortcuts: {
+      Escape: () => setIsOpen(false),
+    },
+  })
+
+  useInteractOutside({
+    ref: controlRef,
+    isDisabled: !isOpen,
+    onInteractOutside: () => setIsOpen(false),
+  })
+
+  // No portal means Tab/Shift+Tab need none of PopoverFilterableTreeDemo's
+  // handling — real DOM order already carries focus out to whatever's next
+  // on the page. This just closes the panel once focus actually leaves the
+  // whole control, so it doesn't sit visually open with focus elsewhere.
+  const handleControlBlur: FocusEventHandler<HTMLDivElement> = e => {
+    if (!controlRef.current?.contains(e.relatedTarget)) {
+      setIsOpen(false)
+    }
+  }
+
+  const renderNode = (node: DemoNode): ReactNode => {
+    if (visibleKeys && !visibleKeys.has(node.id)) return null
+    const leaves = node.children ? collectDescendantLeaves(tree, node.id) : []
+    const checkedCount = leaves.filter(key => checkedKeys.has(key)).length
+    return (
+      <TreeItem
+        key={node.id}
+        id={node.id}
+        textValue={
+          node.children
+            ? `${node.name}, ${checkedCount} av ${leaves.length} valda`
+            : node.name
+        }
+        content={
+          <>
+            <Checkbox
+              isSelected={getCheckedState(node.id) === 'checked'}
+              isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+              onChange={() => toggleKey(node.id)}
+            >
+              {node.name}
+            </Checkbox>
+            {node.children && checkedCount > 0 && (
+              <Badge>
+                {checkedCount}/{leaves.length}
+              </Badge>
+            )}
+          </>
+        }
+      >
+        {node.children?.map(renderNode)}
+      </TreeItem>
+    )
+  }
+
+  return (
+    <div className={popoverFieldStyles.field}>
+      <Label>Enheter, ort, byggnader eller sektion</Label>
+      <Text slot='description'>Sök eller bläddra i trädet</Text>
+      <SearchField
+        aria-label='Filter tree'
+        value={query}
+        onChange={value => {
+          setQuery(value)
+          if (value) setIsOpen(true)
+        }}
+      >
+        <div
+          ref={controlRef}
+          className={popoverFieldStyles.wrap}
+          onBlur={handleControlBlur}
+        >
+          <Input
+            {...mergeProps(
+              inputKeyboardProps,
+              openOnArrowKeyboardProps,
+              closeOnEscapeKeyboardProps,
+            )}
+            ref={inputRef}
+            placeholder='Lägg till enheter'
+            className={popoverFieldStyles.inputField}
+          />
+          <button
+            ref={triggerRef}
+            type='button'
+            aria-expanded={isOpen}
+            aria-label={isOpen ? 'Dölj träd' : 'Visa träd'}
+            className={popoverFieldStyles.button}
+            onClick={() => setIsOpen(open => !open)}
+          >
+            <ChevronDown
+              size={20}
+              aria-hidden
+            />
+          </button>
+          {isOpen && (
+            <div className={popoverFieldStyles.panel}>
+              <div {...mergeProps(treeKeyboardProps, closeOnEscapeKeyboardProps)}>
+                <Tree
+                  ref={treeRef}
+                  aria-label='Filterable tree'
+                  selectionMode='none'
+                  expandedKeys={expandedKeys}
+                  onExpandedChange={onExpandedChange}
+                  onAction={key => toggleKey(key)}
+                >
+                  {treeItems.map(renderNode)}
+                </Tree>
+              </div>
+            </div>
+          )}
+        </div>
+      </SearchField>
+      {/* Always rendered — see the matching comment in
+          PopoverFilterableTreeDemo. The floating panel covers this same area
+          while open anyway, same as any dropdown covers what's beneath it. */}
+      {checkedLeafItems.length > 0 && (
+        <TagGroup
+          aria-label='Valda enheter'
+          className={popoverFieldStyles.tagGroup}
+          onRemove={keys => toggleKey(Array.from(keys)[0])}
+          selectionBehavior='toggle'
+        >
+          <TagList items={checkedLeafItems}>
+            {item => (
+              <Tag
+                isDismissable
+                id={item.key}
+                textValue={item.node.name}
+              >
+                {item.node.name}
+              </Tag>
+            )}
+          </TagList>
+        </TagGroup>
+      )}
+    </div>
+  )
+}
+
+export const DropdownFilterableTree: Story = {
+  tags: ['!autodocs', '!snapshot'],
+  render: () => (
+    <>
+      <DropdownFilterableTreeDemo />
+      {/* Same sentinel as PopoverFilterableTree, to prove Tab lands here
+          natively — no custom Tab handling needed without a portal. */}
+      <button type='button'>Next field</button>
+    </>
+  ),
 }

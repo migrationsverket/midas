@@ -27,8 +27,13 @@
 
   /* RAC sets --tree-item-level inline per row (1 = top level), uncapped —
    * scales to any tree depth, not just the levels a given consumer happens
-   * to use. */
-  padding-inline: calc(var(--tree-item-level, 1) * var(--midas-space-150))
+   * to use. Base inset matches the right side at level 1 (no nesting yet);
+   * each level *beyond* that adds one full step, instead of level 1 already
+   * starting a full step in. */
+  padding-inline: calc(
+      var(--midas-space-medium) + (var(--tree-item-level, 1) - 1) *
+        var(--midas-space-150)
+    )
     var(--midas-space-medium);
 }
 

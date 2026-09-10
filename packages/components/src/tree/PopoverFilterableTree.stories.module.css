@@ -1,0 +1,114 @@
+/*
+ * Story-only styling — approximates the "midas input" look (same recipe as
+ * combobox/ComboBox.module.css) for this spike's trigger field. Not a
+ * shipped component yet; a real convenience component would own this CSS
+ * for real, not import a sibling's private module.
+ */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-small);
+  max-width: 328px;
+}
+
+.wrap {
+  position: relative;
+}
+
+.inputField {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: var(--midas-space-medium);
+  padding-right: calc(var(--midas-size-icon) + 2 * var(--midas-space-70));
+  border: none;
+  border-bottom: 1px solid var(--midas-border-color-primary);
+  border-radius: 0;
+  font-size: var(--midas-typography-font-size-30);
+  color: var(--midas-text-primary);
+  height: var(--midas-size-control);
+  background-color: var(--midas-field-base, var(--midas-field-01-base));
+
+  &[data-hovered] {
+    background-color: var(--midas-field-hover, var(--midas-field-01-hover));
+  }
+
+  &::placeholder {
+    color: var(--midas-text-placeholder);
+  }
+
+  &:focus-visible,
+  &[data-focus-visible] {
+    outline: none;
+  }
+
+  &[data-focused],
+  &[data-focus-visible] {
+    box-shadow: var(--midas-state-focus);
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: var(--midas-space-70);
+  color: var(--midas-icon-primary);
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--midas-size-control);
+  transition: transform var(--midas-transition-duration-normal)
+    var(--midas-transition-timing-ease-in-out);
+
+  &[aria-expanded='true'] {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.tagGroup {
+  margin-top: var(--midas-space-small);
+  max-width: 328px;
+}
+
+/*
+ * Bounds the tree's own height so a large hierarchy scrolls *inside* the
+ * popover, not the page. Without this, focusing an off-screen row scrolls
+ * the whole document into view — which react-aria's own useCloseOnScroll
+ * (correctly, by its own logic) reads as "the trigger scrolled away" and
+ * closes the popover out from under you. A real component would want this
+ * regardless of that: an unbounded popover for a big tree is bad UX anyway.
+ */
+.popoverContent {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/*
+ * DropdownFilterableTree's panel — a normal DOM child of `.wrap` (not a
+ * portal), positioned with plain CSS instead of react-aria's overlay
+ * machinery. Floats over subsequent page content the same way a Popover
+ * does, but Tab order, focus order, and the accessibility tree all follow
+ * *DOM* position, which this doesn't change — only visual position moves.
+ * That's what makes the whole Tab/Shift+Tab/useCloseOnScroll/
+ * shouldCloseOnBlur saga in PopoverFilterableTreeDemo not apply here.
+ */
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--midas-space-10);
+  z-index: 100;
+  box-sizing: border-box;
+  background-color: var(--midas-layer-01-base);
+  border: 1px solid var(--midas-border-color-primary);
+  box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+  max-height: 320px;
+  overflow-y: auto;
+}
