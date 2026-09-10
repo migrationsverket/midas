@@ -1,0 +1,221 @@
+.treeComboBox {
+  font-family: var(--midas-typography-font-family);
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid var(--midas-border-color-primary);
+  border-radius: 0;
+  background-color: var(--midas-field-base, var(--midas-field-01-base));
+
+  @media (forced-colors: active) {
+    border: 1px solid;
+  }
+
+  &[data-hovered] {
+    background-color: var(--midas-field-hover, var(--midas-field-01-hover));
+  }
+
+  &[data-focus-within] {
+    box-shadow: var(--midas-state-focus);
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
+  }
+
+  &[data-invalid] {
+    border: 0.125rem solid var(--midas-support-border-warning);
+  }
+
+  &[data-disabled] {
+    color: var(--midas-text-disabled);
+    background: var(--midas-field-disabled, var(--midas-field-01-disabled));
+    box-shadow: none;
+    border-bottom: 1px solid var(--midas-border-color-disabled);
+    cursor: not-allowed;
+  }
+
+  &[data-readonly] {
+    background-color: transparent;
+    border-color: var(--midas-border-color-subtle);
+
+    &[data-focus-within] {
+      box-shadow: none;
+    }
+  }
+}
+
+.inputField {
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: var(--midas-space-medium);
+  padding-right: calc(var(--midas-size-icon) + 2 * var(--midas-space-70));
+  border: none;
+  border-radius: 0;
+  font-size: var(--midas-typography-font-size-30);
+  color: var(--midas-text-primary);
+  height: var(--midas-size-control);
+  background-color: transparent;
+
+  &.medium {
+    height: var(--midas-size-control-md);
+  }
+
+  &::placeholder {
+    color: var(--midas-text-placeholder);
+  }
+
+  &:focus-visible,
+  &[data-focus-visible] {
+    outline: none;
+  }
+
+  &[data-disabled] {
+    color: var(--midas-text-disabled);
+    cursor: not-allowed;
+  }
+
+  /* Hides the "N selected" pill the instant the input has typed text or is
+   * focused, so it never fights with the filter query underneath it. */
+  &[data-focused] ~ .summaryPill,
+  &:not(:placeholder-shown) ~ .summaryPill {
+    display: none;
+  }
+}
+
+.summaryPill {
+  pointer-events: none;
+  position: absolute;
+  left: var(--midas-space-medium);
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: calc(100% - var(--midas-space-150));
+  display: flex;
+  align-items: center;
+  background-color: var(--midas-button-background-primary-base);
+  border-radius: 1.25rem;
+  color: var(--midas-text-on-color);
+  font-family: var(--midas-typography-font-family);
+  font-size: 0.875rem;
+  justify-content: center;
+  min-height: 1.75rem;
+  padding: 0 0.5rem;
+
+  &:has(.clearButton) {
+    padding-right: 0;
+  }
+
+  &[data-disabled] {
+    background-color: var(
+      --midas-field-disabled,
+      var(--midas-field-01-disabled)
+    );
+    border: 1px solid var(--midas-border-color-disabled);
+    color: var(--midas-text-disabled);
+  }
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clearButton {
+  pointer-events: auto;
+  background-color: var(--midas-button-background-primary-base);
+  border: none;
+  border-radius: 100%;
+  color: var(--midas-text-on-color);
+  display: flex;
+  margin-left: var(--midas-space-10);
+  padding: var(--midas-space-30);
+
+  &[data-hovered] {
+    background-color: var(--midas-button-background-primary-hover);
+    cursor: pointer;
+  }
+
+  &[data-disabled] {
+    background-color: var(--midas-button-background-disabled);
+    color: var(--midas-text-disabled);
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    box-shadow: var(--midas-state-focus);
+    outline: none;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  padding: var(--midas-space-70);
+  color: var(--midas-icon-primary);
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--midas-size-control);
+  transition: transform var(--midas-transition-duration-normal)
+    var(--midas-transition-timing-ease-in-out);
+
+  &.medium {
+    height: var(--midas-size-control-md);
+    padding: var(--midas-space-50) var(--midas-space-70);
+  }
+
+  &[aria-expanded='true'] {
+    transform: rotate(180deg);
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    color: var(--midas-icon-disabled);
+  }
+
+  &[data-hovered] {
+    cursor: pointer;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.popover {
+  composes: dropdownAnimation from '../common/overlay.module.css';
+  font-family: var(--midas-typography-font-family);
+
+  /* RAC passes this variable via the style prop, making it available during runtime only */
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  width: var(--trigger-width);
+  max-height: 20rem;
+  overflow-y: auto;
+  background: var(--midas-layer-01-base);
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%);
+  padding: var(--midas-space-small) 0;
+
+  @media (forced-colors: active) {
+    border: 1px solid var(--midas-border-color-primary);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .button {
+    transition: none;
+  }
+}

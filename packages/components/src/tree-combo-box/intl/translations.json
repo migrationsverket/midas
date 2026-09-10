@@ -1,0 +1,14 @@
+{
+  "en": {
+    "showList": "Show list",
+    "noResultsFound": "No results found",
+    "selected": "selected",
+    "clearAll": "Clear all"
+  },
+  "sv": {
+    "showList": "Visa lista",
+    "noResultsFound": "Inga träffar",
+    "selected": "valda",
+    "clearAll": "Rensa alla"
+  }
+}
