@@ -1,1 +1,1 @@
-export { type SelectionMode, Select, type MidasSelectProps } from './Select'
+export { Select, type MidasSelectProps } from './Select'

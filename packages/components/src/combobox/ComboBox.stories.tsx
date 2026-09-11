@@ -5,6 +5,7 @@ import React from 'react'
 import { useAsyncList } from 'react-stately'
 import { Collection } from 'react-aria-components'
 import { ComboBox } from './ComboBox'
+import type { SelectionMode } from '../common/types'
 import {
   ListBoxHeader,
   ListBoxItem,
@@ -16,59 +17,33 @@ type Item = (typeof options)[0]
 
 type Section = (typeof optionsWithSections)[0]
 
-type Story<T extends object = Item> = StoryObj<typeof ComboBox<T>>
+type Story<
+  T extends object = Item,
+  M extends SelectionMode = 'single',
+> = StoryObj<typeof ComboBox<T, M>>
 
 export default {
   component: ComboBox,
   title: 'Components/ComboBox',
   tags: ['autodocs'],
   args: {
-    label: 'Etikett',
-    placeholder: 'Placeholder',
-    description: 'Beskrivning',
+    children: item => <ListBoxItem>{item.name}</ListBoxItem>,
+    className: 'test',
+    description: 'Description ',
     errorMessage: 'Fel!',
     errorPosition: 'top',
+    items: options,
+    label: 'Välj en frukt ',
+    placeholder: 'Välj eller sök frukt',
     size: 'large',
   },
-  argTypes: {
-    placeholder: { control: 'text' },
-  },
-  render: args => (
-    <ComboBox {...args}>
-      <ListBoxItem id='apple'>Apple</ListBoxItem>
-      <ListBoxItem id='lemon'>Lemon</ListBoxItem>
-    </ComboBox>
-  ),
 } satisfies Meta<typeof ComboBox<Item>>
 
-export const Primary: Story = {
-  args: {
-    placeholder: 'Välj eller sök frukt',
-    label: 'Välj en frukt',
-    description: 'Description',
-    className: 'test',
-  },
-  render: args => (
-    <ComboBox
-      data-testid='test'
-      items={options}
-      {...args}
-    >
-      {item => <ListBoxItem>{item.name}</ListBoxItem>}
-    </ComboBox>
-  ),
-}
+export const Primary: Story = {}
 
 export const Invalid: Story = {
   args: {
     isInvalid: true,
-  },
-}
-
-export const DS1253: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
   },
 }
 
@@ -107,50 +82,63 @@ export const Disabled: Story = {
 export const ReadOnly: Story = {
   args: {
     isReadOnly: true,
-    defaultSelectedKey: 'lemon',
+    defaultSelectedKey: options[0].id,
   },
-}
-
-export const Required: Story = {
-  args: {
-    'aria-label': 'test',
-    isRequired: true,
-  },
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  render: args => (
-    <form>
-      <ComboBox {...args}>
-        <ListBoxItem>Hej</ListBoxItem>
-      </ComboBox>
-      <button type='submit'>Submit</button>
-    </form>
-  ),
 }
 
 // The generic type is infered from the items prop in real life
 export const Sectioned: Story<Section> = {
   args: {
-    placeholder: 'Välj eller sök frukt',
-    label: 'Välj en frukt',
-    description: 'Description',
     className: 'test',
     items: optionsWithSections,
+    children: section => (
+      <ListBoxSection id={section.name}>
+        <ListBoxHeader>{section.name}</ListBoxHeader>
+        <Collection items={section.children}>
+          {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+        </Collection>
+      </ListBoxSection>
+    ),
   },
-  render: args => (
-    <ComboBox {...args}>
-      {section => (
-        <ListBoxSection id={section.name}>
-          <ListBoxHeader>{section.name}</ListBoxHeader>
-          <Collection items={section.children}>
-            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
-          </Collection>
-        </ListBoxSection>
-      )}
-    </ComboBox>
-  ),
+}
+
+export const Multiple: Story<Item, 'multiple'> = {
+  args: {
+    selectionMode: 'multiple',
+  },
+}
+
+export const MultipleDefaultValue: Story<Item, 'multiple'> = {
+  args: {
+    ...Multiple.args,
+    description: 'Ananas och Kiwi är förvalda',
+    defaultValue: ['ananas', 'kiwi'],
+  },
+}
+
+export const MultipleReadOnly: Story<Item, 'multiple'> = {
+  args: {
+    ...Multiple.args,
+    description: 'Ananas och Kiwi är förvalda, skrivskyddad',
+    defaultValue: ['ananas', 'kiwi'],
+    isReadOnly: true,
+  },
+}
+
+export const MultipleAllSelected: Story<Item, 'multiple'> = {
+  args: {
+    ...Multiple.args,
+    description: 'Alla alternativ är valda',
+    defaultValue: options.map(({ id }) => id),
+  },
+}
+
+export const MultipleWithSections: Story<Section, 'multiple'> = {
+  args: {
+    selectionMode: 'multiple',
+    items: optionsWithSections,
+    children: Sectioned.args?.children,
+  },
 }
 
 export const NotVirtualized: Story<Section> = {
@@ -158,52 +146,7 @@ export const NotVirtualized: Story<Section> = {
   args: {
     ...Sectioned.args,
     listBoxProps: { virtualized: false },
-  },
-  render: args => (
-    <ComboBox {...args}>
-      {section => (
-        <ListBoxSection id={section.name}>
-          <ListBoxHeader>{section.name}</ListBoxHeader>
-          <Collection items={section.children}>
-            {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
-          </Collection>
-        </ListBoxSection>
-      )}
-    </ComboBox>
-  ),
-}
-
-export const PerformanceTest: Story = {
-  tags: ['!dev', '!autodocs'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  render: args => {
-    const [numberOfItems, setNumberOfItems] = React.useState(25)
-
-    const items = [...Array(numberOfItems).keys()].map(n => ({
-      name: n.toString(),
-      id: n,
-    }))
-
-    return (
-      <>
-        <label>
-          Adjust load
-          <input
-            type='number'
-            step={25}
-            value={numberOfItems}
-            onChange={e => setNumberOfItems(parseInt(e.target.value))}
-          />
-        </label>
-        <ComboBox {...args}>
-          {items.map(({ name, id }) => (
-            <ListBoxItem key={id}>{name}</ListBoxItem>
-          ))}
-        </ComboBox>
-      </>
-    )
+    children: Sectioned.args?.children,
   },
 }
 
@@ -305,4 +248,77 @@ export const WithHelpPopover: Story = {
       'aria-label': 'Mer information',
     },
   },
+}
+
+// Hidden stories
+
+export const PerformanceTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: args => {
+    const [numberOfItems, setNumberOfItems] = React.useState(25)
+
+    const items = [...Array(numberOfItems).keys()].map(n => ({
+      name: n.toString(),
+      id: n,
+    }))
+
+    return (
+      <>
+        <label>
+          Adjust load
+          <input
+            type='number'
+            step={25}
+            value={numberOfItems}
+            onChange={e => setNumberOfItems(parseInt(e.target.value))}
+          />
+        </label>
+        <ComboBox {...args}>
+          {items.map(({ name, id }) => (
+            <ListBoxItem key={id}>{name}</ListBoxItem>
+          ))}
+        </ComboBox>
+      </>
+    )
+  },
+}
+
+export const Required: Story = {
+  args: {
+    'aria-label': 'test',
+    isRequired: true,
+  },
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  decorators: Component => (
+    <form>
+      <Component />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+}
+
+export const MultipleRequired: Story<Item, 'multiple'> = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    'aria-label': 'test',
+    selectionMode: 'multiple',
+    isRequired: true,
+
+    defaultValue: ['ananas', 'kiwi'],
+  },
+  decorators: Component => (
+    <form onSubmit={e => e.preventDefault()}>
+      <Component />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
 }

@@ -7,8 +7,15 @@ import { render } from '../../test-utils'
 import { ComboBox } from './ComboBox'
 import { ListBoxItem } from '../list-box'
 
-const { Primary, Required, Sectioned, NotVirtualized, WithHelpPopover } =
-  composeStories(stories)
+const {
+  Primary,
+  Required,
+  Sectioned,
+  NotVirtualized,
+  WithHelpPopover,
+  MultipleDefaultValue,
+  MultipleRequired,
+} = composeStories(stories)
 
 describe('given a primary ComboBox', async () => {
   it('it should preserve its classNames when being passed new ones', async () => {
@@ -29,8 +36,8 @@ describe('given a primary ComboBox', async () => {
       </ComboBox>,
     )
 
-    const inputEl = await getByRole('combobox').element()
-    const buttonEl = await getByRole('button').element()
+    const inputEl = getByRole('combobox').element()
+    const buttonEl = getByRole('button').element()
     const inputRect = inputEl.getBoundingClientRect()
     const buttonRect = buttonEl.getBoundingClientRect()
     const paddingRight = parseFloat(
@@ -136,6 +143,89 @@ describe('given a ComboBox with listBoxProps={{ virtualized: false }}', async ()
     await expect.element(listbox.getByText('Ananas')).toBeVisible()
     await expect.element(listbox.getByText('Kokosnöt')).toBeVisible()
     await expect.element(listbox.getByText('Päron')).toBeVisible()
+  })
+})
+
+describe('given a ComboBox with a default multi-value', async () => {
+  it('should render a removable chip for each pre-selected value', async () => {
+    await render(<MultipleDefaultValue />)
+
+    const tagGrid = page.getByRole('grid')
+    await expect.element(tagGrid).toBeVisible()
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .toBeVisible()
+    await expect
+      .element(tagGrid.getByText('Kiwi', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should add chips and clear the input after picking another item', async () => {
+    const { getByRole } = await render(<MultipleDefaultValue />)
+
+    const comboBox = getByRole('combobox')
+    await comboBox.click()
+    await userEvent.keyboard('Apelsin')
+
+    const option = getByRole('option', { name: 'Apelsin' })
+    await expect.element(option).toBeVisible()
+    await option.click()
+
+    const tagGrid = getByRole('grid')
+    await expect.element(comboBox).toHaveValue('')
+    await expect
+      .element(tagGrid.getByText('Apelsin', { exact: true }))
+      .toBeVisible()
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should remove a chip and update the selection when its dismiss button is clicked', async () => {
+    await render(<MultipleDefaultValue />)
+
+    const tagGrid = page.getByRole('grid')
+    await userEvent.click(tagGrid.getByRole('button').first())
+
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .not.toBeInTheDocument()
+    await expect
+      .element(tagGrid.getByText('Kiwi', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should remove the last chip when pressing Backspace in an empty input', async () => {
+    const { getByRole } = await render(<MultipleDefaultValue />)
+
+    const comboBox = getByRole('combobox')
+    await userEvent.click(comboBox)
+    await userEvent.keyboard('[Backspace]')
+
+    const tagGrid = page.getByRole('grid')
+    await expect
+      .element(tagGrid.getByText('Kiwi', { exact: true }))
+      .not.toBeInTheDocument()
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .toBeVisible()
+  })
+})
+
+describe('given a required multiple ComboBox', async () => {
+  it('should show invalid state when all chips are removed via dismiss buttons', async () => {
+    const { getByRole } = await render(<MultipleRequired />)
+
+    const tagGrid = page.getByRole('grid')
+    await expect.element(tagGrid).toBeVisible()
+
+    const count = tagGrid.getByRole('button').elements().length
+
+    for (let i = 0; i < count; i++) {
+      await userEvent.click(tagGrid.getByRole('button').first())
+    }
+
+    await expect.element(getByRole('combobox')).toBeInvalid()
   })
 })
 
