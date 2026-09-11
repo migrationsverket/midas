@@ -8,11 +8,13 @@ import messages from './intl/translations.json'
 interface ComboBoxTagsProps {
   selectionMode?: SelectionMode
   isDisabled?: boolean
+  isReadOnly?: boolean
 }
 
 export const ComboBoxTags = ({
   selectionMode,
   isDisabled,
+  isReadOnly,
 }: ComboBoxTagsProps) => {
   const strings = useLocalizedStringFormatter(messages)
 
@@ -35,7 +37,7 @@ export const ComboBoxTags = ({
       <TagList items={state.selectedItems}>
         {item => (
           <Tag
-            isDismissable
+            isDismissable={!isDisabled && !isReadOnly}
             id={item.key}
             isDisabled={isDisabled}
             key={item.key}
