@@ -4,6 +4,7 @@ import { LinkButton, ButtonGroup } from '@midas-ds/components'
 import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
+import BrowserOnly from '@docusaurus/BrowserOnly'
 import CodeBlock from '@theme/CodeBlock'
 /* eslint-disable @nx/enforce-module-boundaries */
 import { StorybookIcon, EmptyIcon } from '@site/src/components/icons'
@@ -65,9 +66,19 @@ export default function Startpage() {
                   Storybook
                 </LinkButton>
               </ButtonGroup>
-              <CodeBlock className={styles.code}>
-                npm install @midas-ds/components
-              </CodeBlock>
+              <BrowserOnly
+                fallback={
+                  <pre className={styles.codeFallback}>
+                    npm install @midas-ds/components
+                  </pre>
+                }
+              >
+                {() => (
+                  <CodeBlock className={styles.code}>
+                    npm install @midas-ds/components
+                  </CodeBlock>
+                )}
+              </BrowserOnly>
             </div>
           </div>
           <div className='col col--6'>
