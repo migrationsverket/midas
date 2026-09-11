@@ -116,6 +116,15 @@ export const MultipleDefaultValue: Story<Item, 'multiple'> = {
   },
 }
 
+export const MultipleReadOnly: Story<Item, 'multiple'> = {
+  args: {
+    ...Multiple.args,
+    description: 'Ananas och Kiwi är förvalda, skrivskyddad',
+    defaultValue: ['ananas', 'kiwi'],
+    isReadOnly: true,
+  },
+}
+
 export const MultipleAllSelected: Story<Item, 'multiple'> = {
   args: {
     ...Multiple.args,
