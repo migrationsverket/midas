@@ -56,12 +56,6 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
   const inputRef = useRef<HTMLInputElement>(null)
   const strings = useLocalizedStringFormatter(messages)
 
-  const handlePointerUp: PointerEventHandler<HTMLInputElement> = event => {
-    if (event.currentTarget.value) {
-      inputRef.current?.select()
-    }
-  }
-
   const handleFieldPointerUp: PointerEventHandler<HTMLDivElement> = event => {
     const target = event.target as HTMLElement
 
@@ -107,7 +101,6 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
               [styles.multi]: props.selectionMode !== 'single',
             })}
             data-readonly={props.isReadOnly || undefined}
-            onPointerUp={handlePointerUp}
             ref={inputRef}
           />
         </div>
