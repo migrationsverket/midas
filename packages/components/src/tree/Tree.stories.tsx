@@ -14,16 +14,16 @@
 // on the searchable/filterable-tree next step — this isn't the whole story
 // on its own, just the foundation.
 
-import {
-  useRef,
-  useState,
-  type FocusEventHandler,
-  type ReactNode,
-} from 'react'
+import { useRef, useState, type FocusEventHandler, type ReactNode } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
+  Autocomplete,
+  Dialog,
+  DialogTrigger,
   Input,
+  Modal,
   SearchField,
+  useFilter,
   useTreeData,
   type Key,
 } from 'react-aria-components'
@@ -53,7 +53,10 @@ interface DemoNode {
 const categories = optionsWithSections.slice(0, 4).map(category => ({
   id: category.id,
   name: String(category.name),
-  children: category.children.map(fruit => ({ id: fruit.id, name: fruit.name })),
+  children: category.children.map(fruit => ({
+    id: fruit.id,
+    name: fruit.name,
+  })),
 }))
 
 const treeItems: DemoNode[] = [
@@ -306,7 +309,8 @@ const DisabledNodeDemo = () => {
   })
 
   const renderNode = (node: DemoNode): ReactNode => {
-    const isDisabled = node.id === disabledLeafId || node.id === disabledCategoryId
+    const isDisabled =
+      node.id === disabledLeafId || node.id === disabledCategoryId
 
     return (
       <TreeItem
@@ -944,7 +948,9 @@ const DropdownFilterableTreeDemo = () => {
           </button>
           {isOpen && (
             <div className={popoverFieldStyles.panel}>
-              <div {...mergeProps(treeKeyboardProps, closeOnEscapeKeyboardProps)}>
+              <div
+                {...mergeProps(treeKeyboardProps, closeOnEscapeKeyboardProps)}
+              >
                 <Tree
                   ref={treeRef}
                   aria-label='Filterable tree'
@@ -997,4 +1003,109 @@ export const DropdownFilterableTree: Story = {
       <button type='button'>Next field</button>
     </>
   ),
+}
+
+/**
+ * Ett exempel med med Modal och Autocomplete
+ * Lite förvirrande att filtret rensar vissa lövnoder men de är fortfarande tillgängliga för val via sin förälder
+ */
+export const AutocompleteModal: Story = {
+  render: () => {
+    const tree = useTreeData<DemoNode>({
+      initialItems: treeItems,
+      getKey: item => item.id,
+      getChildren: item => item.children ?? [],
+    })
+
+    const { getCheckedState, toggleKey, checkedKeys } = useTreeSelection({
+      tree,
+    })
+
+    const { contains } = useFilter({ sensitivity: 'base' })
+
+    const [search, setSearch] = useState('')
+
+    const filterTree = (nodes: DemoNode[], searchText: string) => {
+      if (!searchText) return nodes
+
+      return nodes
+        .map<DemoNode>(node => {
+          const filteredChildren = node.children
+            ? filterTree(node.children, searchText)
+            : []
+
+          const nodeMatches = node.name
+            .toLowerCase()
+            .includes(searchText.toLowerCase())
+
+          // Keep node if it matches OR has matching children
+          if (nodeMatches || filteredChildren.length > 0) {
+            return { ...node, children: filteredChildren }
+          }
+          return null
+        })
+        .filter(Boolean)
+    }
+
+    const filteredNodes = filterTree(treeItems, search)
+
+    const checkedLeafItems = Array.from(checkedKeys)
+      .map(key => ({ key, node: tree.getItem(key)?.value }))
+      .filter(
+        (item): item is { key: Key; node: DemoNode } =>
+          item.node != null && !item.node.children,
+      )
+
+    const renderNode = (node: DemoNode): ReactNode => (
+      <TreeItem
+        key={node.id}
+        id={node.id}
+        textValue={node.name}
+        content={
+          <Checkbox
+            isSelected={getCheckedState(node.id) === 'checked'}
+            isIndeterminate={getCheckedState(node.id) === 'indeterminate'}
+            onChange={() => toggleKey(node.id)}
+          >
+            {node.name}
+          </Checkbox>
+        }
+      >
+        {node.children?.map(renderNode)}
+      </TreeItem>
+    )
+
+    return (
+      <DialogTrigger>
+        <Button>
+          {checkedLeafItems.length
+            ? checkedLeafItems.map(item => item.node.name).join(', ')
+            : 'Inga valda'}
+        </Button>
+        <Modal isDismissable>
+          <Dialog>
+            <Autocomplete
+              filter={contains}
+              inputValue={search}
+              onInputChange={setSearch}
+            >
+              <SearchField
+                aria-label='Search'
+                autoFocus
+              >
+                <Input />
+              </SearchField>
+              <Tree
+                aria-label='Cascade selection tree'
+                selectionMode='none'
+                onAction={toggleKey}
+              >
+                {filteredNodes.map(renderNode)}
+              </Tree>
+            </Autocomplete>
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+    )
+  },
 }
