@@ -22,6 +22,29 @@
   border-radius: 0;
 }
 
+/*
+ * Matches the colors CodeBlock itself renders in each color mode.
+ * Docusaurus intentionally lags useColorMode() one tick behind on the first
+ * client render to dodge a hydration mismatch, so CodeBlock briefly paints
+ * light-mode colors before correcting - this fallback (shown only until
+ * BrowserOnly mounts CodeBlock, see index.tsx) reads data-theme via CSS
+ * instead, so it's correct from the very first paint.
+ */
+.codeFallback {
+  margin-top: 1.5rem;
+  padding: var(--ifm-pre-padding);
+  border-radius: 0;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size);
+  background-color: #f6f8fa;
+  color: #393a34;
+}
+
+:global(html[data-theme='dark']) .codeFallback {
+  background-color: #202025;
+  color: #fff;
+}
+
 .display1 {
   font-size: 4rem;
   font-weight: 600;
