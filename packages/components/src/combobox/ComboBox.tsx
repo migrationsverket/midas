@@ -82,7 +82,7 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
       )}
       <Group
         className={styles.wrap}
-        data-readonly={props.isReadOnly || undefined}
+        isReadOnly={props.isReadOnly}
         onPointerUp={handleFieldPointerUp}
       >
         <div
@@ -94,6 +94,7 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
           <ComboBoxTags
             selectionMode={props.selectionMode}
             isDisabled={props.isDisabled}
+            isReadOnly={props.isReadOnly}
           />
           <ComboBoxInput
             className={clsx(styles.inputField, {
