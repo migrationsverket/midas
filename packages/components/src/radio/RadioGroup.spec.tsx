@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import { render } from '../../test-utils'
-import * as stories from './Radio.stories'
+import * as stories from './RadioGroup.stories'
 import styles from './Radio.module.css'
 
 const { Primary, Required, CustomValidation } = composeStories(stories)
