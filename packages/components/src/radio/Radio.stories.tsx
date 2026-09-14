@@ -25,9 +25,3 @@ export const Disabled: Story = {
     isDisabled: true,
   },
 }
-
-export const WithDescription: Story = {
-  args: {
-    description: 'Delivers in 5-7 business days',
-  },
-}
