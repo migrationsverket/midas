@@ -5,7 +5,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import { type MidasSelectProps } from '.'
 import messages from './intl/translations.json'
 import React from 'react'
-import { SelectionMode } from '.'
+import type { SelectionMode } from '../common/types'
 import styles from './Select.module.css'
 
 type MultiSelectValueProps<

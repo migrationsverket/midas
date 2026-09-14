@@ -66,4 +66,6 @@ export type OffsetSize =
  * - 'important': Highlights critical information or a significant alert.
  * - 'warning': Signals a potential issue, caution, or a non-critical error.
  */
-export type FeedbackStatus = 'success' | 'info' | 'important' | 'warning';
+export type FeedbackStatus = 'success' | 'info' | 'important' | 'warning'
+
+export type SelectionMode = 'single' | 'multiple'
