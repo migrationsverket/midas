@@ -1,4 +1,3 @@
-/* eslint-disable no-redeclare */
 import { type ClassValue, clsx as cx } from 'clsx'
 
 type RenderProps<T> = T & {
