@@ -4,24 +4,30 @@ import jsoncEslintParser from 'jsonc-eslint-parser'
 export default [
   ...baseConfig,
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    rules: {},
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    // Override or add rules here
-    rules: {},
-  },
-  {
-    files: ['**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    rules: {},
-  },
-  {
-    files: ['**/*.json'],
+    files: ['{package,project}.json'],
     rules: {
-      '@nx/dependency-checks': ['off'],
+      '@nx/dependency-checks': [
+        'error',
+        {
+          buildTargets: ['build'],
+          ignoredDependencies: [
+            // table-styles has an implicit dependency to theme
+            '@midas-ds/theme',
+            // bundled dependencies
+            'lucide-react',
+            'react-aria',
+          ],
+          includeTransitiveDependencies: false,
+          ignoredFiles: [
+            '{projectRoot}/vite.config.ts',
+            '{projectRoot}/vitest.config.ts',
+            '{projectRoot}/vitest.setup.ts',
+          ],
+          checkMissingDependencies: true,
+          checkObsoleteDependencies: true,
+          checkVersionMismatches: true,
+        },
+      ],
     },
     languageOptions: {
       parser: jsoncEslintParser,
