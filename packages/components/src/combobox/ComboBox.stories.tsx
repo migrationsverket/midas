@@ -296,3 +296,13 @@ export const InfiniteScroll: Story = {
     )
   },
 }
+
+export const WithHelpPopover: Story = {
+  args: {
+    popover: {
+      children:
+        'An assistive text that helps the user understand the field better.',
+      'aria-label': 'Mer information',
+    },
+  },
+}

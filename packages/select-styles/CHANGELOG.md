@@ -1,3 +1,14 @@
+## 1.1.69 (2026-09-04)
+
+### 🩹 Fixes
+
+- **table-styles,select-styles:** fix incorrect dependency classification ([d67e5d22859](https://github.com/migrationsverket/midas/commit/d67e5d22859))
+
+### 🔧 Maintenance
+
+- **vite:** migrate off deprecated Nx vite plugins ([0c1d3e92996](https://github.com/migrationsverket/midas/commit/0c1d3e92996))
+- **deps:** update nx to latest ([9876a06b4cf](https://github.com/migrationsverket/midas/commit/9876a06b4cf))
+
 ## 1.1.68 (2026-08-28)
 
 ### 🧱 Updated Dependencies

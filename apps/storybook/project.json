@@ -13,19 +13,28 @@
         "port": 4400
       }
     },
+    "//": {
+      "nx:run-commands": "Running build with @nx/storybook fails with 'Cache output is outside the workspace: ../../dist/storybook/ui'"
+    },
     "build": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/storybook/ui"],
       "options": {
-        "outputDir": "dist/storybook/ui",
-        "configDir": "apps/storybook/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true,
-          "outputDir": "dist/docs/storybook",
-          "webpackStatsJson": "dist/docs/storybook"
-        }
+        "command": "npx storybook build",
+        "cwd": "apps/storybook",
+        "config-dir": ".storybook",
+        "output-dir": "../../dist/storybook/ui"
+      }
+    },
+    "build:ci": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/docs/storybook"],
+      "options": {
+        "command": "npx storybook build",
+        "cwd": "apps/storybook",
+        "config-dir": ".storybook",
+        "stats-json": "../../dist/docs/storybook",
+        "output-dir": "../../dist/docs/storybook"
       }
     },
     "test": {
@@ -35,9 +44,8 @@
       }
     },
     "a11y": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.ts",
+        "config": "vitest.config.ts",
         "project": "storybook"
       },
       "configurations": {
@@ -47,9 +55,8 @@
       }
     },
     "a11y-dark-mode": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.dark.ts",
+        "config": "vitest.config.dark.ts",
         "project": "storybook:dark-mode"
       },
       "configurations": {
@@ -59,9 +66,8 @@
       }
     },
     "a11y-forced-colors": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.forced-colors.ts",
+        "config": "vitest.config.forced-colors.ts",
         "project": "storybook:forced-colors"
       },
       "configurations": {
@@ -71,9 +77,8 @@
       }
     },
     "a11y-mobile": {
-      "executor": "@nx/vitest:test",
       "options": {
-        "config": "apps/storybook/vitest.config.mobile.ts",
+        "config": "vitest.config.mobile.ts",
         "project": "storybook:mobile"
       },
       "configurations": {

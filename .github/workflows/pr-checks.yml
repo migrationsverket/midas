@@ -57,6 +57,9 @@ jobs:
       - name: Build packages
         run: npx nx affected -t lint stylelint build
 
+      - name: Check bundled dependencies are declared
+        run: node tools/check-bundled-dependencies/index.mjs
+
       - name: Test packages
         run: npx nx affected -t test
 

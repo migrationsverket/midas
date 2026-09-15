@@ -5,14 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/rollup:rollup",
-      "options": {
-        "main": "tools/test-utils/src/index.ts",
-        "outputPath": "dist/tools/test-utils",
-        "tsConfig": "tools/test-utils/tsconfig.lib.json",
-        "sourceMap": true
-      }
-    }
+    "build": {}
   }
 }

@@ -258,6 +258,48 @@
         "packages/select-styles/**/*",
         "packages/table-styles/**/*"
       ]
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "devTargetName": "dev",
+        "typecheckTargetName": "typecheck"
+      },
+      "include": [
+        "packages/theme/**/*",
+        "packages/components/**/*",
+        "packages/datepicker-styles/**/*",
+        "packages/select-styles/**/*",
+        "packages/table-styles/**/*",
+        "apps/playground/**/*"
+      ]
+    },
+    {
+      "plugin": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "build"
+      }
+    },
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "buildStorybookTargetName": "build",
+        "serveStorybookTargetName": "storybook",
+        "staticStorybookTargetName": "static-storybook",
+        "testStorybookTargetName": "test-storybook"
+      }
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "a11y-mobile",
+        "testMode": "watch"
+      },
+      "include": ["apps/storybook/**/*"]
     }
   ],
   "analytics": false

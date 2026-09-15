@@ -4,45 +4,5 @@
   "sourceRoot": "apps/playground/src",
   "projectType": "application",
   "tags": ["apps"],
-  "targets": {
-    "serve": {
-      "executor": "@nx/vite:dev-server",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "playground:build"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "playground:build:development",
-          "hmr": true
-        },
-        "production": {
-          "buildTarget": "playground:build:production",
-          "hmr": false
-        }
-      }
-    },
-    "preview": {
-      "executor": "@nx/vite:preview-server",
-      "defaultConfiguration": "development",
-      "dependsOn": ["build"],
-      "options": {
-        "buildTarget": "playground:build"
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "playground:build:development"
-        },
-        "production": {
-          "buildTarget": "playground:build:production"
-        }
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "playground:build"
-      }
-    }
-  }
+  "targets": {}
 }

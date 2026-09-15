@@ -1,3 +1,36 @@
+## 2.0.116 (2026-09-08)
+
+### 🔧 Maintenance
+
+- **table-styles:** migrate to nx inferred tasks ([b2393fd394b](https://github.com/migrationsverket/midas/commit/b2393fd394b))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.8
+
+## 2.0.115 (2026-09-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.7
+
+## 2.0.114 (2026-09-04)
+
+### 🩹 Fixes
+
+- **table-styles,select-styles:** fix incorrect dependency classification ([d67e5d22859](https://github.com/migrationsverket/midas/commit/d67e5d22859))
+- **table-styles:** declare react-aria as a dependency, was undeclared ([c4d48882e68](https://github.com/migrationsverket/midas/commit/c4d48882e68))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.6
+
+## 2.0.113 (2026-09-03)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.5
+
 ## 2.0.112 (2026-09-01)
 
 ### 🔧 Maintenance

@@ -4,7 +4,8 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './DatePicker.stories'
 import { render } from '../../test-utils'
 
-const { Required, CustomValiation, ControlledState } = composeStories(stories)
+const { Required, CustomValiation, ControlledState, WithHelpPopover } =
+  composeStories(stories)
 
 describe('given a required DatePicker', async () => {
   it('should show an error message if submitted empty', async () => {
@@ -43,5 +44,14 @@ describe('given a Contolled DatePicker', async () => {
 
     await page.getByRole('button', { name: 'Open calendar' }).click()
     await expect.element(page.getByRole('application')).toBeVisible()
+  })
+})
+
+describe('given a DatePicker with help popover', async () => {
+  it('should open only the help popover when clicked', async () => {
+    const { getByRole } = await render(<WithHelpPopover />)
+
+    await getByRole('button').first().click()
+    await expect.element(page.getByRole('application')).not.toBeInTheDocument()
   })
 })

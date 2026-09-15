@@ -23,3 +23,5 @@ We use a simple format:
 - [0002 - Component Package Architecture](./0002-component-package-architecture.md) - **Proposed**
 - [0003 - Design Token Shadow Syntax](./0003-design-token-shadow-syntax.md) - **Accepted**
 - [0004 - Breaking Change Strategy](./0004-breaking-change-strategy.md) - **Accepted**
+- [0005 - DatePicker Calendar Height When Rendered Above Input](./0005-datepicker-calendar-placement-height.md) - **Accepted — no action**
+- [0006 - Configurable Layout Mobile/Desktop Breakpoint](./0006-layout-breakpoint-configurability.md) - **Accepted — not pursuing**

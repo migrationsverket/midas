@@ -1,6 +1,7 @@
 ---
 title: Navbar
 description: Navigationsbar längst ned på sidan
+sidebar_position: 2
 ---
 
 import { BasicExample } from '@site/src/components/examples/layout/NavbarExamples'
@@ -17,12 +18,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 Navigationskomponent som ligger längst ned på sidan och är gjord för att likna navigationen i native mobilappar. `Navbar` renderar ett semantiskt `<footer>`-element.
 
 ```tsx
-import {
-  Navbar,
-  Navigation,
-  NavigationItem,
-  NavigationLink,
-} from '@midas-ds/layout'
+import { Navbar, Navigation, NavigationItem, NavigationLink } from '@midas-ds/layout'
 ```
 
 ```tsx
@@ -67,7 +63,7 @@ export const Example = () => {
 
 ## Användning
 
-Syftet med Navbar är att få applikationen att likna en native mobilapp, som oftast har navigation i botten av appen. Navbar ska inte användas samtidigt som [MobileMenu](/dev/layout/components/header), utan Navbar används som den enda navigationen på små skärmar. Navbar kan användas tillsammans med [Sidebar](/dev/layout/components/sidebar) — båda döljer sig automatiskt beroende på skärmstorlek, så inkludera båda i trädet och låt dem ta hand om responsiviteten själva.
+Syftet med Navbar är att få applikationen att likna en native mobilapp, som oftast har navigation i botten av appen. Navbar ska inte användas samtidigt som [MobileMenu](/components/layout/header), utan Navbar används som den enda navigationen på små skärmar. Navbar kan användas tillsammans med [Sidebar](/components/layout/sidebar) — båda döljer sig automatiskt beroende på skärmstorlek, så inkludera båda i trädet och låt dem ta hand om responsiviteten själva.
 
 ### Använd Navbar:
 

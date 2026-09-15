@@ -26,11 +26,12 @@ export const InfoPopover = ({
   return (
     <DialogTrigger>
       <Button
-        variant='icon'
-        size='medium'
-        className={styles.labelPopoverTrigger}
         aria-label={ariaLabel || strings.format('moreInfo')}
+        className={styles.labelPopoverTrigger}
         id={ctx?.popoverId}
+        size='medium'
+        slot={null}
+        variant='icon'
       >
         <Info size={20} />
       </Button>

@@ -12,7 +12,12 @@ export const NavigationExample: React.FC = () => (
     <div style={{ width: 240 }}>
       <SidebarContext.Provider value={{ isCollapsed: false }}>
         <NavigationItem>
-          <NavigationLink icon={<FileText />}>Mina ärenden</NavigationLink>
+          <NavigationLink
+            href='#'
+            icon={<FileText />}
+          >
+            Mina ärenden
+          </NavigationLink>
         </NavigationItem>
       </SidebarContext.Provider>
     </div>
@@ -25,6 +30,7 @@ export const NavigationBadgeExample: React.FC = () => (
       <SidebarContext.Provider value={{ isCollapsed: false }}>
         <NavigationItem>
           <NavigationLink
+            href='#'
             icon={
               <BadgeContainer>
                 <Bell />

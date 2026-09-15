@@ -20,6 +20,7 @@ const {
   RequiredMultipleWithTags,
   RequiredMultipleWithClearAll,
   DS872,
+  WithHelpPopover,
 } = composeStories(stories)
 
 const handleSubmit = vi.fn()
@@ -320,5 +321,21 @@ describe('given a required multiple Select with tags (DS-1817)', async () => {
     await expect
       .element(getByRole('button', { name: 'Label' }))
       .toHaveAttribute('data-invalid')
+  })
+})
+
+describe('given a Select with a help popover', async () => {
+  it('should be possible to open the popover', async () => {
+    const { getByRole, getByText } = await render(<WithHelpPopover />)
+
+    await getByRole('button').first().click()
+
+    await expect
+      .element(
+        getByText(
+          'An assistive text that helps the user understand the field better.',
+        ),
+      )
+      .toBeVisible()
   })
 })

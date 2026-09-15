@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { type Fruit, fruit } from '@midas-ds/test-utils'
+import { type Fruit, fruit, optionsWithSections } from '@midas-ds/test-utils'
 import { ListBox } from './ListBox'
 import { ListBoxItem } from './ListBoxItem'
 import { ListBoxSection } from './ListBoxSection'
 import { ListBoxHeader } from './ListBoxHeader'
+import { Collection } from 'react-aria-components'
 
-type Story = StoryObj<typeof ListBox<Fruit>>
+type Story<T extends object = Fruit> = StoryObj<typeof ListBox<T>>
 
 export default {
   component: ListBox,
@@ -23,6 +24,22 @@ export default {
 export const SelectionModeSingle: Story = {
   args: {
     selectionMode: 'single',
+  },
+}
+
+export const Sectioned: Story<(typeof optionsWithSections)[0]> = {
+  args: {
+    items: optionsWithSections,
+    children: section => (
+      <ListBoxSection id={section.name}>
+        <ListBoxHeader>
+          {section.name + ' and a long string for testing purposes'}
+        </ListBoxHeader>
+        <Collection items={section.children}>
+          {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+        </Collection>
+      </ListBoxSection>
+    ),
   },
 }
 

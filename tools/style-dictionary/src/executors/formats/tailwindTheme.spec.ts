@@ -1,8 +1,12 @@
 import { TransformedToken } from 'style-dictionary'
 import { describe, expect, it } from 'vitest'
-import { tailwindTheme } from './tailwindTheme'
+import { tailwindTheme } from './tailwindTheme.js'
 
-const makeToken = (name: string, value: string, description?: string): TransformedToken => ({
+const makeToken = (
+  name: string,
+  value: string,
+  description?: string,
+): TransformedToken => ({
   name,
   value,
   $value: value,
@@ -23,7 +27,7 @@ const runFormat = async (tokens: TransformedToken[]) => {
     file: {},
     options: { outputReferences: false },
     platform: {},
-  } as any)
+  })
   return result
 }
 
@@ -40,7 +44,11 @@ describe('tailwindTheme format', () => {
   it('excludes deprecated tokens', async () => {
     const output = await runFormat([
       makeToken('color-blue-100', '#0055cc'),
-      makeToken('spacing-small', '0.5rem', '@deprecated Use space.small instead'),
+      makeToken(
+        'spacing-small',
+        '0.5rem',
+        '@deprecated Use space.small instead',
+      ),
     ])
     expect(output).toContain('--color-blue-100')
     expect(output).not.toContain('--spacing-small')

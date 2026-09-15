@@ -125,3 +125,13 @@ export const WithClearButton: Story = {
     defaultValue: new CalendarDate(1995, 5, 29),
   },
 }
+
+export const WithHelpPopover: Story = {
+  args: {
+    popover: {
+      children:
+        'An assistive text that helps the user understand the field better.',
+      'aria-label': 'Mer information',
+    },
+  },
+}

@@ -7,28 +7,7 @@
   "implicitDependencies": ["theme"],
   "targets": {
     "build": {
-      "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/packages/{projectName}",
-        "assets": [
-          {
-            "input": "packages/table-styles/src/lib",
-            "glob": "tanstack-table.css",
-            "output": "."
-          }
-        ]
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
-        }
-      }
+      "dependsOn": ["^build"]
     }
   }
 }

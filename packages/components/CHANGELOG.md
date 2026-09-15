@@ -1,3 +1,43 @@
+## 17.23.8 (2026-09-08)
+
+### 🩹 Fixes
+
+- **components,list-box,select,combobox:** remove fixed heading height ([8ebed768e6a](https://github.com/migrationsverket/midas/commit/8ebed768e6a))
+
+### 📖 Documentation changes
+
+- **components,list-box:** add story with long section headers ([c6ae188d36c](https://github.com/migrationsverket/midas/commit/c6ae188d36c))
+
+### 🔧 Maintenance
+
+- **components:** migrate to nx inferred tasks ([5dd289e7821](https://github.com/migrationsverket/midas/commit/5dd289e7821))
+
+## 17.23.7 (2026-09-08)
+
+### 🩹 Fixes
+
+- **components,label:** fix InfoPopover focus ring clipped by following field ([d6786518e5b](https://github.com/migrationsverket/midas/commit/d6786518e5b))
+
+## 17.23.6 (2026-09-04)
+
+### 🩹 Fixes
+
+- **components,layout:** declare undeclared runtime deps bundled from react-aria packages ([d74be6643f6](https://github.com/migrationsverket/midas/commit/d74be6643f6))
+
+## 17.23.5 (2026-09-03)
+
+### 🩹 Fixes
+
+- **components,combobox,date-picker,select,search-field:** fix help popover button action ([1d62a6cf2ed](https://github.com/migrationsverket/midas/commit/1d62a6cf2ed))
+
+### 📖 Documentation changes
+
+- **components,checkbox,date-field,radio,time-field:** add story with help popover ([94e9cb6a98a](https://github.com/migrationsverket/midas/commit/94e9cb6a98a))
+
+### 🧪 Tests updated
+
+- **components,select,date-picker,search-field:** add test case for help popover ([1288ab6d49e](https://github.com/migrationsverket/midas/commit/1288ab6d49e))
+
 ## 17.23.4 (2026-09-01)
 
 ### 🩹 Fixes

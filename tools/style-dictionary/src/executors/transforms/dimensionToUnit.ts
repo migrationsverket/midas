@@ -7,7 +7,7 @@ export const dimensionToUnit: Transform = {
   transitive: true,
   filter: (token: DesignToken) => token.$type === 'dimension',
   transform: (token: TransformedToken) => {
-    const raw = (token as any).$value ?? (token as any).value
+    const raw = token.$value ?? token.value
     if (raw && typeof raw === 'object') {
       const { value, unit } = raw
       return unit ? `${value}${unit}` : `${value}`

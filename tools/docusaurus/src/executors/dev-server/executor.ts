@@ -1,14 +1,14 @@
-import { start } from '@docusaurus/core/lib'
+import { start } from '@docusaurus/core/lib/index.js'
 import { ExecutorContext } from '@nx/devkit'
-import * as path from 'path'
+import { join } from 'node:path'
 
-import { DevServerExecutorSchema } from './schema'
+import { DevServerExecutorSchema } from './schema.js'
 
 export default async function* runExecutor(
   options: DevServerExecutorSchema,
   context: ExecutorContext,
 ) {
-  const projectRoot = path.join(
+  const projectRoot = join(
     context.root,
     context.projectsConfigurations.projects[context.projectName ?? ''].root,
   )
