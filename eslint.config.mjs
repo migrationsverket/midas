@@ -107,15 +107,7 @@ export default [
         'error',
         {
           buildTargets: ['build'],
-          ignoredDependencies: [
-            'vite',
-            '@vitejs/plugin-react',
-            '@nx/vite',
-            'vite-plugin-dts',
-            'clsx',
-            'rollup-preserve-directives',
-            'vite-plugin-lib-inject-css',
-          ],
+          ignoredDependencies: [],
           includeTransitiveDependencies: false,
           ignoredFiles: [],
           checkMissingDependencies: false,
