@@ -62,12 +62,9 @@ export default defineConfig({
         'react-dom',
         'react/jsx-runtime',
         'react-aria-components',
+        '@midas-ds/theme',
         'react-aria',
         'react-stately',
-        /@react-aria/,
-        /@react-stately/,
-        /@internationalized/,
-        '@midas-ds/theme',
       ],
       output: {
         assetFileNames: 'assets/[name][extname]',
