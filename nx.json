@@ -247,17 +247,7 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "lint"
-      },
-      "include": [
-        "apps/docs/**/*",
-        "apps/next/**/*",
-        "apps/playground/**/*",
-        "apps/storybook/**/*",
-        "packages/components/**/*",
-        "packages/layout/**/*",
-        "packages/select-styles/**/*",
-        "packages/table-styles/**/*"
-      ]
+      }
     },
     {
       "plugin": "@nx/vite/plugin",

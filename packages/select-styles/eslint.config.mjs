@@ -1,20 +1,27 @@
 import baseConfig from '../../eslint.config.mjs'
+import jsoncEslintParser from 'jsonc-eslint-parser'
 
 export default [
   ...baseConfig,
   {
-    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    rules: {},
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    // Override or add rules here
-    rules: {},
-  },
-  {
-    files: ['**/*.js', '**/*.jsx'],
-    // Override or add rules here
-    rules: {},
+    files: ['{package,project}.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'error',
+        {
+          buildTargets: ['build'],
+          // select-styles has an implicit dependency to theme
+          ignoredDependencies: ['@midas-ds/theme'],
+          includeTransitiveDependencies: false,
+          ignoredFiles: ['{projectRoot}/vite.config.ts'],
+          checkMissingDependencies: true,
+          checkObsoleteDependencies: true,
+          checkVersionMismatches: true,
+        },
+      ],
+    },
+    languageOptions: {
+      parser: jsoncEslintParser,
+    },
   },
 ]

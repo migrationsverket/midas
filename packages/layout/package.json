@@ -36,12 +36,12 @@
     "./*/index.js": "./*/index.js",
     "./*": "./*/index.js"
   },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
+  },
   "dependencies": {
     "@midas-ds/components": "17.23.8",
-    "@react-aria/collections": "^3.0.3",
-    "@react-aria/ssr": "^3.9.10",
-    "@react-aria/utils": "^3.33.1",
-    "@react-stately/utils": "^3.11.0",
     "react-aria-components": "1.20.0"
   }
 }
