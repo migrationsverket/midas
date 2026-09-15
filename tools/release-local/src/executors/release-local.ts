@@ -79,6 +79,7 @@ async function waitForRegistry(
 
       logger.info(`Verdaccio is ready on ${registry}`)
       return
+      // eslint-disable-next-line
     } catch (e) {
       if (attempt === maxAttempts) {
         throw new Error(
@@ -167,17 +168,13 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
   // directories are being initialized. This ensures storage is ready.
   logger.info('Warming up Verdaccio storage...')
   try {
-    execSync(
-      `npm publish --json --registry=${registry} --access=public`,
-      {
-        cwd: path.join(context.root, 'tools/release-local/src/warmup-package'),
-        stdio: 'pipe',
-      },
-    )
-    execSync(
-      `npm unpublish @midas-ds/warmup --force --registry=${registry}`,
-      { stdio: 'pipe' },
-    )
+    execSync(`npm publish --json --registry=${registry} --access=public`, {
+      cwd: path.join(context.root, 'tools/release-local/src/warmup-package'),
+      stdio: 'pipe',
+    })
+    execSync(`npm unpublish @midas-ds/warmup --force --registry=${registry}`, {
+      stdio: 'pipe',
+    })
     logger.info('Verdaccio storage is ready')
   } catch {
     logger.warn('Verdaccio warmup publish failed, continuing anyway')
@@ -276,6 +273,7 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
     logger.info('Cleaning up npm configuration...')
     try {
       const npmrcPath = path.join(context.root, '.npmrc')
+      // eslint-disable-next-line
       await fs.unlink(npmrcPath).catch(() => {})
       logger.info('.npmrc cleaned up')
     } catch (e) {
@@ -292,6 +290,7 @@ const runExecutor: PromiseExecutor<ReleaseLocalExecutorSchema> = async (
       logger.info('📦 Packages are ready for testing!')
 
       // Keep the process alive
+      // eslint-disable-next-line
       return new Promise(() => {
         // This promise never resolves, keeping the executor running
         // The Verdaccio process will keep running until manually stopped
