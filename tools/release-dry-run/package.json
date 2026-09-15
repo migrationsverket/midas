@@ -6,8 +6,8 @@
   "main": "./index.esm.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "nx": "^22.3.3",
     "@actions/core": "^3.0.0",
-    "semver": "^7.7.2"
+    "nx": "23.1.2",
+    "semver": "^7.8.5"
   }
 }
