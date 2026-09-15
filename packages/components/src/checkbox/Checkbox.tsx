@@ -1,18 +1,15 @@
-'use client'
-
 import { forwardRef } from 'react'
 import {
-  CheckboxField as AriaCheckboxField,
-  CheckboxButton as AriaCheckboxButton,
   type CheckboxFieldProps as AriaCheckboxFieldProps,
   type ValidationResult,
 } from 'react-aria-components'
 import { Minus, Check } from 'lucide-react'
 import { variables } from '@midas-ds/theme'
-import clsx from '../utils/clsx'
 import { FieldError } from '../field-error'
 import { Text } from '../text'
 import styles from './Checkbox.module.css'
+import { CheckboxField } from './CheckboxField'
+import { CheckboxButton } from './CheckboxButton'
 
 export interface CheckboxProps extends AriaCheckboxFieldProps {
   description?: string
@@ -22,36 +19,19 @@ export interface CheckboxProps extends AriaCheckboxFieldProps {
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
   (
-    {
-      className,
-      description,
-      errorMessage,
-      errorPosition = 'top',
-      children,
-      ...props
-    },
+    { description, errorMessage, errorPosition = 'top', children, ...props },
     ref,
   ) => {
-    const hasFieldContent = Boolean(description || errorMessage)
-
     return (
-      <AriaCheckboxField
-        {...props}
-        className={
-          hasFieldContent ? styles.checkboxWrapper : styles.checkboxField
-        }
-      >
+      <CheckboxField {...props}>
         {description && <Text slot='description'>{description}</Text>}
         {errorPosition === 'top' && errorMessage && (
           <FieldError>{errorMessage}</FieldError>
         )}
-        <AriaCheckboxButton
-          ref={ref}
-          className={clsx(styles.checkbox, className)}
-        >
+        <CheckboxButton ref={ref}>
           {({ isIndeterminate }) => (
             <>
-              <div className={styles.checkboxInner}>
+              <div className={styles.indicator}>
                 {isIndeterminate ? (
                   <Minus
                     size={14}
@@ -67,11 +47,11 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
               {children}
             </>
           )}
-        </AriaCheckboxButton>
+        </CheckboxButton>
         {errorPosition === 'bottom' && errorMessage && (
           <FieldError>{errorMessage}</FieldError>
         )}
-      </AriaCheckboxField>
+      </CheckboxField>
     )
   },
 )

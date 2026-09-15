@@ -1,4 +1,4 @@
-.checkboxInner {
+.indicator {
   --border-color: var(--midas-border-color-primary);
 
   display: flex;
@@ -17,22 +17,22 @@
 
 /* path animations  */
 
-.checkboxInner svg path {
+.indicator svg path {
   stroke-dasharray: 24;
   stroke-dashoffset: 24;
   transition: stroke-dashoffset var(--midas-transition-duration-quick)
     var(--midas-transition-timing-ease-in-out);
 }
 
-.checkbox[data-selected] svg path,
-.checkbox[data-indeterminate] svg path {
+.checkboxButton[data-selected] svg path,
+.checkboxButton[data-indeterminate] svg path {
   stroke-dashoffset: 0;
 }
 
 /* ===========================
    Checkbox Container
 =========================== */
-.checkbox {
+.checkboxButton {
   /* Shared state variables */
   --checkbox-base-color: var(--midas-button-background-primary-base);
   --checkbox-hover-color: var(--midas-button-background-primary-hover);
@@ -68,40 +68,40 @@
   }
 
   /* Hover / Pressed */
-  &[data-hovered] .checkboxInner {
+  &[data-hovered] .indicator {
     border-color: var(--checkbox-hover-color);
   }
 
-  &[data-pressed] .checkboxInner {
+  &[data-pressed] .indicator {
     border-color: var(--checkbox-active-color);
   }
 
   /* Selected / Indeterminate */
-  &[data-selected] .checkboxInner,
-  &[data-indeterminate] .checkboxInner {
+  &[data-selected] .indicator,
+  &[data-indeterminate] .indicator {
     background: var(--checkbox-base-color);
     border-color: var(--checkbox-base-color);
   }
 
-  &[data-selected][data-hovered] .checkboxInner,
-  &[data-indeterminate][data-hovered] .checkboxInner {
+  &[data-selected][data-hovered] .indicator,
+  &[data-indeterminate][data-hovered] .indicator {
     background: var(--checkbox-hover-color);
     border-color: var(--checkbox-hover-color);
   }
 
-  &[data-selected][data-pressed] .checkboxInner,
-  &[data-indeterminate][data-pressed] .checkboxInner {
+  &[data-selected][data-pressed] .indicator,
+  &[data-indeterminate][data-pressed] .indicator {
     background: var(--checkbox-active-color);
     border-color: var(--checkbox-active-color);
   }
 
   /* Invalid */
-  &[data-invalid] .checkboxInner {
+  &[data-invalid] .indicator {
     outline: 2px solid var(--checkbox-warning-border);
     outline-offset: -2px;
   }
 
-  &[data-invalid][data-hovered] .checkboxInner {
+  &[data-invalid][data-hovered] .indicator {
     opacity: 0.5;
     transition: opacity 50ms ease;
   }
@@ -112,13 +112,13 @@
     cursor: not-allowed;
   }
 
-  &[data-disabled] .checkboxInner {
+  &[data-disabled] .indicator {
     pointer-events: none;
     border: 1px solid var(--checkbox-disabled-border);
   }
 
-  &[data-disabled][data-selected] .checkboxInner,
-  &[data-disabled][data-indeterminate] .checkboxInner {
+  &[data-disabled][data-selected] .indicator,
+  &[data-disabled][data-indeterminate] .indicator {
     background: var(--checkbox-disabled-background);
   }
 
@@ -130,7 +130,7 @@
     background-color: transparent;
     border-color: var(--checkbox-readonly-border);
 
-    & .checkboxInner {
+    & .indicator {
       border-color: var(--checkbox-readonly-border);
       background: transparent;
     }
@@ -141,19 +141,12 @@
   }
 }
 
-.checkboxWrapper {
+.checkboxField {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--midas-space-05);
   width: 100%;
-}
-
-/* CheckboxField always renders a wrapping div, even without a description or
-   error message. When there's no extra content, keep that div out of the
-   layout so the button participates directly in the parent's flow. */
-.checkboxField {
-  display: contents;
 }
 
 /* ===========================
@@ -206,33 +199,33 @@
    High Contrast Mode
 =========================== */
 @media (forced-colors: active) {
-  .checkbox[data-hovered] .checkboxInner,
-  .checkbox[data-selected] .checkboxInner,
-  .checkbox[data-indeterminate] .checkboxInner {
+  .checkboxButton[data-hovered] .indicator,
+  .checkboxButton[data-selected] .indicator,
+  .checkboxButton[data-indeterminate] .indicator {
     border-color: SelectedItem;
   }
 
-  .checkbox[data-selected] .checkboxInner,
-  .checkbox[data-indeterminate] .checkboxInner {
+  .checkboxButton[data-selected] .indicator,
+  .checkboxButton[data-indeterminate] .indicator {
     background: SelectedItem;
   }
 
-  .checkbox[data-disabled] {
+  .checkboxButton[data-disabled] {
     color: GrayText;
   }
 
-  .checkbox[data-disabled] .checkboxInner {
+  .checkboxButton[data-disabled] .indicator {
     border-color: GrayText;
   }
 
-  .checkbox[data-disabled][data-selected] .checkboxInner,
-  .checkbox[data-disabled][data-indeterminate] .checkboxInner {
+  .checkboxButton[data-disabled][data-selected] .indicator,
+  .checkboxButton[data-disabled][data-indeterminate] .indicator {
     background: GrayText;
   }
 }
 
 @media (prefers-reduced-motion) {
-  .checkboxInner svg path {
+  .indicator svg path {
     transition: none;
   }
 }
