@@ -1,12 +1,13 @@
 import * as React from 'react'
-import { CheckboxGroupState } from 'react-stately'
-import { Checkbox } from './Checkbox'
-import { CheckboxProps } from './types'
+import { type CheckboxGroupState } from 'react-stately'
+import { Checkbox, type CheckboxProps } from './Checkbox'
 
 export const useSelectAll = (
   children: React.ReactNode,
-  { value: selectedItems }: CheckboxGroupState,
+  state: CheckboxGroupState | null,
 ) => {
+  const selectedItems = state?.value ?? []
+
   const checkboxes = React.Children.toArray(children).filter(
     (child): child is React.ReactElement<CheckboxProps> =>
       React.isValidElement(child) && child.type === Checkbox,

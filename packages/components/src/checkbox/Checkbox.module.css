@@ -149,6 +149,13 @@
   width: 100%;
 }
 
+/* CheckboxField always renders a wrapping div, even without a description or
+   error message. When there's no extra content, keep that div out of the
+   layout so the button participates directly in the parent's flow. */
+.checkboxField {
+  display: contents;
+}
+
 /* ===========================
    Checkbox Group
 =========================== */

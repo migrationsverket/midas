@@ -1,92 +1,69 @@
-import * as React from 'react'
-import { AriaCheckboxGroupProps, useCheckboxGroup } from 'react-aria'
-import { useCheckboxGroupState } from 'react-stately'
+'use client'
+
+import {
+  CheckboxGroup as AriaCheckboxGroup,
+  CheckboxGroupProps as AriaCheckboxGroupProps,
+  ValidationResult,
+  composeRenderProps,
+} from 'react-aria-components'
+import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
-import { Text } from '../text'
-import { useLocalizedStringFormatter } from '../utils/intl'
-import { useSelectAll } from './useSelectAll'
-import { Checkbox } from './Checkbox'
-import { CheckboxGroupContext } from './context'
-import { CheckboxGroupFieldError } from './CheckboxGroupFieldError'
-import messages from './intl/translations.json'
-import styles from './Checkbox.module.css'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
+
+import styles from './Checkbox.module.css'
+import { SelectAllCheckbox } from './SelectAllCheckbox'
 
 export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
-  children: React.ReactNode
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: ValidationResult) => string)
   showSelectAll?: boolean
   selectAllLabel?: string
   errorPosition?: 'top' | 'bottom'
   popover?: InfoPopoverProps
 }
 
-export function CheckboxGroup(props: CheckboxGroupProps) {
-  const state = useCheckboxGroupState(props)
-
-  const stringFormatter = useLocalizedStringFormatter(messages)
-
-  const { groupProps, labelProps, descriptionProps } = useCheckboxGroup(
-    props,
-    state,
-  )
-
-  const { allSelected, someSelected, checkboxValues, disabledSelectedValues } =
-    useSelectAll(props.children, state)
-
-  const handleChange = (checked: boolean) => {
-    state.setValue(
-      checked
-        ? [...checkboxValues, ...disabledSelectedValues]
-        : disabledSelectedValues,
-    )
-  }
-
+export const CheckboxGroup = ({
+  label,
+  description,
+  errorMessage,
+  errorPosition = 'top',
+  popover,
+  showSelectAll,
+  selectAllLabel,
+  className,
+  children,
+  ...props
+}: CheckboxGroupProps) => {
   return (
-    <div
-      {...groupProps}
-      className={styles.checkboxGroup}
-      data-readonly={props.isReadOnly || undefined}
-      data-disabled={props.isDisabled || undefined}
+    <AriaCheckboxGroup
+      {...props}
+      className={clsx(styles.checkboxGroup, className)}
     >
-      <LabelWrapper popover={props.popover}>
-        {props.label && <Label {...labelProps}>{props.label}</Label>}
-      </LabelWrapper>
-
-      {props.description && (
-        <Text
-          slot='description'
-          {...descriptionProps}
-        >
-          {props.description}
-        </Text>
-      )}
-      {props.errorPosition === 'top' && (
-        <CheckboxGroupFieldError
-          {...props}
-          state={state}
-        />
-      )}
-      <div className={styles.checkboxList}>
-        {props.showSelectAll && (
-          <Checkbox
-            isSelected={allSelected}
-            isIndeterminate={someSelected}
-            isReadOnly={props.isReadOnly}
-            onChange={handleChange}
-          >
-            {props.selectAllLabel || stringFormatter.format('selectAll')}
-          </Checkbox>
-        )}
-        <CheckboxGroupContext.Provider value={state}>
-          {props.children}
-        </CheckboxGroupContext.Provider>
-      </div>
-      {props.errorPosition === 'bottom' && (
-        <CheckboxGroupFieldError
-          {...props}
-          state={state}
-        />
-      )}
-    </div>
+      {composeRenderProps(children, children => (
+        <>
+          <LabelWrapper popover={popover}>
+            {label && <Label>{label}</Label>}
+          </LabelWrapper>
+          {description && <Text slot='description'>{description}</Text>}
+          {errorPosition === 'top' && errorMessage && (
+            <FieldError>{errorMessage}</FieldError>
+          )}
+          <div className={styles.checkboxList}>
+            {showSelectAll && (
+              <SelectAllCheckbox label={selectAllLabel}>
+                {children}
+              </SelectAllCheckbox>
+            )}
+            {children}
+          </div>
+          {errorPosition === 'bottom' && errorMessage && (
+            <FieldError>{errorMessage}</FieldError>
+          )}
+        </>
+      ))}
+    </AriaCheckboxGroup>
   )
 }
