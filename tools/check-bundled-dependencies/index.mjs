@@ -15,52 +15,19 @@
  * against whatever's already in dist/packages/<name>/.
  */
 
-import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs'
+import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
-
-const repoRoot = new URL('../..', import.meta.url).pathname
-const distPackagesDir = join(repoRoot, 'dist/packages')
-const srcPackagesDir = join(repoRoot, 'packages')
+import {
+  distPackagesDir,
+  srcPackagesDir,
+  findJsFiles,
+  findBareImports,
+  builtPackages,
+} from './shared.mjs'
 
 // Always provided by the consumer's own app/bundler — never meaningful to
 // require these be declared as a regular dependency.
 const ALWAYS_ALLOWED = new Set(['react', 'react-dom'])
-
-const IMPORT_SPECIFIER_RE = /(?:from|import)\s*\(?\s*['"]([^'"]+)['"]/g
-
-function findJsFiles(dir) {
-  const results = []
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry)
-    const stats = statSync(full)
-    if (stats.isDirectory()) {
-      results.push(...findJsFiles(full))
-    } else if (entry.endsWith('.js') || entry.endsWith('.mjs')) {
-      results.push(full)
-    }
-  }
-  return results
-}
-
-function toPackageName(specifier) {
-  if (specifier.startsWith('@')) {
-    const [scope, name] = specifier.split('/')
-    return `${scope}/${name}`
-  }
-  return specifier.split('/')[0]
-}
-
-function findBareImports(filePath) {
-  const content = readFileSync(filePath, 'utf-8')
-  const specifiers = new Set()
-  for (const match of content.matchAll(IMPORT_SPECIFIER_RE)) {
-    const specifier = match[1]
-    if (!specifier.startsWith('.') && !specifier.startsWith('/')) {
-      specifiers.add(toPackageName(specifier))
-    }
-  }
-  return specifiers
-}
 
 if (!existsSync(distPackagesDir)) {
   console.log(
@@ -69,13 +36,9 @@ if (!existsSync(distPackagesDir)) {
   process.exit(0)
 }
 
-const builtPackages = readdirSync(distPackagesDir).filter(name =>
-  statSync(join(distPackagesDir, name)).isDirectory(),
-)
-
 let hasFailures = false
 
-for (const name of builtPackages) {
+for (const name of builtPackages()) {
   const packageJsonPath = join(srcPackagesDir, name, 'package.json')
   if (!existsSync(packageJsonPath)) continue // not every dist/packages entry maps to packages/<name>
 
