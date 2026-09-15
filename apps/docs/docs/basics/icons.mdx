@@ -41,35 +41,33 @@ Ikoner används som ett komplement till text för att underlätta för användar
 
 Midas använder [Lucide Icons](https://lucide.dev/guide/packages/lucide-react) som ikonbibliotek. Vi använder ikonerna direkt från Lucide, utan några modifieringar.
 
-## Riktlinjer
-
-- För att undvika tvetydighet, använd en och samma symbol per funktion. Vi har en uppsättning standardikoner som ska användas på samma sätt i alla system.
-- Färgen på ikoner sätts via våra [iconfärger](/basics/color/#ikoner). Inga egna färger utanför tokens används.
-- Standardstorleken på ikonerna är `20px` (`1.25rem`). Om textstorleken är liten eller ikonen används i en tabell kan `16px` (`1rem`) användas istället.
-- Ikonen ligger som standard till vänster om texten.
-- Om en text används tillsammans med ikonen bör ikonen döljas för skärmläsare för att undvika att texten läses upp två gånger.
-- Om en ikon används fristående måste vi se till att den är läsbar för skärmläsare
-
-### Ikoner i externa tjänster
-
-För externa tjänster används ikoner restriktivt. När de används så ska de alltid kombineras med text. Till exempel i menyer för navigering, funktionsknappar eller infomeddelanden.
-
-### Ikoner i interna tjänster
-
-För interna tjänster där användarna är bekanta med gränssnittet och återkommer till det ofta kan fristående ikoner användas för att effektivisera och spara plats. Men rekommendationen är att kombinera ikonen med text och att vara försiktig med ikoner som inte är allmänt vedertagna. Testa med användare om du är osäker.
-
-### Färger på ikoner
-
-När ikoner används tillsammans med text bör de ha samma färg som den kompletterande texten.
-När en ikon används för att kommunicera status används färgerna som specificeras av icon/success, icon/info, icon/important respektive icon/warning. Tänk på att inte enbart använda färg för att komunicera status och att färgen måste ha tillräcklig kontrast mot bakgrunden (4,5:1).
-
 :::info[Egna ikoner]
 Om du har behov av en ikon som inte finns i Lucide icons, kontakta Midas-teamet för analys av behovet och möjliga lösningar.
 :::
 
+## Riktlinjer
+
+- För att undvika tvetydighet, använd en och samma symbol per funktion. Vi har en uppsättning [standardikoner](#standardikoner) på Migrationsverket som ska användas på samma sätt i alla system och tjänster.
+- Färgen på ikoner sätts via våra [ikonfärger](/basics/color/#ikoner). Inga egna färger utanför tokens ska användas.
+- Standardstorleken på ikonerna är `20px` (`1.25rem`). Om textstorleken är liten eller ikonen används i en tabell kan `16px` (`1rem`) användas istället.
+- Ikonen ligger som standard till vänster om den tillhörande texten.
+- Dölj ikonen för skärmläsare om den bara kompletterar en befintlig text. Om ikonen är interaktiv eller bär på egen information måste den i stället ha en egen textbeskrivning.
+
+### I externa tjänster
+
+I externa tjänster bör ikoner användas restriktivt. Det beror på att igenkänningseffekten inte är lika stor för sällananvändare i externa tjänster som den är i interna system där användaren ser dem dagligen. När ikoner används bör de alltid kombineras med text för ökad tydlighet.
+
+### I interna system
+
+För interna system där användarna är bekanta med gränssnittet och återkommer till det ofta kan vi använda ikoner utan text för att effektivisera och spara plats. Men rekommendationerna är att kombinera ikonen med text och att vara försiktig med ikoner som inte är allmänt vedertagna. Testa med användare om du är osäker.
+
+### Färger på ikoner
+
+När ikoner används tillsammans med text bör de ha samma färg som den kompletterande texten. När en ikon används för att kommunicera status används tokens success, info, important och warning, se [ikonfärger](/basics/color/#ikoner). Tänk på att inte enbart använda färg för att komunicera status och att färgen måste ha tillräcklig kontrast mot bakgrunden (4,5:1).
+
 ## Standardikoner
 
-För att säkerställga enhetlighet och tydlighet har vi ett antal standardikoner som ska användas på samma sätt i alla system.
+För att säkerställga enhetlighet och tydlighet har vi ett antal standardikoner som ska användas på samma sätt i alla tjänster och system.
 
 ### Navigation
 
