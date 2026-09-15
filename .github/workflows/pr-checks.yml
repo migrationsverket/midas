@@ -60,6 +60,9 @@ jobs:
       - name: Check bundled dependencies are declared
         run: node tools/check-bundled-dependencies/index.mjs
 
+      - name: Check shared-singleton modules stay externalized
+        run: node tools/check-bundled-dependencies/check-shared-singletons.mjs
+
       - name: Test packages
         run: npx nx affected -t test
 
