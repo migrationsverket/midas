@@ -50,6 +50,7 @@ const ExampleNavigation = () => (
         <NavigationLink
           href='/road-trip'
           icon={<Caravan />}
+          isDisabled
         >
           Road trip
         </NavigationLink>
