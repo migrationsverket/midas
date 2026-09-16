@@ -25,9 +25,7 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
     return (
       <CheckboxField {...props}>
         {description && <Text slot='description'>{description}</Text>}
-        {errorPosition === 'top' && errorMessage && (
-          <FieldError>{errorMessage}</FieldError>
-        )}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
         <CheckboxButton ref={ref}>
           {({ isIndeterminate }) => (
             <>
@@ -48,9 +46,7 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
             </>
           )}
         </CheckboxButton>
-        {errorPosition === 'bottom' && errorMessage && (
-          <FieldError>{errorMessage}</FieldError>
-        )}
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       </CheckboxField>
     )
   },
