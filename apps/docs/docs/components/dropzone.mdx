@@ -4,17 +4,18 @@ description: Ett generellt mål för drag & drop — inte begränsat till filupp
 ---
 
 import { DropZone, FileTrigger, Button, Text, FieldError, Label } from '@midas-ds/components'
+import { Upload } from 'lucide-react'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import { ValidatedDropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
 
 <ComponentHeader
   name='DropZone'
   friendlyName='Dra och släpp'
 />
 
-[DropZone](https://react-spectrum.adobe.com/react-aria/DropZone.html) från React Aria är en yta som ett eller flera
-objekt kan dras och släppas på. Den är inte begränsad till filuppladdning — kombinera den med [FileTrigger](/components/file-trigger)
-för filval, eller använd `onDrop` direkt för att hantera andra typer av dragen data.
+En yta som ett eller flera objekt kan dras och släppas på. Kombinera med [FileTrigger](/components/file-trigger) för
+filuppladdning, eller använd den fristående för andra typer av drag & drop.
 
 ```tsx
 <DropZone onDrop={handleDrop}>
@@ -28,24 +29,12 @@ för filval, eller använd `onDrop` direkt för att hantera andra typer av drage
   </DropZone>
 </div>
 
-## Beskrivning
-
-DropZone renderas som en vanlig `<div>` med en dold knapp för tangentbords- och skärmläsaråtkomst. Innehållet är helt
-fritt komponerbart — MIDAS lägger bara till styling ovanpå React Arias beteende. Följande tillstånd stylas enligt
-designsystemet och matchar React Arias render props:
-
-- `isDropTarget` — något dras just nu över ytan
-- `isFocusVisible` — ytan är tangentbordsfokuserad
-- `isDisabled` — ytan är inaktiverad
-- `isInvalid` — MIDAS-specifik prop, se [Validering](#validering)
-
 ## Varianter
 
 ### Etikett
 
-Placera en `<Text slot='label'>` inuti DropZone för att ge ytan sitt tillgängliga namn — React Aria kopplar automatiskt
-ihop den med den dolda knappen. Ska DropZone användas som ett fält bland andra i ett formulär, komplettera med en yttre
-`<Label>` och koppla ihop den via `aria-labelledby`; båda texterna blir då en del av det tillgängliga namnet.
+Textetiketten inuti ytan beskriver vad som ska släppas eller väljas. Används DropZone som ett fält bland andra i ett
+formulär, komplettera med en etikett ovanför.
 
 ```tsx
 <Label id='upload-label'>Ladda upp filer</Label>
@@ -65,30 +54,28 @@ ihop den med den dolda knappen. Ska DropZone användas som ett fält bland andra
 
 ### Validering
 
-DropZone har ingen inbyggd formulärsvalidering (till skillnad från till exempel [TextField](/components/textfield)) —
-`onDrop`/`onSelect` avgör om det som släpptes eller valdes är giltigt. Sätt `isInvalid` för att visa det, och komponera
-en [FieldError](/components/textfield#felmeddelanden) för felmeddelandet. Placera den inuti DropZone för ett meddelande
-i hörnet, eller som ett syskon under för ett fristående meddelande.
+DropZone kan markeras som ogiltig med `isInvalid`, tillsammans med ett felmeddelande.
 
 ```tsx
 <DropZone isInvalid>
   <Text slot='label'>Släpp filer här</Text>
-  <FieldError style={{ alignSelf: 'flex-start', width: '100%' }}>
-    Filen är för stor
-  </FieldError>
 </DropZone>
+<FieldError isInvalid>Filen är för stor</FieldError>
 ```
 
 <div className='card'>
-  <DropZone
-    isInvalid
-    style={{ width: '100%', maxWidth: 480 }}
-  >
-    <Text slot='label'>Släpp filer här</Text>
-    <FieldError style={{ alignSelf: 'flex-start', width: '100%' }}>
-      Filen är för stor
-    </FieldError>
-  </DropZone>
+  <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+    <DropZone isInvalid>
+      <Text slot='label'>Släpp filer här</Text>
+    </DropZone>
+    <FieldError isInvalid>Filen är för stor</FieldError>
+  </div>
+</div>
+
+Samma tillstånd kan användas för att begränsa vilka filtyper som är tillåtna:
+
+<div className='card'>
+  <ValidatedDropZoneExample />
 </div>
 
 ### Filuppladdning
@@ -98,27 +85,45 @@ filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för
 
 ```tsx
 <DropZone onDrop={handleDrop}>
-  <FileTrigger onSelect={handleSelect}>
-    <Button variant='secondary'>Välj filer</Button>
-  </FileTrigger>
   <Text slot='label'>Dra och släpp filer här</Text>
+  <FileTrigger onSelect={handleSelect}>
+    <Button variant='secondary'>
+      <Upload aria-hidden size={20} />
+      Välj filer
+    </Button>
+  </FileTrigger>
 </DropZone>
 ```
 
 <div className='card'>
   <DropZone style={{ width: '100%', maxWidth: 480 }}>
-    <FileTrigger>
-      <Button variant='secondary'>Välj filer</Button>
-    </FileTrigger>
     <Text slot='label'>Dra och släpp filer här</Text>
+    <FileTrigger>
+      <Button variant='secondary'><Upload aria-hidden size={20} />Välj filer</Button>
+    </FileTrigger>
   </DropZone>
 </div>
+
+:::tip Typad drop-data
+`onDrop` ger en typad `DropEvent` där varje objekt i `items` är en `FileDropItem`, `DirectoryDropItem` eller
+`TextDropItem`. Använd type guarden `isFileDropItem` från `react-aria` för att filtrera ut filer, se
+[FileTrigger: Drag & drop](/components/file-trigger#drag--drop) för ett komplett exempel.
+:::
 
 ### Inaktiverad
 
 ```tsx
 <DropZone isDisabled>
   <Text slot='label'>Släpp filer här</Text>
+  <FileTrigger>
+    <Button
+      variant='secondary'
+      isDisabled
+    >
+      <Upload aria-hidden size={20} />
+      Välj filer
+    </Button>
+  </FileTrigger>
 </DropZone>
 ```
 
@@ -128,6 +133,20 @@ filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för
     style={{ width: '100%', maxWidth: 480 }}
   >
     <Text slot='label'>Släpp filer här</Text>
+    <FileTrigger>
+      {/*
+        Demo-only: `secondary` is transparent/outline even when enabled, but its
+        disabled state currently reuses the shared washed-fill background meant
+        for solid-filled variants (primary/danger). Real fix belongs in
+        Button.module.css, tracked separately — this override just keeps the
+        docs demo honest to Figma in the meantime.
+      */}
+      <Button
+        variant='secondary'
+        isDisabled
+        style={{ backgroundColor: 'transparent' }}
+      ><Upload aria-hidden size={20} />Välj filer</Button>
+    </FileTrigger>
   </DropZone>
 </div>
 
