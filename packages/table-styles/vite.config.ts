@@ -36,13 +36,14 @@ export default {
     },
     rolldownOptions: {
       external: [
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
         '@midas-ds/components',
         '@midas-ds/theme',
-        'react-aria-components',
         '@tanstack/react-table',
+        'react-aria',
+        'react-aria-components',
+        'react-dom',
+        'react',
+        'react/jsx-runtime',
       ],
     },
   },

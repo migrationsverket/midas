@@ -15,7 +15,6 @@ export default [
             '@midas-ds/theme',
             // bundled dependencies
             'lucide-react',
-            'react-aria',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [
