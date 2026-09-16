@@ -58,13 +58,15 @@ export default defineConfig({
     },
     rolldownOptions: {
       external: [
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
-        'react-aria-components',
+        '@internationalized/string',
         '@midas-ds/theme',
+        '@react-stately/utils',
+        'react-aria-components',
         'react-aria',
+        'react-dom',
         'react-stately',
+        'react',
+        'react/jsx-runtime',
       ],
       output: {
         assetFileNames: 'assets/[name][extname]',
