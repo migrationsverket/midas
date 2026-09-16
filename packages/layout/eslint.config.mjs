@@ -35,9 +35,7 @@ export default defineConfig([
             // peer dependencies
             'react-dom',
             // bundled dependencies
-            '@react-aria/utils',
             '@react-spectrum/utils',
-            '@react-stately/utils',
             'clsx',
             'lucide-react',
           ],
