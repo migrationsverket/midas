@@ -169,7 +169,7 @@
     gap: var(--midas-space-small);
   }
 
-  .checkbox {
+  .checkboxButton {
     @media (width <= 479px) {
       padding: var(--midas-space-70) var(--midas-space-medium);
       border: 1px solid var(--midas-border-color-primary);
