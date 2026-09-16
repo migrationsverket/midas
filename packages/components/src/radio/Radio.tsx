@@ -4,8 +4,8 @@ import { RadioButton } from './RadioButton'
 
 export type RadioProps = RadioFieldProps
 
-export const Radio = ({ children, ...rest }: RadioProps) => (
+export const Radio = ({ children, className, ...rest }: RadioProps) => (
   <RadioField {...rest}>
-    <RadioButton>{children}</RadioButton>
+    <RadioButton className={className}>{children}</RadioButton>
   </RadioField>
 )

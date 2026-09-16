@@ -9,17 +9,17 @@ const { Primary, Required, CustomValidation } = composeStories(stories)
 
 describe('given a primary RadioGroup', async () => {
   it('should preserve its classNames when being passed new ones', async () => {
-    const { getByRole } = await render(<Primary />)
+    const { container, getByRole } = await render(<Primary />)
 
     const radioGroup = getByRole('radiogroup')
-    const radios = getByRole('group').element().childNodes
+    const radios = container.querySelectorAll(`.${styles.radioButton}`)
 
     await expect
       .element(radioGroup)
       .toHaveClass(styles.radioGroup, Primary.args.className as string)
 
-    radios.forEach(async radio => {
-      expect(radio).toHaveClass(styles.radio, 'test-radio-class')
+    radios.forEach(radio => {
+      expect(radio).toHaveClass('test-radio-class')
     })
   })
 
