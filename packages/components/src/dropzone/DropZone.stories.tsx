@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
-import { DropEvent } from 'react-aria'
+import { DropEvent, isFileDropItem } from 'react-aria'
+import { Upload } from 'lucide-react'
 import { DropZone } from './DropZone'
 import { FileTrigger } from '../file-upload'
 import { Button } from '../button'
@@ -31,6 +32,30 @@ export const Default: Story = {
   ),
 }
 
+export const WithUploadButton: Story = {
+  name: 'With an upload button',
+  render: args => (
+    <DropZone
+      {...args}
+      style={{ width: 679 }}
+    >
+      <Text slot='label'>
+        Välj filer eller dra och släpp inom det streckade området
+      </Text>
+      <FileTrigger>
+        <Button
+          variant='secondary'
+          size='medium'
+          icon={Upload}
+          iconPlacement='left'
+        >
+          Välj filer
+        </Button>
+      </FileTrigger>
+    </DropZone>
+  ),
+}
+
 export const WithFieldLabel: Story = {
   name: 'With an outer field label',
   parameters: {
@@ -55,25 +80,6 @@ export const WithFieldLabel: Story = {
 }
 
 export const Invalid: Story = {
-  name: 'Invalid (message inside)',
-  render: args => (
-    <DropZone
-      {...args}
-      isInvalid
-      style={{ width: 679 }}
-    >
-      <Text slot='label'>Släpp filer här</Text>
-      {/* Pinned to the corner, full width — the dropzone's own `align-items:
-          center` would otherwise center it like the label above. */}
-      <FieldError style={{ alignSelf: 'flex-start', width: '100%' }}>
-        Validering
-      </FieldError>
-    </DropZone>
-  ),
-}
-
-export const InvalidOutside: Story = {
-  name: 'Invalid (message outside)',
   render: args => (
     <div style={{ display: 'flex', flexDirection: 'column', width: 679 }}>
       <DropZone
@@ -87,6 +93,77 @@ export const InvalidOutside: Story = {
   ),
 }
 
+// ─── Rejects a disallowed file type — validation is entirely consumer-owned:
+// DropZone/FileTrigger have no concept of "invalid file", they just report
+// what was selected/dropped. The consumer checks the type and drives
+// `isInvalid` + a composed `FieldError` from that. ───
+
+const ACCEPTED_FILE_TYPES = ['image/jpeg', 'image/png']
+
+const RejectingContainer = () => {
+  const [isInvalid, setIsInvalid] = React.useState(false)
+
+  const validate = (files: File[]) => {
+    setIsInvalid(files.some(file => !ACCEPTED_FILE_TYPES.includes(file.type)))
+  }
+
+  const handleSelect = (selectedFileList: FileList | null) => {
+    if (selectedFileList) validate(Array.from(selectedFileList))
+  }
+
+  const handleDrop = async (e: DropEvent) => {
+    const fileItems = e.items.filter(isFileDropItem)
+    const droppedFiles = await Promise.all(
+      fileItems.map(item => item.getFile()),
+    )
+    validate(droppedFiles)
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', width: 679 }}>
+      <DropZone
+        onDrop={handleDrop}
+        isInvalid={isInvalid}
+        data-testid='drop-zone'
+      >
+        <Text slot='label'>
+          Släpp filer här eller välj en fil (endast .jpg/.png)
+        </Text>
+        <FileTrigger
+          acceptedFileTypes={ACCEPTED_FILE_TYPES}
+          onSelect={handleSelect}
+          data-testid='file-trigger'
+        >
+          <Button
+            variant='secondary'
+            size='medium'
+            icon={Upload}
+            iconPlacement='left'
+          >
+            Välj filer
+          </Button>
+        </FileTrigger>
+      </DropZone>
+      {isInvalid && (
+        <FieldError isInvalid>Endast .jpg- och .png-filer tillåts</FieldError>
+      )}
+    </div>
+  )
+}
+
+export const RejectsWrongFileType: Story = {
+  name: 'Rejects a disallowed file type',
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "DropZone and FileTrigger don't validate file type themselves — `acceptedFileTypes` only narrows the native file picker, it does nothing for drag-and-drop. The consumer checks `file.type` in `onSelect`/`onDrop` and drives `isInvalid` + a composed `FieldError` from the result, same pattern as the plain `Invalid` story above.",
+      },
+    },
+  },
+  render: () => <RejectingContainer />,
+}
+
 export const Disabled: Story = {
   render: args => (
     <DropZone
@@ -94,7 +171,27 @@ export const Disabled: Story = {
       isDisabled
       style={{ width: 679 }}
     >
-      <Text slot='label'>Släpp filer här</Text>
+      <Text slot='label'>
+        Välj filer eller dra och släpp inom det streckade området
+      </Text>
+      <FileTrigger>
+        <Button
+          variant='secondary'
+          size='medium'
+          icon={Upload}
+          iconPlacement='left'
+          isDisabled
+          // `secondary` is transparent/outline even when enabled, but its
+          // disabled state currently applies the shared washed-fill
+          // background meant for solid-filled variants (primary/danger),
+          // which doesn't match Figma here. Real fix belongs in Button.module
+          // .css (tracked separately, out of scope for this branch) — this
+          // is a demo-only override so the story reflects the intended look.
+          style={{ backgroundColor: 'transparent' }}
+        >
+          Välj filer
+        </Button>
+      </FileTrigger>
     </DropZone>
   ),
 }
