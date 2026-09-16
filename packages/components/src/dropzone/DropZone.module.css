@@ -1,16 +1,20 @@
 .dropzone {
   --dropzone-border-color: var(--midas-border-color-primary);
-  --dropzone-border-width: 2px;
+  --dropzone-border-width: 1px;
+  --dropzone-border-style: dashed;
+  --dropzone-background-color: var(--midas-background-base);
 
   font-family: var(--midas-typography-font-family);
   color: var(--midas-text-primary);
-  background-color: var(--midas-background-base);
+  background-color: var(--dropzone-background-color);
   box-sizing: border-box;
-  border: var(--dropzone-border-width) dashed var(--dropzone-border-color);
+  border: var(--dropzone-border-width) var(--dropzone-border-style)
+    var(--dropzone-border-color);
   padding: calc(var(--midas-space-90) - var(--dropzone-border-width));
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--midas-space-medium);
   text-align: center;
 
   [slot='label'] {
@@ -27,7 +31,9 @@
   }
 
   &[data-drop-target] {
-    --dropzone-border-color: var(--midas-support-border-success);
+    --dropzone-border-width: 2px;
+    --dropzone-border-color: var(--midas-border-color-tertiary);
+    --dropzone-background-color: var(--midas-support-background-info);
   }
 
   &[data-focus-visible] {
@@ -41,14 +47,24 @@
   }
 
   &[data-invalid] {
+    --dropzone-border-width: 2px;
+    --dropzone-border-style: solid;
     --dropzone-border-color: var(--midas-support-border-warning);
   }
 
   &[data-disabled] {
     color: var(--midas-text-disabled);
 
+    --dropzone-border-width: 2px;
     --dropzone-border-color: var(--midas-border-color-disabled);
 
     cursor: not-allowed;
+
+    /* Text's default (body) variant hardcodes --midas-text-primary and
+       never checks for an ancestor [data-disabled], unlike its description
+       variant — so the slotted label needs an explicit override here. */
+    [slot='label'] {
+      color: var(--midas-text-disabled);
+    }
   }
 }
