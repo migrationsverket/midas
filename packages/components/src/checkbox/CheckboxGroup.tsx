@@ -53,9 +53,10 @@ export const CheckboxGroup = ({
           )}
           <div className={styles.checkboxList}>
             {showSelectAll && (
-              <SelectAllCheckbox label={selectAllLabel}>
-                {children}
-              </SelectAllCheckbox>
+              <SelectAllCheckbox
+                label={selectAllLabel}
+                checkboxes={children}
+              />
             )}
             {children}
           </div>

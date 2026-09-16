@@ -6,19 +6,19 @@ import { Checkbox } from './Checkbox'
 import messages from './intl/translations.json'
 
 export interface SelectAllCheckboxProps {
-  children: ReactNode
+  checkboxes: ReactNode
   label?: string
 }
 
 export const SelectAllCheckbox = ({
-  children,
+  checkboxes,
   label,
 }: SelectAllCheckboxProps) => {
   const state = useContext(CheckboxGroupStateContext)
   const stringFormatter = useLocalizedStringFormatter(messages)
 
   const { allSelected, someSelected, checkboxValues, disabledSelectedValues } =
-    useSelectAll(children, state)
+    useSelectAll(checkboxes, state)
 
   const handleChange = (checked: boolean) => {
     state?.setValue(
