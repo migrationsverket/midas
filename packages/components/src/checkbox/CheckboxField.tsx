@@ -11,7 +11,7 @@ export type CheckboxFieldProps = AriaCheckboxFieldProps
 
 export const CheckboxField = ({ className, ...rest }: CheckboxFieldProps) => (
   <AriaCheckboxField
-    className={clsx(className, styles.checkboxField)}
+    className={clsx(styles.checkboxField, className)}
     {...rest}
   />
 )
