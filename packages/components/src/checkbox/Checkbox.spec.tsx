@@ -21,9 +21,9 @@ describe('given a primary Checkbox', async () => {
 
     await expect
       .element(
-        container.querySelector(`.${styles.checkboxField}`) as HTMLElement,
+        container.querySelector(`.${styles.checkboxButton}`) as HTMLElement,
       )
-      .toHaveClass(styles.checkboxField, Primary.args.className as string)
+      .toHaveClass(styles.checkboxButton, Primary.args.className as string)
   })
 })
 

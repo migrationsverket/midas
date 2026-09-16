@@ -19,14 +19,24 @@ export interface CheckboxProps extends AriaCheckboxFieldProps {
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
   (
-    { description, errorMessage, errorPosition = 'top', children, ...props },
+    {
+      className,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      children,
+      ...props
+    },
     ref,
   ) => {
     return (
       <CheckboxField {...props}>
         {description && <Text slot='description'>{description}</Text>}
         {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-        <CheckboxButton ref={ref}>
+        <CheckboxButton
+          ref={ref}
+          className={className}
+        >
           {({ isIndeterminate }) => (
             <>
               <div className={styles.indicator}>
