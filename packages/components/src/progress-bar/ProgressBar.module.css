@@ -52,13 +52,13 @@
 
   .circular {
     grid-area: track;
-    height: 1.25rem;
+    height: var(--midas-size-icon);
     transform: rotate(-90deg);
-    width: 1.25rem;
+    width: var(--midas-size-icon);
 
     &.circularSmall {
-      height: 1.25rem;
-      width: 1.25rem;
+      height: var(--midas-size-icon-sm);
+      width: var(--midas-size-icon-sm);
     }
   }
 
@@ -89,7 +89,7 @@
       stroke-linecap: square;
       transform-origin: 50% 50%;
 
-      @media (prefers-reduced-motion) {
+      @media (prefers-reduced-motion: reduce) {
         animation-duration: 2s;
       }
     }
@@ -116,7 +116,7 @@
   }
 }
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   .progressBar:not([aria-valuenow]) .indicator {
     animation-duration: 6s;
   }

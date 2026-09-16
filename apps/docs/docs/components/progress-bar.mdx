@@ -101,6 +101,39 @@ Egenskapen `isIndeterminate` kan användas för att indikera att ett förlopp ä
   />
 </div>
 
+### Cirkulär
+
+Använd `shape='circular'` för en kompakt ring istället för en linjär bar, till exempel bredvid text i en
+lista. `small` gör ringen ännu mindre.
+
+```tsx
+<ProgressBar
+  // highlight-start
+  shape='circular'
+  // highlight-end
+  aria-label='Laddar upp'
+  value={40}
+/>
+```
+
+<div className='card'>
+  <ProgressBar
+    shape='circular'
+    aria-label='Laddar upp'
+    value={40}
+  />
+</div>
+
+Utelämna `value` (eller sätt `isIndeterminate`) för en obestämd ring:
+
+<div className='card'>
+  <ProgressBar
+    shape='circular'
+    aria-label='Laddar upp'
+    isIndeterminate
+  />
+</div>
+
 ## API
 
 ### ProgressBar
