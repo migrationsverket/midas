@@ -208,7 +208,10 @@ det är `status` som avgör vilken som faktiskt anropas när knappen trycks:
 | `Tab` / `Shift+Tab` | Navigera mellan borttagningsknappar |
 | `Enter` / `Space` | Aktivera borttagningsknappen |
 
-Komponenten hanterar inte fokus efter borttagning — det är konsumentens ansvar att flytta fokus när ett objekt faktiskt tas bort från listan.
+När en rad tas bort flyttas fokus automatiskt till en angränsande rads knapp, eller till listan
+själv om det var den sista raden — annars skulle fokus falla igenom och gå förlorat. Detta sker
+bara när raden faktiskt försvinner ur DOM:en, aldrig i förväg, så det stör inte fokus du redan satt
+själv (till exempel om en borttagning misslyckas och raden ligger kvar).
 
 `aria-label` på `FileList` är obligatoriskt och beskriver listans syfte för skärmläsare.
 Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Remove CV_Anna_Svensson.pdf"`.

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import React from 'react'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
 
@@ -185,4 +186,34 @@ export const MixedStates: Story = {
       />
     </FileList>
   ),
+}
+
+// ─── Test-only: real state-driven removal, so focus management on delete
+// (moves to a sibling's action button, or the list itself if that was the
+// last row) can actually be exercised. ───
+
+interface FocusTestContainerProps {
+  initialFiles: string[]
+}
+
+const FocusTestContainer = ({ initialFiles }: FocusTestContainerProps) => {
+  const [files, setFiles] = React.useState(initialFiles)
+
+  return (
+    <FileList aria-label='Test'>
+      {files.map(name => (
+        <FileListItem
+          key={name}
+          fileName={name}
+          onDelete={() => setFiles(prev => prev.filter(f => f !== name))}
+        />
+      ))}
+    </FileList>
+  )
+}
+
+export const FocusManagementTest: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // @ts-expect-error initialFiles exists only on the test container, not FileList
+  render: args => <FocusTestContainer {...args} />,
 }
