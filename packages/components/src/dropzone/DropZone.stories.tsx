@@ -164,6 +164,41 @@ export const RejectsWrongFileType: Story = {
   render: () => <RejectingContainer />,
 }
 
+// ─── `getDropOperation` runs during drag-over, before anything is dropped —
+// it only sees the dragged item's declared type, never its content, so a
+// mismatched type can be rejected before it lands (no drop-target highlight,
+// cursor shows "not allowed"). This is a UX affordance, not a security
+// check: the declared type is untrusted metadata (usually derived from the
+// file extension), not verified content — real validation still belongs
+// server-side, same as the reactive `onDrop`/`file.type` check above. Drag a
+// real file from your OS onto this story to see it in action. ───
+
+export const RejectsTypeBeforeDrop: Story = {
+  name: 'Rejects a disallowed file type before drop',
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "`getDropOperation` runs during drag-over, before anything is dropped — it only sees the dragged item's declared type (`types.has('image/png')`), never its content, so a mismatched file can be rejected before it lands: the zone never enters its drop-target state and the cursor shows \"not allowed\". This is a UX affordance, not a security check — the declared type is untrusted metadata (usually derived from the file extension), not verified content. Real validation still belongs server-side, same as the reactive `onDrop`/`file.type` check in the story above. Want the invalid styling itself to show while the bad file is still hovering, not just the cursor? Drive `isInvalid` from inside `getDropOperation` directly — `onDropEnter`/`onDropExit` won't help here, they only fire once a drag is already accepted and never carry type info of their own.",
+      },
+    },
+  },
+  render: args => (
+    <DropZone
+      {...args}
+      getDropOperation={types =>
+        ACCEPTED_FILE_TYPES.some(type => types.has(type)) ? 'copy' : 'cancel'
+      }
+      style={{ width: 679 }}
+    >
+      <Text slot='label'>
+        Dra en .jpg- eller .png-fil hit — andra filtyper avvisas redan innan
+        släpp
+      </Text>
+    </DropZone>
+  ),
+}
+
 export const Disabled: Story = {
   render: args => (
     <DropZone
