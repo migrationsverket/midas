@@ -38,6 +38,7 @@ export const SelectAllCheckbox = ({
         isSelected={allSelected}
         isIndeterminate={someSelected}
         isReadOnly={state?.isReadOnly}
+        isDisabled={state?.isDisabled}
         onChange={handleChange}
       >
         {label || stringFormatter.format('selectAll')}
