@@ -70,14 +70,22 @@ export const Empty: Story = {
 
 export const Uploading: Story = {
   tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Use `onCancel`, not `onDelete`, while `status='uploading'` — that's where you'd abort the actual in-flight request (`XMLHttpRequest.abort()`/`AbortController.abort()`). `onDelete` still works as a fallback if `onCancel` is omitted, but an upload that isn't actually aborted keeps running in the background after the row disappears.",
+      },
+    },
+  },
   render: args => (
     <FileList {...args}>
       <FileListItem
         fileName='large-video.mp4'
         fileSize='128 MB'
         status='uploading'
-        onDelete={() => {
-          // noop
+        onCancel={() => {
+          // noop — in a real app, abort the in-flight upload request here
         }}
       />
     </FileList>
@@ -92,8 +100,8 @@ export const UploadingDeterminate: Story = {
         fileSize='128 MB'
         status='uploading'
         progress={40}
-        onDelete={() => {
-          // noop
+        onCancel={() => {
+          // noop — in a real app, abort the in-flight upload request here
         }}
       />
     </FileList>
@@ -101,6 +109,14 @@ export const UploadingDeterminate: Story = {
 }
 
 export const Success: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "`FileList` has no concept of an upload having completed vs. a file only ever existing locally — by the time `status='success'` is set, the file is presumably already persisted server-side. `onDelete` here is your only hook to remove it there too; if you only pop it from local state, the file stays wherever it was uploaded to.",
+      },
+    },
+  },
   render: args => (
     <FileList {...args}>
       <FileListItem
@@ -108,7 +124,7 @@ export const Success: Story = {
         fileSize='1.2 MB'
         status='success'
         onDelete={() => {
-          // noop
+          // noop — in a real app, this is likely a server-side delete call
         }}
       />
     </FileList>
@@ -146,7 +162,7 @@ export const MixedStates: Story = {
         fileSize='128 MB'
         status='uploading'
         progress={40}
-        onDelete={() => {
+        onCancel={() => {
           // noop
         }}
       />

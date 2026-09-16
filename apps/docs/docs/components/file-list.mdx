@@ -57,7 +57,9 @@ import { FileList, FileListItem } from '@midas-ds/components'
 
 ## Utan borttagningsknapp
 
-Utelämna `onDelete` för att visa en skrivskyddad lista.
+Utelämna `onDelete` för att visa en skrivskyddad lista. Kan en rad vara `status='uploading'`,
+utelämna även `onCancel` — annars visas ändå en avbryt-knapp i det läget (se
+[Ta bort eller avbryta](#ta-bort-eller-avbryta)).
 
 ```tsx
 <FileList aria-label='Bifogade filer'>
@@ -72,6 +74,130 @@ Utelämna `onDelete` för att visa en skrivskyddad lista.
     <FileListItem fileName='Bilaga_1.pdf' fileSize='1.1 MB' />
   </FileList>
 </div>
+
+## Uppladdning
+
+`status`, `progress` och `errorMessage` på `FileListItem` visar var i uppladdningsflödet en fil befinner sig.
+Komponenten laddar inte upp något själv — det är din egen uppladdningskod som styr övergångarna,
+och den ser olika ut beroende på hur ni laddar upp (eget API, försignerad länk till molnlagring,
+eller annat). Ett exempel med `XMLHttpRequest`:
+
+```tsx
+xhr.upload.onprogress = e => setProgress(Math.round((e.loaded / e.total) * 100))
+xhr.onload = () => setStatus('success')
+xhr.onerror = () => setStatus('error')
+```
+
+### Under uppladdning
+
+Sätt `status='uploading'` medan filen laddas upp. Ange `progress` (0–100) för ett bestämt förlopp, eller
+utelämna den för ett obestämt. Använd `onCancel`, inte `onDelete`, för knappen i detta läge — se
+[Ta bort eller avbryta](#ta-bort-eller-avbryta) nedan för varför.
+
+```tsx
+<FileListItem
+  fileName='video.mp4'
+  fileSize='128 MB'
+  status='uploading'
+  progress={40}
+  onCancel={handleCancel}
+/>
+```
+
+<div className='card'>
+  <FileList aria-label='Uppladdade filer'>
+    <FileListItem
+      fileName='video.mp4'
+      fileSize='128 MB'
+      status='uploading'
+      progress={40}
+      onCancel={() => {}}
+    />
+  </FileList>
+</div>
+
+:::tip Så visar du ett bestämt förlopp
+`progress` är bara ett tal du själv räknar fram och skickar in — komponenten vet inget om hur uppladdningen
+sker. `fetch` kan inte rapportera uppladdningsförlopp alls; använd `XMLHttpRequest` (`upload.onprogress`) om
+du vill visa ett bestämt förlopp. Går det inte att räkna ut ett tal, utelämna `progress` för ett obestämt
+förlopp istället.
+:::
+
+### Klar
+
+```tsx
+<FileListItem
+  fileName='resume.pdf'
+  fileSize='1.2 MB'
+  status='success'
+  onDelete={handleDelete}
+/>
+```
+
+<div className='card'>
+  <FileList aria-label='Uppladdade filer'>
+    <FileListItem
+      fileName='resume.pdf'
+      fileSize='1.2 MB'
+      status='success'
+      onDelete={() => {}}
+    />
+  </FileList>
+</div>
+
+### Fel
+
+```tsx
+<FileListItem
+  fileName='resume.pdf'
+  fileSize='1.2 MB'
+  status='error'
+  errorMessage='Filen är för stor. Max filstorlek är 1 MB.'
+  onDelete={handleDelete}
+/>
+```
+
+<div className='card'>
+  <FileList aria-label='Uppladdade filer'>
+    <FileListItem
+      fileName='resume.pdf'
+      fileSize='1.2 MB'
+      status='error'
+      errorMessage='Filen är för stor. Max filstorlek är 1 MB.'
+      onDelete={() => {}}
+    />
+  </FileList>
+</div>
+
+### Ta bort eller avbryta
+
+`onCancel` och `onDelete` är bara callbacks — komponenten anropar dem när knappen trycks, men gör
+inget själv. Vad som faktiskt händer när de anropas är helt upp till dig. De är två olika åtgärder,
+inte samma knapp med olika etikett:
+
+- **`onCancel`** — anropas när knappen trycks medan `status='uploading'` (knappen visas då som
+  "Avbryt"). Kan användas för att avbryta den faktiska uppladdningen, till exempel med
+  `XMLHttpRequest.abort()` eller `AbortController.abort()` — men `FileList` gör inget av det åt
+  dig. Kopplas ingen sådan logik in kan en pågående uppladdning fortsätta i bakgrunden trots att
+  raden försvunnit ur listan.
+- **`onDelete`** — anropas när knappen trycks i alla andra lägen (visas som "Ta bort"). `FileList`
+  vet inget om filen redan är sparad någonstans — är den det, till exempel efter `status='success'`,
+  kan `onDelete` användas för att även trigga en borttagning på serversidan. Även här: inget
+  komponenten gör automatiskt, bara en callback du kan välja att använda.
+
+Utelämnas `onCancel` faller knappen tillbaka på att anropa `onDelete` även under uppladdning.
+
+I praktiken har samma `FileListItem` oftast båda — filen går ju igenom flera lägen över tid, och
+det är `status` som avgör vilken som faktiskt anropas när knappen trycks:
+
+```tsx
+<FileListItem
+  fileName='video.mp4'
+  status={status}
+  onCancel={handleCancel}
+  onDelete={handleDelete}
+/>
+```
 
 ## Tillgänglighet
 

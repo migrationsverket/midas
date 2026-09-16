@@ -82,6 +82,39 @@ describe('FileList', () => {
       .toBeVisible()
   })
 
+  it('calls onCancel, not onDelete, when the cancel button is pressed during upload', async () => {
+    const onCancel = vi.fn()
+    const onDelete = vi.fn()
+    const { getByRole } = await render(
+      <FileList aria-label='Test'>
+        <FileListItem
+          fileName='video.mp4'
+          status='uploading'
+          onCancel={onCancel}
+          onDelete={onDelete}
+        />
+      </FileList>,
+    )
+    await getByRole('button', { name: /cancel video\.mp4/i }).click()
+    expect(onCancel).toHaveBeenCalledOnce()
+    expect(onDelete).not.toHaveBeenCalled()
+  })
+
+  it('falls back to onDelete during upload when onCancel is not provided', async () => {
+    const onDelete = vi.fn()
+    const { getByRole } = await render(
+      <FileList aria-label='Test'>
+        <FileListItem
+          fileName='video.mp4'
+          status='uploading'
+          onDelete={onDelete}
+        />
+      </FileList>,
+    )
+    await getByRole('button', { name: /cancel video\.mp4/i }).click()
+    expect(onDelete).toHaveBeenCalledOnce()
+  })
+
   it('shows a success indicator and announces completion', async () => {
     const { getByRole, getByText } = await render(<Success />)
     await expect.element(getByRole('button', { name: /remove/i })).toBeVisible()
@@ -92,5 +125,4 @@ describe('FileList', () => {
     const { getByText } = await render(<ErrorStory />)
     await expect.element(getByText('Det gick inte bra')).toBeVisible()
   })
-
 })
