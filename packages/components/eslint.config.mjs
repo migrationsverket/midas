@@ -33,10 +33,6 @@ export default defineConfig([
           buildTargets: ['build'],
           ignoredDependencies: [
             // bundled dependencies
-            '@internationalized/string',
-            '@react-aria/utils',
-            '@react-spectrum/utils',
-            '@react-stately/utils',
             '@react-types/shared',
             'clsx',
             'lucide-react',
