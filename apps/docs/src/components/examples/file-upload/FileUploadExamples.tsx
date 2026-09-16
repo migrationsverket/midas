@@ -1,14 +1,15 @@
 import {
   Button,
   DropZone,
+  FieldError,
   FileList,
   FileListItem,
   FileTrigger,
   Text,
 } from '@midas-ds/components'
-import { ArrowUpFromLine } from 'lucide-react'
+import { Upload } from 'lucide-react'
 import React from 'react'
-import { DropEvent } from 'react-aria'
+import { DropEvent, isFileDropItem } from 'react-aria'
 
 export const FileListExample = () => {
   const [files, setFiles] = React.useState<File[]>([])
@@ -60,8 +61,8 @@ export const DropZoneExample = () => {
   }
 
   const handleDrop = async (e: DropEvent) => {
-    const fileItems = e.items.filter(item => item.kind === 'file')
-    const droppedFiles: File[] = await Promise.all(
+    const fileItems = e.items.filter(isFileDropItem)
+    const droppedFiles = await Promise.all(
       fileItems.map(item => item.getFile()),
     )
     setUniqueFiles(droppedFiles)
@@ -79,15 +80,19 @@ export const DropZoneExample = () => {
   return (
     <>
       <DropZone onDrop={handleDrop}>
+        <Text slot='label'>Dra och släpp filer här</Text>
         <FileTrigger
           allowsMultiple
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <ArrowUpFromLine size={20} /> Välj fil
+            <Upload
+              aria-hidden
+              size={20}
+            />
+            Välj fil
           </Button>
         </FileTrigger>
-        <Text slot='label'>Dra och släpp filer här</Text>
       </DropZone>
       {files.length > 0 && (
         <FileList style={{ marginTop: '1rem' }}>
@@ -102,5 +107,53 @@ export const DropZoneExample = () => {
         </FileList>
       )}
     </>
+  )
+}
+
+const ACCEPTED_FILE_TYPES = ['image/jpeg', 'image/png']
+
+export const ValidatedDropZoneExample = () => {
+  const [isInvalid, setIsInvalid] = React.useState(false)
+
+  const validate = (files: File[]) => {
+    setIsInvalid(files.some(file => !ACCEPTED_FILE_TYPES.includes(file.type)))
+  }
+
+  const handleSelect = (fileList: FileList | null) => {
+    if (fileList) validate(Array.from(fileList))
+  }
+
+  const handleDrop = async (e: DropEvent) => {
+    const fileItems = e.items.filter(isFileDropItem)
+    const droppedFiles = await Promise.all(
+      fileItems.map(item => item.getFile()),
+    )
+    validate(droppedFiles)
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+      <DropZone
+        onDrop={handleDrop}
+        isInvalid={isInvalid}
+      >
+        <Text slot='label'>Släpp filer här</Text>
+        <FileTrigger
+          acceptedFileTypes={ACCEPTED_FILE_TYPES}
+          onSelect={handleSelect}
+        >
+          <Button variant='secondary'>
+            <Upload
+              aria-hidden
+              size={20}
+            />
+            Välj filer
+          </Button>
+        </FileTrigger>
+      </DropZone>
+      {isInvalid && (
+        <FieldError isInvalid>Endast .jpg- och .png-filer tillåts</FieldError>
+      )}
+    </div>
   )
 }
