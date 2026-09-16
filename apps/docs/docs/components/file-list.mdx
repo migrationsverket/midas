@@ -58,7 +58,7 @@ import { FileList, FileListItem } from '@midas-ds/components'
 ## Utan borttagningsknapp
 
 Utelämna `onDelete` för att visa en skrivskyddad lista. Kan en rad vara `status='uploading'`,
-utelämna även `onCancel` — annars visas ändå en avbryt-knapp i det läget (se
+utelämna även `onCancel`, annars visas ändå en avbryt-knapp i det läget (se
 [Ta bort eller avbryta](#ta-bort-eller-avbryta)).
 
 ```tsx
@@ -78,7 +78,7 @@ utelämna även `onCancel` — annars visas ändå en avbryt-knapp i det läget 
 ## Uppladdning
 
 `status`, `progress` och `errorMessage` på `FileListItem` visar var i uppladdningsflödet en fil befinner sig.
-Komponenten laddar inte upp något själv — det är din egen uppladdningskod som styr övergångarna,
+Komponenten laddar inte upp något själv, det är din egen uppladdningskod som styr övergångarna,
 och den ser olika ut beroende på hur ni laddar upp (eget API, försignerad länk till molnlagring,
 eller annat). Ett exempel med `XMLHttpRequest`:
 
@@ -91,7 +91,7 @@ xhr.onerror = () => setStatus('error')
 ### Under uppladdning
 
 Sätt `status='uploading'` medan filen laddas upp. Ange `progress` (0–100) för ett bestämt förlopp, eller
-utelämna den för ett obestämt. Använd `onCancel`, inte `onDelete`, för knappen i detta läge — se
+utelämna den för ett obestämt. Använd `onCancel`, inte `onDelete`, för knappen i detta läge, se
 [Ta bort eller avbryta](#ta-bort-eller-avbryta) nedan för varför.
 
 ```tsx
@@ -117,10 +117,10 @@ utelämna den för ett obestämt. Använd `onCancel`, inte `onDelete`, för knap
 </div>
 
 :::tip Så visar du ett bestämt förlopp
-`progress` är bara ett tal du själv räknar fram och skickar in — komponenten vet inget om hur uppladdningen
+`progress` är ett tal du själv räknar fram och skickar in, komponenten vet inget om hur uppladdningen
 sker. `fetch` kan inte rapportera uppladdningsförlopp alls; använd `XMLHttpRequest` (`upload.onprogress`) om
-du vill visa ett bestämt förlopp. Går det inte att räkna ut ett tal, utelämna `progress` för ett obestämt
-förlopp istället.
+du vill visa ett bestämt förlopp. Går det inte att räkna ut ett tal, utelämna `progress` för att visa ett
+obestämt förlopp istället.
 :::
 
 ### Klar
@@ -171,23 +171,23 @@ förlopp istället.
 
 ### Ta bort eller avbryta
 
-`onCancel` och `onDelete` är bara callbacks — komponenten anropar dem när knappen trycks, men gör
+`onCancel` och `onDelete` är callbacks: komponenten anropar dem när knappen trycks, men gör
 inget själv. Vad som faktiskt händer när de anropas är helt upp till dig. De är två olika åtgärder,
 inte samma knapp med olika etikett:
 
-- **`onCancel`** — anropas när knappen trycks medan `status='uploading'` (knappen visas då som
+- **`onCancel`**: anropas när knappen trycks medan `status='uploading'` (knappen visas då som
   "Avbryt"). Kan användas för att avbryta den faktiska uppladdningen, till exempel med
-  `XMLHttpRequest.abort()` eller `AbortController.abort()` — men `FileList` gör inget av det åt
+  `XMLHttpRequest.abort()` eller `AbortController.abort()`, men `FileList` gör inget av det åt
   dig. Kopplas ingen sådan logik in kan en pågående uppladdning fortsätta i bakgrunden trots att
   raden försvunnit ur listan.
-- **`onDelete`** — anropas när knappen trycks i alla andra lägen (visas som "Ta bort"). `FileList`
-  vet inget om filen redan är sparad någonstans — är den det, till exempel efter `status='success'`,
+- **`onDelete`**: anropas när knappen trycks i alla andra lägen (visas som "Ta bort"). `FileList`
+  vet inget om filen redan är sparad någonstans, är den det, till exempel efter `status='success'`,
   kan `onDelete` användas för att även trigga en borttagning på serversidan. Även här: inget
-  komponenten gör automatiskt, bara en callback du kan välja att använda.
+  komponenten gör automatiskt, endast en callback du kan välja att använda.
 
 Utelämnas `onCancel` faller knappen tillbaka på att anropa `onDelete` även under uppladdning.
 
-I praktiken har samma `FileListItem` oftast båda — filen går ju igenom flera lägen över tid, och
+I praktiken har samma `FileListItem` oftast båda: filen går ju igenom flera lägen över tid, och
 det är `status` som avgör vilken som faktiskt anropas när knappen trycks:
 
 ```tsx
@@ -208,10 +208,13 @@ det är `status` som avgör vilken som faktiskt anropas när knappen trycks:
 | `Tab` / `Shift+Tab` | Navigera mellan borttagningsknappar |
 | `Enter` / `Space` | Aktivera borttagningsknappen |
 
-Komponenten hanterar inte fokus efter borttagning — det är konsumentens ansvar att flytta fokus när ett objekt faktiskt tas bort från listan.
+När en rad tas bort flyttas fokus automatiskt till en angränsande rads knapp, eller till listan
+själv, om det var den sista raden, annars skulle fokus falla igenom och gå förlorat. Detta sker
+bara när raden faktiskt försvinner ur DOM:en, aldrig i förväg, så det stör inte fokus du redan satt
+själv (till exempel om en borttagning misslyckas och raden ligger kvar).
 
 `aria-label` på `FileList` är obligatoriskt och beskriver listans syfte för skärmläsare.
-Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Remove CV_Anna_Svensson.pdf"`.
+Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Ta bort CV_Anna_Svensson.pdf"`.
 
 ## API
 
