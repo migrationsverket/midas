@@ -10,7 +10,6 @@ const handleSelect = vi.fn()
 
 describe('Given a DropZone composed with a FileTrigger', async () => {
   beforeEach(async () => {
-    // @ts-expect-error onSelect exists only on the test container
     await render(<WithFileTrigger onSelect={handleSelect} />)
   })
 

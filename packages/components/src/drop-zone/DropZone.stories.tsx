@@ -290,8 +290,7 @@ const DropZoneTestContainer = (props: DropZoneTestContainerProps) => {
   )
 }
 
-export const WithFileTrigger: Story = {
+export const WithFileTrigger: StoryObj<DropZoneTestContainerProps> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  // @ts-expect-error onSelect exists only on the test container, not DropZone
   render: args => <DropZoneTestContainer {...args} />,
 }
