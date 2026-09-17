@@ -71,6 +71,10 @@ jobs:
         continue-on-error: true
         run: npx nx affected -t visual
 
+      - name: DEBUG list attachments dir
+        if: steps.visual-regression.outcome == 'failure'
+        run: find packages/components/.vitest-attachments -type f 2>&1 || echo "DIR MISSING"
+
       - name: Upload visual regression diffs
         if: steps.visual-regression.outcome == 'failure'
         uses: actions/upload-artifact@v4
