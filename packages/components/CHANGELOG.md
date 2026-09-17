@@ -1,3 +1,9 @@
+## 17.25.0 (2026-09-17)
+
+### 🚀 Features
+
+- **components,checkbox:** export CheckboxButton & CheckboxField ([#1361](https://github.com/migrationsverket/midas/pull/1361))
+
 ## 17.24.0 (2026-09-17)
 
 ### 🚀 Features
