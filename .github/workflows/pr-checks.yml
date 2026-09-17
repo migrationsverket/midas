@@ -67,8 +67,17 @@ jobs:
         run: npx nx affected -t test
 
       - name: Visual regression tests (non-blocking PoC — does not fail the build)
+        id: visual-regression
         continue-on-error: true
         run: npx nx affected -t visual
+
+      - name: Upload visual regression diffs
+        if: steps.visual-regression.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-diffs
+          path: packages/components/.vitest-attachments/
+          retention-days: 14
 
       - name: A11y check packages
         if: >
