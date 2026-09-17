@@ -17,14 +17,26 @@ import { ValidatedDropZoneExample } from '@site/src/components/examples/file-upl
 En yta som ett eller flera objekt kan dras och släppas på. Kombinera med [FileTrigger](/components/file-trigger) för
 filuppladdning, eller använd den fristående för andra typer av drag & drop.
 
+:::warning
+Ange alltid `aria-label` på `DropZone`. Annars faller den tillbaka på en oöversatt engelsk standardetikett
+("DropZone") som skärmläsare läser upp tillsammans med din egen etikett — oavsett om den kommer från
+`slot='label'` eller `aria-labelledby`. De kombineras, de ersätter inte varandra.
+:::
+
 ```tsx
-<DropZone onDrop={handleDrop}>
+<DropZone
+  onDrop={handleDrop}
+  aria-label='Släpp filer här'
+>
   <Text slot='label'>Släpp filer här</Text>
 </DropZone>
 ```
 
 <div className='card'>
-  <DropZone style={{ width: '100%', maxWidth: 480 }}>
+  <DropZone
+    style={{ width: '100%', maxWidth: 480 }}
+    aria-label='Släpp filer här'
+  >
     <Text slot='label'>Släpp filer här</Text>
   </DropZone>
 </div>
@@ -38,7 +50,10 @@ formulär, komplettera med en etikett ovanför.
 
 ```tsx
 <Label id='upload-label'>Ladda upp filer</Label>
-<DropZone aria-labelledby='upload-label'>
+<DropZone
+  aria-labelledby='upload-label'
+  aria-label='Släpp filer här'
+>
   <Text slot='label'>Släpp filer här</Text>
 </DropZone>
 ```
@@ -46,7 +61,10 @@ formulär, komplettera med en etikett ovanför.
 <div className='card'>
   <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
     <Label id='upload-label-docs'>Ladda upp filer</Label>
-    <DropZone aria-labelledby='upload-label-docs'>
+    <DropZone
+      aria-labelledby='upload-label-docs'
+      aria-label='Släpp filer här'
+    >
       <Text slot='label'>Släpp filer här</Text>
     </DropZone>
   </div>
@@ -57,7 +75,10 @@ formulär, komplettera med en etikett ovanför.
 DropZone kan markeras som ogiltig med `isInvalid`, tillsammans med ett felmeddelande.
 
 ```tsx
-<DropZone isInvalid>
+<DropZone
+  isInvalid
+  aria-label='Släpp filer här'
+>
   <Text slot='label'>Släpp filer här</Text>
 </DropZone>
 <FieldError isInvalid>Filen är för stor</FieldError>
@@ -65,7 +86,10 @@ DropZone kan markeras som ogiltig med `isInvalid`, tillsammans med ett felmeddel
 
 <div className='card'>
   <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
-    <DropZone isInvalid>
+    <DropZone
+      isInvalid
+      aria-label='Släpp filer här'
+    >
       <Text slot='label'>Släpp filer här</Text>
     </DropZone>
     <FieldError isInvalid>Filen är för stor</FieldError>
@@ -84,7 +108,10 @@ Kombinera med [FileTrigger](/components/file-trigger) för att låta användaren
 filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för ett komplett exempel med filhantering.
 
 ```tsx
-<DropZone onDrop={handleDrop}>
+<DropZone
+  onDrop={handleDrop}
+  aria-label='Dra och släpp filer här'
+>
   <Text slot='label'>Dra och släpp filer här</Text>
   <FileTrigger onSelect={handleSelect}>
     <Button variant='secondary'>
@@ -96,7 +123,10 @@ filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för
 ```
 
 <div className='card'>
-  <DropZone style={{ width: '100%', maxWidth: 480 }}>
+  <DropZone
+    style={{ width: '100%', maxWidth: 480 }}
+    aria-label='Dra och släpp filer här'
+  >
     <Text slot='label'>Dra och släpp filer här</Text>
     <FileTrigger>
       <Button variant='secondary'><Upload aria-hidden size={20} />Välj filer</Button>
@@ -113,7 +143,10 @@ filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för
 ### Inaktiverad
 
 ```tsx
-<DropZone isDisabled>
+<DropZone
+  isDisabled
+  aria-label='Släpp filer här'
+>
   <Text slot='label'>Släpp filer här</Text>
   <FileTrigger>
     <Button
@@ -131,6 +164,7 @@ filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för
   <DropZone
     isDisabled
     style={{ width: '100%', maxWidth: 480 }}
+    aria-label='Släpp filer här'
   >
     <Text slot='label'>Släpp filer här</Text>
     <FileTrigger>
