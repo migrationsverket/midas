@@ -1,3 +1,17 @@
+## 0.2.34 (2026-09-17)
+
+### 🩹 Fixes
+
+- **layout:** externalize shared dependencies ([e44cc511364](https://github.com/migrationsverket/midas/commit/e44cc511364))
+
+### 🔧 Maintenance
+
+- **layout:** configure @nx/dependency-checks ([c29e20fcf93](https://github.com/migrationsverket/midas/commit/c29e20fcf93))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.23.9
+
 ## 0.2.33 (2026-09-08)
 
 ### 🧱 Updated Dependencies

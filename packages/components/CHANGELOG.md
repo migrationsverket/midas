@@ -1,3 +1,14 @@
+## 17.23.9 (2026-09-17)
+
+### 🩹 Fixes
+
+- **components:** externalize shared dependencies ([df23057046f](https://github.com/migrationsverket/midas/commit/df23057046f))
+
+### 🔧 Maintenance
+
+- **components:** configure @nx/dependency-checks ([1fb6371567b](https://github.com/migrationsverket/midas/commit/1fb6371567b))
+- **components:** remove unnecessary lint bypass ([abc4c5e47ab](https://github.com/migrationsverket/midas/commit/abc4c5e47ab))
+
 ## 17.23.8 (2026-09-08)
 
 ### 🩹 Fixes
