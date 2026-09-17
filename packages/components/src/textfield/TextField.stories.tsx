@@ -127,6 +127,11 @@ export const Disabled: Story = {
 }
 
 export const ReadOnly: Story = {
+  // Flaked on a 3rd visual-regression run (30px / ~1% diff) after passing
+  // clean on 2 prior runs — smaller magnitude than the Tooltip/Navbar cases,
+  // likely font-rendering/anti-aliasing jitter rather than an animation.
+  // Quarantined until root-caused, see PR #1367.
+  tags: ['!snapshot'],
   args: {
     isReadOnly: true,
     value: 'User input',
