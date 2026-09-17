@@ -1,62 +1,65 @@
-import { forwardRef, useContext, useRef } from 'react'
-import { useFocusRing, useHover, usePress } from 'react-aria'
+import { forwardRef } from 'react'
 import {
-  CheckboxContext,
-  FormContext,
-  useContextProps,
-  useSlottedContext,
+  type CheckboxFieldProps as AriaCheckboxFieldProps,
+  type ValidationResult,
 } from 'react-aria-components'
-import { CheckboxGroupContext } from './context'
-import { CheckboxProps } from './types'
-import { CheckBoxGroupItem } from './CheckboxGroupItem'
-import { SingleCheckbox } from './SingleCheckbox'
+import { Minus, Check } from 'lucide-react'
+import { variables } from '@midas-ds/theme'
+import { FieldError } from '../field-error'
+import { Text } from '../text'
+import styles from './Checkbox.module.css'
+import { CheckboxField } from './CheckboxField'
+import { CheckboxButton } from './CheckboxButton'
+
+export interface CheckboxProps extends AriaCheckboxFieldProps {
+  description?: string
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
+}
 
 export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
-  (props, ref) => {
-    ;[props, ref] = useContextProps(props, ref, CheckboxContext)
-
-    const formProps = useSlottedContext(FormContext)
-
-    const validationBehavior =
-      props.validationBehavior ?? formProps?.validationBehavior ?? 'native'
-
-    const state = useContext(CheckboxGroupContext)
-
-    const inputRef = useRef<HTMLInputElement>(null)
-
-    const hoverResult = useHover(props)
-
-    const pressResult = usePress({
-      ref,
-      isDisabled: props.isDisabled,
-    })
-
-    const focusRingAria = useFocusRing()
-
-    if (state) {
-      return (
-        <CheckBoxGroupItem
-          {...props}
-          state={state}
-          inputRef={inputRef}
-          hoverResult={hoverResult}
-          pressResult={pressResult}
-          focusRingAria={focusRingAria}
-          validationBehavior={validationBehavior}
-        />
-      )
-    }
-
+  (
+    {
+      className,
+      description,
+      errorMessage,
+      errorPosition = 'top',
+      children,
+      ...props
+    },
+    ref,
+  ) => {
     return (
-      <SingleCheckbox
-        {...props}
-        inputRef={inputRef}
-        hoverResult={hoverResult}
-        pressResult={pressResult}
-        focusRingAria={focusRingAria}
-        validationBehavior={validationBehavior}
-      />
+      <CheckboxField {...props}>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <CheckboxButton
+          ref={ref}
+          className={className}
+        >
+          {({ isIndeterminate }) => (
+            <>
+              <div className={styles.indicator}>
+                {isIndeterminate ? (
+                  <Minus
+                    size={14}
+                    color={variables.iconOnColor}
+                  />
+                ) : (
+                  <Check
+                    size={14}
+                    color={variables.iconOnColor}
+                  />
+                )}
+              </div>
+              {children}
+            </>
+          )}
+        </CheckboxButton>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+      </CheckboxField>
     )
   },
 )
+
 Checkbox.displayName = 'Checkbox'

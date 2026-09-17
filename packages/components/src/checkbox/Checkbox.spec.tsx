@@ -20,15 +20,19 @@ describe('given a primary Checkbox', async () => {
     const { container } = await render(<Primary />)
 
     await expect
-      .element(container.querySelector(`.${styles.checkbox}`) as HTMLElement)
-      .toHaveClass(styles.checkbox, Primary.args.className as string)
+      .element(
+        container.querySelector(`.${styles.checkboxButton}`) as HTMLElement,
+      )
+      .toHaveClass(styles.checkboxButton, Primary.args.className as string)
   })
 })
 
 describe('given a selected Checkbox', async () => {
   it('should set data-hovered on the wrapper when hovered', async () => {
     const { container } = await render(<Selected />)
-    const wrapper = page.elementLocator(container.querySelector(`.${styles.checkbox}`) as Element)
+    const wrapper = page.elementLocator(
+      container.querySelector(`.${styles.checkboxButton}`) as Element,
+    )
     await wrapper.hover()
     await expect.element(wrapper).toHaveAttribute('data-hovered')
   })
@@ -37,7 +41,9 @@ describe('given a selected Checkbox', async () => {
 describe('given an indeterminate Checkbox', async () => {
   it('should set data-hovered on the wrapper when hovered', async () => {
     const { container } = await render(<Indeterminate />)
-    const wrapper = page.elementLocator(container.querySelector(`.${styles.checkbox}`) as Element)
+    const wrapper = page.elementLocator(
+      container.querySelector(`.${styles.checkboxButton}`) as Element,
+    )
     await wrapper.hover()
     await expect.element(wrapper).toHaveAttribute('data-hovered')
   })
@@ -46,7 +52,9 @@ describe('given an indeterminate Checkbox', async () => {
 describe('given an invalid Checkbox', async () => {
   it('should set data-hovered on the wrapper when hovered', async () => {
     const { container } = await render(<Invalid />)
-    const wrapper = page.elementLocator(container.querySelector(`.${styles.checkbox}`) as Element)
+    const wrapper = page.elementLocator(
+      container.querySelector(`.${styles.checkboxButton}`) as Element,
+    )
     await wrapper.hover()
     await expect.element(wrapper).toHaveAttribute('data-hovered')
   })
@@ -72,9 +80,9 @@ describe('given a Checkbox with a description', async () => {
     const description = getByText(WithDescription.args.description as string)
 
     await expect.element(description).toBeVisible()
-    await expect.element(checkbox).toHaveAccessibleDescription(
-      WithDescription.args.description as string,
-    )
+    await expect
+      .element(checkbox)
+      .toHaveAccessibleDescription(WithDescription.args.description as string)
   })
 
   it('should not toggle the checkbox when clicking the description', async () => {
@@ -95,8 +103,8 @@ describe('given an invalid Checkbox with an error message', async () => {
     const errorMessage = getByText(WithErrorMessage.args.errorMessage as string)
 
     await expect.element(errorMessage).toBeVisible()
-    await expect.element(checkbox).toHaveAccessibleDescription(
-      WithErrorMessage.args.errorMessage as string,
-    )
+    await expect
+      .element(checkbox)
+      .toHaveAccessibleDescription(WithErrorMessage.args.errorMessage as string)
   })
 })
