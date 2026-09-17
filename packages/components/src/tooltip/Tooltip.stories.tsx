@@ -49,6 +49,13 @@ export default {
 export const Primary: Story = {}
 
 export const Open: Story = {
+  // Reproduced twice on the same machine, back to back, no code changes in
+  // between: pixel diffs (~429px, ~1%) against its own prior-run reference.
+  // Likely the open/close transition not fully settling — `isOpen: true`
+  // forces the tooltip in on mount. All three isOpen:true Tooltip stories
+  // (this one, Placement, PlacementStartRTL) have independently flaked at
+  // least once. Quarantined until root-caused, see PR #1367.
+  tags: ['!snapshot'],
   args: {
     className: 'test-class',
     isOpen: true,
@@ -56,6 +63,9 @@ export const Open: Story = {
 }
 
 export const Placement: Story = {
+  // Same flakiness as Open above — pixel diffs between consecutive runs,
+  // no code changes. Quarantined until root-caused, see PR #1367.
+  tags: ['!snapshot'],
   args: {
     placement: 'top',
     isOpen: true,
@@ -63,11 +73,15 @@ export const Placement: Story = {
 }
 
 export const PlacementStartRTL: Story = {
+  // Same flakiness as Open/Placement above — flaked on a 3rd run after not
+  // flaking on the first 2 (all three isOpen: true Tooltip stories have now
+  // independently flaked at least once). Quarantined until root-caused, see
+  // PR #1367.
   args: {
     placement: 'start',
     isOpen: true,
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   render: args => (
     <I18nProvider locale='ar-AR'>
       <Render {...args} />

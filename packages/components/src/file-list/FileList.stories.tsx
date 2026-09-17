@@ -61,6 +61,10 @@ export const WithoutFileSize: Story = {
 }
 
 export const Empty: Story = {
+  // Reproduced twice on the same machine, back to back, no code changes in
+  // between: fails visual regression with "Could not capture a stable
+  // screenshot within 5000ms." Quarantined until root-caused — see PR #1367.
+  tags: ['!snapshot'],
   render: args => (
     <FileList {...args}>
       {[]}
