@@ -1,3 +1,9 @@
+## 17.24.0 (2026-09-17)
+
+### 🚀 Features
+
+- **components,radio:** export RadioButton & RadioField ([#1359](https://github.com/migrationsverket/midas/pull/1359))
+
 ## 17.23.9 (2026-09-17)
 
 ### 🩹 Fixes
