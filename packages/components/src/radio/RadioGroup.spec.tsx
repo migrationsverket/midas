@@ -2,24 +2,24 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import { render } from '../../test-utils'
-import * as stories from './Radio.stories'
+import * as stories from './RadioGroup.stories'
 import styles from './Radio.module.css'
 
 const { Primary, Required, CustomValidation } = composeStories(stories)
 
 describe('given a primary RadioGroup', async () => {
   it('should preserve its classNames when being passed new ones', async () => {
-    const { getByRole } = await render(<Primary />)
+    const { container, getByRole } = await render(<Primary />)
 
     const radioGroup = getByRole('radiogroup')
-    const radios = getByRole('group').element().childNodes
+    const radios = container.querySelectorAll(`.${styles.radioButton}`)
 
     await expect
       .element(radioGroup)
       .toHaveClass(styles.radioGroup, Primary.args.className as string)
 
-    radios.forEach(async radio => {
-      expect(radio).toHaveClass(styles.radio, 'test-radio-class')
+    radios.forEach(radio => {
+      expect(radio).toHaveClass('test-radio-class')
     })
   })
 

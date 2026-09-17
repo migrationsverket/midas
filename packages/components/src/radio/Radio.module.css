@@ -22,7 +22,7 @@
   }
 }
 
-.radio {
+.radioButton {
   font-size: var(--midas-typography-font-size-30);
   display: flex;
   align-items: center;
@@ -131,7 +131,7 @@
     border: 1px solid var(--midas-border-color-primary);
     width: auto;
 
-    &.radio {
+    &.radioButton {
       width: 100%;
       box-sizing: border-box;
     }
@@ -152,7 +152,7 @@
 }
 
 @media (prefers-reduced-motion) {
-  .radio::before {
+  .radioButton::before {
     transition: none;
   }
 }
