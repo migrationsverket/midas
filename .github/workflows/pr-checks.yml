@@ -78,6 +78,9 @@ jobs:
           name: visual-regression-diffs
           path: packages/components/.vitest-attachments/
           retention-days: 14
+          # .vitest-attachments is a dot-directory — upload-artifact's glob
+          # skips hidden paths by default and silently uploads nothing.
+          include-hidden-files: true
 
       - name: A11y check packages
         if: >

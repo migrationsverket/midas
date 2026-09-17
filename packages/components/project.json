@@ -18,6 +18,7 @@
       }
     },
     "visual": {
+      "dependsOn": ["^build"],
       "options": {
         "config": "vitest.config.visual.ts"
       }
