@@ -290,6 +290,14 @@
         "testMode": "watch"
       },
       "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "visual",
+        "testMode": "run"
+      },
+      "include": ["packages/components/**/*"]
     }
   ],
   "analytics": false

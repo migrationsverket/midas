@@ -42,6 +42,7 @@ export default defineConfig([
             '{projectRoot}/test-utils.ts',
             '{projectRoot}/vite.config.ts',
             '{projectRoot}/vitest.config.ts',
+            '{projectRoot}/vitest.config.visual.ts',
             '{projectRoot}/vitest.setup.ts',
           ],
           checkMissingDependencies: true,

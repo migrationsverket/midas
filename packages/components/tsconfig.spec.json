@@ -4,7 +4,7 @@
     "outDir": "../../dist/out-tsc",
     "module": "esnext",
     "moduleResolution": "bundler",
-    "types": ["node", "@nx/react/typings/cssmodule.d.ts"]
+    "types": ["node", "@nx/react/typings/cssmodule.d.ts", "vite/client"]
   },
   "include": ["vitest.config.ts", "src/**/*.test.*", "src/**/*.spec.*"]
 }
