@@ -4,7 +4,7 @@ export const Dummy = () => {
       style={{
         width: 200,
         height: 100,
-        background: 'crimson',
+        background: 'dodgerblue',
       }}
     />
   )
