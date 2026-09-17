@@ -66,6 +66,10 @@ jobs:
       - name: Test packages
         run: npx nx affected -t test
 
+      - name: Visual regression tests (non-blocking PoC — does not fail the build)
+        continue-on-error: true
+        run: npx nx affected -t visual
+
       - name: A11y check packages
         if: >
           (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||

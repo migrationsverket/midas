@@ -16,6 +16,11 @@
         "lintFilePatterns": ["packages/components/**/*.css"],
         "formatter": "unix"
       }
+    },
+    "visual": {
+      "options": {
+        "config": "vitest.config.visual.ts"
+      }
     }
   }
 }

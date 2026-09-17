@@ -200,6 +200,10 @@ __vis__/forced-colors-dark
 __diffs__
 __results__
 
+# vitest toMatchScreenshot() failure artifacts (actual/diff images) — the
+# committed baselines live in __screenshots__/ and are NOT ignored
+.vitest-attachments/
+
 # Playwright
 test-results/
 playwright-report/
