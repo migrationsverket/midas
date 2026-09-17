@@ -14,7 +14,7 @@
   "description": "Midas Layout components",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "0.2.36",
+  "version": "0.2.37",
   "module": "./index.js",
   "type": "module",
   "main": "./index.js",
@@ -41,7 +41,7 @@
     "react-dom": "^18.3.1 || ^19.0.0"
   },
   "dependencies": {
-    "@midas-ds/components": "17.25.0",
+    "@midas-ds/components": "17.25.1",
     "@react-aria/utils": "^3.33.1",
     "@react-stately/utils": "^3.12.1",
     "react-aria-components": "1.20.0"

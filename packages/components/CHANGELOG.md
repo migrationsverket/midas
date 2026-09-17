@@ -1,3 +1,9 @@
+## 17.25.1 (2026-09-17)
+
+### 🩹 Fixes
+
+- **ci:** visual regression target build-dep + artifact upload ([#1370](https://github.com/migrationsverket/midas/pull/1370), [#1](https://github.com/migrationsverket/midas/issues/1), [#2](https://github.com/migrationsverket/midas/issues/2))
+
 ## 17.25.0 (2026-09-17)
 
 ### 🚀 Features
