@@ -147,7 +147,7 @@ export const ValidatedDropZoneExample = () => {
               aria-hidden
               size={20}
             />
-            Välj filer
+            Välj .jpg- eller .png-filer
           </Button>
         </FileTrigger>
       </DropZone>
