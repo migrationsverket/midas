@@ -46,7 +46,7 @@ export const DropZone = forwardRef<HTMLDivElement, DropZoneProps>(
         {...rest}
         ref={ref}
         data-invalid={isInvalid || undefined}
-        className={clsx(styles.dropzone, className)}
+        className={clsx(styles.dropZone, className)}
       >
         {composeRenderProps(children, children => (
           // DropZone has no concept of form validation on its own — provide
