@@ -5,6 +5,7 @@ import styles from './FileList.module.css'
 import { render } from '../../test-utils'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
+import { I18nProvider } from '../utils/intl'
 
 const { Default, WithoutFileSize } = composeStories(stories)
 
@@ -54,4 +55,13 @@ describe('FileList', () => {
       .toHaveClass(styles.fileList, 'custom-class')
   })
 
+  it('renders the remove-file button with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Default />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Ta bort')
+  })
 })

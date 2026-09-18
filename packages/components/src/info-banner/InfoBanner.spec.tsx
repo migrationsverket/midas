@@ -2,6 +2,7 @@ import { describe, expect, it, vi, afterEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './InfoBanner.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
 const { Success, Dismissable, Controlled } = composeStories(stories)
 
@@ -33,6 +34,21 @@ describe('given a dismissable InfoBanner', async () => {
 
     expect(handleOpenChange).toHaveBeenCalledExactlyOnceWith(false)
     await expect.element(getByRole('button')).not.toBeInTheDocument()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the dismiss button and status icon with Swedish text', async () => {
+    // Dismissable uses type: 'success', which also exercises the shared
+    // FeedbackStatusIcon translations ("ok" -> "okej").
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Dismissable />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Stäng')
+    expect(container.innerHTML).toContain('okej')
   })
 })
 
