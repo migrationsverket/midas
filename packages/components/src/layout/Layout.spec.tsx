@@ -4,8 +4,9 @@ import { userEvent } from 'vitest/browser'
 import styles from './Layout.module.css'
 import * as stories from './Layout.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
-const { Primary } = composeStories(stories)
+const { Primary, Navbar } = composeStories(stories)
 
 describe('given a primary Layout', async () => {
   it('should use accept a custom className', async () => {
@@ -23,5 +24,28 @@ describe('given a primary Layout', async () => {
     await userEvent.keyboard('[Enter]')
 
     await expect.element(getByRole('main')).toHaveFocus()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the skip-link and header menu button with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Primary />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Hoppa till huvudinnehåll')
+    expect(container.innerHTML).toContain('Öppna meny')
+  })
+
+  it('renders the navbar with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Navbar />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Bottenmeny')
   })
 })

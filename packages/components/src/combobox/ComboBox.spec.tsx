@@ -6,6 +6,7 @@ import styles from './ComboBox.module.css'
 import { render } from '../../test-utils'
 import { ComboBox } from './ComboBox'
 import { ListBoxItem } from '../list-box'
+import { I18nProvider } from '../utils/intl'
 
 const { Primary, Required, Sectioned, NotVirtualized, WithHelpPopover } =
   composeStories(stories)
@@ -123,6 +124,36 @@ describe('given an async ComboBox with allowsEmptyCollection', async () => {
     await userEvent.keyboard('[ArrowDown]')
 
     await expect.element(page.getByText('No results found')).toBeInTheDocument()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the show-list button with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Primary />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Visa lista')
+  })
+
+  it('renders the empty state with Swedish text', async () => {
+    await render(
+      <I18nProvider locale='sv'>
+        <ComboBox
+          label='Test'
+          allowsEmptyCollection
+        >
+          {[]}
+        </ComboBox>
+      </I18nProvider>,
+    )
+
+    await userEvent.tab()
+    await userEvent.keyboard('[ArrowDown]')
+
+    await expect.element(page.getByText('Inga träffar')).toBeInTheDocument()
   })
 })
 

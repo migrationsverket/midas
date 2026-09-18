@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './ListBox.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
+import { ListBox } from './ListBox'
+import { ListBoxLoadMoreItem } from './ListBoxLoadMoreItem'
 
 const { SelectionModeSingle, NotVirtualized } = composeStories(stories)
 
@@ -40,6 +43,23 @@ describe('given a ListBox with virtualized (default)', async () => {
     expect(
       container.querySelector('[style*="contain: size layout style"]'),
     ).toBeTruthy()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the load-more item with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <ListBox
+          aria-label='fruit'
+          virtualized={false}
+        >
+          <ListBoxLoadMoreItem isLoading />
+        </ListBox>
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Laddar...')
   })
 })
 

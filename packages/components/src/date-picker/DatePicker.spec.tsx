@@ -3,9 +3,15 @@ import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DatePicker.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
-const { Required, CustomValiation, ControlledState, WithHelpPopover } =
-  composeStories(stories)
+const {
+  Required,
+  CustomValiation,
+  ControlledState,
+  WithHelpPopover,
+  WithClearButton,
+} = composeStories(stories)
 
 describe('given a required DatePicker', async () => {
   it('should show an error message if submitted empty', async () => {
@@ -44,6 +50,19 @@ describe('given a Contolled DatePicker', async () => {
 
     await page.getByRole('button', { name: 'Open calendar' }).click()
     await expect.element(page.getByRole('application')).toBeVisible()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the open-calendar and clear buttons with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <WithClearButton />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Öppna kalender')
+    expect(container.innerHTML).toContain('Rensa datum')
   })
 })
 

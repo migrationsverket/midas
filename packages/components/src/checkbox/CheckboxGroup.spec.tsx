@@ -3,9 +3,14 @@ import { userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './CheckboxGroup.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
-const { Primary, SelectAllInteraction, SelectAllWithPreselectedDisabledItem } =
-  composeStories(stories)
+const {
+  Primary,
+  SelectAllInteraction,
+  SelectAllWithPreselectedDisabledItem,
+  ShowSelectAll,
+} = composeStories(stories)
 
 const Required = () => (
   <Primary
@@ -99,5 +104,17 @@ describe('given a Checkbox with select all enabled', async () => {
     expect((banana.element() as HTMLInputElement).checked).toBe(false)
     expect((apple.element() as HTMLInputElement).checked).toBe(false)
     expect((mango.element() as HTMLInputElement).checked).toBe(true)
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the default select-all label with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <ShowSelectAll />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Välj alla')
   })
 })

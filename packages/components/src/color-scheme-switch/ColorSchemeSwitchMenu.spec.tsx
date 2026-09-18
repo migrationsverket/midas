@@ -4,6 +4,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './ColorSchemeSwitchMenu.stories'
 import { render } from '../../test-utils'
 import { ColorSchemeSwitchMenu } from './ColorSchemeSwitchMenu'
+import { I18nProvider } from '../utils/intl'
 
 const { Primary } = composeStories(stories)
 
@@ -37,6 +38,18 @@ describe('given a primary ColorSchemeSwitchMenu', () => {
     await userEvent.click(page.getByRole('button', { name: 'Color scheme: Light mode' }))
     await userEvent.click(page.getByRole('menuitem', { name: 'Follows system' }))
     expect(document.documentElement.dataset.colorScheme).toBeUndefined()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the trigger button with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Primary />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Färgschema: Följer systemet')
   })
 })
 
