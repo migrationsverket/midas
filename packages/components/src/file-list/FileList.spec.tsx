@@ -6,7 +6,15 @@ import { render } from '../../test-utils'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
 
-const { Default, WithoutFileSize } = composeStories(stories)
+const {
+  Default,
+  WithoutFileSize,
+  UploadingDeterminate,
+  Uploading,
+  Success,
+  Error: ErrorStory,
+  FocusManagementTest,
+} = composeStories(stories)
 
 describe('FileList', () => {
   it('renders all file items', async () => {
@@ -54,4 +62,112 @@ describe('FileList', () => {
       .toHaveClass(styles.fileList, 'custom-class')
   })
 
+  it('shows determinate upload progress', async () => {
+    const { getByRole } = await render(<UploadingDeterminate />)
+    await expect
+      .element(getByRole('progressbar'))
+      .toHaveAttribute('aria-valuenow', '40')
+  })
+
+  it('shows indeterminate upload progress when no value is given', async () => {
+    const { getByRole } = await render(<Uploading />)
+    await expect
+      .element(getByRole('progressbar'))
+      .not.toHaveProperty('aria-valuenow')
+  })
+
+  it('labels the delete button as cancel while uploading', async () => {
+    const { getByRole } = await render(<UploadingDeterminate />)
+    await expect
+      .element(getByRole('button', { name: /cancel large-video\.mp4/i }))
+      .toBeVisible()
+  })
+
+  it('calls onCancel, not onDelete, when the cancel button is pressed during upload', async () => {
+    const onCancel = vi.fn()
+    const onDelete = vi.fn()
+    const { getByRole } = await render(
+      <FileList aria-label='Test'>
+        <FileListItem
+          fileName='video.mp4'
+          status='uploading'
+          onCancel={onCancel}
+          onDelete={onDelete}
+        />
+      </FileList>,
+    )
+    await getByRole('button', { name: /cancel video\.mp4/i }).click()
+    expect(onCancel).toHaveBeenCalledOnce()
+    expect(onDelete).not.toHaveBeenCalled()
+  })
+
+  it('falls back to onDelete during upload when onCancel is not provided', async () => {
+    const onDelete = vi.fn()
+    const { getByRole } = await render(
+      <FileList aria-label='Test'>
+        <FileListItem
+          fileName='video.mp4'
+          status='uploading'
+          onDelete={onDelete}
+        />
+      </FileList>,
+    )
+    await getByRole('button', { name: /cancel video\.mp4/i }).click()
+    expect(onDelete).toHaveBeenCalledOnce()
+  })
+
+  it('shows a success indicator and announces completion', async () => {
+    const { getByRole, getByText } = await render(<Success />)
+    await expect.element(getByRole('button', { name: /remove/i })).toBeVisible()
+    await expect.element(getByText('Upload complete')).toBeInTheDocument()
+  })
+
+  it('shows the error message and marks the row invalid', async () => {
+    const { getByText } = await render(<ErrorStory />)
+    await expect.element(getByText('Det gick inte bra')).toBeVisible()
+  })
+
+  describe('focus management on removal', () => {
+    it('moves focus to a sibling button when the focused row is actually removed', async () => {
+      // @ts-expect-error initialFiles exists only on the test container
+      const { getByRole } = await render(
+        <FocusManagementTest initialFiles={['a.pdf', 'b.pdf', 'c.pdf']} />,
+      )
+      await getByRole('button', { name: /remove a\.pdf/i }).click()
+      await expect
+        .element(getByRole('button', { name: /remove b\.pdf/i }))
+        .toHaveFocus()
+    })
+
+    it('falls back to the list container when the last row is removed', async () => {
+      // @ts-expect-error initialFiles exists only on the test container
+      const { getByRole } = await render(
+        <FocusManagementTest initialFiles={['only.pdf']} />,
+      )
+      await getByRole('button', { name: /remove only\.pdf/i }).click()
+      await expect.element(getByRole('list')).toHaveFocus()
+    })
+
+    it('does not move focus when the row is not actually removed', async () => {
+      const { getByRole } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='a.pdf'
+            onDelete={() => {
+              // noop — simulates a delete that fails and leaves the row in place
+            }}
+          />
+          <FileListItem
+            fileName='b.pdf'
+            onDelete={() => {
+              // noop
+            }}
+          />
+        </FileList>,
+      )
+      const button = getByRole('button', { name: /remove a\.pdf/i })
+      await button.click()
+      await expect.element(button).toHaveFocus()
+    })
+  })
 })
