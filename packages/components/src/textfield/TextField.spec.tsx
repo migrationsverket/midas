@@ -4,6 +4,7 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './TextField.stories'
 import styles from './TextField.module.css'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
 const {
   Primary,
@@ -66,6 +67,19 @@ describe('given a Password TextField', async () => {
 
     await userEvent.keyboard('[Enter]')
     await expect.element(input).toHaveAttribute('type', 'password')
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the password toggle button with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Password />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Visa lösenord')
+    expect(container.innerHTML).toContain('Visa')
   })
 })
 

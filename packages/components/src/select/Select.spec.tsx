@@ -4,6 +4,7 @@ import * as stories from './Select.stories'
 import { options } from '@midas-ds/test-utils'
 import { page, userEvent } from 'vitest/browser'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
 const {
   Primary,
@@ -321,6 +322,41 @@ describe('given a required multiple Select with tags (DS-1817)', async () => {
     await expect
       .element(getByRole('button', { name: 'Label' }))
       .toHaveAttribute('data-invalid')
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the clear-all button and selected count with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <AllKeysSelected />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Rensa alla')
+    expect(container.innerHTML).toContain('valda')
+  })
+
+  it('renders the select-all checkbox with Swedish text', async () => {
+    const { getByRole, container } = await render(
+      <I18nProvider locale='sv'>
+        <SelectAllEnabled />
+      </I18nProvider>,
+    )
+
+    await getByRole('button').first().click()
+
+    expect(container.innerHTML).toContain('Välj alla')
+  })
+
+  it('renders the selected-tags group with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <WithTags />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Valda objekt')
   })
 })
 

@@ -3,6 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Spinner.stories'
 import styles from './Spinner.module.css'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
 const { Primary } = composeStories(stories)
 
@@ -13,5 +14,17 @@ describe('given a primary Spinner', async () => {
     await expect
       .element(getByRole('status'))
       .toHaveClass(styles.container, Primary.args.className as string)
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the visually hidden status text with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Primary />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Laddar, vänligen vänta...')
   })
 })

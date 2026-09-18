@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
+import { I18nProvider } from 'react-aria-components'
 import * as stories from './Pagination.stories'
 import { render } from 'vitest-browser-react'
 
@@ -33,5 +34,22 @@ describe('given a table with 11 rows', async () => {
     const { getByText } = await render(<Primary rows={11} />)
     await expect.element(getByText('1 - 10 of 11 rows')).toBeInTheDocument()
     await expect.element(getByText('of 2 pages')).toBeInTheDocument()
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the pagination controls with Swedish text', async () => {
+    const { getByText, getByLabelText, container } = await render(
+      <I18nProvider locale='sv'>
+        <Primary rows={11} />
+      </I18nProvider>,
+    )
+
+    await expect.element(getByLabelText('Nästa sida')).toBeInTheDocument()
+    await expect.element(getByLabelText('Föregående sida')).toBeInTheDocument()
+    await expect.element(getByText('1 - 10 av 11 rader')).toBeInTheDocument()
+    await expect.element(getByText('av 2 sidor')).toBeInTheDocument()
+    expect(container.innerHTML).toContain('Rader per sida:')
+    expect(container.innerHTML).toContain('Välj sida')
   })
 })

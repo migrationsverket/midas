@@ -4,6 +4,7 @@ import { page, userEvent } from 'vitest/browser'
 import styles from './SearchField.module.css'
 import * as stories from './SearchField.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
 const {
   Primary,
@@ -457,6 +458,18 @@ describe('given a SearchField without a label', async () => {
     await expect
       .element(getByRole('searchbox'))
       .toHaveAccessibleName(Primary.args.placeholder as string)
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('renders the default submit button with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <Primary />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Sök')
   })
 })
 
