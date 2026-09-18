@@ -25,12 +25,23 @@ export const RangeCalendar: React.FC<RangeCalendarProps> = ({
   className,
   errorMessage,
   showMonthYearPicker,
+  // React Aria's default ('select') commits an in-progress range using
+  // whatever date currently has focus whenever focus/a pointer leaves the
+  // calendar body — which the month/year picker's listbox options (not
+  // `<button>`s, so they don't get RAC's own prev/next-button exception)
+  // unintentionally trigger, silently turning "browse to another month to
+  // pick an end date" into a bogus committed range. 'reset' fails safer:
+  // it drops the in-progress selection instead of committing a wrong one.
+  // Properly preserving the in-progress selection across navigation is a
+  // separate, bigger fix — tracked as follow-up, not done here.
+  commitBehavior = 'reset',
   ...rest
 }) => (
   <div className={styles.container}>
     <AriaRangeCalendar
       className={clsx(styles.calendar, className)}
       data-readonly={rest.isReadOnly || undefined}
+      commitBehavior={commitBehavior}
       {...rest}
     >
       <CalendarHeader
