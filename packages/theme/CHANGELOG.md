@@ -1,3 +1,15 @@
+## 3.17.1 (2026-09-18)
+
+### 🩹 Fixes
+
+- **theme:** align layer-accent-02 tokens with layer-accent-01 ([ad2d9e76365](https://github.com/migrationsverket/midas/commit/ad2d9e76365))
+
+### 🔧 Maintenance
+
+- **theme:** migrate to nx inferred tasks ([d5756e9134a](https://github.com/migrationsverket/midas/commit/d5756e9134a))
+- **vite:** migrate off deprecated Nx vite plugins ([0c1d3e92996](https://github.com/migrationsverket/midas/commit/0c1d3e92996))
+- **deps:** update nx to latest ([9876a06b4cf](https://github.com/migrationsverket/midas/commit/9876a06b4cf))
+
 ## 3.17.0 (2026-08-28)
 
 ### 🚀 Features

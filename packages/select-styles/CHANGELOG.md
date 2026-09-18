@@ -1,3 +1,14 @@
+## 1.1.70 (2026-09-18)
+
+### 🔧 Maintenance
+
+- **select-styles:** configure @nx/dependency-checks ([8a15e470810](https://github.com/migrationsverket/midas/commit/8a15e470810))
+- **select-styles:** migrate to nx inferred tasks ([92c7a530ddd](https://github.com/migrationsverket/midas/commit/92c7a530ddd))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.1
+
 ## 1.1.69 (2026-09-04)
 
 ### 🩹 Fixes

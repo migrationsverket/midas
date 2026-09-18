@@ -1,3 +1,16 @@
+## 0.2.78 (2026-09-18)
+
+### 🔧 Maintenance
+
+- **datepicker-styles:** configure @nx/dependency-checks ([aeae499ec0f](https://github.com/migrationsverket/midas/commit/aeae499ec0f))
+- **datepicker-styles:** migrate to nx inferred tasks ([39158d91249](https://github.com/migrationsverket/midas/commit/39158d91249))
+- **vite:** migrate off deprecated Nx vite plugins ([0c1d3e92996](https://github.com/migrationsverket/midas/commit/0c1d3e92996))
+- **deps:** update nx to latest ([9876a06b4cf](https://github.com/migrationsverket/midas/commit/9876a06b4cf))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.1
+
 ## 0.2.77 (2026-08-28)
 
 ### 🧱 Updated Dependencies
