@@ -1,0 +1,32 @@
+---
+title: Releases
+sidebar_label: Releases
+sidebar_position: 2.5
+---
+
+Midas paket (`@midas-ds/components`, `@midas-ds/theme`, m.fl.) versionshanteras enligt [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`, t.ex. `2.4.1`:
+
+| Del | Innebär |
+|-----|---------|
+| **MAJOR** | Breaking changes — du kan behöva ändra din kod |
+| **MINOR** | Ny funktionalitet, bakåtkompatibel |
+| **PATCH** | Buggfix eller annan bakåtkompatibel ändring |
+
+## Hur ofta släpper vi?
+
+**Det finns inget releaseschema.** Vi kör kontinuerlig leverans (continuous deployment) — så fort en PR med en versionshöjande ändring mergas till `main` i Midas-repot, publiceras den till npm. Det kan bli flera releaser samma dag, eller inga alls under en period. Uppdatera i din egen takt.
+
+## Var ser jag vad som ändrats?
+
+- [Release notes](/release-notes) — sammanfattning per release
+- [Changelog på GitHub](https://github.com/migrationsverket/midas/releases) — fullständig, per paket
+
+Vi strävar efter att regelbundet skriva release notes som beskriver nya features och hur du aktiverar dem, inte bara att de finns. Vi kommunicerar även detta via våra vanliga kanaler, så du behöver inte bevaka GitHub aktivt för att hänga med.
+
+## Breaking changes
+
+**Vi är restriktiva med breaking changes.** Merparten av vårt arbete är nya features och buggfixar — bakåtkompatibla PATCH- och MINOR-releaser du kan ta emot utan att behöva ändra något i din kod. En MAJOR-version är undantaget, inte det normala, och sker bara när det verkligen behövs.
+
+Vi räknar "brytande" utifrån **kontraktet**: props, exporterade typer och funktionalitet — inte pixel-för-pixel-utseende. Rena visuella justeringar (färger, mellanrum, storlekar) landar normalt i en PATCH eller MINOR, även om de är synliga, eftersom de inte kräver att du ändrar din kod.
+
+När vi väl behöver göra en breaking change tar vi bort funktionalitet stegvis, aldrig direkt: den markeras `@deprecated` i minst en major-version innan den faktiskt tas bort, så du hinner migrera i din egen takt. Planerade breaking changes samlas dessutom i förväg i ett GitHub-ärende — se t.ex. [kommande ändringar i v18](https://github.com/migrationsverket/midas/issues/1109), som även listar **future flags** (opt-in-props) du kan börja använda redan idag för att förbereda dig.
