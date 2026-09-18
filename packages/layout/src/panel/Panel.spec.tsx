@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { render } from 'vitest-browser-react'
 import { userEvent } from 'vitest/browser'
+import { I18nProvider } from 'react-aria-components'
 import * as stories from './Panel.stories'
 import styles from './PanelRegion.module.css'
 import panelStyles from './Panel.module.css'
@@ -52,6 +53,20 @@ describe('given a controlled Panel', () => {
       expect(computed.top).toBe('0px')
       expect(computed.borderLeftWidth).not.toBe('0px')
     }
+  })
+})
+
+describe('given a Swedish locale', () => {
+  it('renders the panel close button with Swedish text', async () => {
+    const { getByRole } = await render(
+      <I18nProvider locale='sv'>
+        <Controlled />
+      </I18nProvider>,
+    )
+    await userEvent.click(getByRole('button', { name: 'Open panel' }))
+    await expect
+      .element(getByRole('button', { name: 'Stäng panel' }))
+      .toBeVisible()
   })
 })
 

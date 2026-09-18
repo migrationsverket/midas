@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './LinkButton.stories'
 import { render } from '../../test-utils'
+import { I18nProvider } from '../utils/intl'
 
 const { Primary, Secondary, Tertiary, Danger, Disabled, NewTab } = composeStories(stories)
 
@@ -15,6 +16,18 @@ describe('given a LinkButton that opens in a new tab', async () => {
     const { container } = await render(<NewTab />)
     const icon = container.querySelector('svg')
     expect(icon?.getAttribute('aria-hidden')).toBe('true')
+  })
+})
+
+describe('given a Swedish locale', async () => {
+  it('should include Swedish visually hidden text for the new tab icon', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <NewTab />
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Öppnas i ny flik')
   })
 })
 

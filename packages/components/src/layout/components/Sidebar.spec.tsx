@@ -4,6 +4,7 @@ import { render } from 'vitest-browser-react'
 import { page } from 'vitest/browser'
 import { Sidebar } from './Sidebar'
 import { House } from 'lucide-react'
+import { I18nProvider } from '../../utils/intl'
 
 const MockLayout = (
   props: Partial<LayoutContextProps> & { children?: React.ReactNode },
@@ -74,5 +75,18 @@ describe('sidebar', () => {
     await expect
       .element(page.getByRole('link'))
       .toHaveAttribute('href', '/my-app/https://google.com')
+  })
+
+  it('renders the collapse button and nav with Swedish text', async () => {
+    const { container } = await render(
+      <I18nProvider locale='sv'>
+        <MockLayout>
+          <Sidebar />
+        </MockLayout>
+      </I18nProvider>,
+    )
+
+    expect(container.innerHTML).toContain('Minimera meny')
+    expect(container.innerHTML).toContain('Sidomeny')
   })
 })
