@@ -31,6 +31,44 @@
     min-height: var(--midas-size-control-md);
   }
 
+  /* Compact trigger for standalone use (e.g. the Calendar month/year
+   * picker) — not reachable through the full Select field component.
+   * Exact spacing pending final design sign-off. */
+  &.small {
+    /* Sits on top of a layer-01 surface (e.g. the Calendar), so it needs
+     * the layer-02 (white in light mode) field tint to read as a raised
+     * control instead of blending into the background — same mechanism
+     * TextField uses when placed inside a Card. */
+    --midas-field-base: var(--midas-field-02-base);
+    --midas-field-hover: var(--midas-field-02-hover);
+    --midas-field-disabled: var(--midas-field-02-disabled);
+
+    /* Stays white (same as base) while the popover is open, rather than
+     * shifting to the darker "active/pressed" tint — RAC keeps the
+     * trigger in data-pressed for as long as its popover stays open, not
+     * just for the duration of the actual mouse press. */
+    --midas-field-active: var(--midas-field-02-base);
+
+    min-height: var(--midas-size-option);
+
+    /* Figma dev mode: 0.5px, thinner than the default 1px. */
+    border-bottom-width: 0.5px;
+    gap: var(--midas-space-small);
+    padding-left: var(--midas-space-small);
+    padding-right: var(--midas-space-small);
+
+    .selectValue {
+      /* .selectValue's default max-width subtracts a fixed
+       * --midas-space-150 (48px), sized for large/medium triggers that
+       * are typically much wider — on a compact trigger that leaves
+       * almost no room for text. Content here is always short
+       * (an abbreviated month or a year), so it doesn't need clamping.
+       * Font size stays the default (font-size-30) per Figma dev mode —
+       * only the listbox items use the smaller font-size-20. */
+      max-width: none;
+    }
+  }
+
   &:focus-visible {
     outline: none;
     box-shadow: var(--midas-state-focus);
@@ -65,7 +103,7 @@
   }
 
   &[data-pressed] {
-    background-color: var(--midas-field-01-active);
+    background-color: var(--midas-field-active, var(--midas-field-01-active));
   }
 
   &[aria-expanded='true'] {
