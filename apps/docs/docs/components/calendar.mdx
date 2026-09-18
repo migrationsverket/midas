@@ -81,6 +81,29 @@ export const RangeCalendarExample = () => {
   <RangeCalendarExample aria-label='Kalender' />
 </div>
 
+### Månads- och årsväljare
+
+Sätt `showMonthYearPicker` för att visa månad och år som separata dropdown-väljare i headern, istället för statisk text.
+Användaren kan då hoppa direkt till en annan månad eller år, utan att behöva bläddra en månad i taget.
+Fungerar likadant på både `Calendar` och `RangeCalendar` (och därmed även `DatePicker`/`DateRangePicker`, som återanvänder dem).
+
+```tsx
+<Calendar
+  aria-label='Kalender'
+  showMonthYearPicker
+/>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Calendar
+    aria-label='Kalender'
+    showMonthYearPicker
+  />
+</div>
+
 ## API
 
 <PropTable name='Calendar' />
