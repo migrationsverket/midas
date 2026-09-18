@@ -19,8 +19,7 @@ import { PropTable } from '@site/src/components/PropsTable'
 [FileTrigger](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) från React Aria gör det möjligt för en användare
 att komma åt filsystemet via valfri tryckbar React Aria-komponent, som till exempel [Button](/components/button).
 Se [API](#api) eller [officiell dokumentation](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) för hur den kan användas.
-FileTrigger är en komponent utan utseende och går att använda direkt från React Aria eller importeras från Midas. DropZone
-har en enkelt stylad yta men med samma beteende som React Aria.
+FileTrigger är en komponent utan utseende och går att använda direkt från React Aria eller importeras från Midas.
 
 ```tsx
 import { Button, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
@@ -79,10 +78,16 @@ möjligheter.
 
 ### Drag & drop
 
-Använd FileTrigger tillsammans med [DropZone](https://react-spectrum.adobe.com/react-aria/DropZone.html)
-för att tillåta val av filer via drag & drop.
+Använd FileTrigger tillsammans med [DropZone](/components/dropzone) för att tillåta val av filer via drag & drop.
+DropZone är en generell yta för drag & drop och dokumenteras separat — se dess [egen sida](/components/dropzone)
+för tillstånd, validering och etikettering.
 
 ```tsx
+import { Button, DropZone, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
+import { Upload } from 'lucide-react'
+import React from 'react'
+import { DropEvent, isFileDropItem } from 'react-aria'
+
 export const DropZoneExample = () => {
   const [files, setFiles] = React.useState<File[]>([])
 
@@ -94,8 +99,8 @@ export const DropZoneExample = () => {
   }
 
   const handleDrop = async (e: DropEvent) => {
-    const fileItems = e.items.filter(item => item.kind === 'file')
-    const droppedFiles: File[] = await Promise.all(fileItems.map(item => item.getFile()))
+    const fileItems = e.items.filter(isFileDropItem)
+    const droppedFiles = await Promise.all(fileItems.map(item => item.getFile()))
     setUniqueFiles(droppedFiles)
   }
 
@@ -110,16 +115,20 @@ export const DropZoneExample = () => {
 
   return (
     <>
-      <DropZone onDrop={handleDrop}>
+      <DropZone
+        onDrop={handleDrop}
+        aria-label='Dra och släpp filer här'
+      >
+        <Text slot='label'>Dra och släpp filer här</Text>
         <FileTrigger
           allowsMultiple
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <ArrowUpFromLine /> Välj filer
+            <Upload aria-hidden size={20} />
+            Välj fil
           </Button>
         </FileTrigger>
-        <Text slot='label'>Dra och släpp filer här</Text>
       </DropZone>
       {files.length > 0 && (
         <FileList style={{ marginTop: '1rem' }}>
@@ -138,12 +147,15 @@ export const DropZoneExample = () => {
 }
 ```
 
-<DropZoneExample />
+<div className='card'>
+  <DropZoneExample />
+</div>
 
 ### Alternativ
 
-För att tillåta användaren att ladda upp flera filer på samma gång, använd attributet `allowsMultiple`, för att
-begränsa valbara filtyper, använd `acceptedFileTypes`.
+Använd `allowsMultiple` för att tillåta flera filer samtidigt, och `acceptedFileTypes` för att begränsa vilka filtyper
+som går att välja. Se [DropZone: Validering](/components/dropzone#validering) för filtypsbegränsning som även gäller
+drag & drop.
 
 ### Media Capture
 
@@ -167,7 +179,3 @@ används.
 ### FileTrigger
 
 <PropTable name='FileTrigger' />
-
-### DropZone
-
-<PropTable name='DropZone' />

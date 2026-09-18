@@ -1,0 +1,1 @@
+export { FileTrigger } from './FileTrigger'
