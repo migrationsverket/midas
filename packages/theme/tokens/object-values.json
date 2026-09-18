@@ -74,15 +74,15 @@
     },
     "02": {
       "base": {
-        "$value": "light-dark({color.gray.10}, {color.gray.180})",
+        "$value": "light-dark({color.gray.30}, {color.gray.160})",
         "$description": "Accentf\u00e4rg som anv\u00e4nds tillsammans med layer 02"
       },
       "hover": {
-        "$value": "light-dark({color.gray.20}, {color.gray.170})",
+        "$value": "light-dark({color.gray.40}, {color.gray.150})",
         "$description": "Hover state f\u00f6r layerAccent02"
       },
       "selected": {
-        "$value": "light-dark({color.gray.30}, {color.gray.160})",
+        "$value": "light-dark({color.gray.50}, {color.gray.140})",
         "$description": "Selected state f\u00f6r layerAccent02"
       }
     }
