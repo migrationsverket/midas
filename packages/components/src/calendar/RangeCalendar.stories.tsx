@@ -58,6 +58,12 @@ export const ReadOnly: Story = {
   },
 }
 
+export const WithMonthYearPicker: Story = {
+  args: {
+    showMonthYearPicker: true,
+  },
+}
+
 export const MaxRangeDuration: Story = {
   args: {
     // The second argument (anchorDate) is the first date the user picked.

@@ -4,12 +4,18 @@ import { Button } from '../button'
 import { Heading } from '../heading'
 import styles from './Calendar.module.css'
 import { CalendarProps } from './Calendar'
+import { CalendarMonthPicker } from './CalendarMonthPicker'
+import { CalendarYearPicker } from './CalendarYearPicker'
 
-type CalendarHeaderProps = Pick<CalendarProps, 'isDisabled' | 'isReadOnly'>
+type CalendarHeaderProps = Pick<
+  CalendarProps,
+  'isDisabled' | 'isReadOnly' | 'showMonthYearPicker'
+>
 
 export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
   isDisabled,
   isReadOnly,
+  showMonthYearPicker,
 }) => (
   <header className={styles.header}>
     <Button
@@ -19,11 +25,24 @@ export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
     >
       <ChevronLeft size={20} />
     </Button>
-    <Heading
-      level={3}
-      elementType='h2'
-      data-disabled={isDisabled || undefined}
-    />
+    {showMonthYearPicker ? (
+      <div className={styles.pickers}>
+        <CalendarMonthPicker
+          isDisabled={isDisabled}
+          isReadOnly={isReadOnly}
+        />
+        <CalendarYearPicker
+          isDisabled={isDisabled}
+          isReadOnly={isReadOnly}
+        />
+      </div>
+    ) : (
+      <Heading
+        level={3}
+        elementType='h2'
+        data-disabled={isDisabled || undefined}
+      />
+    )}
     <Button
       slot='next'
       size='medium'
