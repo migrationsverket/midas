@@ -10,7 +10,7 @@
   box-sizing: border-box;
   border: var(--dropzone-border-width) var(--dropzone-border-style)
     var(--dropzone-border-color);
-  padding: calc(var(--midas-space-90) - var(--dropzone-border-width));
+  padding: calc(var(--midas-space-medium) - var(--dropzone-border-width));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 6.25rem;
   }
 
   [slot='errorMessage']::before {
@@ -55,7 +54,6 @@
   &[data-disabled] {
     color: var(--midas-text-disabled);
 
-    --dropzone-border-width: 2px;
     --dropzone-border-color: var(--midas-border-color-disabled);
 
     cursor: not-allowed;
