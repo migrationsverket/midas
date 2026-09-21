@@ -33,7 +33,6 @@ export const CalendarHeader = ({
               {...props}
               isDisabled={isDisabled}
               isReadOnly={isReadOnly}
-              data-testid='calendar-month-picker'
             />
           )}
         </CalendarMonthPicker>
@@ -43,7 +42,6 @@ export const CalendarHeader = ({
               {...props}
               isDisabled={isDisabled}
               isReadOnly={isReadOnly}
-              data-testid='calendar-year-picker'
             />
           )}
         </CalendarYearPicker>
