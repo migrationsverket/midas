@@ -12,11 +12,11 @@ type CalendarHeaderProps = Pick<
   'isDisabled' | 'isReadOnly' | 'showMonthYearPicker'
 >
 
-export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
+export const CalendarHeader = ({
   isDisabled,
   isReadOnly,
   showMonthYearPicker,
-}) => (
+}: CalendarHeaderProps) => (
   <header className={styles.header}>
     <Button
       slot='previous'

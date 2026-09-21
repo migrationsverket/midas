@@ -21,7 +21,7 @@ export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
   showMonthYearPicker?: boolean
 }
 
-export const RangeCalendar: React.FC<RangeCalendarProps> = ({
+export const RangeCalendar = ({
   className,
   errorMessage,
   showMonthYearPicker,
@@ -36,7 +36,7 @@ export const RangeCalendar: React.FC<RangeCalendarProps> = ({
   // separate, bigger fix — tracked as follow-up, not done here.
   commitBehavior = 'reset',
   ...rest
-}) => (
+}: RangeCalendarProps) => (
   <div className={styles.container}>
     <AriaRangeCalendar
       className={clsx(styles.calendar, className)}
