@@ -16,10 +16,10 @@ export interface CalendarYearPickerProps {
   isReadOnly?: boolean
 }
 
-export const CalendarYearPicker: React.FC<CalendarYearPickerProps> = ({
+export const CalendarYearPicker = ({
   isDisabled,
   isReadOnly,
-}) => (
+}: CalendarYearPickerProps) => (
   <AriaCalendarYearPicker>
     {({ 'aria-label': ariaLabel, value, onChange, items }) => (
       <AriaSelect

@@ -16,10 +16,10 @@ export interface CalendarMonthPickerProps {
   isReadOnly?: boolean
 }
 
-export const CalendarMonthPicker: React.FC<CalendarMonthPickerProps> = ({
+export const CalendarMonthPicker = ({
   isDisabled,
   isReadOnly,
-}) => (
+}: CalendarMonthPickerProps) => (
   <AriaCalendarMonthPicker>
     {({ 'aria-label': ariaLabel, value, onChange, items }) => (
       <AriaSelect

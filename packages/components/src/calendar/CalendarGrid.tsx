@@ -13,10 +13,10 @@ export interface CalendarGridProps {
   isReadOnly?: boolean
 }
 
-export const CalendarGrid: React.FC<CalendarGridProps> = ({
+export const CalendarGrid = ({
   weekdayStyle = 'short',
   isReadOnly,
-}) => {
+}: CalendarGridProps) => {
   const isRange = !!React.useContext(RangeCalendarContext)
 
   return (
