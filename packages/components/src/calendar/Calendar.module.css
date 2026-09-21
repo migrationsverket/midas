@@ -6,7 +6,7 @@
 .calendar {
   padding: 0.5rem;
 
-  * {
+  table :where(*) {
     background: unset;
     color: unset;
     padding: unset;

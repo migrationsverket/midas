@@ -41,6 +41,7 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
+    "@internationalized/date": "^3.12.3",
     "@internationalized/string": "^3.2.10",
     "@midas-ds/theme": "3.17.1",
     "@react-stately/utils": "^3.12.1",
