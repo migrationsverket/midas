@@ -27,9 +27,12 @@ Om projektet har uppdaterat `@midas-ds/components` och använder vår globala st
 automatiskt användarens inställningar. Om du manuellt vill styra temat, t.ex. om ert projekt inte är redo att stödja
 mörkt läge, kan du stänga av mörkt läge genom att ändra färgschemat i CSS på vilken nivå som passar projektet.
 
-```css {2}
+```css {2,4,5}
 :root {
   color-scheme: light;
+
+  --lightningcss-light: initial;
+  --lightningcss-dark: ;
 }
 ```
 
@@ -40,6 +43,7 @@ Använder du inte vår globala stylesheet kan du aktivera mörkt läge genom att
   color-scheme: light dark;
 }
 ```
+
 :::warning
 Inkludera meta-taggen `<meta name="color-scheme">` i dokumentets `<head>` före all CSS för att meddela webbläsaren
 vilket färgschema som sidan stödjer. Detta förhindrar att applikationen blinkar till i vitt innan rätt färgschema
@@ -92,8 +96,7 @@ import { variables } from '@midas-ds/theme'
 ```tsx {1,2,5}
 <div style={{ backgroundColor: variables.backgroundBase }}>
   <p style={{ color: variables.textPrimary }}>
-    En text som är mörk i ljust läge men ljus i mörkt läge
-    på en bakgrund som gör tvärt om!
+    En text som är mörk i ljust läge men ljus i mörkt läge på en bakgrund som gör tvärt om!
   </p>
   <p style={{ color: variables.colorBlackBase }}>En text som alltid är svart</p>
 </div>
