@@ -1,9 +1,11 @@
 import { Select as AriaSelect, SelectProps } from 'react-aria-components'
+import { CalendarDate } from '@internationalized/date'
 import { SelectTrigger } from '../select'
 import { ListBox, ListBoxItem, ListBoxPopover } from '../list-box'
 
 interface CalendarPickerItem {
   id: number
+  date: CalendarDate
   formatted: string
 }
 
