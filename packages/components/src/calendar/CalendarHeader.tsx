@@ -4,8 +4,8 @@ import { Button } from '../button'
 import { Heading } from '../heading'
 import styles from './Calendar.module.css'
 import { CalendarProps } from './Calendar'
-import { CalendarMonthPicker } from './CalendarMonthPicker'
-import { CalendarYearPicker } from './CalendarYearPicker'
+import { CalendarMonthPicker, CalendarYearPicker } from 'react-aria-components'
+import { CalendarPicker } from './CalendarPicker'
 
 type CalendarHeaderProps = Pick<
   CalendarProps,
@@ -27,14 +27,26 @@ export const CalendarHeader = ({
     </Button>
     {showMonthYearPicker ? (
       <div className={styles.pickers}>
-        <CalendarMonthPicker
-          isDisabled={isDisabled}
-          isReadOnly={isReadOnly}
-        />
-        <CalendarYearPicker
-          isDisabled={isDisabled}
-          isReadOnly={isReadOnly}
-        />
+        <CalendarMonthPicker>
+          {props => (
+            <CalendarPicker
+              {...props}
+              isDisabled={isDisabled}
+              isReadOnly={isReadOnly}
+              data-testid='calendar-month-picker'
+            />
+          )}
+        </CalendarMonthPicker>
+        <CalendarYearPicker>
+          {props => (
+            <CalendarPicker
+              {...props}
+              isDisabled={isDisabled}
+              isReadOnly={isReadOnly}
+              data-testid='calendar-year-picker'
+            />
+          )}
+        </CalendarYearPicker>
       </div>
     ) : (
       <Heading
