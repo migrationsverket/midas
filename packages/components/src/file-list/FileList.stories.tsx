@@ -216,8 +216,7 @@ const FocusTestContainer = ({ initialFiles }: FocusTestContainerProps) => {
   )
 }
 
-export const FocusManagementTest: Story = {
+export const FocusManagementTest: StoryObj<FocusTestContainerProps> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  // @ts-expect-error initialFiles exists only on the test container, not FileList
   render: args => <FocusTestContainer {...args} />,
 }
