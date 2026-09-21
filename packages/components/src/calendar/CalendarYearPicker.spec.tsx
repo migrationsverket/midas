@@ -8,18 +8,16 @@ const { WithMonthYearPicker } = composeStories(stories)
 
 describe('given a Calendar with showMonthYearPicker', async () => {
   it('should have an accessible name', async () => {
-    const { getByTestId } = await render(<WithMonthYearPicker />)
+    const { getByRole } = await render(<WithMonthYearPicker />)
 
     await expect
-      .element(getByTestId('calendar-year-picker').getByRole('button'))
+      .element(getByRole('button', { name: 'year' }))
       .toHaveAccessibleName()
   })
 
   it('should navigate to the selected year without selecting a date', async () => {
-    const { getByTestId, getByRole, container } = await render(
-      <WithMonthYearPicker />,
-    )
-    const trigger = getByTestId('calendar-year-picker').getByRole('button')
+    const { getByRole, container } = await render(<WithMonthYearPicker />)
+    const trigger = getByRole('button', { name: 'year' })
 
     const currentYear = await trigger.element().textContent
     const targetYear = String(Number(currentYear) - 1)
@@ -28,37 +26,33 @@ describe('given a Calendar with showMonthYearPicker', async () => {
     await getByRole('option', { name: targetYear }).click()
 
     await expect.element(trigger).toHaveTextContent(targetYear)
-    expect(container.querySelectorAll('[aria-selected="true"]')).toHaveLength(
-      0,
-    )
+    expect(container.querySelectorAll('[aria-selected="true"]')).toHaveLength(0)
   })
 })
 
 describe('given a disabled Calendar with showMonthYearPicker', async () => {
   it('should disable the year picker', async () => {
-    const { getByTestId } = await render(
+    const { getByRole } = await render(
       <Calendar
         showMonthYearPicker
         isDisabled
       />,
     )
 
-    await expect
-      .element(getByTestId('calendar-year-picker').getByRole('button'))
-      .toBeDisabled()
+    await expect.element(getByRole('button', { name: 'year' })).toBeDisabled()
   })
 })
 
 describe('given a read-only Calendar with showMonthYearPicker', async () => {
   it('should keep the year picker interactive (read-only only blocks date selection)', async () => {
-    const { getByTestId, getByRole } = await render(
+    const { getByRole } = await render(
       <Calendar
         showMonthYearPicker
         isReadOnly
       />,
     )
 
-    await getByTestId('calendar-year-picker').getByRole('button').click()
+    await getByRole('button', { name: 'year' }).click()
     await expect.element(getByRole('listbox')).toBeVisible()
   })
 })
