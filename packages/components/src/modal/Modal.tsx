@@ -22,12 +22,16 @@ export interface ModalProps extends ModalOverlayProps {
    * Hide close button in modal header. Use with caution!
    */
   hideCloseButton?: boolean
+  /**
+   * Sticky footer content
+   */
+  footer?: React.ReactNode
 }
 
 export { DialogTrigger }
 
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
-  ({ children, title, hideCloseButton = false, ...rest }, ref) => {
+  ({ children, title, hideCloseButton = false, footer, ...rest }, ref) => {
     const strings = useLocalizedStringFormatter(messages)
 
     return (
@@ -67,6 +71,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
               >
                 {children}
               </div>
+              {footer && <div className={styles.modalFooter}>{footer}</div>}
             </AriaDialog>
           </AriaModal>
         ))}
