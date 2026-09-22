@@ -86,20 +86,20 @@ export const DropZoneExample = () => {
 
   return (
     <>
+      <Label>Filuppladdning</Label>
+      <Text slot='description'>
+        Dra och släpp filer eller välj en fil från din enhet.
+      </Text>
       <DropZone onDrop={handleDrop}>
-        <Label>Filuppladdning</Label>
-        <Text slot='description'>
-          Dra och släpp filer eller välj en fil från din enhet.
-        </Text>
+        <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
         <FileTrigger
           allowsMultiple
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <ArrowUpFromLine size={20} /> Välj fil
+            <ArrowUpFromLine size={20} /> Välj fil(er)
           </Button>
         </FileTrigger>
-        <Text slot='label'>Dra och släpp filer här</Text>
       </DropZone>
       {files.length > 0 && (
         <FileList style={{ marginTop: '1rem' }}>
