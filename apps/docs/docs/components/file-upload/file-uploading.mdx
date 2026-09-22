@@ -1,0 +1,65 @@
+---
+title: Filuppladdning
+description: Filuppladdning med FileTrigger, DropZone och FileList.
+sidebar-position: 1
+---
+
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+
+<ComponentHeader
+  name='Filer'
+  friendlyName='Filuppladdning'
+/>
+
+Filuppladdning skapas genom att använda [FileTrigger](/components/filetrigger), DropZone och [FileList](/components/file-list).
+
+```tsx
+import { Button, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
+import React from 'react'
+
+export const FileListExample = () => {
+  const [files, setFiles] = React.useState<File[]>([])
+
+  const handleSelect = (e: FileList | null) => {
+    const selected = e ? Array.from(e) : []
+    setFiles(prev => {
+      const existingNames = new Set(prev.map(f => f.name))
+      return [...prev, ...selected.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
+
+  return (
+    <>
+      <FileTrigger
+        allowsMultiple
+        onSelect={handleSelect}
+      >
+        <Button>Välj filer</Button>
+      </FileTrigger>
+      {files.length > 0 && (
+        <FileList>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
+    </>
+  )
+}
+```
+
+Se [FileList](/components/file-list) för dokumentation av listkomponenten.
+
+<div className='card'>
+  <FileListExample />
+</div>
