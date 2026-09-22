@@ -4,6 +4,7 @@ import {
   FileList,
   FileListItem,
   FileTrigger,
+  Label,
   Text,
 } from '@midas-ds/components'
 import { ArrowUpFromLine } from 'lucide-react'
@@ -27,11 +28,18 @@ export const FileListExample = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <Label>Välj filer</Label>
+      <Text slot='description'>Välj en eller flera filer från din enhet.</Text>
       <FileTrigger
         allowsMultiple
         onSelect={handleSelect}
       >
-        <Button>Välj filer</Button>
+        <Button
+          variant='secondary'
+          icon={ArrowUpFromLine}
+        >
+          Välj fil(er)
+        </Button>
       </FileTrigger>
       {files.length > 0 && (
         <FileList>
@@ -79,6 +87,10 @@ export const DropZoneExample = () => {
   return (
     <>
       <DropZone onDrop={handleDrop}>
+        <Label>Filuppladdning</Label>
+        <Text slot='description'>
+          Dra och släpp filer eller välj en fil från din enhet.
+        </Text>
         <FileTrigger
           allowsMultiple
           onSelect={handleSelect}
