@@ -1,6 +1,8 @@
 import {
   Button,
   ButtonGroup,
+  Checkbox,
+  CheckboxGroup,
   DialogTrigger,
   Modal,
   Radio,
@@ -97,6 +99,82 @@ export const CustomCSSExample = () => (
     </DialogTrigger>
   </div>
 )
+
+export const StickyFooterExample = () => {
+  return (
+    <div
+      className='card'
+      style={{ display: 'block' }}
+    >
+      <DialogTrigger>
+        <Button>Beställ prenumeration</Button>
+        <Modal
+          title='Beställ fruktkorgsprenumeration'
+          footer={
+            <ButtonGroup>
+              <Button slot='close'>Beställ</Button>
+              <Button
+                slot='close'
+                variant='secondary'
+              >
+                Avbryt
+              </Button>
+            </ButtonGroup>
+          }
+        >
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+          >
+            <TextField
+              autoFocus
+              label='Namn'
+            />
+            <TextField label='E-post' />
+            <TextField label='Telefonnummer' />
+            <TextField label='Leveransadress' />
+            <TextField label='Postnummer' />
+            <TextField label='Ort' />
+            <TextField label='Extra leveransinstruktioner (valfritt)' />
+            <RadioGroup
+              defaultValue='vecka'
+              label='Hur ofta vill du ha leverans?'
+            >
+              <Radio value='vecka'>Varje vecka</Radio>
+              <Radio value='varannan'>Varannan vecka</Radio>
+              <Radio value='manad'>En gång i månaden</Radio>
+            </RadioGroup>
+            <RadioGroup
+              defaultValue='medium'
+              label='Vilken storlek vill du ha på din fruktkorg?'
+            >
+              <Radio value='liten'>Liten</Radio>
+              <Radio value='medium'>Medium</Radio>
+              <Radio value='stor'>Stor</Radio>
+            </RadioGroup>
+            <CheckboxGroup label='Vilka frukter vill du ha i din korg?'>
+              <Checkbox value='apple'>Äpple</Checkbox>
+              <Checkbox value='banan'>Banan</Checkbox>
+              <Checkbox value='apelsin'>Apelsin</Checkbox>
+              <Checkbox value='vindruvor'>Vindruvor</Checkbox>
+              <Checkbox value='paron'>Päron</Checkbox>
+            </CheckboxGroup>
+            <TextField label='Föredragen leveransdag' />
+            <RadioGroup
+              defaultValue='faktura'
+              label='Betalningsmetod'
+            >
+              <Radio value='faktura'>Faktura</Radio>
+              <Radio value='kort'>Kort</Radio>
+              <Radio value='swish'>Swish</Radio>
+            </RadioGroup>
+            <TextField label='Meddelande till leveranspersonal (valfritt)' />
+            <Checkbox value='terms'>Jag godkänner villkoren</Checkbox>
+          </div>
+        </Modal>
+      </DialogTrigger>
+    </div>
+  )
+}
 
 export const HideCloseButtonExample = () => {
   return (
