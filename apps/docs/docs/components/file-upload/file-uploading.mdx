@@ -1,7 +1,7 @@
 ---
 title: Filuppladdning
 description: Filuppladdning med FileTrigger, DropZone och FileList.
-sidebar-position: 1
+sidebar_position: 1
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -12,7 +12,11 @@ import { FileListExample, DropZoneExample } from '@site/src/components/examples/
   friendlyName='Filuppladdning'
 />
 
-Filuppladdning skapas genom att använda [FileTrigger](/components/filetrigger), DropZone och [FileList](/components/file-list).
+Filuppladdning skapas genom att kombinera [FileTrigger](/components/filetrigger), DropZone och [FileList](/components/file-list). Nedan beskrivs varianter och beteenden för filuppladdning. Se respektive komponent för API-dokumentation.
+
+## Varianter
+
+### Standard?
 
 ```tsx
 import { Button, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
@@ -58,8 +62,68 @@ export const FileListExample = () => {
 }
 ```
 
-Se [FileList](/components/file-list) för dokumentation av listkomponenten.
-
 <div className='card'>
   <FileListExample />
 </div>
+
+### Med drag & drop
+
+Genom att kombinera DropZone med FileTrigger kan användaren dra och släppa filer i en definierad yta.
+
+```tsx
+export const DropZoneExample = () => {
+  const [files, setFiles] = React.useState<File[]>([])
+
+  const setUniqueFiles = (newFiles: File[]) => {
+    setFiles(oldFiles => {
+      const existingNames = new Set(oldFiles.map(f => f.name))
+      return [...oldFiles, ...newFiles.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDrop = async (e: DropEvent) => {
+    const fileItems = e.items.filter(item => item.kind === 'file')
+    const droppedFiles: File[] = await Promise.all(fileItems.map(item => item.getFile()))
+    setUniqueFiles(droppedFiles)
+  }
+
+  const handleSelect = (e: FileList | null) => {
+    const selectedFiles = e ? Array.from(e) : []
+    setUniqueFiles(selectedFiles)
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
+
+  return (
+    <>
+      <DropZone onDrop={handleDrop}>
+        <FileTrigger
+          allowsMultiple
+          onSelect={handleSelect}
+        >
+          <Button variant='secondary'>
+            <ArrowUpFromLine /> Välj filer
+          </Button>
+        </FileTrigger>
+        <Text slot='label'>Dra och släpp filer här</Text>
+      </DropZone>
+      {files.length > 0 && (
+        <FileList style={{ marginTop: '1rem' }}>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
+    </>
+  )
+}
+```
+
+<DropZoneExample />
