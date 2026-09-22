@@ -34,6 +34,7 @@ export default defineConfig([
           ignoredDependencies: [
             // bundled dependencies
             '@react-types/shared',
+            '@internationalized/date',
             'clsx',
             'lucide-react',
           ],
