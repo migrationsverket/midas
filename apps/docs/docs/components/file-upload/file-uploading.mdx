@@ -8,15 +8,18 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
 
 <ComponentHeader
-  name='Filer'
+  name='Fileupload'
   friendlyName='Filuppladdning'
+  overrideHeadlessLink=''
 />
 
-Filuppladdning skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), DropZone och [FileList](/components/file-upload/file-list). Nedan beskrivs varianter och beteenden för filuppladdning. Se respektive komponent för API-dokumentation.
+Filuppladdning är ingen egen komponent i Midas utan den skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), DropZone och [FileList](/components/file-upload/file-list). Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
 
 ## Varianter
 
 ### Standard?
+
+Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. FileTrigger ska vara en sekundärknapp.
 
 ```tsx
 import { Button, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
@@ -68,7 +71,7 @@ export const FileListExample = () => {
 
 ### Med drag & drop
 
-Genom att kombinera DropZone med FileTrigger kan användaren dra och släppa filer i en definierad yta.
+Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
 
 ```tsx
 export const DropZoneExample = () => {
