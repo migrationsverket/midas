@@ -5,8 +5,9 @@ import * as stories from './Modal.stories'
 import { render } from '../../test-utils'
 import { Button } from '../button'
 import { I18nProvider } from '../utils/intl'
+import styles from './Modal.module.css'
 
-const { Default, DS1282 } = composeStories(stories)
+const { Default, DS1282, ScrollableWithFooter } = composeStories(stories)
 
 describe('given a default Modal', async () => {
   it('should be possible to access the render props', async () => {
@@ -39,6 +40,34 @@ describe('given a Swedish locale', async () => {
     // Modal renders into a portal, so assert on the dialog itself rather
     // than the render container.
     expect(getByRole('dialog').element().outerHTML).toContain('Stäng')
+  })
+})
+
+describe('given a Modal without a footer', async () => {
+  it('should not render a sticky footer', async () => {
+    const { getByRole } = await render(<Default />)
+
+    await getByRole('button', { name: 'Öppna' }).click()
+
+    expect(
+      getByRole('dialog').element().querySelector(`.${styles.modalFooter}`),
+    ).toBeNull()
+  })
+})
+
+describe('given a Modal with the footer prop', async () => {
+  it('renders the footer buttons after the body content', async () => {
+    const { getByRole } = await render(<ScrollableWithFooter />)
+
+    await getByRole('button', { name: 'Öppna' }).click()
+    const dialog = getByRole('dialog')
+
+    await expect
+      .element(dialog.getByRole('button', { name: 'Submit' }))
+      .toBeVisible()
+    await expect
+      .element(dialog.getByRole('button', { name: 'Cancel' }))
+      .toBeVisible()
   })
 })
 
