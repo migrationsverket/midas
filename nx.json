@@ -75,7 +75,8 @@
       "theme",
       "table-styles",
       "datepicker-styles",
-      "select-styles"
+      "select-styles",
+      "logo"
     ],
     "version": {
       "specifierSource": "conventional-commits",
