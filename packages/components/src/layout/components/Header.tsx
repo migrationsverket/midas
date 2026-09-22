@@ -2,7 +2,7 @@
 
 import styles from '../Layout.module.css'
 import { variables } from '@midas-ds/theme'
-import { Logo } from '../../logo'
+import { Logo } from '@midas-ds/logo'
 import { Button } from '../../button'
 import { Menu, X } from 'lucide-react'
 import * as React from 'react'
