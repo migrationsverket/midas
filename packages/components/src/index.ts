@@ -24,7 +24,12 @@ export * from './layout'
 export * from './link'
 export { RouterProvider } from './link'
 export * from './link-button'
-export * from '@midas-ds/logo'
+export {
+  Logo,
+  LogoContext,
+  type LogoProps,
+  type LogoContextValue,
+} from '@midas-ds/logo'
 export * from './modal'
 export * from './popover'
 export * from './progress-bar'
