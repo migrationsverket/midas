@@ -41,7 +41,6 @@ export default {
     },
     rolldownOptions: {
       external: [
-        '@internationalized/string',
         '@midas-ds/theme',
         'react-aria-components',
         'react-dom',
