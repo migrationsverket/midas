@@ -3,7 +3,7 @@ import type { UserConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default {
-  root: __dirname,
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/packages/theme',
   resolve: {
     tsconfigPaths: true,

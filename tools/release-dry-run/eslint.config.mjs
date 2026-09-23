@@ -11,7 +11,7 @@ export default [
         {
           ignoredFiles: [
             '{projectRoot}/rollup.config.cjs',
-            '{projectRoot}/vitest.config.ts',
+            '{projectRoot}/vitest.config.mts',
           ],
         },
       ],

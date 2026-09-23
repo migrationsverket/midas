@@ -1,5 +1,5 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
-import viteConfig from './vite.config'
+import viteConfig from './vite.config.mjs'
 import { playwright } from '@vitest/browser-playwright'
 
 export default mergeConfig(
@@ -20,7 +20,7 @@ export default mergeConfig(
               instances: [{ browser: 'chromium' }],
               screenshotFailures: false,
             },
-            setupFiles: ['vitest.setup.ts'],
+            setupFiles: ['vitest.setup.mts'],
           },
         },
       ],

@@ -25,7 +25,6 @@
     "@swc-node/register": "^1.11.1",
     "@swc/core": "^1.13.19",
     "@tanstack/react-table": "^8.21.3",
-    "@vitejs/plugin-react": "6.0.3",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "eslint-plugin-import": "2.32.0",
@@ -47,8 +46,6 @@
     "react-stately": "^3.50.0",
     "rollup": "4.62.2",
     "typescript": "6.0.3",
-    "vite": "8.1.0",
-    "vite-plugin-lib-inject-css": "^2.2.2",
     "zustand": "^5.0.11"
   },
   "overrides": {
@@ -94,6 +91,7 @@
     "@types/react-dom": "^19.3.0",
     "@typescript-eslint/eslint-plugin": "8.68.0",
     "@typescript-eslint/parser": "8.68.0",
+    "@vitejs/plugin-react": "^6.1.1",
     "@vitest/browser-playwright": "^4.1.9",
     "@vitest/coverage-v8": "^4.1.9",
     "@vitest/ui": "^4.1.9",
@@ -131,6 +129,8 @@
     "typescript-eslint": "^8.58.0",
     "unplugin-dts": "^1.1.1",
     "verdaccio": "6.9.2",
+    "vite": "^8.3.0",
+    "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-plugin-static-copy": "^4.1.1",
     "vitest": "^4.1.9",
     "vitest-browser-react": "^2.0.2"

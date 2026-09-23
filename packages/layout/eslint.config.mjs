@@ -41,9 +41,9 @@ export default defineConfig([
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [
-            '{projectRoot}/vite.config.ts',
-            '{projectRoot}/vitest.config.ts',
-            '{projectRoot}/vitest.setup.ts',
+            '{projectRoot}/vite.config.mts',
+            '{projectRoot}/vitest.config.mts',
+            '{projectRoot}/vitest.setup.mts',
           ],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,

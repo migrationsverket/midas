@@ -6,5 +6,10 @@
     "moduleResolution": "bundler",
     "types": ["node", "@nx/react/typings/cssmodule.d.ts"]
   },
-  "include": ["vitest.config.ts", "src/**/*.test.*", "src/**/*.spec.*"]
+  "include": [
+    "vitest.config.mts",
+    "vitest.setup.mts",
+    "src/**/*.test.*",
+    "src/**/*.spec.*"
+  ]
 }
