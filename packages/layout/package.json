@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "@midas-ds/components": "17.26.0",
-    "@react-aria/utils": "^3.33.1",
+    "@react-aria/utils": "^3.34.1",
     "@react-stately/utils": "^3.12.1",
-    "react-aria-components": "1.20.0"
+    "react-aria-components": "^1.21.1"
   }
 }
