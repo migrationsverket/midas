@@ -1,5 +1,5 @@
 import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config'
-import viteConfig from './vite.config.mjs'
+import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
 
 export default mergeConfig(
