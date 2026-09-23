@@ -25,7 +25,7 @@ export default mergeConfig(
               instances: [{ browser: 'chromium' }],
               screenshotFailures: false,
             },
-            setupFiles: ['vitest.setup.ts'],
+            setupFiles: ['vitest.setup.visual.ts'],
           },
         },
       ],
