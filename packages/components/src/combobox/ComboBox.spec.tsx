@@ -6,7 +6,7 @@ import styles from './ComboBox.module.css'
 import { render } from '../../test-utils'
 import { ComboBox } from './ComboBox'
 import { ListBoxItem } from '../list-box'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const { Primary, Required, Sectioned, NotVirtualized, WithHelpPopover } =
   composeStories(stories)

@@ -1,6 +1,6 @@
 'use client'
 
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { SidebarLinkClickData, SidebarLinkGroup } from '../Layout'
 import styles from '../Layout.module.css'
 import { RouterProvider } from 'react-aria-components'
@@ -9,7 +9,7 @@ import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import * as React from 'react'
 import { SidebarLink } from './SidebarLink'
 import { useLayoutContext } from '../context/LayoutContext'
-import { useLocalizedStringFormatter } from '../../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from '../intl/translations.json'
 
 type SidebarProps = {

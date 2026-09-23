@@ -3,7 +3,7 @@ import {
   ModalOverlay as AriaModalOverlay,
   type ModalOverlayProps,
 } from 'react-aria-components'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './ModalOverlay.module.css'
 
 export type { ModalOverlayProps }

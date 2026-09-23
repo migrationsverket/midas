@@ -1,7 +1,7 @@
 'use client'
 
 import type { HTMLAttributes } from 'react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './FileList.module.css'
 
 export type FileListProps = HTMLAttributes<HTMLUListElement>

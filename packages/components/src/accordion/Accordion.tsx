@@ -2,7 +2,7 @@
 
 import styles from './Accordion.module.css'
 import * as React from 'react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { DisclosureGroup, DisclosureGroupProps } from 'react-aria-components'
 import { AccordionContext } from './AccordionContext'
 import { Size } from '../common/types'

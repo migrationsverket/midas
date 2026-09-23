@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './ColorSchemeSwitchMenu.stories'
 import { render } from '../../test-utils'
 import { ColorSchemeSwitchMenu } from './ColorSchemeSwitchMenu'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const { Primary } = composeStories(stories)
 

@@ -5,7 +5,7 @@ import {
   InputContext,
 } from 'react-aria-components'
 import { forwardRef, useState } from 'react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './TextField.module.css'
 import { PasswordToggle } from './PasswordToggle'
 

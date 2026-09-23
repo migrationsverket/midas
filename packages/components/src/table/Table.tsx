@@ -29,7 +29,7 @@ import {
   ArrowUpDown,
   GripVertical,
 } from 'lucide-react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Size } from '../common/types'
 
 export interface TableProps extends AriaTableProps {

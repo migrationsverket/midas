@@ -6,7 +6,7 @@ import {
   ValidationResult,
   composeRenderProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { Text } from '../text'

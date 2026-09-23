@@ -8,7 +8,7 @@ import {
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
 import { ClearButton } from '../clear-button'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import styles from './DatePicker.module.css'
 import { DatePickerProps } from './DatePicker'

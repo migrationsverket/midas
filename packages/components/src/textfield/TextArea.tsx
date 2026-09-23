@@ -6,7 +6,7 @@ import {
   TextArea as AriaTextArea,
   type TextAreaProps as AriaTextAreaProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './TextField.module.css'
 import { Complement } from '../utils/types'
 

@@ -2,8 +2,8 @@
 
 import { Trash2 } from 'lucide-react'
 import { Button } from '../button'
-import { useLocalizedStringFormatter } from '../utils/intl'
-import clsx from '../utils/clsx'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
+import { clsx } from '@midas-ds/utils'
 import styles from './FileList.module.css'
 import messages from './intl/translations.json'
 

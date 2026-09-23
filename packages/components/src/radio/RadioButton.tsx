@@ -2,7 +2,7 @@ import {
   RadioButtonProps as AriaRadioButtonProps,
   RadioButton as AriaRadioButton,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Radio.module.css'
 
 export type RadioButtonProps = AriaRadioButtonProps

@@ -1,6 +1,6 @@
 import { ReactNode, useContext } from 'react'
 import { CheckboxGroupStateContext } from 'react-aria-components'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import { useSelectAll } from './useSelectAll'
 import { Checkbox } from './Checkbox'
 import messages from './intl/translations.json'

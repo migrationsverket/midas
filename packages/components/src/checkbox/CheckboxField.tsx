@@ -4,7 +4,7 @@ import {
   CheckboxFieldProps as AriaCheckboxFieldProps,
   CheckboxField as AriaCheckboxField,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Checkbox.module.css'
 
 export type CheckboxFieldProps = AriaCheckboxFieldProps

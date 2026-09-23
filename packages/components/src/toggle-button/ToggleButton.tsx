@@ -4,7 +4,7 @@ import {
 } from 'react-aria-components'
 import ButtonStyles from '../button/Button.module.css'
 import styles from './ToggleButton.module.css'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 
 export const ToggleButton: React.FC<
   ToggleButtonProps & React.RefAttributes<HTMLButtonElement>

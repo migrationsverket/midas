@@ -5,7 +5,7 @@ import {
   useContextProps,
   type TagGroupProps,
 } from 'react-aria-components'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { TagList } from '../tag-list'
 
 export type { TagGroupProps }

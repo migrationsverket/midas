@@ -2,7 +2,7 @@ import {
   Breadcrumbs as AriaBreadcrumbs,
   type BreadcrumbsProps as AriaBreadcrumbsProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Breadcrumbs.module.css'
 
 export type BreadcrumbsProps<T> = AriaBreadcrumbsProps<T>

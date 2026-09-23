@@ -8,7 +8,7 @@ import {
 } from 'react-aria-components'
 import { Button } from '../button'
 import { ChevronDown } from 'lucide-react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import itemStyles from './AccordionItem.module.css'
 import { Heading, HeadingProps } from '../heading'
 import { FeedbackStatus, Size } from '../common/types'
