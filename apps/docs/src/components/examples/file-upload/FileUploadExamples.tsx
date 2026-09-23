@@ -48,7 +48,7 @@ export const FileListExample = () => {
         >
           <Button
             variant='secondary'
-            icon={ArrowUpFromLine}
+            icon={Upload}
           >
             Välj fil(er)
           </Button>
@@ -127,7 +127,7 @@ export const DropZoneExample = () => {
               onSelect={handleSelect}
             >
               <Button variant='secondary'>
-                <ArrowUpFromLine size={20} /> Välj fil(er)
+                <Upload size={20} /> Välj fil(er)
               </Button>
             </FileTrigger>
           </div>
