@@ -1,25 +1,25 @@
 ---
-title: FileTrigger
-description: Åtkomst till filsystemet
+title: Filuppladdning
+description: Filuppladdning med FileTrigger, DropZone och FileList.
+sidebar_position: 1
 ---
 
-import { Button } from '@midas-ds/components'
-import { FileTrigger } from 'react-aria-components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
-import { PropTable } from '@site/src/components/PropsTable'
 
 <ComponentHeader
-  name='FileTrigger'
-  friendlyName='Filuppladdning, filväljare'
-  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
-  hideStorybookLink
+  name='Fileupload'
+  friendlyName='Filuppladdning'
+  overrideHeadlessLink=''
 />
 
-[FileTrigger](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) från React Aria gör det möjligt för en användare
-att komma åt filsystemet via valfri tryckbar React Aria-komponent, som till exempel [Button](/components/button).
-Se [API](#api) eller [officiell dokumentation](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) för hur den kan användas.
-FileTrigger är en komponent utan utseende och går att använda direkt från React Aria eller importeras från Midas.
+Filuppladdning är ingen egen komponent i Midas utan den skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), [DropZone](/components/file-upload/dropzone) och [FileList](/components/file-upload/file-list). Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+
+## Varianter
+
+### Standard?
+
+Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. FileTrigger ska vara en sekundärknapp.
 
 ```tsx
 import { Button, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
@@ -65,22 +65,13 @@ export const FileListExample = () => {
 }
 ```
 
-Se [FileList](/components/file-list) för dokumentation av listkomponenten.
-
 <div className='card'>
   <FileListExample />
 </div>
 
-## Varianter
+### Med drag & drop
 
-Se [API](#api) samt [React Aria](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) för samtliga
-möjligheter.
-
-### Drag & drop
-
-Använd FileTrigger tillsammans med [DropZone](/components/dropzone) för att tillåta val av filer via drag & drop.
-DropZone är en generell yta för drag & drop och dokumenteras separat — se dess [egen sida](/components/dropzone)
-för tillstånd, validering och etikettering.
+Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
 
 ```tsx
 import { Button, DropZone, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
@@ -125,7 +116,10 @@ export const DropZoneExample = () => {
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <Upload aria-hidden size={20} />
+            <Upload
+              aria-hidden
+              size={20}
+            />
             Välj fil
           </Button>
         </FileTrigger>
@@ -147,35 +141,4 @@ export const DropZoneExample = () => {
 }
 ```
 
-<div className='card'>
-  <DropZoneExample />
-</div>
-
-### Alternativ
-
-Använd `allowsMultiple` för att tillåta flera filer samtidigt, och `acceptedFileTypes` för att begränsa vilka filtyper
-som går att välja. Se [DropZone: Validering](/components/dropzone#validering) för filtypsbegränsning som även gäller
-drag & drop.
-
-### Media Capture
-
-På mobila enheter kan användaren använda enhetens kamera för att välja media. `defaultCamera` väljer vilken kamera som
-används.
-
-```tsx
-<FileTrigger defaultCamera={'environment'}>
-  <Button>Öppna kameran</Button>
-</FileTrigger>
-```
-
-<div className='card'>
-  <FileTrigger defaultCamera={'environment'}>
-    <Button>Öppna kameran</Button>
-  </FileTrigger>
-</div>
-
-## API
-
-### FileTrigger
-
-<PropTable name='FileTrigger' />
+<DropZoneExample />
