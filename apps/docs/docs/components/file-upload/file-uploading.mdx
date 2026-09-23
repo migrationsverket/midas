@@ -74,6 +74,11 @@ export const FileListExample = () => {
 Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
 
 ```tsx
+import { Button, DropZone, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
+import { Upload } from 'lucide-react'
+import React from 'react'
+import { DropEvent, isFileDropItem } from 'react-aria'
+
 export const DropZoneExample = () => {
   const [files, setFiles] = React.useState<File[]>([])
 
@@ -85,8 +90,8 @@ export const DropZoneExample = () => {
   }
 
   const handleDrop = async (e: DropEvent) => {
-    const fileItems = e.items.filter(item => item.kind === 'file')
-    const droppedFiles: File[] = await Promise.all(fileItems.map(item => item.getFile()))
+    const fileItems = e.items.filter(isFileDropItem)
+    const droppedFiles = await Promise.all(fileItems.map(item => item.getFile()))
     setUniqueFiles(droppedFiles)
   }
 
@@ -101,16 +106,23 @@ export const DropZoneExample = () => {
 
   return (
     <>
-      <DropZone onDrop={handleDrop}>
+      <DropZone
+        onDrop={handleDrop}
+        aria-label='Dra och släpp filer här'
+      >
+        <Text slot='label'>Dra och släpp filer här</Text>
         <FileTrigger
           allowsMultiple
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <ArrowUpFromLine /> Välj filer
+            <Upload
+              aria-hidden
+              size={20}
+            />
+            Välj fil
           </Button>
         </FileTrigger>
-        <Text slot='label'>Dra och släpp filer här</Text>
       </DropZone>
       {files.length > 0 && (
         <FileList style={{ marginTop: '1rem' }}>

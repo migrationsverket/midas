@@ -1,3 +1,22 @@
+## 17.26.0 (2026-09-23)
+
+### 🚀 Features
+
+- **components,dropzone:** add Dropzone as its own component with error/focus/drop-target states ([3b92846fd0c](https://github.com/migrationsverket/midas/commit/3b92846fd0c))
+
+### 🩹 Fixes
+
+- **components,drop-zone:** fix padding token, remove hardcoded height, and disabled border regression ([0bb4fb196ff](https://github.com/migrationsverket/midas/commit/0bb4fb196ff))
+
+### 🔧 Maintenance
+
+- **components,drop-zone:** rename dropzone folder and class, type WithFileTrigger story ([396d9c77381](https://github.com/migrationsverket/midas/commit/396d9c77381))
+- **components,file-trigger:** rename file-upload folder, drop React.FC typing ([4e1d4638f93](https://github.com/migrationsverket/midas/commit/4e1d4638f93))
+
+### 🧪 Tests updated
+
+- **components,layout,table-styles,test-utils:** add translation coverage checks ([270662927ee](https://github.com/migrationsverket/midas/commit/270662927ee))
+
 ## 17.25.2 (2026-09-18)
 
 ### 🧱 Updated Dependencies

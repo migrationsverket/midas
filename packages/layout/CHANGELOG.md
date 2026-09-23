@@ -1,3 +1,13 @@
+## 0.2.39 (2026-09-23)
+
+### 🧪 Tests updated
+
+- **components,layout,table-styles,test-utils:** add translation coverage checks ([270662927ee](https://github.com/migrationsverket/midas/commit/270662927ee))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.26.0
+
 ## 0.2.38 (2026-09-18)
 
 ### 🧱 Updated Dependencies

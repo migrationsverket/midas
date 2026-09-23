@@ -44,6 +44,7 @@ export default defineConfig([
             '{projectRoot}/vitest.config.ts',
             '{projectRoot}/vitest.config.visual.ts',
             '{projectRoot}/vitest.setup.ts',
+            '{projectRoot}/vitest.setup.visual.ts',
           ],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,
