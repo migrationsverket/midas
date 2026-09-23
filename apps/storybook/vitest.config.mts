@@ -1,6 +1,6 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
-import { defineStorybookProject } from './vitest.storybook.project'
-import viteConfig from './vite.config'
+import { defineStorybookProject } from './vitest.storybook.project.mts'
+import viteConfig from './vite.config.mts'
 
 export default mergeConfig(
   viteConfig,
@@ -10,10 +10,7 @@ export default mergeConfig(
       reporters: ['default'],
       projects: [
         defineStorybookProject({
-          name: 'storybook:forced-colors',
-          contextOptions: {
-            forcedColors: 'active',
-          },
+          name: 'storybook',
         }),
       ],
     },

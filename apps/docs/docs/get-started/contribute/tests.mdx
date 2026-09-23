@@ -69,7 +69,7 @@ För att testa JavaScriptmoduler i nodemiljö används [vitest](https://vitest.d
 
 Alla paket och appar i Midas har inte enhetstester konfigurerade. [@nx/vitest](https://nx.dev/docs/technologies/test-tools/vitest/introduction) kommer automatiskt att skapa kommandot `nx test <package>` om paketet har en konfigurationsfil för vitest (`vitest.config.*`)
 
-```ts title="vitest.config.ts"
+```ts title="vitest.config.mts"
 import { defineProject } from 'vitest/config'
 
 export default defineProject({

@@ -2,8 +2,10 @@ import { defineConfig } from 'vite'
 import * as path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+const root = import.meta.dirname
+
 export default defineConfig(() => ({
-  root: __dirname,
+  root,
   cacheDir: '../../node_modules/.vite/packages/datepicker-styles',
   resolve: {
     tsconfigPaths: true,
@@ -22,10 +24,7 @@ export default defineConfig(() => ({
     reportCompressedSize: true,
     rolldownOptions: {
       input: {
-        'react-datepicker': path.join(
-          __dirname,
-          'src/lib/react-datepicker.css',
-        ),
+        'react-datepicker': path.join(root, 'src/lib/react-datepicker.css'),
       },
       output: {
         assetFileNames: '[name][extname]',

@@ -15,7 +15,7 @@ export default [
           // datepicker-styles has an implicit dependency to theme
           ignoredDependencies: ['@midas-ds/theme'],
           includeTransitiveDependencies: false,
-          ignoredFiles: ['{projectRoot}/vite.config.ts'],
+          ignoredFiles: ['{projectRoot}/vite.config.mts'],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,
           checkVersionMismatches: true,

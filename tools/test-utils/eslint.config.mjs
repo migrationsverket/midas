@@ -10,7 +10,7 @@ export default [
         'error',
         {
           ignoredFiles: [
-            '{projectRoot}/vite.config.ts',
+            '{projectRoot}/vite.config.mts',
             '{projectRoot}/rollup.config.cjs',
           ],
           ignoredDependencies: [
