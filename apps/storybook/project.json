@@ -7,6 +7,7 @@
   "targets": {
     "serve": {
       "executor": "nx:run-commands",
+      "dependsOn": ["docgen:generate"],
       "options": {
         "command": "npx storybook dev",
         "cwd": "apps/storybook",
@@ -18,6 +19,7 @@
     },
     "build": {
       "executor": "nx:run-commands",
+      "dependsOn": ["docgen:generate"],
       "outputs": ["{workspaceRoot}/dist/storybook/ui"],
       "options": {
         "command": "npx storybook build",
@@ -28,6 +30,7 @@
     },
     "build:ci": {
       "executor": "nx:run-commands",
+      "dependsOn": ["docgen:generate"],
       "outputs": ["{workspaceRoot}/dist/docs/storybook"],
       "options": {
         "command": "npx storybook build",

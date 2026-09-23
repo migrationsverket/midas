@@ -1,6 +1,7 @@
 import { createRequire } from 'node:module'
 import { dirname, join } from 'node:path'
 import type { StorybookConfig } from '@storybook/react-vite'
+import { docgenPlugin } from './docgenPlugin.ts'
 
 const require = createRequire(import.meta.url)
 
@@ -29,6 +30,16 @@ export default {
         viteConfigPath: join(basePath, 'vite.config.ts'),
       },
     },
+  },
+  typescript: {
+    // Spike: fed from the shared tools/docgen JSON via docgenPlugin below
+    // instead of Storybook's own extraction. See docgenPlugin.ts.
+    reactDocgen: false,
+  },
+  async viteFinal(config) {
+    config.plugins ??= []
+    config.plugins.push(docgenPlugin())
+    return config
   },
   staticDirs: [join(basePath, 'static')],
   managerHead: head =>
