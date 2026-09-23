@@ -113,24 +113,15 @@ export const DropZoneExample = () => {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <DropZone onDrop={handleDrop}>
-          <div
-            style={{
-              alignItems: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-            }}
+          <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+          <FileTrigger
+            allowsMultiple
+            onSelect={handleSelect}
           >
-            <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-            <FileTrigger
-              allowsMultiple
-              onSelect={handleSelect}
-            >
-              <Button variant='secondary'>
-                <Upload size={20} /> Välj fil(er)
-              </Button>
-            </FileTrigger>
-          </div>
+            <Button variant='secondary'>
+              <Upload size={20} /> Välj fil(er)
+            </Button>
+          </FileTrigger>
         </DropZone>
         {files.length > 0 && (
           <FileList>
