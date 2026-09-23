@@ -28,43 +28,45 @@ export const FileListExample = () => {
   }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-      }}
-    >
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <Label>Ladda upp en bild på din favoritfrukt</Label>
-        <Text slot='description'>
-          Du kan välja flera om du har många favoritfrukter
-        </Text>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <FileTrigger
-          allowsMultiple
-          onSelect={handleSelect}
-        >
-          <Button
-            variant='secondary'
-            icon={Upload}
+    <div className='card'>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        }}
+      >
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Label>Ladda upp en bild på din favoritfrukt</Label>
+          <Text slot='description'>
+            Du kan välja flera om du har många favoritfrukter
+          </Text>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <FileTrigger
+            allowsMultiple
+            onSelect={handleSelect}
           >
-            Välj fil(er)
-          </Button>
-        </FileTrigger>
-        {files.length > 0 && (
-          <FileList>
-            {files.map(file => (
-              <FileListItem
-                key={file.name}
-                fileName={file.name}
-                fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-                onDelete={() => handleDelete(file.name)}
-              />
-            ))}
-          </FileList>
-        )}
+            <Button
+              variant='secondary'
+              icon={Upload}
+            >
+              Välj fil(er)
+            </Button>
+          </FileTrigger>
+          {files.length > 0 && (
+            <FileList>
+              {files.map(file => (
+                <FileListItem
+                  key={file.name}
+                  fileName={file.name}
+                  fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+                  onDelete={() => handleDelete(file.name)}
+                />
+              ))}
+            </FileList>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -98,43 +100,45 @@ export const DropZoneExample = () => {
   }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-      }}
-    >
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <Label>Ladda upp en bild på din favoritfrukt</Label>
-        <Text slot='description'>
-          Du kan välja flera om du har många favoritfrukter
-        </Text>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <DropZone onDrop={handleDrop}>
-          <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-          <FileTrigger
-            allowsMultiple
-            onSelect={handleSelect}
-          >
-            <Button variant='secondary'>
-              <Upload size={20} /> Välj fil(er)
-            </Button>
-          </FileTrigger>
-        </DropZone>
-        {files.length > 0 && (
-          <FileList>
-            {files.map(file => (
-              <FileListItem
-                key={file.name}
-                fileName={file.name}
-                fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-                onDelete={() => handleDelete(file.name)}
-              />
-            ))}
-          </FileList>
-        )}
+    <div className='card'>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+        }}
+      >
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <Label>Ladda upp en bild på din favoritfrukt</Label>
+          <Text slot='description'>
+            Du kan välja flera om du har många favoritfrukter
+          </Text>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <DropZone onDrop={handleDrop}>
+            <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+            <FileTrigger
+              allowsMultiple
+              onSelect={handleSelect}
+            >
+              <Button variant='secondary'>
+                <Upload size={20} /> Välj fil(er)
+              </Button>
+            </FileTrigger>
+          </DropZone>
+          {files.length > 0 && (
+            <FileList>
+              {files.map(file => (
+                <FileListItem
+                  key={file.name}
+                  fileName={file.name}
+                  fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+                  onDelete={() => handleDelete(file.name)}
+                />
+              ))}
+            </FileList>
+          )}
+        </div>
       </div>
     </div>
   )
