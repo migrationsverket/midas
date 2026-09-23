@@ -19,7 +19,7 @@ import React from 'react'
 import { createPortal, flushSync } from 'react-dom'
 import styles from './Toast.module.css'
 import { X } from 'lucide-react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 
 import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
 import { FeedbackStatus } from '../common/types'

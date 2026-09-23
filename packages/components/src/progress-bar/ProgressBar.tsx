@@ -6,7 +6,7 @@ import {
 } from 'react-aria-components'
 import styles from './ProgressBar.module.css'
 import { Label } from '../label'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 
 export interface ProgressBarProps extends AriaProgressBarProps {
   /**

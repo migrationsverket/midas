@@ -1,4 +1,4 @@
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Tooltip.module.css'
 import * as React from 'react'
 import {

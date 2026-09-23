@@ -1,10 +1,10 @@
 import { SidebarLinkProps } from '../Layout'
 import styles from '../Layout.module.css'
 import { Link, RouterProvider } from 'react-aria-components'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { useLayoutContext } from '../context/LayoutContext'
 import { Badge, BadgeContainer } from '../../badge'
-import { useLocalizedStringFormatter } from '../../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from '../intl/translations.json'
 
 export const Navbar: React.FC = () => {

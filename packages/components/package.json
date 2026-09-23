@@ -41,9 +41,9 @@
     "./*": "./*/index.js"
   },
   "dependencies": {
-    "@internationalized/string": "^3.2.10",
     "@midas-ds/logo": "1.0.0",
     "@midas-ds/theme": "3.17.1",
+    "@midas-ds/utils": "0.0.1",
     "@react-stately/utils": "^3.12.1",
     "react-aria-components": "1.20.0",
     "react-aria": "^3.51.0",

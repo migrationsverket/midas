@@ -5,7 +5,7 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './DateField.stories'
 import { render } from '../../test-utils'
 import { DateField } from './DateField'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const { Primary, WithClearButton } = composeStories(stories)
 

@@ -2,7 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { CardTitle } from '../Card'
 import { HeadingProps } from '../../heading'
 import { Text } from '../../text'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './CardHeader.module.css'
 
 export type CardHeaderProps = DetailedHTMLProps<

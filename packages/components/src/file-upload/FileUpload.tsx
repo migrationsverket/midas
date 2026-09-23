@@ -8,7 +8,7 @@ import {
 } from 'react-aria-components'
 import * as React from 'react'
 import styles from './FileUpload.module.css'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 
 export const DropZone: React.FC<DropZoneProps> = ({ className, ...rest }) => {
   return (

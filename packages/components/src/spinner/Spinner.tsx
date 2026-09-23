@@ -1,7 +1,7 @@
 import styles from './Spinner.module.css'
 import { LoaderCircle } from 'lucide-react'
-import clsx from '../utils/clsx'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { clsx } from '@midas-ds/utils'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import { VisuallyHidden } from 'react-aria'
 

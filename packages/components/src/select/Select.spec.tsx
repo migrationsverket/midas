@@ -4,7 +4,7 @@ import * as stories from './Select.stories'
 import { options } from '@midas-ds/test-utils'
 import { page, userEvent } from 'vitest/browser'
 import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const {
   Primary,

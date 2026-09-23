@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './ListBox.module.css'
 
 export const ListBoxButton: React.FC<

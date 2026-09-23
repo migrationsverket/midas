@@ -3,7 +3,7 @@ import {
   composeRenderProps,
   type ListBoxItemProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './ListBox.module.css'
 
 export type { ListBoxItemProps }

@@ -6,13 +6,13 @@ import {
   type ValidationResult,
   DateFieldStateContext,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { ClearButton } from '../clear-button'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import styles from './DateField.module.css'
 import { Size } from '../common/types'

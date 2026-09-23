@@ -9,7 +9,7 @@ import {
   useContextProps,
 } from 'react-aria-components'
 import { LucideIcon } from 'lucide-react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Size } from '../common/types'
 import { Spinner } from '../spinner'
 import styles from './Button.module.css'

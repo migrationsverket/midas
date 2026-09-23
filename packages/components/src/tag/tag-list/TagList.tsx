@@ -5,7 +5,7 @@ import {
   type TagListProps,
 } from 'react-aria-components'
 import styles from './TagList.module.css'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { ForwardedRef, forwardRef } from 'react'
 
 export type { TagListProps }

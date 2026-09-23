@@ -1,7 +1,7 @@
 import React from 'react'
 import { SelectStateContext } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import styles from './Select.module.css'
 

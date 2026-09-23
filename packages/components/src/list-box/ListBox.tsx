@@ -3,7 +3,7 @@ import {
   type ListBoxProps as AriaListBoxProps,
   Virtualizer,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { SectionedListLayout } from './SectionedListLayout'
 import styles from './ListBox.module.css'
 

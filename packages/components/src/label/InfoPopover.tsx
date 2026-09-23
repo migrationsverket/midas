@@ -5,7 +5,7 @@ import { Info } from 'lucide-react'
 import styles from './LabelWrapper.module.css'
 import { LabelWrapperContext } from './LabelWrapper'
 import { DialogTrigger } from '../modal'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */

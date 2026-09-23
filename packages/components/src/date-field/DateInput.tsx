@@ -3,7 +3,7 @@ import {
   DateInput as AriaDateInput,
   type DateInputProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './DateInput.module.css'
 
 export type { DateInputProps }

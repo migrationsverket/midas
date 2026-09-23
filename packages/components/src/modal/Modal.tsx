@@ -9,7 +9,7 @@ import { Button } from '../button'
 import styles from './Modal.module.css'
 import { X } from 'lucide-react'
 import { Heading } from '../heading'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import { ModalOverlay, type ModalOverlayProps } from './modal-overlay'
 

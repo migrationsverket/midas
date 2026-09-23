@@ -1,4 +1,4 @@
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import styles from './TextField.module.css'
 import { Button } from '../button'

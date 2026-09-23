@@ -4,7 +4,7 @@ import { userEvent } from 'vitest/browser'
 import styles from './Layout.module.css'
 import * as stories from './Layout.stories'
 import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const { Primary, Navbar } = composeStories(stories)
 

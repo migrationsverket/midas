@@ -4,7 +4,7 @@ import React from 'react'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import { VisuallyHidden } from 'react-aria'
 import styles from './LinkButton.module.css'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,7 +13,7 @@ import {
   SquareArrowOutUpRight,
 } from 'lucide-react'
 import { Size } from '../common/types'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 
 export interface LinkButtonComponentProps<C extends React.ElementType> {

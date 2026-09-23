@@ -3,7 +3,7 @@
 import { Button } from '../../button'
 import styles from '../Layout.module.css'
 import * as React from 'react'
-import { useLocalizedStringFormatter } from '../../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from '../intl/translations.json'
 
 interface SkipLinkProps {

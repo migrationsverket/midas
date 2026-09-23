@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { type Key, SelectStateContext } from 'react-aria-components'
 import { Tag, TagGroup, TagList } from '../tag'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import { MidasSelectProps } from './'
 import messages from './intl/translations.json'
 import { SelectionMode } from './'

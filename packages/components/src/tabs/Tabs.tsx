@@ -5,7 +5,7 @@ import {
   Tabs as AriaTabs,
   type TabsProps as AriaTabsProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { TabsContext } from './TabsContext'
 import styles from './Tabs.module.css'
 import { type Size } from '../common/types'

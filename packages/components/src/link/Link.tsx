@@ -3,7 +3,7 @@
 import styles from './Link.module.css'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import { VisuallyHidden } from 'react-aria'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import {
   ArrowDownToLine,
   ArrowRight,
@@ -11,7 +11,7 @@ import {
   SquareArrowOutUpRight,
   type LucideIcon,
 } from 'lucide-react'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 
 export interface LinkComponentProps<C extends React.ElementType> {

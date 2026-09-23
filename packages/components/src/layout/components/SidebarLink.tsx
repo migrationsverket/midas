@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Link } from 'react-aria-components'
 import { Tooltip, TooltipTrigger } from '../../tooltip'
 import styles from '../Layout.module.css'

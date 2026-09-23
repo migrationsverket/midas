@@ -34,6 +34,8 @@ export default defineConfig([
           ignoredDependencies: [
             // bundled dependencies
             '@react-types/shared',
+            // SelectTrigger.tsx imports the npm package directly, bypassing
+            // the @midas-ds/utils wrapper (pre-existing, unrelated to that)
             'clsx',
             'lucide-react',
           ],

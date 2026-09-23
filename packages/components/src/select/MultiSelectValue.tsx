@@ -1,7 +1,7 @@
 import { SelectStateContext, Button, SelectValue } from 'react-aria-components'
 import { useFocusManager } from 'react-aria'
 import { X } from 'lucide-react'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import { type MidasSelectProps } from '.'
 import messages from './intl/translations.json'
 import React from 'react'
