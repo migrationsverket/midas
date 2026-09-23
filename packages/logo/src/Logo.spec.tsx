@@ -12,7 +12,9 @@ describe('given a primary Logo', async () => {
     const { container } = await render(<Primary className='test' />)
 
     await expect
-      .element(container.querySelector(`.${styles.container}`) as HTMLElement)
+      .element(
+        container.querySelector(`.${styles['container']}`) as HTMLElement,
+      )
       .toHaveClass('test')
   })
 })

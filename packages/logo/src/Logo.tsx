@@ -1,7 +1,6 @@
 import * as React from 'react'
-import clsx from './utils/clsx'
+import { clsx, useLocalizedStringFormatter } from '@midas-ds/utils'
 import styles from './Logo.module.css'
-import { useLocale } from 'react-aria-components'
 import messages from './intl/translations.json'
 import { useContext } from 'react'
 import { LogoContext } from './LogoContext'
@@ -58,9 +57,8 @@ const SVG = ({ size, primary }: Pick<LogoProps, 'size' | 'primary'>) => {
     size === 'large' && styles.large,
   )
 
-  const { locale } = useLocale()
-  const label = (messages[locale as keyof typeof messages] ?? messages.sv)
-    .logotype
+  const stringFormatter = useLocalizedStringFormatter(messages)
+  const label = stringFormatter.format('logotype')
 
   if (size === 'x-small')
     return (

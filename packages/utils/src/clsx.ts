@@ -28,5 +28,3 @@ export function clsx<T>(
   }
   return cx(classNames)
 }
-
-export default clsx

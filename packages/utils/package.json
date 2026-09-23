@@ -1,20 +1,20 @@
 {
-  "name": "@midas-ds/logo",
+  "name": "@midas-ds/utils",
   "author": {
     "name": "Migrationsverket"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git",
-    "directory": "packages/logo"
+    "directory": "packages/utils"
   },
   "publishConfig": {
     "access": "public"
   },
-  "description": "Midas logotype component",
+  "description": "Shared internal utilities for the Midas design system",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "./index.mjs",
   "types": "./index.d.ts",
   "files": [
@@ -28,8 +28,8 @@
     }
   },
   "dependencies": {
-    "@midas-ds/theme": "3.17.1",
-    "@midas-ds/utils": "0.0.1"
+    "@internationalized/string": "^3.2.10",
+    "react-aria-components": "1.21.1"
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",
