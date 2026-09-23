@@ -1,0 +1,39 @@
+{
+  "name": "@midas-ds/utils",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/utils"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Shared internal utilities for the Midas design system",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
+  "version": "0.0.1",
+  "main": "./index.mjs",
+  "types": "./index.d.ts",
+  "files": [
+    "./"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "default": "./index.mjs"
+    }
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "@internationalized/string": "^3.2.10",
+    "react-aria-components": "1.20.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
+  }
+}

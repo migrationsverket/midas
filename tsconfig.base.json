@@ -27,6 +27,8 @@
       "@midas-ds/table-styles/*": ["packages/table-styles/src/*"],
       "@midas-ds/theme": ["packages/theme/src/index.ts"],
       "@midas-ds/theme/*": ["packages/theme/src/*"],
+      "@midas-ds/utils": ["packages/utils/src/index.ts"],
+      "@midas-ds/utils/*": ["packages/utils/src/*"],
       "@midas-ds/workspace-tools": ["workspace-tools/src/index.ts"],
       "@site/*": ["apps/docs/*"],
       "@midas-ds/release-dry-run": ["tools/release-dry-run/src/index.ts"],
