@@ -1,0 +1,25 @@
+{
+  "name": "docgen",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/docgen/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "generate": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{workspaceRoot}/packages/components/src/**/[A-Z]*.tsx",
+        "{workspaceRoot}/packages/table-styles/src/**/[A-Z]*.tsx",
+        "{workspaceRoot}/packages/layout/src/**/[A-Z]*.tsx",
+        "{workspaceRoot}/packages/components/tsconfig.lib.json"
+      ],
+      "outputs": ["{workspaceRoot}/dist/tools/docgen"],
+      "options": {
+        "cwd": "tools/docgen",
+        "command": "node src/generate.ts"
+      }
+    }
+  }
+}

@@ -42,20 +42,7 @@ const config: Config = {
   plugins: [
     process.env.DOCUSAURUS_HIDE_API === 'true'
       ? null
-      : [
-          require.resolve('./docgen-fix-plugin'),
-          {
-            src: [
-              `${packagesDir}/components/src/**/[A-Z]*.tsx`,
-              `${packagesDir}/table-styles/src/**/[A-Z]*.tsx`,
-              `${packagesDir}/layout/src/**/[A-Z]*.tsx`,
-            ],
-            parserOptions: {
-              shouldExtractValuesFromUnion: true,
-              shouldExtractLiteralValuesFromEnum: false,
-            },
-          },
-        ],
+      : require.resolve('./docgen-fix-plugin'),
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
     function webpackAliasPlugin() {
       return {

@@ -7,7 +7,7 @@
   "targets": {
     "build": {
       "executor": "@midas-ds/docusaurus:browser",
-      "dependsOn": ["theme:style-dictionary-generate", "^build"],
+      "dependsOn": ["theme:style-dictionary-generate", "docgen:generate", "^build"],
       "options": {
         "outputPath": "dist/docs",
         "minify": false
@@ -15,6 +15,7 @@
     },
     "serve": {
       "executor": "@midas-ds/docusaurus:dev-server",
+      "dependsOn": ["docgen:generate"],
       "options": {
         "hideApi": false,
         "port": 3000

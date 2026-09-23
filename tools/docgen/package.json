@@ -1,0 +1,11 @@
+{
+  "name": "@midas-ds/docgen",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "glob": "^13.0.0",
+    "react-docgen-typescript": "^2.2.2",
+    "typescript": "6.0.3"
+  }
+}
