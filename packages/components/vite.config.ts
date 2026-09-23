@@ -59,6 +59,7 @@ export default defineConfig({
     rolldownOptions: {
       external: [
         '@internationalized/string',
+        '@midas-ds/logo',
         '@midas-ds/theme',
         '@react-stately/utils',
         'react-aria-components',

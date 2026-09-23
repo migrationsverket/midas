@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
+import { I18nProvider } from 'react-aria-components'
 import styles from './Logo.module.css'
 import * as stories from './Logo.stories'
-import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { render } from 'vitest-browser-react'
 
 const { Primary } = composeStories(stories)
 

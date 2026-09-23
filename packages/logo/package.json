@@ -1,0 +1,38 @@
+{
+  "name": "@midas-ds/logo",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/logo"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Midas logotype component",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
+  "version": "1.0.0",
+  "main": "./index.mjs",
+  "types": "./index.d.ts",
+  "files": [
+    "./"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "default": "./index.mjs"
+    }
+  },
+  "dependencies": {
+    "@midas-ds/theme": "3.17.1",
+    "react-aria-components": "1.20.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
+  }
+}
