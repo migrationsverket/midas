@@ -6,5 +6,10 @@
     "moduleResolution": "bundler",
     "types": ["node", "@nx/react/typings/cssmodule.d.ts", "vite/client"]
   },
-  "include": ["vitest.config.ts", "src/**/*.test.*", "src/**/*.spec.*"]
+  "include": [
+    "vitest.config.ts",
+    "vitest.setup.visual.ts",
+    "src/**/*.test.*",
+    "src/**/*.spec.*"
+  ]
 }
