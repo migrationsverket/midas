@@ -34,8 +34,10 @@ import { Calendar } from '@midas-ds/components'
 ## Användning
 
 Kalender kan användas när användaren ska välja ett datum eller visualisera ett valt datum. Normalt sett
-är [DatePicker](/components/date-picker) standardvalet men kalendern kan användas när inputfältet inte
-behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte ska presenteras som en popover.
+är [DatePicker](/components/date-picker) standardvalet för att välja ett datum men kalendern kan användas när inputfältet inte
+behövs, när inputfältet inte ligger i direkt anslutning till kalendern eller om kalendern inte ska presenteras som en popover.
+
+## Varianter
 
 ### Calendar
 
@@ -79,6 +81,28 @@ export const RangeCalendarExample = () => {
   style={{ display: 'block' }}
 >
   <RangeCalendarExample aria-label='Kalender' />
+</div>
+
+### Månads- och årsväljare
+
+Sätt `showMonthYearPicker` för att ge användaren möjligthet att välja en specifik månad/år utan att behöva stega igenom månaderna en i taget. Detta är användbart om användaren ofta behöver välja ett datum långt bak/fram i tiden, t.ex. ett födelsedatum.
+Fungerar likadant på både `Calendar` och `RangeCalendar` (och därmed även `DatePicker`/`DateRangePicker`, som återanvänder dem).
+
+```tsx
+<Calendar
+  aria-label='Kalender'
+  showMonthYearPicker
+/>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Calendar
+    aria-label='Kalender'
+    showMonthYearPicker
+  />
 </div>
 
 ## API
