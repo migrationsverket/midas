@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@midas-ds/theme": "3.17.1",
+    "@midas-ds/utils": "0.0.1",
     "react-aria-components": "1.20.0"
   },
   "peerDependencies": {

@@ -13,8 +13,6 @@ export default [
           ignoredDependencies: [
             // logo has an implicit dependency to theme (CSS custom properties only)
             '@midas-ds/theme',
-            // bundled dependencies
-            'clsx',
             // peer dependency required for JSX, not imported directly
             'react-dom',
           ],

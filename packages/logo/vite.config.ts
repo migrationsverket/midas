@@ -38,6 +38,7 @@ export default {
     rolldownOptions: {
       external: [
         '@midas-ds/theme',
+        '@midas-ds/utils',
         'react-aria-components',
         'react-dom',
         'react',
