@@ -1,5 +1,5 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
-import { defineStorybookProject } from './vitest.storybook.project'
+import { defineStorybookProject } from './vitest.storybook.project.mts'
 import viteConfig from './vite.config'
 
 export default mergeConfig(
@@ -10,7 +10,10 @@ export default mergeConfig(
       reporters: ['default'],
       projects: [
         defineStorybookProject({
-          name: 'storybook',
+          name: 'storybook:mobile',
+          contextOptions: {
+            viewport: { width: 320, height: 568 },
+          },
         }),
       ],
     },

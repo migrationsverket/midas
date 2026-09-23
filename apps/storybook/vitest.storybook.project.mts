@@ -11,8 +11,8 @@ interface Props {
 }
 
 const currentDirectory =
-  typeof __dirname !== 'undefined'
-    ? __dirname
+  typeof import.meta.dirname !== 'undefined'
+    ? import.meta.dirname
     : dirname(fileURLToPath(import.meta.url))
 
 export const defineStorybookProject = async ({ name, contextOptions }: Props) =>
@@ -38,6 +38,6 @@ export const defineStorybookProject = async ({ name, contextOptions }: Props) =>
           },
         ],
       },
-      setupFiles: [join('.storybook', 'vitest.setup.ts')],
+      setupFiles: [join('.storybook', 'vitest.setup.mts')],
     },
   }) satisfies TestProjectConfiguration

@@ -26,7 +26,7 @@ export default {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
-        viteConfigPath: join(basePath, 'vite.config.ts'),
+        viteConfigPath: join(basePath, 'vite.config.mts'),
       },
     },
   },

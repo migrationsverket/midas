@@ -4,7 +4,7 @@ import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default {
-  root: __dirname,
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/packages/table-styles',
   resolve: {
     tsconfigPaths: true,

@@ -45,7 +45,7 @@
     },
     "a11y": {
       "options": {
-        "config": "vitest.config.ts",
+        "config": "vitest.config.mts",
         "project": "storybook"
       },
       "configurations": {

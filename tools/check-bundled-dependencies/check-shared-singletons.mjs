@@ -66,8 +66,7 @@ function isWatched(specifier) {
 // type-only import (whole-statement `import type`, or every individual
 // specifier marked `type`) compiles away entirely and can never appear in
 // dist output. Counting one as "used" would be a false positive.
-const IMPORT_STATEMENT_RE =
-  /^\s*import\s+([^;]+?)\s*from\s*['"]([^'"]+)['"]/gm
+const IMPORT_STATEMENT_RE = /^\s*import\s+([^;]+?)\s*from\s*['"]([^'"]+)['"]/gm
 
 // `clause` is everything between `import` and `from`, e.g. `type Key`,
 // `{ type Key }`, `Foo, { type Bar, Baz }`, `* as ns`.
@@ -163,9 +162,9 @@ if (!checkedAny) {
 
 if (hasFailures) {
   console.error(
-    '\nEach module listed above must stay external (check the package\'s vite.config.ts ' +
-      "rollupOptions/rolldownOptions.external) — bundling it means this package ships " +
-      "its own private copy of shared singleton state, which silently breaks the moment " +
+    "\nEach module listed above must stay external (check the package's vite.config.mts " +
+      'rollupOptions/rolldownOptions.external) — bundling it means this package ships ' +
+      'its own private copy of shared singleton state, which silently breaks the moment ' +
       "it's combined with a sibling @midas-ds/* package that externalized the same module. " +
       'See tools/check-bundled-dependencies/check-shared-singletons.mjs for why this matters.',
   )
