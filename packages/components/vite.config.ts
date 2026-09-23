@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
+import dts from 'unplugin-dts/vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
@@ -29,7 +29,7 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: join(__dirname, 'tsconfig.lib.json'),
       include: ['src'],
-      rollupTypes: false,
+      bundleTypes: false,
     }),
     libInjectCss(),
     preserveUseClientDirective(),

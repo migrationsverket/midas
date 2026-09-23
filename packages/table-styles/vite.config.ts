@@ -1,5 +1,5 @@
 import type { UserConfig } from 'vite'
-import dts from 'vite-plugin-dts'
+import dts from 'unplugin-dts/vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 

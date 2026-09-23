@@ -1,4 +1,4 @@
-import dts from 'vite-plugin-dts'
+import dts from 'unplugin-dts/vite'
 import type { UserConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
