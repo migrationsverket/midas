@@ -3,7 +3,7 @@ import nxEslintPlugin from '@nx/eslint-plugin'
 import baseConfig from '../../eslint.config.mjs'
 import midasPlugin from '../../tools/eslint/index.js'
 import pkg from './package.json' with { type: 'json' }
-import jsoncEslintParser from 'jsonc-eslint-parser'
+import * as jsoncEslintParser from 'jsonc-eslint-parser'
 
 export default defineConfig([
   ...nxEslintPlugin.configs['flat/react'],
