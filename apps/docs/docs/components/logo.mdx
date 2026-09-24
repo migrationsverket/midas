@@ -13,7 +13,21 @@ import { Link, Logo } from '@midas-ds/components'
   overrideHeadlessLink=''
 />
 
-På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas.
+:::info
+Migrationsverket har fått en ny logotyp och den kommer införas i Midas som en komponent och del av [Header](../layout/header). I nuläget finns endast svg-filer och implementationen görs av teamen själva. Kontakta Midas-teamet om ni behöver hjälp att implementera nya logotypen i Header.
+:::
+
+## Sidhuvud i externa tjänster
+
+När logotypen används i sidhuvudet i externa tjänster gäller följande riktlinjer för den nya logotypen. Använd länkarna för att ladda ner logotypen i .svg-format.
+
+| Brytpunkt | Höjd sidhuvud (px) | Bredd logotyp (px) | Padding vänster (px) | Variant      | Länk                                                                                                                                           |
+| --------- | ------------------ | -----------------: | -------------------: | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| < 374px   | 92                 |                 28 |                   16 | Vapen        | Kontakta Kommunikationsavdelningen                                                                                                             |
+| 375–767px | 92                 |                112 |                   16 | Stående      | <Link target='_blank' href='/img/Migrationsverket_primary_filled_vertical_red.svg' download>{'Ladda ner vertikal logotyp'}</Link>              |
+| > 768px   | 104                |                220 |                   32 | Liggande eng | <Link target='_blank' href='/img/Migrationsverket_primary_filled_horisontal_red_english.svg' download>{'Ladda ner horisontell logotyp'}</Link> |
+
+## Gamla logotypen
 
 ```tsx
 import { Logo } from '@midas-ds/components'
@@ -27,11 +41,11 @@ import { Logo } from '@midas-ds/components'
   <Logo />
 </div>
 
-## Varianter
+### Varianter
 
 Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
 
-### X-small
+#### X-small
 
 ```tsx
 <Logo size="x-small" />
@@ -49,7 +63,7 @@ Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt m
   />
 </div>
 
-### Small
+#### Small
 
 ```tsx
 <Logo size='small' />
@@ -67,7 +81,7 @@ Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt m
   />
 </div>
 
-### Medium
+#### Medium
 
 ```tsx
 <Logo size="medium" />
@@ -85,7 +99,7 @@ Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt m
   />
 </div>
 
-### Large
+#### Large
 
 ```tsx
 <Logo size="large" />
@@ -102,18 +116,6 @@ Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt m
     size='large'
   />
 </div>
-
-## Logotyp i SVG-format
-
-För de fall där komponenten inte kan användas tillhandahåller vi även logotypen som SVG. I paketet finns två SVG-filer, en med logotypen och en med bara M:et för små skärmar.
-
-<Link
-  target='_blank'
-  href={require('/files/Mig_logo_SVG.zip').default}
-  download
->
-  {'Ladda ner logotypen som SVG (komprimerad fil)'}
-</Link>
 
 ## API
 
