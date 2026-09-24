@@ -7,6 +7,7 @@
     "types": ["node", "@nx/react/typings/cssmodule.d.ts", "vite/client"]
   },
   "include": [
+    "vite.config.mts",
     "vitest.config.mts",
     "vitest.setup.mts",
     "vitest.setup.visual.mts",

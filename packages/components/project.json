@@ -20,7 +20,7 @@
     "visual": {
       "dependsOn": ["^build"],
       "options": {
-        "config": "vitest.config.visual.ts"
+        "config": "vitest.config.visual.mts"
       }
     }
   }
