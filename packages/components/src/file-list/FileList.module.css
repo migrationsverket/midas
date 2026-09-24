@@ -7,7 +7,17 @@
   padding: 0;
 }
 
+/**
+ * 1. Existing duration tokens top out at --midas-transition-duration-slow
+ *    (400ms), tuned for routine UI transitions. This is a one-shot
+ *    celebratory flourish, not a routine transition, and reads as too
+ *    quick/flashy at that length — a longer, hand-tuned duration reads
+ *    better here. Shared across the three success-phase animations below
+ *    so they stay in sync.
+ */
 .fileListItem {
+  --file-list-success-duration: 2000ms; /* 1 */
+
   display: flex;
   flex-direction: column;
 }
@@ -18,21 +28,159 @@
   box-sizing: border-box;
   display: flex;
   font-family: var(--midas-typography-font-family);
-  gap: var(--midas-space-small);
   height: var(--midas-size-control);
   padding-inline-start: var(--midas-space-medium);
+  transition: box-shadow var(--midas-transition-duration-fast)
+    var(--midas-transition-timing-ease-out);
 }
 
-.row.error {
+.fileListItem[data-status='error'] .row {
   box-shadow: var(--midas-state-invalid);
 }
 
-.statusIcon {
+/**
+ * 2. .row has no `gap` of its own (icon, file info, and the delete button
+ *    each own their own margin instead) — otherwise collapsing this to
+ *    zero would still leave .row's own gap behind as leftover space.
+ */
+.iconSlot {
   flex-shrink: 0;
+  height: var(--midas-size-icon-sm);
+  margin-inline-end: 0; /* 2 */
+  opacity: 0;
+  position: relative;
+  transition:
+    margin-inline-end var(--midas-transition-duration-normal)
+      var(--midas-transition-timing-ease-out),
+    opacity var(--midas-transition-duration-normal)
+      var(--midas-transition-timing-ease-out),
+    width var(--midas-transition-duration-normal)
+      var(--midas-transition-timing-ease-out);
+  width: 0;
 }
 
-.error {
-  padding-inline-start: var(--midas-space-medium);
+/* Stays expanded once uploaded — success settles to a persistent checkmark, not an empty row. */
+.fileListItem[data-status='uploading'] .iconSlot,
+.fileListItem[data-status='success'] .iconSlot {
+  margin-inline-end: var(--midas-space-small); /* 2 */
+  opacity: 1;
+  width: var(--midas-size-icon-sm);
+}
+
+.progressIcon {
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity var(--midas-transition-duration-quick)
+    var(--midas-transition-timing-ease-out);
+}
+
+.fileListItem[data-status='uploading'] .progressIcon {
+  opacity: 1;
+}
+
+/**
+ * 3. Matches the live ProgressBar ring's own stroke-width/color, so the
+ *    crossfade from "spinning" to "complete" reads as the same ring, not
+ *    a different shape swapping in.
+ */
+.ring {
+  border: 2px solid var(--midas-icon-success); /* 3 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.fileListItem[data-status='success'] .ring {
+  animation: successRing var(--file-list-success-duration)
+    var(--midas-transition-timing-ease-out) forwards;
+}
+
+/**
+ * 4. Sized explicitly (via the `size` prop, not just CSS) and centered
+ *    with inset+margin:auto rather than relying on `inset: 0` alone —
+ *    a replaced element (the icon's <svg>) with an intrinsic size doesn't
+ *    reliably stretch/center under `inset: 0` by itself. Rendered at its
+ *    full/normal icon size (matching the icon slot); `transform: scale()`
+ *    in the keyframes below keeps it small enough to fit inside the ring
+ *    while the ring is still visible, then grows to its real size once the
+ *    ring is gone.
+ */
+.checkmark {
+  height: var(--midas-size-icon-sm); /* 4 */
+  inset: 0;
+  margin: auto; /* 4 */
+  opacity: 0;
+  position: absolute;
+  transform: scale(0.4);
+  width: var(--midas-size-icon-sm); /* 4 */
+}
+
+.fileListItem[data-status='success'] .checkmark {
+  animation: successCheckmark var(--file-list-success-duration)
+    var(--midas-transition-timing-ease-out) forwards;
+}
+
+.successIcon {
+  color: var(--midas-icon-success);
+}
+
+/*
+ * Deliberately deviates from the Figma prototype at the end: there, the
+ * checkmark and ring vanish entirely once the flourish plays. Here they
+ * settle into a permanent state instead, because a consumer may show a
+ * not-yet-uploaded `idle` file right next to an uploaded one, and the two
+ * must stay visually distinguishable once the animation finishes.
+ */
+@keyframes successRing {
+  0% {
+    opacity: 0;
+  }
+
+  9%,
+  30% {
+    opacity: 1;
+  }
+
+  55%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes successCheckmark {
+  0%,
+  30% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  55% {
+    /* Fits inside the ring, which has just finished fading out. */
+    opacity: 1;
+    transform: scale(0.65);
+  }
+
+  65%,
+  100% {
+    /* Ring's gone — grows the rest of the way to its full, normal size, and stays there. */
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row,
+  .iconSlot,
+  .progressIcon,
+  .ring,
+  .checkmark,
+  .errorReveal {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
 }
 
 .fileInfo {
@@ -61,4 +209,17 @@
 .deleteButton {
   color: var(--midas-icon-primary);
   flex-shrink: 0;
+  margin-inline-start: var(--midas-space-small);
+}
+
+.errorReveal {
+  max-height: 0;
+  overflow: clip;
+  transition: max-height var(--midas-transition-duration-normal)
+    var(--midas-transition-timing-ease-out);
+}
+
+.fileListItem[data-status='error'] .errorReveal {
+  /* Generous fixed cap, not a measured value — the classic max-height reveal trick. */
+  max-height: 6.25rem;
 }

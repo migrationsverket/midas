@@ -53,25 +53,32 @@ export const FileListItem = ({
   const onPress = isUploading ? (onCancel ?? onDelete) : onDelete
 
   return (
-    <li className={clsx(styles.fileListItem, className)}>
-      <div className={clsx(styles.row, status === 'error' && styles.error)}>
-        {status === 'uploading' && (
+    <li
+      className={clsx(styles.fileListItem, className)}
+      data-status={status}
+    >
+      <div className={styles.row}>
+        <span className={styles.iconSlot}>
           <ProgressBar
             shape='circular'
             small
             value={progress}
             isIndeterminate={progress === undefined}
             aria-label={strings.format('uploading')}
-            className={styles.statusIcon}
+            aria-hidden={isUploading ? undefined : true}
+            className={styles.progressIcon}
           />
-        )}
-        {status === 'success' && (
+          <span
+            className={styles.ring}
+            aria-hidden
+          />
           <FeedbackStatusIcon
             status='success'
             aria-hidden
-            className={styles.statusIcon}
+            size={16}
+            className={clsx(styles.checkmark, styles.successIcon)}
           />
-        )}
+        </span>
         <span className={styles.fileInfo}>
           <span className={styles.fileName}>{fileName}</span>
           {fileSize && <span className={styles.fileSize}>{fileSize}</span>}
@@ -93,16 +100,12 @@ export const FileListItem = ({
           </Button>
         )}
       </div>
-      {status === 'error' && errorMessage && (
-        <FieldError isInvalid className={styles.error}>
-          {errorMessage}
-        </FieldError>
-      )}
-      {status === 'success' && (
-        <VisuallyHidden role='status'>
-          {strings.format('uploadComplete')}
-        </VisuallyHidden>
-      )}
+      <div className={styles.errorReveal}>
+        {errorMessage && <FieldError isInvalid>{errorMessage}</FieldError>}
+      </div>
+      <VisuallyHidden role='status'>
+        {status === 'success' ? strings.format('uploadComplete') : ''}
+      </VisuallyHidden>
     </li>
   )
 }

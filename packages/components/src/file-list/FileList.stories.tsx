@@ -192,6 +192,104 @@ export const MixedStates: Story = {
   ),
 }
 
+// ─── Live demos: cycle a single item through real status transitions on a
+// timer, to see the animated states play out. Excluded from visual
+// regression snapshotting since they're non-deterministic mid-animation. ───
+
+const AnimatedCompletionDemo = () => {
+  const [status, setStatus] = React.useState<'uploading' | 'success'>(
+    'uploading',
+  )
+  const [progress, setProgress] = React.useState(0)
+
+  React.useEffect(() => {
+    if (status !== 'uploading') return
+
+    if (progress >= 100) {
+      const timeout = setTimeout(() => setStatus('success'), 300)
+      return () => clearTimeout(timeout)
+    }
+
+    const timeout = setTimeout(
+      () => setProgress(current => Math.min(current + 20, 100)),
+      200,
+    )
+    return () => clearTimeout(timeout)
+  }, [status, progress])
+
+  return (
+    <FileList aria-label='Test'>
+      <FileListItem
+        fileName='resume.pdf'
+        fileSize='1.2 MB'
+        status={status}
+        progress={status === 'uploading' ? progress : undefined}
+        onCancel={() => {
+          // noop
+        }}
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  )
+}
+
+export const AnimatedCompletion: StoryObj = {
+  tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Demonstrates the upload-complete animation: determinate progress reaching 100%, then a ring and checkmark that settle into a persistent success indicator rather than disappearing — success needs to stay visually distinct from idle.',
+      },
+    },
+  },
+  render: () => <AnimatedCompletionDemo />,
+}
+
+const AnimatedFailureDemo = () => {
+  const [status, setStatus] = React.useState<'uploading' | 'error'>(
+    'uploading',
+  )
+
+  React.useEffect(() => {
+    if (status !== 'uploading') return
+    const timeout = setTimeout(() => setStatus('error'), 1500)
+    return () => clearTimeout(timeout)
+  }, [status])
+
+  return (
+    <FileList aria-label='Test'>
+      <FileListItem
+        fileName='resume.pdf'
+        fileSize='1.2 MB'
+        status={status}
+        errorMessage='Det gick inte bra'
+        onCancel={() => {
+          // noop
+        }}
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  )
+}
+
+export const AnimatedFailure: StoryObj = {
+  tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Demonstrates the upload-failure transition: the icon collapses with no checkmark flourish, and the error message reveals below.',
+      },
+    },
+  },
+  render: () => <AnimatedFailureDemo />,
+}
+
 // ─── Test-only: real state-driven removal, so focus management on delete
 // (moves to a sibling's action button, or the list itself if that was the
 // last row) can actually be exercised. ───
