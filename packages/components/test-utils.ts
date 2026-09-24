@@ -15,7 +15,7 @@ export async function render(
   const result = await baseRender(...args)
   const focusTarget = document.createElement('div')
   focusTarget.id = '__vitest_focus_init__'
-  focusTarget.style.cssText = 'width:4px;height:4px;overflow:hidden'
+  focusTarget.style.cssText = 'position:fixed;right:0;bottom:0;z-index:2147483647;width:4px;height:4px;overflow:hidden'
   result.container.prepend(focusTarget)
   await userEvent.click(focusTarget)
   focusTarget.remove()
