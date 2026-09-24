@@ -6,7 +6,7 @@
 .calendar {
   padding: 0.5rem;
 
-  * {
+  table :where(*) {
     background: unset;
     color: unset;
     padding: unset;
@@ -92,7 +92,10 @@
   align-items: center;
   justify-content: space-between;
 
-  & button {
+  /* Direct children only — the month/year pickers also render a nested
+   * <button> (their SelectTrigger), which should keep its own Select
+   * styling rather than inherit the nav buttons' look. */
+  & > button {
     border: none;
     color: var(--midas-text-primary);
     padding: 0.5rem;
@@ -121,6 +124,21 @@
 
   [data-disabled] {
     color: var(--midas-text-disabled);
+  }
+}
+
+.pickers {
+  display: flex;
+  align-items: center;
+  gap: var(--midas-space-small);
+
+  /* data-readonly lands on the <Select> wrapper (see CalendarMonthPicker/
+   * CalendarYearPicker) — reach into the actual trigger button for the
+   * cosmetic treatment, mirroring the nav buttons' [data-readonly] rule.
+   * Selected by tag rather than the (CSS-module-scoped) .trigger class,
+   * since that class name isn't reachable across module files. */
+  [data-readonly] button {
+    background-color: transparent;
   }
 }
 

@@ -7,11 +7,18 @@ import { Size } from '../common/types'
 import { MidasSelectProps } from './Select'
 import { SelectionMode } from '.'
 
+/**
+ * `'small'` is only available through the bare `SelectTrigger` (e.g. for
+ * compact standalone selects like the Calendar month/year picker) — the
+ * full `Select` field component's public `size` prop stays `Size`.
+ */
+export type SelectSize = Size | 'small'
+
 interface SelectTriggerProps<
   T extends object,
   M extends SelectionMode = 'single',
 > extends Pick<MidasSelectProps<T, M>, 'isDisabled' | 'selectionMode'> {
-  size: Size
+  size: SelectSize
 }
 
 export const SelectTrigger = <
@@ -29,6 +36,7 @@ export const SelectTrigger = <
       className={clsx(
         {
           [styles.medium]: size === 'medium',
+          [styles.small]: size === 'small',
         },
         styles.trigger,
       )}

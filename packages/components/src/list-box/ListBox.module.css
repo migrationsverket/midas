@@ -11,6 +11,57 @@
      */
     pointer-events: auto !important;
   }
+
+  /* Compact item sizing, e.g. the Calendar month/year picker. Exact
+   * spacing pending final design sign-off. */
+  &[data-size='small'] {
+    .listBoxItem {
+      /* Figma dev mode: 10px vertical / 16px horizontal (the latter
+       * happens to match the default — only the vertical padding and
+       * font size actually shrink for this size). */
+      padding: var(--midas-space-50) var(--midas-space-medium);
+      font-size: var(--midas-typography-font-size-20);
+      line-height: var(--midas-typography-line-height-20);
+      height: var(--midas-size-option);
+
+      /* Sits on top of a layer-01 surface (e.g. the Calendar), so it needs
+       * the layer-02 tint to read as distinct from the surface behind it —
+       * same reasoning as the .small Select trigger above. */
+      background-color: var(--midas-layer-02-base);
+
+      &[data-hovered]:not([data-disabled]) {
+        background-color: var(--midas-layer-02-hover);
+      }
+
+      &[data-pressed]:not([data-disabled]) {
+        background-color: var(--midas-layer-02-hover);
+      }
+
+      &[data-selected] {
+        background-color: var(--midas-layer-02-selected);
+
+        &[data-hovered]:not([data-disabled]) {
+          background-color: var(--midas-layer-02-selected-hover);
+        }
+      }
+
+      /* Figma's compact variant marks the selected item via background
+       * color alone (see the base [data-selected] rule above) — no
+       * checkmark, and (since there's no icon to reserve room for) no
+       * clamped .textContent width either. The base rules for both are
+       * sized for large/medium rows and were clipping/wrapping compact
+       * text in an already tight row. */
+      &[data-selection-mode='single'][data-selected] {
+        &::after {
+          content: none;
+        }
+
+        .textContent {
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }
 
 .listBoxPopover {
@@ -25,6 +76,20 @@
 
   @media (forced-colors: active) {
     border: 1px solid var(--midas-border-color-primary);
+  }
+
+  /* Small lists (e.g. the Calendar month/year picker) commonly have more
+   * items than fit in .listBox's max-height, so a vertical scrollbar
+   * appears and eats into the width — which, clamped exactly to the
+   * (narrow) trigger's width, clips the text. Grow to fit instead. */
+  &:has(.listBox[data-size='small']) {
+    width: max-content;
+    /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+    min-width: var(--trigger-width);
+
+    /* Sits on top of a layer-01 surface (e.g. the Calendar) — see the
+     * matching .listBoxItem override below. */
+    background: var(--midas-layer-02-base);
   }
 }
 

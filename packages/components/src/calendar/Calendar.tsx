@@ -14,11 +14,19 @@ import styles from './Calendar.module.css'
 export interface CalendarProps<M extends CalendarSelectionMode = 'single'>
   extends AriaCalendarProps<DateValue, M> {
   errorMessage?: string
+  /**
+   * Show month/year picker dropdowns in the header instead of the static
+   * heading, letting users jump directly to a month/year instead of
+   * paging one month at a time.
+   * @default false
+   */
+  showMonthYearPicker?: boolean
 }
 
 export const Calendar = <M extends CalendarSelectionMode = 'single'>({
   className,
   errorMessage,
+  showMonthYearPicker,
   ...rest
 }: CalendarProps<M>) => (
   <div className={styles.container}>
@@ -27,7 +35,10 @@ export const Calendar = <M extends CalendarSelectionMode = 'single'>({
       data-readonly={rest.isReadOnly || undefined}
       {...rest}
     >
-      <CalendarHeader {...rest} />
+      <CalendarHeader
+        {...rest}
+        showMonthYearPicker={showMonthYearPicker}
+      />
       <CalendarGrid {...rest} />
     </AriaCalendar>
     <FieldError isInvalid={rest.isInvalid}>{errorMessage}</FieldError>

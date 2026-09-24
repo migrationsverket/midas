@@ -75,6 +75,12 @@ export const UnavailableWeekends: Story = {
   },
 }
 
+export const WithMonthYearPicker: Story = {
+  args: {
+    showMonthYearPicker: true,
+  },
+}
+
 export const MultiSelect: StoryObj<typeof Calendar<'multiple'>> = {
   tags: ['!autodocs', '!snapshot'],
   render: args => {
