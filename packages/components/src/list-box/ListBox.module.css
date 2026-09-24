@@ -24,6 +24,27 @@
       line-height: var(--midas-typography-line-height-20);
       height: var(--midas-size-option);
 
+      /* Sits on top of a layer-01 surface (e.g. the Calendar), so it needs
+       * the layer-02 tint to read as distinct from the surface behind it —
+       * same reasoning as the .small Select trigger above. */
+      background-color: var(--midas-layer-02-base);
+
+      &[data-hovered]:not([data-disabled]) {
+        background-color: var(--midas-layer-02-hover);
+      }
+
+      &[data-pressed]:not([data-disabled]) {
+        background-color: var(--midas-layer-02-hover);
+      }
+
+      &[data-selected] {
+        background-color: var(--midas-layer-02-selected);
+
+        &[data-hovered]:not([data-disabled]) {
+          background-color: var(--midas-layer-02-selected-hover);
+        }
+      }
+
       /* Figma's compact variant marks the selected item via background
        * color alone (see the base [data-selected] rule above) — no
        * checkmark, and (since there's no icon to reserve room for) no
@@ -65,6 +86,10 @@
     width: max-content;
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
     min-width: var(--trigger-width);
+
+    /* Sits on top of a layer-01 surface (e.g. the Calendar) — see the
+     * matching .listBoxItem override below. */
+    background: var(--midas-layer-02-base);
   }
 }
 
