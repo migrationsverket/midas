@@ -1,5 +1,5 @@
 import baseConfig from '../../eslint.config.mjs'
-import jsoncEslintParser from 'jsonc-eslint-parser'
+import * as jsoncEslintParser from 'jsonc-eslint-parser'
 
 export default [
   ...baseConfig,
@@ -13,7 +13,7 @@ export default [
           // select-styles has an implicit dependency to theme
           ignoredDependencies: ['@midas-ds/theme'],
           includeTransitiveDependencies: false,
-          ignoredFiles: ['{projectRoot}/vite.config.ts'],
+          ignoredFiles: ['{projectRoot}/vite.config.mts'],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,
           checkVersionMismatches: true,

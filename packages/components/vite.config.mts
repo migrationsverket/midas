@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
+import dts from 'unplugin-dts/vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { join, resolve, relative, extname } from 'node:path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
@@ -8,17 +8,15 @@ import { globSync } from 'glob'
 import { fileURLToPath } from 'node:url'
 import preserveUseClientDirective from 'rollup-plugin-preserve-use-client'
 
-const src = resolve(__dirname, 'src')
+const root = import.meta.dirname
+const src = resolve(root, 'src')
 const defaultCss = resolve(src, 'default.css')
 
 export default defineConfig({
-  root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/layout',
+  root,
+  cacheDir: '../../node_modules/.vite/packages/components',
   resolve: {
     tsconfigPaths: true,
-    alias: {
-      '@midas-ds/components/default.css': '../components/src/default.css',
-    },
   },
   plugins: [
     react(),
@@ -30,16 +28,16 @@ export default defineConfig({
     }),
     dts({
       entryRoot: 'src',
-      tsconfigPath: join(__dirname, 'tsconfig.lib.json'),
+      tsconfigPath: join(root, 'tsconfig.lib.json'),
       include: ['src'],
-      rollupTypes: false,
+      bundleTypes: false,
     }),
     libInjectCss(),
     preserveUseClientDirective(),
   ],
 
   build: {
-    outDir: '../../dist/packages/layout',
+    outDir: '../../dist/packages/components',
     emptyOutDir: true,
     reportCompressedSize: true,
     cssCodeSplit: true,
@@ -50,7 +48,7 @@ export default defineConfig({
         ...Object.fromEntries(
           globSync(`${src}/*/index.ts`).map(file => [
             relative(src, file.slice(0, file.length - extname(file).length)),
-            fileURLToPath(new URL(relative(__dirname, file), import.meta.url)),
+            fileURLToPath(new URL(relative(root, file), import.meta.url)),
           ]),
         ),
       },
@@ -61,11 +59,13 @@ export default defineConfig({
     },
     rolldownOptions: {
       external: [
-        '@midas-ds/components',
-        '@react-aria/utils',
+        '@internationalized/string',
+        '@midas-ds/theme',
         '@react-stately/utils',
         'react-aria-components',
+        'react-aria',
         'react-dom',
+        'react-stately',
         'react',
         'react/jsx-runtime',
       ],

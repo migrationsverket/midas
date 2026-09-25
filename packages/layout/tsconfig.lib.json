@@ -30,7 +30,7 @@
     "src/**/*.spec.jsx"
   ],
   "include": [
-    "vite.config.ts",
+    "vite.config.mts",
     "src/**/*.js",
     "src/**/*.jsx",
     "src/**/*.ts",

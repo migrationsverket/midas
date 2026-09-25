@@ -1,5 +1,5 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
-import viteConfig from './vite.config'
+import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
 
 // Split from vitest.config.ts so visual regression can run as its own nx

@@ -1,5 +1,5 @@
 import baseConfig from '../../eslint.config.mjs'
-import jsoncEslintParser from 'jsonc-eslint-parser'
+import * as jsoncEslintParser from 'jsonc-eslint-parser'
 
 export default [
   ...baseConfig,
@@ -10,7 +10,7 @@ export default [
         'error',
         {
           ignoredFiles: [
-            '{projectRoot}/vite.config.ts',
+            '{projectRoot}/vite.config.mts',
             '{projectRoot}/rollup.config.cjs',
           ],
           ignoredDependencies: [

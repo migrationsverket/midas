@@ -7,7 +7,7 @@
   "types": "./index.d.ts",
   "dependencies": {
     "@actions/core": "^3.0.0",
-    "nx": "23.1.2",
+    "nx": "23.2.1",
     "semver": "^7.8.5"
   }
 }

@@ -9,7 +9,7 @@
     "strict": true,
     "ignoreDeprecations": "6.0"
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "vite.config.mts"],
   "references": [
     {
       "path": "./tsconfig.lib.json"

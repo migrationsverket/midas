@@ -2,8 +2,10 @@ import { defineConfig } from 'vite'
 import * as path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+const root = import.meta.dirname
+
 export default defineConfig(() => ({
-  root: __dirname,
+  root,
   cacheDir: '../../node_modules/.vite/packages/select-styles',
   resolve: {
     tsconfigPaths: true,
@@ -21,7 +23,7 @@ export default defineConfig(() => ({
     emptyOutDir: true,
     rolldownOptions: {
       input: {
-        'react-select': path.join(__dirname, 'src/lib/react-select.css'),
+        'react-select': path.join(root, 'src/lib/react-select.css'),
       },
       output: {
         assetFileNames: '[name][extname]',

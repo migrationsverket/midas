@@ -1,5 +1,5 @@
 import baseConfig from '../../eslint.config.mjs'
-import jsoncEslintParser from 'jsonc-eslint-parser'
+import * as jsoncEslintParser from 'jsonc-eslint-parser'
 
 export default [
   ...baseConfig,
@@ -18,9 +18,9 @@ export default [
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [
-            '{projectRoot}/vite.config.ts',
-            '{projectRoot}/vitest.config.ts',
-            '{projectRoot}/vitest.setup.ts',
+            '{projectRoot}/vite.config.mts',
+            '{projectRoot}/vitest.config.mts',
+            '{projectRoot}/vitest.setup.mts',
           ],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,

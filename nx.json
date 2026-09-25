@@ -100,7 +100,7 @@
       "inputs": ["default", "^production"]
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/vitest.config.ts"],
+      "inputs": ["default", "^production", "{workspaceRoot}/vitest.config.mts"],
       "cache": true
     },
     "lint": {

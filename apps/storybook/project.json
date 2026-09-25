@@ -45,7 +45,7 @@
     },
     "a11y": {
       "options": {
-        "config": "vitest.config.ts",
+        "config": "vitest.config.mts",
         "project": "storybook"
       },
       "configurations": {
@@ -56,7 +56,7 @@
     },
     "a11y-dark-mode": {
       "options": {
-        "config": "vitest.config.dark.ts",
+        "config": "vitest.config.dark.mts",
         "project": "storybook:dark-mode"
       },
       "configurations": {
@@ -67,7 +67,7 @@
     },
     "a11y-forced-colors": {
       "options": {
-        "config": "vitest.config.forced-colors.ts",
+        "config": "vitest.config.forced-colors.mts",
         "project": "storybook:forced-colors"
       },
       "configurations": {
@@ -78,7 +78,7 @@
     },
     "a11y-mobile": {
       "options": {
-        "config": "vitest.config.mobile.ts",
+        "config": "vitest.config.mobile.mts",
         "project": "storybook:mobile"
       },
       "configurations": {

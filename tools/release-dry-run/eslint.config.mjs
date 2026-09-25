@@ -1,5 +1,5 @@
 import baseConfig from '../../eslint.config.mjs'
-import jsoncEslintParser from 'jsonc-eslint-parser'
+import * as jsoncEslintParser from 'jsonc-eslint-parser'
 
 export default [
   ...baseConfig,
@@ -11,7 +11,7 @@ export default [
         {
           ignoredFiles: [
             '{projectRoot}/rollup.config.cjs',
-            '{projectRoot}/vitest.config.ts',
+            '{projectRoot}/vitest.config.mts',
           ],
         },
       ],
