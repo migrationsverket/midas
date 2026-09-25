@@ -10,6 +10,27 @@ import { Text } from '../text'
 import { Cell, Column, Row, Table, TableBody, TableHeader } from '../table'
 import { Heading } from '../heading'
 
+const longFormParagraphs = [1, 2, 3, 4, 5, 6].map(n => (
+  <Text
+    key={n}
+    elementType='p'
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore saepe atque
+    necessitatibus pariatur aliquam vel incidunt blanditiis rem maxime. Modi
+    enim dolorem optio id error reprehenderit nisi non iste? Natus! Lorem ipsum
+    dolor sit amet consectetur, adipisicing elit. Itaque, dolores eligendi rerum
+    distinctio dignissimos repellat magni est veniam, ratione, totam quo eius
+    aperiam dolorum quod minima corporis quibusdam! Tempore, nam. Lorem ipsum
+    dolor sit amet consectetur, adipisicing elit. Tempore, laborum praesentium
+    deserunt incidunt minima doloremque eligendi odio iure officia sunt,
+    delectus rem quam soluta dolores modi, illo expedita molestiae eaque! Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Facilis provident,
+    dolorem perspiciatis nesciunt dicta explicabo sequi doloremque neque fugit?
+    Ratione adipisci dolor saepe nam fugit provident asperiores voluptas!
+    Molestiae, cumque.
+  </Text>
+))
+
 type Story = StoryObj<typeof Modal>
 
 export default {
@@ -102,28 +123,26 @@ export const Scrollable: Story = {
     title: 'Read all the text',
     children: (
       <>
-        {[1, 2, 3, 4, 5, 6].map(n => (
-          <Text
-            key={n}
-            elementType='p'
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            saepe atque necessitatibus pariatur aliquam vel incidunt blanditiis
-            rem maxime. Modi enim dolorem optio id error reprehenderit nisi non
-            iste? Natus! Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Itaque, dolores eligendi rerum distinctio dignissimos repellat
-            magni est veniam, ratione, totam quo eius aperiam dolorum quod
-            minima corporis quibusdam! Tempore, nam. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Tempore, laborum praesentium deserunt
-            incidunt minima doloremque eligendi odio iure officia sunt, delectus
-            rem quam soluta dolores modi, illo expedita molestiae eaque! Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            provident, dolorem perspiciatis nesciunt dicta explicabo sequi
-            doloremque neque fugit? Ratione adipisci dolor saepe nam fugit
-            provident asperiores voluptas! Molestiae, cumque.
-          </Text>
-        ))}
+        {longFormParagraphs}
         <Button slot='close'>Submit</Button>
+      </>
+    ),
+  },
+}
+
+export const ScrollableWithFooter: Story = {
+  args: {
+    title: 'Read all the text',
+    children: longFormParagraphs,
+    footer: (
+      <>
+        <Button slot='close'>Submit</Button>
+        <Button
+          slot='close'
+          variant='secondary'
+        >
+          Cancel
+        </Button>
       </>
     ),
   },
