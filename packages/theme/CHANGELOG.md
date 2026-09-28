@@ -1,3 +1,10 @@
+## 3.17.2 (2026-09-28)
+
+### 🔧 Maintenance
+
+- cleanup .ts -> .mts rename misses ([731bd176c35](https://github.com/migrationsverket/midas/commit/731bd176c35))
+- **deps:** update vite related dependencies ([b484d858e76](https://github.com/migrationsverket/midas/commit/b484d858e76))
+
 ## 3.17.1 (2026-09-18)
 
 ### 🩹 Fixes

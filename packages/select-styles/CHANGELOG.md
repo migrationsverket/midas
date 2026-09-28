@@ -1,3 +1,14 @@
+## 1.1.71 (2026-09-28)
+
+### 🔧 Maintenance
+
+- **deps:** run npm update ([c349591751e](https://github.com/migrationsverket/midas/commit/c349591751e))
+- **deps:** update vite related dependencies ([b484d858e76](https://github.com/migrationsverket/midas/commit/b484d858e76))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.2
+
 ## 1.1.70 (2026-09-18)
 
 ### 🔧 Maintenance

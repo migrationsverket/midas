@@ -1,3 +1,19 @@
+## 0.2.41 (2026-09-28)
+
+### 🩹 Fixes
+
+- **components,layout:** keep @midas-ds imports in published types ([6229b621a3d](https://github.com/migrationsverket/midas/commit/6229b621a3d))
+- **components,layout,table-styles:** update adobe dependencies ([bb54f8b7f4d](https://github.com/migrationsverket/midas/commit/bb54f8b7f4d))
+
+### 🔧 Maintenance
+
+- **deps:** run npm update ([c349591751e](https://github.com/migrationsverket/midas/commit/c349591751e))
+- **deps:** update vite related dependencies ([b484d858e76](https://github.com/migrationsverket/midas/commit/b484d858e76))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.1
+
 ## 0.2.40 (2026-09-28)
 
 ### 🧱 Updated Dependencies

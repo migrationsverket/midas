@@ -1,3 +1,26 @@
+## 17.27.1 (2026-09-28)
+
+### 🩹 Fixes
+
+- **components,layout:** keep @midas-ds imports in published types ([6229b621a3d](https://github.com/migrationsverket/midas/commit/6229b621a3d))
+- **components:** keep render focus target from shifting layout under the cursor ([9c0b9902c3b](https://github.com/migrationsverket/midas/commit/9c0b9902c3b))
+- **components,layout,table-styles:** update adobe dependencies ([bb54f8b7f4d](https://github.com/migrationsverket/midas/commit/bb54f8b7f4d))
+
+### 🔧 Maintenance
+
+- cleanup .ts -> .mts rename misses ([731bd176c35](https://github.com/migrationsverket/midas/commit/731bd176c35))
+- **deps:** run npm update ([c349591751e](https://github.com/migrationsverket/midas/commit/c349591751e))
+- **deps:** update vite related dependencies ([b484d858e76](https://github.com/migrationsverket/midas/commit/b484d858e76))
+
+### 🧪 Tests updated
+
+- **components:** update visual regression screenshots ([b0a27f03e41](https://github.com/migrationsverket/midas/commit/b0a27f03e41))
+- change render method for visual regression tests ([197271b1e40](https://github.com/migrationsverket/midas/commit/197271b1e40))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.2
+
 ## 17.27.0 (2026-09-28)
 
 ### 🚀 Features
