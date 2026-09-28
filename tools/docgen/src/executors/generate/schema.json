@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "outputCapture": "direct-nodejs",
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Generate API docs",
+  "description": "Generates one JSON file per component with its props, for the docs app.",
+  "type": "object",
+  "properties": {
+    "tsConfig": {
+      "type": "string",
+      "description": "tsconfig for the package sources, relative to the workspace root. Defaults to <projectRoot>/tsconfig.lib.json."
+    },
+    "include": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Globs for component files, relative to the project root.",
+      "default": ["src/**/[A-Z]*.tsx"]
+    },
+    "exclude": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Globs to exclude, relative to the project root.",
+      "default": ["**/*.stories.tsx", "**/*.spec.tsx", "**/*.test.tsx"]
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "Output directory, relative to the workspace root. Defaults to dist/api/<projectName>."
+    },
+    "watch": {
+      "type": "boolean",
+      "description": "Keep running and regenerate when sources change.",
+      "default": false
+    }
+  },
+  "required": []
+}
