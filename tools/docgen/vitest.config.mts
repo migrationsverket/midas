@@ -6,5 +6,6 @@ export default defineProject({
     environment: 'node',
     // Each test builds real TypeScript programs over the component packages
     testTimeout: 120_000,
+    hookTimeout: 120_000,
   },
 })
