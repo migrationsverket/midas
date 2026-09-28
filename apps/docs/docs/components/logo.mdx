@@ -17,15 +17,35 @@ import { Link, Logo } from '@midas-ds/components'
 Migrationsverket har fått en ny logotyp och den kommer införas i Midas som en komponent och del av [Header](../layout/header). I nuläget finns endast svg-filer och implementationen görs av teamen själva. Kontakta Midas-teamet om ni behöver hjälp att implementera nya logotypen i Header.
 :::
 
-## Sidhuvud i externa tjänster
+## Nya logotypen
+
+Implementeringen av nya logotypen sker först externt.
+
+### Sidhuvud i externa tjänster
 
 När logotypen används i sidhuvudet i externa tjänster gäller följande riktlinjer för den nya logotypen. Använd länkarna för att ladda ner logotypen i .svg-format.
 
-| Brytpunkt | Höjd sidhuvud (px) | Bredd logotyp (px) | Padding vänster (px) | Variant      | Länk                                                                                                                                           |
-| --------- | ------------------ | -----------------: | -------------------: | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| < 374px   | 92                 |                 28 |                   16 | Vapen        | Kontakta Kommunikationsavdelningen                                                                                                             |
-| 375–767px | 92                 |                112 |                   16 | Stående      | <Link target='_blank' href='/img/Migrationsverket_primary_filled_vertical_red.svg' download>{'Ladda ner vertikal logotyp'}</Link>              |
-| > 768px   | 104                |                220 |                   32 | Liggande eng | <Link target='_blank' href='/img/Migrationsverket_primary_filled_horisontal_red_english.svg' download>{'Ladda ner horisontell logotyp'}</Link> |
+| Brytpunkt | Höjd sidhuvud (px) | Bredd logotyp (px) | Padding vänster (px) | Variant             | Länk                                                                                                                                           |
+| --------- | ------------------ | -----------------: | -------------------: | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| < 374px   | 92                 |                 28 |                   16 | Vapen               | <Link target='_blank' href='/img/Migrationsverket_primary_filled_coatofarms_red.svg' download>{'Ladda ner vapen'}</Link>                       |
+| 375–767px | 92                 |                112 |                   16 | Vertikal            | <Link target='_blank' href='/img/Migrationsverket_primary_filled_vertical_red.svg' download>{'Ladda ner vertikal logotyp'}</Link>              |
+| > 768px   | 104                |                220 |                   32 | Horisontell engelsk | <Link target='_blank' href='/img/Migrationsverket_primary_filled_horisontal_red_english.svg' download>{'Ladda ner horisontell logotyp'}</Link> |
+
+### Sidhuvud interna tjänster
+
+Riktlinjer för interna system kommer finnas här framöver.
+
+### Favicon
+
+Faviconen används i webbläsarens flikar och bokmärken. Det är samma vapen som används i logotypen men i mindre format.
+
+<Link
+  target='_blank'
+  href='/img/Migrationsverket_favicon.ico'
+  download
+>
+  {'Ladda ner faviconen i .ico-format'}
+</Link>
 
 ## Gamla logotypen
 
