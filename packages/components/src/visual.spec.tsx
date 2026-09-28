@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
 import { composeStories, setProjectAnnotations } from '@storybook/react-vite'
-import { render } from '../test-utils'
+import { render } from 'vitest-browser-react'
 
 // Mirrors the tag default from apps/storybook/.storybook/preview.tsx (every
 // story is `snapshot`-tagged unless it opts out with `!snapshot`) without
