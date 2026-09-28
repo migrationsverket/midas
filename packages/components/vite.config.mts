@@ -31,6 +31,10 @@ export default defineConfig({
       tsconfigPath: join(root, 'tsconfig.lib.json'),
       include: ['src'],
       bundleTypes: false,
+      // Keep @midas-ds/* imports as package imports. By default tsconfig
+      // paths are rewritten to relative paths into the monorepo's sources,
+      // which don't exist in the published package.
+      pathsToAliases: false,
     }),
     libInjectCss(),
     preserveUseClientDirective(),
