@@ -1,6 +1,6 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
 import { defineStorybookProject } from './vitest.storybook.project.mts'
-import viteConfig from './vite.config'
+import viteConfig from './vite.config.mts'
 
 export default mergeConfig(
   viteConfig,

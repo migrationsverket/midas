@@ -8,7 +8,7 @@ export default mergeConfig(
     test: {
       testTimeout: 2500,
       reporters: ['default'],
-      // Visual regression tests run separately (see vitest.config.visual.ts
+      // Visual regression tests run separately (see vitest.config.visual.mts
       // and the `visual` nx target) so they can be non-blocking in CI
       // without affecting this project's regular, required `test` target.
       exclude: [...defaultExclude, 'src/visual.spec.tsx'],
