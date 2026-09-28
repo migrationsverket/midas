@@ -4,6 +4,8 @@ description: Tooltip kan användas för att förklara en knapp eller annan inter
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import TooltipApi from '@midas-ds/api/components/Tooltip.json'
+import TooltipTriggerApi from '@midas-ds/api/components/TooltipTrigger.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   TooltipDelay,
@@ -169,11 +171,11 @@ för referens.
 
 ### Tooltip
 
-<PropTable name='Tooltip' />
+<PropTable doc={TooltipApi} />
 
 ### TooltipTrigger
 
 <PropTable
-  name='TooltipTrigger'
+  doc={TooltipTriggerApi}
   defaultOpen={false}
 />

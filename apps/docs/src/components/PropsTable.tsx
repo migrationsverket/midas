@@ -1,11 +1,11 @@
-import useGlobalData from '@docusaurus/useGlobalData'
+import { useMemo } from 'react'
 import {
   Accordion,
   AccordionItem,
   DialogTrigger,
   Popover,
 } from '@midas-ds/components'
-import { ComponentDoc, PropItem, Props } from 'react-docgen-typescript'
+import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 import styles from '../css/propstable.module.css'
 import ReactMarkdown from 'react-markdown'
 import Lowlight from 'react-lowlight'
@@ -21,12 +21,62 @@ interface TypeMember {
   members?: TypeMember[]
 }
 
+interface PropItem extends Omit<ApiProp, 'type'> {
+  type: {
+    name: string
+    raw?: string
+    value?: { value: string; members?: TypeMember[] }[]
+    members?: TypeMember[]
+  }
+}
+
+type Props = Record<string, PropItem>
+
+/**
+ * Generated docs store drill-down members once per file in `doc.types` and
+ * refer to them by key. Resolves those references into nested `members`.
+ */
+function resolveProps(doc: ApiDoc): Props {
+  const tables = new Map<string, TypeMember[]>()
+  const resolve = (ref?: string): TypeMember[] | undefined => {
+    if (!ref) return undefined
+    if (!tables.has(ref)) {
+      tables.set(
+        ref,
+        doc.types[ref].map(({ membersRef, ...member }) => ({
+          ...member,
+          members: resolve(membersRef),
+        })),
+      )
+    }
+    return tables.get(ref)
+  }
+
+  return Object.fromEntries(
+    Object.entries(doc.props).map(([key, prop]) => {
+      const { membersRef, value, ...type } = prop.type
+      return [
+        key,
+        {
+          ...prop,
+          type: {
+            ...type,
+            value: value?.map(({ membersRef, ...entry }) => ({
+              ...entry,
+              members: resolve(membersRef),
+            })),
+            members: resolve(membersRef),
+          },
+        },
+      ]
+    }),
+  )
+}
+
 function hasMembers(
   type: PropItem['type'],
 ): type is PropItem['type'] & { members: TypeMember[] } {
-  return (
-    Array.isArray((type as any).members) && (type as any).members.length > 0
-  )
+  return Array.isArray(type.members) && type.members.length > 0
 }
 
 /** Renders a type name — clickable with drill-down popover if it has members */
@@ -104,7 +154,7 @@ const MembersTable = ({ members }: { members: TypeMember[] }) => (
   </div>
 )
 
-export const DisplayCompositeTypes = ({ props }: Props) => {
+export const DisplayCompositeTypes = ({ props }: { props: PropItem }) => {
   if (hasMembers(props.type)) {
     return (
       <DrillableType
@@ -133,7 +183,7 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
           </Pressable>
           <Popover>
             <span className='hljs-code'>
-              {props.type.value.map(
+              {props.type.value?.map(
                 (r: { value: string; members?: TypeMember[] }, i: number) => {
                   return (
                     <span key={`${r.value}${i}`}>
@@ -163,23 +213,24 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
   }
 }
 
-export const PropTable = ({ name, defaultOpen = true }) => {
-  const globalData = useGlobalData()
-
-  const componentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
-    ?.default as ComponentDoc[] | undefined
-
-  if (!componentsDocs) {
-    return null
-  }
-
-  const props = componentsDocs.find(
-    componentDoc => componentDoc.displayName === name,
-  )?.props
-
-  if (!props) {
-    return null
-  }
+/**
+ * Props table for a component. Import the component's generated API doc in
+ * the MDX file and pass it as `doc`:
+ *
+ * ```mdx
+ * import ButtonApi from '@midas-ds/api/components/Button.json'
+ *
+ * <PropTable doc={ButtonApi} />
+ * ```
+ */
+export const PropTable = ({
+  doc,
+  defaultOpen = true,
+}: {
+  doc: ApiDoc
+  defaultOpen?: boolean
+}) => {
+  const props = useMemo(() => resolveProps(doc), [doc])
 
   const { events, accessibility, rest } = Object.entries(props).reduce(
     (acc, [key, value]) => {

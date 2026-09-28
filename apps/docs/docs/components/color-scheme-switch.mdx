@@ -6,6 +6,8 @@ description: Växlare för färgschema (ljust, mörkt, systemets inställning)
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { ColorSchemeSwitch, ColorSchemeSwitchMenu } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
+import ColorSchemeSwitchApi from '@midas-ds/api/components/ColorSchemeSwitch.json'
+import ColorSchemeSwitchMenuApi from '@midas-ds/api/components/ColorSchemeSwitchMenu.json'
 import { SelectorExample } from '@site/src/components/examples/color-scheme-switch/ColorSchemeSwitchExamples'
 
 <ComponentHeader
@@ -123,8 +125,8 @@ const [scheme, setScheme] = useState<ColorScheme>(
 
 ### ColorSchemeSwitch
 
-<PropTable name='ColorSchemeSwitch' />
+<PropTable doc={ColorSchemeSwitchApi} />
 
 ### ColorSchemeSwitchMenu
 
-<PropTable name='ColorSchemeSwitchMenu' />
+<PropTable doc={ColorSchemeSwitchMenuApi} />

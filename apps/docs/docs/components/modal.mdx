@@ -4,6 +4,8 @@ description: Modal som lägger sig över allt annat innehåll.
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import DialogTriggerApi from '@midas-ds/api/components/DialogTrigger.json'
+import ModalApi from '@midas-ds/api/components/Modal.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   FormExample,
@@ -192,8 +194,8 @@ Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande kna
 
 ### DialogTrigger
 
-<PropTable name='DialogTrigger' />
+<PropTable doc={DialogTriggerApi} />
 
 ### Modal
 
-<PropTable name='Modal' />
+<PropTable doc={ModalApi} />

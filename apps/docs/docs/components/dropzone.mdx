@@ -7,6 +7,7 @@ import { DropZone, FileTrigger, Button, Text, FieldError, Label } from '@midas-d
 import { Upload } from 'lucide-react'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import DropZoneApi from '@midas-ds/api/components/DropZone.json'
 import { ValidatedDropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
 
 <ComponentHeader
@@ -188,4 +189,4 @@ filer. Se [FileTriggers dokumentation](/components/file-trigger#drag--drop) för
 
 ### DropZone
 
-<PropTable name='DropZone' />
+<PropTable doc={DropZoneApi} />

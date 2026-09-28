@@ -4,6 +4,8 @@ description: Lista uppladdade filer
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import FileListApi from '@midas-ds/api/components/FileList.json'
+import FileListItemApi from '@midas-ds/api/components/FileListItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { FileList, FileListItem } from '@midas-ds/components'
 
@@ -91,8 +93,8 @@ Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filna
 
 ### FileList
 
-<PropTable name='FileList' />
+<PropTable doc={FileListApi} />
 
 ### FileListItem
 
-<PropTable name='FileListItem' />
+<PropTable doc={FileListItemApi} />

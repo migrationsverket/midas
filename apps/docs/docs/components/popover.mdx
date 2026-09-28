@@ -4,6 +4,8 @@ description: Popover kan användas för att förklara en knapp eller annan inter
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import DialogTriggerApi from '@midas-ds/api/components/DialogTrigger.json'
+import PopoverApi from '@midas-ds/api/components/Popover.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   PopoverExample,
@@ -243,12 +245,12 @@ för referens.
 
 ### Popover
 
-<PropTable name='Popover' />
+<PropTable doc={PopoverApi} />
 
 ### DialogTrigger
 
 <PropTable
-  name='DialogTrigger'
+  doc={DialogTriggerApi}
   defaultOpen={false}
 />
 ```

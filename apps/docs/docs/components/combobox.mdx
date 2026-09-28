@@ -10,6 +10,8 @@ import {
   AsyncExample,
 } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/PropsTable'
+import ComboBoxApi from '@midas-ds/api/components/ComboBox.json'
+import ListBoxItemApi from '@midas-ds/api/components/ListBoxItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -200,11 +202,11 @@ Fler exempel med bland annat infinite scroll finns i [React Arias dokumentation 
 
 ### ComboBox
 
-<PropTable name='ComboBox' />
+<PropTable doc={ComboBoxApi} />
 
 ### ListBoxItem
 
 <PropTable
-  name='ListBoxItem'
+  doc={ListBoxItemApi}
   defaultOpen={false}
 />

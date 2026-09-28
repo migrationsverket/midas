@@ -5,6 +5,12 @@ description: En meny kan användas för att samla ihop funktioner som sällan an
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import MenuApi from '@midas-ds/api/components/Menu.json'
+import MenuItemApi from '@midas-ds/api/components/MenuItem.json'
+import MenuPopoverApi from '@midas-ds/api/components/MenuPopover.json'
+import MenuSectionApi from '@midas-ds/api/components/MenuSection.json'
+import MenuTriggerApi from '@midas-ds/api/components/MenuTrigger.json'
+import SeparatorApi from '@midas-ds/api/components/Separator.json'
 import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
 import { OnActionExample } from '@site/src/components/examples/menu/MenuExamples'
@@ -124,24 +130,24 @@ Om menyn enbart består av navigationslänkar bör du istället använda en dedi
 
 ### Menu
 
-<PropTable name='Menu' />
+<PropTable doc={MenuApi} />
 
 ### MenuItem
 
-<PropTable name='MenuItem' defaultOpen={false} />
+<PropTable doc={MenuItemApi} defaultOpen={false} />
 
 ### MenuPopover
 
-<PropTable name='MenuPopover' defaultOpen={false} />
+<PropTable doc={MenuPopoverApi} defaultOpen={false} />
 
 ### MenuSection
 
-<PropTable name='MenuSection' defaultOpen={false} />
+<PropTable doc={MenuSectionApi} defaultOpen={false} />
 
 ### MenuTrigger
 
-<PropTable name='MenuTrigger' defaultOpen={false} />
+<PropTable doc={MenuTriggerApi} defaultOpen={false} />
 
 ### Separator
 
-<PropTable name='Separator' defaultOpen={false} />
+<PropTable doc={SeparatorApi} defaultOpen={false} />

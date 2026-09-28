@@ -5,6 +5,8 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import AccordionApi from '@midas-ds/api/components/Accordion.json'
+import AccordionItemApi from '@midas-ds/api/components/AccordionItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Example, ExampleControlled, StatusExample } from '@site/src/components/examples/accordion/AccordionExamples'
 
@@ -247,11 +249,11 @@ const [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(new Set(['manda
 
 ### Accordion
 
-<PropTable name='Accordion' />
+<PropTable doc={AccordionApi} />
 
 ### AccordionItem
 
 <PropTable
-  name='AccordionItem'
+  doc={AccordionItemApi}
   defaultOpen={false}
 />

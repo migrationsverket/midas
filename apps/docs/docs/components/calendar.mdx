@@ -4,6 +4,7 @@ description: Använd en kalender när användaren ska välja ett datum eller vis
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import CalendarApi from '@midas-ds/api/components/Calendar.json'
 import { Calendar } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { RangeCalendarExample } from '@site/src/components/examples/calendar/CalendarExamples'
@@ -106,5 +107,5 @@ Fungerar likadant på både `Calendar` och `RangeCalendar` (och därmed även `D
 
 ## API
 
-<PropTable name='Calendar' />
+<PropTable doc={CalendarApi} />
 ````
