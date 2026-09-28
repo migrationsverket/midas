@@ -13,6 +13,7 @@ export default {
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
       pathsToAliases: false,
+      include: ['src'],
     }),
     viteStaticCopy({
       targets: [

@@ -4,7 +4,8 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     ".storybook/**/*.ts",
-    ".storybook/**/*.tsx"
+    ".storybook/**/*.tsx",
+    ".storybook/vitest.setup.mts"
   ],
   "exclude": ["src/**/*.test.tsx", "src/**/*.spec.tsx"],
   "files": [
