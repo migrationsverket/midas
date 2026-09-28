@@ -1,3 +1,34 @@
+## 17.27.0 (2026-09-28)
+
+### 🚀 Features
+
+- **components,calendar:** add opt-in month/year picker to Calendar header ([66aaa354322](https://github.com/migrationsverket/midas/commit/66aaa354322))
+- **components,list-box:** add small size for compact standalone lists ([4fc0d9acdd0](https://github.com/migrationsverket/midas/commit/4fc0d9acdd0))
+- **components,select:** add small size to SelectTrigger for compact standalone selects ([e873817fb04](https://github.com/migrationsverket/midas/commit/e873817fb04))
+
+### 🩹 Fixes
+
+- **components,list-box:** use layer-02 tokens for the compact month/year picker list ([71947f918ce](https://github.com/migrationsverket/midas/commit/71947f918ce))
+- **components:** remove dependency ([cbcbf9bc3a7](https://github.com/migrationsverket/midas/commit/cbcbf9bc3a7))
+- **components,calendar:** use type-only import for CalendarDate to fix shared-singleton CI check ([a1dc4c9d700](https://github.com/migrationsverket/midas/commit/a1dc4c9d700))
+- **components,calendar:** fix commitBehavior regression and calendar style-reset specificity ([1e16eee4048](https://github.com/migrationsverket/midas/commit/1e16eee4048))
+- **components,calendar:** default RangeCalendar to commitBehavior=reset to avoid losing an in-progress selection ([29797a0a969](https://github.com/migrationsverket/midas/commit/29797a0a969))
+
+### 🏭 Refactoring
+
+- **components,calendar:** remove test id ([f438ab14be9](https://github.com/migrationsverket/midas/commit/f438ab14be9))
+- **components,calendar:** remove implementation of calendar parts ([2155a551a54](https://github.com/migrationsverket/midas/commit/2155a551a54))
+- **components,calendar:** extract shared CalendarPicker to remove duplication ([95afddb01d1](https://github.com/migrationsverket/midas/commit/95afddb01d1))
+- **components,calendar:** drop React.FC across calendar components ([89130b5a8f1](https://github.com/migrationsverket/midas/commit/89130b5a8f1))
+
+### 🧪 Tests updated
+
+- **components:** update visual regression screenshots ([577a6fe2928](https://github.com/migrationsverket/midas/commit/577a6fe2928))
+- **components:** update visual regression screenshots ([8739fcb1d91](https://github.com/migrationsverket/midas/commit/8739fcb1d91))
+- **components,calendar:** add missing WithMonthYearPicker visual regression baselines ([3fd6f623052](https://github.com/migrationsverket/midas/commit/3fd6f623052))
+- **components:** update visual regression screenshots ([5f5afd8f047](https://github.com/migrationsverket/midas/commit/5f5afd8f047))
+- **components:** mock the date for visual regression ([78bbf4510e1](https://github.com/migrationsverket/midas/commit/78bbf4510e1))
+
 ## 17.26.0 (2026-09-23)
 
 ### 🚀 Features
