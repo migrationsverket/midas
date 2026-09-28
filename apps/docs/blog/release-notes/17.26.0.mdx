@@ -1,0 +1,156 @@
+---
+slug: 17.26.0
+title: Release 17.26.0
+authors: midas
+tags: [release-notes, v17]
+date: 2026-09-28
+---
+
+Sedan 17.17.3 har DropZone blivit en Midas-komponent med egna tillstånd, fält väljer automatiskt rätt token utifrån lager, och Checkbox/Radio har fått nya byggstenar.
+
+| Paket                  | Version   |
+| ---------------------- | --------- |
+| `@midas-ds/components` | `17.26.0` |
+| `@midas-ds/layout`     | `0.2.39`  |
+| `@midas-ds/theme`      | `3.17.1`  |
+
+{/* truncate */}
+
+## 🆕 Ny komponent: DropZone
+
+`DropZone` är nu en Midas-komponent med visuell representation för samtliga tillstånd.
+
+```tsx
+import { DropZone, FileTrigger, Button, Text } from '@midas-ds/components'
+import { Upload } from 'lucide-react'
+
+<DropZone
+  onDrop={handleDrop}
+  aria-label='Dra och släpp filer här'
+>
+  <Text slot='label'>Dra och släpp filer här</Text>
+  <FileTrigger onSelect={handleSelect}>
+    <Button variant='secondary'>
+      <Upload aria-hidden size={20} />
+      Välj filer
+    </Button>
+  </FileTrigger>
+</DropZone>
+```
+
+Sätt alltid `aria-label` på `DropZone` för att hålla den tillgänglig. Se [dokumentationen](/components/dropzone) för fler exempel, bland annat validering och filtypsbegränsning.
+
+## 🚀 Nya funktioner
+
+### Fält väljer rätt token utifrån lager
+
+Select, ComboBox, DateField m.fl. väljer nu `field-01` eller `field-02` automatiskt, beroende på om fältet ligger direkt på bakgrunden eller inuti en `Card`/`Accordion`. Disabled-tillståndet följer med. Tidigare fick fält fel färg i `Card`.
+
+### Checkbox och Radio: nya byggstenar
+
+RAC har fasat ut `Checkbox`/`Radio` till förmån för `CheckboxButton`/`CheckboxField` och `RadioButton`/`RadioField`. Midas `Checkbox` och `Radio` bygger nu på dem internt och exporteras även separat om du vill bygga eget. API:et är oförändrat.
+
+```tsx
+import { CheckboxButton, CheckboxField } from '@midas-ds/components'
+```
+
+### SearchField: etikett och beskrivning
+
+`SearchField` stöder nu `label` och `description`, precis som övriga fält.
+
+### ListBox: opt-out från virtualisering
+
+`ListBox` (och därmed `Select`/`ComboBox`) kan nu välja bort virtualisering med `virtualized={false}` via `listBoxProps`. Användbart om du testar utanför en riktig webbläsare, eller om du av andra skäl vill stänga av den. Standardbeteendet är oförändrat.
+
+### Select: pressed state
+
+`Select` har nu ett synligt pressed state på trigger.
+
+## 🩹 Fixar
+
+### @midas-ds/components
+
+- **DatePicker, DateRangePicker**: Kraschade tidigare med "Invalid slot 'errorMessage'" så fort en egen `validate`-funktion gjorde fältet ogiltigt. Orsaken var ett fel uppströms i RAC 1.20, löst genom att ta bort en onödig `Dialog`-wrapper runt kalender-popover.
+- **Select, ComboBox, DatePicker, SearchField**: Knappen i hjälp-popover fungerar nu korrekt igen.
+- **ListBox, Select, ComboBox**: Rubriker har inte längre en fast höjd, så längre texter klipps inte.
+- **Select**: Popover täcker inte längre nedre kanten på trigger.
+- **Select**: "Välj alla" rör inte längre disabled-alternativ och räknar bara riktiga alternativ.
+- **Checkbox**: "Välj alla" i CheckboxGroup följer nu samma disabled-regel som övriga alternativ.
+- **Badge**: Stannar nu i ikonets hörn oavsett hur smala containrar är.
+- **Table**: Valbara rader visar nu `cursor: pointer`.
+- **Tabs**: Animerar inte längre när de används inuti en dialog.
+- **Calendar**: Nu generisk över `selectionMode`, vilket öppnar för `selectionMode='multiple'` längre fram. Kräver RAC 1.20.
+- **Label (InfoPopover)**: Fokusringen klipps inte längre av efterföljande fält.
+- **Link**: `RouterProvider` exporteras nu explicit, så den överlever tree-shaking.
+- **Popover**: Använder nu rätt `field-02`-tokens.
+- **ProgressBar**: Bakgrundsfärger använder nu semantiska tokens i stället för hårdkodade.
+
+### @midas-ds/layout
+
+- **Navbar**: Döljs nu på desktop med CSS. Tidigare fick varje konsument skriva sin egen `useMediaQuery`.
+- **Sidebar, Navbar, Panel**: Har nu en enhetlig mobilbrytpunkt (640px) över hela paketet.
+- **Sidebar**: Bredden kan nu styras via CSS custom properties.
+- **Main**: Fungerar nu som en positioneringskontext för fixed/absolut positionerat innehåll.
+- **NavigationLink**: Text och ikon är nu nedtonade i disabled-tillstånd.
+- **Navigation**: Fixat ett typecheck-fel orsakat av en inkompatibel `@react-aria/collections`-version.
+
+### @midas-ds/theme
+
+- **Layer accent**: `layer-accent-02` har nu samma värden som `layer-accent-01`.
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v17.18.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.18.0)
+- [components@v17.19.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.19.0)
+- [components@v17.20.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.20.0)
+- [components@v17.21.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.21.0)
+- [components@v17.21.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.21.1)
+- [components@v17.21.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.21.2)
+- [components@v17.22.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.22.0)
+- [components@v17.23.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.0)
+- [components@v17.23.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.1)
+- [components@v17.23.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.2)
+- [components@v17.23.3](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.3)
+- [components@v17.23.4](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.4)
+- [components@v17.23.5](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.5)
+- [components@v17.23.6](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.6)
+- [components@v17.23.7](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.7)
+- [components@v17.23.8](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.8)
+- [components@v17.23.9](https://github.com/migrationsverket/midas/releases/tag/components%40v17.23.9)
+- [components@v17.24.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.24.0)
+- [components@v17.25.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.25.0)
+- [components@v17.25.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.25.1)
+- [components@v17.25.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.25.2)
+- [components@v17.26.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.26.0)
+- [layout@v0.2.12](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.12)
+- [layout@v0.2.13](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.13)
+- [layout@v0.2.14](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.14)
+- [layout@v0.2.15](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.15)
+- [layout@v0.2.16](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.16)
+- [layout@v0.2.17](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.17)
+- [layout@v0.2.18](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.18)
+- [layout@v0.2.19](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.19)
+- [layout@v0.2.20](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.20)
+- [layout@v0.2.21](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.21)
+- [layout@v0.2.22](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.22)
+- [layout@v0.2.23](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.23)
+- [layout@v0.2.24](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.24)
+- [layout@v0.2.25](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.25)
+- [layout@v0.2.26](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.26)
+- [layout@v0.2.27](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.27)
+- [layout@v0.2.28](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.28)
+- [layout@v0.2.29](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.29)
+- [layout@v0.2.30](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.30)
+- [layout@v0.2.31](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.31)
+- [layout@v0.2.32](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.32)
+- [layout@v0.2.33](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.33)
+- [layout@v0.2.34](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.34)
+- [layout@v0.2.35](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.35)
+- [layout@v0.2.36](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.36)
+- [layout@v0.2.37](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.37)
+- [layout@v0.2.38](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.38)
+- [layout@v0.2.39](https://github.com/migrationsverket/midas/releases/tag/layout%400.2.39)
+- [theme@v3.15.5](https://github.com/migrationsverket/midas/releases/tag/theme%403.15.5)
+- [theme@v3.16.0](https://github.com/migrationsverket/midas/releases/tag/theme%403.16.0)
+- [theme@v3.17.0](https://github.com/migrationsverket/midas/releases/tag/theme%403.17.0)
+- [theme@v3.17.1](https://github.com/migrationsverket/midas/releases/tag/theme%403.17.1)
