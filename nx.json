@@ -96,6 +96,37 @@
     "serve": {
       "dependsOn": ["theme:style-dictionary-generate"]
     },
+    "docgen": {
+      "executor": "@midas-ds/docgen:generate",
+      "inputs": [
+        "production",
+        "^production",
+        "{workspaceRoot}/tsconfig.base.json",
+        "{workspaceRoot}/tools/docgen/src/**/*",
+        {
+          "externalDependencies": [
+            "typescript",
+            "react-docgen-typescript",
+            "react-aria-components",
+            "react-aria",
+            "react-stately",
+            "@react-types/shared",
+            "@types/react"
+          ]
+        }
+      ],
+      "outputs": ["{workspaceRoot}/dist/api/{projectName}"],
+      "cache": true
+    },
+    "docgen-watch": {
+      "executor": "@midas-ds/docgen:generate",
+      "dependsOn": ["docgen"],
+      "options": {
+        "watch": true
+      },
+      "continuous": true,
+      "cache": false
+    },
     "e2e": {
       "inputs": ["default", "^production"]
     },

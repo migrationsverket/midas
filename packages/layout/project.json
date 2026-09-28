@@ -4,5 +4,8 @@
   "sourceRoot": "packages/layout/src",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "docgen": {},
+    "docgen-watch": {}
+  }
 }

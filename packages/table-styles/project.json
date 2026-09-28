@@ -8,6 +8,8 @@
   "targets": {
     "build": {
       "dependsOn": ["^build"]
-    }
+    },
+    "docgen": {},
+    "docgen-watch": {}
   }
 }

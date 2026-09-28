@@ -22,6 +22,8 @@
       "options": {
         "config": "vitest.config.visual.mts"
       }
-    }
+    },
+    "docgen": {},
+    "docgen-watch": {}
   }
 }
