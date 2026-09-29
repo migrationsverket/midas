@@ -1,0 +1,15 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t}from"./iframe-CXm8y9OE.js";import{n,t as r}from"./bell-Db4OOk1o.js";import{n as i,t as a}from"./settings-BpD-c3Wt.js";import{i as o,n as s,r as c,t as l}from"./BadgeContainer-ByfWQg50.js";import{n as u,t as d}from"./HeaderAction-DD0ynSpx.js";var f,p,m,h,g;function _(){return(_=e((()=>{n(),i(),u(),s(),o(),f=t(),p={component:d,title:`Layout/Header/HeaderAction`,tags:[`autodocs`],parameters:{layout:`centered`}},m={args:{children:`Notiser`,"aria-label":`12 olästa notiser`,icon:(0,f.jsxs)(l,{children:[(0,f.jsx)(r,{}),(0,f.jsx)(c,{children:`12`})]})}},h={args:{"aria-label":`Användarinställningar`,icon:(0,f.jsx)(a,{})}},g=[`Primary`,`IconOnly`],m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: 'Notiser',
+    'aria-label': '12 olästa notiser',
+    icon: <BadgeContainer>
+        <Bell />
+        <Badge>12</Badge>
+      </BadgeContainer>
+  }
+}`,...m.parameters?.docs?.source}}},h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`{
+  args: {
+    'aria-label': 'Användarinställningar',
+    icon: <Settings />
+  }
+}`,...h.parameters?.docs?.source}}}})))()}_();export{h as IconOnly,m as Primary,g as __namedExportsOrder,p as default};
