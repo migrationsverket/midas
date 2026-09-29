@@ -41,3 +41,15 @@ export const MonthSelectExample = () => {
     />
   )
 }
+
+export const MonthHeaderPositionExample = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  return (
+    <DatePicker
+      inline
+      selected={selectedDate}
+      monthHeaderPosition='bottom'
+      onChange={(date: Date | null) => setSelectedDate(date)}
+    />
+  )
+}
