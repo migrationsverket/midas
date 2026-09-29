@@ -12,8 +12,12 @@ export default [
         'error',
         {
           buildTargets: ['build'],
-          // datepicker-styles has an implicit dependency to theme
-          ignoredDependencies: ['@midas-ds/theme'],
+          ignoredDependencies: [
+            // datepicker-styles has an implicit dependency to theme
+            '@midas-ds/theme',
+            // the styles target react-datepicker's class names, not its code
+            'react-datepicker',
+          ],
           includeTransitiveDependencies: false,
           ignoredFiles: ['{projectRoot}/vite.config.mts'],
           checkMissingDependencies: true,

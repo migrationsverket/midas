@@ -6,8 +6,9 @@
 }
 
 .react-datepicker {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  position: relative;
   background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   color: var(--midas-text-primary);
@@ -103,6 +104,51 @@
   align-items: center;
   justify-content: center;
   height: 40px;
+
+  &:has(.react-datepicker__header__dropdown:not(:empty)) {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+/* v9: wraps the header and navigation when monthHeaderPosition is "middle" or "bottom" */
+.react-datepicker__header-wrapper {
+  position: relative;
+}
+
+.react-datepicker__header__dropdown {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.react-datepicker__month-select,
+.react-datepicker__year-select,
+.react-datepicker__month-year-select {
+  font-family: var(--midas-typography-font-family);
+  font-size: 1rem;
+  color: var(--midas-text-primary);
+  background-color: var(--midas-field-01-base);
+  border: none;
+  border-bottom: 1px solid var(--midas-border-color-primary);
+  border-radius: 0;
+  min-height: var(--midas-size-control-sm);
+  padding: 0 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--midas-field-01-hover);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--midas-state-focus);
+  }
 }
 
 .react-datepicker-year-header {
@@ -342,4 +388,86 @@
   font-weight: inherit;
   text-decoration: underline;
   text-underline-offset: 0.25rem;
+}
+
+.react-datepicker__today-button {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: var(--midas-typography-weight-medium);
+  color: var(--midas-text-tertiary);
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: var(--midas-button-background-tertiary-hover);
+  }
+
+  &:active {
+    background-color: var(--midas-button-background-tertiary-active);
+  }
+}
+
+.react-datepicker__close-icon {
+  position: absolute;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--midas-icon-primary);
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    width: 1.25rem;
+    height: 1.25rem;
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    background-color: currentColor;
+
+    @media (forced-colors: active) {
+      background-color: ButtonText;
+    }
+  }
+
+  &:hover {
+    background-color: var(--midas-field-01-hover);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--midas-state-focus);
+  }
+}
+
+/* Make room for both the calendar icon and the clear button */
+.react-datepicker__calendar-icon ~ .react-datepicker__close-icon {
+  right: 2.5rem;
+}
+
+.react-datepicker__input-container:has(.react-datepicker__calendar-icon):has(.react-datepicker__close-icon) input {
+  padding-right: 4.5rem;
+}
+
+/* withPortal */
+.react-datepicker__portal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--midas-z-index-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--midas-overlay-background);
+  backdrop-filter: var(--midas-overlay-blur);
+
+  .react-datepicker {
+    box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
+  }
 }
