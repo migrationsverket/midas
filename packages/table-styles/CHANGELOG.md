@@ -1,3 +1,14 @@
+## 2.0.125 (2026-09-29)
+
+### 🚀 Features
+
+- **docgen:** generate API docs per package ([f30b97ee80d](https://github.com/migrationsverket/midas/commit/f30b97ee80d))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.2
+- Updated theme to 3.17.3
+
 ## 2.0.124 (2026-09-28)
 
 ### 🩹 Fixes

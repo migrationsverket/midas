@@ -1,3 +1,7 @@
+## 3.17.3 (2026-09-29)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 3.17.2 (2026-09-28)
 
 ### 🔧 Maintenance
