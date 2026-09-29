@@ -4,6 +4,9 @@ description: Statusindikator
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import TagApi from '@midas-ds/api/components/Tag.json'
+import TagGroupApi from '@midas-ds/api/components/TagGroup.json'
+import TagListApi from '@midas-ds/api/components/TagList.json'
 import { DynamicExample } from '@site/src/components/examples/tag/TagExamples'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Tag, TagGroup, TagList, Card, CardContent, CardTitle, Text, CardActions, Button } from '@midas-ds/components'
@@ -197,12 +200,12 @@ const DynamicExample = () => {
 
 ### Tag
 
-<PropTable name='Tag' />
+<PropTable doc={TagApi} />
 
 ### TagGroup
 
-<PropTable name='TagGroup' />
+<PropTable doc={TagGroupApi} />
 
 ### TagList
 
-<PropTable name='TagList' />
+<PropTable doc={TagListApi} />

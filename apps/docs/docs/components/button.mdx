@@ -4,6 +4,8 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import ButtonApi from '@midas-ds/api/components/Button.json'
+import ButtonGroupApi from '@midas-ds/api/components/ButtonGroup.json'
 import { Button, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Plus } from 'lucide-react'
@@ -215,11 +217,11 @@ import { ButtonContext } from 'react-aria-components'
 
 ### Button
 
-<PropTable name='Button' />
+<PropTable doc={ButtonApi} />
 
 ### ButtonGroup
 
 <PropTable
-  name='ButtonGroup'
+  doc={ButtonGroupApi}
   defaultOpen={false}
 />

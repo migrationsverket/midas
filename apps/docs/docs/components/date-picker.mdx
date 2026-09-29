@@ -4,6 +4,8 @@ description: Fält för att välja ett datum eller ett spann av datum med kalend
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import DatePickerApi from '@midas-ds/api/components/DatePicker.json'
+import DateRangePickerApi from '@midas-ds/api/components/DateRangePicker.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DatePickerExample, UnavailableDateExample } from '@site/src/components/examples/date-picker/DatePickerExamples'
 import { DatePicker, DateRangePicker } from '@midas-ds/components'
@@ -141,11 +143,11 @@ Använd `isClearable` för att visa en knapp som tömmer fältet. Notera att ett
 
 ### DatePicker
 
-<PropTable name='DatePicker' />
+<PropTable doc={DatePickerApi} />
 
 ### DateRangePicker
 
 <PropTable
-  name='DateRangePicker'
+  doc={DateRangePickerApi}
   defaultOpen={false}
 />

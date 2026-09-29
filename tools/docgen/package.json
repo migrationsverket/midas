@@ -1,0 +1,15 @@
+{
+  "name": "@midas-ds/docgen",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@nx/devkit": "23.1.2",
+    "glob": "^13.0.0",
+    "react-docgen-typescript": "^2.2.2",
+    "typescript": "6.0.3"
+  },
+  "executors": "./executors.json"
+}

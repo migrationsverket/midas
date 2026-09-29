@@ -4,6 +4,7 @@ description: Komponent som skapar en länk
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import LinkApi from '@midas-ds/api/components/Link.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link, Text } from '@midas-ds/components'
 import { variables as semantic } from '@midas-ds/theme'
@@ -165,4 +166,4 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 ## API
 
-<PropTable name='Link' />
+<PropTable doc={LinkApi} />

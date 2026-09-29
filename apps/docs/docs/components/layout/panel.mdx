@@ -6,6 +6,9 @@ sidebar_position: 4
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import PanelApi from '@midas-ds/api/layout/Panel.json'
+import PanelProviderApi from '@midas-ds/api/layout/PanelProvider.json'
+import usePanelsApi from '@midas-ds/api/layout/usePanels.json'
 
 <ComponentHeader
   name='Panel'
@@ -221,11 +224,11 @@ Se storyn **DetailView** i Storybook för ett fullständigt exempel.
 
 ### Panel
 
-<PropTable name='Panel' />
+<PropTable doc={PanelApi} />
 
 ### PanelProvider
 
-<PropTable name='PanelProvider' />
+<PropTable doc={PanelProviderApi} />
 
 ### usePanels
 
@@ -235,4 +238,4 @@ Hook för att komma åt `PanelContext` och hantera panelernas tillstånd program
 const { panels, addPanel, closePanel, removePanel } = usePanels()
 ```
 
-<PropTable name='usePanels' />
+<PropTable doc={usePanelsApi} />

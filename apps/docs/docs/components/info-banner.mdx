@@ -4,6 +4,7 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import InfoBannerApi from '@midas-ds/api/components/InfoBanner.json'
 import { InfoBanner, Tab, Tabs, TabList, TabPanel } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -180,4 +181,4 @@ Om du ändå vill använda InfoBanner som ett dynamiskt meddelande behöver `rol
 
 ## API
 
-<PropTable name='InfoBanner' />
+<PropTable doc={InfoBannerApi} />

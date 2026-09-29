@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "generate": {
+      "implementation": "./src/executors/generate/executor.ts",
+      "schema": "./src/executors/generate/schema.json",
+      "description": "Generate API docs (component props) for a package"
+    }
+  }
+}

@@ -4,10 +4,11 @@
   "projectType": "application",
   "sourceRoot": "apps/docs/src",
   "tags": ["docs", "apps"],
+  "implicitDependencies": ["components", "layout", "table-styles"],
   "targets": {
     "build": {
       "executor": "@midas-ds/docusaurus:browser",
-      "dependsOn": ["theme:style-dictionary-generate", "^build"],
+      "dependsOn": ["theme:style-dictionary-generate", "^build", "^docgen"],
       "options": {
         "outputPath": "dist/docs",
         "minify": false
@@ -16,9 +17,13 @@
     "serve": {
       "executor": "@midas-ds/docusaurus:dev-server",
       "options": {
-        "hideApi": false,
         "port": 3000
-      }
+      },
+      "dependsOn": [
+        "theme:style-dictionary-generate",
+        "^docgen",
+        "^docgen-watch"
+      ]
     },
     "contrast-check": {
       "executor": "nx:run-commands",

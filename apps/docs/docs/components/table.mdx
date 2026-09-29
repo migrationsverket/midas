@@ -4,6 +4,11 @@ description: En enkel tabell för att visualisera data.
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import CellApi from '@midas-ds/api/components/Cell.json'
+import ColumnApi from '@midas-ds/api/components/Column.json'
+import RowApi from '@midas-ds/api/components/Row.json'
+import TableApi from '@midas-ds/api/components/Table.json'
+import TableHeaderApi from '@midas-ds/api/components/TableHeader.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   BasicExample,
@@ -362,32 +367,32 @@ En demo av denna kod finns på vår Storybook.
 
 ### Table
 
-<PropTable name='Table' />
+<PropTable doc={TableApi} />
 
 ### TableHeader
 
 <PropTable
-  name='TableHeader'
+  doc={TableHeaderApi}
   defaultOpen={false}
 />
 
 ### Row
 
 <PropTable
-  name='Row'
+  doc={RowApi}
   defaultOpen={false}
 />
 
 ### Column
 
 <PropTable
-  name='Column'
+  doc={ColumnApi}
   defaultOpen={false}
 />
 
 ### Cell
 
 <PropTable
-  name='Cell'
+  doc={CellApi}
   defaultOpen={false}
 />

@@ -4,6 +4,8 @@ description: Radio är en typ av inmatningsfält som används för att välja et
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import RadioApi from '@midas-ds/api/components/Radio.json'
+import RadioGroupApi from '@midas-ds/api/components/RadioGroup.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   BasicExample,
@@ -124,6 +126,6 @@ Använd Radioknappar när användaren bara ska göra **ett** av flera val i en l
 
 ### Radio
 
-<PropTable name='Radio' />
+<PropTable doc={RadioApi} />
 ### RadioGroup
-<PropTable name='RadioGroup' />
+<PropTable doc={RadioGroupApi} />

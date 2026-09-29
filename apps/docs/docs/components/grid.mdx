@@ -4,6 +4,8 @@ description: Grid baserat på tekniken display flex i css
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import GridApi from '@midas-ds/api/components/Grid.json'
+import GridItemApi from '@midas-ds/api/components/GridItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   SimpleExample,
@@ -203,12 +205,12 @@ Grids skalas enligt följande specifikation.
 
 ### Grid
 
-<PropTable name='Grid' />
+<PropTable doc={GridApi} />
 
 ### GridItem
 
 <PropTable
-  name='GridItem'
+  doc={GridItemApi}
   defaultOpen={false}
 />
 ```
