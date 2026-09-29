@@ -21,6 +21,17 @@ full kontroll över tabellens utseende, och vi har tillhandahållit stilar för 
 Stilarna för Tanstack Table är just nu i en tidig version och är ett arbete som pågår. Tanstack Table är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/migrationsverket/midas) och tar gärna emot förslag på stilar som saknas när du implementerar Tanstack Table.
 :::
 
+## Vilka versioner stöds
+
+`@midas-ds/table-styles` stödjer både TanStack Table v8 och v9 (`^8.21.3 || ^9.0.0`). DOM-strukturen är oförändrad mellan de två versionerna, så samma CSS-klasser och stilar fungerar oavsett vilken major du kör, det som skiljer sig är TanStacks eget JS/TS-API.
+
+Det här är relevant att veta direkt: npms `latest`-tagg för `@tanstack/react-table` pekar just nu på v9, och det finns ingen separat v8-tagg. Det betyder att om du kör `npm install @tanstack/react-table` idag i ett nytt projekt får du v9, inte v8. Har du redan ett projekt med v8 installerat påverkas du inte, den versionen fortsätter fungera precis som förut.
+
+- **Ny installation idag → v9.** Använd `useTable`-syntaxen i [Komma igång](#komma-igång) nedan.
+- **Befintligt projekt på v8 → v8.** Använd `useReactTable`-syntaxen, som även är den som de färdiga exemplen längre ner på sidan är skrivna med.
+
+Vill du behålla din befintliga v8-kod men ändå köra på v9 internt finns TanStacks egen `@tanstack/react-table/legacy`-export med en `useLegacyTable`-hook som är API-kompatibel med v8. Se TanStacks [migreringsguide](https://tanstack.com/table/latest/docs/framework/react/guide/migrating) för fler detaljer kring vad som skiljer v8 och v9 åt.
+
 ## När du ska använda Tanstack Table
 
 Använd Tanstack Table när du behöver funktioner som:
@@ -54,9 +65,79 @@ Använd class `midas-tanstack-table`:
 <table className={'midas-tanstack-table'}>...</table>
 ```
 
-Här är ett minimalt exempel för att komma igång:
+Här är ett minimalt exempel för att komma igång. Detta är **v9-syntaxen**, den du får om du installerar `@tanstack/react-table` från scratch idag:
 
 ```tsx
+import {
+  useTable, // v8: useReactTable
+  tableFeatures, // v9-only: builds the feature set passed to useTable
+  coreTablesFeature, // v9-only: base feature that's always required
+  createCoreRowModel, // v8: getCoreRowModel, but not called directly on the table config here
+  flexRender,
+  type ColumnDef,
+} from '@tanstack/react-table'
+import '@midas-ds/table-styles/tanstack-table.css'
+
+// v9-only: v8 instead passes getCoreRowModel: getCoreRowModel() directly to useReactTable
+const features = tableFeatures({
+  coreTablesFeature,
+  coreRowModel: createCoreRowModel(),
+})
+
+type Person = {
+  name: string
+  age: number
+}
+
+// v9: ColumnDef also takes features as its first type parameter, v8 only takes <Person>
+const columns: ColumnDef<typeof features, Person>[] = [
+  { accessorKey: 'name', header: 'Namn' },
+  { accessorKey: 'age', header: 'Ålder' },
+]
+
+const data: Person[] = [
+  { name: 'Anna', age: 28 },
+  { name: 'Erik', age: 35 },
+]
+
+function MyTable() {
+  const table = useTable({
+    features, // v9-only: see above
+    data,
+    columns,
+  })
+
+  return (
+    <table className='midas-tanstack-table'>
+      <thead>
+        {table.getHeaderGroups().map(headerGroup => (
+          <tr key={headerGroup.id}>
+            {headerGroup.headers.map(header => (
+              <th key={header.id}>{flexRender(header.column.columnDef.header, header.getContext())}</th>
+            ))}
+          </tr>
+        ))}
+      </thead>
+      <tbody>
+        {table.getRowModel().rows.map(row => (
+          <tr key={row.id}>
+            {row.getVisibleCells().map(cell => (
+              <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+```
+
+### Är du på v8?
+
+Om ditt projekt redan har `@tanstack/react-table@8` installerat fungerar `table-styles` precis likadant, bara med v8:s `useReactTable`-syntax istället. Det är också den syntaxen som används i alla de färdiga exemplen längre ner på sidan.
+
+```tsx
+// v9: useTable + tableFeatures/coreTablesFeature/createCoreRowModel (see the v9 example above)
 import { useReactTable, getCoreRowModel, flexRender, ColumnDef } from '@tanstack/react-table'
 import '@midas-ds/table-styles/tanstack-table.css'
 
@@ -65,6 +146,7 @@ type Person = {
   age: number
 }
 
+// v9: ColumnDef<typeof features, Person>
 const columns: ColumnDef<Person>[] = [
   { accessorKey: 'name', header: 'Namn' },
   { accessorKey: 'age', header: 'Ålder' },
@@ -79,6 +161,7 @@ function MyTable() {
   const table = useReactTable({
     data,
     columns,
+    // v9: the row model is registered separately via tableFeatures, not inline here
     getCoreRowModel: getCoreRowModel(),
   })
 
@@ -111,10 +194,13 @@ function MyTable() {
 
 Här är några resurser som hjälper dig att komma igång med TanStack Table:
 
-- [**TanStack Table v8 Docs**](https://tanstack.com/table/v8/docs/introduction): Den officiella dokumentationen är den bästa platsen att lära sig om alla funktioner och hur man använder dem.
-- [**Exempel**](https://tanstack.com/table/v8/docs/framework/react/examples/basic): En stor samling exempel som visar hur man implementerar olika funktioner.
+- [**TanStack Table-dokumentation**](https://tanstack.com/table/latest/docs/introduction): Den officiella dokumentationen för v9 (`latest`) är den bästa platsen att lära sig om alla funktioner och hur man använder dem.
+- [**Exempel**](https://tanstack.com/table/latest/docs/framework/react/examples/basic): En stor samling exempel som visar hur man implementerar olika funktioner.
+- Sitter du kvar på v8? Ingen fara, [**v8-dokumentationen**](https://tanstack.com/table/v8/docs/introduction) finns kvar och underhålls separat av TanStack.
 
 ## Exempel
+
+Exemplen nedan är skrivna med v8:s `useReactTable`-syntax (se [Är du på v8?](#är-du-på-v8) ovan). Är du på v9 gäller samma hook-anrop (`getSortedRowModel`, `getFilteredRowModel`, `column.getToggleSortingHandler()` och så vidare), du byter bara ut `useReactTable` mot `useTable` och registrerar features via `tableFeatures`.
 
 ### Paginering
 
