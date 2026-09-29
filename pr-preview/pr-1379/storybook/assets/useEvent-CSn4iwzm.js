@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{t}from"./react-Q1GcV6wX.js";import{_ as n,gt as r,ht as i,v as a}from"./useHover-BYGnHkut.js";function o(e,t,r,a){let o=n(r),c=r==null;(0,s.useEffect)(()=>{if(!(c||e.current==null))return i(e.current,t,o,a)},[e,t,a,c])}var s;function c(){return(c=e((()=>{r(),a(),s=t()})))()}export{c as n,o as t};
