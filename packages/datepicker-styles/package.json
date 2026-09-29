@@ -23,5 +23,8 @@
   },
   "dependencies": {
     "@midas-ds/theme": "3.17.3"
+  },
+  "peerDependencies": {
+    "react-datepicker": "^8.0.0 || ^9.0.0"
   }
 }
