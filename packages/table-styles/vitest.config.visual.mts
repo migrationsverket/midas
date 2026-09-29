@@ -1,22 +1,24 @@
-import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config'
+import { defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
 
+// Split from vitest.config.mts so visual regression can run as its own nx
+// target (`visual`) — separately cacheable, separately reportable, and not
+// part of the required `test` target, so a screenshot diff never blocks a
+// PR the way a real unit test failure does. Mirrors
+// packages/components/vitest.config.visual.mts.
 export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
       testTimeout: 2500,
       reporters: ['default'],
-      // Visual regression tests run separately (see vitest.config.visual.mts
-      // and the `visual` nx target) so they can be non-blocking in CI
-      // without affecting this project's regular, required `test` target.
-      exclude: [...defaultExclude, 'src/visual.spec.tsx'],
+      include: ['src/visual.spec.tsx'],
       projects: [
         {
           extends: true,
           test: {
-            name: 'browser',
+            name: 'visual',
             browser: {
               enabled: true,
               headless: true,
@@ -24,7 +26,7 @@ export default mergeConfig(
               instances: [{ browser: 'chromium' }],
               screenshotFailures: false,
             },
-            setupFiles: ['vitest.setup.mts'],
+            setupFiles: ['vitest.setup.visual.mts'],
           },
         },
       ],

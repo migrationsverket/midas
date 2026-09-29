@@ -328,7 +328,11 @@
         "testTargetName": "visual",
         "testMode": "run"
       },
-      "include": ["packages/components/**/*", "packages/datepicker-styles/**/*"]
+      "include": [
+        "packages/components/**/*",
+        "packages/datepicker-styles/**/*",
+        "packages/table-styles/**/*"
+      ]
     }
   ],
   "analytics": false

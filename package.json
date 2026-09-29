@@ -123,6 +123,7 @@
     "stylelint-prettier": "^5.0.2",
     "stylelint-value-no-unknown-custom-properties": "^6.0.1",
     "tailwindcss": "^4.1.18",
+    "tanstack-table-v9": "npm:@tanstack/react-table@^9.2.4",
     "ts-node": "10.9.2",
     "tslib": "^2.3.0",
     "typescript-eslint": "^8.58.0",
