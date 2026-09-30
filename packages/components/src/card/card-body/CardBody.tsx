@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
-import clsx from '../../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './CardBody.module.css'
 
 export type CardBodyProps = DetailedHTMLProps<

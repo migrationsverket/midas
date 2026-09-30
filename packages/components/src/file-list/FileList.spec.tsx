@@ -5,7 +5,7 @@ import styles from './FileList.module.css'
 import { render } from '../../test-utils'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const { Default, WithoutFileSize } = composeStories(stories)
 

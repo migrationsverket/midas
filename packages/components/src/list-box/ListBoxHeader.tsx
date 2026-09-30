@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Header as AriaHeader } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './ListBox.module.css'
 
 export type ListBoxHeaderProps = React.HTMLAttributes<HTMLElement> &

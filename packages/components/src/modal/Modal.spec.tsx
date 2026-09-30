@@ -4,7 +4,7 @@ import { userEvent } from 'vitest/browser'
 import * as stories from './Modal.stories'
 import { render } from '../../test-utils'
 import { Button } from '../button'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const { Default, DS1282 } = composeStories(stories)
 

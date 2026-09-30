@@ -4,7 +4,7 @@ import { page, userEvent } from 'vitest/browser'
 import styles from './SearchField.module.css'
 import * as stories from './SearchField.stories'
 import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const {
   Primary,

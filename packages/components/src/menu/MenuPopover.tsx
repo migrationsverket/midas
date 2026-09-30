@@ -1,4 +1,4 @@
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Popover as AriaPopover, PopoverProps } from 'react-aria-components'
 import styles from './Menu.module.css'
 

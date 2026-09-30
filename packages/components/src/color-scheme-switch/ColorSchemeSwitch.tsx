@@ -7,7 +7,7 @@ import { VisuallyHidden } from 'react-aria'
 import { Key, SelectionIndicator } from 'react-aria-components'
 import { ToggleButton, ToggleButtonGroup } from '../toggle-button'
 import styles from './ColorSchemeSwitch.module.css'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import { useColorScheme } from './useColorScheme'
 

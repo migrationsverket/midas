@@ -7,7 +7,7 @@ import {
   PopoverProps as AriaPopoverProps,
   useContextProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Popover.module.css'
 
 export interface PopoverProps extends AriaPopoverProps {

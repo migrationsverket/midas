@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/react-vite'
 import { page, userEvent } from 'vitest/browser'
 import * as stories from './DatePicker.stories'
 import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const {
   Required,

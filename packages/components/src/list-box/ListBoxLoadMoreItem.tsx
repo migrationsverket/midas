@@ -1,11 +1,11 @@
 import * as React from 'react'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import {
   ListBoxLoadMoreItem as AriaListBoxLoadMoreItem,
   type ListBoxLoadMoreItemProps,
 } from 'react-aria-components'
 import { Spinner } from '../spinner'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 import styles from './ListBox.module.css'
 

@@ -3,7 +3,7 @@ import {
   DateSegment as AriaDateSegment,
   type DateSegmentProps,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './DateSegment.module.css'
 
 export type { DateSegmentProps }

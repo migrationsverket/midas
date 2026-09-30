@@ -1,5 +1,5 @@
 import styles from './Badge.module.css'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 
 export const BadgeContainer: React.FC<
   React.HTMLAttributes<HTMLSpanElement>

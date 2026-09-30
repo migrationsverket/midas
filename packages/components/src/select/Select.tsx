@@ -7,7 +7,7 @@ import {
 import { FocusScope } from 'react-aria'
 import { Label, type InfoPopoverProps } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Size } from '../common/types'
 import { Text } from '../text'
 import { FieldError } from '../field-error'

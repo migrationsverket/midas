@@ -5,7 +5,7 @@ import {
   CalendarGridProps as AriaCalendarGridProps,
   RangeCalendarContext,
 } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Calendar.module.css'
 
 export interface CalendarGridProps {

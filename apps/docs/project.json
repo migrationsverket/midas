@@ -4,7 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/docs/src",
   "tags": ["docs", "apps"],
-  "implicitDependencies": ["components", "layout", "table-styles"],
+  "implicitDependencies": ["components", "layout", "table-styles", "logo"],
   "targets": {
     "build": {
       "executor": "@midas-ds/docusaurus:browser",

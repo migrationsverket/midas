@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styles from './Skeleton.module.css'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Size } from '../common/types'
 
 export interface SkeletonProps

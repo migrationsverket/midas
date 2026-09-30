@@ -6,7 +6,7 @@ import {
   Group,
 } from 'react-aria-components'
 import { Label, type InfoPopoverProps } from '../label'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { Text } from '../text'
 import { FieldError } from '../field-error'

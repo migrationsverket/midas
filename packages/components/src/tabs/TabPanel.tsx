@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { TabPanel as AriaTabPanel, TabPanelProps } from 'react-aria-components'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './Tabs.module.css'
 import { TabsContext } from './TabsContext'
 

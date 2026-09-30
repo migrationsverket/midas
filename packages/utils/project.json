@@ -1,0 +1,14 @@
+{
+  "name": "utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/utils/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "docgen": {},
+    "docgen-watch": {}
+  }
+}

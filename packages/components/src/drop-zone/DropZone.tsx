@@ -8,7 +8,7 @@ import {
   type DropZoneProps as AriaDropZoneProps,
 } from 'react-aria-components'
 import type { ValidationResult } from '@react-types/shared'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import styles from './DropZone.module.css'
 
 export interface DropZoneProps extends AriaDropZoneProps {

@@ -1,0 +1,15 @@
+{
+  "name": "logo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/logo/src",
+  "projectType": "library",
+  "tags": [],
+  "implicitDependencies": ["theme"],
+  "targets": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "docgen": {},
+    "docgen-watch": {}
+  }
+}

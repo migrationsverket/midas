@@ -25,7 +25,12 @@ export * from './layout'
 export * from './link'
 export { RouterProvider } from './link'
 export * from './link-button'
-export * from './logo'
+export {
+  Logo,
+  LogoContext,
+  type LogoProps,
+  type LogoContextValue,
+} from '@midas-ds/logo'
 export * from './modal'
 export * from './popover'
 export * from './progress-bar'
@@ -46,6 +51,6 @@ export * from './tooltip'
 export * from './icons'
 export * from './list-box'
 export * from './menu'
-export { useLocalizedStringFormatter } from './utils/intl'
-export { clsx } from './utils/clsx'
+export { useLocalizedStringFormatter } from '@midas-ds/utils'
+export { clsx } from '@midas-ds/utils'
 export { VERSION } from './version'

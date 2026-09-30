@@ -7,7 +7,7 @@ import {
   LucideProps,
 } from 'lucide-react'
 import { FeedbackStatus } from './types'
-import { useLocalizedStringFormatter } from '../utils/intl'
+import { useLocalizedStringFormatter } from '@midas-ds/utils'
 import messages from './intl/translations.json'
 
 export interface FeedbackStatusIconProps extends LucideProps {

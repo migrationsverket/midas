@@ -4,7 +4,7 @@ import { render } from 'vitest-browser-react'
 import { page } from 'vitest/browser'
 import { Sidebar } from './Sidebar'
 import { House } from 'lucide-react'
-import { I18nProvider } from '../../utils/intl'
+import { I18nProvider } from '@midas-ds/utils'
 
 const MockLayout = (
   props: Partial<LayoutContextProps> & { children?: React.ReactNode },

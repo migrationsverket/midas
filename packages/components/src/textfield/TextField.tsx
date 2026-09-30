@@ -3,7 +3,7 @@
 import { forwardRef } from 'react'
 import { TextFieldBase, type TextFieldBaseProps } from './TextFieldBase'
 import { Input, type InputProps } from './Input'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 import { Complement } from '../utils/types'
 
 export type TextFieldProps = TextFieldBaseProps &

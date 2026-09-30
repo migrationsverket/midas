@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styles from './Badge.module.css'
-import clsx from '../utils/clsx'
+import { clsx } from '@midas-ds/utils'
 
 export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   children,
