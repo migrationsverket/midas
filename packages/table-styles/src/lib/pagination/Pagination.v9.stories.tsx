@@ -1,9 +1,10 @@
 /**
  * Mirrors Pagination.stories.tsx, but against a real TanStack Table v9
- * instance (aliased as `tanstack-table-v9` in package.json — see the root
- * README for why) instead of v8. Exists to prove `Pagination` still works
- * against v9's table-level API (table-styles' peerDependencies now spans
- * `^8.21.3 || ^9.0.0`), not to be a second user-facing demo.
+ * instance (aliased as `tanstack-table-v9` in the root package.json, so both
+ * majors can be installed side by side without npm workspaces) instead of
+ * v8. Exists to prove `Pagination` still works against v9's table-level API
+ * (table-styles' peerDependencies now spans `^8.21.3 || ^9.0.0`), not to be
+ * a second user-facing demo.
  */
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Pagination } from './Pagination'
@@ -55,7 +56,7 @@ const columns: ColumnDef<typeof features, Person>[] = [
 ]
 
 export default {
-  title: 'Components/Pagination/TanStack v9',
+  title: 'table-styles/Pagination/v9',
   component: Pagination,
   // Compat-test fixture, not a maintained visual baseline — renders
   // identically to Pagination.stories.tsx's Primary story.

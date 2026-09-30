@@ -50,7 +50,7 @@ const columns: ColumnDef<Person>[] = [
 ]
 
 export default {
-  title: 'Components/Pagination',
+  title: 'table-styles/Pagination',
   component: Pagination,
   args: {
     pageSizeOptions: [10, 20, 30, 40, 50],
