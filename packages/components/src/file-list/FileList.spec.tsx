@@ -138,6 +138,18 @@ describe('FileList', () => {
     await expect.element(getByText('Det gick inte bra')).toBeVisible()
   })
 
+  it('renders the status as a data attribute for each state', async () => {
+    const { getByRole } = await render(<UploadingDeterminate />)
+    await expect
+      .element(getByRole('listitem'))
+      .toHaveAttribute('data-status', 'uploading')
+  })
+
+  it('only announces upload completion for the success status', async () => {
+    const { getByRole } = await render(<ErrorStory />)
+    await expect.element(getByRole('status')).toHaveTextContent('')
+  })
+
   describe('focus management on removal', () => {
     it('moves focus to a sibling button when the focused row is actually removed', async () => {
       // @ts-expect-error initialFiles exists only on the test container
