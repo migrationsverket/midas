@@ -73,6 +73,10 @@
   --ifm-navbar-search-input-placeholder-color: #bec3c9;
   --ifm-color-primary: var(--midas-link-enabled);
   --ifm-link-color: var(--midas-link-enabled);
+
+  /* Infima's dark values; its own [data-theme='dark'] rules are layered now */
+  --ifm-code-background: rgb(255 255 255 / 10%);
+  --ifm-hover-overlay: rgb(255 255 255 / 5%);
 }
 
 .theme-code-block {
@@ -233,6 +237,7 @@ article li a {
 
 .tabs {
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding-left: 0;
 
   .tabs__item {
     border-radius: 0;
@@ -312,8 +317,13 @@ nav.menu {
   background: none;
 }
 
-.padding-top--md {
-  padding-top: 2rem !important;
+/*
+ * Extra top spacing for doc pages. Infima's own .padding-top--md
+ * (1rem !important) on the inner container can't be overridden from outside
+ * its cascade layer, so the difference is added on the surrounding <main>.
+ */
+main[class*='docMainContainer'] {
+  padding-top: 1rem;
 }
 
 mark {
@@ -326,7 +336,6 @@ mark {
 
 .component-header {
   margin-bottom: 32px;
-  margin-top: -20px;
 }
 
 [class^='searchBar_'] [class^='dropdownMenu_'],
@@ -357,8 +366,8 @@ mark {
 }
 
 @media (width >= 1620px) {
-  .padding-top--md {
-    padding-top: 3rem !important;
+  main[class*='docMainContainer'] {
+    padding-top: 2rem;
   }
 }
 
@@ -468,7 +477,7 @@ table {
   text-align: left;
 }
 
-code {
+:not(pre) > code {
   border: 0.1rem solid var(--docusaurus-highlighted-code-line-bg);
 
   &.unreleased {

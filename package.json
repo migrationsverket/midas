@@ -11,6 +11,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@docusaurus/babel": "^3.10.2",
     "@docusaurus/core": "^3.10.2",
+    "@docusaurus/faster": "^3.10.2",
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
     "@docusaurus/remark-plugin-npm2yarn": "^3.10.2",
