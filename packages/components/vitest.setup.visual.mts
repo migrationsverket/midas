@@ -16,7 +16,6 @@ beforeAll(() => {
   // stability polling relies on those running for real.
   vi.setSystemTime(mockedNow.toDate(getLocalTimeZone()))
 })
-
 afterAll(() => {
   vi.useRealTimers()
 })
