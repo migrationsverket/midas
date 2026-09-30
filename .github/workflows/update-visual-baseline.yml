@@ -6,8 +6,13 @@ on:
 env:
   AUTHOR_NAME: 'github-actions[bot]'
   AUTHOR_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
+  # glob-magic pathspec: a plain wildcard pathspec has to match the whole file
+  # path, so `packages/**/__screenshots__` never matches a screenshot. `/**`
+  # matches everything below, and --untracked-files=all lists new baselines
+  # file by file instead of as a single untracked directory.
+  SCREENSHOTS_PATHSPEC: ':(glob)packages/**/__screenshots__/**'
   COMMIT_MESSAGE: |
-    test(components): update visual regression screenshots
+    test: update visual regression screenshots
 
     Co-authored-by: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
 
@@ -56,7 +61,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          CHANGED_FILES=$(git status --porcelain -- packages/**/__screenshots__/ | awk '{print $2}')
+          CHANGED_FILES=$(git status --porcelain --untracked-files=all -- "$SCREENSHOTS_PATHSPEC" | awk '{print $2}')
           if [ "${CHANGED_FILES:+x}" ]; then
             echo "changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
@@ -75,7 +80,7 @@ jobs:
       - name: Commit changes
         if: steps.check_changes.outputs.changes == 'true'
         run: |
-          git add packages/components/src/__screenshots__
+          git add -A -- "$SCREENSHOTS_PATHSPEC"
           git commit -m "${{ env.COMMIT_MESSAGE }}"
 
       - name: Push changes
