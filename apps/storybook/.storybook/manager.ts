@@ -7,6 +7,7 @@ import {
 } from './custom-theme'
 import { version as componentsVersion } from '../../../packages/components/package.json'
 import { version as layoutVersion } from '../../../packages/layout/package.json'
+import { version as datepickerStylesVersion } from '../../../packages/datepicker-styles/package.json'
 
 addons.setConfig({
   theme:
@@ -24,6 +25,10 @@ addons.setConfig({
 
       if (name === 'Layout') {
         return `${name} - v.${layoutVersion}`
+      }
+
+      if (name === 'datepicker-styles') {
+        return `${name} - v.${datepickerStylesVersion}`
       }
 
       return name
