@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { BasicTable } from './BasicTable'
 
 export default {
-  title: 'Components/Table',
+  title: 'table-styles/BasicTable',
   component: BasicTable,
 } satisfies Meta<typeof BasicTable>
 
