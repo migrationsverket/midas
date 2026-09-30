@@ -41,6 +41,11 @@ const config: Config = {
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
   i18n: { defaultLocale: 'sv', locales: ['sv'] },
+  // Opt in to all Docusaurus v4 defaults ahead of the upgrade, see
+  // https://docusaurus.io/blog/releases/3.10. Includes Docusaurus Faster
+  // (Rspack/SWC, via @docusaurus/faster), namespaced localStorage keys and
+  // MDX v1 compat turned off.
+  future: { v4: true },
   plugins: [
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
     function webpackAliasPlugin() {
@@ -69,6 +74,36 @@ const config: Config = {
               alias: webpackAliases,
             },
           }
+        },
+      }
+    },
+    function disableCascadeLayersPolyfillPlugin() {
+      return {
+        name: 'disable-cascade-layers-polyfill',
+        configurePostCss(postCssOptions) {
+          // future.v4 wraps Docusaurus' own CSS (Infima etc.) in @layer. The
+          // default browserslist includes a few browsers without cascade
+          // layers (Opera Mini, KaiOS), so postcss-preset-env would polyfill
+          // @layer with :not(#\#) specificity hacks. PostCSS processes each
+          // file on its own, so our unlayered custom.css never gets the
+          // matching boost and Infima ends up winning. Ship real @layer rules
+          // instead.
+          postCssOptions.plugins = postCssOptions.plugins.map(plugin =>
+            Array.isArray(plugin) &&
+            String(plugin[0]).includes('postcss-preset-env')
+              ? [
+                  plugin[0],
+                  {
+                    ...plugin[1],
+                    features: {
+                      ...plugin[1]?.features,
+                      'cascade-layers': false,
+                    },
+                  },
+                ]
+              : plugin,
+          )
+          return postCssOptions
         },
       }
     },

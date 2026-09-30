@@ -2,6 +2,11 @@
   .container--fullscreen {
     max-width: 100%;
     padding: 0;
+
+    /* Infima's xl container width used to win here; keep it now that Infima is in a cascade layer */
+    @media (width >= 1440px) {
+      max-width: var(--ifm-container-width-xl);
+    }
   }
 
   .textColumn {
