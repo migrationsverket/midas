@@ -1,0 +1,86 @@
+import{a as e,n as t}from"./rolldown-runtime-DkW27tQK.js";import{t as n}from"./react-Q1GcV6wX.js";import{c as r,d as i,i as a,n as o,o as s,r as c,s as l,u,x as d,y as f}from"./Collection-CTMFqMoK.js";import{C as p,U as m,g as h,h as g,i as _,n as ee,r as v,t as te,x as ne,z as re}from"./useHover-DpQysL7H.js";import{a as ie,d as ae,f as oe,l as se,m as y,n as ce,p as b,r as x,s as S,t as le,u as ue,v as de,y as fe}from"./utils-BqsHfA_z.js";import{n as C,t as w}from"./clsx-BvAV21YK.js";import{i as pe,t as me}from"./Hidden-Q8SikTjb.js";import{N as he,P as ge,b as _e,l as ve,u as ye,x as be}from"./useLoadMoreSentinel-DGASKQzj.js";import{i as xe,r as Se}from"./useLabel-C6AoPwFE.js";import{a as Ce,i as we,n as Te,r as Ee,t as De}from"./SelectionIndicator-ByMiQgfh.js";import{n as Oe,t as ke}from"./useControlledState-_dP2S65v.js";import{a as Ae,r as je,t as Me}from"./Dialog-CKZfKrDs.js";import{n as Ne,t as Pe}from"./useHasTabbableChild-BSLL0PV0.js";import{a as Fe,n as T,r as Ie}from"./iframe-BIKAc4KZ.js";import{r as Le,t as Re}from"./useListState-CKslNj-h.js";import{n as ze,r as Be,t as Ve}from"./animation-BT5gOnel.js";import{n as He,t as Ue}from"./Button--4GaAhHs.js";import{n as We,t as Ge}from"./Modal-TUFp75Rw.js";function E(e,t,n){return e?(typeof t==`string`&&(t=t.replace(/\s+/g,``)),`${D.get(e)}-${n}-${t}`):``}var D;function O(){return(O=t((()=>{D=new WeakMap})))()}function Ke(e,t,n){let{key:r,isDisabled:i,shouldSelectOnPressUp:a}=e,{selectionManager:o,selectedKey:s}=t,c=r===s,l=i||t.isDisabled||t.selectionManager.isDisabled(r),u=t.collection.getItem(r),{itemProps:d,isPressed:f}=_e({selectionManager:o,key:r,ref:n,isDisabled:l,shouldSelectOnPressUp:a??u?.props.href!=null,linkBehavior:`selection`}),p=E(t,r,`tab`),m=E(t,r,`tabpanel`),{tabIndex:h}=d,_=g(u?.props,{labelable:!0});delete _.id;let ee=re(u?.props),{focusableProps:v}=ne({...u?.props,isDisabled:l},n);return{tabProps:b(_,v,ee,d,{id:p,"aria-selected":c,"aria-disabled":l||void 0,"aria-controls":c?m:void 0,tabIndex:l?void 0:h,role:`tab`}),isSelected:c,isDisabled:l,isPressed:f}}function qe(){return(qe=t((()=>{h(),O(),y(),p(),m(),be()})))()}var Je;function Ye(){return(Ye=t((()=>{Je=class{constructor(e,t,n,r=new Set){this.collection=e,this.flipDirection=t===`rtl`,this.disabledKeys=r,this.tabDirection=n===`horizontal`}getKeyLeftOf(e){return this.flipDirection?this.getNextKey(e):this.getPreviousKey(e)}getKeyRightOf(e){return this.flipDirection?this.getPreviousKey(e):this.getNextKey(e)}isDisabled(e){return this.disabledKeys.has(e)||!!this.collection.getItem(e)?.props?.isDisabled}getFirstKey(){let e=this.collection.getFirstKey();return e!=null&&this.isDisabled(e)&&(e=this.getNextKey(e)),e}getLastKey(){let e=this.collection.getLastKey();return e!=null&&this.isDisabled(e)&&(e=this.getPreviousKey(e)),e}getKeyAbove(e){return this.tabDirection?null:this.getPreviousKey(e)}getKeyBelow(e){return this.tabDirection?null:this.getNextKey(e)}getNextKey(e){let t=e;do t=this.collection.getKeyAfter(t),t??=this.collection.getFirstKey();while(t!=null&&this.isDisabled(t)&&t!==e);return t}getPreviousKey(e){let t=e;do t=this.collection.getKeyBefore(t),t??=this.collection.getLastKey();while(t!=null&&this.isDisabled(t)&&t!==e);return t}}})))()}function Xe(e,t,n){let{orientation:r=`horizontal`,keyboardActivation:i=`automatic`}=e,{collection:a,selectionManager:o,disabledKeys:s}=t,{direction:c}=Ie(),l=(0,Ze.useMemo)(()=>new Je(a,c,r,s),[a,s,r,c]),{collectionProps:u}=he({ref:n,selectionManager:o,keyboardDelegate:l,selectOnFocus:i===`automatic`,disallowEmptySelection:!0,scrollRef:n,linkBehavior:`selection`}),d=de();D.set(t,d);let f=Se({...e,id:d});return{tabListProps:{...b(u,f),role:`tablist`,"aria-orientation":r,tabIndex:void 0}}}var Ze;function Qe(){return(Qe=t((()=>{y(),O(),Ye(),fe(),xe(),Fe(),ge(),Ze=n()})))()}function $e(e,t,n){let r=Pe(n)?void 0:0,i=E(t,e.id??t?.selectedKey,`tabpanel`),a=Se({...e,id:i,"aria-labelledby":E(t,t?.selectedKey,`tab`)});return{tabPanelProps:b(a,{tabIndex:r,role:`tabpanel`,"aria-describedby":e[`aria-describedby`],"aria-details":e[`aria-details`]})}}function et(){return(et=t((()=>{O(),y(),Ne(),xe()})))()}function tt(e){let[t,n]=ke(e.selectedKey,e.defaultSelectedKey??null,e.onSelectionChange),r=(0,nt.useMemo)(()=>t==null?[]:[t],[t]),{collection:i,disabledKeys:a,selectionManager:o}=Re({...e,selectionMode:`single`,disallowEmptySelection:!0,allowDuplicateSelectionEvents:!0,selectedKeys:r,onSelectionChange:r=>{if(r===`all`)return;let i=r.values().next().value??null;i===t&&e.onSelectionChange&&e.onSelectionChange(i),n(i)}});return{collection:i,disabledKeys:a,selectionManager:o,selectedKey:t,setSelectedKey:n,selectedItem:t==null?null:i.getItem(t)}}var nt;function rt(){return(rt=t((()=>{Le(),Oe(),nt=n()})))()}function it(e){let t=tt({...e,onSelectionChange:e.onSelectionChange?t=>{t!=null&&e.onSelectionChange?.(t)}:void 0,suppressTextValueWarning:!0,defaultSelectedKey:e.defaultSelectedKey??at(e.collection,e.disabledKeys?new Set(e.disabledKeys):new Set)??void 0}),{selectionManager:n,collection:r,selectedKey:i}=t,a=(0,k.useRef)(i);return(0,k.useEffect)(()=>{let o=i;e.selectedKey==null&&(n.isEmpty||o==null||!r.getItem(o))&&(o=at(r,t.disabledKeys),o!=null&&n.setSelectedKeys([o])),(o!=null&&n.focusedKey==null||!n.isFocused&&o!==a.current)&&n.setFocusedKey(o),a.current=o}),{...t,isDisabled:e.isDisabled||!1}}function at(e,t){let n=null;if(e){for(n=e.getFirstKey();n!=null&&(t.has(n)||e.getItem(n)?.props?.isDisabled)&&n!==e.getLastKey();)n=e.getKeyAfter(n);n!=null&&(t.has(n)||e.getItem(n)?.props?.isDisabled)&&n===e.getLastKey()&&(n=e.getFirstKey())}return n}var k;function ot(){return(ot=t((()=>{rt(),k=n()})))()}function st({props:e,tabsRef:t,collection:n}){let{orientation:r=`horizontal`}=e,i=it({...e,collection:n,children:void 0}),{focusProps:a,isFocused:o,isFocusVisible:s}=v({within:!0}),c=(0,A.useMemo)(()=>({orientation:r,isFocusWithin:o,isFocusVisible:s}),[r,o,s]),l=x({...e,defaultClassName:`react-aria-Tabs`,values:c}),u=g(e,{global:!0});return A.createElement(S.div,{...b(u,l,a),ref:t,slot:e.slot||void 0,"data-focused":o||void 0,"data-orientation":r,"data-focus-visible":s||void 0,"data-disabled":i.isDisabled||void 0},A.createElement(le,{values:[[j,e],[M,i]]},l.children))}function ct({props:e,forwardedRef:t}){let n=(0,A.useContext)(M),{CollectionRoot:r}=(0,A.useContext)(o),{orientation:i=`horizontal`,keyboardActivation:a=`automatic`}=se(j),s=ae(t),{tabListProps:l}=Xe({...e,orientation:i,keyboardActivation:a},n,s),u=x({...e,children:null,defaultClassName:`react-aria-TabList`,values:{orientation:i,state:n}}),d=g(e,{global:!0});return delete d.id,A.createElement(S.div,{...b(d,u,l),ref:s,"data-orientation":i||void 0},A.createElement(we,null,A.createElement(r,{collection:n.collection,persistedKeys:c(n.selectionManager.focusedKey)})))}function lt(e){let t=(0,A.useContext)(M),{id:n,tabPanelRef:r,isInitiallySelected:i,isExiting:s,...c}=e,{tabPanelProps:l}=$e(e,t,r),{focusProps:u,isFocused:d,isFocusVisible:f}=v(),p=t.selectedKey===e.id,m=ze(r)&&!i,h=x({...e,defaultClassName:`react-aria-TabPanel`,values:{isFocused:d,isFocusVisible:f,isInert:ve(!p),isEntering:m,isExiting:s,state:t}}),_=g(c,{global:!0});delete _.id;let ee=p?b(_,l,u,h):b(_,h);return A.createElement(S.div,{...ee,ref:r,"data-focused":d||void 0,"data-focus-visible":f||void 0,inert:ve(!p||e.inert),"data-inert":p?void 0:`true`,"data-entering":m||void 0,"data-exiting":s||void 0},A.createElement(le,{values:[[j,null],[M,null]]},A.createElement(o.Provider,{value:a},h.children)))}var A,j,M,ut,dt,ft,pt,mt;function N(){return(N=t((()=>{ue(),s(),Ee(),Ce(),Qe(),qe(),et(),i(),d(),pe(),h(),ye(),y(),A=e(n(),1),ot(),Be(),_(),ee(),oe(),j=(0,A.createContext)(null),M=(0,A.createContext)(null),ut=(0,A.forwardRef)(function(e,t){[e,t]=ce(e,t,j);let{children:n,orientation:i=`horizontal`}=e;return n=(0,A.useMemo)(()=>typeof n==`function`?n({orientation:i,defaultChildren:null}):n,[n,i]),A.createElement(r,{content:n},n=>A.createElement(st,{props:e,collection:n,tabsRef:t}))}),dt=(0,A.forwardRef)(function(e,t){return(0,A.useContext)(M)?A.createElement(ct,{props:e,forwardedRef:t}):A.createElement(u,e)}),ft=class extends f{static{this.type=`item`}},pt=l(ft,(e,t,n)=>{let r=(0,A.useContext)(M),i=ae(t),{tabProps:a,isSelected:o,isDisabled:s,isPressed:c}=Ke({key:n.key,...e},r,i),{focusProps:l,isFocused:u,isFocusVisible:d}=v(),{hoverProps:f,isHovered:p}=te({isDisabled:s,onHoverStart:e.onHoverStart,onHoverEnd:e.onHoverEnd,onHoverChange:e.onHoverChange}),m=x({...e,id:void 0,children:n.rendered,defaultClassName:`react-aria-Tab`,values:{isSelected:o,isDisabled:s,isFocused:u,isFocusVisible:d,isPressed:c,isHovered:p}}),h=n.props.href?S.a:S.div,_=g(e,{global:!0});return delete _.id,delete _.onClick,A.createElement(h,{...b(_,m,a,l,f),ref:i,"data-selected":o||void 0,"data-disabled":s||void 0,"data-focused":u||void 0,"data-focus-visible":d||void 0,"data-pressed":c||void 0,"data-hovered":p||void 0},A.createElement(Te.Provider,{value:{isSelected:o}},m.children))}),mt=me(function(e,t){let n=(0,A.useContext)(M),r=ae(t),i=n.selectedKey===e.id,[a,o]=(0,A.useState)(n.selectedKey==null?null:i);a==null&&n.selectedKey!=null?o(i):!i&&a&&o(!1);let s=Ve(r,i);return!i&&!e.shouldForceMount&&!s?null:A.createElement(lt,{...e,tabPanelRef:r,isInitiallySelected:a||!1,isExiting:s})})})))()}var ht,P;function F(){return(F=t((()=>{ht=n(),P=(0,ht.createContext)({variant:`uncontained`,size:`large`})})))()}var gt,_t,vt,yt,bt,xt,St,Ct,I;function L(){return(L=t((()=>{gt=`_tabs_ninos_1`,_t=`_tabList_ninos_12`,vt=`_tab_ninos_1`,yt=`_contained_ninos_55`,bt=`_medium_ninos_75`,xt=`_selectionIndicator_ninos_98`,St=`_animated_ninos_101`,Ct=`_tabPanel_ninos_136`,I={tabs:gt,tabList:_t,tab:vt,contained:yt,medium:bt,selectionIndicator:xt,animated:St,tabPanel:Ct}})))()}var wt,R;function Tt(){return(Tt=t((()=>{n(),N(),C(),F(),L(),wt=T(),R=({className:e,variant:t=`uncontained`,size:n=`large`,...r})=>(0,wt.jsx)(P.Provider,{value:{variant:t,size:n},children:(0,wt.jsx)(ut,{className:w(I.tabs,e),...r})}),R.__docgenInfo={description:``,methods:[],displayName:`Tabs`,props:{variant:{required:!1,tsType:{name:`union`,raw:`'uncontained' | 'contained'`,elements:[{name:`literal`,value:`'uncontained'`},{name:`literal`,value:`'contained'`}]},description:``,defaultValue:{value:`'uncontained'`,computed:!1}},size:{required:!1,tsType:{name:`union`,raw:`'large' | 'medium'`,elements:[{name:`literal`,value:`'large'`},{name:`literal`,value:`'medium'`}]},description:`@default 'large'`,defaultValue:{value:`'large'`,computed:!1}}},composes:[`AriaTabsProps`]}})))()}var Et,z,B;function Dt(){return(Dt=t((()=>{Et=e(n(),1),N(),ue(),Ee(),Ae(),C(),L(),F(),z=T(),B=({className:e,...t})=>{let{variant:n,size:r}=Et.useContext(P),i=Et.useContext(je);return(0,z.jsx)(pt,{...t,className:w(I.tab,{[I.contained]:n===`contained`,[I.medium]:r===`medium`},e),children:ie(t.children,e=>(0,z.jsxs)(z.Fragment,{children:[e,(0,z.jsx)(De,{className:w(I.selectionIndicator,{[I.contained]:n===`contained`,[I.animated]:!i})})]}))})},B.__docgenInfo={description:``,methods:[],displayName:`Tab`}})))()}var Ot,kt,V;function At(){return(At=t((()=>{Ot=e(n(),1),N(),C(),L(),F(),kt=T(),V=({className:e,...t})=>{let{variant:n,size:r}=Ot.useContext(P);return(0,kt.jsx)(mt,{className:w(I.tabPanel,{[I.contained]:n===`contained`,[I.medium]:r===`medium`},e),...t})},V.__docgenInfo={description:``,methods:[],displayName:`TabPanel`}})))()}var jt,H;function Mt(){return(Mt=t((()=>{n(),N(),C(),L(),jt=T(),H=({className:e,...t})=>(0,jt.jsx)(dt,{className:w(I.tabList,e),...t}),H.__docgenInfo={description:``,methods:[],displayName:`TabList`}})))()}var Nt,U,W,Pt,G,K,q,J,Y,X,Z,Q,$,Ft;function It(){return(It=t((()=>{Ae(),Nt=e(n(),1),Tt(),We(),He(),Mt(),Dt(),At(),U=T(),W=[{title:`Processen`,content:`Processen går till såhär Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur maxime dicta omnis aliquam quas doloremque cumque repellendus iure. Eveniet reprehenderit sapiente quidem culpa nam? Vel?`},{title:`Viktigt`,content:`Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti consequatur nam culpa nesciunt cupiditate autem suscipit.`},{title:`Ansök`,content:(0,U.jsxs)(U.Fragment,{children:[`Ansök här: `,(0,U.jsx)(Ue,{children:`Ansök`})]})}],Pt={component:R,title:`Components/Tabs`,tags:[`autodocs`],argTypes:{size:{control:`radio`,options:[`large`,`medium`]}},args:{orientation:`horizontal`,variant:`uncontained`,size:`large`},render:e=>(0,U.jsxs)(R,{...e,children:[(0,U.jsx)(H,{children:W.map(({title:e,isDisabled:t})=>(0,U.jsx)(B,{id:e,isDisabled:t,children:e},e))}),W.map(({title:e,content:t})=>(0,U.jsx)(V,{id:e,children:(0,U.jsx)(`div`,{children:t})},e))]})},G={},K={args:{size:`medium`}},q={args:{variant:`contained`}},J={args:{orientation:`vertical`}},Y={render:e=>(0,U.jsxs)(R,{...e,children:[(0,U.jsx)(H,{children:W.map(({title:e,isDisabled:t},n)=>(0,U.jsx)(B,{id:e,isDisabled:t||!!n,children:e},e))}),W.map(({title:e,content:t})=>(0,U.jsx)(V,{id:e,children:(0,U.jsx)(`div`,{children:t})},e))]})},X={decorators:e=>(0,U.jsxs)(Me,{children:[(0,U.jsx)(Ue,{children:`Open`}),(0,U.jsx)(Ge,{title:`A modal with tabs`,children:(0,U.jsx)(e,{})})]})},Z={tags:[`!dev`,`!autodocs`,`!snapshot`],parameters:{chromatic:{disableSnapshot:!0}},args:{defaultSelectedKey:`Ansök`}},Q={tags:[`!dev`,`!autodocs`,`!snapshot`],parameters:{chromatic:{disableSnapshot:!0}},render:e=>{let[t,n]=Nt.useState(`Processen`);return(0,U.jsxs)(R,{...e,selectedKey:t,onSelectionChange:n,children:[(0,U.jsx)(H,{children:W.map(({title:e,isDisabled:t})=>(0,U.jsx)(B,{id:e,isDisabled:t,children:e},e))}),W.map(({title:e,content:t})=>(0,U.jsx)(V,{id:e,children:(0,U.jsx)(`div`,{children:t})},e))]})}},$={tags:[`!dev`,`!autodocs`,`!snapshot`],parameters:{chromatic:{disableSnapshot:!0}},render:e=>(0,U.jsxs)(U.Fragment,{children:[(0,U.jsx)(R,{...e,children:(0,U.jsx)(`div`,{children:`1`})}),`derp`]})},Ft=[`Primary`,`Medium`,`Contained`,`Vertical`,`DisabledTabs`,`InModal`,`DefaultSelectedKey`,`Controlled`,`MoreItemsThanChildren`],G.parameters={...G.parameters,docs:{...G.parameters?.docs,source:{originalSource:`{}`,...G.parameters?.docs?.source}}},K.parameters={...K.parameters,docs:{...K.parameters?.docs,source:{originalSource:`{
+  args: {
+    size: 'medium'
+  }
+}`,...K.parameters?.docs?.source}}},q.parameters={...q.parameters,docs:{...q.parameters?.docs,source:{originalSource:`{
+  args: {
+    variant: 'contained'
+  }
+}`,...q.parameters?.docs?.source}}},J.parameters={...J.parameters,docs:{...J.parameters?.docs,source:{originalSource:`{
+  args: {
+    orientation: 'vertical'
+  }
+}`,...J.parameters?.docs?.source}}},Y.parameters={...Y.parameters,docs:{...Y.parameters?.docs,source:{originalSource:`{
+  render: args => <Tabs {...args}>
+      <TabList>
+        {data.map(({
+        title,
+        isDisabled
+      }, i) => <Tab id={title} isDisabled={isDisabled || !!i} key={title}>
+            {title}
+          </Tab>)}
+      </TabList>
+      {data.map(({
+      title,
+      content
+    }) => <TabPanel id={title} key={title}>
+          <div>{content}</div>
+        </TabPanel>)}
+    </Tabs>
+}`,...Y.parameters?.docs?.source}}},X.parameters={...X.parameters,docs:{...X.parameters?.docs,source:{originalSource:`{
+  decorators: Story => <DialogTrigger>
+      <Button>Open</Button>
+      <Modal title='A modal with tabs'>
+        <Story />
+      </Modal>
+    </DialogTrigger>
+}`,...X.parameters?.docs?.source}}},Z.parameters={...Z.parameters,docs:{...Z.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  args: {
+    defaultSelectedKey: 'Ansök'
+  }
+}`,...Z.parameters?.docs?.source}}},Q.parameters={...Q.parameters,docs:{...Q.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  render: args => {
+    const [selectedKey, setSelectedKey] = React.useState<Key>('Processen');
+    return <Tabs {...args} selectedKey={selectedKey} onSelectionChange={setSelectedKey}>
+        <TabList>
+          {data.map(({
+          title,
+          isDisabled
+        }) => <Tab id={title} isDisabled={isDisabled} key={title}>
+              {title}
+            </Tab>)}
+        </TabList>
+        {data.map(({
+        title,
+        content
+      }) => <TabPanel id={title} key={title}>
+            <div>{content}</div>
+          </TabPanel>)}
+      </Tabs>;
+  }
+}`,...Q.parameters?.docs?.source}}},$.parameters={...$.parameters,docs:{...$.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  render: args => <>
+      <Tabs {...args}>
+        <div>1</div>
+      </Tabs>
+      derp
+    </>
+}`,...$.parameters?.docs?.source}}}})))()}It();export{q as Contained,Q as Controlled,Z as DefaultSelectedKey,Y as DisabledTabs,X as InModal,K as Medium,$ as MoreItemsThanChildren,G as Primary,J as Vertical,Ft as __namedExportsOrder,Pt as default};
