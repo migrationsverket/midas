@@ -10,6 +10,9 @@ import { playwright } from '@vitest/browser-playwright'
 export default mergeConfig(
   viteConfig,
   defineConfig({
+    optimizeDeps: {
+      include: ['@faker-js/faker', '@internationalized/date'],
+    },
     test: {
       testTimeout: 2500,
       reporters: ['default'],
