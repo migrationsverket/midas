@@ -50,7 +50,7 @@ jobs:
         run: npx playwright install chromium --with-deps
 
       - name: Update visual regression screenshots
-        run: npx nx run-many -t visual -- --update
+        run: npx nx run-many -t visual --all -- --update
 
       # check what changed
       - name: Check for changes
