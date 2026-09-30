@@ -44,6 +44,8 @@ select style based on input type
 | `test` | Tester | Ingen |
 | `chore` | Underhåll | Ingen |
 
+Tabellen gäller paket som har nått 1.0. För paket på version 0.x flyttas versionsändringarna ned ett steg, se [Paket på version 0.x](#paket-på-version-0x).
+
 ### Breaking changes och major-versioner
 
 För att trigga en major-version, lägg till `BREAKING CHANGE:` i commit-meddelandets body:
@@ -85,5 +87,33 @@ Release sker automatiskt via CI/CD när ändringar mergas till `main`-branchen.
 - **Invänta merge**: När din PR godkänns och mergas till `main` sker resten automatiskt.
 
 :::tip
-Du behöver inte köra några manuella release-kommandon. CI/CD-pipelinen hanterar hela releasen automatiskt! 🎉
+Du behöver inte köra några manuella release-kommandon. CI/CD-pipelinen hanterar hela releasen automatiskt! 🎉 Det enda undantaget är när ett paket ska släppas som 1.0, se [Ta ett paket till 1.0](#ta-ett-paket-till-10).
 :::
+
+### Paket på version 0.x
+
+Så länge ett paket har version 0.x följer Nx Release SemVer-konventionen för instabila versioner, där varje versionsändring flyttas ned ett steg.
+
+Det betyder att ett paket **aldrig når 1.0 automatiskt**, inte ens med en breaking change. Steget till 1.0 är ett medvetet beslut om att paketets API är stabilt och görs manuellt.
+
+### Ta ett paket till 1.0
+
+1. Se till att allt som ska ingå i 1.0 är mergat till `main` och att den automatiska releasen för den senaste merge-committen är klar.
+2. Hämta senaste `main` och kontrollera att arbetskatalogen är ren med `git status`.
+3. Provkör releasen och kontrollera att den nya versionen blir `1.0.0`:
+
+   ```bash
+   npx nx release 1.0.0 --projects=<projekt> --skip-publish --dry-run
+   ```
+
+4. Kör releasen på riktigt:
+
+   ```bash
+   npx nx release 1.0.0 --projects=<projekt> --skip-publish
+   ```
+
+   Kommandot uppdaterar `package.json` och changelog, skapar committen `chore(release): publish` och taggen `<projekt>@v1.0.0`, pushar dem till `main` och skapar en GitHub-release. För GitHub-releasen behöver Nx en token, antingen via miljövariabeln `GITHUB_TOKEN`/`GH_TOKEN` eller genom att du är inloggad med GitHub CLI (`gh auth login`). Annars öppnar Nx en förifylld release-sida i webbläsaren.
+
+5. Committen `chore(release): publish` startar arbetsflödet *Publish to NPM*, som publicerar paketet till npm. Använd därför alltid `--skip-publish` lokalt. Det vanliga release-flödet hoppar över `chore(release)`-committar, så versionen bumpas inte en gång till.
+
+Efter 1.0 gäller de vanliga reglerna i tabellen ovan. Om 1.0 innehåller breaking changes, beskriv dem och hur man migrerar i dokumentationen för paketet.
