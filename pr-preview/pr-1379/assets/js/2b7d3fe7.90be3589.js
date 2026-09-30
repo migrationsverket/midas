@@ -199,7 +199,10 @@ function _createMdxContent(props) {
       children: (0,jsx_runtime.jsxs)(_components.p, {
         children: ["Release sker automatiskt via CI/CD när din PR mergas till ", (0,jsx_runtime.jsx)(_components.code, {
           children: "main"
-        }), ". Du behöver inte köra några manuella release-kommandon! 🎉"]
+        }), ". Du behöver inte köra några manuella release-kommandon! 🎉 Undantaget är när ett paket ska släppas som 1.0, se ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/get-started/contribute/conventions#ta-ett-paket-till-10",
+          children: "Ta ett paket till 1.0"
+        }), "."]
       })
     })]
   });

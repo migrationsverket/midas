@@ -70,12 +70,21 @@ const toc = [{
   "value": "Vad du behöver göra",
   "id": "vad-du-behöver-göra",
   "level": 3
+}, {
+  "value": "Paket på version 0.x",
+  "id": "paket-på-version-0x",
+  "level": 3
+}, {
+  "value": "Ta ett paket till 1.0",
+  "id": "ta-ett-paket-till-10",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     admonition: "admonition",
     code: "code",
+    em: "em",
     h1: "h1",
     h2: "h2",
     h3: "h3",
@@ -226,6 +235,11 @@ function _createMdxContent(props) {
           })]
         })]
       })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Tabellen gäller paket som har nått 1.0. För paket på version 0.x flyttas versionsändringarna ned ett steg, se ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "#paket-p%C3%A5-version-0x",
+        children: "Paket på version 0.x"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "breaking-changes-och-major-versioner",
       children: "Breaking changes och major-versioner"
@@ -316,9 +330,90 @@ function _createMdxContent(props) {
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
       type: "tip",
-      children: (0,jsx_runtime.jsx)(_components.p, {
-        children: "Du behöver inte köra några manuella release-kommandon. CI/CD-pipelinen hanterar hela releasen automatiskt! 🎉"
+      children: (0,jsx_runtime.jsxs)(_components.p, {
+        children: ["Du behöver inte köra några manuella release-kommandon. CI/CD-pipelinen hanterar hela releasen automatiskt! 🎉 Det enda undantaget är när ett paket ska släppas som 1.0, se ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "#ta-ett-paket-till-10",
+          children: "Ta ett paket till 1.0"
+        }), "."]
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "paket-på-version-0x",
+      children: "Paket på version 0.x"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Så länge ett paket har version 0.x följer Nx Release SemVer-konventionen för instabila versioner, där varje versionsändring flyttas ned ett steg."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Det betyder att ett paket ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "aldrig når 1.0 automatiskt"
+      }), ", inte ens med en breaking change. Steget till 1.0 är ett medvetet beslut om att paketets API är stabilt och görs manuellt."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "ta-ett-paket-till-10",
+      children: "Ta ett paket till 1.0"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["Se till att allt som ska ingå i 1.0 är mergat till ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "main"
+          }), " och att den automatiska releasen för den senaste merge-committen är klar."]
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["Hämta senaste ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "main"
+          }), " och kontrollera att arbetskatalogen är ren med ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "git status"
+          }), "."]
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["Provkör releasen och kontrollera att den nya versionen blir ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "1.0.0"
+          }), ":"]
+        }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+          children: (0,jsx_runtime.jsx)(_components.code, {
+            className: "language-bash",
+            children: "npx nx release 1.0.0 --projects=<projekt> --skip-publish --dry-run\n"
+          })
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
+          children: "Kör releasen på riktigt:"
+        }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+          children: (0,jsx_runtime.jsx)(_components.code, {
+            className: "language-bash",
+            children: "npx nx release 1.0.0 --projects=<projekt> --skip-publish\n"
+          })
+        }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["Kommandot uppdaterar ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "package.json"
+          }), " och changelog, skapar committen ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "chore(release): publish"
+          }), " och taggen ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "<projekt>@v1.0.0"
+          }), ", pushar dem till ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "main"
+          }), " och skapar en GitHub-release. För GitHub-releasen behöver Nx en token, antingen via miljövariabeln ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "GITHUB_TOKEN"
+          }), "/", (0,jsx_runtime.jsx)(_components.code, {
+            children: "GH_TOKEN"
+          }), " eller genom att du är inloggad med GitHub CLI (", (0,jsx_runtime.jsx)(_components.code, {
+            children: "gh auth login"
+          }), "). Annars öppnar Nx en förifylld release-sida i webbläsaren."]
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["Committen ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "chore(release): publish"
+          }), " startar arbetsflödet ", (0,jsx_runtime.jsx)(_components.em, {
+            children: "Publish to NPM"
+          }), ", som publicerar paketet till npm. Använd därför alltid ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "--skip-publish"
+          }), " lokalt. Det vanliga release-flödet hoppar över ", (0,jsx_runtime.jsx)(_components.code, {
+            children: "chore(release)"
+          }), "-committar, så versionen bumpas inte en gång till."]
+        }), "\n"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Efter 1.0 gäller de vanliga reglerna i tabellen ovan. Om 1.0 innehåller breaking changes, beskriv dem och hur man migrerar i dokumentationen för paketet."
     })]
   });
 }
