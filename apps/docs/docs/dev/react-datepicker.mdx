@@ -3,11 +3,7 @@ title: React Datepicker
 description: Använda React Datepicker med Midas-stilar
 ---
 
-import {
-  DefaultReactDatepickerExample,
-  MonthHeaderPositionExample,
-  MonthSelectExample,
-} from '@site/src/components/examples'
+import { DefaultReactDatepickerExample, MonthSelectExample } from '@site/src/components/examples'
 
 # React Datepicker
 
@@ -45,7 +41,7 @@ Midas-stilarna ersätter React Datepickers egna stilar. Importera därför inte 
 
 ### Versioner som stöds
 
-`@midas-ds/datepicker-styles` stödjer `react-datepicker` version 8 och 9, tillsammans med `date-fns` version 4. Vi planerar att stödja högst två huvudversioner samtidigt, vilket innebär att stödet för version 8 tas bort när version 10 släpps.
+`@midas-ds/datepicker-styles` stödjer `react-datepicker` version 8 och 9, tillsammans med `date-fns` version 4. Vi planerar att stödja högst två huvudversioner samtidigt, vilket innebär att stödet för version 8 tas bort när vi stödjer version 10.
 
 Stilarna täcker:
 
@@ -58,14 +54,6 @@ Stilarna täcker:
 - Placering av månadsrubriken (`monthHeaderPosition`, endast version 9)
 
 Tidsväljaren (`showTimeSelect`, `showTimeInput`) har ännu inga Midas-stilar.
-
-### Nyheter i version 9
-
-Version 9 innehåller inga ändringar som bryter mot Midas-stilarna, så du kan uppgradera utan att ändra din kod. Två nyheter är värda att känna till:
-
-- **Tidszoner:** Den nya `timeZone`-propen kräver paketet `date-fns-tz`. React Datepicker laddar paketet med ett dynamiskt `require`, vilket bundlers som Vite och webpack inte kan lösa upp. I en vanlig webbapplikation ignoreras därför `timeZone` tyst även när `date-fns-tz` är installerat, och i konsolen syns en varning om att paketet saknas. Om du behöver tidszoner, räkna om datumen själv med `date-fns-tz` innan du skickar dem till `DatePicker`.
-
-- **Månadsrubrikens placering:** Med `monthHeaderPosition` kan du placera månadsrubriken och navigeringen ovanför (`"top"`, standard), mellan veckodagarna och datumen (`"middle"`) eller under kalendern (`"bottom"`). Se [exemplet nedan](#placering-av-månadsrubriken).
 
 ### Språkstöd (Locale Support)
 
@@ -137,21 +125,3 @@ return (
 ```
 
 <MonthSelectExample />
-
-### Placering av månadsrubriken
-
-Från och med version 9 kan du flytta månadsrubriken och navigeringen med `monthHeaderPosition`. Här visas den under kalendern:
-
-```tsx title="MonthHeaderPositionExample.tsx"
-const [selectedDate, setSelectedDate] = useState<Date | null>(null)
-return (
-  <DatePicker
-    inline
-    selected={selectedDate}
-    monthHeaderPosition='bottom'
-    onChange={(date: Date | null) => setSelectedDate(date)}
-  />
-)
-```
-
-<MonthHeaderPositionExample />

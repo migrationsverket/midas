@@ -19,7 +19,15 @@ export default [
             'react-datepicker',
           ],
           includeTransitiveDependencies: false,
-          ignoredFiles: ['{projectRoot}/vite.config.mts'],
+          ignoredFiles: [
+            '{projectRoot}/vite.config.mts',
+            '{projectRoot}/vitest.config.mts',
+            '{projectRoot}/vitest.config.visual.mts',
+            '{projectRoot}/vitest.setup.mts',
+            '{projectRoot}/vitest.setup.visual.mts',
+            // story/spec fixture — the build only emits react-datepicker.css
+            '{projectRoot}/src/lib/ReactDatepicker.tsx',
+          ],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,
           checkVersionMismatches: true,

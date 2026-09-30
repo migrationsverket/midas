@@ -4,7 +4,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const root = import.meta.dirname
 
-export default defineConfig(() => ({
+export default defineConfig({
   root,
   cacheDir: '../../node_modules/.vite/packages/datepicker-styles',
   resolve: {
@@ -31,4 +31,4 @@ export default defineConfig(() => ({
       },
     },
   },
-}))
+})
