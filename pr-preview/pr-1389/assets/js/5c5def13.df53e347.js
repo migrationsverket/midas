@@ -252,12 +252,6 @@ function _createMdxContent(props) {
         className: "language-bash",
         children: "feat(components, button): remove deprecated size prop\n\nBREAKING CHANGE: The size prop has been removed. Use variant instead.\n"
       })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Du kan också markera en breaking change med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "!"
-      }), " efter scope, t.ex. ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "feat(components,button)!: remove deprecated size prop"
-      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
       type: "warning",
       children: (0,jsx_runtime.jsxs)(_components.p, {
@@ -346,73 +340,7 @@ function _createMdxContent(props) {
       id: "paket-på-version-0x",
       children: "Paket på version 0.x"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Så länge ett paket har version 0.x följer Nx Release SemVer-konventionen för instabila versioner, där varje versionsändring flyttas ned ett steg:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
-      children: [(0,jsx_runtime.jsx)(_components.thead, {
-        children: (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.th, {
-            children: "Commit"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Från 1.0 och uppåt"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "På 0.x"
-          })]
-        })
-      }), (0,jsx_runtime.jsxs)(_components.tbody, {
-        children: [(0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "Breaking change"
-          }), (0,jsx_runtime.jsxs)(_components.td, {
-            children: ["Major (", (0,jsx_runtime.jsx)(_components.code, {
-              children: "1.4.2"
-            }), " → ", (0,jsx_runtime.jsx)(_components.code, {
-              children: "2.0.0"
-            }), ")"]
-          }), (0,jsx_runtime.jsxs)(_components.td, {
-            children: ["Minor (", (0,jsx_runtime.jsx)(_components.code, {
-              children: "0.2.80"
-            }), " → ", (0,jsx_runtime.jsx)(_components.code, {
-              children: "0.3.0"
-            }), ")"]
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: (0,jsx_runtime.jsx)(_components.code, {
-              children: "feat"
-            })
-          }), (0,jsx_runtime.jsxs)(_components.td, {
-            children: ["Minor (", (0,jsx_runtime.jsx)(_components.code, {
-              children: "1.4.2"
-            }), " → ", (0,jsx_runtime.jsx)(_components.code, {
-              children: "1.5.0"
-            }), ")"]
-          }), (0,jsx_runtime.jsxs)(_components.td, {
-            children: ["Patch (", (0,jsx_runtime.jsx)(_components.code, {
-              children: "0.2.80"
-            }), " → ", (0,jsx_runtime.jsx)(_components.code, {
-              children: "0.2.81"
-            }), ")"]
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: (0,jsx_runtime.jsx)(_components.code, {
-              children: "fix"
-            })
-          }), (0,jsx_runtime.jsxs)(_components.td, {
-            children: ["Patch (", (0,jsx_runtime.jsx)(_components.code, {
-              children: "1.4.2"
-            }), " → ", (0,jsx_runtime.jsx)(_components.code, {
-              children: "1.4.3"
-            }), ")"]
-          }), (0,jsx_runtime.jsxs)(_components.td, {
-            children: ["Patch (", (0,jsx_runtime.jsx)(_components.code, {
-              children: "0.2.80"
-            }), " → ", (0,jsx_runtime.jsx)(_components.code, {
-              children: "0.2.81"
-            }), ")"]
-          })]
-        })]
-      })]
+      children: "Så länge ett paket har version 0.x följer Nx Release SemVer-konventionen för instabila versioner, där varje versionsändring flyttas ned ett steg."
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Det betyder att ett paket ", (0,jsx_runtime.jsx)(_components.strong, {
         children: "aldrig når 1.0 automatiskt"
@@ -420,14 +348,6 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "ta-ett-paket-till-10",
       children: "Ta ett paket till 1.0"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Den här releasen görs av Midas core-team, eftersom den kräver rättigheter att pusha till ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "main"
-      }), ". Byt ut ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<projekt>"
-      }), " mot Nx-projektets namn, t.ex. ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "datepicker-styles"
-      }), "."]
     }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
