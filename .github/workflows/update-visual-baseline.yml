@@ -50,13 +50,13 @@ jobs:
         run: npx playwright install chromium --with-deps
 
       - name: Update visual regression screenshots
-        run: npx nx run components:visual -- --update
+        run: npx nx run-many -t visual -- --update
 
       # check what changed
       - name: Check for changes
         id: check_changes
         run: |
-          CHANGED_FILES=$(git status --porcelain -- 'packages/components/src/__screenshots__' | awk '{print $2}')
+          CHANGED_FILES=$(git status --porcelain -- 'packages/**/__screenshots__' | awk '{print $2}')
           if [ "${CHANGED_FILES:+x}" ]; then
             echo "changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
