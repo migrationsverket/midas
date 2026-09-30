@@ -37,6 +37,24 @@ Importera sedan Midas-stilarna för datumväljaren:
 @import '@midas-ds/datepicker-styles/react-datepicker.css';
 ```
 
+Midas-stilarna ersätter React Datepickers egna stilar. Importera därför inte `react-datepicker/dist/react-datepicker.css` samtidigt, eftersom de två stilmallarna då krockar.
+
+### Versioner som stöds
+
+`@midas-ds/datepicker-styles` stödjer `react-datepicker` version 8 och 9, tillsammans med `date-fns` version 4. Vi planerar att stödja högst två huvudversioner samtidigt, vilket innebär att stödet för version 8 tas bort när vi stödjer version 10.
+
+Stilarna täcker:
+
+- Inmatningsfält med kalenderikon och rensa-knapp (`showIcon`, `isClearable`)
+- Popover, `inline` och `withPortal`
+- Dag-, månads-, kvartals- och årsväljare
+- Datumintervall (`selectsRange`)
+- Månads- och årsdropdowns (`showMonthDropdown`, `showYearDropdown`)
+- Idag-knapp (`todayButton`)
+- Placering av månadsrubriken (`monthHeaderPosition`, endast version 9)
+
+Tidsväljaren (`showTimeSelect`, `showTimeInput`) har ännu inga Midas-stilar.
+
 ### Språkstöd (Locale Support)
 
 React Datepicker använder `date-fns` för hantering av språk och lokala inställningar. För att lägga till språkstöd, installera önskat språkpaket från `date-fns` och registrera det med `react-datepicker`.
@@ -65,7 +83,7 @@ Här är ett exempel på en datumväljare byggd med React Datepicker och stylad 
 import { CalendarDays } from 'lucide-react'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
-import '@midas-ds/datepicker-styles/lib/react-datepicker.css'
+import '@midas-ds/datepicker-styles/react-datepicker.css'
 
 export const DefaultReactDatepickerExample = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
@@ -74,7 +92,7 @@ export const DefaultReactDatepickerExample = () => {
       showIcon
       selected={selectedDate}
       onChange={(date: Date | null) => setSelectedDate(date)}
-      formatWeekDay={date => date[0].toUpperCase()} // Capitalize first letter of the weekday
+      formatWeekDay={date => date[0].toUpperCase()} // Show the weekday as a single capital letter
       toggleCalendarOnIconClick
       icon={<CalendarDays height={20} />}
       showPopperArrow={false}
