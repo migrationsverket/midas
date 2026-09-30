@@ -56,7 +56,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          CHANGED_FILES=$(git status --porcelain -- 'packages/**/__screenshots__' | awk '{print $2}')
+          CHANGED_FILES=$(git status --porcelain -- packages/**/__screenshots__/ | awk '{print $2}')
           if [ "${CHANGED_FILES:+x}" ]; then
             echo "changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected"
