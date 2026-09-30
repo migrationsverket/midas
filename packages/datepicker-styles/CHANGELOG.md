@@ -1,3 +1,19 @@
+## 0.3.0 (2026-09-30)
+
+### 🚀 Features
+
+- ⚠️  **datepicker-styles:** support react-datepicker v8 and v9 ([f88b122c28b](https://github.com/migrationsverket/midas/commit/f88b122c28b))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([34ca19a305e](https://github.com/migrationsverket/midas/commit/34ca19a305e))
+- **datepicker-styles:** add test-util dependencies to avoid flaky tests ([9f89a95b472](https://github.com/migrationsverket/midas/commit/9f89a95b472))
+- **datepicker-styles:** add stories, specs and visual regression setup ([bd23b8906c6](https://github.com/migrationsverket/midas/commit/bd23b8906c6))
+
+### ⚠️  Breaking Changes
+
+- **datepicker-styles:** support react-datepicker v8 and v9  ([f88b122c28b](https://github.com/migrationsverket/midas/commit/f88b122c28b))
+
 ## 0.2.80 (2026-09-29)
 
 ### 🧱 Updated Dependencies
