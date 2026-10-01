@@ -1,0 +1,3 @@
+import{n as e}from"./rolldown-runtime-C0FnF6B9.js";import{n as t}from"./iframe-CQl2n6XD.js";import{i as n,r}from"./react-BOKIvUzN.js";import{a as i,o as a}from"./blocks-BW4dMBdN.js";function o(e){let t={h1:`h1`,p:`p`,...n(),...e.components};return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i,{title:`Components/Intro`}),`
+`,(0,c.jsx)(t.h1,{id:`komponenter`,children:`Komponenter`}),`
+`,(0,c.jsx)(t.p,{children:`Här listas exempel på hur du kan använda vardera komponent. Props, kodexempel se hur de beter sig responsivt m.m.`})]})}function s(e={}){let{wrapper:t}={...n(),...e.components};return t?(0,c.jsx)(t,{...e,children:(0,c.jsx)(o,{...e})}):o(e)}var c;function l(){return(l=e((()=>{c=t(),r(),a()})))()}l();export{s as default};

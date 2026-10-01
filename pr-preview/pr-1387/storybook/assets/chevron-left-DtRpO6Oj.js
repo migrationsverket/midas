@@ -1,1 +1,0 @@
-import{n as e}from"./rolldown-runtime-DkW27tQK.js";import{n as t,t as n}from"./createLucideIcon-BTzsL62Y.js";var r,i;function a(){return(a=e((()=>{t(),r=[[`path`,{d:`m15 18-6-6 6-6`,key:`1wnfg3`}]],i=n(`chevron-left`,r)})))()}export{a as n,i as t};
