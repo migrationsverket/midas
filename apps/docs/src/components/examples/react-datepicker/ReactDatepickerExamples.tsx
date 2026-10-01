@@ -41,3 +41,19 @@ export const MonthSelectExample = () => {
     />
   )
 }
+
+export const MultipleFormatsExample = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  return (
+    <DatePicker
+      showPopperArrow={false}
+      selected={selectedDate}
+      showIcon
+      toggleCalendarOnIconClick
+      icon={<CalendarDays height={20} />}
+      onChange={(date: Date | null) => setSelectedDate(date)}
+      dateFormat={['yyyy-MM-dd', 'yyMMdd']}
+      placeholderText='ÅÅÅÅ-MM-DD'
+    />
+  )
+}
