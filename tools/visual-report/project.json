@@ -1,0 +1,15 @@
+{
+  "name": "visual-report",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/visual-report/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p tools/visual-report/tsconfig.lib.json"
+    },
+    "report": {
+      "command": "node tools/visual-report/src/build-report.ts --comment dist/visual-report-site/comment.md"
+    }
+  }
+}

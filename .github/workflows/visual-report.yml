@@ -5,8 +5,7 @@ name: 'Visual Regression Report'
 # Split from PR Checks because a run for a fork PR only gets a read-only token.
 # This workflow runs from the default branch with write access, so it must
 # never run code from the PR: it only reads the `visual-report` artifact as
-# data and builds the report with tools/visual-report/build-report.mjs from
-# the default branch.
+# data and builds the report with tools/visual-report from the default branch.
 
 on:
   workflow_run:
@@ -33,6 +32,13 @@ jobs:
     steps:
       - name: Checkout default branch
         uses: actions/checkout@v6
+
+      # build-report.ts runs as-is with Node's type stripping, no install
+      # needed
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
 
       - name: Download report data
         id: download
@@ -72,7 +78,7 @@ jobs:
           BASE_URL: ${{ env.PAGES_URL }}/${{ env.REPORT_ROOT }}/pr-${{ steps.pr.outputs.number }}/
           RUN_URL: ${{ github.event.workflow_run.html_url }}
         run: |
-          node tools/visual-report/build-report.mjs \
+          node tools/visual-report/src/build-report.ts \
             --input "$RUNNER_TEMP/visual-report" \
             --output "$RUNNER_TEMP/visual-report-site" \
             --base-url "$BASE_URL" \

@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 /**
- * Turns the folders written by reporter.mjs into a static diff viewer
+ * Turns the folders written by reporter.ts into a static diff viewer
  * (index.html), a summary.json with the counts, and a markdown summary for a
  * sticky PR comment.
  *
- *   node tools/visual-report/build-report.mjs \
+ *   node tools/visual-report/src/build-report.ts \
  *     --input dist/visual-report \
  *     --output dist/visual-report-site \
  *     --base-url https://designsystem.migrationsverket.se/pr-preview/visual/pr-123/ \
  *     --run-url https://github.com/.../actions/runs/... \
- *     --comment dist/visual-report/comment.md
+ *     --comment dist/visual-report-site/comment.md
+ *
+ * or `npx nx run visual-report:report` with the defaults.
  *
  * Everything read from the input comes from a PR's CI run, which may be a
  * fork, so it's treated as untrusted: text is escaped wherever it's printed,
@@ -27,6 +29,15 @@ import {
 } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { parseArgs } from 'node:util'
+import type {
+  VisualReportEntry,
+  VisualReportImage,
+  VisualReportImageName,
+  VisualReportManifest,
+  VisualReportSummary,
+} from './types.ts'
+
+type Failure = VisualReportEntry & { project: string }
 
 const { values: args } = parseArgs({
   options: {
@@ -46,8 +57,7 @@ const PNG_SIGNATURE = Buffer.from([
   0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a,
 ])
 
-/** @returns {import('./reporter.mjs').VisualReportManifest[]} */
-function readManifests(inputDir) {
+function readManifests(inputDir: string): VisualReportManifest[] {
   if (!existsSync(inputDir)) return []
   return readdirSync(inputDir, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory() && PROJECT_NAME.test(dirent.name))
@@ -66,10 +76,10 @@ function readManifests(inputDir) {
     }))
 }
 
-const escapeHtml = value =>
+const escapeHtml = (value: unknown) =>
   String(value).replace(/[&<>"'|`]/g, char => `&#${char.charCodeAt(0)};`)
 
-function isPng(file) {
+function isPng(file: string) {
   if (!existsSync(file)) return false
   return readFileSync(file).subarray(0, 8).equals(PNG_SIGNATURE)
 }
@@ -78,7 +88,10 @@ function isPng(file) {
  * Image path relative to the report root, or undefined if the image is
  * missing or looks off. Valid images are copied to the output folder.
  */
-function imagePath(project, image) {
+function imagePath(
+  project: string,
+  image: VisualReportImage | undefined,
+): string | undefined {
   if (
     !image ||
     !PROJECT_NAME.test(project) ||
@@ -98,7 +111,7 @@ function imagePath(project, image) {
 mkdirSync(args.output, { recursive: true })
 
 const manifests = readManifests(args.input)
-const failures = manifests.flatMap(manifest =>
+const failures: Failure[] = manifests.flatMap(manifest =>
   manifest.failures.map(failure => ({ ...failure, project: manifest.project })),
 )
 const total = manifests.reduce((sum, manifest) => sum + manifest.total, 0)
@@ -109,13 +122,18 @@ const changedCount = failures.length - newCount
 // index.html
 // ---------------------------------------------------------------------------
 
-function renderImage(project, image, label, missingText = `No ${label} image`) {
+function renderImage(
+  project: string,
+  image: VisualReportImage | undefined,
+  label: VisualReportImageName,
+  missingText = `No ${label} image`,
+) {
   const src = imagePath(project, image)
   if (!src) return `<div class="missing">${missingText}</div>`
-  return `<img src="${escapeHtml(src)}" width="${Number(image.width)}" height="${Number(image.height)}" alt="${label}" loading="lazy">`
+  return `<img src="${escapeHtml(src)}" width="${Number(image?.width)}" height="${Number(image?.height)}" alt="${label}" loading="lazy">`
 }
 
-function renderFailure(failure) {
+function renderFailure(failure: Failure) {
   const { project, images } = failure
   const anchor = `${escapeHtml(project)}-${escapeHtml(failure.id)}`
   const canCompare =
@@ -158,7 +176,8 @@ function renderFailure(failure) {
 </section>`
 }
 
-const plural = (count, word) => `${count} ${word}${count === 1 ? '' : 's'}`
+const plural = (count: number, word: string) =>
+  `${count} ${word}${count === 1 ? '' : 's'}`
 
 const title =
   failures.length === 0
@@ -252,15 +271,13 @@ ${failures.map(renderFailure).join('\n')}
 `
 
 writeFileSync(join(args.output, 'index.html'), html)
-writeFileSync(
-  join(args.output, 'summary.json'),
-  JSON.stringify({
-    projects: manifests.length,
-    total,
-    changed: changedCount,
-    new: newCount,
-  }),
-)
+const summary: VisualReportSummary = {
+  projects: manifests.length,
+  total,
+  changed: changedCount,
+  new: newCount,
+}
+writeFileSync(join(args.output, 'summary.json'), JSON.stringify(summary))
 
 // ---------------------------------------------------------------------------
 // comment.md
@@ -275,13 +292,13 @@ if (args.comment) {
   const runLink = args['run-url'] ? `[CI run](${args['run-url']})` : ''
   const links = [reportLink, runLink].filter(Boolean).join(' · ')
 
-  const thumbnail = (failure, name) => {
+  const thumbnail = (failure: Failure, name: VisualReportImageName) => {
     const src = imagePath(failure.project, failure.images[name])
     if (!src || !args['base-url']) return '–'
     return `<img src="${baseUrl}${src}" width="160" alt="${name}">`
   }
 
-  let comment
+  let comment: string
   if (manifests.length === 0) {
     comment = `### ⏭️ Visual regression\n\nNo visual tests were affected by this PR.`
   } else if (failures.length === 0) {
