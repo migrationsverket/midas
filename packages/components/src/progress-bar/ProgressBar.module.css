@@ -1,6 +1,6 @@
 .progressBar {
+  column-gap: var(--midas-space-small);
   display: grid;
-  gap: 0.5rem;
   grid-template-areas:
     'label value'
     'track track';
@@ -8,12 +8,12 @@
 
   .label {
     grid-area: label;
-    margin: 0;
+    margin: 0 0 var(--midas-space-small);
   }
 
   .value {
     grid-area: value;
-    margin: 0;
+    margin: 0 0 var(--midas-space-small);
   }
 
   .track {
@@ -49,6 +49,51 @@
       }
     }
   }
+
+  .circular {
+    grid-area: track;
+    height: var(--midas-size-icon);
+    transform: rotate(-90deg);
+    width: var(--midas-size-icon);
+
+    &.circularSmall {
+      height: var(--midas-size-icon-sm);
+      width: var(--midas-size-icon-sm);
+    }
+  }
+
+  .circularTrack {
+    fill: none;
+    stroke: var(--midas-progress-bar-track-background);
+    stroke-width: 2;
+
+    @media (forced-colors: active) {
+      stroke: CanvasText;
+    }
+  }
+
+  .circularIndicator {
+    fill: none;
+    stroke: var(--midas-progress-bar-indicator-background);
+    stroke-linecap: round;
+    stroke-width: 2;
+    transition: stroke-dashoffset var(--midas-transition-duration-normal)
+      var(--midas-transition-timing-ease-out);
+
+    @media (forced-colors: active) {
+      stroke: highlight;
+    }
+
+    &.circularIndeterminate {
+      animation: circularRotate 1s linear infinite;
+      stroke-linecap: square;
+      transform-origin: 50% 50%;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation-duration: 2s;
+      }
+    }
+  }
 }
 
 @keyframes indeterminate {
@@ -61,7 +106,17 @@
   }
 }
 
-@media (prefers-reduced-motion) {
+@keyframes circularRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   .progressBar:not([aria-valuenow]) .indicator {
     animation-duration: 6s;
   }

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import React from 'react'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
 
@@ -70,4 +71,250 @@ export const Empty: Story = {
       {[]}
     </FileList>
   ),
+}
+
+export const Uploading: Story = {
+  tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Use `onCancel`, not `onDelete`, while `status='uploading'` — that's where you'd abort the actual in-flight request (`XMLHttpRequest.abort()`/`AbortController.abort()`). `onDelete` still works as a fallback if `onCancel` is omitted, but an upload that isn't actually aborted keeps running in the background after the row disappears.",
+      },
+    },
+  },
+  render: args => (
+    <FileList {...args}>
+      <FileListItem
+        fileName='large-video.mp4'
+        fileSize='128 MB'
+        status='uploading'
+        onCancel={() => {
+          // noop — in a real app, abort the in-flight upload request here
+        }}
+      />
+    </FileList>
+  ),
+}
+
+export const UploadingDeterminate: Story = {
+  render: args => (
+    <FileList {...args}>
+      <FileListItem
+        fileName='large-video.mp4'
+        fileSize='128 MB'
+        status='uploading'
+        progress={40}
+        onCancel={() => {
+          // noop — in a real app, abort the in-flight upload request here
+        }}
+      />
+    </FileList>
+  ),
+}
+
+export const Success: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "`FileList` has no concept of an upload having completed vs. a file only ever existing locally — by the time `status='success'` is set, the file is presumably already persisted server-side. `onDelete` here is your only hook to remove it there too; if you only pop it from local state, the file stays wherever it was uploaded to.",
+      },
+    },
+  },
+  render: args => (
+    <FileList {...args}>
+      <FileListItem
+        fileName='resume.pdf'
+        fileSize='1.2 MB'
+        status='success'
+        onDelete={() => {
+          // noop — in a real app, this is likely a server-side delete call
+        }}
+      />
+    </FileList>
+  ),
+}
+
+export const Error: Story = {
+  render: args => (
+    <FileList {...args}>
+      <FileListItem
+        fileName='resume.pdf'
+        fileSize='1.2 MB'
+        status='error'
+        errorMessage='Det gick inte bra'
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  ),
+}
+
+export const MixedStates: Story = {
+  render: args => (
+    <FileList {...args}>
+      <FileListItem
+        fileName='idle-file.pdf'
+        fileSize='1.2 MB'
+        onDelete={() => {
+          // noop
+        }}
+      />
+      <FileListItem
+        fileName='large-video.mp4'
+        fileSize='128 MB'
+        status='uploading'
+        progress={40}
+        onCancel={() => {
+          // noop
+        }}
+      />
+      <FileListItem
+        fileName='cover-letter.docx'
+        fileSize='45 KB'
+        status='success'
+        onDelete={() => {
+          // noop
+        }}
+      />
+      <FileListItem
+        fileName='references.pdf'
+        fileSize='3.4 MB'
+        status='error'
+        errorMessage='Det gick inte bra'
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  ),
+}
+
+// ─── Live demos: cycle a single item through real status transitions on a
+// timer, to see the animated states play out. Excluded from visual
+// regression snapshotting since they're non-deterministic mid-animation. ───
+
+const AnimatedCompletionDemo = () => {
+  const [status, setStatus] = React.useState<'uploading' | 'success'>(
+    'uploading',
+  )
+  const [progress, setProgress] = React.useState(0)
+
+  React.useEffect(() => {
+    if (status !== 'uploading') return
+
+    if (progress >= 100) {
+      const timeout = setTimeout(() => setStatus('success'), 300)
+      return () => clearTimeout(timeout)
+    }
+
+    const timeout = setTimeout(
+      () => setProgress(current => Math.min(current + 20, 100)),
+      200,
+    )
+    return () => clearTimeout(timeout)
+  }, [status, progress])
+
+  return (
+    <FileList aria-label='Test'>
+      <FileListItem
+        fileName='resume.pdf'
+        fileSize='1.2 MB'
+        status={status}
+        progress={status === 'uploading' ? progress : undefined}
+        onCancel={() => {
+          // noop
+        }}
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  )
+}
+
+export const AnimatedCompletion: StoryObj = {
+  tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Demonstrates the upload-complete animation: determinate progress reaching 100%, then a ring and checkmark that settle into a persistent success indicator rather than disappearing — success needs to stay visually distinct from idle.',
+      },
+    },
+  },
+  render: () => <AnimatedCompletionDemo />,
+}
+
+const AnimatedFailureDemo = () => {
+  const [status, setStatus] = React.useState<'uploading' | 'error'>(
+    'uploading',
+  )
+
+  React.useEffect(() => {
+    if (status !== 'uploading') return
+    const timeout = setTimeout(() => setStatus('error'), 1500)
+    return () => clearTimeout(timeout)
+  }, [status])
+
+  return (
+    <FileList aria-label='Test'>
+      <FileListItem
+        fileName='resume.pdf'
+        fileSize='1.2 MB'
+        status={status}
+        errorMessage='Det gick inte bra'
+        onCancel={() => {
+          // noop
+        }}
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  )
+}
+
+export const AnimatedFailure: StoryObj = {
+  tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Demonstrates the upload-failure transition: the icon collapses with no checkmark flourish, and the error message reveals below.',
+      },
+    },
+  },
+  render: () => <AnimatedFailureDemo />,
+}
+
+// ─── Test-only: real state-driven removal, so focus management on delete
+// (moves to a sibling's action button, or the list itself if that was the
+// last row) can actually be exercised. ───
+
+interface FocusTestContainerProps {
+  initialFiles: string[]
+}
+
+const FocusTestContainer = ({ initialFiles }: FocusTestContainerProps) => {
+  const [files, setFiles] = React.useState(initialFiles)
+
+  return (
+    <FileList aria-label='Test'>
+      {files.map(name => (
+        <FileListItem
+          key={name}
+          fileName={name}
+          onDelete={() => setFiles(prev => prev.filter(f => f !== name))}
+        />
+      ))}
+    </FileList>
+  )
+}
+
+export const FocusManagementTest: StoryObj<FocusTestContainerProps> = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  render: args => <FocusTestContainer {...args} />,
 }
