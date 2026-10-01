@@ -66,24 +66,82 @@ jobs:
       - name: Test packages
         run: npx nx affected -t test
 
-      - name: Visual regression tests (non-blocking PoC — does not fail the build)
-        id: visual-regression
-        continue-on-error: true
-        run: npx nx affected -t visual
-
-      - name: Upload visual regression diffs
-        if: steps.visual-regression.outcome == 'failure'
-        uses: actions/upload-artifact@v4
-        with:
-          name: visual-regression-diffs
-          path: packages/components/.vitest-attachments/
-          retention-days: 14
-          # .vitest-attachments is a dot-directory — upload-artifact's glob
-          # skips hidden paths by default and silently uploads nothing.
-          include-hidden-files: true
-
       - name: A11y check packages
         if: >
           (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
            contains(github.event.pull_request.labels.*.name, 'a11y')
         run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
+
+  playwright-version:
+    name: Resolve Playwright version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: package-lock.json
+          sparse-checkout-cone-mode: false
+
+      # The visual job runs in the Playwright image matching the installed
+      # version, so screenshots render the same as when the baselines were
+      # taken (see update-visual-baseline.yml)
+      - name: Read version from package-lock.json
+        id: version
+        run: echo "version=$(jq -r '.packages["node_modules/playwright"].version' package-lock.json)" >> "$GITHUB_OUTPUT"
+
+  visual:
+    name: Visual regression
+    needs: playwright-version
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
+    steps:
+      # actions/checkout falls back to a plain download without git, which
+      # breaks `nx affected` and committing
+      - name: Install git
+        run: command -v git || (apt-get update && apt-get install -y --no-install-recommends git)
+
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          filter: tree:0
+          fetch-depth: 0
+
+      # The workspace is owned by another user than the container's
+      - name: Mark workspace as safe for git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v5
+
+      # Writes dist/visual-report/<project>/ via tools/visual-report/reporter.mjs
+      - name: Visual regression tests
+        run: npx nx affected -t visual
+
+      # Picked up by visual-report.yml, which has the permissions to publish
+      # the report and comment on the PR (this run may come from a fork)
+      - name: Add PR number to report
+        if: ${{ !cancelled() }}
+        run: |
+          mkdir -p dist/visual-report
+          echo "${{ github.event.pull_request.number }}" > dist/visual-report/pr-number.txt
+
+      - name: Upload report data
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-report
+          path: dist/visual-report/
+          retention-days: 14
