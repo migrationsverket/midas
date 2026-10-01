@@ -224,8 +224,8 @@ function _createMdxContent(props) {
       id: "uselocalizedstringformatter",
       children: "useLocalizedStringFormatter"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att översätta eller anpassa enskilda textsträngar kan du använda  ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/i18n/src/useLocalizedStringFormatter.ts",
+      children: ["För att översätta eller anpassa enskilda textsträngar kan du använda ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://github.com/adobe/react-spectrum/blob/main/packages/react-aria/src/i18n/useLocalizedStringFormatter.ts",
         children: "useLocalizedStringFormatter"
       }), ".\nFör siffror och valutor finns motsvarande funktionalitet i ", (0,jsx_runtime.jsx)(_components.a, {
         href: "https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html",
