@@ -77,36 +77,6 @@ const config: Config = {
         },
       }
     },
-    function disableCascadeLayersPolyfillPlugin() {
-      return {
-        name: 'disable-cascade-layers-polyfill',
-        configurePostCss(postCssOptions) {
-          // future.v4 wraps Docusaurus' own CSS (Infima etc.) in @layer. The
-          // default browserslist includes a few browsers without cascade
-          // layers (Opera Mini, KaiOS), so postcss-preset-env would polyfill
-          // @layer with :not(#\#) specificity hacks. PostCSS processes each
-          // file on its own, so our unlayered custom.css never gets the
-          // matching boost and Infima ends up winning. Ship real @layer rules
-          // instead.
-          postCssOptions.plugins = postCssOptions.plugins.map(plugin =>
-            Array.isArray(plugin) &&
-            String(plugin[0]).includes('postcss-preset-env')
-              ? [
-                  plugin[0],
-                  {
-                    ...plugin[1],
-                    features: {
-                      ...plugin[1]?.features,
-                      'cascade-layers': false,
-                    },
-                  },
-                ]
-              : plugin,
-          )
-          return postCssOptions
-        },
-      }
-    },
   ],
   markdown: {
     hooks: {
