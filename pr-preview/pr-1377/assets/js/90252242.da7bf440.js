@@ -109,9 +109,9 @@ const toc = [{
   "id": "undvik-att-använda-modal-för",
   "level": 3
 }, {
-  "value": "Knapparnas placering och ordning",
-  "id": "knapparnas-placering-och-ordning",
-  "level": 3
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
 }, {
   "value": "Varianter",
   "id": "varianter",
@@ -225,9 +225,9 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut."
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "knapparnas-placering-och-ordning",
-      children: "Knapparnas placering och ordning"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
         href: "/components/button",
