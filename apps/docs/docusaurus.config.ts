@@ -41,6 +41,11 @@ const config: Config = {
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
   i18n: { defaultLocale: 'sv', locales: ['sv'] },
+  // Opt in to all Docusaurus v4 defaults ahead of the upgrade, see
+  // https://docusaurus.io/blog/releases/3.10. Includes Docusaurus Faster
+  // (Rspack/SWC, via @docusaurus/faster), namespaced localStorage keys and
+  // MDX v1 compat turned off.
+  future: { v4: true },
   plugins: [
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
     function webpackAliasPlugin() {

@@ -35,4 +35,10 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ['package.json'],
+    rules: {
+      '@nx/dependency-checks': 'off',
+    },
+  },
 ])

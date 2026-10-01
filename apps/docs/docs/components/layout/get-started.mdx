@@ -51,7 +51,7 @@ import { Link } from '@site/src/components/Link'
   </Link>
 </div>
 
-:::caution Beta
+:::caution[Beta]
 
 `@midas-ds/layout` är i beta. Paketet är installationsbart och redo att användas, men visuell design och vissa API:er kan förändras innan stabil release.
 
@@ -404,7 +404,7 @@ export const App = () => {
 Vi hänvisar till [`examples/vite-react-router` på GitHub](https://github.com/migrationsverket/midas/tree/main/examples/vite-react-router) för ett fullständigt exempel på en app som använder `vite`, `react-router`, `@midas-ds/layout` och `@midas-ds/components`.
 I repot finns även [`apps/next`](https://github.com/migrationsverket/midas/tree/main/apps/next), en Next.js-app som är öppen att titta på för inspiration.
 
-:::info Next.js / SSR
+:::info[Next.js / SSR]
 
 Vissa komponenter i paketet (bl.a. `Header`) kräver `'use client'` i Next.js App Router. Använd dem i klientkomponenter eller wrappa dem i en egen `'use client'`-komponent. Se [`apps/next`](https://github.com/migrationsverket/midas/tree/main/apps/next) för ett fungerande exempel.
 
