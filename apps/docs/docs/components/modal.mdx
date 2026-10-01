@@ -11,6 +11,7 @@ import {
   FormExample,
   ConfirmationExample,
   CustomCSSExample,
+  StickyFooterExample,
   HideCloseButtonExample,
 } from '@site/src/components/examples/ModalExamples'
 
@@ -19,9 +20,7 @@ import {
   friendlyName='Modal, Dialog, Dialogruta'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog'
 />
-Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar som standard åtkomst till det
-underliggande lagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det
-krävs ett aktivt svar från användaren.
+Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen.
 
 <FormExample />
 
@@ -35,6 +34,24 @@ import { DialogTrigger, Modal } from '@midas-ds/components'
   <Modal title='Rubrik'>Innehåll i modal</Modal>
 </DialogTrigger>
 ```
+
+## Användning
+
+Modaler används främst när det krävs ett aktivt svar från användaren. Modalen hindrar som standard åtkomst till det underliggande lagret, så användaren måste interagera med modalen innan den kan gå vidare.
+
+### Använd modal för:
+
+- Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras.
+- Att visa ett formulär som kräver användarens input innan den kan gå vidare.
+
+### Undvik att använda modal för:
+
+- Varningar. Använd istället [Toast](/components/toast) eller [InfoBanner](/components/info-banner)
+- Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut.
+
+## Riktlinjer
+
+Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för [Knappar](/components/button)
 
 ## Varianter
 
@@ -69,7 +86,37 @@ Modaler som inte går att stänga på annat sätt än att acceptera/godkänna ka
 
 <HideCloseButtonExample />
 
-## Användning
+### Med fast sidfot
+
+I långa modala formulär är det lämpligt att lägga handlingar i en fast sidfot, så att de alltid är synliga för användaren när den scrollar i modalen. Ange innehållet i sidfoten via `footer`-propen.
+
+```tsx
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal
+    title='Modal Title'
+    //highlight-start
+    footer={
+      <ButtonGroup>
+        <Button slot='close'>Spara</Button>
+        <Button
+          slot='close'
+          variant='secondary'
+        >
+          Avbryt
+        </Button>
+      </ButtonGroup>
+    }
+    //highlight-end
+  >
+    {/* Långt formulärinnehåll */}
+  </Modal>
+</DialogTrigger>
+```
+
+<StickyFooterExample />
+
+## Implementation
 
 ### Uncontrolled
 
@@ -168,27 +215,6 @@ Ange egen stil med hjälp av `className`, notera att din klass hamnar på overla
 ```
 
 <CustomCSSExample />
-
-## Riktlinjer
-
-### Användning
-
-Använd modaler sparsamt och endast när det är nödvändigt då de skapar avbrott i användarens flöde.
-
-Använd modal för:
-
-- Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras.
-- Enklare formulär
-
-Undvik att använda modal för:
-
-- Varningar. Använd istället [Toast](/components/toast) eller [InfoBanner](/components/info-banner)
-- Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut.
-- Långa formulär
-
-### Knapparnas placering och ordning
-
-Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för [Knappar](/components/button)
 
 ## API
 
