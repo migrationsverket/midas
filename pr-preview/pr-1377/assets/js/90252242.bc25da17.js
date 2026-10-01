@@ -97,6 +97,22 @@ const assets = {
 
 
 const toc = [{
+  "value": "Användning",
+  "id": "användning",
+  "level": 2
+}, {
+  "value": "Använd modal för:",
+  "id": "använd-modal-för",
+  "level": 3
+}, {
+  "value": "Undvik att använda modal för:",
+  "id": "undvik-att-använda-modal-för",
+  "level": 3
+}, {
+  "value": "Knapparnas placering och ordning",
+  "id": "knapparnas-placering-och-ordning",
+  "level": 3
+}, {
   "value": "Varianter",
   "id": "varianter",
   "level": 2
@@ -109,12 +125,12 @@ const toc = [{
   "id": "utan-stängknapp",
   "level": 3
 }, {
-  "value": "Sticky footer",
-  "id": "sticky-footer",
+  "value": "Med fast sidfot",
+  "id": "med-fast-sidfot",
   "level": 3
 }, {
-  "value": "Användning",
-  "id": "användning",
+  "value": "Implementation",
+  "id": "implementation",
   "level": 2
 }, {
   "value": "Uncontrolled",
@@ -136,18 +152,6 @@ const toc = [{
   "value": "Styling",
   "id": "styling",
   "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Användning",
-  "id": "användning-1",
-  "level": 3
-}, {
-  "value": "Knapparnas placering och ordning",
-  "id": "knapparnas-placering-och-ordning",
-  "level": 3
 }, {
   "value": "API",
   "id": "api",
@@ -181,7 +185,7 @@ function _createMdxContent(props) {
       friendlyName: "Modal, Dialog, Dialogruta",
       overrideHeadlessLink: "https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar som standard åtkomst till det\nunderliggande lagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det\nkrävs ett aktivt svar från användaren."
+      children: "Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen."
     }), "\n", (0,jsx_runtime.jsx)(FormExample, {}), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
@@ -192,6 +196,43 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "<DialogTrigger>\n  <Button>Öppna modal</Button>\n  <Modal title='Rubrik'>Innehåll i modal</Modal>\n</DialogTrigger>\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "användning",
+      children: "Användning"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Modaler används främst när det krävs ett aktivt svar från användaren. Modalen hindrar som standard åtkomst till det underliggande lagret, så användaren måste interagera med modalen innan den kan gå vidare."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "använd-modal-för",
+      children: "Använd modal för:"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Att visa ett formulär som kräver användarens input innan den kan gå vidare."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "undvik-att-använda-modal-för",
+      children: "Undvik att använda modal för:"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Varningar. Använd istället ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/toast",
+          children: "Toast"
+        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/info-banner",
+          children: "InfoBanner"
+        })]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "knapparnas-placering-och-ordning",
+      children: "Knapparnas placering och ordning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/button",
+        children: "Knappar"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
@@ -218,10 +259,10 @@ function _createMdxContent(props) {
         children: "<DialogTrigger>\n  <Button>Bekräfta att du läst villkoren</Button>\n  <Modal\n    title='Villkor'\n    hideCloseButton\n    isKeyboardDismissDisabled\n  >\n    Du måste bekräfta att du läst villkoren innan du kan gå vidare\n    <Button slot={'close'}>Bekräfta</Button>\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(HideCloseButtonExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "sticky-footer",
-      children: "Sticky footer"
+      id: "med-fast-sidfot",
+      children: "Med fast sidfot"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För användning av en sticky footer, använd ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["I långa modala formulär är det lämpligt att lägga handlingar i en fast sidfot, så att de alltid är synliga för användaren när den scrollar i modalen. Ange innehållet i sidfoten via ", (0,jsx_runtime.jsx)(_components.code, {
         children: "footer"
       }), "-propen."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
@@ -230,8 +271,8 @@ function _createMdxContent(props) {
         children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    title='Modal Title'\n    //highlight-start\n    footer={\n      <ButtonGroup>\n        <Button slot='close'>Spara</Button>\n        <Button\n          slot='close'\n          variant='secondary'\n        >\n          Avbryt\n        </Button>\n      </ButtonGroup>\n    }\n    //highlight-end\n  >\n    {/* Långt formulärinnehåll */}\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(StickyFooterExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "användning",
-      children: "Användning"
+      id: "implementation",
+      children: "Implementation"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "uncontrolled",
       children: "Uncontrolled"
@@ -304,49 +345,6 @@ function _createMdxContent(props) {
         children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title=\"Modal Title\" className=\"myModal\">\n    <TextField label=\"Name\" autoFocus>\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CustomCSSExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "användning-1",
-      children: "Användning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använd modaler sparsamt och endast när det är nödvändigt då de skapar avbrott i användarens flöde."
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använd modal för:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Enklare formulär"
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Längre formulär, om en ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "#sticky-footer",
-          children: "sticky footer"
-        }), " används med primära handlingar"]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Undvik att använda modal för:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Varningar. Använd istället ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/toast",
-          children: "Toast"
-        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/info-banner",
-          children: "InfoBanner"
-        })]
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "knapparnas-placering-och-ordning",
-      children: "Knapparnas placering och ordning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components/button",
-        children: "Knappar"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {

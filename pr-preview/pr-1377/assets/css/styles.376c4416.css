@@ -5903,35 +5903,34 @@ html[data-theme='dark'] .navbar--github-link::before {
     white-space: wrap;
   }
 
-/* ---- Table for language page --- */
-
-.table-cell-green {
-  background-color: #d5f2d9; /* signal-green-20 */
-  padding: 8px;
-}
-
-.table-cell-red {
-  background-color: #ffdfdf; /* signal-red-20 */
-  padding: 8px;
-}
-
-table {
+.language-table {
   border-collapse: collapse;
 }
 
-/* Green header */
-.table-header-green {
-  background-color: #d5f2d9; /* signal-green-20 */
-  padding: 10px;
-  text-align: left;
-}
+.language-table th {
+    padding: var(--midas-space-50);
+    text-align: left;
+  }
 
-/* Red header */
-.table-header-red {
-  background-color: #ffdfdf; /* signal-red-20 */
-  padding: 10px;
-  text-align: left;
-}
+.language-table td {
+    padding: var(--midas-space-small);
+  }
+
+.language-table th:nth-child(odd) {
+      background-color: var(--midas-support-background-success);
+    }
+
+.language-table td:nth-child(odd) {
+      background-color: var(--midas-support-background-success);
+    }
+
+.language-table th:nth-child(even) {
+      background-color: var(--midas-support-background-warning);
+    }
+
+.language-table td:nth-child(even) {
+      background-color: var(--midas-support-background-warning);
+    }
 
 code {
   border: 0.1rem solid rgba(0, 0, 0, 0.025);
