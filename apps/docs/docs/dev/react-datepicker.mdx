@@ -3,7 +3,7 @@ title: React Datepicker
 description: Använda React Datepicker med Midas-stilar
 ---
 
-import { DefaultReactDatepickerExample, MonthSelectExample } from '@site/src/components/examples'
+import { DefaultReactDatepickerExample, MonthSelectExample, MultipleFormatsExample } from '@site/src/components/examples'
 
 # React Datepicker
 
@@ -125,3 +125,35 @@ return (
 ```
 
 <MonthSelectExample />
+
+### Flera inmatningsformat
+
+`dateFormat` kan vara en lista med format. Det första formatet används för att visa datumet, och alla format i listan accepteras när användaren skriver in ett datum. Det är användbart när användarna är vana vid att skriva datum kortare än det format som visas, till exempel `260903` i stället för `2026-09-03`.
+
+Prova att skriva `260903` och lämna fältet:
+
+<MultipleFormatsExample />
+
+```tsx title="MultipleFormatsExample.tsx"
+const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+return (
+  <DatePicker
+    showPopperArrow={false}
+    selected={selectedDate}
+    showIcon
+    toggleCalendarOnIconClick
+    icon={<CalendarDays height={20} />}
+    onChange={(date: Date | null) => setSelectedDate(date)}
+    dateFormat={['yyyy-MM-dd', 'yyMMdd']}
+    placeholderText='ÅÅÅÅ-MM-DD'
+  />
+)
+```
+
+:::warning[Tvåsiffriga årtal]
+
+Ett tvåsiffrigt årtal (`yy`) tolkas som det år som ligger närmast dagens datum, inom 50 år bakåt eller framåt. Hösten 2026 blir `550312` alltså 2055-03-12 och inte 1955-03-12. Använd därför inte tvåsiffriga årtal för datum som kan ligga långt bak i tiden, som födelsedatum.
+
+:::
+
+Midas egna [`DatePicker`](/components/date-picker) och [`DateField`](/components/datefield) bygger på React Aria, där år, månad och dag matas in i separata delar och årtalet alltid skrivs med fyra siffror. Där går det inte att använda tvåsiffriga årtal.
