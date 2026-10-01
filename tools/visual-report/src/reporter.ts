@@ -1,6 +1,6 @@
 /**
  * Vitest reporter that collects failed `toMatchScreenshot()` assertions into a
- * folder that build-report.mjs turns into a static HTML diff viewer and a PR
+ * folder that build-report.ts turns into a static HTML diff viewer and a PR
  * comment.
  *
  * Vitest already records a `visual-regression` artifact for every failed
@@ -14,79 +14,60 @@
 
 import { copyFile, mkdir, rm, writeFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
+import type { Reporter, TestModule, Vitest } from 'vitest/node'
+import type {
+  VisualReportEntry,
+  VisualReportImageName,
+  VisualReportManifest,
+  VisualReportReporterOptions,
+} from './types.ts'
 
-/**
- * @typedef {import('vitest/node').Reporter} Reporter
- * @typedef {import('vitest/node').TestModule} TestModule
- * @typedef {import('vitest/node').Vitest} Vitest
- *
- * @typedef {object} VisualReportImage
- * @property {string} src Path relative to outputDir
- * @property {number} width
- * @property {number} height
- *
- * @typedef {object} VisualReportEntry
- * @property {string} id
- * @property {string} file Spec file, relative to the project root
- * @property {string} name Full test name (describe blocks + test name)
- * @property {string} message
- * @property {boolean} isNew No baseline exists yet, `actual` is the new screenshot
- * @property {Partial<Record<'reference' | 'actual' | 'diff', VisualReportImage>>} images
- *
- * @typedef {object} VisualReportManifest
- * @property {string} project
- * @property {number} total Screenshot tests that ran
- * @property {VisualReportEntry[]} failures
- */
+const IMAGE_NAMES: string[] = ['reference', 'actual', 'diff']
 
-const IMAGE_NAMES = ['reference', 'actual', 'diff']
+export class VisualReportReporter implements Reporter {
+  private project: string
+  private outputDir: string
 
-/** @implements {Reporter} */
-export class VisualReportReporter {
-  /**
-   * @param {{ project: string, outputDir: string }} options outputDir is
-   *   resolved against the Vitest root (the package folder)
-   */
-  constructor({ project, outputDir }) {
+  constructor({ project, outputDir }: VisualReportReporterOptions) {
     this.project = project
     this.outputDir = outputDir
   }
 
-  /** @param {Vitest} vitest */
-  onInit(vitest) {
+  onInit(vitest: Vitest) {
     this.outputDir = resolve(vitest.config.root, this.outputDir)
   }
 
-  /** @param {ReadonlyArray<TestModule>} testModules */
-  async onTestRunEnd(testModules) {
+  async onTestRunEnd(testModules: ReadonlyArray<TestModule>) {
     await rm(this.outputDir, { recursive: true, force: true })
     await mkdir(this.outputDir, { recursive: true })
 
-    /** @type {VisualReportManifest} */
-    const manifest = { project: this.project, total: 0, failures: [] }
+    const manifest: VisualReportManifest = {
+      project: this.project,
+      total: 0,
+      failures: [],
+    }
 
     for (const testModule of testModules) {
       for (const testCase of testModule.children.allTests()) {
         manifest.total++
-        if (testCase.result().state !== 'failed') continue
+        const result = testCase.result()
+        if (result.state !== 'failed') continue
 
         const id = String(manifest.failures.length + 1)
-        /** @type {VisualReportEntry} */
-        const entry = {
+        const entry: VisualReportEntry = {
           id,
           file: testModule.relativeModuleId,
           name: testCase.fullName,
-          message:
-            testCase.result().errors?.[0]?.message ?? 'Screenshot mismatch',
+          message: result.errors?.[0]?.message ?? 'Screenshot mismatch',
           isNew: false,
           images: {},
         }
 
         const artifact = testCase
           .artifacts()
-          .find(a => a.type === 'internal:toMatchScreenshot')
+          .find(artifact => artifact.type === 'internal:toMatchScreenshot')
 
-        if (artifact) {
+        if (artifact?.type === 'internal:toMatchScreenshot') {
           entry.message = artifact.message
           await mkdir(join(this.outputDir, id), { recursive: true })
 
@@ -102,7 +83,9 @@ export class VisualReportReporter {
             if (!IMAGE_NAMES.includes(attachment.name) || !attachment.path) {
               continue
             }
-            const name = entry.isNew ? 'actual' : attachment.name
+            const name: VisualReportImageName = entry.isNew
+              ? 'actual'
+              : attachment.name
             const src = `${id}/${name}.png`
             await copyFile(attachment.path, join(this.outputDir, src))
             entry.images[name] = {

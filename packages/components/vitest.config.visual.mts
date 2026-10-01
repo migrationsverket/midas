@@ -1,7 +1,7 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
-import { VisualReportReporter } from '../../tools/visual-report/reporter.mjs'
+import { VisualReportReporter } from '@midas-ds/visual-report'
 
 // Split from vitest.config.ts so visual regression can run as its own nx
 // target (`visual`) — separately cacheable, separately reportable, and not
