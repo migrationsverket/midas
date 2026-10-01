@@ -1,6 +1,7 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
+import { VisualReportReporter } from '@midas-ds/visual-report'
 
 // Split from vitest.config.mts so visual regression can run as its own nx
 // target (`visual`) — separately cacheable, separately reportable, and not
@@ -15,7 +16,15 @@ export default mergeConfig(
     },
     test: {
       testTimeout: 2500,
-      reporters: ['default'],
+      reporters: [
+        'default',
+        // Collects failed screenshots for the CI diff report, see
+        // tools/visual-report/README.md
+        new VisualReportReporter({
+          project: 'datepicker-styles',
+          outputDir: '../../dist/visual-report/datepicker-styles',
+        }),
+      ],
       include: ['src/visual.spec.tsx'],
       projects: [
         {

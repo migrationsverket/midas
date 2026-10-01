@@ -1,0 +1,113 @@
+name: 'Visual Regression Report'
+
+# Publishes the visual regression diff report and posts a sticky PR comment.
+#
+# Split from PR Checks because a run for a fork PR only gets a read-only token.
+# This workflow runs from the default branch with write access, so it must
+# never run code from the PR: it only reads the `visual-report` artifact as
+# data and builds the report with tools/visual-report from the default branch.
+
+on:
+  workflow_run:
+    workflows: ['PR Checks']
+    types: [completed]
+
+permissions:
+  contents: write # push the report to gh-pages
+  pull-requests: write # sticky comment
+  actions: read # download the artifact from the PR Checks run
+
+env:
+  REPORT_ROOT: pr-preview/visual
+  PAGES_URL: https://designsystem.migrationsverket.se
+
+jobs:
+  report:
+    name: Publish visual regression report
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: visual-report-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v6
+
+      # build-report.ts runs as-is with Node's type stripping, no install
+      # needed
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Download report data
+        id: download
+        continue-on-error: true # the visual job didn't get far enough to upload
+        uses: actions/download-artifact@v4
+        with:
+          name: visual-report
+          path: ${{ runner.temp }}/visual-report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      # The PR number comes from the artifact, so check that it really is the
+      # PR this run was for before commenting on it
+      - name: Resolve PR number
+        id: pr
+        if: steps.download.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          PR_NUMBER=$(head -c 20 "$RUNNER_TEMP/visual-report/pr-number.txt" | tr -d '[:space:]')
+          if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "::error::Invalid PR number in artifact"
+            exit 1
+          fi
+          PR_HEAD_SHA=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq .head.sha)
+          if [ "$PR_HEAD_SHA" != "$HEAD_SHA" ]; then
+            echo "PR #$PR_NUMBER has moved on to $PR_HEAD_SHA, skipping report for $HEAD_SHA"
+            exit 0
+          fi
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+
+      - name: Build report
+        id: build
+        if: steps.pr.outputs.number
+        env:
+          BASE_URL: ${{ env.PAGES_URL }}/${{ env.REPORT_ROOT }}/pr-${{ steps.pr.outputs.number }}/
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          node tools/visual-report/src/build-report.ts \
+            --input "$RUNNER_TEMP/visual-report" \
+            --output "$RUNNER_TEMP/visual-report-site" \
+            --base-url "$BASE_URL" \
+            --run-url "$RUN_URL" \
+            --comment "$RUNNER_TEMP/comment.md"
+          FAILURES=$(jq '.changed + .new' "$RUNNER_TEMP/visual-report-site/summary.json")
+          echo "failures=$FAILURES" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/comment.md" >> "$GITHUB_STEP_SUMMARY"
+
+      # Only failures need a page. The main docs deploy keeps pr-preview/
+      # (clean-exclude in publish-docs.yml), cleanup-pr-preview.yml removes
+      # this folder when the PR closes.
+      - name: Deploy report
+        if: steps.build.outputs.failures > 0
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ${{ runner.temp }}/visual-report-site
+          branch: gh-pages
+          target-folder: ${{ env.REPORT_ROOT }}/pr-${{ steps.pr.outputs.number }}
+          clean: true
+          force: false
+          commit-message: 'Deploy visual regression report for PR #${{ steps.pr.outputs.number }}'
+
+      - name: Comment on PR
+        if: steps.pr.outputs.number
+        uses: marocchino/sticky-pull-request-comment@v3
+        with:
+          header: visual-regression
+          number: ${{ steps.pr.outputs.number }}
+          path: ${{ runner.temp }}/comment.md
+          # Don't start a thread for PRs that never had visual changes
+          only_update: ${{ steps.build.outputs.failures == 0 }}

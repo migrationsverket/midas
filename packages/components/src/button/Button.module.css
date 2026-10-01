@@ -1,6 +1,7 @@
 .button {
   --border-width: 1px;
 
+  border-radius: 32px;
   font-family: var(--midas-typography-font-family);
   font-size: var(--midas-typography-font-size-30);
   font-weight: 500;
