@@ -26,3 +26,21 @@ jobs:
         with:
           source-dir: ./dist/docs
           pages-base-url: 'designsystem.migrationsverket.se'
+
+      # Published by visual-report.yml, outside the folder the action above
+      # manages
+      - name: Remove visual regression report
+        env:
+          REPORT_DIR: pr-preview/visual/pr-${{ github.event.number }}
+        run: |
+          git fetch --depth=1 origin gh-pages
+          git checkout -B gh-pages FETCH_HEAD
+          if [ -z "$(git ls-tree -d HEAD "$REPORT_DIR")" ]; then
+            echo "No report to remove"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -r --quiet "$REPORT_DIR"
+          git commit --quiet -m "Remove visual regression report for PR #${{ github.event.number }}"
+          git push origin gh-pages
