@@ -32,6 +32,7 @@
       "@midas-ds/select-styles/*": ["packages/select-styles/src/*"],
       "@midas-ds/storybook/*": ["apps/storybook/src/*"],
       "@midas-ds/test-utils": ["tools/test-utils/src/index.ts"],
+      "@midas-ds/visual-report": ["tools/visual-report/src/index.ts"],
       "@midas-ds/layout": ["packages/layout/src/index.ts"],
       "@midas-ds/layout/*": ["packages/layout/src/*"]
     },

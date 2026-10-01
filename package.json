@@ -59,6 +59,7 @@
     "@eslint/eslintrc": "^3.0.0",
     "@eslint/js": "^9.8.0",
     "@faker-js/faker": "^10.6.0",
+    "@midas-ds/visual-report": "file:tools/visual-report",
     "@nx/devkit": "23.2.1",
     "@nx/eslint": "23.2.1",
     "@nx/eslint-plugin": "23.2.1",
