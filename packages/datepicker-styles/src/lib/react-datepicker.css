@@ -71,6 +71,14 @@
   border-bottom: 1px solid var(--midas-border-color-disabled);
 }
 
+/* Same as Midas TextField and DateField: the invalid outline replaces the
+   bottom border and stays while the field is focused. Set it with
+   react-datepicker's `ariaInvalid` prop. */
+.react-datepicker__input-container input[aria-invalid='true'] {
+  border: none;
+  box-shadow: var(--midas-state-invalid);
+}
+
 .react-datepicker__calendar-icon {
   order: 1;
   margin-left: auto;

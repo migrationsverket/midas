@@ -88,6 +88,31 @@ describe('given a rendered BasicDatePicker', () => {
   })
 })
 
+describe('given an invalid BasicDatePicker', () => {
+  it('marks the input as invalid with a different outline than a valid one', async () => {
+    const valid = await render(<BasicDatePicker />)
+    const validShadow = getComputedStyle(
+      valid.container.querySelector('input') as Element,
+    ).boxShadow
+
+    const { container } = await render(<BasicDatePicker isInvalid />)
+    const input = query(container, 'input')
+
+    await expect.element(input).toHaveAttribute('aria-invalid', 'true')
+    await expect.element(input).not.toHaveStyle({ boxShadow: 'none' })
+    await expect.element(input).not.toHaveStyle({ boxShadow: validShadow })
+  })
+
+  it('keeps the invalid outline while focused', async () => {
+    const { container } = await render(<BasicDatePicker isInvalid />)
+    const input = query(container, 'input')
+    const restingShadow = getComputedStyle(input.element()).boxShadow
+
+    await input.click()
+    await expect.element(input).toHaveStyle({ boxShadow: restingShadow })
+  })
+})
+
 describe('given a rendered MonthPicker', () => {
   it('lays the months out in a grid', async () => {
     const { container } = await render(<MonthPicker open />)
