@@ -17,11 +17,17 @@ interface ExampleProps {
    * `react-datepicker-v8` alias instead.
    */
   datePicker?: typeof DatePicker
+  /**
+   * Marks the input as invalid via react-datepicker's `ariaInvalid`, which is
+   * what react-datepicker.css hooks the invalid style onto.
+   */
+  isInvalid?: boolean
 }
 
 export const BasicDatePicker = ({
   open,
   datePicker: Picker = DatePicker,
+  isInvalid,
 }: ExampleProps) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   return (
@@ -37,6 +43,7 @@ export const BasicDatePicker = ({
       showPopperArrow={false}
       dateFormat='dd-MM-yyyy'
       placeholderText='Select a date'
+      ariaInvalid={isInvalid ? 'true' : undefined}
     />
   )
 }
