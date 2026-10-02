@@ -343,8 +343,9 @@
 /* Only the actual selection gets the selected style. --keyboard-selected just
    marks react-datepicker's keyboard cursor, which moves to the same day in the
    next month when navigating, so it isn't styled. Keyboard users see the focus
-   ring further down instead, like in Midas Calendar. */
-.react-datepicker__day--selected,
+   ring further down instead, like in Midas Calendar. Days from the adjacent
+   months don't show the selection either, also like Midas Calendar. */
+.react-datepicker__day--selected:not(.react-datepicker__day--outside-month),
 .react-datepicker__month-text--selected,
 .react-datepicker__quarter-text--selected,
 .react-datepicker__year-text--selected {

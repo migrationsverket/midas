@@ -117,6 +117,34 @@ describe('given a rendered BasicDatePicker', () => {
     })
   })
 
+  it('does not show the selection on a day from the next month', async () => {
+    // Opens on June with June 1 selected, then goes back to May, where June 1
+    // is shown as an outside-month day at the end of the grid
+    const { container } = await render(
+      <BasicDatePicker
+        open
+        defaultDate={new Date(2025, 5, 1)}
+      />,
+    )
+    await query(container, '.react-datepicker__navigation--previous').click()
+
+    const overflowDay = query(
+      container,
+      '.react-datepicker__day--001.react-datepicker__day--outside-month',
+    )
+    await expect
+      .element(overflowDay)
+      .toHaveClass('react-datepicker__day--selected')
+
+    const otherOverflowDay = container.querySelector(
+      '.react-datepicker__day--outside-month:not(.react-datepicker__day--selected)',
+    ) as Element
+    await expect.element(overflowDay).toHaveStyle({
+      backgroundColor: getComputedStyle(otherOverflowDay).backgroundColor,
+      color: getComputedStyle(otherOverflowDay).color,
+    })
+  })
+
   it('shows a focus ring on the day the arrow keys move to, but not after a mouse click', async () => {
     const { container } = await render(<BasicDatePicker open />)
     await query(container, day15).click()
