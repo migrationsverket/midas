@@ -52,6 +52,7 @@ Stilarna täcker:
 - Månads- och årsdropdowns (`showMonthDropdown`, `showYearDropdown`)
 - Idag-knapp (`todayButton`)
 - Placering av månadsrubriken (`monthHeaderPosition`, endast version 9)
+- Ogiltigt värde (`ariaInvalid`), se [Ogiltigt värde](#ogiltigt-värde)
 
 Tidsväljaren (`showTimeSelect`, `showTimeInput`) har ännu inga Midas-stilar.
 
@@ -125,6 +126,23 @@ return (
 ```
 
 <MonthSelectExample />
+
+### Ogiltigt värde
+
+React Datepicker har ingen egen validering. Validera värdet själv och sätt `ariaInvalid='true'` när det är ogiltigt, så får fältet samma röda ram som Midas formulärfält. Koppla ihop fältet med felmeddelandet via `ariaDescribedBy`, så att skärmläsare läser upp det.
+
+```tsx
+<DatePicker
+  selected={selectedDate}
+  onChange={(date: Date | null) => setSelectedDate(date)}
+  dateFormat='yyyy-MM-dd'
+  //highlight-start
+  ariaInvalid={error ? 'true' : undefined}
+  ariaDescribedBy={error ? 'date-error' : undefined}
+  //highlight-end
+/>
+{error && <p id='date-error'>{error}</p>}
+```
 
 ### Flera inmatningsformat
 
