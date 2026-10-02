@@ -66,9 +66,21 @@
 
 .react-datepicker__input-container input[disabled] {
   cursor: not-allowed;
-  background-color: var(--midas-field-disabled);
+  color: var(--midas-text-disabled);
+  background-color: var(--midas-field-01-disabled);
   border: none;
   border-bottom: 1px solid var(--midas-border-color-disabled);
+}
+
+/* Same as Midas DateField: no field background and no hover, so it doesn't
+   look editable */
+.react-datepicker__input-container input[readonly] {
+  background-color: transparent;
+  border-bottom-color: var(--midas-border-color-subtle);
+
+  &:hover {
+    background-color: transparent;
+  }
 }
 
 /* Same as Midas TextField and DateField: the invalid outline replaces the
@@ -88,9 +100,20 @@
   user-select: none;
   touch-action: manipulation;
 
-  &:hover + input {
+  &:hover + input:not([readonly], [disabled]) {
     background-color: var(--midas-layer-01-hover);
   }
+}
+
+.react-datepicker__input-container:has(input[disabled])
+  .react-datepicker__calendar-icon {
+  color: var(--midas-text-disabled);
+  cursor: not-allowed;
+}
+
+.react-datepicker__input-container:has(input[readonly])
+  .react-datepicker__calendar-icon {
+  cursor: default;
 }
 
 .react-datepicker-popper {
@@ -317,14 +340,14 @@
   border-color: var(--midas-field-01-hover);
 }
 
+/* Only the actual selection gets the selected style. --keyboard-selected just
+   marks react-datepicker's keyboard cursor, which moves to the same day in the
+   next month when navigating, so it isn't styled. Keyboard users see the focus
+   ring further down instead, like in Midas Calendar. */
 .react-datepicker__day--selected,
-.react-datepicker__day--keyboard-selected,
 .react-datepicker__month-text--selected,
-.react-datepicker__month-text--keyboard-selected,
 .react-datepicker__quarter-text--selected,
-.react-datepicker__quarter-text--keyboard-selected,
-.react-datepicker__year-text--selected,
-.react-datepicker__year-text--keyboard-selected {
+.react-datepicker__year-text--selected {
   background-color: var(--midas-calendar-date-background-selected);
   color: var(--midas-text-inverse);
   border-color: var(--midas-calendar-date-background-selected);
@@ -343,6 +366,19 @@
       background-color: SelectedItem;
       border-color: SelectedItem;
     }
+  }
+}
+
+.react-datepicker__day:focus-visible,
+.react-datepicker__month-text:focus-visible,
+.react-datepicker__quarter-text:focus-visible,
+.react-datepicker__year-text:focus-visible {
+  outline: none;
+  box-shadow: var(--midas-state-focus);
+
+  @media (forced-colors: active) {
+    outline: 3px solid;
+    outline-offset: 2px;
   }
 }
 
@@ -460,7 +496,10 @@
   right: 2.5rem;
 }
 
-.react-datepicker__input-container:has(.react-datepicker__calendar-icon):has(.react-datepicker__close-icon) input {
+.react-datepicker__input-container:has(.react-datepicker__calendar-icon):has(
+    .react-datepicker__close-icon
+  )
+  input {
   padding-right: 4.5rem;
 }
 

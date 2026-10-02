@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
-import { page } from 'vitest/browser'
+import { page, userEvent } from 'vitest/browser'
 import { BasicDatePicker, MonthPicker } from './ReactDatepicker'
 
 // react-datepicker.css restyles markup react-datepicker generates itself, so
@@ -13,8 +13,23 @@ const query = (container: Element, selector: string) =>
   page.elementLocator(container.querySelector(selector) as Element)
 
 // Days from the adjacent months share the `--015` class, so pin to this one
+// Resolves a theme token to the computed color the browser would use, so
+// tests can compare against tokens without hardcoding their values
+const tokenColor = (token: string) => {
+  const probe = document.createElement('span')
+  probe.style.color = `var(${token})`
+  document.body.append(probe)
+  const color = getComputedStyle(probe).color
+  probe.remove()
+  return color
+}
+
 const day15 =
   '.react-datepicker__day--015:not(.react-datepicker__day--outside-month)'
+const day02 =
+  '.react-datepicker__day--002:not(.react-datepicker__day--outside-month)'
+const day16 =
+  '.react-datepicker__day--016:not(.react-datepicker__day--outside-month)'
 
 describe('given a rendered BasicDatePicker', () => {
   it('gives the input a bottom border', async () => {
@@ -79,6 +94,45 @@ describe('given a rendered BasicDatePicker', () => {
     expect(selected.color).not.toBe(unselected.color)
   })
 
+  it('makes the keyboard cursor look like any other day after changing month', async () => {
+    const { container } = await render(<BasicDatePicker open />)
+    await query(container, day02).click()
+    await query(container, '.react-datepicker__navigation--next').click()
+
+    // react-datepicker moves its keyboard cursor (keyboard-selected) to the
+    // same day in the new month. It isn't a selection, so it shouldn't look
+    // like one.
+    const cursorDay = query(container, day02)
+    await expect
+      .element(cursorDay)
+      .toHaveClass('react-datepicker__day--keyboard-selected')
+    await expect
+      .element(cursorDay)
+      .not.toHaveClass('react-datepicker__day--selected')
+
+    const plainDay = container.querySelector(day15) as Element
+    await expect.element(cursorDay).toHaveStyle({
+      backgroundColor: getComputedStyle(plainDay).backgroundColor,
+      color: getComputedStyle(plainDay).color,
+    })
+  })
+
+  it('shows a focus ring on the day the arrow keys move to, but not after a mouse click', async () => {
+    const { container } = await render(<BasicDatePicker open />)
+    await query(container, day15).click()
+    // Changing month moves focus to the keyboard cursor in the new month
+    await query(container, '.react-datepicker__navigation--next').click()
+    const cursorDay = query(container, day15)
+    await expect.element(cursorDay).toHaveFocus()
+    await expect.element(cursorDay).toHaveStyle({ boxShadow: 'none' })
+
+    await userEvent.keyboard('{ArrowRight}')
+
+    const focusedDay = query(container, day16)
+    await expect.element(focusedDay).toHaveFocus()
+    await expect.element(focusedDay).not.toHaveStyle({ boxShadow: 'none' })
+  })
+
   it('writes the selected date to the input in the docs format', async () => {
     const { container } = await render(<BasicDatePicker open />)
     await query(container, day15).click()
@@ -113,7 +167,96 @@ describe('given an invalid BasicDatePicker', () => {
   })
 })
 
+describe('given a read-only BasicDatePicker', () => {
+  it('uses a transparent background and a subtle bottom border', async () => {
+    const { container } = await render(
+      <BasicDatePicker
+        isReadOnly
+        defaultDate={new Date(2025, 4, 15)}
+      />,
+    )
+    const input = query(container, 'input')
+
+    await expect.element(input).toHaveAttribute('readonly')
+    await expect
+      .element(input)
+      .toHaveStyle({ backgroundColor: 'rgba(0, 0, 0, 0)' })
+    await expect.element(input).toHaveStyle({
+      borderBottomColor: tokenColor('--midas-border-color-subtle'),
+    })
+  })
+
+  it('keeps the background on hover', async () => {
+    const { container } = await render(<BasicDatePicker isReadOnly />)
+    const input = query(container, 'input')
+
+    await input.hover()
+    await expect
+      .element(input)
+      .toHaveStyle({ backgroundColor: 'rgba(0, 0, 0, 0)' })
+
+    await query(container, '.react-datepicker__calendar-icon').hover()
+    await expect
+      .element(input)
+      .toHaveStyle({ backgroundColor: 'rgba(0, 0, 0, 0)' })
+  })
+})
+
+describe('given a disabled BasicDatePicker', () => {
+  it('uses the disabled text color', async () => {
+    const { container } = await render(
+      <BasicDatePicker
+        isDisabled
+        defaultDate={new Date(2025, 4, 15)}
+      />,
+    )
+    await expect
+      .element(query(container, 'input'))
+      .toHaveStyle({ color: tokenColor('--midas-text-disabled') })
+  })
+
+  it('uses the disabled field background', async () => {
+    const { container } = await render(<BasicDatePicker isDisabled />)
+    const probe = document.createElement('span')
+    probe.style.backgroundColor = 'var(--midas-field-01-disabled)'
+    document.body.append(probe)
+    const disabledBackground = getComputedStyle(probe).backgroundColor
+    probe.remove()
+
+    await expect
+      .element(query(container, 'input'))
+      .toHaveStyle({ backgroundColor: disabledBackground })
+  })
+
+  it('dims the calendar icon', async () => {
+    const { container } = await render(<BasicDatePicker isDisabled />)
+    await expect
+      .element(query(container, '.react-datepicker__calendar-icon'))
+      .toHaveStyle({ color: tokenColor('--midas-text-disabled') })
+  })
+})
+
 describe('given a rendered MonthPicker', () => {
+  it('makes the keyboard cursor look like any other month after changing year', async () => {
+    const { container } = await render(<MonthPicker open />)
+    const january = '.react-datepicker__month-text.react-datepicker__month-0'
+    await query(container, january).click()
+    await query(container, '.react-datepicker__navigation--next').click()
+
+    const cursorMonth = query(container, january)
+    await expect
+      .element(cursorMonth)
+      .toHaveClass('react-datepicker__month-text--keyboard-selected')
+
+    const plainMonth = container.querySelector(
+      '.react-datepicker__month-text.react-datepicker__month-5',
+    ) as Element
+    // month-text animates background-color, toHaveStyle polls until it's done
+    await expect.element(cursorMonth).toHaveStyle({
+      backgroundColor: getComputedStyle(plainMonth).backgroundColor,
+    })
+  })
+
   it('lays the months out in a grid', async () => {
     const { container } = await render(<MonthPicker open />)
     await expect
