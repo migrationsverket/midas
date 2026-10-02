@@ -3,7 +3,7 @@ title: React Datepicker
 description: Använda React Datepicker med Midas-stilar
 ---
 
-import { DefaultReactDatepickerExample, MonthSelectExample, MultipleFormatsExample } from '@site/src/components/examples'
+import { DefaultReactDatepickerExample, MonthSelectExample, InvalidExample, MultipleFormatsExample } from '@site/src/components/examples'
 
 # React Datepicker
 
@@ -52,7 +52,7 @@ Stilarna täcker:
 - Månads- och årsdropdowns (`showMonthDropdown`, `showYearDropdown`)
 - Idag-knapp (`todayButton`)
 - Placering av månadsrubriken (`monthHeaderPosition`, endast version 9)
-- Ogiltigt värde (`ariaInvalid`), se [Ogiltigt värde](#ogiltigt-värde)
+- [Ogiltigt värde](#ogiltigt-värde) (`ariaInvalid`)
 
 Tidsväljaren (`showTimeSelect`, `showTimeInput`) har ännu inga Midas-stilar.
 
@@ -129,24 +129,51 @@ return (
 
 ### Ogiltigt värde
 
-React Datepicker har ingen egen validering. Validera värdet själv och sätt `ariaInvalid='true'` när det är ogiltigt, så får fältet samma röda ram som Midas formulärfält. Koppla ihop fältet med felmeddelandet via `ariaDescribedBy`, så att skärmläsare läser upp det.
+React Datepicker har ingen egen validering. Validera värdet själv och sätt `ariaInvalid='true'` när det är ogiltigt så får fältet samma röda ram som Midas formulärfält. Visa felmeddelandet med Midas `FieldError` och koppla det till fältet med `ariaDescribedBy` så att skärmläsare läser upp det.
 
-```tsx
-<DatePicker
-  selected={selectedDate}
-  onChange={(date: Date | null) => setSelectedDate(date)}
-  dateFormat='yyyy-MM-dd'
-  //highlight-start
-  ariaInvalid={error ? 'true' : undefined}
-  ariaDescribedBy={error ? 'date-error' : undefined}
-  //highlight-end
-/>
-{error && <p id='date-error'>{error}</p>}
+I exemplet nedan är datumet ogiltigt om det ligger bakåt i tiden.
+
+<InvalidExample />
+
+```tsx title="InvalidExample.tsx"
+const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+const error =
+  selectedDate && isBeforeToday(selectedDate)
+    ? 'Datumet kan inte ligga bakåt i tiden'
+    : undefined
+
+return (
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <Label htmlFor='start-date'>Startdatum</Label>
+    <DatePicker
+      id='start-date'
+      showPopperArrow={false}
+      selected={selectedDate}
+      showIcon
+      toggleCalendarOnIconClick
+      icon={<CalendarDays height={20} />}
+      onChange={(date: Date | null) => setSelectedDate(date)}
+      dateFormat='yyyy-MM-dd'
+      placeholderText='ÅÅÅÅ-MM-DD'
+      //highlight-start
+      ariaInvalid={error ? 'true' : undefined}
+      ariaDescribedBy={error ? 'start-date-error' : undefined}
+      //highlight-end
+    />
+    {error && (
+      //highlight-start
+      <div id='start-date-error'>
+        <FieldError isInvalid>{error}</FieldError>
+      </div>
+      //highlight-end
+    )}
+  </div>
+)
 ```
 
 ### Flera inmatningsformat
 
-`dateFormat` kan vara en lista med format. Det första formatet används för att visa datumet, och alla format i listan accepteras när användaren skriver in ett datum. Det är användbart när användarna är vana vid att skriva datum kortare än det format som visas, till exempel `260903` i stället för `2026-09-03`.
+`dateFormat` kan vara en lista med format. Det första formatet används för att visa datumet och alla format i listan accepteras vid inmatning. Det passar när användarna är vana vid att skriva kortare datum som `260903` i stället för `2026-09-03`.
 
 Prova att skriva `260903` och lämna fältet:
 
@@ -170,8 +197,8 @@ return (
 
 :::warning[Tvåsiffriga årtal]
 
-Ett tvåsiffrigt årtal (`yy`) tolkas som det år som ligger närmast dagens datum, inom 50 år bakåt eller framåt. Hösten 2026 blir `550312` alltså 2055-03-12 och inte 1955-03-12. Använd därför inte tvåsiffriga årtal för datum som kan ligga långt bak i tiden, som födelsedatum.
+Tvåsiffriga årtal (`yy`) tolkas som det år som ligger närmast i tiden, högst 50 år bakåt eller framåt. Det betyder att `550312` kan bli 2055-03-12 i stället för 1955-03-12. Använd dem inte för födelsedatum eller andra datum långt tillbaka i tiden.
 
 :::
 
-Midas egna [`DatePicker`](/components/date-picker) och [`DateField`](/components/datefield) bygger på React Aria, där år, månad och dag matas in i separata delar och årtalet alltid skrivs med fyra siffror. Där går det inte att använda tvåsiffriga årtal.
+Midas egna [`DatePicker`](/components/date-picker) och [`DateField`](/components/datefield) stöder inte tvåsiffriga årtal. De bygger på React Aria där år, månad och dag matas in var för sig och årtalet alltid har fyra siffror.
