@@ -54,3 +54,19 @@ export const Invalid: Story = {
     isInvalid: true,
   },
 }
+
+export const ReadOnly: Story = {
+  args: {
+    open: false,
+    isReadOnly: true,
+    defaultDate: new Date(2025, 4, 15),
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    open: false,
+    isDisabled: true,
+    defaultDate: new Date(2025, 4, 15),
+  },
+}
