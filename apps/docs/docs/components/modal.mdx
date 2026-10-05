@@ -51,7 +51,7 @@ Modaler används främst när det krävs ett aktivt svar från användaren. Moda
 
 ## Riktlinjer
 
-Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för [Knappar](/components/button).
+Handlingar placeras i modalens footer. Se riktlinjer för [Knappar](/components/button).
 
 ## Varianter
 
@@ -85,36 +85,6 @@ Modaler som inte går att stänga på annat sätt än att acceptera/godkänna ka
 ```
 
 <HideCloseButtonExample />
-
-### Med fast sidfot
-
-I långa modala formulär är det lämpligt att lägga handlingar i en fast sidfot, så att de alltid är synliga för användaren när den scrollar i modalen. Ange innehållet i sidfoten via `footer`-propen.
-
-```tsx
-<DialogTrigger>
-  <Button>Open</Button>
-  <Modal
-    title='Modal Title'
-    //highlight-start
-    footer={
-      <ButtonGroup>
-        <Button slot='close'>Spara</Button>
-        <Button
-          slot='close'
-          variant='secondary'
-        >
-          Avbryt
-        </Button>
-      </ButtonGroup>
-    }
-    //highlight-end
-  >
-    {/* Långt formulärinnehåll */}
-  </Modal>
-</DialogTrigger>
-```
-
-<StickyFooterExample />
 
 ## Implementation
 
