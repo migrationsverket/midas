@@ -1,0 +1,8 @@
+{
+  "name": "visual-report-viewer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/visual-report-viewer/src",
+  "projectType": "application",
+  "tags": ["apps"],
+  "targets": {}
+}

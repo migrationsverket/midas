@@ -1,0 +1,79 @@
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* Shows transparent areas of the screenshot */
+  background: repeating-conic-gradient(
+      var(--midas-layer-02-base) 0 25%,
+      var(--midas-layer-01-base) 0 50%
+    )
+    0 0 / 16px 16px;
+}
+
+.actualSize {
+  max-width: none;
+}
+
+.missing {
+  display: grid;
+  place-items: center;
+  min-height: 8rem;
+  padding: 1rem;
+  border: 1px dashed var(--midas-border-color-subtle);
+  color: var(--midas-text-secondary);
+  text-align: center;
+}
+
+.sideBySide {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.figure {
+  margin: 0;
+  overflow: auto;
+}
+
+.caption {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--midas-text-secondary);
+}
+
+.overlay {
+  overflow: auto;
+}
+
+.stack {
+  position: relative;
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+
+  & > * {
+    grid-area: 1 / 1;
+  }
+}
+
+.handle {
+  position: absolute;
+  inset-block: 0;
+  width: 2px;
+  margin-inline-start: -1px;
+  background: var(--midas-border-color-primary);
+  pointer-events: none;
+}
+
+.control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+
+  & input {
+    width: min(24rem, 100%);
+  }
+}

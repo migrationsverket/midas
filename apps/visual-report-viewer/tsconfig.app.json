@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    // Vite does the build. Needed to typecheck @midas-ds/visual-report, whose
+    // sources import each other with .ts extensions.
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": [
+      "node",
+      "vite/client",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts"
+    ]
+  },
+  "files": [
+    "../../node_modules/@nx/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nx/react/typings/image.d.ts"
+  ],
+  "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx"],
+  "include": ["vite.config.mts", "src/**/*.ts", "src/**/*.tsx"]
+}

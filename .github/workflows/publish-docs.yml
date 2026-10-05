@@ -39,6 +39,13 @@ jobs:
       - name: Build storybook
         run: npx nx run storybook:build:ci
 
+      # Reads the reports visual-report.yml publishes, see
+      # tools/visual-report/README.md
+      - name: Build visual regression report viewer
+        run: |
+          npx nx run visual-report-viewer:build
+          cp -r dist/apps/visual-report-viewer dist/docs/visual-report
+
       - name: Deploy website and storybook
         uses: JamesIves/github-pages-deploy-action@v4
         with:

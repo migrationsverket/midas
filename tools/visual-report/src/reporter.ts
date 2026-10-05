@@ -1,6 +1,6 @@
 /**
  * Vitest reporter that collects failed `toMatchScreenshot()` assertions into a
- * folder that build-report.ts turns into a static HTML diff viewer and a PR
+ * folder that build-report.ts turns into the report viewer's data and a PR
  * comment.
  *
  * Vitest already records a `visual-regression` artifact for every failed
@@ -58,6 +58,9 @@ export class VisualReportReporter implements Reporter {
           id,
           file: testModule.relativeModuleId,
           name: testCase.fullName,
+          suite:
+            testCase.parent.type === 'suite' ? testCase.parent.fullName : '',
+          test: testCase.name,
           message: result.errors?.[0]?.message ?? 'Screenshot mismatch',
           isNew: false,
           images: {},

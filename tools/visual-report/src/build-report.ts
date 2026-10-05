@@ -1,22 +1,24 @@
 #!/usr/bin/env node
 /**
- * Turns the folders written by reporter.ts into a static diff viewer
- * (index.html), a summary.json with the counts, and a markdown summary for a
- * sticky PR comment.
+ * Turns the folders written by reporter.ts into the data the report viewer
+ * (apps/visual-report-viewer) reads: report.json plus the images, a
+ * summary.json with the counts, and a markdown summary for a sticky PR comment.
  *
  *   node tools/visual-report/src/build-report.ts \
  *     --input dist/visual-report \
  *     --output dist/visual-report-site \
  *     --base-url https://designsystem.migrationsverket.se/pr-preview/visual/pr-123/ \
+ *     --report-url https://designsystem.migrationsverket.se/visual-report/?pr=123 \
  *     --run-url https://github.com/.../actions/runs/... \
  *     --comment dist/visual-report-site/comment.md
  *
  * or `npx nx run visual-report:report` with the defaults.
  *
  * Everything read from the input comes from a PR's CI run, which may be a
- * fork, so it's treated as untrusted: text is escaped wherever it's printed,
- * and only images the manifests reference that really are PNGs get copied to
- * the output folder. Never publish the input folder itself.
+ * fork, so it's treated as untrusted: report.json is rebuilt field by field
+ * from known keys, text in the comment is escaped, and only images the
+ * manifests reference that really are PNGs get copied to the output folder.
+ * Never publish the input folder itself.
  */
 
 import {
@@ -30,6 +32,7 @@ import {
 import { dirname, join } from 'node:path'
 import { parseArgs } from 'node:util'
 import type {
+  VisualReport,
   VisualReportEntry,
   VisualReportImage,
   VisualReportImageName,
@@ -37,13 +40,14 @@ import type {
   VisualReportSummary,
 } from './types.ts'
 
-type Failure = VisualReportEntry & { project: string }
-
 const { values: args } = parseArgs({
   options: {
     input: { type: 'string', default: 'dist/visual-report' },
     output: { type: 'string', default: 'dist/visual-report-site' },
+    // Where report.json and the images are served from (comment thumbnails)
     'base-url': { type: 'string', default: '' },
+    // The viewer, opened on this report (comment links)
+    'report-url': { type: 'string', default: '' },
     'run-url': { type: 'string', default: '' },
     comment: { type: 'string' },
     // How many failures get thumbnails in the PR comment
@@ -53,281 +57,177 @@ const { values: args } = parseArgs({
 
 const PROJECT_NAME = /^[\w.-]+$/
 const IMAGE_SRC = /^\d+\/(reference|actual|diff)\.png$/
+const IMAGE_NAMES: VisualReportImageName[] = ['reference', 'actual', 'diff']
 const PNG_SIGNATURE = Buffer.from([
   0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a,
 ])
+const MAX_TEXT_LENGTH = 2000
 
-function readManifests(inputDir: string): VisualReportManifest[] {
-  if (!existsSync(inputDir)) return []
-  return readdirSync(inputDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory() && PROJECT_NAME.test(dirent.name))
-    .filter(dirent => existsSync(join(inputDir, dirent.name, 'manifest.json')))
-    .map(dirent => ({
-      ...JSON.parse(
-        readFileSync(join(inputDir, dirent.name, 'manifest.json'), 'utf8'),
-      ),
-      // The folder name is what the image paths are relative to
-      project: dirent.name,
-    }))
-    .map(manifest => ({
-      ...manifest,
-      total: Number(manifest.total) || 0,
-      failures: Array.isArray(manifest.failures) ? manifest.failures : [],
-    }))
-}
+type Untrusted = Record<string, unknown> | undefined
 
-const escapeHtml = (value: unknown) =>
-  String(value).replace(/[&<>"'|`]/g, char => `&#${char.charCodeAt(0)};`)
+const text = (value: unknown) => String(value ?? '').slice(0, MAX_TEXT_LENGTH)
 
 function isPng(file: string) {
   if (!existsSync(file)) return false
   return readFileSync(file).subarray(0, 8).equals(PNG_SIGNATURE)
 }
 
-/**
- * Image path relative to the report root, or undefined if the image is
- * missing or looks off. Valid images are copied to the output folder.
- */
-function imagePath(
+/** Copies a referenced image to the output if it checks out */
+function readImage(
   project: string,
-  image: VisualReportImage | undefined,
-): string | undefined {
-  if (
-    !image ||
-    !PROJECT_NAME.test(project) ||
-    !IMAGE_SRC.test(String(image.src)) ||
-    !isPng(join(args.input, project, image.src))
-  ) {
+  image: Untrusted,
+): VisualReportImage | undefined {
+  const src = String(image?.src)
+  if (!IMAGE_SRC.test(src) || !isPng(join(args.input, project, src))) {
     return undefined
   }
-  const src = `${project}/${image.src}`
-  if (!existsSync(join(args.output, src))) {
-    mkdirSync(dirname(join(args.output, src)), { recursive: true })
-    copyFileSync(join(args.input, src), join(args.output, src))
+  const path = `${project}/${src}`
+  mkdirSync(dirname(join(args.output, path)), { recursive: true })
+  copyFileSync(join(args.input, path), join(args.output, path))
+  return {
+    src: path,
+    width: Number(image?.width) || 0,
+    height: Number(image?.height) || 0,
   }
-  return src
+}
+
+function readEntry(project: string, entry: Untrusted): VisualReportEntry {
+  const images: VisualReportEntry['images'] = {}
+  for (const name of IMAGE_NAMES) {
+    const image = readImage(
+      project,
+      (entry?.images as Record<string, Untrusted>)?.[name],
+    )
+    if (image) images[name] = image
+  }
+  return {
+    id: text(entry?.id),
+    file: text(entry?.file),
+    name: text(entry?.name),
+    suite: text(entry?.suite),
+    test: text(entry?.test ?? entry?.name),
+    message: text(entry?.message),
+    isNew: entry?.isNew === true,
+    images,
+  }
+}
+
+function readManifests(inputDir: string): VisualReportManifest[] {
+  if (!existsSync(inputDir)) return []
+  return readdirSync(inputDir, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory() && PROJECT_NAME.test(dirent.name))
+    .filter(dirent => existsSync(join(inputDir, dirent.name, 'manifest.json')))
+    .map(dirent => {
+      // The folder name is what the image paths are relative to
+      const project = dirent.name
+      const manifest: Untrusted = JSON.parse(
+        readFileSync(join(inputDir, project, 'manifest.json'), 'utf8'),
+      )
+      const failures: Untrusted[] = Array.isArray(manifest?.failures)
+        ? manifest.failures
+        : []
+      return {
+        project,
+        total: Number(manifest?.total) || 0,
+        failures: failures.map(entry => readEntry(project, entry)),
+      }
+    })
 }
 
 mkdirSync(args.output, { recursive: true })
 
-const manifests = readManifests(args.input)
-const failures: Failure[] = manifests.flatMap(manifest =>
+const projects = readManifests(args.input)
+const failures = projects.flatMap(manifest =>
   manifest.failures.map(failure => ({ ...failure, project: manifest.project })),
 )
-const total = manifests.reduce((sum, manifest) => sum + manifest.total, 0)
 const newCount = failures.filter(failure => failure.isNew).length
-const changedCount = failures.length - newCount
-
-// ---------------------------------------------------------------------------
-// index.html
-// ---------------------------------------------------------------------------
-
-function renderImage(
-  project: string,
-  image: VisualReportImage | undefined,
-  label: VisualReportImageName,
-  missingText = `No ${label} image`,
-) {
-  const src = imagePath(project, image)
-  if (!src) return `<div class="missing">${missingText}</div>`
-  return `<img src="${escapeHtml(src)}" width="${Number(image?.width)}" height="${Number(image?.height)}" alt="${label}" loading="lazy">`
-}
-
-function renderFailure(failure: Failure) {
-  const { project, images } = failure
-  const anchor = `${escapeHtml(project)}-${escapeHtml(failure.id)}`
-  const canCompare =
-    imagePath(project, images.reference) && imagePath(project, images.actual)
-
-  return `
-<section class="failure" id="${anchor}">
-  <h2><a href="#${anchor}">${escapeHtml(failure.name)}</a>${failure.isNew ? ' <span class="badge">New</span>' : ''}</h2>
-  <p class="meta">${escapeHtml(project)} · ${escapeHtml(failure.file)}</p>
-  <pre class="message">${escapeHtml(failure.message)}</pre>
-  <div class="modes" role="tablist">
-    <button type="button" data-mode="side" aria-pressed="true">Side by side</button>
-    ${canCompare ? '<button type="button" data-mode="slider" aria-pressed="false">Slider</button>' : ''}
-    ${canCompare ? '<button type="button" data-mode="onion" aria-pressed="false">Onion skin</button>' : ''}
-  </div>
-  <div class="view" data-view="side">
-    <figure><figcaption>Reference</figcaption>${renderImage(project, images.reference, 'reference', failure.isNew ? 'No baseline yet' : undefined)}</figure>
-    <figure><figcaption>Actual</figcaption>${renderImage(project, images.actual, 'actual')}</figure>
-    <figure><figcaption>Diff</figcaption>${renderImage(project, images.diff, 'diff')}</figure>
-  </div>
-  ${
-    canCompare
-      ? `
-  <div class="view" data-view="slider" hidden>
-    <div class="stack">
-      ${renderImage(project, images.reference, 'reference')}
-      <div class="top" style="clip-path: inset(0 50% 0 0)">${renderImage(project, images.actual, 'actual')}</div>
-    </div>
-    <label>Actual on the left, reference on the right <input type="range" min="0" max="100" value="50" data-control="slider"></label>
-  </div>
-  <div class="view" data-view="onion" hidden>
-    <div class="stack">
-      ${renderImage(project, images.reference, 'reference')}
-      <div class="top" style="opacity: 0.5">${renderImage(project, images.actual, 'actual')}</div>
-    </div>
-    <label>Fade from reference to actual <input type="range" min="0" max="100" value="50" data-control="onion"></label>
-  </div>`
-      : ''
-  }
-</section>`
-}
-
-const plural = (count: number, word: string) =>
-  `${count} ${word}${count === 1 ? '' : 's'}`
-
-const title =
-  failures.length === 0
-    ? 'No visual changes'
-    : [
-        changedCount > 0 && plural(changedCount, 'changed screenshot'),
-        newCount > 0 && plural(newCount, 'new screenshot'),
-      ]
-        .filter(Boolean)
-        .join(', ')
-
-const html = `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Visual regression · ${escapeHtml(title)}</title>
-<style>
-  :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
-  [hidden] { display: none !important; }
-  body { margin: 0 auto; max-width: 1400px; padding: 1.5rem; }
-  header p, .meta { color: GrayText; margin: 0.25rem 0; }
-  nav ol { columns: 2; padding-left: 1.25rem; }
-  .failure { border-top: 1px solid GrayText; padding: 1.5rem 0; }
-  .failure h2 { font-size: 1.1rem; margin: 0; }
-  .failure h2 a { color: inherit; }
-  .message { white-space: pre-wrap; font-size: 0.85rem; }
-  .modes { display: flex; gap: 0.25rem; margin-bottom: 1rem; }
-  .modes button { font: inherit; padding: 0.25rem 0.75rem; cursor: pointer; }
-  .modes button[aria-pressed='true'] { font-weight: bold; outline: 2px solid currentColor; }
-  .view[data-view='side'] { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-  figure { margin: 0; }
-  figcaption { font-size: 0.85rem; margin-bottom: 0.25rem; }
-  img { display: block; max-width: 100%; height: auto; background: repeating-conic-gradient(#8882 0 25%, transparent 0 50%) 0 0 / 16px 16px; }
-  .stack { display: grid; width: fit-content; max-width: 100%; }
-  .stack > * { grid-area: 1 / 1; }
-  label { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.5rem; font-size: 0.85rem; }
-  label input { width: min(400px, 100%); }
-  .badge { font-size: 0.75rem; padding: 0.1rem 0.4rem; border: 1px solid currentColor; border-radius: 0.25rem; vertical-align: middle; }
-  .missing { padding: 2rem; border: 1px dashed GrayText; text-align: center; color: GrayText; }
-</style>
-</head>
-<body>
-<header>
-  <h1>Visual regression · ${escapeHtml(title)}</h1>
-  <p>${total} screenshot${total === 1 ? '' : 's'} compared across ${manifests.length} project${manifests.length === 1 ? '' : 's'}.${
-    args['run-url']
-      ? ` <a href="${escapeHtml(args['run-url'])}">CI run</a>`
-      : ''
-  }</p>
-</header>
-${
-  failures.length > 0
-    ? `<nav><ol>${failures
-        .map(
-          f =>
-            `<li><a href="#${escapeHtml(f.project)}-${escapeHtml(f.id)}">${escapeHtml(f.name)}</a></li>`,
-        )
-        .join('')}</ol></nav>`
-    : ''
-}
-${failures.map(renderFailure).join('\n')}
-<script>
-  for (const failure of document.querySelectorAll('.failure')) {
-    const buttons = failure.querySelectorAll('[data-mode]')
-    for (const button of buttons) {
-      button.addEventListener('click', () => {
-        for (const other of buttons) {
-          other.setAttribute('aria-pressed', String(other === button))
-        }
-        for (const view of failure.querySelectorAll('[data-view]')) {
-          view.hidden = view.dataset.view !== button.dataset.mode
-        }
-      })
-    }
-    for (const input of failure.querySelectorAll('[data-control]')) {
-      const top = input.closest('.view').querySelector('.top')
-      input.addEventListener('input', () => {
-        if (input.dataset.control === 'slider') {
-          top.style.clipPath = 'inset(0 ' + (100 - input.value) + '% 0 0)'
-        } else {
-          top.style.opacity = input.value / 100
-        }
-      })
-    }
-  }
-</script>
-</body>
-</html>
-`
-
-writeFileSync(join(args.output, 'index.html'), html)
 const summary: VisualReportSummary = {
-  projects: manifests.length,
-  total,
-  changed: changedCount,
+  projects: projects.length,
+  total: projects.reduce((sum, manifest) => sum + manifest.total, 0),
+  changed: failures.length - newCount,
   new: newCount,
 }
+
+const report: VisualReport = {
+  version: 1,
+  ...(args['run-url'] && { runUrl: args['run-url'] }),
+  summary,
+  projects,
+}
+
+writeFileSync(join(args.output, 'report.json'), JSON.stringify(report))
 writeFileSync(join(args.output, 'summary.json'), JSON.stringify(summary))
 
 // ---------------------------------------------------------------------------
 // comment.md
 // ---------------------------------------------------------------------------
 
+type Failure = (typeof failures)[number]
+
+const escapeHtml = (value: unknown) =>
+  String(value).replace(/[&<>"'|`]/g, char => `&#${char.charCodeAt(0)};`)
+
+const plural = (count: number, word: string) =>
+  `${count} ${word}${count === 1 ? '' : 's'}`
+
 if (args.comment) {
   const baseUrl = args['base-url'].replace(/\/?$/, '/')
+  const reportUrl = args['report-url']
   const limit = Number(args['comment-limit'])
-  const reportLink = args['base-url']
-    ? `[Open the full report](${baseUrl})`
-    : ''
-  const runLink = args['run-url'] ? `[CI run](${args['run-url']})` : ''
-  const links = [reportLink, runLink].filter(Boolean).join(' · ')
+
+  const title = [
+    summary.changed > 0 && plural(summary.changed, 'changed screenshot'),
+    summary.new > 0 && plural(summary.new, 'new screenshot'),
+  ]
+    .filter(Boolean)
+    .join(', ')
 
   const thumbnail = (failure: Failure, name: VisualReportImageName) => {
-    const src = imagePath(failure.project, failure.images[name])
-    if (!src || !args['base-url']) return '–'
-    return `<img src="${baseUrl}${src}" width="160" alt="${name}">`
+    const image = failure.images[name]
+    if (!image || !args['base-url']) return '–'
+    return `<img src="${escapeHtml(baseUrl + image.src)}" width="160" alt="${name}">`
+  }
+
+  const storyName = (failure: Failure) => {
+    const name = escapeHtml(failure.name)
+    if (!reportUrl) return name
+    const href = `${reportUrl}#${encodeURIComponent(failure.project)}/${encodeURIComponent(failure.id)}`
+    return `<a href="${escapeHtml(href)}">${name}</a>`
   }
 
   let comment: string
-  if (manifests.length === 0) {
+  if (projects.length === 0) {
     comment = `### ⏭️ Visual regression\n\nNo visual tests were affected by this PR.`
   } else if (failures.length === 0) {
-    comment = `### ✅ Visual regression\n\nNo visual changes in ${total} screenshots.`
+    comment = `### ✅ Visual regression\n\nNo visual changes in ${summary.total} screenshots.`
   } else {
     const rows = failures.slice(0, limit).map(failure => {
       const badge = failure.isNew ? ' (new)' : ''
-      const name = `<a href="${baseUrl}#${escapeHtml(failure.project)}-${escapeHtml(failure.id)}">${escapeHtml(failure.name)}</a>${badge}`
-      return `| ${name} | ${thumbnail(failure, 'reference')} | ${thumbnail(failure, 'actual')} | ${thumbnail(failure, 'diff')} |`
+      return `| ${storyName(failure)}${badge} | ${thumbnail(failure, 'reference')} | ${thumbnail(failure, 'actual')} | ${thumbnail(failure, 'diff')} |`
     })
-    const more =
-      failures.length > limit
-        ? `\n\n…and ${failures.length - limit} more in the full report.`
-        : ''
 
     comment = [
       `### ❌ Visual regression: ${title}`,
       '',
-      `${failures.length} of ${total} screenshot tests failed.${newCount > 0 ? ' New screenshots have no baseline yet.' : ''}`,
+      `${failures.length} of ${summary.total} screenshot tests failed.${newCount > 0 ? ' New screenshots have no baseline yet.' : ''}`,
       '',
       '| Story | Reference | Actual | Diff |',
       '| --- | --- | --- | --- |',
       ...rows,
     ].join('\n')
-    comment += more
+    if (failures.length > limit) {
+      comment += `\n\n…and ${failures.length - limit} more in the full report.`
+    }
     comment +=
       '\n\nIf the changes are intended, add the `visual:update` label to regenerate the baselines on this branch, then review the updated screenshots under **Files changed**.'
   }
 
+  const links = [
+    reportUrl && `[Open the full report](${reportUrl})`,
+    args['run-url'] && `[CI run](${args['run-url']})`,
+  ]
+    .filter(Boolean)
+    .join(' · ')
   if (links) comment += `\n\n${links}`
   writeFileSync(args.comment, `${comment}\n`)
 }

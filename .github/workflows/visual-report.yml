@@ -76,22 +76,25 @@ jobs:
         if: steps.pr.outputs.number
         env:
           BASE_URL: ${{ env.PAGES_URL }}/${{ env.REPORT_ROOT }}/pr-${{ steps.pr.outputs.number }}/
+          # The viewer is deployed with the docs (publish-docs.yml)
+          REPORT_URL: ${{ env.PAGES_URL }}/visual-report/?pr=${{ steps.pr.outputs.number }}
           RUN_URL: ${{ github.event.workflow_run.html_url }}
         run: |
           node tools/visual-report/src/build-report.ts \
             --input "$RUNNER_TEMP/visual-report" \
             --output "$RUNNER_TEMP/visual-report-site" \
             --base-url "$BASE_URL" \
+            --report-url "$REPORT_URL" \
             --run-url "$RUN_URL" \
             --comment "$RUNNER_TEMP/comment.md"
           FAILURES=$(jq '.changed + .new' "$RUNNER_TEMP/visual-report-site/summary.json")
           echo "failures=$FAILURES" >> "$GITHUB_OUTPUT"
           cat "$RUNNER_TEMP/comment.md" >> "$GITHUB_STEP_SUMMARY"
 
-      # Only failures need a page. The main docs deploy keeps pr-preview/
-      # (clean-exclude in publish-docs.yml), cleanup-pr-preview.yml removes
-      # this folder when the PR closes.
-      - name: Deploy report
+      # Only failures need data for the viewer. The main docs deploy keeps
+      # pr-preview/ (clean-exclude in publish-docs.yml), cleanup-pr-preview.yml
+      # removes this folder when the PR closes.
+      - name: Deploy report data
         if: steps.build.outputs.failures > 0
         uses: JamesIves/github-pages-deploy-action@v4
         with:

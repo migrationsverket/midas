@@ -13,6 +13,10 @@ export interface VisualReportEntry {
   file: string
   /** Full test name (describe blocks + test name) */
   name: string
+  /** Surrounding describe blocks, e.g. the story file */
+  suite: string
+  /** The test's own name, e.g. the story */
+  test: string
   message: string
   /** No baseline exists yet, `actual` is the new screenshot */
   isNew: boolean
@@ -24,6 +28,15 @@ export interface VisualReportManifest {
   /** Screenshot tests that ran */
   total: number
   failures: VisualReportEntry[]
+}
+
+/** report.json, read by apps/visual-report-viewer */
+export interface VisualReport {
+  version: 1
+  runUrl?: string
+  summary: VisualReportSummary
+  /** Image paths are relative to report.json */
+  projects: VisualReportManifest[]
 }
 
 export interface VisualReportSummary {
