@@ -25,23 +25,27 @@ export const ConfirmationExample = () => (
       >
         Ta bort fruktkorgen
       </Button>
-      <Modal title='Ta bort fruktkorg'>
+      <Modal
+        title='Ta bort fruktkorg'
+        footer={
+          <ButtonGroup>
+            <Button
+              variant='danger'
+              slot='close'
+            >
+              Ja, ta bort
+            </Button>
+            <Button
+              autoFocus
+              slot='close'
+              variant='secondary'
+            >
+              Nej, ha kvar
+            </Button>
+          </ButtonGroup>
+        }
+      >
         <Text elementType='p'>Är du säker att du ta bort din fruktkorg?</Text>
-        <ButtonGroup>
-          <Button
-            variant='danger'
-            slot='close'
-          >
-            Ja, ta bort
-          </Button>
-          <Button
-            autoFocus
-            slot='close'
-            variant='secondary'
-          >
-            Nej, ha kvar
-          </Button>
-        </ButtonGroup>
       </Modal>
     </DialogTrigger>
   </div>
@@ -54,7 +58,20 @@ export const FormExample = () => (
   >
     <DialogTrigger>
       <Button>Gör din egen fruktkorg</Button>
-      <Modal title='Gör din egen fruktkorg'>
+      <Modal
+        title='Gör din egen fruktkorg'
+        footer={
+          <ButtonGroup>
+            <Button slot='close'>Skicka</Button>
+            <Button
+              slot='close'
+              variant='secondary'
+            >
+              Avbryt
+            </Button>
+          </ButtonGroup>
+        }
+      >
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <TextField
             autoFocus
@@ -68,15 +85,6 @@ export const FormExample = () => (
             <Radio value='ja'>Ja</Radio>
             <Radio value='nej'>Nej</Radio>
           </RadioGroup>
-          <ButtonGroup>
-            <Button slot='close'>Skicka</Button>
-            <Button
-              slot='close'
-              variant='secondary'
-            >
-              Avbryt
-            </Button>
-          </ButtonGroup>
         </div>
       </Modal>
     </DialogTrigger>
@@ -185,9 +193,9 @@ export const HideCloseButtonExample = () => {
           title='Villkor'
           hideCloseButton
           isKeyboardDismissDisabled
+          footer={<Button slot='close'>Bekräfta</Button>}
         >
           Du måste bekräfta att du läst villkoren innan du kan gå vidare
-          <Button slot='close'>Bekräfta</Button>
         </Modal>
       </DialogTrigger>
     </div>
