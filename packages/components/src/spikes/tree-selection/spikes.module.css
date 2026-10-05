@@ -1,0 +1,139 @@
+/* Partially selected "Välj alla i …" row: same box as ListBox's multi-select
+   indicator, with a minus instead of a check */
+.sectionAllPartial[data-selection-mode='multiple']::before {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNSAxMmgxNCIvPjwvc3ZnPg==');
+  background-size: contain;
+  background-color: var(--midas-button-background-primary-base);
+  border-color: var(--midas-button-background-primary-base);
+
+  @media (forced-colors: active) {
+    background-color: SelectedItem;
+    border-color: SelectedItem;
+  }
+}
+
+.sectionAll {
+  font-weight: 500;
+}
+
+.stack {
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-medium);
+  max-width: 40rem;
+}
+
+.debug {
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--midas-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.searchPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-small);
+}
+
+.results {
+  max-height: 20rem;
+  overflow-y: auto;
+  border: 1px solid var(--midas-border-color-subtle);
+}
+
+.empty {
+  padding: var(--midas-space-medium);
+  color: var(--midas-text-secondary);
+}
+
+.selectedList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-small);
+  min-width: 0;
+}
+
+.selectedHeading {
+  font-weight: 500;
+}
+
+/* Tree or search on the left, the running selection on the right. Stacks on
+   narrow screens */
+.dialogLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--midas-space-large);
+
+  @media (width <= 600px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: var(--midas-space-small);
+  margin-top: var(--midas-space-medium);
+}
+
+/* Midas ListBoxItem has no layout for a description, so the name and the
+   path are stacked here */
+.option {
+  display: flex;
+  flex-direction: column;
+}
+
+.countPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  min-width: 1.5rem;
+  height: 1.25rem;
+  padding: 0 var(--midas-space-small);
+  margin-inline-start: var(--midas-space-small);
+  border-radius: 999px;
+  background-color: var(--midas-button-background-primary-base);
+  color: var(--midas-text-on-color);
+  font-family: var(--midas-typography-font-family);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+
+  @media (forced-colors: active) {
+    border: 1px solid;
+  }
+}
+
+.countPillInverse {
+  background-color: var(--midas-text-on-color);
+  color: var(--midas-button-background-primary-base);
+}
+
+/* The header checkbox variant: the section name is the checkbox label */
+.headerCheckbox {
+  font-weight: 500;
+}
+
+.headerCheckboxWrap {
+  flex: none;
+  display: flex;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+}
+
+/* Pre-filter: two Selects side by side, stacked on narrow screens */
+.scopeFilter {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--midas-space-medium);
+
+  @media (width <= 600px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
