@@ -48,9 +48,6 @@ export const Contained: Story = {
 
 export const AllowsMultipleExpanded: Story = {
   tags: ['!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     ...Default.args,
     allowsMultipleExpanded: true,
@@ -95,9 +92,6 @@ export const CustomTriggerElements: Story = {
 export const DynamicContent: Story = {
   args: {},
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: () => (
     <Accordion>
       <AccordionItem title='AccordionItem with dynamic content'>
@@ -114,9 +108,6 @@ export const DynamicContent: Story = {
 
 export const DS1060: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: () => (
     <Accordion>
       <AccordionItem title='Test'>
@@ -157,4 +148,3 @@ const ExpandableStuff = () => {
     </div>
   )
 }
-
