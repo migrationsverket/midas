@@ -1,3 +1,13 @@
+## 17.27.4 (2026-10-05)
+
+### 🏭 Refactoring
+
+- **visual-report:** make it an Nx project written in TypeScript ([3b6e535f8a7](https://github.com/migrationsverket/midas/commit/3b6e535f8a7))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.5
+
 ## 17.27.3 (2026-10-05)
 
 ### 🧪 Tests updated
