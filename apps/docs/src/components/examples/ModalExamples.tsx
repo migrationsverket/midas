@@ -108,7 +108,7 @@ export const CustomCSSExample = () => (
   </div>
 )
 
-export const StickyFooterExample = () => {
+export const LongFormExample = () => {
   return (
     <div
       className='card'
