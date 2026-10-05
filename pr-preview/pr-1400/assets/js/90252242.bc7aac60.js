@@ -68,21 +68,14 @@ var TextField = __webpack_require__(38601);
 var RadioGroup = __webpack_require__(91804);
 // EXTERNAL MODULE: ./packages/components/src/radio/Radio.tsx + 2 modules
 var Radio = __webpack_require__(90694);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/CheckboxGroup.tsx + 3 modules
+var CheckboxGroup = __webpack_require__(42003);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 2 modules
+var Checkbox = __webpack_require__(30506);
 // EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/trash-2.js
 var trash_2 = __webpack_require__(32708);
 ;// ./apps/docs/src/components/examples/ModalExamples.tsx
-/* unused harmony import specifier */ var ModalExamples_Button;
-/* unused harmony import specifier */ var ModalExamples_Modal;
-/* unused harmony import specifier */ var ModalExamples_Radio;
-/* unused harmony import specifier */ var Checkbox;
-/* unused harmony import specifier */ var ModalExamples_ButtonGroup;
-/* unused harmony import specifier */ var ModalExamples_TextField;
-/* unused harmony import specifier */ var ModalExamples_RadioGroup;
-/* unused harmony import specifier */ var CheckboxGroup;
-/* unused harmony import specifier */ var ModalExamples_DialogTrigger;
-/* unused harmony import specifier */ var _jsx;
-/* unused harmony import specifier */ var _jsxs;
-var ConfirmationExample=function ConfirmationExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{icon:trash_2/* default */.A,variant:"tertiary",children:"Ta bort fruktkorgen"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Ta bort fruktkorg",footer:/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"danger",slot:"close",children:"Ja, ta bort"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{autoFocus:true,slot:"close",variant:"secondary",children:"Nej, ha kvar"})]}),children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{elementType:"p",children:"\xC4r du s\xE4ker att du ta bort din fruktkorg?"})})]})});};var FormExample=function FormExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"G\xF6r din egen fruktkorg"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"G\xF6r din egen fruktkorg",footer:/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"secondary",children:"Avbryt"})]}),children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',flexDirection:'column',gap:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{autoFocus:true,label:"Namnge din fruktkorg",description:"Skriv valfritt namn"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(RadioGroup/* RadioGroup */.z,{defaultValue:"ja",label:"Vill du ha fruktkorgen hemskickad till din hemadress?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"ja",children:"Ja"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"nej",children:"Nej"})]})]})})]})});};var CustomCSSExample=function CustomCSSExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Open"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Modal Title",className:"myModal",children:/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Name",autoFocus:true})})]})});};var StickyFooterExample=function StickyFooterExample(){return/*#__PURE__*/_jsx("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/_jsxs(ModalExamples_DialogTrigger,{children:[/*#__PURE__*/_jsx(ModalExamples_Button,{children:"Best\xE4ll prenumeration"}),/*#__PURE__*/_jsx(ModalExamples_Modal,{title:"Best\xE4ll fruktkorgsprenumeration",footer:/*#__PURE__*/_jsxs(ModalExamples_ButtonGroup,{children:[/*#__PURE__*/_jsx(ModalExamples_Button,{slot:"close",children:"Best\xE4ll"}),/*#__PURE__*/_jsx(ModalExamples_Button,{slot:"close",variant:"secondary",children:"Avbryt"})]}),children:/*#__PURE__*/_jsxs("div",{style:{display:'flex',flexDirection:'column',gap:'1rem'},children:[/*#__PURE__*/_jsx(ModalExamples_TextField,{autoFocus:true,label:"Namn"}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"E-post"}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"Telefonnummer"}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"Leveransadress"}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"Postnummer"}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"Ort"}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"Extra leveransinstruktioner (valfritt)"}),/*#__PURE__*/_jsxs(ModalExamples_RadioGroup,{defaultValue:"vecka",label:"Hur ofta vill du ha leverans?",children:[/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"vecka",children:"Varje vecka"}),/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"varannan",children:"Varannan vecka"}),/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"manad",children:"En g\xE5ng i m\xE5naden"})]}),/*#__PURE__*/_jsxs(ModalExamples_RadioGroup,{defaultValue:"medium",label:"Vilken storlek vill du ha p\xE5 din fruktkorg?",children:[/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"liten",children:"Liten"}),/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"medium",children:"Medium"}),/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"stor",children:"Stor"})]}),/*#__PURE__*/_jsxs(CheckboxGroup,{label:"Vilka frukter vill du ha i din korg?",children:[/*#__PURE__*/_jsx(Checkbox,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/_jsx(Checkbox,{value:"banan",children:"Banan"}),/*#__PURE__*/_jsx(Checkbox,{value:"apelsin",children:"Apelsin"}),/*#__PURE__*/_jsx(Checkbox,{value:"vindruvor",children:"Vindruvor"}),/*#__PURE__*/_jsx(Checkbox,{value:"paron",children:"P\xE4ron"})]}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"F\xF6redragen leveransdag"}),/*#__PURE__*/_jsxs(ModalExamples_RadioGroup,{defaultValue:"faktura",label:"Betalningsmetod",children:[/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"faktura",children:"Faktura"}),/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"kort",children:"Kort"}),/*#__PURE__*/_jsx(ModalExamples_Radio,{value:"swish",children:"Swish"})]}),/*#__PURE__*/_jsx(ModalExamples_TextField,{label:"Meddelande till leveranspersonal (valfritt)"}),/*#__PURE__*/_jsx(Checkbox,{value:"terms",children:"Jag godk\xE4nner villkoren"})]})})]})});};var HideCloseButtonExample=function HideCloseButtonExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Bekr\xE4fta att du l\xE4st villkoren"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Villkor",hideCloseButton:true,isKeyboardDismissDisabled:true,footer:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Bekr\xE4fta"}),children:"Du m\xE5ste bekr\xE4fta att du l\xE4st villkoren innan du kan g\xE5 vidare"})]})});};
+var ConfirmationExample=function ConfirmationExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{icon:trash_2/* default */.A,variant:"tertiary",children:"Ta bort fruktkorgen"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Ta bort fruktkorg",footer:/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"danger",slot:"close",children:"Ja, ta bort"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{autoFocus:true,slot:"close",variant:"secondary",children:"Nej, ha kvar"})]}),children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{elementType:"p",children:"\xC4r du s\xE4ker att du ta bort din fruktkorg?"})})]})});};var FormExample=function FormExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"G\xF6r din egen fruktkorg"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"G\xF6r din egen fruktkorg",footer:/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"secondary",children:"Avbryt"})]}),children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',flexDirection:'column',gap:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{autoFocus:true,label:"Namnge din fruktkorg",description:"Skriv valfritt namn"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(RadioGroup/* RadioGroup */.z,{defaultValue:"ja",label:"Vill du ha fruktkorgen hemskickad till din hemadress?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"ja",children:"Ja"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"nej",children:"Nej"})]})]})})]})});};var CustomCSSExample=function CustomCSSExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Open"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Modal Title",className:"myModal",children:/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Name",autoFocus:true})})]})});};var LongFormExample=function LongFormExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Best\xE4ll prenumeration"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Best\xE4ll fruktkorgsprenumeration",footer:/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Best\xE4ll"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"secondary",children:"Avbryt"})]}),children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',flexDirection:'column',gap:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{autoFocus:true,label:"Namn"}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"E-post"}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Telefonnummer"}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Leveransadress"}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Postnummer"}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Ort"}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Extra leveransinstruktioner (valfritt)"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(RadioGroup/* RadioGroup */.z,{defaultValue:"vecka",label:"Hur ofta vill du ha leverans?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"vecka",children:"Varje vecka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"varannan",children:"Varannan vecka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"manad",children:"En g\xE5ng i m\xE5naden"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(RadioGroup/* RadioGroup */.z,{defaultValue:"medium",label:"Vilken storlek vill du ha p\xE5 din fruktkorg?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"liten",children:"Liten"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"medium",children:"Medium"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"stor",children:"Stor"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$,{label:"Vilka frukter vill du ha i din korg?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"apelsin",children:"Apelsin"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"vindruvor",children:"Vindruvor"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"paron",children:"P\xE4ron"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"F\xF6redragen leveransdag"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(RadioGroup/* RadioGroup */.z,{defaultValue:"faktura",label:"Betalningsmetod",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"faktura",children:"Faktura"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kort",children:"Kort"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"swish",children:"Swish"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Meddelande till leveranspersonal (valfritt)"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"terms",children:"Jag godk\xE4nner villkoren"})]})})]})});};var HideCloseButtonExample=function HideCloseButtonExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Bekr\xE4fta att du l\xE4st villkoren"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal_Modal,{title:"Villkor",hideCloseButton:true,isKeyboardDismissDisabled:true,footer:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Bekr\xE4fta"}),children:"Du m\xE5ste bekr\xE4fta att du l\xE4st villkoren innan du kan g\xE5 vidare"})]})});};
 ;// ./apps/docs/docs/components/modal.mdx
 
 
@@ -124,12 +117,20 @@ const toc = [{
   "id": "varianter",
   "level": 2
 }, {
+  "value": "Utan stängknapp",
+  "id": "utan-stängknapp",
+  "level": 3
+}, {
+  "value": "Exempel",
+  "id": "exempel",
+  "level": 2
+}, {
   "value": "Bekräftelsemodal",
   "id": "bekräftelsemodal",
   "level": 3
 }, {
-  "value": "Utan stängknapp",
-  "id": "utan-stängknapp",
+  "value": "Långa modala formulär",
+  "id": "långa-modala-formulär",
   "level": 3
 }, {
   "value": "Implementation",
@@ -232,21 +233,14 @@ function _createMdxContent(props) {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Handlingar placeras i modalens footer. Se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
+      children: ["Handlingar placeras i modalens footer, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
         href: "/components/button",
         children: "Knappar"
-      }), "."]
+      }), ". Footern i modalen implementerad så att den alltid är synlig, vilket gör att användaren alltid har tillgång till handlingarna, även när innehållet är långt."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "bekräftelsemodal",
-      children: "Bekräftelsemodal"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "autoFocus"
-      }), " på knappen som inte är destruktiv/negativ."]
-    }), "\n", (0,jsx_runtime.jsx)(ConfirmationExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "utan-stängknapp",
       children: "Utan stängknapp"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -262,6 +256,21 @@ function _createMdxContent(props) {
         children: "<DialogTrigger>\n  <Button>Bekräfta att du läst villkoren</Button>\n  <Modal\n    title='Villkor'\n    hideCloseButton\n    isKeyboardDismissDisabled\n  >\n    Du måste bekräfta att du läst villkoren innan du kan gå vidare\n    <Button slot={'close'}>Bekräfta</Button>\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(HideCloseButtonExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "exempel",
+      children: "Exempel"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "bekräftelsemodal",
+      children: "Bekräftelsemodal"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "autoFocus"
+      }), " på knappen som inte är destruktiv/negativ."]
+    }), "\n", (0,jsx_runtime.jsx)(ConfirmationExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "långa-modala-formulär",
+      children: "Långa modala formulär"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Footern i modalen är alltid synlig. Det gör att användaren alltid har tillgång till handlingarna, även när innehållet är långt."
+    }), "\n", (0,jsx_runtime.jsx)(LongFormExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "implementation",
       children: "Implementation"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
@@ -578,6 +587,99 @@ var _excluded=["children","className","aria-label"];/**
  *
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */var ButtonGroup=function ButtonGroup(_ref){var children=_ref.children,className=_ref.className,ariaLabel=_ref['aria-label'],rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({role:"group","aria-label":ariaLabel,className:(0,clsx/* default */.A)(ButtonGroup_module.buttonGroup,className)},rest,{children:children}));};
+
+/***/ },
+
+/***/ 30506
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  S: () => (/* binding */ Checkbox_Checkbox)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/minus.js
+var minus = __webpack_require__(86241);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/check.js
+var check = __webpack_require__(45773);
+// EXTERNAL MODULE: ./packages/theme/src/lib/style-dictionary-dist/variables.js
+var variables = __webpack_require__(90904);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
+var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/private/Checkbox.mjs + 6 modules
+var Checkbox = __webpack_require__(13511);
+// EXTERNAL MODULE: ./packages/components/src/utils/clsx.ts
+var clsx = __webpack_require__(1160);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/checkbox/CheckboxField.tsx
+'use client';var _excluded=["className"];var CheckboxField=function CheckboxField(_ref){var className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* CheckboxField */.Yh,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module/* default */.A.checkboxField,className)},rest));};
+;// ./packages/components/src/checkbox/CheckboxButton.tsx
+'use client';var CheckboxButton_excluded=["className"];var CheckboxButton=/*#__PURE__*/(0,react.forwardRef)(function(_ref,ref){var className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,CheckboxButton_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* CheckboxButton */.aE,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module/* default */.A.checkboxButton,className),ref:ref},rest));});
+;// ./packages/components/src/checkbox/Checkbox.tsx
+var Checkbox_excluded=["className","description","errorMessage","errorPosition","children"];var Checkbox_Checkbox=/*#__PURE__*/(0,react.forwardRef)(function(_ref,ref){var className=_ref.className,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,Checkbox_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(CheckboxField,Object.assign({},props,{children:[description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxButton,{ref:ref,className:className,children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Checkbox_module/* default */.A.indicator,children:isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)(minus/* default */.A,{size:14,color:variables/* iconOnColor */.w1t}):/*#__PURE__*/(0,jsx_runtime.jsx)(check/* default */.A,{size:14,color:variables/* iconOnColor */.w1t})}),_children]});}}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage})]}));});Checkbox_Checkbox.displayName='Checkbox';
+
+/***/ },
+
+/***/ 42003
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  $: () => (/* binding */ CheckboxGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/private/Checkbox.mjs + 6 modules
+var Checkbox = __webpack_require__(13511);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/private/utils.mjs
+var utils = __webpack_require__(95841);
+// EXTERNAL MODULE: ./packages/components/src/utils/clsx.ts
+var clsx = __webpack_require__(1160);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 3 modules
+var LabelWrapper = __webpack_require__(73202);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
+var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
+var useLocalizedStringFormatter = __webpack_require__(88413);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 2 modules
+var checkbox_Checkbox = __webpack_require__(30506);
+;// ./packages/components/src/checkbox/useSelectAll.ts
+var useSelectAll=function useSelectAll(children,state){var _state$value;var selectedItems=(_state$value=state==null?void 0:state.value)!=null?_state$value:[];var checkboxes=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child)&&child.type===checkbox_Checkbox/* Checkbox */.S;});// A disabled checkbox can't be toggled individually, so select-all/clear-all
+// shouldn't be able to change it either — its existing selection state is
+// preserved regardless of which way the header checkbox is toggled.
+var checkboxValues=checkboxes.filter(function(child){return!child.props.isDisabled;}).map(function(child){return child.props.value||'';});var disabledSelectedValues=checkboxes.filter(function(child){return child.props.isDisabled;}).map(function(child){return child.props.value||'';}).filter(function(value){return selectedItems.includes(value);});var selectedCount=selectedItems.filter(function(value){return checkboxValues.includes(value);}).length;var noneSelected=selectedCount===0;var allSelected=selectedCount===checkboxValues.length;var someSelected=!noneSelected&&!allSelected;return{allSelected:allSelected,someSelected:someSelected,checkboxValues:checkboxValues,disabledSelectedValues:disabledSelectedValues};};
+;// ./packages/components/src/checkbox/intl/translations.json
+const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en":{"selectAll":"Select all"},"sv":{"selectAll":"Välj alla"}}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/checkbox/SelectAllCheckbox.tsx
+var SelectAllCheckbox=function SelectAllCheckbox(_ref){var checkboxes=_ref.checkboxes,label=_ref.label;var state=(0,react.useContext)(Checkbox/* CheckboxGroupStateContext */.pf);var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.oe)(translations_namespaceObject);var _useSelectAll=useSelectAll(checkboxes,state),allSelected=_useSelectAll.allSelected,someSelected=_useSelectAll.someSelected,checkboxValues=_useSelectAll.checkboxValues,disabledSelectedValues=_useSelectAll.disabledSelectedValues;var handleChange=function handleChange(checked){state==null||state.setValue(checked?[].concat(checkboxValues,disabledSelectedValues):disabledSelectedValues);};return(/*#__PURE__*/// Select-all mirrors the group's overall state instead of tracking a
+// value of its own, so it needs to opt out of the ambient
+// CheckboxGroupStateContext — otherwise the CheckboxField beneath it
+// would try to register/toggle itself as a valueless group item.
+(0,jsx_runtime.jsx)(Checkbox/* CheckboxGroupStateContext */.pf.Provider,{value:null,children:/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_Checkbox/* Checkbox */.S,{isSelected:allSelected,isIndeterminate:someSelected,isReadOnly:state==null?void 0:state.isReadOnly,isDisabled:state==null?void 0:state.isDisabled,onChange:handleChange,children:label||stringFormatter.format('selectAll')})}));};
+;// ./packages/components/src/checkbox/CheckboxGroup.tsx
+'use client';var _excluded=["label","description","errorMessage","errorPosition","popover","showSelectAll","selectAllLabel","className","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,popover=_ref.popover,showSelectAll=_ref.showSelectAll,selectAllLabel=_ref.selectAllLabel,className=_ref.className,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* CheckboxGroup */.$Q,Object.assign({},props,{className:(0,clsx/* default */.A)(Checkbox_module/* default */.A.checkboxGroup,className),children:(0,utils/* composeRenderProps */.HW)(children,function(children){return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.cR,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&errorMessage&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Checkbox_module/* default */.A.checkboxList,children:[showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectAllCheckbox,{label:selectAllLabel,checkboxes:children}),children]}),errorPosition==='bottom'&&errorMessage&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage})]});})}));};
 
 /***/ },
 
@@ -1041,6 +1143,366 @@ var TextFieldBase=/*#__PURE__*/(0,react.forwardRef)(function(props,ref){var _cls
 
 /***/ },
 
+/***/ 90904
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A1M: () => (/* binding */ brandPrimary),
+/* harmony export */   EWd: () => (/* binding */ stateFocus),
+/* harmony export */   JI6: () => (/* binding */ layer02Base),
+/* harmony export */   Q0Q: () => (/* binding */ textOnColor),
+/* harmony export */   Qni: () => (/* binding */ buttonBackgroundPrimaryBase),
+/* harmony export */   Sjf: () => (/* binding */ spaceMedium),
+/* harmony export */   _2e: () => (/* binding */ borderColorPrimary),
+/* harmony export */   ak9: () => (/* binding */ layer01Base),
+/* harmony export */   eku: () => (/* binding */ textPrimary),
+/* harmony export */   jc5: () => (/* binding */ colorGray200),
+/* harmony export */   l9i: () => (/* binding */ borderColorSubtle),
+/* harmony export */   tK4: () => (/* binding */ field01Base),
+/* harmony export */   w$9: () => (/* binding */ backgroundBase),
+/* harmony export */   w1t: () => (/* binding */ iconOnColor)
+/* harmony export */ });
+/* unused harmony exports base10, base15, base20, base30, base40, base50, base60, base70, base75, base80, base90, base100, base110, base120, base130, base140, base150, base00, base05, windowSizesSm, windowSizesMd, windowSizesLg, windowSizesXl, breakpointsXs, breakpointsSm, breakpointsMd, breakpointsLg, breakpointsXl, buttonBackgroundPrimaryHover, buttonBackgroundPrimaryActive, buttonBackgroundSecondaryBase, buttonBackgroundSecondaryHover, buttonBackgroundSecondaryActive, buttonBackgroundTertiaryHover, buttonBackgroundTertiaryActive, buttonBackgroundDangerBase, buttonBackgroundDangerHover, buttonBackgroundDangerActive, buttonBackgroundDisabled, buttonBorderSecondary, buttonIconHover, buttonIconActive, colorBlackBase, colorBlackHover, colorBlackOpacity5, colorBlackOpacity10, colorWhiteBase, colorWhiteHover, colorWhiteOpacity13, colorWhiteOpacity15, colorGray10, colorGray20, colorGray30, colorGray40, colorGray50, colorGray60, colorGray70, colorGray80, colorGray90, colorGray100, colorGray110, colorGray120, colorGray130, colorGray140, colorGray150, colorGray160, colorGray170, colorGray180, colorGray190, colorBlue10, colorBlue20, colorBlue40, colorBlue50, colorBlue60, colorBlue70, colorBlue80, colorBlue90, colorBlue100, colorBlue110, colorBlue120, colorBlue130, colorBlue150, colorPurple80, colorPurple110, colorRed100, colorOrange100, colorSignalBlue10, colorSignalBlue20, colorSignalBlue100, colorSignalBlue170, colorSignalBlue180, colorSignalGreen20, colorSignalGreen30, colorSignalGreen100, colorSignalGreen150, colorSignalGreen170, colorSignalGreen180, colorSignalYellow10, colorSignalYellow20, colorSignalYellow30, colorSignalYellow40, colorSignalYellow50, colorSignalYellow60, colorSignalYellow70, colorSignalYellow80, colorSignalYellow90, colorSignalYellow100, colorSignalYellow110, colorSignalYellow120, colorSignalYellow130, colorSignalYellow140, colorSignalYellow150, colorSignalYellow160, colorSignalYellow170, colorSignalYellow180, colorSignalYellow190, colorSignalYellow200, colorSignalRed10, colorSignalRed20, colorSignalRed30, colorSignalRed40, colorSignalRed50, colorSignalRed60, colorSignalRed70, colorSignalRed80, colorSignalRed90, colorSignalRed100, colorSignalRed110, colorSignalRed120, colorSignalRed130, colorSignalRed140, colorSignalRed150, colorSignalRed160, colorSignalRed170, colorSignalRed180, colorSignalRed190, colorSignalRed200, colorSky20, colorSky60, colorSky180, colorMint20, colorMint60, colorMint180, colorCream20, colorCream60, colorCream180, colorTeal20, colorTeal60, colorTeal180, colorLagoon20, colorLagoon60, colorLagoon180, colorLavender20, colorLavender60, colorLavender180, colorPeach20, colorPeach60, colorPeach180, colorPippin20, colorPippin60, colorPippin180, spacing10, spacing20, spacing30, spacing40, spacing50, spacing60, spacing70, spacing80, spacing90, spacingXsmall, spacingSmall, spacingMedium, spacingLarge, spacingXlarge, size10, size15, size20, size30, size40, size50, size60, size70, size75, size80, size90, size100, size110, size120, size130, size140, size150, size00, size05, sizeControlSm, sizeIcon, sizeIconSm, sizeOption, sizeControlMd, sizeControl, backgroundHover, backgroundInverse, layer01Hover, layer01Selected, layer01SelectedHover, layer02Hover, layer02Selected, layer02SelectedHover, layerAccent01Base, layerAccent01Hover, layerAccent01Selected, layerAccent02Base, layerAccent02Hover, layerAccent02Selected, borderColorSecondary, borderColorTertiary, borderColorDisabled, borderWidth, field01Hover, field01Active, field01Disabled, field02Base, field02Hover, field02Active, field02Disabled, skeleton01, skeleton02, iconPrimary, iconSecondary, iconTertiary, iconInverse, iconDisabled, iconSuccess, iconInfo, iconWarning, iconImportant, iconReadOnly, linkEnabled, linkHover, linkPressed, linkVisited, progressBarTrackBackground, progressBarIndicatorBackground, supportBorderSuccess, supportBorderInfo, supportBorderImportant, supportBorderWarning, supportBackgroundSuccess, supportBackgroundSuccessHover, supportBackgroundInfo, supportBackgroundInfoHover, supportBackgroundImportant, supportBackgroundImportantHover, supportBackgroundWarning, supportBackgroundWarningHover, tagSkyBackground, tagSkyBorderColor, tagBlueBackground, tagBlueBorderColor, tagMintBackground, tagMintBorderColor, tagGreenBackground, tagGreenBorderColor, tagCreamBackground, tagCreamBorderColor, tagYellowBackground, tagYellowBorderColor, tagTealBackground, tagTealBorderColor, tagLagoonBackground, tagLagoonBorderColor, tagLagoonblueBackground, tagLagoonblueBorderColor, tagLavenderBackground, tagLavenderBorderColor, tagPurpleBackground, tagPurpleBorderColor, tagPeachBackground, tagPeachBorderColor, tagOrangeBackground, tagOrangeBorderColor, tagPippinBackground, tagPippinBorderColor, tagRedBackground, tagRedBorderColor, textSecondary, textTertiary, textInverse, textDisabled, textWarning, textPlaceholder, textReadOnly, badgeBackground, calendarDateBackgroundHover, calendarDateBackgroundSelected, calendarDateBackgroundStartRange, calendarDateBackgroundInRange, calendarDateBackgroundEndRange, logoPrimary, menuItemBackgroundHover, menuItemBackgroundSelected, menuTextSectionHeader, navigationLinkBackgroundHover, navigationLinkBackgroundSelected, navigationLinkBackgroundSelectedHover, overlayBackground, overlayBlur, cardBackgroundBase, cardShadow, panelShadow, space10, space30, space50, space60, space70, space75, space90, space130, space150, spaceXsmall, spaceSmall, spaceLarge, spaceXlarge, space05, stateFocusInset, stateFocusContrastModeOutline, stateFocusContrastModeOffset, stateInvalid, transitionDurationSlow, transitionDurationNormal, transitionDurationFast, transitionDurationQuick, transitionDurationInstant, transitionTimingEaseOut, transitionTimingEaseIn, transitionTimingEaseInOut, transitionPanelCollapse, transitionPanelExpand, typographyFontFamily, typographyFontSize10, typographyFontSize20, typographyFontSize30, typographyFontSize40, typographyFontSize50, typographyFontSize60, typographyFontSize70, typographyFontSize80, typographyFontSize90, typographyFontSize100, typographyLineHeight10, typographyLineHeight20, typographyLineHeight30, typographyLineHeight40, typographyLineHeight50, typographyLineHeight60, typographyLineHeight70, typographyLineHeight80, typographyLineHeight90, typographyLineHeight100, typographyWeightThin, typographyWeightExtraLight, typographyWeightLight, typographyWeightRegular, typographyWeightMedium, typographyWeightSemiBold, typographyWeightBold, typographyWeightExtraBold, typographyWeightBlack, typographyBody, typographyBodySmall, typographyDescription, typographyDescriptionSmall, zIndexBase, zIndexAbove, zIndexSidebar, zIndexModal, zIndexToast, zIndexSkipToContent */
+/**
+ * Do not edit directly, this file was auto-generated.
+ */var base10="0.125rem";var base15="0.188rem";var base20="0.25rem";var base30="0.375rem";var base40="0.5rem";var base50="0.625rem";var base60="0.75rem";var base70="0.875rem";var base75="0.938rem";var base80="1rem";var base90="1.25rem";var base100="1.5rem";var base110="1.75rem";var base120="2rem";var base130="2.5rem";var base140="2.75rem";var base150="3rem";var base00="0rem";var base05="0.063rem";var windowSizesSm="480px";// Liten skärmstorlek. 480px.
+var windowSizesMd="768px";// Mellanstor skärmstorlek. 768px.
+var windowSizesLg="1024px";// Stor skärmstorlek. 1024px.
+var windowSizesXl="1280px";// Extra stor skärmstorlek. 1280px.
+var breakpointsXs="(max-width: calc(480px - 1px))";// Extra liten skärm. Upp till 479px (max-width).
+var breakpointsSm="(min-width: 480px)";// Liten skärm och uppåt. Från 480px (min-width).
+var breakpointsMd="(min-width: 768px)";// Mellanstor skärm och uppåt. Från 768px (min-width).
+var breakpointsLg="(min-width: 1024px)";// Stor skärm och uppåt. Från 1024px (min-width).
+var breakpointsXl="(min-width: 1280px)";// Extra stor skärm och uppåt. Från 1280px (min-width).
+var buttonBackgroundPrimaryBase="light-dark(#143c50, #2e7ca5)";// Färg på primärknapp
+var buttonBackgroundPrimaryHover="light-dark(#25607f, #25607f)";// Hover state på primärknapp
+var buttonBackgroundPrimaryActive="light-dark(#2e7ca5, #143c50)";// Active state för primärknapp
+var buttonBackgroundSecondaryBase="transparent";// Färg på sekundärknapp
+var buttonBackgroundSecondaryHover="light-dark(#0000000d, #ffffff21)";// Hover state på sekundärknapp
+var buttonBackgroundSecondaryActive="light-dark(#0000001a, #ffffff26)";// Active state för sekundärknapp
+var buttonBackgroundTertiaryHover="light-dark(#0000000d, #ffffff21)";// Hover state för tertiär knapp
+var buttonBackgroundTertiaryActive="light-dark(#0000001a, #ffffff26)";// Active state för tertiär knapp
+var buttonBackgroundDangerBase="light-dark(#e62323, #e62323)";// Färg på danger knapp
+var buttonBackgroundDangerHover="light-dark(#bc1d1d, #bc1d1d)";// Hover state för danger knapp
+var buttonBackgroundDangerActive="light-dark(#7d1313, #7d1313)";// Active state för danger knapp
+var buttonBackgroundDisabled="light-dark(#0000000d,#ffffff21)";// Disabled state för knappar
+var buttonBorderSecondary="light-dark(#143c50, #f2f2f2)";// Kantfärg för sekundärknapp
+var buttonIconHover="light-dark(#0000000d, #ffffff21)";// Hover state för ikonknappar
+var buttonIconActive="light-dark(#00000033, #ffffff33)";// Active state för ikoner
+var colorBlackBase="#000";// Black
+var colorBlackHover="#0d0d0d";// Black hover
+var colorBlackOpacity5="#0000000d";// Black with 5% opacity
+var colorBlackOpacity10="#0000001a";// Black with 10% opacity
+var colorWhiteBase="#fff";// White
+var colorWhiteHover="#e6e6e6";// White hover
+var colorWhiteOpacity13="#ffffff21";// White with 13% opacity
+var colorWhiteOpacity15="#ffffff26";// White with 15% opacity
+var colorGray10="#f2f2f2";var colorGray20="#e6e6e6";var colorGray30="#d9d9d9";var colorGray40="#ccc";var colorGray50="#bfbfbf";var colorGray60="#b3b3b3";var colorGray70="#a6a6a6";var colorGray80="#999";var colorGray90="#8c8c8c";var colorGray100="#808080";var colorGray110="#737373";var colorGray120="#666";var colorGray130="#5d5d5d";var colorGray140="#525252";var colorGray150="#474747";var colorGray160="#383838";var colorGray170="#333";var colorGray180="#262626";var colorGray190="#212121";var colorGray200="#171717";var colorBlue10="#eaf2f6";var colorBlue20="#d5e5ed";var colorBlue40="#abcbdb";var colorBlue50="#94BCD1";var colorBlue60="#82b0c9";var colorBlue70="#6CA3C0";var colorBlue80="#5897b8";var colorBlue90="#4289ad";var colorBlue100="#2e7ca5";var colorBlue110="#2C7399";var colorBlue120="#29698C";var colorBlue130="#25607f";var colorBlue150="#143c50";var colorPurple80="#b46ab4";var colorPurple110="#954b95";var colorRed100="#b90835";var colorOrange100="oklch(0.66 0.18 45)";var colorSignalBlue10="#eaf2f6";var colorSignalBlue20="#d5e5ed";var colorSignalBlue100="#06c";var colorSignalBlue170="#162b33";var colorSignalBlue180="#112127";var colorSignalGreen20="#d5f2d9";var colorSignalGreen30="#bae5c5";var colorSignalGreen100="#008d3c";var colorSignalGreen150="#194B33";var colorSignalGreen170="#163328";var colorSignalGreen180="#112722";var colorSignalYellow10="#fff8e2";var colorSignalYellow20="#fff1cd";var colorSignalYellow30="#ffeab8";var colorSignalYellow40="#ffe3a3";var colorSignalYellow50="#ffdc8b";var colorSignalYellow60="#ffd47b";var colorSignalYellow70="#fdcd5d";var colorSignalYellow80="#fbc640";var colorSignalYellow90="#fabf1b";var colorSignalYellow100="#fab900";var colorSignalYellow110="#daa105";var colorSignalYellow120="#bd8c1e";var colorSignalYellow130="#a17927";var colorSignalYellow140="#88672a";var colorSignalYellow150="#70562b";var colorSignalYellow160="#5a4629";var colorSignalYellow170="#453826";var colorSignalYellow180="#322a20";var colorSignalYellow190="#201c18";var colorSignalYellow200="#0f0e0e";var colorSignalRed10="#ffefef";var colorSignalRed20="#ffdfdf";var colorSignalRed30="#fcc8c8";var colorSignalRed40="#f9b0b0";var colorSignalRed50="#f69999";var colorSignalRed60="#f38181";var colorSignalRed70="#ef6a6a";var colorSignalRed80="#EC5252";var colorSignalRed90="#e93b3b";var colorSignalRed100="#e62323";var colorSignalRed110="#d12020";var colorSignalRed120="#bc1d1d";var colorSignalRed130="#a71919";var colorSignalRed140="#921616";var colorSignalRed150="#7d1313";var colorSignalRed160="#691010";var colorSignalRed170="#540d0d";var colorSignalRed180="#3f0a0a";var colorSignalRed190="#2a0606";var colorSignalRed200="#150303";var colorSky20="#cde6f3";var colorSky60="#4a95df";var colorSky180="#101037";var colorMint20="#d5f2d9";var colorMint60="#75b47d";var colorMint180="#07270b";var colorCream20="#fff5db";var colorCream60="#ecbe4a";var colorCream180="#2c2719";var colorTeal20="#cdf2f2";var colorTeal60="#43bcbc";var colorTeal180="#0d2c2c";var colorLagoon20="#d2daf9";var colorLagoon60="#7088e0";var colorLagoon180="#0a1332";var colorLavender20="#f6d0f9";var colorLavender60="#b77dbc";var colorLavender180="#391c3b";var colorPeach20="#ffe6d9";var colorPeach60="#e87031";var colorPeach180="#421d0a";var colorPippin20="#ffe0e0";var colorPippin60="#f17575";var colorPippin180="#431919";var spacing10="0.125rem";// @deprecated Use space.10 (--midas-space-10) instead
+var spacing20="0.25rem";// @deprecated Use space.xsmall (--midas-space-xsmall) instead
+var spacing30="0.5rem";// @deprecated Use space.small (--midas-space-small) instead
+var spacing40="0.75rem";// @deprecated Use space.60 (--midas-space-60) instead
+var spacing50="1rem";// @deprecated Use space.medium (--midas-space-medium) instead
+var spacing60="1.5rem";// @deprecated Use space.large (--midas-space-large) instead
+var spacing70="2rem";// @deprecated Use space.xlarge (--midas-space-xlarge) instead
+var spacing80="2.5rem";// @deprecated Use space.130 (--midas-space-130) instead
+var spacing90="3rem";// @deprecated Use space.150 (--midas-space-150) instead
+var spacingXsmall="0.25rem";// @deprecated Use space.xsmall (--midas-space-xsmall) instead
+var spacingSmall="0.5rem";// @deprecated Use space.small (--midas-space-small) instead
+var spacingMedium="1rem";// @deprecated Use space.medium (--midas-space-medium) instead
+var spacingLarge="1.5rem";// @deprecated Use space.large (--midas-space-large) instead
+var spacingXlarge="2rem";// @deprecated Use space.xlarge (--midas-space-xlarge) instead
+var size10="0.125rem";// @deprecated Use base.10 (--midas-base-10) instead
+var size15="0.188rem";// @deprecated Use base.15 (--midas-base-15) instead
+var size20="0.25rem";// @deprecated Use base.20 (--midas-base-20) instead
+var size30="0.375rem";// @deprecated Use base.30 (--midas-base-30) instead
+var size40="0.5rem";// @deprecated Use base.40 (--midas-base-40) instead
+var size50="0.625rem";// @deprecated Use base.50 (--midas-base-50) instead
+var size60="0.75rem";// @deprecated Use base.60 (--midas-base-60) instead
+var size70="0.875rem";// @deprecated Use base.70 (--midas-base-70) instead
+var size75="0.938rem";// @deprecated Use base.75 (--midas-base-75) instead
+var size80="1rem";// @deprecated Use base.80 (--midas-base-80) instead
+var size90="1.25rem";// @deprecated Use base.90 (--midas-base-90) instead
+var size100="1.5rem";// @deprecated Use base.100 (--midas-base-100) instead
+var size110="1.75rem";// @deprecated Use base.110 (--midas-base-110) instead
+var size120="2rem";// @deprecated Use base.120 (--midas-base-120) instead
+var size130="2.5rem";// @deprecated Use base.130 (--midas-base-130) instead
+var size140="2.75rem";// @deprecated Use base.140 (--midas-base-140) instead
+var size150="3rem";// @deprecated Use base.150 (--midas-base-150) instead
+var size00="0rem";// @deprecated Use base.00 (--midas-base-00) instead
+var size05="0.063rem";// @deprecated Use base.05 (--midas-base-05) instead
+var sizeControlSm="2.5rem";// @deprecated Use size.control-md (--midas-size-control-md) instead
+var sizeIcon="1.25rem";// Standardstorlek för ikoner. 1.25rem / 20px.
+var sizeIconSm="1rem";// Liten ikonstorlek för kompakta kontexter. 1rem / 16px.
+var sizeOption="2rem";// Höjd för alternativ i dropdown-listor, t.ex. Select och Combobox. 2rem / 32px.
+var sizeControlMd="2.5rem";// Medelstor interaktiv kontrollhöjd. 2.5rem / 40px.
+var sizeControl="3rem";// Standardhöjd för interaktiva kontroller, t.ex. TextField och Button. 3rem / 48px.
+var backgroundBase="light-dark(#fff, #171717)";// Standardbakgrund för våra applikationer
+var backgroundHover="light-dark(#e6e6e6, #212121)";// Hoverfärg för bakgrund
+var backgroundInverse="light-dark(#171717, #f2f2f2)";// Bakgrund med inverterade färger
+var layer01Base="light-dark(#f2f2f2, #262626)";// Färg för lager som läggs på Background.
+var layer01Hover="light-dark(#e6e6e6, #333)";// Hover state för layer01
+var layer01Selected="light-dark(#d9d9d9, #383838)";// Selected state för layer01
+var layer01SelectedHover="light-dark(#ccc, #474747)";// Hover state för layerSelected01
+var layer02Base="light-dark(#fff, #383838)";// Färg för lager som läggs på layer 01
+var layer02Hover="light-dark(#e6e6e6, #474747)";// Hover state för layer02
+var layer02Selected="light-dark(#d9d9d9, #525252)";// Selected state för layer02
+var layer02SelectedHover="light-dark(#ccc, #5d5d5d)";// Hover state för layerSelected02
+var layerAccent01Base="light-dark(#d9d9d9, #383838)";// Accentfärg som används tillsammans med layer 01
+var layerAccent01Hover="light-dark(#ccc, #474747)";// Hover state för layerAccent01
+var layerAccent01Selected="light-dark(#bfbfbf, #525252)";// Selected state för layerAccent01
+var layerAccent02Base="light-dark(#d9d9d9, #383838)";// Accentfärg som används tillsammans med layer 02
+var layerAccent02Hover="light-dark(#ccc, #474747)";// Hover state för layerAccent02
+var layerAccent02Selected="light-dark(#bfbfbf, #525252)";// Selected state för layerAccent02
+var brandPrimary="light-dark(#b90835, #b90835)";// Migrationsverkets primära röda färg
+var borderColorPrimary="light-dark(#171717, #f2f2f2)";// Kantlinje med hög kontrast
+var borderColorSecondary="light-dark(#737373, #8c8c8c)";// Kantlinje med medelhög kontrast
+var borderColorSubtle="light-dark(#bfbfbf, #525252)";// Kantlinje med låg kontrast
+var borderColorTertiary="light-dark(#143c50, #2e7ca5)";// Primärblå kantlinje
+var borderColorDisabled="light-dark(#bfbfbf, #525252)";// Kantlinje för disabled state
+var borderWidth="1px";var field01Base="light-dark(#f2f2f2, #262626)";// färg för fält som ligger på Background
+var field01Hover="light-dark(#e6e6e6, #333)";// Hover state för field01
+var field01Active="light-dark(#d9d9d9, #383838)";// Active state för field01
+var field01Disabled="light-dark(#f2f2f2, #262626)";// Disabled state för fält som ligger på Background
+var field02Base="light-dark(#fff, #383838)";// Färg för fält som ligger på layer 01
+var field02Hover="light-dark(#e6e6e6, #474747)";// Hover state för field02
+var field02Active="light-dark(#d9d9d9, #525252)";// Active state för field02
+var field02Disabled="light-dark(#fff, #383838)";// Disabled state för fält som ligger på layer 01
+var skeleton01="light-dark(#f2f2f2, #262626)";// Färg som används när Skeleton ligger på Background
+var skeleton02="light-dark(#d9d9d9, #383838)";// Färg som används när Skeleton ligger på Layer 01
+var iconPrimary="light-dark(#171717, #f2f2f2)";// Primär ikonfärg
+var iconSecondary="light-dark(#525252, #a6a6a6)";// Sekundär ikonfärg
+var iconTertiary="light-dark(#143c50, #f2f2f2)";// Tertiär ikonfärg, används för ikoner i tertiary-knappar
+var iconInverse="light-dark(#fff, #171717)";// Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge
+var iconOnColor="light-dark(#fff, #fff)";// Ikonfärg på färgade ytor som inte är lager
+var iconDisabled="light-dark(#bfbfbf, #525252)";// Färg för ikoner som är disabled
+var iconSuccess="light-dark(#008d3c, #008d3c)";// Ikonfärg för success state
+var iconInfo="light-dark(#06c, #06c)";// Ikonfärg för informationsikoner
+var iconWarning="light-dark(#e62323, #e62323)";// Ikonfärg för varningsikoner och invalid state
+var iconImportant="oklch(0.66 0.18 45)";// Ikonfärg för viktig information
+var iconReadOnly="light-dark(#bfbfbf, #383838)";// Färg för ikoner som är read-only
+var linkEnabled="light-dark(#29698C, #6CA3C0)";// Primär länkfärg
+var linkHover="light-dark(#143c50, #94BCD1)";// Hover state för länkar
+var linkPressed="light-dark(#171717, #abcbdb)";// Active/pressed state för länkar
+var linkVisited="light-dark(#954b95, #b46ab4)";// Färg för besökta länkar
+var progressBarTrackBackground="light-dark(#d9d9d9, #383838)";// Bakgrundsfärg för progress bar track
+var progressBarIndicatorBackground="#008d3c";// Bakgrundsfärg för progress bar indicator
+var supportBorderSuccess="light-dark(#008d3c, #008d3c)";// Kantlinje för success-notifikationer
+var supportBorderInfo="light-dark(#06c, #06c)";// Kantlinje för notifikationer med information
+var supportBorderImportant="oklch(0.66 0.18 45)";// Kantlinje för notifikationer med viktig information
+var supportBorderWarning="light-dark(#e62323, #e62323)";// Kantlinje för notifikationer med varningar
+var supportBackgroundSuccess="light-dark(#d5f2d9, #112722)";// Bakgrund för success-notifikationer
+var supportBackgroundSuccessHover="light-dark(#bae5c5, #163328)";// Hoverbakgrund för success-notifikationer
+var supportBackgroundInfo="light-dark(#eaf2f6, #112127)";// Bakgrund för notifikationer med information
+var supportBackgroundInfoHover="light-dark(#d5e5ed, #162b33)";// Hoverbakgrund för notifikationer med information
+var supportBackgroundImportant="light-dark(#fff8e2, #322a20)";// Bakgrund för notifikationer med viktig information
+var supportBackgroundImportantHover="light-dark(#fff1cd, #453826)";// Hoverbakgrund för notifikationer med viktig information
+var supportBackgroundWarning="light-dark(#ffdfdf, #3f0a0a)";// Bakgrund för notifikationer med varningar
+var supportBackgroundWarningHover="light-dark(#fcc8c8, #540d0d)";// Hoverbakgrund för notifikationer med varningar
+var tagSkyBackground="light-dark(#cde6f3, #101037)";// Tag bakgrund blå
+var tagSkyBorderColor="#4a95df";// Tag kantlinje blå
+var tagBlueBackground="light-dark(#cde6f3, #101037)";// @deprecated Använd tag.sky istället.
+var tagBlueBorderColor="#4a95df";// @deprecated Använd tag.sky istället.
+var tagMintBackground="light-dark(#d5f2d9, #07270b)";// Tag bakgrund grön
+var tagMintBorderColor="#75b47d";// Tag kantlinje grön
+var tagGreenBackground="light-dark(#d5f2d9, #07270b)";// @deprecated Använd tag.mint istället.
+var tagGreenBorderColor="#75b47d";// @deprecated Använd tag.mint istället.
+var tagCreamBackground="light-dark(#fff5db, #2c2719)";// Tag bakgrund gul
+var tagCreamBorderColor="#ecbe4a";// Tag kantlinje gul
+var tagYellowBackground="light-dark(#fff5db, #2c2719)";// @deprecated Använd tag.cream istället.
+var tagYellowBorderColor="#ecbe4a";// @deprecated Använd tag.cream istället.
+var tagTealBackground="light-dark(#cdf2f2, #0d2c2c)";// Tag bakgrund blågrön
+var tagTealBorderColor="#43bcbc";// Tag kantlinje blågrön
+var tagLagoonBackground="light-dark(#d2daf9, #0a1332)";// Tag bakgrund lagunblå
+var tagLagoonBorderColor="#7088e0";// Tag kantlinje lagunblå
+var tagLagoonblueBackground="light-dark(#d2daf9, #0a1332)";// @deprecated Använd tag.lagoon istället.
+var tagLagoonblueBorderColor="#7088e0";// @deprecated Använd tag.lagoon istället.
+var tagLavenderBackground="light-dark(#f6d0f9, #391c3b)";// Tag bakgrund lila
+var tagLavenderBorderColor="#b77dbc";// Tag kantlinje lila
+var tagPurpleBackground="light-dark(#f6d0f9, #391c3b)";// @deprecated Använd tag.lavender istället.
+var tagPurpleBorderColor="#b77dbc";// @deprecated Använd tag.lavender istället.
+var tagPeachBackground="light-dark(#ffe6d9, #421d0a)";// Tag bakgrund orange
+var tagPeachBorderColor="#e87031";// Tag kantlinje orange
+var tagOrangeBackground="light-dark(#ffe6d9, #421d0a)";// @deprecated Använd tag.peach istället.
+var tagOrangeBorderColor="#e87031";// @deprecated Använd tag.peach istället.
+var tagPippinBackground="light-dark(#ffe0e0, #431919)";// Tag bakgrund röd
+var tagPippinBorderColor="#f17575";// Tag kantlinje röd
+var tagRedBackground="light-dark(#ffe0e0, #431919)";// @deprecated Använd tag.pippin istället.
+var tagRedBorderColor="#f17575";// @deprecated Använd tag.pippin istället.
+var textPrimary="light-dark(#171717, #f2f2f2)";// Primär textfärg.
+var textSecondary="light-dark(#525252, #a6a6a6)";// Sekundär textfärg
+var textTertiary="light-dark(#143c50, #f2f2f2)";// Textfärg på tertiär knapp
+var textOnColor="light-dark(#fff, #fff)";// Textfärg på färgade bakgrunder som inte är lager
+var textInverse="light-dark(#f2f2f2, #171717)";// Inverterad textfärg
+var textDisabled="light-dark(#bfbfbf, #525252)";// Färg för disabled text
+var textWarning="light-dark(#e62323, #EC5252)";// Färg för felmeddelanden
+var textPlaceholder="light-dark(#a6a6a6, #525252)";// Färg för platshållare
+var textReadOnly="light-dark(#737373, #999)";// Färg för read-only state
+var badgeBackground="light-dark(#e62323, #e62323)";// Bakgrundsfärg för badge
+var calendarDateBackgroundHover="light-dark(#0000001a, #ffffff1a)";// Hover-bakgrund för datumcell
+var calendarDateBackgroundSelected="light-dark(#143c50, #5897b8)";// Bakgrund för ett valt datum
+var calendarDateBackgroundStartRange="light-dark(#143c50, #5897b8)";// Bakgrund för det första datumet i ett intervallval
+var calendarDateBackgroundInRange="light-dark(#d5e5ed, #143c50)";// Bakgrund för datum som ligger inom ett valt intervall
+var calendarDateBackgroundEndRange="light-dark(#143c50, #5897b8)";// Bakgrund för det sista datumet i ett intervallval
+var logoPrimary="light-dark(#b90835, #fff)";// Färg på logotypen
+var menuItemBackgroundHover="light-dark(#e6e6e6, #212121)";// Bakgrundsfärg för menu vid hover
+var menuItemBackgroundSelected="light-dark(#f2f2f2, #262626)";// Bakgrundsfärg för aktiv menu
+var menuTextSectionHeader="light-dark(#525252, #a6a6a6)";// Textfärg för sektionsrubriker i navigationsmenyn
+var navigationLinkBackgroundHover="light-dark(#e6e6e6, #212121)";// Bakgrundsfärg vid hover
+var navigationLinkBackgroundSelected="light-dark(#f2f2f2, #262626)";// Bakgrundsfärg för aktiv länk
+var navigationLinkBackgroundSelectedHover="light-dark(#e6e6e6, #212121)";// Bakgrundsfärg vid hover på aktiv länk
+var overlayBackground="rgba(0 0 0 / 30%)";// Bakrundsfärg för overlays
+var overlayBlur="blur(2px)";// Blur för overlays
+var cardBackgroundBase="light-dark(#fff, #262626)";// Bakrundsfärg för Card
+var cardShadow="0 3px 5px 0 rgba(0, 0, 0, 0.30)";// Skugga för Card
+var panelShadow="-2px 0px 12px -2px rgba(0, 0, 0, 0.10)";// Skugga för Panel
+var space10="0.125rem";// 0.125rem / 2px.
+var space30="0.375rem";// 0.375rem / 6px.
+var space50="0.625rem";// 0.625rem / 10px.
+var space60="0.75rem";// 0.75rem / 12px.
+var space70="0.875rem";// 0.875rem / 14px.
+var space75="0.938rem";// 0.938rem / 15px.
+var space90="1.25rem";// 1.25rem / 20px.
+var space130="2.5rem";// 2.5rem / 40px.
+var space150="3rem";// 3rem / 48px.
+var spaceXsmall="0.25rem";// Extra litet avstånd. 0.25rem / 4px.
+var spaceSmall="0.5rem";// Litet avstånd. 0.5rem / 8px.
+var spaceMedium="1rem";// Medelstort avstånd. 1rem / 16px.
+var spaceLarge="1.5rem";// Stort avstånd. 1.5rem / 24px.
+var spaceXlarge="2rem";// Extra stort avstånd. 2rem / 32px.
+var space05="0.063rem";// 0.063rem / 1px.
+var stateFocus="0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)";// Focus style used when the component is focused (box-shadow).
+var stateFocusInset="inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)";// Inset variant of the focus ring (box-shadow inset).
+var stateFocusContrastModeOutline="2px";// Outline style for focus ring when Windows High Contrast (forced-colors) mode is active.
+var stateFocusContrastModeOffset="2px";// Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.
+var stateInvalid="inset 0 0 0 2px light-dark(#e62323, #e62323)";// Invalid state style for form fields (box-shadow).
+var transitionDurationSlow="400ms";// Långsam övergång. 400ms. Används för större layoutförändringar som sidopaneler och expanderbara sektioner.
+var transitionDurationNormal="300ms";// Normal övergångshastighet. 300ms. Standardval för de flesta animationer.
+var transitionDurationFast="250ms";// Snabb övergång. 250ms. Används för kortlivade övergångar som tooltips och dropdowns — inte hover.
+var transitionDurationQuick="150ms";// Kort mikroanimation. 150ms. Används för snabba overlay-rörelser som modaler och select-öppningar som är perceptibelt animerade men ändå snabba.
+var transitionDurationInstant="100ms";// Omedelbar återkoppling. 100ms. Används för direkta tillståndsförändringar som hover-bakgrunder och färgövergångar — allt längre upplevs som tröghet.
+var transitionTimingEaseOut=(/* unused pure expression or super */ null && ([0,0,0.58,1]));// Decelererar mot slutet. Används för element som glider in i vyn.
+var transitionTimingEaseIn=(/* unused pure expression or super */ null && ([0.42,0,1,1]));// Accelererar mot slutet. Används för element som lämnar vyn.
+var transitionTimingEaseInOut=(/* unused pure expression or super */ null && ([0.42,0,0.58,1]));// Accelererar sedan decelererar symmetriskt. Används för element som rör sig mellan två positioner på skärmen.
+var transitionPanelCollapse=(/* unused pure expression or super */ null && ({delay:"0ms",duration:"300ms",timingFunction:[0,0,0.58,1]}));// Komprimerar en panel med easeOut-timing. Används i Accordion och expanderbara ytor.
+var transitionPanelExpand=(/* unused pure expression or super */ null && ({delay:"0ms",duration:"300ms",timingFunction:[0.42,0,1,1]}));// Expanderar en panel med easeIn-timing. Används i Accordion och expanderbara ytor.
+var typographyFontFamily="Inter, sans-serif";// Primär typsnittsfamilj för hela design systemet.
+var typographyFontSize10="0.75rem";// 0.75rem / 12px.
+var typographyFontSize20="0.875rem";// 0.875rem / 14px.
+var typographyFontSize30="1rem";// 1rem / 16px.
+var typographyFontSize40="1.125rem";// 1.125rem / 18px.
+var typographyFontSize50="1.25rem";// 1.25rem / 20px.
+var typographyFontSize60="1.5rem";// 1.5rem / 24px.
+var typographyFontSize70="1.625rem";// 1.625rem / 26px.
+var typographyFontSize80="2rem";// 2rem / 32px.
+var typographyFontSize90="2.25rem";// 2.25rem / 36px.
+var typographyFontSize100="2.625rem";// 2.625rem / 42px.
+var typographyLineHeight10="1rem";// 1rem / 16px.
+var typographyLineHeight20="1.125rem";// 1.125rem / 18px.
+var typographyLineHeight30="1.25rem";// 1.25rem / 20px.
+var typographyLineHeight40="1.375rem";// 1.375rem / 22px.
+var typographyLineHeight50="1.5rem";// 1.5rem / 24px.
+var typographyLineHeight60="1.75rem";// 1.75rem / 28px.
+var typographyLineHeight70="2rem";// 2rem / 32px.
+var typographyLineHeight80="2.25rem";// 2.25rem / 36px.
+var typographyLineHeight90="2.5rem";// 2.5rem / 40px.
+var typographyLineHeight100="3rem";// 3rem / 48px.
+var typographyWeightThin=100;// 100 – Tunnast möjliga vikt.
+var typographyWeightExtraLight=200;// 200 – Extra tunn.
+var typographyWeightLight=300;// 300 – Tunn.
+var typographyWeightRegular=400;// 400 – Standardvikt för brödtext.
+var typographyWeightMedium=500;// 500 – Mellantung, för betoning utan fet stil.
+var typographyWeightSemiBold=600;// 600 – Halvfet, för underrubriker och etiketter.
+var typographyWeightBold=700;// 700 – Fet, för rubriker och framhävning.
+var typographyWeightExtraBold=800;// 800 – Extra fet.
+var typographyWeightBlack=900;// 900 – Tyngsta möjliga vikt.
+var typographyBody=(/* unused pure expression or super */ null && ({fontFamily:"Inter, sans-serif",fontSize:"1rem",fontWeight:400,lineHeight:"1.25rem"}));// Standardtypografi för brödtext. Används i löptext, listor och stycken.
+var typographyBodySmall=(/* unused pure expression or super */ null && ({fontFamily:"Inter, sans-serif",fontSize:"0.875rem",fontWeight:400,lineHeight:"1.125rem"}));// Liten brödtextstil. Används för kompakt text i t.ex. tabeller och listor.
+var typographyDescription=(/* unused pure expression or super */ null && ({fontFamily:"Inter, sans-serif",fontSize:"0.875rem",fontWeight:400,lineHeight:"1.125rem"}));// Beskrivningstext, t.ex. för hjälptexter och ledtexter i formulär.
+var typographyDescriptionSmall=(/* unused pure expression or super */ null && ({fontFamily:"Inter, sans-serif",fontSize:"0.75rem",fontWeight:400,lineHeight:"1rem"}));// Liten beskrivningstext, t.ex. för felmeddelanden och teckenräknare i formulär.
+var zIndexBase=1;// Basnivå för normala element. z-index: 1.
+var zIndexAbove=10;// Placerar element ovanför normala element, t.ex. tooltips i flödet. z-index: 10.
+var zIndexSidebar=500;// Z-index för sidopaneler och navigationsdrawers. z-index: 500.
+var zIndexModal=1000;// Z-index för modaler och dialoger. z-index: 1000.
+var zIndexToast=1100;// Z-index för toast-notifikationer, ovanför modaler. z-index: 1100.
+var zIndexSkipToContent=1200;// Z-index för 'hoppa till innehåll'-länken för tillgänglighet, alltid överst. z-index: 1200.
+
+/***/ },
+
+/***/ 32708
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* unused harmony export __iconNode */
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59582);
+/**
+ * @license lucide-react v0.563.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M10 11v6", key: "nco0om" }],
+  ["path", { d: "M14 11v6", key: "outv1u" }],
+  ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
+];
+const Trash2 = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("trash-2", __iconNode);
+
+
+//# sourceMappingURL=trash-2.js.map
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* binding */ Trash2
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 48697
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* unused harmony export __iconNode */
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59582);
+/**
+ * @license lucide-react v0.563.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const __iconNode = [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+];
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("x", __iconNode);
+
+
+//# sourceMappingURL=x.js.map
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, /* binding */ X
+/* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 16025
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"indicator":"indicator_51pB","checkboxButton":"checkboxButton_URXt","does-not-exist":"does-not-exist_qXZz","checkboxField":"checkboxField_Jg75","checkboxGroup":"checkboxGroup_iAq9","checkboxList":"checkboxList_R4Jt"});
+/* harmony export */ __webpack_require__.d(__webpack_exports__, [
+/* harmony export */   "A", 0, __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ ]);
+
+
+/***/ },
+
 /***/ 38739
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -1073,6 +1535,390 @@ var TextFieldBase=/*#__PURE__*/(0,react.forwardRef)(function(props,ref){var _cls
 /* harmony export */ __webpack_require__.d(__webpack_exports__, [
 /* harmony export */   "A", 0, __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ ]);
+
+
+/***/ },
+
+/***/ 82345
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  aF: () => (/* binding */ $8b8d26808cb8cb53$export$2b77a92f1a5ad772),
+  mH: () => (/* binding */ $8b8d26808cb8cb53$export$8948f78d83984c69)
+});
+
+// UNUSED EXPORTS: ModalContext
+
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/private/utils.mjs
+var utils = __webpack_require__(95841);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/private/Dialog.mjs + 1 modules
+var Dialog = __webpack_require__(99592);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/overlays/ariaHideOutside.mjs
+var ariaHideOutside = __webpack_require__(61251);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/overlays/useOverlay.mjs + 1 modules
+var useOverlay = __webpack_require__(71314);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/mergeProps.mjs
+var mergeProps = __webpack_require__(47425);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/overlays/Overlay.mjs
+var Overlay = __webpack_require__(33463);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/overlays/usePreventScroll.mjs
+var usePreventScroll = __webpack_require__(47347);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./node_modules/react-aria/dist/private/overlays/useModalOverlay.mjs
+
+
+
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+
+
+function $5698867baeb53f4e$export$dbc0f175b25fb0fb(props, state, ref) {
+    let { overlayProps: overlayProps, underlayProps: underlayProps } = (0, useOverlay/* useOverlay */.e)({
+        ...props,
+        isOpen: state.isOpen,
+        onClose: state.close
+    }, ref);
+    (0, usePreventScroll/* usePreventScroll */.H)({
+        isDisabled: !state.isOpen
+    });
+    (0, Overlay/* useOverlayFocusContain */.Se)();
+    (0, react.useEffect)(()=>{
+        if (state.isOpen && ref.current) return (0, ariaHideOutside/* ariaHideOutside */.h)([
+            ref.current
+        ], {
+            shouldUseInert: true
+        });
+    }, [
+        state.isOpen,
+        ref
+    ]);
+    return {
+        modalProps: (0, mergeProps/* mergeProps */.v)(overlayProps),
+        underlayProps: underlayProps
+    };
+}
+
+
+
+//# sourceMappingURL=useModalOverlay.mjs.map
+
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/overlays/DismissButton.mjs + 35 modules
+var DismissButton = __webpack_require__(85328);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/filterDOMProps.mjs
+var filterDOMProps = __webpack_require__(46683);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/isScrollable.mjs
+var isScrollable = __webpack_require__(38848);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/mergeRefs.mjs
+var mergeRefs = __webpack_require__(24211);
+// EXTERNAL MODULE: ./node_modules/react-stately/dist/private/overlays/useOverlayTriggerState.mjs
+var useOverlayTriggerState = __webpack_require__(42946);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/animation.mjs
+var animation = __webpack_require__(26855);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/ssr/SSRProvider.mjs
+var SSRProvider = __webpack_require__(51601);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/useObjectRef.mjs
+var useObjectRef = __webpack_require__(80716);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/shadowdom/DOMFunctions.mjs
+var DOMFunctions = __webpack_require__(62975);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/platform.mjs
+var platform = __webpack_require__(87082);
+// EXTERNAL MODULE: ./node_modules/react-aria/dist/private/utils/keyboard.mjs
+var keyboard = __webpack_require__(40208);
+;// ./node_modules/react-aria/dist/private/utils/useViewportSize.mjs
+
+
+
+
+
+
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+
+let $6066a2c586ade9e1$var$visualViewport = typeof document !== 'undefined' && window.visualViewport;
+function $6066a2c586ade9e1$export$d699905dd57c73ca() {
+    let isSSR = (0, SSRProvider/* useIsSSR */.wR)();
+    let [size, setSize] = (0, react.useState)(()=>isSSR ? {
+            width: 0,
+            height: 0
+        } : $6066a2c586ade9e1$var$getViewportSize());
+    (0, react.useEffect)(()=>{
+        let updateSize = (newSize)=>{
+            setSize((size)=>{
+                if (newSize.width === size.width && newSize.height === size.height) return size;
+                return newSize;
+            });
+        };
+        // Use visualViewport api to track available height even on iOS virtual keyboard opening
+        let onResize = ()=>{
+            // Ignore updates when zoomed.
+            if ($6066a2c586ade9e1$var$visualViewport && $6066a2c586ade9e1$var$visualViewport.scale > 1) return;
+            updateSize($6066a2c586ade9e1$var$getViewportSize());
+        };
+        // When closing the keyboard, WebKit on iOS does not fire the visual viewport resize event until the animation is complete.
+        // We can anticipate this and resize early by handling the blur event and using the layout size.
+        let frame;
+        let onBlur = (e)=>{
+            if ($6066a2c586ade9e1$var$visualViewport && $6066a2c586ade9e1$var$visualViewport.scale > 1) return;
+            if ((0, keyboard/* willOpenKeyboard */.o)((0, DOMFunctions/* getEventTarget */.wt)(e))) // Wait one frame to see if a new element gets focused.
+            frame = requestAnimationFrame(()=>{
+                let activeElement = (0, DOMFunctions/* getActiveElement */.bq)();
+                if (!activeElement || !(0, keyboard/* willOpenKeyboard */.o)(activeElement)) updateSize({
+                    width: document.documentElement.clientWidth,
+                    height: document.documentElement.clientHeight
+                });
+            });
+        };
+        updateSize($6066a2c586ade9e1$var$getViewportSize());
+        if ((0, platform/* isIOS */.un)() && (0, platform/* isWebKit */.Tc)()) window.addEventListener('blur', onBlur, true);
+        if (!$6066a2c586ade9e1$var$visualViewport) window.addEventListener('resize', onResize);
+        else $6066a2c586ade9e1$var$visualViewport.addEventListener('resize', onResize);
+        return ()=>{
+            cancelAnimationFrame(frame);
+            if ((0, platform/* isIOS */.un)() && (0, platform/* isWebKit */.Tc)()) window.removeEventListener('blur', onBlur, true);
+            if (!$6066a2c586ade9e1$var$visualViewport) window.removeEventListener('resize', onResize);
+            else $6066a2c586ade9e1$var$visualViewport.removeEventListener('resize', onResize);
+        };
+    }, []);
+    return size;
+}
+/**
+ * Get the viewport size without the scrollbar.
+ */ function $6066a2c586ade9e1$var$getViewportSize() {
+    return {
+        // Multiply by the visualViewport scale to get the "natural" size, unaffected by pinch zooming.
+        width: $6066a2c586ade9e1$var$visualViewport ? // the visual viewport and the document element to ensure that the scrollbar width is always excluded.
+        // See: https://github.com/w3c/csswg-drafts/issues/8099
+        Math.min($6066a2c586ade9e1$var$visualViewport.width * $6066a2c586ade9e1$var$visualViewport.scale, document.documentElement.clientWidth) : document.documentElement.clientWidth,
+        height: $6066a2c586ade9e1$var$visualViewport ? $6066a2c586ade9e1$var$visualViewport.height * $6066a2c586ade9e1$var$visualViewport.scale : document.documentElement.clientHeight
+    };
+}
+
+
+
+//# sourceMappingURL=useViewportSize.mjs.map
+
+;// ./node_modules/react-aria-components/dist/private/Modal.mjs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+const $8b8d26808cb8cb53$export$ab57792b9b6974a6 = /*#__PURE__*/ (0, react.createContext)(null);
+const $8b8d26808cb8cb53$var$InternalModalContext = /*#__PURE__*/ (0, react.createContext)(null);
+const $8b8d26808cb8cb53$export$2b77a92f1a5ad772 = /*#__PURE__*/ (0, react.forwardRef)(function Modal(props, ref) {
+    let ctx = (0, react.useContext)($8b8d26808cb8cb53$var$InternalModalContext);
+    if (ctx) {
+        if (false) // removed by dead control flow
+{}
+        return /*#__PURE__*/ (0, react).createElement($8b8d26808cb8cb53$var$ModalContent, {
+            ...props,
+            modalRef: ref
+        }, props.children);
+    }
+    let { isDismissable: isDismissable, isKeyboardDismissDisabled: isKeyboardDismissDisabled, isOpen: isOpen, defaultOpen: defaultOpen, onOpenChange: onOpenChange, children: children, isEntering: isEntering, isExiting: isExiting, UNSTABLE_portalContainer: UNSTABLE_portalContainer, shouldCloseOnInteractOutside: shouldCloseOnInteractOutside, ...otherProps } = props;
+    return /*#__PURE__*/ (0, react).createElement($8b8d26808cb8cb53$export$8948f78d83984c69, {
+        isDismissable: isDismissable,
+        isKeyboardDismissDisabled: isKeyboardDismissDisabled,
+        isOpen: isOpen,
+        defaultOpen: defaultOpen,
+        onOpenChange: onOpenChange,
+        isEntering: isEntering,
+        isExiting: isExiting,
+        UNSTABLE_portalContainer: UNSTABLE_portalContainer,
+        shouldCloseOnInteractOutside: shouldCloseOnInteractOutside
+    }, /*#__PURE__*/ (0, react).createElement($8b8d26808cb8cb53$var$ModalContent, {
+        ...otherProps,
+        modalRef: ref
+    }, children));
+});
+function $8b8d26808cb8cb53$var$ModalOverlayWithForwardRef(props, ref) {
+    [props, ref] = (0, utils/* useContextProps */.JT)(props, ref, $8b8d26808cb8cb53$export$ab57792b9b6974a6);
+    let contextState = (0, react.useContext)((0, Dialog/* OverlayTriggerStateContext */.RG));
+    let localState = (0, useOverlayTriggerState/* useOverlayTriggerState */.T)(props);
+    let state = props.isOpen != null || props.defaultOpen != null || !contextState ? localState : contextState;
+    if (state === contextState) {
+        if (false) // removed by dead control flow
+{}
+    }
+    let objectRef = (0, useObjectRef/* useObjectRef */.U)(ref);
+    let modalRef = (0, react.useRef)(null);
+    let isOverlayExiting = (0, animation/* useExitAnimation */.O)(objectRef, state.isOpen);
+    let isModalExiting = (0, animation/* useExitAnimation */.O)(modalRef, state.isOpen);
+    let isExiting = isOverlayExiting || isModalExiting || props.isExiting || false;
+    let isSSR = (0, SSRProvider/* useIsSSR */.wR)();
+    if (!state.isOpen && !isExiting || isSSR) return null;
+    return /*#__PURE__*/ (0, react).createElement($8b8d26808cb8cb53$var$ModalOverlayInner, {
+        ...props,
+        state: state,
+        isExiting: isExiting,
+        overlayRef: objectRef,
+        modalRef: modalRef
+    });
+}
+const $8b8d26808cb8cb53$export$8948f78d83984c69 = /*#__PURE__*/ (0, react.forwardRef)($8b8d26808cb8cb53$var$ModalOverlayWithForwardRef);
+function $8b8d26808cb8cb53$var$ModalOverlayInner({ UNSTABLE_portalContainer: UNSTABLE_portalContainer, ...props }) {
+    let modalRef = props.modalRef;
+    let { state: state } = props;
+    let { modalProps: modalProps, underlayProps: underlayProps } = (0, $5698867baeb53f4e$export$dbc0f175b25fb0fb)(props, state, modalRef);
+    let entering = (0, animation/* useEnterAnimation */._)(props.overlayRef) || props.isEntering || false;
+    let renderProps = (0, utils/* useRenderProps */.Sl)({
+        ...props,
+        defaultClassName: 'react-aria-ModalOverlay',
+        values: {
+            isEntering: entering,
+            isExiting: props.isExiting,
+            state: state
+        }
+    });
+    let viewport = (0, $6066a2c586ade9e1$export$d699905dd57c73ca)();
+    let pageWidth = undefined;
+    let pageHeight = undefined;
+    if (typeof document !== 'undefined') {
+        let scrollingElement = (0, isScrollable/* isScrollable */.o)(document.body) ? document.body : document.scrollingElement || document.documentElement;
+        // Prevent Firefox from adding scrollbars when the page has a fractional width/height.
+        let fractionalWidthDifference = scrollingElement.getBoundingClientRect().width % 1;
+        let fractionalHeightDifference = scrollingElement.getBoundingClientRect().height % 1;
+        pageWidth = scrollingElement.scrollWidth - fractionalWidthDifference;
+        pageHeight = scrollingElement.scrollHeight - fractionalHeightDifference;
+    }
+    let style = {
+        ...renderProps.style,
+        '--visual-viewport-width': viewport.width + 'px',
+        '--visual-viewport-height': viewport.height + 'px',
+        '--page-width': pageWidth !== undefined ? pageWidth + 'px' : undefined,
+        '--page-height': pageHeight !== undefined ? pageHeight + 'px' : undefined
+    };
+    // oxlint-disable react/react-compiler
+    return /*#__PURE__*/ (0, react).createElement((0, Overlay/* Overlay */.hJ), {
+        isExiting: props.isExiting,
+        portalContainer: UNSTABLE_portalContainer
+    }, /*#__PURE__*/ (0, react).createElement((0, utils/* dom */.tT).div, {
+        ...(0, mergeProps/* mergeProps */.v)((0, filterDOMProps/* filterDOMProps */.$)(props, {
+            global: true
+        }), underlayProps),
+        ...renderProps,
+        style: style,
+        ref: props.overlayRef,
+        "data-entering": entering || undefined,
+        "data-exiting": props.isExiting || undefined
+    }, /*#__PURE__*/ (0, react).createElement((0, utils/* Provider */.Kq), {
+        values: [
+            [
+                $8b8d26808cb8cb53$var$InternalModalContext,
+                {
+                    modalProps: modalProps,
+                    modalRef: modalRef,
+                    isExiting: props.isExiting,
+                    isDismissable: props.isDismissable
+                }
+            ],
+            [
+                (0, Dialog/* OverlayTriggerStateContext */.RG),
+                state
+            ]
+        ]
+    }, renderProps.children)));
+// oxlint-enable react/react-compiler
+}
+function $8b8d26808cb8cb53$var$ModalContent(props) {
+    let { modalProps: modalProps, modalRef: modalRef, isExiting: isExiting, isDismissable: isDismissable } = (0, react.useContext)($8b8d26808cb8cb53$var$InternalModalContext);
+    let state = (0, react.useContext)((0, Dialog/* OverlayTriggerStateContext */.RG));
+    let mergedRefs = (0, react.useMemo)(()=>(0, mergeRefs/* mergeRefs */.P)(props.modalRef, modalRef), [
+        props.modalRef,
+        modalRef
+    ]);
+    let ref = (0, useObjectRef/* useObjectRef */.U)(mergedRefs);
+    let entering = (0, animation/* useEnterAnimation */._)(ref);
+    let renderProps = (0, utils/* useRenderProps */.Sl)({
+        ...props,
+        defaultClassName: 'react-aria-Modal',
+        values: {
+            isEntering: entering,
+            isExiting: isExiting,
+            state: state
+        }
+    });
+    return /*#__PURE__*/ (0, react).createElement((0, utils/* dom */.tT).div, {
+        ...(0, mergeProps/* mergeProps */.v)((0, filterDOMProps/* filterDOMProps */.$)(props, {
+            global: true
+        }), modalProps),
+        ...renderProps,
+        ref: ref,
+        "data-entering": entering || undefined,
+        "data-exiting": isExiting || undefined
+    }, isDismissable && /*#__PURE__*/ (0, react).createElement((0, DismissButton/* DismissButton */.R), {
+        onDismiss: state.close
+    }), renderProps.children);
+}
+
+
+
+//# sourceMappingURL=Modal.mjs.map
 
 
 /***/ },
