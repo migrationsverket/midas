@@ -31,7 +31,12 @@ import { DialogTrigger, Modal } from '@midas-ds/components'
 ```tsx
 <DialogTrigger>
   <Button>Öppna modal</Button>
-  <Modal title='Rubrik'>Innehåll i modal</Modal>
+  <Modal
+    title='Rubrik'
+    footer={<Button>Knapptext</Button>}
+  >
+    Innehåll i modal
+  </Modal>
 </DialogTrigger>
 ```
 
@@ -71,9 +76,9 @@ Modaler som inte går att stänga på annat sätt än att acceptera/godkänna ka
     title='Villkor'
     hideCloseButton
     isKeyboardDismissDisabled
+    footer={<Button slot='close'>Bekräfta</Button>}
   >
     Du måste bekräfta att du läst villkoren innan du kan gå vidare
-    <Button slot={'close'}>Bekräfta</Button>
   </Modal>
 </DialogTrigger>
 ```
@@ -104,10 +109,11 @@ element kan användas för att öppna modalen. För att stänga modalen med en k
 ```tsx
 <DialogTrigger>
   <Button>Open</Button>
-  <Modal title='Modal Title'>
-    //highlight-start
-    <Button slot='close'>Close</Button>
-    //highlight-end
+  <Modal
+    title='Modal Title'
+    footer={<Button slot='close'>Close</Button>}
+  >
+    {/* Modal content */}
   </Modal>
 </DialogTrigger>
 ```
@@ -129,6 +135,7 @@ return (
       title='Modal Title'
       isOpen={open}
       onOpenChange={setOpen}
+      footer={<Button>Button text</Button>}
     >
       // highlight-end
       {/* Modal content */}
@@ -149,6 +156,7 @@ För att stänga modal via klick utanför modalens yta, använd `isDismissable` 
     isDismissable
     //highlight-end
     title='Modal Title'
+    footer={<Button>Button text</Button>}
   >
     /* Modal content */
   </Modal>
@@ -162,7 +170,7 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 ```tsx
 <DialogTrigger>
   <Button>Open</Button>
-  <Modal title="Modal Title">
+  <Modal title="Modal Title" footer={<Button>Button text</Button>}>
     //highlight-start
     <TextField label="Name" autoFocus>
     //highlight-end
