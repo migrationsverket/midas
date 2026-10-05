@@ -128,7 +128,7 @@
     "tslib": "^2.3.0",
     "typescript-eslint": "^8.58.0",
     "unplugin-dts": "^1.1.1",
-    "verdaccio": "^6.10.4",
+    "verdaccio": "^6.10.5",
     "vite": "^8.3.0",
     "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-plugin-static-copy": "^4.1.1",
