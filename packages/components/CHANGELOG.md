@@ -1,3 +1,14 @@
+## 17.27.3 (2026-10-05)
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([34ca19a305e](https://github.com/migrationsverket/midas/commit/34ca19a305e))
+- **components:** clear hover states before taking screenshots ([2761d75004a](https://github.com/migrationsverket/midas/commit/2761d75004a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.4
+
 ## 17.27.2 (2026-09-29)
 
 ### 🚀 Features

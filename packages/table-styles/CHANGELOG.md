@@ -1,3 +1,24 @@
+## 2.1.0 (2026-10-05)
+
+### 🚀 Features
+
+- **table-styles,docs:** support TanStack Table v9 alongside v8 ([6282173f3ea](https://github.com/migrationsverket/midas/commit/6282173f3ea))
+
+### 🔧 Maintenance
+
+- **table-styles:** fix stale doc comment and regroup stories by package ([4d56165d943](https://github.com/migrationsverket/midas/commit/4d56165d943))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([f6db394b984](https://github.com/migrationsverket/midas/commit/f6db394b984))
+- **table-styles:** pre-bundle test deps to avoid flaky visual runs ([fe99fffe45e](https://github.com/migrationsverket/midas/commit/fe99fffe45e))
+- **table-styles:** clear hover state before screenshots and show version in Storybook ([a24c63cae66](https://github.com/migrationsverket/midas/commit/a24c63cae66))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.3
+- Updated theme to 3.17.4
+
 ## 2.0.125 (2026-09-29)
 
 ### 🚀 Features
