@@ -18,6 +18,13 @@ const currentDirectory =
 export const defineStorybookProject = async ({ name, contextOptions }: Props) =>
   ({
     extends: true,
+    optimizeDeps: {
+      // Only imported from the setup file, which Vite's dependency scan doesn't
+      // crawl. Discovered mid-run instead, it makes Vite reload the page and
+      // fails the test files in flight, so every run with a cold cache (= CI)
+      // failed.
+      include: ['@storybook/addon-a11y/preview'],
+    },
     plugins: [
       // The plugin will run tests for the stories defined in your Storybook config
       // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest

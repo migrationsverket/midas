@@ -37,22 +37,25 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v5
 
+      # Unit tests run in Chromium, the a11y tests (apps/storybook) in Firefox.
+      # The browsers are part of the key: e2e.yml caches a different set, and
+      # sharing one key made Firefox depend on which workflow saved it first.
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: playwright-${{ runner.os }}-chromium-firefox-${{ hashFiles('package-lock.json') }}
 
       - name: Install Playwright browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium --with-deps
+        run: npx playwright install chromium firefox --with-deps
         env:
           PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
 
       - name: Install Playwright system deps
         if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
+        run: npx playwright install-deps chromium firefox
 
       - name: Build packages
         run: npx nx affected -t lint stylelint build
