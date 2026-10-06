@@ -41,7 +41,7 @@ export const defineStorybookProject = async ({ name, contextOptions }: Props) =>
         provider: playwright({ contextOptions }),
         instances: [
           {
-            browser: 'firefox',
+            browser: 'chromium',
           },
         ],
       },
