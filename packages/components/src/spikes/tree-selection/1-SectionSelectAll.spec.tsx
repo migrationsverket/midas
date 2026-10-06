@@ -11,7 +11,9 @@ const debugText = () => page.getByText(/^Valt \(/).element().textContent ?? ''
 
 describe('given a Select with select all per section', () => {
   it('selects only that section, skips disabled items and never stores the sentinel', async () => {
-    const { getByRole } = await render(<SectionSelectAll />)
+    const { getByRole } = await render(
+      <SectionSelectAll dataset='arendetyper' />,
+    )
 
     await getByRole('button', { name: /Ärendetyper/ }).click()
     await page.getByRole('option', { name: /^Välj alla i Studier/ }).click()
@@ -27,7 +29,9 @@ describe('given a Select with select all per section', () => {
   })
 
   it('marks the row selected only while the whole section is selected', async () => {
-    const { getByRole } = await render(<SectionSelectAll />)
+    const { getByRole } = await render(
+      <SectionSelectAll dataset='arendetyper' />,
+    )
 
     await getByRole('button', { name: /Ärendetyper/ }).click()
     const sectionAll = page.getByRole('option', {
@@ -46,7 +50,7 @@ describe('given a Select with select all per section', () => {
   })
 
   it('can be reached and toggled with the keyboard', async () => {
-    await render(<SectionSelectAll />)
+    await render(<SectionSelectAll dataset='arendetyper' />)
 
     await userEvent.tab()
     await userEvent.keyboard('{ArrowDown}')
@@ -62,7 +66,9 @@ describe('given a Select with select all per section', () => {
 
 describe('given section select all combined with the global select all', () => {
   it('selects every selectable item without storing sentinels', async () => {
-    const { getByRole } = await render(<WithGlobalSelectAll />)
+    const { getByRole } = await render(
+      <WithGlobalSelectAll dataset='arendetyper' />,
+    )
 
     await getByRole('button', { name: /Ärendetyper/ }).click()
     await page.getByText('Select all', { exact: true }).click()
@@ -76,7 +82,9 @@ describe('given section select all combined with the global select all', () => {
 
 describe('given the header checkbox variant with counts', () => {
   it('selects the section from the header and counts it in a pill', async () => {
-    const { getByRole } = await render(<HeaderCheckboxWithCounts />)
+    const { getByRole } = await render(
+      <HeaderCheckboxWithCounts dataset='arendetyper' />,
+    )
 
     await getByRole('button', { name: /Ärendetyper/ }).click()
     // Click the label, the checkbox input itself is visually hidden
@@ -91,7 +99,9 @@ describe('given the header checkbox variant with counts', () => {
   })
 
   it('has no "Välj alla i" option rows', async () => {
-    const { getByRole } = await render(<HeaderCheckboxWithCounts />)
+    const { getByRole } = await render(
+      <HeaderCheckboxWithCounts dataset='arendetyper' />,
+    )
 
     await getByRole('button', { name: /Ärendetyper/ }).click()
 

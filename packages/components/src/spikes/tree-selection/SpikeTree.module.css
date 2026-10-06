@@ -12,6 +12,11 @@
   }
 }
 
+/* A virtualized tree needs a fixed height to know what's in view */
+.virtualized {
+  height: 24rem;
+}
+
 .item {
   outline: none;
   cursor: default;

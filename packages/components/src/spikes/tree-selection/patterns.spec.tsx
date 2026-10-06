@@ -9,14 +9,15 @@ import * as hybridStories from './C-Hybrid.stories'
 const { AutocompleteSearchAndBrowse } = composeStories(searchStories)
 const { AutocompleteSearch, FilteredTree, AutocompleteSearchWithCounts } =
   composeStories(dialogStories)
-const { ChipsSearchAndBrowse } = composeStories(hybridStories)
+const { ChipsSearchAndBrowse, CollapsedSelection, GroupedSelection } =
+  composeStories(hybridStories)
 
 const selectedCount = () =>
   page.getByText(/^Valda ärendetyper \(\d+\)$/).first()
 
 describe('A: the Autocomplete search', () => {
   it('keeps focus in the search field while the arrow keys pick a result', async () => {
-    await render(<AutocompleteSearchAndBrowse />)
+    await render(<AutocompleteSearchAndBrowse dataset='arendetyper' />)
 
     const input = page.getByRole('searchbox', { name: 'Ärendetyper' })
     await input.click()
@@ -30,8 +31,25 @@ describe('A: the Autocomplete search', () => {
       .toHaveTextContent('Valda ärendetyper (1)')
   })
 
+  it('keeps the selection when Escape clears the search', async () => {
+    await render(<AutocompleteSearchAndBrowse dataset='arendetyper' />)
+
+    const input = page.getByRole('searchbox', { name: 'Ärendetyper' })
+    await input.click()
+    await userEvent.keyboard('visum')
+    await userEvent.keyboard('{ArrowDown}')
+    await userEvent.keyboard('{Enter}')
+    await userEvent.keyboard('{Escape}')
+    await userEvent.keyboard('{Escape}')
+
+    // React Aria's ListBox clears its selection on Escape by default
+    await expect
+      .element(selectedCount())
+      .toHaveTextContent('Valda ärendetyper (1)')
+  })
+
   it('also finds ärendetyper by their path', async () => {
-    await render(<AutocompleteSearchAndBrowse />)
+    await render(<AutocompleteSearchAndBrowse dataset='arendetyper' />)
 
     await page.getByRole('searchbox', { name: 'Ärendetyper' }).fill('skydd')
 
@@ -43,7 +61,7 @@ describe('A: the Autocomplete search', () => {
 
 describe('B1: the tree dialog with Autocomplete search', () => {
   it('selects a whole branch from the tree and commits it with Klar', async () => {
-    await render(<AutocompleteSearch />)
+    await render(<AutocompleteSearch dataset='arendetyper' />)
 
     await page.getByRole('button', { name: 'Välj ärendetyper' }).click()
     // The tree starts collapsed, so this toggles a top-level row. Clicking a
@@ -58,7 +76,7 @@ describe('B1: the tree dialog with Autocomplete search', () => {
   })
 
   it('shows a partially selected branch as indeterminate', async () => {
-    await render(<AutocompleteSearch />)
+    await render(<AutocompleteSearch dataset='arendetyper' />)
 
     await page.getByRole('button', { name: 'Välj ärendetyper' }).click()
     await page
@@ -83,7 +101,7 @@ describe('B1: the tree dialog with Autocomplete search', () => {
   })
 
   it('throws the changes away on Avbryt', async () => {
-    await render(<AutocompleteSearch />)
+    await render(<AutocompleteSearch dataset='arendetyper' />)
 
     await page.getByRole('button', { name: 'Välj ärendetyper' }).click()
     await page.getByRole('row', { name: 'Skydd' }).click()
@@ -97,7 +115,7 @@ describe('B1: the tree dialog with Autocomplete search', () => {
 
 describe('B2: the filtered tree', () => {
   it('reveals a nested match without the user expanding anything', async () => {
-    await render(<FilteredTree />)
+    await render(<FilteredTree dataset='arendetyper' />)
 
     await page.getByRole('button', { name: 'Välj ärendetyper' }).click()
     await page.getByRole('searchbox', { name: 'Filtrera' }).fill('kvot')
@@ -113,7 +131,7 @@ describe('B2: the filtered tree', () => {
 
 describe('C: hybrid', () => {
   it('only shows search results while there is a query', async () => {
-    await render(<ChipsSearchAndBrowse />)
+    await render(<ChipsSearchAndBrowse dataset='arendetyper' />)
 
     await expect
       .element(page.getByRole('listbox', { name: 'Sökresultat' }))
@@ -131,7 +149,7 @@ describe('C: hybrid', () => {
 
 describe('counts', () => {
   it('shows the total on the trigger and per branch in the tree', async () => {
-    await render(<AutocompleteSearchWithCounts />)
+    await render(<AutocompleteSearchWithCounts dataset='arendetyper' />)
 
     await page.getByRole('button', { name: 'Välj ärendetyper' }).click()
     await page.getByRole('row', { name: 'Medborgarskap', exact: true }).click()
@@ -145,5 +163,45 @@ describe('counts', () => {
     await expect
       .element(page.getByRole('button', { name: /Välj ärendetyper/ }))
       .toHaveTextContent('6 valda')
+  })
+})
+
+describe('summarised selection', () => {
+  it('shows a whole branch as one tag, and removing it clears the branch', async () => {
+    await render(<CollapsedSelection dataset='arendetyper' />)
+
+    await page.getByRole('button', { name: /Bläddra/ }).click()
+    await page
+      .getByRole('treegrid')
+      .getByRole('row', { name: 'Medborgarskap', exact: true })
+      .click()
+    await page.getByRole('button', { name: 'Klar' }).click()
+
+    const list = page.getByRole('grid', { name: 'Valda ärendetyper' })
+    await expect
+      .element(list.getByRole('row'))
+      .toHaveTextContent('Medborgarskap · alla 6')
+
+    await list.getByRole('button').click()
+    // These stories show the count as a pill, not "(n)"
+    await expect
+      .element(page.getByText(/^Valda ärendetyper/).first())
+      .toHaveTextContent('0 valda')
+  })
+
+  it('groups the selection per top level with counts', async () => {
+    await render(<GroupedSelection dataset='arendetyper' />)
+
+    const search = page.getByRole('searchbox', { name: 'Lägg till ärendetyp' })
+    for (const name of ['Visum', 'Asylansökan', 'EU-blåkort']) {
+      await search.fill(name)
+      await page.getByRole('option', { name: new RegExp(`^${name}`) }).click()
+    }
+
+    const rows = page
+      .getByRole('grid', { name: 'Valda ärendetyper' })
+      .getByRole('row')
+    await expect.element(rows.nth(0)).toHaveTextContent('Tillstånd · 2 av 21')
+    await expect.element(rows.nth(1)).toHaveTextContent('Skydd · 1 av 6')
   })
 })

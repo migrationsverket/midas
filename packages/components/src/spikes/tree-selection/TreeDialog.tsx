@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react'
-import type { Key } from 'react-aria-components'
+import { Dialog as AriaDialog, type Key } from 'react-aria-components'
 import { Button } from '../../button'
 import { DialogTrigger, Modal } from '../../modal'
+import { Popover } from '../../popover'
+import { Heading } from '../../heading'
 import { SearchField } from '../../search-field'
-import { caseTypes, flattenLeaves, type CaseTypeNode } from './data'
+import { flattenLeaves, type CaseTypeNode } from './data'
+import { useDataset } from './DatasetContext'
 import { SearchPanel } from './SearchPanel'
-import { SelectedList } from './SelectedList'
+import { SelectedList, type SelectedDisplay } from './SelectedList'
 import { SpikeTree } from './SpikeTree'
 import { useFilteredTree } from './useFilteredTree'
 import { ScopeFilter, useScope } from './ScopeFilter'
@@ -32,6 +35,15 @@ export interface TreeDialogProps {
   nodes?: CaseTypeNode[]
   /** A pre-filter (verksamhetsområde, ärendeområde) inside the dialog */
   withScope?: boolean
+  /**
+   * `modal`: Midas Modal, centered and blocking.
+   * `popover`: Midas Popover anchored to the button, with a React Aria Dialog
+   * inside, as in React Aria's own docs.
+   */
+  container?: 'modal' | 'popover'
+  /** How the list of what's selected is shown inside the dialog */
+  selectedDisplay?: SelectedDisplay
+  groupLevel?: number
 }
 
 interface BodyProps {
@@ -50,12 +62,15 @@ const AutocompleteBody = ({
   const [query, setQuery] = useState('')
   const [expandedKeys, setExpandedKeys] = useState<Set<Key>>(new Set())
   const leaves = useMemo(() => flattenLeaves(nodes), [nodes])
+  const { labels } = useDataset()
 
   return (
     <div className={styles.stack}>
       <SearchPanel
         label='Sök eller bläddra'
         leaves={leaves}
+        placeholder={labels.searchPlaceholder}
+        emptyText={labels.empty}
         selected={draft}
         onSelectedChange={setDraft}
         inputValue={query}
@@ -64,7 +79,8 @@ const AutocompleteBody = ({
       />
       {query.trim() === '' && (
         <SpikeTree
-          aria-label='Ärendetyper'
+          aria-label={labels.field}
+          emptyText={labels.empty}
           showCounts={showCounts}
           nodes={nodes}
           selected={draft}
@@ -80,18 +96,20 @@ const AutocompleteBody = ({
 const FilteredBody = ({ nodes, draft, setDraft, showCounts }: BodyProps) => {
   const [query, setQuery] = useState('')
   const filtered = useFilteredTree(nodes, query)
+  const { labels } = useDataset()
 
   return (
     <div className={styles.stack}>
       <SearchField
         label='Filtrera'
-        placeholder='Filtrera ärendetyper'
+        placeholder={labels.searchPlaceholder}
         showButton={false}
         value={query}
         onChange={setQuery}
       />
       <SpikeTree
-        aria-label='Ärendetyper'
+        aria-label={labels.field}
+        emptyText={labels.empty}
         showCounts={showCounts}
         nodes={filtered.nodes}
         selected={draft}
@@ -105,10 +123,12 @@ const FilteredBody = ({ nodes, draft, setDraft, showCounts }: BodyProps) => {
 
 const TreeOnlyBody = ({ nodes, draft, setDraft, showCounts }: BodyProps) => {
   const [expandedKeys, setExpandedKeys] = useState<Set<Key>>(new Set())
+  const { labels } = useDataset()
 
   return (
     <SpikeTree
-      aria-label='Ärendetyper'
+      aria-label={labels.field}
+      emptyText={labels.empty}
       showCounts={showCounts}
       nodes={nodes}
       selected={draft}
@@ -132,13 +152,17 @@ const DialogBody = ({
   ...props
 }: BodyProps & { variant: TreeDialogVariant; withScope?: boolean }) => {
   const scope = useScope(props.nodes)
+  const { labels } = useDataset()
   const Body = bodies[variant]
 
   if (!withScope) return <Body {...props} />
 
   return (
     <div className={styles.stack}>
-      <ScopeFilter scope={scope} />
+      <ScopeFilter
+        scope={scope}
+        labels={labels}
+      />
       <Body
         {...props}
         nodes={scope.scopedNodes}
@@ -159,9 +183,14 @@ export const TreeDialog = ({
   triggerLabel,
   triggerVariant = 'secondary',
   showCounts,
-  nodes = caseTypes,
+  nodes: nodesProp,
   withScope,
+  container = 'modal',
+  selectedDisplay,
+  groupLevel,
 }: TreeDialogProps) => {
+  const dataset = useDataset()
+  const nodes = nodesProp ?? dataset.nodes
   const [isOpen, setOpen] = useState(false)
   const [draft, setDraft] = useState<Set<string>>(new Set(selected))
 
@@ -169,6 +198,47 @@ export const TreeDialog = ({
     if (open) setDraft(new Set(selected))
     setOpen(open)
   }
+
+  const content = (
+    <>
+      <div className={styles.dialogLayout}>
+        <DialogBody
+          variant={variant}
+          withScope={withScope}
+          nodes={nodes}
+          draft={draft}
+          setDraft={setDraft}
+          showCounts={showCounts}
+        />
+        <SelectedList
+          leaves={dataset.leaves}
+          label={dataset.labels.selected}
+          selected={draft}
+          onSelectedChange={setDraft}
+          showCount={showCounts}
+          display={selectedDisplay}
+          groupLevel={groupLevel}
+          nodes={dataset.nodes}
+        />
+      </div>
+      <div className={styles.actions}>
+        <Button
+          onPress={() => {
+            onSelectedChange(draft)
+            setOpen(false)
+          }}
+        >
+          Klar
+        </Button>
+        <Button
+          variant='secondary'
+          onPress={() => setOpen(false)}
+        >
+          Avbryt
+        </Button>
+      </div>
+    </>
+  )
 
   return (
     <DialogTrigger
@@ -184,39 +254,29 @@ export const TreeDialog = ({
           />
         )}
       </Button>
-      <Modal title='Välj ärendetyper'>
-        <div className={styles.dialogLayout}>
-          <DialogBody
-            variant={variant}
-            withScope={withScope}
-            nodes={nodes}
-            draft={draft}
-            setDraft={setDraft}
-            showCounts={showCounts}
-          />
-          <SelectedList
-            selected={draft}
-            onSelectedChange={setDraft}
-            showCount={showCounts}
-          />
-        </div>
-        <div className={styles.actions}>
-          <Button
-            onPress={() => {
-              onSelectedChange(draft)
-              setOpen(false)
-            }}
+      {container === 'modal' ? (
+        <Modal title={dataset.labels.choose}>{content}</Modal>
+      ) : (
+        <Popover
+          hideArrow
+          placement='bottom start'
+          className={styles.treePopover}
+        >
+          <AriaDialog
+            aria-labelledby='tree-popover-heading'
+            className={styles.treePopoverDialog}
           >
-            Klar
-          </Button>
-          <Button
-            variant='secondary'
-            onPress={() => setOpen(false)}
-          >
-            Avbryt
-          </Button>
-        </div>
-      </Modal>
+            <Heading
+              id='tree-popover-heading'
+              level={3}
+              elementType='h2'
+            >
+              {dataset.labels.choose}
+            </Heading>
+            {content}
+          </AriaDialog>
+        </Popover>
+      )}
     </DialogTrigger>
   )
 }

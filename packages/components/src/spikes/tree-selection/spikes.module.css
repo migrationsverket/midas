@@ -137,3 +137,137 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Story-only cost note below each example */
+.costNote {
+  margin-top: var(--midas-space-xlarge);
+  max-width: 60rem;
+  padding: var(--midas-space-medium);
+  border: 1px solid var(--midas-border-color-subtle);
+  border-inline-start: 4px solid var(--midas-button-background-primary-base);
+  background-color: var(--midas-layer-01-base);
+  font-family: var(--midas-typography-font-family);
+  font-size: 0.875rem;
+  color: var(--midas-text-primary);
+}
+
+.costVerdict {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: var(--midas-space-small);
+}
+
+.costGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--midas-space-medium);
+
+  @media (width <= 600px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.costTitle {
+  font-weight: 500;
+  margin-bottom: var(--midas-space-05);
+}
+
+.costList {
+  margin: 0;
+  padding-inline-start: var(--midas-space-medium);
+}
+
+/* Kind labels on the Midas items in the cost note */
+.kind {
+  display: inline-block;
+  padding: 0 var(--midas-space-small);
+  border-radius: 999px;
+  border: 1px solid currentcolor;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.standard {
+  color: var(--midas-text-primary);
+  border-color: var(--midas-support-border-success);
+}
+
+.logic {
+  color: var(--midas-text-primary);
+}
+
+.handrolled {
+  color: var(--midas-text-warning);
+}
+
+/* Midas Popover caps its width at 320px, too narrow for a tree and a list.
+   A real version would need a size variant on Popover. The doubled class
+   beats Popover's own single-class max-width */
+.treePopover.treePopover {
+  max-width: min(90vw, 44rem);
+  width: 44rem;
+  max-height: min(80vh, 40rem);
+  overflow-y: auto;
+}
+
+.treePopoverDialog {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-medium);
+}
+
+/* Compact search: the search panel in a popover. Doubled class for the same
+   reason as .treePopover */
+.searchPopover.searchPopover {
+  max-width: min(90vw, 28rem);
+  width: 28rem;
+}
+
+.searchPopoverDialog {
+  outline: none;
+}
+
+/* The README rendered as the overview page */
+.overview {
+  max-width: 72rem;
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
+  line-height: 1.5;
+
+  h1,
+  h2,
+  h3 {
+    margin-top: var(--midas-space-xlarge);
+    margin-bottom: var(--midas-space-small);
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-block: var(--midas-space-medium);
+    font-size: 0.875rem;
+  }
+
+  th,
+  td {
+    border: 1px solid var(--midas-border-color-subtle);
+    padding: var(--midas-space-small);
+    text-align: start;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: var(--midas-layer-01-base);
+  }
+
+  code {
+    font-size: 0.875em;
+    padding: 0 var(--midas-space-05);
+    background-color: var(--midas-layer-01-base);
+  }
+}

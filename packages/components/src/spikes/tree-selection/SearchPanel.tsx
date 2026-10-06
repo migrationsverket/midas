@@ -3,19 +3,27 @@ import { useFilter } from 'react-aria'
 import { SearchField } from '../../search-field'
 import { ListBox, ListBoxItem } from '../../list-box'
 import { Text } from '../../text'
-import { leaves as allLeaves, type Leaf } from './data'
+import type { Leaf } from './data'
 import styles from './spikes.module.css'
 
 export interface SearchPanelProps {
   label: string
-  /** The ärendetyper to search, e.g. narrowed by a pre-filter */
-  leaves?: Leaf[]
+  /** What to search, e.g. narrowed by a pre-filter */
+  leaves: Leaf[]
+  placeholder: string
+  /** Shown when nothing matches */
+  emptyText: string
   selected: ReadonlySet<string>
   onSelectedChange: (selected: Set<string>) => void
   inputValue: string
   onInputChange: (value: string) => void
   /** Hide the result list until there's a query, for compact layouts */
   hideResultsWhenEmpty?: boolean
+  /**
+   * Focus the search field on mount. Only for when the panel opens on
+   * request, like in a popover, never on page load
+   */
+  focusOnMount?: boolean
 }
 
 /**
@@ -25,12 +33,15 @@ export interface SearchPanelProps {
  */
 export const SearchPanel = ({
   label,
-  leaves = allLeaves,
+  leaves,
+  placeholder,
+  emptyText,
   selected,
   onSelectedChange,
   inputValue,
   onInputChange,
   hideResultsWhenEmpty,
+  focusOnMount,
 }: SearchPanelProps) => {
   const { contains } = useFilter({ sensitivity: 'base' })
   const showResults = !hideResultsWhenEmpty || inputValue.trim() !== ''
@@ -55,15 +66,24 @@ export const SearchPanel = ({
     <Autocomplete
       inputValue={inputValue}
       onInputChange={onInputChange}
-      // Match on the name and the path, so "arbete" also finds every
-      // ärendetyp under Tillstånd / Arbete
-      filter={(textValue, input) => contains(textValue, input)}
+      // Every word has to appear somewhere in the name or the path, in any
+      // order, so "juridik malmö" finds Juridik under an enhet in Malmö
+      filter={(textValue, input) =>
+        input
+          .trim()
+          .split(/\s+/)
+          .every(word => contains(textValue, word))
+      }
     >
       <div className={styles.searchPanel}>
         <SearchField
           label={label}
-          placeholder='Sök ärendetyp'
+          placeholder={placeholder}
           showButton={false}
+          // The user just opened the popover to search, so the field gets
+          // focus, like React Aria's own searchable menu example
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus={focusOnMount}
         />
         {showResults && (
           <div className={styles.results}>
@@ -71,12 +91,18 @@ export const SearchPanel = ({
               aria-label='Sökresultat'
               items={leaves}
               selectionMode='multiple'
+              // React Aria clears the whole selection on Escape by default.
+              // Escape should only clear the search or close a popover, the
+              // same as in Midas Select
+              escapeKeyBehavior='none'
               selectedKeys={selected}
               onSelectionChange={handleSelectionChange}
               disabledKeys={disabledLeafIds}
-              virtualized={false}
+              // Midas' default. Only small lists skip it, so every option
+              // exists in the DOM for the tests
+              virtualized={leaves.length > 200}
               renderEmptyState={() => (
-                <div className={styles.empty}>Inga ärendetyper matchar</div>
+                <div className={styles.empty}>{emptyText}</div>
               )}
             >
               {leaf => (

@@ -6,7 +6,8 @@ import * as sectionStories from './1-SectionSelectAll.stories'
 import * as searchStories from './A-SearchAndBrowse.stories'
 import * as dialogStories from './B-TreeDialog.stories'
 
-const { WithScopeFilter: SectionWithScope } = composeStories(sectionStories)
+const { WithScopeFilter: SectionWithScope, ThreeLevelsWithPreFilter } =
+  composeStories(sectionStories)
 const { WithScopeFilter: SearchWithScope } = composeStories(searchStories)
 const { AutocompleteSearchWithScope } = composeStories(dialogStories)
 
@@ -20,7 +21,7 @@ const debugText = () => page.getByText(/^Valt \(/).element().textContent ?? ''
 
 describe('1 with a verksamhetsområde pre-filter', () => {
   it('only shows the sections in scope and keeps a selection outside it', async () => {
-    await render(<SectionWithScope />)
+    await render(<SectionWithScope dataset='arendetyper' />)
 
     await choose(/Verksamhetsområde/, 'Skydd')
     await page.getByRole('button', { name: /Ärendetyper/ }).click()
@@ -38,7 +39,7 @@ describe('1 with a verksamhetsområde pre-filter', () => {
 
 describe('A with a pre-filter', () => {
   it('narrows the search to the chosen ärendeområde', async () => {
-    await render(<SearchWithScope />)
+    await render(<SearchWithScope dataset='arendetyper' />)
 
     await choose(/Ärendeområde/, 'Asyl')
     await page
@@ -56,7 +57,7 @@ describe('A with a pre-filter', () => {
   })
 
   it('keeps a selection made before the scope changed', async () => {
-    await render(<SearchWithScope />)
+    await render(<SearchWithScope dataset='arendetyper' />)
 
     const search = page.getByRole('searchbox', { name: 'Ärendetyper' })
     await search.fill('visum')
@@ -74,7 +75,7 @@ describe('A with a pre-filter', () => {
 
 describe('B1 with a pre-filter inside the dialog', () => {
   it('narrows the tree to the chosen verksamhetsområde', async () => {
-    await render(<AutocompleteSearchWithScope />)
+    await render(<AutocompleteSearchWithScope dataset='arendetyper' />)
 
     await page.getByRole('button', { name: /Välj ärendetyper/ }).click()
     await choose(/Verksamhetsområde/, 'Medborgarskap')
@@ -85,5 +86,31 @@ describe('B1 with a pre-filter inside the dialog', () => {
     await expect
       .element(page.getByRole('row', { name: 'Tillstånd', exact: true }))
       .not.toBeInTheDocument()
+  })
+})
+
+describe('three levels with a pre-filter and the Select', () => {
+  it('selects a whole top level with Select all and keeps it when the scope changes', async () => {
+    await render(<ThreeLevelsWithPreFilter dataset='arendetyper' />)
+
+    const selectAll = () => page.getByText('Select all', { exact: true })
+    const list = page.getByRole('grid', { name: 'Valda ärendetyper' })
+
+    await choose(/Verksamhetsområde/, 'Medborgarskap')
+    await page.getByRole('button', { name: /Ärendetyper/ }).click()
+    await selectAll().click()
+    await userEvent.keyboard('{Escape}')
+    await expect.element(list).toHaveTextContent('Medborgarskap · alla 6')
+
+    // Switch the scope, then Select all on and off again in Skydd
+    await choose(/Verksamhetsområde/, 'Medborgarskap')
+    await choose(/Verksamhetsområde/, 'Skydd')
+    await page.getByRole('button', { name: /Ärendetyper/ }).click()
+    await selectAll().click()
+    await selectAll().click()
+    await userEvent.keyboard('{Escape}')
+
+    await expect.element(list).toHaveTextContent('Medborgarskap · alla 6')
+    await expect.element(list).not.toHaveTextContent('Skydd')
   })
 })

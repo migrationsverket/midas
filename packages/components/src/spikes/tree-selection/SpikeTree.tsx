@@ -2,7 +2,9 @@ import type React from 'react'
 import {
   Button as AriaButton,
   Collection,
+  ListLayout,
   Tree,
+  Virtualizer,
   TreeItem,
   TreeItemContent,
   type Key,
@@ -27,9 +29,24 @@ export interface SpikeTreeProps {
   expandedKeys: Iterable<Key>
   onExpandedChange: (keys: Set<Key>) => void
   'aria-label': string
-  /** A pill with the number of selected ärendetyper on each branch */
+  /** A pill with the number selected on each branch */
   showCounts?: boolean
+  /** Shown when nothing matches */
+  emptyText: string
+  /**
+   * React Aria's Virtualizer with a ListLayout, like Midas ListBox. Defaults
+   * to on for trees with more than 200 nodes
+   */
+  virtualized?: boolean
 }
+
+const VIRTUALIZE_ABOVE = 200
+
+const countNodes = (nodes: CaseTypeNode[]): number =>
+  nodes.reduce(
+    (sum, node) => sum + 1 + (node.children ? countNodes(node.children) : 0),
+    0,
+  )
 
 const getDisabledLeafIds = (nodes: CaseTypeNode[]) =>
   nodes
@@ -51,7 +68,10 @@ export const SpikeTree = ({
   onExpandedChange,
   'aria-label': ariaLabel,
   showCounts,
+  emptyText,
+  virtualized,
 }: SpikeTreeProps) => {
+  const isVirtualized = virtualized ?? countNodes(nodes) > VIRTUALIZE_ABOVE
   const selectedNodeIds = getSelectedNodeIds(nodes, selected)
 
   const handleSelectionChange = (keys: Selection) => {
@@ -155,10 +175,12 @@ export const SpikeTree = ({
     )
   }
 
-  return (
+  const tree = (
     <Tree
       aria-label={ariaLabel}
-      className={styles.tree}
+      className={
+        isVirtualized ? `${styles.tree} ${styles.virtualized}` : styles.tree
+      }
       items={nodes}
       selectionMode='multiple'
       selectedKeys={selectedNodeIds}
@@ -169,11 +191,20 @@ export const SpikeTree = ({
       // React Aria caches rendered items, so without this the partial
       // (indeterminate) state of a branch never updates
       dependencies={[selected]}
-      renderEmptyState={() => (
-        <div className={styles.empty}>Inga ärendetyper matchar</div>
-      )}
+      renderEmptyState={() => <div className={styles.empty}>{emptyText}</div>}
     >
       {renderNode}
     </Tree>
+  )
+
+  if (!isVirtualized) return tree
+
+  return (
+    <Virtualizer
+      layout={ListLayout}
+      layoutOptions={{ estimatedRowHeight: 40 }}
+    >
+      {tree}
+    </Virtualizer>
   )
 }
