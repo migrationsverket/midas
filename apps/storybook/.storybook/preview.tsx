@@ -16,6 +16,26 @@ import '@midas-ds/theme/lib/color-scheme.css'
 import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
 import './custom.css'
 
+// Stories embedding other stories (via composeStories) render the decorator
+// again. Only the outermost one adds the root element, otherwise e.g. a
+// composed story's <main> ends up inside the Header's <header> landmark.
+const IsInsideStory = React.createContext(false)
+
+interface StoryRootProps {
+  rootElement: React.ElementType
+  children: React.ReactNode
+}
+
+function StoryRoot({ rootElement: RootTag, children }: StoryRootProps) {
+  const isInsideStory = React.useContext(IsInsideStory)
+  if (isInsideStory) return children
+  return (
+    <IsInsideStory.Provider value>
+      <RootTag>{children}</RootTag>
+    </IsInsideStory.Provider>
+  )
+}
+
 const preview: Preview = {
   async beforeEach() {
     MockDate.set(mockedNow.toDate(getLocalTimeZone()))
@@ -86,11 +106,11 @@ const preview: Preview = {
       }
 
       return (
-        <RootTag>
+        <StoryRoot rootElement={RootTag}>
           <I18nProvider locale={context.globals.lang}>
             <Story />
           </I18nProvider>
-        </RootTag>
+        </StoryRoot>
       )
     },
   ],

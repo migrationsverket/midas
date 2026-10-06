@@ -103,7 +103,10 @@ export const WithHeaderImageAndBody: Story = {
           </MenuPopover>
         </MenuTrigger>
       </CardHeader>
-      <CardImage src='https://www.migrationsverket.se/images/18.2cd2e409193b84c506a2f3bd/1738673319397/Handlaggare_pa_Migrationsverket_gar_igenom_ansokan_man.png' />
+      <CardImage
+        src='https://www.migrationsverket.se/images/18.2cd2e409193b84c506a2f3bd/1738673319397/Handlaggare_pa_Migrationsverket_gar_igenom_ansokan_man.png'
+        alt='Handläggare på Migrationsverket går igenom en ansökan'
+      />
       <CardBody>
         <Text>Kortets innehåll. Det kan vara text, grafik, ikoner mm.</Text>
       </CardBody>
@@ -118,7 +121,10 @@ export const WithImageHeaderAndBody: Story = {
   tags: ['!snapshot'],
   render: args => (
     <Card {...args}>
-      <CardImage src='https://www.migrationsverket.se/images/18.2cd2e409193b84c506a2f3bd/1738673319397/Handlaggare_pa_Migrationsverket_gar_igenom_ansokan_man.png' />
+      <CardImage
+        src='https://www.migrationsverket.se/images/18.2cd2e409193b84c506a2f3bd/1738673319397/Handlaggare_pa_Migrationsverket_gar_igenom_ansokan_man.png'
+        alt='Handläggare på Migrationsverket går igenom en ansökan'
+      />
       <CardHeader
         heading='En rubrik'
         subHeading='En underrubrik'
@@ -162,7 +168,10 @@ export const WithCustomBody: Story = {
           label='Handläggare'
           value='AscDec'
         />
-        <Button variant='icon'>
+        <Button
+          variant='icon'
+          aria-label='Markera som klar'
+        >
           <CheckCircle />
         </Button>
       </CardBody>
@@ -178,7 +187,10 @@ export const CardWithImageAndAction: Story = {
         heading='Nils i Bagarmossen'
         subHeading='Säljare'
       />
-      <CardImage src='https://www.migrationsverket.se/images/18.2cd2e409193b84c506a2f3bd/1738673319397/Handlaggare_pa_Migrationsverket_gar_igenom_ansokan_man.png' />
+      <CardImage
+        src='https://www.migrationsverket.se/images/18.2cd2e409193b84c506a2f3bd/1738673319397/Handlaggare_pa_Migrationsverket_gar_igenom_ansokan_man.png'
+        alt='Handläggare på Migrationsverket går igenom en ansökan'
+      />
       <CardActions>
         <Button variant='secondary'>Boka möte med Nils</Button>
       </CardActions>
