@@ -325,6 +325,30 @@
     {
       "plugin": "@nx/vitest",
       "options": {
+        "testTargetName": "a11y",
+        "testMode": "watch"
+      },
+      "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "a11y-dark-mode",
+        "testMode": "watch"
+      },
+      "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "a11y-forced-colors",
+        "testMode": "watch"
+      },
+      "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
         "testTargetName": "visual",
         "testMode": "run"
       },
