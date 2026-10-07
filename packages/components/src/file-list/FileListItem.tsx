@@ -1,5 +1,6 @@
 'use client'
 
+import { useId } from 'react'
 import { Trash2, X } from 'lucide-react'
 import { VisuallyHidden } from 'react-aria'
 import { Button } from '../button'
@@ -51,6 +52,8 @@ export const FileListItem = ({
   const strings = useLocalizedStringFormatter(messages)
   const isUploading = status === 'uploading'
   const isSuccess = status === 'success'
+  const hasError = status === 'error' && !!errorMessage
+  const errorId = useId()
   const onPress = isUploading ? (onCancel ?? onDelete) : onDelete
 
   return (
@@ -65,7 +68,7 @@ export const FileListItem = ({
             small
             value={progress}
             isIndeterminate={progress === undefined}
-            aria-label={strings.format('uploading')}
+            aria-label={`${strings.format('uploading')} ${fileName}`}
             aria-hidden={isUploading ? undefined : true}
             className={styles.progressIcon}
           />
@@ -96,6 +99,7 @@ export const FileListItem = ({
             aria-label={`${strings.format(
               isUploading ? 'cancelUpload' : 'removeFile',
             )} ${fileName}`}
+            aria-describedby={hasError ? errorId : undefined}
             className={styles.deleteButton}
           >
             {isUploading ? (
@@ -106,11 +110,17 @@ export const FileListItem = ({
           </Button>
         )}
       </div>
-      <div className={styles.errorReveal}>
+      <div
+        id={errorId}
+        className={styles.errorReveal}
+      >
         {errorMessage && <FieldError isInvalid>{errorMessage}</FieldError>}
       </div>
+      {/* Always rendered, so screen readers pick up the text when it changes.
+          Names the file, so several uploads finishing at once stay apart */}
       <VisuallyHidden role='status'>
-        {status === 'success' ? strings.format('uploadComplete') : ''}
+        {isSuccess && `${strings.format('uploadComplete')}: ${fileName}`}
+        {hasError && `${fileName}: ${errorMessage}`}
       </VisuallyHidden>
     </li>
   )

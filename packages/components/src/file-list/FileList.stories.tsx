@@ -143,7 +143,7 @@ export const Error: Story = {
         fileName='resume.pdf'
         fileSize='1.2 MB'
         status='error'
-        errorMessage='Det gick inte bra'
+        errorMessage='Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.'
         onDelete={() => {
           // noop
         }}
@@ -183,7 +183,7 @@ export const MixedStates: Story = {
         fileName='references.pdf'
         fileSize='3.4 MB'
         status='error'
-        errorMessage='Det gick inte bra'
+        errorMessage='Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.'
         onDelete={() => {
           // noop
         }}
@@ -265,7 +265,7 @@ const AnimatedFailureDemo = () => {
         fileName='resume.pdf'
         fileSize='1.2 MB'
         status={status}
-        errorMessage='Det gick inte bra'
+        errorMessage='Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.'
         onCancel={() => {
           // noop
         }}
