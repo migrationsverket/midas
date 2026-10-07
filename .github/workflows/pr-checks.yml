@@ -75,6 +75,31 @@ jobs:
            contains(github.event.pull_request.labels.*.name, 'a11y')
         run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
 
+  lucide-v1:
+    name: lucide-react 1.x compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The packages declare lucide-react `^0.563.0 || ^1.0.0`. The repo
+      # develops against 0.x, so check the icons and types against 1.x too.
+      - name: Install latest lucide-react 1.x
+        run: npm install --no-save --no-audit --no-fund lucide-react@1
+
+      - name: Typecheck packages against lucide-react 1.x
+        run: npx nx run-many -t typecheck -p components layout table-styles --skip-nx-cache
+
   playwright-version:
     name: Resolve Playwright version
     runs-on: ubuntu-latest

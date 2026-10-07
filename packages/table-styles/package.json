@@ -33,7 +33,7 @@
   "dependencies": {
     "@midas-ds/components": "17.29.0",
     "@midas-ds/theme": "3.17.6",
-    "lucide-react": "0.563.0",
+    "lucide-react": "^0.563.0 || ^1.0.0",
     "react-aria-components": "1.21.1",
     "react-aria": "3.52.1"
   },
