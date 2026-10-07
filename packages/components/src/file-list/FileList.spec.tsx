@@ -133,9 +133,37 @@ describe('FileList', () => {
     await expect.element(getByText('Upload complete')).toBeInTheDocument()
   })
 
+  it('keeps the success state readable on the row, not only in the announcement', async () => {
+    const { getByRole } = await render(<Success />)
+    await expect
+      .element(
+        getByRole('listitem').getByRole('img', { name: 'Upload complete' }),
+      )
+      .toBeInTheDocument()
+  })
+
+  it('does not expose the hidden checkmark for other statuses', async () => {
+    const { getByRole } = await render(<Default />)
+    await expect
+      .element(getByRole('img', { name: 'Upload complete' }))
+      .not.toBeInTheDocument()
+  })
+
   it('shows the error message and marks the row invalid', async () => {
     const { getByText } = await render(<ErrorStory />)
     await expect.element(getByText('Det gick inte bra')).toBeVisible()
+  })
+
+  it('renders the status as a data attribute for each state', async () => {
+    const { getByRole } = await render(<UploadingDeterminate />)
+    await expect
+      .element(getByRole('listitem'))
+      .toHaveAttribute('data-status', 'uploading')
+  })
+
+  it('only announces upload completion for the success status', async () => {
+    const { getByRole } = await render(<ErrorStory />)
+    await expect.element(getByRole('status')).toHaveTextContent('')
   })
 
   describe('focus management on removal', () => {
