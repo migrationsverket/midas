@@ -36,3 +36,30 @@ export const IsIndeterminate: Story = {
     label: 'Waiting...',
   },
 }
+
+export const Circular: Story = {
+  args: {
+    shape: 'circular',
+    value: 40,
+    'aria-label': 'Loading...',
+  },
+}
+
+export const CircularSmall: Story = {
+  args: {
+    shape: 'circular',
+    small: true,
+    value: 40,
+    'aria-label': 'Loading...',
+  },
+}
+
+export const CircularIndeterminate: Story = {
+  tags: ['!snapshot'],
+  args: {
+    shape: 'circular',
+    small: true,
+    isIndeterminate: true,
+    'aria-label': 'Loading...',
+  },
+}
