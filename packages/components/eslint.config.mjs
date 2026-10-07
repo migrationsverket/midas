@@ -36,7 +36,6 @@ export default defineConfig([
             '@react-types/shared',
             '@internationalized/date',
             'clsx',
-            'lucide-react',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [

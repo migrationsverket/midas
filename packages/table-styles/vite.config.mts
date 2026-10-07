@@ -39,6 +39,7 @@ export default {
         '@midas-ds/components',
         '@midas-ds/theme',
         '@tanstack/react-table',
+        'lucide-react',
         'react-aria',
         'react-aria-components',
         'react-dom',
