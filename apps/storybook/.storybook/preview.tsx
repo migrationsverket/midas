@@ -72,7 +72,6 @@ const preview: Preview = {
         order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
       },
     },
-    chromatic: {},
     a11y: { test: 'error' },
   },
   globalTypes: {

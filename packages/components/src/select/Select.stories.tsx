@@ -157,9 +157,6 @@ export const SelectAllEnabledWithPreselectedDisabledItem: Story<
 
 export const DS872: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     ...Primary.args,
     selectionMode: 'single',
@@ -238,9 +235,6 @@ export const WithHelpPopover: Story = {
 
 export const RequiredMultipleWithTags: Story<Item, 'multiple'> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     selectionMode: 'multiple',
     isRequired: true,
@@ -258,9 +252,6 @@ export const RequiredMultipleWithTags: Story<Item, 'multiple'> = {
 
 export const RequiredMultipleWithClearAll: Story<Item, 'multiple'> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     selectionMode: 'multiple',
     isRequired: true,
@@ -277,9 +268,6 @@ export const RequiredMultipleWithClearAll: Story<Item, 'multiple'> = {
 
 export const RequiredMultipleSelectAll: Story<Item, 'multiple'> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     selectionMode: 'multiple',
     isSelectableAll: true,
@@ -299,9 +287,6 @@ export const RequiredMultipleSelectAll: Story<Item, 'multiple'> = {
 
 export const RequiredSingleSelect: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     selectionMode: 'single',
     isRequired: true,
@@ -320,9 +305,6 @@ export const RequiredSingleSelect: Story = {
 
 export const LongWords: Story = {
   tags: ['!dev', '!autodocs'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     label: 'Long words',
     description: 'just for test',

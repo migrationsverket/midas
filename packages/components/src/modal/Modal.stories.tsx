@@ -131,9 +131,6 @@ export const Scrollable: Story = {
 
 export const DS1282: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: () => {
     const [selectedFruit, setSelectedFruit] = useState<Key[] | null>(null)
     const options = ['apple', 'banana'].map(fruit => ({

@@ -45,9 +45,6 @@ export const SelectAllInteraction: Story = {
     selectAllLabel: 'SELECT ALL',
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: ({ ...args }) => {
     return (
       <CheckboxGroup {...args}>
@@ -66,9 +63,6 @@ export const SelectAllWithPreselectedDisabledItem: Story = {
     defaultValue: ['Mango'],
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: ({ ...args }) => {
     return (
       <CheckboxGroup {...args}>
