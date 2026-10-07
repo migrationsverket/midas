@@ -100,6 +100,7 @@ const toc = [{
 function _createMdxContent(props) {
   const _components = {
     a: "a",
+    admonition: "admonition",
     code: "code",
     h2: "h2",
     h3: "h3",
@@ -249,18 +250,22 @@ function _createMdxContent(props) {
           onCancel: () => {}
         })
       })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [":::tip Så visar du ett bestämt förlopp\n", (0,jsx_runtime.jsx)(_components.code, {
-        children: "progress"
-      }), " är ett tal du själv räknar fram och skickar in, komponenten vet inget om hur uppladdningen\nsker. ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "fetch"
-      }), " kan inte rapportera uppladdningsförlopp alls; använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "XMLHttpRequest"
-      }), " (", (0,jsx_runtime.jsx)(_components.code, {
-        children: "upload.onprogress"
-      }), ") om\ndu vill visa ett bestämt förlopp. Går det inte att räkna ut ett tal, utelämna ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "progress"
-      }), " för att visa ett\nobestämt förlopp istället.\n:::"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
+      title: "Så visar du ett bestämt förlopp",
+      type: "tip",
+      children: (0,jsx_runtime.jsxs)(_components.p, {
+        children: [(0,jsx_runtime.jsx)(_components.code, {
+          children: "progress"
+        }), " är ett tal du själv räknar fram och skickar in, komponenten vet inget om hur uppladdningen\nsker. ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "fetch"
+        }), " kan inte rapportera uppladdningsförlopp alls; använd ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "XMLHttpRequest"
+        }), " (", (0,jsx_runtime.jsx)(_components.code, {
+          children: "upload.onprogress"
+        }), ") om\ndu vill visa ett bestämt förlopp. Går det inte att räkna ut ett tal, utelämna ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "progress"
+        }), " för att visa ett\nobestämt förlopp istället."]
+      })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "klar",
       children: "Klar"
