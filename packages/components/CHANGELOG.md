@@ -1,3 +1,13 @@
+## 17.27.5 (2026-10-07)
+
+### 🩹 Fixes
+
+- **storybook:** resolve a11y violations in Card and layout stories ([c11917e085a](https://github.com/migrationsverket/midas/commit/c11917e085a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.6
+
 ## 17.27.4 (2026-10-05)
 
 ### 🏭 Refactoring

@@ -1,3 +1,9 @@
+## 0.3.4 (2026-10-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.6
+
 ## 0.3.3 (2026-10-05)
 
 ### 🏭 Refactoring
