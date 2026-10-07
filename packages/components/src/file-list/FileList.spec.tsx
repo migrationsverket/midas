@@ -17,6 +17,9 @@ const {
   FocusManagementTest,
 } = composeStories(stories)
 
+const errorMessage =
+  'Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.'
+
 describe('FileList', () => {
   it('renders all file items', async () => {
     await render(<Default />)
@@ -151,7 +154,7 @@ describe('FileList', () => {
 
   it('shows the error message and marks the row invalid', async () => {
     const { getByText } = await render(<ErrorStory />)
-    await expect.element(getByText('Det gick inte bra')).toBeVisible()
+    await expect.element(getByText(errorMessage, { exact: true })).toBeVisible()
   })
 
   it('renders the status as a data attribute for each state', async () => {
@@ -161,9 +164,45 @@ describe('FileList', () => {
       .toHaveAttribute('data-status', 'uploading')
   })
 
-  it('only announces upload completion for the success status', async () => {
-    const { getByRole } = await render(<ErrorStory />)
-    await expect.element(getByRole('status')).toHaveTextContent('')
+  // Assert what is exposed and tied to which file, not the exact wording, which
+  // UX and the a11y testing still decide on
+  describe('screen reader output', () => {
+    it('names the file in the upload progress', async () => {
+      const { getByRole } = await render(<UploadingDeterminate />)
+      await expect
+        .element(getByRole('progressbar'))
+        .toHaveAccessibleName(/large-video\.mp4/)
+    })
+
+    it('names the file when announcing a completed upload', async () => {
+      const { getByRole } = await render(<Success />)
+      await expect
+        .element(getByRole('status'))
+        .toHaveTextContent('Upload complete: resume.pdf')
+    })
+
+    it('announces a failed upload with the file and the error message', async () => {
+      const { getByRole } = await render(<ErrorStory />)
+      await expect
+        .element(getByRole('status'))
+        .toHaveTextContent(`resume.pdf: ${errorMessage}`)
+    })
+
+    it('ties the error message to the row button', async () => {
+      const { getByRole } = await render(<ErrorStory />)
+      await expect
+        .element(getByRole('button', { name: /remove resume\.pdf/i }))
+        .toHaveAccessibleDescription(errorMessage)
+    })
+
+    it('announces nothing for an idle file', async () => {
+      const { getByRole } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem fileName='idle.pdf' />
+        </FileList>,
+      )
+      await expect.element(getByRole('status')).toHaveTextContent('')
+    })
   })
 
   describe('focus management on removal', () => {
