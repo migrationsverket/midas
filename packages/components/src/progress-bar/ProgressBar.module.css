@@ -1,5 +1,5 @@
 .progressBar {
-  column-gap: 0.5rem;
+  column-gap: var(--midas-space-small);
   display: grid;
   grid-template-areas:
     'label value'
@@ -8,12 +8,12 @@
 
   .label {
     grid-area: label;
-    margin: 0 0 0.5rem;
+    margin: 0 0 var(--midas-space-small);
   }
 
   .value {
     grid-area: value;
-    margin: 0 0 0.5rem;
+    margin: 0 0 var(--midas-space-small);
   }
 
   .track {

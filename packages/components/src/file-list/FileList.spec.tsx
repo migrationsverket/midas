@@ -14,6 +14,7 @@ const {
   Uploading,
   Success,
   Error: ErrorStory,
+  FocusManagementTest,
 } = composeStories(stories)
 
 describe('FileList', () => {
@@ -135,5 +136,49 @@ describe('FileList', () => {
   it('shows the error message and marks the row invalid', async () => {
     const { getByText } = await render(<ErrorStory />)
     await expect.element(getByText('Det gick inte bra')).toBeVisible()
+  })
+
+  describe('focus management on removal', () => {
+    it('moves focus to a sibling button when the focused row is actually removed', async () => {
+      // @ts-expect-error initialFiles exists only on the test container
+      const { getByRole } = await render(
+        <FocusManagementTest initialFiles={['a.pdf', 'b.pdf', 'c.pdf']} />,
+      )
+      await getByRole('button', { name: /remove a\.pdf/i }).click()
+      await expect
+        .element(getByRole('button', { name: /remove b\.pdf/i }))
+        .toHaveFocus()
+    })
+
+    it('falls back to the list container when the last row is removed', async () => {
+      // @ts-expect-error initialFiles exists only on the test container
+      const { getByRole } = await render(
+        <FocusManagementTest initialFiles={['only.pdf']} />,
+      )
+      await getByRole('button', { name: /remove only\.pdf/i }).click()
+      await expect.element(getByRole('list')).toHaveFocus()
+    })
+
+    it('does not move focus when the row is not actually removed', async () => {
+      const { getByRole } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='a.pdf'
+            onDelete={() => {
+              // noop — simulates a delete that fails and leaves the row in place
+            }}
+          />
+          <FileListItem
+            fileName='b.pdf'
+            onDelete={() => {
+              // noop
+            }}
+          />
+        </FileList>,
+      )
+      const button = getByRole('button', { name: /remove a\.pdf/i })
+      await button.click()
+      await expect.element(button).toHaveFocus()
+    })
   })
 })
