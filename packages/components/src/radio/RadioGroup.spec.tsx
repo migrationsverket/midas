@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
+import { fireEvent } from '@testing-library/react'
 import { userEvent } from 'vitest/browser'
 import { render } from '../../test-utils'
 import * as stories from './RadioGroup.stories'
@@ -104,5 +105,38 @@ describe('given a Radio with a test id', () => {
     ;(getByTestId('banana').element() as HTMLElement).click()
 
     await expect.element(getByRole('radio', { name: 'Banana' })).toBeChecked()
+  })
+})
+
+// The recommended way to find a radio in tests: by role and accessible name,
+// which doesn't depend on the markup around the input.
+describe('given a Radio found by its role and name', () => {
+  const Fruits = () => (
+    <RadioGroup label='Fruit'>
+      <Radio value='apple'>Apple</Radio>
+      <Radio value='banana'>Banana</Radio>
+    </RadioGroup>
+  )
+
+  it('should be selected when it is clicked with Testing Library', async () => {
+    const { getByRole } = await render(<Fruits />)
+    const banana = getByRole('radio', { name: 'Banana' })
+
+    // fireEvent and user-event dispatch the click on the input itself
+    fireEvent.click(banana.element())
+
+    await expect.element(banana).toBeChecked()
+  })
+
+  it('should be selected when it is clicked in a real browser', async () => {
+    const { getByRole } = await render(<Fruits />)
+    const banana = getByRole('radio', { name: 'Banana' })
+
+    // The input is visually hidden behind its label, so Playwright's
+    // actionability check sees the label on top of it. `force` skips that
+    // check, and the click lands on the label, which selects the input
+    await banana.click({ force: true })
+
+    await expect.element(banana).toBeChecked()
   })
 })

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
+import { fireEvent } from '@testing-library/react'
 import styles from './Checkbox.module.css'
 import { render } from '../../test-utils'
 import * as stories from './Checkbox.stories'
@@ -131,5 +132,31 @@ describe('given a Checkbox with a test id', () => {
     await getByTestId('checkbox').click()
 
     await expect.element(getByRole('checkbox')).toBeChecked()
+  })
+})
+
+// The recommended way to find a checkbox in tests: by role and accessible
+// name, which doesn't depend on the markup around the input.
+describe('given a Checkbox found by its role and name', () => {
+  it('should be checked when it is clicked with Testing Library', async () => {
+    const { getByRole } = await render(<Checkbox>Accept</Checkbox>)
+    const checkbox = getByRole('checkbox', { name: 'Accept' })
+
+    // fireEvent and user-event dispatch the click on the input itself
+    fireEvent.click(checkbox.element())
+
+    await expect.element(checkbox).toBeChecked()
+  })
+
+  it('should be checked when it is clicked in a real browser', async () => {
+    const { getByRole } = await render(<Checkbox>Accept</Checkbox>)
+    const checkbox = getByRole('checkbox', { name: 'Accept' })
+
+    // The input is visually hidden behind its label, so Playwright's
+    // actionability check sees the label on top of it. `force` skips that
+    // check, and the click lands on the label, which checks the input
+    await checkbox.click({ force: true })
+
+    await expect.element(checkbox).toBeChecked()
   })
 })
