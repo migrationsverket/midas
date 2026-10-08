@@ -52,8 +52,20 @@ export const FileListItem = ({
   const strings = useLocalizedStringFormatter(messages)
   const isUploading = status === 'uploading'
   const isSuccess = status === 'success'
-  const hasError = status === 'error' && !!errorMessage
+  const isError = status === 'error'
+  const hasError = isError && !!errorMessage
   const errorId = useId()
+  const stateId = useId()
+  // Read first in the row, before the file name and the button, the same
+  // place the progress bar has while uploading
+  const stateText = isSuccess
+    ? strings.format('uploadComplete')
+    : isError
+      ? strings.format('uploadFailed')
+      : undefined
+  const buttonDescription =
+    [stateText && stateId, hasError && errorId].filter(Boolean).join(' ') ||
+    undefined
   const onPress = isUploading ? (onCancel ?? onDelete) : onDelete
 
   return (
@@ -84,16 +96,25 @@ export const FileListItem = ({
           {isSuccess && (
             <FeedbackStatusIcon
               status='success'
-              role='img'
-              aria-label={strings.format('uploadComplete')}
+              aria-hidden
               size={16}
               className={clsx(styles.checkmark, styles.successIcon)}
             />
           )}
         </span>
+        {/* Text rather than an image role on the checkmark, which NVDA read
+            as "grafik Uppladdning klar" */}
+        {stateText && <VisuallyHidden id={stateId}>{stateText}</VisuallyHidden>}
         <span className={styles.fileInfo}>
           <span className={styles.fileName}>{fileName}</span>
-          {fileSize && <span className={styles.fileSize}>{fileSize}</span>}
+          {fileSize && (
+            <>
+              {/* Gives screen readers a pause, they otherwise read the two
+                  spans as one word, "resume.pdf1.2 MB" */}
+              <VisuallyHidden>, </VisuallyHidden>
+              <span className={styles.fileSize}>{fileSize}</span>
+            </>
+          )}
         </span>
         {onPress && (
           <Button
@@ -102,7 +123,7 @@ export const FileListItem = ({
             aria-label={`${strings.format(
               isUploading ? 'cancelUpload' : 'removeFile',
             )} ${fileName}`}
-            aria-describedby={hasError ? errorId : undefined}
+            aria-describedby={buttonDescription}
             className={styles.deleteButton}
           >
             {isUploading ? (
