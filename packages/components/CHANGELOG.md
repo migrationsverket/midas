@@ -1,3 +1,17 @@
+## 17.28.2 (2026-10-08)
+
+### 🩹 Fixes
+
+- **components,text-field:** dim text color for isDisabled ([fd2792d0090](https://github.com/migrationsverket/midas/commit/fd2792d0090))
+
+### 📖 Documentation changes
+
+- **components,date-field,date-picker,text-area,time-field:** add stories ([8bf62618e81](https://github.com/migrationsverket/midas/commit/8bf62618e81))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([11cc3df68e6](https://github.com/migrationsverket/midas/commit/11cc3df68e6))
+
 ## 17.28.1 (2026-10-08)
 
 ### 🩹 Fixes
