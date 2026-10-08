@@ -71,6 +71,7 @@ export const Spacing: Story = {
 
 /** A list keeps its list semantics, also without bullets */
 export const AsList: Story = {
+  tags: ['screen-reader'],
   args: {
     elementType: 'ul',
     'aria-label': 'Steg',

@@ -40,7 +40,9 @@ export default {
   ),
 } satisfies Meta<typeof FileList>
 
-export const Default: Story = {}
+export const Default: Story = {
+  tags: ['screen-reader'],
+}
 
 export const WithoutFileSize: Story = {
   render: args => (

@@ -94,6 +94,7 @@ export const ReadOnly: Story = {
 }
 
 export const Invalid: Story = {
+  tags: ['screen-reader'],
   args: {
     isInvalid: true,
   },

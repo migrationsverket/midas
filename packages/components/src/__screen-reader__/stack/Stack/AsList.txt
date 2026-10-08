@@ -1,0 +1,11 @@
+list, Steg
+listitem, level 1, position 1, set size 3
+Fyll i ansökan
+end of listitem, level 1, position 1, set size 3
+listitem, level 1, position 2, set size 3
+Bifoga dokument
+end of listitem, level 1, position 2, set size 3
+listitem, level 1, position 3, set size 3
+Skicka in
+end of listitem, level 1, position 3, set size 3
+end of list, Steg

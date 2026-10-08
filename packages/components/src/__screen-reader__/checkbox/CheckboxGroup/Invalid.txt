@@ -1,0 +1,11 @@
+group, Etikett, Beskrivning Du måste välja en frukt
+Etikett
+Beskrivning
+Du måste välja en frukt
+checkbox, Banan, Du måste välja en frukt Beskrivning, not checked, invalid
+Banan
+checkbox, Apple, Du måste välja en frukt Beskrivning, not checked, invalid
+Apple
+checkbox, Mango, Du måste välja en frukt Beskrivning, not checked, invalid
+Mango
+end of group, Etikett, Beskrivning Du måste välja en frukt

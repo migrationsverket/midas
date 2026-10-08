@@ -102,6 +102,7 @@ export const DisabledOption: Story = {
 }
 
 export const Invalid: Story = {
+  tags: ['screen-reader'],
   args: {
     isInvalid: true,
     errorMessage: 'Error msg',
