@@ -1,0 +1,100 @@
+/**
+ * Everything is in a cascade layer, so any unlayered consumer CSS wins over it,
+ * whatever its specificity or load order. A plain class in a media query can
+ * override direction, gap or --midas-stack-spacing
+ */
+@layer midas {
+  .stack {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    gap: var(--midas-stack-spacing, var(--midas-space-small));
+
+    &:is(ul, ol) {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &:is(fieldset) {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-inline-size: 0;
+    }
+
+    &[data-direction='row'] {
+      flex-direction: row;
+    }
+
+    &[data-direction='row-reverse'] {
+      flex-direction: row-reverse;
+    }
+
+    &[data-direction='column-reverse'] {
+      flex-direction: column-reverse;
+    }
+
+    &[data-align='start'] {
+      align-items: flex-start;
+    }
+
+    &[data-align='center'] {
+      align-items: center;
+    }
+
+    &[data-align='end'] {
+      align-items: flex-end;
+    }
+
+    &[data-align='baseline'] {
+      align-items: baseline;
+    }
+
+    &[data-justify='center'] {
+      justify-content: center;
+    }
+
+    &[data-justify='end'] {
+      justify-content: flex-end;
+    }
+
+    &[data-justify='between'] {
+      justify-content: space-between;
+    }
+
+    &[data-justify='around'] {
+      justify-content: space-around;
+    }
+
+    &[data-justify='evenly'] {
+      justify-content: space-evenly;
+    }
+
+    &[data-wrap] {
+      flex-wrap: wrap;
+    }
+
+    &[data-spacing='xsmall'] {
+      --midas-stack-spacing: var(--midas-space-xsmall);
+    }
+
+    &[data-spacing='small'] {
+      --midas-stack-spacing: var(--midas-space-small);
+    }
+
+    &[data-spacing='medium'] {
+      --midas-stack-spacing: var(--midas-space-medium);
+    }
+
+    &[data-spacing='large'] {
+      --midas-stack-spacing: var(--midas-space-large);
+    }
+
+    &[data-spacing='xlarge'] {
+      --midas-stack-spacing: var(--midas-space-xlarge);
+    }
+  }
+}
