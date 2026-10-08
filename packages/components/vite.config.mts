@@ -31,6 +31,8 @@ export default defineConfig({
       tsconfigPath: join(root, 'tsconfig.lib.json'),
       include: ['src'],
       bundleTypes: false,
+      // Stories and tests aren't part of the published types
+      exclude: ['**/*.stories.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
       // Keep @midas-ds/* imports as package imports. By default tsconfig
       // paths are rewritten to relative paths into the monorepo's sources,
       // which don't exist in the published package.
@@ -66,6 +68,7 @@ export default defineConfig({
         '@internationalized/string',
         '@midas-ds/theme',
         '@react-stately/utils',
+        'clsx',
         'lucide-react',
         'react-aria-components',
         'react-aria',

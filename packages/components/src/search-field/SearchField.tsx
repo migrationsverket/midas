@@ -12,7 +12,6 @@ import TextFieldStyles from '../textfield/TextField.module.css'
 import { Button } from '../button'
 import styles from './SearchField.module.css'
 import clsx from '../utils/clsx'
-import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
 import { FieldError } from '../field-error'
 import { Text } from '../text'
@@ -66,6 +65,9 @@ export interface SearchFieldProps extends Omit<
    * */
   size?: Size
 }
+
+/** What a `validate` function returns for an invalid value */
+type ValidationError = string | string[]
 
 function isValidationError(
   error: ValidationError | true | null | undefined,

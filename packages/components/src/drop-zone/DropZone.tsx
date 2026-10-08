@@ -7,7 +7,7 @@ import {
   composeRenderProps,
   type DropZoneProps as AriaDropZoneProps,
 } from 'react-aria-components'
-import type { ValidationResult } from '@react-types/shared'
+import type { ValidationResult } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import styles from './DropZone.module.css'
 
