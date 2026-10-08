@@ -1,3 +1,14 @@
+## 17.28.0 (2026-10-08)
+
+### 🚀 Features
+
+- **components,stack:** add Stack component ([811b12f3cc2](https://github.com/migrationsverket/midas/commit/811b12f3cc2))
+
+### 🧪 Tests updated
+
+- **components,stack:** add visual regression baselines ([5653f8c8e8b](https://github.com/migrationsverket/midas/commit/5653f8c8e8b))
+- remove chromatic ([7c0e6fe5135](https://github.com/migrationsverket/midas/commit/7c0e6fe5135))
+
 ## 17.27.5 (2026-10-07)
 
 ### 🩹 Fixes
