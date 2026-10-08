@@ -1,0 +1,65 @@
+---
+title: Stack
+description: Ordnar element i en riktning med avstånd mellan dem
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import StackApi from '@midas-ds/api/components/Stack.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { StackExample } from '@site/src/components/examples/stack/StackExamples.tsx'
+
+<ComponentHeader
+  name='Stack'
+  friendlyName='Stack'
+  overrideHeadlessLink=''
+/>
+
+Stack ordnar element vertikalt eller horisontellt med avstånd mellan dem.
+
+Använd Stack för endimensionell layout, där elementen ligger efter varandra i en rad eller en kolumn. Ska innehållet placeras i både rader och kolumner, använd [Grid](./grid.mdx).
+
+```tsx
+import { Stack } from '@midas-ds/components'
+```
+
+```tsx
+<Stack>
+  <div>Första</div>
+  <div>Andra</div>
+  <div>Tredje</div>
+</Stack>
+```
+
+<StackExample />
+
+## Avstånd
+
+Använd `spacing` för att styra avståndet mellan elementen. Värdena motsvarar Midas semantiska space-tokens. Standard är `small`.
+
+| Värde              | Storlek         |
+| ------------------ | --------------- |
+| `xsmall`           | `0.25rem` (4px) |
+| `small` (standard) | `0.5rem` (8px)  |
+| `medium`           | `1rem` (16px)   |
+| `large`            | `1.5rem` (24px) |
+| `xlarge`           | `2rem` (32px)   |
+
+```tsx
+<Stack spacing='large'>…</Stack>
+```
+
+<StackExample spacing='large' />
+
+## Horisontell
+
+Som standard ligger elementen under varandra. Använd `direction='row'` för att lägga dem bredvid varandra.
+
+```tsx
+<Stack direction='row'>…</Stack>
+```
+
+<StackExample direction='row' />
+
+## API
+
+<PropTable doc={StackApi} />
