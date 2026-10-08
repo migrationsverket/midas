@@ -1,3 +1,9 @@
+## 17.28.1 (2026-10-08)
+
+### 🩹 Fixes
+
+- **components,radio,checkbox:** forward data-* attributes ([#1409](https://github.com/migrationsverket/midas/pull/1409))
+
 ## 17.28.0 (2026-10-08)
 
 ### 🚀 Features
