@@ -38,6 +38,7 @@ export const Password: Story = {
 }
 
 export const Invalid: Story = {
+  tags: ['screen-reader'],
   args: {
     isInvalid: true,
     errorMessage: 'Något blev fel',

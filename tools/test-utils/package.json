@@ -5,5 +5,7 @@
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
-  "dependencies": {}
+  "dependencies": {
+    "@guidepup/virtual-screen-reader": "^0.33.0"
+  }
 }

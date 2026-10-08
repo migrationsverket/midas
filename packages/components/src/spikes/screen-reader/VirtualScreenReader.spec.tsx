@@ -1,6 +1,6 @@
-import { afterEach, describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { virtual } from '@guidepup/virtual-screen-reader'
+import { readAll } from '@midas-ds/test-utils/screen-reader'
 import { render } from '../../../test-utils'
 import * as textFieldStories from '../../textfield/TextField.stories'
 import * as checkboxGroupStories from '../../checkbox/CheckboxGroup.stories'
@@ -13,30 +13,6 @@ import * as fileListStories from '../../file-list/FileList.stories'
 const { Invalid: TextFieldInvalid } = composeStories(textFieldStories)
 const { Invalid: CheckboxGroupInvalid } = composeStories(checkboxGroupStories)
 const { Default: FileListDefault } = composeStories(fileListStories)
-
-const readAll = async (container: HTMLElement) => {
-  await virtual.start({ container })
-  // Walk with "next item" until it wraps back to the start. A node can be
-  // read twice ("listitem" and "end of listitem"), so the start is matched on
-  // node and phrase. Capped, so a walk that never wraps can't loop forever
-  const firstNode = virtual.activeNode
-  const firstPhrase = await virtual.lastSpokenPhrase()
-  for (let step = 0; step < 200; step++) {
-    await virtual.next()
-    if (
-      virtual.activeNode === firstNode &&
-      (await virtual.lastSpokenPhrase()) === firstPhrase
-    ) {
-      break
-    }
-  }
-  // The last phrase is the first node again, read after wrapping
-  return (await virtual.spokenPhraseLog()).slice(0, -1)
-}
-
-afterEach(async () => {
-  await virtual.stop()
-})
 
 describe('virtual screen reader output', () => {
   it('TextField, invalid', async () => {
