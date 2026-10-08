@@ -92,6 +92,14 @@ export const Disabled = {
   },
 }
 
+export const DisabledWithDefaultValue: Story = {
+  ...Disabled,
+  args: {
+    ...Disabled.args,
+    defaultValue: 'User input',
+  },
+}
+
 export const ReadOnly: Story = {
   args: {
     isReadOnly: true,
