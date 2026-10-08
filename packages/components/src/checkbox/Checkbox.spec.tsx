@@ -4,6 +4,7 @@ import { composeStories } from '@storybook/react-vite'
 import styles from './Checkbox.module.css'
 import { render } from '../../test-utils'
 import * as stories from './Checkbox.stories'
+import { Checkbox } from './Checkbox'
 
 const {
   Primary,
@@ -106,5 +107,29 @@ describe('given an invalid Checkbox with an error message', async () => {
     await expect
       .element(checkbox)
       .toHaveAccessibleDescription(WithErrorMessage.args.errorMessage as string)
+  })
+})
+
+// Tests in apps click checkboxes by test id. It has to be on the label, not
+// the full-width field wrapper around it, or the click doesn't check it.
+// A bare dispatched click on the label (fireEvent.click) doesn't check a React
+// Aria checkbox at all, not even RAC's own Checkbox, so it isn't tested here.
+describe('given a Checkbox with a test id', () => {
+  it('should put the test id on the label', async () => {
+    const { getByTestId } = await render(
+      <Checkbox data-testid='checkbox'>Accept</Checkbox>,
+    )
+
+    expect(getByTestId('checkbox').element().tagName).toBe('LABEL')
+  })
+
+  it('should be checked when its test id is clicked', async () => {
+    const { getByTestId, getByRole } = await render(
+      <Checkbox data-testid='checkbox'>Accept</Checkbox>,
+    )
+
+    await getByTestId('checkbox').click()
+
+    await expect.element(getByRole('checkbox')).toBeChecked()
   })
 })
