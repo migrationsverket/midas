@@ -131,24 +131,33 @@ describe('FileList', () => {
   })
 
   it('shows a success indicator and announces completion', async () => {
-    const { getByRole, getByText } = await render(<Success />)
+    const { getByRole } = await render(<Success />)
     await expect.element(getByRole('button', { name: /remove/i })).toBeVisible()
-    await expect.element(getByText('Upload complete')).toBeInTheDocument()
+    await expect
+      .element(getByRole('status'))
+      .toHaveTextContent('Upload complete')
   })
 
   it('keeps the success state readable on the row, not only in the announcement', async () => {
     const { getByRole } = await render(<Success />)
     await expect
       .element(
-        getByRole('listitem').getByRole('img', { name: 'Upload complete' }),
+        getByRole('listitem').getByText('Upload complete', { exact: true }),
       )
       .toBeInTheDocument()
   })
 
-  it('does not expose the hidden checkmark for other statuses', async () => {
-    const { getByRole } = await render(<Default />)
+  // As text, not role="img": NVDA read the image role out loud, "grafik
+  // Uppladdning klar"
+  it('does not expose the checkmark as an image', async () => {
+    const { getByRole } = await render(<Success />)
+    await expect.element(getByRole('img')).not.toBeInTheDocument()
+  })
+
+  it('does not show the success state for other statuses', async () => {
+    const { getByText } = await render(<Default />)
     await expect
-      .element(getByRole('img', { name: 'Upload complete' }))
+      .element(getByText('Upload complete', { exact: true }))
       .not.toBeInTheDocument()
   })
 
@@ -199,9 +208,7 @@ describe('FileList', () => {
         'has no checkmark in the DOM while %s',
         async status => {
           const { container } = await render(renderItem(status))
-          expect(
-            container.querySelector('[aria-label="Upload complete"]'),
-          ).toBeNull()
+          expect(container.querySelector(`.${styles.checkmark}`)).toBeNull()
         },
       )
 
@@ -212,6 +219,23 @@ describe('FileList', () => {
         await rerender(renderItem('success'))
         expect(container.querySelector('[role="progressbar"]')).toBeNull()
       })
+    })
+
+    // Without a separator NVDA read the two spans as one word, "resume.pdf1.2 MB"
+    it('separates the file name from the size', async () => {
+      const { getByRole } = await render(<Success />)
+      expect(getByRole('listitem').element().textContent).toContain(
+        'resume.pdf, 1.2 MB',
+      )
+    })
+
+    it('adds no separator when there is no file size', async () => {
+      const { getByRole } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem fileName='resume.pdf' />
+        </FileList>,
+      )
+      expect(getByRole('listitem').element().textContent).not.toContain(',')
     })
 
     it('names the file in the upload progress', async () => {
@@ -235,11 +259,58 @@ describe('FileList', () => {
         .toHaveTextContent(`resume.pdf: ${errorMessage}`)
     })
 
-    it('ties the error message to the row button', async () => {
-      const { getByRole } = await render(<ErrorStory />)
+    // Every state reads in the same order: state, file name, size, button,
+    // details. Uploading and success already start with their icon
+    it('reads a failed upload before the file name and the button', async () => {
+      const { getByRole, getByText } = await render(<ErrorStory />)
+      const state = getByText('Upload failed', { exact: true }).element()
+      const name = getByText('resume.pdf', { exact: true }).element()
+      const button = getByRole('button', { name: /remove resume\.pdf/i })
+
+      expect(
+        state.compareDocumentPosition(name) & Node.DOCUMENT_POSITION_FOLLOWING,
+      ).toBeTruthy()
+      expect(
+        state.compareDocumentPosition(button.element()) &
+          Node.DOCUMENT_POSITION_FOLLOWING,
+      ).toBeTruthy()
+    })
+
+    it('marks a failed upload even without an error message', async () => {
+      const { getByText } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='resume.pdf'
+            status='error'
+          />
+        </FileList>,
+      )
       await expect
-        .element(getByRole('button', { name: /remove resume\.pdf/i }))
-        .toHaveAccessibleDescription(errorMessage)
+        .element(getByText('Upload failed', { exact: true }))
+        .toBeInTheDocument()
+    })
+
+    describe('describes the row button with the state, for focus mode', () => {
+      it('when the upload failed, with the error message', async () => {
+        const { getByRole } = await render(<ErrorStory />)
+        await expect
+          .element(getByRole('button', { name: /remove resume\.pdf/i }))
+          .toHaveAccessibleDescription(`Upload failed ${errorMessage}`)
+      })
+
+      it('when the upload is complete', async () => {
+        const { getByRole } = await render(<Success />)
+        await expect
+          .element(getByRole('button', { name: /remove resume\.pdf/i }))
+          .toHaveAccessibleDescription('Upload complete')
+      })
+
+      it('not for an idle file', async () => {
+        const { getByRole } = await render(<Default />)
+        await expect
+          .element(getByRole('button', { name: /remove resume\.pdf/i }))
+          .not.toHaveAccessibleDescription()
+      })
     })
 
     it('announces nothing for an idle file', async () => {
