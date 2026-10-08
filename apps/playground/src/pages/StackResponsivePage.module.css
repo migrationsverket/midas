@@ -1,0 +1,84 @@
+/* Consumer CSS: what an app would write in its own CSS module */
+
+/* @midas-ds/layout/default.css sets html { overflow: hidden }, so this page,
+   which doesn't use Layout, scrolls itself */
+.scroller {
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+.page {
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--midas-space-large) var(--midas-space-medium);
+}
+
+.card {
+  border: 1px solid var(--midas-border-color-subtle);
+  padding: var(--midas-space-medium);
+}
+
+.box {
+  padding: var(--midas-space-small) var(--midas-space-medium);
+  background-color: var(--midas-layer-02-base);
+  border: 1px solid var(--midas-border-color-subtle);
+}
+
+.code {
+  margin: 0;
+  padding: var(--midas-space-small);
+  background-color: var(--midas-layer-01-base);
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+}
+
+/* 1. Default direction (column), switch to row on desktop */
+.rowOnDesktop {
+  @media (width >= 768px) {
+    flex-direction: row;
+  }
+}
+
+/* 2. direction='row', try to switch to column on mobile */
+.columnOnMobile {
+  @media (width < 768px) {
+    flex-direction: column;
+  }
+}
+
+/* 3. Same as 2, with the specificity bumped to match the Stack's own rule */
+.columnOnMobileBumped.columnOnMobileBumped {
+  @media (width < 768px) {
+    flex-direction: column;
+  }
+}
+
+/* 4. Bigger gap on desktop */
+.gapOnDesktop {
+  @media (width >= 768px) {
+    gap: var(--midas-space-xlarge);
+  }
+}
+
+/* 5. Bigger gap on desktop through the Stack's custom property */
+.spacingVarOnDesktop {
+  @media (width >= 768px) {
+    --midas-stack-spacing: var(--midas-space-xlarge);
+  }
+}
+
+/* 7. Inline style (derp's suggestion), even with bumped specificity */
+.inlineColumnOnMobile.inlineColumnOnMobile {
+  @media (width < 768px) {
+    flex-direction: column;
+  }
+}
+
+/* 8. Inline style, with !important */
+.inlineColumnOnMobileImportant {
+  @media (width < 768px) {
+    flex-direction: column !important;
+  }
+}
