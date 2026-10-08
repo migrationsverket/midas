@@ -10,6 +10,7 @@ import { Text } from '../text'
 import styles from './Checkbox.module.css'
 import { CheckboxField } from './CheckboxField'
 import { CheckboxButton } from './CheckboxButton'
+import { splitDataAttributes } from '../utils/splitDataAttributes'
 
 export interface CheckboxProps extends AriaCheckboxFieldProps {
   description?: string
@@ -25,15 +26,18 @@ export const Checkbox = forwardRef<HTMLLabelElement, CheckboxProps>(
       errorMessage,
       errorPosition = 'top',
       children,
-      ...props
+      ...fieldProps
     },
     ref,
   ) => {
+    // On the label, not the field wrapper, so clicking the test id checks it
+    const [dataAttributes, props] = splitDataAttributes(fieldProps)
     return (
       <CheckboxField {...props}>
         {description && <Text slot='description'>{description}</Text>}
         {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
         <CheckboxButton
+          {...dataAttributes}
           ref={ref}
           className={className}
         >
