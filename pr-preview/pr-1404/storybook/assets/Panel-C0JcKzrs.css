@@ -1,1 +1,0 @@
-._push_xcbfl_1{height:100%;transition:width var(--midas-transition-duration-slow);flex-shrink:0;width:0;position:relative;overflow:hidden}._push_xcbfl_1[data-open]{width:var(--panel-width)}@media (width<=640px){._push_xcbfl_1{width:100%;height:0;transition:height var(--midas-transition-duration-slow)}._push_xcbfl_1[data-open]{height:var(--panel-height-mobile);width:100%}}
