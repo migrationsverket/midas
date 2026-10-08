@@ -69,20 +69,15 @@
 
 .progressIcon {
   inset: 0;
-  opacity: 0;
   position: absolute;
-  transition: opacity var(--midas-transition-duration-quick)
-    var(--midas-transition-timing-ease-out);
-}
-
-.fileListItem[data-status='uploading'] .progressIcon {
-  opacity: 1;
 }
 
 /**
  * 3. Matches the live ProgressBar ring's own stroke-width/color, so the
- *    crossfade from "spinning" to "complete" reads as the same ring, not
- *    a different shape swapping in.
+ *    swap from "spinning" to "complete" reads as the same ring, not a
+ *    different shape swapping in. The ProgressBar is removed as soon as the
+ *    upload ends (see FileListItem), so the ring starts fully visible to
+ *    take its place without a gap.
  */
 .ring {
   border: 2px solid var(--midas-icon-success); /* 3 */
@@ -128,11 +123,7 @@
 }
 
 @keyframes successRing {
-  0% {
-    opacity: 0;
-  }
-
-  9%,
+  0%,
   30% {
     opacity: 1;
   }
@@ -167,7 +158,6 @@
 @media (prefers-reduced-motion: reduce) {
   .row,
   .iconSlot,
-  .progressIcon,
   .ring,
   .checkmark,
   .errorReveal {

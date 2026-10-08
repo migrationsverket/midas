@@ -167,6 +167,53 @@ describe('FileList', () => {
   // Assert what is exposed and tied to which file, not the exact wording, which
   // UX and the a11y testing still decide on
   describe('screen reader output', () => {
+    // Not just hidden: a node that stays in the DOM and only toggles
+    // aria-hidden can linger in NVDA's browse mode buffer, so it read
+    // "Laddar upp" after an upload had already finished or failed
+    describe('only keeps the current state in the DOM', () => {
+      const renderItem = (
+        status: 'idle' | 'uploading' | 'success' | 'error',
+      ) => (
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='resume.pdf'
+            status={status}
+            progress={40}
+            errorMessage={errorMessage}
+            onDelete={() => {
+              // noop
+            }}
+          />
+        </FileList>
+      )
+
+      it.each(['idle', 'success', 'error'] as const)(
+        'has no progress bar in the DOM while %s',
+        async status => {
+          const { container } = await render(renderItem(status))
+          expect(container.querySelector('[role="progressbar"]')).toBeNull()
+        },
+      )
+
+      it.each(['idle', 'uploading', 'error'] as const)(
+        'has no checkmark in the DOM while %s',
+        async status => {
+          const { container } = await render(renderItem(status))
+          expect(
+            container.querySelector('[aria-label="Upload complete"]'),
+          ).toBeNull()
+        },
+      )
+
+      it('removes the progress bar when an upload finishes', async () => {
+        const { container, rerender } = await render(renderItem('uploading'))
+        expect(container.querySelector('[role="progressbar"]')).not.toBeNull()
+
+        await rerender(renderItem('success'))
+        expect(container.querySelector('[role="progressbar"]')).toBeNull()
+      })
+    })
+
     it('names the file in the upload progress', async () => {
       const { getByRole } = await render(<UploadingDeterminate />)
       await expect
