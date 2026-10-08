@@ -144,6 +144,7 @@
   }
 
   &[data-disabled] {
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
     background-color: var(
       --midas-field-disabled,
