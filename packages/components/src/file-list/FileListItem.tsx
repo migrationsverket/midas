@@ -63,30 +63,33 @@ export const FileListItem = ({
     >
       <div className={styles.row}>
         <span className={styles.iconSlot}>
-          <ProgressBar
-            shape='circular'
-            small
-            value={progress}
-            isIndeterminate={progress === undefined}
-            aria-label={`${strings.format('uploading')} ${fileName}`}
-            aria-hidden={isUploading ? undefined : true}
-            className={styles.progressIcon}
-          />
+          {/* The progress bar and checkmark are only rendered in their own
+              state, not kept in the DOM and hidden: NVDA's browse mode can
+              keep a node that only toggles aria-hidden, and read "Laddar upp"
+              after the upload has already ended */}
+          {isUploading && (
+            <ProgressBar
+              shape='circular'
+              small
+              value={progress}
+              isIndeterminate={progress === undefined}
+              aria-label={`${strings.format('uploading')} ${fileName}`}
+              className={styles.progressIcon}
+            />
+          )}
           <span
             className={styles.ring}
             aria-hidden
           />
-          {/* Exposed only while it's shown, so assistive tech gets the same
-              lasting success state as sighted users, not just the one-off
-              announcement below */}
-          <FeedbackStatusIcon
-            status='success'
-            role={isSuccess ? 'img' : undefined}
-            aria-label={strings.format('uploadComplete')}
-            aria-hidden={isSuccess ? undefined : true}
-            size={16}
-            className={clsx(styles.checkmark, styles.successIcon)}
-          />
+          {isSuccess && (
+            <FeedbackStatusIcon
+              status='success'
+              role='img'
+              aria-label={strings.format('uploadComplete')}
+              size={16}
+              className={clsx(styles.checkmark, styles.successIcon)}
+            />
+          )}
         </span>
         <span className={styles.fileInfo}>
           <span className={styles.fileName}>{fileName}</span>
