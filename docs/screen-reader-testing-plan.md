@@ -44,8 +44,11 @@ It reads names, descriptions, error messages, states, list positions and reading
 
 Even on four components, the logs raise questions worth checking with real NVDA:
 
-- **CheckboxGroup, invalid:** every checkbox is described as "Du måste välja en frukt Beskrivning", so the error is read before the description and repeated on every checkbox in the group.
+- **CheckboxGroup, invalid:** the group and its checkboxes read the description and the error in opposite orders. The group says "Beskrivning Du måste välja en frukt", every checkbox says "Du måste välja en frukt Beskrivning", and the error is repeated on every checkbox in the group.
 - **Label text read twice:** the label text appears as its own item after the control. This is likely a limitation of the simulated reader, but worth confirming.
+- **FileList, an empty `status` in every row:** each row has an always-rendered live region, and the simulated reader announces it as "status" even when it's empty, for example on idle rows. Check whether NVDA says anything for it; if it does, every row gets extra noise.
+- **FileList, live region text read again:** when reading through, the simulated reader also reads the live region's text ("Upload complete: cover-letter.docx") at the end of the row. The NVDA tester's transcripts for the same stories didn't include it. This is a concrete example of the simulated reader and NVDA disagreeing, so it shouldn't drive changes on its own.
+- **Caught a real change:** rebasing the spike onto `main` after the FileList upload work (#1366) made the FileList baseline fail with a readable diff: the new separator between file name and size, and the status regions. That's the intended use: the change was deliberate, so the baseline was updated in the same branch.
 
 ## Proposed layers
 
@@ -65,9 +68,9 @@ Manual testing with NVDA, and ideally with users who rely on screen readers, sta
 
 ## Rollout
 
-1. **Shared helper.** Move the spike's `readAll` (walk until the reader wraps back to the start, with a step cap) to `tools/test-utils`, together with a helper for live region announcements.
-2. **Story-driven, opt-in.** Like `visual.spec.tsx`, a single spec that runs the simulated reader over every story with a tag, for example `screen-reader`, and stores one snapshot per story. Opt-in at first, so the baseline grows with reviewed components instead of thousands of unreviewed lines.
-3. **Pilot components.** FileList (all upload states, including announcements), TextField, CheckboxGroup, Select, Modal and Toast (live regions).
+1. **Shared helper.** _Done on the spike branch:_ `readAll` and `collectAnnouncements` in `tools/test-utils/src/screen-reader.ts`, imported as `@midas-ds/test-utils/screen-reader`, with their own tests.
+2. **Story-driven, opt-in.** _Done on the spike branch:_ `packages/components/src/screen-reader.spec.tsx` reads every story tagged `screen-reader` and stores the output as plain text under `__screen-reader__/<folder>/<Component>/<Story>.txt`. Update with `nx test components -- screen-reader.spec -u`. It currently runs in the regular, blocking `test` target, unlike visual regression; see open questions.
+3. **Pilot components.** _Started:_ TextField, Select and CheckboxGroup (invalid), FileList (default and all upload states in `MixedStates`) and Stack as a list. Still to do: Modal and Toast, where announcements matter most.
 4. **Review practice.** A changed snapshot is reviewed like a visual diff: the PR author explains why the spoken output changed, and the reviewer reads the diff.
 5. **Evaluate after the pilot.** Look at snapshot churn, false positives and whether the logs caught anything. Decide then whether to widen the scope and whether layer 4 is worth it.
 
@@ -81,7 +84,7 @@ Manual testing with NVDA, and ideally with users who rely on screen readers, sta
 
 ## Open questions
 
+- Should the baseline block PRs, like a unit test, or report without blocking, like visual regression?
 - Which locale should the baseline use?
-- Should layer 2 snapshots live inline in the spec or in separate snapshot files?
 - Who owns reviewing screen reader snapshot changes?
 - When is real NVDA (layer 4) worth the maintenance, and for which flows?
