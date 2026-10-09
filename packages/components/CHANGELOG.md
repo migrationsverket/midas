@@ -1,3 +1,22 @@
+## 17.29.0 (2026-10-09)
+
+### 🚀 Features
+
+- **components,file-list:** name the file in screen reader output and announce upload errors ([37b3d4545b6](https://github.com/migrationsverket/midas/commit/37b3d4545b6))
+- **components,file-list:** animate the upload-complete and upload-failed transitions ([76157f5d350](https://github.com/migrationsverket/midas/commit/76157f5d350))
+- **components,file-list:** auto-restore focus to a sibling row on removal ([c5356b073ef](https://github.com/migrationsverket/midas/commit/c5356b073ef))
+- **components,file-list,progress-bar:** add upload progress states and a circular ProgressBar ([935847ee8ce](https://github.com/migrationsverket/midas/commit/935847ee8ce))
+
+### 🩹 Fixes
+
+- **components,file-list:** read the upload state first in each row and separate name and size ([4ce25f2de0c](https://github.com/migrationsverket/midas/commit/4ce25f2de0c))
+- **components,file-list:** only render the progress bar and checkmark in their own state ([d7a8371ed70](https://github.com/migrationsverket/midas/commit/d7a8371ed70))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([7052703314c](https://github.com/migrationsverket/midas/commit/7052703314c))
+- update visual regression screenshots ([c7c1aeca056](https://github.com/migrationsverket/midas/commit/c7c1aeca056))
+
 ## 17.28.2 (2026-10-08)
 
 ### 🩹 Fixes
