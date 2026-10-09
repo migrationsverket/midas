@@ -1,3 +1,14 @@
+## 2.2.0 (2026-10-09)
+
+### 🚀 Features
+
+- **components,layout,table-styles:** depend on lucide-react ([#1405](https://github.com/migrationsverket/midas/pull/1405))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.0
+- Updated theme to 3.17.7
+
 ## 2.1.6 (2026-10-09)
 
 ### 🧱 Updated Dependencies
