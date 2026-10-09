@@ -44,7 +44,7 @@
     "@midas-ds/components": "17.29.0",
     "@react-aria/utils": "3.34.1",
     "@react-stately/utils": "3.12.1",
-    "lucide-react": "^0.563.0 || ^1.0.0",
+    "lucide-react": ">=0.563.0 <2.0.0",
     "react-aria-components": "1.21.1"
   }
 }
