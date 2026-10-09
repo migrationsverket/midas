@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { useContext } from 'react'
 import {
   Tab as AriaTab,
   TabProps,
@@ -12,9 +12,9 @@ import clsx from '../utils/clsx'
 import styles from './Tabs.module.css'
 import { TabsContext } from './TabsContext'
 
-export const Tab: React.FC<TabProps> = ({ className, ...props }) => {
-  const { variant, size } = React.useContext(TabsContext)
-  const dialogContext = React.useContext(DialogContext)
+export const Tab = ({ className, ...props }: TabProps) => {
+  const { variant, size } = useContext(TabsContext)
+  const dialogContext = useContext(DialogContext)
 
   return (
     <AriaTab
