@@ -11,8 +11,8 @@ import {
   FormExample,
   ConfirmationExample,
   CustomCSSExample,
-  StickyFooterExample,
   HideCloseButtonExample,
+  LongFormExample,
 } from '@site/src/components/examples/ModalExamples'
 
 <ComponentHeader
@@ -31,7 +31,12 @@ import { DialogTrigger, Modal } from '@midas-ds/components'
 ```tsx
 <DialogTrigger>
   <Button>Öppna modal</Button>
-  <Modal title='Rubrik'>Innehåll i modal</Modal>
+  <Modal
+    title='Rubrik'
+    footer={<Button>Knapptext</Button>}
+  >
+    Innehåll i modal
+  </Modal>
 </DialogTrigger>
 ```
 
@@ -51,15 +56,9 @@ Modaler används främst när det krävs ett aktivt svar från användaren. Moda
 
 ## Riktlinjer
 
-Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för [Knappar](/components/button).
+Handlingar placeras i modalens footer, se riktlinjer för [Knappar](/components/button). Footern i modalen implementerad så att den alltid är synlig, vilket gör att användaren alltid har tillgång till handlingarna, även när innehållet är långt.
 
 ## Varianter
-
-### Bekräftelsemodal
-
-För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd `autoFocus` på knappen som inte är destruktiv/negativ.
-
-<ConfirmationExample />
 
 ### Utan stängknapp
 
@@ -77,44 +76,28 @@ Modaler som inte går att stänga på annat sätt än att acceptera/godkänna ka
     title='Villkor'
     hideCloseButton
     isKeyboardDismissDisabled
+    footer={<Button slot='close'>Bekräfta</Button>}
   >
     Du måste bekräfta att du läst villkoren innan du kan gå vidare
-    <Button slot={'close'}>Bekräfta</Button>
   </Modal>
 </DialogTrigger>
 ```
 
 <HideCloseButtonExample />
 
-### Med fast sidfot
+## Exempel
 
-I långa modala formulär är det lämpligt att lägga handlingar i en fast sidfot, så att de alltid är synliga för användaren när den scrollar i modalen. Ange innehållet i sidfoten via `footer`-propen.
+### Bekräftelsemodal
 
-```tsx
-<DialogTrigger>
-  <Button>Open</Button>
-  <Modal
-    title='Modal Title'
-    //highlight-start
-    footer={
-      <ButtonGroup>
-        <Button slot='close'>Spara</Button>
-        <Button
-          slot='close'
-          variant='secondary'
-        >
-          Avbryt
-        </Button>
-      </ButtonGroup>
-    }
-    //highlight-end
-  >
-    {/* Långt formulärinnehåll */}
-  </Modal>
-</DialogTrigger>
-```
+För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd `autoFocus` på knappen som inte är destruktiv/negativ.
 
-<StickyFooterExample />
+<ConfirmationExample />
+
+### Långa modala formulär
+
+Footern i modalen är alltid synlig. Det gör att användaren alltid har tillgång till handlingarna, även när innehållet är långt.
+
+<LongFormExample />
 
 ## Implementation
 
@@ -126,10 +109,11 @@ element kan användas för att öppna modalen. För att stänga modalen med en k
 ```tsx
 <DialogTrigger>
   <Button>Open</Button>
-  <Modal title='Modal Title'>
-    //highlight-start
-    <Button slot='close'>Close</Button>
-    //highlight-end
+  <Modal
+    title='Modal Title'
+    footer={<Button slot='close'>Close</Button>}
+  >
+    {/* Modal content */}
   </Modal>
 </DialogTrigger>
 ```
@@ -151,6 +135,7 @@ return (
       title='Modal Title'
       isOpen={open}
       onOpenChange={setOpen}
+      footer={<Button>Button text</Button>}
     >
       // highlight-end
       {/* Modal content */}
@@ -171,6 +156,7 @@ För att stänga modal via klick utanför modalens yta, använd `isDismissable` 
     isDismissable
     //highlight-end
     title='Modal Title'
+    footer={<Button>Button text</Button>}
   >
     /* Modal content */
   </Modal>
@@ -184,7 +170,7 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 ```tsx
 <DialogTrigger>
   <Button>Open</Button>
-  <Modal title="Modal Title">
+  <Modal title="Modal Title" footer={<Button>Button text</Button>}>
     //highlight-start
     <TextField label="Name" autoFocus>
     //highlight-end
