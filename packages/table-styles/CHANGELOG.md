@@ -1,3 +1,13 @@
+## 2.2.1 (2026-10-09)
+
+### 🩹 Fixes
+
+- **components,layout,table-styles:** declare public type packages ([#1406](https://github.com/migrationsverket/midas/pull/1406))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.1
+
 ## 2.2.0 (2026-10-09)
 
 ### 🚀 Features
