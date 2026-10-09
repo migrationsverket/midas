@@ -39,6 +39,7 @@
 .modalHeader {
   min-height: var(--midas-size-control);
   background-color: var(--midas-layer-01-base);
+  border-bottom: 1px solid var(--midas-border-color-subtle);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -55,8 +56,7 @@
 
 .modalBody {
   position: relative;
-  padding: var(--midas-space-medium) var(--midas-space-xlarge)
-    var(--midas-space-xlarge);
+  padding: var(--midas-space-medium);
   font-family: var(--midas-typography-font-family);
   display: flex;
   flex-direction: column;
@@ -65,6 +65,7 @@
 
 .modalFooter {
   background-color: var(--midas-layer-01-base);
+  border-top: 1px solid var(--midas-border-color-subtle);
   bottom: 0;
   display: flex;
   gap: var(--midas-space-small);
