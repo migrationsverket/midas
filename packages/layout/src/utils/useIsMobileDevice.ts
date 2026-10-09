@@ -1,7 +1,20 @@
 'use client'
 
-import { useMediaQuery } from '@react-spectrum/utils'
+import { useSyncExternalStore } from 'react'
+
+const QUERY = '(max-width: 640px)'
+
+const subscribe = (onChange: () => void) => {
+  const media = window.matchMedia(QUERY)
+  media.addEventListener('change', onChange)
+  return () => media.removeEventListener('change', onChange)
+}
+
+const getSnapshot = () => window.matchMedia(QUERY).matches
+
+// No window on the server, and the first client render has to match it
+const getServerSnapshot = () => false
 
 export function useIsMobileDevice(): boolean {
-  return useMediaQuery('(max-width: 640px)')
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 }

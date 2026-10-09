@@ -32,10 +32,8 @@ export default defineConfig([
         {
           buildTargets: ['build'],
           ignoredDependencies: [
-            // bundled dependencies
-            '@react-types/shared',
+            // type-only import that isn't part of the public types
             '@internationalized/date',
-            'clsx',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [

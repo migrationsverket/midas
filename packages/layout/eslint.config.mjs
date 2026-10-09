@@ -34,9 +34,6 @@ export default defineConfig([
           ignoredDependencies: [
             // peer dependencies
             'react-dom',
-            // bundled dependencies
-            '@react-spectrum/utils',
-            'clsx',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [
