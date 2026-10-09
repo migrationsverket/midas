@@ -1,17 +1,23 @@
 list, Uploaded files
 listitem, level 1, position 1, set size 3
 resume.pdf
+,
 1.2 MB
 button, Remove resume.pdf
+status
 end of listitem, level 1, position 1, set size 3
 listitem, level 1, position 2, set size 3
 cover-letter.docx
+,
 45 KB
 button, Remove cover-letter.docx
+status
 end of listitem, level 1, position 2, set size 3
 listitem, level 1, position 3, set size 3
 references.pdf
+,
 3.4 MB
 button, Remove references.pdf
+status
 end of listitem, level 1, position 3, set size 3
 end of list, Uploaded files

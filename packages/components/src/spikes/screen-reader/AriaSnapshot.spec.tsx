@@ -51,14 +51,17 @@ describe('accessibility tree snapshots', () => {
     await expect.element(container).toMatchAriaInlineSnapshot(`
       - list "Uploaded files":
         - listitem:
-          - text: resume.pdf 1.2 MB
+          - text: resume.pdf , 1.2 MB
           - button "Remove resume.pdf"
+          - status
         - listitem:
-          - text: cover-letter.docx 45 KB
+          - text: cover-letter.docx , 45 KB
           - button "Remove cover-letter.docx"
+          - status
         - listitem:
-          - text: references.pdf 3.4 MB
+          - text: references.pdf , 3.4 MB
           - button "Remove references.pdf"
+          - status
     `)
   })
 })
