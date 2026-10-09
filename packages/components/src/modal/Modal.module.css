@@ -26,6 +26,12 @@
   overflow-y: auto;
   max-height: inherit;
 
+  /* keep focused content clear of the sticky header and footer, their heights are set from Modal.tsx */
+  scroll-padding-block: calc(
+      var(--modal-header-height, 0px) + var(--midas-space-medium)
+    )
+    calc(var(--modal-footer-height, 0px) + var(--midas-space-medium));
+
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
     outline: none;
@@ -38,7 +44,8 @@
 
 .modalHeader {
   min-height: var(--midas-size-control);
-  background-color: var(--midas-layer-01-base);
+  background-color: var(--midas-background-base);
+  border-bottom: 1px solid var(--midas-border-color-subtle);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -53,10 +60,16 @@
   padding-left: var(--midas-space-medium);
 }
 
+.closeButton {
+  &[data-focus-visible] {
+    /* The default focus indicator gets cut off due to lack of space in the modal header */
+    box-shadow: var(--midas-state-focus-inset);
+  }
+}
+
 .modalBody {
   position: relative;
-  padding: var(--midas-space-medium) var(--midas-space-xlarge)
-    var(--midas-space-xlarge);
+  padding: var(--midas-space-medium);
   font-family: var(--midas-typography-font-family);
   display: flex;
   flex-direction: column;
@@ -64,16 +77,16 @@
 }
 
 .modalFooter {
-  background-color: var(--midas-layer-01-base);
+  background-color: var(--midas-background-base);
+  border-top: 1px solid var(--midas-border-color-subtle);
   bottom: 0;
   display: flex;
   gap: var(--midas-space-small);
-  justify-content: flex-start;
   padding: var(--midas-space-medium);
   position: sticky;
   z-index: var(--midas-z-index-above);
 
-  & > * {
+  & > div {
     flex: 1;
   }
 }

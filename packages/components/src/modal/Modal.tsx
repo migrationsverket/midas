@@ -12,6 +12,7 @@ import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ModalOverlay, type ModalOverlayProps } from './modal-overlay'
+import { useStickyHeight } from './useStickyHeight'
 
 export interface ModalProps extends ModalOverlayProps {
   /**
@@ -33,6 +34,8 @@ export { DialogTrigger }
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   ({ children, title, hideCloseButton = false, footer, ...rest }, ref) => {
     const strings = useLocalizedStringFormatter(messages)
+    const headerRef = useStickyHeight('--modal-header-height')
+    const footerRef = useStickyHeight('--modal-footer-height')
 
     return (
       <ModalOverlay {...rest}>
@@ -42,7 +45,10 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
             ref={ref}
           >
             <AriaDialog className={styles.dialog}>
-              <div className={styles.modalHeader}>
+              <div
+                className={styles.modalHeader}
+                ref={headerRef}
+              >
                 <div className={styles.modalTitle}>
                   {title && (
                     <Heading
@@ -56,13 +62,12 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
                 </div>
                 {!hideCloseButton && (
                   <Button
-                    slot='close'
-                    variant='tertiary'
+                    aria-label={strings.format('close')}
+                    className={styles.closeButton}
                     icon={X}
-                    iconPlacement='right'
-                  >
-                    {strings.format('close')}
-                  </Button>
+                    slot='close'
+                    variant='icon'
+                  />
                 )}
               </div>
               <div
@@ -71,7 +76,14 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
               >
                 {children}
               </div>
-              {footer && <div className={styles.modalFooter}>{footer}</div>}
+              {footer && (
+                <div
+                  className={styles.modalFooter}
+                  ref={footerRef}
+                >
+                  {footer}
+                </div>
+              )}
             </AriaDialog>
           </AriaModal>
         ))}
