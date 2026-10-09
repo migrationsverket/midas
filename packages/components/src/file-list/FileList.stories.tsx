@@ -155,6 +155,7 @@ export const Error: Story = {
 }
 
 export const MixedStates: Story = {
+  tags: ['screen-reader'],
   render: args => (
     <FileList {...args}>
       <FileListItem

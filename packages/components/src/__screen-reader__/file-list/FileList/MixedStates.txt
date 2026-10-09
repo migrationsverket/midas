@@ -1,0 +1,38 @@
+list, Uploaded files
+listitem, level 1, position 1, set size 4
+idle-file.pdf
+,
+1.2 MB
+button, Remove idle-file.pdf
+status
+end of listitem, level 1, position 1, set size 4
+listitem, level 1, position 2, set size 4
+progressbar, Uploading large-video.mp4, max value 100, min value 0, current value 40%
+large-video.mp4
+,
+128 MB
+button, Cancel large-video.mp4
+status
+end of listitem, level 1, position 2, set size 4
+listitem, level 1, position 3, set size 4
+Upload complete
+cover-letter.docx
+,
+45 KB
+button, Remove cover-letter.docx, Upload complete
+status
+Upload complete: cover-letter.docx
+end of status
+end of listitem, level 1, position 3, set size 4
+listitem, level 1, position 4, set size 4
+Upload failed
+references.pdf
+,
+3.4 MB
+button, Remove references.pdf, Upload failed Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.
+Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.
+status
+references.pdf: Uppladdningen misslyckades. Kontrollera din anslutning och försök igen.
+end of status
+end of listitem, level 1, position 4, set size 4
+end of list, Uploaded files
