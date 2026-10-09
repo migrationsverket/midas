@@ -88,6 +88,9 @@
     }
   },
   "targetDefaults": {
+    "typecheck": {
+      "dependsOn": ["theme:style-dictionary-generate"]
+    },
     "build": {
       "dependsOn": ["theme:style-dictionary-generate", "^build"],
       "inputs": ["production", "^production"],

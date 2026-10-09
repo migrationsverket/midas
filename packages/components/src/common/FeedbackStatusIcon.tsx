@@ -1,5 +1,5 @@
 import {
-  AlertTriangle,
+  TriangleAlert,
   Check,
   Flag,
   Info,
@@ -18,7 +18,7 @@ const icons: Record<FeedbackStatus, LucideIcon> = {
   success: Check,
   info: Info,
   important: Flag,
-  warning: AlertTriangle,
+  warning: TriangleAlert,
 }
 
 const labels: Record<FeedbackStatus, keyof (typeof messages)['en' | 'sv']> = {

@@ -44,6 +44,7 @@
     "@internationalized/string": "^3.2.10",
     "@midas-ds/theme": "3.17.6",
     "@react-stately/utils": "3.12.1",
+    "lucide-react": ">=0.563.0 <2.0.0",
     "react-aria-components": "1.21.1",
     "react-aria": "3.52.1",
     "react-stately": "3.50.0"

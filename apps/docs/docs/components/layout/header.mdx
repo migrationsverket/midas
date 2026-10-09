@@ -112,7 +112,7 @@ HeaderActions hanterar inte overflow automatiskt. Om applikationen har många gl
 import { useMediaQuery } from '@react-spectrum/utils'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { Header, HeaderActions, HeaderAction, HeaderLogo, HeaderTitle } from '@midas-ds/layout'
-import { Bell, MoreHorizontal, Settings, User } from 'lucide-react'
+import { Bell, Ellipsis, Settings, User } from 'lucide-react'
 
 const collapsibleActions = [
   { id: 'profile', label: 'Min profil', icon: <User size={20} /> },
@@ -133,7 +133,7 @@ function AppHeader() {
           <MenuTrigger>
             <HeaderAction
               aria-label='Fler alternativ'
-              icon={<MoreHorizontal size={20} />}
+              icon={<Ellipsis size={20} />}
             />
             <MenuPopover>
               <Menu>

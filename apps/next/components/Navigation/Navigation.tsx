@@ -14,7 +14,7 @@ import {
   Save,
   Send,
   User,
-  HelpCircle,
+  CircleQuestionMark,
   Mail,
   Bell,
 } from 'lucide-react'
@@ -100,7 +100,7 @@ const sections: Section[] = [
         id: 10,
         title: 'Help And Support Center',
         href: '/help',
-        icon: <HelpCircle />,
+        icon: <CircleQuestionMark />,
       },
       {
         id: 11,

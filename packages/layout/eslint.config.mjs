@@ -37,7 +37,6 @@ export default defineConfig([
             // bundled dependencies
             '@react-spectrum/utils',
             'clsx',
-            'lucide-react',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [

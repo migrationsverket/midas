@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { CheckCircle, EllipsisVertical, Pen, X } from 'lucide-react'
+import { CircleCheckBig, EllipsisVertical, Pen, X } from 'lucide-react'
 import {
   Card,
   CardActionArea,
@@ -172,7 +172,7 @@ export const WithCustomBody: Story = {
           variant='icon'
           aria-label='Markera som klar'
         >
-          <CheckCircle />
+          <CircleCheckBig />
         </Button>
       </CardBody>
     </Card>

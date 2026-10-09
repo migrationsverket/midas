@@ -14,7 +14,6 @@ export default [
             // table-styles has an implicit dependency to theme
             '@midas-ds/theme',
             // bundled dependencies
-            'lucide-react',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [

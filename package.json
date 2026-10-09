@@ -29,7 +29,7 @@
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-mdx": "^3.5.0",
     "eslint-plugin-react": "7.37.5",
-    "lucide-react": "^0.563.0",
+    "lucide-react": "^1.53.0",
     "next": "^16.3.1",
     "raw-loader": "^4.0.2",
     "react": "^19.3.0",

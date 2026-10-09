@@ -66,6 +66,7 @@ export default defineConfig({
         '@internationalized/string',
         '@midas-ds/theme',
         '@react-stately/utils',
+        'lucide-react',
         'react-aria-components',
         'react-aria',
         'react-dom',

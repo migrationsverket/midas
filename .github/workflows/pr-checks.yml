@@ -75,6 +75,36 @@ jobs:
            contains(github.event.pull_request.labels.*.name, 'a11y')
         run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
 
+  lucide-min:
+    name: lucide-react 0.x compatibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # The packages declare lucide-react `^0.563.0 || ^1.0.0`, but the repo
+      # develops against 1.x, which has icons that 0.x doesn't. Typecheck the
+      # packages against the lowest supported version, read from that range.
+      - name: Install the lowest supported lucide-react
+        run: |
+          MIN=$(node -p "require('./packages/components/package.json').dependencies['lucide-react'].match(/\d+\.\d+\.\d+/)[0]")
+          echo "Typechecking against lucide-react $MIN"
+          npm install --no-save --no-audit --no-fund lucide-react@$MIN
+
+      # Only the packages: the apps use the repo's 1.x
+      - name: Typecheck packages
+        run: npx nx run-many -t typecheck -p components layout table-styles --skip-nx-cache
+
   playwright-version:
     name: Resolve Playwright version
     runs-on: ubuntu-latest
