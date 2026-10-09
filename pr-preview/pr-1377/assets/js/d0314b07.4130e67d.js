@@ -1,0 +1,670 @@
+"use strict";
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([["395"], {
+47602(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  metadata: () => (/* reexport */ site_docs_get_started_install_mdx_d03_namespaceObject),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  contentTitle: () => (/* binding */ contentTitle),
+  toc: () => (/* binding */ toc),
+  assets: () => (/* binding */ assets)
+});
+
+;// CONCATENATED MODULE: ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-install-mdx-d03.json
+var site_docs_get_started_install_mdx_d03_namespaceObject = JSON.parse('{"id":"get-started/install","title":"Installera Midas","description":"Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn.","source":"@site/docs/get-started/install.mdx","sourceDirName":"get-started","slug":"/get-started/install","permalink":"/pr-preview/pr-1377/get-started/install","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Installera Midas","sidebar_label":"Installera","sidebar_position":2},"sidebar":"sideBar","previous":{"title":"Om","permalink":"/pr-preview/pr-1377/get-started/about"},"next":{"title":"Versionshantering","permalink":"/pr-preview/pr-1377/get-started/releases"}}')
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
+var ThemeClassNames = __webpack_require__(88287);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/node_modules/react-router/esm/react-router.js
+var react_router = __webpack_require__(35527);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useIsomorphicLayoutEffect.js
+var useIsomorphicLayoutEffect = __webpack_require__(99989);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/historyUtils.js
+var historyUtils = __webpack_require__(96629);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/jsUtils.js
+var jsUtils = __webpack_require__(80618);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/storageUtils.js + 1 modules
+var storageUtils = __webpack_require__(6518);
+;// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/tabsUtils.js
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 
+
+
+
+
+function sanitizeTabsChildren(children) {
+    return react.Children.toArray(children).filter((child)=>child !== '\n');
+}
+function extractChildrenTabValues(children) {
+    // ✅ <TabItem value="red"/> => true
+    // ✅ <CustomTabItem value="red"/> => true
+    // ❌ <RedTabItem value="tab-value"/> => requires <Tabs values> prop
+    function isTabItemWithValueProp(comp) {
+        const { props } = comp;
+        return !!props && typeof props === 'object' && 'value' in props;
+    }
+    const elements = react.Children.toArray(children).flatMap((child)=>{
+        // Historical case, not sure when it happens, do we really need this?
+        if (!child) {
+            return [];
+        }
+        if (/*#__PURE__*/ (0,react.isValidElement)(child) && isTabItemWithValueProp(child)) {
+            return [
+                child
+            ];
+        }
+        // child.type.name will give non-sensical values in prod because of
+        // minification, but we assume it won't throw in prod.
+        const badChildTypeName = // @ts-expect-error: guarding against unexpected cases
+        typeof child.type === 'string' ? child.type : child.type.name;
+        throw new Error(`Docusaurus error: Bad <Tabs> child <${badChildTypeName}>: all children of the <Tabs> component should be <TabItem>, and every <TabItem> should have a unique "value" prop.
+If you do not want to pass on a "value" prop to the direct children of <Tabs>, you can also pass an explicit <Tabs values={...}> prop.`);
+    });
+    return elements.map((param)=>{
+        let { props: { value, label, attributes, default: isDefault } } = param;
+        return {
+            value,
+            label,
+            attributes,
+            default: isDefault
+        };
+    });
+}
+function ensureNoDuplicateValue(values) {
+    const dup = (0,jsUtils/* .duplicates */.XI)(values, (a, b)=>a.value === b.value);
+    if (dup.length > 0) {
+        throw new Error(`Docusaurus error: Duplicate values "${dup.map((a)=>`'${a.value}'`).join(', ')}" found in <Tabs>. Every value needs to be unique.`);
+    }
+}
+function useTabValues(props) {
+    const { values: valuesProp, children } = props;
+    return (0,react.useMemo)(()=>{
+        const values = valuesProp ?? extractChildrenTabValues(children);
+        ensureNoDuplicateValue(values);
+        return values;
+    }, [
+        valuesProp,
+        children
+    ]);
+}
+function isValidValue(param) {
+    let { value, tabValues } = param;
+    return tabValues.some((a)=>a.value === value);
+}
+function getInitialStateValue(param) {
+    let { defaultValue, tabValues } = param;
+    if (tabValues.length === 0) {
+        throw new Error('Docusaurus error: the <Tabs> component requires at least one <TabItem> children component');
+    }
+    if (defaultValue) {
+        // Warn user about passing incorrect defaultValue as prop.
+        if (!isValidValue({
+            value: defaultValue,
+            tabValues
+        })) {
+            throw new Error(`Docusaurus error: The <Tabs> has a defaultValue "${defaultValue}" but none of its children has the corresponding value. Available values are: ${tabValues.map((a)=>a.value).join(', ')}. If you intend to show no default tab, use defaultValue={null} instead.`);
+        }
+        return defaultValue;
+    }
+    const defaultTabValue = tabValues.find((tabValue)=>tabValue.default) ?? tabValues[0];
+    if (!defaultTabValue) {
+        throw new Error('Unexpected error: 0 tabValues');
+    }
+    return defaultTabValue.value;
+}
+function getStorageKey(groupId) {
+    if (!groupId) {
+        return null;
+    }
+    return `docusaurus.tab.${groupId}`;
+}
+function getQueryStringKey(param) {
+    let { queryString = false, groupId } = param;
+    if (typeof queryString === 'string') {
+        return queryString;
+    }
+    if (queryString === false) {
+        return null;
+    }
+    if (queryString === true && !groupId) {
+        throw new Error(`Docusaurus error: The <Tabs> component groupId prop is required if queryString=true, because this value is used as the search param name. You can also provide an explicit value such as queryString="my-search-param".`);
+    }
+    return groupId ?? null;
+}
+function useTabQueryString(param) {
+    let { queryString = false, groupId } = param;
+    const history = (0,react_router/* .useHistory */.W6)();
+    const key = getQueryStringKey({
+        queryString,
+        groupId
+    });
+    const value = (0,historyUtils/* .useQueryStringValue */.aZ)(key);
+    const setValue = (0,react.useCallback)((newValue)=>{
+        if (!key) {
+            return; // no-op
+        }
+        const searchParams = new URLSearchParams(history.location.search);
+        searchParams.set(key, newValue);
+        history.replace({
+            ...history.location,
+            search: searchParams.toString()
+        });
+    }, [
+        key,
+        history
+    ]);
+    return [
+        value,
+        setValue
+    ];
+}
+function useTabStorage(param) {
+    let { groupId } = param;
+    const key = getStorageKey(groupId);
+    const [value, storageSlot] = (0,storageUtils/* .useStorageSlot */.Dv)(key);
+    const setValue = (0,react.useCallback)((newValue)=>{
+        if (!key) {
+            return; // no-op
+        }
+        storageSlot.set(newValue);
+    }, [
+        key,
+        storageSlot
+    ]);
+    return [
+        value,
+        setValue
+    ];
+}
+function useTabsContextValue(props) {
+    const { defaultValue, queryString = false, groupId } = props;
+    const tabValues = useTabValues(props);
+    const [selectedValue, setSelectedValue] = (0,react.useState)(()=>getInitialStateValue({
+            defaultValue,
+            tabValues
+        }));
+    const [queryStringValue, setQueryString] = useTabQueryString({
+        queryString,
+        groupId
+    });
+    const [storageValue, setStorageValue] = useTabStorage({
+        groupId
+    });
+    // We sync valid querystring/storage value to state on change + hydration
+    const valueToSync = (()=>{
+        const value = queryStringValue ?? storageValue;
+        if (!isValidValue({
+            value,
+            tabValues
+        })) {
+            return null;
+        }
+        return value;
+    })();
+    // Sync in a layout/sync effect is important, for useScrollPositionBlocker
+    // See https://github.com/facebook/docusaurus/issues/8625
+    (0,useIsomorphicLayoutEffect/* ["default"] */.A)(()=>{
+        if (valueToSync) {
+            setSelectedValue(valueToSync);
+        }
+    }, [
+        valueToSync
+    ]);
+    const selectValue = (0,react.useCallback)((newValue)=>{
+        if (!isValidValue({
+            value: newValue,
+            tabValues
+        })) {
+            throw new Error(`Can't select invalid tab value=${newValue}`);
+        }
+        setSelectedValue(newValue);
+        setQueryString(newValue);
+        setStorageValue(newValue);
+    }, [
+        setQueryString,
+        setStorageValue,
+        tabValues
+    ]);
+    return {
+        selectedValue,
+        selectValue,
+        tabValues,
+        lazy: props.lazy ?? false,
+        block: props.block ?? false
+    };
+}
+const TabsContext = /*#__PURE__*/ (0,react.createContext)(null);
+function useTabs() {
+    const contextValue = react.useContext(TabsContext);
+    if (!contextValue) {
+        throw new Error('useTabsContext() must be used within a Tabs component');
+    }
+    return contextValue;
+}
+function TabsProvider(props) {
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(TabsContext.Provider, {
+        value: props.value,
+        children: props.children
+    });
+} //# sourceMappingURL=tabsUtils.js.map
+
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/scrollUtils.js
+var scrollUtils = __webpack_require__(28584);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useIsBrowser.js
+var useIsBrowser = __webpack_require__(19863);
+;// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/Tabs/styles.module.css
+// extracted by css-extract-rspack-plugin
+/* export default */ const styles_module = ({"tabList":"tabList__CuJ","tabItem":"tabItem_LNqP"});
+;// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/Tabs/index.js
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 
+
+
+
+
+
+function TabList(param) {
+    let { className } = param;
+    const { selectedValue, selectValue, tabValues, block } = useTabs();
+    const tabRefs = [];
+    const { blockElementScrollPositionUntilNextRender } = (0,scrollUtils/* .useScrollPositionBlocker */.a_)();
+    const handleTabChange = (event)=>{
+        const newTab = event.currentTarget;
+        const newTabIndex = tabRefs.indexOf(newTab);
+        const newTabValue = tabValues[newTabIndex].value;
+        if (newTabValue !== selectedValue) {
+            blockElementScrollPositionUntilNextRender(newTab);
+            selectValue(newTabValue);
+        }
+    };
+    const handleKeydown = (event)=>{
+        let focusElement = null;
+        switch(event.key){
+            case 'Enter':
+                {
+                    handleTabChange(event);
+                    break;
+                }
+            case 'ArrowRight':
+                {
+                    const nextTab = tabRefs.indexOf(event.currentTarget) + 1;
+                    focusElement = tabRefs[nextTab] ?? tabRefs[0];
+                    break;
+                }
+            case 'ArrowLeft':
+                {
+                    const prevTab = tabRefs.indexOf(event.currentTarget) - 1;
+                    focusElement = tabRefs[prevTab] ?? tabRefs[tabRefs.length - 1];
+                    break;
+                }
+            default:
+                break;
+        }
+        focusElement?.focus();
+    };
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("ul", {
+        role: "tablist",
+        "aria-orientation": "horizontal",
+        className: (0,clsx/* ["default"] */.A)('tabs', {
+            'tabs--block': block
+        }, className),
+        children: tabValues.map((param)=>{
+            let { value, label, attributes } = param;
+            return /*#__PURE__*/ (0,jsx_runtime.jsx)("li", {
+                // TODO extract TabListItem
+                role: "tab",
+                tabIndex: selectedValue === value ? 0 : -1,
+                "aria-selected": selectedValue === value,
+                ref: (ref)=>{
+                    tabRefs.push(ref);
+                },
+                onKeyDown: handleKeydown,
+                onClick: handleTabChange,
+                ...attributes,
+                className: (0,clsx/* ["default"] */.A)('tabs__item', styles_module.tabItem, attributes?.className, {
+                    'tabs__item--active': selectedValue === value
+                }),
+                children: label ?? value
+            }, value);
+        })
+    });
+}
+function TabContent(param) {
+    let { children } = param;
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        className: "margin-top--md",
+        children: children
+    });
+}
+function TabsContainer(param) {
+    let { className, children } = param;
+    return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+        className: (0,clsx/* ["default"] */.A)(ThemeClassNames/* .ThemeClassNames.tabs.container */.G.tabs.container, // former name kept for backward compatibility
+        // see https://github.com/facebook/docusaurus/pull/4086
+        'tabs-container', styles_module.tabList),
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(TabList, {
+                // Surprising but historical
+                // className is applied on TabList, not on TabsContainer
+                className: className
+            }),
+            /*#__PURE__*/ (0,jsx_runtime.jsx)(TabContent, {
+                children: children
+            })
+        ]
+    });
+}
+function Tabs(props) {
+    const isBrowser = (0,useIsBrowser/* ["default"] */.A)();
+    const value = useTabsContextValue(props);
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(TabsProvider, {
+        value: value,
+        children: /*#__PURE__*/ (0,jsx_runtime.jsx)(TabsContainer, {
+            className: props.className,
+            children: sanitizeTabsChildren(props.children)
+        })
+    }, String(isBrowser));
+}
+
+;// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/styles.module.css
+// extracted by css-extract-rspack-plugin
+/* export default */ const TabItem_styles_module = ({"tabItem":"tabItem_Ymn6"});
+;// CONCATENATED MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ 
+
+
+
+function TabItemPanel(param) {
+    let { children, className, hidden } = param;
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        role: "tabpanel",
+        className: (0,clsx/* ["default"] */.A)(TabItem_styles_module.tabItem, className),
+        hidden,
+        children: children
+    });
+}
+function TabItem(param) {
+    let { children, className, value } = param;
+    const { selectedValue, lazy } = useTabs();
+    const isSelected = value === selectedValue;
+    // TODO Docusaurus v4: use <Activity> ?
+    if (!isSelected && lazy) {
+        return null;
+    }
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)(TabItemPanel, {
+        className: className,
+        hidden: !isSelected,
+        children: children
+    });
+}
+
+;// CONCATENATED MODULE: ./apps/docs/docs/get-started/install.mdx
+
+
+const frontMatter = {
+	title: 'Installera Midas',
+	sidebar_label: 'Installera',
+	sidebar_position: 2
+};
+const contentTitle = undefined;
+
+const assets = {
+
+};
+
+
+
+
+
+const toc = [{
+  "value": "Snabbstart",
+  "id": "snabbstart",
+  "level": 2
+}, {
+  "value": "Importera och använd en komponent",
+  "id": "importera-och-använd-en-komponent",
+  "level": 3
+}, {
+  "value": "Avancerad installation",
+  "id": "avancerad-installation",
+  "level": 2
+}, {
+  "value": "1. Importera variabler och typsnitt",
+  "id": "1-importera-variabler-och-typsnitt",
+  "level": 3
+}, {
+  "value": "2. Använd tokens i CSS",
+  "id": "2-använd-tokens-i-css",
+  "level": 3
+}, {
+  "value": "Headless-bibliotek och andra beroenden",
+  "id": "headless-bibliotek-och-andra-beroenden",
+  "level": 2
+}, {
+  "value": "Rapportera buggar eller förslag till nya features",
+  "id": "rapportera-buggar-eller-förslag-till-nya-features",
+  "level": 2
+}, {
+  "value": "Uppgradera från tidigare version",
+  "id": "uppgradera-från-tidigare-version",
+  "level": 2
+}];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    admonition: "admonition",
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    li: "li",
+    p: "p",
+    pre: "pre",
+    strong: "strong",
+    ul: "ul",
+    ...(0,lib/* .useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(_components.p, {
+      children: "Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn.\nAlla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket."
+    }), "\n", (0,jsx_runtime.jsxs)(Tabs, {
+      groupId: "npm2yarn",
+      children: [(0,jsx_runtime.jsx)(TabItem, {
+        value: "npm",
+        children: (0,jsx_runtime.jsx)(_components.pre, {
+          children: (0,jsx_runtime.jsx)(_components.code, {
+            className: "language-bash",
+            children: "npm install @midas-ds/components\n"
+          })
+        })
+      }), (0,jsx_runtime.jsx)(TabItem, {
+        value: "yarn",
+        label: "Yarn",
+        children: (0,jsx_runtime.jsx)(_components.pre, {
+          children: (0,jsx_runtime.jsx)(_components.code, {
+            className: "language-bash",
+            children: "yarn add @midas-ds/components\n"
+          })
+        })
+      }), (0,jsx_runtime.jsx)(TabItem, {
+        value: "pnpm",
+        label: "pnpm",
+        children: (0,jsx_runtime.jsx)(_components.pre, {
+          children: (0,jsx_runtime.jsx)(_components.code, {
+            className: "language-bash",
+            children: "pnpm add @midas-ds/components\n"
+          })
+        })
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "snabbstart",
+      children: "Snabbstart"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För en snabb och enkel start, importera ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "default.css"
+      }), ". Denna fil innehåller allt du behöver: typsnitt och CSS-variabler\nför att ge komponenterna rätt utseende. Importera filen i roten av din applikation:"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "title=\"main.tsx\"",
+        children: "import '@midas-ds/components/default.css'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "importera-och-använd-en-komponent",
+      children: "Importera och använd en komponent"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Efter installationen kan du importera och använda komponenter direkt:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{1,6} title=\"App.tsx\"",
+        children: "import { Button } from '@midas-ds/components'\n\nexport default function App({ children }) {\n  return (\n    <main>\n      <Button variant='primary'>Klicka här</Button>\n      {children}\n    </main>\n  )\n}\n\nexport default App\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För specifika instruktioner, se respektive komponent på våra ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/accordion",
+        children: "komponentsidor"
+      }), " eller\nutforska komponenterna mer i vår ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://designsystem.migrationsverket.se/storybook/",
+        children: "Storybook"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "avancerad-installation",
+      children: "Avancerad installation"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "För mer granulär kontroll kan du importera typsnitt och variabler separat från vårt temapaket. Detta är användbart om du vill\nundvika att blanda CSS-filer eller ha mer kontroll över hur typsnitt laddas."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "1-importera-variabler-och-typsnitt",
+      children: "1. Importera variabler och typsnitt"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Importera de delar du behöver i roten av din applikation:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "title=\"main.tsx\"",
+        children: "// Importera enbart CSS-variabler\nimport '@midas-ds/theme/variables.css'\n\n// Importera enbart typsnittet Inter\nimport '@midas-ds/theme/fonts.css'\n\n// Importera color-scheme (eller ange själv color-scheme: light dark i css)\nimport '@midas-ds/theme/color-scheme.css'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
+      type: "info",
+      children: (0,jsx_runtime.jsx)(_components.p, {
+        children: "Du kan använda andra metoder för att ladda typsnittet, så länge vikterna 400, 500 och 600 av \"Inter\" inkluderas."
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "2-använd-tokens-i-css",
+      children: "2. Använd tokens i CSS"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Du kan nu använda Midas design tokens som CSS-variabler. Läs mer om våra ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/get-started/contribute/tokens/dev-tokens",
+        children: "tokens"
+      }), " för att se alla tillgängliga alternativ."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-css",
+        metastring: "title=\"index.css\"",
+        children: ".myClass {\n  background-color: var(--midas-background-base);\n}\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "headless-bibliotek-och-andra-beroenden",
+      children: "Headless-bibliotek och andra beroenden"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Midas bygger på flertalet beroenden som kan vara bra att känna till. Förutom att vara ett komponentbibliotek baserat på React,\nså innehåller Midas även verktyg och bibliotek som underlättar utveckling och säkerställer tillgänglighet."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.a, {
+          href: "https://react-spectrum.adobe.com/react-aria/",
+          children: "React Aria"
+        }), " - Alla komponenter med några få undantag baseras på React Arias bibliotek för att säkerställa tillgänglighet\noch användarvänlighet. Använder du en komponent från Midas kan det även vara värt att läsa React Arias motsvarande dokumentation.\nDessa finns länkade på komponentsidan."]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.a, {
+          href: "https://lucide.dev/",
+          children: "Lucide Icons"
+        }), " - Midas använder Lucide Icons för att tillhandahålla ikoner i komponenter. ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "lucide-react"
+        }), " är ett\nberoende till ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "@midas-ds/components"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "@midas-ds/layout"
+        }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "@midas-ds/table-styles"
+        }), " och installeras automatiskt. Midas stöder\nbåde ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "lucide-react"
+        }), " 0.x (från 0.563.0) och 1.x, så använder du Lucide även i din egen applikation delar ni på en och samma kopia."]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "rapportera-buggar-eller-förslag-till-nya-features",
+      children: "Rapportera buggar eller förslag till nya features"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Hittat en bugg eller förbättringsmöjlighet? Det går utmärkt att skapa ärenden via ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://github.com/migrationsverket/midas/issues",
+        children: "github issues"
+      }), ".\nDet går naturligtvis också bra att kontakta MIDAS-teamet via alla de normala kontaktvägarna. Alla synpunkter är välkomna!"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "uppgradera-från-tidigare-version",
+      children: "Uppgradera från tidigare version"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Senaste ändringar och eventuella instruktioner för migrering hittas på ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/release-notes",
+        children: "release notes"
+      }), ". Det finns också en\nmer detaljerad ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://github.com/migrationsverket/midas/releases",
+        children: "changelog"
+      }), " för varje release."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
+      title: "Kommande breaking changes i v18",
+      type: "info",
+      children: (0,jsx_runtime.jsxs)(_components.p, {
+        children: ["Vi samlar planerade brytande ändringar och tillhörande migreringsvägar i ett ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/issues/1109",
+          children: "GitHub-ärende"
+        }), ". Där finns också information om vilka ", (0,jsx_runtime.jsx)(_components.strong, {
+          children: "future flags"
+        }), " som redan finns tillgängliga — opt-in-props du kan börja använda idag för att förbereda dig inför v18."]
+      })
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* .useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
+
+},
+
+}]);
