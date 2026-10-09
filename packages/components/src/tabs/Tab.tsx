@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import { useContext } from 'react'
 import {
   Tab as AriaTab,
   TabProps,
@@ -12,9 +12,9 @@ import clsx from '../utils/clsx'
 import styles from './Tabs.module.css'
 import { TabsContext } from './TabsContext'
 
-export const Tab: React.FC<TabProps> = ({ className, ...props }) => {
-  const { variant, size } = React.useContext(TabsContext)
-  const dialogContext = React.useContext(DialogContext)
+export const Tab = ({ className, ...props }: TabProps) => {
+  const { variant, size } = useContext(TabsContext)
+  const dialogContext = useContext(DialogContext)
 
   return (
     <AriaTab
@@ -30,7 +30,21 @@ export const Tab: React.FC<TabProps> = ({ className, ...props }) => {
     >
       {composeRenderProps(props.children, children => (
         <>
-          {children}
+          {typeof children === 'string' || typeof children === 'number' ? (
+            // The selected tab's label is heavier, and so wider. The label
+            // reserves that width up front (see .labelSizer in the CSS), so
+            // selecting a tab doesn't shift the tabs next to it
+            <span className={styles.label}>
+              {children}
+              <span
+                aria-hidden
+                className={styles.labelSizer}
+                data-label={children}
+              />
+            </span>
+          ) : (
+            children
+          )}
           <SelectionIndicator
             className={clsx(styles.selectionIndicator, {
               [styles.contained]: variant === 'contained',
