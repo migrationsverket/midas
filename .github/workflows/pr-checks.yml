@@ -10,6 +10,10 @@ on:
     branches:
       - main
 
+env:
+  # This will be default in nx24
+  NX_LEGACY_AFFECTED: 'false'
+
 permissions:
   contents: read
 
