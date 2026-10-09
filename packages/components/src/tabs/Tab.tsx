@@ -30,7 +30,21 @@ export const Tab: React.FC<TabProps> = ({ className, ...props }) => {
     >
       {composeRenderProps(props.children, children => (
         <>
-          {children}
+          {typeof children === 'string' || typeof children === 'number' ? (
+            // The selected tab's label is heavier, and so wider. The label
+            // reserves that width up front (see .labelSizer in the CSS), so
+            // selecting a tab doesn't shift the tabs next to it
+            <span className={styles.label}>
+              {children}
+              <span
+                aria-hidden
+                className={styles.labelSizer}
+                data-label={children}
+              />
+            </span>
+          ) : (
+            children
+          )}
           <SelectionIndicator
             className={clsx(styles.selectionIndicator, {
               [styles.contained]: variant === 'contained',

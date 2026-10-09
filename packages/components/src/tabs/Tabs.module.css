@@ -95,6 +95,31 @@
   margin-right: -1px;
 }
 
+/*
+ * The label at the selected weight, invisible and zero height, so a tab is
+ * always as wide as when it's selected and selecting one doesn't shift the
+ * others. The text only exists in CSS, so getByText finds it once, and the
+ * sizer is aria-hidden, so it isn't part of the tab's accessible name (Playwright
+ * and Testing Library include pseudo-element text in names otherwise).
+ */
+.label {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.labelSizer {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  user-select: none;
+  pointer-events: none;
+  font-weight: var(--midas-typography-weight-medium);
+
+  &::after {
+    content: attr(data-label);
+  }
+}
+
 .selectionIndicator {
   position: absolute;
 
