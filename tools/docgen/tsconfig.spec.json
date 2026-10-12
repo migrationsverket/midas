@@ -1,9 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "moduleResolution": "nodenext",
     "module": "nodenext",
+    "moduleResolution": "nodenext",
     "types": ["node", "vitest"]
   },
   "include": ["vitest.config.mts", "src/**/*.spec.ts"]
