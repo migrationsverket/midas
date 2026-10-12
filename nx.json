@@ -350,16 +350,7 @@
       "include": ["apps/storybook/**/*"]
     },
     {
-      "plugin": "@nx/vitest",
-      "options": {
-        "testTargetName": "visual",
-        "testMode": "run"
-      },
-      "include": [
-        "packages/components/**/*",
-        "packages/datepicker-styles/**/*",
-        "packages/table-styles/**/*"
-      ]
+      "plugin": "./tools/visual-testing/src/plugin.ts"
     }
   ],
   "analytics": false

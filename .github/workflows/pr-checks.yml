@@ -159,7 +159,7 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v5
 
-      # Writes dist/visual-report/<project>/ via tools/visual-report/reporter.mjs
+      # Writes dist/visual-report/<project>/ via tools/visual-testing's reporter
       - name: Visual regression tests
         run: npx nx affected -t visual
 

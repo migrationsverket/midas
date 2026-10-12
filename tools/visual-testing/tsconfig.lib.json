@@ -12,5 +12,7 @@
     "strict": true,
     "types": ["node"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  // Run in the browser through Vite, see tsconfig.browser.json
+  "exclude": ["src/setup.ts", "src/stories.ts"]
 }
