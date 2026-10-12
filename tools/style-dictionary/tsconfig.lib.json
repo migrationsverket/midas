@@ -1,10 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "moduleResolution": "nodenext",
     "module": "nodenext",
+    "moduleResolution": "nodenext",
     "types": ["node"]
   },
   "include": ["src/**/*.ts"]

@@ -1,20 +1,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
     "types": ["node", "vitest"]
   },
   "include": [
     "vite.config.mts",
     "vitest.config.mts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.tsx",
-    "src/**/*.spec.tsx",
-    "src/**/*.test.js",
-    "src/**/*.spec.js",
-    "src/**/*.test.jsx",
-    "src/**/*.spec.jsx",
+    "src/**/*.test.*",
+    "src/**/*.spec.*",
     "src/**/*.d.ts"
   ]
 }

@@ -1,14 +1,7 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "types": ["vite/client"],
-    "resolveJsonModule": true,
-    "moduleResolution": "bundler",
-    "ignoreDeprecations": "6.0"
+    "types": ["vite/client"]
   },
   "files": [],
   "include": [],
@@ -19,6 +12,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "extends": "../../tsconfig.base.json"
+  ]
 }
