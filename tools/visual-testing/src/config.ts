@@ -34,6 +34,8 @@ export const visualConfig = defineConfig({
     fs: { allow: [workspaceRoot] },
   },
   test: {
+    testTimeout: 10000,
+    hookTimeout: 10000,
     name: 'visual',
     include: ['src/visual.spec.tsx'],
     reporters: ['default', new VisualReportReporter()],

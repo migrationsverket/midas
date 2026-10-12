@@ -17,10 +17,6 @@ type StoryModule = Parameters<typeof composeStories>[0]
 /** What composeStories returns per story, as far as we use it */
 type ComposedStory = ComponentType & { tags?: string[] }
 
-// Capturing, encoding and diffing a screenshot takes longer than the unit
-// test timeouts the packages use
-const SCREENSHOT_TIMEOUT = 10_000
-
 export function snapshotStories(storyModules: Record<string, StoryModule>) {
   // Mirrors the tag default from apps/storybook/.storybook/preview.tsx (every
   // story is `snapshot`-tagged unless it opts out with `!snapshot`) without
@@ -42,7 +38,7 @@ export function snapshotStories(storyModules: Record<string, StoryModule>) {
 
     describe(path, () => {
       for (const [name, Story] of stories) {
-        test(name, { timeout: SCREENSHOT_TIMEOUT }, async () => {
+        test(name, async () => {
           const { container } = await render(createElement(Story))
           await document.fonts.ready
           await expect(container).toMatchScreenshot()
