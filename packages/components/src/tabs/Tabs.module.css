@@ -34,7 +34,6 @@
 
   &[data-selected] {
     color: var(--midas-text-primary);
-    font-weight: var(--midas-typography-weight-medium);
     forced-color-adjust: none;
   }
 
