@@ -5,7 +5,7 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import TextFieldApi from '@midas-ds/api/components/TextField.json'
-import { TextField } from '@midas-ds/components'
+import { Stack, TextField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { ControlledValue } from '@site/src/components/examples/form/TextFieldExamples'
 
@@ -182,12 +182,9 @@ För att minska höjden på TextField, använd `size="medium"` som minskar paddi
 ```
 
 <div className='card'>
-  <span
-    style={{
-      display: 'flex',
-      gap: '1rem',
-      flexDirection: 'row',
-    }}
+  <Stack
+    direction='row'
+    spacing='medium'
   >
     <TextField
       label='Large'
@@ -199,7 +196,7 @@ För att minska höjden på TextField, använd `size="medium"` som minskar paddi
       size='medium'
       defaultValue='medium textfield'
     />
-  </span>
+  </Stack>
 </div>
 
 Varianterna är tillägg till React Arias ursprungliga implementation.

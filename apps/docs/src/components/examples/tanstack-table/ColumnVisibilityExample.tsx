@@ -5,7 +5,13 @@ import {
   useReactTable,
   flexRender,
 } from '@tanstack/react-table'
-import { Checkbox, Popover, Button, DialogTrigger } from '@midas-ds/components'
+import {
+  Checkbox,
+  Popover,
+  Button,
+  DialogTrigger,
+  Stack,
+} from '@midas-ds/components'
 import { Settings } from 'lucide-react'
 import { type Employee, employees } from '@midas-ds/test-utils'
 import '@midas-ds/table-styles/lib/tanstack-table.css'
@@ -52,7 +58,11 @@ export function ColumnVisibilityExample() {
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <Stack
+        direction='row'
+        wrap
+        spacing='medium'
+      >
         {table.getAllLeafColumns().map(column => (
           <Checkbox
             key={column.id}
@@ -64,7 +74,7 @@ export function ColumnVisibilityExample() {
               : column.id}
           </Checkbox>
         ))}
-      </div>
+      </Stack>
       <div
         style={{
           display: 'flex',
@@ -102,17 +112,23 @@ export function ColumnVisibilityExample() {
             ))}
           </tbody>
         </table>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Stack
+          direction='row'
+          alignItems='center'
+          style={{
+            // Stack has no zero spacing, override its gap
+            gap: 0,
+          }}
+        >
           Kolumnsynlighet kan också läggas i en popover:
           <DialogTrigger>
             <Button variant='icon'>
               <Settings />
             </Button>
             <Popover>
-              <div
+              <Stack
                 style={{
-                  display: 'flex',
-                  flexDirection: 'column',
+                  // 0.75rem is between Stack's spacings, override its gap
                   gap: '0.75rem',
                 }}
               >
@@ -128,10 +144,10 @@ export function ColumnVisibilityExample() {
                       : column.id}
                   </Checkbox>
                 ))}
-              </div>
+              </Stack>
             </Popover>
           </DialogTrigger>
-        </div>
+        </Stack>
       </div>
     </div>
   )

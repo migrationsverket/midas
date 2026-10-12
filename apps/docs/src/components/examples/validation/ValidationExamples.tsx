@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {
+  Stack,
   TextField,
   Grid,
   GridItem,
@@ -202,7 +203,7 @@ export const DatabaseValidationExample = () => {
     <div className='card'>
       <Grid>
         <GridItem size={12}>
-          <div className='field-and-spinner'>
+          <Stack direction='row' alignItems='end'>
             <TextField
               label='Ange ditt kortnummer'
               description='Ditt kortnummer kommer kontrolleras mot databasen. Det kan ta en liten stund'
@@ -215,8 +216,8 @@ export const DatabaseValidationExample = () => {
               isInvalid={!!error}
               errorMessage={error}
             />
-            <div className='spinner-box'>{isChecking && <Spinner small />}</div>
-          </div>
+            <Stack direction='row' alignItems='center' justifyContent='center' className='spinner-box'>{isChecking && <Spinner small />}</Stack>
+          </Stack>
         </GridItem>
         <GridItem size='auto'>
           <Button

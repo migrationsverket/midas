@@ -3,6 +3,7 @@ import { DesignToken } from 'style-dictionary/types'
 import { Copy, Check } from 'lucide-react'
 import { getCSSVariableName } from './utils'
 import styles from './ColorPaletteTable.module.css'
+import { Stack } from '@midas-ds/components'
 
 const getLuminance = (hex: string): number => {
   let clean = hex.replace('#', '')
@@ -87,21 +88,21 @@ export const ColorPaletteTable = ({ tokens }: { tokens: any }) => {
   )
 
   return (
-    <div className={styles.container}>
+    <Stack className={styles.container}>
       {families.map(([familyName, family]) => {
         const swatches = getFamilyTokens(family)
         if (swatches.length === 0) return null
         return (
-          <div key={familyName} className={styles.row}>
+          <Stack direction='row' alignItems='center' spacing='medium' key={familyName} className={styles.row}>
             <div className={styles.familyName}>{familyName}</div>
-            <div className={styles.swatches}>
+            <Stack direction='row' wrap spacing='xsmall' className={styles.swatches}>
               {swatches.map(token => (
                 <Swatch key={getCSSVariableName(token)} token={token} />
               ))}
-            </div>
-          </div>
+            </Stack>
+          </Stack>
         )
       })}
-    </div>
+    </Stack>
   )
 }

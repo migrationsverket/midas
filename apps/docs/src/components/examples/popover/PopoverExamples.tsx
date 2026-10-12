@@ -5,6 +5,7 @@ import {
   Heading,
   Popover,
   DialogTrigger,
+  Stack,
   Text,
   TextField,
   ButtonGroup,
@@ -27,9 +28,7 @@ export const PopoverExample = () => {
           Dela
         </Button>
         <Popover>
-          <div
-            style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
-          >
+          <Stack spacing='medium'>
             <div>
               <Heading>Dela inköpslista</Heading>
               <Text>Välj hur du vill dela din inköpslista</Text>
@@ -38,7 +37,7 @@ export const PopoverExample = () => {
               <Button>Mejla</Button>
               <Button variant='secondary'>Kopiera texten</Button>
             </ButtonGroup>
-          </div>
+          </Stack>
         </Popover>
       </DialogTrigger>
     </div>
@@ -51,7 +50,11 @@ export const InfoPopoverExample = () => {
       className='card'
       style={{ display: 'block' }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+      <Stack
+        direction='row'
+        alignItems='center'
+        spacing='xsmall'
+      >
         <Text>Hemkatalog</Text>
         <DialogTrigger>
           <Pressable>
@@ -69,7 +72,7 @@ export const InfoPopoverExample = () => {
             </Text>
           </Popover>
         </DialogTrigger>
-      </div>
+      </Stack>
     </div>
   )
 }
@@ -116,14 +119,11 @@ export const PopoverFormExample = () => {
 
 export const PopoverPlacement = () => {
   return (
-    <div
+    <Stack
+      direction='row'
+      alignItems='center'
+      spacing='medium'
       className='card'
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: '1rem',
-      }}
     >
       <DialogTrigger>
         <Button>
@@ -141,7 +141,7 @@ export const PopoverPlacement = () => {
           Popover visas på ovansidan av trigger-elementet
         </Popover>
       </DialogTrigger>
-    </div>
+    </Stack>
   )
 }
 

@@ -24,9 +24,6 @@
   min-width: 200px;
   flex: 0 0 auto;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
 .tokenName {
@@ -63,12 +60,6 @@
   flex-shrink: 0;
 }
 
-.colorSwatchContainer {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
 .typographyPreview {
   word-break: normal;
   overflow-wrap: anywhere;
@@ -83,20 +74,12 @@
 }
 
 .compositeTypographyDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
   font-size: 0.75rem;
   padding: 0.5rem;
   background-color: var(--ifm-code-background);
   border-radius: 4px;
   word-break: normal;
   overflow-wrap: anywhere;
-}
-
-.compositeTypographyDetails > div {
-  display: flex;
-  gap: 0.5rem;
 }
 
 .compositeTypographyPreview {
@@ -110,9 +93,6 @@
 }
 
 .dimensionContainer {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
   justify-self: flex-end;
   min-width: 150px;
 }
@@ -145,13 +125,6 @@
   margin-top: 0.25rem;
 }
 
-.durationContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-end;
-}
-
 .durationValue {
   font-size: 0.875rem;
   font-family: monospace;
@@ -179,9 +152,8 @@
 }
 
 .statePreviewContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Stack has no zero spacing, override its gap */
+  gap: 0;
   padding: 1rem;
 }
 
@@ -240,8 +212,8 @@
 }
 
 .tokenListContainer {
-  display: flex;
-  flex-direction: column;
+  /* Stack has no zero spacing, override its gap */
+  gap: 0;
 }
 
 .tokenSection {
@@ -250,6 +222,6 @@
 }
 
 .tokenGroup {
-  display: flex;
-  flex-direction: column;
+  /* Stack has no zero spacing, override its gap */
+  gap: 0;
 }

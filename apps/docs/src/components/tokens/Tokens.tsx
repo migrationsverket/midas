@@ -2,6 +2,7 @@ import { DesignToken } from 'style-dictionary/types'
 import { CopyButton } from '@site/src/components/CopyButton'
 import { getCSSVariableName } from './utils'
 import styles from './Tokens.module.css'
+import { Stack } from '@midas-ds/components'
 
 export const Token = ({ token }: { token: DesignToken }) => {
   const isColor = token.$type === 'color'
@@ -27,20 +28,23 @@ export const Token = ({ token }: { token: DesignToken }) => {
     if (isCompositeTypography && typeof token.$value === 'object') {
       const { fontFamily, fontSize, fontWeight, lineHeight } = token.$value
       return (
-        <div className={styles.compositeTypographyDetails}>
-          <div>
+        <Stack
+          spacing='xsmall'
+          className={styles.compositeTypographyDetails}
+        >
+          <Stack direction='row'>
             <strong>Font Family:</strong> {fontFamily}
-          </div>
-          <div>
+          </Stack>
+          <Stack direction='row'>
             <strong>Font Size:</strong> {fontSize}
-          </div>
-          <div>
+          </Stack>
+          <Stack direction='row'>
             <strong>Font Weight:</strong> {fontWeight}
-          </div>
-          <div>
+          </Stack>
+          <Stack direction='row'>
             <strong>Line Height:</strong> {lineHeight}
-          </div>
-        </div>
+          </Stack>
+        </Stack>
       )
     }
     return null
@@ -58,7 +62,10 @@ export const Token = ({ token }: { token: DesignToken }) => {
           unit === 's' ? parseFloat(value) * 1000 : parseFloat(value)
 
         return (
-          <div className={styles.durationContainer}>
+          <Stack
+            alignItems='end'
+            className={styles.durationContainer}
+          >
             <div className={styles.durationValue}>{token.$value}</div>
             <div
               className={styles.durationBarContainer}
@@ -71,7 +78,7 @@ export const Token = ({ token }: { token: DesignToken }) => {
             >
               <div className={styles.durationBar} />
             </div>
-          </div>
+          </Stack>
         )
       }
 
@@ -104,7 +111,11 @@ export const Token = ({ token }: { token: DesignToken }) => {
       const darkValue = values[1]
 
       return (
-        <div className={styles.colorSwatchContainer}>
+        <Stack
+          direction='row'
+          alignItems='center'
+          className={styles.colorSwatchContainer}
+        >
           <div
             className={styles.colorSwatch}
             style={{ backgroundColor: lightValue }}
@@ -115,7 +126,7 @@ export const Token = ({ token }: { token: DesignToken }) => {
             style={{ backgroundColor: darkValue }}
             title={`Dark: ${darkValue}`}
           />
-        </div>
+        </Stack>
       )
     }
 
@@ -162,24 +173,33 @@ export const Token = ({ token }: { token: DesignToken }) => {
 
     if (isDimension) {
       return (
-        <div className={styles.dimensionContainer}>
+        <Stack
+          direction='row'
+          alignItems='center'
+          className={styles.dimensionContainer}
+        >
           <div
             className={styles.dimensionBar}
             style={{ width: token.$value }}
           />
           <div className={styles.dimensionValue}>{token.$value}</div>
-        </div>
+        </Stack>
       )
     }
 
     if (isBoxShadow) {
       return (
-        <div className={styles.statePreviewContainer}>
+        <Stack
+          direction='row'
+          alignItems='center'
+          justifyContent='center'
+          className={styles.statePreviewContainer}
+        >
           <div
             className={styles.statePreview}
             style={{ boxShadow: `var(${getCSSVariableName(token)})` }}
           />
-        </div>
+        </Stack>
       )
     }
 
@@ -204,7 +224,7 @@ export const Token = ({ token }: { token: DesignToken }) => {
 
   return (
     <div className={styles.tokenContainer}>
-      <div className={styles.tokenInfo}>
+      <Stack className={styles.tokenInfo}>
         <div>
           <div className={styles.tokenName}>{token.name}</div>
           <div className={styles.tokenVariable}>
@@ -215,7 +235,7 @@ export const Token = ({ token }: { token: DesignToken }) => {
           <div className={styles.tokenDescription}>{token.$description}</div>
         )}
         {renderExtraInfo()}
-      </div>
+      </Stack>
 
       <div className={styles.tokenPreview}>{renderValue()}</div>
     </div>
@@ -258,14 +278,14 @@ const renderTokens = (tokens, level = 0) => {
               </div>
             </>
           )}
-          <div className={styles.tokenGroup}>
+          <Stack className={styles.tokenGroup}>
             {compositeTokens.map(([key, value]) => (
               <Token
                 key={key}
                 token={value}
               />
             ))}
-          </div>
+          </Stack>
         </div>
       )}
 
@@ -285,9 +305,9 @@ const renderTokens = (tokens, level = 0) => {
           {value.$description && (
             <div className={styles.groupDescription}>{value.$description}</div>
           )}
-          <div className={styles.tokenGroup}>
+          <Stack className={styles.tokenGroup}>
             {renderTokens(value, level + 1)}
-          </div>
+          </Stack>
         </div>
       ))}
 
@@ -305,8 +325,8 @@ export const TokenList = ({ tokens, filter }) => {
   const filteredTokens = filter ? { [filter]: tokens[filter] } : tokens
 
   return (
-    <div className={styles.tokenListContainer}>
+    <Stack className={styles.tokenListContainer}>
       {renderTokens(filteredTokens)}
-    </div>
+    </Stack>
   )
 }

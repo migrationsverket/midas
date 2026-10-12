@@ -1,5 +1,5 @@
 import { Bell, CircleQuestionMark, Ellipsis, Settings, User } from 'lucide-react'
-import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import { Menu, MenuItem, MenuPopover, MenuTrigger, Stack } from '@midas-ds/components'
 import { useMediaQuery } from '@react-spectrum/utils'
 import {
   Header,
@@ -52,7 +52,19 @@ export default function HeaderOverflowExample() {
       </Header>
       <LayoutContent>
         <Main>
-          <div style={{ height: '100%', border: 'dashed 2px var(--midas-border-color-subtle)', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--midas-text-subtle)' }}>App-innehåll</div>
+          <Stack
+            direction='row'
+            alignItems='center'
+            justifyContent='center'
+            style={{
+              // Stack has no zero spacing, override its gap
+              gap: 0,
+              height: '100%',
+              border: 'dashed 2px var(--midas-border-color-subtle)',
+              borderRadius: 4,
+              color: 'var(--midas-text-subtle)',
+            }}
+          >App-innehåll</Stack>
         </Main>
       </LayoutContent>
     </Layout>

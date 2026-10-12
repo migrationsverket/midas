@@ -1,5 +1,5 @@
 import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
-import { Label, Text } from '@midas-ds/components'
+import { Label, Stack, Text } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/lib/react-select.css'
 
@@ -12,7 +12,12 @@ export const MultiComboBox = ({
   className = 'select',
 }: MultiComboBoxProps) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <Stack
+      style={{
+        // Stack has no zero spacing, override its gap
+        gap: 0,
+      }}
+    >
       <Label htmlFor={id}>Select employee</Label>
       <Text slot='description'>Employees from all departments</Text>
       <Select
@@ -40,6 +45,6 @@ export const MultiComboBox = ({
         }}
         unstyled
       />
-    </div>
+    </Stack>
   )
 }

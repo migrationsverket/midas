@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Stack } from '@midas-ds/components'
 import {
   ColumnDef,
   getCoreRowModel,
@@ -78,7 +79,9 @@ export function SortingExample() {
               {headerGroup.headers.map(header => (
                 <th key={header.id}>
                   {header.isPlaceholder ? null : (
-                    <div
+                    <Stack
+                      direction='row'
+                      alignItems='center'
                       className={
                         header.column.getCanSort() ? 'sortable-header' : ''
                       }
@@ -91,11 +94,6 @@ export function SortingExample() {
                       }}
                       role={header.column.getCanSort() ? 'button' : undefined}
                       tabIndex={header.column.getCanSort() ? 0 : undefined}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                      }}
                     >
                       {flexRender(
                         header.column.columnDef.header,
@@ -103,7 +101,7 @@ export function SortingExample() {
                       )}
                       {header.column.getCanSort() &&
                         getSortIcon(header.column.getIsSorted())}
-                    </div>
+                    </Stack>
                   )}
                 </th>
               ))}

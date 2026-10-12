@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {
+  Stack,
   TextField,
   Button,
   GlobalToastRegion,
@@ -80,7 +81,10 @@ export const InlineSpinnerExample = () => {
     <div className='card'>
       <Grid>
         <GridItem size={12}>
-          <div className='field-and-spinner'>
+          <Stack
+            direction='row'
+            alignItems='end'
+          >
             <TextField
               label='Ange ditt kortnummer'
               description='Ditt kortnummer kontrolleras mot databasen. Det kan ta en liten stund'
@@ -93,8 +97,15 @@ export const InlineSpinnerExample = () => {
               isInvalid={!!error}
               errorMessage={error}
             />
-            <div className='spinner-box'>{isChecking && <Spinner small />}</div>
-          </div>
+            <Stack
+              direction='row'
+              alignItems='center'
+              justifyContent='center'
+              className='spinner-box'
+            >
+              {isChecking && <Spinner small />}
+            </Stack>
+          </Stack>
         </GridItem>
         <GridItem size='auto'>
           <Button
@@ -132,7 +143,7 @@ export const SkeletonExample = () => {
       <Grid>
         <GridItem size={12}>
           {isLoading ? (
-            <div className='skeleton-container'>
+            <Stack>
               <Skeleton
                 width='20%'
                 height='16px'
@@ -143,7 +154,7 @@ export const SkeletonExample = () => {
                 height='48px'
                 isAnimated
               />
-            </div>
+            </Stack>
           ) : (
             <TextField label='Ange ditt namn' />
           )}
@@ -206,11 +217,19 @@ export const FullScreenLoadingExample = () => {
 
       {/* Full screen loading overlay */}
       {isLoading && (
-        <div className='overlay'>
-          <div className='overlay-content'>
+        <Stack
+          direction='row'
+          alignItems='center'
+          justifyContent='center'
+          className='overlay'
+        >
+          <Stack
+            alignItems='center'
+            className='overlay-content'
+          >
             <Spinner color={variables.iconOnColor} />
-          </div>
-        </div>
+          </Stack>
+        </Stack>
       )}
     </div>
   )

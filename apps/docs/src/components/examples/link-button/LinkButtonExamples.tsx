@@ -1,10 +1,11 @@
-import { LinkButton } from '@midas-ds/components'
+import { LinkButton, Stack } from '@midas-ds/components'
 
 export const Example = () => {
   return (
-    <div
+    <Stack
+      direction='row'
+      spacing='medium'
       className='card'
-      style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}
     >
       <LinkButton href='#'>Starta tjänst</LinkButton>
       <LinkButton
@@ -19,6 +20,6 @@ export const Example = () => {
       >
         Starta tjänst
       </LinkButton>
-    </div>
+    </Stack>
   )
 }

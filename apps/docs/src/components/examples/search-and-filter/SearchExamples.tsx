@@ -1,4 +1,4 @@
-import { SearchField, InfoBanner, Button } from '@midas-ds/components'
+import { SearchField, InfoBanner, Button, Stack } from '@midas-ds/components'
 import { useState } from 'react'
 
 export const SimpleSearchExample = () => {
@@ -25,22 +25,22 @@ export const SimpleSearchExample = () => {
 
 export const NoHitsExample = () => {
   return (
-    <div
+    <Stack
+      spacing='medium'
       className='card'
-      style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
     >
-      <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
+      <Stack direction='row'>
         <SearchField
           showButton={false}
           placeholder='Sök frukt'
         />
         <Button>Sök</Button>
-      </div>
+      </Stack>
       <InfoBanner
         type='info'
         title='Sökningen gav inga träffar'
         message='Kontrollera stavningen och testa att ta bort filter om sådana är aktiva.'
       />
-    </div>
+    </Stack>
   )
 }

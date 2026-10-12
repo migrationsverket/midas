@@ -5,6 +5,7 @@ import {
   FileList,
   FileListItem,
   FileTrigger,
+  Stack,
   Text,
 } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
@@ -27,7 +28,7 @@ export const FileListExample = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+    <Stack spacing='medium'>
       <FileTrigger
         allowsMultiple
         onSelect={handleSelect}
@@ -46,7 +47,7 @@ export const FileListExample = () => {
           ))}
         </FileList>
       )}
-    </div>
+    </Stack>
   )
 }
 
@@ -135,7 +136,14 @@ export const ValidatedDropZoneExample = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+    <Stack
+      style={{
+        // Stack has no zero spacing, override its gap
+        gap: 0,
+        width: '100%',
+        maxWidth: 480,
+      }}
+    >
       <DropZone
         onDrop={handleDrop}
         isInvalid={isInvalid}
@@ -158,6 +166,6 @@ export const ValidatedDropZoneExample = () => {
       {isInvalid && (
         <FieldError isInvalid>Endast .jpg- och .png-filer tillåts</FieldError>
       )}
-    </div>
+    </Stack>
   )
 }

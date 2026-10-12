@@ -1,6 +1,6 @@
 import { CalendarDays } from 'lucide-react'
 import DatePicker from 'react-datepicker'
-import { FieldError, Label } from '@midas-ds/components'
+import { FieldError, Label, Stack } from '@midas-ds/components'
 import { useState } from 'react'
 import { registerLocale, setDefaultLocale } from 'react-datepicker'
 import { sv } from 'date-fns/locale/sv'
@@ -61,7 +61,12 @@ export const InvalidExample = () => {
       : undefined
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <Stack
+      style={{
+        // Stack has no zero spacing, override its gap
+        gap: 0,
+      }}
+    >
       <Label htmlFor='invalid-example-date'>Startdatum</Label>
       <DatePicker
         id='invalid-example-date'
@@ -81,6 +86,6 @@ export const InvalidExample = () => {
           <FieldError isInvalid>{error}</FieldError>
         </div>
       )}
-    </div>
+    </Stack>
   )
 }

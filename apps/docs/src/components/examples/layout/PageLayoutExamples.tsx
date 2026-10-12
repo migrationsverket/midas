@@ -17,7 +17,7 @@ import {
   Navbar,
 } from '@midas-ds/layout'
 import { Bell, House, Settings, User } from 'lucide-react'
-import { Button } from '@midas-ds/components'
+import { Button, Stack } from '@midas-ds/components'
 import { useState } from 'react'
 
 export const OnlyHeaderExample: React.FC = () => (
@@ -38,19 +38,21 @@ export const OnlyHeaderExample: React.FC = () => (
         </HeaderActions>
       </Header>
 
-      <div
+      <Stack
+        direction='row'
+        alignItems='center'
+        justifyContent='center'
         style={{
+          // Stack has no zero spacing, override its gap
+          gap: 0,
           padding: 48,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           minHeight: 180,
           textAlign: 'center',
           color: 'var(--ifm-color-content-secondary)',
         }}
       >
         Din applikation
-      </div>
+      </Stack>
     </div>
   </div>
 )

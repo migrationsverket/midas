@@ -5,6 +5,7 @@ import {
   Modal,
   Radio,
   RadioGroup,
+  Stack,
   Text,
   TextField,
 } from '@midas-ds/components'
@@ -53,7 +54,7 @@ export const FormExample = () => (
     <DialogTrigger>
       <Button>Gör din egen fruktkorg</Button>
       <Modal title='Gör din egen fruktkorg'>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <Stack spacing='medium'>
           <TextField
             autoFocus
             label='Namnge din fruktkorg'
@@ -75,7 +76,7 @@ export const FormExample = () => (
               Avbryt
             </Button>
           </ButtonGroup>
-        </div>
+        </Stack>
       </Modal>
     </DialogTrigger>
   </div>

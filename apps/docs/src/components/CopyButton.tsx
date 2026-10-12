@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Copy, Check } from 'lucide-react'
-import { Button } from '@midas-ds/components'
+import { Button, Stack } from '@midas-ds/components'
 import styles from './CopyButton.module.css'
 
 export interface CopyButtonProps {
@@ -21,7 +21,7 @@ export function CopyButton({ text }: CopyButtonProps) {
   }
 
   return (
-    <span className={styles.copyButtonContainer}>
+    <Stack direction='row' alignItems='center' className={styles.copyButtonContainer}>
       <span className={styles.text}>{text}</span>
       <Button
         variant="icon"
@@ -33,6 +33,6 @@ export function CopyButton({ text }: CopyButtonProps) {
         <Copy size={16} aria-hidden />
         <Check size={16} aria-hidden />
       </Button>
-    </span>
+    </Stack>
   )
 }

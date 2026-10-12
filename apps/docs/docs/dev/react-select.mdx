@@ -60,13 +60,18 @@ Följande exempel visar hur du kan använda react-select för att sätta upp en 
 
 ```tsx
 import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
-import { Label, Text } from '@midas-ds/components'
+import { Label, Stack, Text } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/react-select.css'
 ```
 
 ```tsx
-<div style={{ display: 'flex', flexDirection: 'column' }}>
+<Stack
+  style={{
+    // Stack has no zero spacing, override its gap
+    gap: 0,
+  }}
+>
   <Label htmlFor='employee'>Select employee</Label>
   <Text slot='description'>Employees from all departments</Text>
   <Select
@@ -92,7 +97,7 @@ import '@midas-ds/select-styles/react-select.css'
     }}
     unstyled
   />
-</div>
+</Stack>
 ```
 
 ### Medium size

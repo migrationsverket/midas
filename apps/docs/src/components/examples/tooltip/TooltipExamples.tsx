@@ -1,18 +1,21 @@
-import { Button, Tooltip, TooltipTrigger, Text } from '@midas-ds/components'
+import {
+  Button,
+  Stack,
+  Tooltip,
+  TooltipTrigger,
+  Text,
+} from '@midas-ds/components'
 import { ArrowUp, ArrowLeft, Save } from 'lucide-react'
 import React from 'react'
 import { Focusable } from 'react-aria-components'
 
 export const SimpleExample = () => {
   return (
-    <div
+    <Stack
+      direction='row'
+      alignItems='center'
+      spacing='medium'
       className='card'
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: '1rem',
-      }}
     >
       <Text>Hovra över ikonen för att visa tooltip</Text>
       <TooltipTrigger>
@@ -24,19 +27,15 @@ export const SimpleExample = () => {
         </Button>
         <Tooltip>Spara</Tooltip>
       </TooltipTrigger>
-    </div>
+    </Stack>
   )
 }
 export const TooltipDelay = () => {
   return (
-    <div
+    <Stack
+      direction='row'
+      spacing='medium'
       className='card'
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'start',
-        gap: '1rem',
-      }}
     >
       <TooltipTrigger delay={600}>
         <Button variant='secondary'>Hover me first</Button>
@@ -46,20 +45,17 @@ export const TooltipDelay = () => {
         <Button variant='primary'>Hover later</Button>
         <Tooltip>Och nästa Tooltip visas då snabbare!</Tooltip>
       </TooltipTrigger>
-    </div>
+    </Stack>
   )
 }
 
 export const TooltipPlacement = () => {
   return (
-    <div
+    <Stack
+      direction='row'
+      alignItems='center'
+      spacing='medium'
       className='card'
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: '1rem',
-      }}
     >
       <TooltipTrigger delay={600}>
         <Button>
@@ -77,7 +73,7 @@ export const TooltipPlacement = () => {
           Tooltip visas på ovansidan av trigger-elementet
         </Tooltip>
       </TooltipTrigger>
-    </div>
+    </Stack>
   )
 }
 

@@ -9,7 +9,13 @@ import {
   User,
 } from 'lucide-react'
 import { useMediaQuery } from '@react-spectrum/utils'
-import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import {
+  Menu,
+  MenuItem,
+  MenuPopover,
+  MenuTrigger,
+  Stack,
+} from '@midas-ds/components'
 import {
   Header,
   HeaderAction,
@@ -128,11 +134,13 @@ export const HeaderActionsExample: React.FC = () => {
 export const MobileHeaderExample: React.FC = () => {
   const url = useBaseUrl('/layout-examples/header-mobile')
   return (
-    <div
+    <Stack
+      direction='row'
+      alignItems='center'
       className='card'
       style={{
-        display: 'flex',
-        alignItems: 'center',
+        // Stack has no zero spacing, override its gap
+        gap: 0,
       }}
     >
       <iframe
@@ -140,6 +148,6 @@ export const MobileHeaderExample: React.FC = () => {
         style={{ width: '60%', height: 72, border: 'none', display: 'block' }}
         src={url}
       />
-    </div>
+    </Stack>
   )
 }

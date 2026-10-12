@@ -1,4 +1,4 @@
-import { AccordionItem, Accordion, type AccordionProps } from '@midas-ds/components'
+import { AccordionItem, Accordion, type AccordionProps, Stack } from '@midas-ds/components'
 import React from 'react'
 import { Key } from 'react-aria-components'
 
@@ -69,9 +69,9 @@ export const ExampleControlled = (props: typeof Accordion) => {
     new Set(['mandarin']),
   )
   return (
-    <div
+    <Stack
+      spacing='xlarge'
       className='card'
-      style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
     >
       <Accordion
         {...props}
@@ -101,6 +101,6 @@ export const ExampleControlled = (props: typeof Accordion) => {
       <pre>
         Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}
       </pre>
-    </div>
+    </Stack>
   )
 }

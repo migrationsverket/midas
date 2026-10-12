@@ -1,7 +1,6 @@
 .copyButtonContainer {
+  /* Inline next to the text it copies, unlike Stack */
   display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
   position: relative;
 }
 

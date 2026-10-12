@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Stack } from '@midas-ds/components'
 import {
   ColumnDef,
   getCoreRowModel,
@@ -83,7 +84,10 @@ function DraggableTableHeader({ header }: DraggableTableHeaderProps) {
       style={style}
     >
       {header.isPlaceholder ? null : (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <Stack
+          direction='row'
+          alignItems='center'
+        >
           {flexRender(header.column.columnDef.header, header.getContext())}
           <button
             {...attributes}
@@ -101,7 +105,7 @@ function DraggableTableHeader({ header }: DraggableTableHeaderProps) {
           >
             <GripVertical size={16} />
           </button>
-        </div>
+        </Stack>
       )}
     </th>
   )

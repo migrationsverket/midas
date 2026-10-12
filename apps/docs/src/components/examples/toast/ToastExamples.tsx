@@ -3,6 +3,7 @@ import CodeBlock from '@theme/CodeBlock'
 import {
   Button,
   GlobalToastRegion,
+  Stack,
   toastQueue,
   Select,
   ListBoxItem,
@@ -36,11 +37,14 @@ export const DynamicToastExample = () => {
   return (
     <>
       <GlobalToastRegion />
-      <div
+      <Stack
+        spacing='medium'
         className='card'
-        style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
       >
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <Stack
+          direction='row'
+          spacing='medium'
+        >
           <div style={{ flex: 1 }}>
             <Select
               label='Typ'
@@ -65,7 +69,7 @@ export const DynamicToastExample = () => {
               <ListBoxItem id='10000'>10000</ListBoxItem>
             </Select>
           </div>
-        </div>
+        </Stack>
         <TextField
           label='Meddelande'
           value={message}
@@ -81,7 +85,7 @@ export const DynamicToastExample = () => {
         >
           Visa toast
         </Button>
-      </div>
+      </Stack>
       <CodeBlock language='tsx'>{code}</CodeBlock>
     </>
   )

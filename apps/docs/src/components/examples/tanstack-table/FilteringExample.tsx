@@ -6,7 +6,13 @@ import {
   useReactTable,
   flexRender,
 } from '@tanstack/react-table'
-import { Select, TextField, ListBoxItem, Button } from '@midas-ds/components'
+import {
+  Select,
+  Stack,
+  TextField,
+  ListBoxItem,
+  Button,
+} from '@midas-ds/components'
 import { type Employee, employees } from '@midas-ds/test-utils'
 import '@midas-ds/table-styles/lib/tanstack-table.css'
 
@@ -95,12 +101,12 @@ export function FilteringExample() {
 
   return (
     <div style={{ width: '100%' }}>
-      <div
+      <Stack
+        direction='row'
+        wrap
+        spacing='medium'
         style={{
-          display: 'flex',
-          gap: '1rem',
           marginBottom: '1.5rem',
-          flexWrap: 'wrap',
         }}
       >
         <div style={{ flex: '1 1 300px', minWidth: '200px' }}>
@@ -134,10 +140,12 @@ export function FilteringExample() {
           </Select>
         </div>
 
-        <div
+        <Stack
+          direction='row'
+          alignItems='end'
           style={{
-            display: 'flex',
-            alignItems: 'flex-end',
+            // Stack has no zero spacing, override its gap
+            gap: 0,
           }}
         >
           <Button
@@ -146,8 +154,8 @@ export function FilteringExample() {
           >
             Rensa filter
           </Button>
-        </div>
-      </div>
+        </Stack>
+      </Stack>
 
       <table className='midas-tanstack-table'>
         <thead>

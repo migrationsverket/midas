@@ -4,7 +4,7 @@ description: Växlare för färgschema (ljust, mörkt, systemets inställning)
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ColorSchemeSwitch, ColorSchemeSwitchMenu } from '@midas-ds/components'
+import { ColorSchemeSwitch, ColorSchemeSwitchMenu, Stack } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
 import ColorSchemeSwitchApi from '@midas-ds/api/components/ColorSchemeSwitch.json'
 import ColorSchemeSwitchMenuApi from '@midas-ds/api/components/ColorSchemeSwitchMenu.json'
@@ -54,18 +54,17 @@ import { ColorSchemeSwitchMenu } from '@midas-ds/components'
   className='card'
   style={{ padding: 0, overflow: 'hidden' }}
 >
-  <div
+  <Stack
+    direction='row'
+    alignItems='center'
     style={{
-      display: 'flex',
-      alignItems: 'center',
       padding: '0.5rem 1rem',
       borderBottom: '1px solid var(--midas-border-color-subtle)',
-      gap: '0.5rem',
     }}
   >
     <span style={{ flex: 1, fontWeight: 500 }}>Min applikation</span>
     <ColorSchemeSwitchMenu />
-  </div>
+  </Stack>
 </div>
 
 ## Användning

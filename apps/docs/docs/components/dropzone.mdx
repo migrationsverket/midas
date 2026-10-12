@@ -3,7 +3,7 @@ title: DropZone
 description: Ett generellt mål för drag & drop — inte begränsat till filuppladdning.
 ---
 
-import { DropZone, FileTrigger, Button, Text, FieldError, Label } from '@midas-ds/components'
+import { DropZone, FileTrigger, Button, Stack, Text, FieldError, Label } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
@@ -60,7 +60,14 @@ formulär, komplettera med en etikett ovanför.
 ```
 
 <div className='card'>
-  <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+  <Stack
+    style={{
+      // Stack has no zero spacing, override its gap
+      gap: 0,
+      width: '100%',
+      maxWidth: 480,
+    }}
+  >
     <Label id='upload-label-docs'>Ladda upp filer</Label>
     <DropZone
       aria-labelledby='upload-label-docs'
@@ -68,7 +75,7 @@ formulär, komplettera med en etikett ovanför.
     >
       <Text slot='label'>Släpp filer här</Text>
     </DropZone>
-  </div>
+  </Stack>
 </div>
 
 ### Validering
@@ -86,7 +93,14 @@ DropZone kan markeras som ogiltig med `isInvalid`, tillsammans med ett felmeddel
 ```
 
 <div className='card'>
-  <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+  <Stack
+    style={{
+      // Stack has no zero spacing, override its gap
+      gap: 0,
+      width: '100%',
+      maxWidth: 480,
+    }}
+  >
     <DropZone
       isInvalid
       aria-label='Släpp filer här'
@@ -94,7 +108,7 @@ DropZone kan markeras som ogiltig med `isInvalid`, tillsammans med ett felmeddel
       <Text slot='label'>Släpp filer här</Text>
     </DropZone>
     <FieldError isInvalid>Filen är för stor</FieldError>
-  </div>
+  </Stack>
 </div>
 
 Samma tillstånd kan användas för att begränsa vilka filtyper som är tillåtna:

@@ -13,6 +13,7 @@ import {
   NavigationLink,
   Sidebar,
 } from '@midas-ds/layout'
+import { Stack } from '@midas-ds/components'
 
 export default function HeaderExample() {
   return (
@@ -35,7 +36,19 @@ export default function HeaderExample() {
           </Navigation>
         </Sidebar>
         <Main>
-          <div style={{ height: '100%', border: 'dashed 2px var(--midas-border-color-subtle)', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--midas-text-subtle)' }}>App-innehåll</div>
+          <Stack
+            direction='row'
+            alignItems='center'
+            justifyContent='center'
+            style={{
+              // Stack has no zero spacing, override its gap
+              gap: 0,
+              height: '100%',
+              border: 'dashed 2px var(--midas-border-color-subtle)',
+              borderRadius: 4,
+              color: 'var(--midas-text-subtle)',
+            }}
+          >App-innehåll</Stack>
         </Main>
       </LayoutContent>
     </Layout>

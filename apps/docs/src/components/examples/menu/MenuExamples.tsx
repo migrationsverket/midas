@@ -1,11 +1,14 @@
-import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
+import { Button, Menu, MenuItem, MenuPopover, MenuTrigger, Stack } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
 import React, { useState } from 'react'
 
 export const OnActionExample: React.FC = () => {
   const [actions, setActions] = useState<string[]>([])
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1rem' }}>
+    <Stack
+      alignItems='start'
+      spacing='medium'
+    >
       <MenuTrigger>
         <Button aria-label='Menu' variant='icon'>
           <MenuIcon size={20} />
@@ -29,6 +32,6 @@ export const OnActionExample: React.FC = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </Stack>
   )
 }

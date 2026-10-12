@@ -6,7 +6,7 @@ description: Sökfält är ett inmatningsfält anpassat för sökning
 import { PropTable } from '@site/src/components/PropsTable'
 import SearchFieldApi from '@midas-ds/api/components/SearchField.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { SearchField, Button } from '@midas-ds/components'
+import { SearchField, Button, Stack } from '@midas-ds/components'
 import React from 'react'
 
 <ComponentHeader
@@ -95,14 +95,17 @@ const [query, setQuery] = React.useState('')
 export const SearchWithButton = () => {
   const [query, setQuery] = React.useState('')
   return (
-    <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+    <Stack
+      direction='row'
+      alignItems='start'
+    >
       <SearchField
         placeholder='Sök efter frukter'
         showButton={false}
         onChange={setQuery}
       />
       <Button onPress={() => console.log('submit:', query)}>Sök</Button>
-    </div>
+    </Stack>
   )
 }
 
