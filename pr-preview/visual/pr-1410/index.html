@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Visual regression · 4 changed screenshots</title>
+<title>Visual regression · 5 changed screenshots</title>
 <style>
   :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
   [hidden] { display: none !important; }
@@ -32,16 +32,16 @@
 </head>
 <body>
 <header>
-  <h1>Visual regression · 4 changed screenshots</h1>
-  <p>274 screenshots compared across 1 project. <a href="https://github.com/migrationsverket/midas/actions/runs/37911752539">CI run</a></p>
+  <h1>Visual regression · 5 changed screenshots</h1>
+  <p>274 screenshots compared across 1 project. <a href="https://github.com/migrationsverket/midas/actions/runs/38246275863">CI run</a></p>
 </header>
-<nav><ol><li><a href="#components-1">./tabs/Tabs.stories.tsx &#62; Contained</a></li><li><a href="#components-2">./tabs/Tabs.stories.tsx &#62; DisabledTabs</a></li><li><a href="#components-3">./tabs/Tabs.stories.tsx &#62; Medium</a></li><li><a href="#components-4">./tabs/Tabs.stories.tsx &#62; Primary</a></li></ol></nav>
+<nav><ol><li><a href="#components-1">./tabs/Tabs.stories.tsx &#62; Contained</a></li><li><a href="#components-2">./tabs/Tabs.stories.tsx &#62; DisabledTabs</a></li><li><a href="#components-3">./tabs/Tabs.stories.tsx &#62; Medium</a></li><li><a href="#components-4">./tabs/Tabs.stories.tsx &#62; Primary</a></li><li><a href="#components-5">./tabs/Tabs.stories.tsx &#62; Vertical</a></li></ol></nav>
 
 <section class="failure" id="components-1">
   <h2><a href="#components-1">./tabs/Tabs.stories.tsx &#62; Contained</a></h2>
   <p class="meta">components · src/visual.spec.tsx</p>
   <pre class="message">Screenshot does not match the stored reference.
-38 pixels (ratio 0.01) differ.</pre>
+686 pixels (ratio 0.02) differ.</pre>
   <div class="modes" role="tablist">
     <button type="button" data-mode="side" aria-pressed="true">Side by side</button>
     <button type="button" data-mode="slider" aria-pressed="false">Slider</button>
@@ -73,7 +73,7 @@
   <h2><a href="#components-2">./tabs/Tabs.stories.tsx &#62; DisabledTabs</a></h2>
   <p class="meta">components · src/visual.spec.tsx</p>
   <pre class="message">Screenshot does not match the stored reference.
-1 pixels (ratio 0.01) differ.</pre>
+439 pixels (ratio 0.01) differ.</pre>
   <div class="modes" role="tablist">
     <button type="button" data-mode="side" aria-pressed="true">Side by side</button>
     <button type="button" data-mode="slider" aria-pressed="false">Slider</button>
@@ -105,7 +105,7 @@
   <h2><a href="#components-3">./tabs/Tabs.stories.tsx &#62; Medium</a></h2>
   <p class="meta">components · src/visual.spec.tsx</p>
   <pre class="message">Screenshot does not match the stored reference.
-1 pixels (ratio 0.01) differ.</pre>
+614 pixels (ratio 0.02) differ.</pre>
   <div class="modes" role="tablist">
     <button type="button" data-mode="side" aria-pressed="true">Side by side</button>
     <button type="button" data-mode="slider" aria-pressed="false">Slider</button>
@@ -137,7 +137,7 @@
   <h2><a href="#components-4">./tabs/Tabs.stories.tsx &#62; Primary</a></h2>
   <p class="meta">components · src/visual.spec.tsx</p>
   <pre class="message">Screenshot does not match the stored reference.
-1 pixels (ratio 0.01) differ.</pre>
+584 pixels (ratio 0.02) differ.</pre>
   <div class="modes" role="tablist">
     <button type="button" data-mode="side" aria-pressed="true">Side by side</button>
     <button type="button" data-mode="slider" aria-pressed="false">Slider</button>
@@ -160,6 +160,38 @@
     <div class="stack">
       <img src="components/4/reference.png" width="333" height="161" alt="reference" loading="lazy">
       <div class="top" style="opacity: 0.5"><img src="components/4/actual.png" width="333" height="161" alt="actual" loading="lazy"></div>
+    </div>
+    <label>Fade from reference to actual <input type="range" min="0" max="100" value="50" data-control="onion"></label>
+  </div>
+</section>
+
+<section class="failure" id="components-5">
+  <h2><a href="#components-5">./tabs/Tabs.stories.tsx &#62; Vertical</a></h2>
+  <p class="meta">components · src/visual.spec.tsx</p>
+  <pre class="message">Screenshot does not match the stored reference.
+8365 pixels (ratio 0.15) differ.</pre>
+  <div class="modes" role="tablist">
+    <button type="button" data-mode="side" aria-pressed="true">Side by side</button>
+    <button type="button" data-mode="slider" aria-pressed="false">Slider</button>
+    <button type="button" data-mode="onion" aria-pressed="false">Onion skin</button>
+  </div>
+  <div class="view" data-view="side">
+    <figure><figcaption>Reference</figcaption><img src="components/5/reference.png" width="333" height="171" alt="reference" loading="lazy"></figure>
+    <figure><figcaption>Actual</figcaption><img src="components/5/actual.png" width="333" height="171" alt="actual" loading="lazy"></figure>
+    <figure><figcaption>Diff</figcaption><img src="components/5/diff.png" width="333" height="171" alt="diff" loading="lazy"></figure>
+  </div>
+  
+  <div class="view" data-view="slider" hidden>
+    <div class="stack">
+      <img src="components/5/reference.png" width="333" height="171" alt="reference" loading="lazy">
+      <div class="top" style="clip-path: inset(0 50% 0 0)"><img src="components/5/actual.png" width="333" height="171" alt="actual" loading="lazy"></div>
+    </div>
+    <label>Actual on the left, reference on the right <input type="range" min="0" max="100" value="50" data-control="slider"></label>
+  </div>
+  <div class="view" data-view="onion" hidden>
+    <div class="stack">
+      <img src="components/5/reference.png" width="333" height="171" alt="reference" loading="lazy">
+      <div class="top" style="opacity: 0.5"><img src="components/5/actual.png" width="333" height="171" alt="actual" loading="lazy"></div>
     </div>
     <label>Fade from reference to actual <input type="range" min="0" max="100" value="50" data-control="onion"></label>
   </div>
