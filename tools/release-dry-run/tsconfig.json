@@ -1,8 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "esnext",
-    "ignoreDeprecations": "6.0"
+    "strict": false
   },
   "files": [],
   "include": [],

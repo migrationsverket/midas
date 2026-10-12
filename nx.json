@@ -89,7 +89,12 @@
   },
   "targetDefaults": {
     "typecheck": {
-      "dependsOn": ["theme:style-dictionary-generate"]
+      "dependsOn": ["theme:style-dictionary-generate"],
+      "inputs": [
+        "production",
+        "^production",
+        { "externalDependencies": ["@typescript/native"] }
+      ]
     },
     "build": {
       "dependsOn": ["theme:style-dictionary-generate", "^build"],

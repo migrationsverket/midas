@@ -1,15 +1,9 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": false,
-    "isolatedModules": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "ignoreDeprecations": "6.0"
+    "isolatedModules": true
   },
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "vite.config.mts"],
+  "include": ["**/*.ts", "**/*.tsx", "vite.config.mts"],
   "references": [
     {
       "path": "./tsconfig.lib.json"
@@ -17,6 +11,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "extends": "../../tsconfig.base.json"
+  ]
 }
