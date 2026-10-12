@@ -1,12 +1,16 @@
 /**
- * Shared setup for visual regression tests, added to every package's visual
- * project by defineVisualConfig (after the package's own vitest.setup.mts).
+ * Shared setup for visual regression tests, added by visualConfig.
  */
 
 import { afterAll, beforeAll, beforeEach, vi } from 'vitest'
 import { userEvent } from 'vitest/browser'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '@midas-ds/test-utils'
+
+// The package's own test setup, if it has one: global CSS and fonts the
+// screenshots depend on. A leading slash makes the glob relative to the Vite
+// root (the package), and a missing file just matches nothing
+import.meta.glob('/vitest.setup.mts', { eager: true })
 
 // Clear hover states and park the cursor before taking a screenshot
 // https://github.com/vitest-dev/vitest/discussions/9878

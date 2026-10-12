@@ -24,7 +24,6 @@ export default [
             '{projectRoot}/vitest.config.mts',
             '{projectRoot}/vitest.config.visual.mts',
             '{projectRoot}/vitest.setup.mts',
-            '{projectRoot}/vitest.setup.visual.mts',
             // story/spec fixture — the build only emits react-datepicker.css
             '{projectRoot}/src/lib/ReactDatepicker.tsx',
           ],

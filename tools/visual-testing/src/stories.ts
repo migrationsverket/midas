@@ -21,7 +21,7 @@ type ComposedStory = ComponentType & { tags?: string[] }
 // test timeouts the packages use
 const SCREENSHOT_TIMEOUT = 10_000
 
-export function snapshotStories(storyModules: Record<string, unknown>) {
+export function snapshotStories(storyModules: Record<string, StoryModule>) {
   // Mirrors the tag default from apps/storybook/.storybook/preview.tsx (every
   // story is `snapshot`-tagged unless it opts out with `!snapshot`) without
   // depending on the Storybook app. composeStories() needs project
@@ -29,7 +29,7 @@ export function snapshotStories(storyModules: Record<string, unknown>) {
   setProjectAnnotations([{ tags: ['snapshot'] }])
 
   for (const [path, storyModule] of Object.entries(storyModules)) {
-    const composed = composeStories(storyModule as StoryModule) as Record<
+    const composed = composeStories(storyModule) as Record<
       string,
       ComposedStory
     >

@@ -42,7 +42,6 @@ export default defineConfig([
             '{projectRoot}/vitest.config.mts',
             '{projectRoot}/vitest.config.visual.mts',
             '{projectRoot}/vitest.setup.mts',
-            '{projectRoot}/vitest.setup.visual.mts',
           ],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,
