@@ -1,3 +1,9 @@
+## 17.31.0 (2026-10-13)
+
+### 🚀 Features
+
+- **components,accordion:** add contentBackground prop and deprecate hasBackground ([3472b15f38d](https://github.com/migrationsverket/midas/commit/3472b15f38d))
+
 ## 17.30.2 (2026-10-13)
 
 ### 🚀 Features
