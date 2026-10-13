@@ -257,7 +257,7 @@ export const PropTable = ({
           id='props'
           title='Props'
           className={styles.accordionItem}
-          hasBackground={false}
+          contentBackground='inherit'
         >
           <Grid
             propGroup={rest}
@@ -270,7 +270,7 @@ export const PropTable = ({
           id='events'
           title='Events'
           className={styles.accordionItem}
-          hasBackground={false}
+          contentBackground='inherit'
         >
           <Grid
             propGroup={events}
@@ -284,7 +284,7 @@ export const PropTable = ({
           id='accessibility'
           title='Tillgänglighet'
           className={styles.accordionItem}
-          hasBackground={false}
+          contentBackground='inherit'
         >
           <Grid
             propGroup={accessibility}
