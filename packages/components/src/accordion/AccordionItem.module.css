@@ -135,7 +135,7 @@
   padding: var(--content-padding);
 }
 
-.hasBackground {
+.neutralBackground {
   background-color: var(--midas-background-base);
 
   --midas-field-base: var(--midas-field-01-base);
