@@ -124,6 +124,46 @@ jobs:
         id: version
         run: echo "version=$(jq -r '.packages["node_modules/playwright"].version' package-lock.json)" >> "$GITHUB_OUTPUT"
 
+  # Not a required check: a changed baseline is reviewed like a visual diff,
+  # see docs/screen-reader-testing-plan.md
+  screen-reader:
+    name: Screen reader regression
+    needs: playwright-version
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
+    steps:
+      # actions/checkout falls back to a plain download without git, which
+      # breaks `nx affected`
+      - name: Install git
+        run: command -v git || (apt-get update && apt-get install -y --no-install-recommends git)
+
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          filter: tree:0
+          fetch-depth: 0
+
+      # The workspace is owned by another user than the container's
+      - name: Mark workspace as safe for git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v5
+
+      - name: Screen reader regression tests
+        run: npx nx affected -t screen-reader
+
   visual:
     name: Visual regression
     needs: playwright-version
