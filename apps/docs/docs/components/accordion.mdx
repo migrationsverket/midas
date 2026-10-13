@@ -95,7 +95,7 @@ Contained accordion används för att ge en mer framträdande presentation av in
 Använd endast `type` tillsammans med `isContained`.
 :::
 Contained accordion kan ha en `type` för att förmedla en status för innehållet. Det primära användningsområdet för detta är när Accordion används som expanderbara sektioner i en process, där varje sektion innehåller formulär eller uppgifter som behöver slutföras.
-`AccordionItem` har som standard samma bakgrund på innehållet som på titeln. Bakgrunden på innehållet kan tas bort genom att sätta `hasBackground={false}`.
+Innehållet i `AccordionItem` har som standard en neutral bakgrund. Sätt `contentBackground='inherit'` för att låta statusfärgen fortsätta in i innehållet.
 
 ```tsx {6,13,20,28}
 <Accordion isContained>
