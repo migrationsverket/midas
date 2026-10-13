@@ -1,0 +1,1 @@
+import{t as e}from"./iframe-C48wwwTR.js";e();
