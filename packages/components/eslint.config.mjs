@@ -40,6 +40,7 @@ export default defineConfig([
             '{projectRoot}/test-utils.ts',
             '{projectRoot}/vite.config.mts',
             '{projectRoot}/vitest.config.mts',
+            '{projectRoot}/vitest.config.screen-reader.mts',
             '{projectRoot}/vitest.config.visual.mts',
             '{projectRoot}/vitest.setup.mts',
           ],

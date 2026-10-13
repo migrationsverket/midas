@@ -57,6 +57,7 @@
     "@eslint/js": "^9.8.0",
     "@faker-js/faker": "^10.6.0",
     "@guidepup/virtual-screen-reader": "^0.33.0",
+    "@midas-ds/screen-reader-testing": "file:tools/screen-reader-testing",
     "@midas-ds/visual-testing": "file:tools/visual-testing",
     "@nx/devkit": "23.2.1",
     "@nx/eslint": "23.2.1",

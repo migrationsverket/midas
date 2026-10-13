@@ -32,8 +32,11 @@
       "@midas-ds/select-styles/*": ["packages/select-styles/src/*"],
       "@midas-ds/storybook/*": ["apps/storybook/src/*"],
       "@midas-ds/test-utils": ["tools/test-utils/src/index.ts"],
-      "@midas-ds/test-utils/screen-reader": [
-        "tools/test-utils/src/screen-reader.ts"
+      "@midas-ds/screen-reader-testing": [
+        "tools/screen-reader-testing/src/index.ts"
+      ],
+      "@midas-ds/screen-reader-testing/*": [
+        "tools/screen-reader-testing/src/*"
       ],
       "@midas-ds/visual-testing": ["tools/visual-testing/src/index.ts"],
       "@midas-ds/visual-testing/*": ["tools/visual-testing/src/*"],

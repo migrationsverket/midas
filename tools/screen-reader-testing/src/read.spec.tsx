@@ -1,10 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { useState } from 'react'
-import {
-  collectAnnouncements,
-  readAll,
-} from '@midas-ds/test-utils/screen-reader'
-import { render } from '../../../test-utils'
+import { render } from 'vitest-browser-react'
+import { collectAnnouncements, readAll } from './read.ts'
 
 describe('readAll', () => {
   it('reads every item once, in order, and stops when it wraps', async () => {

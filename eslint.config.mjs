@@ -128,9 +128,10 @@ export default [
     },
   },
   {
-    // Visual regression specs use tools/visual-testing, which isn't built:
-    // fine, since the specs aren't part of any package's build either
-    files: ['**/src/visual.spec.tsx'],
+    // Visual and screen reader regression specs use tools/visual-testing and
+    // tools/screen-reader-testing, which aren't built: fine, since the specs
+    // aren't part of any package's build either
+    files: ['**/src/visual.spec.tsx', '**/src/screen-reader.spec.tsx'],
     rules: {
       '@nx/enforce-module-boundaries': 'off',
     },

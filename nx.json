@@ -351,6 +351,9 @@
     },
     {
       "plugin": "./tools/visual-testing/src/plugin.ts"
+    },
+    {
+      "plugin": "./tools/screen-reader-testing/src/plugin.ts"
     }
   ],
   "analytics": false

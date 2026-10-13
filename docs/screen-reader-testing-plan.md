@@ -68,8 +68,8 @@ Manual testing with NVDA, and ideally with users who rely on screen readers, sta
 
 ## Rollout
 
-1. **Shared helper.** _Done on the spike branch:_ `readAll` and `collectAnnouncements` in `tools/test-utils/src/screen-reader.ts`, imported as `@midas-ds/test-utils/screen-reader`, with their own tests.
-2. **Story-driven, opt-in.** _Done on the spike branch:_ `packages/components/src/screen-reader.spec.tsx` reads every story tagged `screen-reader` and stores the output as plain text under `__screen-reader__/<folder>/<Component>/<Story>.txt`. Update with `nx test components -- screen-reader.spec -u`. It currently runs in the regular, blocking `test` target, unlike visual regression; see open questions.
+1. **Shared tool.** _Done on the spike branch:_ `tools/screen-reader-testing`, built like `tools/visual-testing`: `readAll` and `collectAnnouncements` with their own tests, a shared Vitest config and an Nx plugin that adds the `screen-reader` target. See its README.
+2. **Story-driven, opt-in.** _Done on the spike branch:_ `packages/components/src/screen-reader.spec.tsx` reads every story tagged `screen-reader` and stores the output as plain text under `__screen-reader__/<folder>/<Component>/<Story>.txt`. It runs in its own `screen-reader` target, `nx run components:screen-reader`, and updates with `nx run components:screen-reader -- -u`. Like visual regression it's a separate, non-blocking job in PR Checks.
 3. **Pilot components.** _Started:_ TextField, Select and CheckboxGroup (invalid), FileList (default and all upload states in `MixedStates`) and Stack as a list. Still to do: Modal and Toast, where announcements matter most.
 4. **Review practice.** A changed snapshot is reviewed like a visual diff: the PR author explains why the spoken output changed, and the reviewer reads the diff.
 5. **Evaluate after the pilot.** Look at snapshot churn, false positives and whether the logs caught anything. Decide then whether to widen the scope and whether layer 4 is worth it.
@@ -84,7 +84,7 @@ Manual testing with NVDA, and ideally with users who rely on screen readers, sta
 
 ## Open questions
 
-- Should the baseline block PRs, like a unit test, or report without blocking, like visual regression?
+- The baseline reports without blocking for now, like visual regression. Should it block PRs once the pilot has settled?
 - Which locale should the baseline use?
 - Who owns reviewing screen reader snapshot changes?
 - When is real NVDA (layer 4) worth the maintenance, and for which flows?
