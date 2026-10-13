@@ -1,3 +1,13 @@
+## 0.3.6 (2026-10-13)
+
+### 🚀 Features
+
+- **visual-testing:** nx tool for visual test setup ([1775f05eaf7](https://github.com/migrationsverket/midas/commit/1775f05eaf7))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.8
+
 ## 0.3.5 (2026-10-09)
 
 ### 🚀 Features
