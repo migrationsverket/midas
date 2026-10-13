@@ -1,0 +1,16 @@
+{
+  "name": "@midas-ds/visual-testing",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./stories": "./src/stories.ts",
+    "./setup": "./src/setup.ts",
+    "./plugin": "./src/plugin.ts",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {}
+}

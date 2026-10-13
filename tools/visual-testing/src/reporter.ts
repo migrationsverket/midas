@@ -13,7 +13,8 @@
  */
 
 import { copyFile, mkdir, rm, writeFile } from 'node:fs/promises'
-import { join, resolve } from 'node:path'
+import { basename, dirname, join, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { Reporter, TestModule, Vitest } from 'vitest/node'
 import type {
   VisualReportEntry,
@@ -24,17 +25,26 @@ import type {
 
 const IMAGE_NAMES: string[] = ['reference', 'actual', 'diff']
 
-export class VisualReportReporter implements Reporter {
-  private project: string
-  private outputDir: string
+const workspaceRoot = resolve(
+  dirname(fileURLToPath(import.meta.url)),
+  '../../..',
+)
 
-  constructor({ project, outputDir }: VisualReportReporterOptions) {
-    this.project = project
-    this.outputDir = outputDir
+export class VisualReportReporter implements Reporter {
+  private options: VisualReportReporterOptions
+  private project = ''
+  private outputDir = ''
+
+  constructor(options: VisualReportReporterOptions = {}) {
+    this.options = options
   }
 
   onInit(vitest: Vitest) {
-    this.outputDir = resolve(vitest.config.root, this.outputDir)
+    const { root } = vitest.config
+    this.project = this.options.project ?? basename(root)
+    this.outputDir = this.options.outputDir
+      ? resolve(root, this.options.outputDir)
+      : join(workspaceRoot, 'dist/visual-report', this.project)
   }
 
   async onTestRunEnd(testModules: ReadonlyArray<TestModule>) {

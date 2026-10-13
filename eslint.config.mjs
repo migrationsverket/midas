@@ -127,4 +127,12 @@ export default [
       'react-hooks/rules-of-hooks': 'off',
     },
   },
+  {
+    // Visual regression specs use tools/visual-testing, which isn't built:
+    // fine, since the specs aren't part of any package's build either
+    files: ['**/src/visual.spec.tsx'],
+    rules: {
+      '@nx/enforce-module-boundaries': 'off',
+    },
+  },
 ]

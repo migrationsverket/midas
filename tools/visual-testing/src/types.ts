@@ -34,7 +34,11 @@ export interface VisualReportSummary {
 }
 
 export interface VisualReportReporterOptions {
-  project: string
-  /** Resolved against the Vitest root (the package folder) */
-  outputDir: string
+  /** Defaults to the name of the Vitest root folder, e.g. `components` */
+  project?: string
+  /**
+   * Resolved against the Vitest root (the package folder). Defaults to
+   * `dist/visual-report/<project>` in the workspace root
+   */
+  outputDir?: string
 }
