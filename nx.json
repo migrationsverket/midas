@@ -137,6 +137,31 @@
       "inputs": ["default", "^production", "{workspaceRoot}/vitest.config.mts"],
       "cache": true
     },
+    "a11y*": {
+      "inputs": [
+        "default",
+        "^production",
+        "storybookStories",
+        {
+          "fileset": "{projectRoot}/tsconfig.spec.json",
+          "dependencies": true
+        },
+        {
+          "fileset": "{projectRoot}/tsconfig.storybook.json",
+          "dependencies": true
+        },
+        {
+          "externalDependencies": ["vitest"]
+        },
+        {
+          "env": "CI"
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.js",
+          "transitive": true
+        }
+      ]
+    },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
       "cache": true
@@ -194,6 +219,9 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/tsconfig.storybook.json",
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
+    ],
+    "storybookStories": [
+      "{workspaceRoot}/packages/**/*.stories.@(js|jsx|ts|tsx|mdx)"
     ],
     "sharedGlobals": []
   },
