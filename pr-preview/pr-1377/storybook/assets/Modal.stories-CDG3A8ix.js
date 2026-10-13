@@ -1,0 +1,105 @@
+import{n as e}from"./rolldown-runtime-C0FnF6B9.js";import{t}from"./react-DiVRNtpo.js";import{a as n,t as r}from"./Dialog-CCnljiGu.js";import{a as i,i as a,n as o,o as s,r as c,s as l,t as u}from"./Table-B88UqE2L.js";import{n as d,o as f,u as p}from"./iframe-BRhJ0sFS.js";import{n as m,t as h}from"./Button-DNf1g_8f.js";import{n as g,t as _}from"./ButtonGroup-F6jRgGxC.js";import{n as v,t as y}from"./Heading-BRNe0n--.js";import{n as b,t as x}from"./Modal-KUJ7l2lr.js";import{n as S,t as C}from"./Text-C2TQmbGw.js";import{n as w,t as T}from"./Select-CvcD7U0G.js";import{n as E,t as D}from"./ListBoxItem-BHQXWncn.js";import{n as O,t as k}from"./TextField-tXHFd2br.js";var A,j,M,N,P,F,I,L,R,z,B,V,H,U;function W(){return(W=e((()=>{f(),A=t(),n(),b(),m(),g(),w(),E(),S(),l(),v(),O(),j=d(),M=[1,2,3,4,5,6].map(e=>(0,j.jsx)(C,{elementType:`p`,children:`Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore saepe atque necessitatibus pariatur aliquam vel incidunt blanditiis rem maxime. Modi enim dolorem optio id error reprehenderit nisi non iste? Natus! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, dolores eligendi rerum distinctio dignissimos repellat magni est veniam, ratione, totam quo eius aperiam dolorum quod minima corporis quibusdam! Tempore, nam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, laborum praesentium deserunt incidunt minima doloremque eligendi odio iure officia sunt, delectus rem quam soluta dolores modi, illo expedita molestiae eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis provident, dolorem perspiciatis nesciunt dicta explicabo sequi doloremque neque fugit? Ratione adipisci dolor saepe nam fugit provident asperiores voluptas! Molestiae, cumque.`},e)),N={component:x,subcomponents:{DialogTrigger:r},title:`Components/Modal`,tags:[`autodocs`],parameters:{layout:`centered`},render:e=>(0,j.jsxs)(r,{children:[(0,j.jsx)(h,{children:`Öppna`}),(0,j.jsx)(x,{title:`Enter your name`,...e})]}),args:{children:(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(T,{autoFocus:!0,placeholder:`Select...`,defaultValue:[`kiwi`],label:`Select fruits`,selectionMode:`multiple`,items:p,isSelectableAll:!1,children:e=>(0,j.jsx)(D,{...e,children:e.name})}),(0,j.jsx)(h,{slot:`close`,children:`Submit`})]})}},P={args:{isDismissable:!0}},F={},I={decorators:[e=>(0,j.jsxs)(`div`,{children:[(0,j.jsx)(y,{level:1,children:`Läs riktlinjer för användning! `}),(0,j.jsx)(e,{})]})],parameters:{},args:{hideCloseButton:!0,isKeyboardDismissDisabled:!0,title:`Close button hidden`,children:(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(C,{children:`This modal cannot be closed from the header`}),(0,j.jsx)(h,{slot:`close`,children:`Agree`})]})}},L={args:{title:null,children:(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(C,{children:`This is a simple modal with no title.`}),(0,j.jsx)(h,{slot:`close`,children:`Close`})]})}},R={args:{title:`Read all the text`,children:(0,j.jsxs)(j.Fragment,{children:[M,(0,j.jsx)(h,{slot:`close`,children:`Submit`})]})}},z={args:{title:`Read all the text`,children:M,footer:(0,j.jsxs)(_,{children:[(0,j.jsx)(h,{slot:`close`,children:`Submit`}),(0,j.jsx)(h,{slot:`close`,variant:`secondary`,children:`Cancel`})]})}},B={tags:[`!snapshot`],args:{title:`Fill in the form`,children:Array.from({length:14},(e,t)=>(0,j.jsx)(k,{label:`Field ${t+1}`},t)),footer:(0,j.jsxs)(_,{children:[(0,j.jsx)(h,{slot:`close`,children:`Submit`}),(0,j.jsx)(h,{slot:`close`,variant:`secondary`,children:`Cancel`})]})}},V={tags:[`!dev`,`!autodocs`,`!snapshot`],render:()=>{let[e,t]=(0,A.useState)(null),n=[`apple`,`banana`].map(e=>({id:e,name:e}));return(0,j.jsxs)(j.Fragment,{children:[(0,j.jsxs)(a,{"aria-label":`tabell`,children:[(0,j.jsx)(s,{children:(0,j.jsx)(o,{isRowHeader:!0,children:`Actions`})}),(0,j.jsx)(i,{children:e&&e.map(e=>(0,j.jsx)(c,{children:(0,j.jsx)(u,{children:(0,j.jsxs)(r,{children:[(0,j.jsx)(h,{children:`View`}),(0,j.jsx)(x,{children:e})]})})},e))})]}),(0,j.jsxs)(r,{children:[(0,j.jsx)(h,{children:`Add entry`}),(0,j.jsx)(x,{children:(0,j.jsx)(T,{autoFocus:!0,label:`test`,items:n,onChange:e=>e&&t(t=>t?[...t,e]:[e]),children:e=>(0,j.jsx)(D,{...e,children:e.name})})})]})]})}},H={args:{title:`This is a very long title to test how the modal handles text wrapping and layout with a lot of text in the title bar`,children:(0,j.jsxs)(j.Fragment,{children:[(0,j.jsx)(C,{children:`This modal has a very long title.`}),(0,j.jsx)(h,{slot:`close`,children:`Close`})]})}},U=[`Default`,`NotDismissable`,`HiddenCloseButton`,`EmptyTitle`,`Scrollable`,`ScrollableWithFooter`,`FormWithFooter`,`DS1282`,`LongTitle`],P.parameters={...P.parameters,docs:{...P.parameters?.docs,source:{originalSource:`{
+  args: {
+    isDismissable: true
+  }
+}`,...P.parameters?.docs?.source}}},F.parameters={...F.parameters,docs:{...F.parameters?.docs,source:{originalSource:`{}`,...F.parameters?.docs?.source}}},I.parameters={...I.parameters,docs:{...I.parameters?.docs,source:{originalSource:`{
+  decorators: [Story => <div>
+        <Heading level={1}>Läs riktlinjer för användning! </Heading>
+        <Story />
+      </div>],
+  parameters: {},
+  args: {
+    hideCloseButton: true,
+    isKeyboardDismissDisabled: true,
+    title: 'Close button hidden',
+    children: <>
+        <Text>This modal cannot be closed from the header</Text>
+        <Button slot='close'>Agree</Button>
+      </>
+  }
+}`,...I.parameters?.docs?.source},description:{story:`For special cases when modal should not be closable without taking further action`,...I.parameters?.docs?.description}}},L.parameters={...L.parameters,docs:{...L.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: null,
+    children: <>
+        <Text>This is a simple modal with no title.</Text>
+        <Button slot='close'>Close</Button>
+      </>
+  }
+}`,...L.parameters?.docs?.source}}},R.parameters={...R.parameters,docs:{...R.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'Read all the text',
+    children: <>
+        {longFormParagraphs}
+        <Button slot='close'>Submit</Button>
+      </>
+  }
+}`,...R.parameters?.docs?.source}}},z.parameters={...z.parameters,docs:{...z.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'Read all the text',
+    children: longFormParagraphs,
+    footer: <ButtonGroup>
+        <Button slot='close'>Submit</Button>
+        <Button slot='close' variant='secondary'>
+          Cancel
+        </Button>
+      </ButtonGroup>
+  }
+}`,...z.parameters?.docs?.source}}},B.parameters={...B.parameters,docs:{...B.parameters?.docs,source:{originalSource:`{
+  // Only the trigger button is visible in a screenshot, the open modal and
+  // its scroll behaviour are covered by Modal.spec.tsx
+  tags: ['!snapshot'],
+  args: {
+    title: 'Fill in the form',
+    children: Array.from({
+      length: 14
+    }, (_, i) => <TextField key={i} label={\`Field \${i + 1}\`} />),
+    footer: <ButtonGroup>
+        <Button slot='close'>Submit</Button>
+        <Button slot='close' variant='secondary'>
+          Cancel
+        </Button>
+      </ButtonGroup>
+  }
+}`,...B.parameters?.docs?.source}}},V.parameters={...V.parameters,docs:{...V.parameters?.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  render: () => {
+    const [selectedFruit, setSelectedFruit] = useState<Key[] | null>(null);
+    const options = ['apple', 'banana'].map(fruit => ({
+      id: fruit,
+      name: fruit
+    }));
+    return <>
+        <Table aria-label='tabell'>
+          <TableHeader>
+            <Column isRowHeader>Actions</Column>
+          </TableHeader>
+          <TableBody>
+            {selectedFruit && selectedFruit.map(fruit => <Row key={fruit}>
+                  <Cell>
+                    <DialogTrigger>
+                      <Button>View</Button>
+                      <Modal>{fruit}</Modal>
+                    </DialogTrigger>
+                  </Cell>
+                </Row>)}
+          </TableBody>
+        </Table>
+        <DialogTrigger>
+          <Button>Add entry</Button>
+          <Modal>
+            <Select autoFocus label='test' items={options} onChange={value => value && setSelectedFruit(previousValue => previousValue ? [...previousValue, value] : [value])}>
+              {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+            </Select>
+          </Modal>
+        </DialogTrigger>
+      </>;
+  }
+}`,...V.parameters?.docs?.source}}},H.parameters={...H.parameters,docs:{...H.parameters?.docs,source:{originalSource:`{
+  args: {
+    title: 'This is a very long title to test how the modal handles text wrapping and layout with a lot of text in the title bar',
+    children: <>
+        <Text>This modal has a very long title.</Text>
+        <Button slot='close'>Close</Button>
+      </>
+  }
+}`,...H.parameters?.docs?.source}}}})))()}W();export{V as DS1282,P as Default,L as EmptyTitle,B as FormWithFooter,I as HiddenCloseButton,H as LongTitle,F as NotDismissable,R as Scrollable,z as ScrollableWithFooter,U as __namedExportsOrder,N as default};
