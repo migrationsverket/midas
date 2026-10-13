@@ -41178,8 +41178,8 @@ __webpack_require__.d(__webpack_exports__, {
           "@midas-ds/style-dictionary/*": "/home/runner/work/midas/midas/tools/style-dictionary/src/*",
           "@midas-ds/test-utils": "/home/runner/work/midas/midas/tools/test-utils/src/index.ts",
           "@midas-ds/test-utils/*": "/home/runner/work/midas/midas/tools/test-utils/src/*",
-          "@midas-ds/visual-report": "/home/runner/work/midas/midas/tools/visual-report/src/index.ts",
-          "@midas-ds/visual-report/*": "/home/runner/work/midas/midas/tools/visual-report/src/*"
+          "@midas-ds/visual-testing": "/home/runner/work/midas/midas/tools/visual-testing/src/index.ts",
+          "@midas-ds/visual-testing/*": "/home/runner/work/midas/midas/tools/visual-testing/src/*"
         }
       }
     ],
