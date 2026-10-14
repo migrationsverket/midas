@@ -6,14 +6,29 @@ interface Profile {
   browser: 'chromium' | 'firefox' | 'webkit'
   /** A Playwright device descriptor, for touch, user agent and viewport */
   device?: keyof typeof devices
+  /**
+   * Overrides the package's test timeout. The packages time tests for
+   * Chromium, and the other profiles run about twice as slow on CI runners
+   */
+  testTimeout?: number
 }
+
+const slowTestTimeout = 5000
 
 const profiles = {
   chromium: { browser: 'chromium' },
-  firefox: { browser: 'firefox' },
-  webkit: { browser: 'webkit' },
-  'mobile-safari': { browser: 'webkit', device: 'iPhone 15' },
-  'mobile-chrome': { browser: 'chromium', device: 'Pixel 7' },
+  firefox: { browser: 'firefox', testTimeout: slowTestTimeout },
+  webkit: { browser: 'webkit', testTimeout: slowTestTimeout },
+  'mobile-safari': {
+    browser: 'webkit',
+    device: 'iPhone 15',
+    testTimeout: slowTestTimeout,
+  },
+  'mobile-chrome': {
+    browser: 'chromium',
+    device: 'Pixel 7',
+    testTimeout: slowTestTimeout,
+  },
 } satisfies Record<string, Profile>
 
 export type BrowserProfile = keyof typeof profiles
@@ -53,6 +68,7 @@ const toInstance = (
       ? `${variant.name} (${profileName})`
       : profileName
   const instance: BrowserInstanceOption = {
+    ...(profile.testTimeout && { testTimeout: profile.testTimeout }),
     ...variant,
     browser: profile.browser,
     name,
