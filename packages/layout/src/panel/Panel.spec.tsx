@@ -46,7 +46,7 @@ describe('given a controlled Panel', () => {
     const panel = container.querySelector(`.${panelStyles.panel}`) as HTMLElement
     const computed = getComputedStyle(panel)
 
-    if (task.file.projectName === 'mobile') {
+    if (task.file.projectName.startsWith('mobile')) {
       expect(computed.bottom).toBe('0px')
       expect(computed.borderTopWidth).not.toBe('0px')
     } else {
@@ -150,7 +150,7 @@ describe('given a PanelProvider with push variant', () => {
 
     await userEvent.click(getByRole('button', { name: 'Open Panel A' }))
 
-    if (task.file.projectName === 'mobile') {
+    if (task.file.projectName.startsWith('mobile')) {
       await expect.poll(() => getComputedStyle(region).height).not.toBe('0px')
     } else {
       await expect.poll(() => getComputedStyle(region).width).not.toBe('0px')

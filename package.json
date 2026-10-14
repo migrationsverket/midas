@@ -55,6 +55,7 @@
     "@eslint/eslintrc": "^3.0.0",
     "@eslint/js": "^9.8.0",
     "@faker-js/faker": "^10.6.0",
+    "@midas-ds/test-browsers": "file:tools/test-browsers",
     "@midas-ds/visual-testing": "file:tools/visual-testing",
     "@nx/devkit": "24.0.0",
     "@nx/eslint": "24.0.0",
