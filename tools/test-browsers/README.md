@@ -26,16 +26,36 @@ These are Playwright's builds of each engine, not the branded browsers, so they 
 
 Install the browsers you want to run with `npx playwright install firefox webkit`.
 
+## Real browsers
+
+`<browser>@<version>` profiles run the branded browsers through WebdriverIO, which downloads the browser and its driver:
+
+```sh
+MIDAS_BROWSERS=chrome@stable npx nx run components:test
+MIDAS_BROWSERS=chrome@154 npx nx run components:test           # a milestone
+MIDAS_BROWSERS=firefox@stable npx nx run components:test
+MIDAS_BROWSERS=firefox@stable_157.0.1 npx nx run components:test # an exact release
+MIDAS_BROWSERS=edge@stable npx nx run components:test           # the installed Edge
+```
+
+Firefox's `latest` is Nightly, so use `stable` or `stable_<version>`. These can't be mixed with the Playwright profiles in one run.
+
+`src/resolve-versions.ts` prints the profiles for the two latest versions of each browser, which the nightly workflow (`browsers-nightly.yml`) runs. A failing browser opens an issue, which is closed when it passes again.
+
+Known differences: under WebdriverIO, Vitest computes accessible names for `getByRole` itself, and they can differ from Playwright's.
+
 ## In a Vitest config
 
 ```ts
-import { browserInstances } from '@midas-ds/test-browsers'
+import { browserInstances, browserProvider } from '@midas-ds/test-browsers'
 
 browser: {
-  provider: playwright(),
+  provider: browserProvider(),
   instances: browserInstances(),
 }
 ```
+
+`browserProvider()` picks Playwright or WebdriverIO for the selected profiles. Vitest needs every instance to use the same kind of provider as the project.
 
 Pass variants to run every profile in several setups. With one profile the instances keep the variant names; with several, the profile is added, e.g. `mobile (firefox)`, so check names with `startsWith`:
 
