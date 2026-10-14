@@ -75,20 +75,22 @@ Kort i dashboards behöver inte ha samma storlek. Anpassa storleken efter inneh�
     </Text>
   </CardBody>
   <CardActions>
-    <Button
-      variant='secondary'
-      aria-label='Redigera inköpslista'
-      icon={Pen}
-    >
-      Redigera
-    </Button>
-    <Button
-      variant='tertiary'
-      aria-label='Ta bort inköpslista'
-      icon={Trash2}
-    >
-      Ta bort
-    </Button>
+    <ButtonGroup aria-label='Hantera inköpslista'>
+      <Button
+        variant='secondary'
+        aria-label='Redigera inköpslista'
+        icon={Pen}
+      >
+        Redigera
+      </Button>
+      <Button
+        variant='tertiary'
+        aria-label='Ta bort inköpslista'
+        icon={Trash2}
+      >
+        Ta bort
+      </Button>
+    </ButtonGroup>
   </CardActions>
 </Card>
 ```
@@ -182,7 +184,10 @@ import { Link as ReactRouterLink } from 'react-router'
 
 <Card>
   <CardContent>
-    <CardLink as={ReactRouterLink} to='/min-sida'>
+    <CardLink
+      as={ReactRouterLink}
+      to='/min-sida'
+    >
       <CardTitle>Min sida</CardTitle>
     </CardLink>
     <Text>På min sida kan du ändra dina uppgifter och se status på dina ansökningar</Text>
