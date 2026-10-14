@@ -50,4 +50,4 @@ instances: browserInstances([
 
 ## In CI
 
-The build job in `pr-checks.yml` tests in Chromium. The `browsers` job runs the same affected tests once per other profile, in parallel. Visual regression tests stay in Chromium only.
+The `test` job in `pr-checks.yml` runs the affected tests once per profile, in parallel jobs. Only Chromium blocks the PR for now. Firefox and WebKit run one test file at a time, because they throttle the background tabs Vitest opens per file. Visual regression and Storybook a11y tests stay in Chromium only.
