@@ -41191,6 +41191,7 @@ __webpack_require__.d(__webpack_exports__, {
           "@midas-ds/release-local/*": "/home/runner/work/midas/midas/tools/release-local/src/*",
           "@midas-ds/style-dictionary": "/home/runner/work/midas/midas/tools/style-dictionary/src/index.ts",
           "@midas-ds/style-dictionary/*": "/home/runner/work/midas/midas/tools/style-dictionary/src/*",
+          "@midas-ds/test-browsers": "/home/runner/work/midas/midas/tools/test-browsers/src/index.ts",
           "@midas-ds/test-browsers/*": "/home/runner/work/midas/midas/tools/test-browsers/src/*",
           "@midas-ds/test-utils": "/home/runner/work/midas/midas/tools/test-utils/src/index.ts",
           "@midas-ds/test-utils/*": "/home/runner/work/midas/midas/tools/test-utils/src/*",
