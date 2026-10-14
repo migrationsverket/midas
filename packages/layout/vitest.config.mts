@@ -1,6 +1,7 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
+import { browserInstances } from '../../tools/test-browsers/index.mts'
 
 export default mergeConfig(
   viteConfig,
@@ -17,18 +18,16 @@ export default mergeConfig(
               enabled: true,
               headless: true,
               provider: playwright(),
-              instances: [
+              instances: browserInstances([
                 {
                   name: 'desktop',
-                  browser: 'chromium',
                   viewport: { width: 1024, height: 768 },
                 },
                 {
                   name: 'mobile',
-                  browser: 'chromium',
                   viewport: { width: 320, height: 568 },
                 },
-              ],
+              ]),
               screenshotFailures: false,
             },
             setupFiles: ['vitest.setup.mts'],

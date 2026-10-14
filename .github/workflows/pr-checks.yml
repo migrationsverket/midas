@@ -75,6 +75,72 @@ jobs:
            contains(github.event.pull_request.labels.*.name, 'a11y')
         run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
 
+  # The build job tests in Chromium. This runs the same tests in the other
+  # engines and in mobile emulation, see tools/test-browsers
+  browsers:
+    name: Test packages (${{ matrix.profile }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Non-blocking until the suite is green in every profile
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: firefox
+            engine: firefox
+          - profile: webkit
+            engine: webkit
+          - profile: mobile-safari
+            engine: webkit
+          - profile: mobile-chrome
+            engine: chromium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          filter: tree:0
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v5
+
+      # Same key format as the build job, so the Chromium cache is shared
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ matrix.engine }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install ${{ matrix.engine }} --with-deps
+        env:
+          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
+
+      - name: Install Playwright system deps
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps ${{ matrix.engine }}
+
+      # The tests import the generated design tokens
+      - name: Generate theme tokens
+        run: npx nx run theme:style-dictionary-generate
+
+      - name: Test packages
+        run: npx nx affected -t test
+        env:
+          MIDAS_BROWSERS: ${{ matrix.profile }}
+
   lucide-min:
     name: lucide-react 0.x compatibility
     runs-on: ubuntu-latest
