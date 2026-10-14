@@ -141,10 +141,10 @@ const Modal_Modal = /*#__PURE__*/ (0,react.forwardRef)((param, ref)=>{
 });
 Modal_Modal.displayName = 'Modal';
 
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(20883);
 // EXTERNAL MODULE: ./packages/components/src/button/ButtonGroup.tsx + 1 modules
 var ButtonGroup = __webpack_require__(98742);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(20883);
 // EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
 var TextField = __webpack_require__(48494);
 // EXTERNAL MODULE: ./packages/components/src/radio/RadioGroup.tsx
@@ -174,29 +174,27 @@ const ConfirmationExample = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                     variant: "tertiary",
                     children: "Ta bort fruktkorgen"
                 }),
-                /*#__PURE__*/ (0,jsx_runtime.jsxs)(Modal_Modal, {
+                /*#__PURE__*/ (0,jsx_runtime.jsx)(Modal_Modal, {
                     title: "Ta bort fruktkorg",
-                    children: [
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)(Text/* .Text */.E, {
-                            elementType: "p",
-                            children: "\xc4r du s\xe4ker att du ta bort din fruktkorg?"
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime.jsxs)(ButtonGroup/* .ButtonGroup */.e, {
-                            children: [
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                                    variant: "danger",
-                                    slot: "close",
-                                    children: "Ja, ta bort"
-                                }),
-                                /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                                    autoFocus: true,
-                                    slot: "close",
-                                    variant: "secondary",
-                                    children: "Nej, ha kvar"
-                                })
-                            ]
-                        })
-                    ]
+                    footer: /*#__PURE__*/ (0,jsx_runtime.jsxs)(ButtonGroup/* .ButtonGroup */.e, {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                                variant: "danger",
+                                slot: "close",
+                                children: "Ja, ta bort"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                                autoFocus: true,
+                                slot: "close",
+                                variant: "secondary",
+                                children: "Nej, ha kvar"
+                            })
+                        ]
+                    }),
+                    children: /*#__PURE__*/ (0,jsx_runtime.jsx)(Text/* .Text */.E, {
+                        elementType: "p",
+                        children: "\xc4r du s\xe4ker att du ta bort din fruktkorg?"
+                    })
                 })
             ]
         })
@@ -213,6 +211,19 @@ const FormExample = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                 }),
                 /*#__PURE__*/ (0,jsx_runtime.jsx)(Modal_Modal, {
                     title: "G\xf6r din egen fruktkorg",
+                    footer: /*#__PURE__*/ (0,jsx_runtime.jsxs)(ButtonGroup/* .ButtonGroup */.e, {
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                                slot: "close",
+                                children: "Skicka"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                                slot: "close",
+                                variant: "secondary",
+                                children: "Avbryt"
+                            })
+                        ]
+                    }),
                     children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                         style: {
                             display: 'flex',
@@ -236,19 +247,6 @@ const FormExample = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                                     /*#__PURE__*/ (0,jsx_runtime.jsx)(Radio/* .Radio */.s, {
                                         value: "nej",
                                         children: "Nej"
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ (0,jsx_runtime.jsxs)(ButtonGroup/* .ButtonGroup */.e, {
-                                children: [
-                                    /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                                        slot: "close",
-                                        children: "Skicka"
-                                    }),
-                                    /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                                        slot: "close",
-                                        variant: "secondary",
-                                        children: "Avbryt"
                                     })
                                 ]
                             })
@@ -276,7 +274,7 @@ const CustomCSSExample = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
             ]
         })
     });
-const StickyFooterExample = ()=>{
+const LongFormExample = ()=>{
     return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
         className: "card",
         style: {
@@ -435,17 +433,15 @@ const HideCloseButtonExample = ()=>{
                 /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
                     children: "Bekr\xe4fta att du l\xe4st villkoren"
                 }),
-                /*#__PURE__*/ (0,jsx_runtime.jsxs)(Modal_Modal, {
+                /*#__PURE__*/ (0,jsx_runtime.jsx)(Modal_Modal, {
                     title: "Villkor",
                     hideCloseButton: true,
                     isKeyboardDismissDisabled: true,
-                    children: [
-                        "Du m\xe5ste bekr\xe4fta att du l\xe4st villkoren innan du kan g\xe5 vidare",
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                            slot: "close",
-                            children: "Bekr\xe4fta"
-                        })
-                    ]
+                    footer: /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                        slot: "close",
+                        children: "Bekr\xe4fta"
+                    }),
+                    children: "Du m\xe5ste bekr\xe4fta att du l\xe4st villkoren innan du kan g\xe5 vidare"
                 })
             ]
         })
@@ -493,16 +489,20 @@ const toc = [{
   "id": "varianter",
   "level": 2
 }, {
-  "value": "Bekräftelsemodal",
-  "id": "bekräftelsemodal",
-  "level": 3
-}, {
   "value": "Utan stängknapp",
   "id": "utan-stängknapp",
   "level": 3
 }, {
-  "value": "Med fast sidfot",
-  "id": "med-fast-sidfot",
+  "value": "Exempel",
+  "id": "exempel",
+  "level": 2
+}, {
+  "value": "Bekräftelsemodal",
+  "id": "bekräftelsemodal",
+  "level": 3
+}, {
+  "value": "Långa modala formulär",
+  "id": "långa-modala-formulär",
   "level": 3
 }, {
   "value": "Implementation",
@@ -570,7 +570,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Öppna modal</Button>\n  <Modal title='Rubrik'>Innehåll i modal</Modal>\n</DialogTrigger>\n"
+        children: "<DialogTrigger>\n  <Button>Öppna modal</Button>\n  <Modal\n    title='Rubrik'\n    footer={<Button>Knapptext</Button>}\n  >\n    Innehåll i modal\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "användning",
@@ -605,21 +605,14 @@ function _createMdxContent(props) {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
+      children: ["Handlingar placeras i modalens footer, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
         href: "/components/button",
         children: "Knappar"
-      }), "."]
+      }), ". Footern i modalen implementerad så att den alltid är synlig, vilket gör att användaren alltid har tillgång till handlingarna, även när innehållet är långt."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "bekräftelsemodal",
-      children: "Bekräftelsemodal"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "autoFocus"
-      }), " på knappen som inte är destruktiv/negativ."]
-    }), "\n", (0,jsx_runtime.jsx)(ConfirmationExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "utan-stängknapp",
       children: "Utan stängknapp"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -632,21 +625,24 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Bekräfta att du läst villkoren</Button>\n  <Modal\n    title='Villkor'\n    hideCloseButton\n    isKeyboardDismissDisabled\n  >\n    Du måste bekräfta att du läst villkoren innan du kan gå vidare\n    <Button slot={'close'}>Bekräfta</Button>\n  </Modal>\n</DialogTrigger>\n"
+        children: "<DialogTrigger>\n  <Button>Bekräfta att du läst villkoren</Button>\n  <Modal\n    title='Villkor'\n    hideCloseButton\n    isKeyboardDismissDisabled\n    footer={<Button slot='close'>Bekräfta</Button>}\n  >\n    Du måste bekräfta att du läst villkoren innan du kan gå vidare\n  </Modal>\n</DialogTrigger>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(HideCloseButtonExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "med-fast-sidfot",
-      children: "Med fast sidfot"
+    }), "\n", (0,jsx_runtime.jsx)(HideCloseButtonExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "exempel",
+      children: "Exempel"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "bekräftelsemodal",
+      children: "Bekräftelsemodal"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["I långa modala formulär är det lämpligt att lägga handlingar i en fast sidfot, så att de alltid är synliga för användaren när den scrollar i modalen. Ange innehållet i sidfoten via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "footer"
-      }), "-propen."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    title='Modal Title'\n    //highlight-start\n    footer={\n      <ButtonGroup>\n        <Button slot='close'>Spara</Button>\n        <Button\n          slot='close'\n          variant='secondary'\n        >\n          Avbryt\n        </Button>\n      </ButtonGroup>\n    }\n    //highlight-end\n  >\n    {/* Långt formulärinnehåll */}\n  </Modal>\n</DialogTrigger>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(StickyFooterExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      children: ["För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "autoFocus"
+      }), " på knappen som inte är destruktiv/negativ."]
+    }), "\n", (0,jsx_runtime.jsx)(ConfirmationExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "långa-modala-formulär",
+      children: "Långa modala formulär"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Footern i modalen är alltid synlig. Det gör att användaren alltid har tillgång till handlingarna, även när innehållet är långt."
+    }), "\n", (0,jsx_runtime.jsx)(LongFormExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "implementation",
       children: "Implementation"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
@@ -664,7 +660,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title='Modal Title'>\n    //highlight-start\n    <Button slot='close'>Close</Button>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
+        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    title='Modal Title'\n    footer={<Button slot='close'>Close</Button>}\n  >\n    {/* Modal content */}\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "controlled",
@@ -678,7 +674,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "/* imports and rest of app */\nconst [open, setOpen] = React.useState<boolean>(false)\n\nreturn (\n  <>\n    {/* trigger modal from anywhere */}\n    <Button onPress={() => setOpen(true)}>Open</Button>\n    // highlight-start\n    <Modal\n      title='Modal Title'\n      isOpen={open}\n      onOpenChange={setOpen}\n    >\n      // highlight-end\n      {/* Modal content */}\n    </Modal>\n  </>\n)\n"
+        children: "/* imports and rest of app */\nconst [open, setOpen] = React.useState<boolean>(false)\n\nreturn (\n  <>\n    {/* trigger modal from anywhere */}\n    <Button onPress={() => setOpen(true)}>Open</Button>\n    // highlight-start\n    <Modal\n      title='Modal Title'\n      isOpen={open}\n      onOpenChange={setOpen}\n      footer={<Button>Button text</Button>}\n    >\n      // highlight-end\n      {/* Modal content */}\n    </Modal>\n  </>\n)\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "dismissable",
@@ -690,7 +686,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    //highlight-start\n    isDismissable\n    //highlight-end\n    title='Modal Title'\n  >\n    /* Modal content */\n  </Modal>\n</DialogTrigger>\n"
+        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    //highlight-start\n    isDismissable\n    //highlight-end\n    title='Modal Title'\n    footer={<Button>Button text</Button>}\n  >\n    /* Modal content */\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "autofocus",
@@ -700,7 +696,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title=\"Modal Title\">\n    //highlight-start\n    <TextField label=\"Name\" autoFocus>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
+        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title=\"Modal Title\" footer={<Button>Button text</Button>}>\n    //highlight-start\n    <TextField label=\"Name\" autoFocus>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "styling",
