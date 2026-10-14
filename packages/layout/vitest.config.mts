@@ -1,7 +1,7 @@
 import { defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
-import { browserInstances } from '../../tools/test-browsers/index.mts'
+import { browserInstances } from '@midas-ds/test-browsers'
 
 export default mergeConfig(
   viteConfig,

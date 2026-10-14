@@ -29,7 +29,7 @@ Install the browsers you want to run with `npx playwright install firefox webkit
 ## In a Vitest config
 
 ```ts
-import { browserInstances } from '../../tools/test-browsers/index.mts'
+import { browserInstances } from '@midas-ds/test-browsers'
 
 browser: {
   provider: playwright(),
@@ -47,6 +47,8 @@ instances: browserInstances([
 ```
 
 `MIDAS_BROWSERS` is an input of the `test` target in `nx.json`, so Nx caches each profile separately.
+
+The package is never compiled: Vitest config files are loaded by Node, which runs it from source with type stripping. Node doesn't know the tsconfig path alias, so it's also linked into `node_modules` as a `file:` dev dependency, like `@midas-ds/visual-testing`.
 
 ## In CI
 
