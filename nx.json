@@ -134,7 +134,13 @@
       "inputs": ["default", "^production"]
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/vitest.config.mts"],
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/vitest.config.mts",
+        "{workspaceRoot}/tools/test-browsers/**/*",
+        { "env": "MIDAS_BROWSERS" }
+      ],
       "cache": true
     },
     "a11y*": {
