@@ -10,7 +10,7 @@ const { Primary, Controlled } = composeStories(stories)
 describe('MobileMenu', () => {
   beforeEach(({ skip, task }) => {
     skip(
-      task.file.projectName === 'desktop',
+      task.file.projectName.startsWith('desktop'),
       'MobileMenu is only relevant for mobile',
     )
   })
