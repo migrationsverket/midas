@@ -1,3 +1,61 @@
+## 0.3.6 (2026-10-13)
+
+### 🚀 Features
+
+- **visual-testing:** nx tool for visual test setup ([1775f05eaf7](https://github.com/migrationsverket/midas/commit/1775f05eaf7))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.8
+
+## 0.3.5 (2026-10-09)
+
+### 🚀 Features
+
+- **components,layout,table-styles:** depend on lucide-react ([#1405](https://github.com/migrationsverket/midas/pull/1405))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.7
+
+## 0.3.4 (2026-10-07)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.6
+
+## 0.3.3 (2026-10-05)
+
+### 🏭 Refactoring
+
+- **visual-report:** make it an Nx project written in TypeScript ([3b6e535f8a7](https://github.com/migrationsverket/midas/commit/3b6e535f8a7))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.5
+
+## 0.3.2 (2026-10-05)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.4
+
+## 0.3.1 (2026-10-05)
+
+### 🚀 Features
+
+- **datepicker-styles:** add invalid state styling ([0f20ba55d15](https://github.com/migrationsverket/midas/commit/0f20ba55d15))
+
+### 🩹 Fixes
+
+- **datepicker-styles:** don't show the selection on days from adjacent months ([e5c6b17cf47](https://github.com/migrationsverket/midas/commit/e5c6b17cf47))
+- **datepicker-styles:** fix keyboard cursor, disabled and read-only styling ([eb550f0f1b6](https://github.com/migrationsverket/midas/commit/eb550f0f1b6))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([f0b5e66123c](https://github.com/migrationsverket/midas/commit/f0b5e66123c))
+- update visual regression screenshots ([5abf440462a](https://github.com/migrationsverket/midas/commit/5abf440462a))
+
 ## 0.3.0 (2026-09-30)
 
 ### 🚀 Features

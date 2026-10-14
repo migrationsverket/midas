@@ -46,3 +46,27 @@ export const Default: Story = {}
 export const MonthSelect: Story = {
   render: args => <MonthPicker {...args} />,
 }
+
+export const Invalid: Story = {
+  args: {
+    // The invalid style is on the input, so leave the calendar closed
+    open: false,
+    isInvalid: true,
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    open: false,
+    isReadOnly: true,
+    defaultDate: new Date(2025, 4, 15),
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    open: false,
+    isDisabled: true,
+    defaultDate: new Date(2025, 4, 15),
+  },
+}

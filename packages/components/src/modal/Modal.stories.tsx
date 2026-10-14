@@ -3,12 +3,13 @@ import { options } from '@midas-ds/test-utils'
 import { useState } from 'react'
 import { DialogTrigger, type Key } from 'react-aria-components'
 import { Modal } from './Modal'
-import { Button } from '../button'
+import { Button, ButtonGroup } from '../button'
 import { Select } from '../select'
 import { ListBoxItem } from '../list-box'
 import { Text } from '../text'
 import { Cell, Column, Row, Table, TableBody, TableHeader } from '../table'
 import { Heading } from '../heading'
+import { TextField } from '../textfield'
 
 const longFormParagraphs = [1, 2, 3, 4, 5, 6].map(n => (
   <Text
@@ -54,21 +55,19 @@ export default {
   ),
   args: {
     children: (
-      <>
-        <Select
-          autoFocus
-          placeholder='Select...'
-          defaultValue={['kiwi']}
-          label='Select fruits'
-          selectionMode='multiple'
-          items={options}
-          isSelectableAll={false}
-        >
-          {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
-        </Select>
-        <Button slot='close'>Submit</Button>
-      </>
+      <Select
+        autoFocus
+        placeholder='Select...'
+        defaultValue={['kiwi']}
+        label='Select fruits'
+        selectionMode='multiple'
+        items={options}
+        isSelectableAll={false}
+      >
+        {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+      </Select>
     ),
+    footer: <Button slot='close'>Submit</Button>,
   },
 } as Meta<typeof Modal>
 
@@ -97,36 +96,24 @@ export const HiddenCloseButton: Story = {
     hideCloseButton: true,
     isKeyboardDismissDisabled: true,
     title: 'Close button hidden',
-    children: (
-      <>
-        <Text>This modal cannot be closed from the header</Text>
-        <Button slot='close'>Agree</Button>
-      </>
-    ),
+    children: <Text>This modal cannot be closed from the header</Text>,
+    footer: <Button slot='close'>Submit</Button>,
   },
 }
 
 export const EmptyTitle: Story = {
   args: {
     title: null,
-    children: (
-      <>
-        <Text>This is a simple modal with no title.</Text>
-        <Button slot='close'>Close</Button>
-      </>
-    ),
+    children: <Text>This is a simple modal with no title.</Text>,
+    footer: <Button slot='close'>Submit</Button>,
   },
 }
 
 export const Scrollable: Story = {
   args: {
     title: 'Read all the text',
-    children: (
-      <>
-        {longFormParagraphs}
-        <Button slot='close'>Submit</Button>
-      </>
-    ),
+    children: longFormParagraphs,
+    footer: <Button slot='close'>Submit</Button>,
   },
 }
 
@@ -135,7 +122,7 @@ export const ScrollableWithFooter: Story = {
     title: 'Read all the text',
     children: longFormParagraphs,
     footer: (
-      <>
+      <ButtonGroup>
         <Button slot='close'>Submit</Button>
         <Button
           slot='close'
@@ -143,16 +130,39 @@ export const ScrollableWithFooter: Story = {
         >
           Cancel
         </Button>
-      </>
+      </ButtonGroup>
+    ),
+  },
+}
+
+export const FormWithFooter: Story = {
+  // Only the trigger button is visible in a screenshot, the open modal and
+  // its scroll behaviour are covered by Modal.spec.tsx
+  tags: ['!snapshot'],
+  args: {
+    title: 'Fill in the form',
+    children: Array.from({ length: 14 }, (_, i) => (
+      <TextField
+        key={i}
+        label={`Field ${i + 1}`}
+      />
+    )),
+    footer: (
+      <ButtonGroup>
+        <Button slot='close'>Submit</Button>
+        <Button
+          slot='close'
+          variant='secondary'
+        >
+          Cancel
+        </Button>
+      </ButtonGroup>
     ),
   },
 }
 
 export const DS1282: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: () => {
     const [selectedFruit, setSelectedFruit] = useState<Key[] | null>(null)
     const options = ['apple', 'banana'].map(fruit => ({
@@ -207,11 +217,7 @@ export const LongTitle: Story = {
   args: {
     title:
       'This is a very long title to test how the modal handles text wrapping and layout with a lot of text in the title bar',
-    children: (
-      <>
-        <Text>This modal has a very long title.</Text>
-        <Button slot='close'>Close</Button>
-      </>
-    ),
+    children: <Text>This modal has a very long title.</Text>,
+    footer: <Button slot='close'>Submit</Button>,
   },
 }

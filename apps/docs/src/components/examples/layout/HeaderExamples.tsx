@@ -2,9 +2,9 @@ import React from 'react'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import {
   Bell,
-  HelpCircle,
+  CircleQuestionMark,
   House,
-  MoreHorizontal,
+  Ellipsis,
   Settings,
   User,
 } from 'lucide-react'
@@ -25,7 +25,7 @@ import {
 const collapsibleActions = [
   { id: 'profile', label: 'Min profil', icon: <User size={20} /> },
   { id: 'settings', label: 'Inställningar', icon: <Settings size={20} /> },
-  { id: 'help', label: 'Hjälp', icon: <HelpCircle size={20} /> },
+  { id: 'help', label: 'Hjälp', icon: <CircleQuestionMark size={20} /> },
 ]
 
 export const BasicHeaderExample: React.FC = () => (
@@ -73,7 +73,7 @@ export const OverflowHeaderExample: React.FC = () => {
             <MenuTrigger>
               <HeaderAction
                 aria-label='Fler alternativ'
-                icon={<MoreHorizontal size={20} />}
+                icon={<Ellipsis size={20} />}
               />
               <MenuPopover>
                 <Menu>

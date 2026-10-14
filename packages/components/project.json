@@ -17,12 +17,6 @@
         "formatter": "unix"
       }
     },
-    "visual": {
-      "dependsOn": ["^build"],
-      "options": {
-        "config": "vitest.config.visual.mts"
-      }
-    },
     "docgen": {},
     "docgen-watch": {}
   }

@@ -8,7 +8,7 @@ sidebar_position: 3
 ## Översikt
 
 Tester i Midas utgörs främst av _komponenttester_ med hjälp av [Vitest Component Testing](https://vitest.dev/guide/browser/component-testing).
-Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing). Våra _snapshottester_ körs i Chromatic.
+Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing). Våra _snapshottester_ körs i vår CI.
 
 ## Skriva tester
 
@@ -115,33 +115,19 @@ docker compose exec cli npx nx run storybook:a11y-forced-colors  # Forced colors
 
 ## 👀 Snapshottester
 
-Vi använder [Chromatic](https://chromatic.com) för att köra snapshottester som jämför visuella ändringar i komponenter.
-Chromatic utgår från vår Storybook och tar snapshots på samtliga stories.
-
-### Trigga snapshottester
-
-Snapshottester körs automatiskt vid push till följande brancher:
-
-- `main`
-- brancher som startar med `feature`
-- brancher som startar med `feat`
-- brancher som startar med `fix`
-- brancher som startar med `bugfix`
+Vi använder vår CI för att köra snapshottester som jämför visuella ändringar i komponenter.
+Testerna utgår från vår Storybook och tar snapshots på samtliga stories som inte optar ut.
 
 ### Hoppa över stories
 
-För att reducera antalet snapshots bör vi bara ta en snap per tillstånd i en komponent, vänligen använd följande kod om du vill att chromatic ska hoppa över din story:
+För att reducera antalet snapshots bör vi bara ta en snap per tillstånd i en komponent, vänligen använd följande kod för att inte ta en snapshot.
 
 ```tsx
 export const PrimaryWithAnotherLabel: Story = {
   args: {
     label: 'Just another label',
   },
-  parameters: {
-    chromatic: {
-      disableSnapshot: true,
-    },
-  },
+  tags: ['!snapshot'],
   // ...
 }
 ```

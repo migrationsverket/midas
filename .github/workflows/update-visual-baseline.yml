@@ -1,7 +1,9 @@
 name: 'Update Visual Regression Screenshots'
 
 on:
-  workflow_dispatch: # manual trigger only — run from the Actions tab against the PR's branch
+  workflow_dispatch: # run from the Actions tab against the PR's branch
+  pull_request:
+    types: [labeled] # or add the `visual:update` label to the PR
 
 env:
   AUTHOR_NAME: 'github-actions[bot]'
@@ -16,29 +18,77 @@ env:
 
     Co-authored-by: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
 
+  # the PR's branch for the label trigger, the selected branch otherwise
+  BRANCH: ${{ github.head_ref || github.ref_name }}
+
 jobs:
+  playwright-version:
+    name: Resolve Playwright version
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.label.name == 'visual:update' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: package-lock.json
+          sparse-checkout-cone-mode: false
+
+      - name: Read version from package-lock.json
+        id: version
+        run: echo "version=$(jq -r '.packages["node_modules/playwright"].version' package-lock.json)" >> "$GITHUB_OUTPUT"
+
   update-screenshots:
+    needs: playwright-version
     runs-on: ubuntu-latest
 
+    # Same image as the visual job in pr-checks.yml, so the baselines match
+    # what CI compares against
+    container:
+      image: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
+
     # safety first: don't run on main
-    if: github.ref_name != github.event.repository.default_branch
+    if: (github.head_ref || github.ref_name) != github.event.repository.default_branch
 
     # one at a time per branch
     concurrency:
-      group: visual-regression-screenshots-${{ github.ref_name }}
+      group: visual-regression-screenshots-${{ github.head_ref || github.ref_name }}
       cancel-in-progress: true
 
     permissions:
       contents: write # needs to push changes back to the branch
 
     steps:
+      # A push with the default GITHUB_TOKEN doesn't trigger workflows, so PR
+      # Checks wouldn't re-run on the new baselines. With a GitHub App
+      # configured, push as the app instead.
+      - name: Create GitHub App token
+        id: app-token
+        if: vars.VISUAL_BASELINE_APP_ID != ''
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.VISUAL_BASELINE_APP_ID }}
+          private-key: ${{ secrets.VISUAL_BASELINE_APP_PRIVATE_KEY }}
+
+      # actions/checkout falls back to a plain download without git, which
+      # breaks `nx affected` and committing
+      - name: Install git
+        run: command -v git || (apt-get update && apt-get install -y --no-install-recommends git)
+
       - name: Checkout selected branch
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ env.BRANCH }}
+          token: ${{ steps.app-token.outputs.token || github.token }}
 
       - name: Configure Git
         run: |
+          # The workspace is owned by another user than the container's
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config --global user.name "${{ env.AUTHOR_NAME }}"
           git config --global user.email "${{ env.AUTHOR_EMAIL }}"
 
@@ -50,9 +100,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Install Playwright browsers
-        run: npx playwright install chromium --with-deps
 
       - name: Update visual regression screenshots
         run: npx nx run-many -t visual --all -- --update
@@ -85,7 +132,7 @@ jobs:
 
       - name: Push changes
         if: steps.check_changes.outputs.changes == 'true'
-        run: git push origin ${{ github.ref_name }}
+        run: git push origin "$BRANCH"
 
       # pretty summary for humans
       - name: Summary
@@ -93,16 +140,33 @@ jobs:
           if [[ "${{ steps.check_changes.outputs.changes }}" == "true" ]]; then
             echo "### 📸 Visual Regression Screenshots Updated" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "Successfully updated **${{ steps.check_changes.outputs.changed_count }}** screenshot(s) on \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "Successfully updated **${{ steps.check_changes.outputs.changed_count }}** screenshot(s) on \`${{ env.BRANCH }}\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "#### Changed Files:" >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
             echo "${{ steps.check_changes.outputs.changed_files }}" >> $GITHUB_STEP_SUMMARY
             echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "✅ The updated screenshots have been committed and pushed. Re-run PR checks to confirm they now pass." >> $GITHUB_STEP_SUMMARY
+            if [ -n "${{ steps.app-token.outputs.token }}" ]; then
+              echo "✅ The updated screenshots have been committed and pushed. PR checks will re-run on the new commit." >> $GITHUB_STEP_SUMMARY
+            else
+              echo "✅ The updated screenshots have been committed and pushed. Re-run PR checks to confirm they now pass." >> $GITHUB_STEP_SUMMARY
+            fi
           else
             echo "### ℹ️ No Screenshot Updates Required" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "The visual regression tests ran successfully but no screenshots needed updating." >> $GITHUB_STEP_SUMMARY
           fi
+
+  # Lets the label be added again for the next round of changes
+  remove-label:
+    needs: update-screenshots
+    if: always() && github.event_name == 'pull_request' && needs.update-screenshots.result != 'skipped'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Remove visual:update label
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr edit ${{ github.event.pull_request.number }} --repo "$GITHUB_REPOSITORY" --remove-label visual:update

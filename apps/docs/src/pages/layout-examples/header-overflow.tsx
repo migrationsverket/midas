@@ -1,4 +1,4 @@
-import { Bell, HelpCircle, MoreHorizontal, Settings, User } from 'lucide-react'
+import { Bell, CircleQuestionMark, Ellipsis, Settings, User } from 'lucide-react'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { useMediaQuery } from '@react-spectrum/utils'
 import {
@@ -15,7 +15,7 @@ import {
 const collapsibleActions = [
   { id: 'profile', label: 'Min profil', icon: <User size={20} /> },
   { id: 'settings', label: 'Inställningar', icon: <Settings size={20} /> },
-  { id: 'help', label: 'Hjälp', icon: <HelpCircle size={20} /> },
+  { id: 'help', label: 'Hjälp', icon: <CircleQuestionMark size={20} /> },
 ]
 
 export default function HeaderOverflowExample() {
@@ -30,7 +30,7 @@ export default function HeaderOverflowExample() {
           <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
           {isNarrow ? (
             <MenuTrigger>
-              <HeaderAction aria-label='Fler alternativ' icon={<MoreHorizontal size={20} />} />
+              <HeaderAction aria-label='Fler alternativ' icon={<Ellipsis size={20} />} />
               <MenuPopover>
                 <Menu>
                   {collapsibleActions.map(action => (

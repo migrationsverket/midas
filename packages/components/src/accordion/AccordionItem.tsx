@@ -26,8 +26,13 @@ export interface AccordionItemProps extends DisclosureProps {
   /** Display an accordion item with different type styles. */
   type?: FeedbackStatus
   /**
+   * Background of the content area. `neutral` gives the content its own neutral background, `inherit` lets the item background (e.g. the status color from `type`) show through.
+   * @default 'neutral'
+   **/
+  contentBackground?: 'neutral' | 'inherit'
+  /**
    * Adds a neutral background to the content area. When using `type`, set to `false` to let the status color show through the content area as well.
-   * @default true
+   * @deprecated since v17.31.0 Use `contentBackground` instead. `hasBackground={false}` equals `contentBackground="inherit"`.
    **/
   hasBackground?: boolean
   isContained?: boolean
@@ -47,7 +52,8 @@ export const AccordionItem = ({
   className,
   headingLevel = 'h2',
   type,
-  hasBackground = true,
+  contentBackground: contentBackgroundFromProp,
+  hasBackground,
   size = 'large',
   isContained: isContainedFromProp,
   iconAriaLabel,
@@ -56,6 +62,9 @@ export const AccordionItem = ({
   const context = useContext(AccordionContext)
   const isContained = isContainedFromProp ?? context?.isContained ?? false
   const titleIsReactNode = typeof title === 'object'
+  const contentBackground =
+    contentBackgroundFromProp ??
+    (hasBackground === false ? 'inherit' : 'neutral')
 
   useEffect(() => {
     if (type && !isContained) {
@@ -114,7 +123,7 @@ export const AccordionItem = ({
             <div
               className={clsx(
                 itemStyles.content,
-                hasBackground && itemStyles.hasBackground,
+                contentBackground === 'neutral' && itemStyles.neutralBackground,
               )}
             >
               {children}

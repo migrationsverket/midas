@@ -67,9 +67,6 @@ export const Invalid: Story = {
 
 export const DS1253: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
 }
 
 export const MediumSizeInvalid: Story = {
@@ -117,9 +114,6 @@ export const Required: Story = {
     isRequired: true,
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => (
     <form>
       <ComboBox {...args}>
@@ -175,9 +169,6 @@ export const NotVirtualized: Story<Section> = {
 
 export const PerformanceTest: Story = {
   tags: ['!dev', '!autodocs'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => {
     const [numberOfItems, setNumberOfItems] = React.useState(25)
 

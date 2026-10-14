@@ -63,9 +63,6 @@ export const WithDescription: Story = {
     description: 'Du kan när som helst ändra detta i dina kontoinställningar',
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
 }
 
 export const WithErrorMessage: Story = {
@@ -74,9 +71,6 @@ export const WithErrorMessage: Story = {
     errorMessage: 'Du måste godkänna villkoren',
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
 }
 
 export const Required: Story = {
@@ -84,9 +78,6 @@ export const Required: Story = {
     isRequired: true,
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: ({ ...args }) => {
     return (
       <form>

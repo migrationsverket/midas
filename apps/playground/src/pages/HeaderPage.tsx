@@ -1,6 +1,6 @@
 'use client'
 
-import { Bell, CircleUserRound, HelpCircle, Languages, MoreHorizontal, Settings, Sun } from 'lucide-react'
+import { Bell, CircleUserRound, CircleQuestionMark, Languages, Ellipsis, Settings, Sun } from 'lucide-react'
 import { Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { useMediaQuery } from '@react-spectrum/utils'
 import {
@@ -34,7 +34,7 @@ const overflowActions = [
   { label: 'Profil', icon: <CircleUserRound size={20} />, onPress: () => alert('Profil') },
   { label: 'Språk', icon: <Languages size={20} />, onPress: () => alert('Språk') },
   { label: 'Tema', icon: <Sun size={20} />, onPress: () => alert('Tema') },
-  { label: 'Hjälp', icon: <HelpCircle size={20} />, onPress: () => alert('Hjälp') },
+  { label: 'Hjälp', icon: <CircleQuestionMark size={20} />, onPress: () => alert('Hjälp') },
   { label: 'Inställningar', icon: <Settings size={20} />, onPress: () => alert('Inställningar') },
 ]
 
@@ -55,7 +55,7 @@ export const HeaderPage = () => {
           </HeaderAction>
           {isNarrow ? (
             <MenuTrigger>
-              <HeaderAction aria-label='Fler alternativ' icon={<MoreHorizontal size={20} />} />
+              <HeaderAction aria-label='Fler alternativ' icon={<Ellipsis size={20} />} />
               <MenuPopover>
                 <Menu onAction={key => overflowActions[Number(key)]?.onPress()}>
                   {overflowActions.map((action, i) => (

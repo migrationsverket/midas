@@ -1,6 +1,13 @@
 import * as React from 'react'
 import { SidebarLinkGroup, SidebarUser, App } from '../Layout'
-import { Href } from '@react-types/shared'
+import type { LinkProps } from 'react-aria-components'
+
+/**
+ * A link target, typed by the app's React Aria router config if it has one.
+ * The same type as `Href` in @react-types/shared, taken from a package we
+ * depend on so it resolves in consumers' type checks.
+ */
+export type Href = NonNullable<LinkProps['href']>
 
 export interface LayoutContextProps {
   items: SidebarLinkGroup[]

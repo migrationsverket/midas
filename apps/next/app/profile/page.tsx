@@ -1,5 +1,5 @@
 import { Breadcrumb, Breadcrumbs, Card, CardContent, CardTitle, Heading, Text } from '@midas-ds/components'
-import { Building2, Globe, Mail, MapPin, Phone } from 'lucide-react'
+import { BuildingComplex, Globe, Mail, MapPin, Phone } from 'lucide-react'
 import Link from 'next/link'
 import styles from './page.module.css'
 
@@ -43,7 +43,7 @@ export default function Profile() {
             <CardTitle>Office</CardTitle>
             <ul className={styles.list}>
               <li className={styles.listItem}>
-                <Building2 size={16} aria-hidden />
+                <BuildingComplex size={16} aria-hidden />
                 <Text>Stockholm office</Text>
               </li>
               <li className={styles.listItem}>

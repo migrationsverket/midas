@@ -22,4 +22,4 @@ import {Button, Checkbox, etc} from '@midas-ds/components'
 
 - See the full design system documentation on [Midas](https://designsystem.migrationsverket.se/) (Swedish).
 
-- Component API documentation on [Storybook](https://main--6810d578d5507438df0f0d22.chromatic.com).
+- Component API documentation on [Storybook](https://designsystem.migrationsverket.se/storybook/).

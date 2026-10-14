@@ -129,9 +129,6 @@ export const InModal: Story = {
 
 export const DefaultSelectedKey: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   args: {
     defaultSelectedKey: 'Ansök',
   },
@@ -139,9 +136,6 @@ export const DefaultSelectedKey: Story = {
 
 export const Controlled: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => {
     const [selectedKey, setSelectedKey] = React.useState<Key>('Processen')
     return (
@@ -176,9 +170,6 @@ export const Controlled: Story = {
 
 export const MoreItemsThanChildren: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => (
     <>
       <Tabs {...args}>

@@ -32,11 +32,8 @@ export default defineConfig([
         {
           buildTargets: ['build'],
           ignoredDependencies: [
-            // bundled dependencies
-            '@react-types/shared',
+            // type-only import that isn't part of the public types
             '@internationalized/date',
-            'clsx',
-            'lucide-react',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [
@@ -45,7 +42,6 @@ export default defineConfig([
             '{projectRoot}/vitest.config.mts',
             '{projectRoot}/vitest.config.visual.mts',
             '{projectRoot}/vitest.setup.mts',
-            '{projectRoot}/vitest.setup.visual.mts',
           ],
           checkMissingDependencies: true,
           checkObsoleteDependencies: true,

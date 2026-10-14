@@ -1,3 +1,100 @@
+## 2.2.3 (2026-10-13)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.31.0
+
+## 2.2.2 (2026-10-13)
+
+### 🚀 Features
+
+- **visual-testing:** nx tool for visual test setup ([1775f05eaf7](https://github.com/migrationsverket/midas/commit/1775f05eaf7))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.2
+- Updated theme to 3.17.8
+
+## 2.2.1 (2026-10-09)
+
+### 🩹 Fixes
+
+- **components,layout,table-styles:** declare public type packages ([#1406](https://github.com/migrationsverket/midas/pull/1406))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.1
+
+## 2.2.0 (2026-10-09)
+
+### 🚀 Features
+
+- **components,layout,table-styles:** depend on lucide-react ([#1405](https://github.com/migrationsverket/midas/pull/1405))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.0
+- Updated theme to 3.17.7
+
+## 2.1.6 (2026-10-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.29.0
+
+## 2.1.5 (2026-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.28.2
+
+## 2.1.4 (2026-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.28.1
+
+## 2.1.3 (2026-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.28.0
+
+## 2.1.2 (2026-10-07)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.5
+- Updated theme to 3.17.6
+
+## 2.1.1 (2026-10-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.4
+- Updated theme to 3.17.5
+
+## 2.1.0 (2026-10-05)
+
+### 🚀 Features
+
+- **table-styles,docs:** support TanStack Table v9 alongside v8 ([6282173f3ea](https://github.com/migrationsverket/midas/commit/6282173f3ea))
+
+### 🔧 Maintenance
+
+- **table-styles:** fix stale doc comment and regroup stories by package ([4d56165d943](https://github.com/migrationsverket/midas/commit/4d56165d943))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([f6db394b984](https://github.com/migrationsverket/midas/commit/f6db394b984))
+- **table-styles:** pre-bundle test deps to avoid flaky visual runs ([fe99fffe45e](https://github.com/migrationsverket/midas/commit/fe99fffe45e))
+- **table-styles:** clear hover state before screenshots and show version in Storybook ([a24c63cae66](https://github.com/migrationsverket/midas/commit/a24c63cae66))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.3
+- Updated theme to 3.17.4
+
 ## 2.0.125 (2026-09-29)
 
 ### 🚀 Features

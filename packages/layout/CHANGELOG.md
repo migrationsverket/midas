@@ -1,3 +1,77 @@
+## 0.2.53 (2026-10-13)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.31.0
+
+## 0.2.52 (2026-10-13)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.2
+
+## 0.2.51 (2026-10-09)
+
+### 🩹 Fixes
+
+- **components,layout,table-styles:** declare public type packages ([#1406](https://github.com/migrationsverket/midas/pull/1406))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.1
+
+## 0.2.50 (2026-10-09)
+
+### 🚀 Features
+
+- **components,layout,table-styles:** depend on lucide-react ([#1405](https://github.com/migrationsverket/midas/pull/1405))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.30.0
+
+## 0.2.49 (2026-10-09)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.29.0
+
+## 0.2.48 (2026-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.28.2
+
+## 0.2.47 (2026-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.28.1
+
+## 0.2.46 (2026-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.28.0
+
+## 0.2.45 (2026-10-07)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.5
+
+## 0.2.44 (2026-10-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.4
+
+## 0.2.43 (2026-10-05)
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.27.3
+
 ## 0.2.42 (2026-09-29)
 
 ### 🚀 Features

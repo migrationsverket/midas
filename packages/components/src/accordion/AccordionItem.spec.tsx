@@ -3,7 +3,21 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './AccordionItem.stories'
 import { render } from '../../test-utils'
 
-const { Default, Success, Info, Warning, Important, TypeWithoutContained } = composeStories(stories)
+const {
+  Default,
+  Success,
+  Info,
+  Warning,
+  Important,
+  TypeWithoutContained,
+  ContentBackgroundNeutral,
+  ContentBackgroundInherit,
+} = composeStories(stories)
+
+const TRANSPARENT = 'rgba(0, 0, 0, 0)'
+
+const getContentBackground = (element: Element) =>
+  getComputedStyle(element).backgroundColor
 
 describe('given a Default AccordionItem', async () => {
   it('should accept a function as children', async () => {
@@ -60,5 +74,72 @@ describe('given an AccordionItem with type but without isContained', async () =>
   it('should not render the status icon', async () => {
     const { container } = await render(<TypeWithoutContained />)
     expect(container.querySelector('svg[aria-label]')).toBeNull()
+  })
+})
+
+describe('given an AccordionItem with contentBackground', async () => {
+  it('should paint a neutral background on the content by default', async () => {
+    const { getByText } = await render(
+      <Success defaultExpanded>Content</Success>,
+    )
+    await expect.element(getByText('Content')).toBeVisible()
+    expect(getContentBackground(getByText('Content').element())).not.toBe(
+      TRANSPARENT,
+    )
+  })
+
+  it('should paint a neutral background on the content when set to "neutral"', async () => {
+    const { getByText } = await render(
+      <ContentBackgroundNeutral defaultExpanded>
+        Content
+      </ContentBackgroundNeutral>,
+    )
+    await expect.element(getByText('Content')).toBeVisible()
+    expect(getContentBackground(getByText('Content').element())).not.toBe(
+      TRANSPARENT,
+    )
+  })
+
+  it('should let the item background show through when set to "inherit"', async () => {
+    const { getByText } = await render(
+      <ContentBackgroundInherit defaultExpanded>
+        Content
+      </ContentBackgroundInherit>,
+    )
+    await expect.element(getByText('Content')).toBeVisible()
+    expect(getContentBackground(getByText('Content').element())).toBe(
+      TRANSPARENT,
+    )
+  })
+
+  it('should map the deprecated hasBackground={false} to "inherit"', async () => {
+    const { getByText } = await render(
+      <Success
+        defaultExpanded
+        hasBackground={false}
+      >
+        Content
+      </Success>,
+    )
+    await expect.element(getByText('Content')).toBeVisible()
+    expect(getContentBackground(getByText('Content').element())).toBe(
+      TRANSPARENT,
+    )
+  })
+
+  it('should let contentBackground win over the deprecated hasBackground', async () => {
+    const { getByText } = await render(
+      <Success
+        defaultExpanded
+        hasBackground={false}
+        contentBackground='neutral'
+      >
+        Content
+      </Success>,
+    )
+    await expect.element(getByText('Content')).toBeVisible()
+    expect(getContentBackground(getByText('Content').element())).not.toBe(
+      TRANSPARENT,
+    )
   })
 })

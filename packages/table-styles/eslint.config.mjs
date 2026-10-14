@@ -14,12 +14,12 @@ export default [
             // table-styles has an implicit dependency to theme
             '@midas-ds/theme',
             // bundled dependencies
-            'lucide-react',
           ],
           includeTransitiveDependencies: false,
           ignoredFiles: [
             '{projectRoot}/vite.config.mts',
             '{projectRoot}/vitest.config.mts',
+            '{projectRoot}/vitest.config.visual.mts',
             '{projectRoot}/vitest.setup.mts',
           ],
           checkMissingDependencies: true,

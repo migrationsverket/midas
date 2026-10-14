@@ -1,5 +1,5 @@
-import { HeaderPage } from '../pages/HeaderPage';
+import { StackResponsivePage } from '../pages/StackResponsivePage';
 
 export default function App() {
-  return <HeaderPage />;
+  return <StackResponsivePage />;
 }

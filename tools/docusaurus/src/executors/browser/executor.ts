@@ -12,6 +12,9 @@ export default async function* runExecutor(
     context.root,
     context.projectsConfigurations.projects[context.projectName ?? ''].root,
   )
+  // Browserslist is resolved from the cwd, which is the workspace root when
+  // running through Nx. Point it at the project's own package.json instead.
+  process.env.BROWSERSLIST_CONFIG ??= join(projectRoot, 'package.json')
 
   try {
     await build(projectRoot, {

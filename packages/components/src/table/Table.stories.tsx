@@ -138,7 +138,6 @@ export const Virtualized: Story = {
 export const StripedWithLink: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
-    chromatic: { disableSnapshot: true },
     a11y: {
       // Link color has insufficient contrast to striped background
       test: 'todo',
@@ -170,9 +169,6 @@ export const StripedWithLink: Story = {
 
 export const InteractiveCells: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => (
     <Table
       {...args}

@@ -62,6 +62,13 @@ export const WithDefaultValue: Story = {
   },
 }
 
+export const DisabledWithDefaultValue: Story = {
+  args: {
+    ...Disabled.args,
+    ...WithDefaultValue.args,
+  },
+}
+
 export const WithClearButton: Story = {
   args: {
     isClearable: true,

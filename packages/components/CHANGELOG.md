@@ -1,3 +1,116 @@
+## 17.31.0 (2026-10-13)
+
+### 🚀 Features
+
+- **components,accordion:** add contentBackground prop and deprecate hasBackground ([3472b15f38d](https://github.com/migrationsverket/midas/commit/3472b15f38d))
+
+## 17.30.2 (2026-10-13)
+
+### 🚀 Features
+
+- **visual-testing:** nx tool for visual test setup ([1775f05eaf7](https://github.com/migrationsverket/midas/commit/1775f05eaf7))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.8
+
+## 17.30.1 (2026-10-09)
+
+### 🩹 Fixes
+
+- **components,layout,table-styles:** declare public type packages ([#1406](https://github.com/migrationsverket/midas/pull/1406))
+
+## 17.30.0 (2026-10-09)
+
+### 🚀 Features
+
+- **components,layout,table-styles:** depend on lucide-react ([#1405](https://github.com/migrationsverket/midas/pull/1405))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.7
+
+## 17.29.0 (2026-10-09)
+
+### 🚀 Features
+
+- **components,file-list:** name the file in screen reader output and announce upload errors ([37b3d4545b6](https://github.com/migrationsverket/midas/commit/37b3d4545b6))
+- **components,file-list:** animate the upload-complete and upload-failed transitions ([76157f5d350](https://github.com/migrationsverket/midas/commit/76157f5d350))
+- **components,file-list:** auto-restore focus to a sibling row on removal ([c5356b073ef](https://github.com/migrationsverket/midas/commit/c5356b073ef))
+- **components,file-list,progress-bar:** add upload progress states and a circular ProgressBar ([935847ee8ce](https://github.com/migrationsverket/midas/commit/935847ee8ce))
+
+### 🩹 Fixes
+
+- **components,file-list:** read the upload state first in each row and separate name and size ([4ce25f2de0c](https://github.com/migrationsverket/midas/commit/4ce25f2de0c))
+- **components,file-list:** only render the progress bar and checkmark in their own state ([d7a8371ed70](https://github.com/migrationsverket/midas/commit/d7a8371ed70))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([7052703314c](https://github.com/migrationsverket/midas/commit/7052703314c))
+- update visual regression screenshots ([c7c1aeca056](https://github.com/migrationsverket/midas/commit/c7c1aeca056))
+
+## 17.28.2 (2026-10-08)
+
+### 🩹 Fixes
+
+- **components,text-field:** dim text color for isDisabled ([fd2792d0090](https://github.com/migrationsverket/midas/commit/fd2792d0090))
+
+### 📖 Documentation changes
+
+- **components,date-field,date-picker,text-area,time-field:** add stories ([8bf62618e81](https://github.com/migrationsverket/midas/commit/8bf62618e81))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([11cc3df68e6](https://github.com/migrationsverket/midas/commit/11cc3df68e6))
+
+## 17.28.1 (2026-10-08)
+
+### 🩹 Fixes
+
+- **components,radio,checkbox:** forward data-* attributes ([#1409](https://github.com/migrationsverket/midas/pull/1409))
+
+## 17.28.0 (2026-10-08)
+
+### 🚀 Features
+
+- **components,stack:** add Stack component ([811b12f3cc2](https://github.com/migrationsverket/midas/commit/811b12f3cc2))
+
+### 🧪 Tests updated
+
+- **components,stack:** add visual regression baselines ([5653f8c8e8b](https://github.com/migrationsverket/midas/commit/5653f8c8e8b))
+- remove chromatic ([7c0e6fe5135](https://github.com/migrationsverket/midas/commit/7c0e6fe5135))
+
+## 17.27.5 (2026-10-07)
+
+### 🩹 Fixes
+
+- **storybook:** resolve a11y violations in Card and layout stories ([c11917e085a](https://github.com/migrationsverket/midas/commit/c11917e085a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.6
+
+## 17.27.4 (2026-10-05)
+
+### 🏭 Refactoring
+
+- **visual-report:** make it an Nx project written in TypeScript ([3b6e535f8a7](https://github.com/migrationsverket/midas/commit/3b6e535f8a7))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.5
+
+## 17.27.3 (2026-10-05)
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([34ca19a305e](https://github.com/migrationsverket/midas/commit/34ca19a305e))
+- **components:** clear hover states before taking screenshots ([2761d75004a](https://github.com/migrationsverket/midas/commit/2761d75004a))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.4
+
 ## 17.27.2 (2026-09-29)
 
 ### 🚀 Features

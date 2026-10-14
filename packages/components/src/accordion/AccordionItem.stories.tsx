@@ -82,18 +82,20 @@ export const StatusDisabled: Story = {
   },
 }
 
-export const HasBackground: Story = {
+export const ContentBackgroundNeutral: Story = {
   args: {
     type: 'success',
     isContained: true,
-    hasBackground: true,
+    contentBackground: 'neutral',
+    defaultExpanded: true,
   },
 }
 
-export const NoBackground: Story = {
+export const ContentBackgroundInherit: Story = {
   args: {
     type: 'success',
     isContained: true,
-    hasBackground: false,
+    contentBackground: 'inherit',
+    defaultExpanded: true,
   },
 }

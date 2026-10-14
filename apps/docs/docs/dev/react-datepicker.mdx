@@ -3,7 +3,7 @@ title: React Datepicker
 description: Använda React Datepicker med Midas-stilar
 ---
 
-import { DefaultReactDatepickerExample, MonthSelectExample } from '@site/src/components/examples'
+import { DefaultReactDatepickerExample, MonthSelectExample, InvalidExample } from '@site/src/components/examples'
 
 # React Datepicker
 
@@ -52,6 +52,7 @@ Stilarna täcker:
 - Månads- och årsdropdowns (`showMonthDropdown`, `showYearDropdown`)
 - Idag-knapp (`todayButton`)
 - Placering av månadsrubriken (`monthHeaderPosition`, endast version 9)
+- [Ogiltigt värde](#ogiltigt-värde) (`ariaInvalid`)
 
 Tidsväljaren (`showTimeSelect`, `showTimeInput`) har ännu inga Midas-stilar.
 
@@ -125,3 +126,47 @@ return (
 ```
 
 <MonthSelectExample />
+
+### Ogiltigt värde
+
+React Datepicker har ingen egen validering. Validera värdet själv och sätt `ariaInvalid='true'` när det är ogiltigt så får fältet samma röda ram som Midas formulärfält. Visa felmeddelandet med Midas `FieldError` och koppla det till fältet med `ariaDescribedBy` så att skärmläsare läser upp det.
+
+I exemplet nedan är datumet ogiltigt om det ligger bakåt i tiden.
+
+<InvalidExample />
+
+```tsx title="InvalidExample.tsx"
+const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+const error =
+  selectedDate && isBeforeToday(selectedDate)
+    ? 'Datumet kan inte ligga bakåt i tiden'
+    : undefined
+
+return (
+  <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <Label htmlFor='start-date'>Startdatum</Label>
+    <DatePicker
+      id='start-date'
+      showPopperArrow={false}
+      selected={selectedDate}
+      showIcon
+      toggleCalendarOnIconClick
+      icon={<CalendarDays height={20} />}
+      onChange={(date: Date | null) => setSelectedDate(date)}
+      dateFormat='yyyy-MM-dd'
+      placeholderText='ÅÅÅÅ-MM-DD'
+      //highlight-start
+      ariaInvalid={error ? 'true' : undefined}
+      ariaDescribedBy={error ? 'start-date-error' : undefined}
+      //highlight-end
+    />
+    {error && (
+      //highlight-start
+      <div id='start-date-error'>
+        <FieldError isInvalid>{error}</FieldError>
+      </div>
+      //highlight-end
+    )}
+  </div>
+)
+```

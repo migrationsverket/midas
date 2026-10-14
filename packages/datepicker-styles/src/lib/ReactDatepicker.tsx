@@ -17,13 +17,30 @@ interface ExampleProps {
    * `react-datepicker-v8` alias instead.
    */
   datePicker?: typeof DatePicker
+  /**
+   * Passes react-datepicker's `ariaInvalid`, which renders `aria-invalid` on
+   * the input. That attribute is what react-datepicker.css styles.
+   */
+  isInvalid?: boolean
+  /** Passes react-datepicker's `readOnly`, rendered as `readonly` on the input */
+  isReadOnly?: boolean
+  /** Passes react-datepicker's `disabled` */
+  isDisabled?: boolean
+  /** Date to start with, so read-only and disabled have a value to show */
+  defaultDate?: Date
 }
 
 export const BasicDatePicker = ({
   open,
   datePicker: Picker = DatePicker,
+  isInvalid,
+  isReadOnly,
+  isDisabled,
+  defaultDate,
 }: ExampleProps) => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    defaultDate ?? null,
+  )
   return (
     <Picker
       showIcon
@@ -37,6 +54,9 @@ export const BasicDatePicker = ({
       showPopperArrow={false}
       dateFormat='dd-MM-yyyy'
       placeholderText='Select a date'
+      ariaInvalid={isInvalid ? 'true' : undefined}
+      readOnly={isReadOnly}
+      disabled={isDisabled}
     />
   )
 }

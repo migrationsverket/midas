@@ -17,6 +17,8 @@ export default {
     dts({
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
+      // Stories and tests aren't part of the published types
+      exclude: ['**/*.stories.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
       pathsToAliases: false,
     }),
     viteStaticCopy({
@@ -39,6 +41,7 @@ export default {
         '@midas-ds/components',
         '@midas-ds/theme',
         '@tanstack/react-table',
+        'lucide-react',
         'react-aria',
         'react-aria-components',
         'react-dom',

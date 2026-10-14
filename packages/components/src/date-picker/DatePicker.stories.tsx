@@ -50,6 +50,13 @@ export const Disabled: Story = {
   },
 }
 
+export const DisabledWithDefaultValue: Story = {
+  args: {
+    ...Disabled.args,
+    defaultValue: new CalendarDate(1995, 5, 29),
+  },
+}
+
 export const ReadOnly: Story = {
   args: {
     isReadOnly: true,
@@ -70,9 +77,6 @@ export const Required: Story = {
     errorMessage: 'Var god ange ett datum',
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => (
     <form>
       <DatePicker {...args} />
@@ -88,9 +92,6 @@ export const CustomValiation: Story = {
       year === new Date().getFullYear() ? 'Var god välj ett annat år' : true,
   },
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => (
     <form>
       <DatePicker {...args} />
@@ -101,9 +102,6 @@ export const CustomValiation: Story = {
 
 export const ControlledState: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
   render: args => {
     const [value, setValue] = React.useState<CalendarDate | null>(
       parseDate('2026-05-29'),

@@ -88,6 +88,9 @@
     }
   },
   "targetDefaults": {
+    "typecheck": {
+      "dependsOn": ["theme:style-dictionary-generate"]
+    },
     "build": {
       "dependsOn": ["theme:style-dictionary-generate", "^build"],
       "inputs": ["production", "^production"],
@@ -133,6 +136,31 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/vitest.config.mts"],
       "cache": true
+    },
+    "a11y*": {
+      "inputs": [
+        "default",
+        "^production",
+        "storybookStories",
+        {
+          "fileset": "{projectRoot}/tsconfig.spec.json",
+          "dependencies": true
+        },
+        {
+          "fileset": "{projectRoot}/tsconfig.storybook.json",
+          "dependencies": true
+        },
+        {
+          "externalDependencies": ["vitest"]
+        },
+        {
+          "env": "CI"
+        },
+        {
+          "dependentTasksOutputFiles": "**/*.js",
+          "transitive": true
+        }
+      ]
     },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
@@ -191,6 +219,9 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/tsconfig.storybook.json",
       "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
+    ],
+    "storybookStories": [
+      "{workspaceRoot}/packages/**/*.stories.@(js|jsx|ts|tsx|mdx)"
     ],
     "sharedGlobals": []
   },
@@ -325,10 +356,29 @@
     {
       "plugin": "@nx/vitest",
       "options": {
-        "testTargetName": "visual",
-        "testMode": "run"
+        "testTargetName": "a11y",
+        "testMode": "watch"
       },
-      "include": ["packages/components/**/*", "packages/datepicker-styles/**/*"]
+      "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "a11y-dark-mode",
+        "testMode": "watch"
+      },
+      "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "@nx/vitest",
+      "options": {
+        "testTargetName": "a11y-forced-colors",
+        "testMode": "watch"
+      },
+      "include": ["apps/storybook/**/*"]
+    },
+    {
+      "plugin": "./tools/visual-testing/src/plugin.ts"
     }
   ],
   "analytics": false
