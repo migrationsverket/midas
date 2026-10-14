@@ -35413,7 +35413,7 @@ const removeDefaultStopWordFilter = (/* unused pure expression or super */ null 
 const language = (/* unused pure expression or super */ null && ([
     "sv"
 ]));
-const searchIndexUrl = "search-index{dir}.json?_=de35ad23";
+const searchIndexUrl = "search-index{dir}.json?_=64f46e30";
 const searchResultLimits = 8;
 const fuzzyMatchingDistance = 1;
 

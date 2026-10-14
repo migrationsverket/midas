@@ -15,7 +15,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// CONCATENATED MODULE: ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-validation-mdx-f40.json
-var site_docs_design_patterns_validation_mdx_f40_namespaceObject = JSON.parse('{"id":"design-patterns/validation","title":"validation","description":"Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa.","source":"@site/docs/design-patterns/validation.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/validation","permalink":"/design-patterns/validation","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{},"sidebar":"sideBar","previous":{"title":"Tabeller","permalink":"/design-patterns/tables"},"next":{"title":"Routing på klientnivå","permalink":"/dev/client-side-routing"}}')
+var site_docs_design_patterns_validation_mdx_f40_namespaceObject = JSON.parse('{"id":"design-patterns/validation","title":"Validering i formulär","description":"Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa.","source":"@site/docs/design-patterns/validation.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/validation","permalink":"/design-patterns/validation","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{},"sidebar":"sideBar","previous":{"title":"Tabeller","permalink":"/design-patterns/tables"},"next":{"title":"Routing på klientnivå","permalink":"/dev/client-side-routing"}}')
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -383,12 +383,12 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(ToastRegion, {}), "\n", (0,jsx_runtime.jsx)(_components.header, {
+    children: [(0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
         id: "validering-i-formulär",
         children: "Validering i formulär"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+    }), "\n", "\n", (0,jsx_runtime.jsx)(ToastRegion, {}), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "när-och-hur-ska-vi-validera",
