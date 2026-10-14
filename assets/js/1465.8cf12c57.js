@@ -17,7 +17,7 @@ const removeDefaultStopWordFilter = [];
 const language = [
     "sv"
 ];
-const searchIndexUrl = "search-index{dir}.json?_=16d4118d";
+const searchIndexUrl = "search-index{dir}.json?_=de35ad23";
 const searchResultLimits = 8;
 const fuzzyMatchingDistance = 1;
 
