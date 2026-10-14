@@ -140,8 +140,11 @@ jobs:
       - name: Generate theme tokens
         run: npx nx run theme:style-dictionary-generate
 
+      # One test file at a time: Vitest opens a tab per file, and unlike
+      # Chromium, Firefox and WebKit throttle timers and animations in the
+      # tabs that aren't focused, which made their tests flaky
       - name: Test packages
-        run: npx nx affected -t test
+        run: npx nx affected -t test --fileParallelism=false
         env:
           MIDAS_BROWSERS: ${{ matrix.profile }}
 
