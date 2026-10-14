@@ -1,0 +1,151 @@
+---
+slug: 17.32.0
+title: Release 17.32.0
+authors: midas
+tags: [release-notes, v17]
+date: 2026-10-14
+---
+
+Sedan 17.26.0 har `Modal` fått ny design och en sticky footer, `Stack` har tillkommit, `FileList` visar uppladdningsförlopp och `Calendar` har fått en månads- och årsväljare.
+
+| Paket                  | Version   |
+| ---------------------- | --------- |
+| `@midas-ds/components` | `17.32.0` |
+| `@midas-ds/layout`     | `0.2.54`  |
+| `@midas-ds/theme`      | `3.17.8`  |
+
+{/* truncate */}
+
+## 🆕 Ny komponent: Stack
+
+`Stack` placerar children i en riktning, med standardavstånd från Midas semantiska space-tokens. En förenklad flexbox helt enkelt!
+
+```tsx
+import { Stack, Button } from '@midas-ds/components'
+
+;<Stack
+  direction='row'
+  spacing='medium'
+  justifyContent='end'
+>
+  <Button variant='secondary'>Avbryt</Button>
+  <Button>Spara</Button>
+</Stack>
+```
+
+`spacing` tar `xsmall`–`xlarge` (standard `small`). Med `elementType` väljer du vilket element som renderas, t.ex. `ul` för en lista. Se [dokumentationen](/components/stack) för fler exempel.
+
+## 🚀 Nya funktioner
+
+### Modal: ny design och sticky footer
+
+`Modal` har fått ny design: stängknappen visar bara en ikon (med `aria-label`), headern har ny bakgrundsfärg och paddingen är justerad. Med nya `footer`-propen hamnar handlingarna i en footer som alltid är synlig, även när innehållet är långt.
+
+```tsx
+<DialogTrigger>
+  <Button>Öppna modal</Button>
+  <Modal
+    title='Rubrik'
+    footer={<Button slot='close'>Bekräfta</Button>}
+  >
+    Innehåll i modal
+  </Modal>
+</DialogTrigger>
+```
+
+Se [riktlinjerna](/components/modal) för var handlingar ska placeras.
+
+### FileList: uppladdningsförlopp
+
+`FileListItem` har fått `status` (`idle`, `uploading`, `success`, `error`), `progress` och `errorMessage` för att visa var i uppladdningsflödet en fil befinner sig.
+
+```tsx
+<FileListItem
+  fileName='video.mp4'
+  fileSize='128 MB'
+  status='uploading'
+  progress={40}
+  onCancel={handleCancel}
+/>
+```
+
+Se [dokumentationen](/components/file-list).
+
+### ProgressBar: cirkulär variant
+
+`ProgressBar` kan nu renderas som en ring med `shape='circular'`, och med `small` blir den 20px, lika stor som en liten `Spinner`.
+
+### Calendar: månads- och årsväljare
+
+`Calendar` och `RangeCalendar` kan visa månad och år som dropdown-väljare i headern med `showMonthYearPicker`, så att användaren kan hoppa direkt till en annan månad eller ett annat år.
+
+```tsx
+<Calendar
+  aria-label='Kalender'
+  showMonthYearPicker
+/>
+```
+
+### Accordion: `contentBackground`
+
+`AccordionItem` har fått `contentBackground` (`neutral` eller `inherit`). `hasBackground` är deprecated, `hasBackground={false}` motsvarar `contentBackground='inherit'`.
+
+### lucide-react är nu ett beroende
+
+`@midas-ds/components` och `@midas-ds/layout` bundlar inte längre egna kopior av `lucide-react`, utan deklarerar det som beroende. Använder du själv Lucide delar ni nu på samma kopia, och typer som `icon?: LucideIcon` på `Button` och `Link` fungerar utan att du installerar paketet själv.
+
+## 🩹 Fixar
+
+### @midas-ds/components
+
+- **TextField**: Texten är nu nedtonad i disabled-tillstånd.
+- **Checkbox, Radio**: `data-*`-attribut hamnar återigen på knappen, inte på fältet runt. Det hade ändrats sedan de började bygga på `CheckboxField`/`RadioField`.
+- **RangeCalendar**: Använder nu `commitBehavior='reset'` som standard, så att ett påbörjat val inte försvinner.
+- **Calendar**: Fixat en regression i `commitBehavior` och specificiteten i kalenderns style-reset.
+- **Typer**: Publicerade typer importerar inte längre odeklarerade paket. `clsx` är nu ett deklarerat beroende, `@react-types/shared` används inte längre och `.stories.d.ts`-filer publiceras inte. Tidigare kunde du få `any` eller fel med pnpm eller `skipLibCheck: false`.
+- **Beroenden**: React Aria och React Spectrum är uppdaterade.
+
+### @midas-ds/layout
+
+- **Typer**: Publicerade typer importerar nu från `@midas-ds/components` i stället för sökvägar som inte finns i `node_modules`. Tidigare saknade bl.a. `PanelTitle`, `NavigationHeader`, `MobileMenu` och `HeaderAction` typer från components.
+- **useMediaQuery**: Bygger nu på `useSyncExternalStore` i stället för `@react-spectrum/utils`, så paketet bundlar inte längre en egen kopia av React Arias SSR-kontext.
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v17.27.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.27.0)
+- [components@v17.27.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.27.1)
+- [components@v17.27.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.27.2)
+- [components@v17.27.3](https://github.com/migrationsverket/midas/releases/tag/components%40v17.27.3)
+- [components@v17.27.4](https://github.com/migrationsverket/midas/releases/tag/components%40v17.27.4)
+- [components@v17.27.5](https://github.com/migrationsverket/midas/releases/tag/components%40v17.27.5)
+- [components@v17.28.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.28.0)
+- [components@v17.28.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.28.1)
+- [components@v17.28.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.28.2)
+- [components@v17.29.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.29.0)
+- [components@v17.30.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.30.0)
+- [components@v17.30.1](https://github.com/migrationsverket/midas/releases/tag/components%40v17.30.1)
+- [components@v17.30.2](https://github.com/migrationsverket/midas/releases/tag/components%40v17.30.2)
+- [components@v17.31.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.31.0)
+- [components@v17.32.0](https://github.com/migrationsverket/midas/releases/tag/components%40v17.32.0)
+- [layout@v0.2.40](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.40)
+- [layout@v0.2.41](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.41)
+- [layout@v0.2.42](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.42)
+- [layout@v0.2.43](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.43)
+- [layout@v0.2.44](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.44)
+- [layout@v0.2.45](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.45)
+- [layout@v0.2.46](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.46)
+- [layout@v0.2.47](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.47)
+- [layout@v0.2.48](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.48)
+- [layout@v0.2.49](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.49)
+- [layout@v0.2.50](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.50)
+- [layout@v0.2.51](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.51)
+- [layout@v0.2.52](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.52)
+- [layout@v0.2.53](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.53)
+- [layout@v0.2.54](https://github.com/migrationsverket/midas/releases/tag/layout%40v0.2.54)
+- [theme@v3.17.2](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.2)
+- [theme@v3.17.3](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.3)
+- [theme@v3.17.4](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.4)
+- [theme@v3.17.5](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.5)
+- [theme@v3.17.6](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.6)
+- [theme@v3.17.7](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.7)
+- [theme@v3.17.8](https://github.com/migrationsverket/midas/releases/tag/theme%40v3.17.8)
