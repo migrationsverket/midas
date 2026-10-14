@@ -1,3 +1,10 @@
+## 17.32.0 (2026-10-14)
+
+### 🚀 Features
+
+- **components,modal:** implement new design ([185be7bb0cd](https://github.com/migrationsverket/midas/commit/185be7bb0cd))
+- **components,modal:** add footer prop ([c75d08e15b8](https://github.com/migrationsverket/midas/commit/c75d08e15b8))
+
 ## 17.31.0 (2026-10-13)
 
 ### 🚀 Features
