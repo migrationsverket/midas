@@ -1,6 +1,7 @@
 import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import { playwright } from '@vitest/browser-playwright'
+import { browserInstances } from '@midas-ds/test-browsers'
 
 export default mergeConfig(
   viteConfig,
@@ -21,7 +22,7 @@ export default mergeConfig(
               enabled: true,
               headless: true,
               provider: playwright(),
-              instances: [{ browser: 'chromium' }],
+              instances: browserInstances(),
               screenshotFailures: false,
             },
             setupFiles: ['vitest.setup.mts'],

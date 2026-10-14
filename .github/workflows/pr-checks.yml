@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   build:
-    name: Lint, test and build packages
+    name: Lint and build packages
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -41,26 +41,6 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v5
 
-      # The browsers are part of the key: e2e.yml caches a different set, and
-      # sharing one key made the browsers available here depend on which
-      # workflow happened to save the cache first.
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-chromium-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Playwright browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install chromium --with-deps
-        env:
-          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
-
-      - name: Install Playwright system deps
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps chromium
-
       - name: Build packages
         run: npx nx affected -t lint stylelint build
 
@@ -70,13 +50,89 @@ jobs:
       - name: Check shared-singleton modules stay externalized
         run: node tools/check-bundled-dependencies/check-shared-singletons.mjs
 
-      - name: Test packages
-        run: npx nx affected -t test
+  # The package tests, once per browser profile, see tools/test-browsers
+  test:
+    name: Test packages (${{ matrix.profile }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Only Chromium blocks, until the suite is green in every profile
+    continue-on-error: ${{ matrix.profile != 'chromium' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: chromium
+            engine: chromium
+          - profile: firefox
+            engine: firefox
+            serial: true
+          - profile: webkit
+            engine: webkit
+            serial: true
+          - profile: mobile-safari
+            engine: webkit
+            serial: true
+          - profile: mobile-chrome
+            engine: chromium
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          filter: tree:0
+          fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v5
+
+      # The engine is part of the key: e2e.yml caches a different set, and
+      # sharing one key made the browsers available here depend on which
+      # workflow happened to save the cache first.
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ matrix.engine }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npx playwright install ${{ matrix.engine }} --with-deps
+        env:
+          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
+
+      - name: Install Playwright system deps
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps ${{ matrix.engine }}
+
+      # The tests import the generated design tokens
+      - name: Generate theme tokens
+        run: npx nx run theme:style-dictionary-generate
+
+      # `serial` runs one test file at a time: Vitest opens a tab per file,
+      # and unlike Chromium, Firefox and WebKit throttle timers and
+      # animations in the tabs that aren't focused, which made their tests
+      # flaky
+      - name: Test packages
+        run: npx nx affected -t test ${{ matrix.serial && '--fileParallelism=false' || '' }}
+        env:
+          MIDAS_BROWSERS: ${{ matrix.profile }}
+
+      # The Storybook a11y tests run in Chromium only
       - name: A11y check packages
         if: >
-          (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
-           contains(github.event.pull_request.labels.*.name, 'a11y')
+          matrix.profile == 'chromium' && (
+            (github.event.action == 'labeled' && github.event.label && github.event.label.name == 'a11y') ||
+            contains(github.event.pull_request.labels.*.name, 'a11y')
+          )
         run: npx nx affected -t a11y a11y-dark-mode a11y-forced-colors
 
   lucide-min:
