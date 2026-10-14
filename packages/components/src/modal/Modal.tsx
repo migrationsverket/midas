@@ -13,6 +13,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ModalOverlay, type ModalOverlayProps } from './modal-overlay'
 import { useStickyHeight } from './useStickyHeight'
+import { useKeepFocusClear } from './useKeepFocusClear'
 
 export interface ModalProps extends ModalOverlayProps {
   /**
@@ -36,6 +37,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     const strings = useLocalizedStringFormatter(messages)
     const headerRef = useStickyHeight('--modal-header-height')
     const footerRef = useStickyHeight('--modal-footer-height')
+    const dialogRef = useKeepFocusClear()
 
     return (
       <ModalOverlay {...rest}>
@@ -44,7 +46,10 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
             className={styles.modal}
             ref={ref}
           >
-            <AriaDialog className={styles.dialog}>
+            <AriaDialog
+              className={styles.dialog}
+              ref={dialogRef}
+            >
               <div
                 className={styles.modalHeader}
                 ref={headerRef}
