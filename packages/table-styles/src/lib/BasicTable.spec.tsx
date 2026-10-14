@@ -26,18 +26,23 @@ describe('given a rendered BasicTable', () => {
     expect(evenBackground).not.toBe(oddBackground)
   })
 
-  it('changes a row background on hover', async () => {
-    const { container } = await render(<BasicTable />)
-    const row = page.elementLocator(
-      container.querySelector('tbody tr') as Element,
-    )
-    const restingBackground = getComputedStyle(row.element()).backgroundColor
+  // The row hover is behind `@media (hover: hover)`, so touch screens don't
+  // get one by design
+  it.skipIf(matchMedia('(hover: none)').matches)(
+    'changes a row background on hover',
+    async () => {
+      const { container } = await render(<BasicTable />)
+      const row = page.elementLocator(
+        container.querySelector('tbody tr') as Element,
+      )
+      const restingBackground = getComputedStyle(row.element()).backgroundColor
 
-    await row.hover()
-    await expect
-      .element(row)
-      .not.toHaveStyle({ backgroundColor: restingBackground })
-  })
+      await row.hover()
+      await expect
+        .element(row)
+        .not.toHaveStyle({ backgroundColor: restingBackground })
+    },
+  )
 
   it('reveals the neutral sort icon on header hover', async () => {
     const { container } = await render(<BasicTable />)
