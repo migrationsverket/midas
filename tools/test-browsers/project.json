@@ -1,0 +1,12 @@
+{
+  "name": "test-browsers",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/test-browsers/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p tools/test-browsers/tsconfig.lib.json"
+    }
+  }
+}
