@@ -27,23 +27,34 @@ describe('given a controlled Panel', () => {
   it('should close when the dismiss button is pressed', async () => {
     const { getByRole } = await render(<Controlled />)
     await userEvent.click(getByRole('button', { name: 'Open panel' }))
-    await expect.element(getByRole('complementary')).not.toHaveAttribute('data-entering')
+    await expect
+      .element(getByRole('complementary'))
+      .not.toHaveAttribute('data-entering')
     await userEvent.click(getByRole('button', { name: 'Dismiss panel' }))
     await expect.element(getByRole('complementary')).not.toBeInTheDocument()
+    // increased timeout for awaiting the exit animation
   }, 8000)
 
   it('should close when the panel close button is pressed', async () => {
     const { getByRole } = await render(<Controlled />)
     await userEvent.click(getByRole('button', { name: 'Open panel' }))
+    await expect
+      .element(getByRole('complementary'))
+      .not.toHaveAttribute('data-entering')
     await userEvent.click(getByRole('button', { name: 'Close panel' }))
     await expect.element(getByRole('complementary')).not.toBeInTheDocument()
-  })
+    // increased timeout for awaiting the exit animation
+  }, 8000)
 
-  it('should render as a bottom sheet on mobile and a side panel on desktop', async ({ task }) => {
+  it('should render as a bottom sheet on mobile and a side panel on desktop', async ({
+    task,
+  }) => {
     const { getByRole, container } = await render(<Controlled />)
     await userEvent.click(getByRole('button', { name: 'Open panel' }))
 
-    const panel = container.querySelector(`.${panelStyles.panel}`) as HTMLElement
+    const panel = container.querySelector(
+      `.${panelStyles.panel}`,
+    ) as HTMLElement
     const computed = getComputedStyle(panel)
 
     if (task.file.projectName.startsWith('mobile')) {
@@ -144,7 +155,9 @@ describe('given a PanelProvider with push variant', () => {
     expect(region.dataset.open).toBe('true')
   })
 
-  it('should grow horizontally on desktop and vertically on mobile', async ({ task }) => {
+  it('should grow horizontally on desktop and vertically on mobile', async ({
+    task,
+  }) => {
     const { getByRole, container } = await render(<VariantPush />)
     const region = container.querySelector(`.${styles.push}`) as HTMLElement
 
