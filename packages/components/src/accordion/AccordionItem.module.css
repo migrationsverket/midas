@@ -118,7 +118,8 @@
   background-color: var(--accordion-background-hover);
 }
 
-.triggerButton[data-focus-visible] {
+.triggerButton[data-focus-visible],
+.triggerButton:focus-visible {
   box-shadow: var(--midas-state-focus-inset);
 }
 
