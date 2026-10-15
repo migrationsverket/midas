@@ -60,13 +60,12 @@ describe('given a rendered BasicTable', () => {
 
   it('reveals the drag handle on header cell hover', async () => {
     const { container, getByRole } = await render(<BasicTable />)
-    const th = getByRole('columnheader', { name: 'ID', exact: true })
     const handle = page.elementLocator(
       container.querySelector('.drag-handle') as Element,
     )
 
     await expect.element(handle).toHaveStyle({ opacity: '0' })
-    await th.hover()
+    await getByRole('button', { name: 'ID', exact: true }).hover()
     await expect.element(handle).toHaveStyle({ opacity: '1' })
   })
 })

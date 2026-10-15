@@ -1,0 +1,120 @@
+name: 'Nightly browser tests'
+
+# The package tests in the two latest versions of the real desktop browsers,
+# see tools/test-browsers. Never blocks anything: a failing browser opens an
+# issue, which is closed again when it passes.
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+  # Changes to the tooling test themselves
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/test-browsers/**'
+      - '.github/workflows/browsers-nightly.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    name: Resolve browser versions
+    runs-on: ubuntu-latest
+    outputs:
+      targets: ${{ steps.resolve.outputs.targets }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: tools/test-browsers
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Resolve the two latest versions
+        id: resolve
+        run: echo "targets=$(node tools/test-browsers/src/resolve-versions.ts)" >> "$GITHUB_OUTPUT"
+
+  test:
+    name: Test packages (${{ matrix.slot }} ${{ matrix.version }})
+    needs: versions
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      issues: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.versions.outputs.targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # WebdriverIO downloads Chrome and Firefox, but only the driver for
+      # Edge, so install the Edge build, replacing the runner's own
+      - name: Install Edge ${{ matrix.version }}
+        if: matrix.deb
+        env:
+          DEB: ${{ matrix.deb }}
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/edge.deb" "$DEB"
+          sudo apt-get install -y --allow-downgrades "$RUNNER_TEMP/edge.deb"
+          microsoft-edge --version
+
+      # The tests import the generated design tokens
+      - name: Generate theme tokens
+        run: npx nx run theme:style-dictionary-generate
+
+      # WebdriverIO downloads the browser and its driver. `stable` and the
+      # milestones move, so the Nx cache is skipped
+      - name: Test packages
+        id: test
+        run: npx nx run-many -t test --skip-nx-cache
+        env:
+          MIDAS_BROWSERS: ${{ matrix.profile }}
+
+      - name: Open or update the issue
+        if: failure() && steps.test.outcome == 'failure' && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Browser tests fail in ${{ matrix.slot }}'
+          BODY: |
+            The nightly package tests fail in ${{ matrix.slot }} (${{ matrix.version }}).
+
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Reproduce with `MIDAS_BROWSERS=${{ matrix.profile }} npx nx run-many -t test`.
+        run: |
+          ISSUE=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number,title \
+            --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          if [ -n "$ISSUE" ]; then
+            gh issue comment "$ISSUE" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi
+
+      - name: Close the issue
+        if: success() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Browser tests fail in ${{ matrix.slot }}'
+        run: |
+          ISSUE=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number,title \
+            --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          if [ -n "$ISSUE" ]; then
+            gh issue close "$ISSUE" --comment "Passes again in ${{ matrix.slot }} (${{ matrix.version }}): ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          fi
