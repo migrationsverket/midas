@@ -38,8 +38,9 @@ const realBrowsers = ['chrome', 'firefox', 'edge'] as const
 /**
  * A branded browser in a given version, run through WebdriverIO, which
  * downloads it: `<browser>@<version>`, e.g. `chrome@141`, `chrome@stable`,
- * `firefox@stable` or `firefox@stable_157.0.2`. Edge isn't downloaded, so
- * only the installed version works, as `edge@stable`
+ * `firefox@stable` or `firefox@stable_157.0.2`. For Edge only the driver is
+ * downloaded, so the version must be the installed one, e.g. `edge@stable` or
+ * `edge@154.0.4258.62`
  */
 const parseRealProfile = (name: string) => {
   const [browser, version, ...rest] = name.split('@')

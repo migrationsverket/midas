@@ -5,7 +5,8 @@
  *   node tools/test-browsers/src/resolve-versions.ts
  *   [{"profile":"chrome@155","slot":"Chrome latest","version":"155"}, ...]
  *
- * Edge isn't downloaded like the others, so it's only the installed version.
+ * WebdriverIO only downloads the driver for Edge, so Edge targets also have
+ * the `.deb` to install first.
  */
 
 interface Target {
@@ -13,13 +14,18 @@ interface Target {
   /** Stays the same when the version changes, e.g. for issue titles */
   slot: string
   version: string
+  /** A package to install before running, for Edge */
+  deb?: string
 }
 
-const getJson = async <T>(url: string): Promise<T> => {
+const getResponse = async (url: string) => {
   const response = await fetch(url)
   if (!response.ok) throw new Error(`${url} answered ${response.status}`)
-  return (await response.json()) as T
+  return response
 }
+
+const getJson = async <T>(url: string): Promise<T> =>
+  (await (await getResponse(url)).json()) as T
 
 const major = (version: string) => Number(version.split('.')[0])
 
@@ -73,10 +79,52 @@ const firefox = async (): Promise<Target[]> => {
   ].map(target => ({ ...target, profile: `firefox@stable_${target.version}` }))
 }
 
+// Microsoft's apt repository keeps the older builds, take the last one of
+// each of the two latest majors
+const edgeRepository = 'https://packages.microsoft.com/repos/edge'
+
+const edge = async (): Promise<Target[]> => {
+  const index = await (
+    await getResponse(
+      `${edgeRepository}/dists/stable/main/binary-amd64/Packages`,
+    )
+  ).text()
+  const builds = index
+    .split('\n\n')
+    .map(entry => ({
+      name: entry.match(/^Package: (.+)$/m)?.[1],
+      version: entry.match(/^Version: (.+)-\d+$/m)?.[1],
+      filename: entry.match(/^Filename: (.+)$/m)?.[1],
+    }))
+    .filter(
+      (build): build is { name: string; version: string; filename: string } =>
+        build.name === 'microsoft-edge-stable' &&
+        build.version !== undefined &&
+        build.filename !== undefined,
+    )
+    .sort((a, b) => compareVersions(a.version, b.version))
+
+  const latest = builds.at(-1)
+  const previous = builds.findLast(
+    build => latest && major(build.version) === major(latest.version) - 1,
+  )
+  if (!latest || !previous) throw new Error('No Edge builds found')
+
+  return [
+    { slot: 'Edge latest', build: latest },
+    { slot: 'Edge previous', build: previous },
+  ].map(({ slot, build }) => ({
+    slot,
+    version: build.version,
+    profile: `edge@${build.version}`,
+    deb: `${edgeRepository}/${build.filename}`,
+  }))
+}
+
 const targets: Target[] = [
   ...(await chrome()),
   ...(await firefox()),
-  { profile: 'edge@stable', slot: 'Edge latest', version: 'installed' },
+  ...(await edge()),
 ]
 
 console.log(JSON.stringify(targets))

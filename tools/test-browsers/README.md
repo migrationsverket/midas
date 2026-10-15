@@ -38,11 +38,12 @@ MIDAS_BROWSERS=chrome@154 npx nx run components:test           # a milestone
 MIDAS_BROWSERS=firefox@stable npx nx run components:test
 MIDAS_BROWSERS=firefox@stable_157.0.1 npx nx run components:test # an exact release
 MIDAS_BROWSERS=edge@stable npx nx run components:test           # the installed Edge
+MIDAS_BROWSERS=edge@154.0.4258.62 npx nx run components:test    # must match the installed Edge
 ```
 
 Firefox's `latest` is Nightly, so use `stable` or `stable_<version>`. These can't be mixed with the Playwright profiles in one run.
 
-`src/resolve-versions.ts` prints the profiles for the two latest versions of each browser, which the nightly workflow (`browsers-nightly.yml`) runs. A failing browser opens an issue, which is closed when it passes again.
+`src/resolve-versions.ts` prints the profiles for the two latest versions of each browser, which the nightly workflow (`browsers-nightly.yml`) runs. For Edge it also gives the build's `.deb` from Microsoft's apt repository, which keeps the older versions, and the workflow installs it first. A failing browser opens an issue, which is closed when it passes again.
 
 Known differences: under WebdriverIO, Vitest computes accessible names for `getByRole` itself, and they can differ from Playwright's.
 

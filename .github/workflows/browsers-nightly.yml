@@ -64,6 +64,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # WebdriverIO downloads Chrome and Firefox, but only the driver for
+      # Edge, so install the Edge build, replacing the runner's own
+      - name: Install Edge ${{ matrix.version }}
+        if: matrix.deb
+        env:
+          DEB: ${{ matrix.deb }}
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/edge.deb" "$DEB"
+          sudo apt-get install -y --allow-downgrades "$RUNNER_TEMP/edge.deb"
+          microsoft-edge --version
+
       # The tests import the generated design tokens
       - name: Generate theme tokens
         run: npx nx run theme:style-dictionary-generate
