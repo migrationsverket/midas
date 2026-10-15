@@ -50,7 +50,7 @@ export function FieldLayerPage() {
 
         {/* Right: inside a Card */}
         <Card>
-          <CardHeader>På Card-yta (field-02)</CardHeader>
+          <CardHeader heading='På Card-yta (field-02)' />
           <CardBody>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <TextField label='Namn' placeholder='Anna Andersson' />

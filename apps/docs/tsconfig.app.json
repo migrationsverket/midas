@@ -1,17 +1,11 @@
 {
-  "extends": ["@docusaurus/tsconfig", "./tsconfig.json"],
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "esModuleInterop": true,
     "emitDeclarationOnly": true,
-    "jsx": "react-jsx",
+    "allowJs": true,
     "lib": ["DOM", "dom.iterable"],
     "noImplicitAny": false,
-    "strict": true,
     "types": [
       "node",
       "@docusaurus/module-type-aliases",
