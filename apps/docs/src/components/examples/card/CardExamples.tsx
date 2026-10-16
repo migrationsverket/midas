@@ -16,6 +16,7 @@ import {
   Menu,
   MenuItem,
   MenuPopover,
+  ButtonGroup,
 } from '@midas-ds/components'
 import { Pen, Trash2, X, EllipsisVertical, Phone } from 'lucide-react'
 import React from 'react'
@@ -47,20 +48,22 @@ export const ActionExample: React.FC = () => (
         </Text>
       </CardBody>
       <CardActions>
-        <Button
-          variant='secondary'
-          aria-label='Redigera inköpslista'
-          icon={Pen}
-        >
-          Redigera
-        </Button>
-        <Button
-          variant='tertiary'
-          aria-label='Ta bort inköpslista'
-          icon={Trash2}
-        >
-          Ta bort
-        </Button>
+        <ButtonGroup aria-label='Hantera inköpslista'>
+          <Button
+            variant='secondary'
+            aria-label='Redigera inköpslista'
+            icon={Pen}
+          >
+            Redigera
+          </Button>
+          <Button
+            variant='tertiary'
+            aria-label='Ta bort inköpslista'
+            icon={Trash2}
+          >
+            Ta bort
+          </Button>
+        </ButtonGroup>
       </CardActions>
     </Card>
   </div>
