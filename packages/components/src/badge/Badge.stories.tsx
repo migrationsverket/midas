@@ -16,7 +16,7 @@ export default {
   args: {},
   render: args => (
     <Button
-      variant='tertiary'
+      variant='icon'
       aria-label='Notiser'
     >
       <BadgeContainer>
