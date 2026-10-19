@@ -1,1 +1,0 @@
-import{t as e}from"./iframe-DDi70ckg.js";e();
