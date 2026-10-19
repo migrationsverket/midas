@@ -118,10 +118,7 @@ Samma tillstånd kan användas för att begränsa vilka filtyper som är tillåt
 >
   <Text slot='label'>Släpp filer här</Text>
   <FileTrigger>
-    <Button
-      variant='secondary'
-      isDisabled
-    >
+    <Button isDisabled>
       <Upload aria-hidden size={20} />
       Välj filer
     </Button>
@@ -145,7 +142,6 @@ Samma tillstånd kan användas för att begränsa vilka filtyper som är tillåt
         docs demo honest to Figma in the meantime.
       */}
       <Button
-        variant='secondary'
         isDisabled
         style={{ backgroundColor: 'transparent' }}
       ><Upload aria-hidden size={20} />Välj filer</Button>
