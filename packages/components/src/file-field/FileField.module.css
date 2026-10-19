@@ -1,0 +1,12 @@
+.fileField {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: var(--midas-typography-font-family);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-medium);
+}

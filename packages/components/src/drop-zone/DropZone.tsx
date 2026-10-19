@@ -9,13 +9,15 @@ import {
 } from 'react-aria-components'
 import type { ValidationResult } from 'react-aria-components'
 import clsx from '../utils/clsx'
+import { useFileFieldContext } from '../file-field/FileFieldContext'
 import styles from './DropZone.module.css'
 
 export interface DropZoneProps extends AriaDropZoneProps {
   /**
    * Marks the dropzone as invalid, e.g. after a failed validation. Pair with
    * `FieldError` to render the error message, either inside or below the
-   * dropzone depending on where it's composed.
+   * dropzone depending on where it's composed. Inside a `FileField`, it
+   * follows the field's `isInvalid` unless set explicitly.
    *
    * @default false
    */
@@ -32,7 +34,9 @@ export interface DropZoneProps extends AriaDropZoneProps {
  * @see {@link https://react-spectrum.adobe.com/react-aria/DropZone.html|React Aria DropZone}
  */
 export const DropZone = forwardRef<HTMLDivElement, DropZoneProps>(
-  ({ className, isInvalid, children, ...rest }, ref) => {
+  ({ className, isInvalid: isInvalidProp, children, ...rest }, ref) => {
+    const fileField = useFileFieldContext()
+    const isInvalid = isInvalidProp ?? fileField?.isInvalid ?? false
     const validation: ValidationResult | null = isInvalid
       ? {
           isInvalid: true,
