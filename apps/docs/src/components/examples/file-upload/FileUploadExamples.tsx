@@ -5,111 +5,135 @@ import {
   FileList,
   FileListItem,
   FileTrigger,
+  Label,
   Text,
 } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
 import { DropEvent, isFileDropItem } from 'react-aria'
 
-export const FileListExample = () => {
+const useUniqueFiles = () => {
   const [files, setFiles] = React.useState<File[]>([])
 
-  const handleSelect = (e: FileList | null) => {
-    const selected = e ? Array.from(e) : []
-    setFiles(prev => {
-      const existingNames = new Set(prev.map(f => f.name))
-      return [...prev, ...selected.filter(f => !existingNames.has(f.name))]
-    })
-  }
-
-  const handleDelete = (name: string) => {
-    setFiles(prev => prev.filter(f => f.name !== name))
-  }
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <FileTrigger
-        allowsMultiple
-        onSelect={handleSelect}
-      >
-        <Button>Välj filer</Button>
-      </FileTrigger>
-      {files.length > 0 && (
-        <FileList>
-          {files.map(file => (
-            <FileListItem
-              key={file.name}
-              fileName={file.name}
-              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-              onDelete={() => handleDelete(file.name)}
-            />
-          ))}
-        </FileList>
-      )}
-    </div>
-  )
-}
-
-export const DropZoneExample = () => {
-  const [files, setFiles] = React.useState<File[]>([])
-
-  const setUniqueFiles = (newFiles: File[]) => {
+  const addFiles = (newFiles: File[]) => {
     setFiles(oldFiles => {
       const existingNames = new Set(oldFiles.map(f => f.name))
       return [...oldFiles, ...newFiles.filter(f => !existingNames.has(f.name))]
     })
   }
 
+  const removeFile = (name: string) => {
+    setFiles(oldFiles => oldFiles.filter(f => f.name !== name))
+  }
+
+  return { files, addFiles, removeFile }
+}
+
+const UploadedFiles = ({
+  files,
+  onDelete,
+}: {
+  files: File[]
+  onDelete: (name: string) => void
+}) =>
+  files.length > 0 && (
+    <FileList aria-label='Valda filer'>
+      {files.map(file => (
+        <FileListItem
+          key={file.name}
+          fileName={file.name}
+          fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+          onDelete={() => onDelete(file.name)}
+        />
+      ))}
+    </FileList>
+  )
+
+export const FileListExample = () => {
+  const { files, addFiles, removeFile } = useUniqueFiles()
+  const labelId = React.useId()
+  const descriptionId = React.useId()
+
+  const handleSelect = (fileList: FileList | null) => {
+    if (fileList) addFiles(Array.from(fileList))
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
+      <Text id={descriptionId}>
+        Du kan välja flera om du har många favoritfrukter
+      </Text>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <FileTrigger
+          allowsMultiple
+          onSelect={handleSelect}
+        >
+          <Button
+            variant='secondary'
+            icon={Upload}
+            aria-describedby={`${labelId} ${descriptionId}`}
+          >
+            Välj fil(er)
+          </Button>
+        </FileTrigger>
+        <UploadedFiles
+          files={files}
+          onDelete={removeFile}
+        />
+      </div>
+    </div>
+  )
+}
+
+export const DropZoneExample = () => {
+  const { files, addFiles, removeFile } = useUniqueFiles()
+  const labelId = React.useId()
+  const descriptionId = React.useId()
+
   const handleDrop = async (e: DropEvent) => {
     const fileItems = e.items.filter(isFileDropItem)
     const droppedFiles = await Promise.all(
       fileItems.map(item => item.getFile()),
     )
-    setUniqueFiles(droppedFiles)
+    addFiles(droppedFiles)
   }
 
-  const handleSelect = (e: FileList | null) => {
-    const selectedFiles = e ? Array.from(e) : []
-    setUniqueFiles(selectedFiles)
-  }
-
-  const handleDelete = (name: string) => {
-    setFiles(prev => prev.filter(f => f.name !== name))
+  const handleSelect = (fileList: FileList | null) => {
+    if (fileList) addFiles(Array.from(fileList))
   }
 
   return (
-    <>
-      <DropZone
-        onDrop={handleDrop}
-        aria-label='Dra och släpp filer här'
-      >
-        <Text slot='label'>Dra och släpp filer här</Text>
-        <FileTrigger
-          allowsMultiple
-          onSelect={handleSelect}
+    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
+      <Text id={descriptionId}>
+        Du kan välja flera om du har många favoritfrukter
+      </Text>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <DropZone
+          onDrop={handleDrop}
+          aria-label='Välj filer eller dra och släpp filer här'
         >
-          <Button variant='secondary'>
-            <Upload
-              aria-hidden
-              size={20}
-            />
-            Välj fil
-          </Button>
-        </FileTrigger>
-      </DropZone>
-      {files.length > 0 && (
-        <FileList style={{ marginTop: '1rem' }}>
-          {files.map(file => (
-            <FileListItem
-              key={file.name}
-              fileName={file.name}
-              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-              onDelete={() => handleDelete(file.name)}
-            />
-          ))}
-        </FileList>
-      )}
-    </>
+          <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+          <FileTrigger
+            allowsMultiple
+            onSelect={handleSelect}
+          >
+            <Button
+              variant='secondary'
+              icon={Upload}
+              aria-describedby={`${labelId} ${descriptionId}`}
+            >
+              Välj fil(er)
+            </Button>
+          </FileTrigger>
+        </DropZone>
+        <UploadedFiles
+          files={files}
+          onDelete={removeFile}
+        />
+      </div>
+    </div>
   )
 }
 

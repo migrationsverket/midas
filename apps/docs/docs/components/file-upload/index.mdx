@@ -1,0 +1,177 @@
+---
+title: Filuppladdning
+description: Filuppladdning med FileTrigger, DropZone och FileList.
+---
+
+import {
+  FileListExample,
+  DropZoneExample,
+} from '@site/src/components/examples/file-upload/FileUploadExamples'
+
+Filuppladdning är ingen egen komponent i Midas utan den skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), [DropZone](/components/file-upload/dropzone) och [FileList](/components/file-upload/file-list). Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+
+## Varianter
+
+### Standard
+
+Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. FileTrigger ska vara en sekundärknapp.
+
+```tsx
+import {
+  Button,
+  FileList,
+  FileListItem,
+  FileTrigger,
+  Label,
+  Text,
+} from '@midas-ds/components'
+import { Upload } from 'lucide-react'
+import React from 'react'
+
+export const FileListExample = () => {
+  const [files, setFiles] = React.useState<File[]>([])
+  const labelId = React.useId()
+  const descriptionId = React.useId()
+
+  const handleSelect = (fileList: FileList | null) => {
+    const selected = fileList ? Array.from(fileList) : []
+    setFiles(prev => {
+      const existingNames = new Set(prev.map(f => f.name))
+      return [...prev, ...selected.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
+      <Text id={descriptionId}>
+        Du kan välja flera om du har många favoritfrukter
+      </Text>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <FileTrigger
+          allowsMultiple
+          onSelect={handleSelect}
+        >
+          <Button
+            variant='secondary'
+            icon={Upload}
+            aria-describedby={`${labelId} ${descriptionId}`}
+          >
+            Välj fil(er)
+          </Button>
+        </FileTrigger>
+        {files.length > 0 && (
+          <FileList aria-label='Valda filer'>
+            {files.map(file => (
+              <FileListItem
+                key={file.name}
+                fileName={file.name}
+                fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+                onDelete={() => handleDelete(file.name)}
+              />
+            ))}
+          </FileList>
+        )}
+      </div>
+    </div>
+  )
+}
+```
+
+<div className='card'>
+  <FileListExample />
+</div>
+
+### Med drag & drop
+
+Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
+
+```tsx
+import {
+  Button,
+  DropZone,
+  FileList,
+  FileListItem,
+  FileTrigger,
+  Label,
+  Text,
+} from '@midas-ds/components'
+import { Upload } from 'lucide-react'
+import React from 'react'
+import { DropEvent, isFileDropItem } from 'react-aria'
+
+export const DropZoneExample = () => {
+  const [files, setFiles] = React.useState<File[]>([])
+  const labelId = React.useId()
+  const descriptionId = React.useId()
+
+  const addFiles = (newFiles: File[]) => {
+    setFiles(prev => {
+      const existingNames = new Set(prev.map(f => f.name))
+      return [...prev, ...newFiles.filter(f => !existingNames.has(f.name))]
+    })
+  }
+
+  const handleDrop = async (e: DropEvent) => {
+    const fileItems = e.items.filter(isFileDropItem)
+    addFiles(await Promise.all(fileItems.map(item => item.getFile())))
+  }
+
+  const handleSelect = (fileList: FileList | null) => {
+    if (fileList) addFiles(Array.from(fileList))
+  }
+
+  const handleDelete = (name: string) => {
+    setFiles(prev => prev.filter(f => f.name !== name))
+  }
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
+      <Text id={descriptionId}>
+        Du kan välja flera om du har många favoritfrukter
+      </Text>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <DropZone
+          onDrop={handleDrop}
+          aria-label='Välj filer eller dra och släpp filer här'
+        >
+          <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+          <FileTrigger
+            allowsMultiple
+            onSelect={handleSelect}
+          >
+            <Button
+              variant='secondary'
+              icon={Upload}
+              aria-describedby={`${labelId} ${descriptionId}`}
+            >
+              Välj fil(er)
+            </Button>
+          </FileTrigger>
+        </DropZone>
+        {files.length > 0 && (
+          <FileList aria-label='Valda filer'>
+            {files.map(file => (
+              <FileListItem
+                key={file.name}
+                fileName={file.name}
+                fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+                onDelete={() => handleDelete(file.name)}
+              />
+            ))}
+          </FileList>
+        )}
+      </div>
+    </div>
+  )
+}
+```
+
+<div className='card'>
+  <DropZoneExample />
+</div>
