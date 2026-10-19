@@ -1,3 +1,17 @@
+## 17.32.1 (2026-10-19)
+
+### 🩹 Fixes
+
+- **components,tabs:** remove bold selection indicator ([f74514719bb](https://github.com/migrationsverket/midas/commit/f74514719bb))
+
+### 🏭 Refactoring
+
+- **components,tabs:** remove React.FC and destructure react imports ([68728c12952](https://github.com/migrationsverket/midas/commit/68728c12952))
+
+### 📖 Documentation changes
+
+- **components,badge:** use the icon button variant in badge examples ([0da87b2a175](https://github.com/migrationsverket/midas/commit/0da87b2a175))
+
 ## 17.32.0 (2026-10-14)
 
 ### 🚀 Features
