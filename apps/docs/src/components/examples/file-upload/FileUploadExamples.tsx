@@ -65,10 +65,7 @@ export const FileListExample = () => {
         allowsMultiple
         onSelect={handleSelect}
       >
-        <Button
-          variant='secondary'
-          icon={Upload}
-        >
+        <Button icon={Upload}>
           Välj fil(er)
         </Button>
       </FileTrigger>
@@ -109,10 +106,7 @@ export const DropZoneExample = () => {
           allowsMultiple
           onSelect={handleSelect}
         >
-          <Button
-            variant='secondary'
-            icon={Upload}
-          >
+          <Button icon={Upload}>
             Välj fil(er)
           </Button>
         </FileTrigger>
