@@ -155,7 +155,7 @@ export const ValidatedDropZoneExample = () => {
           acceptedFileTypes={ACCEPTED_FILE_TYPES}
           onSelect={handleSelect}
         >
-          <Button variant='secondary'>
+          <Button>
             <Upload
               aria-hidden
               size={20}
