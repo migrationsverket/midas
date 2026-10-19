@@ -1,14 +1,15 @@
 ---
 title: Filuppladdning
-description: Filuppladdning med FileTrigger, DropZone och FileList.
+description: Filuppladdning med FileField, FileTrigger, DropZone och FileList.
 ---
 
-import {
-  FileListExample,
-  DropZoneExample,
-} from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { PropTable } from '@site/src/components/PropsTable'
+import FileFieldApi from '@midas-ds/api/components/FileField.json'
 
-Filuppladdning är ingen egen komponent i Midas utan den skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), [DropZone](/components/file-upload/dropzone) och [FileList](/components/file-upload/file-list). Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+Filuppladdning skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), [DropZone](/components/file-upload/dropzone) och [FileList](/components/file-upload/file-list) inuti en `FileField`. Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+
+`FileField` ger mönstret en etikett, en beskrivning och ett felmeddelande. En `FileTrigger` inuti beskrivs automatiskt av dessa via `aria-describedby`, så du behöver inte koppla ihop dem själv. De valda filerna hanterar du själv i ditt eget state.
 
 ## Varianter
 
@@ -17,21 +18,12 @@ Filuppladdning är ingen egen komponent i Midas utan den skapas genom att kombin
 Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. FileTrigger ska vara en sekundärknapp.
 
 ```tsx
-import {
-  Button,
-  FileList,
-  FileListItem,
-  FileTrigger,
-  Label,
-  Text,
-} from '@midas-ds/components'
+import { Button, FileField, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
 
 export const FileListExample = () => {
   const [files, setFiles] = React.useState<File[]>([])
-  const labelId = React.useId()
-  const descriptionId = React.useId()
 
   const handleSelect = (fileList: FileList | null) => {
     const selected = fileList ? Array.from(fileList) : []
@@ -46,38 +38,29 @@ export const FileListExample = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
-      <Text id={descriptionId}>
-        Du kan välja flera om du har många favoritfrukter
-      </Text>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <FileTrigger
-          allowsMultiple
-          onSelect={handleSelect}
-        >
-          <Button
-            variant='secondary'
-            icon={Upload}
-            aria-describedby={`${labelId} ${descriptionId}`}
-          >
-            Välj fil(er)
-          </Button>
-        </FileTrigger>
-        {files.length > 0 && (
-          <FileList aria-label='Valda filer'>
-            {files.map(file => (
-              <FileListItem
-                key={file.name}
-                fileName={file.name}
-                fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-                onDelete={() => handleDelete(file.name)}
-              />
-            ))}
-          </FileList>
-        )}
-      </div>
-    </div>
+    <FileField
+      label='Ladda upp en bild på din favoritfrukt'
+      description='Du kan välja flera om du har många favoritfrukter'
+    >
+      <FileTrigger
+        allowsMultiple
+        onSelect={handleSelect}
+      >
+        <Button icon={Upload}>Välj fil(er)</Button>
+      </FileTrigger>
+      {files.length > 0 && (
+        <FileList aria-label='Valda filer'>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
+    </FileField>
   )
 }
 ```
@@ -91,23 +74,13 @@ export const FileListExample = () => {
 Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
 
 ```tsx
-import {
-  Button,
-  DropZone,
-  FileList,
-  FileListItem,
-  FileTrigger,
-  Label,
-  Text,
-} from '@midas-ds/components'
+import { Button, DropZone, FileField, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
 import { DropEvent, isFileDropItem } from 'react-aria'
 
 export const DropZoneExample = () => {
   const [files, setFiles] = React.useState<File[]>([])
-  const labelId = React.useId()
-  const descriptionId = React.useId()
 
   const addFiles = (newFiles: File[]) => {
     setFiles(prev => {
@@ -130,44 +103,35 @@ export const DropZoneExample = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
-      <Text id={descriptionId}>
-        Du kan välja flera om du har många favoritfrukter
-      </Text>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <DropZone
-          onDrop={handleDrop}
-          aria-label='Välj filer eller dra och släpp filer här'
+    <FileField
+      label='Ladda upp en bild på din favoritfrukt'
+      description='Du kan välja flera om du har många favoritfrukter'
+    >
+      <DropZone
+        onDrop={handleDrop}
+        aria-label='Välj filer eller dra och släpp filer här'
+      >
+        <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+        <FileTrigger
+          allowsMultiple
+          onSelect={handleSelect}
         >
-          <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-          <FileTrigger
-            allowsMultiple
-            onSelect={handleSelect}
-          >
-            <Button
-              variant='secondary'
-              icon={Upload}
-              aria-describedby={`${labelId} ${descriptionId}`}
-            >
-              Välj fil(er)
-            </Button>
-          </FileTrigger>
-        </DropZone>
-        {files.length > 0 && (
-          <FileList aria-label='Valda filer'>
-            {files.map(file => (
-              <FileListItem
-                key={file.name}
-                fileName={file.name}
-                fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-                onDelete={() => handleDelete(file.name)}
-              />
-            ))}
-          </FileList>
-        )}
-      </div>
-    </div>
+          <Button icon={Upload}>Välj fil(er)</Button>
+        </FileTrigger>
+      </DropZone>
+      {files.length > 0 && (
+        <FileList aria-label='Valda filer'>
+          {files.map(file => (
+            <FileListItem
+              key={file.name}
+              fileName={file.name}
+              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
+              onDelete={() => handleDelete(file.name)}
+            />
+          ))}
+        </FileList>
+      )}
+    </FileField>
   )
 }
 ```
@@ -175,3 +139,32 @@ export const DropZoneExample = () => {
 <div className='card'>
   <DropZoneExample />
 </div>
+
+### Felmeddelande
+
+Sätt `isInvalid` och `errorMessage` på `FileField` för att visa ett fel, till exempel om användaren väljer fel filtyp. Felmeddelandet visas alltid under kontrollerna och läggs automatiskt till i knappens beskrivning. En `DropZone` inuti markeras också som ogiltig.
+
+```tsx
+<FileField
+  label='Ladda upp en bild på din favoritfrukt'
+  isInvalid={isInvalid}
+  errorMessage='Endast .jpg- och .png-filer tillåts'
+>
+  <DropZone
+    onDrop={handleDrop}
+    aria-label='Välj filer eller dra och släpp filer här'
+  >
+    ...
+  </DropZone>
+</FileField>
+```
+
+:::note
+Lägg felmeddelandet på `FileField`, inte som en egen `FieldError` inuti `DropZone`. Annars visas det två gånger.
+:::
+
+## API
+
+### FileField
+
+<PropTable doc={FileFieldApi} />

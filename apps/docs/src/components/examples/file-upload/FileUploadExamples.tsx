@@ -2,10 +2,10 @@ import {
   Button,
   DropZone,
   FieldError,
+  FileField,
   FileList,
   FileListItem,
   FileTrigger,
-  Label,
   Text,
 } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
@@ -51,45 +51,37 @@ const UploadedFiles = ({
 
 export const FileListExample = () => {
   const { files, addFiles, removeFile } = useUniqueFiles()
-  const labelId = React.useId()
-  const descriptionId = React.useId()
 
   const handleSelect = (fileList: FileList | null) => {
     if (fileList) addFiles(Array.from(fileList))
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
-      <Text id={descriptionId}>
-        Du kan välja flera om du har många favoritfrukter
-      </Text>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <FileTrigger
-          allowsMultiple
-          onSelect={handleSelect}
+    <FileField
+      label='Ladda upp en bild på din favoritfrukt'
+      description='Du kan välja flera om du har många favoritfrukter'
+    >
+      <FileTrigger
+        allowsMultiple
+        onSelect={handleSelect}
+      >
+        <Button
+          variant='secondary'
+          icon={Upload}
         >
-          <Button
-            variant='secondary'
-            icon={Upload}
-            aria-describedby={`${labelId} ${descriptionId}`}
-          >
-            Välj fil(er)
-          </Button>
-        </FileTrigger>
-        <UploadedFiles
-          files={files}
-          onDelete={removeFile}
-        />
-      </div>
-    </div>
+          Välj fil(er)
+        </Button>
+      </FileTrigger>
+      <UploadedFiles
+        files={files}
+        onDelete={removeFile}
+      />
+    </FileField>
   )
 }
 
 export const DropZoneExample = () => {
   const { files, addFiles, removeFile } = useUniqueFiles()
-  const labelId = React.useId()
-  const descriptionId = React.useId()
 
   const handleDrop = async (e: DropEvent) => {
     const fileItems = e.items.filter(isFileDropItem)
@@ -104,36 +96,32 @@ export const DropZoneExample = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-      <Label id={labelId}>Ladda upp en bild på din favoritfrukt</Label>
-      <Text id={descriptionId}>
-        Du kan välja flera om du har många favoritfrukter
-      </Text>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <DropZone
-          onDrop={handleDrop}
-          aria-label='Välj filer eller dra och släpp filer här'
+    <FileField
+      label='Ladda upp en bild på din favoritfrukt'
+      description='Du kan välja flera om du har många favoritfrukter'
+    >
+      <DropZone
+        onDrop={handleDrop}
+        aria-label='Välj filer eller dra och släpp filer här'
+      >
+        <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+        <FileTrigger
+          allowsMultiple
+          onSelect={handleSelect}
         >
-          <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-          <FileTrigger
-            allowsMultiple
-            onSelect={handleSelect}
+          <Button
+            variant='secondary'
+            icon={Upload}
           >
-            <Button
-              variant='secondary'
-              icon={Upload}
-              aria-describedby={`${labelId} ${descriptionId}`}
-            >
-              Välj fil(er)
-            </Button>
-          </FileTrigger>
-        </DropZone>
-        <UploadedFiles
-          files={files}
-          onDelete={removeFile}
-        />
-      </div>
-    </div>
+            Välj fil(er)
+          </Button>
+        </FileTrigger>
+      </DropZone>
+      <UploadedFiles
+        files={files}
+        onDelete={removeFile}
+      />
+    </FileField>
   )
 }
 
