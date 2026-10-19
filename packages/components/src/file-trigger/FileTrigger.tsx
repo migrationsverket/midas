@@ -5,6 +5,7 @@ import {
   ButtonContext,
   type FileTriggerProps,
 } from 'react-aria-components'
+import type { ButtonProps } from '../button'
 import { useFileFieldContext } from '../file-field/FileFieldContext'
 
 export const FileTrigger = ({ children, ...props }: FileTriggerProps) => {
@@ -20,15 +21,9 @@ export const FileTrigger = ({ children, ...props }: FileTriggerProps) => {
 
   return (
     <AriaFileTrigger {...props}>
-      {fileField ? (
-        // Scoped to the trigger's own button, so other buttons inside a
-        // FileField (e.g. FileList's delete buttons) aren't described too
-        <ButtonContext.Provider value={fileField}>
-          {children}
-        </ButtonContext.Provider>
-      ) : (
-        children
-      )}
+      <ButtonContext.Provider value={buttonProps}>
+        {children}
+      </ButtonContext.Provider>
     </AriaFileTrigger>
   )
 }
