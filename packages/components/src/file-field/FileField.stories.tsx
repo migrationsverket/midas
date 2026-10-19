@@ -73,12 +73,7 @@ const DefaultContainer = (args: FileFieldProps) => {
         onSelect={fileList => fileList && addFiles(Array.from(fileList))}
         data-testid='file-trigger'
       >
-        <Button
-          variant='secondary'
-          icon={Upload}
-        >
-          Välj fil(er)
-        </Button>
+        <Button icon={Upload}>Välj fil(er)</Button>
       </FileTrigger>
       <UploadedFiles
         files={files}
@@ -104,12 +99,7 @@ const DropZoneContainer = (args: FileFieldProps) => {
           allowsMultiple
           onSelect={fileList => fileList && addFiles(Array.from(fileList))}
         >
-          <Button
-            variant='secondary'
-            icon={Upload}
-          >
-            Välj fil(er)
-          </Button>
+          <Button icon={Upload}>Välj fil(er)</Button>
         </FileTrigger>
       </DropZone>
       <UploadedFiles
