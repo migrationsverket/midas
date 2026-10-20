@@ -17,7 +17,7 @@ describe('LayoutContent', () => {
     const el = container.querySelector(`.${styles.layoutContent}`) as HTMLElement
     const flexDirection = getComputedStyle(el).flexDirection
 
-    if (task.file.projectName === 'mobile') {
+    if (task.file.projectName.startsWith('mobile')) {
       expect(flexDirection).toBe('column')
     } else {
       expect(flexDirection).toBe('row')
