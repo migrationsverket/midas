@@ -107,6 +107,7 @@
     "mockdate": "^3.0.5",
     "nx": "23.3.0",
     "nx-stylelint": "^19.0.0",
+    "patch-package": "^8.0.1",
     "playwright": "^1.60.0",
     "prettier": "^3.8.1",
     "prism-react-renderer": "^2.3.1",
