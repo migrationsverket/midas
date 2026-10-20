@@ -16,6 +16,8 @@ interface Target {
   version: string
   /** A package to install before running, for Edge */
   deb?: string
+  /** Run one test file at a time, see `pr-checks.yml` */
+  serial?: boolean
 }
 
 const getResponse = async (url: string) => {
@@ -76,7 +78,11 @@ const firefox = async (): Promise<Target[]> => {
   return [
     { slot: 'Firefox latest', version: latest },
     { slot: 'Firefox previous', version: previous },
-  ].map(target => ({ ...target, profile: `firefox@stable_${target.version}` }))
+  ].map(target => ({
+    ...target,
+    profile: `firefox@stable_${target.version}`,
+    serial: true,
+  }))
 }
 
 // Microsoft's apt repository keeps the older builds, take the last one of

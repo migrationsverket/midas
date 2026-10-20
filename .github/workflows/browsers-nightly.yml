@@ -85,10 +85,11 @@ jobs:
         env:
           MIDAS_BROWSERS: ${{ matrix.profile }}
 
-      # `stable` and the milestones move, so the Nx cache is skipped
+      # `stable` and the milestones move, so the Nx cache is skipped.
+      # `serial` runs one test file at a time, as in `pr-checks.yml`
       - name: Test packages
         id: test
-        run: npx nx run-many -t test --skip-nx-cache
+        run: npx nx run-many -t test --skip-nx-cache ${{ matrix.serial && '--fileParallelism=false' || '' }}
         env:
           MIDAS_BROWSERS: ${{ matrix.profile }}
 
