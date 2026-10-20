@@ -29,14 +29,18 @@ describe('Given a DropZone composed with a FileTrigger', async () => {
     },
   )
 
-  it('should be possible to upload files using drag and drop', async () => {
-    await userEvent.dragAndDrop(
-      page.getByTestId('image'),
-      page.getByTestId('drop-zone'),
-    )
+  // Firefox's WebDriver starts the drag, but never drops
+  it.skipIf(server.provider === 'webdriverio' && server.browser === 'firefox')(
+    'should be possible to upload files using drag and drop',
+    async () => {
+      await userEvent.dragAndDrop(
+        page.getByTestId('image'),
+        page.getByTestId('drop-zone'),
+      )
 
-    expect(handleSelect).toHaveBeenCalledTimes(1)
-  })
+      expect(handleSelect).toHaveBeenCalledTimes(1)
+    },
+  )
 })
 
 describe('Given an invalid DropZone', async () => {
