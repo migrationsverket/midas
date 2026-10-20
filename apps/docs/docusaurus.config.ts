@@ -125,7 +125,11 @@ const config: Config = {
         },
         pages: {},
         theme: {
-          customCss: ['./src/css/custom.css', './src/css/highlight.css'],
+          customCss: [
+            './src/css/custom.css',
+            './src/css/highlight.css',
+            './src/css/examples.css',
+          ],
         },
         blog: {
           path: 'blog/release-notes',
