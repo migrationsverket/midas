@@ -79,8 +79,13 @@ jobs:
       - name: Generate theme tokens
         run: npx nx run theme:style-dictionary-generate
 
-      # WebdriverIO downloads the browser and its driver. `stable` and the
-      # milestones move, so the Nx cache is skipped
+      # Once, as the packages' test runs would race to download them
+      - name: Download the browser and its driver
+        run: node tools/test-browsers/src/install.ts
+        env:
+          MIDAS_BROWSERS: ${{ matrix.profile }}
+
+      # `stable` and the milestones move, so the Nx cache is skipped
       - name: Test packages
         id: test
         run: npx nx run-many -t test --skip-nx-cache

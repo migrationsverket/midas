@@ -94,6 +94,7 @@
     "@vitest/browser-webdriverio": "^4.1.11",
     "@vitest/coverage-v8": "^4.1.9",
     "@vitest/ui": "^4.1.9",
+    "@wdio/utils": "^9.32.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.0",

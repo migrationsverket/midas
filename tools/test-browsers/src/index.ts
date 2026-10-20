@@ -74,6 +74,18 @@ export const selectedProfiles = (
   return names
 }
 
+/**
+ * WebdriverIO capabilities for the `<browser>@<version>` profiles in
+ * `MIDAS_BROWSERS`, for downloading them up front, see `install.ts`
+ */
+export const realBrowserCapabilities = (profileNames = selectedProfiles()) =>
+  profileNames.flatMap(name => {
+    const real = parseRealProfile(name)
+    return real
+      ? [{ browserName: real.browser, browserVersion: real.version }]
+      : []
+  })
+
 const toInstance = (
   profileName: string,
   variant: Partial<BrowserInstanceOption>,
