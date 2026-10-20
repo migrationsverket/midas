@@ -104,6 +104,9 @@ const toInstance = (
   if (real) {
     return {
       testTimeout: slowTestTimeout,
+      // On CI runners, Chrome and Edge now and then miss a hover from
+      // WebDriver, failing a different test each run
+      retry: 2,
       ...variant,
       browser: real.browser,
       name,

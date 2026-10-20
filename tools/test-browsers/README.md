@@ -54,6 +54,8 @@ Firefox's `latest` is Nightly, so use `stable` or `stable_<version>`. These can'
 
 In Edge, run `npx patch-package` first: Vitest's `toHaveStyle` parses the expected styles in a separate document for every browser but Chrome, Chromium and WebKit, which leaves them empty in Edge, so every style assertion fails. The patch in `patches/` adds Edge to that list ([vitest-dev/vitest#11668](https://github.com/vitest-dev/vitest/issues/11668)), and only the nightly workflow applies it.
 
+The `<browser>@<version>` profiles retry a failing test twice, as Chrome and Edge now and then miss a hover from WebDriver on CI runners.
+
 Known differences: under WebdriverIO, Vitest computes accessible names for `getByRole` itself, and they can differ from Playwright's.
 
 ## In a Vitest config
