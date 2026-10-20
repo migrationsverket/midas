@@ -39,6 +39,13 @@ MIDAS_BROWSERS=edge@stable npx nx run components:test           # the installed 
 MIDAS_BROWSERS=edge@154.0.4258.62 npx nx run components:test    # must match the installed Edge
 ```
 
+When testing several packages at once, download the browser and driver first, as the packages' test runs otherwise race to download them into the same directory:
+
+```sh
+MIDAS_BROWSERS=chrome@stable node tools/test-browsers/src/install.ts
+MIDAS_BROWSERS=chrome@stable npx nx run-many -t test
+```
+
 Firefox's `latest` is Nightly, so use `stable` or `stable_<version>`. These can't be mixed with the Playwright profiles in one run.
 
 `src/resolve-versions.ts` prints the profiles for the two latest versions of each browser, which the nightly workflow (`browsers-nightly.yml`) runs. For Edge it also gives the build's `.deb` from Microsoft's apt repository, which keeps the older versions, and the workflow installs it first. A failing browser opens an issue, which is closed when it passes again.
