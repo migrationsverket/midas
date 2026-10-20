@@ -66,7 +66,8 @@ jobs:
 
       # Vitest's toHaveStyle only parses the expected styles in Chrome's own
       # document, not Edge's, so every expected style comes out empty there.
-      # A failing patch means Vitest changed: drop it if fixed, else update it
+      # (vitest-dev/vitest#11668). A failing patch means Vitest changed: drop
+      # it if fixed, else update it
       - name: Patch Vitest for Edge
         run: npx patch-package
 
