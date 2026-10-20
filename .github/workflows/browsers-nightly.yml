@@ -75,6 +75,12 @@ jobs:
           sudo apt-get install -y --allow-downgrades "$RUNNER_TEMP/edge.deb"
           microsoft-edge --version
 
+      # Ubuntu 24.04 lets only programs with an AppArmor profile create the
+      # user namespaces the Chrome and Edge sandbox needs, and the
+      # downloaded Chrome for Testing has none, so the browser exits at start
+      - name: Allow the browser sandbox
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
       # The tests import the generated design tokens
       - name: Generate theme tokens
         run: npx nx run theme:style-dictionary-generate
