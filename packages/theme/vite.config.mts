@@ -1,6 +1,7 @@
 import dts from 'unplugin-dts/vite'
 import type { UserConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { buildTarget } from '@midas-ds/browser-targets'
 
 export default {
   root: import.meta.dirname,
@@ -32,6 +33,8 @@ export default {
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
+    // The supported browsers, see .browserslistrc
+    target: buildTarget(),
     outDir: '../../dist/packages/theme',
     cssCodeSplit: true,
     emptyOutDir: true,

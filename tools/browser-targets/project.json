@@ -1,0 +1,15 @@
+{
+  "name": "browser-targets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/browser-targets/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "typecheck": {
+      "command": "tsc -p tools/browser-targets/tsconfig.lib.json"
+    },
+    "print": {
+      "command": "node tools/browser-targets/src/print.ts"
+    }
+  }
+}

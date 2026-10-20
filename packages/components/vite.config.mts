@@ -7,6 +7,7 @@ import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
 import { fileURLToPath } from 'node:url'
 import preserveUseClientDirective from 'rollup-plugin-preserve-use-client'
+import { buildTarget } from '@midas-ds/browser-targets'
 
 const root = import.meta.dirname
 const src = resolve(root, 'src')
@@ -43,6 +44,8 @@ export default defineConfig({
   ],
 
   build: {
+    // The supported browsers, see .browserslistrc
+    target: buildTarget(),
     outDir: '../../dist/packages/components',
     emptyOutDir: true,
     reportCompressedSize: true,

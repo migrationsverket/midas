@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import * as path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { buildTarget } from '@midas-ds/browser-targets'
 
 const root = import.meta.dirname
 
@@ -19,6 +20,8 @@ export default defineConfig(() => ({
     }),
   ],
   build: {
+    // The supported browsers, see .browserslistrc
+    target: buildTarget(),
     outDir: '../../dist/packages/select-styles',
     emptyOutDir: true,
     rolldownOptions: {

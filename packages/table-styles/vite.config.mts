@@ -2,6 +2,7 @@ import type { UserConfig } from 'vite'
 import dts from 'unplugin-dts/vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { buildTarget } from '@midas-ds/browser-targets'
 
 export default {
   root: import.meta.dirname,
@@ -29,6 +30,8 @@ export default {
     }),
   ],
   build: {
+    // The supported browsers, see .browserslistrc
+    target: buildTarget(),
     outDir: '../../dist/packages/table-styles',
     emptyOutDir: true,
     cssCodeSplit: true,
