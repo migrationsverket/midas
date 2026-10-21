@@ -3,6 +3,8 @@ import { composeStories } from '@storybook/react-vite'
 import * as stories from './Grid.stories'
 import { render } from '../../test-utils'
 import styles from './Grid.module.css'
+import { Grid } from './Grid'
+import { GridItem } from './GridItem'
 
 const { Primary } = composeStories(stories)
 
@@ -23,5 +25,30 @@ describe('given a Grid without margins', async () => {
     await expect
       .element(container.querySelector(`.${styles.container}`) as HTMLElement)
       .toHaveClass(styles.container, styles.removeMargins)
+  })
+})
+
+describe('given GridItems with padding', async () => {
+  it('should fit the columns of a row on one line', async () => {
+    const { getByText } = await render(
+      <Grid>
+        <GridItem
+          size={8}
+          style={{ padding: '1rem' }}
+        >
+          Eight
+        </GridItem>
+        <GridItem
+          size={4}
+          style={{ padding: '1rem' }}
+        >
+          Four
+        </GridItem>
+      </Grid>,
+    )
+
+    const eight = getByText('Eight').element().getBoundingClientRect()
+    const four = getByText('Four').element().getBoundingClientRect()
+    expect(four.top).toBe(eight.top)
   })
 })

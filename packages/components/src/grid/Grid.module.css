@@ -32,6 +32,9 @@
   display: flex;
   flex-flow: column nowrap;
   flex: 0 0 auto;
+
+  /* The column widths include the item's padding and border */
+  box-sizing: border-box;
   width: calc(
     (100% / var(--columns)) - var(--gutter) + (var(--gutter) / var(--columns))
   );
