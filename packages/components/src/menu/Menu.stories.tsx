@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components'
 import { MenuIcon } from 'lucide-react'
 import React from 'react'
-import { Menu } from './Menu'
+import { Menu, type MenuProps } from './Menu'
 import { MenuItem } from './MenuItem'
 import { Button } from '../button'
 import { MenuPopover } from './MenuPopover'
@@ -26,26 +26,44 @@ interface Item {
 
 type Story = StoryObj<typeof Menu<Item>>
 
+const renderMenu = <T extends object>(
+  args: MenuProps<T>,
+  defaultOpen = false,
+) => (
+  <MenuTrigger defaultOpen={defaultOpen}>
+    <Button
+      aria-label='Menu'
+      variant='icon'
+      size={args.size}
+    >
+      <MenuIcon size={20} />
+    </Button>
+    <MenuPopover>
+      <Menu {...args} />
+    </MenuPopover>
+  </MenuTrigger>
+)
+
+/**
+ * Snapshot-only copy of a story with the menu open, since the visual tests
+ * don't click the trigger. Hidden from the sidebar and docs. The screenshot is
+ * cropped to the story's own element, so it's made tall enough for the menu
+ */
+const open = (story: Story): Story => ({
+  ...story,
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <div style={{ minHeight: '25rem' }}>{renderMenu(args, true)}</div>
+  ),
+})
+
 export default {
   title: 'Components/Menu',
   component: Menu,
   subcomponents: {
     MenuItem,
   },
-  render: args => (
-    <MenuTrigger>
-      <Button
-        aria-label='Menu'
-        variant='icon'
-        size={args.size}
-      >
-        <MenuIcon size={20} />
-      </Button>
-      <MenuPopover>
-        <Menu {...args} />
-      </MenuPopover>
-    </MenuTrigger>
-  ),
+  render: args => renderMenu(args),
   args: {
     children: item => <MenuItem {...item}>{(item as Item).name}</MenuItem>,
     items: [
@@ -272,3 +290,17 @@ export const SubMenus: Story = {
     },
   },
 }
+
+export const PrimaryOpen = open(Primary)
+
+export const SectionsOpen = open(Sections)
+
+export const SeparatorsOpen = open(Separators)
+
+export const TextSlotsOpen = open(TextSlots)
+
+export const MultiSelectWithDescriptionsOpen = open(MultiSelectWithDescriptions)
+
+export const DisabledItemsOpen = open(DisabledItems)
+
+export const SubMenusOpen = open(SubMenus)

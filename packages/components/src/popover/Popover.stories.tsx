@@ -19,6 +19,40 @@ export default {
   },
 } satisfies Meta<typeof Popover>
 
+/**
+ * Snapshot-only copy of a story with the popover open, since the visual tests
+ * don't click the trigger. Hidden from the sidebar and docs. The screenshot is
+ * cropped to the story's own element, so it's padded to fit the popover
+ */
+const open = (story: Story): Story => ({
+  ...story,
+  tags: ['!dev', '!autodocs'],
+  decorators: [
+    Story => (
+      <div
+        style={{
+          padding: '8rem 0',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
+  render: args => (
+    <DialogTrigger defaultOpen>
+      <Button
+        variant='icon'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      <Popover {...args} />
+    </DialogTrigger>
+  ),
+})
+
 export const Primary: Story = {
   args: {
     children: (
@@ -67,3 +101,7 @@ export const Placement: Story = {
     </DialogTrigger>
   ),
 }
+
+export const PrimaryOpen = open(Primary)
+
+export const PlacementOpen = open(Placement)

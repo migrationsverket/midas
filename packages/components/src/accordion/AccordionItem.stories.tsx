@@ -15,6 +15,16 @@ export default {
   },
 } satisfies Meta<typeof AccordionItem>
 
+/**
+ * Snapshot-only copy of a story with the item expanded, since the visual
+ * tests don't click the trigger. Hidden from the sidebar and docs
+ */
+const expanded = (story: Story): Story => ({
+  ...story,
+  tags: ['!dev', '!autodocs'],
+  args: { ...story.args, defaultExpanded: true },
+})
+
 export const Default: Story = {
   args: {
     type: undefined,
@@ -99,3 +109,17 @@ export const ContentBackgroundInherit: Story = {
     defaultExpanded: true,
   },
 }
+
+export const DefaultExpanded = expanded(Default)
+
+export const ContainedExpanded = expanded(Contained)
+
+export const SuccessExpanded = expanded(Success)
+
+export const InfoExpanded = expanded(Info)
+
+export const WarningExpanded = expanded(Warning)
+
+export const ImportantExpanded = expanded(Important)
+
+export const TypeWithoutContainedExpanded = expanded(TypeWithoutContained)

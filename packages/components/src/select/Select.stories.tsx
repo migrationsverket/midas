@@ -33,6 +33,26 @@ export default {
   },
 } satisfies Meta<typeof Select<Item>>
 
+/**
+ * Snapshot-only copy of a story with the list open, since the visual tests
+ * don't click the trigger. Hidden from the sidebar and docs. The screenshot is
+ * cropped to the story's own element, so it's made tall enough for the list
+ */
+const open = <T extends object, M extends SelectionMode>(
+  story: Story<T, M>,
+): Story<T, M> => ({
+  ...story,
+  tags: ['!dev', '!autodocs'],
+  args: { ...story.args, defaultOpen: true },
+  decorators: [
+    Story => (
+      <div style={{ minHeight: '30rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
+})
+
 export const StaticItems: Story = {
   args: {
     label: 'label',
@@ -336,3 +356,19 @@ export const LongWords: Story = {
     ),
   },
 }
+
+export const PrimaryOpen = open(Primary)
+
+export const DefaultValueOpen = open(DefaultValue)
+
+export const DisabledOptionOpen = open(DisabledOption)
+
+export const SelectAllEnabledOpen = open(SelectAllEnabled)
+
+export const SelectAllEnabledWithPreselectedDisabledItemOpen = open(
+  SelectAllEnabledWithPreselectedDisabledItem,
+)
+
+export const StaticSectionsOpen = open(StaticSections)
+
+export const LongWordsOpen = open(LongWords)

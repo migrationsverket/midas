@@ -8,6 +8,8 @@ import {
   toastQueue,
 } from './Toast'
 import { Button } from '../button'
+import { useState } from 'react'
+import { ToastQueue, useToastQueue } from 'react-stately'
 
 type Story = StoryObj<typeof meta>
 
@@ -23,8 +25,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component:
-          `Toast visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser. Det finns två sätt att använda toast: **globalt** med \`toastQueue\` eller **lokalt** med \`ToastProvider\`.
+        component: `Toast visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser. Det finns två sätt att använda toast: **globalt** med \`toastQueue\` eller **lokalt** med \`ToastProvider\`.
 
 ### MidasToast
 
@@ -241,6 +242,33 @@ toastQueue.add(
           </Button>
         </div>
       </>
+    )
+  },
+}
+
+/**
+ * Snapshot-only: the variants with their toasts showing, since the visual
+ * tests don't press the buttons. Hidden from the sidebar and docs. Uses its
+ * own queue, so the toasts can't leak into other stories through the global
+ * one. The region is fixed below the header, and the screenshot is cropped to
+ * the story's own element, so it's made tall enough to include it
+ */
+export const VariantsOpen: Story = {
+  tags: ['!dev', '!autodocs'],
+  render: () => {
+    const [queue] = useState(() => {
+      const queue = new ToastQueue<MidasToast>({ maxVisibleToasts: 5 })
+      for (const type of ['success', 'info', 'important', 'warning'] as const) {
+        queue.add({ type, message: `Detta är en ${type}-toast` })
+      }
+      return queue
+    })
+    const state = useToastQueue(queue)
+
+    return (
+      <div style={{ height: '30rem' }}>
+        <ToastRegion state={state} />
+      </div>
     )
   },
 }

@@ -34,6 +34,31 @@ const meta: Meta<typeof DatePicker<CalendarDate>> = {
 export default meta
 type Story = StoryObj<typeof DatePicker<CalendarDate>>
 
+/**
+ * Snapshot-only copy of a story with the calendar open, since the visual tests
+ * don't click the trigger. Hidden from the sidebar and docs. The screenshot is
+ * cropped to the story's own element, so it's made tall enough for the
+ * calendar
+ */
+const open = (story: Story): Story => ({
+  ...story,
+  tags: ['!dev', '!autodocs'],
+  args: { ...story.args, defaultOpen: true },
+  parameters: {
+    // The open popover is an unnamed dialog (aria-dialog-name), and the
+    // calendar's <header> inside it is a nested banner landmark
+    // (landmark-banner-is-top-level)
+    a11y: { test: 'todo' },
+  },
+  decorators: [
+    Story => (
+      <div style={{ minHeight: '32rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
+})
+
 export const Primary: Story = {}
 
 export const WithTime: Story = {
@@ -133,3 +158,9 @@ export const WithHelpPopover: Story = {
     },
   },
 }
+
+export const PrimaryOpen = open(Primary)
+
+export const WithTimeOpen = open(WithTime)
+
+export const WithClearButtonOpen = open(WithClearButton)

@@ -20,6 +20,16 @@ export default {
   },
 } satisfies Meta<typeof Accordion>
 
+/**
+ * Snapshot-only copy of a story with an item expanded, since the visual tests
+ * don't click the trigger. Hidden from the sidebar and docs
+ */
+const expanded = (story: Story): Story => ({
+  ...story,
+  tags: ['!dev', '!autodocs'],
+  args: { ...story.args, defaultExpandedKeys: ['Två'] },
+})
+
 export const Default: Story = {
   args: {
     className: 'test',
@@ -116,6 +126,10 @@ export const DS1060: Story = {
     </Accordion>
   ),
 }
+
+export const ContainedExpanded = expanded(Contained)
+
+export const CustomTriggerElementsExpanded = expanded(CustomTriggerElements)
 
 const ExpandableStuff = () => {
   const [isVisible, setIsVisible] = React.useState(false)
