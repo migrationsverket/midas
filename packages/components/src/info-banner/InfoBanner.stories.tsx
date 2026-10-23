@@ -68,6 +68,8 @@ export const Dismissable: Story = {
 }
 
 export const Controlled: Story = {
+  // Same screenshot as Dismissable
+  tags: ['!snapshot'],
   args: {
     ...Dismissable.args,
   },

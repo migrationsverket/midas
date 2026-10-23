@@ -137,6 +137,8 @@ export const WithTags: Story<Item, 'multiple'> = {
 }
 
 export const SelectAllEnabled: Story<Item, 'multiple'> = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     selectionMode: 'multiple',
     isSelectableAll: true,
@@ -144,6 +146,8 @@ export const SelectAllEnabled: Story<Item, 'multiple'> = {
 }
 
 export const SelectAllEnabledWithSections: Story<Item, 'multiple'> = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     selectionMode: 'multiple',
     isSelectableAll: true,
@@ -202,6 +206,8 @@ export const DS872: Story = {
 }
 
 export const StaticSections: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     children: (
       <>
@@ -229,6 +235,8 @@ export const NotVirtualized: Story = {
 }
 
 export const DynamicSections: Story<Section> = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     ...Primary.args,
     items: optionsWithSections,

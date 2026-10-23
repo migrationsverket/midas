@@ -17,6 +17,8 @@ type Story = StoryObj<typeof ColorSchemeSwitch>
 export const Primary: Story = {}
 
 export const WithCallback: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   render: () => {
     const [last, setLast] = useState<ColorScheme | null>(null)
     return (

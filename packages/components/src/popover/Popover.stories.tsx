@@ -81,6 +81,8 @@ export const Primary: Story = {
 }
 
 export const Placement: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     placement: 'top',
     children: 'Spara',

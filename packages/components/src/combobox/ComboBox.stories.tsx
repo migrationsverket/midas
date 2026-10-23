@@ -126,6 +126,8 @@ export const Required: Story = {
 
 // The generic type is infered from the items prop in real life
 export const Sectioned: Story<Section> = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     placeholder: 'Välj eller sök frukt',
     label: 'Välj en frukt',
@@ -244,6 +246,8 @@ export const AsynchronousLoadingWithEmptyMessage: Story = {
 }
 
 export const InfiniteScroll: Story = {
+  // Same screenshot as AsynchronousLoadingWithEmptyMessage
+  tags: ['!snapshot'],
   args: {
     ...AsynchronousLoadingWithEmptyMessage.args,
   },

@@ -71,6 +71,8 @@ export const Important: Story = {
 }
 
 export const TypeWithoutContained: Story = {
+  // Same screenshot as Default
+  tags: ['!snapshot'],
   args: {
     type: 'success',
     isContained: false,
@@ -121,5 +123,3 @@ export const InfoExpanded = expanded(Info)
 export const WarningExpanded = expanded(Warning)
 
 export const ImportantExpanded = expanded(Important)
-
-export const TypeWithoutContainedExpanded = expanded(TypeWithoutContained)

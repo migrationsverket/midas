@@ -69,6 +69,8 @@ export const Disabled: Story = {
 }
 
 export const AppLink: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     children: 'Till E-tjänst',
     'data-testid': 'link-button',

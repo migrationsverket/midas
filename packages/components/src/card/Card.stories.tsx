@@ -304,7 +304,8 @@ const CustomLink = (
 ) => <a {...props}>{props.children}</a>
 
 export const LegacyWithCustomLink: Story = {
-  tags: ['!autodocs', '!dev'],
+  // Same screenshot as LegacyWithLink
+  tags: ['!autodocs', '!dev', '!snapshot'],
   args: {
     children: (
       <CardContent>

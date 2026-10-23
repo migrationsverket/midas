@@ -93,7 +93,10 @@ export const Default: Story = {
   },
 }
 
-export const NotDismissable: Story = {}
+export const NotDismissable: Story = {
+  // Same screenshot as Default
+  tags: ['!snapshot'],
+}
 
 /**
  * For special cases when modal should not be closable without taking further action
@@ -118,6 +121,8 @@ export const HiddenCloseButton: Story = {
 }
 
 export const EmptyTitle: Story = {
+  // Same screenshot as Default
+  tags: ['!snapshot'],
   args: {
     title: null,
     children: <Text>This is a simple modal with no title.</Text>,
@@ -126,6 +131,8 @@ export const EmptyTitle: Story = {
 }
 
 export const Scrollable: Story = {
+  // Same screenshot as Default
+  tags: ['!snapshot'],
   args: {
     title: 'Read all the text',
     children: longFormParagraphs,
@@ -134,6 +141,8 @@ export const Scrollable: Story = {
 }
 
 export const ScrollableWithFooter: Story = {
+  // Same screenshot as Default
+  tags: ['!snapshot'],
   args: {
     title: 'Read all the text',
     children: longFormParagraphs,
@@ -230,6 +239,8 @@ export const DS1282: Story = {
 }
 
 export const LongTitle: Story = {
+  // Same screenshot as Default
+  tags: ['!snapshot'],
   args: {
     title:
       'This is a very long title to test how the modal handles text wrapping and layout with a lot of text in the title bar',

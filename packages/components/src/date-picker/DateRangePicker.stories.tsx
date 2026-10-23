@@ -93,6 +93,8 @@ export const WithClearButton: Story = {
 }
 
 export const MaxRangeDuration: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     isDateUnavailable: (date, anchorDate) =>
       anchorDate !== null && Math.abs(date.compare(anchorDate)) > 7,

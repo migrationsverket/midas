@@ -82,6 +82,8 @@ export const Number: Story = {
 }
 
 export const Numeric: Story = {
+  // Same screenshot as Number
+  tags: ['!snapshot'],
   parameters: {
     docs: {
       description: {

@@ -97,7 +97,8 @@ export const WithIcon: Story = {
 }
 
 export const WithoutTagList: Story = {
-  tags: ['!autodocs', '!dev'],
+  // Same screenshot as Primary
+  tags: ['!autodocs', '!dev', '!snapshot'],
   render: args => (
     <TagGroup aria-label='Taggar'>
       <Tag {...args} />

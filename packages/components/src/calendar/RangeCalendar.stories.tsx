@@ -65,6 +65,8 @@ export const WithMonthYearPicker: Story = {
 }
 
 export const MaxRangeDuration: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     // The second argument (anchorDate) is the first date the user picked.
     // It's null until a selection has started, so dates are only restricted

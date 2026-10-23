@@ -78,6 +78,8 @@ export const WithSeconds: Story = {
 }
 
 export const HourCycle12: Story = {
+  // Same screenshot as WithDefaultValue
+  tags: ['!snapshot'],
   args: {
     hourCycle: 12,
     defaultValue: new Time(14, 30),

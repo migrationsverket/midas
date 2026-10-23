@@ -157,6 +157,8 @@ export const ControlledMultipleSelection: Story = {
 }
 
 export const Sections: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     items: [
       {
@@ -186,6 +188,8 @@ export const Sections: Story = {
 }
 
 export const Separators: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     children: (
       <>
@@ -204,6 +208,8 @@ export const Separators: Story = {
 }
 
 export const TextSlots: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     children: (
       <>
@@ -228,6 +234,8 @@ export const TextSlots: Story = {
 }
 
 export const MultiSelectWithDescriptions: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     selectionMode: 'multiple',
     children: (
@@ -250,6 +258,8 @@ export const MultiSelectWithDescriptions: Story = {
 }
 
 export const DisabledItems: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     items: [
       { id: 0, name: 'Copy' },
@@ -260,6 +270,8 @@ export const DisabledItems: Story = {
 }
 
 export const SubMenus: Story = {
+  // Same screenshot as Primary
+  tags: ['!snapshot'],
   args: {
     items: [
       { id: '0', name: 'Menu item' },
