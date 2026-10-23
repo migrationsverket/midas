@@ -33,6 +33,32 @@ export default {
   },
 } satisfies Meta<typeof DateRangePicker>
 
+/**
+ * Snapshot-only copy of a story with the calendar open, since the visual tests
+ * don't click the trigger. The screenshot is cropped to the story's own
+ * element, so it's made tall enough for the calendar. Spread it into a story
+ * that sets `tags: ['!dev', '!autodocs']` itself, to hide it from the sidebar
+ * and docs: Storybook reads tags statically from the story object, so tags set
+ * by a helper are ignored
+ */
+const open = (story: Story): Story => ({
+  ...story,
+  args: { ...story.args, defaultOpen: true },
+  parameters: {
+    // The open popover is an unnamed dialog (aria-dialog-name), and the
+    // calendar's <header> inside it is a nested banner landmark
+    // (landmark-banner-is-top-level)
+    a11y: { test: 'todo' },
+  },
+  decorators: [
+    Story => (
+      <div style={{ minHeight: '32rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
+})
+
 export const Primary: Story = {}
 
 export const Disabled: Story = {
@@ -72,4 +98,14 @@ export const MaxRangeDuration: Story = {
     isDateUnavailable: (date, anchorDate) =>
       anchorDate !== null && Math.abs(date.compare(anchorDate)) > 7,
   },
+}
+
+export const PrimaryOpen: Story = {
+  ...open(Primary),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const WithClearButtonOpen: Story = {
+  ...open(WithClearButton),
+  tags: ['!dev', '!autodocs'],
 }
