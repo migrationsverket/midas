@@ -1,5 +1,5 @@
 {
-  "extends": ["../../tsconfig.base.json"],
+  "extends": "../../tsconfig.base.json",
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -7,8 +7,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "compilerOptions": {
-    "ignoreDeprecations": "6.0"
-  }
+  ]
 }

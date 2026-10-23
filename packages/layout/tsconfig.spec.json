@@ -1,9 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "types": [
       "vitest/globals",
       "vitest/importMeta",
@@ -14,14 +11,8 @@
   },
   "include": [
     "vitest.setup.mts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.tsx",
-    "src/**/*.spec.tsx",
-    "src/**/*.test.js",
-    "src/**/*.spec.js",
-    "src/**/*.test.jsx",
-    "src/**/*.spec.jsx",
+    "src/**/*.test.*",
+    "src/**/*.spec.*",
     "src/**/*.d.ts"
   ]
 }

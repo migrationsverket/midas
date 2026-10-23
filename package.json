@@ -42,7 +42,6 @@
     "react-select": "^5.10.2",
     "react-stately": "3.50.0",
     "rollup": "4.62.2",
-    "typescript": "6.0.3",
     "zustand": "^5.0.11"
   },
   "overrides": {
@@ -88,6 +87,7 @@
     "@types/react-dom": "^19.3.0",
     "@typescript-eslint/eslint-plugin": "^8.70.1",
     "@typescript-eslint/parser": "^8.70.1",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/browser-playwright": "^4.1.9",
     "@vitest/coverage-v8": "^4.1.9",
@@ -125,6 +125,7 @@
     "tanstack-table-v9": "npm:@tanstack/react-table@^9.2.4",
     "ts-node": "10.9.2",
     "tslib": "^2.3.0",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.58.0",
     "unplugin-dts": "^1.1.1",
     "verdaccio": "^6.10.6",

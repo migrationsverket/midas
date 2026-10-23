@@ -1,9 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "types": ["node", "@nx/react/typings/cssmodule.d.ts", "vite/client"]
   },
   "include": [
