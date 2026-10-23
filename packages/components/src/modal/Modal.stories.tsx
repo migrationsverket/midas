@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { options } from '@midas-ds/test-utils'
 import { useState } from 'react'
 import { DialogTrigger, type Key } from 'react-aria-components'
-import { Modal } from './Modal'
+import { Modal, type ModalProps } from './Modal'
 import { Button, ButtonGroup } from '../button'
 import { Select } from '../select'
 import { ListBoxItem } from '../list-box'
@@ -34,6 +34,31 @@ const longFormParagraphs = [1, 2, 3, 4, 5, 6].map(n => (
 
 type Story = StoryObj<typeof Modal>
 
+const renderModal = (args: ModalProps, defaultOpen = false) => (
+  <DialogTrigger defaultOpen={defaultOpen}>
+    <Button>Öppna</Button>
+    <Modal
+      title='Enter your name'
+      {...args}
+    />
+  </DialogTrigger>
+)
+
+/**
+ * Snapshot-only copy of a story with the modal open, since the visual tests
+ * don't click the trigger. The screenshot is cropped to the story's own
+ * element, so it's stretched to the viewport the modal is centered in. Spread
+ * it into a story that sets `tags: ['!dev', '!autodocs']` itself, to hide it
+ * from the sidebar and docs: Storybook reads tags statically from the story
+ * object, so tags set by a helper are ignored
+ */
+const open = (story: Story): Story => ({
+  ...story,
+  render: args => (
+    <div style={{ height: '100vh' }}>{renderModal(args, true)}</div>
+  ),
+})
+
 export default {
   component: Modal,
   subcomponents: {
@@ -44,15 +69,7 @@ export default {
   parameters: {
     layout: 'centered',
   },
-  render: args => (
-    <DialogTrigger>
-      <Button>Öppna</Button>
-      <Modal
-        title='Enter your name'
-        {...args}
-      />
-    </DialogTrigger>
-  ),
+  render: args => renderModal(args),
   args: {
     children: (
       <Select
@@ -220,4 +237,34 @@ export const LongTitle: Story = {
     children: <Text>This modal has a very long title.</Text>,
     footer: <Button slot='close'>Submit</Button>,
   },
+}
+
+export const DefaultOpen: Story = {
+  ...open(Default),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const HiddenCloseButtonOpen: Story = {
+  ...open(HiddenCloseButton),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const EmptyTitleOpen: Story = {
+  ...open(EmptyTitle),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const ScrollableOpen: Story = {
+  ...open(Scrollable),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const ScrollableWithFooterOpen: Story = {
+  ...open(ScrollableWithFooter),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const LongTitleOpen: Story = {
+  ...open(LongTitle),
+  tags: ['!dev', '!autodocs'],
 }

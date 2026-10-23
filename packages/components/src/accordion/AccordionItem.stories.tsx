@@ -15,6 +15,17 @@ export default {
   },
 } satisfies Meta<typeof AccordionItem>
 
+/**
+ * Snapshot-only copy of a story with the item expanded, since the visual tests
+ * don't click the trigger. Spread it into a story that sets `tags: ['!dev',
+ * '!autodocs']` itself, to hide it from the sidebar and docs: Storybook reads
+ * tags statically from the story object, so tags set by a helper are ignored
+ */
+const expanded = (story: Story): Story => ({
+  ...story,
+  args: { ...story.args, defaultExpanded: true },
+})
+
 export const Default: Story = {
   args: {
     type: undefined,
@@ -98,4 +109,39 @@ export const ContentBackgroundInherit: Story = {
     contentBackground: 'inherit',
     defaultExpanded: true,
   },
+}
+
+export const DefaultExpanded: Story = {
+  ...expanded(Default),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const ContainedExpanded: Story = {
+  ...expanded(Contained),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const SuccessExpanded: Story = {
+  ...expanded(Success),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const InfoExpanded: Story = {
+  ...expanded(Info),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const WarningExpanded: Story = {
+  ...expanded(Warning),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const ImportantExpanded: Story = {
+  ...expanded(Important),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const TypeWithoutContainedExpanded: Story = {
+  ...expanded(TypeWithoutContained),
+  tags: ['!dev', '!autodocs'],
 }

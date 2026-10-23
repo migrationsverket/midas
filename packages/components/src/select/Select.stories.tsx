@@ -33,6 +33,28 @@ export default {
   },
 } satisfies Meta<typeof Select<Item>>
 
+/**
+ * Snapshot-only copy of a story with the list open, since the visual tests
+ * don't click the trigger. The screenshot is cropped to the story's own
+ * element, so it's made tall enough for the list. Spread it into a story that
+ * sets `tags: ['!dev', '!autodocs']` itself, to hide it from the sidebar and
+ * docs: Storybook reads tags statically from the story object, so tags set by a
+ * helper are ignored
+ */
+const open = <T extends object, M extends SelectionMode>(
+  story: Story<T, M>,
+): Story<T, M> => ({
+  ...story,
+  args: { ...story.args, defaultOpen: true },
+  decorators: [
+    Story => (
+      <div style={{ minHeight: '30rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
+})
+
 export const StaticItems: Story = {
   args: {
     label: 'label',
@@ -335,4 +357,42 @@ export const LongWords: Story = {
       </>
     ),
   },
+}
+
+export const PrimaryOpen: Story = {
+  ...open(Primary),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const DefaultValueOpen: Story<Item, 'multiple'> = {
+  ...open(DefaultValue),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const DisabledOptionOpen: Story = {
+  ...open(DisabledOption),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const SelectAllEnabledOpen: Story<Item, 'multiple'> = {
+  ...open(SelectAllEnabled),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const SelectAllEnabledWithPreselectedDisabledItemOpen: Story<
+  Item,
+  'multiple'
+> = {
+  ...open(SelectAllEnabledWithPreselectedDisabledItem),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const StaticSectionsOpen: Story = {
+  ...open(StaticSections),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const LongWordsOpen: Story = {
+  ...open(LongWords),
+  tags: ['!dev', '!autodocs'],
 }

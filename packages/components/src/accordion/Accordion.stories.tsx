@@ -20,6 +20,17 @@ export default {
   },
 } satisfies Meta<typeof Accordion>
 
+/**
+ * Snapshot-only copy of a story with an item expanded, since the visual tests
+ * don't click the trigger. Spread it into a story that sets `tags: ['!dev',
+ * '!autodocs']` itself, to hide it from the sidebar and docs: Storybook reads
+ * tags statically from the story object, so tags set by a helper are ignored
+ */
+const expanded = (story: Story): Story => ({
+  ...story,
+  args: { ...story.args, defaultExpandedKeys: ['Två'] },
+})
+
 export const Default: Story = {
   args: {
     className: 'test',
@@ -115,6 +126,16 @@ export const DS1060: Story = {
       </AccordionItem>
     </Accordion>
   ),
+}
+
+export const ContainedExpanded: Story = {
+  ...expanded(Contained),
+  tags: ['!dev', '!autodocs'],
+}
+
+export const CustomTriggerElementsExpanded: Story = {
+  ...expanded(CustomTriggerElements),
+  tags: ['!dev', '!autodocs'],
 }
 
 const ExpandableStuff = () => {
