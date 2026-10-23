@@ -1,0 +1,26 @@
+/*
+ * Keeps the site's styles out of the component examples, so they render as
+ * in Storybook and in an app. Infima styles elements globally, e.g.
+ * `* { box-sizing: border-box }`, `table { display: block }` and `p`
+ * margins, and so does the docs' own CSS.
+ *
+ * Inside an example, every property they set goes back to the browser's
+ * default. This layer is above theirs and below Midas', so whatever Midas
+ * sets, in the `midas` layer or unlayered, still applies.
+ *
+ * `revert` also undoes presentation attributes, so it skips SVG icons and
+ * elements sized with attributes, like `<img width>`.
+ */
+@layer examples {
+  .card *:not(svg, svg *, [width], [height]),
+  .card *::before,
+  .card *::after {
+    all: revert;
+  }
+
+  /* What the site sets on icons, which their attributes don't */
+  .card :is(svg, svg *) {
+    box-sizing: revert;
+    vertical-align: revert;
+  }
+}
