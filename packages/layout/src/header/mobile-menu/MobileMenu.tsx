@@ -31,6 +31,14 @@ export interface MobileMenuProps
    * A visible title for the menu
    */
   title?: string
+  /**
+   * Which side of the screen the drawer slides in from. Place the `MobileMenu`
+   * first in the `Header` for `'left'` and last for `'right'`, so the trigger
+   * button lines up with the drawer.
+   *
+   * @default 'left'
+   */
+  placement?: 'left' | 'right'
 }
 
 export const MobileMenu = ({
@@ -39,6 +47,7 @@ export const MobileMenu = ({
   defaultOpen,
   isOpen,
   onOpenChange,
+  placement = 'left',
   title,
   ...rest
 }: MobileMenuProps) => {
@@ -57,7 +66,11 @@ export const MobileMenu = ({
           icon={Menu}
           variant='icon'
           size='medium'
-          className={styles.triggerButton}
+          className={clsx(
+            styles.triggerButton,
+            placement === 'right' && styles.right,
+          )}
+          data-mobile-menu-placement={placement}
         />
         <ModalOverlay
           className={clsx(className, styles.overlay)}
@@ -65,7 +78,12 @@ export const MobileMenu = ({
           {...rest}
         >
           {composeRenderProps(children, children => (
-            <Modal className={styles.drawer}>
+            <Modal
+              className={clsx(
+                styles.drawer,
+                placement === 'right' && styles.right,
+              )}
+            >
               <Dialog className={styles.dialog}>
                 {title && <Text className={styles.header}>{title}</Text>}
                 {children}
