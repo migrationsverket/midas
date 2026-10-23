@@ -28,7 +28,7 @@ Every story is screenshotted unless it opts out with the `!snapshot` tag. The fi
 
 ## What's shared
 
-- **`visualConfig`** (`src/config.ts`): a plain `defineConfig(...)` with browser mode in Chromium, `src/visual.spec.tsx` as the only test file, the default reporter plus the report reporter, and the shared setup. It also pre-bundles dependencies that stories import (so a cold Vite cache doesn't reload the page mid-run) and lets Vite serve the helpers from `tools/`. Everything is at the top level of `test` (no `projects`), so a package can extend or override any value with another `mergeConfig`; arrays like `setupFiles` and `optimizeDeps.include` are added to:
+- **`visualConfig`** (`src/config.ts`): a plain `defineConfig(...)` with browser mode in Chromium and animations disabled in screenshots (transitions are fast-forwarded, infinite animations reset), `src/visual.spec.tsx` as the only test file, the default reporter plus the report reporter, and the shared setup. It also pre-bundles dependencies that stories import (so a cold Vite cache doesn't reload the page mid-run) and lets Vite serve the helpers from `tools/`. Everything is at the top level of `test` (no `projects`), so a package can extend or override any value with another `mergeConfig`; arrays like `setupFiles` and `optimizeDeps.include` are added to:
 
   ```ts
   export default mergeConfig(

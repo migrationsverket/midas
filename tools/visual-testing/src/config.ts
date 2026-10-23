@@ -45,6 +45,14 @@ export const visualConfig = defineConfig({
       provider: playwright(),
       instances: [{ browser: 'chromium' }],
       screenshotFailures: false,
+      expect: {
+        toMatchScreenshot: {
+          // Fast-forwards CSS transitions and animations before each capture,
+          // so overlays that animate in on open are taken fully settled.
+          // Infinite animations are reset to their first frame
+          screenshotOptions: { animations: 'disabled' },
+        },
+      },
     },
     // Also runs the package's own vitest.setup.mts, see setup.ts
     setupFiles: [join(projectRoot, 'setup.ts')],
