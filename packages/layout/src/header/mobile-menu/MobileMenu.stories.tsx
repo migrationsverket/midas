@@ -21,6 +21,12 @@ export default {
 
 export const Primary: Story = {}
 
+export const PlacementRight: Story = {
+  args: {
+    placement: 'right',
+  },
+}
+
 export const Controlled: Story = {
   render: args => {
     const [isOpen, setIsOpen] = useState(false)
