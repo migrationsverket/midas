@@ -8,7 +8,8 @@ import { HeaderTitle } from './header-title'
 type Story = StoryObj<typeof Header>
 
 const { Primary: PrimaryHeaderActions } = composeStories(headerActionsStories)
-const { Primary: PrimaryMobileMenu } = composeStories(MobileMenuStories)
+const { Primary: PrimaryMobileMenu, PlacementRight: MobileMenuPlacementRight } =
+  composeStories(MobileMenuStories)
 
 export default {
   component: Header,
@@ -35,6 +36,29 @@ export const Mobile: Story = {
       <HeaderLogo />
       <HeaderTitle>System name</HeaderTitle>
       <PrimaryHeaderActions />
+    </Header>
+  ),
+}
+
+export const MobileMenuRight: Story = {
+  globals: { viewport: { value: 'small' } },
+  render: () => (
+    <Header>
+      <HeaderLogo />
+      <HeaderTitle>System name</HeaderTitle>
+      <PrimaryHeaderActions />
+      <MobileMenuPlacementRight />
+    </Header>
+  ),
+}
+
+export const MobileMenuRightWithoutActions: Story = {
+  globals: { viewport: { value: 'small' } },
+  render: () => (
+    <Header>
+      <HeaderLogo />
+      <HeaderTitle>System name</HeaderTitle>
+      <MobileMenuPlacementRight />
     </Header>
   ),
 }
