@@ -10,10 +10,33 @@ permissions:
   contents: read
 
 jobs:
+  playwright-version:
+    name: Resolve Playwright version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: package-lock.json
+          sparse-checkout-cone-mode: false
+
+      - name: Read version from package-lock.json
+        id: version
+        run: echo "version=$(jq -r '.packages["node_modules/playwright"].version' package-lock.json)" >> "$GITHUB_OUTPUT"
+
   e2e:
     name: E2E registry tests
+    needs: playwright-version
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # The Playwright image has the browsers and their system dependencies,
+    # which `playwright install --with-deps` fetched from a slow Ubuntu mirror
+    # when several jobs started at once. See the test job in pr-checks.yml
+    container:
+      image: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
+      options: --user 1001 --ipc=host --init
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -26,19 +49,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          # All browsers, unlike pr-checks.yml, so the key must differ
-          key: playwright-${{ runner.os }}-all-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-        env:
-          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
 
       - name: Start Verdaccio
         run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
