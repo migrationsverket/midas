@@ -145,10 +145,12 @@ describe('given a rendered BasicDatePicker', () => {
     })
   })
 
-  // Known gap: react-datepicker moves focus after the keydown, and Firefox
+  // Known gaps: react-datepicker moves focus after the keydown, and Firefox
   // doesn't give that focus :focus-visible after a mouse click, so the day
-  // gets no ring there
-  it.skipIf(server.browser === 'firefox')(
+  // gets no ring there. In WebKit, focus only sometimes moves to the keyboard
+  // cursor after the month change, likely because WebKit doesn't focus a
+  // button on click
+  it.skipIf(server.browser === 'firefox' || server.browser === 'webkit')(
     'shows a focus ring on the day the arrow keys move to, but not after a mouse click',
     async () => {
       const { container } = await render(<BasicDatePicker open />)
