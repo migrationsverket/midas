@@ -11,13 +11,13 @@ describe('given a Calendar with showMonthYearPicker', async () => {
     const { getByRole } = await render(<WithMonthYearPicker />)
 
     await expect
-      .element(getByRole('button', { name: 'year' }))
+      .element(getByRole('button', { name: / year$/ }))
       .toHaveAccessibleName()
   })
 
   it('should navigate to the selected year without selecting a date', async () => {
     const { getByRole, container } = await render(<WithMonthYearPicker />)
-    const trigger = getByRole('button', { name: 'year' })
+    const trigger = getByRole('button', { name: / year$/ })
 
     const currentYear = await trigger.element().textContent
     const targetYear = String(Number(currentYear) - 1)
@@ -39,7 +39,7 @@ describe('given a disabled Calendar with showMonthYearPicker', async () => {
       />,
     )
 
-    await expect.element(getByRole('button', { name: 'year' })).toBeDisabled()
+    await expect.element(getByRole('button', { name: / year$/ })).toBeDisabled()
   })
 })
 
@@ -52,7 +52,7 @@ describe('given a read-only Calendar with showMonthYearPicker', async () => {
       />,
     )
 
-    await getByRole('button', { name: 'year' }).click()
+    await getByRole('button', { name: / year$/ }).click()
     await expect.element(getByRole('listbox')).toBeVisible()
   })
 })

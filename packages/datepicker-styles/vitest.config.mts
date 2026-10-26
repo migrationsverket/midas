@@ -14,7 +14,6 @@ export default mergeConfig(
       exclude: [...defaultExclude, 'src/visual.spec.tsx'],
       projects: [
         {
-          extends: true,
           test: {
             name: 'browser',
             browser: {

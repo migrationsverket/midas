@@ -17,7 +17,6 @@ const currentDirectory =
 
 export const defineStorybookProject = async ({ name, contextOptions }: Props) =>
   ({
-    extends: true,
     optimizeDeps: {
       // Only imported from the setup file, which Vite's dependency scan doesn't
       // crawl. Discovered mid-run instead, it makes Vite reload the page and

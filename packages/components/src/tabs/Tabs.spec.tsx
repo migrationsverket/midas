@@ -33,6 +33,6 @@ describe('given a Tabs with more items than children', async () => {
   })
 
   it('the page should still render even if the tabs component is misconfigured', async () => {
-    expect(page.getByText('derp')).toBeInTheDocument()
+    expect(page.getByText('derp', { exact: false })).toBeInTheDocument()
   })
 })

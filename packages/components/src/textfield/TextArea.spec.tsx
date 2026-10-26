@@ -97,7 +97,12 @@ describe('given a TextArea with showCounter', async () => {
 
   describe('using defaultValue', async () => {
     it('should show the correct count for its initial value', async () => {
-      const { getByText } = await render(<ShowCounter defaultValue='HEJ' />)
+      const { getByText } = await render(
+        <ShowCounter
+          value={undefined}
+          defaultValue='HEJ'
+        />,
+      )
 
       await expect
         .element(getByText('HEJ'.length.toString()))

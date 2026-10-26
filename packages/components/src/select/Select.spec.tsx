@@ -71,7 +71,7 @@ describe('given a Select with a default value', async () => {
         .toBeInTheDocument()
     })
 
-    await expect.element(page.getByText('2')).toBeVisible()
+    await expect.element(page.getByText('2 selected')).toBeVisible()
   })
 })
 
@@ -79,7 +79,7 @@ describe('given a Select with all keys selected as default', async () => {
   it('should display and reflect the pre-selected values', async () => {
     const { getByTestId } = await render(<AllKeysSelected />)
 
-    const visibleValue = page.getByText('38')
+    const visibleValue = page.getByText('38 selected')
 
     options.forEach(async ({ name }) => {
       await expect
@@ -106,7 +106,7 @@ describe('given a Select with showTags', async () => {
   it('should display and reflect the pre-selected values', async () => {
     const { getByTestId } = await render(<WithTags />)
 
-    const visibleValue = page.getByText('2')
+    const visibleValue = page.getByText('2 selected')
     const value = ['Ananas', 'Kiwi']
 
     value.forEach(async name => {
@@ -141,7 +141,7 @@ describe('given a Select with select all enabled', async () => {
     await userEvent.keyboard('[Space]')
     await userEvent.keyboard('[Escape]')
 
-    const visibleValue = page.getByText(`${options.length}`)
+    const visibleValue = page.getByText(`${options.length} selected`)
 
     options.forEach(
       async ({ name }) =>
@@ -245,11 +245,11 @@ describe('given a required multiple Select with selectAll', async () => {
 
     // Trigger should now be invalid
     await expect
-      .element(getByRole('button', { name: 'Label' }))
+      .element(getByRole('button', { name: /Label$/ }))
       .toHaveAttribute('data-invalid')
 
     // Open the dropdown and click Select all
-    await userEvent.click(getByRole('button', { name: 'Label' }))
+    await userEvent.click(getByRole('button', { name: /Label$/ }))
     await userEvent.click(
       page.getByRole('dialog', { name: 'Label' }).getByText('Select all'),
     )
@@ -257,7 +257,7 @@ describe('given a required multiple Select with selectAll', async () => {
 
     // Trigger should no longer be invalid
     await expect
-      .element(getByRole('button', { name: 'Label' }))
+      .element(getByRole('button', { name: /Label$/ }))
       .not.toHaveAttribute('data-invalid')
   })
 })
@@ -310,7 +310,7 @@ describe('given a required multiple Select with tags (DS-1817)', async () => {
     }
 
     await expect
-      .element(getByRole('button', { name: 'Label' }))
+      .element(getByRole('button', { name: /Label$/ }))
       .toHaveAttribute('data-invalid')
   })
 
@@ -320,7 +320,7 @@ describe('given a required multiple Select with tags (DS-1817)', async () => {
     await userEvent.click(getByRole('button', { name: 'Clear all' }))
 
     await expect
-      .element(getByRole('button', { name: 'Label' }))
+      .element(getByRole('button', { name: /Label$/ }))
       .toHaveAttribute('data-invalid')
   })
 })

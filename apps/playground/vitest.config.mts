@@ -10,7 +10,6 @@ export default mergeConfig(
       reporters: ['default'],
       projects: [
         {
-          extends: true,
           test: {
             browser: {
               enabled: true,

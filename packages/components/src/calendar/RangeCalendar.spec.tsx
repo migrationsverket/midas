@@ -30,19 +30,20 @@ describe('given a primary RangeCalendar', async () => {
     await expect
       .element(
         getByRole('button', {
-          name: 'Today, Thursday, May 29',
+          name: /^Today, Thursday, May 29, 2025/,
         }).element().parentElement,
       )
       .toHaveAttribute('aria-selected', 'true')
     await expect
       .element(
-        getByRole('button', { name: 'Friday, May 30' }).element().parentElement,
+        getByRole('button', { name: /^Friday, May 30, 2025/ }).element()
+          .parentElement,
       )
       .toHaveAttribute('aria-selected', 'true')
     await expect
       .element(
         getByRole('button', {
-          name: 'Saturday, May 31',
+          name: /^Saturday, May 31, 2025/,
         }).element().parentElement,
       )
       .toHaveAttribute('aria-selected', 'true')
@@ -65,7 +66,7 @@ describe('given a RangeCalendar with showMonthYearPicker', async () => {
     // exception for this. RangeCalendar is configured with
     // commitBehavior="reset" specifically so this fails safe: no range
     // gets committed at all, rather than an unintended one.
-    const monthTrigger = getByRole('button', { name: 'month' })
+    const monthTrigger = getByRole('button', { name: / month$/ })
     await monthTrigger.click()
     await getByRole('option').nth(1).click()
 
