@@ -91,8 +91,10 @@
     "@typescript/native": "npm:typescript@^7.0.2",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/browser-playwright": "^4.1.9",
+    "@vitest/browser-webdriverio": "^4.1.11",
     "@vitest/coverage-v8": "^4.1.9",
     "@vitest/ui": "^4.1.9",
+    "@wdio/utils": "^9.32.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.0",
@@ -105,6 +107,7 @@
     "mockdate": "^3.0.5",
     "nx": "24.0.0",
     "nx-stylelint": "^19.0.0",
+    "patch-package": "^8.0.1",
     "playwright": "^1.60.0",
     "prettier": "^3.8.1",
     "prism-react-renderer": "^2.3.1",
@@ -134,7 +137,8 @@
     "vite-plugin-lib-inject-css": "^2.2.2",
     "vite-plugin-static-copy": "^4.1.1",
     "vitest": "^4.1.9",
-    "vitest-browser-react": "^2.0.2"
+    "vitest-browser-react": "^2.0.2",
+    "webdriverio": "^9.32.0"
   },
   "engines": {
     "node": ">=24.0"

@@ -1,0 +1,172 @@
+name: 'Nightly browser tests'
+
+# The package tests in the two latest versions of the real desktop browsers,
+# see tools/test-browsers. Never blocks anything: a failing browser opens an
+# issue, which is closed again when it passes.
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+  # Changes to the tooling test themselves
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/test-browsers/**'
+      - '.github/workflows/browsers-nightly.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    name: Resolve browser versions
+    runs-on: ubuntu-latest
+    outputs:
+      targets: ${{ steps.resolve.outputs.targets }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: tools/test-browsers
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Resolve the two latest versions
+        id: resolve
+        run: echo "targets=$(node tools/test-browsers/src/resolve-versions.ts)" >> "$GITHUB_OUTPUT"
+
+  test:
+    name: Test packages (${{ matrix.slot }} ${{ matrix.version }})
+    needs: versions
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      issues: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.versions.outputs.targets) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Vitest's toHaveStyle only parses the expected styles in Chrome's own
+      # document, not Edge's, so every expected style comes out empty there.
+      # (vitest-dev/vitest#11668). A failing patch means Vitest changed: drop
+      # it if fixed, else update it
+      - name: Patch Vitest for Edge
+        run: npx patch-package
+
+      # WebdriverIO downloads Chrome and Firefox, but only the driver for
+      # Edge, so install the Edge build, replacing the runner's own
+      - name: Install Edge ${{ matrix.version }}
+        if: matrix.deb
+        env:
+          DEB: ${{ matrix.deb }}
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/edge.deb" "$DEB"
+          sudo apt-get install -y --allow-downgrades "$RUNNER_TEMP/edge.deb"
+          microsoft-edge --version
+
+      # Ubuntu 24.04 lets only programs with an AppArmor profile create the
+      # user namespaces the Chrome and Edge sandbox needs, and the
+      # downloaded Chrome for Testing has none, so the browser exits at start
+      - name: Allow the browser sandbox
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+      # The tests import the generated design tokens
+      - name: Generate theme tokens
+        run: npx nx run theme:style-dictionary-generate
+
+      # Once, as the packages' test runs would race to download them
+      - name: Download the browser and its driver
+        run: node tools/test-browsers/src/install.ts
+        env:
+          MIDAS_BROWSERS: ${{ matrix.profile }}
+
+      # `stable` and the milestones move, so the Nx cache is skipped.
+      # `serial` runs one test file at a time, as in `pr-checks.yml`
+      - name: Test packages
+        run: npx nx run-many -t test --skip-nx-cache ${{ matrix.serial && '--fileParallelism=false' || '' }}
+        env:
+          MIDAS_BROWSERS: ${{ matrix.profile }}
+
+      # Any failed step, as installing Edge, patching Vitest or downloading the
+      # browser can fail before the tests even start
+      - name: Open or update the issue
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Browser tests fail in ${{ matrix.slot }}'
+          BODY: |
+            The nightly package tests fail in ${{ matrix.slot }} (${{ matrix.version }}).
+
+            Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Reproduce with `MIDAS_BROWSERS=${{ matrix.profile }} npx nx run-many -t test`.
+        run: |
+          ISSUE=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number,title \
+            --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          if [ -n "$ISSUE" ]; then
+            gh issue comment "$ISSUE" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY"
+          fi
+
+      - name: Close the issue
+        if: success() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: 'Browser tests fail in ${{ matrix.slot }}'
+          COMMENT: 'Passes again in ${{ matrix.slot }} (${{ matrix.version }}): ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        run: |
+          ISSUE=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number,title \
+            --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          if [ -n "$ISSUE" ]; then
+            gh issue close "$ISSUE" --comment "$COMMENT"
+          fi
+
+  # Without the versions there's no matrix and no test job to open an issue,
+  # so report it here instead
+  report-versions:
+    name: Report the browser versions
+    needs: versions
+    if: ${{ !cancelled() && github.event_name == 'schedule' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open, update or close the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RESULT: ${{ needs.versions.result }}
+          TITLE: "Nightly browser tests can't resolve the browser versions"
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          ISSUE=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number,title \
+            --jq "map(select(.title == env.TITLE)) | .[0].number // empty")
+          if [ "$RESULT" = failure ]; then
+            BODY="No browser tests ran, as resolving the browser versions failed: $RUN_URL"
+            if [ -n "$ISSUE" ]; then
+              gh issue comment "$ISSUE" --body "$BODY"
+            else
+              gh issue create --title "$TITLE" --body "$BODY"
+            fi
+          elif [ -n "$ISSUE" ]; then
+            gh issue close "$ISSUE" --comment "Resolves the versions again: $RUN_URL"
+          fi

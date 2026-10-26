@@ -1,4 +1,5 @@
 import { playwright } from '@vitest/browser-playwright'
+import { webdriverio } from '@vitest/browser-webdriverio'
 import { devices } from 'playwright'
 import type { BrowserInstanceOption } from 'vitest/node'
 
@@ -15,6 +16,7 @@ interface Profile {
 
 const slowTestTimeout = 5000
 
+/** Playwright's builds of each engine, see the README */
 const profiles = {
   chromium: { browser: 'chromium' },
   firefox: { browser: 'firefox', testTimeout: slowTestTimeout },
@@ -31,35 +33,65 @@ const profiles = {
   },
 } satisfies Record<string, Profile>
 
-export type BrowserProfile = keyof typeof profiles
+const realBrowsers = ['chrome', 'firefox', 'edge'] as const
+
+/**
+ * A branded browser in a given version, run through WebdriverIO, which
+ * downloads it: `<browser>@<version>`, e.g. `chrome@141`, `chrome@stable`,
+ * `firefox@stable` or `firefox@stable_157.0.2`. For Edge only the driver is
+ * downloaded, so the version must be the installed one, e.g. `edge@stable` or
+ * `edge@154.0.4258.62`
+ */
+const parseRealProfile = (name: string) => {
+  const [browser, version, ...rest] = name.split('@')
+  if (!version || rest.length > 0) return undefined
+  if (!realBrowsers.includes(browser as (typeof realBrowsers)[number])) {
+    return undefined
+  }
+  return { browser: browser as (typeof realBrowsers)[number], version }
+}
+
+const isProfile = (name: string) =>
+  name in profiles || parseRealProfile(name) !== undefined
 
 /**
  * The profiles to run, from `MIDAS_BROWSERS`: a comma separated list of
- * profile names, or `all`. Defaults to Chromium.
+ * profile names, or `all` for the Playwright profiles. Defaults to Chromium.
  */
 export const selectedProfiles = (
   value = process.env.MIDAS_BROWSERS,
-): BrowserProfile[] => {
+): string[] => {
   if (!value?.trim()) return ['chromium']
-  if (value.trim() === 'all') return Object.keys(profiles) as BrowserProfile[]
+  if (value.trim() === 'all') return Object.keys(profiles)
 
   const names = value.split(',').map(name => name.trim())
-  const unknown = names.filter(name => !(name in profiles))
+  const unknown = names.filter(name => !isProfile(name))
   if (unknown.length > 0) {
     throw new Error(
-      `Unknown MIDAS_BROWSERS profile: ${unknown.join(', ')}. Use any of ${Object.keys(profiles).join(', ')} or all.`,
+      `Unknown MIDAS_BROWSERS profile: ${unknown.join(', ')}. Use any of ${Object.keys(profiles).join(', ')}, all, or <${realBrowsers.join('|')}>@<version>.`,
     )
   }
-  return names as BrowserProfile[]
+  return names
 }
 
+/**
+ * WebdriverIO capabilities for the `<browser>@<version>` profiles in
+ * `MIDAS_BROWSERS`, for downloading them up front, see `install.ts`
+ */
+export const realBrowserCapabilities = (profileNames = selectedProfiles()) =>
+  profileNames.flatMap(name => {
+    const real = parseRealProfile(name)
+    return real
+      ? [{ browserName: real.browser, browserVersion: real.version }]
+      : []
+  })
+
 const toInstance = (
-  profileName: BrowserProfile,
+  profileName: string,
   variant: Partial<BrowserInstanceOption>,
   /** Add the profile to the name, when running several profiles */
   suffix: boolean,
 ): BrowserInstanceOption => {
-  const profile: Profile = profiles[profileName]
   // Vitest needs a unique name per instance, and two profiles can share an
   // engine. A single profile keeps the variant's name as is
   const name = !suffix
@@ -67,6 +99,24 @@ const toInstance = (
     : variant.name
       ? `${variant.name} (${profileName})`
       : profileName
+
+  const real = parseRealProfile(profileName)
+  if (real) {
+    return {
+      testTimeout: slowTestTimeout,
+      // On CI runners, Chrome and Edge now and then miss a hover from
+      // WebDriver, failing a different test each run
+      retry: 2,
+      ...variant,
+      browser: real.browser,
+      name,
+      provider: webdriverio({
+        capabilities: { browserVersion: real.version },
+      }),
+    }
+  }
+
+  const profile: Profile = profiles[profileName as keyof typeof profiles]
   const instance: BrowserInstanceOption = {
     ...(profile.testTimeout && { testTimeout: profile.testTimeout }),
     ...variant,
@@ -100,13 +150,27 @@ const toInstance = (
 }
 
 /**
+ * The browser provider for the profiles in `MIDAS_BROWSERS`: Playwright, or
+ * WebdriverIO for the `<browser>@<version>` profiles. Vitest runs a project's
+ * instances with one kind of provider, so the two can't be mixed in one run.
+ */
+export const browserProvider = (profileNames = selectedProfiles()) => {
+  const realCount = profileNames.filter(name => parseRealProfile(name)).length
+  if (realCount === 0) return playwright()
+  if (realCount === profileNames.length) return webdriverio()
+  throw new Error(
+    `MIDAS_BROWSERS can't mix Playwright profiles with <browser>@<version> profiles: ${profileNames.join(', ')}`,
+  )
+}
+
+/**
  * Vitest browser instances for the profiles in `MIDAS_BROWSERS`, one per
  * profile and variant. Pass variants to run every profile in several setups,
  * e.g. a desktop and a mobile viewport.
  *
  * @example
  * browser: {
- *   provider: playwright(),
+ *   provider: browserProvider(),
  *   instances: browserInstances([
  *     { name: 'desktop', viewport: { width: 1024, height: 768 } },
  *     { name: 'mobile', viewport: { width: 320, height: 568 } },
