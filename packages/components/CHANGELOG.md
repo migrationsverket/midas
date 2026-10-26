@@ -1,3 +1,15 @@
+## 17.32.3 (2026-10-26)
+
+### 🩹 Fixes
+
+- **components,modal:** prevent scroll to top on body click ([0986a346c70](https://github.com/migrationsverket/midas/commit/0986a346c70))
+- **components,modal:** keep focused fields clear of the sticky header and footer in WebKit ([577d2cf1d5b](https://github.com/migrationsverket/midas/commit/577d2cf1d5b))
+
+### 🧪 Tests updated
+
+- run the package tests nightly in real Chrome, Firefox and Edge ([#1421](https://github.com/migrationsverket/midas/pull/1421))
+- run package tests in Firefox, WebKit and mobile emulation ([2616981547e](https://github.com/migrationsverket/midas/commit/2616981547e))
+
 ## 17.32.2 (2026-10-26)
 
 ### 🩹 Fixes

@@ -1,3 +1,14 @@
+## 2.2.7 (2026-10-26)
+
+### 🧪 Tests updated
+
+- run the package tests nightly in real Chrome, Firefox and Edge ([#1421](https://github.com/migrationsverket/midas/pull/1421))
+- run package tests in Firefox, WebKit and mobile emulation ([2616981547e](https://github.com/migrationsverket/midas/commit/2616981547e))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.32.3
+
 ## 2.2.6 (2026-10-26)
 
 ### 🔧 Maintenance
