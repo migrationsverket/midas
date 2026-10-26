@@ -52,12 +52,14 @@ jobs:
 
       # One step, because in a container job a background process ends with
       # the step that started it, and the registry has to stay up from
-      # publishing through installing
+      # publishing through installing. Verdaccio listens on 0.0.0.0 from its
+      # config, and the clients use 127.0.0.1: in the container, localhost
+      # also resolves to ::1, and the registry wasn't reachable through it
       - name: Publish packages to a local registry and install them
         run: |
-          npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
-          npx nx run @midas-ds/source:release:local --skipVerdaccioStart
-          npm install --prefix apps/next --@midas-ds:registry=http://localhost:4873/
+          npx verdaccio --config .verdaccio/config.yaml &
+          npx nx run @midas-ds/source:release:local --skipVerdaccioStart --registry=http://127.0.0.1:4873/
+          npm install --prefix apps/next --@midas-ds:registry=http://127.0.0.1:4873/
 
       - name: Remove dist files
         run: rm -rf dist
