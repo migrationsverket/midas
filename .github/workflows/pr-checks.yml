@@ -49,8 +49,17 @@ jobs:
   # The package tests, once per browser profile, see tools/test-browsers
   test:
     name: Test packages (${{ matrix.profile }})
+    needs: playwright-version
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # The Playwright image has the browsers and their system dependencies.
+    # Installing those with `playwright install --with-deps` took up to 20
+    # minutes when several jobs hit the Ubuntu mirror at once. User 1001 owns
+    # the workspace, as in Playwright's GitHub Actions example, and Chromium
+    # needs --ipc=host to not run out of shared memory
+    container:
+      image: mcr.microsoft.com/playwright:v${{ needs.playwright-version.outputs.version }}-noble
+      options: --user 1001 --ipc=host --init
     # Only Chromium blocks, until the suite is green in every profile
     continue-on-error: ${{ matrix.profile != 'chromium' }}
     strategy:
@@ -58,18 +67,13 @@ jobs:
       matrix:
         include:
           - profile: chromium
-            engine: chromium
           - profile: firefox
-            engine: firefox
             serial: true
           - profile: webkit
-            engine: webkit
             serial: true
           - profile: mobile-safari
-            engine: webkit
             serial: true
           - profile: mobile-chrome
-            engine: chromium
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -88,26 +92,6 @@ jobs:
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v5
-
-      # The engine is part of the key: e2e.yml caches a different set, and
-      # sharing one key made the browsers available here depend on which
-      # workflow happened to save the cache first.
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ matrix.engine }}-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Playwright browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install ${{ matrix.engine }} --with-deps
-        env:
-          PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT: 60000
-
-      - name: Install Playwright system deps
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps ${{ matrix.engine }}
 
       # The tests import the generated design tokens
       - name: Generate theme tokens
@@ -173,9 +157,10 @@ jobs:
           sparse-checkout: package-lock.json
           sparse-checkout-cone-mode: false
 
-      # The visual job runs in the Playwright image matching the installed
-      # version, so screenshots render the same as when the baselines were
-      # taken (see update-visual-baseline.yml)
+      # The test and visual jobs run in the Playwright image matching the
+      # installed version, so it has the browsers Playwright expects. For the
+      # visual job, screenshots also render the same as when the baselines
+      # were taken (see update-visual-baseline.yml)
       - name: Read version from package-lock.json
         id: version
         run: echo "version=$(jq -r '.packages["node_modules/playwright"].version' package-lock.json)" >> "$GITHUB_OUTPUT"
