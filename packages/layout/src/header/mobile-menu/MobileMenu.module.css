@@ -13,6 +13,13 @@
     animation: drawer-blur var(--midas-transition-duration-quick) reverse
       var(--midas-transition-timing-ease-in);
   }
+
+  @media (prefers-reduced-motion) {
+    &[data-entering],
+    &[data-exiting] {
+      animation: none;
+    }
+  }
 }
 
 .drawer {
@@ -37,6 +44,13 @@
   &[data-exiting] {
     animation: drawer-slide var(--midas-transition-duration-quick) reverse
       var(--midas-transition-timing-ease-in);
+  }
+
+  @media (prefers-reduced-motion) {
+    &[data-entering],
+    &[data-exiting] {
+      animation: none;
+    }
   }
 }
 

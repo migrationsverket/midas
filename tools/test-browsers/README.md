@@ -22,6 +22,8 @@ MIDAS_BROWSERS=all npx nx run components:test
 | `mobile-safari` | WebKit   | iPhone 15: touch, user agent and viewport |
 | `mobile-chrome` | Chromium | Pixel 7: touch, user agent and viewport   |
 
+Every profile runs with `prefers-reduced-motion: reduce`, so the components skip their enter and exit animations. Overlays stay mounted until their exit animation ends, which made closing them and clicking near them flaky on CI.
+
 These are Playwright's builds of each engine, not the branded browsers, so they catch engine differences, not version differences.
 
 Install the browsers you want to run with `npx playwright install firefox webkit`.

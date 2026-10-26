@@ -74,7 +74,18 @@ const toInstance = (
     name,
   }
 
-  if (!profile.device) return instance
+  // Reduced motion turns off the components' enter and exit animations.
+  // Overlays stay mounted until their exit animation ends, and animating the
+  // backdrop blur is slow without a GPU, so with motion on, closing overlays
+  // and clicking near them timed out on CI, mostly in mobile WebKit
+  const reducedMotion = 'reduce'
+
+  if (!profile.device) {
+    return {
+      ...instance,
+      provider: playwright({ contextOptions: { reducedMotion } }),
+    }
+  }
 
   // The device's viewport sizes the test iframe, unless the variant sets one.
   // The rest (touch, user agent, scale) goes to the page context
@@ -82,7 +93,9 @@ const toInstance = (
   return {
     ...instance,
     viewport: variant.viewport ?? viewport,
-    provider: playwright({ contextOptions }),
+    provider: playwright({
+      contextOptions: { ...contextOptions, reducedMotion },
+    }),
   }
 }
 
