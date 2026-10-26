@@ -32,7 +32,7 @@ describe('given a Primary Calendar', async () => {
     await expect
       .element(
         getByRole('button', {
-          name: 'Tuesday, May 27',
+          name: /^Tuesday, May 27, 2025/,
         }).element().parentElement,
       )
       .toHaveAttribute('aria-selected', 'true')
@@ -51,7 +51,9 @@ describe('DS1141', async () => {
     vi.setSystemTime(mockedNow.toDate(getLocalTimeZone()))
 
     const { getByRole } = await render(<Primary minValue={mockedNow} />)
-    const yesterdayButton = getByRole('button', { name: 'Tuesday, May 27' })
+    const yesterdayButton = getByRole('button', {
+      name: /^Tuesday, May 27, 2025/,
+    })
 
     await yesterdayButton.hover()
 

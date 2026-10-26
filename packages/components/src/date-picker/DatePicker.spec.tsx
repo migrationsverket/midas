@@ -33,7 +33,7 @@ describe('given a DatePicker with Custom Validation', async () => {
   it('should show a custom error message if invalid', async () => {
     const { getByText } = await render(<CustomValiation />)
 
-    await page.getByRole('button', { name: 'Open calendar' }).click()
+    await page.getByRole('button', { name: /^Open calendar/ }).click()
     await expect.element(page.getByRole('grid')).toBeVisible()
     await userEvent.keyboard('[Enter]')
     await page.getByRole('button', { name: 'Submit' }).click()
@@ -48,7 +48,7 @@ describe('given a Contolled DatePicker', async () => {
   it('the calendar should not be contained by the datepicker div', async () => {
     await render(<ControlledState />)
 
-    await page.getByRole('button', { name: 'Open calendar' }).click()
+    await page.getByRole('button', { name: /^Open calendar/ }).click()
     await expect.element(page.getByRole('application')).toBeVisible()
   })
 })

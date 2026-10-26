@@ -135,7 +135,7 @@ describe('FileList', () => {
     await expect.element(getByRole('button', { name: /remove/i })).toBeVisible()
     await expect
       .element(getByRole('status'))
-      .toHaveTextContent('Upload complete')
+      .toHaveTextContent('Upload complete: resume.pdf')
   })
 
   it('keeps the success state readable on the row, not only in the announcement', async () => {

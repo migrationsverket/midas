@@ -5,7 +5,7 @@
  *
  * Vitest already records a `visual-regression` artifact for every failed
  * screenshot, with the reference, actual and diff images attached (written to
- * `.vitest-attachments/`). This reporter copies those images next to a
+ * `.vitest/attachments/`). This reporter copies those images next to a
  * manifest.json per project, so the report doesn't have to guess anything
  * from file names.
  *

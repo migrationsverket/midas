@@ -30,7 +30,7 @@ describe('given a primary RadioGroup', async () => {
     const { getByRole } = await render(
       <Primary>{({ orientation }) => orientation}</Primary>,
     )
-    await expect.element(getByRole('radiogroup')).toHaveTextContent('vertical')
+    await expect.element(getByRole('radiogroup')).toMatchTextContent('vertical')
   })
 })
 
