@@ -50,14 +50,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start Verdaccio
-        run: npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
-
-      - name: Publish packages to local registry
-        run: npx nx run @midas-ds/source:release:local --skipVerdaccioStart
-
-      - name: Install from registry
-        run: npm install --prefix apps/next --@midas-ds:registry=http://localhost:4873/
+      # One step, because in a container job a background process ends with
+      # the step that started it, and the registry has to stay up from
+      # publishing through installing
+      - name: Publish packages to a local registry and install them
+        run: |
+          npx verdaccio --config .verdaccio/config.yaml --listen 4873 &
+          npx nx run @midas-ds/source:release:local --skipVerdaccioStart
+          npm install --prefix apps/next --@midas-ds:registry=http://localhost:4873/
 
       - name: Remove dist files
         run: rm -rf dist
