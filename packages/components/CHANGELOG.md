@@ -1,3 +1,13 @@
+## 17.32.2 (2026-10-26)
+
+### 🩹 Fixes
+
+- **components,accordion:** add styling for native :focus-visible ([a5febf9ed8b](https://github.com/migrationsverket/midas/commit/a5febf9ed8b))
+
+### 🔧 Maintenance
+
+- **deps:** install typescript 7 alongside 6 and clean up tsconfigs ([70bf5240642](https://github.com/migrationsverket/midas/commit/70bf5240642))
+
 ## 17.32.1 (2026-10-19)
 
 ### 🩹 Fixes

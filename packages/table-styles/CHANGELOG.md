@@ -1,3 +1,13 @@
+## 2.2.6 (2026-10-26)
+
+### 🔧 Maintenance
+
+- **deps:** install typescript 7 alongside 6 and clean up tsconfigs ([70bf5240642](https://github.com/migrationsverket/midas/commit/70bf5240642))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.32.2
+
 ## 2.2.5 (2026-10-19)
 
 ### 🧱 Updated Dependencies
