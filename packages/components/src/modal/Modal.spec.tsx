@@ -153,6 +153,8 @@ describe.each([
     await page.viewport(414, 896)
   })
 
+  // Tabs through every field twice, which takes most of the default timeout
+  // on CI runners, hence the longer one at the end
   it('should keep the focused field clear of the sticky header and footer', async () => {
     await page.viewport(width, height)
     const { getByRole } = await render(<FormWithFooter />)
@@ -173,10 +175,12 @@ describe.each([
         .toBe(0)
     }
 
+    // At most two presses per field, like above: an unbounded loop kept
+    // pressing Shift+Tab into the next tests after this one timed out
     for (const field of [...fields].reverse()) {
-      while (document.activeElement !== field) {
-        await userEvent.tab({ shift: true })
-      }
+      if (document.activeElement !== field) await userEvent.tab({ shift: true })
+      if (document.activeElement !== field) await userEvent.tab({ shift: true })
+      expect(document.activeElement).toBe(field)
       expect
         .soft(
           coveredBySticky(dialog, field),
@@ -184,7 +188,7 @@ describe.each([
         )
         .toBe(0)
     }
-  })
+  }, 10000)
 
   it('should be able to keep the scroll position when clicking the modal body', async () => {
     const SCROLL_HEIGHT = 200
