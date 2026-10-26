@@ -118,7 +118,11 @@ describe('given a Modal taller than the viewport', async () => {
     )
     await userEvent.keyboard('[End]')
     await scrollEnd
-    expect(dialog.scrollTop).toBe(dialog.scrollHeight - dialog.clientHeight)
+    // Firefox scrolls to fractions of a pixel
+    expect(dialog.scrollTop).toBeCloseTo(
+      dialog.scrollHeight - dialog.clientHeight,
+      0,
+    )
 
     await userEvent.keyboard('[Home]')
     await expect.poll(() => dialog.scrollTop).toBe(0)

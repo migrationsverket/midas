@@ -28,16 +28,48 @@ These are Playwright's builds of each engine, not the branded browsers, so they 
 
 Install the browsers you want to run with `npx playwright install firefox webkit`.
 
+## Real browsers
+
+`<browser>@<version>` profiles run the branded browsers through WebdriverIO, which downloads the browser and its driver:
+
+```sh
+MIDAS_BROWSERS=chrome@stable npx nx run components:test
+MIDAS_BROWSERS=chrome@154 npx nx run components:test           # a milestone
+MIDAS_BROWSERS=firefox@stable npx nx run components:test
+MIDAS_BROWSERS=firefox@stable_157.0.1 npx nx run components:test # an exact release
+MIDAS_BROWSERS=edge@stable npx nx run components:test           # the installed Edge
+MIDAS_BROWSERS=edge@154.0.4258.62 npx nx run components:test    # must match the installed Edge
+```
+
+When testing several packages at once, download the browser and driver first, as the packages' test runs otherwise race to download them into the same directory:
+
+```sh
+MIDAS_BROWSERS=chrome@stable node tools/test-browsers/src/install.ts
+MIDAS_BROWSERS=chrome@stable npx nx run-many -t test
+```
+
+Firefox's `latest` is Nightly, so use `stable` or `stable_<version>`. These can't be mixed with the Playwright profiles in one run.
+
+`src/resolve-versions.ts` prints the profiles for the two latest versions of each browser, which the nightly workflow (`browsers-nightly.yml`) runs. For Edge it also gives the build's `.deb` from Microsoft's apt repository, which keeps the older versions, and the workflow installs it first. A failing browser opens an issue, which is closed when it passes again.
+
+In Edge, run `npx patch-package` first: Vitest's `toHaveStyle` parses the expected styles in a separate document for every browser but Chrome, Chromium and WebKit, which leaves them empty in Edge, so every style assertion fails. The patch in `patches/` adds Edge to that list ([vitest-dev/vitest#11668](https://github.com/vitest-dev/vitest/issues/11668)), and only the nightly workflow applies it.
+
+The `<browser>@<version>` profiles retry a failing test twice, as Chrome and Edge now and then miss a hover from WebDriver on CI runners.
+
+Known differences: under WebdriverIO, Vitest computes accessible names for `getByRole` itself, and they can differ from Playwright's.
+
 ## In a Vitest config
 
 ```ts
-import { browserInstances } from '@midas-ds/test-browsers'
+import { browserInstances, browserProvider } from '@midas-ds/test-browsers'
 
 browser: {
-  provider: playwright(),
+  provider: browserProvider(),
   instances: browserInstances(),
 }
 ```
+
+`browserProvider()` picks Playwright or WebdriverIO for the selected profiles. Vitest needs every instance to use the same kind of provider as the project.
 
 Pass variants to run every profile in several setups. With one profile the instances keep the variant names; with several, the profile is added, e.g. `mobile (firefox)`, so check names with `startsWith`:
 

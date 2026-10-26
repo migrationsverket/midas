@@ -5,6 +5,8 @@
     // stripping, never compiled
     "noEmit": true,
     "module": "nodenext",
+    "target": "esnext",
+    "lib": ["es2023"],
     "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "erasableSyntaxOnly": true,
