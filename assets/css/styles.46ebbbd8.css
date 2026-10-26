@@ -7368,18 +7368,6 @@ TODO merge this logic back in Infima?
   }
 }
 
-.buttonGroup_mVqm {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 0.5rem;
-}
-
-@media screen and (width <= 479px) {
-  .buttonGroup_mVqm > * {
-    width: 100%;
-  }
-}
-
 @layer docusaurus.theme-classic {/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -7730,6 +7718,18 @@ CSS variables, meant to be overridden by final theme
 .img_ev3q {
   height: auto;
 }
+}
+
+.buttonGroup_mVqm {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+
+@media screen and (width <= 479px) {
+  .buttonGroup_mVqm > * {
+    width: 100%;
+  }
 }
 
 .navbar_TBxr {

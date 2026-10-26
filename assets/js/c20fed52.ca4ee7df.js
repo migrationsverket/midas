@@ -77,6 +77,8 @@ const CardBody = (param)=>{
     });
 };
 
+// EXTERNAL MODULE: ./packages/components/src/button/ButtonGroup.tsx + 1 modules
+var ButtonGroup = __webpack_require__(98742);
 // EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
 var Button = __webpack_require__(67191);
 // EXTERNAL MODULE: ./packages/components/src/grid/Grid.tsx
@@ -216,21 +218,24 @@ const ActionExample = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
                         })
                     })
                 }),
-                /*#__PURE__*/ (0,jsx_runtime.jsxs)(Card/* .CardActions */.w, {
-                    children: [
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                            variant: "secondary",
-                            "aria-label": "Redigera ink\xf6pslista",
-                            icon: Pen,
-                            children: "Redigera"
-                        }),
-                        /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
-                            variant: "tertiary",
-                            "aria-label": "Ta bort ink\xf6pslista",
-                            icon: trash/* ["default"] */.A,
-                            children: "Ta bort"
-                        })
-                    ]
+                /*#__PURE__*/ (0,jsx_runtime.jsx)(Card/* .CardActions */.w, {
+                    children: /*#__PURE__*/ (0,jsx_runtime.jsxs)(ButtonGroup/* .ButtonGroup */.e, {
+                        "aria-label": "Hantera ink\xf6pslista",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                                variant: "secondary",
+                                "aria-label": "Redigera ink\xf6pslista",
+                                icon: Pen,
+                                children: "Redigera"
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime.jsx)(Button/* .Button */.$, {
+                                variant: "tertiary",
+                                "aria-label": "Ta bort ink\xf6pslista",
+                                icon: trash/* ["default"] */.A,
+                                children: "Ta bort"
+                            })
+                        ]
+                    })
                 })
             ]
         })
@@ -578,7 +583,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Card>\n  <CardHeader heading='Inköpslista' />\n  <CardBody>\n    <Text>\n      <ul>\n        <li>3 bananer</li>\n        <li>2 meloner</li>\n        <li>4 kiwi</li>\n        <li>2 citroner</li>\n      </ul>\n    </Text>\n  </CardBody>\n  <CardActions>\n    <Button\n      variant='secondary'\n      aria-label='Redigera inköpslista'\n      icon={Pen}\n    >\n      Redigera\n    </Button>\n    <Button\n      variant='tertiary'\n      aria-label='Ta bort inköpslista'\n      icon={Trash2}\n    >\n      Ta bort\n    </Button>\n  </CardActions>\n</Card>\n"
+        children: "<Card>\n  <CardHeader heading='Inköpslista' />\n  <CardBody>\n    <Text>\n      <ul>\n        <li>3 bananer</li>\n        <li>2 meloner</li>\n        <li>4 kiwi</li>\n        <li>2 citroner</li>\n      </ul>\n    </Text>\n  </CardBody>\n  <CardActions>\n    <ButtonGroup aria-label='Hantera inköpslista'>\n      <Button\n        variant='secondary'\n        aria-label='Redigera inköpslista'\n        icon={Pen}\n      >\n        Redigera\n      </Button>\n      <Button\n        variant='tertiary'\n        aria-label='Ta bort inköpslista'\n        icon={Trash2}\n      >\n        Ta bort\n      </Button>\n    </ButtonGroup>\n  </CardActions>\n</Card>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(ActionExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "kort-med-bild",
@@ -646,7 +651,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Link as ReactRouterLink } from 'react-router'\n\n<Card>\n  <CardContent>\n    <CardLink as={ReactRouterLink} to='/min-sida'>\n      <CardTitle>Min sida</CardTitle>\n    </CardLink>\n    <Text>På min sida kan du ändra dina uppgifter och se status på dina ansökningar</Text>\n  </CardContent>\n</Card>\n"
+        children: "import { Link as ReactRouterLink } from 'react-router'\n\n<Card>\n  <CardContent>\n    <CardLink\n      as={ReactRouterLink}\n      to='/min-sida'\n    >\n      <CardTitle>Min sida</CardTitle>\n    </CardLink>\n    <Text>På min sida kan du ändra dina uppgifter och se status på dina ansökningar</Text>\n  </CardContent>\n</Card>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "primär-handling",
@@ -959,6 +964,46 @@ const EmptyIcon = ()=>/*#__PURE__*/ (0,jsx_runtime.jsx)("svg", {
 ;// CONCATENATED MODULE: ./apps/docs/src/components/icons/index.ts
 
 
+
+
+},
+98742(__unused_rspack_module, __webpack_exports__, __webpack_require__) {
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  e: () => (/* binding */ ButtonGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./packages/components/src/utils/clsx.ts
+var clsx = __webpack_require__(18496);
+;// CONCATENATED MODULE: ./packages/components/src/button/ButtonGroup.module.css
+// extracted by css-extract-rspack-plugin
+/* export default */ const ButtonGroup_module = ({"buttonGroup":"buttonGroup_mVqm"});
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// CONCATENATED MODULE: ./packages/components/src/button/ButtonGroup.tsx
+
+
+
+
+/**
+ * Group several buttons together.
+ *
+ * @interface React.HTMLAttributes<HTMLDivElement>
+ *
+ * @see {@link https://designsystem.migrationsverket.se/components/button}
+ */ const ButtonGroup = (param)=>{
+    let { children, className, 'aria-label': ariaLabel, ...rest } = param;
+    return /*#__PURE__*/ (0,jsx_runtime.jsx)("div", {
+        role: "group",
+        "aria-label": ariaLabel,
+        className: (0,clsx/* ["default"] */.A)(ButtonGroup_module.buttonGroup, className),
+        ...rest,
+        children: children
+    });
+};
 
 
 },
