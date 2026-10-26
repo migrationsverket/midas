@@ -1,4 +1,5 @@
 import { useCallback, useRef } from 'react'
+import styles from './Modal.module.css'
 
 /**
  * Scrolls a focused element out from under the dialog's sticky header and
@@ -14,9 +15,20 @@ export const useKeepFocusClear = () => {
     cleanup.current = undefined
     if (!dialog) return
 
-    const onFocusIn = (event: FocusEvent) => {
-      const target = event.target
-      if (!(target instanceof Element) || target === dialog) return
+    const onFocusIn = ({ target }: FocusEvent) => {
+      if (!(target instanceof Element) || target === dialog) {
+        return
+      }
+
+      // A click on body text focuses .modalBody (tabIndex -1), which never matches :focus-visible
+      if (!target.matches(':focus-visible')) {
+        return
+      }
+
+      // Elements in the sticky header and footer are always visible
+      if (target.closest(`.${styles.modalHeader}, .${styles.modalFooter}`)) {
+        return
+      }
 
       const style = getComputedStyle(dialog)
       const view = dialog.getBoundingClientRect()
