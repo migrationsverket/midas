@@ -181,4 +181,19 @@ describe.each([
         .toBe(0)
     }
   })
+
+  it('should be able to keep the scroll position when clicking the modal body', async () => {
+    const SCROLL_HEIGHT = 200
+    await page.viewport(width, height)
+    const { getByRole } = await render(<FormWithFooter />)
+
+    await getByRole('button', { name: 'Öppna' }).click()
+    const dialog = getByRole('dialog')
+    const dialogElement = dialog.element()
+
+    dialogElement.scrollBy(0, SCROLL_HEIGHT)
+    expect(dialogElement.scrollTop).toBe(SCROLL_HEIGHT)
+    await dialog.click()
+    expect(dialogElement.scrollTop).toBe(SCROLL_HEIGHT)
+  })
 })
