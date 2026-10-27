@@ -1,3 +1,13 @@
+## 17.33.0 (2026-10-27)
+
+### 🚀 Features
+
+- **components,grid:** add 'box-sizing: border-box' ([e4cd21b43f5](https://github.com/migrationsverket/midas/commit/e4cd21b43f5))
+
+### 🧪 Tests updated
+
+- **components,modal:** stop the sticky focus test from leaking ([3b278ebd2f9](https://github.com/migrationsverket/midas/commit/3b278ebd2f9))
+
 ## 17.32.3 (2026-10-26)
 
 ### 🩹 Fixes
