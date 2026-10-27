@@ -34,7 +34,10 @@ const rows = [
 ]
 
 export const BasicExample = () => (
-  <div className='card'>
+  <div
+    className='card'
+    style={{ display: 'block' }}
+  >
     <Table aria-label='Fruit'>
       <TableHeader>
         <Column isRowHeader>Name</Column>
@@ -55,7 +58,10 @@ export const BasicExample = () => (
 )
 
 export const FullExample: React.FC<TableProps> = props => (
-  <div className='card'>
+  <div
+    className='card'
+    style={{ display: 'block' }}
+  >
     <Table
       aria-label='Fruit'
       {...props}
@@ -104,7 +110,10 @@ export const RowOnActionExample = () => {
   )
 
   return (
-    <div className='card'>
+    <div
+      className='card'
+      style={{ display: 'block' }}
+    >
       <Table aria-label='Fruit'>
         <TableHeader columns={columns}>
           {column => (
@@ -135,7 +144,10 @@ export const TableOnRowActionExample = () => {
   const [lastKey, setLastKey] = React.useState<Key | null>(null)
 
   return (
-    <div className='card'>
+    <div
+      className='card'
+      style={{ display: 'block' }}
+    >
       <Table
         aria-label='Fruit'
         onRowAction={setLastKey}
@@ -190,7 +202,10 @@ export const SortingExample: React.FC<TableProps> = props => {
   })
 
   return (
-    <div className='card'>
+    <div
+      className='card'
+      style={{ display: 'block' }}
+    >
       <Table
         aria-label='Fruit'
         sortDescriptor={sortDescriptor}
