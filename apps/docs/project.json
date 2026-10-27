@@ -7,19 +7,20 @@
   "implicitDependencies": ["components", "layout", "table-styles"],
   "targets": {
     "build": {
-      "executor": "@midas-ds/docusaurus:browser",
+      "executor": "nx:run-commands",
       "dependsOn": ["theme:style-dictionary-generate", "^build", "^docgen"],
-      "outputs": ["{options.outputPath}"],
+      "outputs": ["{workspaceRoot}/dist/docs"],
       "options": {
-        "outputPath": "dist/docs",
-        "minify": false
+        "command": "docusaurus build --out-dir ../../dist/docs --no-minify",
+        "cwd": "apps/docs"
       }
     },
     "serve": {
-      "executor": "@midas-ds/docusaurus:dev-server",
+      "executor": "nx:run-commands",
       "continuous": true,
       "options": {
-        "port": 3000
+        "command": "docusaurus start --port 3000 --no-open",
+        "cwd": "apps/docs"
       },
       "dependsOn": [
         "theme:style-dictionary-generate",
