@@ -12,10 +12,11 @@
   align-items: center;
   background-color: var(--midas-field-base, var(--midas-field-01-base));
   border-bottom: 1px solid var(--midas-border-color-primary);
-  padding-left: 1rem;
+
+  /* The scroller's padding makes up the rest, see DateInput.module.css */
+  padding-left: calc(var(--midas-space-medium) - var(--midas-space-xsmall));
   display: flex;
   justify-content: flex-start;
-  gap: 1rem;
 
   @media (forced-colors: active) {
     border: 1px solid var(--midas-border-color-primary);
