@@ -26,6 +26,11 @@
       "type": "boolean",
       "description": "Open page in the browser.",
       "default": false
+    },
+    "poll": {
+      "type": "boolean",
+      "description": "Poll for file changes instead of watching, e.g. in a container with a mounted volume.",
+      "default": false
     }
   },
   "required": []
