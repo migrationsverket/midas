@@ -2,6 +2,7 @@
 
 export * from './accordion'
 export * from './badge'
+export * from './blankslate'
 export * from './breadcrumbs'
 export * from './button'
 export * from './calendar'

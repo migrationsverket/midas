@@ -1,0 +1,54 @@
+.blankslate {
+  container: blankslate / inline-size;
+
+  /* Inline-size containment stops the element from sizing to its content,
+     so it would collapse to zero width in a flex row or other shrink-to-fit parent */
+  inline-size: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--midas-space-medium);
+  padding: var(--midas-space-xlarge);
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
+/* Matches windowSizes.sm. Custom properties can't be used in container conditions */
+@container blankslate (width < 480px) {
+  .content {
+    padding: var(--midas-space-medium);
+  }
+}
+
+.visual {
+  color: var(--midas-icon-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (forced-colors: active) {
+    color: GrayText;
+  }
+}
+
+.heading {
+  text-wrap: balance;
+}
+
+.description {
+  color: var(--midas-text-secondary);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--midas-space-medium);
+  margin-top: var(--midas-space-60);
+}
