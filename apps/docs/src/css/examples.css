@@ -10,9 +10,11 @@
  *
  * `revert` also undoes presentation attributes, so it skips SVG icons and
  * elements sized with attributes, like `<img width>`.
+ * 
+ * Also let Infimas styled <pre> slip through. 
  */
 @layer examples {
-  .card *:not(svg, svg *, [width], [height], [hidden]),
+  .card *:not(svg, svg *, [width], [height], [hidden], pre),
   .card *::before,
   .card *::after {
     all: revert;
