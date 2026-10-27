@@ -29,6 +29,7 @@
 }
 
 .flex > * {
+  box-sizing: border-box;
   display: flex;
   flex-flow: column nowrap;
   flex: 0 0 auto;
