@@ -3,4 +3,5 @@ export interface DevServerExecutorSchema {
   host: string
   hotOnly: boolean
   open: boolean
+  poll: boolean
 }

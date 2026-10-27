@@ -9,6 +9,7 @@
     "build": {
       "executor": "@midas-ds/docusaurus:browser",
       "dependsOn": ["theme:style-dictionary-generate", "^build", "^docgen"],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/docs",
         "minify": false
@@ -16,6 +17,7 @@
     },
     "serve": {
       "executor": "@midas-ds/docusaurus:dev-server",
+      "continuous": true,
       "options": {
         "port": 3000
       },
