@@ -52,9 +52,13 @@ export interface ToastProviderProps extends AriaToastRegionProps {
 const toastStateProps: ToastStateProps = {
   wrapUpdate(fn) {
     if ('startViewTransition' in document) {
-      document.startViewTransition(() => {
+      const transition = document.startViewTransition(() => {
         flushSync(fn)
       })
+      // A transition started before this one ends, e.g. by a second toast,
+      // skips it, which rejects `ready`. The update still runs, so that's
+      // expected, but left unhandled it's reported as an error
+      transition.ready.catch(() => undefined)
     } else {
       fn()
     }
