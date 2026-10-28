@@ -1,12 +1,15 @@
 import { ExecutorContext } from '@nx/devkit'
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join, relative, resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
-import { BuildTokensExecutorSchema } from './schema.js'
 import executor from './build-tokens.js'
 
-const options: BuildTokensExecutorSchema = {}
+const root = resolve(import.meta.dirname, '../../../..')
+
 const context: ExecutorContext = {
-  root: '',
+  root,
   cwd: process.cwd(),
   isVerbose: false,
   projectGraph: {
@@ -21,8 +24,25 @@ const context: ExecutorContext = {
 }
 
 describe('BuildTokens Executor', () => {
-  it('can run', async () => {
-    const output = await executor(options, context)
-    expect(output.success).toBe(true)
+  // Nx can be started from any folder in the workspace, and passes the paths
+  // relative to the workspace root
+  it('reads the tokens and writes the files relative to the workspace root', async () => {
+    const outDir = mkdtempSync(join(tmpdir(), 'build-tokens-'))
+    try {
+      const output = await executor(
+        {
+          source: ['packages/theme/tokens/**/*.json'],
+          buildPath: relative(root, outDir),
+        },
+        context,
+      )
+
+      expect(output.success).toBe(true)
+      expect(readFileSync(join(outDir, 'variables.css'), 'utf8')).toContain(
+        '--midas-',
+      )
+    } finally {
+      rmSync(outDir, { recursive: true, force: true })
+    }
   })
 })

@@ -1,4 +1,5 @@
 import { PromiseExecutor } from '@nx/devkit'
+import { resolve } from 'node:path'
 import { BuildTokensExecutorSchema } from './schema.js'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 import { Config } from 'style-dictionary/types'
@@ -10,13 +11,17 @@ StyleDictionary.registerTransform(dimensionToUnit)
 StyleDictionary.registerFormat(tailwindTheme)
 
 const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
-  config,
+  options,
   context,
 ) => {
-  const buildPath = context.target.options.buildPath
-  const defaultConfig: Config = {
+  // Nx passes the paths relative to the workspace root, and Style Dictionary
+  // resolves them from the cwd: started from a project folder, it read no
+  // tokens and wrote empty files into that folder
+  const fromRoot = (path: string) => resolve(context.root, path)
+  const buildPath = `${fromRoot(options.buildPath)}/`
+  const config: Config = {
     usesDtcg: true,
-    source: ['tokens/**/*.json'],
+    source: options.source.map(fromRoot),
     platforms: {
       es6: {
         options: {
@@ -113,11 +118,7 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
       },
     },
   }
-  const buildConfig: Config = {
-    ...defaultConfig,
-    ...config,
-  }
-  const sd = new StyleDictionary(buildConfig, { verbosity: 'verbose' })
+  const sd = new StyleDictionary(config, { verbosity: 'verbose' })
   const res = await sd.buildAllPlatforms()
 
   return {
