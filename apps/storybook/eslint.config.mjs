@@ -21,4 +21,11 @@ export default defineConfig([
       '@nx/enforce-module-boundaries': 'off',
     },
   },
+  // The app isn't published, its package.json only links it as a workspace
+  {
+    files: ['package.json'],
+    rules: {
+      '@nx/dependency-checks': 'off',
+    },
+  },
 ])

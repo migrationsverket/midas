@@ -17,6 +17,7 @@
   "version": "1.1.77",
   "exports": {
     "./react-select.css": {
+      "@midas-ds/source": "./src/lib/react-select.css",
       "import": "./react-select.css",
       "default": "./react-select.css"
     }

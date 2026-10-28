@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
-    "@nx/devkit": "21.4.0",
+    "@nx/devkit": "24.0.0",
     "tslib": "^2.3.0"
   },
   "executors": "./executors.json"

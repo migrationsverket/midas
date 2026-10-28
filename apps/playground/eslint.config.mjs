@@ -19,4 +19,11 @@ export default [
     // Override or add rules here
     rules: {},
   },
+  // The app isn't published, its package.json only links it as a workspace
+  {
+    files: ['package.json'],
+    rules: {
+      '@nx/dependency-checks': 'off',
+    },
+  },
 ]

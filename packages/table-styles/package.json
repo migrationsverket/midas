@@ -22,11 +22,13 @@
   ],
   "exports": {
     ".": {
+      "@midas-ds/source": "./src/index.ts",
       "types": "./index.d.ts",
       "import": "./index.mjs",
       "default": "./index.mjs"
     },
     "./tanstack-table.css": {
+      "@midas-ds/source": "./src/lib/tanstack-table.css",
       "import": "./tanstack-table.css"
     }
   },

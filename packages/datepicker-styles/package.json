@@ -18,6 +18,7 @@
   "main": "./index.js",
   "exports": {
     "./react-datepicker.css": {
+      "@midas-ds/source": "./src/lib/react-datepicker.css",
       "import": "./react-datepicker.css"
     }
   },

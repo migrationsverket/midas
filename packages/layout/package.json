@@ -31,10 +31,22 @@
     "directory": "packages/layout"
   },
   "exports": {
-    ".": "./index.js",
-    "./default.css": "./assets/default.css",
-    "./*/index.js": "./*/index.js",
-    "./*": "./*/index.js"
+    ".": {
+      "@midas-ds/source": "./src/index.ts",
+      "default": "./index.js"
+    },
+    "./default.css": {
+      "@midas-ds/source": "./src/default.css",
+      "default": "./assets/default.css"
+    },
+    "./*/index.js": {
+      "@midas-ds/source": "./src/*/index.ts",
+      "default": "./*/index.js"
+    },
+    "./*": {
+      "@midas-ds/source": "./src/*/index.ts",
+      "default": "./*/index.js"
+    }
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",

@@ -19,23 +19,28 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "@midas-ds/source": "./src/index.ts",
       "types": "./index.d.ts",
       "import": "./index.mjs",
       "default": "./index.mjs"
     },
     "./variables.css": {
+      "@midas-ds/source": "./src/lib/style-dictionary-dist/variables.css",
       "import": "./variables.css",
       "default": "./variables.css"
     },
     "./tailwind-theme.css": {
+      "@midas-ds/source": "./src/lib/style-dictionary-dist/tailwind-theme.css",
       "import": "./tailwind-theme.css",
       "default": "./tailwind-theme.css"
     },
     "./fonts.css": {
+      "@midas-ds/source": "./src/lib/fonts.css",
       "import": "./fonts.css",
       "default": "./fonts.css"
     },
     "./color-scheme.css": {
+      "@midas-ds/source": "./src/lib/color-scheme.css",
       "import": "./color-scheme.css",
       "default": "./color-scheme.css"
     }
