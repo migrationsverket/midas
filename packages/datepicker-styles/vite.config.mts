@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, defaultClientConditions } from 'vite'
 import * as path from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
@@ -8,7 +8,8 @@ export default defineConfig({
   root,
   cacheDir: '../../node_modules/.vite/packages/datepicker-styles',
   resolve: {
-    tsconfigPaths: true,
+    // Resolves the workspace packages to their sources, see their exports
+    conditions: ['@midas-ds/source', ...defaultClientConditions],
   },
   plugins: [
     viteStaticCopy({

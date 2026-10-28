@@ -4,7 +4,7 @@ import { FieldError, Label } from '@midas-ds/components'
 import { useState } from 'react'
 import { registerLocale, setDefaultLocale } from 'react-datepicker'
 import { sv } from 'date-fns/locale/sv'
-import '@midas-ds/datepicker-styles/lib/react-datepicker.css'
+import '@midas-ds/datepicker-styles/react-datepicker.css'
 
 registerLocale('sv', sv)
 setDefaultLocale('sv')

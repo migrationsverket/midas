@@ -11,9 +11,9 @@ import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '@midas-ds/test-utils'
 import { variables } from '@midas-ds/theme'
 import { I18nProvider } from 'react-aria'
-import '@midas-ds/theme/lib/fonts.css'
-import '@midas-ds/theme/lib/color-scheme.css'
-import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
+import '@midas-ds/theme/fonts.css'
+import '@midas-ds/theme/color-scheme.css'
+import '@midas-ds/theme/variables.css'
 import './custom.css'
 
 // Stories embedding other stories (via composeStories) render the decorator

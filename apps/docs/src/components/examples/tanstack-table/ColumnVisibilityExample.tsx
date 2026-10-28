@@ -8,7 +8,7 @@ import {
 import { Checkbox, Popover, Button, DialogTrigger } from '@midas-ds/components'
 import { Settings } from 'lucide-react'
 import { type Employee, employees } from '@midas-ds/test-utils'
-import '@midas-ds/table-styles/lib/tanstack-table.css'
+import '@midas-ds/table-styles/tanstack-table.css'
 
 const columns: ColumnDef<Employee>[] = [
   {

@@ -25,7 +25,7 @@ import {
 import { CSS } from '@dnd-kit/utilities'
 import { GripVertical } from 'lucide-react'
 import { type Employee, employees } from '@midas-ds/test-utils'
-import '@midas-ds/table-styles/lib/tanstack-table.css'
+import '@midas-ds/table-styles/tanstack-table.css'
 
 const columns: ColumnDef<Employee>[] = [
   {

@@ -9,7 +9,7 @@ import {
 } from '@tanstack/react-table'
 import { ArrowUp, ArrowDown, ArrowUpDown } from 'lucide-react'
 import { type Employee, employees } from '@midas-ds/test-utils'
-import '@midas-ds/table-styles/lib/tanstack-table.css'
+import '@midas-ds/table-styles/tanstack-table.css'
 
 const columns: ColumnDef<Employee>[] = [
   {

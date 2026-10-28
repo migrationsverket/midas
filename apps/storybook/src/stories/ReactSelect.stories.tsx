@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
 import { options } from '@midas-ds/test-utils'
 import { variables } from '@midas-ds/theme'
-import '@midas-ds/select-styles/lib/react-select.css'
+import '@midas-ds/select-styles/react-select.css'
 import { Button, DialogTrigger, Label, Modal, Text } from '@midas-ds/components'
 
 type Story = StoryObj<typeof Select>

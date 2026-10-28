@@ -4,7 +4,7 @@ import {
   flexRender,
   ColumnDef,
 } from '@tanstack/react-table';
-import '@midas-ds/table-styles/lib/tanstack-table.css';
+import '@midas-ds/table-styles/tanstack-table.css';
 
 interface BasicTableProps<TData> {
   data: TData[];

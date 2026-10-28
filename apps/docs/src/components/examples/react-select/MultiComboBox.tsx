@@ -1,7 +1,7 @@
 import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
 import { Label, Text } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
-import '@midas-ds/select-styles/lib/react-select.css'
+import '@midas-ds/select-styles/react-select.css'
 
 import { employees } from '@midas-ds/test-utils'
 

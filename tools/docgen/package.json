@@ -3,8 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "@midas-ds/source": "./src/index.ts",
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "@nx/devkit": "24.0.0",
     "glob": "^13.0.0",

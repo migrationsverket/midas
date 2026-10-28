@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-table'
 import { Select, TextField, ListBoxItem, Button } from '@midas-ds/components'
 import { type Employee, employees } from '@midas-ds/test-utils'
-import '@midas-ds/table-styles/lib/tanstack-table.css'
+import '@midas-ds/table-styles/tanstack-table.css'
 
 const columns: ColumnDef<Employee>[] = [
   {

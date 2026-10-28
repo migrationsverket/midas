@@ -1,3 +1,4 @@
+import { defaultClientConditions } from 'vite'
 import type { UserConfig } from 'vite'
 import dts from 'unplugin-dts/vite'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
@@ -7,10 +8,8 @@ export default {
   root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/packages/table-styles',
   resolve: {
-    tsconfigPaths: true,
-    alias: {
-      '@midas-ds/components/default.css': '../components/src/default.css',
-    },
+    // Resolves the workspace packages to their sources, see their exports
+    conditions: ['@midas-ds/source', ...defaultClientConditions],
   },
   plugins: [
     libInjectCss(),

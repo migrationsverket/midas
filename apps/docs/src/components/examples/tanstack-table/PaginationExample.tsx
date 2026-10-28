@@ -6,7 +6,7 @@ import {
   ColumnDef,
 } from '@tanstack/react-table'
 import { Pagination } from '@midas-ds/table-styles'
-import '@midas-ds/table-styles/lib/tanstack-table.css'
+import '@midas-ds/table-styles/tanstack-table.css'
 
 type Person = {
   id: number
