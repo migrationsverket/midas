@@ -1,0 +1,8 @@
+"use strict";
+(self["webpackChunkdocs"] = self["webpackChunkdocs"] || []).push([["8868"], {
+49436(module) {
+module.exports = JSON.parse('{"authors":[{"name":"Midas","title":"Midas Core Team","utl":"https://github.com/migrationsverket/midas","imageURL":"https://avatars.githubusercontent.com/u/110020437?s=200&v=4","key":"midas","page":null,"count":29}]}')
+
+},
+
+}]);

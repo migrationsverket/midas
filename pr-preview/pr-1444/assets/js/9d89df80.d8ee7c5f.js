@@ -1,0 +1,8 @@
+"use strict";
+(self["webpackChunkdocs"] = self["webpackChunkdocs"] || []).push([["8136"], {
+64415(module) {
+module.exports = JSON.parse('{"tag":{"label":"v16","permalink":"/pr-preview/pr-1444/release-notes/tags/v-16","allTagsPath":"/pr-preview/pr-1444/release-notes/tags","count":2,"unlisted":false},"listMetadata":{"permalink":"/pr-preview/pr-1444/release-notes/tags/v-16","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}}')
+
+},
+
+}]);
