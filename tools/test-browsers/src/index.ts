@@ -36,6 +36,23 @@ const profiles = {
 const realBrowsers = ['chrome', 'firefox', 'edge'] as const
 
 /**
+ * Turns on prefers-reduced-motion in the branded browsers, like
+ * `reducedMotion` does for the Playwright profiles below. Unlike Playwright,
+ * WebDriver clicks without waiting for the element to take the click, so
+ * with motion on it clicked into panels and overlays that were still
+ * animating in, e.g. an accordion panel still opening.
+ */
+const reducedMotionCapabilities = {
+  chrome: {
+    'goog:chromeOptions': { args: ['--force-prefers-reduced-motion'] },
+  },
+  edge: { 'ms:edgeOptions': { args: ['--force-prefers-reduced-motion'] } },
+  firefox: {
+    'moz:firefoxOptions': { prefs: { 'ui.prefersReducedMotion': 1 } },
+  },
+} satisfies Record<(typeof realBrowsers)[number], object>
+
+/**
  * A branded browser in a given version, run through WebdriverIO, which
  * downloads it: `<browser>@<version>`, e.g. `chrome@141`, `chrome@stable`,
  * `firefox@stable` or `firefox@stable_157.0.2`. For Edge only the driver is
@@ -111,7 +128,10 @@ const toInstance = (
       browser: real.browser,
       name,
       provider: webdriverio({
-        capabilities: { browserVersion: real.version },
+        capabilities: {
+          ...reducedMotionCapabilities[real.browser],
+          browserVersion: real.version,
+        },
       }),
     }
   }
