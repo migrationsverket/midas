@@ -32,6 +32,10 @@ describe('given a Calendar with showMonthYearPicker', async () => {
     const targetIndex = optionTexts.findIndex(text => text !== currentMonth)
     const targetMonth = optionTexts[targetIndex]
 
+    // The list opens scrolled to the current month, with the first months
+    // partly above its top. Playwright scrolls an option into view before
+    // clicking it, WebDriver doesn't, so its click missed in Firefox
+    options.nth(targetIndex).element().scrollIntoView({ block: 'nearest' })
     await options.nth(targetIndex).click()
 
     await expect.element(trigger).toHaveTextContent(targetMonth as string)
