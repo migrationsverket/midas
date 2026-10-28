@@ -11,7 +11,7 @@
       "dependsOn": ["theme:style-dictionary-generate", "^build", "^docgen"],
       "outputs": ["{workspaceRoot}/dist/docs"],
       "options": {
-        "command": "docusaurus build --out-dir ../../dist/docs --no-minify",
+        "command": "docusaurus build --out-dir ../../dist/docs",
         "cwd": "apps/docs"
       }
     },
