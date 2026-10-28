@@ -45,7 +45,11 @@ const config: Config = {
   // https://docusaurus.io/blog/releases/3.10. Includes Docusaurus Faster
   // (Rspack/SWC, via @docusaurus/faster), namespaced localStorage keys and
   // MDX v1 compat turned off.
-  future: { v4: true },
+  //
+  // VCS is off: the site shows no last update dates, and with it on every
+  // build reads the whole git history in the background. In CI's treeless
+  // checkout that takes hours, and `docusaurus build` waits for it to exit.
+  future: { v4: true, experimental_vcs: false },
   plugins: [
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
     function webpackAliasPlugin() {
