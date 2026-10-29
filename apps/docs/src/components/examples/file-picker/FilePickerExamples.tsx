@@ -68,11 +68,8 @@ export const FormExample = () => {
     >
       <FilePicker
         label='Ladda upp bilder på dina favoritfrukter'
-        description='Högst tre bilder'
         name='fruits'
-        isRequired
         allowsMultiple
-        validate={files => (files.length > 3 ? 'Välj högst tre bilder' : true)}
       />
       <div>
         <Button type='submit'>Skicka</Button>

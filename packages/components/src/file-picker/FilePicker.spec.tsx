@@ -14,8 +14,7 @@ const {
   Disabled,
   ErrorOnTop,
   Controlled,
-  Required,
-  CustomValidation,
+  InForm,
 } = composeStories(stories)
 
 const LABEL = 'Ladda upp en bild på din favoritfrukt'
@@ -165,7 +164,6 @@ describe('Given a FilePicker with acceptedFileTypes', () => {
       <FilePicker
         label={LABEL}
         acceptedFileTypes={['image/png', '.pdf']}
-        validationBehavior='aria'
         defaultValue={[
           png('a.png'),
           new File(['%PDF'], 'b.PDF'),
@@ -180,23 +178,9 @@ describe('Given a FilePicker with acceptedFileTypes', () => {
   })
 })
 
-describe('Given a required FilePicker in a form', () => {
-  it('should block submission, show an error and focus the trigger', async () => {
-    await render(<Required />)
-
-    await page.getByRole('button', { name: 'Skicka' }).click()
-
-    await expect.element(page.getByTestId('submitted')).not.toBeInTheDocument()
-    const trigger = page.getByRole('button', { name: 'Choose files' })
-    await expect.element(trigger).toHaveFocus()
-    // Label, description and the browser's "select a file" message
-    expect(
-      trigger.element().getAttribute('aria-describedby')?.split(' '),
-    ).toHaveLength(3)
-  })
-
+describe('Given a FilePicker in a form', () => {
   it('should submit the selected files with the form', async () => {
-    const { container } = await render(<Required />)
+    const { container } = await render(<InForm />)
 
     await upload(container, png('a.png'), png('b.png'))
     await page.getByRole('button', { name: 'Skicka' }).click()
@@ -205,47 +189,16 @@ describe('Given a required FilePicker in a form', () => {
       .element(page.getByTestId('submitted'))
       .toHaveTextContent('a.png, b.png')
   })
-})
 
-describe('Given a FilePicker with validate', () => {
-  it('should show the error on submit', async () => {
-    const { container } = await render(<CustomValidation />)
+  it('should clear the selection when the form resets', async () => {
+    const { container } = await render(<InForm />)
 
-    await upload(container, png('a.png'), png('b.png'), png('c.png'))
-    await expect
-      .element(page.getByText('Välj högst två filer'))
-      .toBeInTheDocument()
+    await upload(container, png('a.png'))
+    await page.getByRole('button', { name: 'Rensa' }).click()
+    await expect.element(page.getByText('a.png')).not.toBeInTheDocument()
 
     await page.getByRole('button', { name: 'Skicka' }).click()
-    await expect.element(page.getByTestId('submitted')).not.toBeInTheDocument()
-  })
-
-  it('should clear the selection and the error when the form resets', async () => {
-    const { container } = await render(<CustomValidation />)
-
-    await upload(container, png('a.png'), png('b.png'), png('c.png'))
-    await page.getByRole('button', { name: 'Rensa' }).click()
-
-    await expect.element(page.getByText('a.png')).not.toBeInTheDocument()
-    await expect
-      .element(page.getByText('Välj högst två filer'))
-      .not.toBeInTheDocument()
-  })
-
-  it('should pass the validation to an errorMessage function', async () => {
-    await render(
-      <FilePicker
-        label={LABEL}
-        validationBehavior='aria'
-        defaultValue={[png('a.png')]}
-        validate={() => 'För stor'}
-        errorMessage={validation =>
-          `Fel: ${validation.validationErrors.join(', ')}`
-        }
-      />,
-    )
-
-    await expect.element(page.getByText('Fel: För stor')).toBeInTheDocument()
+    await expect.element(page.getByTestId('submitted')).toHaveTextContent('–')
   })
 })
 

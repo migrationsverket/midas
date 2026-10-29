@@ -22,7 +22,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 />
 
 `FilePicker` låter användaren välja filer. Den håller de valda filerna, ger fältet en etikett, en beskrivning och ett
-felmeddelande, och valideras och skickas med formulär som andra formulärfält.
+felmeddelande, och skickar filerna med formulär.
 
 Utan innehåll visas en knapp och en lista över de valda filerna. Vill du till exempel kunna dra och släppa filer
 bygger du innehållet själv med [FileTrigger](/components/file-picker/file-trigger),
@@ -97,21 +97,15 @@ släpps i en DropZone, gör fältet ogiltigt och namnges i felmeddelandet.
 
 ### I ett formulär
 
-Med `name` skickas de valda filerna med formuläret, som för ett vanligt filfält. `isRequired` kräver minst en fil,
-och `validate` returnerar ett felmeddelande när urvalet inte är giltigt, till exempel för många eller för stora
-filer. Felen visas när formuläret skickas, och formuläret skickas inte förrän de är åtgärdade. Med
-`validationBehavior='aria'` visas felen direkt i stället, och formuläret skickas ändå. Se
-[Validering](/design-patterns/validation) för mer om validering i formulär.
+Med `name` skickas de valda filerna med formuläret, som för ett vanligt filfält. När formuläret återställs går urvalet
+tillbaka till `defaultValue`.
 
 ```tsx
 <form onSubmit={handleSubmit}>
   <FilePicker
     label='Ladda upp bilder på dina favoritfrukter'
-    description='Högst tre bilder'
     name='fruits'
-    isRequired
     allowsMultiple
-    validate={files => (files.length > 3 ? 'Välj högst tre bilder' : true)}
   />
   <Button type='submit'>Skicka</Button>
 </form>
@@ -159,10 +153,10 @@ const [files, setFiles] = React.useState<File[]>([])
 
 ### Felmeddelande
 
-Sätt `isInvalid` och `errorMessage` för att visa ett fel som inte kommer från valideringen, till exempel om
+Sätt `isInvalid` och `errorMessage` för att visa ett fel, till exempel om användaren väljer för många filer eller om
 uppladdningen misslyckas. Felmeddelandet visas under kontrollerna, eller ovanför med `errorPosition='top'`, och läggs
-automatiskt till i knappens beskrivning. En DropZone inuti markeras också som ogiltig. Utan `errorMessage` visas
-meddelandena från valideringen.
+automatiskt till i knappens beskrivning. En DropZone inuti markeras också som ogiltig. `isInvalid` tar över
+felet från `acceptedFileTypes`.
 
 ```tsx
 <FilePicker

@@ -76,7 +76,6 @@ export const AcceptedFileTypes: Story = {
   args: {
     acceptedFileTypes: ['image/png', 'image/jpeg'],
     description: 'Endast .jpg- och .png-filer',
-    validationBehavior: 'aria',
   },
   render: args => (
     <FilePicker {...args}>
@@ -134,31 +133,10 @@ const useSubmittedFiles = (name: string) => {
   return { names, onSubmit }
 }
 
-export const Required: Story = {
+export const InForm: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   args: {
     name: 'fruits',
-    isRequired: true,
-  },
-  render: function Render(args) {
-    const { names, onSubmit } = useSubmittedFiles('fruits')
-
-    return (
-      <form onSubmit={onSubmit}>
-        <FilePicker {...args} />
-        <button type='submit'>Skicka</button>
-        <SubmittedFiles names={names} />
-      </form>
-    )
-  },
-}
-
-export const CustomValidation: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  args: {
-    name: 'fruits',
-    validate: (files: File[]) =>
-      files.length > 2 ? 'Välj högst två filer' : true,
   },
   render: function Render(args) {
     const { names, onSubmit } = useSubmittedFiles('fruits')

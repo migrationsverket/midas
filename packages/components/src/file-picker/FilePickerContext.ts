@@ -11,7 +11,7 @@ export interface FilePickerContextValue {
   /** Adds files to the selection, or replaces it unless `allowsMultiple` */
   addFiles: (files: File[]) => void
   removeFile: (file: File) => void
-  /** Attached to the FileTrigger's button, focused when the field is invalid on submit */
+  /** Attached to the FileTrigger's button, focused when the last file is removed */
   triggerRef: RefObject<HTMLButtonElement | null>
 }
 
