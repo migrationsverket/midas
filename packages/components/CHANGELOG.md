@@ -1,3 +1,18 @@
+## 17.33.1 (2026-10-29)
+
+### 🩹 Fixes
+
+- **components,toast:** handle skipped view transitions ([1245e406c11](https://github.com/migrationsverket/midas/commit/1245e406c11))
+
+### 🔧 Maintenance
+
+- **deps:** update vitest to v5 ([7841295f924](https://github.com/migrationsverket/midas/commit/7841295f924))
+
+### 🧪 Tests updated
+
+- **components,toast:** wait for the view transition before closing ([8e400d3778f](https://github.com/migrationsverket/midas/commit/8e400d3778f))
+- **components:** add open overlay stories for visual baselines ([7e775268454](https://github.com/migrationsverket/midas/commit/7e775268454))
+
 ## 17.33.0 (2026-10-27)
 
 ### 🚀 Features

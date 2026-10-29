@@ -1,3 +1,13 @@
+## 0.2.59 (2026-10-29)
+
+### 🔧 Maintenance
+
+- **deps:** update vitest to v5 ([7841295f924](https://github.com/migrationsverket/midas/commit/7841295f924))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.33.1
+
 ## 0.2.58 (2026-10-27)
 
 ### 🧱 Updated Dependencies
