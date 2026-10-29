@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
-import { DropEvent, isFileDropItem } from 'react-aria'
 import { Upload } from 'lucide-react'
-import { FilePicker, FilePickerProps } from './FilePicker'
+import { FilePicker } from './FilePicker'
 import { FileTrigger } from '../file-trigger'
 import { DropZone } from '../drop-zone'
-import { FileList, FileListItem } from '../file-list'
+import { FileList } from '../file-list'
 import { Button } from '../button'
 import { Text } from '../text'
 
@@ -21,110 +20,44 @@ export default {
   args: {
     label: 'Ladda upp en bild på din favoritfrukt',
     description: 'Du kan välja flera om du har många favoritfrukter',
+    allowsMultiple: true,
   },
 } satisfies Meta<typeof FilePicker>
 
-const useUniqueFiles = () => {
-  const [files, setFiles] = React.useState<File[]>([])
+// Fixed dates keep the visual snapshots stable
+const apple = new File(['🍎'], 'äpple.png', {
+  type: 'image/png',
+  lastModified: 0,
+})
 
-  const addFiles = (newFiles: File[]) =>
-    setFiles(oldFiles => {
-      const existingFileNames = new Set(oldFiles.map(({ name }) => name))
-
-      return [
-        ...oldFiles,
-        ...newFiles.filter(({ name }) => !existingFileNames.has(name)),
-      ]
-    })
-
-  const removeFile = (name: string) =>
-    setFiles(oldFiles => oldFiles.filter(file => file.name !== name))
-
-  return { files, addFiles, removeFile }
-}
-
-const UploadedFiles = ({
-  files,
-  onDelete,
-}: {
-  files: File[]
-  onDelete: (name: string) => void
-}) =>
-  files.length > 0 && (
-    <FileList aria-label='Valda filer'>
-      {files.map(file => (
-        <FileListItem
-          key={file.name}
-          fileName={file.name}
-          fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-          onDelete={() => onDelete(file.name)}
-        />
-      ))}
-    </FileList>
-  )
-
-const DefaultContainer = (args: FilePickerProps) => {
-  const { files, addFiles, removeFile } = useUniqueFiles()
-
-  return (
-    <FilePicker {...args}>
-      <FileTrigger
-        allowsMultiple
-        onSelect={fileList => fileList && addFiles(Array.from(fileList))}
-        data-testid='file-trigger'
-      >
+const DropZoneControls = () => (
+  <>
+    <DropZone>
+      <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+      <FileTrigger>
         <Button icon={Upload}>Välj fil(er)</Button>
       </FileTrigger>
-      <UploadedFiles
-        files={files}
-        onDelete={removeFile}
-      />
-    </FilePicker>
-  )
-}
+    </DropZone>
+    <FileList />
+  </>
+)
 
-const DropZoneContainer = (args: FilePickerProps) => {
-  const { files, addFiles, removeFile } = useUniqueFiles()
-
-  const handleDrop = async (e: DropEvent) => {
-    const fileItems = e.items.filter(isFileDropItem)
-    addFiles(await Promise.all(fileItems.map(item => item.getFile())))
-  }
-
-  return (
-    <FilePicker {...args}>
-      <DropZone onDrop={handleDrop}>
-        <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-        <FileTrigger
-          allowsMultiple
-          onSelect={fileList => fileList && addFiles(Array.from(fileList))}
-        >
-          <Button icon={Upload}>Välj fil(er)</Button>
-        </FileTrigger>
-      </DropZone>
-      <UploadedFiles
-        files={files}
-        onDelete={removeFile}
-      />
-    </FilePicker>
-  )
-}
-
-export const Default: Story = {
-  render: args => <DefaultContainer {...args} />,
-}
+export const Default: Story = {}
 
 export const Invalid: Story = {
   args: {
     isInvalid: true,
     errorMessage: 'Endast .jpg- och .png-filer tillåts',
   },
-  render: args => <DefaultContainer {...args} />,
 }
 
 export const WithDropZone: Story = {
   name: 'With a DropZone',
-  render: args => <DropZoneContainer {...args} />,
+  render: args => (
+    <FilePicker {...args}>
+      <DropZoneControls />
+    </FilePicker>
+  ),
 }
 
 export const InvalidWithDropZone: Story = {
@@ -132,5 +65,111 @@ export const InvalidWithDropZone: Story = {
     isInvalid: true,
     errorMessage: 'Endast .jpg- och .png-filer tillåts',
   },
-  render: args => <DropZoneContainer {...args} />,
+  render: args => (
+    <FilePicker {...args}>
+      <DropZoneControls />
+    </FilePicker>
+  ),
+}
+
+export const AcceptedFileTypes: Story = {
+  args: {
+    acceptedFileTypes: ['image/png', 'image/jpeg'],
+    description: 'Endast .jpg- och .png-filer',
+    validationBehavior: 'aria',
+  },
+  render: args => (
+    <FilePicker {...args}>
+      <DropZoneControls />
+    </FilePicker>
+  ),
+}
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+    defaultValue: [apple],
+  },
+}
+
+export const ErrorOnTop: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    isInvalid: true,
+    errorMessage: 'Endast .jpg- och .png-filer tillåts',
+    errorPosition: 'top',
+  },
+}
+
+export const Controlled: Story = {
+  tags: ['!snapshot'],
+  render: function Render(args) {
+    const [files, setFiles] = React.useState<File[]>([])
+
+    return (
+      <div>
+        <FilePicker
+          {...args}
+          value={files}
+          onChange={setFiles}
+        />
+        <p data-testid='file-count'>Valda filer: {files.length}</p>
+      </div>
+    )
+  },
+}
+
+const SubmittedFiles = ({ names }: { names: string[] | null }) =>
+  names && <output data-testid='submitted'>{names.join(', ') || '–'}</output>
+
+const useSubmittedFiles = (name: string) => {
+  const [names, setNames] = React.useState<string[] | null>(null)
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const files = new FormData(e.currentTarget).getAll(name) as File[]
+    setNames(files.filter(file => file.name).map(file => file.name))
+  }
+
+  return { names, onSubmit }
+}
+
+export const Required: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    name: 'fruits',
+    isRequired: true,
+  },
+  render: function Render(args) {
+    const { names, onSubmit } = useSubmittedFiles('fruits')
+
+    return (
+      <form onSubmit={onSubmit}>
+        <FilePicker {...args} />
+        <button type='submit'>Skicka</button>
+        <SubmittedFiles names={names} />
+      </form>
+    )
+  },
+}
+
+export const CustomValidation: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    name: 'fruits',
+    validate: (files: File[]) =>
+      files.length > 2 ? 'Välj högst två filer' : true,
+  },
+  render: function Render(args) {
+    const { names, onSubmit } = useSubmittedFiles('fruits')
+
+    return (
+      <form onSubmit={onSubmit}>
+        <FilePicker {...args} />
+        <button type='submit'>Skicka</button>
+        <button type='reset'>Rensa</button>
+        <SubmittedFiles names={names} />
+      </form>
+    )
+  },
 }

@@ -1,0 +1,12 @@
+{
+  "en": {
+    "chooseFile": "Choose file",
+    "chooseFiles": "Choose files",
+    "unsupportedFileType": "File type not allowed"
+  },
+  "sv": {
+    "chooseFile": "Välj fil",
+    "chooseFiles": "Välj filer",
+    "unsupportedFileType": "Filtypen är inte tillåten"
+  }
+}

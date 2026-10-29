@@ -1,25 +1,52 @@
 'use client'
 
 import { useEffect, useRef, type HTMLAttributes } from 'react'
-import { FocusScope, useFocusManager } from 'react-aria'
+import { FocusScope, useFocusManager, useLocale } from 'react-aria'
 import clsx from '../utils/clsx'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import { useFilePickerContext } from '../file-picker/FilePickerContext'
+import { formatFileSize } from '../file-picker/utils'
+import { FileListItem } from './FileListItem'
 import styles from './FileList.module.css'
+import messages from './intl/translations.json'
 
+/**
+ * Inside a `FilePicker`, leave out `children` to list the picker's selected
+ * files, each with a delete button.
+ */
 export type FileListProps = HTMLAttributes<HTMLUListElement>
 
 export const FileList = ({ className, children, ...props }: FileListProps) => {
   const listRef = useRef<HTMLUListElement>(null)
+  const filePicker = useFilePickerContext()
+  const strings = useLocalizedStringFormatter(messages)
+  const { locale } = useLocale()
+  const listsPickerFiles = !!filePicker && children === undefined
+
+  if (listsPickerFiles && filePicker.files.length === 0) return null
 
   return (
     <FocusScope>
       <ul
+        aria-label={
+          listsPickerFiles ? strings.format('selectedFiles') : undefined
+        }
         {...props}
         ref={listRef}
         tabIndex={-1}
         className={clsx(styles.fileList, className)}
       >
         <FocusGuard containerRef={listRef} />
-        {children}
+        {listsPickerFiles
+          ? filePicker.files.map(file => (
+              <FileListItem
+                key={`${file.name}-${file.size}-${file.lastModified}`}
+                fileName={file.name}
+                fileSize={formatFileSize(file.size, locale)}
+                onDelete={() => filePicker.removeFile(file)}
+              />
+            ))
+          : children}
       </ul>
     </FocusScope>
   )

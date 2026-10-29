@@ -9,6 +9,7 @@ import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
 import { FieldError } from '../field-error'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import clsx from '../utils/clsx'
+import { useFilePickerContext } from '../file-picker/FilePickerContext'
 import styles from './FileList.module.css'
 import messages from './intl/translations.json'
 
@@ -50,6 +51,7 @@ export const FileListItem = ({
   className,
 }: FileListItemProps) => {
   const strings = useLocalizedStringFormatter(messages)
+  const filePicker = useFilePickerContext()
   const isUploading = status === 'uploading'
   const isSuccess = status === 'success'
   const isError = status === 'error'
@@ -120,6 +122,7 @@ export const FileListItem = ({
           <Button
             variant='icon'
             onPress={onPress}
+            isDisabled={filePicker?.isDisabled}
             aria-label={`${strings.format(
               isUploading ? 'cancelUpload' : 'removeFile',
             )} ${fileName}`}
