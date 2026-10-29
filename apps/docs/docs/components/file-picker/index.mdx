@@ -3,7 +3,14 @@ title: FilePicker
 description: Filuppladdning med etikett, beskrivning och felmeddelande.
 ---
 
-import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-picker/FilePickerExamples'
+import {
+  DefaultExample,
+  DropZoneExample,
+  AcceptedFileTypesExample,
+  FormExample,
+  ControlledExample,
+  DisabledExample,
+} from '@site/src/components/examples/file-picker/FilePickerExamples'
 import { PropTable } from '@site/src/components/PropsTable'
 import FilePickerApi from '@midas-ds/api/components/FilePicker.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -14,156 +21,155 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-`FilePicker` används för filuppladdning och accepterar en kombination av [FileTrigger](/components/file-picker/file-trigger), [DropZone](/components/file-picker/dropzone) och [FileList](/components/file-picker/file-list). Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+`FilePicker` låter användaren välja filer. Den håller de valda filerna, ger fältet en etikett, en beskrivning och ett
+felmeddelande, och valideras och skickas med formulär som andra formulärfält.
 
-`FilePicker` ger mönstret en etikett, en beskrivning och ett felmeddelande. En `FileTrigger` inuti beskrivs automatiskt av dessa via `aria-describedby`, så du behöver inte koppla ihop dem själv. De valda filerna hanterar du själv i ditt eget state.
+Utan innehåll visas en knapp och en lista över de valda filerna. Vill du till exempel kunna dra och släppa filer
+bygger du innehållet själv med [FileTrigger](/components/file-picker/file-trigger),
+[DropZone](/components/file-picker/dropzone) och [FileList](/components/file-picker/file-list). De läggs till i
+`FilePicker` automatiskt: valda och släppta filer läggs till i urvalet, och en `FileList` utan innehåll listar dem med
+en knapp för att ta bort.
 
 ## Varianter
 
 ### Standard
 
-Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. Knappen i FileTrigger blir automatiskt en sekundärknapp.
-
 ```tsx
-import { Button, FilePicker, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
-import { Upload } from 'lucide-react'
-import React from 'react'
-
-export const FileListExample = () => {
-  const [files, setFiles] = React.useState<File[]>([])
-
-  const handleSelect = (fileList: FileList | null) => {
-    const selected = fileList ? Array.from(fileList) : []
-    setFiles(prev => {
-      const existingNames = new Set(prev.map(f => f.name))
-      return [...prev, ...selected.filter(f => !existingNames.has(f.name))]
-    })
-  }
-
-  const handleDelete = (name: string) => {
-    setFiles(prev => prev.filter(f => f.name !== name))
-  }
-
-  return (
-    <FilePicker
-      label='Ladda upp en bild på din favoritfrukt'
-      description='Du kan välja flera om du har många favoritfrukter'
-    >
-      <FileTrigger
-        allowsMultiple
-        onSelect={handleSelect}
-      >
-        <Button icon={Upload}>Välj fil(er)</Button>
-      </FileTrigger>
-      {files.length > 0 && (
-        <FileList aria-label='Valda filer'>
-          {files.map(file => (
-            <FileListItem
-              key={file.name}
-              fileName={file.name}
-              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-              onDelete={() => handleDelete(file.name)}
-            />
-          ))}
-        </FileList>
-      )}
-    </FilePicker>
-  )
-}
+<FilePicker
+  label='Ladda upp en bild på din favoritfrukt'
+  description='Du kan välja flera om du har många favoritfrukter'
+  allowsMultiple
+/>
 ```
 
 <div className='card'>
-  <FileListExample />
+  <DefaultExample />
 </div>
+
+Utan `allowsMultiple` kan användaren bara välja en fil, och en ny fil ersätter den valda.
 
 ### Med drag & drop
 
-Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
+Lägg en DropZone med en FileTrigger och en FileList inuti `FilePicker` för att låta användaren dra och släppa filer i
+en definierad yta. Knappen i FileTrigger blir automatiskt en sekundärknapp och beskrivs av fältets etikett,
+beskrivning och felmeddelande.
 
 ```tsx
-import { Button, DropZone, FilePicker, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
-import { Upload } from 'lucide-react'
-import React from 'react'
-import { DropEvent, isFileDropItem } from 'react-aria'
-
-export const DropZoneExample = () => {
-  const [files, setFiles] = React.useState<File[]>([])
-
-  const addFiles = (newFiles: File[]) => {
-    setFiles(prev => {
-      const existingNames = new Set(prev.map(f => f.name))
-      return [...prev, ...newFiles.filter(f => !existingNames.has(f.name))]
-    })
-  }
-
-  const handleDrop = async (e: DropEvent) => {
-    const fileItems = e.items.filter(isFileDropItem)
-    addFiles(await Promise.all(fileItems.map(item => item.getFile())))
-  }
-
-  const handleSelect = (fileList: FileList | null) => {
-    if (fileList) addFiles(Array.from(fileList))
-  }
-
-  const handleDelete = (name: string) => {
-    setFiles(prev => prev.filter(f => f.name !== name))
-  }
-
-  return (
-    <FilePicker
-      label='Ladda upp en bild på din favoritfrukt'
-      description='Du kan välja flera om du har många favoritfrukter'
-    >
-      <DropZone
-        onDrop={handleDrop}
-        aria-label='Välj filer eller dra och släpp filer här'
-      >
-        <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-        <FileTrigger
-          allowsMultiple
-          onSelect={handleSelect}
-        >
-          <Button icon={Upload}>Välj fil(er)</Button>
-        </FileTrigger>
-      </DropZone>
-      {files.length > 0 && (
-        <FileList aria-label='Valda filer'>
-          {files.map(file => (
-            <FileListItem
-              key={file.name}
-              fileName={file.name}
-              fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-              onDelete={() => handleDelete(file.name)}
-            />
-          ))}
-        </FileList>
-      )}
-    </FilePicker>
-  )
-}
+<FilePicker
+  label='Ladda upp en bild på din favoritfrukt'
+  description='Du kan välja flera om du har många favoritfrukter'
+  allowsMultiple
+>
+  <DropZone aria-label='Välj filer eller dra och släpp filer här'>
+    <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+    <FileTrigger>
+      <Button icon={Upload}>Välj filer</Button>
+    </FileTrigger>
+  </DropZone>
+  <FileList />
+</FilePicker>
 ```
 
 <div className='card'>
   <DropZoneExample />
 </div>
 
-### Felmeddelande
+### Tillåtna filtyper
 
-Sätt `isInvalid` och `errorMessage` på `FilePicker` för att visa ett fel, till exempel om användaren väljer fel filtyp. Felmeddelandet visas alltid under kontrollerna och läggs automatiskt till i knappens beskrivning. En `DropZone` inuti markeras också som ogiltig.
+`acceptedFileTypes` begränsar vilka filer som går att välja, på samma sätt som `accept` på ett vanligt filfält:
+filändelser (`.pdf`), MIME-typer (`image/png`) eller grupper (`image/*`). Filer av andra typer, till exempel sådana som
+släpps i en DropZone, gör fältet ogiltigt och namnges i felmeddelandet.
 
 ```tsx
 <FilePicker
   label='Ladda upp en bild på din favoritfrukt'
-  isInvalid={isInvalid}
-  errorMessage='Endast .jpg- och .png-filer tillåts'
+  description='Endast .jpg- och .png-filer'
+  acceptedFileTypes={['image/jpeg', 'image/png']}
+  allowsMultiple
 >
-  <DropZone
-    onDrop={handleDrop}
-    aria-label='Välj filer eller dra och släpp filer här'
-  >
-    ...
-  </DropZone>
+  ...
 </FilePicker>
+```
+
+<div className='card'>
+  <AcceptedFileTypesExample />
+</div>
+
+### I ett formulär
+
+Med `name` skickas de valda filerna med formuläret, som för ett vanligt filfält. `isRequired` kräver minst en fil,
+och `validate` returnerar ett felmeddelande när urvalet inte är giltigt, till exempel för många eller för stora
+filer. Felen visas när formuläret skickas, och formuläret skickas inte förrän de är åtgärdade. Med
+`validationBehavior='aria'` visas felen direkt i stället, och formuläret skickas ändå. Se
+[Validering](/design-patterns/validation) för mer om validering i formulär.
+
+```tsx
+<form onSubmit={handleSubmit}>
+  <FilePicker
+    label='Ladda upp bilder på dina favoritfrukter'
+    description='Högst tre bilder'
+    name='fruits'
+    isRequired
+    allowsMultiple
+    validate={files => (files.length > 3 ? 'Välj högst tre bilder' : true)}
+  />
+  <Button type='submit'>Skicka</Button>
+</form>
+```
+
+<div className='card'>
+  <FormExample />
+</div>
+
+### Kontrollerad
+
+Använd `value` och `onChange` för att hålla de valda filerna i ditt eget state, till exempel för att ladda upp dem
+direkt eller visa en sammanfattning. `defaultValue` sätter de filer som är valda från början.
+
+```tsx
+const [files, setFiles] = React.useState<File[]>([])
+
+<FilePicker
+  label='Ladda upp en bild på din favoritfrukt'
+  allowsMultiple
+  value={files}
+  onChange={setFiles}
+/>
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
+
+### Inaktiverad
+
+`isDisabled` inaktiverar knappen, DropZone och knapparna för att ta bort filer.
+
+```tsx
+<FilePicker
+  label='Ladda upp en bild på din favoritfrukt'
+  isDisabled
+  defaultValue={files}
+/>
+```
+
+<div className='card'>
+  <DisabledExample />
+</div>
+
+### Felmeddelande
+
+Sätt `isInvalid` och `errorMessage` för att visa ett fel som inte kommer från valideringen, till exempel om
+uppladdningen misslyckas. Felmeddelandet visas under kontrollerna, eller ovanför med `errorPosition='top'`, och läggs
+automatiskt till i knappens beskrivning. En DropZone inuti markeras också som ogiltig. Utan `errorMessage` visas
+meddelandena från valideringen.
+
+```tsx
+<FilePicker
+  label='Ladda upp en bild på din favoritfrukt'
+  isInvalid={uploadFailed}
+  errorMessage='Uppladdningen misslyckades, försök igen'
+/>
 ```
 
 :::note

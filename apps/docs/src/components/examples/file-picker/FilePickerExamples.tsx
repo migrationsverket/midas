@@ -4,7 +4,6 @@ import {
   FieldError,
   FilePicker,
   FileList,
-  FileListItem,
   FileTrigger,
   Text,
 } from '@midas-ds/components'
@@ -12,112 +11,105 @@ import { Upload } from 'lucide-react'
 import React from 'react'
 import { DropEvent, isFileDropItem } from 'react-aria'
 
-const useUniqueFiles = () => {
-  const [files, setFiles] = React.useState<File[]>([])
+export const DefaultExample = () => (
+  <FilePicker
+    label='Ladda upp en bild på din favoritfrukt'
+    description='Du kan välja flera om du har många favoritfrukter'
+    allowsMultiple
+  />
+)
 
-  const addFiles = (newFiles: File[]) => {
-    setFiles(oldFiles => {
-      const existingNames = new Set(oldFiles.map(f => f.name))
-      return [...oldFiles, ...newFiles.filter(f => !existingNames.has(f.name))]
-    })
-  }
-
-  const removeFile = (name: string) => {
-    setFiles(oldFiles => oldFiles.filter(f => f.name !== name))
-  }
-
-  return { files, addFiles, removeFile }
-}
-
-const UploadedFiles = ({
-  files,
-  onDelete,
-}: {
-  files: File[]
-  onDelete: (name: string) => void
-}) =>
-  files.length > 0 && (
-    <FileList aria-label='Valda filer'>
-      {files.map(file => (
-        <FileListItem
-          key={file.name}
-          fileName={file.name}
-          fileSize={`${(file.size / 1024).toFixed(1)} KB`}
-          onDelete={() => onDelete(file.name)}
-        />
-      ))}
-    </FileList>
-  )
-
-export const FileListExample = () => {
-  const { files, addFiles, removeFile } = useUniqueFiles()
-
-  const handleSelect = (fileList: FileList | null) => {
-    if (fileList) addFiles(Array.from(fileList))
-  }
-
-  return (
-    <FilePicker
-      label='Ladda upp en bild på din favoritfrukt'
-      description='Du kan välja flera om du har många favoritfrukter'
-    >
-      <FileTrigger
-        allowsMultiple
-        onSelect={handleSelect}
-      >
-        <Button icon={Upload}>
-          Välj fil(er)
-        </Button>
+export const DropZoneExample = () => (
+  <FilePicker
+    label='Ladda upp en bild på din favoritfrukt'
+    description='Du kan välja flera om du har många favoritfrukter'
+    allowsMultiple
+  >
+    <DropZone aria-label='Välj filer eller dra och släpp filer här'>
+      <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+      <FileTrigger>
+        <Button icon={Upload}>Välj filer</Button>
       </FileTrigger>
-      <UploadedFiles
-        files={files}
-        onDelete={removeFile}
-      />
-    </FilePicker>
-  )
-}
+    </DropZone>
+    <FileList />
+  </FilePicker>
+)
 
-export const DropZoneExample = () => {
-  const { files, addFiles, removeFile } = useUniqueFiles()
+export const AcceptedFileTypesExample = () => (
+  <FilePicker
+    label='Ladda upp en bild på din favoritfrukt'
+    description='Endast .jpg- och .png-filer'
+    acceptedFileTypes={['image/jpeg', 'image/png']}
+    allowsMultiple
+  >
+    <DropZone aria-label='Välj filer eller dra och släpp filer här'>
+      <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
+      <FileTrigger>
+        <Button icon={Upload}>Välj filer</Button>
+      </FileTrigger>
+    </DropZone>
+    <FileList />
+  </FilePicker>
+)
 
-  const handleDrop = async (e: DropEvent) => {
-    const fileItems = e.items.filter(isFileDropItem)
-    const droppedFiles = await Promise.all(
-      fileItems.map(item => item.getFile()),
-    )
-    addFiles(droppedFiles)
-  }
+export const FormExample = () => {
+  const [submitted, setSubmitted] = React.useState<string[] | null>(null)
 
-  const handleSelect = (fileList: FileList | null) => {
-    if (fileList) addFiles(Array.from(fileList))
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const files = new FormData(e.currentTarget).getAll('fruits') as File[]
+    setSubmitted(files.map(file => file.name))
   }
 
   return (
-    <FilePicker
-      label='Ladda upp en bild på din favoritfrukt'
-      description='Du kan välja flera om du har många favoritfrukter'
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
     >
-      <DropZone
-        onDrop={handleDrop}
-        aria-label='Välj filer eller dra och släpp filer här'
-      >
-        <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
-        <FileTrigger
-          allowsMultiple
-          onSelect={handleSelect}
-        >
-          <Button icon={Upload}>
-            Välj fil(er)
-          </Button>
-        </FileTrigger>
-      </DropZone>
-      <UploadedFiles
-        files={files}
-        onDelete={removeFile}
+      <FilePicker
+        label='Ladda upp bilder på dina favoritfrukter'
+        description='Högst tre bilder'
+        name='fruits'
+        isRequired
+        allowsMultiple
+        validate={files => (files.length > 3 ? 'Välj högst tre bilder' : true)}
       />
-    </FilePicker>
+      <div>
+        <Button type='submit'>Skicka</Button>
+      </div>
+      {submitted && <output>Skickade: {submitted.join(', ')}</output>}
+    </form>
   )
 }
+
+export const ControlledExample = () => {
+  const [files, setFiles] = React.useState<File[]>([])
+  const totalSize = files.reduce((sum, file) => sum + file.size, 0)
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <FilePicker
+        label='Ladda upp en bild på din favoritfrukt'
+        allowsMultiple
+        value={files}
+        onChange={setFiles}
+      />
+      <Text>
+        Valda filer: {files.length}, totalt {Math.round(totalSize / 1000)} kB
+      </Text>
+    </div>
+  )
+}
+
+export const DisabledExample = () => (
+  <FilePicker
+    label='Ladda upp en bild på din favoritfrukt'
+    isDisabled
+    defaultValue={[
+      new File(['🍎'], 'äpple.png', { type: 'image/png' }),
+    ]}
+  />
+)
 
 const ACCEPTED_FILE_TYPES = ['image/jpeg', 'image/png']
 
