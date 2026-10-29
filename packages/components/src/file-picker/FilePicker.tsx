@@ -6,10 +6,10 @@ import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
-import { FileFieldContext } from './FileFieldContext'
-import styles from './FileField.module.css'
+import { FilePickerContext } from './FilePickerContext'
+import styles from './FilePicker.module.css'
 
-export interface FileFieldProps extends Omit<
+export interface FilePickerProps extends Omit<
   HTMLAttributes<HTMLDivElement>,
   'popover'
 > {
@@ -33,7 +33,7 @@ export interface FileFieldProps extends Omit<
  * Wraps a file upload pattern — `FileTrigger`, `DropZone` and `FileList` —
  * with a label, description and error message.
  */
-export const FileField = ({
+export const FilePicker = ({
   label,
   description,
   errorMessage,
@@ -42,7 +42,7 @@ export const FileField = ({
   className,
   children,
   ...rest
-}: FileFieldProps) => {
+}: FilePickerProps) => {
   const labelId = useId()
   const descriptionId = useId()
   const errorId = useId()
@@ -60,7 +60,7 @@ export const FileField = ({
     <div
       {...rest}
       data-invalid={isInvalid || undefined}
-      className={clsx(styles.fileField, className)}
+      className={clsx(styles.filePicker, className)}
     >
       <LabelWrapper popover={popover}>
         <Label id={labelId}>{label}</Label>
@@ -73,11 +73,11 @@ export const FileField = ({
           {description}
         </Text>
       )}
-      <FileFieldContext.Provider
+      <FilePickerContext.Provider
         value={{ 'aria-describedby': describedBy, isInvalid }}
       >
         <div className={styles.content}>{children}</div>
-      </FileFieldContext.Provider>
+      </FilePickerContext.Provider>
       {showError && (
         <FieldError
           id={errorId}
