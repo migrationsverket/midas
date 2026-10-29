@@ -1,5 +1,10 @@
 .triggerButton {
   margin-inline-start: calc(-1 * var(--midas-space-50));
+
+  /* Pushed to the end of the Header, flush with its padding */
+  &.right {
+    margin-inline: auto calc(-1 * var(--midas-space-50));
+  }
 }
 
 .overlay {
@@ -52,6 +57,20 @@
       animation: none;
     }
   }
+
+  &.right {
+    border-left: 1px solid var(--midas-border-color-subtle);
+    border-right: none;
+    box-shadow: 8px 0 20px rgb(0 0 0 / 10%);
+    left: auto;
+    margin-left: auto;
+    margin-right: 0;
+
+    &[data-entering],
+    &[data-exiting] {
+      animation-name: drawer-slide-right;
+    }
+  }
 }
 
 .dialog {
@@ -84,6 +103,16 @@
 @keyframes drawer-slide {
   from {
     transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawer-slide-right {
+  from {
+    transform: translateX(100%);
   }
 
   to {

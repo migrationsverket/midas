@@ -143,3 +143,22 @@ export const MobileHeaderExample: React.FC = () => {
     </div>
   )
 }
+
+export const MobileHeaderRightExample = () => {
+  const url = useBaseUrl('/layout-examples/header-mobile-right')
+  return (
+    <div
+      className='card'
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <iframe
+        title='Header with right-placed mobile menu example'
+        style={{ width: '60%', height: 72, border: 'none', display: 'block' }}
+        src={url}
+      />
+    </div>
+  )
+}
