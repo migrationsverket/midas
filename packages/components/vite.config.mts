@@ -76,10 +76,6 @@ export default defineConfig({
         'react-stately',
         'react',
         'react/jsx-runtime',
-        // Subpaths, e.g. react-aria/private/*. Bundling a copy would give
-        // FilePicker its own FormValidationContext, cut off from <Form>
-        /^react-aria\//,
-        /^react-stately\//,
       ],
       output: {
         assetFileNames: 'assets/[name][extname]',

@@ -17,15 +17,12 @@ import {
   type ValidationResult,
 } from 'react-aria-components'
 import { VisuallyHidden } from 'react-aria'
-// Not part of React Aria's public API, but what its own fields use for form
-// validation. Midas pins React Aria to exact versions, so these only move on
-// a deliberate upgrade.
+import { useFormReset } from '@react-aria/utils'
+import { useFormValidation } from '@react-aria/form'
 import {
   useFormValidationState,
   VALID_VALIDITY_STATE,
-} from 'react-stately/private/form/useFormValidationState'
-import { useFormValidation } from 'react-aria/private/form/useFormValidation'
-import { useFormReset } from 'react-aria/private/utils/useFormReset'
+} from '@react-stately/form'
 import { Upload } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { useLocalizedStringFormatter } from '../utils/intl'
@@ -99,9 +96,7 @@ export interface FilePickerProps extends Omit<
    * too large files. Shown on submit, or right away with
    * `validationBehavior='aria'`.
    */
-  validate?: (
-    files: File[],
-  ) => string | string[] | true | null | undefined
+  validate?: (files: File[]) => string | string[] | true | null | undefined
   /**
    * `native` blocks form submission while the field is invalid and shows
    * errors on submit. `aria` shows errors right away and doesn't block
@@ -157,7 +152,8 @@ export const FilePicker = ({
   const triggerRef = useRef<HTMLButtonElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  const formValidationBehavior = useSlottedContext(FormContext)?.validationBehavior
+  const formValidationBehavior =
+    useSlottedContext(FormContext)?.validationBehavior
   const validationBehavior =
     validationBehaviorProp ?? formValidationBehavior ?? 'native'
 
@@ -333,7 +329,9 @@ export const FilePicker = ({
             <>
               <FileTrigger>
                 <Button icon={Upload}>
-                  {strings.format(allowsMultiple ? 'chooseFiles' : 'chooseFile')}
+                  {strings.format(
+                    allowsMultiple ? 'chooseFiles' : 'chooseFile',
+                  )}
                 </Button>
               </FileTrigger>
               <FileList />
