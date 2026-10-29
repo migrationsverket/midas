@@ -4,15 +4,13 @@
     "cancelUpload": "Cancel",
     "uploading": "Uploading",
     "uploadComplete": "Upload complete",
-    "uploadFailed": "Upload failed",
-    "selectedFiles": "Selected files"
+    "uploadFailed": "Upload failed"
   },
   "sv": {
     "removeFile": "Ta bort",
     "cancelUpload": "Avbryt",
     "uploading": "Laddar upp",
     "uploadComplete": "Uppladdning klar",
-    "uploadFailed": "Uppladdning misslyckades",
-    "selectedFiles": "Valda filer"
+    "uploadFailed": "Uppladdning misslyckades"
   }
 }

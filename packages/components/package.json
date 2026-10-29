@@ -43,9 +43,6 @@
   "dependencies": {
     "@internationalized/string": "^3.2.10",
     "@midas-ds/theme": "3.17.8",
-    "@react-aria/form": "3.2.1",
-    "@react-aria/utils": "3.34.1",
-    "@react-stately/form": "3.3.1",
     "@react-stately/utils": "3.12.1",
     "lucide-react": ">=0.563.0 <2.0.0",
     "clsx": "^2.1.1",
