@@ -11,6 +11,7 @@ import { ClearButton } from '../clear-button'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import styles from './DatePicker.module.css'
+import inputStyles from '../date-field/DateInput.module.css'
 import { DatePickerProps } from './DatePicker'
 import { FocusScope, useFocusManager } from 'react-aria'
 import { isRangePickerState } from './utils'
@@ -75,7 +76,7 @@ export const DatePickerInputField = ({
       })}
     >
       <FocusScope>
-        {children}
+        <div className={inputStyles.scroller}>{children}</div>
         <div className={styles.buttonGroup}>
           <DatePickerClearButton
             isClearable={isClearable}

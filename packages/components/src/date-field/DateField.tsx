@@ -15,6 +15,7 @@ import { ClearButton } from '../clear-button'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import styles from './DateField.module.css'
+import inputStyles from './DateInput.module.css'
 import { Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { FocusScope } from 'react-aria'
@@ -101,7 +102,9 @@ export const DateField = React.forwardRef(
           data-testid='date-field_input-field'
         >
           <FocusScope>
-            <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+            <div className={inputStyles.scroller}>
+              <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+            </div>
             <DateFieldClearButton
               isClearable={isClearable}
               size={size}
