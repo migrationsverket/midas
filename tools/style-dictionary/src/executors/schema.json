@@ -4,6 +4,18 @@
   "title": "BuildTokens executor",
   "description": "",
   "type": "object",
-  "properties": {},
-  "required": []
+  "properties": {
+    "source": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Globs of the token files, relative to the workspace root."
+    },
+    "buildPath": {
+      "type": "string",
+      "description": "Folder to write the generated files to, relative to the workspace root."
+    }
+  },
+  "required": ["source", "buildPath"]
 }
