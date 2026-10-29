@@ -1,3 +1,13 @@
+## 17.33.2 (2026-10-29)
+
+### 🩹 Fixes
+
+- **textfield:** define a grid row for each template area ([1fb1e8d6dcb](https://github.com/migrationsverket/midas/commit/1fb1e8d6dcb))
+
+### 🧪 Tests updated
+
+- **components,calendar:** scroll the month option into view first ([c74cacebd46](https://github.com/migrationsverket/midas/commit/c74cacebd46))
+
 ## 17.33.1 (2026-10-29)
 
 ### 🩹 Fixes
