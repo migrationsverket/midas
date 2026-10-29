@@ -44,7 +44,6 @@ export const WithUploadButton: Story = {
       </Text>
       <FileTrigger>
         <Button
-          variant='secondary'
           size='medium'
           icon={Upload}
           iconPlacement='left'
@@ -135,7 +134,6 @@ const RejectingContainer = () => {
           data-testid='file-trigger'
         >
           <Button
-            variant='secondary'
             size='medium'
             icon={Upload}
             iconPlacement='left'
@@ -211,7 +209,6 @@ export const Disabled: Story = {
       </Text>
       <FileTrigger>
         <Button
-          variant='secondary'
           size='medium'
           icon={Upload}
           iconPlacement='left'
