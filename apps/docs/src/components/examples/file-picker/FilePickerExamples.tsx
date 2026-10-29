@@ -2,7 +2,7 @@ import {
   Button,
   DropZone,
   FieldError,
-  FileField,
+  FilePicker,
   FileList,
   FileListItem,
   FileTrigger,
@@ -57,7 +57,7 @@ export const FileListExample = () => {
   }
 
   return (
-    <FileField
+    <FilePicker
       label='Ladda upp en bild på din favoritfrukt'
       description='Du kan välja flera om du har många favoritfrukter'
     >
@@ -73,7 +73,7 @@ export const FileListExample = () => {
         files={files}
         onDelete={removeFile}
       />
-    </FileField>
+    </FilePicker>
   )
 }
 
@@ -93,7 +93,7 @@ export const DropZoneExample = () => {
   }
 
   return (
-    <FileField
+    <FilePicker
       label='Ladda upp en bild på din favoritfrukt'
       description='Du kan välja flera om du har många favoritfrukter'
     >
@@ -115,7 +115,7 @@ export const DropZoneExample = () => {
         files={files}
         onDelete={removeFile}
       />
-    </FileField>
+    </FilePicker>
   )
 }
 

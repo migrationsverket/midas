@@ -1,15 +1,22 @@
 ---
-title: Filuppladdning
-description: Filuppladdning med FileField, FileTrigger, DropZone och FileList.
+title: FilePicker
+description: Filuppladdning med etikett, beskrivning och felmeddelande.
 ---
 
-import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-picker/FilePickerExamples'
 import { PropTable } from '@site/src/components/PropsTable'
-import FileFieldApi from '@midas-ds/api/components/FileField.json'
+import FilePickerApi from '@midas-ds/api/components/FilePicker.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
-Filuppladdning skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), [DropZone](/components/file-upload/dropzone) och [FileList](/components/file-upload/file-list) inuti en `FileField`. Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+<ComponentHeader
+  name='FilePicker'
+  friendlyName='Filuppladdning'
+  overrideHeadlessLink=''
+/>
 
-`FileField` ger mönstret en etikett, en beskrivning och ett felmeddelande. En `FileTrigger` inuti beskrivs automatiskt av dessa via `aria-describedby`, så du behöver inte koppla ihop dem själv. De valda filerna hanterar du själv i ditt eget state.
+`FilePicker` används för filuppladdning och accepterar en kombination av [FileTrigger](/components/file-picker/file-trigger), [DropZone](/components/file-picker/dropzone) och [FileList](/components/file-picker/file-list). Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
+
+`FilePicker` ger mönstret en etikett, en beskrivning och ett felmeddelande. En `FileTrigger` inuti beskrivs automatiskt av dessa via `aria-describedby`, så du behöver inte koppla ihop dem själv. De valda filerna hanterar du själv i ditt eget state.
 
 ## Varianter
 
@@ -18,7 +25,7 @@ Filuppladdning skapas genom att kombinera [FileTrigger](/components/file-upload/
 Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. Knappen i FileTrigger blir automatiskt en sekundärknapp.
 
 ```tsx
-import { Button, FileField, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
+import { Button, FilePicker, FileList, FileListItem, FileTrigger } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
 
@@ -38,7 +45,7 @@ export const FileListExample = () => {
   }
 
   return (
-    <FileField
+    <FilePicker
       label='Ladda upp en bild på din favoritfrukt'
       description='Du kan välja flera om du har många favoritfrukter'
     >
@@ -60,7 +67,7 @@ export const FileListExample = () => {
           ))}
         </FileList>
       )}
-    </FileField>
+    </FilePicker>
   )
 }
 ```
@@ -74,7 +81,7 @@ export const FileListExample = () => {
 Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
 
 ```tsx
-import { Button, DropZone, FileField, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
+import { Button, DropZone, FilePicker, FileList, FileListItem, FileTrigger, Text } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
 import { DropEvent, isFileDropItem } from 'react-aria'
@@ -103,7 +110,7 @@ export const DropZoneExample = () => {
   }
 
   return (
-    <FileField
+    <FilePicker
       label='Ladda upp en bild på din favoritfrukt'
       description='Du kan välja flera om du har många favoritfrukter'
     >
@@ -131,7 +138,7 @@ export const DropZoneExample = () => {
           ))}
         </FileList>
       )}
-    </FileField>
+    </FilePicker>
   )
 }
 ```
@@ -142,10 +149,10 @@ export const DropZoneExample = () => {
 
 ### Felmeddelande
 
-Sätt `isInvalid` och `errorMessage` på `FileField` för att visa ett fel, till exempel om användaren väljer fel filtyp. Felmeddelandet visas alltid under kontrollerna och läggs automatiskt till i knappens beskrivning. En `DropZone` inuti markeras också som ogiltig.
+Sätt `isInvalid` och `errorMessage` på `FilePicker` för att visa ett fel, till exempel om användaren väljer fel filtyp. Felmeddelandet visas alltid under kontrollerna och läggs automatiskt till i knappens beskrivning. En `DropZone` inuti markeras också som ogiltig.
 
 ```tsx
-<FileField
+<FilePicker
   label='Ladda upp en bild på din favoritfrukt'
   isInvalid={isInvalid}
   errorMessage='Endast .jpg- och .png-filer tillåts'
@@ -156,15 +163,15 @@ Sätt `isInvalid` och `errorMessage` på `FileField` för att visa ett fel, till
   >
     ...
   </DropZone>
-</FileField>
+</FilePicker>
 ```
 
 :::note
-Lägg felmeddelandet på `FileField`, inte som en egen `FieldError` inuti `DropZone`. Annars visas det två gånger.
+Lägg felmeddelandet på `FilePicker`, inte som en egen `FieldError` inuti `DropZone`. Annars visas det två gånger.
 :::
 
 ## API
 
-### FileField
+### FilePicker
 
-<PropTable doc={FileFieldApi} />
+<PropTable doc={FilePickerApi} />
