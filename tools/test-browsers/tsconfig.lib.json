@@ -2,8 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     // Loaded from source by the Vitest configs, through Node's type
-    // stripping, never compiled
-    "noEmit": true,
+    // stripping, never compiled. The typecheck only writes declarations
     "module": "nodenext",
     "target": "esnext",
     "lib": ["es2023"],
@@ -12,7 +11,9 @@
     "erasableSyntaxOnly": true,
     "verbatimModuleSyntax": true,
     "strict": true,
-    "types": ["node"]
+    "types": ["node"],
+    "emitDeclarationOnly": true,
+    "outDir": "out-tsc/lib"
   },
   "include": ["src/**/*.ts"]
 }

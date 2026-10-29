@@ -6,8 +6,26 @@
       "vite/client",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "outDir": "out-tsc/app"
   },
   "include": ["vite.config.mts", "src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["**/*.spec.*", "**/*.test.*"]
+  "exclude": ["**/*.spec.*", "**/*.test.*"],
+  "references": [
+    {
+      "path": "../../tools/test-browsers/tsconfig.lib.json"
+    },
+    {
+      "path": "../../tools/test-utils/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/layout/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/components/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/table-styles/tsconfig.lib.json"
+    }
+  ]
 }

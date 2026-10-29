@@ -325,7 +325,6 @@ describe('FileList', () => {
 
   describe('focus management on removal', () => {
     it('moves focus to a sibling button when the focused row is actually removed', async () => {
-      // @ts-expect-error initialFiles exists only on the test container
       const { getByRole } = await render(
         <FocusManagementTest initialFiles={['a.pdf', 'b.pdf', 'c.pdf']} />,
       )
@@ -336,7 +335,6 @@ describe('FileList', () => {
     })
 
     it('falls back to the list container when the last row is removed', async () => {
-      // @ts-expect-error initialFiles exists only on the test container
       const { getByRole } = await render(
         <FocusManagementTest initialFiles={['only.pdf']} />,
       )

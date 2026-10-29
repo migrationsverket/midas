@@ -3,7 +3,7 @@
   "compilerOptions": {
     "isolatedModules": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "vite.config.mts"],
+  "include": [],
   "references": [
     {
       "path": "./tsconfig.lib.json"
@@ -11,5 +11,6 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "files": []
 }

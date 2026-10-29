@@ -10,8 +10,23 @@
       "node",
       "@docusaurus/module-type-aliases",
       "@docusaurus/theme-classic"
-    ]
+    ],
+    "outDir": "out-tsc/app"
   },
   "include": ["**/*"],
-  "exclude": ["**/*.test.*", "**/*.spec.*", "eslint.config.mjs"]
+  "exclude": ["**/*.test.*", "**/*.spec.*", "eslint.config.mjs", "out-tsc"],
+  "references": [
+    {
+      "path": "../../packages/layout/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/theme/tsconfig.lib.json"
+    },
+    {
+      "path": "../../tools/docgen/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/components/tsconfig.lib.json"
+    }
+  ]
 }

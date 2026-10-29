@@ -2,7 +2,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "types": ["node", "vite/client"]
+    "types": ["node", "vite/client"],
+    "outDir": "out-tsc/lib"
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "references": [
+    {
+      "path": "../theme/tsconfig.lib.json"
+    }
+  ]
 }

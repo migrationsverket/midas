@@ -9,8 +9,22 @@
     ],
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
-    "noEmit": true
+    "outDir": "out-tsc/lib"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["**/*.spec.*", "**/*.test.*"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", "package.json"],
+  "exclude": ["**/*.spec.*", "**/*.test.*"],
+  "references": [
+    {
+      "path": "../../tools/test-browsers/tsconfig.lib.json"
+    },
+    {
+      "path": "../../tools/visual-testing/tsconfig.lib.json"
+    },
+    {
+      "path": "../../tools/test-utils/tsconfig.lib.json"
+    },
+    {
+      "path": "../theme/tsconfig.lib.json"
+    }
+  ]
 }

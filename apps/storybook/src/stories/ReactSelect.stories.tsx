@@ -9,7 +9,9 @@ type Story = StoryObj<typeof Select>
 
 const inputId = 'react-select'
 
-export default {
+// Typed rather than inferred: the declaration emitted for the typecheck
+// can't name react-select's internal types
+const meta: Meta<typeof Select> = {
   component: Select,
   title: 'Components/ReactSelect',
   tags: ['autodocs'],
@@ -34,7 +36,9 @@ export default {
       <Select {...args} />
     </div>
   ),
-} satisfies Meta<typeof Select>
+}
+
+export default meta
 
 export const Primary: Story = {}
 

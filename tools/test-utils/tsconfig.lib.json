@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "types": ["node"]
+    "types": ["node"],
+    "outDir": "out-tsc/lib"
   },
   "include": ["src/**/*.ts"]
 }

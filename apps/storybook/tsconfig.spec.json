@@ -1,4 +1,12 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.test.tsx", "src/**/*.spec.tsx"]
+  "include": ["src/**/*.test.tsx", "src/**/*.spec.tsx"],
+  "compilerOptions": {
+    "outDir": "out-tsc/spec"
+  },
+  "references": [
+    {
+      "path": "./tsconfig.storybook.json"
+    }
+  ]
 }

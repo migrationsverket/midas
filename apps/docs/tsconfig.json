@@ -7,5 +7,12 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@site/*": ["./*"]
+    }
+  },
+  "files": [],
+  "include": []
 }

@@ -14,11 +14,19 @@ export default {
   plugins: [
     libInjectCss(),
     dts({
+      // The published types: no declaration maps, which would point at
+      // sources that aren't published, and not a project references build
+      compilerOptions: { composite: false, declarationMap: false },
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
       // Stories and tests aren't part of the published types
-      exclude: ['**/*.stories.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
-      pathsToAliases: false,
+      exclude: [
+        '**/*.stories.tsx',
+        '**/*.spec.ts',
+        '**/*.spec.tsx',
+        // Imported translations, part of the JavaScript
+        '**/*.json',
+      ],
     }),
     viteStaticCopy({
       targets: [

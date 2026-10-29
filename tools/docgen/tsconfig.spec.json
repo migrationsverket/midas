@@ -3,7 +3,13 @@
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "types": ["node", "vitest"]
+    "types": ["node", "vitest"],
+    "outDir": "out-tsc/spec"
   },
-  "include": ["vitest.config.mts", "src/**/*.spec.ts"]
+  "include": ["vitest.config.mts", "src/**/*.spec.ts"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ]
 }

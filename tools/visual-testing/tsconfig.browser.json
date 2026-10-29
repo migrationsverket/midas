@@ -1,13 +1,15 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    // Loaded in the browser by Vitest through Vite, never compiled
-    "noEmit": true,
+    // Loaded in the browser by Vitest through Vite, never compiled. The
+    // typecheck only writes declarations
     "module": "esnext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "strict": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "emitDeclarationOnly": true,
+    "outDir": "out-tsc/browser"
   },
   "include": ["src/setup.ts", "src/stories.ts"]
 }

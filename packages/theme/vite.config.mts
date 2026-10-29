@@ -12,9 +12,11 @@ export default {
   },
   plugins: [
     dts({
+      // The published types: no declaration maps, which would point at
+      // sources that aren't published, and not a project references build
+      compilerOptions: { composite: false, declarationMap: false },
       entryRoot: 'src',
       tsconfigPath: 'tsconfig.lib.json',
-      pathsToAliases: false,
       include: ['src'],
     }),
     viteStaticCopy({

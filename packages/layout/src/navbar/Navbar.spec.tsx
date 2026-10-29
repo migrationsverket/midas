@@ -22,7 +22,7 @@ describe('Navbar', () => {
 
     const content = page.getByText('Navbar content')
 
-    if (task.file.projectName.startsWith('mobile')) {
+    if (task.file.projectName?.startsWith('mobile')) {
       await expect.element(content).toBeVisible()
     } else {
       await expect.element(content).not.toBeVisible()

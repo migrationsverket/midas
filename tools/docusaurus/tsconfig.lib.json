@@ -4,7 +4,8 @@
     "declaration": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "types": ["node"]
+    "types": ["node"],
+    "outDir": "out-tsc/lib"
   },
   "include": ["src/**/*.ts"]
 }

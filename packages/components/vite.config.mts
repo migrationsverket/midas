@@ -28,16 +28,15 @@ export default defineConfig({
       ],
     }),
     dts({
+      // The published types: no declaration maps, which would point at
+      // sources that aren't published, and not a project references build
+      compilerOptions: { composite: false, declarationMap: false },
       entryRoot: 'src',
       tsconfigPath: join(root, 'tsconfig.lib.json'),
       include: ['src'],
       bundleTypes: false,
       // Stories and tests aren't part of the published types
       exclude: ['**/*.stories.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
-      // Keep @midas-ds/* imports as package imports. By default tsconfig
-      // paths are rewritten to relative paths into the monorepo's sources,
-      // which don't exist in the published package.
-      pathsToAliases: false,
     }),
     libInjectCss(),
     preserveUseClientDirective(),

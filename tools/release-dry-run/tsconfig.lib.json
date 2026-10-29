@@ -3,7 +3,8 @@
   "compilerOptions": {
     "declaration": true,
     "target": "esnext",
-    "types": ["node"]
+    "types": ["node"],
+    "outDir": "out-tsc/lib"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["**/*.spec.*", "**/*.test.*"]

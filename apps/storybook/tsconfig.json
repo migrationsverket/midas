@@ -7,6 +7,27 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/select-styles"
+    },
+    {
+      "path": "../../tools/test-utils"
+    },
+    {
+      "path": "../../packages/table-styles"
+    },
+    {
+      "path": "../../packages/datepicker-styles"
+    },
+    {
+      "path": "../../packages/layout"
+    },
+    {
+      "path": "../../packages/components"
+    },
+    {
+      "path": "../../packages/theme"
+    },
+    {
       "path": "./tsconfig.storybook.json"
     },
     {

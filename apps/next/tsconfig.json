@@ -18,7 +18,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "composite": false
   },
   "include": [
     "next-env.d.ts",
@@ -28,5 +29,13 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../../packages/layout"
+    },
+    {
+      "path": "../../packages/components"
+    }
+  ]
 }

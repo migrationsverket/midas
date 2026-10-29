@@ -6,12 +6,18 @@
       "node",
       "@nx/react/typings/cssmodule.d.ts",
       "@nx/react/typings/image.d.ts"
-    ]
+    ],
+    "outDir": "out-tsc/spec"
   },
   "include": [
     "vite.config.mts",
     "src/**/*.test.*",
     "src/**/*.spec.*",
     "src/**/*.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
   ]
 }

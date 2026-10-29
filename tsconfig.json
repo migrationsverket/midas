@@ -1,0 +1,58 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {},
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/datepicker-styles"
+    },
+    {
+      "path": "./packages/select-styles"
+    },
+    {
+      "path": "./tools/style-dictionary"
+    },
+    {
+      "path": "./tools/release-dry-run"
+    },
+    {
+      "path": "./packages/table-styles"
+    },
+    {
+      "path": "./tools/visual-testing"
+    },
+    {
+      "path": "./packages/components"
+    },
+    {
+      "path": "./tools/release-local"
+    },
+    {
+      "path": "./tools/test-browsers"
+    },
+    {
+      "path": "./tools/docusaurus"
+    },
+    {
+      "path": "./tools/test-utils"
+    },
+    {
+      "path": "./packages/layout"
+    },
+    {
+      "path": "./apps/playground"
+    },
+    {
+      "path": "./apps/storybook"
+    },
+    {
+      "path": "./packages/theme"
+    },
+    {
+      "path": "./tools/docgen"
+    },
+    {
+      "path": "./apps/docs"
+    }
+  ]
+}

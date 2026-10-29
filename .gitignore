@@ -217,3 +217,6 @@ playwright/.auth/
 
 # claude
 .claude/
+
+# TypeScript declaration output of the typecheck tasks (tsc --build)
+out-tsc

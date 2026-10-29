@@ -11,13 +11,17 @@ describe('LayoutContent', () => {
     await expect.element(page.getByText('Content')).toBeInTheDocument()
   })
 
-  it('should stack children vertically on mobile and horizontally on desktop', async ({ task }) => {
+  it('should stack children vertically on mobile and horizontally on desktop', async ({
+    task,
+  }) => {
     const { container } = await render(<LayoutContent>Content</LayoutContent>)
 
-    const el = container.querySelector(`.${styles.layoutContent}`) as HTMLElement
+    const el = container.querySelector(
+      `.${styles.layoutContent}`,
+    ) as HTMLElement
     const flexDirection = getComputedStyle(el).flexDirection
 
-    if (task.file.projectName.startsWith('mobile')) {
+    if (task.file.projectName?.startsWith('mobile')) {
       expect(flexDirection).toBe('column')
     } else {
       expect(flexDirection).toBe('row')

@@ -14,6 +14,8 @@ const compat = new FlatCompat({
 })
 
 export default [
+  // Declarations written by the typecheck tasks (tsc --build)
+  { ignores: ['**/out-tsc'] },
   ...nx.configs['flat/base'],
   {
     plugins: {

@@ -5,9 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "typecheck": {
-      "command": "tsc -p tools/visual-testing/tsconfig.lib.json && tsc -p tools/visual-testing/tsconfig.browser.json"
-    },
     "report": {
       "command": "node tools/visual-testing/src/build-report.ts --comment dist/visual-report-site/comment.md"
     }

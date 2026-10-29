@@ -8,7 +8,7 @@ import styles from './Sidebar.module.css'
 describe('Sidebar', () => {
   beforeEach(({ skip, task }) => {
     skip(
-      task.file.projectName.startsWith('mobile'),
+      task.file.projectName?.startsWith('mobile') ?? false,
       'Sidebar is only relevant for desktop',
     )
   })

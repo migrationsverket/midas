@@ -2,16 +2,22 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     // Run as-is with Node's type stripping and loaded by Vitest from source,
-    // never compiled
-    "noEmit": true,
+    // never compiled. The typecheck only writes declarations
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
     "erasableSyntaxOnly": true,
     "verbatimModuleSyntax": true,
-    "types": ["node"]
+    "types": ["node"],
+    "emitDeclarationOnly": true,
+    "outDir": "out-tsc/lib"
   },
   "include": ["src/**/*.ts"],
   // Run in the browser through Vite, see tsconfig.browser.json
-  "exclude": ["src/setup.ts", "src/stories.ts"]
+  "exclude": ["src/setup.ts", "src/stories.ts"],
+  "references": [
+    {
+      "path": "../test-utils/tsconfig.lib.json"
+    }
+  ]
 }

@@ -1,12 +1,19 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "types": ["node", "@nx/react/typings/cssmodule.d.ts", "vite/client"]
+    "types": ["node", "@nx/react/typings/cssmodule.d.ts", "vite/client"],
+    "outDir": "out-tsc/spec"
   },
   "include": [
     "vitest.setup.mts",
     "vitest.setup.visual.mts",
     "src/**/*.test.*",
-    "src/**/*.spec.*"
+    "src/**/*.spec.*",
+    "test-utils.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
   ]
 }

@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "./dist/out-tsc",
     "target": "es2015",
     "lib": ["es2020", "dom"],
     "module": "esnext",
@@ -13,29 +11,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "importHelpers": true,
-    "paths": {
-      "@midas-ds/components": ["./packages/components/src/index.ts"],
-      "@midas-ds/components/*": ["./packages/components/src/*"],
-      "@midas-ds/datepicker-styles/*": ["./packages/datepicker-styles/src/*"],
-      "@midas-ds/docgen": ["./tools/docgen/src/index.ts"],
-      "@midas-ds/docusaurus": ["./tools/docusaurus/src/index.ts"],
-      "@midas-ds/release-local": ["./tools/release-local/src/index.ts"],
-      "@midas-ds/style-dictionary": ["./tools/style-dictionary/src/index.ts"],
-      "@midas-ds/table-styles": ["./packages/table-styles/src/index.ts"],
-      "@midas-ds/table-styles/*": ["./packages/table-styles/src/*"],
-      "@midas-ds/theme": ["./packages/theme/src/index.ts"],
-      "@midas-ds/theme/*": ["./packages/theme/src/*"],
-      "@site/*": ["./apps/docs/*"],
-      "@midas-ds/release-dry-run": ["./tools/release-dry-run/src/index.ts"],
-      "@midas-ds/select-styles/*": ["./packages/select-styles/src/*"],
-      "@midas-ds/storybook/*": ["./apps/storybook/src/*"],
-      "@midas-ds/test-utils": ["./tools/test-utils/src/index.ts"],
-      "@midas-ds/test-browsers": ["./tools/test-browsers/src/index.ts"],
-      "@midas-ds/visual-testing": ["./tools/visual-testing/src/index.ts"],
-      "@midas-ds/visual-testing/*": ["./tools/visual-testing/src/*"],
-      "@midas-ds/layout": ["./packages/layout/src/index.ts"],
-      "@midas-ds/layout/*": ["./packages/layout/src/*"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "composite": true,
+    "declarationMap": true,
+    "customConditions": ["@midas-ds/source"]
+  }
 }

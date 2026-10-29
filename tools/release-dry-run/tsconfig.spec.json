@@ -1,7 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "types": ["node", "vitest"]
+    "types": ["node", "vitest"],
+    "outDir": "out-tsc/spec"
   },
   "include": [
     "vite.config.mts",
@@ -9,5 +10,10 @@
     "src/**/*.test.*",
     "src/**/*.spec.*",
     "src/**/*.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
   ]
 }

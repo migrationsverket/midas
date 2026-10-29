@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "types": ["node", "vitest"],
-    "composite": true
+    "composite": true,
+    "outDir": "out-tsc/spec"
   },
   "include": [
     "vitest.config.mts",
@@ -15,5 +16,10 @@
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx",
     "src/**/*.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    }
   ]
 }

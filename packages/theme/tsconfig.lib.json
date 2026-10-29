@@ -3,7 +3,9 @@
   "compilerOptions": {
     "composite": true,
     "types": ["node"],
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "outDir": "out-tsc/lib"
   },
+  "include": ["src/**/*.ts"],
   "exclude": ["**/*.spec.*", "**/*.test.*"]
 }
