@@ -90,6 +90,24 @@ xhr.onload = () => setStatus('success')
 xhr.onerror = () => setStatus('error')
 ```
 
+### I en FilePicker
+
+Inuti en [FilePicker](/components/file-picker) kan du ge `FileList` en funktion i stället för rader. Den anropas för
+varje vald fil. Ge `FileListItem` filen med `file`, så fylls `fileName` och `fileSize` i, och knapparna tar bort filen
+från `FilePicker`, som anropar sin `onRemove`. Se [Ladda upp direkt](/components/file-picker#ladda-upp-direkt).
+
+```tsx
+<FileList>
+  {file => (
+    <FileListItem
+      file={file}
+      status={uploads.get(file)?.status}
+      progress={uploads.get(file)?.progress}
+    />
+  )}
+</FileList>
+```
+
 ### Under uppladdning
 
 Sätt `status='uploading'` medan filen laddas upp. Ange `progress` (0–100) för ett bestämt förlopp, eller

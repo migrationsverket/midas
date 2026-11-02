@@ -2,11 +2,13 @@
   "en": {
     "chooseFile": "Choose file",
     "chooseFiles": "Choose files",
-    "unsupportedFileType": "File type not allowed"
+    "unsupportedFileType": "File type not allowed",
+    "valueMissing": "Select a file"
   },
   "sv": {
     "chooseFile": "Välj fil",
     "chooseFiles": "Välj filer",
-    "unsupportedFileType": "Filtypen är inte tillåten"
+    "unsupportedFileType": "Filtypen är inte tillåten",
+    "valueMissing": "Välj en fil"
   }
 }

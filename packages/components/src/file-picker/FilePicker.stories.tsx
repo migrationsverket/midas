@@ -4,7 +4,7 @@ import { Upload } from 'lucide-react'
 import { FilePicker } from './FilePicker'
 import { FileTrigger } from '../file-trigger'
 import { DropZone } from '../drop-zone'
-import { FileList } from '../file-list'
+import { FileList, FileListItem, type FileListItemProps } from '../file-list'
 import { Button } from '../button'
 import { Text } from '../text'
 
@@ -76,6 +76,7 @@ export const AcceptedFileTypes: Story = {
   args: {
     acceptedFileTypes: ['image/png', 'image/jpeg'],
     description: 'Endast .jpg- och .png-filer',
+    validationBehavior: 'aria',
   },
   render: args => (
     <FilePicker {...args}>
@@ -147,6 +148,142 @@ export const InForm: Story = {
         <button type='submit'>Skicka</button>
         <button type='reset'>Rensa</button>
         <SubmittedFiles names={names} />
+      </form>
+    )
+  },
+}
+
+export const Required: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    name: 'fruits',
+    isRequired: true,
+  },
+  render: function Render(args) {
+    const { names, onSubmit } = useSubmittedFiles('fruits')
+
+    return (
+      <form onSubmit={onSubmit}>
+        <FilePicker {...args} />
+        <button type='submit'>Skicka</button>
+        <SubmittedFiles names={names} />
+      </form>
+    )
+  },
+}
+
+export const CustomValidation: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    name: 'fruits',
+    validate: (files: File[]) =>
+      files.length > 2 ? 'Välj högst två filer' : true,
+  },
+  render: function Render(args) {
+    const { names, onSubmit } = useSubmittedFiles('fruits')
+
+    return (
+      <form onSubmit={onSubmit}>
+        <FilePicker {...args} />
+        <button type='submit'>Skicka</button>
+        <button type='reset'>Rensa</button>
+        <SubmittedFiles names={names} />
+      </form>
+    )
+  },
+}
+
+type UploadState = Pick<
+  FileListItemProps,
+  'status' | 'progress' | 'errorMessage'
+>
+
+/**
+ * Uploads each file as soon as it's added and submits the uploaded files'
+ * names instead of the files. The form can't be submitted while uploads are
+ * running.
+ */
+export const UploadOnAdd: Story = {
+  tags: ['!snapshot'],
+  render: function Render(args) {
+    const [uploads, setUploads] = React.useState(new Map<File, UploadState>())
+    const timers = React.useRef(new Map<File, number>())
+    const [submitted, setSubmitted] = React.useState<string | null>(null)
+
+    const setUpload = (file: File, upload: UploadState | null) =>
+      setUploads(prev => {
+        const next = new Map(prev)
+        if (upload) next.set(file, upload)
+        else next.delete(file)
+        return next
+      })
+
+    // Stands in for a fetch or XMLHttpRequest with progress events
+    const startUpload = (file: File) => {
+      let progress = 0
+      setUpload(file, { status: 'uploading', progress })
+      timers.current.set(
+        file,
+        window.setInterval(() => {
+          progress += 25
+          if (progress < 100) {
+            setUpload(file, { status: 'uploading', progress })
+            return
+          }
+          window.clearInterval(timers.current.get(file))
+          setUpload(file, { status: 'success' })
+        }, 300),
+      )
+    }
+
+    const abortUpload = (file: File) => {
+      window.clearInterval(timers.current.get(file))
+      setUpload(file, null)
+    }
+
+    const isUploading = [...uploads.values()].some(
+      upload => upload.status === 'uploading',
+    )
+    const uploaded = [...uploads.entries()]
+      .filter(([, upload]) => upload.status === 'success')
+      .map(([file]) => file.name)
+
+    return (
+      <form
+        onSubmit={e => {
+          e.preventDefault()
+          setSubmitted(new FormData(e.currentTarget).get('uploaded') as string)
+        }}
+      >
+        <FilePicker
+          {...args}
+          onAdd={added => added.forEach(startUpload)}
+          onRemove={abortUpload}
+          validate={() =>
+            isUploading ? 'Vänta tills uppladdningen är klar' : true
+          }
+        >
+          <FileTrigger>
+            <Button icon={Upload}>Välj filer</Button>
+          </FileTrigger>
+          <FileList>
+            {file => (
+              <FileListItem
+                file={file}
+                {...uploads.get(file)}
+              />
+            )}
+          </FileList>
+        </FilePicker>
+        <input
+          type='hidden'
+          name='uploaded'
+          value={uploaded.join(', ')}
+        />
+        <button type='submit'>Skicka</button>
+        {submitted !== null && (
+          <output data-testid='submitted'>{submitted || '–'}</output>
+        )}
       </form>
     )
   },

@@ -4,8 +4,10 @@ import {
   FieldError,
   FilePicker,
   FileList,
+  FileListItem,
   FileTrigger,
   Text,
+  type FileListItemProps,
 } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
@@ -68,13 +70,103 @@ export const FormExample = () => {
     >
       <FilePicker
         label='Ladda upp bilder på dina favoritfrukter'
+        description='Högst tre bilder'
         name='fruits'
+        isRequired
         allowsMultiple
+        validate={files => (files.length > 3 ? 'Välj högst tre bilder' : true)}
       />
       <div>
         <Button type='submit'>Skicka</Button>
       </div>
       {submitted && <output>Skickade: {submitted.join(', ')}</output>}
+    </form>
+  )
+}
+
+type UploadState = Pick<FileListItemProps, 'status' | 'progress'>
+
+export const UploadOnAddExample = () => {
+  const [uploads, setUploads] = React.useState(new Map<File, UploadState>())
+  const timers = React.useRef(new Map<File, number>())
+  const [submitted, setSubmitted] = React.useState<string | null>(null)
+
+  const setUpload = (file: File, upload: UploadState | null) =>
+    setUploads(prev => {
+      const next = new Map(prev)
+      if (upload) next.set(file, upload)
+      else next.delete(file)
+      return next
+    })
+
+  // Stands in for a fetch or XMLHttpRequest with progress events
+  const startUpload = (file: File) => {
+    let progress = 0
+    setUpload(file, { status: 'uploading', progress })
+    timers.current.set(
+      file,
+      window.setInterval(() => {
+        progress += 10
+        if (progress < 100) {
+          setUpload(file, { status: 'uploading', progress })
+          return
+        }
+        window.clearInterval(timers.current.get(file))
+        setUpload(file, { status: 'success' })
+      }, 300),
+    )
+  }
+
+  const abortUpload = (file: File) => {
+    window.clearInterval(timers.current.get(file))
+    setUpload(file, null)
+  }
+
+  const isUploading = [...uploads.values()].some(
+    upload => upload.status === 'uploading',
+  )
+  const fileIds = [...uploads.entries()]
+    .filter(([, upload]) => upload.status === 'success')
+    .map(([file]) => file.name)
+
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+        setSubmitted(new FormData(e.currentTarget).get('fileIds') as string)
+      }}
+      style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+    >
+      <FilePicker
+        label='Ladda upp bilder på dina favoritfrukter'
+        allowsMultiple
+        onAdd={files => files.forEach(startUpload)}
+        onRemove={abortUpload}
+        validate={() =>
+          isUploading ? 'Vänta tills uppladdningen är klar' : true
+        }
+      >
+        <FileTrigger>
+          <Button icon={Upload}>Välj filer</Button>
+        </FileTrigger>
+        <FileList>
+          {file => (
+            <FileListItem
+              file={file}
+              {...uploads.get(file)}
+            />
+          )}
+        </FileList>
+      </FilePicker>
+      <input
+        type='hidden'
+        name='fileIds'
+        value={fileIds.join(',')}
+      />
+      <div>
+        <Button type='submit'>Skicka</Button>
+      </div>
+      {submitted !== null && <output>Skickade: {submitted || '–'}</output>}
     </form>
   )
 }

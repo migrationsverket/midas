@@ -1,52 +1,67 @@
 'use client'
 
-import { useEffect, useRef, type HTMLAttributes } from 'react'
-import { FocusScope, useFocusManager, useLocale } from 'react-aria'
+import {
+  Fragment,
+  useEffect,
+  useRef,
+  type HTMLAttributes,
+  type ReactNode,
+} from 'react'
+import { FocusScope, useFocusManager } from 'react-aria'
 import clsx from '../utils/clsx'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { useFilePickerContext } from '../file-picker/FilePickerContext'
-import { formatFileSize } from '../file-picker/utils'
 import { FileListItem } from './FileListItem'
 import styles from './FileList.module.css'
 import messages from './intl/translations.json'
 
-/**
- * Inside a `FilePicker`, leave out `children` to list the picker's selected
- * files, each with a delete button.
- */
-export type FileListProps = HTMLAttributes<HTMLUListElement>
+export interface FileListProps extends Omit<
+  HTMLAttributes<HTMLUListElement>,
+  'children'
+> {
+  /**
+   * The rows. Inside a `FilePicker`, pass a function to render a row for
+   * each selected file, e.g. with its upload status:
+   * `{file => <FileListItem file={file} status={...} />}`. Leave out to list
+   * the files with a delete button each.
+   */
+  children?: ReactNode | ((file: File) => ReactNode)
+}
+
+const defaultRow = (file: File) => <FileListItem file={file} />
 
 export const FileList = ({ className, children, ...props }: FileListProps) => {
   const listRef = useRef<HTMLUListElement>(null)
   const filePicker = useFilePickerContext()
   const strings = useLocalizedStringFormatter(messages)
-  const { locale } = useLocale()
-  const listsPickerFiles = !!filePicker && children === undefined
+  const renderRow =
+    typeof children === 'function'
+      ? children
+      : filePicker && children === undefined
+        ? defaultRow
+        : undefined
 
-  if (listsPickerFiles && filePicker.files.length === 0) return null
+  const pickerFiles = filePicker?.files ?? []
+
+  if (renderRow && pickerFiles.length === 0) return null
 
   return (
     <FocusScope>
       <ul
-        aria-label={
-          listsPickerFiles ? strings.format('selectedFiles') : undefined
-        }
+        aria-label={renderRow ? strings.format('selectedFiles') : undefined}
         {...props}
         ref={listRef}
         tabIndex={-1}
         className={clsx(styles.fileList, className)}
       >
         <FocusGuard containerRef={listRef} />
-        {listsPickerFiles
-          ? filePicker.files.map(file => (
-              <FileListItem
-                key={`${file.name}-${file.size}-${file.lastModified}`}
-                fileName={file.name}
-                fileSize={formatFileSize(file.size, locale)}
-                onDelete={() => filePicker.removeFile(file)}
-              />
+        {renderRow
+          ? pickerFiles.map(file => (
+              <Fragment key={`${file.name}-${file.size}-${file.lastModified}`}>
+                {renderRow(file)}
+              </Fragment>
             ))
-          : children}
+          : (children as ReactNode)}
       </ul>
     </FocusScope>
   )

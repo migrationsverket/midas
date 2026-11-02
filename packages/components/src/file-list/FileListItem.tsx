@@ -2,7 +2,7 @@
 
 import { useId } from 'react'
 import { Trash2, X } from 'lucide-react'
-import { VisuallyHidden } from 'react-aria'
+import { useLocale, VisuallyHidden } from 'react-aria'
 import { Button } from '../button'
 import { ProgressBar } from '../progress-bar'
 import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
@@ -10,11 +10,11 @@ import { FieldError } from '../field-error'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import clsx from '../utils/clsx'
 import { useFilePickerContext } from '../file-picker/FilePickerContext'
+import { formatFileSize } from '../file-picker/utils'
 import styles from './FileList.module.css'
 import messages from './intl/translations.json'
 
-export interface FileListItemProps {
-  fileName: string
+interface FileListItemBaseProps {
   fileSize?: string
   /** @default 'idle' */
   status?: 'idle' | 'uploading' | 'success' | 'error'
@@ -40,18 +40,40 @@ export interface FileListItemProps {
   className?: string
 }
 
+export type FileListItemProps = FileListItemBaseProps &
+  (
+    | {
+        /**
+         * A file selected in the surrounding `FilePicker`. Fills in
+         * `fileName` and `fileSize`, and the delete and cancel buttons
+         * remove it from the picker, which calls its `onRemove`.
+         */
+        file: File
+        fileName?: string
+      }
+    | { file?: undefined; fileName: string }
+  )
+
 export const FileListItem = ({
-  fileName,
-  fileSize,
+  file,
+  fileName: fileNameProp,
+  fileSize: fileSizeProp,
   status = 'idle',
   progress,
   errorMessage,
   onCancel,
-  onDelete,
+  onDelete: onDeleteProp,
   className,
 }: FileListItemProps) => {
   const strings = useLocalizedStringFormatter(messages)
   const filePicker = useFilePickerContext()
+  const { locale } = useLocale()
+  const fileName = fileNameProp ?? file?.name ?? ''
+  const fileSize =
+    fileSizeProp ?? (file ? formatFileSize(file.size, locale) : undefined)
+  const onDelete =
+    onDeleteProp ??
+    (file && filePicker ? () => filePicker.removeFile(file) : undefined)
   const isUploading = status === 'uploading'
   const isSuccess = status === 'success'
   const isError = status === 'error'

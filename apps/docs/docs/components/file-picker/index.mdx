@@ -8,6 +8,7 @@ import {
   DropZoneExample,
   AcceptedFileTypesExample,
   FormExample,
+  UploadOnAddExample,
   ControlledExample,
   DisabledExample,
 } from '@site/src/components/examples/file-picker/FilePickerExamples'
@@ -22,7 +23,8 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 />
 
 `FilePicker` låter användaren välja filer. Den håller de valda filerna, ger fältet en etikett, en beskrivning och ett
-felmeddelande, och skickar filerna med formulär.
+felmeddelande, och valideras och skickas med formulär som andra formulärfält. Filerna kan skickas med formuläret,
+som ett vanligt filfält eller med `fetch`, eller laddas upp direkt när de väljs.
 
 Utan innehåll visas en knapp och en lista över de valda filerna. Vill du till exempel kunna dra och släppa filer
 bygger du innehållet själv med [FileTrigger](/components/file-picker/file-trigger),
@@ -97,15 +99,25 @@ släpps i en DropZone, gör fältet ogiltigt och namnges i felmeddelandet.
 
 ### I ett formulär
 
-Med `name` skickas de valda filerna med formuläret, som för ett vanligt filfält. När formuläret återställs går urvalet
-tillbaka till `defaultValue`.
+Med `name` skickas de valda filerna med formuläret, som för ett vanligt filfält. Det fungerar både när formuläret
+skickas av webbläsaren och när du skickar det själv med `fetch` och `new FormData(form)`.
+
+`isRequired` kräver minst en fil, och `validate` returnerar ett felmeddelande när urvalet inte är giltigt, till exempel
+för många eller för stora filer. Felen visas när användaren ändrar urvalet eller försöker skicka formuläret, och
+formuläret skickas inte förrän de är åtgärdade. Med `validationBehavior='aria'` visas felen direkt i stället, och
+formuläret skickas ändå. Fel från servern, i `validationErrors` på ett `Form`, visas tills användaren ändrar urvalet.
+När formuläret återställs går urvalet tillbaka till `defaultValue`. Se [Validering](/design-patterns/validation) för mer
+om validering i formulär.
 
 ```tsx
 <form onSubmit={handleSubmit}>
   <FilePicker
     label='Ladda upp bilder på dina favoritfrukter'
+    description='Högst tre bilder'
     name='fruits'
+    isRequired
     allowsMultiple
+    validate={files => (files.length > 3 ? 'Välj högst tre bilder' : true)}
   />
   <Button type='submit'>Skicka</Button>
 </form>
@@ -115,10 +127,50 @@ tillbaka till `defaultValue`.
   <FormExample />
 </div>
 
+### Ladda upp direkt
+
+Vill du ladda upp filerna så fort de väljs startar du uppladdningen i `onAdd` och avbryter den i `onRemove`.
+Uppladdningens status håller du i ditt eget state. Ge `FileList` en funktion som visar en rad per vald fil, och ge
+`FileListItem` filen med `file`, så fylls namn och storlek i och knapparna tar bort filen från `FilePicker`.
+
+Utelämna `name`, så skickas inte filerna en gång till med formuläret. Skicka i stället det servern svarade med, till
+exempel filernas id, i ett eget fält. Med `validate` kan du hindra att formuläret skickas medan uppladdningar pågår.
+
+```tsx
+const [uploads, setUploads] = React.useState(new Map<File, Upload>())
+const isUploading = [...uploads.values()].some(upload => upload.status === 'uploading')
+
+<FilePicker
+  label='Ladda upp bilder på dina favoritfrukter'
+  allowsMultiple
+  onAdd={files => files.forEach(startUpload)}
+  onRemove={abortUpload}
+  validate={() => (isUploading ? 'Vänta tills uppladdningen är klar' : true)}
+>
+  <FileTrigger>
+    <Button icon={Upload}>Välj filer</Button>
+  </FileTrigger>
+  <FileList>
+    {file => (
+      <FileListItem
+        file={file}
+        status={uploads.get(file)?.status}
+        progress={uploads.get(file)?.progress}
+      />
+    )}
+  </FileList>
+</FilePicker>
+<input type='hidden' name='fileIds' value={fileIds.join(',')} />
+```
+
+<div className='card'>
+  <UploadOnAddExample />
+</div>
+
 ### Kontrollerad
 
-Använd `value` och `onChange` för att hålla de valda filerna i ditt eget state, till exempel för att ladda upp dem
-direkt eller visa en sammanfattning. `defaultValue` sätter de filer som är valda från början.
+Använd `value` och `onChange` för att hålla de valda filerna i ditt eget state, till exempel för att visa en
+sammanfattning. `defaultValue` sätter de filer som är valda från början.
 
 ```tsx
 const [files, setFiles] = React.useState<File[]>([])
@@ -153,10 +205,10 @@ const [files, setFiles] = React.useState<File[]>([])
 
 ### Felmeddelande
 
-Sätt `isInvalid` och `errorMessage` för att visa ett fel, till exempel om användaren väljer för många filer eller om
+Sätt `isInvalid` och `errorMessage` för att visa ett fel som inte kommer från valideringen, till exempel om
 uppladdningen misslyckas. Felmeddelandet visas under kontrollerna, eller ovanför med `errorPosition='top'`, och läggs
 automatiskt till i knappens beskrivning. En DropZone inuti markeras också som ogiltig. `isInvalid` tar över
-felet från `acceptedFileTypes`.
+valideringen, och utan `errorMessage` visas meddelandena från valideringen.
 
 ```tsx
 <FilePicker
