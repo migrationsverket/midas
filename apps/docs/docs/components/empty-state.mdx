@@ -1,0 +1,122 @@
+---
+title: EmptyState
+description: Text och åtgärder för tomma sökresultat, tomma sidor och liknande.
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import EmptyStateApi from '@midas-ds/api/components/EmptyState.json'
+import {
+  Button,
+  EmptyState,
+  EmptyStateVisual,
+  EmptyStateHeading,
+  EmptyStateText,
+  EmptyStateActions,
+} from '@midas-ds/components'
+import { Inbox } from 'lucide-react'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
+<ComponentHeader
+  name='emptystate'
+  friendlyName='Tomt läge, blank slate'
+  overrideHeadlessLink=''
+/>
+
+Visas när det inte finns något innehåll att visa, till exempel när en sökning inte gav några träffar eller när en sida är tom.
+
+```tsx
+import {
+  EmptyState,
+  EmptyStateActions,
+  EmptyStateHeading,
+  EmptyStateText,
+  EmptyStateVisual,
+  Button,
+} from '@midas-ds/components'
+import { Inbox } from 'lucide-react'
+```
+
+```tsx
+<EmptyState>
+  <EmptyStateVisual>
+    <Inbox />
+  </EmptyStateVisual>
+  <EmptyStateHeading>Du har inga ärenden</EmptyStateHeading>
+  <EmptyStateText>När du skickar in en ansökan visas den här.</EmptyStateText>
+  <EmptyStateActions>
+    <Button>Gör en ansökan</Button>
+  </EmptyStateActions>
+</EmptyState>
+```
+
+<div className='card'>
+  <EmptyState>
+    <EmptyStateVisual>
+      <Inbox />
+    </EmptyStateVisual>
+    <EmptyStateHeading>Du har inga ärenden</EmptyStateHeading>
+    <EmptyStateText>När du skickar in en ansökan visas den här.</EmptyStateText>
+    <EmptyStateActions>
+      <Button>Gör en ansökan</Button>
+    </EmptyStateActions>
+  </EmptyState>
+</div>
+
+## Komponenter i EmptyState
+
+`EmptyStateHeading` och `EmptyStateText` ärver egenskaper från `Heading` respektive `Text`, men sätter andra standardegenskaper:
+
+| Komponent           | Egenskap      | Värde |
+| ------------------- | ------------- | ----- |
+| `EmptyStateHeading` | `level`       | `2`   |
+| `EmptyStateText`    | `elementType` | `'p'` |
+
+## Varianter
+
+### Placering
+
+Använd `align='start'` när innehållet ska linjera med till exempel ett sökfält ovanför.
+
+```tsx
+<EmptyState
+  // highlight-start
+  align='start'
+  // highlight-end
+>
+  <EmptyStateHeading>Inga sökträffar</EmptyStateHeading>
+  <EmptyStateText>Kontrollera stavningen eller prova med färre sökord.</EmptyStateText>
+  <EmptyStateActions>
+    <Button variant='secondary'>Rensa sökningen</Button>
+  </EmptyStateActions>
+</EmptyState>
+```
+
+<div className='card'>
+  <EmptyState align='start'>
+    <EmptyStateHeading>Inga sökträffar</EmptyStateHeading>
+    <EmptyStateText>Kontrollera stavningen eller prova med färre sökord.</EmptyStateText>
+    <EmptyStateActions>
+      <Button variant='secondary'>Rensa sökningen</Button>
+    </EmptyStateActions>
+  </EmptyState>
+</div>
+
+### Rubriknivå
+
+Rubriken för `EmptyStateHeading` är en `h2` som standard. Ange `elementType` för `Heading` så att den passar sidans rubrikstruktur, utseendet behålls.
+
+```tsx
+<EmptyState>
+  <EmptyStateHeading elementType='h3'>Min rubrik</EmptyStateHeading>
+</EmptyState>
+```
+
+## Tillgänglighet
+
+Om innehållet uppdateras utan att sidan laddas om, till exempel vid filtrering av sökresultat, kan du lägga till `aria-live='polite'` så att skärmläsare läser upp att det inte finns några träffar.
+
+## API
+
+### EmptyState
+
+<PropTable doc={EmptyStateApi} />
