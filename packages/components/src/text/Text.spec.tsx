@@ -3,6 +3,9 @@ import { composeStories } from '@storybook/react-vite'
 import { page } from 'vitest/browser'
 import * as stories from './Text.stories'
 import { render } from '../../test-utils'
+import { createRef } from 'react'
+import { Text } from './Text'
+import { TextContext } from './TextContext'
 
 const {
   Default,
@@ -92,5 +95,50 @@ describe('given a Text with size="small" & slot="description"', async () => {
         fontSize: '12px',
         lineHeight: '16px',
       })
+  })
+})
+
+describe('given a Text inside a TextContext', async () => {
+  it('should use the props from context', async () => {
+    const { getByText } = await render(
+      <TextContext.Provider value={{ size: 'small', elementType: 'p' }}>
+        <Text>Text</Text>
+      </TextContext.Provider>,
+    )
+    const text = getByText('Text')
+    expect(text.element().tagName).toBe('P')
+    await expect.element(text).toHaveStyle({ fontSize: '14px' })
+  })
+
+  it('should let its own props take precedence', async () => {
+    const { getByText } = await render(
+      <TextContext.Provider value={{ size: 'small', elementType: 'p' }}>
+        <Text elementType='strong'>Text</Text>
+      </TextContext.Provider>,
+    )
+    expect(getByText('Text').element().tagName).toBe('STRONG')
+  })
+
+  it('should use the description look for a description slot from context', async () => {
+    const { getByText } = await render(
+      <TextContext.Provider
+        value={{ slots: { description: { size: 'small' } } }}
+      >
+        <Text slot='description'>Text</Text>
+      </TextContext.Provider>,
+    )
+    await expect.element(getByText('Text')).toHaveStyle({ fontSize: '12px' })
+  })
+
+  it('should merge a ref from context with its own', async () => {
+    const contextRef = createRef<HTMLElement>()
+    const ownRef = createRef<HTMLElement>()
+    await render(
+      <TextContext.Provider value={{ ref: contextRef }}>
+        <Text ref={ownRef}>Text</Text>
+      </TextContext.Provider>,
+    )
+    expect(contextRef.current?.tagName).toBe('SPAN')
+    expect(ownRef.current).toBe(contextRef.current)
   })
 })

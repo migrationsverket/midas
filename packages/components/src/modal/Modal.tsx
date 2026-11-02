@@ -3,12 +3,15 @@ import {
   Modal as AriaModal,
   Dialog as AriaDialog,
   composeRenderProps,
+  Provider,
 } from 'react-aria-components'
 import { forwardRef } from 'react'
-import { Button } from '../button'
+import { Button, ButtonContext } from '../button'
 import styles from './Modal.module.css'
 import { X } from 'lucide-react'
-import { Heading } from '../heading'
+import { Heading, HeadingContext } from '../heading'
+import { LinkContext } from '../link'
+import { TextContext } from '../text'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ModalOverlay, type ModalOverlayProps } from './modal-overlay'
@@ -46,50 +49,61 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
             className={styles.modal}
             ref={ref}
           >
-            <AriaDialog
-              className={styles.dialog}
-              ref={dialogRef}
+            {/* Portalled content still sees React context, so don't let
+                the defaults from where the modal is triggered leak in */}
+            <Provider
+              values={[
+                [HeadingContext, null],
+                [TextContext, null],
+                [ButtonContext, null],
+                [LinkContext, null],
+              ]}
             >
-              <div
-                className={styles.modalHeader}
-                ref={headerRef}
+              <AriaDialog
+                className={styles.dialog}
+                ref={dialogRef}
               >
-                <div className={styles.modalTitle}>
-                  {title && (
-                    <Heading
-                      level={3}
-                      elementType='h2'
-                      slot='title'
-                    >
-                      {title}
-                    </Heading>
+                <div
+                  className={styles.modalHeader}
+                  ref={headerRef}
+                >
+                  <div className={styles.modalTitle}>
+                    {title && (
+                      <Heading
+                        level={3}
+                        elementType='h2'
+                        slot='title'
+                      >
+                        {title}
+                      </Heading>
+                    )}
+                  </div>
+                  {!hideCloseButton && (
+                    <Button
+                      aria-label={strings.format('close')}
+                      className={styles.closeButton}
+                      icon={X}
+                      slot='close'
+                      variant='icon'
+                    />
                   )}
                 </div>
-                {!hideCloseButton && (
-                  <Button
-                    aria-label={strings.format('close')}
-                    className={styles.closeButton}
-                    icon={X}
-                    slot='close'
-                    variant='icon'
-                  />
-                )}
-              </div>
-              <div
-                className={styles.modalBody}
-                tabIndex={-1}
-              >
-                {children}
-              </div>
-              {footer && (
                 <div
-                  className={styles.modalFooter}
-                  ref={footerRef}
+                  className={styles.modalBody}
+                  tabIndex={-1}
                 >
-                  {footer}
+                  {children}
                 </div>
-              )}
-            </AriaDialog>
+                {footer && (
+                  <div
+                    className={styles.modalFooter}
+                    ref={footerRef}
+                  >
+                    {footer}
+                  </div>
+                )}
+              </AriaDialog>
+            </Provider>
           </AriaModal>
         ))}
       </ModalOverlay>

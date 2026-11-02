@@ -6,10 +6,9 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 import { PropTable } from '@site/src/components/PropsTable'
 import ButtonApi from '@midas-ds/api/components/Button.json'
 import ButtonGroupApi from '@midas-ds/api/components/ButtonGroup.json'
-import { Button, ButtonGroup } from '@midas-ds/components'
+import { Button, ButtonContext, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Plus } from 'lucide-react'
-import { ButtonContext } from 'react-aria-components'
 
 <ComponentHeader
   name='Button'
@@ -19,7 +18,7 @@ import { ButtonContext } from 'react-aria-components'
 Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär. När användaren interagerar med en knapp händer något på sidan.
 
 ```tsx
-import { Button, ButtonGroup } from '@midas-ds/components'
+import { Button, ButtonContext, ButtonGroup } from '@midas-ds/components'
 ```
 
 ```tsx
@@ -185,10 +184,10 @@ import { ButtonGroup } from '@midas-ds/components'
 
 ### Kontrollera flertalet knappar
 
-För att kontrollera flertalet knappar kan `ButtonContext` användas runtom flertalet knappar för att kontrollera attribut på samtliga knappar på ett ställe.
+För att kontrollera flertalet knappar kan `ButtonContext` användas runtom flertalet knappar för att kontrollera attribut på samtliga knappar på ett ställe. Egenskaper som anges direkt på en `Button` har företräde.
 
 ```tsx
-import { ButtonContext } from 'react-aria-components'
+import { ButtonContext } from '@midas-ds/components'
 ```
 
 ```tsx

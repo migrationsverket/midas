@@ -114,6 +114,20 @@ Egenskapen `elementType` kan användas för att ändra rubrikens semantiska niv�
   </Heading>
 </div>
 
+## Context
+
+Med `HeadingContext` kan du ange standardvärden för alla `Heading` inuti, till exempel i en egen komponent. Egenskaper som anges direkt på en `Heading` har företräde.
+
+```tsx
+import { Heading, HeadingContext } from '@midas-ds/components'
+```
+
+```tsx
+<HeadingContext.Provider value={{ level: 2, elementType: 'h3' }}>
+  <Heading>Får nivå 2 och blir en h3</Heading>
+</HeadingContext.Provider>
+```
+
 ## API
 
 ### Heading

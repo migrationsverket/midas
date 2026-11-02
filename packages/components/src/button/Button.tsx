@@ -12,6 +12,7 @@ import { LucideIcon } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { Size } from '../common/types'
 import { Spinner } from '../spinner'
+import { ButtonContext } from './ButtonContext'
 import styles from './Button.module.css'
 
 /**
@@ -59,9 +60,12 @@ export type MidasButton = ButtonProps
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
+    const [midasProps, midasRef] = useContextProps(props, ref, ButtonContext)
+    // React Aria's ButtonContext carries slot props from its own components
+    // (DialogTrigger, Dialog's close slot etc.), so it's merged here as well
     const [mergedProps, mergedRef] = useContextProps(
-      props,
-      ref,
+      midasProps,
+      midasRef,
       AriaButtonContext,
     )
     const {

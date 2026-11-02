@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Heading.stories'
 import { render } from '../../test-utils'
+import { createRef } from 'react'
+import { Heading } from './Heading'
+import { HeadingContext } from './HeadingContext'
 
 const {
   Heading1,
@@ -116,5 +119,68 @@ describe('given a Heading with a changed semantic element', async () => {
       lineHeight: '24px',
       fontWeight: '600',
     })
+  })
+})
+
+describe('given a Heading inside a HeadingContext', async () => {
+  it('should use the level and elementType from context', async () => {
+    const { getByRole } = await render(
+      <HeadingContext.Provider value={{ level: 1, elementType: 'h4' }}>
+        <Heading>Rubrik</Heading>
+      </HeadingContext.Provider>,
+    )
+    await expect.element(getByRole('heading', { level: 4 })).toHaveStyle({
+      fontSize: '26px',
+    })
+  })
+
+  it('should let its own props take precedence', async () => {
+    const { getByRole } = await render(
+      <HeadingContext.Provider value={{ level: 1, elementType: 'h4' }}>
+        <Heading
+          level={2}
+          elementType='h5'
+        >
+          Rubrik
+        </Heading>
+      </HeadingContext.Provider>,
+    )
+    await expect.element(getByRole('heading', { level: 5 })).toHaveStyle({
+      fontSize: '20px',
+    })
+  })
+
+  it('should merge the className from context with its own', async () => {
+    const { getByRole } = await render(
+      <HeadingContext.Provider value={{ className: 'from-context' }}>
+        <Heading className='own'>Rubrik</Heading>
+      </HeadingContext.Provider>,
+    )
+    const { classList } = getByRole('heading').element()
+    expect(classList).toContain('from-context')
+    expect(classList).toContain('own')
+  })
+
+  it('should use the props of a named slot', async () => {
+    const { getByRole } = await render(
+      <HeadingContext.Provider
+        value={{ slots: { title: { level: 1 }, subtitle: { level: 4 } } }}
+      >
+        <Heading slot='subtitle'>Rubrik</Heading>
+      </HeadingContext.Provider>,
+    )
+    await expect.element(getByRole('heading', { level: 4 })).toBeVisible()
+  })
+
+  it('should merge a ref from context with its own', async () => {
+    const contextRef = createRef<HTMLHeadingElement>()
+    const ownRef = createRef<HTMLHeadingElement>()
+    await render(
+      <HeadingContext.Provider value={{ ref: contextRef }}>
+        <Heading ref={ownRef}>Rubrik</Heading>
+      </HeadingContext.Provider>,
+    )
+    expect(contextRef.current?.tagName).toBe('H3')
+    expect(ownRef.current).toBe(contextRef.current)
   })
 })

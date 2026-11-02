@@ -1,9 +1,11 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
 import clsx from '../utils/clsx'
 import {
   Text as AriaText,
   TextProps as AriaTextProps,
+  useContextProps,
 } from 'react-aria-components'
+import { TextContext } from './TextContext'
 import styles from './Text.module.css'
 
 export type TextSize = 'small'
@@ -22,14 +24,18 @@ export interface TextProps extends AriaTextProps {
 
 const DEFAULT_ELEMENT = 'span'
 
-export const Text: React.FC<TextProps> = ({
-  children,
-  className,
-  size,
-  isExpressive = false,
-  elementType = DEFAULT_ELEMENT,
-  ...rest
-}) => {
+export const Text = forwardRef<HTMLElement, TextProps>((props, ref) => {
+  const [
+    {
+      className,
+      size,
+      isExpressive = false,
+      elementType = DEFAULT_ELEMENT,
+      ...rest
+    },
+    mergedRef,
+  ] = useContextProps(props, ref, TextContext)
+
   const getClassName = () => {
     const isDescription = rest.slot === 'description'
     if (isDescription) {
@@ -54,5 +60,12 @@ export const Text: React.FC<TextProps> = ({
     ...rest,
   }
 
-  return <AriaText {...textProps}>{children}</AriaText>
-}
+  return (
+    <AriaText
+      ref={mergedRef}
+      {...textProps}
+    />
+  )
+})
+
+Text.displayName = 'Text'

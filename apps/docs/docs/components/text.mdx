@@ -100,6 +100,20 @@ Du kan även kombinera `slot='description'` med `size='small'` för liten descri
   <Text slot='description' size='small'>Liten hjälptext</Text>
 </div>
 
+## Context
+
+Med `TextContext` kan du ange standardvärden för alla `Text` inuti, till exempel i en egen komponent. Egenskaper som anges direkt på en `Text` har företräde.
+
+```tsx
+import { Text, TextContext } from '@midas-ds/components'
+```
+
+```tsx
+<TextContext.Provider value={{ size: 'small', elementType: 'p' }}>
+  <Text>Liten text i ett p-element</Text>
+</TextContext.Provider>
+```
+
 ## API
 
 ### Text

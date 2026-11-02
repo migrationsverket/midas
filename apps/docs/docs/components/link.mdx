@@ -164,6 +164,20 @@ Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/clien
 
 Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
+## Context
+
+Med `LinkContext` kan du ange standardvärden för alla `Link` inuti, till exempel i en egen komponent. Egenskaper som anges direkt på en `Link` har företräde.
+
+```tsx
+import { Link, LinkContext } from '@midas-ds/components'
+```
+
+```tsx
+<LinkContext.Provider value={{ standalone: true }}>
+  <Link href='#'>Fristående länk</Link>
+</LinkContext.Provider>
+```
+
 ## API
 
 <PropTable doc={LinkApi} />
