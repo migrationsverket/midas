@@ -1,0 +1,15 @@
+.emptyState {
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  font-family: var(--midas-typography-font-family);
+  gap: var(--midas-space-small);
+  max-inline-size: 38rem;
+  padding-block: var(--midas-space-xlarge);
+
+  &[data-align='center'] {
+    justify-content: center;
+    margin-inline: auto;
+    text-align: center;
+  }
+}

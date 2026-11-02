@@ -1,0 +1,9 @@
+.emptyStateVisual {
+  margin-block-end: var(--midas-space-small);
+
+  &,
+  & > svg {
+    height: var(--midas-base-120);
+    width: var(--midas-base-120);
+  }
+}
