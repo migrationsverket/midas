@@ -3,7 +3,7 @@
 import { forwardRef } from 'react'
 import {
   Button as AriaButton,
-  ButtonContext,
+  ButtonContext as AriaButtonContext,
   ButtonProps as AriaButtonProps,
   composeRenderProps,
   useContextProps,
@@ -59,7 +59,11 @@ export type MidasButton = ButtonProps
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
-    const [mergedProps, mergedRef] = useContextProps(props, ref, ButtonContext)
+    const [mergedProps, mergedRef] = useContextProps(
+      props,
+      ref,
+      AriaButtonContext,
+    )
     const {
       className,
       fullwidth,
@@ -73,35 +77,39 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     } = mergedProps
 
     return (
-      <AriaButton
-        className={clsx(
-          styles.button,
-          variant === 'primary' && styles.primary,
-          variant === 'secondary' && styles.secondary,
-          variant === 'tertiary' && styles.tertiary,
-          variant === 'danger' && styles.danger,
-          variant === 'icon' && styles.iconBtn,
-          fullwidth && styles.fullwidth,
-          size === 'medium' && styles.medium,
-          iconPlacement === 'right' && styles.iconRight,
-          className,
-        )}
-        ref={mergedRef}
-        {...rest}
-      >
-        {composeRenderProps(mergedProps.children, children => (
-          <>
-            {IconComponent && !isPending && (
-              <IconComponent
-                aria-hidden
-                size={iconSize ?? 20}
-              />
-            )}
-            {isPending && <Spinner small />}
-            {children}
-          </>
-        ))}
-      </AriaButton>
+      // Already merged above, clear it so AriaButton doesn't merge it again
+      // and call handlers from the context twice
+      <AriaButtonContext.Provider value={null}>
+        <AriaButton
+          className={clsx(
+            styles.button,
+            variant === 'primary' && styles.primary,
+            variant === 'secondary' && styles.secondary,
+            variant === 'tertiary' && styles.tertiary,
+            variant === 'danger' && styles.danger,
+            variant === 'icon' && styles.iconBtn,
+            fullwidth && styles.fullwidth,
+            size === 'medium' && styles.medium,
+            iconPlacement === 'right' && styles.iconRight,
+            className,
+          )}
+          ref={mergedRef}
+          {...rest}
+        >
+          {composeRenderProps(mergedProps.children, children => (
+            <>
+              {IconComponent && !isPending && (
+                <IconComponent
+                  aria-hidden
+                  size={iconSize ?? 20}
+                />
+              )}
+              {isPending && <Spinner small />}
+              {children}
+            </>
+          ))}
+        </AriaButton>
+      </AriaButtonContext.Provider>
     )
   },
 )
