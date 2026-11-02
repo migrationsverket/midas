@@ -1,4 +1,5 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+import { userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Button.stories'
 import { render } from '../../test-utils'
@@ -45,5 +46,16 @@ describe('given a Button inside a ButtonContext provider', async () => {
     await expect
       .element(getByRole('button').getByRole('status'))
       .toBeInTheDocument()
+  })
+
+  it('should call onPress from context once', async () => {
+    const onPress = vi.fn()
+    const { getByRole } = await render(
+      <ButtonContext.Provider value={{ onPress }}>
+        <Button>Knapp</Button>
+      </ButtonContext.Provider>,
+    )
+    await userEvent.click(getByRole('button'))
+    expect(onPress).toHaveBeenCalledTimes(1)
   })
 })
