@@ -11,6 +11,7 @@ import { SidebarLink } from './SidebarLink'
 import { useLayoutContext } from '../context/LayoutContext'
 import { useLocalizedStringFormatter } from '../../utils/intl'
 import messages from '../intl/translations.json'
+import { ClearContexts } from '../../utils/ClearContexts'
 
 type SidebarProps = {
   onLinkClick?: (e: SidebarLinkClickData) => void
@@ -90,22 +91,24 @@ export const Sidebar: React.FC<SidebarProps> = ({
     >
       <div className={styles.sidebarHeader}>
         {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
-        <Button
-          variant='icon'
-          aria-label={
-            isCollapsed
-              ? strings.format('maximizeMenu')
-              : strings.format('minimizeMenu')
-          }
-          onPress={() => setIsCollapsed(!isCollapsed)}
-          className={styles.collapseButton}
-        >
-          {isCollapsed ? (
-            <PanelLeftOpen size={20} />
-          ) : (
-            <PanelLeftClose size={20} />
-          )}
-        </Button>
+        <ClearContexts>
+          <Button
+            variant='icon'
+            aria-label={
+              isCollapsed
+                ? strings.format('maximizeMenu')
+                : strings.format('minimizeMenu')
+            }
+            onPress={() => setIsCollapsed(!isCollapsed)}
+            className={styles.collapseButton}
+          >
+            {isCollapsed ? (
+              <PanelLeftOpen size={20} />
+            ) : (
+              <PanelLeftClose size={20} />
+            )}
+          </Button>
+        </ClearContexts>
       </div>
       <nav
         className={styles.sidebarNav}

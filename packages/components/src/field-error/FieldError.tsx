@@ -6,6 +6,7 @@ import {
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import { Text } from '../text'
+import { ClearContexts } from '../utils/ClearContexts'
 import styles from './FieldError.module.css'
 
 export interface FieldErrorProps extends AriaFieldErrorProps {
@@ -19,7 +20,11 @@ export const FieldError = forwardRef(
     const context = useContext(FieldErrorContext)
 
     if (!context && isInvalid && typeof children !== 'function') {
-      return <Text className={className}>{children}</Text>
+      return (
+        <ClearContexts>
+          <Text className={className}>{children}</Text>
+        </ClearContexts>
+      )
     }
 
     if (!context?.isInvalid) return null

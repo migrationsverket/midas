@@ -19,6 +19,9 @@ import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
+import { SearchFieldContext } from './SearchFieldContext'
 
 export interface SearchFieldProps extends Omit<
   AriaSearchFieldProps,
@@ -75,20 +78,21 @@ function isValidationError(
   return !!(error as ValidationError)?.length
 }
 
-export const SearchField = ({
-  errorPosition = 'top',
-  size = 'large',
-  showButton,
-  className,
-  errorMessage,
-  placeholder,
-  label,
-  description,
-  popover,
-  validationBehavior,
-  inputMode = 'search',
-  ...props
-}: SearchFieldProps) => {
+export const SearchField = (localProps: SearchFieldProps) => {
+  const {
+    errorPosition = 'top',
+    size = 'large',
+    showButton,
+    className,
+    errorMessage,
+    placeholder,
+    label,
+    description,
+    popover,
+    validationBehavior,
+    inputMode = 'search',
+    ...props
+  } = useContextPropsWithoutRef(localProps, SearchFieldContext)
   const strings = useLocalizedStringFormatter(messages)
   const formProps = useSlottedContext(FormContext)
   const resolvedValidationBehavior =
@@ -111,7 +115,7 @@ export const SearchField = ({
       validationBehavior={resolvedValidationBehavior}
     >
       {({ state }) => (
-        <>
+        <ClearContexts>
           <LabelWrapper popover={popover}>
             {label && <Label>{label}</Label>}
           </LabelWrapper>
@@ -183,7 +187,7 @@ export const SearchField = ({
               }
             </FieldError>
           )}
-        </>
+        </ClearContexts>
       )}
     </AriaSearchField>
   )

@@ -1,6 +1,5 @@
 import { forwardRef, type ReactNode } from 'react'
 import {
-  TextFieldContext,
   useContextProps,
   TextField as AriaTextField,
   TextFieldProps,
@@ -14,6 +13,8 @@ import { clsx } from 'clsx'
 import { Size } from '../common/types'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { ClearContexts } from '../utils/ClearContexts'
+import { TextFieldContext } from './TextFieldContext'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: ReactNode
@@ -39,8 +40,12 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
 
 export const TextFieldBase = forwardRef<HTMLDivElement, TextFieldBaseProps>(
   (props, ref) => {
-    ;[props] = useContextProps(props, ref, TextFieldContext)
-
+    // React Aria's TextFieldContext is merged by AriaTextField
+    const [mergedProps, mergedRef] = useContextProps(
+      props,
+      ref,
+      TextFieldContext,
+    )
     const {
       label,
       description,
@@ -50,32 +55,35 @@ export const TextFieldBase = forwardRef<HTMLDivElement, TextFieldBaseProps>(
       size = 'large',
       popover,
       children,
-    } = props
+    } = mergedProps
 
     return (
       <AriaTextField
-        {...props}
+        {...mergedProps}
+        ref={mergedRef}
         className={clsx(styles.textField, {
           [styles.medium]: size === 'medium',
         })}
       >
-        <LabelWrapper popover={popover}>
-          {label && <Label>{label}</Label>}
-        </LabelWrapper>
-        {description && <Text slot='description'>{description}</Text>}
-        {showCounter && <CharacterCounter isLonely={!description} />}
-        {errorPosition === 'top' && (
-          <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-        )}
-        {children}
-        {errorPosition === 'bottom' && (
-          <FieldError
-            data-testid='fieldError'
-            className={styles.bottomError}
-          >
-            {errorMessage}
-          </FieldError>
-        )}
+        <ClearContexts>
+          <LabelWrapper popover={popover}>
+            {label && <Label>{label}</Label>}
+          </LabelWrapper>
+          {description && <Text slot='description'>{description}</Text>}
+          {showCounter && <CharacterCounter isLonely={!description} />}
+          {errorPosition === 'top' && (
+            <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+          )}
+          {children}
+          {errorPosition === 'bottom' && (
+            <FieldError
+              data-testid='fieldError'
+              className={styles.bottomError}
+            >
+              {errorMessage}
+            </FieldError>
+          )}
+        </ClearContexts>
       </AriaTextField>
     )
   },

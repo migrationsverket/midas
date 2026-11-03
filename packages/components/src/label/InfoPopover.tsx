@@ -7,6 +7,7 @@ import { LabelWrapperContext } from './LabelWrapper'
 import { DialogTrigger } from '../modal'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { ClearContexts } from '../utils/ClearContexts'
 
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
 export interface InfoPopoverProps {
@@ -25,16 +26,18 @@ export const InfoPopover = ({
 
   return (
     <DialogTrigger>
-      <Button
-        aria-label={ariaLabel || strings.format('moreInfo')}
-        className={styles.labelPopoverTrigger}
-        id={ctx?.popoverId}
-        size='medium'
-        slot={null}
-        variant='icon'
-      >
-        <Info size={20} />
-      </Button>
+      <ClearContexts>
+        <Button
+          aria-label={ariaLabel || strings.format('moreInfo')}
+          className={styles.labelPopoverTrigger}
+          id={ctx?.popoverId}
+          size='medium'
+          slot={null}
+          variant='icon'
+        >
+          <Info size={20} />
+        </Button>
+      </ClearContexts>
       <Popover>{children}</Popover>
     </DialogTrigger>
   )

@@ -8,6 +8,7 @@ import messages from './intl/translations.json'
 import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
 import { FeedbackStatus } from '../common/types'
 import { useControlledState } from '@react-stately/utils'
+import { ClearContexts } from '../utils/ClearContexts'
 export interface InfoBannerProps extends React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
@@ -89,13 +90,15 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
       </div>
       {isDismissable && (
         <div className={styles.dismissable}>
-          <Button
-            variant='icon'
-            aria-label={strings.format('close')}
-            onPress={handleClose}
-          >
-            <X size={20} />
-          </Button>
+          <ClearContexts>
+            <Button
+              variant='icon'
+              aria-label={strings.format('close')}
+              onPress={handleClose}
+            >
+              <X size={20} />
+            </Button>
+          </ClearContexts>
         </div>
       )}
     </aside>

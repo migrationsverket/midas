@@ -3,20 +3,18 @@ import {
   Modal as AriaModal,
   Dialog as AriaDialog,
   composeRenderProps,
-  Provider,
 } from 'react-aria-components'
 import { forwardRef } from 'react'
-import { Button, ButtonContext } from '../button'
+import { Button } from '../button'
 import styles from './Modal.module.css'
 import { X } from 'lucide-react'
-import { Heading, HeadingContext } from '../heading'
-import { LinkContext } from '../link'
-import { TextContext } from '../text'
+import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ModalOverlay, type ModalOverlayProps } from './modal-overlay'
 import { useStickyHeight } from './useStickyHeight'
 import { useKeepFocusClear } from './useKeepFocusClear'
+import { ClearContexts } from '../utils/ClearContexts'
 
 export interface ModalProps extends ModalOverlayProps {
   /**
@@ -49,24 +47,15 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
             className={styles.modal}
             ref={ref}
           >
-            {/* Portalled content still sees React context, so don't let
-                the defaults from where the modal is triggered leak in */}
-            <Provider
-              values={[
-                [HeadingContext, null],
-                [TextContext, null],
-                [ButtonContext, null],
-                [LinkContext, null],
-              ]}
+            <AriaDialog
+              className={styles.dialog}
+              ref={dialogRef}
             >
-              <AriaDialog
-                className={styles.dialog}
-                ref={dialogRef}
+              <div
+                className={styles.modalHeader}
+                ref={headerRef}
               >
-                <div
-                  className={styles.modalHeader}
-                  ref={headerRef}
-                >
+                <ClearContexts>
                   <div className={styles.modalTitle}>
                     {title && (
                       <Heading
@@ -87,23 +76,23 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
                       variant='icon'
                     />
                   )}
-                </div>
+                </ClearContexts>
+              </div>
+              <div
+                className={styles.modalBody}
+                tabIndex={-1}
+              >
+                {children}
+              </div>
+              {footer && (
                 <div
-                  className={styles.modalBody}
-                  tabIndex={-1}
+                  className={styles.modalFooter}
+                  ref={footerRef}
                 >
-                  {children}
+                  {footer}
                 </div>
-                {footer && (
-                  <div
-                    className={styles.modalFooter}
-                    ref={footerRef}
-                  >
-                    {footer}
-                  </div>
-                )}
-              </AriaDialog>
-            </Provider>
+              )}
+            </AriaDialog>
           </AriaModal>
         ))}
       </ModalOverlay>

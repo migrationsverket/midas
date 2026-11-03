@@ -4,6 +4,7 @@ import { HeadingProps } from '../../heading'
 import { Text } from '../../text'
 import clsx from '../../utils/clsx'
 import styles from './CardHeader.module.css'
+import { ClearContexts } from '../../utils/ClearContexts'
 
 export type CardHeaderProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
@@ -27,15 +28,17 @@ export const CardHeader = ({
     {...rest}
   >
     <div className={styles.textContainer}>
-      <CardTitle elementType={headingLevel}>{heading}</CardTitle>
-      {subHeading && (
-        <Text
-          slot='description'
-          className={styles.subHeading}
-        >
-          {subHeading}
-        </Text>
-      )}
+      <ClearContexts>
+        <CardTitle elementType={headingLevel}>{heading}</CardTitle>
+        {subHeading && (
+          <Text
+            slot='description'
+            className={styles.subHeading}
+          >
+            {subHeading}
+          </Text>
+        )}
+      </ClearContexts>
     </div>
     {children}
   </div>

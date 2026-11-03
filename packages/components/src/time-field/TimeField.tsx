@@ -5,6 +5,7 @@ import {
   type TimeValue,
   type ValidationResult,
   TimeFieldStateContext,
+  useContextProps,
 } from 'react-aria-components'
 import { FocusScope, useFocusManager } from 'react-aria'
 import clsx from '../utils/clsx'
@@ -18,6 +19,8 @@ import messages from './intl/translations.json'
 import styles from './TimeField.module.css'
 import { type Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { ClearContexts } from '../utils/ClearContexts'
+import { TimeFieldContext } from './TimeFieldContext'
 
 export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
   description?: string
@@ -65,7 +68,11 @@ const TimeFieldClearButton: React.FC<
 
 export const TimeField = React.forwardRef(
   <T extends TimeValue>(
-    {
+    props: TimeFieldProps<T>,
+    ref: React.ForwardedRef<HTMLDivElement>
+  ) => {
+    const [mergedProps, mergedRef] = useContextProps(props, ref, TimeFieldContext)
+    const {
       className,
       description,
       errorMessage,
@@ -77,38 +84,39 @@ export const TimeField = React.forwardRef(
       isReadOnly,
       isDisabled,
       ...rest
-    }: TimeFieldProps<T>,
-    ref: React.ForwardedRef<HTMLDivElement>
-  ) => {
+    } = mergedProps as TimeFieldProps<T>
+
     return (
       <AriaTimeField
         {...rest}
-        ref={ref}
+        ref={mergedRef}
         isReadOnly={isReadOnly}
         isDisabled={isDisabled}
         className={clsx(styles.timeField, className)}
       >
-        <LabelWrapper popover={popover}>
-          {label && <Label>{label}</Label>}
-        </LabelWrapper>
-        {description && <Text slot='description'>{description}</Text>}
-        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-        <div
-          className={clsx(styles.inputField, {
-            [styles.medium]: size === 'medium',
-          })}
-        >
-          <FocusScope>
-            <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-            <TimeFieldClearButton
-              isClearable={isClearable}
-              size={size}
-              isDisabled={isDisabled}
-              isReadOnly={isReadOnly}
-            />
-          </FocusScope>
-        </div>
-        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        <ClearContexts>
+          <LabelWrapper popover={popover}>
+            {label && <Label>{label}</Label>}
+          </LabelWrapper>
+          {description && <Text slot='description'>{description}</Text>}
+          {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+          <div
+            className={clsx(styles.inputField, {
+              [styles.medium]: size === 'medium',
+            })}
+          >
+            <FocusScope>
+              <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+              <TimeFieldClearButton
+                isClearable={isClearable}
+                size={size}
+                isDisabled={isDisabled}
+                isReadOnly={isReadOnly}
+              />
+            </FocusScope>
+          </div>
+          {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        </ClearContexts>
       </AriaTimeField>
     )
   }

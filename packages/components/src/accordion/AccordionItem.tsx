@@ -17,6 +17,7 @@ import {
   FeedbackStatusIcon,
   FeedbackStatusIconProps,
 } from '../common/FeedbackStatusIcon'
+import { ClearContexts } from '../utils/ClearContexts'
 
 export interface AccordionItemProps extends DisclosureProps {
   /** The text displayed in the collapsed state. If a ReactNode is provided, a heading will not be automatically added, and you must provide one yourself. */
@@ -87,38 +88,40 @@ export const AccordionItem = ({
     >
       {composeRenderProps(children, children => (
         <>
-          <div className={itemStyles.trigger}>
-            <Button
-              className={itemStyles.triggerButton}
-              slot='trigger'
-              variant='icon'
-            >
-              <ChevronDown
-                size={20}
-                className={itemStyles.chevronIcon}
-              />
-              <div className={itemStyles.triggerMainContent}>
-                {titleIsReactNode ? (
-                  title
-                ) : (
-                  <Heading
-                    level={3}
-                    elementType={headingLevel}
-                    className={itemStyles.triggerText}
-                  >
-                    {title}
-                  </Heading>
-                )}
-              </div>
-              {type && isContained && (
-                <FeedbackStatusIcon
-                  aria-label={iconAriaLabel}
-                  className={itemStyles.statusIcon}
-                  status={type}
+          <ClearContexts>
+            <div className={itemStyles.trigger}>
+              <Button
+                className={itemStyles.triggerButton}
+                slot='trigger'
+                variant='icon'
+              >
+                <ChevronDown
+                  size={20}
+                  className={itemStyles.chevronIcon}
                 />
-              )}
-            </Button>
-          </div>
+                <div className={itemStyles.triggerMainContent}>
+                  {titleIsReactNode ? (
+                    title
+                  ) : (
+                    <Heading
+                      level={3}
+                      elementType={headingLevel}
+                      className={itemStyles.triggerText}
+                    >
+                      {title}
+                    </Heading>
+                  )}
+                </div>
+                {type && isContained && (
+                  <FeedbackStatusIcon
+                    aria-label={iconAriaLabel}
+                    className={itemStyles.statusIcon}
+                    status={type}
+                  />
+                )}
+              </Button>
+            </div>
+          </ClearContexts>
           <DisclosurePanel className={itemStyles.panel}>
             <div
               className={clsx(

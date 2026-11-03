@@ -6,6 +6,7 @@ import styles from './Calendar.module.css'
 import { CalendarProps } from './Calendar'
 import { CalendarMonthPicker, CalendarYearPicker } from 'react-aria-components'
 import { CalendarPicker, CalendarPickerProps } from './CalendarPicker'
+import { ClearContexts } from '../utils/ClearContexts'
 
 type CalendarHeaderProps = Pick<
   CalendarProps,
@@ -26,33 +27,35 @@ export const CalendarHeader = ({
   )
 
   return (
-    <header className={styles.header}>
-      <Button
-        slot='previous'
-        size='medium'
-        data-readonly={isReadOnly || undefined}
-      >
-        <ChevronLeft size={20} />
-      </Button>
-      {showMonthYearPicker ? (
-        <div className={styles.pickers}>
-          <CalendarMonthPicker>{renderPicker}</CalendarMonthPicker>
-          <CalendarYearPicker>{renderPicker}</CalendarYearPicker>
-        </div>
-      ) : (
-        <Heading
-          level={3}
-          elementType='h2'
-          data-disabled={isDisabled || undefined}
-        />
-      )}
-      <Button
-        slot='next'
-        size='medium'
-        data-readonly={isReadOnly || undefined}
-      >
-        <ChevronRight size={20} />
-      </Button>
-    </header>
+    <ClearContexts>
+      <header className={styles.header}>
+        <Button
+          slot='previous'
+          size='medium'
+          data-readonly={isReadOnly || undefined}
+        >
+          <ChevronLeft size={20} />
+        </Button>
+        {showMonthYearPicker ? (
+          <div className={styles.pickers}>
+            <CalendarMonthPicker>{renderPicker}</CalendarMonthPicker>
+            <CalendarYearPicker>{renderPicker}</CalendarYearPicker>
+          </div>
+        ) : (
+          <Heading
+            level={3}
+            elementType='h2'
+            data-disabled={isDisabled || undefined}
+          />
+        )}
+        <Button
+          slot='next'
+          size='medium'
+          data-readonly={isReadOnly || undefined}
+        >
+          <ChevronRight size={20} />
+        </Button>
+      </header>
+    </ClearContexts>
   )
 }

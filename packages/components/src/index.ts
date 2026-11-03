@@ -24,6 +24,8 @@ export * from './label'
 export * from './layout'
 export * from './link'
 export { RouterProvider } from './link'
+/** Provide several component contexts at once, e.g. `<Provider values={[[TextFieldContext, { size: 'medium' }], [SelectContext, { size: 'medium' }]]}>` */
+export { Provider } from 'react-aria-components'
 export * from './link-button'
 export * from './logo'
 export * from './modal'

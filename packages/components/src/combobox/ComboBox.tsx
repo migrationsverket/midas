@@ -17,6 +17,9 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ListBoxEmptyState } from '../list-box/list-box-empty-state/ListBoxEmptyState'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
+import { ComboBoxContext } from './ComboBoxContext'
 
 export interface ComboBoxProps<T extends object> extends Omit<
   AriaComboBoxProps<T>,
@@ -37,19 +40,20 @@ export interface ComboBoxProps<T extends object> extends Omit<
   listBoxProps?: ListBoxProps<T>
 }
 
-export function ComboBox<T extends object>({
-  label,
-  description,
-  errorMessage,
-  children,
-  items,
-  className,
-  errorPosition = 'top',
-  size = 'large',
-  popover,
-  listBoxProps,
-  ...props
-}: ComboBoxProps<T>) {
+export function ComboBox<T extends object>(localProps: ComboBoxProps<T>) {
+  const {
+    label,
+    description,
+    errorMessage,
+    children,
+    items,
+    className,
+    errorPosition = 'top',
+    size = 'large',
+    popover,
+    listBoxProps,
+    ...props
+  } = useContextPropsWithoutRef(localProps, ComboBoxContext)
   const inputRef = useRef<HTMLInputElement>(null)
   const strings = useLocalizedStringFormatter(messages)
 
@@ -65,55 +69,57 @@ export function ComboBox<T extends object>({
       {...props}
       data-readonly={props.isReadOnly || undefined}
     >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-      )}
-      <div className={styles.wrap}>
-        <Input
-          className={clsx(styles.inputField, {
-            [styles.medium]: size === 'medium',
-          })}
-          data-readonly={props.isReadOnly || undefined}
-          onPointerUp={handlePointerUp}
-          ref={inputRef}
-        />
-        <Button
-          className={clsx(styles.button, {
-            [styles.medium]: size === 'medium',
-          })}
-          aria-label={strings.format('showList')}
-        >
-          <div
-            className={styles.icon}
-            aria-hidden='true'
+      <ClearContexts>
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && (
+          <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        )}
+        <div className={styles.wrap}>
+          <Input
+            className={clsx(styles.inputField, {
+              [styles.medium]: size === 'medium',
+            })}
+            data-readonly={props.isReadOnly || undefined}
+            onPointerUp={handlePointerUp}
+            ref={inputRef}
+          />
+          <Button
+            className={clsx(styles.button, {
+              [styles.medium]: size === 'medium',
+            })}
+            aria-label={strings.format('showList')}
           >
-            <ChevronDown
-              size={20}
-              aria-hidden
-            />
-          </div>
-        </Button>
-      </div>
-      {errorPosition === 'bottom' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-      )}
-      <ListBoxPopover offset={4}>
-        <ListBox
-          items={items}
-          renderEmptyState={() => (
-            <ListBoxEmptyState>
-              {strings.format('noResultsFound')}
-            </ListBoxEmptyState>
-          )}
-          {...listBoxProps}
-        >
-          {children}
-        </ListBox>
-      </ListBoxPopover>
+            <div
+              className={styles.icon}
+              aria-hidden='true'
+            >
+              <ChevronDown
+                size={20}
+                aria-hidden
+              />
+            </div>
+          </Button>
+        </div>
+        {errorPosition === 'bottom' && (
+          <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        )}
+        <ListBoxPopover offset={4}>
+          <ListBox
+            items={items}
+            renderEmptyState={() => (
+              <ListBoxEmptyState>
+                {strings.format('noResultsFound')}
+              </ListBoxEmptyState>
+            )}
+            {...listBoxProps}
+          >
+            {children}
+          </ListBox>
+        </ListBoxPopover>
+      </ClearContexts>
     </AriaComboBox>
   )
 }

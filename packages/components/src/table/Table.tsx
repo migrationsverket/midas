@@ -31,6 +31,7 @@ import {
 } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { Size } from '../common/types'
+import { ClearContexts } from '../utils/ClearContexts'
 
 export interface TableProps extends AriaTableProps {
   /** Row height (large: 48px, medium: 40px)
@@ -72,10 +73,12 @@ export const TableHeader = <T extends object>({
       {selectionBehavior === 'toggle' && (
         <Column width={50}>
           {selectionMode === 'multiple' && (
-            <Checkbox
-              className={styles.selection}
-              slot='selection'
-            />
+            <ClearContexts>
+              <Checkbox
+                className={styles.selection}
+                slot='selection'
+              />
+            </ClearContexts>
           )}
         </Column>
       )}
@@ -108,10 +111,12 @@ export const Row = <T extends object>({
       )}
       {selectionBehavior === 'toggle' && (
         <Cell>
-          <Checkbox
-            className={styles.selection}
-            slot='selection'
-          />
+          <ClearContexts>
+            <Checkbox
+              className={styles.selection}
+              slot='selection'
+            />
+          </ClearContexts>
         </Cell>
       )}
       <Collection items={columns}>{children}</Collection>

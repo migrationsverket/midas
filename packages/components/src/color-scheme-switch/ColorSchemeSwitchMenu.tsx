@@ -13,6 +13,7 @@ import type { ColorScheme, ColorSchemeSwitchProps } from './ColorSchemeSwitch'
 import styles from './ColorSchemeSwitchMenu.module.css'
 import messages from './intl/translations.json'
 import { useColorScheme } from './useColorScheme'
+import { ClearContexts } from '../utils/ClearContexts'
 
 const schemeIcon: Record<ColorScheme, React.ElementType> = {
   light: Sun,
@@ -63,18 +64,20 @@ export const ColorSchemeSwitchMenu: React.FC<
 
   return (
     <MenuTrigger>
-      <Button
-        variant='icon'
-        size='medium'
-        className={clsx(styles.trigger, className)}
-        aria-label={strings.format(schemeTriggerKey(resolved))}
-      >
-        <Icon size={20} />
-        <ChevronDown
-          size={20}
-          className={styles.chevron}
-        />
-      </Button>
+      <ClearContexts>
+        <Button
+          variant='icon'
+          size='medium'
+          className={clsx(styles.trigger, className)}
+          aria-label={strings.format(schemeTriggerKey(resolved))}
+        >
+          <Icon size={20} />
+          <ChevronDown
+            size={20}
+            className={styles.chevron}
+          />
+        </Button>
+      </ClearContexts>
       <MenuPopover placement='bottom start'>
         <Menu
           onAction={handleAction}

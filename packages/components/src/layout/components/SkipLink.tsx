@@ -5,6 +5,7 @@ import styles from '../Layout.module.css'
 import * as React from 'react'
 import { useLocalizedStringFormatter } from '../../utils/intl'
 import messages from '../intl/translations.json'
+import { ClearContexts } from '../../utils/ClearContexts'
 
 interface SkipLinkProps {
   id?: string
@@ -26,11 +27,13 @@ export const SkipLink: React.FC<SkipLinkProps> = ({
   const strings = useLocalizedStringFormatter(messages)
 
   return (
-    <Button
-      onPress={handleSkipToContent}
-      className={styles.skipToContent}
-    >
-      {strings.format('skipToContent')}
-    </Button>
+    <ClearContexts>
+      <Button
+        onPress={handleSkipToContent}
+        className={styles.skipToContent}
+      >
+        {strings.format('skipToContent')}
+      </Button>
+    </ClearContexts>
   )
 }

@@ -10,6 +10,7 @@ import { useLayoutContext } from '../context/LayoutContext'
 import clsx from '../../utils/clsx'
 import { useLocalizedStringFormatter } from '../../utils/intl'
 import messages from '../intl/translations.json'
+import { ClearContexts } from '../../utils/ClearContexts'
 
 export interface MidasHeader {
   headerChildren?: React.ReactNode
@@ -70,32 +71,34 @@ export const Header: React.FC = () => {
           />
         </div>
         {isOpened !== undefined && (
-          <Button
-            variant='icon'
-            className={styles.toggleButton}
-            aria-label={
-              isOpened
-                ? strings.format('closeMenu')
-                : strings.format('openMenu')
-            }
-            aria-controls={id}
-            onPressStart={() => {
-              setIsCollapsed(false)
-              setIsOpened?.(true)
-            }}
-          >
-            {isOpened ? (
-              <X
-                size={20}
-                aria-hidden='true'
-              />
-            ) : (
-              <Menu
-                size={20}
-                aria-hidden='true'
-              />
-            )}
-          </Button>
+          <ClearContexts>
+            <Button
+              variant='icon'
+              className={styles.toggleButton}
+              aria-label={
+                isOpened
+                  ? strings.format('closeMenu')
+                  : strings.format('openMenu')
+              }
+              aria-controls={id}
+              onPressStart={() => {
+                setIsCollapsed(false)
+                setIsOpened?.(true)
+              }}
+            >
+              {isOpened ? (
+                <X
+                  size={20}
+                  aria-hidden='true'
+                />
+              ) : (
+                <Menu
+                  size={20}
+                  aria-hidden='true'
+                />
+              )}
+            </Button>
+          </ClearContexts>
         )}
         <div>
           <p className={styles.userName}>{user.name}</p>

@@ -8,6 +8,7 @@ import { Button } from '../button'
 import clsx from '../utils/clsx'
 import { FeedbackStatus } from '../common/types'
 import styles from './Tag.module.css'
+import { ClearContexts } from '../utils/ClearContexts'
 
 export interface TagProps extends AriaTagProps {
   /**
@@ -89,14 +90,16 @@ export const Tag = ({
         <>
           <div className={styles.tagText}>{children}</div>
           {isTagDismissable && (
-            <Button
-              variant='icon'
-              size='medium'
-              className={styles.button}
-              slot='remove'
-            >
-              <X size={20} />
-            </Button>
+            <ClearContexts>
+              <Button
+                variant='icon'
+                size='medium'
+                className={styles.button}
+                slot='remove'
+              >
+                <X size={20} />
+              </Button>
+            </ClearContexts>
           )}
         </>
       ))}

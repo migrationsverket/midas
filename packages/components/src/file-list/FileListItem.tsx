@@ -11,6 +11,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import clsx from '../utils/clsx'
 import styles from './FileList.module.css'
 import messages from './intl/translations.json'
+import { ClearContexts } from '../utils/ClearContexts'
 
 export interface FileListItemProps {
   fileName: string
@@ -117,21 +118,23 @@ export const FileListItem = ({
           )}
         </span>
         {onPress && (
-          <Button
-            variant='icon'
-            onPress={onPress}
-            aria-label={`${strings.format(
-              isUploading ? 'cancelUpload' : 'removeFile',
-            )} ${fileName}`}
-            aria-describedby={buttonDescription}
-            className={styles.deleteButton}
-          >
-            {isUploading ? (
-              <X size={20} aria-hidden />
-            ) : (
-              <Trash2 size={20} aria-hidden />
-            )}
-          </Button>
+          <ClearContexts>
+            <Button
+              variant='icon'
+              onPress={onPress}
+              aria-label={`${strings.format(
+                isUploading ? 'cancelUpload' : 'removeFile',
+              )} ${fileName}`}
+              aria-describedby={buttonDescription}
+              className={styles.deleteButton}
+            >
+              {isUploading ? (
+                <X size={20} aria-hidden />
+              ) : (
+                <Trash2 size={20} aria-hidden />
+              )}
+            </Button>
+          </ClearContexts>
         )}
       </div>
       <div

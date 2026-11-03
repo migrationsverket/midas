@@ -23,6 +23,7 @@ import clsx from '../utils/clsx'
 
 import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
 import { FeedbackStatus } from '../common/types'
+import { ClearContexts } from '../utils/ClearContexts'
 
 export interface MidasToast {
   message: string
@@ -170,15 +171,17 @@ export function Toast<T extends MidasToast>({
           {props.toast.content.children}
         </div>
       </div>
-      <Button
-        variant='icon'
-        {...closeButtonProps}
-      >
-        <X
-          size={20}
-          aria-hidden
-        />
-      </Button>
+      <ClearContexts>
+        <Button
+          variant='icon'
+          {...closeButtonProps}
+        >
+          <X
+            size={20}
+            aria-hidden
+          />
+        </Button>
+      </ClearContexts>
     </div>
   )
 }

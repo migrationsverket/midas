@@ -1,12 +1,8 @@
 'use client'
 
 import styles from './Link.module.css'
-import {
-  Link as AriaLink,
-  RouterProvider,
-  useSlottedContext,
-} from 'react-aria-components'
-import { mergeProps, VisuallyHidden } from 'react-aria'
+import { Link as AriaLink, RouterProvider } from 'react-aria-components'
+import { VisuallyHidden } from 'react-aria'
 import clsx from '../utils/clsx'
 import {
   ArrowDownToLine,
@@ -18,6 +14,8 @@ import {
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { LinkContext } from './LinkContext'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
 
 export interface LinkComponentProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -40,8 +38,6 @@ export type LinkProps<C extends React.ElementType> = LinkComponentProps<C> &
 export const Link = <C extends React.ElementType = typeof AriaLink>(
   props: LinkProps<C>,
 ) => {
-  // Refs aren't forwarded by Link, so only props are taken from the context
-  const contextProps = useSlottedContext(LinkContext, props.slot)
   const {
     children,
     standalone,
@@ -52,7 +48,7 @@ export const Link = <C extends React.ElementType = typeof AriaLink>(
     className,
     as,
     ...rest
-  } = mergeProps(contextProps, props) as LinkProps<C>
+  } = useContextPropsWithoutRef(props, LinkContext)
   const Component = as || AriaLink
 
   const strings = useLocalizedStringFormatter(messages)
@@ -79,7 +75,7 @@ export const Link = <C extends React.ElementType = typeof AriaLink>(
       target={target}
       download={download}
     >
-      {children}
+      <ClearContexts>{children}</ClearContexts>
       {iconConfig ? (
         <>
           <Icon

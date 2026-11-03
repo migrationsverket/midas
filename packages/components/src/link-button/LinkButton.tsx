@@ -15,6 +15,9 @@ import {
 import { Size } from '../common/types'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { LinkButtonContext } from './LinkButtonContext'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
 
 export interface LinkButtonComponentProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -56,17 +59,20 @@ export type LinkButtonProps<C extends React.ElementType> =
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */
-export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
-  children,
-  variant,
-  fullwidth,
-  icon: customIcon,
-  iconPlacement,
-  className,
-  as,
-  size = 'large',
-  ...rest
-}: LinkButtonProps<C>) => {
+export const LinkButton = <C extends React.ElementType = typeof AriaLink>(
+  props: LinkButtonProps<C>,
+) => {
+  const {
+    children,
+    variant,
+    fullwidth,
+    icon: customIcon,
+    iconPlacement,
+    className,
+    as,
+    size = 'large',
+    ...rest
+  } = useContextPropsWithoutRef(props, LinkButtonContext)
   const Component = as || AriaLink
 
   const strings = useLocalizedStringFormatter(messages)
@@ -96,7 +102,7 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
       )}
       {...rest}
     >
-      {children}
+      <ClearContexts>{children}</ClearContexts>
       <Icon
         className={styles.icon}
         icon={iconConfig.icon}

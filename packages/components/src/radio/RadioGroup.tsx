@@ -11,6 +11,9 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import styles from './Radio.module.css'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
+import { RadioGroupContext } from './RadioGroupContext'
 
 export interface RadioGroupProps extends AriaRadioGroupProps {
   /** Label for the RadioGroup */
@@ -32,16 +35,17 @@ export type MVDSRadioGroupProps = RadioGroupProps
 /**
  * RadioGroup is used to group several radio items together
  */
-export const RadioGroup: React.FC<RadioGroupProps> = ({
-  label,
-  description,
-  errorMessage,
-  children,
-  className,
-  errorPosition = 'top',
-  popover,
-  ...props
-}) => {
+export const RadioGroup = (localProps: RadioGroupProps) => {
+  const {
+    label,
+    description,
+    errorMessage,
+    children,
+    className,
+    errorPosition = 'top',
+    popover,
+    ...props
+  } = useContextPropsWithoutRef(localProps, RadioGroupContext)
   return (
     <AriaRadioGroup
       {...props}
@@ -49,16 +53,21 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({
     >
       {composeRenderProps(children, children => (
         <>
-          <LabelWrapper popover={popover}>
-            {label && <Label>{label}</Label>}
-          </LabelWrapper>
-          {description && <Text slot='description'>{description}</Text>}
-          {errorPosition === 'top' && (
-            <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-          )}
+          <ClearContexts>
+            <LabelWrapper popover={popover}>
+              {label && <Label>{label}</Label>}
+            </LabelWrapper>
+            {description && <Text slot='description'>{description}</Text>}
+            {errorPosition === 'top' && (
+              <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+            )}
+          </ClearContexts>
+          {/* The consumer's radios, so they get the consumer's contexts */}
           <Group className={styles.wrap}>{children}</Group>
           {errorPosition === 'bottom' && (
-            <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+            <ClearContexts>
+              <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+            </ClearContexts>
           )}
         </>
       ))}

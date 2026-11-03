@@ -14,6 +14,9 @@ import { FieldError } from '../field-error'
 
 import styles from './Checkbox.module.css'
 import { SelectAllCheckbox } from './SelectAllCheckbox'
+import { CheckboxGroupContext } from './CheckboxGroupContext'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
 
 export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
   label?: string
@@ -25,18 +28,19 @@ export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
   popover?: InfoPopoverProps
 }
 
-export const CheckboxGroup = ({
-  label,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  popover,
-  showSelectAll,
-  selectAllLabel,
-  className,
-  children,
-  ...props
-}: CheckboxGroupProps) => {
+export const CheckboxGroup = (localProps: CheckboxGroupProps) => {
+  const {
+    label,
+    description,
+    errorMessage,
+    errorPosition = 'top',
+    popover,
+    showSelectAll,
+    selectAllLabel,
+    className,
+    children,
+    ...props
+  } = useContextPropsWithoutRef(localProps, CheckboxGroupContext)
   return (
     <AriaCheckboxGroup
       {...props}
@@ -44,24 +48,31 @@ export const CheckboxGroup = ({
     >
       {composeRenderProps(children, children => (
         <>
-          <LabelWrapper popover={popover}>
-            {label && <Label>{label}</Label>}
-          </LabelWrapper>
-          {description && <Text slot='description'>{description}</Text>}
-          {errorPosition === 'top' && errorMessage && (
-            <FieldError>{errorMessage}</FieldError>
-          )}
+          <ClearContexts>
+            <LabelWrapper popover={popover}>
+              {label && <Label>{label}</Label>}
+            </LabelWrapper>
+            {description && <Text slot='description'>{description}</Text>}
+            {errorPosition === 'top' && errorMessage && (
+              <FieldError>{errorMessage}</FieldError>
+            )}
+          </ClearContexts>
           <div className={styles.checkboxList}>
             {showSelectAll && (
-              <SelectAllCheckbox
-                label={selectAllLabel}
-                checkboxes={children}
-              />
+              <ClearContexts>
+                <SelectAllCheckbox
+                  label={selectAllLabel}
+                  checkboxes={children}
+                />
+              </ClearContexts>
             )}
+            {/* The consumer's checkboxes, so they get the consumer's contexts */}
             {children}
           </div>
           {errorPosition === 'bottom' && errorMessage && (
-            <FieldError>{errorMessage}</FieldError>
+            <ClearContexts>
+              <FieldError>{errorMessage}</FieldError>
+            </ClearContexts>
           )}
         </>
       ))}

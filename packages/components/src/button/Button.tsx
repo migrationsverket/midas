@@ -13,6 +13,7 @@ import clsx from '../utils/clsx'
 import { Size } from '../common/types'
 import { Spinner } from '../spinner'
 import { ButtonContext } from './ButtonContext'
+import { ClearContexts } from '../utils/ClearContexts'
 import styles from './Button.module.css'
 
 /**
@@ -109,7 +110,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 />
               )}
               {isPending && <Spinner small />}
-              {children}
+              <ClearContexts>{children}</ClearContexts>
             </>
           ))}
         </AriaButton>

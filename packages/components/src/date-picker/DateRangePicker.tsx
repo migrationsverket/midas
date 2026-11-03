@@ -18,6 +18,9 @@ import { Text } from '../text'
 import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
+import { DateRangePickerContext } from './DateRangePickerContext'
 
 export interface DateRangePickerProps
   extends AriaDateRangePickerProps<DateValue> {
@@ -37,19 +40,21 @@ export interface DateRangePickerProps
   isClearable?: boolean
 }
 
-export const DateRangePicker: React.FC<DateRangePickerProps> = ({
-  className,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  label,
-  popover,
-  isClearable = false,
-  isReadOnly,
-  isDisabled,
-  size,
-  ...rest
-}) => {
+export const DateRangePicker = (props: DateRangePickerProps) => {
+  const {
+    className,
+    description,
+    errorMessage,
+    errorPosition = 'top',
+    label,
+    popover,
+    isClearable = false,
+    isReadOnly,
+    isDisabled,
+    size,
+    ...rest
+  } = useContextPropsWithoutRef(props, DateRangePickerContext)
+
   return (
     <AriaDateRangePicker
       className={clsx(styles.datePicker, className)}
@@ -57,30 +62,32 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       isDisabled={isDisabled}
       {...rest}
     >
-      <LabelWrapper popover={popover}>
-        {label && <Label>{label}</Label>}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerInputField
-        isClearable={isClearable}
-        isReadOnly={isReadOnly}
-        isDisabled={isDisabled}
-        size={size}
-        {...rest}
-      >
-        <DateInput slot='start'>
-          {segment => <DateSegment segment={segment} />}
-        </DateInput>
-        <DateInputDivider />
-        <DateInput slot='end'>
-          {segment => <DateSegment segment={segment} />}
-        </DateInput>
-      </DatePickerInputField>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerPopover>
-        <RangeCalendar />
-      </DatePickerPopover>
+      <ClearContexts>
+        <LabelWrapper popover={popover}>
+          {label && <Label>{label}</Label>}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <DatePickerInputField
+          isClearable={isClearable}
+          isReadOnly={isReadOnly}
+          isDisabled={isDisabled}
+          size={size}
+          {...rest}
+        >
+          <DateInput slot='start'>
+            {segment => <DateSegment segment={segment} />}
+          </DateInput>
+          <DateInputDivider />
+          <DateInput slot='end'>
+            {segment => <DateSegment segment={segment} />}
+          </DateInput>
+        </DatePickerInputField>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        <DatePickerPopover>
+          <RangeCalendar />
+        </DatePickerPopover>
+      </ClearContexts>
     </AriaDateRangePicker>
   )
 }

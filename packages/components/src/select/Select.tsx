@@ -18,6 +18,9 @@ import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
 import styles from './Select.module.css'
+import { ClearContexts } from '../utils/ClearContexts'
+import { useContextPropsWithoutRef } from '../utils/useContextPropsWithoutRef'
+import { SelectContext } from './SelectContext'
 
 export type SelectionMode = 'single' | 'multiple'
 
@@ -61,69 +64,79 @@ export interface MidasSelectProps<
   listBoxProps?: Omit<ListBoxProps<T>, 'items' | 'children'>
 }
 
-export function Select<T extends object, M extends SelectionMode = 'single'>({
-  children,
-  description,
-  errorMessage,
-  errorPosition = 'top',
-  items,
-  label,
-  popover,
-  popoverProps,
-  listBoxProps,
-  size = 'large',
-  ...props
-}: MidasSelectProps<T, M>) {
+export function Select<T extends object, M extends SelectionMode = 'single'>(
+  localProps: MidasSelectProps<T, M>,
+) {
+  const {
+    children,
+    description,
+    errorMessage,
+    errorPosition = 'top',
+    items,
+    label,
+    popover,
+    popoverProps,
+    listBoxProps,
+    size = 'large',
+    ...props
+  } = useContextPropsWithoutRef(localProps, SelectContext)
+
   return (
     <FocusScope>
       <AriaSelect
         {...props}
         className={clsx(props.className, styles.select)}
       >
-        <LabelWrapper popover={popover}>
-          {label && (
-            <Label data-disabled={props.isDisabled || undefined}>{label}</Label>
-          )}
-        </LabelWrapper>
-        {description && <Text slot='description'>{description}</Text>}
-        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-        <div
-          className={styles.triggerContainer}
-          data-disabled={props.isDisabled || undefined}
-        >
-          <SelectTrigger
-            size={size}
-            {...props}
-          />
-          {props.selectionMode === 'multiple' ? (
-            <MultiSelectValue {...props} />
-          ) : null}
-        </div>
-        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-        <Popover
-          // offset={0} looks flush, but React Aria floors the popover's
-          // computed `top` to a whole pixel while leaving the trigger's own
-          // (often fractional) width/position unrounded. When the trigger's
-          // true bottom edge lands on a fractional pixel — common with
-          // flex/grid-distributed widths — the popover can end up rendered
-          // ~1px too high, covering the trigger's bottom border. offset={1}
-          // adds enough buffer to absorb that rounding error.
-          // See https://github.com/adobe/react-spectrum/issues/8857
-          offset={1}
-          hideArrow
-          {...popoverProps}
-          className={clsx(popoverProps?.className, styles.popover)}
-        >
-          {props.isSelectableAll && <SelectAll />}
-          <ListBox
-            escapeKeyBehavior='none'
-            items={items}
-            {...listBoxProps}
+        <ClearContexts>
+          <LabelWrapper popover={popover}>
+            {label && (
+              <Label data-disabled={props.isDisabled || undefined}>
+                {label}
+              </Label>
+            )}
+          </LabelWrapper>
+          {description && <Text slot='description'>{description}</Text>}
+          {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+          <div
+            className={styles.triggerContainer}
+            data-disabled={props.isDisabled || undefined}
           >
-            {children}
-          </ListBox>
-        </Popover>
-        <SelectTags {...props} />
+            <SelectTrigger
+              size={size}
+              {...props}
+            />
+            {props.selectionMode === 'multiple' ? (
+              <MultiSelectValue {...props} />
+            ) : null}
+          </div>
+          {errorPosition === 'bottom' && (
+            <FieldError>{errorMessage}</FieldError>
+          )}
+          <Popover
+            // offset={0} looks flush, but React Aria floors the popover's
+            // computed `top` to a whole pixel while leaving the trigger's own
+            // (often fractional) width/position unrounded. When the trigger's
+            // true bottom edge lands on a fractional pixel — common with
+            // flex/grid-distributed widths — the popover can end up rendered
+            // ~1px too high, covering the trigger's bottom border. offset={1}
+            // adds enough buffer to absorb that rounding error.
+            // See https://github.com/adobe/react-spectrum/issues/8857
+            offset={1}
+            hideArrow
+            {...popoverProps}
+            className={clsx(popoverProps?.className, styles.popover)}
+          >
+            {props.isSelectableAll && <SelectAll />}
+            <ListBox
+              escapeKeyBehavior='none'
+              items={items}
+              {...listBoxProps}
+            >
+              {children}
+            </ListBox>
+          </Popover>
+          <SelectTags {...props} />
+        </ClearContexts>
       </AriaSelect>
     </FocusScope>
   )
