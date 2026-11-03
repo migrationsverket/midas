@@ -122,6 +122,16 @@ Om användaren behöver ha möjlighet att avstå från att välja ett de givna a
 
 Använd Radioknappar när användaren bara ska göra **ett** av flera val i en lista. Använd [Checkbox](/components/checkbox) om flera val ska kunna göras. Om det är fler alternativ än fem bör [Select](/components/select) användas istället.
 
+## Context
+
+Med `RadioGroupContext` kan du ange standardvärden för alla `RadioGroup` inuti, egenskaper som anges direkt på komponenten har företräde. `Radio` har `RadioContext`. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<RadioGroupContext.Provider value={{ errorPosition: 'bottom' }}>
+  <RadioGroup label='Välj'>…</RadioGroup>
+</RadioGroupContext.Provider>
+```
+
 ## API
 
 ### Radio

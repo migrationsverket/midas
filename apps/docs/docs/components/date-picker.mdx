@@ -139,6 +139,16 @@ Använd `isClearable` för att visa en knapp som tömmer fältet. Notera att ett
   defaultValue={new CalendarDate(1995, 5, 29)}
 />
 
+## Context
+
+Med `DatePickerContext` kan du ange standardvärden för alla `DatePicker` inuti, egenskaper som anges direkt på komponenten har företräde. `DateRangePicker` har `DateRangePickerContext`. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<DatePickerContext.Provider value={{ size: 'medium' }}>
+  <DatePicker label='Datum' />
+</DatePickerContext.Provider>
+```
+
 ## API
 
 ### DatePicker

@@ -1,0 +1,1 @@
+{"version":3,"file":"getComponentMetaData.d.ts","sourceRoot":"","sources":["../../../../src/components/getComponentMetaData.tsx"],"names":[],"mappings":"AAMA,eAAO,MAAM,eAAe,uHAOzB;IACD,IAAI,EAAE,MAAM,CAAA;IACZ,YAAY,EAAE,MAAM,CAAA;IACpB,oBAAoB,CAAC,EAAE,MAAM,CAAA;IAC7B,yBAAyB,CAAC,EAAE,MAAM,CAAA;IAClC,iBAAiB,CAAC,EAAE,OAAO,CAAA;IAC3B,qBAAqB,CAAC,EAAE,MAAM,CAAA;CAC/B,gCA6DA,CAAA"}

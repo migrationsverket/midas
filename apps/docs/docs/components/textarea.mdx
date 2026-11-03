@@ -40,6 +40,16 @@ TextArea är en komposition av `<TextField>`, `<TextArea>`, `<Label>`, `<FieldEr
 
 Med undantag för `type`-attributet erbjuder `TextArea` samma API som `TextField`, vänligen använd [dokumentationen för TextField](../textfield) för mer information.
 
+## Context
+
+Med `TextFieldContext` kan du ange standardvärden för alla `TextArea` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<TextFieldContext.Provider value={{ size: 'medium' }}>
+  <TextArea label='Meddelande' />
+</TextFieldContext.Provider>
+```
+
 ## API
 
 <PropTable doc={TextAreaApi} />

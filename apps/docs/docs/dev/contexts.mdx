@@ -1,0 +1,98 @@
+---
+title: Contexts
+description: Ange standardvärden för flera komponenter på ett ställe
+---
+
+# Contexts
+
+Formulärfälten, knappar, länkar och typografin har var sin context. Med den anger du standardvärden för alla komponenter av samma typ inuti, i stället för att upprepa samma egenskaper på varje komponent.
+
+```tsx
+import { TextField, TextFieldContext } from '@midas-ds/components'
+
+;<TextFieldContext.Provider value={{ size: 'medium', isRequired: true }}>
+  <TextField label='Förnamn' />
+  <TextField label='Efternamn' />
+</TextFieldContext.Provider>
+```
+
+Egenskaper som du anger direkt på en komponent har alltid företräde framför contexten.
+
+## Flera komponenter på en gång
+
+Använd `Provider` för att ange flera contexts utan att nästla dem. Till exempel ett formulär där alla fält och knappar har storleken `medium`:
+
+```tsx
+import {
+  Button,
+  ButtonContext,
+  Provider,
+  Select,
+  SelectContext,
+  TextField,
+  TextFieldContext,
+} from '@midas-ds/components'
+
+;<Provider
+  values={[
+    [TextFieldContext, { size: 'medium' }],
+    [SelectContext, { size: 'medium' }],
+    [ButtonContext, { size: 'medium' }],
+  ]}
+>
+  <TextField label='Namn' />
+  <Select label='Land'>…</Select>
+  <Button type='submit'>Spara</Button>
+</Provider>
+```
+
+## Tillgängliga contexts
+
+| Komponent                  | Context                  |
+| -------------------------- | ------------------------ |
+| `Button`                   | `ButtonContext`          |
+| `Checkbox`                 | `CheckboxContext`        |
+| `CheckboxGroup`            | `CheckboxGroupContext`   |
+| `ComboBox`                 | `ComboBoxContext`        |
+| `DateField`                | `DateFieldContext`       |
+| `DatePicker`               | `DatePickerContext`      |
+| `DateRangePicker`          | `DateRangePickerContext` |
+| `Heading`                  | `HeadingContext`         |
+| `Link`                     | `LinkContext`            |
+| `LinkButton`               | `LinkButtonContext`      |
+| `Radio`                    | `RadioContext`           |
+| `RadioGroup`               | `RadioGroupContext`      |
+| `SearchField`              | `SearchFieldContext`     |
+| `Select`                   | `SelectContext`          |
+| `Text`                     | `TextContext`            |
+| `TextField` och `TextArea` | `TextFieldContext`       |
+| `TimeField`                | `TimeFieldContext`       |
+
+## Vad som påverkas
+
+En context gäller de komponenter som du själv renderar inuti den, även i till exempel `Card`, `Modal` och `Accordion`.
+
+Den gäller inte de delar som komponenterna renderar själva. En `ButtonContext` ändrar alltså inte sökknappen i `SearchField`, stängknappen i `Modal` eller knapparna i kalendern, och en `TextContext` ändrar inte beskrivningstexten i ett fält.
+
+Innehållet i en `Button`, `Link`, `LinkButton`, `Checkbox` eller `Radio` räknas också som komponentens egen del. En `Link` i etiketten till en `Checkbox` får därför inte värdena från en `LinkContext` utanför.
+
+## Egna komponenter
+
+Contexts gör det enkelt att bygga egna komponenter som sätter standardvärden för det som placeras i dem:
+
+```tsx
+const FilterPanel = ({ children }: { children: React.ReactNode }) => (
+  <Provider
+    values={[
+      [CheckboxContext, { className: styles.filter }],
+      [ButtonContext, { size: 'medium', variant: 'secondary' }],
+    ]}
+  >
+    <div className={styles.panel}>{children}</div>
+  </Provider>
+)
+```
+
+## React Aria
+
+React Aria exporterar contexts med samma namn, till exempel `ButtonContext` och `TextFieldContext`. Importera dem från `@midas-ds/components` så att du kan använda egenskaper som `size` och `variant`. React Arias contexts fungerar fortfarande, men känner inte till designsystemets egna egenskaper.

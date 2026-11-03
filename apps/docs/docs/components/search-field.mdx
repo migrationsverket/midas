@@ -118,6 +118,16 @@ Vill du förbereda dig redan nu? Använd `showButton={false}` och komponera en e
 
 :::
 
+## Context
+
+Med `SearchFieldContext` kan du ange standardvärden för alla `SearchField` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<SearchFieldContext.Provider value={{ size: 'medium' }}>
+  <SearchField placeholder='Sök' />
+</SearchFieldContext.Provider>
+```
+
 ## API
 
 <PropTable doc={SearchFieldApi} />

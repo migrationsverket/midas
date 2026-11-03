@@ -200,6 +200,16 @@ return (
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 
+## Context
+
+Med `CheckboxContext` kan du ange standardvärden för alla `Checkbox` inuti, egenskaper som anges direkt på komponenten har företräde. `CheckboxGroup` har `CheckboxGroupContext`. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<CheckboxContext.Provider value={{ errorPosition: 'bottom' }}>
+  <Checkbox>Jag godkänner villkoren</Checkbox>
+</CheckboxContext.Provider>
+```
+
 ## API
 
 ### Checkbox

@@ -155,6 +155,16 @@ Ett användbart exempel är `isNonModal`, som gör att ett klick utanför popove
 </Select>
 ```
 
+## Context
+
+Med `SelectContext` kan du ange standardvärden för alla `Select` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<SelectContext.Provider value={{ size: 'medium' }}>
+  <Select label='Land'>…</Select>
+</SelectContext.Provider>
+```
+
 ## API
 
 ### Select

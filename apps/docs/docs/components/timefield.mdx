@@ -141,6 +141,16 @@ Använd `hourCycle={12}` för AM/PM-format.
   defaultValue={new Time(14, 30)}
 />
 
+## Context
+
+Med `TimeFieldContext` kan du ange standardvärden för alla `TimeField` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<TimeFieldContext.Provider value={{ size: 'medium' }}>
+  <TimeField label='Tid' />
+</TimeFieldContext.Provider>
+```
+
 ## API
 
 <PropTable doc={TimeFieldApi} />

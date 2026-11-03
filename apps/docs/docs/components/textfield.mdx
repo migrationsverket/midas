@@ -249,6 +249,16 @@ Använd `type="password"` för att aktivera en knapp för att visa/dölja inmata
   />
 </div>
 
+## Context
+
+Med `TextFieldContext` kan du ange standardvärden för alla `TextField` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<TextFieldContext.Provider value={{ size: 'medium' }}>
+  <TextField label='Namn' />
+</TextFieldContext.Provider>
+```
+
 ## API
 
 ### TextField

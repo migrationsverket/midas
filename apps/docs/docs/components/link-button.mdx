@@ -30,6 +30,16 @@ Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/clien
 
 Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
+## Context
+
+Med `LinkButtonContext` kan du ange standardvärden för alla `LinkButton` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<LinkButtonContext.Provider value={{ size: 'medium' }}>
+  <LinkButton href='/'>Till startsidan</LinkButton>
+</LinkButtonContext.Provider>
+```
+
 ## API
 
 <PropTable doc={LinkButtonApi} />

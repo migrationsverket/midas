@@ -198,6 +198,16 @@ Fler exempel med bland annat infinite scroll finns i [React Arias dokumentation 
   <AsyncExample />
 </div>
 
+## Context
+
+Med `ComboBoxContext` kan du ange standardvärden för alla `ComboBox` inuti, egenskaper som anges direkt på komponenten har företräde. Läs mer under [Contexts](/dev/contexts).
+
+```tsx
+<ComboBoxContext.Provider value={{ size: 'medium' }}>
+  <ComboBox label='Land'>…</ComboBox>
+</ComboBoxContext.Provider>
+```
+
 ## API
 
 ### ComboBox
