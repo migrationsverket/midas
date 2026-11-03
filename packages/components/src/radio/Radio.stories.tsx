@@ -15,7 +15,7 @@ export default {
       <Story />
     </RadioGroup>
   ),
-  tags: ['autodocs'],
+  tags: ['!autodocs', '!dev'],
 } satisfies Meta<typeof Radio>
 
 export const Primary: Story = {}
