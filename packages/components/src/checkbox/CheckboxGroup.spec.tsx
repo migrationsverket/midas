@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { userEvent } from 'vitest/browser'
+import styles from './Checkbox.module.css'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './CheckboxGroup.stories'
 import { render } from '../../test-utils'
@@ -116,5 +117,32 @@ describe('given a Swedish locale', async () => {
     )
 
     expect(container.innerHTML).toContain('Välj alla')
+  })
+})
+
+// 414px is the default test viewport, so the checkboxes render as cards
+describe('given a CheckboxGroup on a small screen', () => {
+  it('should give every card the full width of the group', async () => {
+    const { container } = await render(<ShowSelectAll />)
+    const list = container.querySelector(`.${styles.checkboxList}`)
+    const cards = [
+      ...container.querySelectorAll(`.${styles.checkboxButton}`),
+    ] as HTMLElement[]
+
+    expect(cards.length).toBeGreaterThan(1)
+    for (const card of cards) {
+      expect(card.getBoundingClientRect().width).toBe(
+        list?.getBoundingClientRect().width,
+      )
+    }
+  })
+
+  it('each checkbox should be styled as a card by default', async () => {
+    const { container } = await render(<Primary />)
+    const button = container.querySelector(
+      `.${styles.checkboxButton}`,
+    ) as HTMLElement
+
+    expect(getComputedStyle(button).borderTopStyle).toBe('solid')
   })
 })

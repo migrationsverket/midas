@@ -173,7 +173,8 @@
     @media (width <= 479px) {
       padding: var(--midas-space-70) var(--midas-space-medium);
       border: 1px solid var(--midas-border-color-primary);
-      width: auto;
+      width: 100%;
+      box-sizing: border-box;
 
       &[data-hovered] {
         background-color: var(--midas-layer-01-hover);

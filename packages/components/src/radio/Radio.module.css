@@ -16,6 +16,12 @@
     align-items: start;
   }
 
+  &[aria-orientation='vertical'] .wrap {
+    @media (width <= 479px) {
+      align-items: unset;
+    }
+  }
+
   &[aria-orientation='horizontal'] .wrap {
     flex-direction: row;
     gap: var(--midas-space-medium);
