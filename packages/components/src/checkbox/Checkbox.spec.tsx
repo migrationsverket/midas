@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { page } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import { fireEvent } from '@testing-library/react'
@@ -26,6 +26,33 @@ describe('given a primary Checkbox', async () => {
         container.querySelector(`.${styles.checkboxButton}`) as HTMLElement,
       )
       .toHaveClass(styles.checkboxButton, Primary.args.className as string)
+  })
+})
+
+describe('given a Checkbox on a small screen', () => {
+  it('should not be styled as a card', async () => {
+    const { container } = await render(<Primary />)
+    const button = container.querySelector(
+      `.${styles.checkboxButton}`,
+    ) as HTMLElement
+
+    expect(getComputedStyle(button).borderTopStyle).toBe('none')
+  })
+})
+
+describe('given a Checkbox on a large screen', () => {
+  afterEach(async () => {
+    await page.viewport(414, 896)
+  })
+
+  it('should not be styled as a card', async () => {
+    await page.viewport(1280, 720)
+    const { container } = await render(<Primary />)
+    const button = container.querySelector(
+      `.${styles.checkboxButton}`,
+    ) as HTMLElement
+
+    expect(getComputedStyle(button).borderTopStyle).toBe('none')
   })
 })
 
