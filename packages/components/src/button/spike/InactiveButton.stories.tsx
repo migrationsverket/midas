@@ -54,16 +54,16 @@ A natively disabled button is removed from the tab order and fires no pointer ev
 
 ### Comparison
 
-| | Baseline: native \`disabled\` | 1. Cursor | 2. Popover on click | 3. Tooltip on hover |
-|---|---|---|---|---|
-| **Mouse** | Not-allowed cursor, no reason | Not-allowed cursor, no reason | Reason on click | Reason on hover |
-| **Touch (phone/tablet)** | Nothing happens | Nothing happens | Reason on tap | Nothing happens, tooltips don't open on touch |
-| **Keyboard** | Can't be reached | Reachable, Enter/Space do nothing | Reason on Enter/Space, focus moves into the popover | Reason on focus |
-| **Screen reader, desktop** | Announced as disabled in browse mode, skipped with Tab | "Dimmed/unavailable", no reason | "Dimmed, collapsed, button", reason after pressing | Reason read as description when focused with Tab, not in browse mode |
-| **Screen reader, mobile (VoiceOver iOS, TalkBack)** | Announced as disabled | Announced as disabled, no reason | Announced as disabled, reason on double tap | Announced as disabled, no reason (swiping isn't keyboard focus) |
-| **Voice control (Voice Control, Dragon)** | "Click Skicka ansökan" fails silently | Fails silently | Reason shown | Usually nothing, hover isn't triggered |
-| **Zoom / magnifier** | No reason | No reason | Reason next to the button | Reason next to the button, may hide on mouse move |
-| **Forced colors** | Automatic | Needs \`GrayText\` (done) | Same as 1 | Same as 1 |
+| | Baseline: native \`disabled\` | 1. Cursor | 2. Popover on click | 3. Tooltip on hover | 4. Tooltip + popover |
+|---|---|---|---|---|---|
+| **Mouse** | Not-allowed cursor, no reason | Not-allowed cursor, no reason | Reason on click | Reason on hover | Reason on hover, again on click |
+| **Touch (phone/tablet)** | Nothing happens | Nothing happens | Reason on tap | Nothing happens, tooltips don't open on touch | Reason on tap (popover) |
+| **Keyboard** | Can't be reached | Reachable, Enter/Space do nothing | Reason on Enter/Space, focus moves into the popover | Reason on focus | Reason on focus, again on Enter/Space |
+| **Screen reader, desktop** | Announced as disabled in browse mode, skipped with Tab | "Dimmed/unavailable", no reason | "Dimmed, collapsed, button", reason after pressing | Reason read as description when focused with Tab, not in browse mode | Reason on Tab, and after pressing |
+| **Screen reader, mobile (VoiceOver iOS, TalkBack)** | Announced as disabled | Announced as disabled, no reason | Announced as disabled, reason on double tap | Announced as disabled, no reason (swiping isn't keyboard focus) | Reason on double tap (popover) |
+| **Voice control (Voice Control, Dragon)** | "Click Skicka ansökan" fails silently | Fails silently | Reason shown | Usually nothing, hover isn't triggered | Reason shown (popover) |
+| **Zoom / magnifier** | No reason | No reason | Reason next to the button | Reason next to the button, may hide on mouse move | Reason next to the button |
+| **Forced colors** | Automatic | Needs \`GrayText\` (done) | Same as 1 | Same as 1 | Same as 1 |
 
 None of these has been verified with real assistive tech yet; the table is based on how the browser and react-aria behave.
 `,
@@ -168,5 +168,41 @@ export const TooltipOnHover: Story = {
       <InactiveButton {...args} />
       <Tooltip>{reason}</Tooltip>
     </TooltipTrigger>
+  ),
+}
+
+/**
+ * **4. Tooltip on hover and popover on click.** Combines 2 and 3: the tooltip
+ * explains on hover and keyboard focus, and pressing the button opens a
+ * popover with the same message, closing the tooltip.
+ *
+ * **Pros**
+ * - Mouse and keyboard users see the reason before they try, like 3
+ * - Touch, mobile screen reader and voice control users still get the reason
+ *   when they press, like 2
+ * - The most complete coverage of the four
+ *
+ * **Cons**
+ * - The same message is shown twice for mouse and keyboard users, and screen
+ *   readers may read it twice (as description, then in the popover)
+ * - Inherits the mixed signals of 2: not-allowed cursor and "dimmed" while
+ *   pressing still opens something
+ * - Two overlays on one button: more to design, translate, test and keep in
+ *   sync
+ * - Hovering and then clicking makes the message jump from tooltip to popover
+ */
+export const TooltipAndPopover: Story = {
+  render: args => (
+    <DialogTrigger>
+      <TooltipTrigger>
+        <InactiveButton {...args} />
+        <Tooltip>{reason}</Tooltip>
+      </TooltipTrigger>
+      <Popover placement='top'>
+        <Dialog style={{ outline: 'none' }}>
+          <Text>{reason}</Text>
+        </Dialog>
+      </Popover>
+    </DialogTrigger>
   ),
 }
