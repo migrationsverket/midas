@@ -1,3 +1,9 @@
+## 17.33.3 (2026-11-05)
+
+### 🩹 Fixes
+
+- **components,card:** keep support for horizontal prop ([07b6b01f2f1](https://github.com/migrationsverket/midas/commit/07b6b01f2f1))
+
 ## 17.33.2 (2026-10-29)
 
 ### 🩹 Fixes
