@@ -172,6 +172,9 @@ build
 .nx
 tmp
 
+# Nx AI migrations temporary directory
+tools/ai-migrations/
+
 # Generated style-dictionary files
 packages/theme/src/lib/style-dictionary-dist/
 
