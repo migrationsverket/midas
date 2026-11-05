@@ -45,7 +45,8 @@
     "zustand": "^5.0.11"
   },
   "overrides": {
-    "piscina": "4.9.3"
+    "piscina": "4.9.3",
+    "playwright-core": "1.63.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
@@ -71,7 +72,7 @@
     "@nx/vitest": "24.0.4",
     "@nx/web": "24.0.4",
     "@nx/workspace": "24.0.4",
-    "@playwright/test": "^1.60.0",
+    "@playwright/test": "1.63.0",
     "@react-aria/test-utils": "^1.0.0-rc.1",
     "@storybook/addon-a11y": "10.6.5",
     "@storybook/addon-docs": "^10.6.5",
@@ -108,7 +109,7 @@
     "nx": "24.0.4",
     "nx-stylelint": "^19.0.0",
     "patch-package": "^8.0.1",
-    "playwright": "^1.60.0",
+    "playwright": "1.63.0",
     "prettier": "^3.8.1",
     "prism-react-renderer": "^2.3.1",
     "react-datepicker": "^9.1.0",
