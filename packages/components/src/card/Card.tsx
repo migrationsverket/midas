@@ -6,10 +6,6 @@ import { Button, ButtonProps, Link } from 'react-aria-components'
 import { ArrowRight } from 'lucide-react'
 
 export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * Stack content in card vertical or horizontal
-   * @deprecated since v17.14.0 please stack content vertically instead
-   */
   horizontal?: boolean
   /** Card content, usually wrap with CardContent */
   children: React.ReactNode
