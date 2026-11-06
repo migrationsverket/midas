@@ -1,3 +1,13 @@
+## 17.33.4 (2026-11-06)
+
+### 🩹 Fixes
+
+- **components,checkbox,radio:** stretch group items horizontally ([94a9cb03f50](https://github.com/migrationsverket/midas/commit/94a9cb03f50))
+
+### 📖 Documentation changes
+
+- **components,radio:** hide single radio stories ([be4424382a6](https://github.com/migrationsverket/midas/commit/be4424382a6))
+
 ## 17.33.3 (2026-11-05)
 
 ### 🩹 Fixes
