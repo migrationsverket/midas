@@ -21,3 +21,24 @@
 .divider {
   color: var(--midas-text-primary);
 }
+
+/*
+ * Scrolls the date inputs sideways when the field is too narrow for them
+ * so the buttons next to them stay in view. The padding keeps the 
+ * segments' focus ring (4px outside the segment) inside the clipped area, 
+ * and the scroll padding keeps it in view when focus scrolls a segment in
+ */
+.scroller {
+  align-items: center;
+  display: flex;
+  flex: 1;
+
+  /* Between a range's start, divider and end */
+  gap: var(--midas-space-medium);
+  min-width: 0;
+  overflow: auto clip;
+  padding: var(--midas-space-xsmall);
+  scroll-padding-inline: var(--midas-space-xsmall);
+  scrollbar-width: none;
+  white-space: nowrap;
+}
