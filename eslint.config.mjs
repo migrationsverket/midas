@@ -6,6 +6,7 @@ import nx from '@nx/eslint-plugin'
 import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import eslintPluginReact from 'eslint-plugin-react'
 import stylisticEslintPlugin from '@stylistic/eslint-plugin'
+import compatPlugin from 'eslint-plugin-compat'
 import * as jsoncEslintParser from 'jsonc-eslint-parser'
 
 const compat = new FlatCompat({
@@ -126,6 +127,12 @@ export default [
       '@nx/enforce-module-boundaries': 'off',
       'react-hooks/rules-of-hooks': 'off',
     },
+  },
+  {
+    // Web APIs the supported browsers lack, see .browserslistrc
+    ...compatPlugin.configs['flat/recommended'],
+    files: ['**/src/**/*.{ts,tsx}'],
+    ignores: ['**/*.{spec,test,stories}.{ts,tsx}'],
   },
   {
     // Visual regression specs use tools/visual-testing, which isn't built:

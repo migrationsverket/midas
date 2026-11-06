@@ -211,7 +211,7 @@
     "storybookStories": [
       "{workspaceRoot}/packages/**/*.stories.@(js|jsx|ts|tsx|mdx)"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": ["{workspaceRoot}/.browserslistrc"]
   },
   "workspaceLayout": {
     "appsDir": "apps",
