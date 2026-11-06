@@ -164,6 +164,9 @@
       "$description": "Orange – används för 'viktig'-notifieringar och ikoner.",
       "100": {
         "$value": "oklch(0.66 0.18 45)"
+      },
+      "110": {
+        "$value": "#d46722"
       }
     },
     "signalBlue": {
