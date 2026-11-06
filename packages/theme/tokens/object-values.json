@@ -221,7 +221,7 @@
     },
     "important": {
       "$type": "color",
-      "$value": "{color.orange.100}",
+      "$value": "{color.orange.110}",
       "$description": "Ikonf\u00e4rg f\u00f6r viktig information"
     },
     "readOnly": {
@@ -280,7 +280,7 @@
       },
       "important": {
         "$type": "color",
-        "$value": "{color.orange.100}",
+        "$value": "{color.orange.110}",
         "$description": "Kantlinje f\u00f6r notifikationer med viktig information"
       },
       "warning": {
