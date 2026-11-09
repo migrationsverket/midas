@@ -37,8 +37,8 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v5
 
-      - name: Build packages
-        run: npx nx affected -t lint stylelint build
+      - name: Lint, typecheck and build packages
+        run: npx nx affected -t typecheck lint stylelint build
 
       - name: Check bundled dependencies are declared
         run: node tools/check-bundled-dependencies/index.mjs
