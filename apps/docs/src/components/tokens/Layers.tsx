@@ -1,5 +1,5 @@
 import {Grid, Text, GridItem } from '@midas-ds/components'
-import { tokens, variables } from '@midas-ds/theme'
+import { variables } from '@midas-ds/theme'
 
 export const Layers = () => {
   return (

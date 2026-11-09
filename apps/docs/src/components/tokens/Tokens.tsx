@@ -1,19 +1,18 @@
-import { DesignToken } from 'style-dictionary/types'
+import { TransformedToken } from 'style-dictionary/types'
 import { CopyButton } from '@site/src/components/CopyButton'
 import { getCSSVariableName } from './utils'
 import styles from './Tokens.module.css'
 
-export const Token = ({ token }: { token: DesignToken }) => {
+export const Token = ({ token }: { token: TransformedToken }) => {
   const isColor = token.$type === 'color'
   const isLightDark =
     typeof token.$value === 'string' && token.$value.startsWith('light-dark(')
   const isCompositeTypography = token.$type === 'typography'
-  const isTypography = [
-    'fontFamily',
-    'fontSize',
-    'fontWeight',
-    'lineHeight',
-  ].includes(token.$type)
+  const isTypography =
+    token.$type !== undefined &&
+    ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight'].includes(
+      token.$type,
+    )
   const isDimension = token.$type === 'dimension'
   const isWindowSize = token.path.includes('windowSizes')
   const isDuration = token.$type === 'duration'

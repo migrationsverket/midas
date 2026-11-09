@@ -215,14 +215,14 @@ sätta prop `validationErrors` på &lt;Form&gt; och presentera felmeddelanden de
 
 ```tsx
 export const ServerValidation = () => {
-  const [isWaiting, setIsWaiting] = React.useState(false)
+  const [isPending, setIsPending] = React.useState(false)
   // Fake server used in this example.
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
   async function callServer(data) {
-    setIsWaiting(true)
+    setIsPending(true)
     await delay(1000)
-    setIsWaiting(false)
+    setIsPending(false)
     return { errors: { username: `Tyvärr, användarnamnet ${data.username} är upptaget.` } }
   }
 
@@ -253,18 +253,11 @@ export const ServerValidation = () => {
         isRequired
       />
       <ButtonGroup>
-        <Button type='submit'>
-          {isWaiting ? (
-            <>
-              <Spinner
-                isOnColor
-                small
-              />
-              Skickar...
-            </>
-          ) : (
-            'Skicka'
-          )}
+        <Button
+          type='submit'
+          isPending={isPending}
+        >
+          {isPending ? 'Skickar...' : 'Skicka'}
         </Button>
       </ButtonGroup>
     </Form>

@@ -1,8 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "composite": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "allowJs": true,
     "lib": ["DOM", "dom.iterable"],
     "noImplicitAny": false,

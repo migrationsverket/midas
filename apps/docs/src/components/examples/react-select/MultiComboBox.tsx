@@ -1,4 +1,4 @@
-import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
+import Select from 'react-select'
 import { Label, Text } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/lib/react-select.css'
@@ -30,10 +30,7 @@ export const MultiComboBox = ({
         }))}
         placeholder='Select an employee'
         styles={{
-          multiValue: (
-            provided: CSSObjectWithLabel,
-            { isFocused }: MultiValueProps,
-          ) => ({
+          multiValue: (provided, { isFocused }) => ({
             ...provided,
             boxShadow: isFocused ? variables.stateFocus : undefined,
           }),
