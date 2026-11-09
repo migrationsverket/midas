@@ -54,7 +54,7 @@ Firefox's `latest` is Nightly, so use `stable` or `stable_<version>`. These can'
 
 The `<browser>@<version>` profiles retry a failing test twice, as Chrome and Edge now and then miss a hover from WebDriver on CI runners.
 
-Known differences: under WebdriverIO, Vitest computes accessible names for `getByRole` itself, and they can differ from Playwright's.
+Known differences: under WebdriverIO, Vitest computes accessible names for `getByRole` itself, and they can differ from Playwright's. Vitest's trace view is off for these profiles, as recording a step throws in WebdriverIO's provider when the locator matches no element, failing every `not.toBeInTheDocument()`.
 
 ## In a Vitest config
 
