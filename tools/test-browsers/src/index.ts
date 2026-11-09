@@ -184,6 +184,18 @@ export const browserProvider = (profileNames = selectedProfiles()) => {
 }
 
 /**
+ * Vitest's trace view for the profiles in `MIDAS_BROWSERS`: off for the
+ * `<browser>@<version>` profiles, else Vitest's default. Recording a step
+ * reads its locator's selector, which WebdriverIO's provider throws on when
+ * no element matches, so every `not.toBeInTheDocument()` failed
+ * (vitest-community/vitest-webdriverio#13)
+ */
+export const browserTraceView = (profileNames = selectedProfiles()) =>
+  profileNames.some(name => parseRealProfile(name))
+    ? ('off' as const)
+    : undefined
+
+/**
  * Vitest browser instances for the profiles in `MIDAS_BROWSERS`, one per
  * profile and variant. Pass variants to run every profile in several setups,
  * e.g. a desktop and a mobile viewport.

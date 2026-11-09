@@ -1,6 +1,10 @@
 import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
-import { browserInstances, browserProvider } from '@midas-ds/test-browsers'
+import {
+  browserInstances,
+  browserProvider,
+  browserTraceView,
+} from '@midas-ds/test-browsers'
 
 export default mergeConfig(
   viteConfig,
@@ -20,6 +24,7 @@ export default mergeConfig(
               enabled: true,
               headless: true,
               provider: browserProvider(),
+              traceView: browserTraceView(),
               instances: browserInstances(),
               screenshotFailures: false,
             },
