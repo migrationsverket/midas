@@ -1,0 +1,9 @@
+# The browsers Midas supports: the two latest major versions of each.
+# The packages' builds use Vite's default target, which is older than all of
+# these, so the output also works in somewhat older browsers.
+last 2 Chrome major versions
+last 2 Edge major versions
+last 2 Firefox major versions
+last 2 iOS major versions
+last 2 ChromeAndroid major versions
+last 2 Samsung major versions
