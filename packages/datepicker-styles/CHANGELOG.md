@@ -1,3 +1,21 @@
+## 0.3.7 (2026-11-09)
+
+### 🔧 Maintenance
+
+- **deps:** update vitest to v5 ([7841295f924](https://github.com/migrationsverket/midas/commit/7841295f924))
+- **deps:** install typescript 7 alongside 6 and clean up tsconfigs ([70bf5240642](https://github.com/migrationsverket/midas/commit/70bf5240642))
+
+### 🧪 Tests updated
+
+- **datepicker-styles:** skip the arrow key focus ring test in WebKit ([37acce93d09](https://github.com/migrationsverket/midas/commit/37acce93d09))
+- run the package tests nightly in real Chrome, Firefox and Edge ([#1421](https://github.com/migrationsverket/midas/pull/1421))
+- **datepicker-styles:** skip the arrow key focus ring test in Firefox ([f82c3aeb003](https://github.com/migrationsverket/midas/commit/f82c3aeb003))
+- run package tests in Firefox, WebKit and mobile emulation ([2616981547e](https://github.com/migrationsverket/midas/commit/2616981547e))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.9
+
 ## 0.3.6 (2026-10-13)
 
 ### 🚀 Features

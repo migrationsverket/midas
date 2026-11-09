@@ -1,3 +1,13 @@
+## 1.1.78 (2026-11-09)
+
+### 🔧 Maintenance
+
+- **deps:** install typescript 7 alongside 6 and clean up tsconfigs ([70bf5240642](https://github.com/migrationsverket/midas/commit/70bf5240642))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.17.9
+
 ## 1.1.77 (2026-10-13)
 
 ### 🧱 Updated Dependencies

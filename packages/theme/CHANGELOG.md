@@ -1,3 +1,13 @@
+## 3.17.9 (2026-11-09)
+
+### 🩹 Fixes
+
+- **theme:** add orange-110 for important icon and border to meet contrast ([67bff5f7265](https://github.com/migrationsverket/midas/commit/67bff5f7265))
+
+### 🔧 Maintenance
+
+- **deps:** install typescript 7 alongside 6 and clean up tsconfigs ([70bf5240642](https://github.com/migrationsverket/midas/commit/70bf5240642))
+
 ## 3.17.8 (2026-10-13)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.
