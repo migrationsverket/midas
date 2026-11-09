@@ -7,7 +7,6 @@ import {
   ButtonGroup,
   CheckboxGroup,
   Checkbox,
-  Spinner,
 } from '@midas-ds/components'
 
 export const UncontrolledForm = () => {
@@ -110,16 +109,16 @@ export const RealtimeValidation = () => {
 }
 
 export const ServerValidation = () => {
-  const [isWaiting, setIsWaiting] = React.useState(false)
+  const [isPending, setIsPending] = React.useState(false)
   // Fake server used in this example.
   const delay = (ms: number): Promise<void> =>
     new Promise(resolve => setTimeout(resolve, ms))
   async function callServer(
     data: Record<string, FormDataEntryValue>,
   ): Promise<{ errors: Record<string, string> }> {
-    setIsWaiting(true)
+    setIsPending(true)
     await delay(1000)
-    setIsWaiting(false)
+    setIsPending(false)
     return {
       errors: {
         username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,
@@ -156,18 +155,11 @@ export const ServerValidation = () => {
         isRequired
       />
       <ButtonGroup>
-        <Button type='submit'>
-          {isWaiting ? (
-            <>
-              <Spinner
-                isOnColor
-                small
-              />
-              Skickar...
-            </>
-          ) : (
-            'Skicka'
-          )}
+        <Button
+          type='submit'
+          isPending={isPending}
+        >
+          {isPending ? 'Skickar...' : 'Skicka'}
         </Button>
       </ButtonGroup>
     </Form>

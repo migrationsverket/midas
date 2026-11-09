@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import {
   ColumnDef,
+  ColumnFiltersState,
   getCoreRowModel,
   getFilteredRowModel,
   useReactTable,
@@ -59,7 +60,7 @@ export function FilteringExample() {
   const [statusFilter, setStatusFilter] = useState<string>('all')
 
   const columnFilters = useMemo(() => {
-    const filters = []
+    const filters: ColumnFiltersState = []
     if (departmentFilter !== 'all') {
       filters.push({ id: 'department', value: departmentFilter })
     }

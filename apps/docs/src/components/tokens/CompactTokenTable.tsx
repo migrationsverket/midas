@@ -1,4 +1,4 @@
-import { DesignToken } from 'style-dictionary/types'
+import { TransformedToken } from 'style-dictionary/types'
 import { CopyButton } from '@site/src/components/CopyButton'
 import { getCSSVariableName } from './utils'
 import styles from './CompactTokenTable.module.css'
@@ -11,20 +11,20 @@ const sortEntries = (entries: [string, any][]) =>
     return a.localeCompare(b)
   })
 
-const flattenTokens = (obj: any): DesignToken[] => {
+const flattenTokens = (obj: any): TransformedToken[] => {
   if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return []
 
   // obj itself is a leaf token
   if (obj.$value !== undefined) {
-    return obj.path ? [obj as DesignToken] : []
+    return obj.path ? [obj as TransformedToken] : []
   }
 
-  const result: DesignToken[] = []
+  const result: TransformedToken[] = []
   for (const [key, value] of sortEntries(Object.entries(obj))) {
     if (key.startsWith('$')) continue
     if (!value || typeof value !== 'object' || Array.isArray(value)) continue
     if (value.$value !== undefined) {
-      if (value.path) result.push(value as DesignToken)
+      if (value.path) result.push(value as TransformedToken)
     } else {
       result.push(...flattenTokens(value))
     }
@@ -32,7 +32,7 @@ const flattenTokens = (obj: any): DesignToken[] => {
   return result
 }
 
-const Preview = ({ token }: { token: DesignToken }) => {
+const Preview = ({ token }: { token: TransformedToken }) => {
   const value = token.$value as string
 
   if (

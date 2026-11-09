@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DesignToken } from 'style-dictionary/types'
+import { TransformedToken } from 'style-dictionary/types'
 import { Copy, Check } from 'lucide-react'
 import { getCSSVariableName } from './utils'
 import styles from './ColorPaletteTable.module.css'
@@ -46,12 +46,12 @@ const sortEntries = (entries: [string, any][]) =>
     return a.localeCompare(b)
   })
 
-const getFamilyTokens = (family: any): DesignToken[] =>
+const getFamilyTokens = (family: any): TransformedToken[] =>
   sortEntries(Object.entries(family))
     .filter(([k, v]) => !k.startsWith('$') && v?.$value !== undefined)
-    .map(([, v]) => v as DesignToken)
+    .map(([, v]) => v as TransformedToken)
 
-const Swatch = ({ token }: { token: DesignToken }) => {
+const Swatch = ({ token }: { token: TransformedToken }) => {
   const [copied, setCopied] = useState(false)
   const cssVar = getCSSVariableName(token)
   const value = token.$value as string
