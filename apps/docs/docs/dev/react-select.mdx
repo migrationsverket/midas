@@ -59,7 +59,7 @@ Följande exempel visar hur du kan använda react-select för att sätta upp en 
 </div>
 
 ```tsx
-import Select, { CSSObjectWithLabel, MultiValueProps } from 'react-select'
+import Select from 'react-select'
 import { Label, Text } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 import '@midas-ds/select-styles/react-select.css'
@@ -85,7 +85,7 @@ import '@midas-ds/select-styles/react-select.css'
     ]}
     placeholder='Select an employee'
     styles={{
-      multiValue: (provided: CSSObjectWithLabel, { isFocused }: MultiValueProps) => ({
+      multiValue: (provided, { isFocused }) => ({
         ...provided,
         boxShadow: isFocused ? variables.stateFocus : undefined,
       }),
