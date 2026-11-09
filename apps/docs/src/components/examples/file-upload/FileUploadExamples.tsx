@@ -79,10 +79,7 @@ export const DropZoneExample = () => {
 
   return (
     <>
-      <DropZone
-        onDrop={handleDrop}
-        aria-label='Dra och släpp filer här'
-      >
+      <DropZone onDrop={handleDrop}>
         <Text slot='label'>Dra och släpp filer här</Text>
         <FileTrigger
           allowsMultiple
@@ -135,11 +132,17 @@ export const ValidatedDropZoneExample = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', maxWidth: 480 }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        maxWidth: 480,
+      }}
+    >
       <DropZone
         onDrop={handleDrop}
         isInvalid={isInvalid}
-        aria-label='Släpp filer här'
       >
         <Text slot='label'>Släpp filer här</Text>
         <FileTrigger

@@ -116,17 +116,17 @@ export const DropZoneExample = () => {
 
   return (
     <>
-      <DropZone
-        onDrop={handleDrop}
-        aria-label='Dra och släpp filer här'
-      >
+      <DropZone onDrop={handleDrop}>
         <Text slot='label'>Dra och släpp filer här</Text>
         <FileTrigger
           allowsMultiple
           onSelect={handleSelect}
         >
           <Button variant='secondary'>
-            <Upload aria-hidden size={20} />
+            <Upload
+              aria-hidden
+              size={20}
+            />
             Välj fil
           </Button>
         </FileTrigger>
