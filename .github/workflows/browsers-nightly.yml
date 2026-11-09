@@ -64,13 +64,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Vitest's toHaveStyle only parses the expected styles in Chrome's own
-      # document, not Edge's, so every expected style comes out empty there.
-      # (vitest-dev/vitest#11668). A failing patch means Vitest changed: drop
-      # it if fixed, else update it
-      - name: Patch Vitest for Edge
-        run: npx patch-package
-
       # WebdriverIO downloads Chrome and Firefox, but only the driver for
       # Edge, so install the Edge build, replacing the runner's own
       - name: Install Edge ${{ matrix.version }}
@@ -105,8 +98,8 @@ jobs:
         env:
           MIDAS_BROWSERS: ${{ matrix.profile }}
 
-      # Any failed step, as installing Edge, patching Vitest or downloading the
-      # browser can fail before the tests even start
+      # Any failed step, as installing Edge or downloading the browser can fail
+      # before the tests even start
       - name: Open or update the issue
         if: failure() && github.event_name == 'schedule'
         env:
