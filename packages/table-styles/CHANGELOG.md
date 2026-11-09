@@ -1,3 +1,13 @@
+## 2.2.14 (2026-11-09)
+
+### 🩹 Fixes
+
+- **test-browsers:** turn off the trace view under WebdriverIO ([f3dfebc7c37](https://github.com/migrationsverket/midas/commit/f3dfebc7c37))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.33.6
+
 ## 2.2.13 (2026-11-09)
 
 ### 🧱 Updated Dependencies
