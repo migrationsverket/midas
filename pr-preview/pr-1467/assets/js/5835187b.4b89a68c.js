@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([["189"],{60492(e){e.exports=JSON.parse('{"metadata":{"permalink":"/pr-preview/pr-1467/release-notes","page":1,"postsPerPage":10,"totalPages":3,"totalCount":29,"nextPage":"/pr-preview/pr-1467/release-notes/page/2","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
