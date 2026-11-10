@@ -5,7 +5,7 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './DateField.stories'
 import { render } from '../../test-utils'
 import { DateField } from './DateField'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '../aria'
 
 const { Primary, WithClearButton } = composeStories(stories)
 
@@ -69,5 +69,26 @@ describe('given a clearable DateField ', async () => {
 
     await expect.element(monthSelector).toHaveFocus()
     await expect.element(monthSelector).toHaveTextContent('mm')
+  })
+})
+
+describe('given a DateField inside an en-US I18nProvider', async () => {
+  it('should order the segments month, day, year', async () => {
+    await render(
+      <I18nProvider locale='en-US'>
+        <DateField label='Date' />
+      </I18nProvider>,
+    )
+
+    const segments = page.getByRole('spinbutton')
+    await expect
+      .element(segments.nth(0))
+      .toHaveAttribute('aria-label', expect.stringMatching(/^month/))
+    await expect
+      .element(segments.nth(1))
+      .toHaveAttribute('aria-label', expect.stringMatching(/^day/))
+    await expect
+      .element(segments.nth(2))
+      .toHaveAttribute('aria-label', expect.stringMatching(/^year/))
   })
 })
