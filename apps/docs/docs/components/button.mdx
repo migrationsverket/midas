@@ -6,10 +6,9 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 import { PropTable } from '@site/src/components/PropsTable'
 import ButtonApi from '@midas-ds/api/components/Button.json'
 import ButtonGroupApi from '@midas-ds/api/components/ButtonGroup.json'
-import { Button, ButtonGroup } from '@midas-ds/components'
+import { Button, ButtonContext, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Plus } from 'lucide-react'
-import { ButtonContext } from 'react-aria-components'
 
 <ComponentHeader
   name='Button'
@@ -188,7 +187,7 @@ import { ButtonGroup } from '@midas-ds/components'
 För att kontrollera flertalet knappar kan `ButtonContext` användas runtom flertalet knappar för att kontrollera attribut på samtliga knappar på ett ställe.
 
 ```tsx
-import { ButtonContext } from 'react-aria-components'
+import { ButtonContext } from '@midas-ds/components'
 ```
 
 ```tsx
