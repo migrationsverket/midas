@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
 import { page } from 'vitest/browser'
-import { I18nProvider } from 'react-aria-components'
+import { I18nProvider } from '@midas-ds/components'
 import { Sidebar } from './Sidebar'
 import styles from './Sidebar.module.css'
 

@@ -12,7 +12,6 @@ import type {
 } from 'react-aria-components'
 
 import {
-  Collection,
   TableHeader as AriaTableHeader,
   useTableOptions,
   Column as AriaColumn,
@@ -22,13 +21,9 @@ import {
   Table as AriaTable,
   TableBody as AriaTableBody,
 } from 'react-aria-components'
+import { Collection } from '../aria'
 import { Checkbox } from '../checkbox'
-import {
-  ArrowDown,
-  ArrowUp,
-  ArrowUpDown,
-  GripVertical,
-} from 'lucide-react'
+import { ArrowDown, ArrowUp, ArrowUpDown, GripVertical } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { Size } from '../common/types'
 
@@ -133,7 +128,12 @@ export const Column = ({ children, className, ...rest }: ColumnProps) => {
           if (sortDirection === 'descending') {
             return <ArrowDown size={16} />
           }
-          return <ArrowUpDown size={16} className={styles.sortIconNeutral} />
+          return (
+            <ArrowUpDown
+              size={16}
+              className={styles.sortIconNeutral}
+            />
+          )
         }
 
         return (

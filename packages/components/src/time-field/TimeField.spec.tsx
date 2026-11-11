@@ -5,14 +5,19 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './TimeField.stories'
 import { render } from '../../test-utils'
 import { TimeField } from './TimeField'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '../aria'
 
 const { Primary, WithClearButton } = composeStories(stories)
 
 describe('given a TimeField with a ref', async () => {
   it('should forward the ref to the underlying element', async () => {
     const ref = React.createRef<HTMLDivElement>()
-    await render(<TimeField label='Time' ref={ref} />)
+    await render(
+      <TimeField
+        label='Time'
+        ref={ref}
+      />,
+    )
     expect(ref.current).not.toBeNull()
   })
 })
@@ -46,13 +51,12 @@ describe('given a clearable TimeField', async () => {
   it('should be clearable using the mouse', async () => {
     await page.getByRole('button').first().click()
 
-    const hourSelector = page
-      .getByRole('group')
-      .getByRole('spinbutton')
-      .first()
+    const hourSelector = page.getByRole('group').getByRole('spinbutton').first()
 
     await expect.element(hourSelector).toHaveFocus()
-    await expect.element(hourSelector).toHaveAttribute('data-placeholder', 'true')
+    await expect
+      .element(hourSelector)
+      .toHaveAttribute('data-placeholder', 'true')
   })
 
   it('should be clearable using the keyboard', async () => {
@@ -62,12 +66,11 @@ describe('given a clearable TimeField', async () => {
     await userEvent.tab()
     await userEvent.keyboard('[Enter]')
 
-    const hourSelector = page
-      .getByRole('group')
-      .getByRole('spinbutton')
-      .first()
+    const hourSelector = page.getByRole('group').getByRole('spinbutton').first()
 
     await expect.element(hourSelector).toHaveFocus()
-    await expect.element(hourSelector).toHaveAttribute('data-placeholder', 'true')
+    await expect
+      .element(hourSelector)
+      .toHaveAttribute('data-placeholder', 'true')
   })
 })

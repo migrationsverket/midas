@@ -3,11 +3,11 @@
 import { forwardRef } from 'react'
 import {
   Button as AriaButton,
-  ButtonContext,
   ButtonProps as AriaButtonProps,
   composeRenderProps,
   useContextProps,
 } from 'react-aria-components'
+import { ButtonContext } from '../aria'
 import { LucideIcon } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { Size } from '../common/types'

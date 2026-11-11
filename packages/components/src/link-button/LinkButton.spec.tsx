@@ -2,9 +2,10 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './LinkButton.stories'
 import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '../aria'
 
-const { Primary, Secondary, Tertiary, Danger, Disabled, NewTab } = composeStories(stories)
+const { Primary, Secondary, Tertiary, Danger, Disabled, NewTab } =
+  composeStories(stories)
 
 describe('given a LinkButton that opens in a new tab', async () => {
   it('should include visually hidden text for the new tab icon', async () => {

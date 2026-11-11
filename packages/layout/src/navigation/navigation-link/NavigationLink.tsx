@@ -6,12 +6,8 @@ import {
   type ElementType,
   type ComponentProps,
 } from 'react'
-import {
-  Focusable,
-  Link,
-  OverlayTriggerStateContext,
-} from 'react-aria-components'
-import { clsx, Tooltip, TooltipTrigger } from '@midas-ds/components'
+import { Link, OverlayTriggerStateContext } from 'react-aria-components'
+import { clsx, Tooltip, TooltipTrigger, Focusable } from '@midas-ds/components'
 import styles from './NavigationLink.module.css'
 import { MobileMenuContext } from '../../header'
 import { NavbarContext } from '../../navbar'

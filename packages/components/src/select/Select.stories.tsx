@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '@midas-ds/test-utils'
 import { useState } from 'react'
-import { Collection, type Key } from 'react-aria-components'
+import { Collection, type Key } from '../aria'
 import { Select, SelectionMode } from './Select'
 import { ListBoxHeader, ListBoxItem, ListBoxSection } from '../list-box'
 

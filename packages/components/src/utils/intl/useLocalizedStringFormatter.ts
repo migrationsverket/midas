@@ -17,7 +17,7 @@ import {
   LocalizedStrings,
 } from '@internationalized/string'
 import { useMemo } from 'react'
-import { useLocale, I18nProvider } from 'react-aria-components'
+import { useLocale } from '../../aria'
 
 const DEFAULT_LANGUAGE = 'sv'
 
@@ -81,5 +81,3 @@ export function useLocalizedStringFormatter<
     [dictionary, locale],
   )
 }
-
-export { I18nProvider }

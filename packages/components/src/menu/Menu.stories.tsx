@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
-  Collection,
   Header,
   Keyboard,
   MenuTrigger,
   SubmenuTrigger,
   type Selection,
 } from 'react-aria-components'
+import { Collection } from '../aria'
 import { MenuIcon } from 'lucide-react'
 import React from 'react'
 import { Menu, type MenuProps } from './Menu'
