@@ -1,0 +1,58 @@
+/* A container can't query itself, so the query lives on a wrapper */
+.container {
+  container-type: inline-size;
+  margin-bottom: var(--ifm-leading);
+}
+
+.playground {
+  border: 1px solid var(--midas-border-color-subtle);
+  display: grid;
+  grid-template-areas:
+    'preview'
+    'controls'
+    'code';
+}
+
+.preview {
+  align-items: center;
+  display: flex;
+  grid-area: preview;
+  justify-content: center;
+  min-height: 10rem;
+  padding: var(--midas-space-large);
+}
+
+.controls {
+  border-top: 1px solid var(--midas-border-color-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-small);
+  grid-area: controls;
+  padding: var(--midas-space-medium);
+}
+
+.code {
+  border-top: 1px solid var(--midas-border-color-subtle);
+  grid-area: code;
+  min-width: 0;
+}
+
+.code :global(.theme-code-block) {
+  border: 0;
+  margin: 0;
+}
+
+/* Like React Aria's docs: preview and controls side by side, code below */
+@container (width >= 40rem) {
+  .playground {
+    grid-template-areas:
+      'preview controls'
+      'code code';
+    grid-template-columns: 1fr minmax(12rem, 16rem);
+  }
+
+  .controls {
+    border-inline-start: 1px solid var(--midas-border-color-subtle);
+    border-top: 0;
+  }
+}

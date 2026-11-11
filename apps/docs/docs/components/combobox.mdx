@@ -4,12 +4,13 @@ description: Sökbar version av Select
 ---
 
 import {
-  BasicExample,
   ControlledExample,
   SectionedExample,
   AsyncExample,
 } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { ComboBox, ListBoxItem } from '@midas-ds/components'
 import ComboBoxApi from '@midas-ds/api/components/ComboBox.json'
 import ListBoxItemApi from '@midas-ds/api/components/ListBoxItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -26,22 +27,18 @@ En ComboBox är en sökbar version av Select. Combobox är lämplig att använda
 import { ComboBox, ListBoxItem } from '@midas-ds/components'
 ```
 
-```tsx
-<ComboBox
-  label='Välj din favoritfrukt'
-  description='Du kan bara välja en'
+<Playground
+  component={ComboBox}
+  api={ComboBoxApi}
+  props={['label', 'description', 'size', 'isDisabled']}
+  initialProps={{ label: 'Välj din favoritfrukt' }}
 >
   <ListBoxItem id='Lime'>Lime</ListBoxItem>
   <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
   <ListBoxItem id='Banan'>Banan</ListBoxItem>
   <ListBoxItem id='Kiwi'>Kiwi</ListBoxItem>
   <ListBoxItem id='Apelsin'>Apelsin</ListBoxItem>
-</ComboBox>
-```
-
-<div className='card'>
-  <BasicExample />
-</div>
+</Playground>
 
 ## Kontrollerat val
 
