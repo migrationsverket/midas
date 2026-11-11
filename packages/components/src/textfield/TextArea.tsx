@@ -14,7 +14,7 @@ export type TextAreaProps = Omit<TextFieldBaseProps, 'type' | 'pattern'> &
   Complement<TextFieldBaseProps, AriaTextAreaProps>
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ className, cols, form, rows, wrap, ...rest }, ref) => (
+  ({ className, cols, form, rows, wrap, style, ...rest }, ref) => (
     <TextFieldBase {...rest}>
       <AriaTextArea
         className={clsx(styles.textArea, className)}
@@ -22,6 +22,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         form={form}
         ref={ref}
         rows={rows}
+        style={style}
         wrap={wrap}
       />
     </TextFieldBase>

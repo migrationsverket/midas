@@ -51,6 +51,18 @@ describe('given a Primary TextField', async () => {
   })
 })
 
+describe('given a basic TextField', async () => {
+  it('should forward passed styles to the input DOM element', async () => {
+    const { getByRole } = await render(
+      <Primary style={{ background: 'red' }} />,
+    )
+
+    await expect
+      .element(getByRole('textbox'))
+      .toHaveStyle({ background: 'red' })
+  })
+})
+
 describe('given a Password TextField', async () => {
   it('should toggle the input type between password and text', async () => {
     const { getByRole } = await render(<Password />)

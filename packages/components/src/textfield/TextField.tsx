@@ -10,7 +10,7 @@ export type TextFieldProps = TextFieldBaseProps &
   Complement<TextFieldBaseProps, InputProps>
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ className, list, type, min, max, form, ...rest }, ref) => (
+  ({ className, list, type, min, max, form, style, ...rest }, ref) => (
     <TextFieldBase {...rest}>
       <Input
         className={clsx(className)}
@@ -19,6 +19,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         min={min}
         max={max}
         ref={ref}
+        style={style}
         type={type}
         skipContext
       />

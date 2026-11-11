@@ -15,7 +15,10 @@ import { Size } from '../common/types'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 
-export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
+export interface TextFieldBaseProps extends Omit<
+  TextFieldProps,
+  'className' | 'style'
+> {
   children?: ReactNode
   /** Specify label displayed above the TextField*/
   label?: string

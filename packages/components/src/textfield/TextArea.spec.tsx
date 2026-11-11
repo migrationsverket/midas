@@ -42,6 +42,18 @@ describe('given a Primary TextArea', async () => {
   })
 })
 
+describe('given a basic TextArea', async () => {
+  it('should forward passed styles to the textarea DOM element', async () => {
+    const { getByRole } = await render(
+      <Primary style={{ background: 'red' }} />,
+    )
+
+    await expect
+      .element(getByRole('textbox'))
+      .toHaveStyle({ background: 'red' })
+  })
+})
+
 describe('given a required TextArea', async () => {
   it('should give a validation error if the user entered no text', async () => {
     const { getByText } = await render(<Required />)
