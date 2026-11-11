@@ -3,7 +3,7 @@
   "position": 4,
   "className": "chapter-end",
   "link": {
-    "type": "generated-index",
-    "slug": "/components"
+    "type": "doc",
+    "id": "components/index"
   }
 }
