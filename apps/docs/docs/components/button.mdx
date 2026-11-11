@@ -138,6 +138,31 @@ Om den tertiära knappen används fristående från andra knappar ska den ha en 
   </Button>
 </div>
 
+### Ikon
+
+Ikonknappen används när en ikon är den enda labeln. Ange aria-label så att användare med tekniska hjälpmedel förstår knappens syfte.
+
+```tsx
+<Button
+  variant='icon'
+  aria-label='Lägg till rad'
+  icon={Plus}
+  iconPlacement='left'
+/>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button
+    variant='icon'
+    aria-label='Lägg till rad'
+    icon={Plus}
+    iconPlacement='left'
+  />
+</div>
+
 ## Tillstånd
 
 ### isDisabled
