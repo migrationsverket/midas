@@ -1,3 +1,9 @@
+## 17.33.7 (2026-11-11)
+
+### 🩹 Fixes
+
+- **components,date-field,date-picker:** scroll segments in narrow fields ([a7ec7513411](https://github.com/migrationsverket/midas/commit/a7ec7513411))
+
 ## 17.33.6 (2026-11-09)
 
 ### 🩹 Fixes
