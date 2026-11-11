@@ -11,19 +11,6 @@ import {
 import React from 'react'
 import { useAsyncList } from 'react-stately'
 
-export const BasicExample: React.FC = () => (
-  <ComboBox
-    label='Välj din favoritfrukt'
-    description='Du kan bara välja en'
-  >
-    <ListBoxItem id='Lime'>Lime</ListBoxItem>
-    <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
-    <ListBoxItem id='Banan'>Banan</ListBoxItem>
-    <ListBoxItem id='Kiwi'>Kiwi</ListBoxItem>
-    <ListBoxItem id='Apelsin'>Apelsin</ListBoxItem>
-  </ComboBox>
-)
-
 export const ControlledExample = () => {
   const [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)
 
