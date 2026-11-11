@@ -48,7 +48,10 @@ export interface ButtonProps extends AriaButtonProps {
    *  @default 20
    * */
   iconSize?: number
-  /** Display the icon on the left or right side of the button text */
+  /**
+   * Display the icon on the left or right side of the button text
+   * @default 'left'
+   */
   iconPlacement?: 'left' | 'right'
 }
 
