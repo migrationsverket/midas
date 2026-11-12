@@ -4,7 +4,7 @@ import { ListBox } from './ListBox'
 import { ListBoxItem } from './ListBoxItem'
 import { ListBoxSection } from './ListBoxSection'
 import { ListBoxHeader } from './ListBoxHeader'
-import { Collection } from 'react-aria-components'
+import { Collection } from '../aria'
 
 type Story<T extends object = Fruit> = StoryObj<typeof ListBox<T>>
 

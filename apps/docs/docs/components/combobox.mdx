@@ -49,7 +49,7 @@ Använd `value` och `onChange` för att styra det valda värdet i ComboBox.
 
 ```tsx
 import React from 'react'
-import { Key } from 'react-aria-components'
+import { Key } from '@midas-ds/components'
 
 const [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)
 
@@ -82,8 +82,7 @@ För närvarande stödjer inte vår ComboBox flerval. Använd [Midas CSS för re
 Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:
 
 ```tsx
-import { ListBoxHeader, ListBoxItem, ListBoxSection } from '@midas-ds/components'
-import { Collection } from 'react-aria-components'
+import { Collection, ListBoxHeader, ListBoxItem, ListBoxSection } from '@midas-ds/components'
 
 const options = [
   {
@@ -144,8 +143,7 @@ Använd `allowsEmptyCollection` hos `ComboBox` och rendera bara `ListBoxLoadMore
 
 ```tsx
 import { useAsyncList } from 'react-stately'
-import { Collection } from 'react-aria-components'
-import { ComboBox, ListBoxItem, ListBoxLoadMoreItem, ListBoxEmptyState } from '@midas-ds/components'
+import { Collection, ComboBox, ListBoxItem, ListBoxLoadMoreItem, ListBoxEmptyState } from '@midas-ds/components'
 
 const list = useAsyncList<{ name: string }>({
   async load({ signal, cursor, filterText }) {

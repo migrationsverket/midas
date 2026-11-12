@@ -6,10 +6,11 @@ import {
   FileListItem,
   FileTrigger,
   Text,
+  type DropEvent,
 } from '@midas-ds/components'
 import { Upload } from 'lucide-react'
 import React from 'react'
-import { DropEvent, isFileDropItem } from 'react-aria'
+import { isFileDropItem } from 'react-aria'
 
 export const FileListExample = () => {
   const [files, setFiles] = React.useState<File[]>([])

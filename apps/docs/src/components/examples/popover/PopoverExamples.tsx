@@ -8,10 +8,10 @@ import {
   Text,
   TextField,
   ButtonGroup,
+  Pressable,
 } from '@midas-ds/components'
 import { ArrowUp, ArrowLeft, Info, UserCog, Share2 } from 'lucide-react'
 import React from 'react'
-import { Pressable } from 'react-aria-components'
 
 export const PopoverExample = () => {
   return (

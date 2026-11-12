@@ -2,7 +2,7 @@ import { describe, expect, it, beforeEach } from 'vitest'
 import { render } from 'vitest-browser-react'
 import { userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
-import { I18nProvider } from 'react-aria-components'
+import { I18nProvider } from '@midas-ds/components'
 import * as stories from './MobileMenu.stories'
 
 const { Primary, Controlled } = composeStories(stories)

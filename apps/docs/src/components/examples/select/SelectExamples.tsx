@@ -1,6 +1,7 @@
 import React from 'react'
-import { Collection, type Selection } from 'react-aria-components'
 import {
+  Collection,
+  type Selection,
   Select,
   MidasSelectProps,
   ListBoxItem,

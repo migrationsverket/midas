@@ -4,13 +4,13 @@ import {
   AccordionItem,
   DialogTrigger,
   Popover,
+  Pressable,
 } from '@midas-ds/components'
 import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 import styles from '../css/propstable.module.css'
 import ReactMarkdown from 'react-markdown'
 import Lowlight from 'react-lowlight'
 import 'react-lowlight/common'
-import { Pressable } from 'react-aria-components'
 import { jsdocLinkToMarkdown } from '../utils/jsdocLinkToMarkdown'
 
 interface TypeMember {

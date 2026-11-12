@@ -181,7 +181,7 @@ Om du själv vill ha kontroll över vilka eller vilken rad som är vald kan du a
 
 ```tsx
 import type React from 'react'
-import type { Selection } from 'react-aria-components'
+import type { Selection } from '@midas-ds/components'
 ```
 
 ```tsx
@@ -247,7 +247,7 @@ Använd `onRowAction` på `Table`-komponenten för en enda hanterare för hela t
 Tabellen har inbyggd support för sortering. Använd `sortDescriptor` och `onSortChange` för att hantera sorteringen, och sätt `allowsSorting` på de kolumner som ska vara sorterbara.
 
 ```tsx
-import type { SortDescriptor } from 'react-aria-components'
+import type { SortDescriptor } from '@midas-ds/components'
 
 const [sortDescriptor, setSortDescriptor] = React.useState<SortDescriptor>({
   column: 'name',
@@ -316,8 +316,7 @@ För användning av randiga rader behöver `data-even`-attributet anges för jä
 :::
 
 ```tsx
-import { Virtualizer, TableLayout } from 'react-aria-components'
-import { Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
+import { Virtualizer, TableLayout, Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
 
 const VirtualizedExample = () => {
   const rows = [...Array.from(Array(5000).keys())].map(i => ({

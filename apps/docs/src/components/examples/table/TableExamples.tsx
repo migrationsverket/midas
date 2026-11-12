@@ -1,6 +1,8 @@
 import React from 'react'
-import type { Key, Selection, SortDescriptor } from 'react-aria-components'
 import {
+  type Key,
+  type Selection,
+  type SortDescriptor,
   Cell,
   Column,
   Row,

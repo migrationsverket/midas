@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { I18nProvider } from 'react-aria-components'
+import { I18nProvider } from '@midas-ds/components'
 import * as stories from './Pagination.stories'
 import { render } from 'vitest-browser-react'
 

@@ -1,8 +1,8 @@
 import {
   ListBox as AriaListBox,
   type ListBoxProps as AriaListBoxProps,
-  Virtualizer,
 } from 'react-aria-components'
+import { Virtualizer } from '../aria'
 import clsx from '../utils/clsx'
 import { SectionedListLayout } from './SectionedListLayout'
 import styles from './ListBox.module.css'

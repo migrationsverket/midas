@@ -1,7 +1,12 @@
-import { Button, Tooltip, TooltipTrigger, Text } from '@midas-ds/components'
+import {
+  Button,
+  Tooltip,
+  TooltipTrigger,
+  Text,
+  Focusable,
+} from '@midas-ds/components'
 import { ArrowUp, ArrowLeft, Save } from 'lucide-react'
 import React from 'react'
-import { Focusable } from 'react-aria-components'
 
 export const SimpleExample = () => {
   return (

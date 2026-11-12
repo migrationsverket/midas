@@ -5,8 +5,7 @@ import {
   today,
   getLocalTimeZone,
 } from '@internationalized/date'
-import { DatePicker } from '@midas-ds/components'
-import { DateValue } from 'react-aria-components'
+import { DatePicker, DateValue } from '@midas-ds/components'
 
 export const DatePickerExample = () => {
   const [value, setValue] = React.useState<CalendarDate | null>(
