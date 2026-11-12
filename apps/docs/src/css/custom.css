@@ -259,17 +259,23 @@
     border-radius: 0;
   }
 
+  /* Same colours as a Midas Card with a CardLink, so they follow the color scheme */
   [class*='cardContainer'] {
     box-shadow: none !important;
     border: none !important;
     border-radius: 0 !important;
-    border-bottom: 1px solid black !important;
-    transition:
-      transform 250ms ease-in-out,
-      background-color 250ms ease-in-out;
+    border-bottom: var(--midas-border-width) solid
+      var(--midas-border-color-subtle) !important;
+    background-color: var(--midas-card-background-base);
+    color: var(--midas-text-primary);
+    transition: background-color 250ms ease-in-out;
+
+    :is(h2, p) {
+      color: inherit;
+    }
 
     &:hover {
-      background-color: #e6e6e6;
+      background-color: var(--midas-layer-01-hover);
     }
   }
 
