@@ -26,3 +26,5 @@ export const ListBoxItem = <T extends object>({
     ))}
   </AriaListBoxItem>
 )
+
+ListBoxItem.displayName = 'ListBoxItem'

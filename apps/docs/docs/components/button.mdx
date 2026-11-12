@@ -4,11 +4,12 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import ButtonApi from '@midas-ds/api/components/Button.json'
 import ButtonGroupApi from '@midas-ds/api/components/ButtonGroup.json'
 import { Button, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Plus } from 'lucide-react'
+import { Plus, Trash2, Upload } from 'lucide-react'
 import { ButtonContext } from 'react-aria-components'
 
 <ComponentHeader
@@ -22,21 +23,16 @@ Komponent som används för att låta användaren utföra en handling t.ex. spar
 import { Button, ButtonGroup } from '@midas-ds/components'
 ```
 
-```tsx
-<ButtonGroup aria-label='Välj knapp'>
-  <Button>Primary</Button>
-  <Button variant='secondary'>Secondary</Button>
-  <Button variant='tertiary'>Tertiary</Button>
-</ButtonGroup>
-```
-
-<div className='card'>
-  <ButtonGroup aria-label='Välj knapp'>
-    <Button>Primary</Button>
-    <Button variant='secondary'>Secondary</Button>
-    <Button variant='tertiary'>Tertiary</Button>
-  </ButtonGroup>
-</div>
+<Playground
+  component={Button}
+  api={ButtonApi}
+  props={['variant', 'size', 'icon', 'iconPlacement', 'isDisabled']}
+  initialProps={{ children: 'Spara', icon: 'Ingen' }}
+  controlOptions={{ variant: ['primary', 'secondary', 'tertiary', 'danger'] }}
+  valueOptions={{ icon: { Ingen: undefined, Plus, Upload, Trash2 } }}
+  valueImports={{ icon: 'lucide-react' }}
+  dependsOn={{ iconPlacement: 'icon' }}
+/>
 
 ## Riktlinjer
 
