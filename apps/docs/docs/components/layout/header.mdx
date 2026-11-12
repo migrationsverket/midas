@@ -8,6 +8,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   BasicHeaderExample,
   MobileHeaderExample,
+  MobileHeaderRightExample,
   OverflowHeaderExample,
   HeaderActionsExample,
 } from '@site/src/components/examples/layout/HeaderExamples'
@@ -213,6 +214,29 @@ export const MobileHeaderExample = () => {
 
 <MobileHeaderExample />
 
+### Meny till höger
+
+Som standard öppnas menyn från vänster. Med `placement='right'` öppnas den i stället från höger. Lägg då `MobileMenu` sist i `Header`, efter eventuella `HeaderActions`, så att menyknappen hamnar i högra kanten. Utan `HeaderActions` skjuts knappen automatiskt ut till höger.
+
+```tsx
+<Header>
+  <HeaderLogo />
+  <HeaderTitle>Mitt system</HeaderTitle>
+  <HeaderActions>
+    <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+    <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+  </HeaderActions>
+  <MobileMenu
+    title='Mitt system'
+    placement='right'
+  >
+    <Navigation>…</Navigation>
+  </MobileMenu>
+</Header>
+```
+
+<MobileHeaderRightExample />
+
 ## Props
 
 ### HeaderAction
@@ -238,10 +262,11 @@ export const MobileHeaderExample = () => {
 
 ### MobileMenu
 
-| Prop           | Typ                         | Beskrivning                    |
-| -------------- | --------------------------- | ------------------------------ |
-| `title`        | `string`                    | Rubrik i menyn                 |
-| `defaultOpen`  | `boolean`                   | Okontrollerat starttillstånd   |
-| `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
-| `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
-| `children`     | `ReactNode`                 | Menyinnehåll                   |
+| Prop           | Typ                         | Standard | Beskrivning                    |
+| -------------- | --------------------------- | -------- | ------------------------------ |
+| `title`        | `string`                    |          | Rubrik i menyn                 |
+| `placement`    | `'left' \| 'right'`         | `'left'` | Vilken sida menyn öppnas från  |
+| `defaultOpen`  | `boolean`                   |          | Okontrollerat starttillstånd   |
+| `isOpen`       | `boolean`                   |          | Kontrollerat öppet-läge        |
+| `onOpenChange` | `(isOpen: boolean) => void` |          | Callback vid öppning/stängning |
+| `children`     | `ReactNode`                 |          | Menyinnehåll                   |

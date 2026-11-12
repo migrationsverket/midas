@@ -4,3 +4,9 @@
   align-items: center;
   margin-inline-start: auto;
 }
+
+/* HeaderActions already push to the end, so a right-placed MobileMenu trigger
+   after them shouldn't take a share of the free space */
+.headerActions ~ button[data-mobile-menu-placement='right'] {
+  margin-inline-start: 0;
+}
