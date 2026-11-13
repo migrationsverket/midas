@@ -7,10 +7,10 @@ import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
-import { FileFieldContext } from './FileFieldContext'
-import styles from './FileField.module.css'
+import { FilePickerContext } from './FilePickerContext'
+import styles from './FilePicker.module.css'
 
-export interface FileFieldProps extends Omit<
+export interface FilePickerProps extends Omit<
   HTMLAttributes<HTMLDivElement>,
   'popover' | 'role'
 > {
@@ -31,10 +31,11 @@ export interface FileFieldProps extends Omit<
 }
 
 /**
- * Wraps a file upload pattern — `FileTrigger`, `DropZone` and `FileList` —
- * with a label, description and error message.
+ * Groups a file upload pattern, `FileTrigger`, `DropZone` and `FileList`,
+ * under a label, description and error message. It doesn't hold the files:
+ * keep them, and their upload status, in your own state.
  */
-export const FileField = ({
+export const FilePicker = ({
   label,
   description,
   errorMessage,
@@ -43,7 +44,7 @@ export const FileField = ({
   className,
   children,
   ...rest
-}: FileFieldProps) => {
+}: FilePickerProps) => {
   const labelId = useId()
   const descriptionId = useId()
   const errorId = useId()
@@ -59,7 +60,7 @@ export const FileField = ({
       aria-labelledby={labelId}
       aria-describedby={describedBy || undefined}
       isInvalid={isInvalid}
-      className={clsx(styles.fileField, className)}
+      className={clsx(styles.filePicker, className)}
     >
       <LabelWrapper popover={popover}>
         <Label
@@ -77,14 +78,14 @@ export const FileField = ({
           {description}
         </Text>
       )}
-      <FileFieldContext.Provider
+      <FilePickerContext.Provider
         value={{
           'aria-describedby': [labelId, describedBy].filter(Boolean).join(' '),
           isInvalid,
         }}
       >
         <div className={styles.content}>{children}</div>
-      </FileFieldContext.Provider>
+      </FilePickerContext.Provider>
       {showError && (
         <FieldError
           id={errorId}
