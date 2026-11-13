@@ -6,17 +6,17 @@ import {
   type FileTriggerProps,
 } from 'react-aria-components'
 import type { ButtonProps } from '../button'
-import { useFileFieldContext } from '../file-field/FileFieldContext'
+import { useFilePickerContext } from '../file-picker/FilePickerContext'
 
 export const FileTrigger = ({ children, ...props }: FileTriggerProps) => {
-  const fileField = useFileFieldContext()
+  const filePicker = useFilePickerContext()
 
-  // Scoped to the trigger's own button, so other buttons inside a FileField
+  // Scoped to the trigger's own button, so other buttons inside a FilePicker
   // (e.g. FileList's delete buttons) aren't affected. Props set directly on
   // the Button still win.
   const buttonProps: ButtonProps = {
     variant: 'secondary',
-    'aria-describedby': fileField?.['aria-describedby'],
+    'aria-describedby': filePicker?.['aria-describedby'],
   }
 
   return (

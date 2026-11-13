@@ -2,18 +2,18 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 import { DropEvent, isFileDropItem } from 'react-aria'
 import { Upload } from 'lucide-react'
-import { FileField, FileFieldProps } from './FileField'
+import { FilePicker, FilePickerProps } from './FilePicker'
 import { FileTrigger } from '../file-trigger'
 import { DropZone } from '../drop-zone'
 import { FileList, FileListItem } from '../file-list'
 import { Button } from '../button'
 import { Text } from '../text'
 
-type Story = StoryObj<typeof FileField>
+type Story = StoryObj<typeof FilePicker>
 
 export default {
-  component: FileField,
-  title: 'Components/FileField',
+  component: FilePicker,
+  title: 'Components/FilePicker',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -22,7 +22,7 @@ export default {
     label: 'Ladda upp en bild på din favoritfrukt',
     description: 'Du kan välja flera om du har många favoritfrukter',
   },
-} satisfies Meta<typeof FileField>
+} satisfies Meta<typeof FilePicker>
 
 const useUniqueFiles = () => {
   const [files, setFiles] = React.useState<File[]>([])
@@ -63,11 +63,11 @@ const UploadedFiles = ({
     </FileList>
   )
 
-const DefaultContainer = (args: FileFieldProps) => {
+const DefaultContainer = (args: FilePickerProps) => {
   const { files, addFiles, removeFile } = useUniqueFiles()
 
   return (
-    <FileField {...args}>
+    <FilePicker {...args}>
       <FileTrigger
         allowsMultiple
         onSelect={fileList => fileList && addFiles(Array.from(fileList))}
@@ -79,11 +79,11 @@ const DefaultContainer = (args: FileFieldProps) => {
         files={files}
         onDelete={removeFile}
       />
-    </FileField>
+    </FilePicker>
   )
 }
 
-const DropZoneContainer = (args: FileFieldProps) => {
+const DropZoneContainer = (args: FilePickerProps) => {
   const { files, addFiles, removeFile } = useUniqueFiles()
 
   const handleDrop = async (e: DropEvent) => {
@@ -92,7 +92,7 @@ const DropZoneContainer = (args: FileFieldProps) => {
   }
 
   return (
-    <FileField {...args}>
+    <FilePicker {...args}>
       <DropZone onDrop={handleDrop}>
         <Text slot='label'>Välj filer eller dra och släpp filer här</Text>
         <FileTrigger
@@ -106,7 +106,7 @@ const DropZoneContainer = (args: FileFieldProps) => {
         files={files}
         onDelete={removeFile}
       />
-    </FileField>
+    </FilePicker>
   )
 }
 

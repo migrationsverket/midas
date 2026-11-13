@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
-import * as stories from './FileField.stories'
+import * as stories from './FilePicker.stories'
 import { render } from '../../test-utils'
-import { FileField } from './FileField'
+import { FilePicker } from './FilePicker'
 import { DropZone } from '../drop-zone'
 import { Text } from '../text'
 
@@ -14,7 +14,7 @@ const DESCRIPTION = 'Du kan välja flera om du har många favoritfrukter'
 const ERROR = 'Endast .jpg- och .png-filer tillåts'
 const DROP_ZONE_LABEL = 'Välj filer eller dra och släpp filer här'
 
-describe('Given a FileField', () => {
+describe('Given a FilePicker', () => {
   it('should be a group named by the label', async () => {
     const { getByRole } = await render(<Default />)
 
@@ -56,7 +56,7 @@ describe('Given a FileField', () => {
   })
 })
 
-describe('Given an invalid FileField with a DropZone', () => {
+describe('Given an invalid FilePicker with a DropZone', () => {
   it('should show the error message and include it in the description', async () => {
     const { getByText, getByRole } = await render(<InvalidWithDropZone />)
 
@@ -95,7 +95,7 @@ describe('Given an invalid FileField with a DropZone', () => {
 
   it('should let an explicit isInvalid on the DropZone win', async () => {
     const { getByText } = await render(
-      <FileField
+      <FilePicker
         label={LABEL}
         isInvalid
         errorMessage={ERROR}
@@ -103,7 +103,7 @@ describe('Given an invalid FileField with a DropZone', () => {
         <DropZone isInvalid={false}>
           <Text slot='label'>{DROP_ZONE_LABEL}</Text>
         </DropZone>
-      </FileField>,
+      </FilePicker>,
     )
 
     const dropZone = getByText(DROP_ZONE_LABEL).element().parentElement
@@ -111,7 +111,7 @@ describe('Given an invalid FileField with a DropZone', () => {
   })
 })
 
-describe('Given a valid FileField with a DropZone', () => {
+describe('Given a valid FilePicker with a DropZone', () => {
   it('should not mark the DropZone as invalid', async () => {
     const { getByText } = await render(<WithDropZone />)
 
