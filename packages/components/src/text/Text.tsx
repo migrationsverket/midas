@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { forwardRef } from 'react'
 import clsx from '../utils/clsx'
 import {
   Text as AriaText,
@@ -22,37 +22,48 @@ export interface TextProps extends AriaTextProps {
 
 const DEFAULT_ELEMENT = 'span'
 
-export const Text: React.FC<TextProps> = ({
-  children,
-  className,
-  size,
-  isExpressive = false,
-  elementType = DEFAULT_ELEMENT,
-  ...rest
-}) => {
-  const getClassName = () => {
-    const isDescription = rest.slot === 'description'
-    if (isDescription) {
-      return size === 'small'
-        ? styles['description-small']
-        : styles['description']
-    }
-    return size === 'small' ? styles['body-small'] : styles['body']
-  }
-
-  const textProps: TextProps = {
-    className: clsx(
-      getClassName(),
-      {
-        [styles.bold]: ['b', 'strong'].includes(elementType),
-        [styles.italic]: ['i', 'em'].includes(elementType),
-      },
+export const Text = forwardRef<HTMLElement, TextProps>(
+  (
+    {
       className,
-    ),
-    elementType: elementType || DEFAULT_ELEMENT,
-    ...(isExpressive && { 'data-expressive': true }),
-    ...rest,
-  }
+      size,
+      isExpressive = false,
+      elementType = DEFAULT_ELEMENT,
+      ...rest
+    },
+    ref,
+  ) => {
+    const getClassName = () => {
+      const isDescription = rest.slot === 'description'
+      if (isDescription) {
+        return size === 'small'
+          ? styles['description-small']
+          : styles['description']
+      }
+      return size === 'small' ? styles['body-small'] : styles['body']
+    }
 
-  return <AriaText {...textProps}>{children}</AriaText>
-}
+    const textProps: TextProps = {
+      className: clsx(
+        getClassName(),
+        {
+          [styles.bold]: ['b', 'strong'].includes(elementType),
+          [styles.italic]: ['i', 'em'].includes(elementType),
+        },
+        className,
+      ),
+      elementType: elementType || DEFAULT_ELEMENT,
+      ...(isExpressive && { 'data-expressive': true }),
+      ...rest,
+    }
+
+    return (
+      <AriaText
+        ref={ref}
+        {...textProps}
+      />
+    )
+  },
+)
+
+Text.displayName = 'Text'
