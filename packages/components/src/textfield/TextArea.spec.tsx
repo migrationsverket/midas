@@ -40,6 +40,12 @@ describe('given a Primary TextArea', async () => {
       .element(page.getByRole('textbox'))
       .toHaveClass(styles.textArea, 'test-class')
   })
+
+  it('should only be resizable vertically', async () => {
+    await expect
+      .element(page.getByRole('textbox'))
+      .toHaveStyle({ resize: 'vertical' })
+  })
 })
 
 describe('given a required TextArea', async () => {
