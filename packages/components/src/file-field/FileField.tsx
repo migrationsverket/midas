@@ -1,6 +1,7 @@
 'use client'
 
 import { useId, type HTMLAttributes } from 'react'
+import { Group } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
@@ -11,9 +12,9 @@ import styles from './FileField.module.css'
 
 export interface FileFieldProps extends Omit<
   HTMLAttributes<HTMLDivElement>,
-  'popover'
+  'popover' | 'role'
 > {
-  /** The label shown above the upload controls */
+  /** The label shown above the upload controls, also the group's name */
   label: string
   /** A description shown below the label */
   description?: string
@@ -48,22 +49,25 @@ export const FileField = ({
   const errorId = useId()
   const showError = isInvalid && !!errorMessage
 
-  const describedBy = [
-    labelId,
-    description && descriptionId,
-    showError && errorId,
-  ]
+  const describedBy = [description && descriptionId, showError && errorId]
     .filter(Boolean)
     .join(' ')
 
   return (
-    <div
+    <Group
       {...rest}
-      data-invalid={isInvalid || undefined}
+      aria-labelledby={labelId}
+      aria-describedby={describedBy || undefined}
+      isInvalid={isInvalid}
       className={clsx(styles.fileField, className)}
     >
       <LabelWrapper popover={popover}>
-        <Label id={labelId}>{label}</Label>
+        <Label
+          id={labelId}
+          elementType='span'
+        >
+          {label}
+        </Label>
       </LabelWrapper>
       {description && (
         <Text
@@ -74,7 +78,10 @@ export const FileField = ({
         </Text>
       )}
       <FileFieldContext.Provider
-        value={{ 'aria-describedby': describedBy, isInvalid }}
+        value={{
+          'aria-describedby': [labelId, describedBy].filter(Boolean).join(' '),
+          isInvalid,
+        }}
       >
         <div className={styles.content}>{children}</div>
       </FileFieldContext.Provider>
@@ -86,6 +93,6 @@ export const FileField = ({
           {errorMessage}
         </FieldError>
       )}
-    </div>
+    </Group>
   )
 }

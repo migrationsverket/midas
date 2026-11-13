@@ -15,6 +15,14 @@ const ERROR = 'Endast .jpg- och .png-filer tillåts'
 const DROP_ZONE_LABEL = 'Välj filer eller dra och släpp filer här'
 
 describe('Given a FileField', () => {
+  it('should be a group named by the label', async () => {
+    const { getByRole } = await render(<Default />)
+
+    await expect
+      .element(getByRole('group', { name: LABEL }))
+      .toHaveAccessibleDescription(DESCRIPTION)
+  })
+
   it('should describe the trigger button with the label and description', async () => {
     const { getByRole } = await render(<Default />)
 
@@ -56,6 +64,16 @@ describe('Given an invalid FileField with a DropZone', () => {
     await expect
       .element(getByRole('button', { name: 'Välj fil(er)' }))
       .toHaveAccessibleDescription(`${LABEL} ${DESCRIPTION} ${ERROR}`)
+  })
+
+  it('should mark the group as invalid and include the error in its description', async () => {
+    const { getByRole } = await render(<InvalidWithDropZone />)
+
+    const group = getByRole('group', { name: LABEL })
+    await expect.element(group).toHaveAttribute('data-invalid')
+    await expect
+      .element(group)
+      .toHaveAccessibleDescription(`${DESCRIPTION} ${ERROR}`)
   })
 
   it('should show the error message below the controls', async () => {
