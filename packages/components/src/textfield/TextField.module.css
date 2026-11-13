@@ -49,7 +49,7 @@
   box-sizing: border-box;
   overflow-wrap: break-word;
   width: 100%;
-  resize: both;
+  resize: vertical;
   overflow: auto;
 
   @media (forced-colors: active) {
