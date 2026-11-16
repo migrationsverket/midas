@@ -5,7 +5,9 @@ import {
   codeExpression,
   elementToCode,
   getControl,
+  getPlaygroundProps,
   importsToCode,
+  type Control,
 } from './playgroundUtils'
 
 const prop = (type: ApiProp['type'], rest: Partial<ApiProp> = {}): ApiProp => ({
@@ -63,15 +65,41 @@ describe('getControl', () => {
   })
 
   it('should limit enum options when told to', () => {
-    expect(getControl('size', prop(sizeType), ['medium'])).toMatchObject({
-      options: ['medium'],
+    expect(
+      getControl('size', prop(sizeType), { options: ['medium'] }),
+    ).toMatchObject({ options: ['medium'] })
+  })
+
+  it('should make a select from several named options', () => {
+    const Plus = () => null
+    const Upload = () => null
+    expect(
+      getControl('icon', prop({ name: 'LucideIcon' }), {
+        options: { Ingen: undefined, Plus, Upload },
+      }),
+    ).toMatchObject({
+      kind: 'enum',
+      options: ['Ingen', 'Plus', 'Upload'],
+      named: { Ingen: undefined, Plus, Upload },
     })
   })
 
-  it('should make a control from given options for a type it cannot read', () => {
+  it('should make a checkbox from a single named option', () => {
+    const Plus = () => null
     expect(
-      getControl('icon', prop({ name: 'LucideIcon' }), ['Ingen', 'Plus']),
-    ).toMatchObject({ kind: 'enum', options: ['Ingen', 'Plus'] })
+      getControl('icon', prop({ name: 'LucideIcon' }), {
+        options: { Plus },
+      }),
+    ).toMatchObject({ kind: 'toggle', option: 'Plus', named: { Plus } })
+  })
+
+  it('should keep the import and showWhen of the config', () => {
+    expect(
+      getControl('iconPlacement', prop(sizeType), {
+        import: 'lucide-react',
+        showWhen: 'icon',
+      }),
+    ).toMatchObject({ import: 'lucide-react', showWhen: 'icon' })
   })
 
   it('should map strings to a text control', () => {
@@ -100,6 +128,53 @@ describe('getControl', () => {
         }),
       ),
     ).toBeNull()
+  })
+})
+
+describe('getPlaygroundProps', () => {
+  const Plus = () => null
+  const icon: Control = {
+    name: 'icon',
+    kind: 'toggle',
+    option: 'Plus',
+    named: { Plus },
+    import: 'lucide-react',
+  }
+  const iconPlacement: Control = {
+    name: 'iconPlacement',
+    kind: 'enum',
+    options: ['left', 'right'],
+    showWhen: 'icon',
+  }
+  const controls = [icon, iconPlacement]
+
+  it('should resolve named options to their values and print them by name', () => {
+    const result = getPlaygroundProps(controls, {
+      icon: 'Plus',
+      iconPlacement: 'right',
+    })
+
+    expect(result.props).toEqual({ icon: Plus, iconPlacement: 'right' })
+    expect(result.codeProps.icon).toEqual(codeExpression('Plus'))
+    expect(result.imports).toEqual({ 'lucide-react': ['Plus'] })
+  })
+
+  it('should leave out an unset option, its import and the props that depend on it', () => {
+    const result = getPlaygroundProps(controls, {
+      icon: undefined,
+      iconPlacement: 'right',
+    })
+
+    expect(result.props).toEqual({ icon: undefined })
+    expect(result.imports).toEqual({})
+    expect(result.visibleControls).toEqual([icon])
+  })
+
+  it('should pass on props without a control, but not children', () => {
+    const result = getPlaygroundProps([], { label: 'Frukt', children: 'x' })
+
+    expect(result.props).toEqual({ label: 'Frukt' })
+    expect(result.codeProps).toEqual({ label: 'Frukt' })
   })
 })
 
