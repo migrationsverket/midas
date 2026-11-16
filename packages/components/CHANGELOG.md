@@ -1,3 +1,9 @@
+## 17.34.0 (2026-11-16)
+
+### 🚀 Features
+
+- **components:** re-export react-aria primitives ([#1478](https://github.com/migrationsverket/midas/pull/1478))
+
 ## 17.33.7 (2026-11-11)
 
 ### 🩹 Fixes
