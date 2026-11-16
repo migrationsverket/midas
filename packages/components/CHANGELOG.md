@@ -1,3 +1,9 @@
+## 17.34.1 (2026-11-16)
+
+### 🩹 Fixes
+
+- **components,textarea:** only allow vertical resizing ([173a7b2ffcc](https://github.com/migrationsverket/midas/commit/173a7b2ffcc))
+
 ## 17.34.0 (2026-11-16)
 
 ### 🚀 Features
