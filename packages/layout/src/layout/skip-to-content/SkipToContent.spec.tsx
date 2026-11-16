@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
-import { I18nProvider } from 'react-aria-components'
+import { I18nProvider } from '@midas-ds/components'
 import { SkipToContent } from './SkipToContent'
 
 describe('given a Swedish locale', () => {

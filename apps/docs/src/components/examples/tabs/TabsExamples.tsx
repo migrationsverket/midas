@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { type Key } from 'react-aria-components'
 import {
+  type Key,
   Tab,
   TabPanel,
   TabsProps,

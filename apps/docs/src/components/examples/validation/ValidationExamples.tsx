@@ -9,8 +9,8 @@ import {
   Spinner,
   toastQueue,
   GlobalToastRegion,
+  Form,
 } from '@midas-ds/components'
-import { Form } from 'react-aria-components'
 
 export const ToastRegion = () => <GlobalToastRegion />
 
@@ -53,7 +53,10 @@ export const ValidateAfterSubmitExample = () => {
   const handlePress = () => {
     setIsInvalid(name.trim() === '')
     if (name.trim() !== '') {
-      toastQueue.add({ message: 'Formuläret skickades!', type: 'success' }, { timeout: 5000 })
+      toastQueue.add(
+        { message: 'Formuläret skickades!', type: 'success' },
+        { timeout: 5000 },
+      )
     }
   }
 
@@ -195,7 +198,10 @@ export const DatabaseValidationExample = () => {
       return
     }
     setError('')
-    toastQueue.add({ message: 'Formuläret skickades!', type: 'success' }, { timeout: 5000 })
+    toastQueue.add(
+      { message: 'Formuläret skickades!', type: 'success' },
+      { timeout: 5000 },
+    )
   }
 
   return (

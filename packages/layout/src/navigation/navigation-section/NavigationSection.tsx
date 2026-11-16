@@ -2,7 +2,8 @@
 
 import clsx from 'clsx'
 import { useContext } from 'react'
-import { Collection, CollectionProps } from 'react-aria-components'
+import { CollectionProps } from 'react-aria-components'
+import { Collection } from '@midas-ds/components'
 import { NavigationHeader } from '../navigation-header'
 import { NavigationItem } from '../navigation-item'
 import { SidebarContext } from '../../sidebar'

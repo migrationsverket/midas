@@ -1,0 +1,53 @@
+---
+title: React Aria
+description: Delar av React Aria som återexporteras från Midas
+---
+
+# React Aria
+
+Midas bygger på [React Aria Components](https://react-spectrum.adobe.com/react-aria/) och några av dess delar
+kan användas tillsammans med Midaskomponenter, till exempel `Focusable` som gör valfritt element till en trigger
+för en [Tooltip](/components/tooltip). Dessa delar exporteras från Midas och bör importeras därifrån:
+
+```tsx
+// Rekommenderat
+import { Focusable, TooltipTrigger } from '@midas-ds/components'
+
+// Undvik
+import { Focusable } from 'react-aria-components'
+```
+
+## Varför?
+
+Delarna nedan kommunicerar med Midaskomponenter via React context. Om ert projekt har en annan version av
+`react-aria-components` än den Midas använder kan två kopior av paketet installeras. Då hittar delarna inte
+varandra och slutar fungera utan felmeddelanden: Tooltips visas inte, språkinställningen ignoreras osv.
+Genom att importera från Midas används alltid samma kopia som komponenterna.
+
+Exporterna är React Arias egna, utan Midas-styling. Se React Arias dokumentation för deras API.
+
+## Exporter
+
+| Export          | Används till                                                                                                |
+| --------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Focusable`     | Valfritt element som trigger för [Tooltip](/components/tooltip)                                             |
+| `Pressable`     | Valfritt element som trigger för [Popover](/components/popover) och [FileTrigger](/components/file-trigger) |
+| `I18nProvider`  | Styra språk och region, se [Lokalisering](/dev/localization)                                                |
+| `useLocale`     | Läsa av aktuellt språk och riktning, se [Lokalisering](/dev/localization)                                   |
+| `ButtonContext` | Sätta props på flera [knappar](/components/button) samtidigt                                                |
+| `Form`          | Formulär med validering, se [Formulär](/dev/forms)                                                          |
+| `Collection`    | Dynamiska sektioner i till exempel [ComboBox](/components/combobox)                                         |
+| `Virtualizer`   | Virtualisering av stora [tabeller](/components/table)                                                       |
+| `TableLayout`   | Layout till `Virtualizer` för [tabeller](/components/table)                                                 |
+
+Följande typer exporteras också: `Key`, `Selection`, `SortDescriptor`, `DateValue` och `DropEvent`.
+
+## Det som inte exporteras
+
+Följande används i dokumentationen men exporteras inte från Midas. De är inte beroende av context och
+fungerar oavsett version, så de kan importeras direkt:
+
+- `useAsyncList` från `react-stately`
+- `isFileDropItem` från `react-aria`
+- Datum- och tidsfunktioner från `@internationalized/date`, till exempel `CalendarDate` och `parseDate`.
+  Med en annan version än Midas kan TypeScript ge typfel för datumvärden, men de fungerar som de ska.

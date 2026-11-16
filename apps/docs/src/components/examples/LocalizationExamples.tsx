@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Key, useLocale } from 'react-aria'
-import { I18nProvider } from 'react-aria'
-import { parseDate } from '@internationalized/date'
 import {
+  Key,
+  useLocale,
+  I18nProvider,
   Table,
   TableHeader,
   TableBody,
@@ -14,6 +14,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from '@midas-ds/components'
+import { parseDate } from '@internationalized/date'
 
 export const LocaleExample = () => {
   const { locale, direction } = useLocale()

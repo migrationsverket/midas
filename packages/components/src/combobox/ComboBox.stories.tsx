@@ -3,7 +3,7 @@ import { options, optionsWithSections } from '@midas-ds/test-utils'
 import { RunOptions } from 'axe-core'
 import React from 'react'
 import { useAsyncList } from 'react-stately'
-import { Collection } from 'react-aria-components'
+import { Collection } from '../aria'
 import { ComboBox } from './ComboBox'
 import {
   ListBoxHeader,

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Form as AriaForm } from 'react-aria-components'
 import {
+  Form,
   TextField,
   Grid,
   GridItem,
@@ -13,14 +13,14 @@ import {
   ListBoxItem,
 } from '@midas-ds/components'
 
-const meta: Meta<typeof AriaForm> = {
-  component: AriaForm,
+const meta: Meta<typeof Form> = {
+  component: Form,
   title: 'Examples/Form',
   tags: ['autodocs'],
   argTypes: {},
 }
 export default meta
-type Story = StoryObj<typeof AriaForm>
+type Story = StoryObj<typeof Form>
 
 export const SimpleForm: Story = {
   args: {},

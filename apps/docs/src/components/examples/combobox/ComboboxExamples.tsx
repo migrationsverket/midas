@@ -5,9 +5,10 @@ import {
   ListBoxSection,
   ListBoxLoadMoreItem,
   ListBoxEmptyState,
+  Collection,
+  Key,
 } from '@midas-ds/components'
 import React from 'react'
-import { Collection, Key } from 'react-aria-components'
 import { useAsyncList } from 'react-stately'
 
 export const BasicExample: React.FC = () => (

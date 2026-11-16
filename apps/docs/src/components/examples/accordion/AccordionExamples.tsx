@@ -1,6 +1,10 @@
-import { AccordionItem, Accordion, type AccordionProps } from '@midas-ds/components'
+import {
+  AccordionItem,
+  Accordion,
+  type AccordionProps,
+  Key,
+} from '@midas-ds/components'
 import React from 'react'
-import { Key } from 'react-aria-components'
 
 export const Example = (props: AccordionProps) => {
   return (

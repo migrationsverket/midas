@@ -7,9 +7,9 @@ import {
   MenuItem,
   MenuPopover,
   MenuTrigger,
+  type Key,
 } from '@midas-ds/components'
 import { Ellipsis } from 'lucide-react'
-import type { Key } from 'react-aria-components'
 
 export const CollapsedBreadcrumbsExample = () => {
   const handleAction = (id: Key) => console.log('Navigera till:', id)

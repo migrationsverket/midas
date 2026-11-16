@@ -1,6 +1,7 @@
 'use client'
 
 export * from './accordion'
+export * from './aria'
 export * from './badge'
 export * from './breadcrumbs'
 export * from './button'

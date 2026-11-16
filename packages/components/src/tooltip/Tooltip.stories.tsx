@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Save } from 'lucide-react'
-import { I18nProvider } from 'react-aria-components'
+import { I18nProvider } from '../aria'
 import { type TooltipProps, Tooltip, TooltipTrigger } from './Tooltip'
 import { Button } from '../button'
 

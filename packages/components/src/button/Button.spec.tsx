@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Button.stories'
 import { render } from '../../test-utils'
+import { Button } from './Button'
+import { ButtonContext } from '../aria'
 
 const { Primary, Secondary } = composeStories(stories)
 
@@ -29,5 +31,19 @@ describe('given a disabled secondary Button', async () => {
     const { getByRole } = await render(<Secondary isDisabled />)
 
     await expect.element(getByRole('button')).toBeDisabled()
+  })
+})
+
+describe('given a Button inside a ButtonContext provider', async () => {
+  it('should receive props from the context', async () => {
+    const { getByRole } = await render(
+      <ButtonContext.Provider value={{ isPending: true }}>
+        <Button>Save</Button>
+      </ButtonContext.Provider>,
+    )
+
+    await expect
+      .element(getByRole('button').getByRole('status'))
+      .toBeInTheDocument()
   })
 })

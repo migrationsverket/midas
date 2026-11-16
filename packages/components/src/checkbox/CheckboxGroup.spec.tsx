@@ -4,7 +4,7 @@ import styles from './Checkbox.module.css'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './CheckboxGroup.stories'
 import { render } from '../../test-utils'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '../aria'
 
 const {
   Primary,

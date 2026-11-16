@@ -4,7 +4,7 @@ import { page, userEvent } from 'vitest/browser'
 import * as stories from './Modal.stories'
 import { render } from '../../test-utils'
 import { Button } from '../button'
-import { I18nProvider } from '../utils/intl'
+import { I18nProvider } from '../aria'
 import styles from './Modal.module.css'
 
 const { Default, DS1282, Scrollable, ScrollableWithFooter, FormWithFooter } =

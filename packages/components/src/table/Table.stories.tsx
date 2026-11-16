@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import {
-  TableLayout,
-  Virtualizer,
-  type SortDescriptor,
-} from 'react-aria-components'
+import { TableLayout, Virtualizer, SortDescriptor } from '../aria'
 import { useState } from 'react'
 import { Cell, Column, Row, Table, TableBody, TableHeader } from './Table'
 import { Link } from '../link'
