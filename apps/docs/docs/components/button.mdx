@@ -9,7 +9,7 @@ import ButtonApi from '@midas-ds/api/components/Button.json'
 import ButtonGroupApi from '@midas-ds/api/components/ButtonGroup.json'
 import { Button, ButtonContext, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Plus, Trash2, Upload } from 'lucide-react'
+import { Plus } from 'lucide-react'
 
 <ComponentHeader
   name='Button'
@@ -25,12 +25,14 @@ import { Button, ButtonGroup } from '@midas-ds/components'
 <Playground
   component={Button}
   api={ButtonApi}
-  props={['variant', 'size', 'icon', 'iconPlacement', 'isDisabled']}
-  initialProps={{ children: 'Spara', icon: 'Ingen' }}
-  controlOptions={{ variant: ['primary', 'secondary', 'tertiary', 'danger'] }}
-  valueOptions={{ icon: { Ingen: undefined, Plus, Upload, Trash2 } }}
-  valueImports={{ icon: 'lucide-react' }}
-  dependsOn={{ iconPlacement: 'icon' }}
+  initialProps={{ children: 'Spara' }}
+  controls={{
+    variant: { options: ['primary', 'secondary', 'tertiary', 'danger'] },
+    size: {},
+    icon: { options: { Plus }, import: 'lucide-react' },
+    iconPlacement: { showWhen: 'icon' },
+    isDisabled: {},
+  }}
 />
 
 ## Riktlinjer

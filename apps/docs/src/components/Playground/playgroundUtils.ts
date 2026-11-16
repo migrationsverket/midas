@@ -1,8 +1,26 @@
 import { Children, isValidElement, type ReactNode } from 'react'
 import type { ApiProp } from '@midas-ds/docgen'
 
+/** How the playground shows one prop. Leave it empty to read everything from the API docs. */
+export interface ControlConfig {
+  /**
+   * Limits a union of strings to these options, or gives named values for a
+   * prop that takes anything else, e.g. `{ Plus }` for an icon. The names are
+   * printed as is in the code. A single named option is shown as a checkbox.
+   */
+  options?: string[] | Record<string, unknown>
+  /** The module the named options are imported from, e.g. `lucide-react` */
+  import?: string
+  /** Shows the control only when this other prop has a value */
+  showWhen?: string
+}
+
 interface BaseControl {
   name: string
+  /** Named values, by the name printed in the code */
+  named?: Record<string, unknown>
+  import?: string
+  showWhen?: string
 }
 
 export interface BooleanControl extends BaseControl {
@@ -21,7 +39,14 @@ export interface TextControl extends BaseControl {
   defaultValue?: string
 }
 
-export type Control = BooleanControl | EnumControl | TextControl
+/** A named value that is either set or not */
+export interface ToggleControl extends BaseControl {
+  kind: 'toggle'
+  option: string
+  defaultValue?: undefined
+}
+
+export type Control = BooleanControl | EnumControl | TextControl | ToggleControl
 
 type Values = Record<string, unknown>
 
@@ -32,24 +57,31 @@ const isStringLiteral = (value: string) => /^['"].*['"]$/.test(value.trim())
 /** The control for a prop, or `null` if its type can't be edited in a control */
 export const getControl = (
   name: string,
-  prop: ApiProp,
-  options?: string[],
+  prop: ApiProp | undefined,
+  { options, import: importFrom, showWhen }: ControlConfig = {},
 ): Control | null => {
-  const base = { name }
-  const defaultValue: string | undefined = prop.defaultValue?.value
+  const base = { name, import: importFrom, showWhen }
+  const defaultValue: string | undefined = prop?.defaultValue?.value
 
-  if (name === 'children' || prop.type.name === 'string') {
+  if (options && !Array.isArray(options)) {
+    const names = Object.keys(options)
+    return names.length === 1
+      ? { ...base, kind: 'toggle', option: names[0], named: options }
+      : { ...base, kind: 'enum', options: names, named: options }
+  }
+
+  if (name === 'children' || prop?.type.name === 'string') {
     return { ...base, kind: 'text', defaultValue }
   }
 
   // react-docgen-typescript expands boolean to an enum of false and true
-  if (prop.type.raw === 'boolean' || prop.type.name === 'boolean') {
+  if (prop?.type.raw === 'boolean' || prop?.type.name === 'boolean') {
     return { ...base, kind: 'boolean', defaultValue: defaultValue === 'true' }
   }
 
-  const values = prop.type.value?.map(({ value }) => value)
+  const values = prop?.type.value?.map(({ value }) => value)
   const isLiteralEnum =
-    prop.type.name === 'enum' && values?.every(isStringLiteral)
+    prop?.type.name === 'enum' && values?.every(isStringLiteral)
   if (options || isLiteralEnum) {
     return {
       ...base,
@@ -102,6 +134,52 @@ const childToCode = (child: ReactNode, indent: string) => {
   const { children, ...rest } = props
 
   return elementToCode(name, rest, children as ReactNode, {}, indent)
+}
+
+/**
+ * The props to render and to print for the current values. Named options are
+ * resolved to their values, and printed by name with an import. Props whose
+ * `showWhen` prop has no value are left out, and so are their controls.
+ */
+export const getPlaygroundProps = (controls: Control[], values: Values) => {
+  const byName = new Map(controls.map(control => [control.name, control]))
+  const valueOf = (name: string) => {
+    const named = byName.get(name)?.named
+    return named ? named[values[name] as string] : values[name]
+  }
+  const isVisible = (name: string) => {
+    const showWhen = byName.get(name)?.showWhen
+    return !showWhen || valueOf(showWhen) !== undefined
+  }
+
+  const names = Object.keys(values).filter(
+    name => name !== 'children' && isVisible(name),
+  )
+  const props: Values = {}
+  const codeProps: Values = {}
+  const imports: Record<string, string[]> = {}
+
+  for (const name of names) {
+    const control = byName.get(name)
+    const value = valueOf(name)
+    props[name] = value
+    codeProps[name] = value
+
+    if (control?.named && value !== undefined) {
+      const option = values[name] as string
+      codeProps[name] = codeExpression(option)
+      if (control.import) {
+        imports[control.import] = [...(imports[control.import] ?? []), option]
+      }
+    }
+  }
+
+  return {
+    props,
+    codeProps,
+    imports,
+    visibleControls: controls.filter(({ name }) => isVisible(name)),
+  }
 }
 
 /** Prints JSX the way our Prettier config formats it */

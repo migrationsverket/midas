@@ -8,11 +8,12 @@ import { Checkbox, ListBoxItem, Select, TextField } from '@midas-ds/components'
 import type { ApiDoc } from '@midas-ds/docgen'
 import CodeBlock from '@theme/CodeBlock'
 import {
-  codeExpression,
   elementToCode,
   getControl,
+  getPlaygroundProps,
   importsToCode,
   type Control,
+  type ControlConfig,
 } from './playgroundUtils'
 import styles from './Playground.module.css'
 
@@ -23,18 +24,10 @@ export interface PlaygroundProps {
   component: ElementType
   /** The generated API docs for the component */
   api: ApiDoc
-  /** The props to show controls for, in order */
-  props: string[]
-  /** Starting values, also for props without a control */
+  /** The props to show controls for, in order. `{}` reads the control from the API docs. */
+  controls: Record<string, ControlConfig>
+  /** Starting values, also for props without a control. Named options are given by name. */
   initialProps?: Values
-  /** Limits the options of an enum prop */
-  controlOptions?: Record<string, string[]>
-  /** Named options for props that take anything but a string, e.g. an icon */
-  valueOptions?: Record<string, Record<string, unknown>>
-  /** The module the named options of a prop are imported from, e.g. lucide-react for icons */
-  valueImports?: Record<string, string>
-  /** Shows a control only when another prop has a value, by prop name */
-  dependsOn?: Record<string, string>
   /** Static content, e.g. the items of a ComboBox */
   children?: ReactNode
 }
@@ -74,6 +67,17 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
           ))}
         </Select>
       )
+    case 'toggle':
+      return (
+        <Checkbox
+          isSelected={value !== undefined}
+          onChange={isSelected =>
+            onChange(isSelected ? control.option : undefined)
+          }
+        >
+          {control.name}
+        </Checkbox>
+      )
     case 'text':
       return (
         <TextField
@@ -94,22 +98,13 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
 export const Playground = ({
   component,
   api,
-  props: propNames,
+  controls: config,
   initialProps = {},
-  controlOptions = {},
-  valueOptions = {},
-  valueImports = {},
-  dependsOn = {},
   children,
 }: PlaygroundProps) => {
-  const controls = propNames
-    .map(name =>
-      getControl(
-        name,
-        api.props[name],
-        controlOptions[name] ??
-          (valueOptions[name] && Object.keys(valueOptions[name])),
-      ),
+  const controls = Object.entries(config)
+    .map(([name, controlConfig]) =>
+      getControl(name, api.props[name], controlConfig),
     )
     .filter(control => control !== null)
 
@@ -118,32 +113,11 @@ export const Playground = ({
   )
   const [values, setValues] = useState<Values>({ ...defaults, ...initialProps })
 
-  const getValue = (name: string) =>
-    valueOptions[name]
-      ? valueOptions[name][values[name] as string]
-      : values[name]
-  const isActive = (name: string) =>
-    !dependsOn[name] || getValue(dependsOn[name]) !== undefined
-
-  const { children: textChildren, ...rest } = values
-  const names = Object.keys(rest).filter(isActive)
-  const props = Object.fromEntries(names.map(name => [name, getValue(name)]))
-  const codeProps = Object.fromEntries(
-    names.map(name => [
-      name,
-      valueOptions[name] && getValue(name) !== undefined
-        ? codeExpression(values[name] as string)
-        : props[name],
-    ]),
+  const { props, codeProps, imports, visibleControls } = getPlaygroundProps(
+    controls,
+    values,
   )
-  const content = (textChildren as ReactNode) ?? children
-  const imports: Record<string, string[]> = {}
-  for (const name of names) {
-    const module = valueImports[name]
-    if (module && valueOptions[name] && getValue(name) !== undefined) {
-      imports[module] = [...(imports[module] ?? []), values[name] as string]
-    }
-  }
+  const content = (values.children as ReactNode) ?? children
   const code = [
     importsToCode(imports),
     elementToCode(api.displayName, codeProps, content, defaults),
@@ -158,18 +132,16 @@ export const Playground = ({
           {createElement(component, props, content)}
         </div>
         <div className={styles.controls}>
-          {controls
-            .filter(({ name }) => isActive(name))
-            .map(control => (
-              <ControlRow
-                key={control.name}
-                control={control}
-                value={values[control.name]}
-                onChange={value =>
-                  setValues(current => ({ ...current, [control.name]: value }))
-                }
-              />
-            ))}
+          {visibleControls.map(control => (
+            <ControlRow
+              key={control.name}
+              control={control}
+              value={values[control.name]}
+              onChange={value =>
+                setValues(current => ({ ...current, [control.name]: value }))
+              }
+            />
+          ))}
         </div>
         <div className={styles.code}>
           <CodeBlock language='tsx'>{code}</CodeBlock>
