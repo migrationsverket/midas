@@ -244,9 +244,10 @@ const PreviewInModalContainer = (args: React.ComponentProps<typeof FileList>) =>
 }
 
 export const PreviewInModal: Story = {
-  // The modal only opens on press, so the screenshot would be the same as
-  // WithPreview
-  tags: ['!snapshot'],
+  // Only used by the tests, to show that the app can open its own preview.
+  // Hidden from Storybook and docs, and the screenshot would be the same as
+  // WithPreview since the modal only opens on press
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     docs: {
       description: {
