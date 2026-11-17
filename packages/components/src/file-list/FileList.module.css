@@ -189,6 +189,7 @@
   font-size: var(--midas-typography-font-size-30);
 }
 
+.previewButton,
 .deleteButton {
   color: var(--midas-icon-primary);
   flex-shrink: 0;

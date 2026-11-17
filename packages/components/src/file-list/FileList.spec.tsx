@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { describe, expect, it, vi } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './FileList.stories'
@@ -15,6 +16,8 @@ const {
   Success,
   Error: ErrorStory,
   FocusManagementTest,
+  WithPreview,
+  PreviewInModal,
 } = composeStories(stories)
 
 const errorMessage =
@@ -323,6 +326,88 @@ describe('FileList', () => {
     })
   })
 
+  describe('preview', () => {
+    it('shows a preview button for idle and completed files', async () => {
+      const { getByRole } = await render(<WithPreview />)
+      await expect
+        .element(getByRole('button', { name: 'Preview passport.jpg' }))
+        .toBeVisible()
+      await expect
+        .element(getByRole('button', { name: 'Preview certificate.pdf' }))
+        .toBeVisible()
+    })
+
+    it('hides it while uploading', async () => {
+      const { getByRole } = await render(<WithPreview />)
+      await expect
+        .element(getByRole('button', { name: 'Preview photo.png' }))
+        .not.toBeInTheDocument()
+    })
+
+    it('hides it when the upload failed', async () => {
+      const { getByRole } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='broken.png'
+            status='error'
+            onPreview={() => {
+              // noop
+            }}
+          />
+        </FileList>,
+      )
+      await expect
+        .element(getByRole('button', { name: 'Preview broken.png' }))
+        .not.toBeInTheDocument()
+    })
+
+    it('shows no preview button without onPreview', async () => {
+      const { getByRole } = await render(<Default />)
+      await expect
+        .element(getByRole('button', { name: /^preview/i }).first())
+        .not.toBeInTheDocument()
+    })
+
+    it('calls onPreview when pressed', async () => {
+      const onPreview = vi.fn()
+      const { getByRole } = await render(
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='a.png'
+            onPreview={onPreview}
+          />
+        </FileList>,
+      )
+      await getByRole('button', { name: 'Preview a.png' }).click()
+      expect(onPreview).toHaveBeenCalledOnce()
+    })
+
+    it('comes before the delete button in the tab order', async () => {
+      const { getByRole } = await render(<WithPreview />)
+      const preview = getByRole('button', { name: 'Preview passport.jpg' })
+      const remove = getByRole('button', { name: 'Remove passport.jpg' })
+      expect(
+        preview.element().compareDocumentPosition(remove.element()) &
+          Node.DOCUMENT_POSITION_FOLLOWING,
+      ).toBeTruthy()
+    })
+
+    it('describes the preview button with the state, for focus mode', async () => {
+      const { getByRole } = await render(<WithPreview />)
+      await expect
+        .element(getByRole('button', { name: 'Preview passport.jpg' }))
+        .toHaveAccessibleDescription('Upload complete')
+    })
+
+    it('lets the app open its own preview', async () => {
+      const { getByRole } = await render(<PreviewInModal />)
+      await getByRole('button', { name: 'Preview landscape.svg' }).click()
+      await expect
+        .element(getByRole('dialog').getByRole('img', { name: 'landscape.svg' }))
+        .toBeVisible()
+    })
+  })
+
   describe('focus management on removal', () => {
     it('moves focus to a sibling button when the focused row is actually removed', async () => {
       // @ts-expect-error initialFiles exists only on the test container
@@ -342,6 +427,84 @@ describe('FileList', () => {
       )
       await getByRole('button', { name: /remove only\.pdf/i }).click()
       await expect.element(getByRole('list')).toHaveFocus()
+    })
+
+    it("moves focus to the next row's first button when there are previews", async () => {
+      const PreviewRows = () => {
+        const [files, setFiles] = useState(['a.png', 'b.png'])
+        return (
+          <FileList aria-label='Test'>
+            {files.map(file => (
+              <FileListItem
+                key={file}
+                fileName={file}
+                onPreview={() => {
+                  // noop
+                }}
+                onDelete={() => setFiles(f => f.filter(x => x !== file))}
+              />
+            ))}
+          </FileList>
+        )
+      }
+      const { getByRole } = await render(<PreviewRows />)
+      await getByRole('button', { name: 'Remove a.png' }).click()
+      await expect
+        .element(getByRole('button', { name: 'Preview b.png' }))
+        .toHaveFocus()
+    })
+
+    it("moves focus to the row's other button when the focused button disappears", async () => {
+      const StartsUploadOnPreview = () => {
+        const [status, setStatus] = useState<'success' | 'uploading'>(
+          'success',
+        )
+        return (
+          <FileList aria-label='Test'>
+            <FileListItem
+              fileName='a.png'
+              status={status}
+              onPreview={() => setStatus('uploading')}
+              onDelete={() => {
+                // noop
+              }}
+            />
+          </FileList>
+        )
+      }
+      const { getByRole } = await render(<StartsUploadOnPreview />)
+      await getByRole('button', { name: 'Preview a.png' }).click()
+      await expect
+        .element(getByRole('button', { name: 'Cancel a.png' }))
+        .toHaveFocus()
+    })
+
+    it('does not pull focus back when it had already left the list', async () => {
+      const row = (status: 'success' | 'uploading') => (
+        <FileList aria-label='Test'>
+          <FileListItem
+            fileName='a.png'
+            status={status}
+            onPreview={() => {
+              // noop
+            }}
+            onDelete={() => {
+              // noop
+            }}
+          />
+        </FileList>
+      )
+      const { getByRole, rerender } = await render(row('success'))
+      const preview = getByRole('button', { name: 'Preview a.png' })
+      ;(preview.element() as HTMLElement).focus()
+      ;(preview.element() as HTMLElement).blur()
+      // Focus leaves first, and the status changes later, not in the same task
+      await expect.poll(() => document.activeElement).toBe(document.body)
+      await rerender(row('uploading'))
+      await expect
+        .element(getByRole('button', { name: 'Cancel a.png' }))
+        .not.toHaveFocus()
+      expect(document.activeElement).toBe(document.body)
     })
 
     it('does not move focus when the row is not actually removed', async () => {

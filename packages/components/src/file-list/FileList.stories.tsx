@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 import { FileList } from './FileList'
 import { FileListItem } from './FileListItem'
+import { Modal } from '../modal'
 
 type Story = StoryObj<typeof FileList>
 
@@ -150,6 +151,111 @@ export const Error: Story = {
       />
     </FileList>
   ),
+}
+
+export const WithPreview: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Pass `onPreview` to show a preview button next to the delete button. It is only shown for idle and completed files, and opening the preview is up to you.',
+      },
+    },
+  },
+  render: args => (
+    <FileList {...args}>
+      <FileListItem
+        fileName='passport.jpg'
+        fileSize='2.1 MB'
+        status='success'
+        onPreview={() => {
+          // noop
+        }}
+        onDelete={() => {
+          // noop
+        }}
+      />
+      <FileListItem
+        fileName='certificate.pdf'
+        fileSize='340 KB'
+        onPreview={() => {
+          // noop
+        }}
+        onDelete={() => {
+          // noop
+        }}
+      />
+      <FileListItem
+        fileName='photo.png'
+        fileSize='4.8 MB'
+        status='uploading'
+        progress={40}
+        onPreview={() => {
+          // noop
+        }}
+        onCancel={() => {
+          // noop
+        }}
+      />
+      <FileListItem
+        fileName='notes.docx'
+        fileSize='45 KB'
+        onDelete={() => {
+          // noop
+        }}
+      />
+    </FileList>
+  ),
+}
+
+const previewImage = `data:image/svg+xml,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320"><rect width="480" height="320" fill="#d6e4ea"/><circle cx="360" cy="90" r="40" fill="#f2c94c"/><path d="M0 320 L160 140 L280 260 L360 180 L480 320 Z" fill="#4f7f8f"/></svg>',
+)}`
+
+const PreviewInModalContainer = (args: React.ComponentProps<typeof FileList>) => {
+  const [preview, setPreview] = React.useState<string | null>(null)
+
+  return (
+    <>
+      <FileList {...args}>
+        <FileListItem
+          fileName='landscape.svg'
+          fileSize='1 KB'
+          status='success'
+          onPreview={() => setPreview('landscape.svg')}
+          onDelete={() => {
+            // noop
+          }}
+        />
+      </FileList>
+      <Modal
+        title={preview ?? ''}
+        isOpen={preview !== null}
+        onOpenChange={isOpen => !isOpen && setPreview(null)}
+      >
+        <img
+          src={previewImage}
+          alt={preview ?? ''}
+          style={{ display: 'block', maxWidth: '100%' }}
+        />
+      </Modal>
+    </>
+  )
+}
+
+export const PreviewInModal: Story = {
+  // The modal only opens on press, so the screenshot would be the same as
+  // WithPreview
+  tags: ['!snapshot'],
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'FileList has no viewer of its own. Here the app opens the image in a `Modal` when the preview button is pressed.',
+      },
+    },
+  },
+  render: args => <PreviewInModalContainer {...args} />,
 }
 
 export const MixedStates: Story = {
