@@ -1,3 +1,14 @@
+## 17.35.0 (2026-11-17)
+
+### 🚀 Features
+
+- **components,empty-state:** new component EmptyState ([b25edcf1703](https://github.com/migrationsverket/midas/commit/b25edcf1703))
+- **components,text,heading:** forward refs ([27348f56bcc](https://github.com/migrationsverket/midas/commit/27348f56bcc))
+
+### 🩹 Fixes
+
+- **components,button:** call handlers from RAC context once ([7f625ea237c](https://github.com/migrationsverket/midas/commit/7f625ea237c))
+
 ## 17.34.1 (2026-11-16)
 
 ### 🩹 Fixes
