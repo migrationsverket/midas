@@ -1,1 +1,0 @@
-import{t as e}from"./iframe-BaY3_TW2.js";e();
