@@ -132,7 +132,20 @@ export const AsyncExample = () => {
 }
 
 export const ItemActionExample = () => {
+  const [items, setItems] = useState([
+    'Lime',
+    'Äpple',
+    'Banan',
+    'Kiwi',
+    'Apelsin',
+  ])
   const [inputValue, setInputValue] = useState('')
+  const [selectedItem, setSelectedItem] = useState<Key | null>(null)
+
+  const createItem = () => {
+    setItems(prev => [...prev, inputValue])
+    setSelectedItem(inputValue)
+  }
 
   return (
     <ComboBox
@@ -141,17 +154,22 @@ export const ItemActionExample = () => {
       allowsEmptyCollection
       inputValue={inputValue}
       onInputChange={setInputValue}
+      value={selectedItem}
+      onChange={setSelectedItem}
     >
-      {inputValue.length > 0 && (
-        <ListBoxItem onAction={() => alert('Skapar ' + inputValue)}>
+      {inputValue.length > 0 && !items.includes(inputValue) && (
+        <ListBoxItem onAction={createItem}>
           {`Skapa "${inputValue}"`}
         </ListBoxItem>
       )}
-      <ListBoxItem>Lime</ListBoxItem>
-      <ListBoxItem>Äpple</ListBoxItem>
-      <ListBoxItem>Banan</ListBoxItem>
-      <ListBoxItem>Kiwi</ListBoxItem>
-      <ListBoxItem>Apelsin</ListBoxItem>
+      {items.map(item => (
+        <ListBoxItem
+          key={item}
+          id={item}
+        >
+          {item}
+        </ListBoxItem>
+      ))}
     </ComboBox>
   )
 }
