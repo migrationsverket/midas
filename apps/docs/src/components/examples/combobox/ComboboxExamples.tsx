@@ -8,7 +8,7 @@ import {
   Collection,
   Key,
 } from '@midas-ds/components'
-import React from 'react'
+import React, { useState } from 'react'
 import { useAsyncList } from 'react-stately'
 
 export const BasicExample: React.FC = () => (
@@ -127,6 +127,31 @@ export const AsyncExample = () => {
         {item => <ListBoxItem id={item.name}>{item.name}</ListBoxItem>}
       </Collection>
       {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
+    </ComboBox>
+  )
+}
+
+export const ItemActionExample = () => {
+  const [inputValue, setInputValue] = useState('')
+
+  return (
+    <ComboBox
+      label='Välj din favoritfrukt eller grönsak'
+      description='Skapa en ny om den ej finns i listan'
+      allowsEmptyCollection
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+    >
+      {inputValue.length > 0 && (
+        <ListBoxItem onAction={() => alert('Skapar ' + inputValue)}>
+          {`Skapa "${inputValue}"`}
+        </ListBoxItem>
+      )}
+      <ListBoxItem>Lime</ListBoxItem>
+      <ListBoxItem>Äpple</ListBoxItem>
+      <ListBoxItem>Banan</ListBoxItem>
+      <ListBoxItem>Kiwi</ListBoxItem>
+      <ListBoxItem>Apelsin</ListBoxItem>
     </ComboBox>
   )
 }
