@@ -1,7 +1,7 @@
 'use client'
 
 import { useId } from 'react'
-import { Trash2, X } from 'lucide-react'
+import { Eye, Trash2, X } from 'lucide-react'
 import { VisuallyHidden } from 'react-aria'
 import { Button } from '../button'
 import { ProgressBar } from '../progress-bar'
@@ -36,6 +36,11 @@ export interface FileListItemProps {
    * server-side by the time this fires, deleting it there too is your call.
    */
   onDelete?: () => void
+  /**
+   * Shows a preview button next to the delete button, for idle and completed
+   * files. Opening the preview, e.g. in a `Modal` or a new tab, is up to you.
+   */
+  onPreview?: () => void
   className?: string
 }
 
@@ -47,6 +52,7 @@ export const FileListItem = ({
   errorMessage,
   onCancel,
   onDelete,
+  onPreview,
   className,
 }: FileListItemProps) => {
   const strings = useLocalizedStringFormatter(messages)
@@ -67,6 +73,8 @@ export const FileListItem = ({
     [stateText && stateId, hasError && errorId].filter(Boolean).join(' ') ||
     undefined
   const onPress = isUploading ? (onCancel ?? onDelete) : onDelete
+  // Nothing to look at while the file is on its way or failed to arrive
+  const showPreview = !!onPreview && !isUploading && !isError
 
   return (
     <li
@@ -116,6 +124,20 @@ export const FileListItem = ({
             </>
           )}
         </span>
+        {showPreview && (
+          <Button
+            variant='icon'
+            onPress={onPreview}
+            aria-label={`${strings.format('previewFile')} ${fileName}`}
+            aria-describedby={buttonDescription}
+            className={styles.previewButton}
+          >
+            <Eye
+              size={20}
+              aria-hidden
+            />
+          </Button>
+        )}
         {onPress && (
           <Button
             variant='icon'
