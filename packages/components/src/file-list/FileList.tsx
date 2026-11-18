@@ -7,6 +7,10 @@ import styles from './FileList.module.css'
 
 export type FileListProps = HTMLAttributes<HTMLUListElement>
 
+/**
+ * A list of files the user has picked or uploaded, one `FileListItem` per
+ * file. Give it an `aria-label` that says what the files are for.
+ */
 export const FileList = ({ className, children, ...props }: FileListProps) => {
   const listRef = useRef<HTMLUListElement>(null)
 
