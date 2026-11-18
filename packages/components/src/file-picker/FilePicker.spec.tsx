@@ -9,7 +9,8 @@ import { Text } from '../text'
 import { FileTrigger } from '../file-trigger'
 import { Button } from '../button'
 
-const { Default, WithDropZone, InvalidWithDropZone } = composeStories(stories)
+const { Default, WithDropZone, InvalidWithDropZone, RejectedFiles } =
+  composeStories(stories)
 
 const LABEL = 'Ladda upp en bild på din favoritfrukt'
 const DESCRIPTION = 'Du kan välja flera om du har många favoritfrukter'
@@ -188,5 +189,55 @@ describe('Given a valid FilePicker with a DropZone', () => {
 
     const dropZone = getByText(DROP_ZONE_LABEL).element().parentElement
     expect(dropZone).not.toHaveAttribute('data-invalid')
+  })
+})
+
+describe('Given a FilePicker that only accepts small images', () => {
+  const upload = async (file: File) => {
+    const screen = await render(<RejectedFiles />)
+    await userEvent.upload(screen.getByTestId('file-trigger'), file)
+    return screen
+  }
+
+  it('should limit the file dialog to the accepted types', async () => {
+    const { getByTestId } = await render(<RejectedFiles />)
+
+    await expect
+      .element(getByTestId('file-trigger'))
+      .toHaveAttribute('accept', 'image/png,image/jpeg')
+  })
+
+  it('should list a file of another type as failed, with the reason', async () => {
+    const { getByRole, getByText } = await upload(
+      new File(['hello'], 'notes.txt', { type: 'text/plain' }),
+    )
+
+    await expect.element(getByText('notes.txt')).toBeVisible()
+    await expect
+      .element(getByText('Endast .jpg- och .png-filer tillåts'))
+      .toBeVisible()
+    await expect
+      .element(getByRole('button', { name: 'Remove notes.txt' }))
+      .toHaveAccessibleDescription(/Endast .jpg- och .png-filer tillåts/)
+  })
+
+  it('should list a file over the size limit as failed, with the reason', async () => {
+    const big = new File([new Uint8Array(1024 * 1024 + 1)], 'big.png', {
+      type: 'image/png',
+    })
+    const { getByText } = await upload(big)
+
+    await expect.element(getByText('Filen är för stor, max 1 MB')).toBeVisible()
+  })
+
+  it('should list an accepted file without an error', async () => {
+    const { getByText, getByRole } = await upload(
+      new File(['hello'], 'ok.png', { type: 'image/png' }),
+    )
+
+    await expect.element(getByText('ok.png')).toBeVisible()
+    await expect
+      .element(getByRole('button', { name: 'Remove ok.png' }))
+      .not.toHaveAccessibleDescription(/./)
   })
 })
