@@ -140,12 +140,13 @@ export const ItemActionExample = () => {
     'Apelsin',
   ])
   const [inputValue, setInputValue] = useState('')
-  const [selectedItem, setSelectedItem] = useState<Key | null>(null)
+  const selectedItem = items.includes(inputValue) ? inputValue : null
 
-  const createItem = () => {
-    setItems(prev => [...prev, inputValue])
-    setSelectedItem(inputValue)
+  const selectItem = (key: Key | null) => {
+    if (key !== null) setInputValue(String(key))
   }
+
+  const createItem = () => setItems(prev => [...prev, inputValue])
 
   return (
     <ComboBox
@@ -155,9 +156,9 @@ export const ItemActionExample = () => {
       inputValue={inputValue}
       onInputChange={setInputValue}
       value={selectedItem}
-      onChange={setSelectedItem}
+      onChange={selectItem}
     >
-      {inputValue.length > 0 && !items.includes(inputValue) && (
+      {inputValue.length > 0 && selectedItem === null && (
         <ListBoxItem onAction={createItem}>
           {`Skapa "${inputValue}"`}
         </ListBoxItem>
