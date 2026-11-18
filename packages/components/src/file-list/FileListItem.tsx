@@ -37,8 +37,11 @@ export interface FileListItemProps {
    */
   onDelete?: () => void
   /**
-   * Shows a preview button next to the delete button, for idle and completed
-   * files. Opening the preview, e.g. in a `Modal` or a new tab, is up to you.
+   * Shows a preview button next to the delete button. Hidden while
+   * `uploading`, when cancelling is the main action in the row. Shown when
+   * an upload failed, since the file is still on the user's device and they
+   * can check what they picked. Opening the preview, e.g. in a `Modal` or a
+   * new tab, is up to you.
    */
   onPreview?: () => void
   className?: string
@@ -73,8 +76,7 @@ export const FileListItem = ({
     [stateText && stateId, hasError && errorId].filter(Boolean).join(' ') ||
     undefined
   const onPress = isUploading ? (onCancel ?? onDelete) : onDelete
-  // Nothing to look at while the file is on its way or failed to arrive
-  const showPreview = !!onPreview && !isUploading && !isError
+  const showPreview = !!onPreview && !isUploading
   const deleteButtonRef = useRef<HTMLButtonElement>(null)
   const previewHadFocus = useRef(false)
 
