@@ -26,9 +26,17 @@ export const ComboBoxInput = forwardRef<HTMLInputElement, InputProps>(
       onKeyDown?.(event)
     }
 
+    // The tags show what's selected, and the placeholder would be cut off
+    // next to them. An empty string, since undefined wouldn't override the
+    // placeholder React Aria passes through context
+    const hasTags =
+      state?.selectionManager.selectionMode === 'multiple' &&
+      state.selectedItems.length > 0
+
     return (
       <Input
         {...props}
+        {...(hasTags && { placeholder: '' })}
         onKeyDown={handleKeyDown}
         ref={ref}
       />
