@@ -12,6 +12,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import type { SelectionMode } from '../common/types'
 import clsx from '../utils/clsx'
 import messages from './intl/translations.json'
+import { ComboBoxScrollCount } from './ComboBoxScrollCount'
 import styles from './ComboBox.module.css'
 import tagStyles from '../tag/Tag.module.css'
 
@@ -48,19 +49,26 @@ export const ComboBoxTags = ({
   )
   const hiddenCount = selectedItems.length - visibleCount
 
-  // After a pick, keep the input in view at the end of a scrolling row.
-  // React Aria renders the new tag in a later pass, so this waits for it
+  // With 'scroll-count' the tags scroll in a strip of their own, and the
+  // input stays in view next to it
+  const isCountingScroll = tagOverflow === 'scroll-count'
+  const [tagScroller, setTagScroller] = useState<HTMLDivElement | null>(null)
+  const scroller = isCountingScroll ? tagScroller : container
+
+  // After a pick, scroll to the end: to the input in a 'scroll' row, and to
+  // the new tag in a 'scroll-count' strip. React Aria renders the new tag in
+  // a later pass, so this waits for it
   useLayoutEffect(() => {
-    if (!isScrollingRow(tagOverflow) || !container) return
+    if (!isScrollingRow(tagOverflow) || !container || !scroller) return
 
     const observer = new MutationObserver(() => {
       if (container.querySelector('input') === document.activeElement) {
-        container.scrollLeft = container.scrollWidth
+        scroller.scrollLeft = scroller.scrollWidth
       }
     })
-    observer.observe(container, { childList: true, subtree: true })
+    observer.observe(scroller, { childList: true, subtree: true })
     return () => observer.disconnect()
-  }, [tagOverflow, container])
+  }, [tagOverflow, container, scroller])
 
   const handleRemove = (keys: Set<Key>) => {
     const isLastTag = state?.selectedItems.length === 1
@@ -83,7 +91,9 @@ export const ComboBoxTags = ({
         aria-label={strings.format('selectedItems')}
         onRemove={handleRemove}
         selectionBehavior='toggle'
-        className={styles.tags}
+        className={clsx(styles.tags, isCountingScroll && styles.tagScroller)}
+        ref={isCountingScroll ? setTagScroller : undefined}
+        data-tag-scroller={isCountingScroll || undefined}
       >
         <TagList
           items={selectedItems.slice(0, visibleCount)}
@@ -101,6 +111,7 @@ export const ComboBoxTags = ({
             </Tag>
           )}
         </TagList>
+        {isCountingScroll && <ComboBoxScrollCount container={tagScroller} />}
       </TagGroup>
       {isCollapsing && (
         <>

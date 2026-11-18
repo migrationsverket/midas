@@ -21,12 +21,13 @@ One row, always the same height as an empty field. The tags and the input scroll
 
 ## 3. Scroll with count (`tagOverflow='scroll-count'`)
 
-Scrolls like `scroll`, with a "+n" chip pinned to the right edge that counts the tags out of view to the right. The count goes down as the row scrolls right and the chip disappears at the end, where the input is. Clicking the chip is like clicking the rest of the field: the input gets focus and the row scrolls to it.
+The input always keeps at least 15% of the row on the right (and at least `8ch`), so it's always in view and easy to click. The tags scroll sideways in the rest, with a "+n" chip pinned to their right edge that counts the tags out of view to the right. The count goes down as the tags scroll right, and the chip disappears at the end. With few tags, the input takes whatever room is left.
 
-- **Good:** the layout never moves, there's a visible hint that there's more and how much, and every tag is still a real tag. The arrow keys reach all of them, and the row scrolls so the focused tag is clear of the chip.
-- **Bad:** nothing shows how many are out of view to the left once the row has scrolled. A "n+" chip on the left edge would be the same code mirrored.
-- The chip is only a visual hint, hidden from screen readers (`aria-hidden`): they reach every tag in the tag list anyway. Making it scroll the row on when clicked would need it to be a real button, with its own tab stop and label, so the spike leaves it out.
-- The chip is the last item in the row, a zero-width `position: sticky` anchor at the right edge, so it covers the end of what's in view without taking room in the row. It stays laid out while it's invisible (count 0), so its width can be read before it shows.
+- **Good:** the layout never moves, the input is always there to click, there's a visible hint that there's more and how much, and every tag is still a real tag. The arrow keys reach all of them, and the tags scroll so the focused one is clear of the chip. After a pick, the tags scroll to the end to show the new one.
+- **Bad:** nothing shows how many are out of view to the left once the tags have scrolled. A "n+" chip on the left edge would be the same code mirrored.
+- With tags selected, the input area is blank, since the placeholder only shows while nothing is selected. It's still clickable, but nothing marks it. A short placeholder for this case, like "Sök…", would show where to click.
+- The chip is only a visual hint, hidden from screen readers (`aria-hidden`): they reach every tag in the tag list anyway. Clicking it is like clicking the rest of the field: the input gets focus. Making it scroll the tags on would need it to be a real button, with its own tab stop and label, so the spike leaves it out.
+- The tags scroll in the `TagGroup` element, which gets `display: flex` here instead of `display: contents`. The chip is the strip's last item, a zero-width `position: sticky` anchor at its right edge, so it covers the end of what's in view without taking room. It stays laid out while it's invisible (count 0), so its width can be read before it shows.
 - Its digits are tabular (`font-variant-numeric: tabular-nums`). Otherwise "+16" is a pixel wider than "+17", and the chip grew back over the tag that was just scrolled clear of it.
 
 ## 4. Collapse (`tagOverflow='collapse'`)
@@ -44,7 +45,7 @@ One row with the tags that fit and a "+n" chip for the rest. The input keeps at 
 - **React Aria renders the tags in a later pass than the component around them.** An effect that runs after a pick doesn't see the new tag yet. Both `scroll` (keeping the input in view) and `collapse` (measuring) wait for the tags with a `MutationObserver` on the row.
 - **The row's element is passed down through state, not a ref.** `ComboBoxTags`' effects run before React attaches the parent's ref, so with a ref they saw `null` on mount and never started their observers.
 - **Shift+Tab from the input reaches the focused tag's Remove button before the tag.** That's React Aria's tab order for tags (the same in their docs), so it's the same in all the versions.
-- `scroll` and `scroll-count` scroll only the row, never the page, when a tag or the input gets focus. Scrolling the page would close the list, since React Aria closes a ComboBox's popover when the page scrolls.
+- `scroll` and `scroll-count` scroll only the row or the tags, never the page, when a tag or the input gets focus. Scrolling the page would close the list, since React Aria closes a ComboBox's popover when the page scrolls.
 
 ## What it would take to ship one
 

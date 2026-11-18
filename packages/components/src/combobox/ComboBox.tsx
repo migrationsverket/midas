@@ -24,7 +24,6 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ListBoxEmptyState } from '../list-box/list-box-empty-state/ListBoxEmptyState'
 import { ComboBoxTags, isScrollingRow, type TagOverflow } from './ComboBoxTags'
-import { ComboBoxScrollCount } from './ComboBoxScrollCount'
 import { ComboBoxInput } from './ComboBoxInput'
 import type { SelectionMode } from '../common/types'
 
@@ -88,17 +87,23 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
     inputRef.current?.select()
   }
 
-  // In a row that scrolls sideways, show whatever gets focus: the input
-  // sits at the end and a tag can be anywhere along the row
+  // In a row that scrolls sideways, show whatever gets focus. With
+  // 'scroll-count' only the tags scroll, and the input is always in view
   const handleFieldFocus: FocusEventHandler<HTMLDivElement> = event => {
     if (!isScrollingRow(tagOverflow)) return
+    const row =
+      tagOverflow === 'scroll-count'
+        ? event.currentTarget.querySelector<HTMLElement>('[data-tag-scroller]')
+        : event.currentTarget
+    if (!row?.contains(event.target)) return
+
     // Keep what gets focus clear of the "+n" chip pinned to the right edge
-    const chip = event.currentTarget.querySelector('[data-scroll-count]')
+    const chip = row.querySelector('[data-scroll-count]')
     const chipWidth =
       chip && chip.getAttribute('data-scroll-count') !== '0'
         ? chip.getBoundingClientRect().width
         : 0
-    scrollIntoRow(event.target, event.currentTarget, chipWidth)
+    scrollIntoRow(event.target, row, chipWidth)
   }
 
   return (
@@ -123,7 +128,9 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
           className={clsx(styles.fieldContent, {
             [styles.medium]: size === 'medium',
             [styles.disabled]: props.isDisabled,
-            [styles.scroll]: isMultiple && isScrollingRow(tagOverflow),
+            [styles.scroll]: isMultiple && tagOverflow === 'scroll',
+            [styles.scrollCountRow]:
+              isMultiple && tagOverflow === 'scroll-count',
             [styles.collapse]: isMultiple && tagOverflow === 'collapse',
           })}
           data-tag-overflow={isMultiple ? tagOverflow : undefined}
@@ -146,9 +153,6 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
             data-readonly={props.isReadOnly || undefined}
             ref={inputRef}
           />
-          {isMultiple && tagOverflow === 'scroll-count' && (
-            <ComboBoxScrollCount container={fieldContent} />
-          )}
         </div>
         <Button
           className={clsx(styles.button, {

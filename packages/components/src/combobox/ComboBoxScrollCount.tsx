@@ -4,16 +4,16 @@ import styles from './ComboBox.module.css'
 import tagStyles from '../tag/Tag.module.css'
 
 interface ComboBoxScrollCountProps {
-  /** The scrolling row the tags and the input share */
+  /** The strip the tags scroll in */
   container: HTMLDivElement | null
 }
 
 /**
- * Spike: "+n" pinned to the right edge of a scrolling row, counting the
+ * Spike: "+n" pinned to the right edge of the scrolling tags, counting the
  * tags that are out of view to the right. Every tag is still in the tag
  * list, so screen readers and the arrow keys reach them all, and this is
  * only a visual hint. Clicking it is like clicking the field: the input gets
- * focus and the row scrolls to it at the end.
+ * focus.
  */
 export const ComboBoxScrollCount = ({
   container,
