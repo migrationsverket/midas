@@ -1,6 +1,6 @@
 # Spike: ComboBox tag overflow
 
-What should a multi-select `ComboBox` do when the selected tags don't fit on one row? This spike compares three versions in the same component. The stories are under **Spikes/ComboBox tag overflow** in Storybook. **1. Variants → Side By Side** shows all three with the same selection; use the `width` and `selectedCount` controls to compare them.
+What should a multi-select `ComboBox` do when the selected tags don't fit on one row? This spike compares three versions in the same component. The stories are under **Spikes/ComboBox tag overflow** in Storybook. **1. Variants → Side By Side** shows all three with the same selection. The fields fill the window, so resize it to see how each version reacts, or turn off `fullWidth` to set a fixed `width`. `selectedCount` sets how many are selected.
 
 The versions are switched with a `tagOverflow` prop on `ComboBox` that only exists on this branch: `'wrap'` (the default), `'scroll'` or `'collapse'`. Nothing else here is exported from the package.
 
