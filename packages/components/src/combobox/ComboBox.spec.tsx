@@ -219,9 +219,12 @@ describe('given a ComboBox with a default multi-value', async () => {
     const option = getByRole('option', { name: 'Apelsin' })
     await expect.element(option).toBeVisible()
     await option.click()
-
-    const tagGrid = getByRole('grid')
     await expect.element(comboBox).toHaveValue('')
+
+    // The list stays open for more picks and hides the tags from the
+    // accessibility tree until it closes
+    await userEvent.keyboard('[Escape]')
+    const tagGrid = getByRole('grid')
     await expect
       .element(tagGrid.getByText('Apelsin', { exact: true }))
       .toBeVisible()
