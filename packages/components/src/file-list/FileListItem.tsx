@@ -1,9 +1,9 @@
 'use client'
 
-import { useId } from 'react'
+import { useId, useLayoutEffect, useRef, type RefObject } from 'react'
 import { Eye, Trash2, X } from 'lucide-react'
 import { VisuallyHidden } from 'react-aria'
-import { Button } from '../button'
+import { Button, type ButtonProps } from '../button'
 import { ProgressBar } from '../progress-bar'
 import { FeedbackStatusIcon } from '../common/FeedbackStatusIcon'
 import { FieldError } from '../field-error'
@@ -75,6 +75,16 @@ export const FileListItem = ({
   const onPress = isUploading ? (onCancel ?? onDelete) : onDelete
   // Nothing to look at while the file is on its way or failed to arrive
   const showPreview = !!onPreview && !isUploading && !isError
+  const deleteButtonRef = useRef<HTMLButtonElement>(null)
+  const previewHadFocus = useRef(false)
+
+  // The preview button disappears when an upload starts. If it had focus,
+  // hand it to the row's other button instead of letting it fall to <body>
+  useLayoutEffect(() => {
+    if (!previewHadFocus.current) return
+    previewHadFocus.current = false
+    deleteButtonRef.current?.focus()
+  }, [showPreview])
 
   return (
     <li
@@ -125,7 +135,8 @@ export const FileListItem = ({
           )}
         </span>
         {showPreview && (
-          <Button
+          <PreviewButton
+            hadFocusRef={previewHadFocus}
             variant='icon'
             onPress={onPreview}
             aria-label={`${strings.format('previewFile')} ${fileName}`}
@@ -136,10 +147,11 @@ export const FileListItem = ({
               size={20}
               aria-hidden
             />
-          </Button>
+          </PreviewButton>
         )}
         {onPress && (
           <Button
+            ref={deleteButtonRef}
             variant='icon'
             onPress={onPress}
             aria-label={`${strings.format(
@@ -169,5 +181,35 @@ export const FileListItem = ({
         {hasError && `${fileName}: ${errorMessage}`}
       </VisuallyHidden>
     </li>
+  )
+}
+
+interface PreviewButtonProps extends ButtonProps {
+  hadFocusRef: RefObject<boolean>
+}
+
+/**
+ * Notes in `hadFocusRef` whether it had focus when it unmounts. React runs a
+ * removed component's layout effect cleanup before it removes the DOM node,
+ * so focus can still be read here, and the row's own layout effect, which
+ * runs after, can move it on.
+ */
+const PreviewButton = ({ hadFocusRef, ...props }: PreviewButtonProps) => {
+  const ref = useRef<HTMLButtonElement>(null)
+
+  useLayoutEffect(() => {
+    const button = ref.current
+    return () => {
+      if (button && document.activeElement === button) {
+        hadFocusRef.current = true
+      }
+    }
+  }, [hadFocusRef])
+
+  return (
+    <Button
+      {...props}
+      ref={ref}
+    />
   )
 }

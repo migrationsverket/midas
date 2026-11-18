@@ -507,6 +507,47 @@ describe('FileList', () => {
       expect(document.activeElement).toBe(document.body)
     })
 
+    it('does not pull focus back later when the app moved it out on removal', async () => {
+      const MovesFocusToUndo = () => {
+        const [files, setFiles] = useState(['a.png', 'b.png'])
+        const [bStatus, setBStatus] = useState<'uploading' | 'success'>(
+          'uploading',
+        )
+        return (
+          <>
+            <FileList aria-label='Test'>
+              {files.map(file => (
+                <FileListItem
+                  key={file}
+                  fileName={file}
+                  status={file === 'b.png' ? bStatus : 'idle'}
+                  onDelete={() => {
+                    setFiles(f => f.filter(x => x !== file))
+                    document.getElementById('undo')?.focus()
+                  }}
+                />
+              ))}
+            </FileList>
+            <button id='undo'>Undo</button>
+            <button onClick={() => setBStatus('success')}>Finish b</button>
+          </>
+        )
+      }
+      const { getByRole } = await render(<MovesFocusToUndo />)
+      await getByRole('button', { name: 'Remove a.png' }).click()
+      await expect.element(getByRole('button', { name: 'Undo' })).toHaveFocus()
+      ;(document.activeElement as HTMLElement).blur()
+      await expect.poll(() => document.activeElement).toBe(document.body)
+      // An unrelated change in another row, with focus on <body>
+      ;(
+        getByRole('button', { name: 'Finish b' }).element() as HTMLElement
+      ).click()
+      await expect
+        .element(getByRole('button', { name: 'Remove b.png' }))
+        .toBeVisible()
+      expect(document.activeElement).toBe(document.body)
+    })
+
     it('does not move focus when the row is not actually removed', async () => {
       const { getByRole } = await render(
         <FileList aria-label='Test'>
