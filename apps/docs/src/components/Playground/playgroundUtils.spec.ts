@@ -1,10 +1,11 @@
 import { createElement, type FC } from 'react'
 import { describe, expect, it } from 'vitest'
-import type { ApiProp } from '@midas-ds/docgen'
+import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 import {
   codeExpression,
   elementToCode,
   getControl,
+  getControls,
   getPlaygroundProps,
   importsToCode,
   type Control,
@@ -290,5 +291,42 @@ describe('importsToCode', () => {
 
   it('should skip modules without names', () => {
     expect(importsToCode({ 'lucide-react': [] })).toBe('')
+  })
+})
+
+describe('getControls', () => {
+  const api = {
+    displayName: 'Button',
+    props: { variant: prop(sizeType), isDisabled: prop(booleanType) },
+  } as unknown as ApiDoc
+
+  it('should build the controls in the order they are configured', () => {
+    expect(
+      getControls(api, { isDisabled: {}, variant: {} }).map(c => c.name),
+    ).toEqual(['isDisabled', 'variant'])
+  })
+
+  it('should allow children even when the API docs leave it out', () => {
+    expect(getControls(api, { children: {} })).toMatchObject([
+      { name: 'children', kind: 'text' },
+    ])
+  })
+
+  it('should throw for a control that is not a prop, so a typo fails the docs build', () => {
+    expect(() => getControls(api, { varaint: {} })).toThrow(
+      'Playground: Button has no prop "varaint"',
+    )
+  })
+
+  it('should throw for a showWhen that is not a prop', () => {
+    expect(() => getControls(api, { variant: { showWhen: 'icon' } })).toThrow(
+      'Playground: Button has no prop "icon"',
+    )
+  })
+
+  it('should throw for initial props that are not props', () => {
+    expect(() => getControls(api, {}, { lable: 'Spara' })).toThrow(
+      'Playground: Button has no prop "lable"',
+    )
   })
 })

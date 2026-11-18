@@ -1,6 +1,7 @@
 import {
   createElement,
   useState,
+  type ComponentProps,
   type ElementType,
   type ReactNode,
 } from 'react'
@@ -9,25 +10,30 @@ import type { ApiDoc } from '@midas-ds/docgen'
 import CodeBlock from '@theme/CodeBlock'
 import {
   elementToCode,
-  getControl,
+  getControls,
   getPlaygroundProps,
   importsToCode,
   type Control,
   type ControlConfig,
+  type ControlsConfig,
+  type PropName,
 } from './playgroundUtils'
 import styles from './Playground.module.css'
 
 type Values = Record<string, unknown>
 
-export interface PlaygroundProps {
+export interface PlaygroundProps<C extends ElementType> {
   /** The component to render */
-  component: ElementType
+  component: C
   /** The generated API docs for the component */
   api: ApiDoc
-  /** The props to show controls for, in order. `{}` reads the control from the API docs. */
-  controls: Record<string, ControlConfig>
+  /**
+   * The props to show controls for, in order. `{}` reads the control from the
+   * API docs. A name that isn't a prop throws, which fails the docs build.
+   */
+  controls: ControlsConfig<ComponentProps<C>>
   /** Starting values, also for props without a control. Named options are given by name. */
-  initialProps?: Values
+  initialProps?: { [K in PropName<ComponentProps<C>>]?: unknown }
   /** Static content, e.g. the items of a ComboBox */
   children?: ReactNode
 }
@@ -95,18 +101,19 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
  * from the generated API docs and the code is generated from the current
  * values, so it can't drift from what's rendered.
  */
-export const Playground = ({
+export const Playground = <C extends ElementType>({
   component,
   api,
   controls: config,
   initialProps = {},
   children,
-}: PlaygroundProps) => {
-  const controls = Object.entries(config)
-    .map(([name, controlConfig]) =>
-      getControl(name, api.props[name], controlConfig),
-    )
-    .filter(control => control !== null)
+}: PlaygroundProps<C>) => {
+  // The types only check the call site, getControls checks the names at runtime
+  const controls = getControls(
+    api,
+    config as Partial<Record<string, ControlConfig>>,
+    initialProps,
+  )
 
   const defaults = Object.fromEntries(
     controls.map(({ name, defaultValue }) => [name, defaultValue]),

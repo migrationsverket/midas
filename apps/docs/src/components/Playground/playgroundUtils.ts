@@ -1,19 +1,32 @@
 import { Children, isValidElement, type ReactNode } from 'react'
-import type { ApiProp } from '@midas-ds/docgen'
+import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 
-/** How the playground shows one prop. Leave it empty to read everything from the API docs. */
-export interface ControlConfig {
+/** The prop names of a component's props, `P` */
+export type PropName<P> = Extract<keyof P, string>
+
+/**
+ * How the playground shows prop `K` of props `P`. Leave it empty to read
+ * everything from the API docs. Without type arguments it accepts any prop.
+ */
+export interface ControlConfig<
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  P = Record<string, any>,
+  K extends keyof P = keyof P,
+> {
   /**
    * Limits a union of strings to these options, or gives named values for a
    * prop that takes anything else, e.g. `{ Plus }` for an icon. The names are
    * printed as is in the code. A single named option is shown as a checkbox.
    */
-  options?: string[] | Record<string, unknown>
+  options?: Extract<P[K], string>[] | Record<string, P[K]>
   /** The module the named options are imported from, e.g. `lucide-react` */
   import?: string
   /** Shows the control only when this other prop has a value */
-  showWhen?: string
+  showWhen?: PropName<P>
 }
+
+/** One entry per prop to show a control for, in order */
+export type ControlsConfig<P> = { [K in PropName<P>]?: ControlConfig<P, K> }
 
 interface BaseControl {
   name: string
@@ -93,6 +106,32 @@ export const getControl = (
   }
 
   return null
+}
+
+/**
+ * The controls for a playground, in the order they are configured. Throws for
+ * a name that isn't a prop of the component, so a typo fails the docs build
+ * instead of silently leaving a control out.
+ */
+export const getControls = (
+  api: ApiDoc,
+  config: Partial<Record<string, ControlConfig>>,
+  initialProps: Values = {},
+): Control[] => {
+  const assertProp = (name: string) => {
+    if (name !== 'children' && !(name in api.props)) {
+      throw new Error(`Playground: ${api.displayName} has no prop "${name}"`)
+    }
+  }
+  Object.keys(initialProps).forEach(assertProp)
+
+  return Object.entries(config)
+    .map(([name, controlConfig]) => {
+      assertProp(name)
+      if (controlConfig?.showWhen) assertProp(controlConfig.showWhen)
+      return getControl(name, api.props[name], controlConfig)
+    })
+    .filter(control => control !== null)
 }
 
 class CodeExpression {
