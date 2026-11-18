@@ -590,11 +590,39 @@
           "$description": "Bakgrundsf\u00e4rg f\u00f6r aktiv menu"
         }
       }
+    }
+  },
+  "switch": {
+    "$description": "Färger för Switch.",
+    "$type": "string",
+    "background": {
+      "enabled": {
+        "$value": "light-dark({color.blue.120}, {color.blue.70})",
+        "$description": "Bakgrundsfärg för enabled Switch"
+      },
+      "checked": {
+        "hover": {
+          "$value": "light-dark({color.blue.80}, {color.blue.100})",
+          "$description": "Bakgrundsfärg för hovrad checked Switch"
+        }
+      }
     },
-    "text": {
-      "sectionHeader": {
-        "$value": "light-dark({color.gray.140}, {color.gray.70})",
-        "$description": "Textfärg för sektionsrubriker i navigationsmenyn"
+    "handle": {
+      "checked": {
+        "$value": "light-dark({color.white.base}, {color.black.base})",
+        "$description": "Färg för switch handle vid påslagen switch"
+      },
+      "unchecked": {
+        "$value": "light-dark({color.gray.110}, {color.gray.110})",
+        "$description": "Färg för switch handle vid ej påslagen switch"
+      },
+      "disabled": {
+        "$value": "light-dark({color.white.base}, {color.white.base})",
+        "$description": "Färg för disabled switch handle"
+      },
+      "active": {
+        "$value": "light-dark({color.blue.130}, {color.blue.60})",
+        "$description": "Färg för aktiv switch handle"
       }
     }
   },
