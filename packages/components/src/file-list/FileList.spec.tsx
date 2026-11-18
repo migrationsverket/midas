@@ -344,7 +344,7 @@ describe('FileList', () => {
         .not.toBeInTheDocument()
     })
 
-    it('hides it when the upload failed', async () => {
+    it('shows it when the upload failed, the file is still local', async () => {
       const { getByRole } = await render(
         <FileList aria-label='Test'>
           <FileListItem
@@ -358,7 +358,7 @@ describe('FileList', () => {
       )
       await expect
         .element(getByRole('button', { name: 'Preview broken.png' }))
-        .not.toBeInTheDocument()
+        .toBeVisible()
     })
 
     it('shows no preview button without onPreview', async () => {
