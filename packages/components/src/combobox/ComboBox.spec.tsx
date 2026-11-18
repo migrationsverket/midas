@@ -54,6 +54,24 @@ describe('given a primary ComboBox', async () => {
     )
   })
 
+  it('should keep the list in line with a full-width field and inside the viewport', async () => {
+    const { getByRole } = await render(<Primary />)
+
+    await getByRole('combobox').click()
+    await userEvent.keyboard('A')
+    const listBox = getByRole('listbox')
+    await expect.element(listBox).toBeVisible()
+
+    const fieldRect = getByRole('group').element().getBoundingClientRect()
+    const popover = listBox.element().closest('[data-trigger="ComboBox"]')
+    expect(popover).not.toBeNull()
+    const popoverRect = (popover as Element).getBoundingClientRect()
+    expect(popoverRect.left).toBe(fieldRect.left)
+    expect(document.documentElement.scrollWidth).toBeLessThanOrEqual(
+      window.innerWidth,
+    )
+  })
+
   it('should select the text when clicking in a combobox with a selected value (DS1253)', async () => {
     const { getByRole } = await render(<Primary />)
 
