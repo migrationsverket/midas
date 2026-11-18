@@ -9,15 +9,23 @@ type Item = (typeof options)[number]
 
 interface SpikeArgs {
   tagOverflow: TagOverflow
-  /** Width of the field in px */
+  /** Fill the container, so resizing the window resizes the field */
+  fullWidth: boolean
+  /** Width of the field in px, when it doesn't fill the container */
   width: number
   /** How many fruits are selected from the start */
   selectedCount: number
   size: 'large' | 'medium'
 }
 
-const Field = ({ tagOverflow, width, selectedCount, size }: SpikeArgs) => (
-  <div style={{ width }}>
+const Field = ({
+  tagOverflow,
+  fullWidth,
+  width,
+  selectedCount,
+  size,
+}: SpikeArgs) => (
+  <div style={{ width: fullWidth ? '100%' : width }}>
     <ComboBox<Item, 'multiple'>
       // A new key resets the default selection when the control changes
       key={selectedCount}
@@ -41,6 +49,7 @@ const meta = {
   parameters: { layout: 'padded' },
   args: {
     tagOverflow: 'wrap',
+    fullWidth: true,
     width: 400,
     selectedCount: 8,
     size: 'large',
@@ -50,7 +59,10 @@ const meta = {
       control: 'inline-radio',
       options: ['wrap', 'scroll', 'collapse'],
     },
-    width: { control: { type: 'range', min: 200, max: 900, step: 10 } },
+    width: {
+      control: { type: 'range', min: 200, max: 900, step: 10 },
+      if: { arg: 'fullWidth', truthy: false },
+    },
     selectedCount: {
       control: { type: 'range', min: 0, max: options.length, step: 1 },
     },
