@@ -1,8 +1,8 @@
 # Spike: ComboBox tag overflow
 
-What should a multi-select `ComboBox` do when the selected tags don't fit on one row? This spike compares three versions in the same component. The stories are under **Spikes/ComboBox tag overflow** in Storybook. **1. Variants → Side By Side** shows all three with the same selection. The fields fill the window, so resize it to see how each version reacts, or turn off `fullWidth` to set a fixed `width`. `selectedCount` sets how many are selected.
+What should a multi-select `ComboBox` do when the selected tags don't fit on one row? This spike compares four versions in the same component. The stories are under **Spikes/ComboBox tag overflow** in Storybook. **1. Variants → Side By Side** shows all four with the same selection. The fields fill the window, so resize it to see how each version reacts, or turn off `fullWidth` to set a fixed `width`. `selectedCount` sets how many are selected.
 
-The versions are switched with a `tagOverflow` prop on `ComboBox` that only exists on this branch: `'wrap'` (the default), `'scroll'` or `'collapse'`. Nothing else here is exported from the package.
+The versions are switched with a `tagOverflow` prop on `ComboBox` that only exists on this branch: `'wrap'` (the default), `'scroll'`, `'scroll-count'` or `'collapse'`. Nothing else here is exported from the package.
 
 ## 1. Wrap (`tagOverflow='wrap'`)
 
@@ -19,7 +19,17 @@ One row, always the same height as an empty field. The tags and the input scroll
 - **Bad:** with no scrollbar, nothing shows that there's more. Tags cut off at the edges are the only hint. Scrolling sideways with a mouse wheel needs Shift; trackpads and touch scroll naturally.
 - The field scrolls to the input when the input gets focus and after each pick, and to a tag when a tag gets focus (arrow keys in the tag list).
 
-## 3. Collapse (`tagOverflow='collapse'`)
+## 3. Scroll with count (`tagOverflow='scroll-count'`)
+
+Scrolls like `scroll`, with a "+n" chip pinned to the right edge that counts the tags out of view to the right. The count goes down as the row scrolls right and the chip disappears at the end, where the input is. Clicking the chip is like clicking the rest of the field: the input gets focus and the row scrolls to it.
+
+- **Good:** the layout never moves, there's a visible hint that there's more and how much, and every tag is still a real tag. The arrow keys reach all of them, and the row scrolls so the focused tag is clear of the chip.
+- **Bad:** nothing shows how many are out of view to the left once the row has scrolled. A "n+" chip on the left edge would be the same code mirrored.
+- The chip is only a visual hint, hidden from screen readers (`aria-hidden`): they reach every tag in the tag list anyway. Making it scroll the row on when clicked would need it to be a real button, with its own tab stop and label, so the spike leaves it out.
+- The chip is the last item in the row, a zero-width `position: sticky` anchor at the right edge, so it covers the end of what's in view without taking room in the row. It stays laid out while it's invisible (count 0), so its width can be read before it shows.
+- Its digits are tabular (`font-variant-numeric: tabular-nums`). Otherwise "+16" is a pixel wider than "+17", and the chip grew back over the tag that was just scrolled clear of it.
+
+## 4. Collapse (`tagOverflow='collapse'`)
 
 One row with the tags that fit and a "+n" chip for the rest. The input keeps at least `8ch` at the end of the row. Resizing the field shows more or fewer tags.
 
@@ -33,13 +43,14 @@ One row with the tags that fit and a "+n" chip for the rest. The input keeps at 
 
 - **React Aria renders the tags in a later pass than the component around them.** An effect that runs after a pick doesn't see the new tag yet. Both `scroll` (keeping the input in view) and `collapse` (measuring) wait for the tags with a `MutationObserver` on the row.
 - **The row's element is passed down through state, not a ref.** `ComboBoxTags`' effects run before React attaches the parent's ref, so with a ref they saw `null` on mount and never started their observers.
-- **Shift+Tab from the input reaches the focused tag's Remove button before the tag.** That's React Aria's tab order for tags (the same in their docs), so it's the same in all three versions.
-- `scroll` scrolls only the row, never the page, when a tag or the input gets focus. Scrolling the page would close the list, since React Aria closes a ComboBox's popover when the page scrolls.
+- **Shift+Tab from the input reaches the focused tag's Remove button before the tag.** That's React Aria's tab order for tags (the same in their docs), so it's the same in all the versions.
+- `scroll` and `scroll-count` scroll only the row, never the page, when a tag or the input gets focus. Scrolling the page would close the list, since React Aria closes a ComboBox's popover when the page scrolls.
 
 ## What it would take to ship one
 
 - **wrap:** nothing more, it's on `feat/combobox`.
 - **scroll:** small. A fade at the edges that have more would be the main addition, since nothing shows there's more. Needs a check with VoiceOver on iOS, where scrolling a row of tags sideways may not be obvious.
+- **scroll-count:** about the same as scroll: the fade is already there under the chip. Deciding on a left-edge count, and a check with VoiceOver on iOS.
 - **collapse:** the most work and the most open questions. What should "+n" do: nothing, open the list, or expand the row while the field has focus (like MUI's `limitTags`)? And Backspace removing a hidden tag needs either a different behaviour or an announcement.
 
 The tests are in `TagOverflow.spec.tsx`.

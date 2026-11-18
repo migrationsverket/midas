@@ -23,7 +23,8 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ListBoxEmptyState } from '../list-box/list-box-empty-state/ListBoxEmptyState'
-import { ComboBoxTags, type TagOverflow } from './ComboBoxTags'
+import { ComboBoxTags, isScrollingRow, type TagOverflow } from './ComboBoxTags'
+import { ComboBoxScrollCount } from './ComboBoxScrollCount'
 import { ComboBoxInput } from './ComboBoxInput'
 import type { SelectionMode } from '../common/types'
 
@@ -47,8 +48,9 @@ export interface ComboBoxProps<
   /**
    * Spike: how the selected tags behave when they don't fit on one row in
    * multi-select mode. `wrap` stacks them on more rows, `scroll` keeps one
-   * row that scrolls sideways, and `collapse` shows the tags that fit and
-   * "+n" for the rest
+   * row that scrolls sideways, `scroll-count` does the same with "+n" for
+   * the tags out of view to the right, and `collapse` shows the tags that
+   * fit and "+n" for the rest
    * @default 'wrap'
    */
   tagOverflow?: TagOverflow
@@ -89,8 +91,14 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
   // In a row that scrolls sideways, show whatever gets focus: the input
   // sits at the end and a tag can be anywhere along the row
   const handleFieldFocus: FocusEventHandler<HTMLDivElement> = event => {
-    if (tagOverflow !== 'scroll') return
-    scrollIntoRow(event.target, event.currentTarget)
+    if (!isScrollingRow(tagOverflow)) return
+    // Keep what gets focus clear of the "+n" chip pinned to the right edge
+    const chip = event.currentTarget.querySelector('[data-scroll-count]')
+    const chipWidth =
+      chip && chip.getAttribute('data-scroll-count') !== '0'
+        ? chip.getBoundingClientRect().width
+        : 0
+    scrollIntoRow(event.target, event.currentTarget, chipWidth)
   }
 
   return (
@@ -115,7 +123,7 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
           className={clsx(styles.fieldContent, {
             [styles.medium]: size === 'medium',
             [styles.disabled]: props.isDisabled,
-            [styles.scroll]: isMultiple && tagOverflow === 'scroll',
+            [styles.scroll]: isMultiple && isScrollingRow(tagOverflow),
             [styles.collapse]: isMultiple && tagOverflow === 'collapse',
           })}
           data-tag-overflow={isMultiple ? tagOverflow : undefined}
@@ -138,6 +146,9 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
             data-readonly={props.isReadOnly || undefined}
             ref={inputRef}
           />
+          {isMultiple && tagOverflow === 'scroll-count' && (
+            <ComboBoxScrollCount container={fieldContent} />
+          )}
         </div>
         <Button
           className={clsx(styles.button, {
@@ -177,14 +188,20 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
 }
 
 /** Scrolls the row sideways, and nothing else, so that `element` is in view */
-export const scrollIntoRow = (element: Element, row: HTMLElement) => {
+export const scrollIntoRow = (
+  element: Element,
+  row: HTMLElement,
+  /** Room covered at the right edge, by the "+n" chip */
+  endInset = 0,
+) => {
   const elementRect = element.getBoundingClientRect()
   const rowRect = row.getBoundingClientRect()
   const { paddingLeft, paddingRight } = getComputedStyle(row)
   const left = rowRect.left + parseFloat(paddingLeft)
-  const right = rowRect.right - parseFloat(paddingRight)
+  const right = rowRect.right - parseFloat(paddingRight) - endInset
 
-  if (elementRect.left < left) row.scrollLeft -= left - elementRect.left
+  if (elementRect.left < left)
+    row.scrollLeft -= Math.ceil(left - elementRect.left)
   else if (elementRect.right > right)
-    row.scrollLeft += elementRect.right - right
+    row.scrollLeft += Math.ceil(elementRect.right - right)
 }

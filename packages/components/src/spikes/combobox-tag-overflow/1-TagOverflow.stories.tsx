@@ -57,7 +57,7 @@ const meta = {
   argTypes: {
     tagOverflow: {
       control: 'inline-radio',
-      options: ['wrap', 'scroll', 'collapse'],
+      options: ['wrap', 'scroll', 'scroll-count', 'collapse'],
     },
     width: {
       control: { type: 'range', min: 200, max: 900, step: 10 },
@@ -86,13 +86,22 @@ export const Scroll: Story = {
   args: { tagOverflow: 'scroll' },
 }
 
+/**
+ * Scrolls like Scroll, with "+n" at the right edge for the tags out of view
+ * to the right. Every tag can be reached with the arrow keys
+ */
+export const ScrollCount: Story = {
+  tags: ['!snapshot', '!autodocs'],
+  args: { tagOverflow: 'scroll-count' },
+}
+
 /** One row with the tags that fit and "+n" for the rest */
 export const Collapse: Story = {
   tags: ['!snapshot', '!autodocs'],
   args: { tagOverflow: 'collapse' },
 }
 
-/** All three with the same selection, to compare */
+/** All four with the same selection, to compare */
 export const SideBySide: Story = {
   tags: ['!snapshot', '!autodocs'],
   argTypes: { tagOverflow: { table: { disable: true } } },
@@ -105,6 +114,10 @@ export const SideBySide: Story = {
       <Field
         {...args}
         tagOverflow='scroll'
+      />
+      <Field
+        {...args}
+        tagOverflow='scroll-count'
       />
       <Field
         {...args}

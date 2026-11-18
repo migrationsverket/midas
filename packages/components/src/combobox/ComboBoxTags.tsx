@@ -15,7 +15,7 @@ import messages from './intl/translations.json'
 import styles from './ComboBox.module.css'
 import tagStyles from '../tag/Tag.module.css'
 
-export type TagOverflow = 'wrap' | 'scroll' | 'collapse'
+export type TagOverflow = 'wrap' | 'scroll' | 'scroll-count' | 'collapse'
 
 interface ComboBoxTagsProps {
   selectionMode?: SelectionMode
@@ -51,7 +51,7 @@ export const ComboBoxTags = ({
   // After a pick, keep the input in view at the end of a scrolling row.
   // React Aria renders the new tag in a later pass, so this waits for it
   useLayoutEffect(() => {
-    if (tagOverflow !== 'scroll' || !container) return
+    if (!isScrollingRow(tagOverflow) || !container) return
 
     const observer = new MutationObserver(() => {
       if (container.querySelector('input') === document.activeElement) {
@@ -213,3 +213,7 @@ const useVisibleTagCount = (
 
   return isEnabled && isMeasured ? fit.count : keys.length
 }
+
+/** The versions where the tags and the input share one row that scrolls */
+export const isScrollingRow = (tagOverflow: TagOverflow) =>
+  tagOverflow === 'scroll' || tagOverflow === 'scroll-count'
