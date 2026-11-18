@@ -10,12 +10,10 @@ import { FieldError } from '../field-error'
 import { FilePickerContext } from './FilePickerContext'
 import styles from './FilePicker.module.css'
 
-export interface FilePickerProps extends Omit<
+interface FilePickerBaseProps extends Omit<
   HTMLAttributes<HTMLDivElement>,
-  'popover' | 'role'
+  'popover' | 'role' | 'aria-label' | 'aria-labelledby'
 > {
-  /** The label shown above the upload controls, also the group's name */
-  label: string
   /** A description shown below the label */
   description?: string
   /** Error message shown when `isInvalid` is true */
@@ -27,8 +25,37 @@ export interface FilePickerProps extends Omit<
    * @default false
    */
   isInvalid?: boolean
-  popover?: InfoPopoverProps
 }
+
+/** The group needs a name: a visible label, or one for screen readers only */
+type FilePickerName =
+  | {
+      /** The label shown above the upload controls, also the group's name */
+      label: string
+      /** An info button next to the label */
+      popover?: InfoPopoverProps
+      'aria-label'?: never
+      'aria-labelledby'?: never
+    }
+  | {
+      label?: never
+      popover?: never
+      /** Names the group when there's no visible `label` */
+      'aria-label': string
+      'aria-labelledby'?: never
+    }
+  | {
+      label?: never
+      popover?: never
+      'aria-label'?: never
+      /**
+       * Names the group with another element, e.g. a heading, when there's
+       * no visible `label`. It also describes the upload controls.
+       */
+      'aria-labelledby': string
+    }
+
+export type FilePickerProps = FilePickerBaseProps & FilePickerName
 
 /**
  * Groups a file upload pattern, `FileTrigger`, `DropZone` and `FileList`,
@@ -37,6 +64,8 @@ export interface FilePickerProps extends Omit<
  */
 export const FilePicker = ({
   label,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
   description,
   errorMessage,
   isInvalid = false,
@@ -45,7 +74,8 @@ export const FilePicker = ({
   children,
   ...rest
 }: FilePickerProps) => {
-  const labelId = useId()
+  const generatedLabelId = useId()
+  const labelId = label ? generatedLabelId : ariaLabelledBy
   const descriptionId = useId()
   const errorId = useId()
   const showError = isInvalid && !!errorMessage
@@ -57,19 +87,22 @@ export const FilePicker = ({
   return (
     <Group
       {...rest}
+      aria-label={ariaLabel}
       aria-labelledby={labelId}
       aria-describedby={describedBy || undefined}
       isInvalid={isInvalid}
       className={clsx(styles.filePicker, className)}
     >
-      <LabelWrapper popover={popover}>
-        <Label
-          id={labelId}
-          elementType='span'
-        >
-          {label}
-        </Label>
-      </LabelWrapper>
+      {label && (
+        <LabelWrapper popover={popover}>
+          <Label
+            id={labelId}
+            elementType='span'
+          >
+            {label}
+          </Label>
+        </LabelWrapper>
+      )}
       {description && (
         <Text
           slot='description'

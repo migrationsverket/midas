@@ -3,9 +3,11 @@ import { composeStories } from '@storybook/react-vite'
 import { userEvent } from 'vitest/browser'
 import * as stories from './FilePicker.stories'
 import { render } from '../../test-utils'
-import { FilePicker } from './FilePicker'
+import { FilePicker, type FilePickerProps } from './FilePicker'
 import { DropZone } from '../drop-zone'
 import { Text } from '../text'
+import { FileTrigger } from '../file-trigger'
+import { Button } from '../button'
 
 const { Default, WithDropZone, InvalidWithDropZone } = composeStories(stories)
 
@@ -53,6 +55,75 @@ describe('Given a FilePicker', () => {
       button.hasAttribute('aria-describedby'),
     )
     expect(describedButtons).toHaveLength(1)
+  })
+})
+
+describe('Given a FilePicker without a visible label', () => {
+  const trigger = (
+    <FileTrigger>
+      <Button>Välj fil(er)</Button>
+    </FileTrigger>
+  )
+
+  it('should be a group named by aria-label', async () => {
+    const { getByRole, container } = await render(
+      <FilePicker
+        aria-label={LABEL}
+        description={DESCRIPTION}
+      >
+        {trigger}
+      </FilePicker>,
+    )
+
+    await expect
+      .element(getByRole('group', { name: LABEL }))
+      .toHaveAccessibleDescription(DESCRIPTION)
+    expect(container.textContent).not.toContain(LABEL)
+  })
+
+  it('should describe the trigger button with only the description', async () => {
+    const { getByRole } = await render(
+      <FilePicker
+        aria-label={LABEL}
+        description={DESCRIPTION}
+      >
+        {trigger}
+      </FilePicker>,
+    )
+
+    await expect
+      .element(getByRole('button', { name: 'Välj fil(er)' }))
+      .toHaveAccessibleDescription(DESCRIPTION)
+  })
+
+  it('should be named by, and describe the trigger with, an external label', async () => {
+    const { getByRole } = await render(
+      <>
+        <h2 id='external-label'>{LABEL}</h2>
+        <FilePicker
+          aria-labelledby='external-label'
+          description={DESCRIPTION}
+        >
+          {trigger}
+        </FilePicker>
+      </>,
+    )
+
+    await expect.element(getByRole('group', { name: LABEL })).toBeVisible()
+    await expect
+      .element(getByRole('button', { name: 'Välj fil(er)' }))
+      .toHaveAccessibleDescription(`${LABEL} ${DESCRIPTION}`)
+  })
+
+  it('should require a label, aria-label or aria-labelledby', () => {
+    // @ts-expect-error no accessible name
+    const unnamed: FilePickerProps = { description: DESCRIPTION }
+    // @ts-expect-error a visible label and aria-label would compete
+    const both: FilePickerProps = { label: LABEL, 'aria-label': LABEL }
+    const info = { children: 'Info' }
+    // @ts-expect-error the popover sits next to the visible label
+    const popover: FilePickerProps = { 'aria-label': LABEL, popover: info }
+    expect([unnamed, both, popover]).toHaveLength(3)
   })
 })
 
