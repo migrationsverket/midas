@@ -201,22 +201,54 @@ det är `status` som avgör vilken som faktiskt anropas när knappen trycks:
 />
 ```
 
+## Förhandsgranska
+
+Ange `onPreview` för att visa en knapp för förhandsgranskning på raden. Knappen visas i alla lägen
+utom under uppladdning, även när uppladdningen misslyckats, eftersom filen då fortfarande finns
+hos användaren. Själva förhandsgranskningen, till exempel i en `Modal` eller annan komponent för
+visning, står din egen kod för.
+
+```tsx
+<FileListItem
+  fileName='pass.jpg'
+  fileSize='2.4 MB'
+  status='success'
+  onPreview={handlePreview}
+  onDelete={handleDelete}
+/>
+```
+
+<div className='card'>
+  <FileList aria-label='Uppladdade filer'>
+    <FileListItem
+      fileName='pass.jpg'
+      fileSize='2.4 MB'
+      status='success'
+      onPreview={() => {}}
+      onDelete={() => {}}
+    />
+  </FileList>
+</div>
+
 ## Tillgänglighet
 
-`FileList` renderar en semantisk `<ul>`-lista där varje borttagningsknapp är direkt nåbar via tangentbordet.
+`FileList` renderar en semantisk `<ul>`-lista där varje knapp är direkt nåbar via tangentbordet.
 
 | Tangent | Åtgärd |
 |---------|--------|
-| `Tab` / `Shift+Tab` | Navigera mellan borttagningsknappar |
-| `Enter` / `Space` | Aktivera borttagningsknappen |
+| `Tab` / `Shift+Tab` | Navigera mellan knapparna |
+| `Enter` / `Space` | Aktivera knappen som har fokus |
 
 När en rad tas bort flyttas fokus automatiskt till en angränsande rads knapp, eller till listan
 själv, om det var den sista raden, annars skulle fokus falla igenom och gå förlorat. Detta sker
 bara när raden faktiskt försvinner ur DOM:en, aldrig i förväg, så det stör inte fokus du redan satt
 själv (till exempel om en borttagning misslyckas och raden ligger kvar).
 
+Försvinner förhandsgranskningsknappen medan den har fokus, till exempel när en ny uppladdning
+startar, flyttas fokus till radens andra knapp.
+
 `aria-label` på `FileList` är obligatoriskt och beskriver listans syfte för skärmläsare.
-Borttagningsknappen har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Ta bort CV_Anna_Svensson.pdf"`.
+Knapparna har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex. `"Ta bort CV_Anna_Svensson.pdf"` och `"Förhandsgranska CV_Anna_Svensson.pdf"`.
 
 ## API
 
