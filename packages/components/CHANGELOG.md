@@ -1,3 +1,26 @@
+## 17.36.0 (2026-11-18)
+
+### 🚀 Features
+
+- **components,file-list:** allow preview for failed uploads ([9eefa45ed7b](https://github.com/migrationsverket/midas/commit/9eefa45ed7b))
+- **components,file-list:** add an optional preview button ([cdce6cff9e3](https://github.com/migrationsverket/midas/commit/cdce6cff9e3))
+
+### 🏭 Refactoring
+
+- **components,file-list:** move preview focus handling into the row ([7a53427809e](https://github.com/migrationsverket/midas/commit/7a53427809e))
+
+### 📖 Documentation changes
+
+- **components,file-list:** describe all FileListItem props ([8d4a432c5c0](https://github.com/migrationsverket/midas/commit/8d4a432c5c0))
+
+### 🔧 Maintenance
+
+- **components,file-list:** hide the modal preview story ([bb6cfe9063b](https://github.com/migrationsverket/midas/commit/bb6cfe9063b))
+
+### 🧪 Tests updated
+
+- update visual regression screenshots ([0ce17025cfb](https://github.com/migrationsverket/midas/commit/0ce17025cfb))
+
 ## 17.35.0 (2026-11-17)
 
 ### 🚀 Features
