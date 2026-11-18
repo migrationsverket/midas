@@ -80,6 +80,12 @@
   }
 }
 
+/* The tags and the input share .fieldContent's flex line, so the input sits
+ * after the last tag when it fits and wraps below it when it doesn't */
+.fieldContent .tags {
+  display: contents;
+}
+
 .inputField {
   min-width: 6ch;
   box-sizing: border-box;
@@ -93,7 +99,9 @@
 
   &.multi {
     height: unset;
-    min-width: unset;
+    min-width: 8ch;
+    flex: 1 0 8ch;
+    width: 0;
   }
 
   &::placeholder {

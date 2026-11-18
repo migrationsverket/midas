@@ -15,6 +15,7 @@ const {
   NotVirtualized,
   WithHelpPopover,
   MultipleDefaultValue,
+  MultipleAllSelected,
   MultipleRequired,
 } = composeStories(stories)
 
@@ -261,6 +262,45 @@ describe('given a ComboBox with a default multi-value', async () => {
     await expect
       .element(tagGrid.getByText('Ananas', { exact: true }))
       .toBeVisible()
+  })
+
+  it('should put the input after the last tag when there is room for it, and below it when there is not', async () => {
+    const { getByRole, container } = await render(<MultipleAllSelected />)
+
+    const input = getByRole('combobox').element()
+    const fieldContent = input.parentElement as HTMLElement
+    const tags = getByRole('row').elements()
+    const minWidth = parseFloat(getComputedStyle(input).minWidth)
+    expect(minWidth).toBeGreaterThan(0)
+
+    // The room left after the last tag depends on the fonts, so try a range
+    // of widths and check the rule at each one
+    const sameRowWidths: number[] = []
+    for (let width = 300; width <= 414; width += 2) {
+      container.style.width = `${width}px`
+      const lastTag = tags[tags.length - 1].getBoundingClientRect()
+      const tagRows = new Set(
+        tags.map(tag => Math.round(tag.getBoundingClientRect().top)),
+      )
+      const { columnGap, paddingRight } = getComputedStyle(fieldContent)
+      const roomAfterLastTag =
+        fieldContent.getBoundingClientRect().right -
+        parseFloat(paddingRight) -
+        lastTag.right -
+        parseFloat(columnGap)
+      const inputRect = input.getBoundingClientRect()
+      const isOnLastTagRow =
+        inputRect.top < lastTag.bottom && inputRect.bottom > lastTag.top
+
+      expect(tagRows.size, `at ${width}px`).toBeGreaterThan(1)
+      expect(isOnLastTagRow, `at ${width}px`).toBe(roomAfterLastTag >= minWidth)
+      if (isOnLastTagRow) {
+        expect(inputRect.left).toBeGreaterThan(lastTag.right)
+        sameRowWidths.push(width)
+      }
+    }
+
+    expect(sameRowWidths.length).toBeGreaterThan(0)
   })
 })
 

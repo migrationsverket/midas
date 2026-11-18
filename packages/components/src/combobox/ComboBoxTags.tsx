@@ -4,6 +4,7 @@ import { Tag, TagGroup, TagList } from '../tag'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import type { SelectionMode } from '../common/types'
 import messages from './intl/translations.json'
+import styles from './ComboBox.module.css'
 
 interface ComboBoxTagsProps {
   selectionMode?: SelectionMode
@@ -33,8 +34,12 @@ export const ComboBoxTags = ({
       aria-label={strings.format('selectedItems')}
       onRemove={handleRemove}
       selectionBehavior='toggle'
+      className={styles.tags}
     >
-      <TagList items={state.selectedItems}>
+      <TagList
+        items={state.selectedItems}
+        className={styles.tags}
+      >
         {item => (
           <Tag
             isDismissable={!isDisabled && !isReadOnly}
