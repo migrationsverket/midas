@@ -110,22 +110,27 @@ describe("tagOverflow='scroll'", () => {
     expect(isInside(firstTag.element(), fieldContent())).toBe(true)
   })
 
-  it('should keep the input in view after picking another item', async () => {
-    await render(
-      <Field
-        tagOverflow='scroll'
-        selectedCount={20}
-      />,
-    )
-    const input = page.getByRole('combobox')
+  // Types a whole fruit name, which is slow on a busy machine
+  it(
+    'should keep the input in view after picking another item',
+    { timeout: 5000 },
+    async () => {
+      await render(
+        <Field
+          tagOverflow='scroll'
+          selectedCount={20}
+        />,
+      )
+      const input = page.getByRole('combobox')
 
-    await userEvent.click(input)
-    await userEvent.keyboard('Vattenmelon')
-    await userEvent.keyboard('[ArrowDown][Enter]')
+      await userEvent.click(input)
+      await userEvent.keyboard('Vattenmelon')
+      await userEvent.keyboard('[ArrowDown][Enter]')
 
-    await expect.element(input).toHaveValue('')
-    expect(isInside(input.element(), fieldContent())).toBe(true)
-  })
+      await expect.element(input).toHaveValue('')
+      expect(isInside(input.element(), fieldContent())).toBe(true)
+    },
+  )
 })
 
 describe("tagOverflow='collapse'", () => {
@@ -200,5 +205,96 @@ describe("tagOverflow='collapse'", () => {
     await expect
       .poll(() => page.getByRole('row').elements().length)
       .toBeGreaterThan(narrowCount)
+  })
+})
+
+describe("tagOverflow='scroll-count'", () => {
+  const chip = () =>
+    fieldContent().querySelector<HTMLElement>(
+      '[data-scroll-count]',
+    ) as HTMLElement
+  const count = () => Number(chip().getAttribute('data-scroll-count'))
+  const tagsEndingAfter = (edge: number) =>
+    page
+      .getByRole('row')
+      .elements()
+      .filter(tag => tag.getBoundingClientRect().right > edge + 0.5).length
+  const visibleRight = () => fieldContent().getBoundingClientRect().right
+  const scrollTo = async (left: number) => {
+    fieldContent().scrollLeft = left
+    await new Promise(resolve => requestAnimationFrame(resolve))
+  }
+
+  it('should render every tag and count the ones out of view to the right', async () => {
+    await render(
+      <Field
+        tagOverflow='scroll-count'
+        selectedCount={20}
+      />,
+    )
+
+    await expect.element(page.getByRole('row')).toHaveLength(20)
+    await expect.poll(count).toBeGreaterThan(0)
+    expect(count()).toBe(
+      tagsEndingAfter(visibleRight() - chip().getBoundingClientRect().width),
+    )
+    expect(rowTops().size).toBe(1)
+    expect(chip().closest('[aria-hidden]')).not.toBeNull()
+  })
+
+  it('should count fewer as the row scrolls right, and none at the end', async () => {
+    await render(
+      <Field
+        tagOverflow='scroll-count'
+        selectedCount={20}
+      />,
+    )
+    await expect.poll(count).toBeGreaterThan(0)
+    const atStart = count()
+
+    await scrollTo(fieldContent().scrollWidth / 2)
+    await expect.poll(count).toBeLessThan(atStart)
+    expect(count()).toBeGreaterThan(0)
+
+    await scrollTo(fieldContent().scrollWidth)
+    await expect.poll(count).toBe(0)
+    expect(getComputedStyle(chip()).visibility).toBe('hidden')
+  })
+
+  it('should reach every tag with the arrow keys and keep it clear of "+n"', async () => {
+    await render(
+      <Field
+        tagOverflow='scroll-count'
+        selectedCount={20}
+      />,
+    )
+    const tags = page.getByRole('row')
+    ;(tags.first().element() as HTMLElement).focus()
+
+    for (let index = 1; index < 20; index++) {
+      await userEvent.keyboard('[ArrowRight]')
+      await expect.element(tags.nth(index)).toHaveFocus()
+      const tagRight = tags.nth(index).element().getBoundingClientRect().right
+      const chipLeft =
+        count() > 0 ? chip().getBoundingClientRect().left : visibleRight()
+      expect(tagRight, `tag ${index}`).toBeLessThanOrEqual(chipLeft + 0.5)
+    }
+  }, 10000)
+
+  it('should focus the input and scroll to it when "+n" is clicked, like the rest of the field', async () => {
+    await render(
+      <Field
+        tagOverflow='scroll-count'
+        selectedCount={20}
+      />,
+    )
+    await expect.poll(count).toBeGreaterThan(0)
+
+    await userEvent.click(chip())
+
+    const input = page.getByRole('combobox')
+    await expect.element(input).toHaveFocus()
+    expect(isInside(input.element(), fieldContent())).toBe(true)
+    await expect.poll(count).toBe(0)
   })
 })

@@ -101,6 +101,36 @@
   scrollbar-width: none;
 }
 
+/* Spike: tagOverflow='scroll-count' scrolls like 'scroll', with "+n" pinned
+ * to the right edge. The anchor is the row's last item, has no width and
+ * sticks to the right edge, so the chip covers the end of what's in view
+ * without taking any room in the row */
+.scrollCountAnchor {
+  position: sticky;
+  right: 0;
+  align-self: stretch;
+  flex: 0 0 0;
+  margin-inline-start: calc(-1 * var(--midas-space-xsmall));
+}
+
+.scrollCount {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  white-space: nowrap;
+
+  /* Same width for every count with as many digits, so the chip doesn't
+   * grow over the tag that was just scrolled clear of it */
+  font-variant-numeric: tabular-nums;
+  box-shadow: -12px 0 8px -4px
+    var(--midas-field-base, var(--midas-field-01-base));
+
+  &[data-scroll-count='0'] {
+    visibility: hidden;
+  }
+}
+
 /* Spike: tagOverflow='collapse' keeps one row with the tags that fit and
  * "+n" for the rest */
 .fieldContent.collapse {
