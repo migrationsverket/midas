@@ -14,6 +14,7 @@ const {
   Sectioned,
   NotVirtualized,
   WithHelpPopover,
+  Multiple,
   MultipleDefaultValue,
   MultipleAllSelected,
   MultipleRequired,
@@ -264,6 +265,19 @@ describe('given a ComboBox with a default multi-value', async () => {
       .toBeVisible()
   })
 
+  it('should only show the placeholder while nothing is selected', async () => {
+    const { getByRole } = await render(<MultipleDefaultValue />)
+    const comboBox = getByRole('combobox')
+
+    await expect.element(comboBox).toHaveAttribute('placeholder', '')
+
+    await userEvent.click(comboBox)
+    await userEvent.keyboard('[Backspace][Backspace]')
+    await expect
+      .element(comboBox)
+      .toHaveAttribute('placeholder', 'Välj eller sök frukt')
+  })
+
   it('should put the input after the last tag when there is room for it, and below it when there is not', async () => {
     const { getByRole, container } = await render(<MultipleAllSelected />)
 
@@ -301,6 +315,16 @@ describe('given a ComboBox with a default multi-value', async () => {
     }
 
     expect(sameRowWidths.length).toBeGreaterThan(0)
+  })
+})
+
+describe('given a multiple ComboBox with nothing selected', async () => {
+  it('should show the placeholder', async () => {
+    const { getByRole } = await render(<Multiple />)
+
+    await expect
+      .element(getByRole('combobox'))
+      .toHaveAttribute('placeholder', 'Välj eller sök frukt')
   })
 })
 
