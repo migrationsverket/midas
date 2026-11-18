@@ -139,7 +139,7 @@ export const DropZoneExample = () => {
 
 ### Felmeddelande
 
-Sätt `isInvalid` och `errorMessage` på `FilePicker` för att visa ett fel, till exempel om användaren väljer fel filtyp. Felmeddelandet visas alltid under kontrollerna och läggs automatiskt till i knappens beskrivning. En `DropZone` inuti markeras också som ogiltig.
+Sätt `isInvalid` och `errorMessage` på `FilePicker` för att visa ett fel, till exempel om användaren väljer fel filtyp. Felmeddelandet visas mellan beskrivningen och kontrollerna, eller under kontrollerna med `errorPosition='bottom'`, och läggs automatiskt till i knappens beskrivning. En `DropZone` inuti markeras också som ogiltig.
 
 ```tsx
 <FilePicker

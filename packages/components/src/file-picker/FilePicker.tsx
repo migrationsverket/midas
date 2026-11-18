@@ -19,7 +19,14 @@ interface FilePickerBaseProps extends Omit<
   /** Error message shown when `isInvalid` is true */
   errorMessage?: string
   /**
-   * Marks the field as invalid and shows `errorMessage` below the controls.
+   * Shows the error message between the description and the upload
+   * controls, or below the controls.
+   *
+   * @default 'top'
+   */
+  errorPosition?: 'top' | 'bottom'
+  /**
+   * Marks the field as invalid and shows `errorMessage`.
    * A composed `DropZone` is marked as invalid too.
    *
    * @default false
@@ -68,6 +75,7 @@ export const FilePicker = ({
   'aria-labelledby': ariaLabelledBy,
   description,
   errorMessage,
+  errorPosition = 'top',
   isInvalid = false,
   popover,
   className,
@@ -83,6 +91,15 @@ export const FilePicker = ({
   const describedBy = [description && descriptionId, showError && errorId]
     .filter(Boolean)
     .join(' ')
+
+  const error = showError && (
+    <FieldError
+      id={errorId}
+      isInvalid
+    >
+      {errorMessage}
+    </FieldError>
+  )
 
   return (
     <Group
@@ -111,6 +128,7 @@ export const FilePicker = ({
           {description}
         </Text>
       )}
+      {errorPosition === 'top' && error}
       <FilePickerContext.Provider
         value={{
           'aria-describedby': [labelId, describedBy].filter(Boolean).join(' '),
@@ -119,14 +137,7 @@ export const FilePicker = ({
       >
         <div className={styles.content}>{children}</div>
       </FilePickerContext.Provider>
-      {showError && (
-        <FieldError
-          id={errorId}
-          isInvalid
-        >
-          {errorMessage}
-        </FieldError>
-      )}
+      {errorPosition === 'bottom' && error}
     </Group>
   )
 }

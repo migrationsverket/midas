@@ -148,8 +148,25 @@ describe('Given an invalid FilePicker with a DropZone', () => {
       .toHaveAccessibleDescription(`${DESCRIPTION} ${ERROR}`)
   })
 
-  it('should show the error message below the controls', async () => {
+  it('should show the error message above the controls by default', async () => {
     const { getByText, getByRole } = await render(<InvalidWithDropZone />)
+
+    const description = getByText(DESCRIPTION).element()
+    const error = getByText(ERROR).element()
+    const button = getByRole('button', { name: 'Välj fil(er)' }).element()
+    expect(
+      description.compareDocumentPosition(error) &
+        Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy()
+    expect(
+      error.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING,
+    ).toBeTruthy()
+  })
+
+  it('should show the error message below the controls with errorPosition bottom', async () => {
+    const { getByText, getByRole } = await render(
+      <InvalidWithDropZone errorPosition='bottom' />,
+    )
 
     const button = getByRole('button', { name: 'Välj fil(er)' }).element()
     const error = getByText(ERROR).element()
