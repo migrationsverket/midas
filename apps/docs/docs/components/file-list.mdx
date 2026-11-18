@@ -4,7 +4,6 @@ description: Lista uppladdade filer
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
-import FileListApi from '@midas-ds/api/components/FileList.json'
 import FileListItemApi from '@midas-ds/api/components/FileListItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { FileList, FileListItem } from '@midas-ds/components'
@@ -254,7 +253,7 @@ Knapparna har ett automatiskt genererat `aria-label` baserat på filnamnet, t.ex
 
 ### FileList
 
-<PropTable doc={FileListApi} />
+`FileList` tar emot samma props som ett `<ul>`-element, till exempel `aria-label` och `className`.
 
 ### FileListItem
 
