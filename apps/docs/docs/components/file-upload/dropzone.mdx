@@ -18,6 +18,8 @@ import { ValidatedDropZoneExample } from '@site/src/components/examples/file-upl
 En yta som ett eller flera objekt kan dras och släppas på. Kombinera med [FileTrigger](/components/file-upload/file-trigger) för
 [filuppladdning](/components/file-upload#med-drag--drop), eller använd den fristående för andra typer av drag & drop.
 
+Används DropZone för filuppladdning, lägg alltid en `FileTrigger` i den. Dra och släpp fungerar inte på de flesta mobiler och används inte av alla, så knappen är det som gör att alla kan välja filer.
+
 ```tsx
 <DropZone onDrop={handleDrop}>
   <Text slot='label'>Släpp filer här</Text>

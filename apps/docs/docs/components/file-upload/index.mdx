@@ -4,12 +4,31 @@ description: Filuppladdning med FilePicker, FileTrigger, DropZone och FileList.
 ---
 
 import { FileListExample, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { FileUploadComplete } from '@site/src/components/examples/file-upload/FileUploadComplete'
+import FileUploadCompleteSrc from '!!raw-loader!@site/src/components/examples/file-upload/FileUploadComplete'
+import CodeBlock from '@theme/CodeBlock'
 import { PropTable } from '@site/src/components/PropsTable'
 import FilePickerApi from '@midas-ds/api/components/FilePicker.json'
 
 Filuppladdning skapas genom att kombinera [FileTrigger](/components/file-upload/file-trigger), [DropZone](/components/file-upload/dropzone) och [FileList](/components/file-upload/file-list) inuti en `FilePicker`. Nedan beskrivs mönstret för filuppladdning med dessa komponenter. Se respektive komponent för API-dokumentation.
 
-`FilePicker` ger mönstret en etikett, en beskrivning och ett felmeddelande. En `FileTrigger` inuti beskrivs automatiskt av dessa via `aria-describedby`, så du behöver inte koppla ihop dem själv. De valda filerna hanterar du själv i ditt eget state.
+`FilePicker` ger mönstret en etikett, en beskrivning och ett felmeddelande. En `FileTrigger` inuti beskrivs automatiskt av dessa via `aria-describedby`, så du behöver inte koppla ihop dem själv. Vilka filer som är valda, kraven på filtyp och storlek och själva uppladdningen sköter din egen kod.
+
+## Komplett exempel
+
+Ett exempel med allt på plats: dra och släpp, kontroll av filtyp och storlek, och uppladdning med status. Kopiera det och anpassa kraven, texterna och `uploadFile` efter er tjänst.
+
+<div className='card'>
+  <FileUploadComplete />
+</div>
+
+<CodeBlock language='tsx'>{FileUploadCompleteSrc}</CodeBlock>
+
+Så här fungerar exemplet:
+
+- En fil som inte kan laddas upp visas ändå i listan, med ett felmeddelande som förklarar varför.
+- `acceptedFileTypes` begränsar bara vilka filer som går att välja i filväljaren. En fil som dras och släpps kan vara av vilken typ som helst, därför kontrolleras filtypen även i koden.
+- Kontrollerna i webbläsaren ger användaren snabb återkoppling, men de skyddar inte. `file.type` bygger bara på filändelsen och allt i webbläsaren går att kringgå, så servern måste alltid kontrollera filerna igen.
 
 ## Varianter
 
@@ -72,6 +91,8 @@ export const FileListExample = () => {
 ### Med drag & drop
 
 Genom att kombinera DropZone med FileTrigger och FileList kan användaren dra och släppa filer i en definierad yta.
+
+Lägg alltid en `FileTrigger` i `DropZone`. Dra och släpp fungerar inte på de flesta mobiler och används inte av alla, så knappen är det som gör att alla kan välja filer.
 
 ```tsx
 import { Button, DropZone, FilePicker, FileList, FileListItem, FileTrigger, Text, type DropEvent } from '@midas-ds/components'
