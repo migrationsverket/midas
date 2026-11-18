@@ -13,40 +13,48 @@ import styles from './FileList.module.css'
 import messages from './intl/translations.json'
 
 export interface FileListItemProps {
+  /** Shown in the row, and used in the buttons' accessible names. */
   fileName: string
+  /** Shown after the file name, already formatted, e.g. `'1.2 MB'`. */
   fileSize?: string
-  /** @default 'idle' */
+  /**
+   * Where the file is in the upload. Decides what the row shows, and whether
+   * its button cancels or deletes.
+   * @default 'idle'
+   */
   status?: 'idle' | 'uploading' | 'success' | 'error'
   /** 0-100. Only meaningful when `status='uploading'`; omit for indeterminate. */
   progress?: number
   /** Shown below the row when `status='error'`. */
   errorMessage?: string
   /**
-   * Called when the cancel button is pressed while `status='uploading'` —
-   * this is where you'd abort the in-flight request (e.g.
-   * `XMLHttpRequest.abort()` or `AbortController.abort()`). Falls back to
+   * Called when the cancel button is pressed while `status='uploading'`.
+   * This is where you'd abort the in-flight request, e.g. with
+   * `XMLHttpRequest.abort()` or `AbortController.abort()`. Falls back to
    * `onDelete` if omitted, so an in-progress upload isn't silently left
    * running in the background with no way to stop it.
    */
   onCancel?: () => void
   /**
    * Called when the delete button is pressed for any status other than
-   * `uploading` (use `onCancel` for that). `FileList` has no concept of
-   * "uploaded" vs "local only" — if the file is already persisted
-   * server-side by the time this fires, deleting it there too is your call.
+   * `uploading` (use `onCancel` for that). `FileList` doesn't know whether a
+   * file is uploaded or only local. If it's already stored server-side when
+   * this fires, deleting it there too is up to you.
    */
   onDelete?: () => void
   /**
    * Shows a preview button next to the delete button. Hidden while
    * `uploading`, when cancelling is the main action in the row. Shown when
    * an upload failed, since the file is still on the user's device and they
-   * can check what they picked. Opening the preview, e.g. in a `Modal` or a
-   * new tab, is up to you.
+   * can check what they picked. Opening the preview, e.g. in a `Modal` or
+   * another component, is up to you.
    */
   onPreview?: () => void
+  /** Class name for the row's `<li>`. */
   className?: string
 }
 
+/** A row in a `FileList`, showing one file and its upload status. */
 export const FileListItem = ({
   fileName,
   fileSize,
