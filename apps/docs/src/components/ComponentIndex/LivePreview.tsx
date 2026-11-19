@@ -5,7 +5,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { UNSAFE_PortalProvider } from 'react-aria'
+import { I18nProvider, UNSAFE_PortalProvider } from 'react-aria'
 import { findStories, pickStory, previewWidth, shouldFit } from './stories'
 import { renderStory } from './renderStory'
 import styles from './ComponentIndex.module.css'
@@ -62,7 +62,9 @@ const FitToBox = ({
       {/* Overlays portal into the preview, so they're scaled and inert too */}
       {container && (
         <UNSAFE_PortalProvider getContainer={() => container}>
-          {children}
+          {/* The docs are in Swedish, so dates and built-in texts are too,
+              whatever the browser's language */}
+          <I18nProvider locale='sv-SE'>{children}</I18nProvider>
         </UNSAFE_PortalProvider>
       )}
     </div>
