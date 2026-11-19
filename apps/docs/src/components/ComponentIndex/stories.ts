@@ -91,6 +91,12 @@ const overrides: Record<string, Override> = {
   pagination: { width: '720px' },
   // The preview is on layer 01, the default skeleton blends into it
   skeleton: { story: 'IsOnLayer01', args: { isAnimated: false } },
+  // Fills the viewport's height, so it's given a desktop size instead
+  layout: {
+    story: 'WithNavbar',
+    width: '1280px',
+    args: { style: { height: '540px' } },
+  },
   // Its region is fixed, the preview contains it
   toast: { story: 'VariantsOpen' },
 
