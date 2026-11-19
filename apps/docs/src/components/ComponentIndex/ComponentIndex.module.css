@@ -6,40 +6,8 @@
 }
 
 .card {
-  border: var(--midas-border-width) solid var(--midas-border-color-subtle);
-  color: var(--midas-text-primary);
   display: flex;
   flex-direction: column;
-  position: relative;
-  transition: background-color 250ms ease-in-out;
-
-  &:hover {
-    background-color: var(--midas-layer-01-hover);
-  }
-
-  &:has(.link:focus-visible) {
-    box-shadow: var(--midas-state-focus);
-  }
-}
-
-/* Covers the whole card, so all of it is clickable through one link */
-.link {
-  color: inherit;
-
-  &::after {
-    content: '';
-    inset: 0;
-    position: absolute;
-  }
-
-  &:hover {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  &:focus-visible {
-    outline: none;
-  }
 }
 
 .preview {
@@ -87,18 +55,8 @@
   }
 }
 
-.body {
-  padding: var(--midas-space-small) var(--midas-space-medium);
-}
-
-.title {
-  font-size: 1.125rem;
-  margin: 0 0 var(--midas-space-xsmall);
-}
-
 .description {
   display: -webkit-box;
-  font-size: 0.875rem;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   margin: 0;
