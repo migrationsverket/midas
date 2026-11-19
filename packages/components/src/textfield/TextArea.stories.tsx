@@ -122,3 +122,9 @@ export const MaxLengthAndShowCounter: Story = {
     maxLength: 50,
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { label: 'Meddelande', description: 'Beskriv ditt ärende kort' },
+}

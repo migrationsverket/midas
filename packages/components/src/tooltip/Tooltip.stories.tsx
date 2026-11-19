@@ -74,3 +74,11 @@ export const PlacementStartRTL: Story = {
     </I18nProvider>
   ),
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  ...Open,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // React Aria positions the tooltip from unscaled coordinates
+  parameters: { indexPreview: { fit: false } },
+}

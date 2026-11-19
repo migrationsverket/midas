@@ -89,3 +89,9 @@ export const ChangeSemanticElement: Story = {
     children: 'I am a regular h1 element with a look of a regular h3',
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { level: 1, children: 'Rubrik' },
+}

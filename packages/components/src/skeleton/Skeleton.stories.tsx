@@ -83,3 +83,9 @@ export const DS1191: Story = {
     },
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { ...Rectangle.args, isOnLayer01: true, isAnimated: false },
+}

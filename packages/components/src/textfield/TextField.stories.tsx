@@ -218,3 +218,13 @@ export const OnCard: Story = {
     </Card>
   ),
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    label: 'Förnamn',
+    description: 'Som det står i ditt pass',
+    defaultValue: 'Anna',
+  },
+}

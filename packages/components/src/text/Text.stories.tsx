@@ -49,3 +49,9 @@ export const Expressive: Story = {
 }
 
 export default meta
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { children: 'Det här är ett stycke brödtext.' },
+}

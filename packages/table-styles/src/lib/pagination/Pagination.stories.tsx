@@ -142,3 +142,11 @@ export const ServerSide: Story = {
     )
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  ...Primary,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Uses container queries and hides parts of itself below 675px
+  parameters: { indexPreview: { width: '720px' } },
+}
