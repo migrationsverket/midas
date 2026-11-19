@@ -6,12 +6,20 @@ import {
   type ReactNode,
 } from 'react'
 import { UNSAFE_PortalProvider } from 'react-aria'
-import { findStories, pickStory, shouldFit } from './stories'
+import { findStories, pickStory, previewWidth, shouldFit } from './stories'
 import { renderStory } from './renderStory'
 import styles from './ComponentIndex.module.css'
 
 /** Shrinks its content until it fits the preview box, never enlarges it */
-const FitToBox = ({ children, fit }: { children: ReactNode; fit: boolean }) => {
+const FitToBox = ({
+  children,
+  fit,
+  width,
+}: {
+  children: ReactNode
+  fit: boolean
+  width?: string
+}) => {
   const ref = useRef<HTMLDivElement>(null)
   const [zoom, setZoom] = useState(1)
   // The story waits for the container: overlays read it while rendering, and a
@@ -49,7 +57,7 @@ const FitToBox = ({ children, fit }: { children: ReactNode; fit: boolean }) => {
       }}
       className={styles.live}
       inert
-      style={{ zoom }}
+      style={{ zoom, width, flexShrink: width ? 0 : undefined }}
     >
       {/* Overlays portal into the preview, so they're scaled and inert too */}
       {container && (
@@ -97,7 +105,14 @@ export const LivePreview = ({ title }: { title: string }) => {
       ref={ref}
       className={styles.preview}
     >
-      {preview && <FitToBox fit={shouldFit(title)}>{preview}</FitToBox>}
+      {preview && (
+        <FitToBox
+          fit={shouldFit(title)}
+          width={previewWidth(title)}
+        >
+          {preview}
+        </FitToBox>
+      )}
     </div>
   )
 }
