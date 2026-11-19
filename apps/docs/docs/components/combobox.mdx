@@ -7,6 +7,7 @@ import {
   ControlledExample,
   SectionedExample,
   AsyncExample,
+  ItemActionExample,
 } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/PropsTable'
 import { Playground } from '@site/src/components/Playground/Playground'
@@ -191,6 +192,60 @@ Fler exempel med bland annat infinite scroll finns i [React Arias dokumentation 
 
 <div className='card'>
   <AsyncExample />
+</div>
+
+## Skapa alternativ
+
+Använd `onAction` på `<ListBoxItem>` för att utföra valfria handlingar när användaren klickar eller trycker enter. Detta exempel visar hur användaren kan skapa ett nytt alternativ för angivet `inputValue`.
+
+```tsx
+const ItemActionExample = () => {
+  const [items, setItems] = useState([
+    'Lime',
+    'Äpple',
+    'Banan',
+    'Kiwi',
+    'Apelsin',
+  ])
+  const [inputValue, setInputValue] = useState('')
+  const selectedItem = items.includes(inputValue) ? inputValue : null
+
+  const selectItem = (key: Key | null) => {
+    if (key !== null) setInputValue(String(key))
+  }
+
+  const createItem = () => setItems(prev => [...prev, inputValue])
+
+  return (
+    <ComboBox
+      label='Välj din favoritfrukt eller grönsak'
+      description='Skapa en ny om den ej finns i listan'
+      allowsEmptyCollection
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      value={selectedItem}
+      onChange={selectItem}
+    >
+      {inputValue.length > 0 && selectedItem === null && (
+        <ListBoxItem onAction={createItem}>
+          {`Skapa "${inputValue}"`}
+        </ListBoxItem>
+      )}
+      {items.map(item => (
+        <ListBoxItem
+          key={item}
+          id={item}
+        >
+          {item}
+        </ListBoxItem>
+      ))}
+    </ComboBox>
+  )
+}
+```
+
+<div className='card'>
+  <ItemActionExample />
 </div>
 
 ## API

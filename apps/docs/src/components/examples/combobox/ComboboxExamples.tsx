@@ -8,7 +8,7 @@ import {
   Collection,
   Key,
 } from '@midas-ds/components'
-import React from 'react'
+import React, { useState } from 'react'
 import { useAsyncList } from 'react-stately'
 
 export const ControlledExample = () => {
@@ -114,6 +114,50 @@ export const AsyncExample = () => {
         {item => <ListBoxItem id={item.name}>{item.name}</ListBoxItem>}
       </Collection>
       {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
+    </ComboBox>
+  )
+}
+
+export const ItemActionExample = () => {
+  const [items, setItems] = useState([
+    'Lime',
+    'Äpple',
+    'Banan',
+    'Kiwi',
+    'Apelsin',
+  ])
+  const [inputValue, setInputValue] = useState('')
+  const selectedItem = items.includes(inputValue) ? inputValue : null
+
+  const selectItem = (key: Key | null) => {
+    if (key !== null) setInputValue(String(key))
+  }
+
+  const createItem = () => setItems(prev => [...prev, inputValue])
+
+  return (
+    <ComboBox
+      label='Välj din favoritfrukt eller grönsak'
+      description='Skapa en ny om den ej finns i listan'
+      allowsEmptyCollection
+      inputValue={inputValue}
+      onInputChange={setInputValue}
+      value={selectedItem}
+      onChange={selectItem}
+    >
+      {inputValue.length > 0 && selectedItem === null && (
+        <ListBoxItem onAction={createItem}>
+          {`Skapa "${inputValue}"`}
+        </ListBoxItem>
+      )}
+      {items.map(item => (
+        <ListBoxItem
+          key={item}
+          id={item}
+        >
+          {item}
+        </ListBoxItem>
+      ))}
     </ComboBox>
   )
 }
