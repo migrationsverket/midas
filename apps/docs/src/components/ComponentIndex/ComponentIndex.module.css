@@ -62,6 +62,8 @@
 
 /* The live component is only a picture: not focusable, not clickable */
 .live {
+  /* Keeps fixed elements, e.g. the toast region, inside the preview */
+  contain: layout;
   pointer-events: none;
 }
 
