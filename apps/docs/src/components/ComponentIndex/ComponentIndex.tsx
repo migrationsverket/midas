@@ -10,7 +10,13 @@ import type {
   PropSidebarItemCategory,
   PropSidebarItemLink,
 } from '@docusaurus/plugin-content-docs'
-import Heading from '@theme/Heading'
+import {
+  Card,
+  CardContent,
+  CardLink,
+  CardTitle,
+  Text,
+} from '@midas-ds/components'
 import { LivePreview } from './LivePreview'
 import styles from './ComponentIndex.module.css'
 
@@ -44,29 +50,26 @@ const ComponentCard = ({ item }: { item: CardItem }) => {
   const { title, href, description } = useCardData(item)
   if (!href) return null
 
-  // Only the title is a link, stretched over the card with CSS. Wrapping the
-  // whole card in a link would nest links from stories like Breadcrumbs
+  // A link card: CardLink stretches over the whole card. The preview isn't
+  // inside the link, so links from stories like Breadcrumbs aren't nested
   return (
-    <div className={styles.card}>
+    <Card className={styles.card}>
       {/* Stories can touch window, so previews only render in the browser */}
       <BrowserOnly fallback={<div className={styles.preview} />}>
         {() => <LivePreview title={title} />}
       </BrowserOnly>
-      <div className={styles.body}>
-        <Heading
-          as='h2'
-          className={styles.title}
+      <CardContent>
+        <CardLink
+          as={Link}
+          to={href}
         >
-          <Link
-            className={styles.link}
-            to={href}
-          >
-            {title}
-          </Link>
-        </Heading>
-        {description && <p className={styles.description}>{description}</p>}
-      </div>
-    </div>
+          <CardTitle>{title}</CardTitle>
+        </CardLink>
+        {description && (
+          <Text className={styles.description}>{description}</Text>
+        )}
+      </CardContent>
+    </Card>
   )
 }
 
