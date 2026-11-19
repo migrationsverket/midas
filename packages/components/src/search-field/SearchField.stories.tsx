@@ -89,3 +89,11 @@ export const WithLabelAndDescriptionWithoutButton: Story = {
     showButton: false,
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  ...Primary,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Rendered wider so it looks like a field in a form, not squeezed into the card
+  parameters: { indexPreview: { width: '480px' } },
+}

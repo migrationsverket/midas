@@ -63,3 +63,9 @@ export const CircularIndeterminate: Story = {
     'aria-label': 'Loading...',
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { ...Primary.args, label: 'Laddar upp fil' },
+}

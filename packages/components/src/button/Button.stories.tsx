@@ -82,3 +82,9 @@ export const Danger: Story = {
     variant: 'danger',
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { children: 'Spara' },
+}

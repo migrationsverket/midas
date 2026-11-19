@@ -92,3 +92,9 @@ export const Required: Story = {
     )
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { children: 'Jag har läst informationen' },
+}

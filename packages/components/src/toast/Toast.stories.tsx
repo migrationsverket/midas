@@ -272,3 +272,9 @@ export const VariantsOpen: Story = {
     )
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  ...VariantsOpen,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+}
