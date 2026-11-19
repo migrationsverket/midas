@@ -65,6 +65,14 @@
   /* Keeps fixed elements, e.g. the toast region, inside the preview */
   contain: layout;
   pointer-events: none;
+
+  /* A grid of looping spinners and skeletons is distracting, and moving
+     content needs a way to stop it (WCAG 2.2.2), so the previews stand still */
+  & *,
+  & *::before,
+  & *::after {
+    animation: none !important;
+  }
 }
 
 .body {
