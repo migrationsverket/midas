@@ -93,9 +93,52 @@ const overrides: Record<string, Override> = {
   skeleton: { story: 'IsOnLayer01', args: { isAnimated: false } },
   // Its region is fixed, the preview contains it
   toast: { story: 'VariantsOpen' },
-  // Rendered wider so they look like a field in a form, not squeezed into the card
+
+  // Swedish text instead of the stories' placeholders. Fields are rendered
+  // wider so they look like a field in a form, not squeezed into the card
+  button: { args: { children: 'Spara' } },
+  checkbox: { args: { children: 'Jag har läst informationen' } },
+  combobox: {
+    args: {
+      label: 'Land',
+      placeholder: 'Sök eller välj land',
+      description: 'Börja skriva för att söka',
+    },
+  },
+  heading: { story: 'Heading1', args: { children: 'Rubrik' } },
+  infobanner: {
+    story: 'Info',
+    args: { message: 'Du har fått ett nytt meddelande.' },
+  },
+  progressbar: { args: { label: 'Laddar upp fil' } },
+  radio: { args: { children: 'E-post' } },
   searchfield: { width: '480px' },
-  select: { width: '480px' },
+  select: {
+    args: {
+      label: 'Språk',
+      placeholder: 'Välj språk',
+      description: 'Du kan ändra det senare',
+    },
+  },
+  tag: { args: { children: 'Pågående' } },
+  text: {
+    story: 'Default',
+    args: { children: 'Det här är ett stycke brödtext.' },
+  },
+  textarea: {
+    args: {
+      label: 'Meddelande',
+      description: 'Beskriv ditt ärende kort',
+      defaultValue: '',
+    },
+  },
+  textfield: {
+    args: {
+      label: 'Förnamn',
+      description: 'Som det står i ditt pass',
+      defaultValue: 'Anna',
+    },
+  },
 }
 
 /**
