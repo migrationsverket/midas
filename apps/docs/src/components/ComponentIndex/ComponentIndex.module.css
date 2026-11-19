@@ -44,10 +44,13 @@
 
 .preview {
   align-items: center;
-  background-color: var(
-    --midas-background-secondary,
-    var(--midas-layer-01-base)
-  );
+  background-color: var(--midas-layer-01-base);
+
+  /* Fields on layer 01 need the layer 02 colour, or they blend in */
+  --midas-field-base: var(--midas-field-02-base);
+  --midas-field-hover: var(--midas-field-02-hover);
+  --midas-field-disabled: var(--midas-field-02-disabled);
+
   border-bottom: var(--midas-border-width) solid
     var(--midas-border-color-subtle);
   display: flex;
