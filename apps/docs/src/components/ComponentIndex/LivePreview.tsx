@@ -5,56 +5,59 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import ErrorBoundary from '@docusaurus/ErrorBoundary'
 import { I18nProvider, UNSAFE_PortalProvider } from 'react-aria'
-import { findStories, pickStory, previewWidth, shouldFit } from './stories'
+import { findStories, pickStory, previewParameters } from './stories'
 import { renderStory } from './renderStory'
 import styles from './ComponentIndex.module.css'
 
 /** Shrinks its content until it fits the preview box, never enlarges it */
 const FitToBox = ({
   children,
-  fit,
+  fit = true,
   width,
 }: {
   children: ReactNode
-  fit: boolean
+  fit?: boolean
   width?: string
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
   const [zoom, setZoom] = useState(1)
-  // The story waits for the container: overlays read it while rendering, and a
-  // ref is only attached after the first render
+  // State, not a ref: overlays read the container while rendering, so the
+  // story waits until it's attached
   const [container, setContainer] = useState<HTMLDivElement | null>(null)
 
   useLayoutEffect(() => {
-    const element = ref.current
-    const box = element?.parentElement
-    if (!fit || !element || !box) return
+    const box = container?.parentElement
+    if (!fit || !container || !box) return
 
     const resize = () => {
-      const { width, height } = box.getBoundingClientRect()
-      const padding = 16
+      const style = getComputedStyle(box)
+      const width =
+        box.clientWidth -
+        parseFloat(style.paddingLeft) -
+        parseFloat(style.paddingRight)
+      const height =
+        box.clientHeight -
+        parseFloat(style.paddingTop) -
+        parseFloat(style.paddingBottom)
       setZoom(
         Math.min(
           1,
-          (width - padding) / element.scrollWidth,
-          (height - padding) / element.scrollHeight,
+          width / container.scrollWidth,
+          height / container.scrollHeight,
         ),
       )
     }
     const observer = new ResizeObserver(resize)
-    observer.observe(element)
+    observer.observe(container)
     observer.observe(box)
     return () => observer.disconnect()
-  }, [fit])
+  }, [fit, container])
 
   return (
     // inert: the preview is a picture of the component, it must not add tab stops
     <div
-      ref={element => {
-        ref.current = element
-        setContainer(element)
-      }}
+      ref={setContainer}
       className={styles.live}
       inert
       style={{ zoom, width, flexShrink: width ? 0 : undefined }}
@@ -86,12 +89,21 @@ export const LivePreview = ({ title }: { title: string }) => {
       ([entry]) => {
         if (!entry.isIntersecting) return
         observer.disconnect()
-        load().then(stories => {
-          const story = pickStory(title, stories)
-          if (!cancelled && story) {
-            setPreview(renderStory(stories.default, story))
-          }
-        })
+        load()
+          .then(stories => {
+            const story = pickStory(stories)
+            if (cancelled || !story) return
+            setPreview(
+              <FitToBox {...previewParameters(story)}>
+                {renderStory(stories.default, story)}
+              </FitToBox>,
+            )
+          })
+          // E.g. a chunk that's gone after a deploy. The card works without
+          // its preview, so it's left empty
+          .catch((error: unknown) =>
+            console.error(`No preview for ${title}`, error),
+          )
       },
       { rootMargin: '200px' },
     )
@@ -107,14 +119,8 @@ export const LivePreview = ({ title }: { title: string }) => {
       ref={ref}
       className={styles.preview}
     >
-      {preview && (
-        <FitToBox
-          fit={shouldFit(title)}
-          width={previewWidth(title)}
-        >
-          {preview}
-        </FitToBox>
-      )}
+      {/* A story that throws only loses its own preview, not the whole page */}
+      <ErrorBoundary fallback={() => null}>{preview}</ErrorBoundary>
     </div>
   )
 }
