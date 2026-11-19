@@ -104,3 +104,9 @@ export const WithoutTagList: Story = {
     </TagGroup>
   ),
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: { children: 'Pågående' },
+}

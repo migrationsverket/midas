@@ -297,3 +297,14 @@ export const WithHelpPopover: Story = {
     },
   },
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  ...Primary,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    label: 'Land',
+    placeholder: 'Sök eller välj land',
+    description: 'Börja skriva för att söka',
+  },
+}

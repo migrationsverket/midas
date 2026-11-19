@@ -396,3 +396,13 @@ export const LongWordsOpen: Story = {
   ...open(LongWords),
   tags: ['!dev', '!autodocs'],
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    label: 'Språk',
+    placeholder: 'Välj språk',
+    description: 'Du kan ändra det senare',
+  },
+}
