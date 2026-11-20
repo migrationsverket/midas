@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import { TransformedToken } from 'style-dictionary/types'
 import { Copy, Check } from 'lucide-react'
+import { VisuallyHidden } from 'react-aria'
+import { useCopyToClipboard } from '@midas-ds/components'
 import { getCSSVariableName } from './utils'
 import styles from './ColorPaletteTable.module.css'
 
@@ -52,32 +53,45 @@ const getFamilyTokens = (family: any): TransformedToken[] =>
     .map(([, v]) => v as TransformedToken)
 
 const Swatch = ({ token }: { token: TransformedToken }) => {
-  const [copied, setCopied] = useState(false)
+  const { copy, status } = useCopyToClipboard({ resetAfter: 1500 })
+  const copied = status === 'copied'
   const cssVar = getCSSVariableName(token)
   const value = token.$value as string
   const step = token.path?.[token.path.length - 1]
   const light = isLight(value)
   const labelColor = light ? 'rgba(0,0,0,0.55)' : 'rgba(255,255,255,0.8)'
 
-  const handleClick = async () => {
-    await navigator.clipboard.writeText(cssVar)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1500)
-  }
-
   return (
-    <button
-      className={`${styles.swatch} ${copied ? styles.copied : ''}`}
-      style={{ backgroundColor: value }}
-      onClick={handleClick}
-      title={`${cssVar}\n${value}`}
-      aria-label={`Copy ${cssVar}`}
-    >
-      <span className={styles.copyIcon} style={{ color: labelColor }}>
-        {copied ? <Check size={12} /> : <Copy size={12} />}
-      </span>
-      <span className={styles.step} style={{ color: labelColor }}>{step}</span>
-    </button>
+    <>
+      <button
+        className={`${styles.swatch} ${copied ? styles.copied : ''}`}
+        style={{ backgroundColor: value }}
+        onClick={() => copy(cssVar)}
+        title={`${cssVar}\n${value}`}
+        aria-label={`Kopiera ${cssVar}`}
+      >
+        <span
+          className={styles.copyIcon}
+          style={{ color: labelColor }}
+        >
+          {copied ? <Check size={12} /> : <Copy size={12} />}
+        </span>
+        <span
+          className={styles.step}
+          style={{ color: labelColor }}
+        >
+          {step}
+        </span>
+      </button>
+      {/* The hook doesn't announce, a custom trigger brings its own status */}
+      <VisuallyHidden
+        role='status'
+        elementType='span'
+      >
+        {status === 'copied' && 'Kopierat'}
+        {status === 'failed' && 'Kunde inte kopiera'}
+      </VisuallyHidden>
+    </>
   )
 }
 
@@ -92,11 +106,17 @@ export const ColorPaletteTable = ({ tokens }: { tokens: any }) => {
         const swatches = getFamilyTokens(family)
         if (swatches.length === 0) return null
         return (
-          <div key={familyName} className={styles.row}>
+          <div
+            key={familyName}
+            className={styles.row}
+          >
             <div className={styles.familyName}>{familyName}</div>
             <div className={styles.swatches}>
               {swatches.map(token => (
-                <Swatch key={getCSSVariableName(token)} token={token} />
+                <Swatch
+                  key={getCSSVariableName(token)}
+                  token={token}
+                />
               ))}
             </div>
           </div>

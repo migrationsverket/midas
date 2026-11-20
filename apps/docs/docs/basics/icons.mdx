@@ -34,7 +34,7 @@ import {
   House,
   Languages,
 } from 'lucide-react'
-import { CopyButton } from '@site/src/components/CopyButton'
+import { CopyableText } from '@site/src/components/CopyableText'
 import { Tooltip, TooltipTrigger } from '@midas-ds/components'
 
 Ikoner används som ett komplement till text för att underlätta för användaren, inte för enbart dekoration. Rätt använda kan ikoner göra funktioner och innehåll tydligare och hjälpa användare att snabbt hitta rätt i grännssnittet.
@@ -71,57 +71,57 @@ För att säkerställga enhetlighet och tydlighet har vi ett antal standardikone
 
 ### Navigation
 
-| Ikon                          | Namn                                   | Användning      |
-| :---------------------------- | :------------------------------------- | :-------------- |
-| <Menu size={20}/>             | <CopyButton text='Menu' />             | Huvudmeny, meny |
-| <EllipsisVertical size={20}/> | <CopyButton text='EllipsisVertical' /> | Meny            |
-| <Ellipsis size={20}/>         | <CopyButton text='Ellipsis' />         | Meny            |
+| Ikon                          | Namn                                     | Användning      |
+| :---------------------------- | :--------------------------------------- | :-------------- |
+| <Menu size={20}/>             | <CopyableText text='Menu' />             | Huvudmeny, meny |
+| <EllipsisVertical size={20}/> | <CopyableText text='EllipsisVertical' /> | Meny            |
+| <Ellipsis size={20}/>         | <CopyableText text='Ellipsis' />         | Meny            |
 
 ### Pilar/riktning
 
-| Ikon                     | Namn                              | Användning        |
-| :----------------------- | :-------------------------------- | :---------------- |
-| <ArrowRight size={20}/>  | <CopyButton text='ArrowRight' />  | Höger, nästa      |
-| <ArrowLeft size={20}/>   | <CopyButton text='ArrowLeft' />   | Vänster, tillbaka |
-| <ChevronDown size={20}/> | <CopyButton text='ChevronDown' /> | Fäll ut, nedåt    |
-| <ChevronUp size={20}/>   | <CopyButton text='ChevronUp' />   | Fäll ihop, uppåt  |
+| Ikon                     | Namn                                | Användning        |
+| :----------------------- | :---------------------------------- | :---------------- |
+| <ArrowRight size={20}/>  | <CopyableText text='ArrowRight' />  | Höger, nästa      |
+| <ArrowLeft size={20}/>   | <CopyableText text='ArrowLeft' />   | Vänster, tillbaka |
+| <ChevronDown size={20}/> | <CopyableText text='ChevronDown' /> | Fäll ut, nedåt    |
+| <ChevronUp size={20}/>   | <CopyableText text='ChevronUp' />   | Fäll ihop, uppåt  |
 
 ### Status
 
-| Ikon                       | Namn                                | Användning         |
-| :------------------------- | :---------------------------------- | :----------------- |
-| <Check size={20}/>         | <CopyButton text='Check' />         | Ok, slutfört       |
-| <Info size={20}/>          | <CopyButton text='Info' />          | Information        |
-| <Flag size={20}/>          | <CopyButton text='Flag' />          | Viktig information |
-| <TriangleAlert size={20}/> | <CopyButton text='TriangleAlert' /> | Varning, fel       |
+| Ikon                       | Namn                                  | Användning         |
+| :------------------------- | :------------------------------------ | :----------------- |
+| <Check size={20}/>         | <CopyableText text='Check' />         | Ok, slutfört       |
+| <Info size={20}/>          | <CopyableText text='Info' />          | Information        |
+| <Flag size={20}/>          | <CopyableText text='Flag' />          | Viktig information |
+| <TriangleAlert size={20}/> | <CopyableText text='TriangleAlert' /> | Varning, fel       |
 
 ### Action
 
-| Ikon                | Namn                         | Användning      |
-| :------------------ | :--------------------------- | :-------------- |
-| <Plus size={20}/>   | <CopyButton text='Plus' />   | Lägg till, öka  |
-| <Minus size={20}/>  | <CopyButton text='Minus' />  | Ta bort, minska |
-| <Trash2 size={20}/> | <CopyButton text='Trash2' /> | Ta bort, släng  |
-| <Pencil size={20}/> | <CopyButton text='Pencil' /> | Redigera        |
-| <X size={20}/>      | <CopyButton text='X' />      | Stäng, avbryt   |
-| <Search size={20}/> | <CopyButton text='Search' /> | Sök             |
+| Ikon                | Namn                           | Användning      |
+| :------------------ | :----------------------------- | :-------------- |
+| <Plus size={20}/>   | <CopyableText text='Plus' />   | Lägg till, öka  |
+| <Minus size={20}/>  | <CopyableText text='Minus' />  | Ta bort, minska |
+| <Trash2 size={20}/> | <CopyableText text='Trash2' /> | Ta bort, släng  |
+| <Pencil size={20}/> | <CopyableText text='Pencil' /> | Redigera        |
+| <X size={20}/>      | <CopyableText text='X' />      | Stäng, avbryt   |
+| <Search size={20}/> | <CopyableText text='Search' /> | Sök             |
 
 ### Länkar/Media
 
-| Ikon                               | Namn                                        | Användning  |
-| :--------------------------------- | :------------------------------------------ | :---------- |
-| <ArrowDownToLine size={20}/>       | <CopyButton text='ArrowDownToLine' />       | Ladda ner   |
-| <SquareArrowOutUpRight size={20}/> | <CopyButton text='SquareArrowOutUpRight' /> | Extern länk |
+| Ikon                               | Namn                                          | Användning  |
+| :--------------------------------- | :-------------------------------------------- | :---------- |
+| <ArrowDownToLine size={20}/>       | <CopyableText text='ArrowDownToLine' />       | Ladda ner   |
+| <SquareArrowOutUpRight size={20}/> | <CopyableText text='SquareArrowOutUpRight' /> | Extern länk |
 
 ### Övrigt
 
-| Ikon                      | Namn                               | Användning               |
-| :------------------------ | :--------------------------------- | :----------------------- |
-| <LogIn size={20}/>        | <CopyButton text='LogIn' />        | Logga in                 |
-| <LogOut size={20}/>       | <CopyButton text='LogOut' />       | Logga ut                 |
-| <CalendarDays size={20}/> | <CopyButton text='CalendarDays' /> | Kalender, datum, bokning |
-| <Bell size={20}/>         | <CopyButton text='Bell' />         | Notifiering              |
-| <House size={20}/>        | <CopyButton text='House' />        | Hem                      |
-| <Languages size={20}/>    | <CopyButton text='Languages' />    | Språkväxlare             |
-| <Moon size={20}/>         | <CopyButton text='Moon' />         | Mörkt läge               |
-| <Sun size={20}/>          | <CopyButton text='Sun' />          | Ljust läge               |
+| Ikon                      | Namn                                 | Användning               |
+| :------------------------ | :----------------------------------- | :----------------------- |
+| <LogIn size={20}/>        | <CopyableText text='LogIn' />        | Logga in                 |
+| <LogOut size={20}/>       | <CopyableText text='LogOut' />       | Logga ut                 |
+| <CalendarDays size={20}/> | <CopyableText text='CalendarDays' /> | Kalender, datum, bokning |
+| <Bell size={20}/>         | <CopyableText text='Bell' />         | Notifiering              |
+| <House size={20}/>        | <CopyableText text='House' />        | Hem                      |
+| <Languages size={20}/>    | <CopyableText text='Languages' />    | Språkväxlare             |
+| <Moon size={20}/>         | <CopyableText text='Moon' />         | Mörkt läge               |
+| <Sun size={20}/>          | <CopyableText text='Sun' />          | Ljust läge               |

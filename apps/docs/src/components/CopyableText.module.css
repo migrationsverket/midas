@@ -1,0 +1,22 @@
+.copyableText {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--midas-space-xsmall);
+}
+
+/* A table of names stays calm: the button shows when the row is hovered.
+   It stays visible on keyboard focus and while it confirms a copy, and
+   always on touch screens, which can't hover */
+@media (hover: hover) {
+  .copyableText button {
+    opacity: 0;
+  }
+
+  :global(tr):hover .copyableText button,
+  .copyableText:hover button,
+  .copyableText button[data-focus-visible],
+  .copyableText button[data-status='copied'],
+  .copyableText button[data-status='failed'] {
+    opacity: 1;
+  }
+}

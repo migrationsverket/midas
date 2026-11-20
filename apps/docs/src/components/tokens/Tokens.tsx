@@ -1,5 +1,5 @@
 import { TransformedToken } from 'style-dictionary/types'
-import { CopyButton } from '@site/src/components/CopyButton'
+import { CopyableText } from '@site/src/components/CopyableText'
 import { getCSSVariableName } from './utils'
 import styles from './Tokens.module.css'
 
@@ -207,7 +207,7 @@ export const Token = ({ token }: { token: TransformedToken }) => {
         <div>
           <div className={styles.tokenName}>{token.name}</div>
           <div className={styles.tokenVariable}>
-            <CopyButton text={cssVarName} />
+            <CopyableText text={cssVarName} />
           </div>
         </div>
         {token.$description && (
