@@ -53,6 +53,16 @@ describe('given a CopyButton', () => {
     await expect.element(getByRole('status')).toHaveTextContent('Kopierat')
   })
 
+  it('shows its name in a tooltip, and says "Kopierat" there once pressed', async () => {
+    const { getByRole } = await render(<Primary />)
+
+    await userEvent.hover(getByRole('button'))
+    await expect.element(getByRole('tooltip')).toHaveTextContent('Kopiera')
+
+    await userEvent.click(getByRole('button'))
+    await expect.element(getByRole('tooltip')).toHaveTextContent('Kopierat')
+  })
+
   it('also says it in the button when it has text', async () => {
     const { getByRole } = await render(<WithText />)
 

@@ -4,6 +4,7 @@ import { forwardRef } from 'react'
 import { VisuallyHidden } from 'react-aria'
 import { Check, Copy, TriangleAlert } from 'lucide-react'
 import { Button, type ButtonProps } from '../button'
+import { Tooltip, TooltipTrigger } from '../tooltip'
 import clsx from '../utils/clsx'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import {
@@ -20,9 +21,9 @@ export interface CopyButtonProps
   /** The text that's copied */
   value: string
   /**
-   * `icon` shows only the copy icon, `text` adds the text "Kopiera".
-   * An icon button's name is "Kopiera": when there are several on a page,
-   * name each with `aria-label`, e.g. "Kopiera ärendenummer"
+   * `icon` shows only the copy icon, with its name in a tooltip, `text` adds
+   * the text "Kopiera". An icon button's name is "Kopiera": when there are
+   * several on a page, name each with `aria-label`, e.g. "Kopiera ärendenummer"
    *
    * @default 'icon'
    */
@@ -53,25 +54,40 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
       onCopyError,
     })
     const Icon = { idle: Copy, copied: Check, failed: TriangleAlert }[status]
+    const name = rest['aria-label'] ?? strings.format('copy')
+    const isIcon = variant === 'icon'
+
+    const button = (
+      <Button
+        {...rest}
+        aria-label={isIcon ? name : rest['aria-label']}
+        ref={ref}
+        variant={isIcon ? 'icon' : 'tertiary'}
+        onPress={() => copy(value)}
+        data-status={status}
+        className={clsx(styles.copyButton, className)}
+      >
+        <Icon
+          aria-hidden
+          size={20}
+        />
+        {!isIcon && strings.format(status === 'idle' ? 'copy' : status)}
+      </Button>
+    )
 
     return (
       <>
-        <Button
-          aria-label={variant === 'icon' ? strings.format('copy') : undefined}
-          {...rest}
-          ref={ref}
-          variant={variant === 'icon' ? 'icon' : 'tertiary'}
-          onPress={() => copy(value)}
-          data-status={status}
-          className={clsx(styles.copyButton, className)}
-        >
-          <Icon
-            aria-hidden
-            size={20}
-          />
-          {variant === 'text' &&
-            strings.format(status === 'idle' ? 'copy' : status)}
-        </Button>
+        {isIcon ? (
+          // Stays open on press, so it can say "Kopierat"
+          <TooltipTrigger shouldCloseOnPress={false}>
+            {button}
+            <Tooltip>
+              {status === 'idle' ? name : strings.format(status)}
+            </Tooltip>
+          </TooltipTrigger>
+        ) : (
+          button
+        )}
         {/* Always rendered, a status region only announces changes made
             after it's in the DOM */}
         <VisuallyHidden
