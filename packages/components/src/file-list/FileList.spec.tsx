@@ -403,7 +403,9 @@ describe('FileList', () => {
       const { getByRole } = await render(<PreviewInModal />)
       await getByRole('button', { name: 'Preview landscape.svg' }).click()
       await expect
-        .element(getByRole('dialog').getByRole('img', { name: 'landscape.svg' }))
+        .element(
+          getByRole('dialog').getByRole('img', { name: 'landscape.svg' }),
+        )
         .toBeVisible()
     })
   })
@@ -415,6 +417,28 @@ describe('FileList', () => {
         <FocusManagementTest initialFiles={['a.pdf', 'b.pdf', 'c.pdf']} />,
       )
       await getByRole('button', { name: /remove a\.pdf/i }).click()
+      await expect
+        .element(getByRole('button', { name: /remove b\.pdf/i }))
+        .toHaveFocus()
+    })
+
+    it('moves focus to the next row when a row in the middle is removed', async () => {
+      // @ts-expect-error initialFiles exists only on the test container
+      const { getByRole } = await render(
+        <FocusManagementTest initialFiles={['a.pdf', 'b.pdf', 'c.pdf']} />,
+      )
+      await getByRole('button', { name: /remove b\.pdf/i }).click()
+      await expect
+        .element(getByRole('button', { name: /remove c\.pdf/i }))
+        .toHaveFocus()
+    })
+
+    it('moves focus to the previous row when the last row is removed', async () => {
+      // @ts-expect-error initialFiles exists only on the test container
+      const { getByRole } = await render(
+        <FocusManagementTest initialFiles={['a.pdf', 'b.pdf', 'c.pdf']} />,
+      )
+      await getByRole('button', { name: /remove c\.pdf/i }).click()
       await expect
         .element(getByRole('button', { name: /remove b\.pdf/i }))
         .toHaveFocus()
@@ -456,9 +480,7 @@ describe('FileList', () => {
 
     it("moves focus to the row's other button when the focused button disappears", async () => {
       const StartsUploadOnPreview = () => {
-        const [status, setStatus] = useState<'success' | 'uploading'>(
-          'success',
-        )
+        const [status, setStatus] = useState<'success' | 'uploading'>('success')
         return (
           <FileList aria-label='Test'>
             <FileListItem
