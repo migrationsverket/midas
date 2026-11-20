@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
-  Header,
   Keyboard,
   MenuTrigger,
   SubmenuTrigger,
@@ -10,6 +9,7 @@ import { Collection } from '../aria'
 import { MenuIcon } from 'lucide-react'
 import React from 'react'
 import { Menu, type MenuProps } from './Menu'
+import { MenuHeader } from './MenuHeader'
 import { MenuItem } from './MenuItem'
 import { Button } from '../button'
 import { MenuPopover } from './MenuPopover'
@@ -178,7 +178,7 @@ export const Sections: Story = {
     ],
     children: section => (
       <MenuSection>
-        <Header>{section.name}</Header>
+        <MenuHeader>{section.name}</MenuHeader>
         <Collection items={section.children}>
           {item => <MenuItem>{item.name}</MenuItem>}
         </Collection>
