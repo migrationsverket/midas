@@ -1,6 +1,12 @@
 'use client'
 import styles from './ComboBox.module.css'
-import { type ReactNode, type PointerEventHandler, useRef } from 'react'
+import {
+  type FocusEventHandler,
+  type ReactNode,
+  type PointerEventHandler,
+  useRef,
+  useState,
+} from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ValidationResult,
@@ -17,7 +23,7 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { ListBoxEmptyState } from '../list-box/list-box-empty-state/ListBoxEmptyState'
-import { ComboBoxTags } from './ComboBoxTags'
+import { ComboBoxTags, isScrollingRow, type TagOverflow } from './ComboBoxTags'
 import { ComboBoxInput } from './ComboBoxInput'
 import type { SelectionMode } from '../common/types'
 
@@ -38,6 +44,15 @@ export interface ComboBoxProps<
   size?: Size
   popover?: InfoPopoverProps
   listBoxProps?: ListBoxProps<T>
+  /**
+   * Spike: how the selected tags behave when they don't fit on one row in
+   * multi-select mode. `wrap` stacks them on more rows, `scroll` keeps one
+   * row that scrolls sideways, `scroll-count` does the same with "+n" for
+   * the tags out of view to the right, and `collapse` shows the tags that
+   * fit and "+n" for the rest
+   * @default 'wrap'
+   */
+  tagOverflow?: TagOverflow
 }
 
 export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
@@ -51,9 +66,14 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
   size = 'large',
   popover,
   listBoxProps,
+  tagOverflow = 'wrap',
   ...props
 }: ComboBoxProps<T, M>) {
   const inputRef = useRef<HTMLInputElement>(null)
+  // State rather than a ref, so ComboBoxTags gets the element once it's
+  // there: a child's effects run before the parent's ref is attached
+  const [fieldContent, setFieldContent] = useState<HTMLDivElement | null>(null)
+  const isMultiple = props.selectionMode === 'multiple'
   const strings = useLocalizedStringFormatter(messages)
 
   const handleFieldPointerUp: PointerEventHandler<HTMLDivElement> = event => {
@@ -65,6 +85,25 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
 
     inputRef.current?.focus()
     inputRef.current?.select()
+  }
+
+  // In a row that scrolls sideways, show whatever gets focus. With
+  // 'scroll-count' only the tags scroll, and the input is always in view
+  const handleFieldFocus: FocusEventHandler<HTMLDivElement> = event => {
+    if (!isScrollingRow(tagOverflow)) return
+    const row =
+      tagOverflow === 'scroll-count'
+        ? event.currentTarget.querySelector<HTMLElement>('[data-tag-scroller]')
+        : event.currentTarget
+    if (!row?.contains(event.target)) return
+
+    // Keep what gets focus clear of the "+n" chip pinned to the right edge
+    const chip = row.querySelector('[data-scroll-count]')
+    const chipWidth =
+      chip && chip.getAttribute('data-scroll-count') !== '0'
+        ? chip.getBoundingClientRect().width
+        : 0
+    scrollIntoRow(event.target, row, chipWidth)
   }
 
   return (
@@ -89,13 +128,22 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
           className={clsx(styles.fieldContent, {
             [styles.medium]: size === 'medium',
             [styles.disabled]: props.isDisabled,
+            [styles.scroll]: isMultiple && tagOverflow === 'scroll',
+            [styles.scrollCountRow]:
+              isMultiple && tagOverflow === 'scroll-count',
+            [styles.collapse]: isMultiple && tagOverflow === 'collapse',
           })}
+          data-tag-overflow={isMultiple ? tagOverflow : undefined}
+          onFocus={handleFieldFocus}
+          ref={setFieldContent}
         >
           <ComboBoxTags
             selectionMode={props.selectionMode}
             isDisabled={props.isDisabled}
             isReadOnly={props.isReadOnly}
             inputRef={inputRef}
+            tagOverflow={tagOverflow}
+            container={fieldContent}
           />
           <ComboBoxInput
             className={clsx(styles.inputField, {
@@ -141,4 +189,23 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
       </ListBoxPopover>
     </AriaComboBox>
   )
+}
+
+/** Scrolls the row sideways, and nothing else, so that `element` is in view */
+export const scrollIntoRow = (
+  element: Element,
+  row: HTMLElement,
+  /** Room covered at the right edge, by the "+n" chip */
+  endInset = 0,
+) => {
+  const elementRect = element.getBoundingClientRect()
+  const rowRect = row.getBoundingClientRect()
+  const { paddingLeft, paddingRight } = getComputedStyle(row)
+  const left = rowRect.left + parseFloat(paddingLeft)
+  const right = rowRect.right - parseFloat(paddingRight) - endInset
+
+  if (elementRect.left < left)
+    row.scrollLeft -= Math.ceil(left - elementRect.left)
+  else if (elementRect.right > right)
+    row.scrollLeft += Math.ceil(elementRect.right - right)
 }

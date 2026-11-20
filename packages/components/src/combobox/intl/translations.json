@@ -2,11 +2,13 @@
   "en": {
     "showList": "Show list",
     "noResultsFound": "No results found",
-    "selectedItems": "Selected items"
+    "selectedItems": "Selected items",
+    "moreSelected": "more selected"
   },
   "sv": {
     "showList": "Visa lista",
     "noResultsFound": "Inga träffar",
-    "selectedItems": "Valda objekt"
+    "selectedItems": "Valda objekt",
+    "moreSelected": "fler valda"
   }
 }

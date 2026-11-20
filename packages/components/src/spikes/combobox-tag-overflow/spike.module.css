@@ -1,0 +1,16 @@
+.sideBySide {
+  display: flex;
+  flex-direction: column;
+  gap: var(--midas-space-large);
+}
+
+.overview {
+  max-width: 50rem;
+  font-family: var(--midas-typography-font-family);
+  line-height: 1.5;
+  color: var(--midas-text-primary);
+
+  code {
+    font-size: 0.9em;
+  }
+}

@@ -86,6 +86,102 @@
   display: contents;
 }
 
+/* Spike: tagOverflow='scroll' keeps one row that scrolls sideways, with no
+ * scrollbar, so the field is always the same height */
+.fieldContent.scroll {
+  flex-wrap: nowrap;
+  max-height: none;
+  overflow: auto hidden;
+
+  /*
+   * Safari supports scrollbar-width since 18.2, but caniuse bundles it with
+   * scrollbar-color (Safari 26.2) in one "css-scrollbar" feature
+   */
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+  scrollbar-width: none;
+}
+
+/* Spike: tagOverflow='scroll-count' keeps the input in view on the right,
+ * with at least 15% of the row, and the tags scroll sideways in the rest
+ * with "+n" pinned to their right edge */
+.fieldContent.scrollCountRow {
+  flex-wrap: nowrap;
+  max-height: none;
+  overflow: hidden;
+
+  .tagScroller {
+    display: flex;
+    flex: 0 1 auto;
+    gap: var(--midas-space-xsmall);
+    min-width: 0;
+    overflow: auto hidden;
+
+    /*
+     * Safari supports scrollbar-width since 18.2, but caniuse bundles it with
+     * scrollbar-color (Safari 26.2) in one "css-scrollbar" feature
+     */
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+    scrollbar-width: none;
+  }
+
+  .inputField.multi {
+    flex: 1 0 max(15%, 8ch);
+  }
+}
+
+/* The anchor is the strip's last item, has no width and sticks to its right
+ * edge, so the chip covers the end of what's in view without taking any
+ * room */
+.scrollCountAnchor {
+  position: sticky;
+  right: 0;
+  align-self: stretch;
+  flex: 0 0 0;
+  margin-inline-start: calc(-1 * var(--midas-space-xsmall));
+}
+
+.scrollCount {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  white-space: nowrap;
+
+  /* Same width for every count with as many digits, so the chip doesn't
+   * grow over the tag that was just scrolled clear of it */
+  font-variant-numeric: tabular-nums;
+  box-shadow: -12px 0 8px -4px
+    var(--midas-field-base, var(--midas-field-01-base));
+
+  &[data-scroll-count='0'] {
+    visibility: hidden;
+  }
+}
+
+/* Spike: tagOverflow='collapse' keeps one row with the tags that fit and
+ * "+n" for the rest */
+.fieldContent.collapse {
+  position: relative;
+  flex-wrap: nowrap;
+  max-height: none;
+  overflow: hidden;
+}
+
+.fieldContent:is(.scroll, .scrollCountRow, .collapse) .tags > *,
+.moreTags {
+  flex-shrink: 0;
+}
+
+.moreTags {
+  white-space: nowrap;
+}
+
+.measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .inputField {
   min-width: 6ch;
   box-sizing: border-box;
