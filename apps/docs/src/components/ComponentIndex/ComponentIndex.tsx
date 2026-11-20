@@ -43,11 +43,14 @@ const useCardData = (item: CardItem) => {
         ? (item.href ?? findFirstSidebarItemLink(item))
         : item.href,
     description: doc?.description,
+    // From sidebar_custom_props in the page's frontmatter, or customProps in
+    // a category's _category_.json
+    story: item.customProps?.story as string | undefined,
   }
 }
 
 const ComponentCard = ({ item }: { item: CardItem }) => {
-  const { title, href, description } = useCardData(item)
+  const { title, href, description, story } = useCardData(item)
   if (!href) return null
 
   // A link card: CardLink stretches over the whole card. The preview isn't
@@ -55,9 +58,13 @@ const ComponentCard = ({ item }: { item: CardItem }) => {
   return (
     <Card className={styles.card}>
       {/* Stories can touch window, so previews only render in the browser */}
-      <BrowserOnly fallback={<div className={styles.preview} />}>
-        {() => <LivePreview title={title} />}
-      </BrowserOnly>
+      {story ? (
+        <BrowserOnly fallback={<div className={styles.preview} />}>
+          {() => <LivePreview story={story} />}
+        </BrowserOnly>
+      ) : (
+        <div className={styles.preview} />
+      )}
       <CardContent>
         <CardLink
           as={Link}

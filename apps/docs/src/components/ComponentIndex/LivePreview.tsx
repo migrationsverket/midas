@@ -75,12 +75,12 @@ const FitToBox = ({
 }
 
 /** The component's story, loaded once the card scrolls into view */
-export const LivePreview = ({ title }: { title: string }) => {
+export const LivePreview = ({ story }: { story: string }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [preview, setPreview] = useState<ReactNode>(null)
 
   useEffect(() => {
-    const load = findStories(title)
+    const load = findStories(story)
     const element = ref.current
     if (!load || !element) return
 
@@ -91,18 +91,18 @@ export const LivePreview = ({ title }: { title: string }) => {
         observer.disconnect()
         load()
           .then(stories => {
-            const story = pickStory(stories)
-            if (cancelled || !story) return
+            const picked = pickStory(stories)
+            if (cancelled || !picked) return
             setPreview(
-              <FitToBox {...previewParameters(story)}>
-                {renderStory(stories.default, story)}
+              <FitToBox {...previewParameters(picked)}>
+                {renderStory(stories.default, picked)}
               </FitToBox>,
             )
           })
           // E.g. a chunk that's gone after a deploy. The card works without
           // its preview, so it's left empty
           .catch((error: unknown) =>
-            console.error(`No preview for ${title}`, error),
+            console.error(`No preview for ${story}`, error),
           )
       },
       { rootMargin: '200px' },
@@ -112,7 +112,7 @@ export const LivePreview = ({ title }: { title: string }) => {
       cancelled = true
       observer.disconnect()
     }
-  }, [title])
+  }, [story])
 
   return (
     <div
