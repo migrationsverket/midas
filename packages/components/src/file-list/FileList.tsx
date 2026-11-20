@@ -36,11 +36,12 @@ interface FocusGuardProps {
 /**
  * Renderless. Watches the DOM directly (not React's render cycle, which
  * batches unpredictably) for a row disappearing while it held focus, and
- * moves focus to a sibling's action button instead of letting it fall
- * through to `<body>` — only once a removal has actually happened, so it
- * never second-guesses focus a consumer already set (e.g. after a delete
- * that failed and left the row in place, focus just stays where it was).
- * Falls back to the list itself if the removed row was the last one.
+ * moves focus to the first button in the row that took its place, or in the
+ * row before if it was the last one, instead of letting it fall through to
+ * `<body>`. Only once a removal has actually happened, so it never
+ * second-guesses focus a consumer already set (e.g. after a delete that
+ * failed and left the row in place, focus just stays where it was).
+ * Falls back to the list itself if there are no rows left.
  */
 const FocusGuard = ({ containerRef }: FocusGuardProps) => {
   const focusManager = useFocusManager()
@@ -55,11 +56,18 @@ const FocusGuard = ({ containerRef }: FocusGuardProps) => {
     if (!container) return
 
     const observer = new MutationObserver(mutations => {
-      const hadRemoval = mutations.some(m => m.removedNodes.length > 0)
-      if (!hadRemoval) return
+      const removal = mutations.find(m => m.removedNodes.length > 0)
+      if (!removal) return
       if (document.activeElement !== document.body) return
 
-      if (!focusManagerRef.current?.focusFirst({ tabbable: true })) {
+      // The record knows where the row was: the row after it took its place
+      const row = [removal.nextSibling, removal.previousSibling].find(
+        (node): node is Element => node instanceof Element && node.isConnected,
+      )
+      if (
+        !row ||
+        !focusManagerRef.current?.focusNext({ from: row, tabbable: true })
+      ) {
         container.focus()
       }
     })
