@@ -1,0 +1,65 @@
+.grid {
+  display: grid;
+  gap: var(--midas-space-medium);
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  margin-bottom: var(--midas-space-xlarge);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview {
+  align-items: center;
+  background-color: var(--midas-layer-01-base);
+
+  /* Fields on layer 01 need the layer 02 colour, or they blend in */
+  --midas-field-base: var(--midas-field-02-base);
+  --midas-field-hover: var(--midas-field-02-hover);
+  --midas-field-disabled: var(--midas-field-02-disabled);
+
+  border-bottom: var(--midas-border-width) solid
+    var(--midas-border-color-subtle);
+  display: flex;
+  height: 9rem;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--midas-space-small);
+  position: relative;
+
+  /* Fades the preview out towards its edges, so anything cut off or parked
+     just outside the component doesn't end in a hard line */
+  &::after {
+    box-shadow: inset 0 0 var(--midas-space-small) var(--midas-space-small)
+      var(--midas-layer-01-base);
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+}
+
+/* The live component is only a picture: not focusable, not clickable */
+.live {
+  /* Keeps fixed elements, e.g. the toast region, inside the preview */
+  contain: layout;
+  pointer-events: none;
+
+  /* A grid of looping spinners and skeletons is distracting, and moving
+     content needs a way to stop it (WCAG 2.2.2), so the previews stand still */
+  & *,
+  & *::before,
+  & *::after {
+    animation: none !important;
+  }
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}

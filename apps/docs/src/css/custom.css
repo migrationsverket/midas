@@ -259,20 +259,6 @@
     border-radius: 0;
   }
 
-  [class*='cardContainer'] {
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-    border-bottom: 1px solid black !important;
-    transition:
-      transform 250ms ease-in-out,
-      background-color 250ms ease-in-out;
-
-    &:hover {
-      background-color: #e6e6e6;
-    }
-  }
-
   nav.menu {
     padding: 0.5rem 0 0.5rem 0.5rem;
   }

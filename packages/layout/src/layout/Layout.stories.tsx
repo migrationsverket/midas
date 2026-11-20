@@ -58,3 +58,12 @@ export const WithNavbar: Story = {
     </Layout>
   ),
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  ...WithNavbar,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Fills the viewport's height, so it's given a desktop size instead
+  args: { style: { height: '540px' } },
+  parameters: { indexPreview: { width: '1280px' } },
+}
