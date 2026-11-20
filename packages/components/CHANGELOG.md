@@ -1,3 +1,13 @@
+## 17.37.0 (2026-11-20)
+
+### 🚀 Features
+
+- **components,menu:** add MenuHeader component ([a40cb37aa6b](https://github.com/migrationsverket/midas/commit/a40cb37aa6b))
+
+### 📖 Documentation changes
+
+- **docs:** add a prop playground to Button and ComboBox ([47ae949317a](https://github.com/migrationsverket/midas/commit/47ae949317a))
+
 ## 17.36.0 (2026-11-18)
 
 ### 🚀 Features
