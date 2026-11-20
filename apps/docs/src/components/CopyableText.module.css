@@ -4,19 +4,31 @@
   gap: var(--midas-space-xsmall);
 }
 
-/* A table of names stays calm: the button shows when the row is hovered.
-   It stays visible on keyboard focus and while it confirms a copy, and
-   always on touch screens, which can't hover */
+/* Like Docusaurus's code blocks: hidden until the row is hovered, faded
+   then, and crisp when the button itself is hovered. It's always crisp on
+   keyboard focus and while it confirms a copy, and always visible on touch
+   screens, which can't hover */
 @media (hover: hover) {
   .copyableText button {
     opacity: 0;
+    transition: opacity var(--midas-transition-duration-instant);
   }
 
-  :global(tr):hover .copyableText button,
-  .copyableText:hover button,
+  :where(tr:hover) .copyableText button,
+  .copyableText:hover button {
+    opacity: 0.6;
+  }
+
+  .copyableText button[data-hovered],
   .copyableText button[data-focus-visible],
   .copyableText button[data-status='copied'],
   .copyableText button[data-status='failed'] {
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .copyableText button {
+    transition: none;
   }
 }
