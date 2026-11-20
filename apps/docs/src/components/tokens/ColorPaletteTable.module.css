@@ -57,6 +57,7 @@
 }
 
 .swatch:hover .copyIcon,
+.swatch:focus-visible .copyIcon,
 .swatch.copied .copyIcon {
   opacity: 1;
 }
