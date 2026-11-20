@@ -78,8 +78,13 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
     return (
       <>
         {isIcon ? (
-          // Stays open on press, so it can say "Kopierat"
-          <TooltipTrigger shouldCloseOnPress={false}>
+          // Waits a moment on hover, so sweeping over a table of values
+          // doesn't flash a tooltip on every row. Keyboard focus opens it at
+          // once. It stays open on press, so it can say "Kopierat"
+          <TooltipTrigger
+            delay={500}
+            shouldCloseOnPress={false}
+          >
             {button}
             <Tooltip>
               {status === 'idle' ? name : strings.format(status)}
