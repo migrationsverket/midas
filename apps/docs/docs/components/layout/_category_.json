@@ -1,4 +1,7 @@
 {
   "label": "Layout",
-  "collapsed": true
+  "collapsed": true,
+  "customProps": {
+    "story": "layout/layout/Layout"
+  }
 }

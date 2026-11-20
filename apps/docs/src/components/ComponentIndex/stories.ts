@@ -22,43 +22,40 @@ export interface StoryModule {
 }
 
 // Lazy, so a story module is only downloaded when its card is rendered.
-// The layout package comes first: its Layout is the one the Layout category shows.
-const contexts = [
-  require.context(
-    '../../../../../packages/layout/src',
-    true,
-    /\.stories\.tsx$/,
-    'lazy',
-  ),
-  require.context(
+// require.context needs literal arguments, hence one per package
+const contexts: Record<string, ReturnType<NodeRequire['context']>> = {
+  components: require.context(
     '../../../../../packages/components/src',
     true,
     /\.stories\.tsx$/,
     'lazy',
   ),
-  require.context(
+  layout: require.context(
+    '../../../../../packages/layout/src',
+    true,
+    /\.stories\.tsx$/,
+    'lazy',
+  ),
+  'table-styles': require.context(
     '../../../../../packages/table-styles/src',
     true,
     /\.stories\.tsx$/,
     'lazy',
   ),
-]
-
-const normalize = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '')
-
-/** Story files by component name, e.g. `select` for `select/Select.stories.tsx` */
-const storyFiles = new Map<string, () => Promise<StoryModule>>()
-for (const context of contexts) {
-  for (const key of context.keys()) {
-    const name = normalize(
-      (key.split('/').pop() ?? '').replace('.stories.tsx', ''),
-    )
-    if (!storyFiles.has(name)) storyFiles.set(name, () => context(key))
-  }
 }
 
-/** Loads the stories for a docs page, matched on the page's title */
-export const findStories = (title: string) => storyFiles.get(normalize(title))
+/**
+ * Loads a page's stories from the `story` in its `sidebar_custom_props`,
+ * e.g. `components/select/Select` for
+ * `packages/components/src/select/Select.stories.tsx`.
+ * `stories.spec.ts` checks that every page has one that exists
+ */
+export const findStories = (story: string) => {
+  const [pkg, ...path] = story.split('/')
+  const context = contexts[pkg]
+  const key = `./${path.join('/')}.stories.tsx`
+  return context?.keys().includes(key) ? () => context(key) : undefined
+}
 
 const isPreviewable = (story: any) =>
   story &&
