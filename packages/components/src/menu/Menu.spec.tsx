@@ -4,8 +4,12 @@ import { User } from '@react-aria/test-utils'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Menu.stories'
 import { render } from '../../test-utils'
+import { Menu } from './Menu'
+import { MenuHeader } from './MenuHeader'
+import { MenuItem } from './MenuItem'
+import { MenuSection } from './MenuSection'
 
-const { Primary } = composeStories(stories)
+const { Primary, Sections } = composeStories(stories)
 
 const handleAction = vi.fn()
 
@@ -69,5 +73,41 @@ describe('given a Menu with @react-aria/test-utils', async () => {
     await menuTester.open()
     await menuTester.toggleOptionSelection({ option: 'Open', interactionType: 'keyboard' })
     expect(handleAction).toHaveBeenCalledWith(0, { id: 0, name: 'Open' })
+  })
+})
+
+describe('given a Menu with sections', async () => {
+  it('should label each section with its MenuHeader', async () => {
+    await render(<Sections />)
+
+    await userEvent.click(page.getByRole('button', { name: 'Menu' }))
+    await expect
+      .element(page.getByRole('group', { name: 'Left Panel' }))
+      .toBeVisible()
+    await expect
+      .element(page.getByRole('group', { name: 'Right Panel' }))
+      .toBeVisible()
+  })
+
+  it('should accept a custom className and forward its ref', async () => {
+    const ref = { current: null as HTMLElement | null }
+
+    await render(
+      <Menu aria-label='Files'>
+        <MenuSection>
+          <MenuHeader
+            ref={ref}
+            className='test-class'
+          >
+            Header
+          </MenuHeader>
+          <MenuItem>Item</MenuItem>
+        </MenuSection>
+      </Menu>,
+    )
+
+    const header = page.getByText('Header')
+    await expect.element(header).toHaveClass('test-class')
+    expect(ref.current).toBe(header.element())
   })
 })

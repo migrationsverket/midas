@@ -6,6 +6,7 @@ description: En meny kan användas för att samla ihop funktioner som sällan an
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
 import MenuApi from '@midas-ds/api/components/Menu.json'
+import MenuHeaderApi from '@midas-ds/api/components/MenuHeader.json'
 import MenuItemApi from '@midas-ds/api/components/MenuItem.json'
 import MenuPopoverApi from '@midas-ds/api/components/MenuPopover.json'
 import MenuSectionApi from '@midas-ds/api/components/MenuSection.json'
@@ -14,6 +15,9 @@ import SeparatorApi from '@midas-ds/api/components/Separator.json'
 import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
 import { OnActionExample } from '@site/src/components/examples/menu/MenuExamples'
+import { SectionedExample } from '@site/src/components/examples/menu/SectionedExample'
+import SectionedExampleSrc from '!!raw-loader!@site/src/components/examples/menu/SectionedExample'
+import CodeBlock from '@theme/CodeBlock'
 
 export const Example = () => {
   return (
@@ -83,6 +87,7 @@ Komponenten bygger på [React Aria Menu](https://react-spectrum.adobe.com/react-
 Midas exporterar följande komponenter och typer:
 
 - `Menu` & `MenuProps`
+- `MenuHeader` & `MenuHeaderProps`
 - `MenuItem` & `MenuItemProps`
 - `MenuPopover` & `MenuPopoverProps`
 - `MenuSection` & `MenuSectionProps`
@@ -113,6 +118,19 @@ Använd `onAction` på `Menu` för att lyssna på vilket menyval användaren vä
 </Menu>
 ```
 
+### Dynamiska sektioner
+
+Använd `MenuSection` och `MenuHeader` för att skapa sektioner i din meny, se exempel nedan där `Collection` används i en dynamisk kollektion.
+
+<CodeBlock language='tsx'>{SectionedExampleSrc}</CodeBlock>
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <SectionedExample />
+</div>
+
 ### Länkar
 
 React Arias dokumentation visar [exempel på hur menyn kan innehålla länkar](https://react-spectrum.adobe.com/react-aria/Menu.html#links). Länkar i en meny är tillåtna så länge menyns syfte är tydligt för användaren, exempelvis en meny som blandar handlingar med kontextuella länkar som "Öppna i nytt fönster" eller "Gå till inställningar".
@@ -131,6 +149,10 @@ Om menyn enbart består av navigationslänkar bör du istället använda en dedi
 ### Menu
 
 <PropTable doc={MenuApi} />
+
+### MenuHeader
+
+<PropTable doc={MenuHeaderApi} defaultOpen={false} />
 
 ### MenuItem
 
