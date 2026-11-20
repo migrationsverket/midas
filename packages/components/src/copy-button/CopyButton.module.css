@@ -1,0 +1,7 @@
+.copyButton[data-status='copied'] svg {
+  color: var(--midas-icon-success);
+}
+
+.copyButton[data-status='failed'] svg {
+  color: var(--midas-icon-warning);
+}
