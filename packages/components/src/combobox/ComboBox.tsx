@@ -95,6 +95,7 @@ export function ComboBox<T extends object, M extends SelectionMode = 'single'>({
             selectionMode={props.selectionMode}
             isDisabled={props.isDisabled}
             isReadOnly={props.isReadOnly}
+            inputRef={inputRef}
           />
           <ComboBoxInput
             className={clsx(styles.inputField, {

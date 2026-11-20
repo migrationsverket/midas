@@ -318,6 +318,33 @@ describe('given a ComboBox with a default multi-value', async () => {
   })
 })
 
+describe('given a multiple ComboBox where the tags are removed one by one', async () => {
+  for (const [how, remove] of [
+    ['Backspace', () => userEvent.keyboard('[Backspace]')],
+    ['Delete', () => userEvent.keyboard('[Delete]')],
+    [
+      'the remove button',
+      () =>
+        userEvent.click(page.getByRole('button', { name: /Remove/ }).first()),
+    ],
+  ] as const) {
+    it(`should move focus to the next tag, and to the input when the last tag is removed with ${how}`, async () => {
+      const { getByRole } = await render(<MultipleDefaultValue />)
+      ;(getByRole('row').first().element() as HTMLElement).focus()
+
+      await remove()
+      await expect.element(getByRole('row', { name: 'Kiwi' })).toHaveFocus()
+
+      await remove()
+      await expect.element(getByRole('grid')).not.toBeInTheDocument()
+      await expect.element(getByRole('combobox')).toHaveFocus()
+      await expect
+        .element(getByRole('combobox'))
+        .toHaveAttribute('aria-expanded', 'false')
+    })
+  }
+})
+
 describe('given a multiple ComboBox with nothing selected', async () => {
   it('should show the placeholder', async () => {
     const { getByRole } = await render(<Multiple />)
