@@ -57,6 +57,11 @@ export const Mobile: Story = {
   ),
 }
 
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  render: Mobile.render,
+}
+
 export const OnlyHeading: Story = {
   render: args => (
     <EmptyState {...args}>
