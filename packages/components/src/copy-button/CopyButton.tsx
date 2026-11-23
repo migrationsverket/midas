@@ -1,7 +1,7 @@
 'use client'
 
 import { forwardRef } from 'react'
-import { VisuallyHidden } from 'react-aria'
+import { useId, VisuallyHidden } from 'react-aria'
 import { Check, Copy, TriangleAlert } from 'lucide-react'
 import { Button, type ButtonProps } from '../button'
 import { Tooltip, TooltipTrigger } from '../tooltip'
@@ -16,14 +16,24 @@ import styles from './CopyButton.module.css'
 
 export interface CopyButtonProps
   extends
-    Omit<ButtonProps, 'children' | 'onPress' | 'variant' | 'icon'>,
+    Omit<
+      ButtonProps,
+      | 'children'
+      | 'onPress'
+      | 'variant'
+      | 'icon'
+      | 'iconSize'
+      | 'iconPlacement'
+      | 'isPending'
+    >,
     UseCopyToClipboardOptions {
   /** The text that's copied */
   value: string
   /**
    * `icon` shows only the copy icon, with its name in a tooltip, `text` adds
    * the text "Kopiera". An icon button's name is "Kopiera": when there are
-   * several on a page, name each with `aria-label`, e.g. "Kopiera ärendenummer"
+   * several on a page, name each with `aria-label`, e.g. "Kopiera ärendenummer",
+   * or point `aria-labelledby` at the value's label, which gives the same name
    *
    * @default 'icon'
    */
@@ -33,6 +43,9 @@ export interface CopyButtonProps
 /**
  * Copies a value to the clipboard. Place it next to the value it copies.
  * It confirms with a check icon and tells screen readers it's copied.
+ *
+ * Keep it visible. Showing it only on hover is fine in dense tables, as long
+ * as it's also visible on keyboard focus and on touch screens.
  */
 export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
   (
@@ -43,10 +56,13 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
       onCopy,
       onCopyError,
       className,
+      id: idProp,
+      'aria-labelledby': labelledBy,
       ...rest
     },
     ref,
   ) => {
+    const id = useId(idProp)
     const strings = useLocalizedStringFormatter(messages)
     const { copy, status } = useCopyToClipboard({
       resetAfter,
@@ -60,7 +76,11 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
     const button = (
       <Button
         {...rest}
+        id={id}
         aria-label={isIcon ? name : rest['aria-label']}
+        // Keeps the button's own name first, so it's "Kopiera Ärendenummer",
+        // which contains the visible "Kopiera" (WCAG 2.5.3)
+        aria-labelledby={labelledBy ? `${id} ${labelledBy}` : undefined}
         ref={ref}
         variant={isIcon ? 'icon' : 'tertiary'}
         onPress={() => copy(value)}

@@ -24,7 +24,6 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.restoreAllMocks()
-  vi.useRealTimers()
 })
 
 describe('given a CopyButton', () => {
@@ -77,7 +76,7 @@ describe('given a CopyButton', () => {
     const { getByRole } = await render(
       <CopyButton
         value='1234'
-        resetAfter={50}
+        resetAfter={500}
       />,
     )
 
@@ -118,6 +117,41 @@ describe('given a CopyButton', () => {
     await userEvent.click(getByRole('button'))
 
     await vi.waitFor(() => expect(onCopy).toHaveBeenCalledWith('1234'))
+  })
+
+  it('keeps "Kopiera" in its name when labelled by another element', async () => {
+    const { getByRole } = await render(
+      <>
+        <span id='case-number-label'>Ärendenummer</span>
+        <CopyButton
+          value='1234'
+          aria-labelledby='case-number-label'
+        />
+      </>,
+    )
+    const button = getByRole('button', { name: 'Kopiera Ärendenummer' })
+
+    await expect.element(button).toBeInTheDocument()
+    // The tooltip says "Kopiera", which is in the name (WCAG 2.5.3)
+    await userEvent.hover(button)
+    await expect.element(getByRole('tooltip')).toHaveTextContent('Kopiera')
+  })
+
+  it('keeps "Kopiera" in its name when labelled by another element, with text', async () => {
+    const { getByRole } = await render(
+      <>
+        <span id='case-number-label'>Ärendenummer</span>
+        <CopyButton
+          value='1234'
+          variant='text'
+          aria-labelledby='case-number-label'
+        />
+      </>,
+    )
+
+    await expect
+      .element(getByRole('button', { name: 'Kopiera Ärendenummer' }))
+      .toBeInTheDocument()
   })
 
   it('names each button after its value when there are several', async () => {
