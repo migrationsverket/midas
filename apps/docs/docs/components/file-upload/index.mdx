@@ -14,7 +14,7 @@ Filuppladdning är ingen egen komponent i Midas utan den skapas genom att kombin
 
 ### Standard
 
-Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. FileTrigger ska vara en sekundärknapp.
+Standardmönstret kombinerar FileTrigger och FileList med en etikett och beskrivning. Knappen i FileTrigger blir automatiskt en sekundärknapp.
 
 ```tsx
 import {
@@ -57,7 +57,6 @@ export const FileListExample = () => {
           onSelect={handleSelect}
         >
           <Button
-            variant='secondary'
             icon={Upload}
             aria-describedby={`${labelId} ${descriptionId}`}
           >
@@ -144,7 +143,6 @@ export const DropZoneExample = () => {
             onSelect={handleSelect}
           >
             <Button
-              variant='secondary'
               icon={Upload}
               aria-describedby={`${labelId} ${descriptionId}`}
             >
