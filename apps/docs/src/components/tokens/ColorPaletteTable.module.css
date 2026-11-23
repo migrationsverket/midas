@@ -58,7 +58,7 @@
 
 .swatch:hover .copyIcon,
 .swatch:focus-visible .copyIcon,
-.swatch.copied .copyIcon {
+.swatch:not([data-status='idle']) .copyIcon {
   opacity: 1;
 }
 
