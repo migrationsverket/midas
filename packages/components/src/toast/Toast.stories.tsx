@@ -273,8 +273,31 @@ export const VariantsOpen: Story = {
   },
 }
 
-/** Shown on the components index in the docs, hidden from Storybook */
+/**
+ * Shown on the components index in the docs, hidden from Storybook. The toast
+ * without its region, which is fixed to the edge of the page, so the preview
+ * can centre it like any other component
+ */
 export const Preview: Story = {
-  ...VariantsOpen,
   tags: ['!dev', '!autodocs', '!snapshot'],
+  render: () => {
+    const [queue] = useState(() => {
+      const queue = new ToastQueue<MidasToast>()
+      queue.add({ type: 'success', message: 'Dina ändringar har sparats' })
+      return queue
+    })
+    const state = useToastQueue(queue)
+    const [toast] = state.visibleToasts
+
+    return (
+      <>
+        {toast && (
+          <Toast
+            toast={toast}
+            state={state}
+          />
+        )}
+      </>
+    )
+  },
 }
