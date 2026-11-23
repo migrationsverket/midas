@@ -19,7 +19,14 @@ export const FieldError = forwardRef(
     const context = useContext(FieldErrorContext)
 
     if (!context && isInvalid && typeof children !== 'function') {
-      return <Text className={className}>{children}</Text>
+      return (
+        <Text
+          id={props.id}
+          className={className}
+        >
+          {children}
+        </Text>
+      )
     }
 
     if (!context?.isInvalid) return null
