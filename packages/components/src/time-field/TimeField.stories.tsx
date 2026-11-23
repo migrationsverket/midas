@@ -30,6 +30,13 @@ export default {
 
 export const Primary: Story = {}
 
+export const Preview: Story = {
+  ...Primary,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Same width as DateField's preview, so the two cards match
+  parameters: { indexPreview: { width: '240px' } },
+}
+
 export const Invalid: Story = {
   args: {
     isInvalid: true,
