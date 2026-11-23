@@ -71,7 +71,6 @@ export const FileListExample = () => {
           onSelect={handleSelect}
         >
           <Button
-            variant='secondary'
             icon={Upload}
             aria-describedby={`${labelId} ${descriptionId}`}
           >
@@ -118,7 +117,6 @@ export const DropZoneExample = () => {
             onSelect={handleSelect}
           >
             <Button
-              variant='secondary'
               icon={Upload}
               aria-describedby={`${labelId} ${descriptionId}`}
             >
@@ -174,7 +172,7 @@ export const ValidatedDropZoneExample = () => {
           acceptedFileTypes={ACCEPTED_FILE_TYPES}
           onSelect={handleSelect}
         >
-          <Button variant='secondary'>
+          <Button>
             <Upload
               aria-hidden
               size={20}
