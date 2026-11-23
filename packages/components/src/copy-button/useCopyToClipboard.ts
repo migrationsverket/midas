@@ -29,22 +29,41 @@ export const useCopyToClipboard = ({
 }: UseCopyToClipboardOptions = {}) => {
   const [status, setStatus] = useState<CopyStatus>('idle')
   const timeout = useRef<ReturnType<typeof setTimeout>>(undefined)
+  const latestCopy = useRef(0)
+  const isMounted = useRef(false)
 
-  useEffect(() => () => clearTimeout(timeout.current), [])
+  useEffect(() => {
+    isMounted.current = true
+    return () => {
+      isMounted.current = false
+      clearTimeout(timeout.current)
+    }
+  }, [])
 
   const copy = useCallback(
     async (text: string) => {
-      clearTimeout(timeout.current)
+      const thisCopy = ++latestCopy.current
+      let copied = false
+      let copyError: unknown
       try {
         if (!navigator.clipboard) throw new Error('Clipboard API unavailable')
         await navigator.clipboard.writeText(text)
-        setStatus('copied')
-        onCopy?.(text)
+        copied = true
       } catch (error) {
-        setStatus('failed')
-        onCopyError?.(error)
+        copyError = error
       }
-      timeout.current = setTimeout(() => setStatus('idle'), resetAfter)
+
+      // Copies can finish out of order, so only the latest one sets the status
+      if (thisCopy === latestCopy.current && isMounted.current) {
+        clearTimeout(timeout.current)
+        setStatus(copied ? 'copied' : 'failed')
+        timeout.current = setTimeout(() => setStatus('idle'), resetAfter)
+      }
+
+      // Outside the try, so an error thrown by onCopy isn't taken for a
+      // failed copy. It's passed on to the caller instead
+      if (copied) onCopy?.(text)
+      else onCopyError?.(copyError)
     },
     [resetAfter, onCopy, onCopyError],
   )
