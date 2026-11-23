@@ -27,7 +27,8 @@ const isCardItem = (item: { type: string }): item is CardItem =>
 
 /**
  * A docs page, or a category such as Layout. A category links to its first
- * page and borrows that page's description.
+ * page and borrows that page's description, unless its _category_.json has
+ * one of its own.
  */
 const useCardData = (item: CardItem) => {
   const docId =
@@ -42,7 +43,9 @@ const useCardData = (item: CardItem) => {
       item.type === 'category'
         ? (item.href ?? findFirstSidebarItemLink(item))
         : item.href,
-    description: doc?.description,
+    description:
+      (item.type === 'category' ? item.description : undefined) ??
+      doc?.description,
     // From sidebar_custom_props in the page's frontmatter, or customProps in
     // a category's _category_.json
     story: item.customProps?.story as string | undefined,
