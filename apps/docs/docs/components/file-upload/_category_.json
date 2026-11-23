@@ -1,4 +1,8 @@
 {
   "label": "Filuppladdning",
-  "collapsed": true
+  "collapsed": true,
+  "description": "Filuppladdning med FilePicker, FileTrigger, DropZone och FileList.",
+  "customProps": {
+    "story": "components/file-picker/FilePicker"
+  }
 }

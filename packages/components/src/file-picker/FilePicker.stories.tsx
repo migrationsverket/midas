@@ -127,6 +127,15 @@ export const WithDropZone: Story = {
   render: args => <DropZoneContainer {...args} />,
 }
 
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  args: {
+    label: 'Bifoga dokument',
+    description: 'Du kan välja flera filer',
+  },
+  render: WithDropZone.render,
+}
+
 export const InvalidWithDropZone: Story = {
   args: {
     isInvalid: true,
