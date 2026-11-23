@@ -1,8 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
-import { userEvent } from 'vitest/browser'
 import * as stories from './FilePicker.stories'
-import { render } from '../../test-utils'
+import { render, uploadFile } from '../../test-utils'
 import { FilePicker, type FilePickerProps } from './FilePicker'
 import { DropZone } from '../drop-zone'
 import { Text } from '../text'
@@ -39,8 +38,7 @@ describe('Given a FilePicker', () => {
   it('should list selected files', async () => {
     const { getByText, getByTestId } = await render(<Default />)
 
-    const testFile = new File(['hello'], 'hello.png', { type: 'image/png' })
-    await userEvent.upload(getByTestId('file-trigger'), testFile)
+    await uploadFile(getByTestId('file-trigger'), 'hello.png', 'hello')
 
     await expect.element(getByText('hello.png')).toBeInTheDocument()
   })
@@ -48,8 +46,7 @@ describe('Given a FilePicker', () => {
   it('should not describe the delete buttons in the file list', async () => {
     const { getByRole, getByTestId } = await render(<Default />)
 
-    const testFile = new File(['hello'], 'hello.png', { type: 'image/png' })
-    await userEvent.upload(getByTestId('file-trigger'), testFile)
+    await uploadFile(getByTestId('file-trigger'), 'hello.png', 'hello')
 
     const buttons = getByRole('button').elements()
     const describedButtons = buttons.filter(button =>
@@ -210,9 +207,9 @@ describe('Given a valid FilePicker with a DropZone', () => {
 })
 
 describe('Given a FilePicker that only accepts small images', () => {
-  const upload = async (file: File) => {
+  const upload = async (name: string, contents = 'hello') => {
     const screen = await render(<RejectedFiles />)
-    await userEvent.upload(screen.getByTestId('file-trigger'), file)
+    await uploadFile(screen.getByTestId('file-trigger'), name, contents)
     return screen
   }
 
@@ -225,9 +222,7 @@ describe('Given a FilePicker that only accepts small images', () => {
   })
 
   it('should list a file of another type as failed, with the reason', async () => {
-    const { getByRole, getByText } = await upload(
-      new File(['hello'], 'notes.txt', { type: 'text/plain' }),
-    )
+    const { getByRole, getByText } = await upload('notes.txt')
 
     await expect.element(getByText('notes.txt')).toBeVisible()
     await expect
@@ -239,18 +234,13 @@ describe('Given a FilePicker that only accepts small images', () => {
   })
 
   it('should list a file over the size limit as failed, with the reason', async () => {
-    const big = new File([new Uint8Array(1024 * 1024 + 1)], 'big.png', {
-      type: 'image/png',
-    })
-    const { getByText } = await upload(big)
+    const { getByText } = await upload('big.png', 'x'.repeat(1024 * 1024 + 1))
 
     await expect.element(getByText('Filen är för stor, max 1 MB')).toBeVisible()
   })
 
   it('should list an accepted file without an error', async () => {
-    const { getByText, getByRole } = await upload(
-      new File(['hello'], 'ok.png', { type: 'image/png' }),
-    )
+    const { getByText, getByRole } = await upload('ok.png')
 
     await expect.element(getByText('ok.png')).toBeVisible()
     await expect

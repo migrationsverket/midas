@@ -1,6 +1,7 @@
 import { defaultExclude, defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config.mts'
 import {
+  browserCommands,
   browserInstances,
   browserProvider,
   browserTraceView,
@@ -27,6 +28,7 @@ export default mergeConfig(
               traceView: browserTraceView(),
               instances: browserInstances(),
               screenshotFailures: false,
+              commands: browserCommands,
             },
             setupFiles: ['vitest.setup.mts'],
           },

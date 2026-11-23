@@ -3,6 +3,8 @@ import { webdriverio } from '@vitest/browser-webdriverio'
 import { devices } from 'playwright'
 import type { BrowserInstanceOption } from 'vitest/node'
 
+export { browserCommands } from './commands.ts'
+
 interface Profile {
   browser: 'chromium' | 'firefox' | 'webkit'
   /** A Playwright device descriptor, for touch, user agent and viewport */

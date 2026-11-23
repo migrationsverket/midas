@@ -1,5 +1,32 @@
 import { render as baseRender } from 'vitest-browser-react'
-import { server, userEvent } from 'vitest/browser'
+import { commands, server, userEvent, type Locator } from 'vitest/browser'
+
+/**
+ * Uploads a file with the given name and contents to a file input.
+ *
+ * WebdriverIO can only upload files from disk, not `File` objects, so the
+ * file is written to the gitignored `tmp` folder first, in a folder per
+ * browser as the browser instances run at the same time. The browser takes
+ * the file's type from its extension. Vitest's `upload` fails in Firefox
+ * under WebdriverIO, so that sets the input with a custom command instead.
+ */
+export async function uploadFile(
+  input: Locator,
+  name: string,
+  contents: string,
+): Promise<void> {
+  const path = `tmp/uploads/${server.browser}/${name}`
+  await commands.writeFile(path, contents)
+  try {
+    if (server.provider === 'webdriverio') {
+      await commands.setInputFile(input.selector, path)
+    } else {
+      await userEvent.upload(input, path)
+    }
+  } finally {
+    await commands.removeFile(path)
+  }
+}
 
 /**
  * Under WebdriverIO, tabbing past the last element moves focus out of the
