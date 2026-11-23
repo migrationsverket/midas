@@ -1,3 +1,14 @@
+## 17.38.0 (2026-11-23)
+
+### 🚀 Features
+
+- **components,file-picker:** add FilePicker for file uploads ([d315d83320b](https://github.com/migrationsverket/midas/commit/d315d83320b))
+- **components,file-trigger:** change default button variant ([d60c71ce913](https://github.com/migrationsverket/midas/commit/d60c71ce913))
+
+### 🩹 Fixes
+
+- **components,file-list:** move focus to the next row, not the first, when a row is removed ([c710f1dab54](https://github.com/migrationsverket/midas/commit/c710f1dab54))
+
 ## 17.37.0 (2026-11-20)
 
 ### 🚀 Features
