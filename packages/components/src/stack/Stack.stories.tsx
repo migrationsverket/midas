@@ -107,3 +107,23 @@ export const SpaceBetween: Story = {
     alignItems: 'center',
   },
 }
+
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Empty boxes like Grid's preview, so the spacing is what the preview shows.
+  // Gap and side padding match Grid's gutter and margins on desktop
+  parameters: { indexPreview: { width: '640px' } },
+  args: {
+    spacing: 'large',
+    style: { paddingInline: 'var(--midas-space-xlarge)' },
+    children: [1, 2, 3].map(key => (
+      <div
+        key={key}
+        style={{
+          height: 32,
+          backgroundColor: 'var(--midas-border-color-subtle)',
+        }}
+      />
+    )),
+  },
+}
