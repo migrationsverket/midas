@@ -76,3 +76,30 @@ export const Primary: Story = {
     </Grid>
   ),
 }
+
+const previewRows = [[12], [6, 6], [4, 4, 4], [3, 3, 3, 3]] as const
+
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Empty boxes, so the columns themselves are what the preview shows
+  parameters: { indexPreview: { width: '640px' } },
+  render: args => (
+    <Grid {...args}>
+      {previewRows.flatMap((row, rowIndex) =>
+        row.map((size, index) => (
+          <GridItem
+            key={`${rowIndex}-${index}`}
+            size={size}
+          >
+            <div
+              style={{
+                height: 32,
+                backgroundColor: 'var(--midas-border-color-subtle)',
+              }}
+            />
+          </GridItem>
+        )),
+      )}
+    </Grid>
+  ),
+}
