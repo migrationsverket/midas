@@ -35,6 +35,13 @@ export default {
 /** Don't put format in description, it changes with browser language settings! */
 export const Primary: Story = {}
 
+export const Preview: Story = {
+  ...Primary,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Rendered wider so the field doesn't shrink-wrap the date segments
+  parameters: { indexPreview: { width: '240px' } },
+}
+
 export const Invalid: Story = {
   args: {
     isInvalid: true,
