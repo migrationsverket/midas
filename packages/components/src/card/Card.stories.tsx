@@ -63,6 +63,25 @@ export const Example: Story = {
   ),
 }
 
+export const Preview: Story = {
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  render: args => (
+    <Card {...args}>
+      <CardHeader
+        heading='Sven Svensson'
+        subHeading='Designer på Migrationsverket'
+      />
+      <CardBody>
+        <Text>Prata med Sven om du har frågor om design tokens.</Text>
+      </CardBody>
+      <CardActions>
+        <Button variant='secondary'>Boka möte</Button>
+        <Button variant='secondary'>Skicka meddelande</Button>
+      </CardActions>
+    </Card>
+  ),
+}
+
 export const WithHeaderAndBody: Story = {
   render: args => (
     <Card {...args}>
