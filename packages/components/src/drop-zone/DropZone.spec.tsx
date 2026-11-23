@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi, afterEach } from 'vitest'
 import { composeStories } from '@storybook/react-vite'
 import { page, server, userEvent } from 'vitest/browser'
 import * as stories from './DropZone.stories'
-import { render } from '../../test-utils'
+import { render, uploadFile } from '../../test-utils'
 
 const { WithFileTrigger, Invalid, RejectsWrongFileType } =
   composeStories(stories)
@@ -17,17 +17,14 @@ describe('Given a DropZone composed with a FileTrigger', async () => {
     vi.resetAllMocks()
   })
 
-  // TODO: The "webdriverio" provider doesn't support uploading files objects. Provide a file path instead.
-  it.skipIf(server.provider === 'webdriverio')(
-    'should be possible to upload files using the upload button',
-    async () => {
-      const testFile = new File(['hello'], 'hello.png', { type: 'image/png' })
-      await userEvent.upload(page.getByTestId('file-trigger'), testFile)
+  it('should be possible to upload files using the upload button', async () => {
+    await uploadFile(page.getByTestId('file-trigger'), 'hello.png', 'hello')
 
-      expect(handleSelect).toHaveBeenCalledTimes(1)
-      expect(handleSelect).toHaveBeenCalledWith([testFile])
-    },
-  )
+    expect(handleSelect).toHaveBeenCalledTimes(1)
+    expect(handleSelect).toHaveBeenCalledWith([
+      expect.objectContaining({ name: 'hello.png', type: 'image/png' }),
+    ])
+  })
 
   // Firefox's WebDriver starts the drag, but never drops
   it.skipIf(server.provider === 'webdriverio' && server.browser === 'firefox')(
@@ -59,38 +56,27 @@ describe('Given a DropZone restricted to .jpg/.png', async () => {
     await render(<RejectsWrongFileType />)
   })
 
-  // TODO: The "webdriverio" provider doesn't support uploading files objects. Provide a file path instead.
-  it.skipIf(server.provider === 'webdriverio')(
-    'should mark itself invalid and show an error when a disallowed file type is selected',
-    async () => {
-      const badFile = new File(['hello'], 'hello.txt', { type: 'text/plain' })
-      await userEvent.upload(page.getByTestId('file-trigger'), badFile)
+  it('should mark itself invalid and show an error when a disallowed file type is selected', async () => {
+    await uploadFile(page.getByTestId('file-trigger'), 'hello.txt', 'hello')
 
-      await expect
-        .element(page.getByTestId('drop-zone'))
-        .toHaveAttribute('data-invalid')
-      await expect
-        .element(page.getByText('Endast .jpg- och .png-filer tillåts'))
-        .toBeInTheDocument()
-    },
-  )
+    await expect
+      .element(page.getByTestId('drop-zone'))
+      .toHaveAttribute('data-invalid')
+    await expect
+      .element(page.getByText('Endast .jpg- och .png-filer tillåts'))
+      .toBeInTheDocument()
+  })
 
-  // TODO: The "webdriverio" provider doesn't support uploading files objects. Provide a file path instead.
-  it.skipIf(server.provider === 'webdriverio')(
-    'should clear the invalid state once a valid file type is selected',
-    async () => {
-      const badFile = new File(['hello'], 'hello.txt', { type: 'text/plain' })
-      await userEvent.upload(page.getByTestId('file-trigger'), badFile)
-      await expect
-        .element(page.getByTestId('drop-zone'))
-        .toHaveAttribute('data-invalid')
+  it('should clear the invalid state once a valid file type is selected', async () => {
+    await uploadFile(page.getByTestId('file-trigger'), 'hello.txt', 'hello')
+    await expect
+      .element(page.getByTestId('drop-zone'))
+      .toHaveAttribute('data-invalid')
 
-      const goodFile = new File(['hello'], 'hello.png', { type: 'image/png' })
-      await userEvent.upload(page.getByTestId('file-trigger'), goodFile)
+    await uploadFile(page.getByTestId('file-trigger'), 'hello.png', 'hello')
 
-      await expect
-        .element(page.getByTestId('drop-zone'))
-        .not.toHaveAttribute('data-invalid')
-    },
-  )
+    await expect
+      .element(page.getByTestId('drop-zone'))
+      .not.toHaveAttribute('data-invalid')
+  })
 })
