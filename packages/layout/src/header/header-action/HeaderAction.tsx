@@ -1,9 +1,10 @@
 'use client'
 
 import clsx from 'clsx'
-import { forwardRef, ReactNode } from 'react'
+import { forwardRef, ReactNode, useContext } from 'react'
 import { composeRenderProps } from 'react-aria-components'
 import { type ButtonProps, Button } from '@midas-ds/components'
+import { HeaderActionsContext } from '../header-actions/HeaderActionsContext'
 import styles from './HeaderAction.module.css'
 
 export interface HeaderActionProps extends Omit<ButtonProps, 'icon'> {
@@ -21,6 +22,7 @@ export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(
         "Please provide an 'aria-label' for HeaderAction components that doesnt have a visible label (children)",
       )
     }
+    const { orientation } = useContext(HeaderActionsContext)
 
     return (
       <Button
@@ -28,6 +30,7 @@ export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(
         size='medium'
         variant='tertiary'
         className={clsx(styles.headerAction, className)}
+        data-orientation={orientation}
         data-icon-only={children === undefined || undefined}
         {...props}
       >

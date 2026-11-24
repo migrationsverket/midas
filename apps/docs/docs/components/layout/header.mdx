@@ -10,6 +10,7 @@ import {
   MobileHeaderExample,
   OverflowHeaderExample,
   HeaderActionsExample,
+  VerticalHeaderActionsExample,
 } from '@site/src/components/examples/layout/HeaderExamples'
 
 <ComponentHeader
@@ -103,6 +104,20 @@ I Header läggs globala handlingar, alltså handlingar som användaren ska kunna
 ```
 
 <HeaderActionsExample />
+
+### Orientering
+
+Med `orientation='vertical'` hamnar etiketten under ikonen. På små skärmar (≤ 768px) döljs etiketterna oavsett orientering, och då visas bara ikonerna.
+
+```tsx
+<HeaderActions orientation='vertical'>
+  <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+  <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+  <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+</HeaderActions>
+```
+
+<VerticalHeaderActionsExample />
 
 ### Overflow
 

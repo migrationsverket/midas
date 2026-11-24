@@ -7,7 +7,8 @@ import { HeaderTitle } from './header-title'
 
 type Story = StoryObj<typeof Header>
 
-const { Primary: PrimaryHeaderActions } = composeStories(headerActionsStories)
+const { Primary: PrimaryHeaderActions, Vertical: VerticalHeaderActions } =
+  composeStories(headerActionsStories)
 const { Primary: PrimaryMobileMenu } = composeStories(MobileMenuStories)
 
 export default {
@@ -35,6 +36,16 @@ export const Mobile: Story = {
       <HeaderLogo />
       <HeaderTitle>System name</HeaderTitle>
       <PrimaryHeaderActions />
+    </Header>
+  ),
+}
+
+export const DesktopVerticalActions: Story = {
+  render: () => (
+    <Header>
+      <HeaderLogo />
+      <HeaderTitle>System name</HeaderTitle>
+      <VerticalHeaderActions />
     </Header>
   ),
 }
