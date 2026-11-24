@@ -20,12 +20,15 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    viteStaticCopy({
+    // Build only: in dev and in browser tests the serve half of this plugin
+    // answers /package.json with the raw file, which breaks `import ... from
+    // '../package.json'` in version.ts
+    ...viteStaticCopy({
       targets: [
         { src: '*.md', dest: '.' },
         { src: 'package.json', dest: '.' },
       ],
-    }),
+    }).filter(plugin => plugin.apply === 'build'),
     dts({
       entryRoot: 'src',
       tsconfigPath: join(root, 'tsconfig.lib.json'),

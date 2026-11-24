@@ -1,3 +1,5 @@
-import pkg from '../package.json'
+// A named import, so only the version string is bundled, not the whole
+// package.json
+import { version } from '../package.json'
 
-export const VERSION = pkg.version
+export const VERSION = version
