@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
+import { User } from 'lucide-react'
 import { userEvent } from 'vitest/browser'
 import { composeStories } from '@storybook/react-vite'
 import * as stories from './Button.stories'
@@ -57,5 +58,28 @@ describe('given a Button inside a ButtonContext provider', async () => {
     )
     await userEvent.click(getByRole('button'))
     expect(onPress).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('given a Button with an icon in a container too narrow for it', async () => {
+  it.each([
+    ['from the icon prop', <Button icon={User}>Min profil</Button>],
+    [
+      'passed as a child',
+      <Button>
+        <User size={20} />
+        Min profil
+      </Button>,
+    ],
+  ])('keeps the icon, %s, at its size', async (_, button) => {
+    const { container } = await render(
+      <div style={{ display: 'flex', width: 80 }}>{button}</div>,
+    )
+    const icon = container.querySelector('svg')?.getBoundingClientRect()
+
+    expect({ width: icon?.width, height: icon?.height }).toEqual({
+      width: 20,
+      height: 20,
+    })
   })
 })

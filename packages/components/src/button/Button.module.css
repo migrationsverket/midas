@@ -19,6 +19,11 @@
   justify-content: center;
   gap: var(--midas-space-small);
 
+  /* When a label wraps in a tight space, the icon would otherwise shrink */
+  & > svg {
+    flex-shrink: 0;
+  }
+
   &[data-focus-visible],
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
