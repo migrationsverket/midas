@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions, bugs and requests
+    url: https://designsystem.migrationsverket.se/get-started/support/
+    about: What to include, and what happens after you create an issue
+  - name: Documentation
+    url: https://designsystem.migrationsverket.se
+    about: Components, guides and examples
