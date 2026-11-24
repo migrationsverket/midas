@@ -1,3 +1,14 @@
+## 17.38.1 (2026-11-24)
+
+### 🩹 Fixes
+
+- **components,button:** keep the icon at its size when the label wraps ([391a1df924b](https://github.com/migrationsverket/midas/commit/391a1df924b))
+
+### 🧪 Tests updated
+
+- **components,drop-zone:** run uploads in WebdriverIO ([6cb6cac6a3a](https://github.com/migrationsverket/midas/commit/6cb6cac6a3a))
+- **components,file-picker:** upload from disk ([427fec0fad0](https://github.com/migrationsverket/midas/commit/427fec0fad0))
+
 ## 17.38.0 (2026-11-23)
 
 ### 🚀 Features
