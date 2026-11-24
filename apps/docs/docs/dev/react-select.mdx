@@ -7,11 +7,15 @@ import { MultiComboBox } from '@site/src/components/examples/react-select'
 
 # react-select
 
+:::warning[Använd ComboBox för flerval med sök]
+Midas [ComboBox](/components/combobox#flerval) stödjer nu flerval med `selectionMode='multiple'`. Använd den i stället för react-select från och med nu. Den här sidan finns kvar för befintliga implementationer med react-select.
+:::
+
 I `@midas-ds/components` finns komponenterna [Select](/components/select) och [ComboBox](/components/combobox)
-där användaren kan kan klicka eller söka fram ett val. Select stödjer flerval, ComboBox gör det ej för närvarande.
+där användaren kan klicka eller söka fram ett val. Båda stödjer flerval.
 
 Ett annat populärt bibliotek som kombinerar dessa mönster är [react-select](https://react-select.com/).
-Tack vare sitt API kan samma komponent leverera snarlik funktionalitet som komponenter i Midas och dessutom t.ex. flerval för ComboBox.
+Innan ComboBox stödde flerval var react-select med Midas-stilar vårt sätt att erbjuda flerval med sök.
 
 :::info
 Stilarna för react-select är just nu i en tidig version och är ett arbete som pågår. react-select är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/migrationsverket/midas) och tar gärna emot förslag på stilar som saknas när du implementerar react-select.
@@ -19,7 +23,7 @@ Stilarna för react-select är just nu i en tidig version och är ett arbete som
 
 ## När du ska använda react-select
 
-- Flerval kombinerat med sökbarhet (ComboBox med flerval)
+- Bara i befintliga implementationer som redan använder react-select. För flerval med sök i nya implementationer, använd [ComboBox med flerval](/components/combobox#flerval).
 
 ## Komma igång
 
