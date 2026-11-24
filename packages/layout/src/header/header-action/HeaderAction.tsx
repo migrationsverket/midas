@@ -8,7 +8,14 @@ import { HeaderActionsContext } from '../header-actions/HeaderActionsContext'
 import styles from './HeaderAction.module.css'
 
 export interface HeaderActionProps extends Omit<ButtonProps, 'icon'> {
+  /** The action's icon, 20px, e.g. `<Bell size={20} />` */
   icon?: ReactNode
+  /**
+   * The label. It's hidden on small screens, where only the icon shows, but
+   * screen readers still read it. Without a label, give the action an
+   * `aria-label`
+   */
+  children?: ButtonProps['children']
 }
 
 export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(

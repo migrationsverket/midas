@@ -5,6 +5,11 @@ sidebar_position: 1
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { PropTable } from '@site/src/components/PropsTable'
+import HeaderLogoApi from '@midas-ds/api/layout/HeaderLogo.json'
+import HeaderActionsApi from '@midas-ds/api/layout/HeaderActions.json'
+import HeaderActionApi from '@midas-ds/api/layout/HeaderAction.json'
+import MobileMenuApi from '@midas-ds/api/layout/MobileMenu.json'
 import {
   BasicHeaderExample,
   MobileHeaderExample,
@@ -228,35 +233,28 @@ export const MobileHeaderExample = () => {
 
 <MobileHeaderExample />
 
-## Props
+## API
 
-### HeaderAction
+### Header
 
-| Prop         | Typ         | Beskrivning                                            |
-| ------------ | ----------- | ------------------------------------------------------ |
-| `icon`       | `ReactNode` | Valfri ikon                                            |
-| `children`   | `ReactNode` | Etikett — visas på desktop, döljs som sr-only på mobil |
-| `aria-label` | `string`    | Alternativt om `children` inte används                 |
-
-### HeaderTitle
-
-| Prop        | Typ         | Beskrivning     |
-| ----------- | ----------- | --------------- |
-| `children`  | `ReactNode` | Systemnamnet    |
-| `className` | `string`    | Extra CSS-klass |
+`Header` tar emot samma props som ett `<header>`-element, till exempel `className`.
 
 ### HeaderLogo
 
-| Prop      | Typ       | Standard | Beskrivning                 |
-| --------- | --------- | -------- | --------------------------- |
-| `primary` | `boolean` | `true`   | Monokrom variant om `false` |
+<PropTable doc={HeaderLogoApi} />
+
+### HeaderTitle
+
+`HeaderTitle` tar emot samma props som ett `<span>`-element, till exempel `className`.
+
+### HeaderActions
+
+<PropTable doc={HeaderActionsApi} />
+
+### HeaderAction
+
+<PropTable doc={HeaderActionApi} />
 
 ### MobileMenu
 
-| Prop           | Typ                         | Beskrivning                    |
-| -------------- | --------------------------- | ------------------------------ |
-| `title`        | `string`                    | Rubrik i menyn                 |
-| `defaultOpen`  | `boolean`                   | Okontrollerat starttillstånd   |
-| `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
-| `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
-| `children`     | `ReactNode`                 | Menyinnehåll                   |
+<PropTable doc={MobileMenuApi} />
