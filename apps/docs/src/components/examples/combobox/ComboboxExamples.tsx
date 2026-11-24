@@ -34,6 +34,56 @@ export const ControlledExample = () => {
   )
 }
 
+const fruits = [
+  { id: 'lime', name: 'Lime' },
+  { id: 'apple', name: 'Äpple' },
+  { id: 'banana', name: 'Banan' },
+  { id: 'kiwi', name: 'Kiwi' },
+  { id: 'orange', name: 'Apelsin' },
+  { id: 'pear', name: 'Päron' },
+  { id: 'mango', name: 'Mango' },
+  { id: 'plum', name: 'Plommon' },
+  { id: 'cherry', name: 'Körsbär' },
+  { id: 'raspberry', name: 'Hallon' },
+]
+
+export const MultipleExample = () => (
+  <ComboBox
+    label='Välj dina favoritfrukter'
+    description='Du kan välja flera'
+    placeholder='Välj eller sök frukt'
+    selectionMode='multiple'
+    defaultValue={['banana', 'kiwi']}
+    items={fruits}
+  >
+    {item => <ListBoxItem>{item.name}</ListBoxItem>}
+  </ComboBox>
+)
+
+export const ControlledMultipleExample = () => {
+  const [selectedFruits, setSelectedFruits] = useState<Key[]>(['banana'])
+
+  return (
+    <>
+      <ComboBox
+        label='Välj dina favoritfrukter'
+        description='Du kan välja flera'
+        placeholder='Välj eller sök frukt'
+        selectionMode='multiple'
+        value={selectedFruits}
+        onChange={setSelectedFruits}
+        items={fruits}
+      >
+        {item => <ListBoxItem>{item.name}</ListBoxItem>}
+      </ComboBox>
+
+      <pre style={{ marginTop: '1rem' }}>
+        Valda frukter: {selectedFruits.join(', ')}
+      </pre>
+    </>
+  )
+}
+
 export const SectionedExample = () => {
   return (
     <ComboBox

@@ -5,6 +5,8 @@ description: Sökbar version av Select
 
 import {
   ControlledExample,
+  MultipleExample,
+  ControlledMultipleExample,
   SectionedExample,
   AsyncExample,
   ItemActionExample,
@@ -73,7 +75,93 @@ return (
 
 ## Flerval
 
-För närvarande stödjer inte vår ComboBox flerval. Använd [Midas CSS för react-select](/dev/react-select) för detta.
+Sätt `selectionMode='multiple'` för att låta användaren välja flera alternativ. Valen visas som etiketter i fältet, och textfältet följer efter den sista etiketten. När användaren väljer något töms textfältet och listan står kvar öppen, så att det går att fortsätta välja. Platshållartexten visas bara så länge inget är valt.
+
+```tsx
+const fruits = [
+  { id: 'lime', name: 'Lime' },
+  { id: 'apple', name: 'Äpple' },
+  { id: 'banana', name: 'Banan' },
+  { id: 'kiwi', name: 'Kiwi' },
+  // ...
+]
+
+return (
+  <ComboBox
+    label='Välj dina favoritfrukter'
+    description='Du kan välja flera'
+    placeholder='Välj eller sök frukt'
+    // highlight-next-line
+    selectionMode='multiple'
+    defaultValue={['banana', 'kiwi']}
+    items={fruits}
+  >
+    {item => <ListBoxItem>{item.name}</ListBoxItem>}
+  </ComboBox>
+)
+```
+
+<div className='card'>
+  <MultipleExample />
+</div>
+
+:::tip
+Tidigare rekommenderade vi [react-select med Midas-stilar](/dev/react-select) för flerval med sök. Använd ComboBox med `selectionMode='multiple'` i stället från och med nu.
+:::
+
+### Kontrollerat flerval
+
+Vid flerval är `value` och `defaultValue` en lista med nycklar (`Key[]`), och `onChange` anropas med hela listan av valda nycklar.
+
+```tsx
+import React from 'react'
+import { Key } from '@midas-ds/components'
+
+const [selectedFruits, setSelectedFruits] = React.useState<Key[]>(['banana'])
+
+return (
+  <ComboBox
+    label='Välj dina favoritfrukter'
+    description='Du kan välja flera'
+    placeholder='Välj eller sök frukt'
+    selectionMode='multiple'
+    value={selectedFruits}
+    onChange={setSelectedFruits}
+    items={fruits}
+  >
+    {item => <ListBoxItem>{item.name}</ListBoxItem>}
+  </ComboBox>
+)
+```
+
+<div className='card'>
+  <ControlledMultipleExample />
+</div>
+
+### Ta bort val
+
+Användaren kan ta bort ett val på flera sätt:
+
+- Klicka på krysset i etiketten.
+- Välj alternativet i listan igen.
+- Tryck `Backspace` i ett tomt textfält, vilket tar bort det senast valda.
+- Tryck `Shift+Tab` från textfältet för att komma till krysset i den sista etiketten, och tryck `Enter`. Ett `Shift+Tab` till går till själva etiketten, där `←` och `→` flyttar mellan etiketterna och `Delete` eller `Backspace` tar bort den som har fokus.
+
+### Tangentbord
+
+| Tangent | Åtgärd |
+|---------|--------|
+| `↓` / `↑` i textfältet | Öppna listan och flytta mellan alternativen |
+| `Enter` i listan | Välj alternativet, eller ta bort valet om det redan är valt |
+| `Escape` | Stäng listan |
+| `Backspace` i ett tomt textfält | Ta bort det senast valda |
+| `Shift+Tab` från textfältet | Gå till krysset i den etikett som senast hade fokus (först den sista), och en gång till till själva etiketten |
+| `←` / `→` bland etiketterna | Flytta mellan etiketterna |
+| `Delete` / `Backspace` på en etikett | Ta bort etiketten |
+
+När en etikett tas bort med tangentbordet flyttas fokus till nästa etikett. När den sista etiketten tas bort flyttas fokus till textfältet, så att fokus inte går förlorat.
+
+Medan listan är öppen döljs etiketterna för skärmläsare, eftersom React Aria döljer allt utanför en öppen ComboBox-lista. De blir nåbara igen när listan stängs.
 
 ## Sektioner
 

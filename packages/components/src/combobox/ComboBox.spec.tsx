@@ -8,8 +8,17 @@ import { ComboBox } from './ComboBox'
 import { ListBoxItem } from '../list-box'
 import { I18nProvider } from '../aria'
 
-const { Primary, Required, Sectioned, NotVirtualized, WithHelpPopover } =
-  composeStories(stories)
+const {
+  Primary,
+  Required,
+  Sectioned,
+  NotVirtualized,
+  WithHelpPopover,
+  Multiple,
+  MultipleDefaultValue,
+  MultipleAllSelected,
+  MultipleRequired,
+} = composeStories(stories)
 
 describe('given a primary ComboBox', async () => {
   it('it should preserve its classNames when being passed new ones', async () => {
@@ -30,8 +39,8 @@ describe('given a primary ComboBox', async () => {
       </ComboBox>,
     )
 
-    const inputEl = await getByRole('combobox').element()
-    const buttonEl = await getByRole('button').element()
+    const inputEl = getByRole('combobox').element()
+    const buttonEl = getByRole('button').element()
     const inputRect = inputEl.getBoundingClientRect()
     const buttonRect = buttonEl.getBoundingClientRect()
     const paddingRight = parseFloat(
@@ -44,6 +53,24 @@ describe('given a primary ComboBox', async () => {
     const RENDERING_TOLERANCE_PX = 4
     expect(inputRect.right - paddingRight).toBeLessThanOrEqual(
       buttonRect.left + RENDERING_TOLERANCE_PX,
+    )
+  })
+
+  it('should keep the list in line with a full-width field and inside the viewport', async () => {
+    const { getByRole } = await render(<Primary />)
+
+    await getByRole('combobox').click()
+    await userEvent.keyboard('A')
+    const listBox = getByRole('listbox')
+    await expect.element(listBox).toBeVisible()
+
+    const fieldRect = getByRole('group').element().getBoundingClientRect()
+    const popover = listBox.element().closest('[data-trigger="ComboBox"]')
+    expect(popover).not.toBeNull()
+    const popoverRect = (popover as Element).getBoundingClientRect()
+    expect(popoverRect.left).toBe(fieldRect.left)
+    expect(document.documentElement.scrollWidth).toBeLessThanOrEqual(
+      window.innerWidth,
     )
   })
 
@@ -167,6 +194,181 @@ describe('given a ComboBox with listBoxProps={{ virtualized: false }}', async ()
     await expect.element(listbox.getByText('Ananas')).toBeVisible()
     await expect.element(listbox.getByText('Kokosnöt')).toBeVisible()
     await expect.element(listbox.getByText('Päron')).toBeVisible()
+  })
+})
+
+describe('given a ComboBox with a default multi-value', async () => {
+  it('should render a removable chip for each pre-selected value', async () => {
+    await render(<MultipleDefaultValue />)
+
+    const tagGrid = page.getByRole('grid')
+    await expect.element(tagGrid).toBeVisible()
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .toBeVisible()
+    await expect
+      .element(tagGrid.getByText('Kiwi', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should add chips and clear the input after picking another item', async () => {
+    const { getByRole } = await render(<MultipleDefaultValue />)
+
+    const comboBox = getByRole('combobox')
+    await comboBox.click()
+    await userEvent.keyboard('Apelsin')
+
+    const option = getByRole('option', { name: 'Apelsin' })
+    await expect.element(option).toBeVisible()
+    await option.click()
+    await expect.element(comboBox).toHaveValue('')
+
+    // The list stays open for more picks and hides the tags from the
+    // accessibility tree until it closes
+    await userEvent.keyboard('[Escape]')
+    const tagGrid = getByRole('grid')
+    await expect
+      .element(tagGrid.getByText('Apelsin', { exact: true }))
+      .toBeVisible()
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should remove a chip and update the selection when its dismiss button is clicked', async () => {
+    await render(<MultipleDefaultValue />)
+
+    const tagGrid = page.getByRole('grid')
+    await userEvent.click(tagGrid.getByRole('button').first())
+
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .not.toBeInTheDocument()
+    await expect
+      .element(tagGrid.getByText('Kiwi', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should remove the last chip when pressing Backspace in an empty input', async () => {
+    const { getByRole } = await render(<MultipleDefaultValue />)
+
+    const comboBox = getByRole('combobox')
+    await userEvent.click(comboBox)
+    await userEvent.keyboard('[Backspace]')
+
+    const tagGrid = page.getByRole('grid')
+    await expect
+      .element(tagGrid.getByText('Kiwi', { exact: true }))
+      .not.toBeInTheDocument()
+    await expect
+      .element(tagGrid.getByText('Ananas', { exact: true }))
+      .toBeVisible()
+  })
+
+  it('should only show the placeholder while nothing is selected', async () => {
+    const { getByRole } = await render(<MultipleDefaultValue />)
+    const comboBox = getByRole('combobox')
+
+    await expect.element(comboBox).toHaveAttribute('placeholder', '')
+
+    await userEvent.click(comboBox)
+    await userEvent.keyboard('[Backspace][Backspace]')
+    await expect
+      .element(comboBox)
+      .toHaveAttribute('placeholder', 'Välj eller sök frukt')
+  })
+
+  it('should put the input after the last tag when there is room for it, and below it when there is not', async () => {
+    const { getByRole, container } = await render(<MultipleAllSelected />)
+
+    const input = getByRole('combobox').element()
+    const fieldContent = input.parentElement as HTMLElement
+    const tags = getByRole('row').elements()
+    const minWidth = parseFloat(getComputedStyle(input).minWidth)
+    expect(minWidth).toBeGreaterThan(0)
+
+    // The room left after the last tag depends on the fonts, so try a range
+    // of widths and check the rule at each one
+    const sameRowWidths: number[] = []
+    for (let width = 300; width <= 414; width += 2) {
+      container.style.width = `${width}px`
+      const lastTag = tags[tags.length - 1].getBoundingClientRect()
+      const tagRows = new Set(
+        tags.map(tag => Math.round(tag.getBoundingClientRect().top)),
+      )
+      const { columnGap, paddingRight } = getComputedStyle(fieldContent)
+      const roomAfterLastTag =
+        fieldContent.getBoundingClientRect().right -
+        parseFloat(paddingRight) -
+        lastTag.right -
+        parseFloat(columnGap)
+      const inputRect = input.getBoundingClientRect()
+      const isOnLastTagRow =
+        inputRect.top < lastTag.bottom && inputRect.bottom > lastTag.top
+
+      expect(tagRows.size, `at ${width}px`).toBeGreaterThan(1)
+      expect(isOnLastTagRow, `at ${width}px`).toBe(roomAfterLastTag >= minWidth)
+      if (isOnLastTagRow) {
+        expect(inputRect.left).toBeGreaterThan(lastTag.right)
+        sameRowWidths.push(width)
+      }
+    }
+
+    expect(sameRowWidths.length).toBeGreaterThan(0)
+  })
+})
+
+describe('given a multiple ComboBox where the tags are removed one by one', async () => {
+  for (const [how, remove] of [
+    ['Backspace', () => userEvent.keyboard('[Backspace]')],
+    ['Delete', () => userEvent.keyboard('[Delete]')],
+    [
+      'the remove button',
+      () =>
+        userEvent.click(page.getByRole('button', { name: /Remove/ }).first()),
+    ],
+  ] as const) {
+    it(`should move focus to the next tag, and to the input when the last tag is removed with ${how}`, async () => {
+      const { getByRole } = await render(<MultipleDefaultValue />)
+      ;(getByRole('row').first().element() as HTMLElement).focus()
+
+      await remove()
+      await expect.element(getByRole('row', { name: 'Kiwi' })).toHaveFocus()
+
+      await remove()
+      await expect.element(getByRole('grid')).not.toBeInTheDocument()
+      await expect.element(getByRole('combobox')).toHaveFocus()
+      await expect
+        .element(getByRole('combobox'))
+        .toHaveAttribute('aria-expanded', 'false')
+    })
+  }
+})
+
+describe('given a multiple ComboBox with nothing selected', async () => {
+  it('should show the placeholder', async () => {
+    const { getByRole } = await render(<Multiple />)
+
+    await expect
+      .element(getByRole('combobox'))
+      .toHaveAttribute('placeholder', 'Välj eller sök frukt')
+  })
+})
+
+describe('given a required multiple ComboBox', async () => {
+  it('should show invalid state when all chips are removed via dismiss buttons', async () => {
+    const { getByRole } = await render(<MultipleRequired />)
+
+    const tagGrid = page.getByRole('grid')
+    await expect.element(tagGrid).toBeVisible()
+
+    const count = tagGrid.getByRole('button').elements().length
+
+    for (let i = 0; i < count; i++) {
+      await userEvent.click(tagGrid.getByRole('button').first())
+    }
+
+    await expect.element(getByRole('combobox')).toBeInvalid()
   })
 })
 
