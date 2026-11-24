@@ -5,51 +5,25 @@ sidebar_position: 2
 
 # 🔨 Bidra med kod
 
-Den här guiden beskriver hur du bygger och bidrar med komponenter till Midas. Vi uppskattar alla bidrag - stora som små!
+Den här sidan gäller alla kodändringar, från en buggfix till en ny komponent.
 
-:::tip
-Innan du börjar koda, läs gärna om vår [designfilosofi och arkitektur](/get-started/contribute/architecture) för att förstå hur vi bygger komponenter.
-:::
+## Innan du börjar
 
-## 📦 Bygga komponenter
+Är ändringen större än en buggfix, skapa gärna ett [issue](/get-started/support) först så att vi kan prata ihop oss. Utgå från hur befintliga komponenter är byggda och läs om vår [arkitektur](/get-started/contribute/architecture).
 
-### Styleguide
+## Det här ska finnas med
 
-Använd befintliga komponenter som referens för struktur och namngivning. Se även [React Aria](https://github.com/adobe/react-spectrum/tree/main/packages/react-aria-components) för inspiration.
+- **Stories** för alla tillstånd som ändras eller tillkommer, i Storybook.
+- **Tester** som täcker ändringen, ofta med en story som utgångspunkt. Se [Tester](/get-started/contribute/tests).
+- **JSDoc på engelska** för nya props. API-tabellerna i dokumentationen genereras från dem.
+- **En dokumentationssida** med exempel, om det är en ny komponent eller ett nytt beteende som användare behöver känna till.
 
-### Skapa stories
+## Innan du skapar en PR
 
-Alla states bör finnas representerade som stories i Storybook. Storybook är i första hand ett internt verktyg för UX och utvecklare i designsystemet men också en publikt exponerad referens med API och visuell representation av komponenterna.
+- [ ] `npx nx test <projekt>`, `npx nx lint <projekt>` och `npx nx stylelint <projekt>` går igenom
+- [ ] Commits följer våra [commit-konventioner](/get-started/contribute/conventions)
+- [ ] Commit-historiken är städad (`git rebase -i` vid behov)
 
-### Skriv tester
+Ändrar du hur något ser ut visar CI skillnaderna i de [visuella testerna](/get-started/contribute/tests#-visuella-tester). Är ändringen avsiktlig lägger du till etiketten `visual:update` på PR:en.
 
-De stories du skapat kan användas som utgångspunkt för komponenttester. Läs mer om [hur vi testar komponenter](/get-started/contribute/tests).
-
-### Dokumentation
-
-Dokumentera komponentens API (props, events etc.) med TypeScript-typer så genereras API-dokumentationen automatiskt. Lägg även till relevanta exempel och användningsfall med kodexempel.
-
----
-
-## 🌿 Versionshantering
-
-Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-brancher som sedan mergas in i `main`. Följ [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) - det avgör vilken versionsändring som sker.
-
-Se [arbetsflöde](/get-started/contribute/conventions) för detaljerad guide om commits och release-processen.
-
----
-
-## ✅ Checklista för PR
-
-Innan du skapar en pull request, kontrollera att:
-
-- [ ] Komponenten följer befintliga patterns och styleguide
-- [ ] Alla relevanta states finns som stories i Storybook
-- [ ] Komponenttester är skrivna och passerar (`nx test components`)
-- [ ] Dokumentation är uppdaterad
-- [ ] Commits följer conventional commits-format
-- [ ] Commit-historiken är städad (använd `git rebase -i` vid behov)
-
-:::tip
-Release sker automatiskt via CI/CD när din PR mergas till `main`. Du behöver inte köra några manuella release-kommandon! 🎉 Undantaget är när ett paket ska släppas som 1.0, se [Ta ett paket till 1.0](/get-started/contribute/conventions#ta-ett-paket-till-10).
-:::
+När PR:en mergas släpps ändringen automatiskt.
