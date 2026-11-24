@@ -1,0 +1,1 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{n as t,t as n}from"./clsx-DCdnwCma.js";function r(){return(r=e((()=>{})))()}function i(...e){return e.some(e=>typeof e==`function`)?t=>n(e.map(e=>typeof e==`function`?e(t):e)):n(e)}function a(){return(a=e((()=>{t(),r()})))()}export{a as n,i as t};
