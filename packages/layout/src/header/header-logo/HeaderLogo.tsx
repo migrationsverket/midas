@@ -9,7 +9,21 @@ export interface HeaderLogoProps {
 
 export const HeaderLogo = ({ primary }: HeaderLogoProps) => (
   <>
-    <Logo size='x-small' primary={primary} padding={false} className={styles.mobile} />
-    <Logo size='small' primary={primary} padding={false} className={styles.desktop} />
+    <div className={styles.mobile}>
+      <Logo
+        size='x-small'
+        primary={primary}
+        padding={false}
+        className={styles.mobileLogo}
+      />
+    </div>
+    <div className={styles.desktop}>
+      <Logo
+        size='small'
+        primary={primary}
+        padding={false}
+        className={styles.desktopLogo}
+      />
+    </div>
   </>
 )

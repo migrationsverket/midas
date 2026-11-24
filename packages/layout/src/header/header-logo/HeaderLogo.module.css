@@ -1,19 +1,31 @@
-.mobile {
-  flex-shrink: 0;
-  height: 2.25rem;
-  aspect-ratio: 100 / 92;
+/* Logo sets display on its own element, so the media queries hide wrappers
+ * instead. With both on one element and the same specificity, whichever CSS
+ * loaded last would win, and an app could end up showing both logos */
+.mobile,
+.desktop {
+  display: contents;
+}
 
+.mobile {
   @media (width > 640px) {
     display: none;
   }
 }
 
 .desktop {
-  flex-shrink: 0;
-  height: 2.5rem;
-  aspect-ratio: 112 / 40;
-
   @media (width <= 640px) {
     display: none;
   }
+}
+
+.mobileLogo {
+  flex-shrink: 0;
+  height: 2.25rem;
+  aspect-ratio: 100 / 92;
+}
+
+.desktopLogo {
+  flex-shrink: 0;
+  height: 2.5rem;
+  aspect-ratio: 112 / 40;
 }
