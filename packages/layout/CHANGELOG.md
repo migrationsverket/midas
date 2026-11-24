@@ -1,3 +1,9 @@
+## 0.2.72 (2026-11-24)
+
+### 🩹 Fixes
+
+- **layout,header:** show one HeaderLogo whatever order the CSS loads in ([a7a9d3900d5](https://github.com/migrationsverket/midas/commit/a7a9d3900d5))
+
 ## 0.2.71 (2026-11-23)
 
 ### 🧱 Updated Dependencies
