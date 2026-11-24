@@ -27,6 +27,12 @@ export const PlacementRight: Story = {
   },
 }
 
+export const Vertical: Story = {
+  args: {
+    orientation: 'vertical',
+  },
+}
+
 export const Controlled: Story = {
   render: args => {
     const [isOpen, setIsOpen] = useState(false)

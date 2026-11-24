@@ -1,9 +1,9 @@
 .triggerButton {
-  margin-inline-start: calc(-1 * var(--midas-space-50));
+  margin-inline-start: calc(-1 * var(--midas-space-medium));
 
   /* Pushed to the end of the Header, flush with its padding */
   &.right {
-    margin-inline: auto calc(-1 * var(--midas-space-50));
+    margin-inline: auto calc(-1 * var(--midas-space-medium));
   }
 }
 

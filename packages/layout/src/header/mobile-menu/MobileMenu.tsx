@@ -1,14 +1,15 @@
 'use client'
 
 import { Menu } from 'lucide-react'
+import { useContext } from 'react'
 import {
   composeRenderProps,
   Dialog,
   DialogTriggerProps,
   Modal,
+  ToolbarProps,
 } from 'react-aria-components'
 import {
-  Button,
   clsx,
   DialogTrigger,
   Text,
@@ -17,6 +18,8 @@ import {
   ModalOverlayProps,
 } from '@midas-ds/components'
 import { useIsMobileDevice } from '../../utils'
+import { HeaderAction } from '../header-action'
+import { HeaderActionsContext } from '../header-actions/HeaderActionsContext'
 import { MobileMenuContext } from './MobileMenuContext'
 import messages from './intl/translations.json'
 import styles from './MobileMenu.module.css'
@@ -39,6 +42,19 @@ export interface MobileMenuProps
    * @default 'left'
    */
   placement?: 'left' | 'right'
+  /**
+   * The trigger button's label, next to or below its icon
+   *
+   * @default 'Menu' ('Meny' in Swedish)
+   */
+  label?: string
+  /**
+   * Places the trigger's label next to its icon, or below it, like the
+   * `orientation` of `HeaderActions`. Set both to the same value
+   *
+   * @default 'horizontal'
+   */
+  orientation?: ToolbarProps['orientation']
 }
 
 export const MobileMenu = ({
@@ -48,11 +64,14 @@ export const MobileMenu = ({
   isOpen,
   onOpenChange,
   placement = 'left',
+  label,
+  orientation,
   title,
   ...rest
 }: MobileMenuProps) => {
   const isMobile = useIsMobileDevice()
   const strings = useLocalizedStringFormatter(messages)
+  const headerActions = useContext(HeaderActionsContext)
 
   return isMobile ? (
     <MobileMenuContext.Provider value={{}}>
@@ -61,17 +80,20 @@ export const MobileMenu = ({
         onOpenChange={onOpenChange}
         defaultOpen={defaultOpen}
       >
-        <Button
-          aria-label={strings.format('openMenu')}
-          icon={Menu}
-          variant='icon'
-          size='medium'
-          className={clsx(
-            styles.triggerButton,
-            placement === 'right' && styles.right,
-          )}
-          data-mobile-menu-placement={placement}
-        />
+        <HeaderActionsContext.Provider
+          value={{ orientation: orientation ?? headerActions.orientation }}
+        >
+          <HeaderAction
+            icon={<Menu size={20} />}
+            className={clsx(
+              styles.triggerButton,
+              placement === 'right' && styles.right,
+            )}
+            data-mobile-menu-placement={placement}
+          >
+            {label ?? strings.format('menu')}
+          </HeaderAction>
+        </HeaderActionsContext.Provider>
         <ModalOverlay
           className={clsx(className, styles.overlay)}
           isDismissable

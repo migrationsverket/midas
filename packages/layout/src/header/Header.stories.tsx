@@ -12,8 +12,11 @@ type Story = StoryObj<typeof Header>
 
 const { Primary: PrimaryHeaderActions, Vertical: VerticalHeaderActions } =
   composeStories(headerActionsStories)
-const { Primary: PrimaryMobileMenu, PlacementRight: MobileMenuPlacementRight } =
-  composeStories(MobileMenuStories)
+const {
+  Primary: PrimaryMobileMenu,
+  PlacementRight: MobileMenuPlacementRight,
+  Vertical: VerticalMobileMenu,
+} = composeStories(MobileMenuStories)
 
 export default {
   component: Header,
@@ -59,7 +62,7 @@ export const MobileVerticalActions: Story = {
   globals: { viewport: { value: 'smallest' } },
   render: () => (
     <Header>
-      <PrimaryMobileMenu />
+      <VerticalMobileMenu />
       <HeaderLogo />
       <HeaderActions orientation='vertical'>
         <HeaderAction icon={<Search size={20} />}>Sök</HeaderAction>
