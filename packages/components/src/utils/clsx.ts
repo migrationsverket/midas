@@ -1,4 +1,5 @@
 import { type ClassValue, clsx as cx } from 'clsx'
+import { checkForDuplicateInstance } from './duplicateInstance'
 
 type RenderProps<T> = T & {
   defaultClassName: string | undefined
@@ -18,6 +19,9 @@ export function clsx<T>(
 export function clsx<T>(
   ...classNames: (ClassNameOrFunction<T> | ClassValue)[]
 ): string | ((renderProps: RenderProps<T>) => string) {
+  // Nearly every component renders through here, so it's the one place a
+  // second copy of Midas is sure to be noticed. Runs once, in development
+  checkForDuplicateInstance()
   if (classNames.some(className => typeof className === 'function')) {
     return (renderProps: RenderProps<T>) =>
       cx(
