@@ -1,0 +1,61 @@
+---
+title: Frågor, buggar och önskemål
+sidebar_label: Frågor och önskemål
+sidebar_position: 2.8
+description: Så rapporterar du buggar och önskemål till Midas, och vad som händer sedan.
+---
+
+Hittat en bugg, saknar du något eller undrar hur något är tänkt att fungera? Skapa ett
+[issue på GitHub](https://github.com/migrationsverket/midas/issues/new/choose). Där samlar vi
+alla buggar, önskemål och frågor, och där kan du och andra följa vad som händer med dem. Det
+finns en mall för varje sort.
+
+Har du redan pratat med oss någon annanstans? Skapa gärna ett issue ändå, så att önskemålet och
+beslutet finns kvar och fler kan ta del av dem.
+
+:::warning
+GitHub är öppet för alla. Beskriv inte Migrationsverkets interna system, varken i text eller
+med skärmbilder.
+:::
+
+## Hittat en bugg?
+
+Välj mallen **Bug report** och beskriv vad du förväntade dig och vad som hände i stället. Ju
+enklare det är för oss att återskapa felet, desto snabbare kan vi rätta det. Ett kort exempel
+eller en lista med steg räcker långt.
+
+## Saknar du något?
+
+Välj mallen **Feature request**. Beskriv gärna behovet och inte bara lösningen: vad försöker
+användaren göra, och varför räcker inte det som finns i dag? Då kan vi tillsammans hitta den
+lösning som passar bäst, i designsystemet eller i din applikation.
+
+En ny komponent tar vi in när flera team behöver den, när behovet inte går att lösa med det som
+redan finns och när vi kan bygga den tillgänglig och enligt våra mönster.
+
+## Vad händer sedan?
+
+Vi går igenom nya issues så snart vi kan, och du får oftast svar inom kort. Svaret kan vara en
+fråga tillbaka, en bekräftelse på att vi tittar på det eller ett besked direkt.
+
+Buggar prioriterar vi högt. Önskemål om nya komponenter eller ny funktionalitet tar ofta längre
+tid, och det kan bero på flera saker:
+
+- **Det passar inte i designsystemet.** Vissa behov löses bättre i applikationen än i en
+  gemensam komponent, eller går redan att lösa med det som finns.
+- **Designen behöver mer arbete.** En ny komponent ska fungera för många team och vara
+  tillgänglig, och ibland tar det tid att hitta en lösning som håller.
+- **Det krockar med hur komponenterna är byggda.** Ibland går en idé emot de mönster och
+  bibliotek vi bygger på, och då behöver vi hitta en annan väg.
+
+Du kan följa issuet för att se var det står. När något är löst stänger vi issuet med en länk
+till ändringen, och du hittar den i [release notes](/release-notes) när den har släppts.
+Bestämmer vi oss för att inte göra något stänger vi issuet som _not planned_ och förklarar
+varför. Ett nej betyder inte att behovet är fel, bara att designsystemet inte är rätt ställe att
+lösa det på just nu.
+
+## Vill du bygga det själv?
+
+Bidrag är välkomna, både kod och dokumentation. Läs [Bidra till Midas](/get-started/contribute)
+för hur du kommer igång. Skapa gärna ett issue först om ändringen är större, så att vi kan
+prata ihop oss innan du lägger tid på den.

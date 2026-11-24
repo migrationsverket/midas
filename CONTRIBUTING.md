@@ -4,7 +4,7 @@ Tack för att du vill bidra till Midas! Här är de snabbaste vägarna in.
 
 ## Hittat en bugg eller har ett förslag?
 
-Öppna ett [Issue](https://github.com/migrationsverket/midas/issues/new/choose) och beskriv vad du hittade eller saknar.
+Öppna ett [Issue](https://github.com/migrationsverket/midas/issues/new/choose) och beskriv vad du hittade eller saknar. Läs [Frågor, buggar och önskemål](https://designsystem.migrationsverket.se/get-started/support/) för vad du ska ta med och vad som händer sedan.
 
 ## Bidra med kod eller dokumentation
 
