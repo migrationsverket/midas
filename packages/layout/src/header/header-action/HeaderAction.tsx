@@ -28,6 +28,7 @@ export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(
         size='medium'
         variant='tertiary'
         className={clsx(styles.headerAction, className)}
+        data-icon-only={children === undefined || undefined}
         {...props}
       >
         {composeRenderProps(children, children => (
