@@ -13,31 +13,15 @@ Midas är Migrationsverkets designsystem för att skapa användarvänliga, tillg
 
 ## 🚀 Kom igång
 
-### 🐳 Docker (Rekommenderat)
-
-Det snabbaste sättet att komma igång - inga lokala beroenden krävs.
+Kräver Node.js 24.
 
 ```bash
-docker compose up -d
+npm ci
+npx playwright install chromium
+npx nx serve storybook
 ```
 
-Detta startar:
-
-- **Storybook** på http://localhost:4400
-- **Dokumentation** på http://localhost:3000
-- **Playground** på http://localhost:4200
-
-> 💡 Första uppstarten tar några minuter. Följ processen med `docker compose logs -f`
-
-### 💻 Lokal installation
-
-Kräver Node.js `^24` och [Nx](https://nx.dev).
-
-```bash
-npm install --global nx@latest
-npm install
-nx serve storybook
-```
+Mer om utvecklingsmiljön finns i [bidragsguiden](https://designsystem.migrationsverket.se/get-started/contribute/coding/).
 
 ## 📦 Paket
 
@@ -52,7 +36,7 @@ nx serve storybook
 
 ## 🤝 Bidra
 
-Vi välkomnar bidrag av alla slag — buggar, idéer, kod och dokumentation.
+Vi välkomnar bidrag av alla slag: buggar, idéer, kod och dokumentation.
 
 - 🐛 **Hittat en bugg eller har ett förslag?** Öppna ett [Issue](https://github.com/migrationsverket/midas/issues/new/choose)
 - 💻 **Bidra med kod?** Klona repot, skapa en branch och öppna en Pull Request
