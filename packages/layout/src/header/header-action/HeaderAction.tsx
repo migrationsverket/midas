@@ -7,7 +7,10 @@ import { type ButtonProps, Button } from '@midas-ds/components'
 import { HeaderActionsContext } from '../header-actions/HeaderActionsContext'
 import styles from './HeaderAction.module.css'
 
-export interface HeaderActionProps extends Omit<ButtonProps, 'icon'> {
+export interface HeaderActionProps extends Omit<
+  ButtonProps,
+  'icon' | 'size' | 'variant'
+> {
   /** The action's icon, 20px, e.g. `<Bell size={20} />` */
   icon?: ReactNode
   /**
@@ -38,7 +41,7 @@ export const HeaderAction = forwardRef<HTMLButtonElement, HeaderActionProps>(
         variant='tertiary'
         className={clsx(styles.headerAction, className)}
         data-orientation={orientation}
-        data-icon-only={children === undefined || undefined}
+        data-icon-only={!children || undefined}
         {...props}
       >
         {composeRenderProps(children, children => (

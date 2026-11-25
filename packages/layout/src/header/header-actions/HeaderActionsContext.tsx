@@ -1,10 +1,10 @@
 'use client'
 
 import { createContext } from 'react'
-import type { ToolbarProps } from 'react-aria-components'
+import type { HeaderActionsProps } from './HeaderActions'
 
 export interface HeaderActionsContextValue {
-  orientation: NonNullable<ToolbarProps['orientation']>
+  orientation: NonNullable<HeaderActionsProps['orientation']>
 }
 
 export const HeaderActionsContext = createContext<HeaderActionsContextValue>({

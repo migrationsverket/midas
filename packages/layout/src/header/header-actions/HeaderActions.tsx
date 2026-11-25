@@ -2,7 +2,6 @@
 
 import clsx from 'clsx'
 import { type ReactNode } from 'react'
-import type { ToolbarProps } from 'react-aria-components'
 import { HeaderActionsContext } from './HeaderActionsContext'
 import styles from './HeaderActions.module.css'
 
@@ -16,7 +15,7 @@ export interface HeaderActionsProps {
    *
    * @default 'horizontal'
    */
-  orientation?: ToolbarProps['orientation']
+  orientation?: 'horizontal' | 'vertical'
 }
 
 export const HeaderActions = ({
