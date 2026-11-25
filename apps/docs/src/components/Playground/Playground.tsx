@@ -51,6 +51,11 @@ export interface PlaygroundProps<C extends ElementType> {
   wrap?: (element: ReactElement) => ReactElement
   /** Lets the component take the full width, instead of centering it */
   fill?: boolean
+  /**
+   * A class for the preview only, e.g. to make the items of a layout
+   * component visible. It isn't part of the generated code.
+   */
+  previewClassName?: string
 }
 
 const UNSET = '__unset__'
@@ -139,6 +144,7 @@ export const Playground = <C extends ElementType>({
   children,
   wrap,
   fill = false,
+  previewClassName,
 }: PlaygroundProps<C>) => {
   // The types only check the call site, getControls checks the names at runtime
   const controls = getControls(
@@ -176,7 +182,14 @@ export const Playground = <C extends ElementType>({
   return (
     <div className={styles.container}>
       <div className={styles.playground}>
-        <div className={fill ? styles.previewFill : styles.preview}>
+        <div
+          className={[
+            fill ? styles.previewFill : styles.preview,
+            previewClassName,
+          ]
+            .filter(Boolean)
+            .join(' ')}
+        >
           {wrap ? wrap(element) : element}
         </div>
         <div className={styles.controls}>

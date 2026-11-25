@@ -130,6 +130,12 @@
     }
   }
 
+  /* Makes the items of a Grid visible in a playground */
+  .playground-grid > * > * > * {
+    background-color: var(--midas-layer-01-base);
+    padding: var(--midas-space-medium);
+  }
+
   .card-image {
     text-align: center;
     padding: 24px;
