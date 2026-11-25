@@ -6,11 +6,11 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import LinkButtonApi from '@midas-ds/api/components/LinkButton.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import CodeBlock from '@theme/CodeBlock'
-import { Example } from '@site/src/components/examples/link-button/LinkButtonExamples'
-import ExampleSrc from '!!raw-loader!@site/src/components/examples/link-button/LinkButtonExamples'
+import { LinkButton } from '@midas-ds/components'
+import { Download } from 'lucide-react'
 
 <ComponentHeader
   name='LinkButton'
@@ -20,9 +20,22 @@ import ExampleSrc from '!!raw-loader!@site/src/components/examples/link-button/L
 
 Komponent med samma utseende och beteende som [Button](/components/button) men avsedd att använda som länk internt eller externt i en applikation.
 
-<CodeBlock language='tsx'>{ExampleSrc}</CodeBlock>
+```tsx
+import { LinkButton } from '@midas-ds/components'
+```
 
-<Example />
+<Playground
+  component={LinkButton}
+  api={LinkButtonApi}
+  initialProps={{ children: 'Starta tjänst', href: '#' }}
+  controls={{
+    children: {},
+    variant: { options: ['primary', 'secondary', 'tertiary'] },
+    size: {},
+    icon: { options: { Download }, import: 'lucide-react' },
+    iconPlacement: { showWhen: 'icon' },
+  }}
+/>
 
 ## Client Side Routing
 
