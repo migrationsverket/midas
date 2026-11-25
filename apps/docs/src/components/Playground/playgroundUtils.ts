@@ -133,7 +133,9 @@ export const getControls = (
       throw new Error(`Playground: ${api.displayName} has no prop "${name}"`)
     }
   }
-  Object.keys(initialProps).forEach(assertProp)
+  // A component with `as` passes the rest on to the element it renders, e.g.
+  // href to a link, and the API docs can't list those props
+  if (!('as' in api.props)) Object.keys(initialProps).forEach(assertProp)
 
   return Object.entries(config)
     .map(([name, controlConfig]) => {

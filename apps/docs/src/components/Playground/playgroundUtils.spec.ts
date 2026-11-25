@@ -421,6 +421,18 @@ describe('getControls', () => {
     ).not.toThrow()
   })
 
+  it('should allow any initial prop on a component that renders another with `as`', () => {
+    const linkApi = {
+      displayName: 'Link',
+      props: { as: prop({ name: 'C' }), standalone: prop(booleanType) },
+    } as unknown as ApiDoc
+
+    expect(() => getControls(linkApi, {}, { href: '#' })).not.toThrow()
+    expect(() => getControls(linkApi, { href: {} })).toThrow(
+      'Playground: Link has no prop "href"',
+    )
+  })
+
   it('should throw for initial props that are not props', () => {
     expect(() => getControls(api, {}, { lable: 'Spara' })).toThrow(
       'Playground: Button has no prop "lable"',
