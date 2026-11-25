@@ -139,3 +139,30 @@ describe('NavigationLink with onPress handler', () => {
     expect(handlePress).toHaveBeenCalledOnce()
   })
 })
+
+describe('NavigationLink disabled state', () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('should not warn about a non-focusable child when disabled', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+
+    await render(
+      <NavigationLink
+        href='/app'
+        icon={<House />}
+        isDisabled
+      >
+        Test Link
+      </NavigationLink>,
+    )
+
+    await expect
+      .element(page.getByRole('link'))
+      .toHaveAttribute('aria-disabled', 'true')
+    expect(warn).not.toHaveBeenCalledWith(
+      expect.stringContaining('<Focusable> child must be focusable'),
+    )
+  })
+})
