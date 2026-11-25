@@ -1,3 +1,23 @@
+## 17.38.2 (2026-11-25)
+
+### 🩹 Fixes
+
+- **components,date-field,time-field:** fill the width and pad both sides like the other fields ([503442a7677](https://github.com/migrationsverket/midas/commit/503442a7677))
+
+### 📖 Documentation changes
+
+- **components,popover:** show the popover open in the index preview ([edb1cfea3c5](https://github.com/migrationsverket/midas/commit/edb1cfea3c5))
+- **components,toast:** show a single success toast in the index preview ([d299341653b](https://github.com/migrationsverket/midas/commit/d299341653b))
+- **components,time-field:** match the index preview to DateField ([450edfa4cd1](https://github.com/migrationsverket/midas/commit/450edfa4cd1))
+- **docs,components:** show FilePicker on the file upload index card ([a0b8edf641b](https://github.com/migrationsverket/midas/commit/a0b8edf641b))
+- **components,empty-state:** show icon, text and button in the index preview ([93978b51b7a](https://github.com/migrationsverket/midas/commit/93978b51b7a))
+- **components,stack:** match the index preview to Grid ([7be2b8000da](https://github.com/migrationsverket/midas/commit/7be2b8000da))
+- **components,grid:** show empty columns in the index preview ([7f33e90eebd](https://github.com/migrationsverket/midas/commit/7f33e90eebd))
+- **components,date-field:** widen the index preview ([46dde2acb78](https://github.com/migrationsverket/midas/commit/46dde2acb78))
+- **components,card:** show a card with two actions in the index preview ([e8575d03335](https://github.com/migrationsverket/midas/commit/e8575d03335))
+- **components,layout,table-styles:** add Preview stories for the components index ([f4636bcd6fd](https://github.com/migrationsverket/midas/commit/f4636bcd6fd))
+- **components,file-trigger:** add a story ([05cb37d0cc5](https://github.com/migrationsverket/midas/commit/05cb37d0cc5))
+
 ## 17.38.1 (2026-11-24)
 
 ### 🩹 Fixes

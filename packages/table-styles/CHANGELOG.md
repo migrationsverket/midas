@@ -1,3 +1,13 @@
+## 2.2.23 (2026-11-25)
+
+### 📖 Documentation changes
+
+- **components,layout,table-styles:** add Preview stories for the components index ([f4636bcd6fd](https://github.com/migrationsverket/midas/commit/f4636bcd6fd))
+
+### 🧱 Updated Dependencies
+
+- Updated components to 17.38.2
+
 ## 2.2.22 (2026-11-24)
 
 ### 🧱 Updated Dependencies
