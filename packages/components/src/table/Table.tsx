@@ -120,7 +120,11 @@ export const Column = ({ children, className, ...rest }: ColumnProps) => {
       className={clsx(className, styles.column)}
       {...rest}
     >
-      {({ allowsSorting, sortDirection }) => {
+      {renderProps => {
+        const { allowsSorting, sortDirection } = renderProps
+        const label =
+          typeof children === 'function' ? children(renderProps) : children
+
         const getSortIcon = () => {
           if (sortDirection === 'ascending') {
             return <ArrowUp size={16} />
@@ -136,18 +140,18 @@ export const Column = ({ children, className, ...rest }: ColumnProps) => {
           )
         }
 
+        if (!allowsSorting) return label
+
         return (
-          <>
-            {children}
-            {allowsSorting && (
-              <span
-                aria-hidden='true'
-                className={styles.sortIndicator}
-              >
-                {getSortIcon()}
-              </span>
-            )}
-          </>
+          <div className={styles.columnContent}>
+            <span className={styles.columnLabel}>{label}</span>
+            <span
+              aria-hidden='true'
+              className={styles.sortIndicator}
+            >
+              {getSortIcon()}
+            </span>
+          </div>
         )
       }}
     </AriaColumn>
