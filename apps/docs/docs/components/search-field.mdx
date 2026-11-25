@@ -37,62 +37,15 @@ import { SearchField } from '@midas-ds/components'
   }}
 />
 
-## Grundläggande användning
-
 Fältet renderar en sökknapp som standard. Enter-tangenten fungerar alltid för att trigga `onSubmit`.
-
-```tsx
-<SearchField placeholder='Sök efter frukter' onSubmit={handleSubmit} />
-```
-
-<div className='card'>
-  <SearchField
-    placeholder='Sök efter frukter'
-    onSubmit={(v) => console.log('submit:', v)}
-  />
-</div>
 
 ## Med etikett och beskrivning
 
 Precis som andra fält kan `SearchField` ta en `label` och `description`. Används när fältet inte har en tydlig kontext från omgivningen.
 
-```tsx
-<SearchField
-  label='Sök person'
-  description='Ange namn, personnummer eller ärendenummer'
-  placeholder='Sök efter en person'
-  onSubmit={handleSubmit}
-/>
-```
-
-<div className='card'>
-  <SearchField
-    label='Sök person'
-    description='Ange namn, personnummer eller ärendenummer'
-    placeholder='Sök efter en person'
-    onSubmit={(v) => console.log('submit:', v)}
-  />
-</div>
-
 ## Utan knapp
 
 För realtidsfiltrering eller när ett explicit submit-steg inte behövs kan knappen döljas med `showButton={false}`. Använd `onChange` för att reagera på varje tangenttryckning.
-
-```tsx
-{/* Real-time filter */}
-<SearchField placeholder='Filtrera efter namn' showButton={false} onChange={filterResults} />
-
-{/* Keyboard submit only */}
-<SearchField placeholder='Sök efter frukter' showButton={false} onSubmit={handleSubmit} />
-```
-
-<div className='card'>
-  <SearchField
-    placeholder='Sök efter frukter'
-    showButton={false}
-    onSubmit={(v) => console.log('submit:', v)}
-  />
-</div>
 
 ## Sök med extern knapp
 

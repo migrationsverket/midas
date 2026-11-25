@@ -62,41 +62,9 @@ import { Accordion, AccordionItem } from '@midas-ds/components'
 
 Accordion finns i två varianter, uncontained och contained.
 
-### Uncontained
-
-Accordion är uncontained som standard. När accordion är uncontained har `AccordionItem` inte någon bakgrund.
-
-```tsx
-<Accordion>
-  {/* more items */}
-  <AccordionItem
-    id='mandarin'
-    title='Mandarin'
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-</Accordion>
-```
-
-<Example />
-
 ### Contained
 
 Contained accordion används för att ge en mer framträdande presentation av innehållet. När accordion är contained har varje `AccordionItem` bakgrundsfärg och kantlinje samt möjlighet att ha en status. Kontrolleras av `isContained` på `Accordion`.
-
-```tsx
-<Accordion isContained>
-  {/* more items */}
-  <AccordionItem
-    id='mandarin'
-    title='Mandarin'
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-</Accordion>
-```
-
-<Example isContained />
 
 #### Status
 
@@ -142,44 +110,7 @@ Innehållet i `AccordionItem` har som standard en neutral bakgrund. Sätt `conte
 
 <StatusExample />
 
-#### Size
-
-Contained accordion finns i två storlekar, `'medium'` och `'large'`, där `'large'` är standard. Storleken anges med `size` på `Accordion`.
-
-```tsx
-<Accordion
-  isContained
-  size='medium'
->
-  {/* more items */}
-  <AccordionItem
-    id='mandarin'
-    title='Mandarin'
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-</Accordion>
-```
-
-<Example
-  isContained
-  size='medium'
-/>
-
 ## Implementering
-
-### Multiple
-
-En accordion har som standard bara en öppen samtidigt och stänger automatiskt andra sektioner när en ny öppnas.
-Detta kan ändras genom att sätta prop `allowsMultipleExpanded`.
-
-```tsx
-<Accordion allowsMultipleExpanded>
-  <AccordionItem>...</AccordionItem>
-</Accordion>
-```
-
-<Example allowsMultipleExpanded />
 
 ### Uncontrolled expanded
 

@@ -13,7 +13,6 @@ import DialogTriggerApi from '@midas-ds/api/components/DialogTrigger.json'
 import PopoverApi from '@midas-ds/api/components/Popover.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
-  PopoverPlacement,
   ControlledPopover,
   CustomTriggerPopover,
   InfoPopoverExample,
@@ -160,31 +159,6 @@ const Example = () => {
 Popover är byggd på [React Aria Popover](https://react-spectrum.adobe.com/react-aria/Popover.html) och med det
 följer inbyggd tillgänglighet som till exempel sammankoppling mellan trigger och popover. För mer detaljerad
 dokumentation hänvisas till React Aria.
-
-### Placering
-
-Placering av Popover i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
-
-```tsx
-<DialogTrigger>
-  <Button>
-    <ArrowLeft />
-  </Button>
-  <Popover placement='left'>
-    Popover visas till vänster om trigger-elementet
-  </Popover>
-</DialogTrigger>
-<DialogTrigger>
-  <Button>
-    <ArrowUp />
-  </Button>
-  <Popover placement='top'>
-    Popover visas på ovansidan av trigger-elementet
-  </Popover>
-</DialogTrigger>
-```
-
-<PopoverPlacement />
 
 ### Controlled state
 

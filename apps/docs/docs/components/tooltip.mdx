@@ -14,7 +14,6 @@ import TooltipTriggerApi from '@midas-ds/api/components/TooltipTrigger.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   TooltipDelay,
-  TooltipPlacement,
   ControlledTooltip,
   CustomTriggerTooltip,
 } from '@site/src/components/examples/tooltip/TooltipExamples'
@@ -97,30 +96,6 @@ innan de för muspekaren över ett annat element, startar uppvärmningstimern om
 ```
 
 <TooltipDelay />
-
-### Placering
-
-Placering av Tooltip i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
-
-```tsx
-<TooltipTrigger delay={600}>
-  <Button>
-    <ArrowLeft />
-  </Button>
-  <Tooltip placement='left'>
-  Tooltip visas till vänster om trigger-elementet
-  </Tooltip>
-</TooltipTrigger>
-<TooltipTrigger delay={600}>
-  <Button>
-  <ArrowUp />
-  </Button>
-  <Tooltip placement='top'>
-  Tooltip visas på ovansidan av trigger-elementet
-</Tooltip></TooltipTrigger>
-```
-
-<TooltipPlacement />
 
 ### Controlled state
 

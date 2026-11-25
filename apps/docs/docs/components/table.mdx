@@ -123,36 +123,6 @@ const rows = [
 
 Använd `striped` om du vill att raderna ska vara zebrarandiga. Det är särskilt användbart i breda tabeller med många kolumner, där det annars kan vara svårt för användaren att följa en enskild rad horisontellt.
 
-```tsx
-<Table
-  aria-label='Fruit'
-  // highlight-start
-  striped
-  // highlight-end
->
-  ...
-</Table>
-```
-
-<FullExample striped />
-
-### Kompakt tabell
-
-Använd `size='medium'` om du vill ha en kompaktare tabell.
-
-```tsx
-<Table
-  aria-label='Fruit'
-  // highlight-start
-  size='medium'
-  // highlight-end
->
-  ...
-</Table>
-```
-
-<FullExample size='medium' />
-
 ## Valbara rader
 
 Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`

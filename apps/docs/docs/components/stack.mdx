@@ -10,7 +10,6 @@ import { Playground } from '@site/src/components/Playground/Playground'
 import { Stack } from '@midas-ds/components'
 import StackApi from '@midas-ds/api/components/Stack.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { StackExample } from '@site/src/components/examples/stack/StackExamples.tsx'
 
 <ComponentHeader
   name='Stack'
@@ -53,22 +52,6 @@ Använd `spacing` för att styra avståndet mellan elementen. Värdena motsvarar
 | `medium`           | `1rem` (16px)   |
 | `large`            | `1.5rem` (24px) |
 | `xlarge`           | `2rem` (32px)   |
-
-```tsx
-<Stack spacing='large'>…</Stack>
-```
-
-<StackExample spacing='large' />
-
-## Horisontell
-
-Som standard ligger elementen under varandra. Använd `direction='row'` för att lägga dem bredvid varandra.
-
-```tsx
-<Stack direction='row'>…</Stack>
-```
-
-<StackExample direction='row' />
 
 ## API
 

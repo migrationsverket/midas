@@ -45,7 +45,6 @@ import { TimeField } from '@midas-ds/components'
     description: {},
     size: {},
     granularity: {},
-    isClearable: {},
     isDisabled: {},
     isReadOnly: {},
     isRequired: {},
@@ -117,23 +116,6 @@ Visar en knapp som tömmer fältet. Knappen visas bara när fältet har ett komp
 <Example
   isClearable
   defaultValue={new Time(14, 30)}
-/>
-
-### Sekunder
-
-Använd `granularity="second"` för att även visa sekunder.
-
-```tsx
-<TimeField
-  granularity='second'
-  defaultValue={new Time(14, 30, 45)}
-  label='Etikett'
-/>
-```
-
-<Example
-  granularity='second'
-  defaultValue={new Time(14, 30, 45)}
 />
 
 ### 12-timmarsformat

@@ -13,10 +13,8 @@ import DialogTriggerApi from '@midas-ds/api/components/DialogTrigger.json'
 import ModalApi from '@midas-ds/api/components/Modal.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
-  FormExample,
   ConfirmationExample,
   CustomCSSExample,
-  HideCloseButtonExample,
   LongFormExample,
 } from '@site/src/components/examples/ModalExamples'
 
@@ -25,9 +23,8 @@ import {
   friendlyName='Modal, Dialog, Dialogruta'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog'
 />
-Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen.
 
-<FormExample />
+Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen.
 
 ```tsx
 import { DialogTrigger, Modal } from '@midas-ds/components'
@@ -79,22 +76,6 @@ döljas.
 :::warning
 Modaler som inte går att stänga på annat sätt än att acceptera/godkänna kan upplevas väldigt frustrerande för användarna och bör bara användas om det är nödvändigt. Komplettera alltid med en förklaring till varför det inte går att backa/avbryta.
 :::
-
-```tsx
-<DialogTrigger>
-  <Button>Bekräfta att du läst villkoren</Button>
-  <Modal
-    title='Villkor'
-    hideCloseButton
-    isKeyboardDismissDisabled
-    footer={<Button slot='close'>Bekräfta</Button>}
-  >
-    Du måste bekräfta att du läst villkoren innan du kan gå vidare
-  </Modal>
-</DialogTrigger>
-```
-
-<HideCloseButtonExample />
 
 ## Exempel
 

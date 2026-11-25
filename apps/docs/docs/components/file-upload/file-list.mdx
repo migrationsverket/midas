@@ -41,22 +41,6 @@ import { FileList, FileListItem } from '@midas-ds/components'
   wrap={item => <FileList aria-label='Uppladdade filer'>{item}</FileList>}
 />
 
-## Utan filstorlek
-
-`fileSize` är valfritt och kan utelämnas.
-
-```tsx
-<FileList aria-label='Uppladdade filer'>
-  <FileListItem fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
-</FileList>
-```
-
-<div className='card'>
-  <FileList aria-label='Uppladdade filer'>
-    <FileListItem fileName='CV_Anna_Svensson.pdf' onDelete={() => {}} />
-  </FileList>
-</div>
-
 ## Utan borttagningsknapp
 
 Utelämna `onDelete` för att visa en skrivskyddad lista. Kan en rad vara `status='uploading'`,

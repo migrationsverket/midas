@@ -69,30 +69,6 @@ import { Inbox } from 'lucide-react'
 
 Använd `align='start'` när innehållet ska linjera med till exempel ett sökfält ovanför.
 
-```tsx
-<EmptyState
-  // highlight-start
-  align='start'
-  // highlight-end
->
-  <EmptyStateHeading>Inga sökträffar</EmptyStateHeading>
-  <EmptyStateText>Kontrollera stavningen eller prova med färre sökord.</EmptyStateText>
-  <EmptyStateActions>
-    <Button variant='secondary'>Rensa sökningen</Button>
-  </EmptyStateActions>
-</EmptyState>
-```
-
-<div className='card'>
-  <EmptyState align='start'>
-    <EmptyStateHeading>Inga sökträffar</EmptyStateHeading>
-    <EmptyStateText>Kontrollera stavningen eller prova med färre sökord.</EmptyStateText>
-    <EmptyStateActions>
-      <Button variant='secondary'>Rensa sökningen</Button>
-    </EmptyStateActions>
-  </EmptyState>
-</div>
-
 ### Rubriknivå
 
 Rubriken för `EmptyStateHeading` är en `h2` som standard. Ange `elementType` för `Heading` så att den passar sidans rubrikstruktur, utseendet behålls.

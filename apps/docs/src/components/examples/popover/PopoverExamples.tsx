@@ -9,7 +9,7 @@ import {
   TextField,
   Pressable,
 } from '@midas-ds/components'
-import { ArrowUp, ArrowLeft, Info, UserCog } from 'lucide-react'
+import { Info, UserCog } from 'lucide-react'
 import React from 'react'
 
 export const InfoPopoverExample = () => {
@@ -75,37 +75,6 @@ export const PopoverFormExample = () => {
           >
             Spara
           </Button>
-        </Popover>
-      </DialogTrigger>
-    </div>
-  )
-}
-
-export const PopoverPlacement = () => {
-  return (
-    <div
-      className='card'
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: '1rem',
-      }}
-    >
-      <DialogTrigger>
-        <Button>
-          <ArrowLeft />
-        </Button>
-        <Popover placement='left'>
-          Popover visas till vänster om trigger-elementet
-        </Popover>
-      </DialogTrigger>
-      <DialogTrigger>
-        <Button>
-          <ArrowUp />
-        </Button>
-        <Popover placement='top'>
-          Popover visas på ovansidan av trigger-elementet
         </Popover>
       </DialogTrigger>
     </div>

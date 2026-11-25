@@ -36,18 +36,6 @@ import { Heading } from '@midas-ds/components'
 
 ## Varianter
 
-### Nivå
-
-Använd egenskapen `level` för att justera rubrikens nivå.
-
-```tsx
-<Heading level={3}>Jag är en vanlig h3-rubrik</Heading>
-```
-
-<div className='card'>
-  <Heading level={3}>Jag är en vanlig h3-rubrik</Heading>
-</div>
-
 ### Inbyggda marginaler
 
 Använd egenskapen `enableMargins` för att aktivera inbyggda marginaler ovan och under rubriken.
@@ -75,28 +63,6 @@ Använd egenskapen `enableMargins` för att aktivera inbyggda marginaler ovan oc
     {'Jag är en vanlig h2-rubrik med inbyggda marginaler'}
   </Heading>
   <Text elementType='p'>Rubrikens marginaler fick denna paragraf att flytta på sig lite</Text>
-</div>
-
-### Extern
-
-Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
-
-```tsx {3}
-<Heading
-  level={2}
-  isExpressive
->
-  Jag är en luftig h2-rubrik
-</Heading>
-```
-
-<div className='card'>
-  <Heading
-    level={2}
-    isExpressive
-  >
-    Jag är en luftig h2-rubrik
-  </Heading>
 </div>
 
 ### Val av semantiskt element

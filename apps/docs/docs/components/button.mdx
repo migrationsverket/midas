@@ -61,81 +61,15 @@ Knappar placeras i regel i nedre vänstra hörnet av en sida, sektion eller tydl
 
 Primärknappen används för den mest prioriterade handlingen (t.ex. Skicka eller Slutför) eller den positiva handlingen i ett flöde (t.ex. OK eller Nästa) och är därför utformad för att dra användarens uppmärksamhet till sig. För att ge användaren tydlig vägledning i gränssnittet bör antalet primärknappar i en och samma vy begränsas. Button har som standard `variant='primary'`.
 
-```tsx
-<Button>Slutför</Button>
-```
-
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <Button>Slutför</Button>
-</div>
-
 ### Sekundär
 
 Sekundärknappen används för vanliga handlingar som inte är lika viktiga som primära handlingar eller för den negativa handlingen i ett flöde (t.ex. Avbryt eller Tillbaka).
-
-```tsx
-<ButtonGroup aria-label='Välj knapp'>
-  <Button>Slutför</Button>
-  <Button variant='secondary'>Tillbaka</Button>
-</ButtonGroup>
-```
-
-<div className='card'>
-  <ButtonGroup aria-label='Välj knapp'>
-    <Button>Slutför</Button>
-    <Button variant='secondary'>Tillbaka</Button>
-  </ButtonGroup>
-</div>
 
 ### Tertiär
 
 Den tertiära knappen används för de minst prioriterade handlingarna, t.ex. Ta bort eller Redigera.
 
-```tsx
-<ButtonGroup aria-label='Hantera anmälan'>
-  <Button>Slutför</Button>
-  <Button variant='secondary'>Tillbaka</Button>
-  <Button variant='tertiary'>Ta bort anmälan</Button>
-</ButtonGroup>
-```
-
-<div className='card'>
-  <ButtonGroup aria-label='Hantera anmälan'>
-    <Button>Slutför</Button>
-    <Button variant='secondary'>Tillbaka</Button>
-    <Button variant='tertiary'>Ta bort anmälan</Button>
-  </ButtonGroup>
-</div>
-
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`. Vilken sida om texten som ikonen ska vara på styrs av `iconPlacement`.
-
-```tsx
-<Button
-  variant='tertiary'
-  // highlight-start
-  icon={Plus}
-  iconPlacement='left'
-  // highlight-end
->
-  Lägg till rad
-</Button>
-```
-
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <Button
-    icon={Plus}
-    variant='tertiary'
-    iconPlacement='left'
-  >
-    {'Lägg till rad'}
-  </Button>
-</div>
 
 ### Ikon
 
