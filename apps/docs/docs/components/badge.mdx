@@ -6,8 +6,11 @@ sidebar_custom_props:
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import { Button, BadgeContainer, Badge } from '@midas-ds/components'
 import { Bell } from 'lucide-react'
+import BadgeApi from '@midas-ds/api/components/Badge.json'
 
 <ComponentHeader
   name='Badge'
@@ -22,32 +25,22 @@ import { Badge, BadgeContainer, Button } from '@midas-ds/components'
 import { Bell } from 'lucide-react'
 ```
 
-```tsx
-<Button
-  variant='icon'
-  aria-label='Olästa meddelanden'
->
-  <BadgeContainer>
-    <Bell />
-    <Badge />
-  </BadgeContainer>
-</Button>
-```
-
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <Button
-    variant='icon'
-    aria-label='Meddelanden'
-  >
-    <BadgeContainer>
-      <Bell />
-      <Badge />
-    </BadgeContainer>
-  </Button>
-</div>
+<Playground
+  component={Badge}
+  api={BadgeApi}
+  controls={{ children: {} }}
+  wrap={badge => (
+    <Button
+      variant='icon'
+      aria-label='Olästa meddelanden'
+    >
+      <BadgeContainer>
+        <Bell />
+        {badge}
+      </BadgeContainer>
+    </Button>
+  )}
+/>
 
 ## Placering
 
@@ -71,17 +64,6 @@ Använd en label för att till exempel visa hur många meddelanden som är oläs
 </Button>
 ```
 
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <Button
-    variant='icon'
-    aria-label='12 olästa meddelanden'
-  >
-    <BadgeContainer>
-      <Bell />
-      <Badge>12</Badge>
-    </BadgeContainer>
-  </Button>
-</div>
+## API
+
+<PropTable doc={BadgeApi} />
