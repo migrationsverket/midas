@@ -26,12 +26,21 @@
         user-select: none;
         touch-action: manipulation;
 
+        .columnContent {
+          display: flex;
+          align-items: center;
+          gap: var(--midas-space-xsmall);
+        }
+
+        .columnLabel {
+          min-width: 0;
+        }
+
         .sortIndicator {
           display: inline-flex;
+          flex-shrink: 0;
           align-items: center;
           justify-content: center;
-          margin-left: var(--midas-space-xsmall);
-          vertical-align: text-bottom;
         }
 
         .sortIconNeutral {
