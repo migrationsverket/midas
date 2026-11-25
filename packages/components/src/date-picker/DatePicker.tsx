@@ -24,6 +24,10 @@ export interface DatePickerProps<
 > extends AriaDatePickerProps<T> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
   label?: string
   /** Component size (large: height 48px, medium: height 40px)

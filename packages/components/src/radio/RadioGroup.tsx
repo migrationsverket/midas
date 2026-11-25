@@ -19,6 +19,10 @@ export interface RadioGroupProps extends AriaRadioGroupProps {
   description?: string
   /** String to display as error message or function to handle the result and produce the error message */
   errorMessage?: string | ((validation: ValidationResult) => string)
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
