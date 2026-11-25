@@ -16,6 +16,7 @@ const {
   Primary: PrimaryMobileMenu,
   PlacementRight: MobileMenuPlacementRight,
   Vertical: VerticalMobileMenu,
+  VerticalRight: VerticalMobileMenuRight,
 } = composeStories(MobileMenuStories)
 
 export default {
@@ -68,6 +69,18 @@ export const MobileVerticalActions: Story = {
         <HeaderAction icon={<Search size={20} />}>Sök</HeaderAction>
         <HeaderAction icon={<Globe size={20} />}>Språk</HeaderAction>
       </HeaderActions>
+    </Header>
+  ),
+}
+
+export const MobileVerticalActionsRight: Story = {
+  globals: { viewport: { value: 'small' } },
+  render: () => (
+    <Header>
+      <HeaderLogo />
+      <HeaderTitle>System name</HeaderTitle>
+      <VerticalHeaderActions />
+      <VerticalMobileMenuRight />
     </Header>
   ),
 }
