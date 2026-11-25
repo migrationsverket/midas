@@ -1,7 +1,11 @@
 'use client'
 
 import styles from './Link.module.css'
-import { Link as AriaLink, RouterProvider } from 'react-aria-components'
+import {
+  Link as AriaLink,
+  RouterProvider as AriaRouterProvider,
+} from 'react-aria-components'
+import { withDisplayName } from '../utils/withDisplayName'
 import { VisuallyHidden } from 'react-aria'
 import clsx from '../utils/clsx'
 import {
@@ -49,8 +53,13 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
 
   const getIcon = (): { icon: LucideIcon; label?: string } | null => {
     if (customIcon) return { icon: customIcon }
-    if (download) return { icon: ArrowDownToLine, label: strings.format('downloadsFile') }
-    if (target === '_blank') return { icon: SquareArrowOutUpRight, label: strings.format('opensInNewTab') }
+    if (download)
+      return { icon: ArrowDownToLine, label: strings.format('downloadsFile') }
+    if (target === '_blank')
+      return {
+        icon: SquareArrowOutUpRight,
+        label: strings.format('opensInNewTab'),
+      }
     if (standalone) return { icon: ArrowRight }
     return null
   }
@@ -78,7 +87,9 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
             size={16}
             aria-hidden={true}
           />
-          {iconConfig.label && <VisuallyHidden>{iconConfig.label}</VisuallyHidden>}
+          {iconConfig.label && (
+            <VisuallyHidden>{iconConfig.label}</VisuallyHidden>
+          )}
         </>
       ) : null}
     </Component>
@@ -90,4 +101,7 @@ const Icon = ({
   ...rest
 }: { icon: LucideIcon } & LucideProps) => <IconComponent {...rest} />
 
-export { RouterProvider }
+export const RouterProvider = withDisplayName(
+  AriaRouterProvider,
+  'RouterProvider',
+)
