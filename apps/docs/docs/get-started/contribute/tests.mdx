@@ -5,69 +5,90 @@ sidebar_position: 3
 
 # 🧪 Tester
 
-## Översikt
+Ett bidrag till kodbasen ska komma med minst ett test. Vi har flera sorters tester:
 
-Tester i Midas utgörs främst av _komponenttester_ med hjälp av [Vitest Component Testing](https://vitest.dev/guide/browser/component-testing).
-Vi gör också automatiska [_tillgänglighetstester_ i Storybook](https://storybook.js.org/docs/writing-tests/accessibility-testing). Våra _snapshottester_ körs i vår CI.
-
-## Skriva tester
-
-Vi strävar efter en hög testtäckning, vi tror att en vältestad kodbas ökar förvaltningsbarheten och ger utvecklaren trygghet att förbättra befintlig kod.
-
-Bidrag till kodbasen ska kompletteras med åtminstone ett test.
+- **Komponenttester** körs i en riktig webbläsare och är de vi skriver flest av.
+- **Tillgänglighetstester** kontrollerar alla stories i Storybook med axe.
+- **Visuella tester** jämför skärmbilder av alla stories med godkända versioner.
+- **E2E-tester** kontrollerar att paketen fungerar i en Next.js-app.
+- **Enhetstester** testar kod som inte behöver en webbläsare.
 
 ## 🧩 Komponenttester
 
-Midas använder [Storybook](https://storybook.js.org) för att presentera komponenter, med hjälp av [portable stories](https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#composestories) kan vi använda en renderad story som utgångspunkt för våra tester.
-Testerna körs sedan via en riktig browser. Läs gärna mer om komponenttestning hos [Vitest](https://vitest.dev/guide/browser/component-testing)
-
-### Kör komponenttester
-
-Lokal installation:
+Komponenttesterna utgår från stories i Storybook. Med [portable stories](https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#composestories) renderar testet en story och kontrollerar sedan beteendet i en riktig webbläsare med [Vitest Browser Mode](https://vitest.dev/guide/browser/component-testing).
 
 ```bash
-nx test components
+npx nx test components                            # Alla tester i ett paket
+npx nx test components -- toast/Toast.spec        # En enskild fil
+npx nx test components --browser.headless=false   # Med synlig webbläsare, användbart vid felsökning
 ```
 
-Docker:
+Synlig webbläsare kräver WSLg eller en X-server om du kör WSL2.
+
+Testerna i `@midas-ds/layout` körs i två storlekar, `desktop` (1024 × 768) och `mobile` (320 × 568). Ett test som bara gäller den ena storleken kan hoppa över den andra med `skip` i en `beforeEach`.
+
+### Andra webbläsare
+
+Som standard körs testerna i Chromium. Med `MIDAS_BROWSERS` väljer du andra webbläsare:
 
 ```bash
-docker compose exec cli npx nx test components
+npx playwright install firefox webkit                     # En gång
+MIDAS_BROWSERS=firefox npx nx test components
+MIDAS_BROWSERS=webkit,mobile-safari npx nx test layout
+MIDAS_BROWSERS=all npx nx test components                 # Alla
 ```
 
-### Kör tester för en specifik komponent
+CI kör testerna i flera webbläsare på varje PR, och varje natt även i de två senaste versionerna av riktiga skrivbordswebbläsare. Profilerna beskrivs i [`tools/test-browsers`](https://github.com/migrationsverket/midas/tree/main/tools/test-browsers).
+
+## ♿ Tillgänglighetstester
+
+Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) kontrolleras varje story med [axe](https://www.deque.com/axe/):
 
 ```bash
-nx test components -- toast/Toast.spec
+npx nx a11y storybook                     # Ljust läge
+npx nx run storybook:a11y-dark-mode       # Mörkt läge
+npx nx run storybook:a11y-forced-colors   # Högkontrastläge
+npx nx run storybook:a11y-mobile          # Liten skärm
 ```
 
-Docker:
+Automatiska tester hittar en stor del av bristerna mot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/), men inte allt. Testa även med tangentbord och skärmläsare.
+
+## 👀 Visuella tester
+
+De visuella testerna tar en skärmbild av varje story och jämför den med en godkänd version som ligger i repot under `src/__screenshots__`. CI kör dem på varje PR och lägger en kommentar med skillnaderna om något har ändrats. De stoppar inte en merge.
+
+Är ändringen avsiktlig lägger du till etiketten `visual:update` på PR:en. Då tas nya skärmbilder som committas till din branch. Granska dem under **Files changed**.
+
+Du kan köra testerna lokalt, men skärmbilder från din egen dator kan skilja sig lite från dem i CI:
 
 ```bash
-docker compose exec cli npx nx test components -- toast/Toast.spec
+npx nx run components:visual
 ```
 
-### Kör tester med synlig webbläsare (headed)
+### Hoppa över stories
 
-Användbart vid felsökning. Kräver WSLg eller en X-server om du kör WSL2.
+Ta bara en skärmbild per tillstånd i en komponent. Lägg till taggen `!snapshot` på stories som inte behöver någon:
+
+```tsx
+export const PrimaryWithAnotherLabel: Story = {
+  args: {
+    label: 'Just another label',
+  },
+  tags: ['!snapshot'],
+}
+```
+
+## 🌐 E2E-tester
+
+E2E-testerna kör [Playwright](https://playwright.dev/) mot en Next.js-app i `apps/next`, och kontrollerar att paketen går att bygga och köra där.
 
 ```bash
-nx test components --browser.headless=false
+npx nx e2e next
 ```
 
-Headed mode kan kombineras med ett specifikt test:
+## 🔧 Enhetstester
 
-```bash
-nx test components -- toast/Toast.spec --browser.headless=false
-```
-
-## 🧪 Enhetstester
-
-För att testa JavaScriptmoduler i nodemiljö används [vitest](https://vitest.dev/guide/).
-
-### Lägg till konfiguration för enhetstester
-
-Alla paket och appar i Midas har inte enhetstester konfigurerade. [@nx/vitest](https://nx.dev/docs/technologies/test-tools/vitest/introduction) kommer automatiskt att skapa kommandot `nx test <package>` om paketet har en konfigurationsfil för vitest (`vitest.config.*`)
+Kod som inte behöver en webbläsare testas med [Vitest](https://vitest.dev/guide/) i Node. Alla paket har inte enhetstester. [@nx/vitest](https://nx.dev/docs/technologies/test-tools/vitest/introduction) skapar kommandot `nx test <paket>` automatiskt när paketet har en konfigurationsfil för Vitest:
 
 ```ts title="vitest.config.mts"
 import { defineProject } from 'vitest/config'
@@ -77,57 +98,4 @@ export default defineProject({
     name: 'unit',
   },
 })
-```
-
-## ♿ Tillgänglighetstester
-
-Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent, dessa testas i våra workflows med kommandot:
-
-Lokal installation:
-
-```bash
-nx a11y storybook
-```
-
-Docker:
-
-```bash
-docker compose exec cli npx nx a11y storybook
-```
-
-Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
-
-För att kontrollera tillgängligheten i dark-mode eller forced-colors:
-
-Lokal installation:
-
-```bash
-nx run storybook:a11y-dark-mode      # Dark mode
-nx run storybook:a11y-forced-colors  # Forced colors
-```
-
-Docker:
-
-```bash
-docker compose exec cli npx nx run storybook:a11y-dark-mode      # Dark mode
-docker compose exec cli npx nx run storybook:a11y-forced-colors  # Forced colors
-```
-
-## 👀 Snapshottester
-
-Vi använder vår CI för att köra snapshottester som jämför visuella ändringar i komponenter.
-Testerna utgår från vår Storybook och tar snapshots på samtliga stories som inte optar ut.
-
-### Hoppa över stories
-
-För att reducera antalet snapshots bör vi bara ta en snap per tillstånd i en komponent, vänligen använd följande kod för att inte ta en snapshot.
-
-```tsx
-export const PrimaryWithAnotherLabel: Story = {
-  args: {
-    label: 'Just another label',
-  },
-  tags: ['!snapshot'],
-  // ...
-}
 ```

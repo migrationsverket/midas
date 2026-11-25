@@ -1,0 +1,55 @@
+name: Bug report
+description: Something in Midas doesn't work as it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Swedish is fine too.
+
+        **This repository is public.** Don't describe Migrationsverket's internal systems, in text or in screenshots.
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      options:
+        - '@midas-ds/components'
+        - '@midas-ds/layout'
+        - '@midas-ds/theme'
+        - '@midas-ds/datepicker-styles'
+        - '@midas-ds/select-styles'
+        - '@midas-ds/table-styles'
+        - Documentation site
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Run `npm ls @midas-ds/components` (or the package you picked) to see it
+      placeholder: '17.38.1'
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: A list of steps, a short code example or a link to one. The easier it is to reproduce, the faster we can fix it.
+      placeholder: |
+        1. Render <Select> inside a <Modal>
+        2. Open the Select
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: Chrome 142, Edge 141, ...

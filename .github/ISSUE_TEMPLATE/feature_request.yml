@@ -1,0 +1,33 @@
+name: Feature request
+description: A new component, prop or behavior
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea! Swedish is fine too. Read [what happens next](https://designsystem.migrationsverket.se/get-started/support/#vad-händer-sedan) if you're curious.
+
+        **This repository is public.** Don't describe Migrationsverket's internal systems, in text or in screenshots.
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need, and why?
+      description: Describe the problem rather than the solution. What are your users trying to do, and why doesn't Midas cover it today?
+    validations:
+      required: true
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who needs it?
+      description: Components in Midas should work for many teams. Some needs are better solved in the app itself.
+      options:
+        - One team or app
+        - Several teams or apps
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Do you have a solution in mind?
+      description: Optional. Links to other design systems or sketches are welcome.

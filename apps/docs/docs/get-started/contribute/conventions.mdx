@@ -1,119 +1,32 @@
 ---
-sidebar_label: 'Arbetsflöde'
+sidebar_label: 'Commits och release'
 sidebar_position: 5
 ---
 
-# 🌿 Arbetsflöde
+# 🌿 Commits och release
 
-Denna sida beskriver våra konventioner för versionshantering, commits och release-processen.
+## 📝 Commits
 
-## Versionshantering
-
-Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-brancher som sedan mergas in i `main`. Vi använder inte `develop` eller andra liknande brancher för att hålla det enkelt och för att passa ett arbetssätt med kontinuerlig integration och leverans (CI/CD).
-
----
-
-## 📝 Conventional commits
-
-Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska, **imperativ form**, definiera type `feat|docs|fix|refactor|test|chore|ops...` för att avgöra vilken versionsändring du vill göra och scope `(project, component)` som rubrik för changelog.
-
-**Viktigt**: Scope börjar alltid med ett av Nx-projekten (`components`, `theme`, `docs`, etc.) för att versionshanteringen ska fungera korrekt. Du kan lägga till flera scopes med kommatecken, t.ex. `feat(components,button): ...`
-
-### Exempel
+Vi följer [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Nya versioner och changelog skapas automatiskt från commit-meddelandena, så formatet spelar roll. Skriv på engelska i imperativ form, och låt scope börja med det Nx-projekt som ändras:
 
 ```bash
-feat(components, button): add new button variant   # Minor bump för components
-fix(theme): fix button hover color                 # Patch för theme
-docs: update contribution guide                    # Ingen bump
-
-# Med body för mer kontext
-fix(theme): prevent red color on button hover
-
-Introduce new css variable to automatically
-select style based on input type
+feat(components,button): add new button variant   # minor
+fix(theme): fix button hover color                 # patch
+docs: update contribution guide                    # ingen ny version
 ```
 
-### Types och versionsändringar
-
-| Type | Beskrivning | Version |
-|------|-------------|---------|
-| `feat` | Ny funktionalitet | Minor |
-| `fix` | Buggfix | Patch |
-| `docs` | Dokumentation | Ingen |
-| `refactor` | Kodrefaktorering | Ingen |
-| `test` | Tester | Ingen |
-| `chore` | Underhåll | Ingen |
-
-Tabellen gäller paket som har nått 1.0. För paket på version 0.x flyttas versionsändringarna ned ett steg, se [Paket på version 0.x](#paket-på-version-0x).
-
-### Breaking changes och major-versioner
-
-För att trigga en major-version, lägg till `BREAKING CHANGE:` i commit-meddelandets body:
-
-```bash
-feat(components, button): remove deprecated size prop
-
-BREAKING CHANGE: The size prop has been removed. Use variant instead.
-```
+En breaking change markerar du med `BREAKING CHANGE:` i commit-meddelandets body, och då blir det en ny major-version.
 
 :::warning
-Ta aldrig bort funktionalitet direkt - deprecera först! Markera med `@deprecated` i koden och dokumentera i release notes. Ge användare minst en major-version att migrera innan borttagning.
+Ta aldrig bort funktionalitet direkt, deprecera först! Markera med `@deprecated` i koden och dokumentera i release notes. Ge användare minst en major-version att migrera innan borttagning.
 :::
-
-:::info
-Innan du skapar en PR, städa gärna commit-historiken med `git rebase -i` om du har många commits i din feature branch. [Guide till git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
-:::
-
----
 
 ## 🚀 Release
 
-Release sker automatiskt via CI/CD när ändringar mergas till `main`-branchen.
-
-### Hur det fungerar
-
-1. **Automatiska versioner**: När en pull request mergas till `main` analyserar Nx Release alla commits sedan senaste release och räknar fram rätt version baserat på conventional commits.
-
-2. **Publicering**: Om någon package får en ny version publiceras den automatiskt till npm.
-
-3. **Changelog och taggar**: Changelog uppdateras automatiskt och nya git-taggar skapas enligt formatet `nx-project@version`.
-
-4. **Dokumentation**: Dokumentationswebben byggs och publiceras automatiskt med de senaste ändringarna.
-
-### Vad du behöver göra
-
-- **Följ conventional commits**: Se till att dina commits följer conventional commits-standarden, eftersom det avgör vilken versionsändring som sker (major, minor, patch).
-- **Skapa en PR**: Alla kan skapa pull requests, men Midas core-team ansvarar för granskning och merge.
-- **Invänta merge**: När din PR godkänns och mergas till `main` sker resten automatiskt.
-
-:::tip
-Du behöver inte köra några manuella release-kommandon. CI/CD-pipelinen hanterar hela releasen automatiskt! 🎉 Det enda undantaget är när ett paket ska släppas som 1.0, se [Ta ett paket till 1.0](#ta-ett-paket-till-10).
-:::
+Allt som mergas till `main` släpps automatiskt. Nx Release räknar fram nya versioner från commit-meddelandena, publicerar till npm, uppdaterar changelog och bygger om dokumentationswebben. Du behöver inte göra något själv.
 
 ### Paket på version 0.x
 
-Så länge ett paket har version 0.x följer Nx Release SemVer-konventionen för instabila versioner, där varje versionsändring flyttas ned ett steg.
+Så länge ett paket har version 0.x följer Nx Release SemVer-konventionen för instabila versioner, där varje versionsändring flyttas ned ett steg: en breaking change ger en ny minor-version och `feat` ger en patch.
 
-Det betyder att ett paket **aldrig når 1.0 automatiskt**, inte ens med en breaking change. Steget till 1.0 är ett medvetet beslut om att paketets API är stabilt och görs manuellt.
-
-### Ta ett paket till 1.0
-
-1. Se till att allt som ska ingå i 1.0 är mergat till `main` och att den automatiska releasen för den senaste merge-committen är klar.
-2. Hämta senaste `main` och kontrollera att arbetskatalogen är ren med `git status`.
-3. Provkör releasen och kontrollera att den nya versionen blir `1.0.0`:
-
-   ```bash
-   npx nx release 1.0.0 --projects=<projekt> --skip-publish --dry-run
-   ```
-
-4. Kör releasen på riktigt:
-
-   ```bash
-   npx nx release 1.0.0 --projects=<projekt> --skip-publish
-   ```
-
-   Kommandot uppdaterar `package.json` och changelog, skapar committen `chore(release): publish` och taggen `<projekt>@v1.0.0`, pushar dem till `main` och skapar en GitHub-release. För GitHub-releasen behöver Nx en token, antingen via miljövariabeln `GITHUB_TOKEN`/`GH_TOKEN` eller genom att du är inloggad med GitHub CLI (`gh auth login`). Annars öppnar Nx en förifylld release-sida i webbläsaren.
-
-5. Committen `chore(release): publish` startar arbetsflödet *Publish to NPM*, som publicerar paketet till npm. Använd därför alltid `--skip-publish` lokalt. Det vanliga release-flödet hoppar över `chore(release)`-committar, så versionen bumpas inte en gång till.
-
-Efter 1.0 gäller de vanliga reglerna i tabellen ovan. Om 1.0 innehåller breaking changes, beskriv dem och hur man migrerar i dokumentationen för paketet.
+Det betyder att ett paket **aldrig når 1.0 automatiskt**, inte ens med en breaking change. Steget till 1.0 är ett medvetet beslut om att API:et är stabilt, och det görs manuellt med `nx release`.

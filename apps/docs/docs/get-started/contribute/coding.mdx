@@ -5,147 +5,46 @@ sidebar_position: 1
 
 # 🛠️ Sätt upp utvecklingsmiljön
 
-Klona [repot](https://github.com/migrationsverket/midas) och välj ett av alternativen nedan.
+Du behöver [Node.js](https://nodejs.org/) version 24 och git.
 
 ```bash
 git clone https://github.com/migrationsverket/midas.git
+cd midas
+npm ci
+npx playwright install chromium
 ```
 
-## 🐳 Docker (Rekommenderat)
+Komponenttesterna körs i en riktig webbläsare, och `playwright install` hämtar den.
 
-Det snabbaste sättet att komma igång är med Docker. Då behöver du inte installera Node.js, npm eller några beroenden lokalt - allt körs i en isolerad miljö med exakt rätt versioner.
+## Vanliga kommandon
 
-**Krav:** Endast Docker Desktop (eller Docker Engine + Docker Compose)
-
-### Starta
+Midas är ett monorepo som hanteras med [Nx](https://nx.dev). Komponentbiblioteket, dokumentationswebben och verktygen är olika projekt i samma repo, och `npx nx graph` visar hur de hänger ihop.
 
 ```bash
-docker compose up -d
+npx nx serve storybook    # Storybook på http://localhost:4400
+npx nx serve docs         # Dokumentationswebben på http://localhost:3000
+npx nx serve playground   # En sandlåda för att prova komponenter, på http://localhost:4200
+npx nx test components    # Komponenttesterna
 ```
 
-Detta startar i bakgrunden:
+Komponenterna ligger i `packages/components` och dokumentationswebben i `apps/docs`. Mer om testerna finns på [sidan om tester](/get-started/contribute/tests).
 
-- **Storybook** på http://localhost:4400
-- **Dokumentation** på http://localhost:3000
-- **Playground** på http://localhost:4200
-- **Next.js** på http://localhost:3001
+## 🧪 Testa i en annan app
 
-:::note
-Första uppstarten tar några minuter för att installera beroenden. Följ processen med `docker compose logs -f`.
-:::
-
-**Starta en specifik app:**
+Vill du testa din lokala version av Midas i en annan app, innan den är släppt, kan du publicera den till ett lokalt [Verdaccio](https://verdaccio.org/)-registry:
 
 ```bash
-docker compose up -d storybook  # Endast Storybook
-docker compose up -d docs       # Endast dokumentation
+npx nx run @midas-ds/source:release:local:dev
 ```
 
-### Kör kommandon
-
-```bash
-docker compose exec midas-cli npx nx test components   # Kör tester
-docker compose exec midas-cli npx nx build components  # Bygg komponenter
-docker compose exec midas-cli npm install <paket>      # Installera beroenden
-docker compose exec midas-cli sh                       # Öppna shell i containern
-```
-
-### Stoppa
-
-```bash
-docker compose down
-```
-
-### Felsökning
-
-**Port redan upptagen:** Stoppa processen som använder porten, eller ändra portmappning i `docker-compose.yml`.
-
-**Ändringar syns inte:** Kontrollera loggarna med `docker compose logs -f <service>` eller starta om med `docker compose restart <service>`.
-
-**Bygga om efter beroendeändringar:**
-
-```bash
-docker compose down
-docker compose build --no-cache
-docker compose up -d
-```
-
-**Ren omstart:**
-
-```bash
-docker compose down -v
-docker compose build --no-cache
-docker compose up -d
-```
-
----
-
-## 💻 Lokal installation (Alternativ)
-
-Om du föredrar att köra allt lokalt behöver du:
-
-Node version `^24` krävs. Installera [Nx](https://nx.dev) globalt: `npm install --global nx@latest`
-
-### Nx
-
-Midas är ett monorepo som hanteras med [Nx](https://nx.dev). Det innebär att vi har flera olika projekt i samma repo, till exempel komponentbiblioteket, dokumentationswebben och andra verktyg. Du kan köra `nx graph` för att se en visuell representation av hur projekten är relaterade till varandra.
-
-### Starta Storybook
-
-```bash
-nx serve storybook
-```
-
-### Komponentbibliotek
-
-Alla komponenter ligger under `/packages/components` och exporteras som ett npm-paket [`@midas-ds/components`](https://www.npmjs.com/package/@midas-ds/components).
-
-### Tester
-
-```bash
-nx test components
-```
-
-Mer info finns på [sidan om tester](/get-started/contribute/tests).
-
-### Dokumentationswebb
-
-Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https://docusaurus.io/).
-
-```bash
-nx serve docs    # Kör lokalt
-nx build docs    # Produktionsbygge
-```
-
----
-
-## 🧪 Testa lokalt end-to-end
-
-För att testa komponentbiblioteket i en annan app kan du publicera det till ett lokalt Verdaccio-registry.
-
-### Publicera till lokalt registry
-
-**Med Docker:**
-
-```bash
-docker compose up -d verdaccio
-docker compose exec midas-cli npx nx run @midas-ds/source:release:local:docker:dev
-```
-
-**Utan Docker:**
-
-```bash
-nx run @midas-ds/source:release:local:dev
-```
-
-### Installera i ditt testprojekt
+Installera det sedan i din app:
 
 ```bash
 npm install @midas-ds/components@latest --registry=http://localhost:4873/
 ```
 
 :::warning
-Skriptet ändrar `package.json`-filer med temporära versioner (t.ex. `15.2.7-local.0`). **Committa inte dessa ändringar!** Återställ efter testning:
+Skriptet ändrar `package.json`-filer med tillfälliga versioner (t.ex. `15.2.7-local.0`). **Committa inte de ändringarna!** Återställ dem när du är klar:
 
 ```bash
 git checkout -- packages/*/package.json
@@ -153,9 +52,22 @@ git checkout -- packages/*/package.json
 
 :::
 
----
+## 🐳 Starta allt med Docker
 
-## 📚 Fördjupning
+Vill du ha flera tjänster igång på en gång kan du starta dem med Docker Compose i stället. Då behöver du inte heller Node.js lokalt.
 
-- [Arkitektur](/get-started/contribute/architecture) - Vår designfilosofi och val av beroenden
-- [Arbetsflöde](/get-started/contribute/conventions) - Commit-format och versionshantering
+```bash
+docker compose up -d                              # Storybook, dokumentationswebben, playground och Next.js
+docker compose up -d storybook                    # Eller bara en av dem
+docker compose exec cli npx nx test components    # Kör kommandon i containern
+docker compose down                               # Stoppa
+```
+
+| Tjänst               | Adress                |
+| -------------------- | --------------------- |
+| Storybook            | http://localhost:4400 |
+| Dokumentationswebben | http://localhost:3000 |
+| Playground           | http://localhost:4200 |
+| Next.js              | http://localhost:3001 |
+
+Första uppstarten tar några minuter. Följ den med `docker compose logs -f`.

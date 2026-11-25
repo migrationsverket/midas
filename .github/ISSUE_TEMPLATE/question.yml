@@ -1,0 +1,16 @@
+name: Question
+description: Wondering how something is meant to work
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Swedish is fine too. The [documentation](https://designsystem.migrationsverket.se) might already have the answer.
+
+        **This repository is public.** Don't describe Migrationsverket's internal systems, in text or in screenshots.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true

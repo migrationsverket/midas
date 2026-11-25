@@ -8,12 +8,6 @@ sidebar_position: 6
 Design tokens är de minsta beståndsdelarna i designsystemet och utgör grunden för all styling. De representerar
 designbeslut som färger, typsnitt, avstånd och andra visuella egenskaper.
 
-## Style Dictionary
-
-Vi använder [Style Dictionary](https://styledictionary.com/) för att transformera våra design tokens till olika format
-som kan användas i våra applikationer. Style Dictionary är ett verktyg som tar en uppsättning design tokens i ett
-standardiserat format och genererar plattformsspecifika filer, till exempel CSS-variabler, JavaScript-objekt eller iOS/Android-resurser.
-
 ## DTCG-standard
 
 Våra design tokens följer [Design Tokens Community Group (DTCG)](https://design-tokens.github.io/community-group/format/) standarden. Detta innebär att våra tokens
@@ -38,21 +32,20 @@ Det gör det enklare att dela och återanvända våra designbeslut över olika p
 }
 ```
 
-## Generering av variabler
+## Arbeta med tokens
 
-För att generera CSS-variabler från våra design tokens använder vi ett skript som heter `sd.build.mjs`:
+Alla tokens ligger i `packages/theme/tokens/`. [Style Dictionary](https://styledictionary.com/) gör om dem till CSS-variabler och ett JS-objekt i paketet `@midas-ds/theme`. Det sker automatiskt när du bygger, startar eller testar ett paket som använder dem, så du behöver aldrig generera något själv.
 
-```bash
-nx run theme:build
-```
+Tokens finns i tre nivåer:
 
-Detta skript gör följande:
+- **Primitiver** (`color.*`, `base.*`) är de råa värdena, till exempel en färgskala.
+- **Semantiska tokens** (`background.*`, `text.*`, `button.*` osv.) beskriver en roll i gränssnittet och refererar till primitiver.
+- **CSS-variabler** (`--midas-*`) genereras från de semantiska tokens, och det är de som komponenterna använder.
 
-1.  **Läser in tokens:** Skriptet läser in alla token-filer från `/packages/theme/tokens` och slår ihop dem till ett enda stort objekt.
-2.  **Transformerar tokens:** Style Dictionary transformerar sedan detta objekt enligt de konfigurationer som finns i `sd.build.mjs`. Detta inkluderar att omvandla färger till rätt format, lägga till prefix och andra anpassningar.
-3.  **Genererar filer:** Slutligen genererar Style Dictionary CSS-filer med alla våra design tokens som CSS-variabler. Dessa filer sparas i `/dist/packages/theme` och kan sedan importeras och användas i våra komponenter och applikationer.
+Några regler:
 
+- Semantiska tokens refererar direkt till primitiver, inte till andra semantiska tokens. Då påverkar en ändrad token bara det den själv används till.
+- Använd `--midas-space-*` och `--midas-size-*` i komponenternas CSS, aldrig `--midas-base-*`.
+- Ta inte bort eller byt namn på en token direkt. Lägg det gamla namnet i `deprecated.json` som en referens till det nya, med `@deprecated` i beskrivningen, så att det finns kvar till nästa major-version.
 
-De genererade filerna publiceras som ett eget npm-paket med namnet `@midas-ds/theme`.
-
-En komplett lista över alla tillgängliga tokens finns på sidan [token reference](dev-tokens).
+En komplett lista över alla tokens finns på sidan [Tokens list reference](dev-tokens).
