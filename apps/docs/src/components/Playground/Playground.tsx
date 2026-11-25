@@ -49,7 +49,11 @@ export interface PlaygroundProps<C extends ElementType> {
    * wrapper is part of the generated code too.
    */
   wrap?: (element: ReactElement) => ReactElement
+  /** Lets the component take the full width, instead of centering it */
+  fill?: boolean
 }
+
+const UNSET = '__unset__'
 
 interface ControlRowProps {
   control: Control
@@ -68,24 +72,27 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
           {control.name}
         </Checkbox>
       )
-    case 'enum':
+    case 'enum': {
+      // Without a default, leaving the prop out is a choice of its own
+      const canUnset = control.defaultValue === undefined
       return (
         <Select
           label={control.name}
           size='medium'
-          value={(value as string) ?? null}
-          onChange={onChange}
+          value={(value as string) ?? (canUnset ? UNSET : null)}
+          onChange={key => onChange(key === UNSET ? undefined : key)}
         >
-          {control.options.map(option => (
+          {[...(canUnset ? [UNSET] : []), ...control.options].map(option => (
             <ListBoxItem
               key={option}
               id={option}
             >
-              {option}
+              {option === UNSET ? 'Standard' : option}
             </ListBoxItem>
           ))}
         </Select>
       )
+    }
     case 'toggle':
       return (
         <Checkbox
@@ -121,6 +128,7 @@ export const Playground = <C extends ElementType>({
   initialProps = {},
   children,
   wrap,
+  fill = false,
 }: PlaygroundProps<C>) => {
   // The types only check the call site, getControls checks the names at runtime
   const controls = getControls(
@@ -158,7 +166,7 @@ export const Playground = <C extends ElementType>({
   return (
     <div className={styles.container}>
       <div className={styles.playground}>
-        <div className={styles.preview}>{wrap ? wrap(element) : element}</div>
+        <div className={fill ? styles.previewFill : styles.preview}>{wrap ? wrap(element) : element}</div>
         <div className={styles.controls}>
           {visibleControls.map(control => (
             <ControlRow

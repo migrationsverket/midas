@@ -22,6 +22,12 @@
   padding: var(--midas-space-large);
 }
 
+.previewFill {
+  grid-area: preview;
+  min-height: 10rem;
+  padding: var(--midas-space-large);
+}
+
 .controls {
   border-top: 1px solid var(--midas-border-color-subtle);
   display: flex;
