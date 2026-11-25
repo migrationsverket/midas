@@ -112,7 +112,7 @@ I Header läggs globala handlingar, alltså handlingar som användaren ska kunna
 
 ### Orientering
 
-Med `orientation='vertical'` hamnar etiketten under ikonen. På små skärmar (≤ 768px) döljs etiketterna oavsett orientering, och då visas bara ikonerna.
+Med `orientation='vertical'` hamnar etiketten under ikonen. På små skärmar (≤ 768px) döljs etiketterna i horisontell orientering så att bara ikonerna visas, medan vertikala behåller sina etiketter. Där ryms bara ett fåtal korta etiketter, så det är upp till applikationen att utelämna `HeaderTitle` eller begränsa antalet handlingar så att sidhuvudet inte blir bredare än skärmen.
 
 ```tsx
 <HeaderActions orientation='vertical'>

@@ -13,8 +13,9 @@
 }
 
 @media (width <= 768px) {
-  /* Only the icons fit on small screens, whatever the orientation */
-  .headerAction {
+  /* Horizontal actions show only their icons on small screens. Vertical ones
+   * keep their labels, as on migrationsverket.se */
+  .headerAction:not([data-orientation='vertical']) {
     padding-inline: calc(var(--midas-space-50) - var(--border-width));
 
     .label {

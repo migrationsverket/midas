@@ -1,7 +1,10 @@
 import { composeStories, type Meta, type StoryObj } from '@storybook/react-vite'
+import { Globe, Search } from 'lucide-react'
 import * as headerActionsStories from './header-actions/HeaderActions.stories'
 import * as MobileMenuStories from './mobile-menu/MobileMenu.stories'
 import { Header } from './Header'
+import { HeaderAction } from './header-action'
+import { HeaderActions } from './header-actions'
 import { HeaderLogo } from './header-logo'
 import { HeaderTitle } from './header-title'
 
@@ -46,6 +49,21 @@ export const DesktopVerticalActions: Story = {
       <HeaderLogo />
       <HeaderTitle>System name</HeaderTitle>
       <VerticalHeaderActions />
+    </Header>
+  ),
+}
+
+/** Vertical actions keep their labels on small screens, so only a few short ones fit */
+export const MobileVerticalActions: Story = {
+  globals: { viewport: { value: 'smallest' } },
+  render: () => (
+    <Header>
+      <PrimaryMobileMenu />
+      <HeaderLogo />
+      <HeaderActions orientation='vertical'>
+        <HeaderAction icon={<Search size={20} />}>Sök</HeaderAction>
+        <HeaderAction icon={<Globe size={20} />}>Språk</HeaderAction>
+      </HeaderActions>
     </Header>
   ),
 }

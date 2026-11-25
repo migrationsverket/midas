@@ -11,7 +11,8 @@ export interface HeaderActionsProps {
   className?: string
   /**
    * Places each action's label next to its icon, or below it. On small
-   * screens the labels are hidden either way, and only the icons show
+   * screens horizontal actions show only their icons, while vertical actions
+   * keep their labels
    *
    * @default 'horizontal'
    */

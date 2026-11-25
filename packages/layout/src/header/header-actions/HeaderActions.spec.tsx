@@ -18,7 +18,7 @@ const getAction = async (Story: typeof Primary) => {
   }
 }
 
-describe('given HeaderActions on a large screen', () => {
+describe('given horizontal HeaderActions on a large screen', () => {
   beforeEach(({ skip, task }) => {
     skip(
       task.file.projectName.startsWith('mobile'),
@@ -26,7 +26,7 @@ describe('given HeaderActions on a large screen', () => {
     )
   })
 
-  it('puts the label next to the icon by default', async () => {
+  it('puts the label next to the icon', async () => {
     const { icon, label } = await getAction(Primary)
 
     await expect.element(label).toBeVisible()
@@ -34,18 +34,9 @@ describe('given HeaderActions on a large screen', () => {
       label.element().getBoundingClientRect().left,
     )
   })
-
-  it('puts the label under the icon when vertical', async () => {
-    const { icon, label } = await getAction(Vertical)
-
-    await expect.element(label).toBeVisible()
-    expect(icon.bottom).toBeLessThanOrEqual(
-      label.element().getBoundingClientRect().top,
-    )
-  })
 })
 
-describe('given HeaderActions on a small screen', () => {
+describe('given horizontal HeaderActions on a small screen', () => {
   beforeEach(({ skip, task }) => {
     skip(
       task.file.projectName.startsWith('desktop'),
@@ -53,16 +44,25 @@ describe('given HeaderActions on a small screen', () => {
     )
   })
 
-  it.each([
-    ['horizontal', Primary],
-    ['vertical', Vertical],
-  ])('collapses a %s action to its icon', async (_, Story) => {
-    const { action } = await getAction(Story)
+  it('collapses an action to its icon', async () => {
+    const { action } = await getAction(Primary)
 
     expect({ width: action.width, height: action.height }).toEqual({
       width: 40,
       height: 40,
     })
+  })
+})
+
+describe('given vertical HeaderActions', () => {
+  it('puts the label under the icon, on any screen', async () => {
+    const { icon, label } = await getAction(Vertical)
+
+    // A visually hidden label is still "visible", but only 1px wide
+    expect(label.element().getBoundingClientRect().width).toBeGreaterThan(1)
+    expect(icon.bottom).toBeLessThanOrEqual(
+      label.element().getBoundingClientRect().top,
+    )
   })
 })
 
