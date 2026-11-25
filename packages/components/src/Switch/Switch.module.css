@@ -1,0 +1,119 @@
+.SwitchField {
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.SwitchButton {
+  display: flex;
+  align-items: center;
+  gap: var(--midas-space-50);
+  color: var(--midas-text-primary);
+  font-family: var(--midas-typography-font-family);
+  font-size: 1rem;
+
+  .track {
+    border: 1px solid var(--midas-border-color-primary);
+    border-radius: 1.625rem;
+    transition: background-color 400ms ease-in-out;
+    box-sizing: border-box;
+    overflow: clip;
+
+    .handle {
+      background-color: var(--midas-switch-handle-unchecked);
+      box-sizing: border-box;
+      border-radius: 50%;
+      transition: all 200ms;
+    }
+  }
+
+  .medium {
+    padding: 0.125rem;
+    height: 1.5rem;
+    width: 2.9375rem;
+
+    .handle {
+      height: 1.125rem;
+      width: 1.125rem;
+    }
+  }
+
+  .large {
+    padding: 3px;
+    height: 2.375rem;
+    width: 4.375rem;
+
+    .handle {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+
+  &[data-hovered] {
+    &[data-selected] {
+      .track {
+        background-color: var(--midas-switch-background-checked-hover);
+
+        .handle {
+          background-color: var(--midas-switch-handle-checked);
+        }
+      }
+    }
+  }
+
+  &[data-pressed] {
+    .handle {
+      background-color: var(--midas-switch-handle-active);
+      border-radius: 45%;
+      scale: 1.05 1;
+    }
+  }
+
+  &[data-selected] {
+    .track {
+      background-color: var(--midas-switch-background-enabled);
+
+      .handle {
+        background-color: var(--midas-switch-handle-checked);
+      }
+    }
+
+    .large {
+      .handle {
+        transform: translateX(2rem);
+        transform-origin: var(1rem) 50%;
+      }
+    }
+
+    .medium {
+      .handle {
+        transform: translateX(1.4rem);
+        transform-origin: var(1rem) 50%;
+      }
+    }
+
+    &[data-disabled] {
+      .track {
+        background-color: var(
+          --midas-field-disabled,
+          var(--midas-field-01-disabled)
+        );
+
+        .handle {
+          background-color: var(--midas-field-01-disabled);
+        }
+      }
+    }
+  }
+
+  &[data-disabled] {
+    color: var(--midas-text-disabled);
+
+    .track {
+      border: 1px solid var(--midas-border-color-disabled);
+    }
+
+    .handle {
+      background-color: var(--midas-border-color-disabled);
+    }
+  }
+}
