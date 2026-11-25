@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Link as AriaLink, RouterProvider } from 'react-aria-components'
+import { Link as AriaLink } from 'react-aria-components'
 import { VisuallyHidden } from 'react-aria'
 import styles from './LinkButton.module.css'
 import clsx from '../utils/clsx'
@@ -73,7 +73,11 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
 
   const getIcon = (): { icon: LucideIcon; label?: string } => {
     if (customIcon) return { icon: customIcon }
-    if (rest.target === '_blank') return { icon: SquareArrowOutUpRight, label: strings.format('opensInNewTab') }
+    if (rest.target === '_blank')
+      return {
+        icon: SquareArrowOutUpRight,
+        label: strings.format('opensInNewTab'),
+      }
     if (iconPlacement === 'left') return { icon: ArrowLeft }
     return { icon: ArrowRight }
   }
@@ -113,4 +117,4 @@ const Icon = ({
   ...rest
 }: { icon: LucideIcon } & LucideProps) => <IconComponent {...rest} />
 
-export { RouterProvider }
+export { RouterProvider } from '../link'
