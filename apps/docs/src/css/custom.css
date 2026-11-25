@@ -130,6 +130,25 @@
     }
   }
 
+  /*
+   * On mobile the examples, and the code joined to them, reach the edges of
+   * the screen, so they get the width of the page's gutter instead of losing
+   * it. Only div.card, since Docusaurus' category cards are links.
+   */
+  /* stylelint-disable-next-line media-feature-range-notation */
+  @media (max-width: 996px) {
+    div.card,
+    .theme-code-block:has(+ div.card) {
+      border-inline-width: 0;
+      border-radius: 0;
+      margin-inline: calc(-1 * var(--ifm-spacing-horizontal));
+    }
+
+    div.card:not(.padding-0) {
+      padding: var(--midas-space-medium);
+    }
+  }
+
   .card-image {
     text-align: center;
     padding: 24px;
