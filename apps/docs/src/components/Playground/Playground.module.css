@@ -56,3 +56,19 @@
     border-top: 0;
   }
 }
+
+/* Like the other examples, the playground reaches the edges of the screen on mobile */
+/* stylelint-disable-next-line media-feature-range-notation */
+@media (max-width: 996px) {
+  .container {
+    margin-inline: calc(-1 * var(--ifm-spacing-horizontal));
+  }
+
+  .playground {
+    border-inline-width: 0;
+  }
+
+  .preview {
+    padding: var(--midas-space-medium);
+  }
+}
