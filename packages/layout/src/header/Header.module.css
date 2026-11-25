@@ -3,6 +3,7 @@
   border-bottom: 1px solid var(--midas-border-color-subtle);
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   min-height: 4.5rem;
-  padding-inline: var(--midas-space-medium);
+  padding: var(--midas-space-medium);
 }
