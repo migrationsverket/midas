@@ -6,6 +6,8 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '@midas-ds/components'
 import CellApi from '@midas-ds/api/components/Cell.json'
 import ColumnApi from '@midas-ds/api/components/Column.json'
 import RowApi from '@midas-ds/api/components/Row.json'
@@ -13,7 +15,6 @@ import TableApi from '@midas-ds/api/components/Table.json'
 import TableHeaderApi from '@midas-ds/api/components/TableHeader.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
-  BasicExample,
   FullExample,
   ControlledExample,
   RowOnActionExample,
@@ -37,26 +38,31 @@ Denna komponent är utformad för att visa data på ett enkelt och okomplicerat 
 import { Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
 ```
 
-```tsx
-<Table aria-label='Fruit'>
+<Playground
+  component={Table}
+  api={TableApi}
+  initialProps={{ 'aria-label': 'Frukter' }}
+  controls={{
+    size: {},
+    striped: {},
+    selectionMode: {},
+  }}
+>
   <TableHeader>
-    <Column>Name</Column>
-    <Column>Description</Column>
+    <Column isRowHeader>Namn</Column>
+    <Column>Beskrivning</Column>
   </TableHeader>
   <TableBody>
     <Row>
-      <Cell>Banana</Cell>
-      <Cell>A yellow fruit</Cell>
+      <Cell>Banan</Cell>
+      <Cell>En gul frukt</Cell>
     </Row>
     <Row>
-      <Cell>Pear</Cell>
-      <Cell>Usually green</Cell>
+      <Cell>Päron</Cell>
+      <Cell>Oftast grönt</Cell>
     </Row>
   </TableBody>
-</Table>
-```
-
-<BasicExample />
+</Playground>
 
 ## Varianter
 

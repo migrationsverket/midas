@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import CalendarApi from '@midas-ds/api/components/Calendar.json'
 import { Calendar } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -23,16 +24,16 @@ Fristående kalenderkomponent
 import { Calendar } from '@midas-ds/components'
 ```
 
-```tsx
-<Calendar aria-label='Kalender' />
-```
-
-<div
-  className='card'
-  style={{ display: 'block' }}
->
-  <Calendar aria-label='Kalender' />
-</div>
+<Playground
+  component={Calendar}
+  api={CalendarApi}
+  initialProps={{ 'aria-label': 'Kalender' }}
+  controls={{
+    showMonthYearPicker: {},
+    isDisabled: {},
+    isReadOnly: {},
+  }}
+/>
 
 ## Användning
 

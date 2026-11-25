@@ -6,6 +6,8 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { Tab, TabList, TabPanel, Tabs } from '@midas-ds/components'
 import TabsApi from '@midas-ds/api/components/Tabs.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { ControlledExample, BasicExample, ClosableTabsExample } from '@site/src/components/examples/tabs/TabsExamples'
@@ -21,22 +23,25 @@ En komponent för att segmentera information och minska den mängd som direkt pr
 import { Tabs, TabList, Tab, TabPanel } from '@midas-ds/components'
 ```
 
-```tsx
-<Tabs>
+<Playground
+  component={Tabs}
+  api={TabsApi}
+  controls={{
+    variant: {},
+    size: {},
+    orientation: {},
+    isDisabled: {},
+  }}
+>
   <TabList aria-label='Viktig information om frukter och bär'>
-    <Tab id='vitaminer'>...</Tab>
-    <Tab id='frukter'>...</Tab>
-    <Tab id='hallon'>...</Tab>
+    <Tab id='vitaminer'>Vitaminer</Tab>
+    <Tab id='frukter'>Frukter</Tab>
+    <Tab id='hallon'>Hallon</Tab>
   </TabList>
-  <TabPanel id='vitaminer'>...</TabPanel>
-  <TabPanel id='frukter'>...</TabPanel>
-  <TabPanel id='hallon'>...</TabPanel>
-</Tabs>
-```
-
-<div className='card'>
-  <BasicExample />
-</div>
+  <TabPanel id='vitaminer'>Frukt och bär är rika på vitaminer.</TabPanel>
+  <TabPanel id='frukter'>Äpplen, päron och bananer är vanliga frukter.</TabPanel>
+  <TabPanel id='hallon'>Hallon växer vilt i hela Sverige.</TabPanel>
+</Playground>
 
 ## Beskrivning
 

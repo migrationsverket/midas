@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import SkeletonApi from '@midas-ds/api/components/Skeleton.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Skeleton } from '@midas-ds/components'
@@ -23,13 +24,18 @@ Komponent som används som en platshållare för den riktiga komponenten innan s
 import { Skeleton } from '@midas-ds/components'
 ```
 
-```tsx
-<Skeleton height='48px' />
-```
-
-<div className='card'>
-  <Skeleton height='48px' />
-</div>
+<Playground
+  component={Skeleton}
+  api={SkeletonApi}
+  initialProps={{ height: '48px' }}
+  controls={{
+    variant: {},
+    size: { showWhen: 'variant' },
+    width: {},
+    height: {},
+    isAnimated: {},
+  }}
+/>
 
 ## Varianter
 

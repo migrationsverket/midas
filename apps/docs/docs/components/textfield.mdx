@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import TextFieldApi from '@midas-ds/api/components/TextField.json'
 import { TextField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -23,19 +24,22 @@ Inmatningsfält när användaren ska fylla i kortare information, tex namn, pers
 import { TextField } from '@midas-ds/components'
 ```
 
-```tsx
-<TextField
-  label='Etikett'
-  description='Beskrivning'
+<Playground
+  component={TextField}
+  api={TextFieldApi}
+  initialProps={{ label: 'Etikett', description: 'Beskrivning' }}
+  controls={{
+    label: {},
+    description: {},
+    placeholder: {},
+    size: {},
+    isDisabled: {},
+    isReadOnly: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+  }}
 />
-```
-
-<div className='card'>
-  <TextField
-    label='Etikett'
-    description='Beskrivning'
-  />
-</div>
 
 ## Beskrivning
 

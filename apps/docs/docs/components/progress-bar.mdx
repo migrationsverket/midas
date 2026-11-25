@@ -7,6 +7,7 @@ sidebar_custom_props:
 
 import { ProgressBar } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import ProgressBarApi from '@midas-ds/api/components/ProgressBar.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -21,21 +22,19 @@ Progress bar med fördefinierad stil, använder `role="progressbar"` under huven
 import { ProgressBar } from '@midas-ds/components'
 ```
 
-```tsx
-<ProgressBar
-  label='Laddar...'
-  showValueLabel
-  value={30}
+<Playground
+  component={ProgressBar}
+  api={ProgressBarApi}
+  initialProps={{ label: 'Laddar...', value: '30' }}
+  controls={{
+    label: {},
+    value: { options: { 0: 0, 30: 30, 60: 60, 100: 100 } },
+    shape: {},
+    showValueLabel: {},
+    small: {},
+    isIndeterminate: {},
+  }}
 />
-```
-
-<div className='card'>
-  <ProgressBar
-    label='Laddar...'
-    showValueLabel
-    value={30}
-  />
-</div>
 
 ## Varianter
 

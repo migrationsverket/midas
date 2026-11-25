@@ -6,11 +6,13 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { DialogTrigger, Popover } from '@midas-ds/components'
+import { Button, Heading, Text } from '@midas-ds/components'
 import DialogTriggerApi from '@midas-ds/api/components/DialogTrigger.json'
 import PopoverApi from '@midas-ds/api/components/Popover.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
-  PopoverExample,
   PopoverPlacement,
   ControlledPopover,
   CustomTriggerPopover,
@@ -30,26 +32,23 @@ Komponent som används när användaren behöver extra information eller en lite
 import { Popover, DialogTrigger, Button, ButtonGroup, Heading, Text } from '@midas-ds/components'
 ```
 
-```tsx
-<DialogTrigger>
-  <Button
-    variant='secondary'
-    icon={Share2}
-  >
-    Dela
-  </Button>
-  <Popover>
-    <Heading>Dela inköpslista</Heading>
-    <Text>Välj hur du vill dela din inköpslista</Text>
-    <ButtonGroup>
-      <Button>Mejla</Button>
-      <Button variant='secondary'>Kopiera texten</Button>
-    </ButtonGroup>
-  </Popover>
-</DialogTrigger>
-```
-
-<PopoverExample />
+<Playground
+  component={Popover}
+  api={PopoverApi}
+  controls={{
+    placement: { options: ['top', 'bottom', 'start', 'end'] },
+    hideArrow: {},
+  }}
+  wrap={popover => (
+    <DialogTrigger>
+      <Button variant='secondary'>Dela</Button>
+      {popover}
+    </DialogTrigger>
+  )}
+>
+  <Heading>Dela inköpslista</Heading>
+  <Text>Välj hur du vill dela din inköpslista</Text>
+</Playground>
 
 ## Användning
 

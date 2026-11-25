@@ -6,6 +6,9 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { DialogTrigger, Modal } from '@midas-ds/components'
+import { Button } from '@midas-ds/components'
 import DialogTriggerApi from '@midas-ds/api/components/DialogTrigger.json'
 import ModalApi from '@midas-ds/api/components/Modal.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -13,7 +16,6 @@ import {
   FormExample,
   ConfirmationExample,
   CustomCSSExample,
-  StickyFooterExample,
   HideCloseButtonExample,
   LongFormExample,
 } from '@site/src/components/examples/ModalExamples'
@@ -31,17 +33,23 @@ Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen.
 import { DialogTrigger, Modal } from '@midas-ds/components'
 ```
 
-```tsx
-<DialogTrigger>
-  <Button>Öppna modal</Button>
-  <Modal
-    title='Rubrik'
-    footer={<Button>Knapptext</Button>}
-  >
-    Innehåll i modal
-  </Modal>
-</DialogTrigger>
-```
+<Playground
+  component={Modal}
+  api={ModalApi}
+  initialProps={{ title: 'Rubrik', children: 'Innehåll i modal' }}
+  controls={{
+    title: {},
+    children: {},
+    isDismissable: {},
+    hideCloseButton: {},
+  }}
+  wrap={modal => (
+    <DialogTrigger>
+      <Button>Öppna modal</Button>
+      {modal}
+    </DialogTrigger>
+  )}
+/>
 
 ## Användning
 

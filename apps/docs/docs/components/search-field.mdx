@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import SearchFieldApi from '@midas-ds/api/components/SearchField.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { SearchField, Button } from '@midas-ds/components'
@@ -21,6 +22,20 @@ Inmatningsfält anpassat för sökning.
 ```tsx
 import { SearchField } from '@midas-ds/components'
 ```
+
+<Playground
+  component={SearchField}
+  api={SearchFieldApi}
+  initialProps={{ placeholder: 'Sök efter frukter' }}
+  controls={{
+    label: {},
+    description: {},
+    placeholder: {},
+    size: {},
+    showButton: {},
+    isDisabled: {},
+  }}
+/>
 
 ## Grundläggande användning
 

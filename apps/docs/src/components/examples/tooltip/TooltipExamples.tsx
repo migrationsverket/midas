@@ -2,36 +2,11 @@ import {
   Button,
   Tooltip,
   TooltipTrigger,
-  Text,
   Focusable,
 } from '@midas-ds/components'
-import { ArrowUp, ArrowLeft, Save } from 'lucide-react'
+import { ArrowUp, ArrowLeft } from 'lucide-react'
 import React from 'react'
 
-export const SimpleExample = () => {
-  return (
-    <div
-      className='card'
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: '1rem',
-      }}
-    >
-      <Text>Hovra över ikonen för att visa tooltip</Text>
-      <TooltipTrigger>
-        <Button
-          variant='icon'
-          aria-label='Spara'
-        >
-          <Save />
-        </Button>
-        <Tooltip>Spara</Tooltip>
-      </TooltipTrigger>
-    </div>
-  )
-}
 export const TooltipDelay = () => {
   return (
     <div

@@ -7,6 +7,7 @@ sidebar_custom_props:
 
 import { Heading, Text } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import HeadingApi from '@midas-ds/api/components/Heading.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -22,13 +23,16 @@ Rubrik med fördefinierad stil.
 import { Heading } from '@midas-ds/components'
 ```
 
-```tsx
-<Heading level={2}>Jag är en vanlig h2-rubrik</Heading>
-```
-
-<div className='card'>
-  <Heading level={2}>Jag är en vanlig h2-rubrik</Heading>
-</div>
+<Playground
+  component={Heading}
+  api={HeadingApi}
+  initialProps={{ children: 'Jag är en rubrik', level: '2' }}
+  controls={{
+    children: {},
+    level: { options: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6 } },
+    isExpressive: {},
+  }}
+/>
 
 ## Varianter
 

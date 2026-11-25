@@ -6,6 +6,9 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { Button, Tooltip, TooltipTrigger } from '@midas-ds/components'
+import { Save } from 'lucide-react'
 import TooltipApi from '@midas-ds/api/components/Tooltip.json'
 import TooltipTriggerApi from '@midas-ds/api/components/TooltipTrigger.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -14,7 +17,6 @@ import {
   TooltipPlacement,
   ControlledTooltip,
   CustomTriggerTooltip,
-  SimpleExample,
 } from '@site/src/components/examples/tooltip/TooltipExamples'
 
 <ComponentHeader
@@ -29,19 +31,26 @@ import { Tooltip, TooltipTrigger, Button } from '@midas-ds/components'
 import { Save } from 'lucide-react'
 ```
 
-```tsx
-<TooltipTrigger>
-  <Button
-    variant='icon'
-    aria-label='Spara'
-  >
-    <Save />
-  </Button>
-  <Tooltip>Spara</Tooltip>
-</TooltipTrigger>
-```
-
-<SimpleExample />
+<Playground
+  component={Tooltip}
+  api={TooltipApi}
+  initialProps={{ children: 'Spara' }}
+  controls={{
+    children: {},
+    placement: { options: ['top', 'bottom', 'start', 'end'] },
+  }}
+  wrap={tooltip => (
+    <TooltipTrigger>
+      <Button
+        variant='icon'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      {tooltip}
+    </TooltipTrigger>
+  )}
+/>
 
 ## Användning
 

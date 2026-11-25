@@ -7,6 +7,7 @@ sidebar_custom_props:
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import MenuApi from '@midas-ds/api/components/Menu.json'
 import MenuHeaderApi from '@midas-ds/api/components/MenuHeader.json'
 import MenuItemApi from '@midas-ds/api/components/MenuItem.json'
@@ -15,33 +16,11 @@ import MenuSectionApi from '@midas-ds/api/components/MenuSection.json'
 import MenuTriggerApi from '@midas-ds/api/components/MenuTrigger.json'
 import SeparatorApi from '@midas-ds/api/components/Separator.json'
 import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
-import { MenuIcon } from 'lucide-react'
+import { EllipsisVertical, MenuIcon } from 'lucide-react'
 import { OnActionExample } from '@site/src/components/examples/menu/MenuExamples'
 import { SectionedExample } from '@site/src/components/examples/menu/SectionedExample'
 import SectionedExampleSrc from '!!raw-loader!@site/src/components/examples/menu/SectionedExample'
 import CodeBlock from '@theme/CodeBlock'
-
-export const Example = () => {
-  return (
-    <MenuTrigger>
-      <Button
-        aria-label='Menu'
-        variant='icon'
-      >
-        <MenuIcon size={20} />
-      </Button>
-      <MenuPopover>
-        <Menu>
-          <MenuItem id='open'>Open</MenuItem>
-          <MenuItem id='rename'>Rename...</MenuItem>
-          <MenuItem id='duplicate'> Duplicate</MenuItem>
-          <MenuItem id='share'>Share...</MenuItem>
-          <MenuItem id='delete'>Delete...</MenuItem>
-        </Menu>
-      </MenuPopover>
-    </MenuTrigger>
-  )
-}
 
 <ComponentHeader
   name='Menu'
@@ -55,32 +34,30 @@ import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/comp
 import { MenuIcon } from 'lucide-react'
 ```
 
-```tsx
-<MenuTrigger>
-  <Button
-    aria-label='Menu'
-    variant='icon'
-  >
-    <MenuIcon size={20} />
-  </Button>
-  <MenuPopover>
-    <Menu>
-      <MenuItem>Open</MenuItem>
-      <MenuItem>Rename...</MenuItem>
-      <MenuItem>Duplicate</MenuItem>
-      <MenuItem>Share...</MenuItem>
-      <MenuItem>Delete...</MenuItem>
-    </Menu>
-  </MenuPopover>
-</MenuTrigger>
-```
-
-<div
-  className='card'
-  style={{ display: 'block' }}
+<Playground
+  component={Menu}
+  api={MenuApi}
+  controls={{
+    size: {},
+    selectionMode: {},
+  }}
+  wrap={menu => (
+    <MenuTrigger>
+      <Button
+        aria-label='Meny'
+        variant='icon'
+      >
+        <EllipsisVertical />
+      </Button>
+      <MenuPopover>{menu}</MenuPopover>
+    </MenuTrigger>
+  )}
 >
-  <Example />
-</div>
+  <MenuItem id='open'>Öppna</MenuItem>
+  <MenuItem id='rename'>Byt namn...</MenuItem>
+  <MenuItem id='duplicate'>Duplicera</MenuItem>
+  <MenuItem id='delete'>Ta bort...</MenuItem>
+</Playground>
 
 ## Beskrivning
 

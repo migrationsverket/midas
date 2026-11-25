@@ -7,6 +7,7 @@ sidebar_custom_props:
 
 import { Text, Label } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import TextApi from '@midas-ds/api/components/Text.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -22,13 +23,15 @@ Textelement med fördefinierad stil
 import { Text } from '@midas-ds/components'
 ```
 
-```tsx
-<Text>Jag är ett vanligt span-element som standard</Text>
-```
-
-<div className='card'>
-  <Text>Jag är ett vanligt span-element som standard</Text>
-</div>
+<Playground
+  component={Text}
+  api={TextApi}
+  initialProps={{ children: 'Jag är ett vanligt span-element som standard' }}
+  controls={{
+    children: {},
+    isExpressive: {},
+  }}
+/>
 
 ## Varianter
 

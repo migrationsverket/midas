@@ -9,6 +9,7 @@ import { DropZone, FileTrigger, Button, Text, FieldError, Label } from '@midas-d
 import { Upload } from 'lucide-react'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import DropZoneApi from '@midas-ds/api/components/DropZone.json'
 import { ValidatedDropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
 
@@ -23,16 +24,20 @@ En yta som ett eller flera objekt kan dras och släppas på. Kombinera med [File
 Används DropZone för filuppladdning, lägg alltid en `FileTrigger` i den. Dra och släpp fungerar inte på de flesta mobiler och används inte av alla, så knappen är det som gör att alla kan välja filer.
 
 ```tsx
-<DropZone onDrop={handleDrop}>
-  <Text slot='label'>Släpp filer här</Text>
-</DropZone>
+import { DropZone, Text } from '@midas-ds/components'
 ```
 
-<div className='card'>
-  <DropZone style={{ width: '100%', maxWidth: 480 }}>
-    <Text slot='label'>Släpp filer här</Text>
-  </DropZone>
-</div>
+<Playground
+  component={DropZone}
+  api={DropZoneApi}
+  initialProps={{ onDrop: () => {} }}
+  controls={{
+    isDisabled: {},
+    isInvalid: {},
+  }}
+>
+  <Text slot='label'>Släpp filer här</Text>
+</Playground>
 
 ## Varianter
 

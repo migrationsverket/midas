@@ -6,8 +6,9 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import InfoBannerApi from '@midas-ds/api/components/InfoBanner.json'
-import { InfoBanner, Tab, Tabs, TabList, TabPanel } from '@midas-ds/components'
+import { InfoBanner } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -18,44 +19,25 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
 
-<div className='card'>
-  <Tabs label='Välj typ'>
-    <TabList>
-      <Tab id='success'>Success</Tab>
-      <Tab id='info'>Info</Tab>
-      <Tab id='important'>Important</Tab>
-      <Tab id='warning'>Warning</Tab>
-    </TabList>
-    <TabPanel id='success'>
-      <InfoBanner
-        type='success'
-        title='Formuläret har skickats'
-        message='Allt gick bra. Du kan nu stänga fönstret.'
-      />
-    </TabPanel>
-    <TabPanel id='info'>
-      <InfoBanner
-        type='info'
-        title='Kom ihåg att fylla i din semesterplan'
-        message='Vi behöver din semesterplan för att kunna gå vidare.'
-      />
-    </TabPanel>
-    <TabPanel id='important'>
-      <InfoBanner
-        type='important'
-        title='Du behöver komplettera!'
-        message='Vi saknar din semesterplan.'
-      />
-    </TabPanel>
-    <TabPanel id='warning'>
-      <InfoBanner
-        type='warning'
-        title='Formuläret kunde inte skickas!'
-        message='Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'
-      />
-    </TabPanel>
-  </Tabs>
-</div>
+```tsx
+import { InfoBanner } from '@midas-ds/components'
+```
+
+<Playground
+  component={InfoBanner}
+  api={InfoBannerApi}
+  initialProps={{
+    type: 'success',
+    title: 'Formuläret har skickats',
+    message: 'Allt gick bra. Du kan nu stänga fönstret.',
+  }}
+  controls={{
+    type: {},
+    title: {},
+    message: {},
+    isDismissable: {},
+  }}
+/>
 
 ## Varianter
 

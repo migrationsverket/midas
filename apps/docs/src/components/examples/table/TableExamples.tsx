@@ -35,30 +35,6 @@ const rows = [
   },
 ]
 
-export const BasicExample = () => (
-  <div
-    className='card'
-    style={{ display: 'block' }}
-  >
-    <Table aria-label='Fruit'>
-      <TableHeader>
-        <Column isRowHeader>Name</Column>
-        <Column>Description</Column>
-      </TableHeader>
-      <TableBody>
-        <Row>
-          <Cell>Banana</Cell>
-          <Cell>A yellow fruit</Cell>
-        </Row>
-        <Row>
-          <Cell>Pear</Cell>
-          <Cell>Usually green</Cell>
-        </Row>
-      </TableBody>
-    </Table>
-  </div>
-)
-
 export const FullExample: React.FC<TableProps> = props => (
   <div
     className='card'

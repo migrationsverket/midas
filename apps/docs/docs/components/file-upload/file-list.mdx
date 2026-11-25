@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import FileListItemApi from '@midas-ds/api/components/FileListItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { FileList, FileListItem } from '@midas-ds/components'
@@ -22,25 +23,23 @@ Komponent för att visa en lista med uppladdade filer. Varje rad visar filnamn, 
 import { FileList, FileListItem } from '@midas-ds/components'
 ```
 
-```tsx
-<FileList aria-label='Uppladdade filer'>
-  <FileListItem
-    fileName='CV_Anna_Svensson.pdf'
-    fileSize='1.2 MB'
-    onDelete={() => {}}
-  />
-</FileList>
-```
-
-<div className='card'>
-  <FileList aria-label='Uppladdade filer'>
-    <FileListItem
-      fileName='CV_Anna_Svensson.pdf'
-      fileSize='1.2 MB'
-      onDelete={() => {}}
-    />
-  </FileList>
-</div>
+<Playground
+  component={FileListItem}
+  api={FileListItemApi}
+  initialProps={{
+    fileName: 'CV_Anna_Svensson.pdf',
+    fileSize: '1.2 MB',
+    onDelete: () => {},
+  }}
+  controls={{
+    fileName: {},
+    fileSize: {},
+    status: {},
+    progress: { options: { 30: 30, 60: 60, 90: 90 } },
+    errorMessage: { showWhen: 'status' },
+  }}
+  wrap={item => <FileList aria-label='Uppladdade filer'>{item}</FileList>}
+/>
 
 ## Utan filstorlek
 
