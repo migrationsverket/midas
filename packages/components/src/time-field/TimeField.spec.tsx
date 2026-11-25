@@ -74,3 +74,29 @@ describe('given a clearable TimeField', async () => {
       .toHaveAttribute('data-placeholder', 'true')
   })
 })
+
+describe('given a TimeField in a flex container', async () => {
+  it('should fill the width, like the other fields', async () => {
+    await render(
+      <div
+        data-testid='wrapper'
+        style={{ display: 'flex', width: 400 }}
+      >
+        <TimeField label='Etikett' />
+      </div>,
+    )
+
+    const field = page.getByTestId('wrapper').element().firstElementChild!
+
+    expect(field.getBoundingClientRect().width).toBe(400)
+  })
+
+  it('should have the same padding on both sides of the input', async () => {
+    await render(<TimeField label='Etikett' />)
+    const style = getComputedStyle(
+      page.getByRole('group').element().parentElement!,
+    )
+
+    expect(style.paddingRight).toBe(style.paddingLeft)
+  })
+})

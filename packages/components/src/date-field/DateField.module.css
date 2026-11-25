@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 
   &[data-readonly] .inputField {
     background-color: transparent;
@@ -37,8 +38,13 @@
   border-bottom-color: var(--midas-border-color-primary);
 
   /* The scroller's padding makes up the rest, see DateInput.module.css */
-  padding-left: calc(var(--midas-space-medium) - var(--midas-space-xsmall));
+  padding-inline: calc(var(--midas-space-medium) - var(--midas-space-xsmall));
   position: relative;
+
+  /* The clear button sits flush right */
+  &:has(.clearButton) {
+    padding-right: 0;
+  }
 
   &.medium {
     min-height: var(--midas-size-control-md);

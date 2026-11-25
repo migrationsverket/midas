@@ -12,7 +12,12 @@ const { Primary, WithClearButton } = composeStories(stories)
 describe('given a DateField with a ref', async () => {
   it('should forward the ref to the underlying element', async () => {
     const ref = React.createRef<HTMLDivElement>()
-    await render(<DateField label='Date' ref={ref} />)
+    await render(
+      <DateField
+        label='Date'
+        ref={ref}
+      />,
+    )
     expect(ref.current).not.toBeNull()
   })
 })
@@ -90,5 +95,31 @@ describe('given a DateField inside an en-US I18nProvider', async () => {
     await expect
       .element(segments.nth(2))
       .toHaveAttribute('aria-label', expect.stringMatching(/^year/))
+  })
+})
+
+describe('given a DateField in a flex container', async () => {
+  it('should fill the width, like the other fields', async () => {
+    await render(
+      <div
+        data-testid='wrapper'
+        style={{ display: 'flex', width: 400 }}
+      >
+        <DateField label='Etikett' />
+      </div>,
+    )
+
+    const field = page.getByTestId('wrapper').element().firstElementChild!
+
+    expect(field.getBoundingClientRect().width).toBe(400)
+  })
+
+  it('should have the same padding on both sides of the input', async () => {
+    await render(<DateField label='Etikett' />)
+    const style = getComputedStyle(
+      page.getByTestId('date-field_input-field').element(),
+    )
+
+    expect(style.paddingRight).toBe(style.paddingLeft)
   })
 })

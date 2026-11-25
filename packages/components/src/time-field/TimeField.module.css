@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 
   &[data-readonly] .inputField {
     background-color: transparent;
@@ -35,8 +36,13 @@
   background-color: var(--midas-field-base, var(--midas-field-01-base));
   border: 1px solid transparent;
   border-bottom-color: var(--midas-border-color-primary);
-  padding: 0 0 0 1rem;
+  padding: 0 var(--midas-space-medium);
   position: relative;
+
+  /* The clear button sits flush right */
+  &:has(.clearButton) {
+    padding-right: 0;
+  }
 
   &.medium {
     min-height: var(--midas-size-control-md);
