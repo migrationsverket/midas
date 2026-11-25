@@ -14,18 +14,16 @@
 }
 
 .preview {
-  align-items: center;
-  display: flex;
   grid-area: preview;
-  justify-content: center;
   min-height: 10rem;
   padding: var(--midas-space-large);
 }
 
-.previewFill {
-  grid-area: preview;
-  min-height: 10rem;
-  padding: var(--midas-space-large);
+/* Unless the component fills the preview */
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .controls {

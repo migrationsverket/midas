@@ -1,8 +1,10 @@
 import { createElement, type FC, type ReactNode } from 'react'
 import { describe, expect, it } from 'vitest'
+import { MoreVertical } from 'lucide-react'
 import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 import {
   childToCode,
+  CodeScope,
   CodeSlot,
   codeExpression,
   elementToCode,
@@ -10,7 +12,7 @@ import {
   getControls,
   getPlaygroundProps,
   importsToCode,
-  registerComponentNames,
+  registerModule,
   type Control,
 } from './playgroundUtils'
 
@@ -72,6 +74,22 @@ describe('getControl', () => {
     expect(
       getControl('size', prop(sizeType), { options: ['medium'] }),
     ).toMatchObject({ options: ['medium'] })
+  })
+
+  it('should prefer configured options to a text field', () => {
+    expect(
+      getControl(
+        'width',
+        prop({ name: 'enum', raw: 'Width', value: [{ value: 'string' }] }),
+        { options: ['100px', '50%'] },
+      ),
+    ).toMatchObject({ kind: 'enum', options: ['100px', '50%'] })
+  })
+
+  it('should mark a required enum', () => {
+    expect(
+      getControl('type', prop(sizeType, { required: true })),
+    ).toMatchObject({ kind: 'enum', required: true })
   })
 
   it('should make a select from several named options', () => {
@@ -214,6 +232,34 @@ describe('getPlaygroundProps', () => {
     expect(result.disabledControls).toEqual(['errorMessage'])
   })
 
+  it('should enable a control only for the given values of another prop', () => {
+    const status: Control = {
+      name: 'status',
+      kind: 'enum',
+      options: ['idle', 'error'],
+    }
+    const errorMessage: Control = {
+      name: 'errorMessage',
+      kind: 'text',
+      showWhen: { status: ['error'] },
+    }
+    const values = { status: 'idle', errorMessage: 'Fel' }
+
+    expect(getPlaygroundProps([status, errorMessage], values)).toMatchObject({
+      props: { status: 'idle' },
+      disabledControls: ['errorMessage'],
+    })
+    expect(
+      getPlaygroundProps([status, errorMessage], {
+        ...values,
+        status: 'error',
+      }),
+    ).toMatchObject({
+      props: { status: 'error', errorMessage: 'Fel' },
+      disabledControls: [],
+    })
+  })
+
   it('should pass on props without a control, but not children', () => {
     const result = getPlaygroundProps([], { label: 'Frukt', children: 'x' })
 
@@ -347,11 +393,59 @@ describe('childToCode', () => {
       ].join('\n'),
     )
   })
+})
 
-  it('should name a component by its registered export over its function name', () => {
-    const minified = () => null
-    registerComponentNames({ MenuTrigger: minified, useThing: () => null })
-    expect(childToCode(createElement(minified))).toBe('<MenuTrigger />')
+describe('CodeScope', () => {
+  const Button: FC<{ variant?: string; children?: ReactNode }> = () => null
+  // A minified name, like in a production build
+  const t: FC<{ children?: ReactNode }> = () => null
+  registerModule('@midas-ds/components', { Button, MenuTrigger: t, useX: t })
+
+  it('should name midas components by their export and lucide icons by their name, and import them', () => {
+    const scope = new CodeScope()
+
+    expect(
+      childToCode(
+        createElement(
+          t,
+          null,
+          createElement(
+            Button,
+            { variant: 'icon' },
+            createElement(MoreVertical),
+          ),
+        ),
+        '',
+        scope,
+      ),
+    ).toBe(
+      [
+        '<MenuTrigger>',
+        "  <Button variant='icon'>",
+        '    <EllipsisVertical />',
+        '  </Button>',
+        '</MenuTrigger>',
+      ].join('\n'),
+    )
+    expect(scope.imports).toEqual({
+      '@midas-ds/components': ['MenuTrigger', 'Button'],
+      'lucide-react': ['EllipsisVertical'],
+    })
+  })
+
+  it('should name other components from the config', () => {
+    const Form: FC = () => null
+    const scope = new CodeScope({ 'react-aria-components': { Form } })
+
+    expect(childToCode(createElement(Form), '', scope)).toBe('<Form />')
+    expect(scope.imports).toEqual({ 'react-aria-components': ['Form'] })
+  })
+
+  it('should throw for a component it cannot name', () => {
+    const Form: FC = () => null
+    expect(() => childToCode(createElement(Form), '', new CodeScope())).toThrow(
+      "Playground: Form isn't from @midas-ds/components or lucide-react, add it to imports",
+    )
   })
 })
 
@@ -407,6 +501,45 @@ describe('getControls', () => {
     expect(() => getControls(api, { varaint: {} })).toThrow(
       'Playground: Button has no prop "varaint"',
     )
+  })
+
+  it('should throw for a prop that cannot be a control', () => {
+    const withHandler = {
+      displayName: 'Button',
+      props: {
+        onPress: prop({ name: 'enum', raw: '(() => void)', value: [] }),
+      },
+    } as unknown as ApiDoc
+    expect(() => getControls(withHandler, { onPress: {} })).toThrow(
+      `Playground: Button's prop "onPress" can't be a control`,
+    )
+  })
+
+  it('should throw for an aria prop as a control, since the API docs leave them out', () => {
+    expect(() => getControls(api, { 'aria-labl': {} })).toThrow(
+      'Playground: Button has no prop "aria-labl"',
+    )
+  })
+
+  it('should allow aria props in the initial props', () => {
+    expect(() => getControls(api, {}, { 'aria-label': 'Spara' })).not.toThrow()
+  })
+
+  it('should allow only link props in the initial props of a component with as', () => {
+    const link = {
+      displayName: 'Link',
+      props: { as: prop({ name: 'ElementType' }) },
+    } as unknown as ApiDoc
+    expect(() => getControls(link, {}, { href: '#' })).not.toThrow()
+    expect(() => getControls(link, {}, { standlone: true })).toThrow(
+      'Playground: Link has no prop "standlone"',
+    )
+  })
+
+  it('should throw for a showWhen value that is not a prop', () => {
+    expect(() =>
+      getControls(api, { variant: { showWhen: { staus: 'error' } } }),
+    ).toThrow('Playground: Button has no prop "staus"')
   })
 
   it('should throw for a showWhen that is not a prop', () => {

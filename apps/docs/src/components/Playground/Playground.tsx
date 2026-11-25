@@ -8,25 +8,26 @@ import {
 } from 'react'
 import * as components from '@midas-ds/components'
 import { Checkbox, ListBoxItem, Select, TextField } from '@midas-ds/components'
-import * as layout from '@midas-ds/layout'
 import type { ApiDoc } from '@midas-ds/docgen'
 import CodeBlock from '@theme/CodeBlock'
 import {
   childToCode,
+  CodeScope,
   CodeSlot,
   elementToCode,
   getControls,
   getPlaygroundProps,
   importsToCode,
-  registerComponentNames,
   type Control,
   type ControlConfig,
   type ControlsConfig,
+  type ImportsConfig,
   type PropName,
+  registerModule,
 } from './playgroundUtils'
 import styles from './Playground.module.css'
 
-registerComponentNames(components, layout)
+registerModule('@midas-ds/components', components)
 
 type Values = Record<string, unknown>
 
@@ -49,6 +50,12 @@ export interface PlaygroundProps<C extends ElementType> {
    * wrapper is part of the generated code too.
    */
   wrap?: (element: ReactElement) => ReactElement
+  /**
+   * Components in `wrap` or `children` from other libraries than midas and
+   * lucide, by module, so the code can name and import them. One that is
+   * missing throws, which fails the docs build.
+   */
+  imports?: ImportsConfig
   /** Lets the component take the full width, instead of centering it */
   fill?: boolean
   /**
@@ -86,7 +93,7 @@ const ControlRow = ({
       )
     case 'enum': {
       // Without a default, leaving the prop out is a choice of its own
-      const canUnset = control.defaultValue === undefined
+      const canUnset = control.defaultValue === undefined && !control.required
       return (
         <Select
           isDisabled={isDisabled}
@@ -125,7 +132,8 @@ const ControlRow = ({
           label={control.name}
           size='medium'
           value={(value as string) ?? ''}
-          onChange={onChange}
+          // An empty field leaves the prop out, in the preview and the code
+          onChange={text => onChange(text === '' ? undefined : text)}
         />
       )
   }
@@ -143,6 +151,7 @@ export const Playground = <C extends ElementType>({
   initialProps = {},
   children,
   wrap,
+  imports: importsConfig,
   fill = false,
   previewClassName,
 }: PlaygroundProps<C>) => {
@@ -156,7 +165,19 @@ export const Playground = <C extends ElementType>({
   const defaults = Object.fromEntries(
     controls.map(({ name, defaultValue }) => [name, defaultValue]),
   )
-  const [values, setValues] = useState<Values>({ ...defaults, ...initialProps })
+  // A required prop without a default starts at its first option
+  const required = Object.fromEntries(
+    controls.flatMap(control =>
+      control.kind === 'enum' && control.required && !control.defaultValue
+        ? [[control.name, control.options[0]]]
+        : [],
+    ),
+  )
+  const [values, setValues] = useState<Values>({
+    ...defaults,
+    ...required,
+    ...initialProps,
+  })
 
   const { props, codeProps, imports, disabledControls } = getPlaygroundProps(
     controls,
@@ -164,29 +185,32 @@ export const Playground = <C extends ElementType>({
   )
   const content = (values.children as ReactNode) ?? children
   const element = createElement(component, props, content)
+  const scope = new CodeScope(importsConfig)
   const elementCode = elementToCode(
-    api.displayName,
+    scope.use(component),
     codeProps,
     content,
     defaults,
+    '',
+    scope,
   )
-  const code = [
-    importsToCode(imports),
-    wrap
-      ? childToCode(wrap(createElement(CodeSlot, { code: elementCode })))
-      : elementCode,
-  ]
-    .filter(Boolean)
-    .join('\n\n')
+  const jsx = wrap
+    ? childToCode(
+        wrap(createElement(CodeSlot, { code: elementCode })),
+        '',
+        scope,
+      )
+    : elementCode
+  for (const [module, names] of Object.entries(imports)) {
+    names.forEach(name => scope.addImport(module, name))
+  }
+  const code = [importsToCode(scope.imports), jsx].filter(Boolean).join('\n\n')
 
   return (
     <div className={styles.container}>
       <div className={styles.playground}>
         <div
-          className={[
-            fill ? styles.previewFill : styles.preview,
-            previewClassName,
-          ]
+          className={[styles.preview, !fill && styles.center, previewClassName]
             .filter(Boolean)
             .join(' ')}
         >

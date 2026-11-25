@@ -31,9 +31,9 @@ import { Skeleton } from '@midas-ds/components'
   initialProps={{ height: '48px' }}
   controls={{
     variant: {},
-    size: { showWhen: 'variant' },
+    size: { showWhen: { variant: 'form' } },
     width: {},
-    height: {},
+    height: { showWhen: { variant: 'rectangle' } },
     isAnimated: {},
   }}
 />

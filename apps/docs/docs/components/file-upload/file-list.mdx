@@ -35,8 +35,11 @@ import { FileList, FileListItem } from '@midas-ds/components'
     fileName: {},
     fileSize: {},
     status: {},
-    progress: { options: { 30: 30, 60: 60, 90: 90 } },
-    errorMessage: { showWhen: 'status' },
+    progress: {
+      options: { 30: 30, 60: 60, 90: 90 },
+      showWhen: { status: 'uploading' },
+    },
+    errorMessage: { showWhen: { status: 'error' } },
   }}
   wrap={item => <FileList aria-label='Uppladdade filer'>{item}</FileList>}
 />

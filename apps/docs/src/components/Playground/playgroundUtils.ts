@@ -1,4 +1,5 @@
 import { Children, isValidElement, type ReactNode } from 'react'
+import { Icon } from 'lucide-react'
 import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 
 /** The prop names of a component's props, `P` */
@@ -21,8 +22,16 @@ export interface ControlConfig<
   options?: Extract<P[K], string>[] | Record<string, P[K]>
   /** The module the named options are imported from, e.g. `lucide-react` */
   import?: string
-  /** Shows the control only when this other prop is set, and not false */
-  showWhen?: PropName<P>
+  /**
+   * Enables the control only when another prop is set and not false, or,
+   * given as `{ prop: value }`, only when that prop has one of these values
+   */
+  showWhen?: PropName<P> | ShowWhenValues<P>
+}
+
+/** The values of other props a control is enabled for, e.g. `{ status: 'error' }` */
+export type ShowWhenValues<P> = {
+  [K in PropName<P>]?: P[K] | P[K][]
 }
 
 /** One entry per prop to show a control for, in order */
@@ -33,7 +42,7 @@ interface BaseControl {
   /** Named values, by the name printed in the code */
   named?: Record<string, unknown>
   import?: string
-  showWhen?: string
+  showWhen?: string | Record<string, unknown>
 }
 
 export interface BooleanControl extends BaseControl {
@@ -45,6 +54,8 @@ export interface EnumControl extends BaseControl {
   kind: 'enum'
   options: string[]
   defaultValue?: string
+  /** A required prop without a default can't be left out */
+  required?: boolean
 }
 
 export interface TextControl extends BaseControl {
@@ -83,6 +94,22 @@ export const getControl = (
       : { ...base, kind: 'enum', options: names, named: options }
   }
 
+  const values = prop?.type.value?.map(({ value }) => value)
+  const isLiteralEnum =
+    prop?.type.name === 'enum' &&
+    !!values?.length &&
+    values.every(isStringLiteral)
+  if (options || (isLiteralEnum && name !== 'children')) {
+    return {
+      ...base,
+      kind: 'enum',
+      options: options ?? (values ?? []).map(unquote),
+      defaultValue:
+        defaultValue === undefined ? undefined : unquote(defaultValue),
+      required: prop?.required,
+    }
+  }
+
   // A ReactNode or a union with string, e.g. errorMessage, can take text too
   const acceptsText =
     prop?.type.name === 'string' ||
@@ -95,19 +122,6 @@ export const getControl = (
   // react-docgen-typescript expands boolean to an enum of false and true
   if (prop?.type.raw === 'boolean' || prop?.type.name === 'boolean') {
     return { ...base, kind: 'boolean', defaultValue: defaultValue === 'true' }
-  }
-
-  const values = prop?.type.value?.map(({ value }) => value)
-  const isLiteralEnum =
-    prop?.type.name === 'enum' && values?.every(isStringLiteral)
-  if (options || isLiteralEnum) {
-    return {
-      ...base,
-      kind: 'enum',
-      options: options ?? (values ?? []).map(unquote),
-      defaultValue:
-        defaultValue === undefined ? undefined : unquote(defaultValue),
-    }
   }
 
   return null
@@ -123,28 +137,45 @@ export const getControls = (
   config: Partial<Record<string, ControlConfig>>,
   initialProps: Values = {},
 ): Control[] => {
-  // The API docs leave out the aria-* props, every component takes them
   const assertProp = (name: string) => {
-    if (
-      name !== 'children' &&
-      !name.startsWith('aria-') &&
-      !(name in api.props)
-    ) {
+    if (name !== 'children' && !(name in api.props)) {
       throw new Error(`Playground: ${api.displayName} has no prop "${name}"`)
     }
   }
-  // A component with `as` passes the rest on to the element it renders, e.g.
-  // href to a link, and the API docs can't list those props
-  if (!('as' in api.props)) Object.keys(initialProps).forEach(assertProp)
+  // The API docs leave out the aria-* props, which every component takes, and
+  // the link props that a component with `as` passes on to the element
+  const hasLinkProps = 'as' in api.props
+  for (const name of Object.keys(initialProps)) {
+    if (name.startsWith('aria-')) continue
+    if (hasLinkProps && LINK_PROPS.includes(name)) continue
+    assertProp(name)
+  }
 
-  return Object.entries(config)
-    .map(([name, controlConfig]) => {
-      assertProp(name)
-      if (controlConfig?.showWhen) assertProp(controlConfig.showWhen)
-      return getControl(name, api.props[name], controlConfig)
-    })
-    .filter(control => control !== null)
+  return Object.entries(config).map(([name, controlConfig = {}]) => {
+    assertProp(name)
+    const { showWhen } = controlConfig
+    if (typeof showWhen === 'string') assertProp(showWhen)
+    else if (showWhen) Object.keys(showWhen).forEach(assertProp)
+
+    const control = getControl(name, api.props[name], controlConfig)
+    if (!control) {
+      throw new Error(
+        `Playground: ${api.displayName}'s prop "${name}" can't be a control, give it options`,
+      )
+    }
+    return control
+  })
 }
+
+const LINK_PROPS = [
+  'href',
+  'target',
+  'rel',
+  'download',
+  'hrefLang',
+  'ping',
+  'referrerPolicy',
+]
 
 class CodeExpression {
   constructor(readonly code: string) {}
@@ -189,34 +220,106 @@ const indentCode = (code: string, indent: string) =>
     .map(line => `${indent}${line}`)
     .join('\n')
 
-const componentNames = new Map<unknown, string>()
+/**
+ * Components from other libraries than midas and lucide, by module, e.g.
+ * `{ 'react-aria-components': { Form } }`
+ */
+export type ImportsConfig = Record<string, Record<string, unknown>>
+
+type Entry = [module: string, name: string]
+
+const registry = new Map<unknown, Entry>()
 
 /**
- * Names components by their export, since a production build minifies
- * function names and most components have no displayName
+ * Names the exports of a module, since a production build minifies function
+ * names and most components have no displayName
  */
-export const registerComponentNames = (
-  ...modules: Record<string, unknown>[]
+export const registerModule = (
+  module: string,
+  exports: Record<string, unknown>,
 ) => {
-  for (const module of modules) {
-    for (const [name, value] of Object.entries(module)) {
-      if (/^[A-Z]/.test(name) && !componentNames.has(value)) {
-        componentNames.set(value, name)
-      }
+  for (const [name, value] of Object.entries(exports)) {
+    if (/^[A-Z]/.test(name) && !registry.has(value)) {
+      registry.set(value, [module, name])
     }
   }
 }
 
-const nameOf = (type: unknown) =>
-  typeof type === 'string'
-    ? type
-    : componentNames.get(type) ||
-      (type as { displayName?: string }).displayName ||
-      (type as { name?: string }).name ||
-      'Unknown'
+/**
+ * A lucide icon renders lucide's Icon and keeps its displayName when
+ * minified, so the icons need no registry, which would load all of them
+ */
+const lucideIcon = (type: unknown): Entry | undefined => {
+  const { render, displayName } = type as {
+    render?: (props: object, ref: null) => unknown
+    displayName?: string
+  }
+  if (typeof render !== 'function' || !displayName) return undefined
+  try {
+    const element = render({}, null)
+    return isValidElement(element) && element.type === Icon
+      ? ['lucide-react', displayName]
+      : undefined
+  } catch {
+    // Another component's render, which may use hooks outside of React
+    return undefined
+  }
+}
+
+/**
+ * Names the components in the code and collects their imports: midas
+ * components by their registered export, lucide icons by their name and
+ * anything else from the config
+ */
+export class CodeScope {
+  private readonly names = new Map<unknown, Entry>()
+  readonly imports: Record<string, string[]> = {}
+
+  constructor(config: ImportsConfig = {}) {
+    for (const [module, components] of Object.entries(config)) {
+      for (const [name, component] of Object.entries(components)) {
+        this.names.set(component, [module, name])
+      }
+    }
+  }
+
+  /** The name of a component, which the code then imports */
+  use(type: unknown): string {
+    if (typeof type === 'string') return type
+    const entry = this.names.get(type) ?? registry.get(type) ?? lucideIcon(type)
+    if (!entry) {
+      const name =
+        (type as { displayName?: string }).displayName ||
+        (type as { name?: string }).name
+      throw new Error(
+        `Playground: ${name || 'a component'} isn't from @midas-ds/components or lucide-react, add it to imports`,
+      )
+    }
+    const [module, name] = entry
+    this.addImport(module, name)
+    return name
+  }
+
+  addImport(module: string, name: string) {
+    this.imports[module] = [...(this.imports[module] ?? []), name]
+  }
+}
+
+const nameOf = (type: unknown, scope?: CodeScope) =>
+  scope
+    ? scope.use(type)
+    : typeof type === 'string'
+      ? type
+      : (type as { displayName?: string }).displayName ||
+        (type as { name?: string }).name ||
+        'Unknown'
 
 /** Prints any element and its children, with props as they are */
-export const childToCode = (child: ReactNode, indent = ''): string => {
+export const childToCode = (
+  child: ReactNode,
+  indent = '',
+  scope?: CodeScope,
+): string => {
   if (!isValidElement<Values>(child)) return `${indent}${String(child)}`
   if (child.type === CodeSlot) {
     return indentCode((child.props as { code: string }).code, indent)
@@ -225,11 +328,12 @@ export const childToCode = (child: ReactNode, indent = ''): string => {
   const { children, ...rest } = child.props
 
   return elementToCode(
-    nameOf(child.type),
+    nameOf(child.type, scope),
     rest,
     children as ReactNode,
     {},
     indent,
+    scope,
   )
 }
 
@@ -247,8 +351,13 @@ export const getPlaygroundProps = (controls: Control[], values: Values) => {
   const isVisible = (name: string) => {
     const showWhen = byName.get(name)?.showWhen
     if (!showWhen) return true
-    const value = valueOf(showWhen)
-    return value !== undefined && value !== false
+    if (typeof showWhen === 'string') {
+      const value = valueOf(showWhen)
+      return value !== undefined && value !== false
+    }
+    return Object.entries(showWhen).every(([other, wanted]) =>
+      (Array.isArray(wanted) ? wanted : [wanted]).includes(values[other]),
+    )
   }
 
   const names = Object.keys(values).filter(
@@ -291,6 +400,7 @@ export const elementToCode = (
   children?: ReactNode,
   defaults: Values = {},
   indent = '',
+  scope?: CodeScope,
 ): string => {
   const inner = `${indent}  `
   const attributes = Object.entries(props)
@@ -312,7 +422,9 @@ export const elementToCode = (
     return `${open}>${String(childNodes[0])}</${name}>`
   }
 
-  const body = childNodes.map(child => childToCode(child, inner)).join('\n')
+  const body = childNodes
+    .map(child => childToCode(child, inner, scope))
+    .join('\n')
 
   return `${open}${isOneLine ? '>' : `\n${indent}>`}\n${body}\n${indent}</${name}>`
 }
