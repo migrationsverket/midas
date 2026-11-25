@@ -3,22 +3,30 @@ import {
   useState,
   type ComponentProps,
   type ElementType,
+  type ReactElement,
   type ReactNode,
 } from 'react'
+import * as components from '@midas-ds/components'
 import { Checkbox, ListBoxItem, Select, TextField } from '@midas-ds/components'
+import * as layout from '@midas-ds/layout'
 import type { ApiDoc } from '@midas-ds/docgen'
 import CodeBlock from '@theme/CodeBlock'
 import {
+  childToCode,
+  CodeSlot,
   elementToCode,
   getControls,
   getPlaygroundProps,
   importsToCode,
+  registerComponentNames,
   type Control,
   type ControlConfig,
   type ControlsConfig,
   type PropName,
 } from './playgroundUtils'
 import styles from './Playground.module.css'
+
+registerComponentNames(components, layout)
 
 type Values = Record<string, unknown>
 
@@ -36,6 +44,11 @@ export interface PlaygroundProps<C extends ElementType> {
   initialProps?: { [K in PropName<ComponentProps<C>>]?: unknown }
   /** Static content, e.g. the items of a ComboBox */
   children?: ReactNode
+  /**
+   * Puts the component in context, e.g. a Tooltip in its TooltipTrigger. The
+   * wrapper is part of the generated code too.
+   */
+  wrap?: (element: ReactElement) => ReactElement
 }
 
 interface ControlRowProps {
@@ -107,6 +120,7 @@ export const Playground = <C extends ElementType>({
   controls: config,
   initialProps = {},
   children,
+  wrap,
 }: PlaygroundProps<C>) => {
   // The types only check the call site, getControls checks the names at runtime
   const controls = getControls(
@@ -125,9 +139,18 @@ export const Playground = <C extends ElementType>({
     values,
   )
   const content = (values.children as ReactNode) ?? children
+  const element = createElement(component, props, content)
+  const elementCode = elementToCode(
+    api.displayName,
+    codeProps,
+    content,
+    defaults,
+  )
   const code = [
     importsToCode(imports),
-    elementToCode(api.displayName, codeProps, content, defaults),
+    wrap
+      ? childToCode(wrap(createElement(CodeSlot, { code: elementCode })))
+      : elementCode,
   ]
     .filter(Boolean)
     .join('\n\n')
@@ -135,9 +158,7 @@ export const Playground = <C extends ElementType>({
   return (
     <div className={styles.container}>
       <div className={styles.playground}>
-        <div className={styles.preview}>
-          {createElement(component, props, content)}
-        </div>
+        <div className={styles.preview}>{wrap ? wrap(element) : element}</div>
         <div className={styles.controls}>
           {visibleControls.map(control => (
             <ControlRow

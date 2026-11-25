@@ -21,7 +21,7 @@ export interface ControlConfig<
   options?: Extract<P[K], string>[] | Record<string, P[K]>
   /** The module the named options are imported from, e.g. `lucide-react` */
   import?: string
-  /** Shows the control only when this other prop has a value */
+  /** Shows the control only when this other prop is set, and not false */
   showWhen?: PropName<P>
 }
 
@@ -83,7 +83,12 @@ export const getControl = (
       : { ...base, kind: 'enum', options: names, named: options }
   }
 
-  if (name === 'children' || prop?.type.name === 'string') {
+  // A ReactNode or a union with string, e.g. errorMessage, can take text too
+  const acceptsText =
+    prop?.type.name === 'string' ||
+    prop?.type.raw === 'ReactNode' ||
+    prop?.type.value?.some(({ value }) => value === 'string')
+  if (name === 'children' || acceptsText) {
     return { ...base, kind: 'text', defaultValue }
   }
 
@@ -118,8 +123,13 @@ export const getControls = (
   config: Partial<Record<string, ControlConfig>>,
   initialProps: Values = {},
 ): Control[] => {
+  // The API docs leave out the aria-* props, every component takes them
   const assertProp = (name: string) => {
-    if (name !== 'children' && !(name in api.props)) {
+    if (
+      name !== 'children' &&
+      !name.startsWith('aria-') &&
+      !(name in api.props)
+    ) {
       throw new Error(`Playground: ${api.displayName} has no prop "${name}"`)
     }
   }
@@ -150,6 +160,9 @@ const propToCode = (name: string, value: unknown, defaultValue: unknown) => {
       return value ? name : `${name}={false}`
     case 'number':
       return `${name}={${value}}`
+    // The code shows that a handler is needed, not what it does
+    case 'function':
+      return `${name}={() => {}}`
     case 'string':
       return value.includes("'")
         ? `${name}={${JSON.stringify(value)}}`
@@ -162,17 +175,60 @@ const propToCode = (name: string, value: unknown, defaultValue: unknown) => {
 const isVisibleChild = (child: ReactNode) =>
   typeof child !== 'string' || child.trim() !== ''
 
-const childToCode = (child: ReactNode, indent: string) => {
+/**
+ * Stands in for the playground's component in the code of a wrapper, and
+ * prints the code it is given
+ */
+export const CodeSlot = (_props: { code: string }) => null
+
+const indentCode = (code: string, indent: string) =>
+  code
+    .split('\n')
+    .map(line => `${indent}${line}`)
+    .join('\n')
+
+const componentNames = new Map<unknown, string>()
+
+/**
+ * Names components by their export, since a production build minifies
+ * function names and most components have no displayName
+ */
+export const registerComponentNames = (
+  ...modules: Record<string, unknown>[]
+) => {
+  for (const module of modules) {
+    for (const [name, value] of Object.entries(module)) {
+      if (/^[A-Z]/.test(name) && !componentNames.has(value)) {
+        componentNames.set(value, name)
+      }
+    }
+  }
+}
+
+const nameOf = (type: unknown) =>
+  typeof type === 'string'
+    ? type
+    : componentNames.get(type) ||
+      (type as { displayName?: string }).displayName ||
+      (type as { name?: string }).name ||
+      'Unknown'
+
+/** Prints any element and its children, with props as they are */
+export const childToCode = (child: ReactNode, indent = ''): string => {
   if (!isValidElement<Values>(child)) return `${indent}${String(child)}`
+  if (child.type === CodeSlot) {
+    return indentCode((child.props as { code: string }).code, indent)
+  }
 
-  const { type, props } = child
-  const name =
-    typeof type === 'string'
-      ? type
-      : (type as { displayName?: string }).displayName || type.name
-  const { children, ...rest } = props
+  const { children, ...rest } = child.props
 
-  return elementToCode(name, rest, children as ReactNode, {}, indent)
+  return elementToCode(
+    nameOf(child.type),
+    rest,
+    children as ReactNode,
+    {},
+    indent,
+  )
 }
 
 /**
@@ -188,7 +244,9 @@ export const getPlaygroundProps = (controls: Control[], values: Values) => {
   }
   const isVisible = (name: string) => {
     const showWhen = byName.get(name)?.showWhen
-    return !showWhen || valueOf(showWhen) !== undefined
+    if (!showWhen) return true
+    const value = valueOf(showWhen)
+    return value !== undefined && value !== false
   }
 
   const names = Object.keys(values).filter(

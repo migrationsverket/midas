@@ -1,13 +1,16 @@
-import { createElement, type FC } from 'react'
+import { createElement, type FC, type ReactNode } from 'react'
 import { describe, expect, it } from 'vitest'
 import type { ApiDoc, ApiProp } from '@midas-ds/docgen'
 import {
+  childToCode,
+  CodeSlot,
   codeExpression,
   elementToCode,
   getControl,
   getControls,
   getPlaygroundProps,
   importsToCode,
+  registerComponentNames,
   type Control,
 } from './playgroundUtils'
 
@@ -109,6 +112,28 @@ describe('getControl', () => {
     ).toMatchObject({ kind: 'text' })
   })
 
+  it('should map ReactNode and unions with string to a text control', () => {
+    expect(
+      getControl(
+        'message',
+        prop({ name: 'enum', raw: 'ReactNode', value: [] }),
+      ),
+    ).toMatchObject({ kind: 'text' })
+    expect(
+      getControl(
+        'errorMessage',
+        prop({
+          name: 'enum',
+          raw: '((validation: ValidationResult) => string) | string',
+          value: [
+            { value: '(validation: ValidationResult) => string' },
+            { value: 'string' },
+          ],
+        }),
+      ),
+    ).toMatchObject({ kind: 'text' })
+  })
+
   it('should treat children as text, whatever its type is', () => {
     expect(
       getControl(
@@ -169,6 +194,24 @@ describe('getPlaygroundProps', () => {
     expect(result.props).toEqual({ icon: undefined })
     expect(result.imports).toEqual({})
     expect(result.visibleControls).toEqual([icon])
+  })
+
+  it('should hide a prop whose showWhen prop is false', () => {
+    const isInvalid: Control = {
+      name: 'isInvalid',
+      kind: 'boolean',
+      defaultValue: false,
+    }
+    const errorMessage: Control = {
+      name: 'errorMessage',
+      kind: 'text',
+      showWhen: 'isInvalid',
+    }
+    const values = { isInvalid: false, errorMessage: 'Fyll i fältet' }
+    const result = getPlaygroundProps([isInvalid, errorMessage], values)
+
+    expect(result.props).toEqual({ isInvalid: false })
+    expect(result.visibleControls).toEqual([isInvalid])
   })
 
   it('should pass on props without a control, but not children', () => {
@@ -242,6 +285,12 @@ describe('elementToCode', () => {
     )
   })
 
+  it('should print a handler as an empty function', () => {
+    expect(elementToCode('FileListItem', { onDelete: () => 'deleted' })).toBe(
+      '<FileListItem onDelete={() => {}} />',
+    )
+  })
+
   it('should print code expressions unquoted', () => {
     expect(elementToCode('Button', { icon: codeExpression('Plus') })).toBe(
       '<Button icon={Plus} />',
@@ -261,6 +310,48 @@ describe('elementToCode', () => {
         '</ComboBox>',
       ].join('\n'),
     )
+  })
+})
+
+describe('childToCode', () => {
+  const Trigger: FC<{ children: ReactNode }> = () => null
+  Trigger.displayName = 'Trigger'
+
+  it('should print a wrapper with the code of the slot indented in place', () => {
+    const slotCode = [
+      '<Tooltip',
+      "  placement='top'",
+      '>',
+      '  Spara',
+      '</Tooltip>',
+    ].join('\n')
+    expect(
+      childToCode(
+        createElement(
+          Trigger,
+          null,
+          createElement('button', { key: 'a' }, 'Spara'),
+          createElement(CodeSlot, { key: 'b', code: slotCode }),
+        ),
+      ),
+    ).toBe(
+      [
+        '<Trigger>',
+        '  <button>Spara</button>',
+        '  <Tooltip',
+        "    placement='top'",
+        '  >',
+        '    Spara',
+        '  </Tooltip>',
+        '</Trigger>',
+      ].join('\n'),
+    )
+  })
+
+  it('should name a component by its registered export over its function name', () => {
+    const minified = () => null
+    registerComponentNames({ MenuTrigger: minified, useThing: () => null })
+    expect(childToCode(createElement(minified))).toBe('<MenuTrigger />')
   })
 })
 
@@ -322,6 +413,12 @@ describe('getControls', () => {
     expect(() => getControls(api, { variant: { showWhen: 'icon' } })).toThrow(
       'Playground: Button has no prop "icon"',
     )
+  })
+
+  it('should allow aria props, which the API docs leave out', () => {
+    expect(() =>
+      getControls(api, {}, { 'aria-label': 'Kalender' }),
+    ).not.toThrow()
   })
 
   it('should throw for initial props that are not props', () => {
