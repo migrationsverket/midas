@@ -146,7 +146,7 @@ describe('NavigationLink disabled state', () => {
   })
 
   it('should not warn about a non-focusable child when disabled', async () => {
-    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const warn = vi.spyOn(console, 'warn').mockImplementation(vi.fn())
 
     await render(
       <NavigationLink
