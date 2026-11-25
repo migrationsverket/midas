@@ -59,13 +59,20 @@ interface ControlRowProps {
   control: Control
   value: unknown
   onChange: (value: unknown) => void
+  isDisabled: boolean
 }
 
-const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
+const ControlRow = ({
+  control,
+  value,
+  onChange,
+  isDisabled,
+}: ControlRowProps) => {
   switch (control.kind) {
     case 'boolean':
       return (
         <Checkbox
+          isDisabled={isDisabled}
           isSelected={Boolean(value)}
           onChange={onChange}
         >
@@ -77,6 +84,7 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
       const canUnset = control.defaultValue === undefined
       return (
         <Select
+          isDisabled={isDisabled}
           label={control.name}
           size='medium'
           value={(value as string) ?? (canUnset ? UNSET : null)}
@@ -96,6 +104,7 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
     case 'toggle':
       return (
         <Checkbox
+          isDisabled={isDisabled}
           isSelected={value !== undefined}
           onChange={isSelected =>
             onChange(isSelected ? control.option : undefined)
@@ -107,6 +116,7 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
     case 'text':
       return (
         <TextField
+          isDisabled={isDisabled}
           label={control.name}
           size='medium'
           value={(value as string) ?? ''}
@@ -142,7 +152,7 @@ export const Playground = <C extends ElementType>({
   )
   const [values, setValues] = useState<Values>({ ...defaults, ...initialProps })
 
-  const { props, codeProps, imports, visibleControls } = getPlaygroundProps(
+  const { props, codeProps, imports, disabledControls } = getPlaygroundProps(
     controls,
     values,
   )
@@ -166,12 +176,15 @@ export const Playground = <C extends ElementType>({
   return (
     <div className={styles.container}>
       <div className={styles.playground}>
-        <div className={fill ? styles.previewFill : styles.preview}>{wrap ? wrap(element) : element}</div>
+        <div className={fill ? styles.previewFill : styles.preview}>
+          {wrap ? wrap(element) : element}
+        </div>
         <div className={styles.controls}>
-          {visibleControls.map(control => (
+          {controls.map(control => (
             <ControlRow
               key={control.name}
               control={control}
+              isDisabled={disabledControls.includes(control.name)}
               value={values[control.name]}
               onChange={value =>
                 setValues(current => ({ ...current, [control.name]: value }))

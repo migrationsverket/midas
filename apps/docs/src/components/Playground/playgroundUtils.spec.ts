@@ -193,10 +193,10 @@ describe('getPlaygroundProps', () => {
 
     expect(result.props).toEqual({ icon: undefined })
     expect(result.imports).toEqual({})
-    expect(result.visibleControls).toEqual([icon])
+    expect(result.disabledControls).toEqual(['iconPlacement'])
   })
 
-  it('should hide a prop whose showWhen prop is false', () => {
+  it('should leave out a prop whose showWhen prop is false, and disable its control', () => {
     const isInvalid: Control = {
       name: 'isInvalid',
       kind: 'boolean',
@@ -211,7 +211,7 @@ describe('getPlaygroundProps', () => {
     const result = getPlaygroundProps([isInvalid, errorMessage], values)
 
     expect(result.props).toEqual({ isInvalid: false })
-    expect(result.visibleControls).toEqual([isInvalid])
+    expect(result.disabledControls).toEqual(['errorMessage'])
   })
 
   it('should pass on props without a control, but not children', () => {

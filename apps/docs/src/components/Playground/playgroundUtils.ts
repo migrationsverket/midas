@@ -236,7 +236,7 @@ export const childToCode = (child: ReactNode, indent = ''): string => {
 /**
  * The props to render and to print for the current values. Named options are
  * resolved to their values, and printed by name with an import. Props whose
- * `showWhen` prop has no value are left out, and so are their controls.
+ * `showWhen` prop has no value are left out, and their controls are disabled.
  */
 export const getPlaygroundProps = (controls: Control[], values: Values) => {
   const byName = new Map(controls.map(control => [control.name, control]))
@@ -277,7 +277,10 @@ export const getPlaygroundProps = (controls: Control[], values: Values) => {
     props,
     codeProps,
     imports,
-    visibleControls: controls.filter(({ name }) => isVisible(name)),
+    // Disabled rather than hidden, so the playground doesn't change size
+    disabledControls: controls
+      .filter(({ name }) => !isVisible(name))
+      .map(({ name }) => name),
   }
 }
 
