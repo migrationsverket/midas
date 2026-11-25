@@ -113,3 +113,36 @@ export const PlacementOpen: Story = {
   ...open(Placement),
   tags: ['!dev', '!autodocs'],
 }
+
+/** Shown on the components index in the docs, hidden from Storybook */
+export const Preview: Story = {
+  args: {
+    isNonModal: true,
+    placement: 'top',
+    children: <Text>Det går inte att ångra.</Text>,
+  },
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // React Aria positions the popover from unscaled coordinates
+  parameters: { indexPreview: { fit: false } },
+  render: args => (
+    // Overlays portal into the preview, so it needs room for the popover
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        paddingTop: '3.5rem',
+        width: '18rem',
+      }}
+    >
+      <DialogTrigger defaultOpen>
+        <Button
+          variant='icon'
+          aria-label='Spara'
+        >
+          <Save />
+        </Button>
+        <Popover {...args} />
+      </DialogTrigger>
+    </div>
+  ),
+}
