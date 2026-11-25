@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([["9110"],{90597(e,a,s){s.r(a),s.d(a,{Primary:()=>l,default:()=>t});let t={component:s(60732).J,title:"Components/Typography/Label",tags:["autodocs"]},l={args:{children:"I am a label"}}}}]);

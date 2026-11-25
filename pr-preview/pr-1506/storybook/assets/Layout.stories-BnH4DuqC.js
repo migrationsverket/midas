@@ -1,0 +1,39 @@
+import{n as e}from"./rolldown-runtime-BCiCTKAo.js";import{n as t}from"./iframe-x_Tp_kt2.js";import{n,t as r}from"./dist-B2K6g6-1.js";import{a as i,c as a,i as o,n as s,o as c,r as l,s as u,t as d}from"./LayoutContent-B_lPfBey.js";import{n as f,t as p}from"./Header.stories-CSbAXddH.js";import{n as m,t as h}from"./Sidebar.stories-CNTKkWkc.js";import{n as g,t as _}from"./Navbar.stories-jSNi4Qq2.js";var v,y,b,x,S,C,w,T,E,D;function O(){return(O=e((()=>{r(),f(),m(),g(),c(),o(),s(),a(),v=t(),{Desktop:y,Mobile:b}=n(p),{Primary:x}=n(h),{Primary:S}=n(_),C={component:l,title:`Layout/Layout`,tags:[`autodocs`],args:{children:`Content`},parameters:{layout:`fullscreen`,rootElement:`div`}},w={render:e=>(0,v.jsxs)(l,{...e,children:[(0,v.jsx)(b,{}),(0,v.jsxs)(d,{children:[(0,v.jsx)(x,{}),(0,v.jsx)(i,{children:`Content`}),(0,v.jsx)(u,{id:`panel`,defaultOpen:!0,title:`Panel`})]})]})},T={globals:{viewport:{value:`small`}},render:e=>(0,v.jsxs)(l,{...e,children:[(0,v.jsx)(y,{}),(0,v.jsxs)(d,{children:[(0,v.jsx)(x,{}),(0,v.jsx)(i,{children:`Content`}),(0,v.jsx)(u,{id:`panel`,defaultOpen:!0,title:`Panel`})]}),(0,v.jsx)(S,{})]})},E={...T,tags:[`!dev`,`!autodocs`,`!snapshot`],args:{style:{height:`540px`}},parameters:{indexPreview:{width:`1280px`}}},D=[`WithMobileMenu`,`WithNavbar`,`Preview`],w.parameters={...w.parameters,docs:{...w.parameters?.docs,source:{originalSource:`{
+  render: args => <Layout {...args}>
+      <HeaderWithMobileMenu />
+      <LayoutContent>
+        <PrimarySidebar />
+        <Main>Content</Main>
+        <Panel id='panel' defaultOpen title='Panel' />
+      </LayoutContent>
+    </Layout>
+}`,...w.parameters?.docs?.source}}},T.parameters={...T.parameters,docs:{...T.parameters?.docs,source:{originalSource:`{
+  globals: {
+    viewport: {
+      value: 'small'
+    }
+  },
+  render: args => <Layout {...args}>
+      <PrimaryHeader />
+      <LayoutContent>
+        <PrimarySidebar />
+        <Main>Content</Main>
+        <Panel id='panel' defaultOpen title='Panel' />
+      </LayoutContent>
+      <PrimaryNavbar />
+    </Layout>
+}`,...T.parameters?.docs?.source}}},E.parameters={...E.parameters,docs:{...E.parameters?.docs,source:{originalSource:`{
+  ...WithNavbar,
+  tags: ['!dev', '!autodocs', '!snapshot'],
+  // Fills the viewport's height, so it's given a desktop size instead
+  args: {
+    style: {
+      height: '540px'
+    }
+  },
+  parameters: {
+    indexPreview: {
+      width: '1280px'
+    }
+  }
+}`,...E.parameters?.docs?.source},description:{story:`Shown on the components index in the docs, hidden from Storybook`,...E.parameters?.docs?.description}}}})))()}O();export{E as Preview,w as WithMobileMenu,T as WithNavbar,D as __namedExportsOrder,C as default};
