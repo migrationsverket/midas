@@ -34,7 +34,15 @@ import { ComboBox, ListBoxItem } from '@midas-ds/components'
   component={ComboBox}
   api={ComboBoxApi}
   initialProps={{ label: 'Välj din favoritfrukt' }}
-  controls={{ label: {}, description: {}, size: {}, isDisabled: {} }}
+  controls={{
+    label: {},
+    description: {},
+    size: {},
+    isDisabled: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
 >
   <ListBoxItem id='Lime'>Lime</ListBoxItem>
   <ListBoxItem id='Äpple'>Äpple</ListBoxItem>
