@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Keyboard, SubmenuTrigger, type Selection } from 'react-aria-components'
-import { Collection } from '../aria'
+import { Collection, Keyboard, SubmenuTrigger, type Selection } from '../aria'
 import { EllipsisVertical } from 'lucide-react'
 import React from 'react'
 import { Menu, MenuTrigger, type MenuProps } from './Menu'

@@ -12,6 +12,8 @@ import {
   RouterProvider,
   MenuTrigger,
   DialogTrigger,
+  SubmenuTrigger,
+  Keyboard,
 } from 'react-aria-components'
 import { withDisplayName } from '../utils/withDisplayName'
 
@@ -24,6 +26,8 @@ withDisplayName(Virtualizer, 'Virtualizer')
 withDisplayName(RouterProvider, 'RouterProvider')
 withDisplayName(MenuTrigger, 'MenuTrigger')
 withDisplayName(DialogTrigger, 'DialogTrigger')
+withDisplayName(SubmenuTrigger, 'SubmenuTrigger')
+withDisplayName(Keyboard, 'Keyboard')
 
 export {
   Focusable,
@@ -35,6 +39,8 @@ export {
   RouterProvider,
   MenuTrigger,
   DialogTrigger,
+  SubmenuTrigger,
+  Keyboard,
 }
 export { useLocale, ButtonContext, TableLayout } from 'react-aria-components'
 
