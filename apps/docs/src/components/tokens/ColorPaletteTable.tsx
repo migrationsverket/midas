@@ -1,6 +1,8 @@
-import { useState } from 'react'
 import { TransformedToken } from 'style-dictionary/types'
-import { Copy, Check } from 'lucide-react'
+import { useState } from 'react'
+import { Copy, Check, TriangleAlert } from 'lucide-react'
+import { VisuallyHidden } from 'react-aria'
+import { useCopyToClipboard, type CopyStatus } from '@midas-ds/components'
 import { getCSSVariableName } from './utils'
 import styles from './ColorPaletteTable.module.css'
 
@@ -51,32 +53,45 @@ const getFamilyTokens = (family: any): TransformedToken[] =>
     .filter(([k, v]) => !k.startsWith('$') && v?.$value !== undefined)
     .map(([, v]) => v as TransformedToken)
 
-const Swatch = ({ token }: { token: TransformedToken }) => {
-  const [copied, setCopied] = useState(false)
+const statusIcons = { idle: Copy, copied: Check, failed: TriangleAlert }
+
+const Swatch = ({
+  token,
+  status,
+  onCopy,
+}: {
+  token: TransformedToken
+  status: CopyStatus
+  onCopy: (cssVar: string) => void
+}) => {
   const cssVar = getCSSVariableName(token)
   const value = token.$value as string
   const step = token.path?.[token.path.length - 1]
   const light = isLight(value)
   const labelColor = light ? 'rgba(0,0,0,0.55)' : 'rgba(255,255,255,0.8)'
-
-  const handleClick = async () => {
-    await navigator.clipboard.writeText(cssVar)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1500)
-  }
+  const Icon = statusIcons[status]
 
   return (
     <button
-      className={`${styles.swatch} ${copied ? styles.copied : ''}`}
+      className={styles.swatch}
+      data-status={status}
       style={{ backgroundColor: value }}
-      onClick={handleClick}
+      onClick={() => onCopy(cssVar)}
       title={`${cssVar}\n${value}`}
-      aria-label={`Copy ${cssVar}`}
+      aria-label={`Kopiera ${cssVar}`}
     >
-      <span className={styles.copyIcon} style={{ color: labelColor }}>
-        {copied ? <Check size={12} /> : <Copy size={12} />}
+      <span
+        className={styles.copyIcon}
+        style={{ color: labelColor }}
+      >
+        <Icon size={12} />
       </span>
-      <span className={styles.step} style={{ color: labelColor }}>{step}</span>
+      <span
+        className={styles.step}
+        style={{ color: labelColor }}
+      >
+        {step}
+      </span>
     </button>
   )
 }
@@ -85,6 +100,15 @@ export const ColorPaletteTable = ({ tokens }: { tokens: any }) => {
   const families = sortEntries(
     Object.entries(tokens).filter(([k]) => !k.startsWith('$')),
   )
+  // One copy status and one status region for the whole table, not one per
+  // swatch: there are hundreds of them
+  const { copy, status } = useCopyToClipboard({ resetAfter: 1500 })
+  const [lastCopied, setLastCopied] = useState<string>()
+
+  const copyToken = (cssVar: string) => {
+    setLastCopied(cssVar)
+    copy(cssVar)
+  }
 
   return (
     <div className={styles.container}>
@@ -92,16 +116,33 @@ export const ColorPaletteTable = ({ tokens }: { tokens: any }) => {
         const swatches = getFamilyTokens(family)
         if (swatches.length === 0) return null
         return (
-          <div key={familyName} className={styles.row}>
+          <div
+            key={familyName}
+            className={styles.row}
+          >
             <div className={styles.familyName}>{familyName}</div>
             <div className={styles.swatches}>
               {swatches.map(token => (
-                <Swatch key={getCSSVariableName(token)} token={token} />
+                <Swatch
+                  key={getCSSVariableName(token)}
+                  token={token}
+                  status={
+                    lastCopied === getCSSVariableName(token) ? status : 'idle'
+                  }
+                  onCopy={copyToken}
+                />
               ))}
             </div>
           </div>
         )
       })}
+      <VisuallyHidden
+        role='status'
+        elementType='span'
+      >
+        {status === 'copied' && 'Kopierat'}
+        {status === 'failed' && 'Kunde inte kopiera'}
+      </VisuallyHidden>
     </div>
   )
 }

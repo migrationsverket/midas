@@ -1,0 +1,12 @@
+{
+  "en": {
+    "copy": "Copy",
+    "copied": "Copied",
+    "failed": "Couldn't copy"
+  },
+  "sv": {
+    "copy": "Kopiera",
+    "copied": "Kopierat",
+    "failed": "Kunde inte kopiera"
+  }
+}

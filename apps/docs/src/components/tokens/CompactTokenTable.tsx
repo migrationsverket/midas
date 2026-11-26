@@ -1,5 +1,5 @@
 import { TransformedToken } from 'style-dictionary/types'
-import { CopyButton } from '@site/src/components/CopyButton'
+import { CopyableText } from '@site/src/components/CopyableText'
 import { getCSSVariableName } from './utils'
 import styles from './CompactTokenTable.module.css'
 
@@ -115,7 +115,7 @@ export const CompactTokenTable = ({
             <tr key={cssVar}>
               <td className={styles.tokenPath}>{path}</td>
               <td className={styles.cssVar}>
-                <CopyButton text={cssVar} />
+                <CopyableText text={cssVar} />
               </td>
               <td className={styles.value}>
                 <code>{valueStr}</code>
