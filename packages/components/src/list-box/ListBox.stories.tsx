@@ -5,6 +5,7 @@ import { ListBoxItem } from './ListBoxItem'
 import { ListBoxSection } from './ListBoxSection'
 import { ListBoxHeader } from './ListBoxHeader'
 import { Collection } from '../aria'
+import { childrenSource } from '../utils/childrenSource'
 
 type Story<T extends object = Fruit> = StoryObj<typeof ListBox<T>>
 
@@ -13,7 +14,13 @@ export default {
   subcomponents: { ListBoxItem },
   tags: ['autodocs'],
   title: 'Internal/ListBox',
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    layout: 'fullscreen',
+    ...childrenSource(
+      'ListBox',
+      '{item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}',
+    ),
+  },
   args: {
     'aria-label': 'fruit',
     children: item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>,
@@ -28,6 +35,19 @@ export const SelectionModeSingle: Story = {
 }
 
 export const Sectioned: Story<(typeof optionsWithSections)[0]> = {
+  parameters: childrenSource(
+    'ListBox',
+    `{section => (
+  <ListBoxSection id={section.name}>
+    <ListBoxHeader>
+      {section.name + ' and a long string for testing purposes'}
+    </ListBoxHeader>
+    <Collection items={section.children}>
+      {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+    </Collection>
+  </ListBoxSection>
+)}`,
+  ),
   args: {
     items: optionsWithSections,
     children: section => (

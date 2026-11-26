@@ -1,5 +1,4 @@
 import {
-  DialogTrigger,
   Modal as AriaModal,
   Dialog as AriaDialog,
   composeRenderProps,
@@ -30,7 +29,7 @@ export interface ModalProps extends ModalOverlayProps {
   footer?: React.ReactNode
 }
 
-export { DialogTrigger }
+export { DialogTrigger } from '../aria'
 
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   ({ children, title, hideCloseButton = false, footer, ...rest }, ref) => {

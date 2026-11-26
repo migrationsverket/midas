@@ -1,6 +1,5 @@
 import {
   Menu as AriaMenu,
-  MenuTrigger,
   type MenuTriggerProps,
   type MenuProps as AriaMenuProps,
 } from 'react-aria-components'
@@ -8,7 +7,8 @@ import clsx from '../utils/clsx'
 import type { Size } from '../common/types'
 import styles from './Menu.module.css'
 
-export { MenuTrigger, type MenuTriggerProps }
+export { MenuTrigger } from '../aria'
+export type { MenuTriggerProps }
 
 export interface MenuProps<T> extends AriaMenuProps<T> {
   /** Component size (large: height 40px, medium: height 32px)

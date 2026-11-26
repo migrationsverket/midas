@@ -1,14 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import {
-  Keyboard,
-  MenuTrigger,
-  SubmenuTrigger,
-  type Selection,
-} from 'react-aria-components'
-import { Collection } from '../aria'
-import { MenuIcon } from 'lucide-react'
+import { Collection, Keyboard, SubmenuTrigger, type Selection } from '../aria'
+import { EllipsisVertical } from 'lucide-react'
 import React from 'react'
-import { Menu, type MenuProps } from './Menu'
+import { Menu, MenuTrigger, type MenuProps } from './Menu'
 import { MenuHeader } from './MenuHeader'
 import { MenuItem } from './MenuItem'
 import { Button } from '../button'
@@ -16,6 +10,7 @@ import { MenuPopover } from './MenuPopover'
 import { Text } from '../text'
 import { MenuSection } from './MenuSection'
 import { Separator } from './Separator'
+import { childrenSource } from '../utils/childrenSource'
 
 interface Item {
   id: string | number
@@ -36,7 +31,7 @@ const renderMenu = <T extends object>(
       variant='icon'
       size={args.size}
     >
-      <MenuIcon size={20} />
+      <EllipsisVertical size={20} />
     </Button>
     <MenuPopover>
       <Menu {...args} />
@@ -66,6 +61,10 @@ export default {
     MenuItem,
   },
   render: args => renderMenu(args),
+  parameters: childrenSource(
+    'Menu',
+    '{item => <MenuItem {...item}>{item.name}</MenuItem>}',
+  ),
   args: {
     children: item => <MenuItem {...item}>{(item as Item).name}</MenuItem>,
     items: [
@@ -97,7 +96,7 @@ export const ControlledSingleSelection: Story = {
             variant='icon'
             size={args.size}
           >
-            <MenuIcon size={20} />
+            <EllipsisVertical size={20} />
           </Button>
           <MenuPopover>
             <Menu
@@ -134,7 +133,7 @@ export const ControlledMultipleSelection: Story = {
             variant='icon'
             size={args.size}
           >
-            <MenuIcon size={20} />
+            <EllipsisVertical size={20} />
           </Button>
           <MenuPopover>
             <Menu
@@ -159,6 +158,17 @@ export const ControlledMultipleSelection: Story = {
 }
 
 export const Sections: Story = {
+  parameters: childrenSource(
+    'Menu',
+    `{section => (
+  <MenuSection>
+    <MenuHeader>{section.name}</MenuHeader>
+    <Collection items={section.children}>
+      {item => <MenuItem>{item.name}</MenuItem>}
+    </Collection>
+  </MenuSection>
+)}`,
+  ),
   args: {
     items: [
       {

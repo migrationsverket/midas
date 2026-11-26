@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Breadcrumbs } from './Breadcrumbs'
 import { Breadcrumb } from './Breadcrumb'
 import { Link } from '../link'
+import { childrenSource } from '../utils/childrenSource'
 
 type Item = { title: string; href: string }
 type Story = StoryObj<typeof Breadcrumbs<Item>>
@@ -11,6 +12,14 @@ export default {
   subcomponents: { Breadcrumb, Link },
   title: 'Components/Breadcrumbs',
   tags: ['autodocs'],
+  parameters: childrenSource(
+    'Breadcrumbs',
+    `{item => (
+  <Breadcrumb id={item.title}>
+    <Link href={item.href}>{item.title}</Link>
+  </Breadcrumb>
+)}`,
+  ),
   args: {
     items: [
       { title: 'Jag vill förlänga', href: '#' },

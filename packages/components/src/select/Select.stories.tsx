@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Collection, type Key } from '../aria'
 import { Select, SelectionMode } from './Select'
 import { ListBoxHeader, ListBoxItem, ListBoxSection } from '../list-box'
+import { childrenSource } from '../utils/childrenSource'
 
 type Story<
   T extends object = Item,
@@ -18,6 +19,10 @@ export default {
   component: Select,
   title: 'Components/Select',
   tags: ['autodocs'],
+  parameters: childrenSource(
+    'Select',
+    '{item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}',
+  ),
   args: {
     children: item => <ListBoxItem {...item}>{item.name}</ListBoxItem>,
     description: 'Description',
@@ -231,6 +236,17 @@ export const NotVirtualized: Story = {
 }
 
 export const DynamicSections: Story<Section> = {
+  parameters: childrenSource(
+    'Select',
+    `{section => (
+  <ListBoxSection id={section.name}>
+    <ListBoxHeader>{section.name}</ListBoxHeader>
+    <Collection items={section.children}>
+      {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+    </Collection>
+  </ListBoxSection>
+)}`,
+  ),
   args: {
     ...Primary.args,
     items: optionsWithSections,

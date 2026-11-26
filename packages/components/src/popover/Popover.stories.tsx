@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Heading, Save } from 'lucide-react'
+import { Save } from 'lucide-react'
 import { Popover } from './Popover'
-import { DialogTrigger } from 'react-aria-components'
+import { DialogTrigger } from '../modal'
+import { Heading } from '../heading'
 import { Text } from '../text'
 import { Button } from '../button'
 
