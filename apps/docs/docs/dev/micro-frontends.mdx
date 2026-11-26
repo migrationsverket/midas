@@ -1,0 +1,151 @@
+---
+title: Micro frontends
+description: Använd Midas i flera appar på samma sida med Module Federation
+---
+
+# Micro frontends och Module Federation
+
+När flera appar renderas på samma sida, till exempel med
+[Module Federation](https://module-federation.io/), behöver de dela på Midas. Gör de inte det
+fungerar komponenterna var för sig men inte tillsammans, och det syns sällan som ett fel.
+
+Kort sammanfattat:
+
+- Dela `@midas-ds/components`, `react-aria-components`, `react-aria` och `react-stately` som
+  singletons, inte bara `react` och `react-dom`.
+- Låt bara skalet (värdappen, "host") importera `default.css` och rendera de globala
+  leverantörerna: `I18nProvider`, `GlobalToastRegion`, `RouterProvider` och `ColorSchemeSwitch`.
+- Håll alla appar på samma major-version av Midas, och uppdatera skalet först.
+
+I [exemplet på GitHub](https://github.com/migrationsverket/midas/tree/main/examples/module-federation)
+finns ett skal och en remote som är uppsatta på det här sättet. Där kan du också se vad som händer
+när bara React delas.
+
+## Dela Midas som singleton
+
+Midas och React Aria har tillstånd på modulnivå: toast-kön, språkinställning, routing och
+hantering av fokus och overlays. Varje kopia av paketen på sidan får sitt eget tillstånd. Därför
+måste alla appar använda samma kopia.
+
+```ts title="vite.config.ts (alla appar, både skal och remotes)"
+import { federation } from '@module-federation/vite'
+
+const singleton = (requiredVersion: string) => ({ singleton: true, requiredVersion })
+
+export default defineConfig({
+  plugins: [
+    federation({
+      // name, exposes, remotes ...
+      shared: {
+        react: singleton('^19.0.0'),
+        'react-dom': singleton('^19.0.0'),
+        'react/jsx-runtime': singleton('^19.0.0'),
+        '@midas-ds/components': singleton('^17.0.0'),
+        'react-aria-components': singleton('^1.0.0'),
+        'react-aria': singleton('^3.0.0'),
+        'react-stately': singleton('^3.0.0'),
+      },
+    }),
+  ],
+})
+```
+
+`shared` ser likadan ut med `@module-federation/enhanced` för webpack och Rspack.
+
+Använder ni `@midas-ds/layout` delar ni även det på samma sätt.
+
+### Varför `requiredVersion`?
+
+Utan `requiredVersion` hämtar Module Federation versionen från appens `package.json`. Har en app
+låst Midas till exakt `17.20.0` kräver den exakt den versionen, och ni får en varning i konsolen
+när en annan version används. Med `strictVersion` slutar appen fungera. Ange därför ett intervall
+på major-nivå.
+
+### Vad händer om Midas inte delas?
+
+Delar apparna bara React fungerar komponenterna som vanligt så länge de används inom en och samma
+app. Över gränsen mellan apparna slutar de fungera:
+
+| Symptom                                                                   | Orsak                                                         |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Datum och texter i en remote visas på webbläsarens språk, inte skalets    | Skalets `I18nProvider` når inte remotens kopia av React Aria  |
+| Toasts från en remote visas aldrig                                        | `toastQueue` är en egen kö per kopia                          |
+| En `Select` eller `ComboBox` från en remote öppnas inte i skalets `Modal` | Skalets modal och remotens popover hanterar fokus var för sig |
+| Escape stänger skalets modal i stället för remotens popover               | Samma orsak                                                   |
+| Länkar i en remote laddar om sidan                                        | Skalets `RouterProvider` når inte remotens kopia              |
+
+När det finns flera kopior av `@midas-ds/components` på sidan varnar Midas i konsolen under
+utveckling:
+
+```
+Several copies of @midas-ds/components are running on this page (17.38.0 and 17.20.0). ...
+```
+
+Samma varning kan dyka upp utan micro frontends, om pakethanteraren har installerat två
+versioner. Kör `npm ls @midas-ds/components` för att se varifrån de kommer.
+
+## Global CSS
+
+`default.css` sätter alla design tokens (`--midas-*`) på `:root`, och laddar typsnitt och
+färgschema. Det finns bara en `:root` per sida, så den stylesheet som laddas sist gäller för alla
+appar. Importerar en remote med en äldre version av Midas `default.css` får även skalet de äldre
+värdena.
+
+Låt därför bara skalet importera `default.css`. En remote som också ska gå att köra fristående
+importerar den bara i sin egen startfil, inte i modulen den exponerar:
+
+```tsx title="remote/src/standalone.tsx (används bara när remoten körs fristående)"
+import '@midas-ds/components/default.css'
+import { createRoot } from 'react-dom/client'
+import { GlobalToastRegion } from '@midas-ds/components'
+import Widget from './Widget'
+
+createRoot(document.getElementById('root')!).render(
+  <>
+    <GlobalToastRegion />
+    <Widget />
+  </>,
+)
+```
+
+```tsx title="remote/src/Widget.tsx (exponeras till skalet)"
+// Ingen import av default.css här
+import { Button } from '@midas-ds/components'
+
+export default function Widget() {
+  return <Button>Från remoten</Button>
+}
+```
+
+Komponenternas egen CSS behöver ni inte göra något åt. Klassnamnen bygger på innehållet i
+CSS:en, så två versioner kan inte skriva över varandras stilar.
+
+## Globala leverantörer
+
+Rendera följande en gång, i skalet. Remotes som delar Midas med skalet använder dem automatiskt.
+
+- `I18nProvider`, se [Lokalisering](./localization.mdx)
+- `GlobalToastRegion`. Remotes anropar `toastQueue.add()` som vanligt.
+- `RouterProvider`, se [Routing på klientnivå](./client-side-routing.mdx)
+- `ColorSchemeSwitch`, se [Mörkt läge](./dark-mode.mdx). Den sätter `data-color-scheme` på
+  `<html>`, så flera reglage på samma sida skriver över varandra.
+
+## Versioner
+
+När Midas delas som singleton använder alla appar samma version. Module Federation väljer den
+högsta versionen som finns på sidan, även om den kommer från en remote. En app som är byggd mot
+`17.20.0` kan alltså köras med `17.38.0`.
+
+Det fungerar inom samma major-version, med ett undantag: design tokens kommer från skalets
+`default.css`. Är skalet äldre än komponenterna saknas tokens som har lagts till senare, och
+komponenter som använder dem kan se fel ut. Uppdatera därför skalet först, eller samtidigt som
+remotes.
+
+Byt major-version i alla appar samtidigt.
+
+## Paketstorlek
+
+En delad modul kan inte tree-shakas, eftersom Module Federation inte vet vilka komponenter
+andra appar använder. Hela `@midas-ds/components` och React Aria laddas därför, ungefär
+650 kB minifierat och 185 kB med gzip. Det laddas bara en gång, oavsett hur många appar som
+använder Midas.
