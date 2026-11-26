@@ -1,0 +1,25 @@
+/*
+ * Mirrors the [data-disabled] styles in Button.module.css. The class is
+ * repeated to beat the hover and pressed rules there, which react-aria still
+ * applies since the button isn't really disabled
+ */
+.inactive.inactive.inactive {
+  color: var(--midas-text-disabled);
+  cursor: not-allowed;
+  background-color: var(--midas-button-background-disabled);
+
+  &[data-variant='secondary'] {
+    border-color: var(--midas-border-color-disabled);
+  }
+
+  &[data-variant='tertiary'],
+  &[data-variant='icon'] {
+    background-color: transparent;
+  }
+
+  /* Native :disabled gets GrayText for free, aria-disabled doesn't */
+  @media (forced-colors: active) {
+    color: GrayText;
+    border-color: GrayText;
+  }
+}
