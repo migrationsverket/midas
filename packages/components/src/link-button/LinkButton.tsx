@@ -117,4 +117,4 @@ const Icon = ({
   ...rest
 }: { icon: LucideIcon } & LucideProps) => <IconComponent {...rest} />
 
-export { RouterProvider } from '../link'
+export { RouterProvider } from '../aria'

@@ -9,6 +9,9 @@ import {
   Form,
   Collection,
   Virtualizer,
+  RouterProvider,
+  MenuTrigger,
+  DialogTrigger,
 } from 'react-aria-components'
 import { withDisplayName } from '../utils/withDisplayName'
 
@@ -18,8 +21,21 @@ withDisplayName(I18nProvider, 'I18nProvider')
 withDisplayName(Form, 'Form')
 withDisplayName(Collection, 'Collection')
 withDisplayName(Virtualizer, 'Virtualizer')
+withDisplayName(RouterProvider, 'RouterProvider')
+withDisplayName(MenuTrigger, 'MenuTrigger')
+withDisplayName(DialogTrigger, 'DialogTrigger')
 
-export { Focusable, Pressable, I18nProvider, Form, Collection, Virtualizer }
+export {
+  Focusable,
+  Pressable,
+  I18nProvider,
+  Form,
+  Collection,
+  Virtualizer,
+  RouterProvider,
+  MenuTrigger,
+  DialogTrigger,
+}
 export { useLocale, ButtonContext, TableLayout } from 'react-aria-components'
 
 export type {

@@ -1,8 +1,7 @@
 'use client'
 
 import styles from './Link.module.css'
-import { Link as AriaLink, RouterProvider } from 'react-aria-components'
-import { withDisplayName } from '../utils/withDisplayName'
+import { Link as AriaLink } from 'react-aria-components'
 import { VisuallyHidden } from 'react-aria'
 import clsx from '../utils/clsx'
 import {
@@ -98,5 +97,4 @@ const Icon = ({
   ...rest
 }: { icon: LucideIcon } & LucideProps) => <IconComponent {...rest} />
 
-withDisplayName(RouterProvider, 'RouterProvider')
-export { RouterProvider }
+export { RouterProvider } from '../aria'

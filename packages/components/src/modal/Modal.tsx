@@ -1,11 +1,9 @@
 import {
-  DialogTrigger,
   Modal as AriaModal,
   Dialog as AriaDialog,
   composeRenderProps,
 } from 'react-aria-components'
 import { forwardRef } from 'react'
-import { withDisplayName } from '../utils/withDisplayName'
 import { Button } from '../button'
 import styles from './Modal.module.css'
 import { X } from 'lucide-react'
@@ -31,8 +29,7 @@ export interface ModalProps extends ModalOverlayProps {
   footer?: React.ReactNode
 }
 
-withDisplayName(DialogTrigger, 'DialogTrigger')
-export { DialogTrigger }
+export { DialogTrigger } from '../aria'
 
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   ({ children, title, hideCloseButton = false, footer, ...rest }, ref) => {
