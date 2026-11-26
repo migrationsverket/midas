@@ -7,13 +7,13 @@
 }
 
 .mobile {
-  @media (width > 640px) {
+  @media (width > 768px) {
     display: none;
   }
 }
 
 .desktop {
-  @media (width <= 640px) {
+  @media (width <= 768px) {
     display: none;
   }
 }
