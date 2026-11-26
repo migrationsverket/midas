@@ -1,0 +1,186 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks'
+import * as StepperStories from '../../../../packages/components/src/stepper/Stepper.stories'
+
+<Meta
+  of={StepperStories}
+  name='Så funkar det'
+/>
+
+# Stepper: så funkar det
+
+Stepper visar var användaren befinner sig i ett flöde med flera steg. Vilka steg som finns och vilket som är aktuellt bestämmer appen, eftersom det hänger ihop med routing, formulärdata och validering som appen redan har koll på. Stepper har alltså inget eget state och ingen navigering, den ritar bara upp stegen du ger den.
+
+## Skriva stegen
+
+Stegen skrivs som `Step` inuti `Stepper`, på samma sätt som `Tab` i `Tabs`. Är flödet kort och stegen kända i förväg kan du skriva dem direkt, och steg som bara gäller ibland lägger du till med ett vanligt villkor.
+
+```tsx
+<Stepper currentStep={step}>
+  <Step
+    id='person'
+    href='/ansokan/person'
+  >
+    Personuppgifter
+  </Step>
+  {hasChildren && (
+    <Step
+      id='barn'
+      href='/ansokan/barn'
+    >
+      Barn
+    </Step>
+  )}
+  <Step
+    id='adress'
+    href='/ansokan/adress'
+  >
+    Adress
+  </Step>
+  <Step
+    id='granska'
+    href='/ansokan/granska'
+  >
+    Granska och skicka
+  </Step>
+</Stepper>
+```
+
+<Canvas of={StepperStories.Primary} />
+
+I de flesta riktiga flöden är det smidigare att ha stegen i en lista. Samma lista kan då styra routes och knapparna för Nästa och Tillbaka, så att stegen bara finns på ett ställe.
+
+```tsx
+// ansokan/steps.ts
+export const getSteps = (answers: Answers) => [
+  { id: 'person', label: 'Personuppgifter' },
+  ...(answers.hasChildren ? [{ id: 'barn', label: 'Barn' }] : []),
+  { id: 'adress', label: 'Adress' },
+  { id: 'granska', label: 'Granska och skicka' },
+]
+```
+
+```tsx
+<Stepper
+  items={getSteps(answers)}
+  currentStep={params.step}
+>
+  {step => (
+    <Step
+      id={step.id}
+      href={`/ansokan/${step.id}`}
+    >
+      {step.label}
+    </Step>
+  )}
+</Stepper>
+```
+
+<Canvas of={StepperStories.Items} />
+
+`currentStep` är stegets id, inte dess nummer. Om ett steg tillkommer eller försvinner på grund av ett svar står användaren kvar där den var.
+
+## Bygga flödet
+
+Vi rekommenderar en route per steg, till exempel `/ansokan/[step]`. Då kan URL:en avgöra vilket steg som är aktuellt, och bakåtknappen, omladdning och direktlänkar fungerar utan extra arbete. Lägg Stepper i layouten så att den inte monteras om vid varje steg.
+
+När användaren klickar på Nästa validerar appen formuläret och navigerar sedan till nästa steg i listan. Ge alla steg en `href`, Stepper gör själv om de avklarade stegen till länkar.
+
+Glöm inte fokus. När steget byts ska fokus flyttas till rubriken för det nya steget, annars blir det kvar på knappen eller hamnar överst på sidan, och den som använder skärmläsare märker inte att något hänt. Exemplet nedan är skrivet för hand utan hjälp från Midas, och du kan kryssa i "Jag har barn" för att se ett steg tillkomma.
+
+<Canvas of={StepperStories.FlowWithoutHook} />
+
+## useStepper, ett förslag
+
+> Det här är en del av spiken och API:et är inte bestämt. Vi vill veta om hooken gör flödet enklare att bygga eller om den mest är i vägen, så hör av dig med vad du tycker.
+
+`useStepper` tar hand om det som annars upprepas i varje flöde: vilket steg som är aktuellt, Nästa och Tillbaka, och att fokus hamnar på rubriken. Hooken flyttar fokus varje gång steget byts, oavsett om det var en knapp, en länk i Stepper, webbläsarens bakåtknapp eller att det aktuella steget försvann ur listan. Vid första renderingen flyttas inget fokus. Vilka steg som finns, vad som sparas och när formuläret är giltigt bestämmer appen precis som förut, så Nästa ska anropas först när steget har validerats.
+
+```tsx
+const stepper = useStepper({ steps: getSteps(answers) })
+
+<Stepper {...stepper.stepperProps}>
+  {step => <Step id={step.id}>{step.label}</Step>}
+</Stepper>
+<Heading {...stepper.headingProps} level={2}>
+  {stepper.current?.label}
+</Heading>
+<Button onPress={stepper.back} isDisabled={stepper.isFirst}>Tillbaka</Button>
+<Button onPress={stepper.next}>Nästa</Button>
+```
+
+<Canvas of={StepperStories.Flow} />
+
+Om användaren står på ett steg som försvinner ur listan hamnar hen på steget som tog dess plats. Prova att kryssa i rutan, gå till Barn och kryssa ur den igen.
+
+### En route per steg
+
+Med en router skickar appen in `currentStep` från URL:en och navigerar i `onCurrentStepChange`. Hooken och Stepper ligger i layouten, som finns kvar mellan stegen, medan varje steg är en egen sida med sin rubrik och sitt formulär. Sidan behöver komma åt hooken för att kunna sätta `headingProps` på sin rubrik och anropa `next`, och i spiken löser vi det med `StepperStateContext`. Det är den del av förslaget vi är minst säkra på.
+
+```tsx
+// app/ansokan/layout.tsx
+const segment = useSelectedLayoutSegment()
+const router = useRouter()
+const stepper = useStepper({
+  steps: getSteps(answers),
+  currentStep: segment,
+  onCurrentStepChange: id => router.push(`/ansokan/${id}`),
+})
+
+return (
+  <StepperStateContext.Provider value={stepper}>
+    <Stepper {...stepper.stepperProps}>
+      {step => (
+        <Step
+          id={step.id}
+          href={`/ansokan/${step.id}`}
+        >
+          {step.label}
+        </Step>
+      )}
+    </Stepper>
+    {children}
+  </StepperStateContext.Provider>
+)
+```
+
+```tsx
+// app/ansokan/adress/page.tsx
+const stepper = useContext(StepperStateContext)
+
+return (
+  <form
+    onSubmit={event => {
+      event.preventDefault()
+      save(event)
+      stepper.next()
+    }}
+  >
+    <Heading
+      {...stepper.headingProps}
+      level={2}
+    >
+      Adress
+    </Heading>
+    <TextField
+      label='Gatuadress'
+      name='street'
+      isRequired
+    />
+    <Button type='submit'>Nästa</Button>
+  </form>
+)
+```
+
+Ett komplett exempel med formulär i varje steg finns i `apps/next/app/stepper`, där mappstrukturen visar var allt hör hemma: `layout.tsx` äger listan med steg, svaren och Stepper, och varje stegs mapp har en `page.tsx` med bara sitt eget formulär. Next.js flyttar inte fokus själv vid navigering, så hooken krockar inte med routern. Exemplet nedan gör samma sak i Storybook, där sidan monteras om vid varje steg som den skulle göra under en router.
+
+<Canvas of={StepperStories.RoutePerStep} />
+
+## Smala skärmar
+
+Om behållaren är smalare än 36rem visas bara stegnumren, med "Steg 2 av 4" och namnet på det aktuella steget ovanför. Etiketterna finns kvar för skärmläsare. Stepper utgår från sin egen bredd och inte fönstrets, så det fungerar även i en smal spalt.
+
+<Canvas of={StepperStories.Narrow} />
+
+## Tillgänglighet
+
+Stepper är ett `nav`-landmärke med etiketten "Steg" som innehåller en numrerad lista. Det aktuella steget har `aria-current="step"` och avklarade steg läses upp med ", klart" efter namnet. Det finns inga egna tangentbordskommandon, avklarade steg är vanliga länkar som nås med Tab.
