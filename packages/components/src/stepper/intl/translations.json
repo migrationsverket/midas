@@ -1,0 +1,12 @@
+{
+  "en": {
+    "steps": "Steps",
+    "stepOf": "Step {current} of {total}",
+    "completed": "completed"
+  },
+  "sv": {
+    "steps": "Steg",
+    "stepOf": "Steg {current} av {total}",
+    "completed": "klart"
+  }
+}

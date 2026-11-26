@@ -1,0 +1,121 @@
+.stepper {
+  container-type: inline-size;
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
+}
+
+.summary {
+  display: none;
+  flex-direction: column;
+  gap: var(--midas-space-xsmall);
+  margin: 0 0 var(--midas-space-small);
+}
+
+.summaryLabel {
+  font-weight: var(--midas-typography-weight-semi-bold);
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step {
+  --marker-size: var(--midas-size-control-sm);
+
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--midas-space-xsmall);
+  min-width: 0;
+  position: relative;
+  text-align: center;
+
+  /* The line to the previous step, from its marker to this one */
+  &:not(:first-child)::before {
+    background: var(--midas-progress-bar-track-background);
+    content: '';
+    height: 0.125rem;
+    inset-inline: calc(
+        -50% + var(--marker-size) / 2 + var(--midas-space-xsmall)
+      )
+      calc(50% + var(--marker-size) / 2 + var(--midas-space-xsmall));
+    position: absolute;
+    top: calc(var(--marker-size) / 2 - 0.0625rem);
+
+    @media (forced-colors: active) {
+      background: CanvasText;
+      forced-color-adjust: none;
+    }
+  }
+
+  &:is([data-status='completed'], [data-status='current']):not(
+      :first-child
+    )::before {
+    background: var(--midas-progress-bar-indicator-background);
+
+    @media (forced-colors: active) {
+      background: Highlight;
+      forced-color-adjust: none;
+    }
+  }
+}
+
+.marker {
+  align-items: center;
+  block-size: var(--marker-size);
+  border: var(--midas-border-width) solid var(--midas-border-color-primary);
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-variant-numeric: tabular-nums;
+  inline-size: var(--marker-size);
+  justify-content: center;
+
+  [data-status='completed'] > &,
+  [data-status='current'] > & {
+    background: var(--midas-progress-bar-indicator-background);
+    border-color: var(--midas-progress-bar-indicator-background);
+    color: var(--midas-text-on-color);
+
+    @media (forced-colors: active) {
+      background: Highlight;
+      border-color: Highlight;
+      color: HighlightText;
+      forced-color-adjust: none;
+    }
+  }
+}
+
+.label {
+  overflow-wrap: anywhere;
+  padding-inline: var(--midas-space-xsmall);
+
+  [data-status='current'] > & {
+    font-weight: var(--midas-typography-weight-semi-bold);
+  }
+
+  [data-status='upcoming'] > & {
+    color: var(--midas-text-secondary);
+  }
+}
+
+/* Narrow: keep every marker, move the labels out of sight and say where we are in words */
+@container (width < 36rem) {
+  .summary {
+    display: flex;
+  }
+
+  .label {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
