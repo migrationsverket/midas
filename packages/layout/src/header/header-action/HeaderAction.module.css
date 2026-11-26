@@ -1,22 +1,33 @@
 .headerAction {
   color: var(--midas-text-primary);
   position: relative;
+
+  /* The attribute selectors outweigh Button's own size classes */
+  &[data-icon-only] {
+    padding: calc(var(--midas-space-50) - var(--border-width));
+  }
+
+  &[data-orientation='vertical'] {
+    flex-direction: column;
+  }
 }
 
 @media (width <= 768px) {
-  .label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-    border-width: 0;
-  }
-
-  .headerAction {
+  /* Horizontal actions show only their icons on small screens. Vertical ones
+   * keep their labels, as on migrationsverket.se */
+  .headerAction:not([data-orientation='vertical']) {
     padding-inline: calc(var(--midas-space-50) - var(--border-width));
+
+    .label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border-width: 0;
+    }
   }
 }

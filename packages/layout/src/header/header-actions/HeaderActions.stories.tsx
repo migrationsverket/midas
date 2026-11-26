@@ -16,9 +16,14 @@ export default {
 export const Primary: Story = {
   render: args => (
     <HeaderActions {...args}>
-      <HeaderAction icon={<Bell />}>Notiser</HeaderAction>
-      <HeaderAction icon={<Settings />}>Inställningar</HeaderAction>
-      <HeaderAction icon={<User />}>Min profil</HeaderAction>
+      <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+      <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+      <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
     </HeaderActions>
   ),
+}
+
+export const Vertical: Story = {
+  args: { orientation: 'vertical' },
+  render: Primary.render,
 }

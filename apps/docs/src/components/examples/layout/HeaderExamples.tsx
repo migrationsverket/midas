@@ -125,6 +125,23 @@ export const HeaderActionsExample: React.FC = () => {
   )
 }
 
+export const VerticalHeaderActionsExample = () => (
+  <div
+    className='card'
+    style={{ overflow: 'hidden', padding: 0 }}
+  >
+    <Header>
+      <HeaderLogo />
+      <HeaderTitle>Mitt system</HeaderTitle>
+      <HeaderActions orientation='vertical'>
+        <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+        <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+        <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+      </HeaderActions>
+    </Header>
+  </div>
+)
+
 export const MobileHeaderExample: React.FC = () => {
   const url = useBaseUrl('/layout-examples/header-mobile')
   return (

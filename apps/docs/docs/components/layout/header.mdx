@@ -5,11 +5,17 @@ sidebar_position: 1
 ---
 
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { PropTable } from '@site/src/components/PropsTable'
+import HeaderLogoApi from '@midas-ds/api/layout/HeaderLogo.json'
+import HeaderActionsApi from '@midas-ds/api/layout/HeaderActions.json'
+import HeaderActionApi from '@midas-ds/api/layout/HeaderAction.json'
+import MobileMenuApi from '@midas-ds/api/layout/MobileMenu.json'
 import {
   BasicHeaderExample,
   MobileHeaderExample,
   OverflowHeaderExample,
   HeaderActionsExample,
+  VerticalHeaderActionsExample,
 } from '@site/src/components/examples/layout/HeaderExamples'
 
 <ComponentHeader
@@ -103,6 +109,20 @@ I Header läggs globala handlingar, alltså handlingar som användaren ska kunna
 ```
 
 <HeaderActionsExample />
+
+### Orientering
+
+Med `orientation='vertical'` hamnar etiketten under ikonen. På små skärmar (≤ 768px) döljs etiketterna i horisontell orientering så att bara ikonerna visas, medan vertikala behåller sina etiketter. Där ryms bara ett fåtal korta etiketter, så det är upp till applikationen att utelämna `HeaderTitle` eller begränsa antalet handlingar så att sidhuvudet inte blir bredare än skärmen.
+
+```tsx
+<HeaderActions orientation='vertical'>
+  <HeaderAction icon={<Bell size={20} />}>Notiser</HeaderAction>
+  <HeaderAction icon={<User size={20} />}>Min profil</HeaderAction>
+  <HeaderAction icon={<Settings size={20} />}>Inställningar</HeaderAction>
+</HeaderActions>
+```
+
+<VerticalHeaderActionsExample />
 
 ### Overflow
 
@@ -213,35 +233,28 @@ export const MobileHeaderExample = () => {
 
 <MobileHeaderExample />
 
-## Props
+## API
 
-### HeaderAction
+### Header
 
-| Prop         | Typ         | Beskrivning                                            |
-| ------------ | ----------- | ------------------------------------------------------ |
-| `icon`       | `ReactNode` | Valfri ikon                                            |
-| `children`   | `ReactNode` | Etikett — visas på desktop, döljs som sr-only på mobil |
-| `aria-label` | `string`    | Alternativt om `children` inte används                 |
-
-### HeaderTitle
-
-| Prop        | Typ         | Beskrivning     |
-| ----------- | ----------- | --------------- |
-| `children`  | `ReactNode` | Systemnamnet    |
-| `className` | `string`    | Extra CSS-klass |
+`Header` tar emot samma props som ett `<header>`-element, till exempel `className`.
 
 ### HeaderLogo
 
-| Prop      | Typ       | Standard | Beskrivning                 |
-| --------- | --------- | -------- | --------------------------- |
-| `primary` | `boolean` | `true`   | Monokrom variant om `false` |
+<PropTable doc={HeaderLogoApi} />
+
+### HeaderTitle
+
+`HeaderTitle` tar emot samma props som ett `<span>`-element, till exempel `className`.
+
+### HeaderActions
+
+<PropTable doc={HeaderActionsApi} />
+
+### HeaderAction
+
+<PropTable doc={HeaderActionApi} />
 
 ### MobileMenu
 
-| Prop           | Typ                         | Beskrivning                    |
-| -------------- | --------------------------- | ------------------------------ |
-| `title`        | `string`                    | Rubrik i menyn                 |
-| `defaultOpen`  | `boolean`                   | Okontrollerat starttillstånd   |
-| `isOpen`       | `boolean`                   | Kontrollerat öppet-läge        |
-| `onOpenChange` | `(isOpen: boolean) => void` | Callback vid öppning/stängning |
-| `children`     | `ReactNode`                 | Menyinnehåll                   |
+<PropTable doc={MobileMenuApi} />
