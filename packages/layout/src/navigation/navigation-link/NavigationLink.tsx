@@ -66,7 +66,7 @@ export const NavigationLink = <C extends ElementType = typeof Link>({
 
   return (
     <TooltipTrigger isDisabled={!isCollapsed || (!title && !ariaLabel)}>
-      <Focusable>
+      <Focusable isDisabled={isDisabled}>
         <Component
           aria-current={isActive && 'page'}
           aria-label={ariaLabel || (isCollapsed ? title : undefined)}
