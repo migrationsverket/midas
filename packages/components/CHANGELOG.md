@@ -1,3 +1,9 @@
+## 17.38.3 (2026-11-27)
+
+### 🩹 Fixes
+
+- **components,table:** keep the sort indicator next to the column label ([15ba3828937](https://github.com/migrationsverket/midas/commit/15ba3828937))
+
 ## 17.38.2 (2026-11-25)
 
 ### 🩹 Fixes
