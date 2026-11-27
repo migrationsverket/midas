@@ -41,10 +41,11 @@ describe('given a Primary TextArea', async () => {
       .toHaveClass(styles.textArea, 'test-class')
   })
 
-  it('should only be resizable vertically', async () => {
+  it('should only be resizable vertically, or grow with the text on touch screens', async () => {
+    const touch = window.matchMedia('(pointer: coarse)').matches
     await expect
       .element(page.getByRole('textbox'))
-      .toHaveStyle({ resize: 'vertical' })
+      .toHaveStyle({ resize: touch ? 'none' : 'vertical' })
   })
 })
 
