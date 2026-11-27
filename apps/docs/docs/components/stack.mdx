@@ -6,9 +6,10 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { Stack } from '@midas-ds/components'
 import StackApi from '@midas-ds/api/components/Stack.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { StackExample } from '@site/src/components/examples/stack/StackExamples.tsx'
 
 <ComponentHeader
   name='Stack'
@@ -24,15 +25,22 @@ Använd Stack för endimensionell layout, där elementen ligger efter varandra i
 import { Stack } from '@midas-ds/components'
 ```
 
-```tsx
-<Stack>
+<Playground
+  fill
+  component={Stack}
+  api={StackApi}
+  controls={{
+    direction: {},
+    spacing: {},
+    alignItems: {},
+    justifyContent: {},
+    wrap: {},
+  }}
+>
   <div>Första</div>
   <div>Andra</div>
   <div>Tredje</div>
-</Stack>
-```
-
-<StackExample />
+</Playground>
 
 ## Avstånd
 
@@ -45,22 +53,6 @@ Använd `spacing` för att styra avståndet mellan elementen. Värdena motsvarar
 | `medium`           | `1rem` (16px)   |
 | `large`            | `1.5rem` (24px) |
 | `xlarge`           | `2rem` (32px)   |
-
-```tsx
-<Stack spacing='large'>…</Stack>
-```
-
-<StackExample spacing='large' />
-
-## Horisontell
-
-Som standard ligger elementen under varandra. Använd `direction='row'` för att lägga dem bredvid varandra.
-
-```tsx
-<Stack direction='row'>…</Stack>
-```
-
-<StackExample direction='row' />
 
 ## API
 

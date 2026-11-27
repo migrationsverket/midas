@@ -6,9 +6,10 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import LinkApi from '@midas-ds/api/components/Link.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Link, Text } from '@midas-ds/components'
+import { Link } from '@midas-ds/components'
 import { variables as semantic } from '@midas-ds/theme'
 
 <ComponentHeader
@@ -22,58 +23,21 @@ Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående
 import { Link } from '@midas-ds/components'
 ```
 
-```tsx
-<Text>
-  En text med en <Link href='#'>länk</Link> i ett textstycke.
-</Text>
-```
-
-<div className='card'>
-  <Text>
-    En text med en <Link href='#'>länk</Link> i ett textstycke.
-  </Text>
-</div>
+<Playground
+  component={Link}
+  api={LinkApi}
+  initialProps={{ children: 'Läs mer om ansökan', href: '#' }}
+  controls={{
+    children: {},
+    standalone: {},
+  }}
+/>
 
 ## Varianter
-
-### Länk
-
-```tsx {2}
-<Text>
-  En text med en <Link href='#länk'>länk</Link> i ett textstycke.
-</Text>
-```
-
-<div className='card'>
-  <Text>
-    En text med en <Link href='#länk'>länk</Link> i ett textstycke.
-  </Text>
-</div>
 
 ### Fristående
 
 Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
-
-```tsx {3}
-<Text>Text</Text>
-<Link
-  standalone
-  href="#fristående"
->
-  En länk som är fristående från text
-</Link>
-```
-
-<div className='card'>
-  För att visa en länk som en fristående komponent, använd propertyn <code>standalone</code>. Detta kan vara användbart
-  när du vill att länken ska stå ut från omgivande text eller när du vill placera den på en egen rad.
-  <Link
-    standalone
-    href='#fristående'
-  >
-    {'En länk som är fristående från text'}
-  </Link>
-</div>
 
 ### Stretched
 

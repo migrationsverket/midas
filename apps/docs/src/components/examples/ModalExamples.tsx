@@ -51,46 +51,6 @@ export const ConfirmationExample = () => (
   </div>
 )
 
-export const FormExample = () => (
-  <div
-    className='card'
-    style={{ display: 'block' }}
-  >
-    <DialogTrigger>
-      <Button>Gör din egen fruktkorg</Button>
-      <Modal
-        title='Gör din egen fruktkorg'
-        footer={
-          <ButtonGroup>
-            <Button slot='close'>Skicka</Button>
-            <Button
-              slot='close'
-              variant='secondary'
-            >
-              Avbryt
-            </Button>
-          </ButtonGroup>
-        }
-      >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <TextField
-            autoFocus
-            label='Namnge din fruktkorg'
-            description='Skriv valfritt namn'
-          />
-          <RadioGroup
-            defaultValue='ja'
-            label='Vill du ha fruktkorgen hemskickad till din hemadress?'
-          >
-            <Radio value='ja'>Ja</Radio>
-            <Radio value='nej'>Nej</Radio>
-          </RadioGroup>
-        </div>
-      </Modal>
-    </DialogTrigger>
-  </div>
-)
-
 export const CustomCSSExample = () => (
   <div className='card'>
     <DialogTrigger>
@@ -178,24 +138,6 @@ export const LongFormExample = () => {
             <TextField label='Meddelande till leveranspersonal (valfritt)' />
             <Checkbox value='terms'>Jag godkänner villkoren</Checkbox>
           </div>
-        </Modal>
-      </DialogTrigger>
-    </div>
-  )
-}
-
-export const HideCloseButtonExample = () => {
-  return (
-    <div className='card'>
-      <DialogTrigger>
-        <Button>Bekräfta att du läst villkoren</Button>
-        <Modal
-          title='Villkor'
-          hideCloseButton
-          isKeyboardDismissDisabled
-          footer={<Button slot='close'>Bekräfta</Button>}
-        >
-          Du måste bekräfta att du läst villkoren innan du kan gå vidare
         </Modal>
       </DialogTrigger>
     </div>

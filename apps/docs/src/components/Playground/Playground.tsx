@@ -3,12 +3,17 @@ import {
   useState,
   type ComponentProps,
   type ElementType,
+  type ReactElement,
   type ReactNode,
 } from 'react'
+import * as components from '@midas-ds/components'
 import { Checkbox, ListBoxItem, Select, TextField } from '@midas-ds/components'
 import type { ApiDoc } from '@midas-ds/docgen'
 import CodeBlock from '@theme/CodeBlock'
 import {
+  childToCode,
+  CodeScope,
+  CodeSlot,
   elementToCode,
   getControls,
   getPlaygroundProps,
@@ -16,9 +21,13 @@ import {
   type Control,
   type ControlConfig,
   type ControlsConfig,
+  type ImportsConfig,
   type PropName,
+  registerModule,
 } from './playgroundUtils'
 import styles from './Playground.module.css'
+
+registerModule('@midas-ds/components', components)
 
 type Values = Record<string, unknown>
 
@@ -36,46 +45,78 @@ export interface PlaygroundProps<C extends ElementType> {
   initialProps?: { [K in PropName<ComponentProps<C>>]?: unknown }
   /** Static content, e.g. the items of a ComboBox */
   children?: ReactNode
+  /**
+   * Puts the component in context, e.g. a Tooltip in its TooltipTrigger. The
+   * wrapper is part of the generated code too.
+   */
+  wrap?: (element: ReactElement) => ReactElement
+  /**
+   * Components in `wrap` or `children` from other libraries than midas and
+   * lucide, by module, so the code can name and import them. One that is
+   * missing throws, which fails the docs build.
+   */
+  imports?: ImportsConfig
+  /** Lets the component take the full width, instead of centering it */
+  fill?: boolean
+  /**
+   * A class for the preview only, e.g. to make the items of a layout
+   * component visible. It isn't part of the generated code.
+   */
+  previewClassName?: string
 }
+
+const UNSET = '__unset__'
 
 interface ControlRowProps {
   control: Control
   value: unknown
   onChange: (value: unknown) => void
+  isDisabled: boolean
 }
 
-const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
+const ControlRow = ({
+  control,
+  value,
+  onChange,
+  isDisabled,
+}: ControlRowProps) => {
   switch (control.kind) {
     case 'boolean':
       return (
         <Checkbox
+          isDisabled={isDisabled}
           isSelected={Boolean(value)}
           onChange={onChange}
         >
           {control.name}
         </Checkbox>
       )
-    case 'enum':
+    case 'enum': {
+      // Without a default, leaving the prop out is a choice of its own
+      const canUnset = control.defaultValue === undefined && !control.required
       return (
         <Select
+          isDisabled={isDisabled}
           label={control.name}
           size='medium'
-          value={(value as string) ?? null}
-          onChange={onChange}
+          value={(value as string) ?? (canUnset ? UNSET : null)}
+          onChange={key => onChange(key === UNSET ? undefined : key)}
         >
-          {control.options.map(option => (
+          {[...(canUnset ? [UNSET] : []), ...control.options].map(option => (
             <ListBoxItem
               key={option}
               id={option}
             >
-              {option}
+              {option === UNSET ? 'Standard' : option}
             </ListBoxItem>
           ))}
         </Select>
       )
+    }
     case 'toggle':
       return (
         <Checkbox
+          isDisabled={isDisabled}
           isSelected={value !== undefined}
           onChange={isSelected =>
             onChange(isSelected ? control.option : undefined)
@@ -87,10 +128,12 @@ const ControlRow = ({ control, value, onChange }: ControlRowProps) => {
     case 'text':
       return (
         <TextField
+          isDisabled={isDisabled}
           label={control.name}
           size='medium'
           value={(value as string) ?? ''}
-          onChange={onChange}
+          // An empty field leaves the prop out, in the preview and the code
+          onChange={text => onChange(text === '' ? undefined : text)}
         />
       )
   }
@@ -107,6 +150,10 @@ export const Playground = <C extends ElementType>({
   controls: config,
   initialProps = {},
   children,
+  wrap,
+  imports: importsConfig,
+  fill = false,
+  previewClassName,
 }: PlaygroundProps<C>) => {
   // The types only check the call site, getControls checks the names at runtime
   const controls = getControls(
@@ -118,31 +165,63 @@ export const Playground = <C extends ElementType>({
   const defaults = Object.fromEntries(
     controls.map(({ name, defaultValue }) => [name, defaultValue]),
   )
-  const [values, setValues] = useState<Values>({ ...defaults, ...initialProps })
+  // A required prop without a default starts at its first option
+  const required = Object.fromEntries(
+    controls.flatMap(control =>
+      control.kind === 'enum' && control.required && !control.defaultValue
+        ? [[control.name, control.options[0]]]
+        : [],
+    ),
+  )
+  const [values, setValues] = useState<Values>({
+    ...defaults,
+    ...required,
+    ...initialProps,
+  })
 
-  const { props, codeProps, imports, visibleControls } = getPlaygroundProps(
+  const { props, codeProps, imports, disabledControls } = getPlaygroundProps(
     controls,
     values,
   )
   const content = (values.children as ReactNode) ?? children
-  const code = [
-    importsToCode(imports),
-    elementToCode(api.displayName, codeProps, content, defaults),
-  ]
-    .filter(Boolean)
-    .join('\n\n')
+  const element = createElement(component, props, content)
+  const scope = new CodeScope(importsConfig)
+  const elementCode = elementToCode(
+    scope.use(component),
+    codeProps,
+    content,
+    defaults,
+    '',
+    scope,
+  )
+  const jsx = wrap
+    ? childToCode(
+        wrap(createElement(CodeSlot, { code: elementCode })),
+        '',
+        scope,
+      )
+    : elementCode
+  for (const [module, names] of Object.entries(imports)) {
+    names.forEach(name => scope.addImport(module, name))
+  }
+  const code = [importsToCode(scope.imports), jsx].filter(Boolean).join('\n\n')
 
   return (
     <div className={styles.container}>
       <div className={styles.playground}>
-        <div className={styles.preview}>
-          {createElement(component, props, content)}
+        <div
+          className={[styles.preview, !fill && styles.center, previewClassName]
+            .filter(Boolean)
+            .join(' ')}
+        >
+          {wrap ? wrap(element) : element}
         </div>
         <div className={styles.controls}>
-          {visibleControls.map(control => (
+          {controls.map(control => (
             <ControlRow
               key={control.name}
               control={control}
+              isDisabled={disabledControls.includes(control.name)}
               value={values[control.name]}
               onChange={value =>
                 setValues(current => ({ ...current, [control.name]: value }))

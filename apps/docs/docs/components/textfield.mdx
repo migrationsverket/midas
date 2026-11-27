@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import TextFieldApi from '@midas-ds/api/components/TextField.json'
 import { TextField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -23,19 +24,23 @@ Inmatningsfält när användaren ska fylla i kortare information, tex namn, pers
 import { TextField } from '@midas-ds/components'
 ```
 
-```tsx
-<TextField
-  label='Etikett'
-  description='Beskrivning'
+<Playground
+  component={TextField}
+  api={TextFieldApi}
+  initialProps={{ label: 'Etikett', description: 'Beskrivning' }}
+  controls={{
+    label: {},
+    description: {},
+    placeholder: {},
+    size: {},
+    isDisabled: {},
+    isReadOnly: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
 />
-```
-
-<div className='card'>
-  <TextField
-    label='Etikett'
-    description='Beskrivning'
-  />
-</div>
 
 ## Beskrivning
 
@@ -172,39 +177,6 @@ Använd `inputMode="numeric"` för att visa ett numeriskt tangentbord på mobil 
 Se [MDN — inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) och [MDN — autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#values) för alla tillgängliga värden.
 
 ## Varianter
-
-### Storlek
-
-För att minska höjden på TextField, använd `size="medium"` som minskar padding i inputfältet.
-
-```tsx
-<TextField label="Large" /> // default is size="large"
-//highlight-next-line
-<TextField label="Medium" size="medium" />
-```
-
-<div className='card'>
-  <span
-    style={{
-      display: 'flex',
-      gap: '1rem',
-      flexDirection: 'row',
-    }}
-  >
-    <TextField
-      label='Large'
-      size='large'
-      defaultValue='large textfield'
-    />
-    <TextField
-      label='Medium'
-      size='medium'
-      defaultValue='medium textfield'
-    />
-  </span>
-</div>
-
-Varianterna är tillägg till React Arias ursprungliga implementation.
 
 ### Character counter
 

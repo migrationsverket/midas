@@ -236,23 +236,3 @@ export const DatabaseValidationExample = () => {
     </div>
   )
 }
-
-export const ErrorMessageList = () => {
-  return (
-    <div className='card'>
-      <InfoBanner
-        type='warning'
-        title='Justera dessa fält'
-      >
-        <ul>
-          <li>
-            <Link href='#felmeddelandelista'>Felmeddelande från fält A</Link>
-          </li>
-          <li>
-            <Link href='#felmeddelandelista'>Felmeddelande från fält B</Link>
-          </li>
-        </ul>
-      </InfoBanner>
-    </div>
-  )
-}

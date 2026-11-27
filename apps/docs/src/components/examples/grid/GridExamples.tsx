@@ -1,4 +1,4 @@
-import { Checkbox, Grid, GridItem } from '@midas-ds/components'
+import { Grid, GridItem } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 import * as React from 'react'
 
@@ -166,36 +166,6 @@ export const ResponsiveOffsetExample = () => {
           style={{ background: variables.layer01Base, padding: '1rem' }}
         >
           size=3
-        </GridItem>
-      </Grid>
-    </div>
-  )
-}
-
-export const NoMarginExample = () => {
-  const [margin, setMargin] = React.useState(true)
-
-  return (
-    <div className='card'>
-      <Checkbox
-        isSelected={margin}
-        onChange={() => setMargin(!margin)}
-      >
-        Marginaler avstängda
-      </Checkbox>
-      <hr />
-      <Grid removeMargins={margin}>
-        <GridItem
-          size={8}
-          style={{ background: variables.layer01Base, padding: '1rem' }}
-        >
-          size=8
-        </GridItem>
-        <GridItem
-          size={4}
-          style={{ background: variables.layer01Base, padding: '1rem' }}
-        >
-          size=4
         </GridItem>
       </Grid>
     </div>

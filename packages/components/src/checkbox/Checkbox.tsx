@@ -15,6 +15,10 @@ import { splitDataAttributes } from '../utils/splitDataAttributes'
 export interface CheckboxProps extends AriaCheckboxFieldProps {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
 }
 

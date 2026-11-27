@@ -59,6 +59,10 @@ export interface SearchFieldProps extends Omit<
    * A custom error message if using the isInvalid prop.
    */
   errorMessage?: string
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'

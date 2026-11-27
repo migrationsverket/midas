@@ -8,6 +8,7 @@ sidebar_custom_props:
 import { PropTable } from '@site/src/components/PropsTable'
 import SpinnerApi from '@midas-ds/api/components/Spinner.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Playground } from '@site/src/components/Playground/Playground'
 import { Spinner, Button } from '@midas-ds/components'
 import { variables } from '@midas-ds/theme'
 
@@ -24,13 +25,11 @@ Läs mer om hur spinner används i [Mönster för laddningsindikatorer](/design-
 import { Spinner } from '@midas-ds/components'
 ```
 
-```tsx
-<Spinner />
-```
-
-<div className='card'>
-  <Spinner />
-</div>
+<Playground
+  component={Spinner}
+  api={SpinnerApi}
+  controls={{ small: {}, color: {} }}
+/>
 
 ## Varianter
 
@@ -38,25 +37,9 @@ import { Spinner } from '@midas-ds/components'
 
 Standardstorleken är helskärmsspinner. Använd varianten `small` när spinner ligger bredvid andra komponenter.
 
-```tsx
-<Spinner small />
-```
-
-<div className='card'>
-  <Spinner small />
-</div>
-
 ### Färg
 
 Spinnern ärver sin färg från textfärgen på det element den placeras i.
-
-```tsx
-<Spinner />
-```
-
-<div className='card'>
-  <Spinner />
-</div>
 
 ### Valfri färg
 

@@ -7,6 +7,7 @@ sidebar_custom_props:
 
 import { I18nProvider } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import DateFieldApi from '@midas-ds/api/components/DateField.json'
 import { DateField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -54,14 +55,23 @@ till hur värden ska formateras hittas där.
 import { DateField } from '@midas-ds/components'
 ```
 
-```tsx
-<DateField
-  label='Etikett'
-  description='Beskrivning'
+<Playground
+  component={DateField}
+  api={DateFieldApi}
+  initialProps={{ label: 'Etikett', description: 'Beskrivning' }}
+  controls={{
+    label: {},
+    description: {},
+    size: {},
+    granularity: {},
+    isDisabled: {},
+    isReadOnly: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
 />
-```
-
-<Example />
 
 ## Användning
 

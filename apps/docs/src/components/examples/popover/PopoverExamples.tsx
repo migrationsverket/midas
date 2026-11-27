@@ -7,43 +7,10 @@ import {
   DialogTrigger,
   Text,
   TextField,
-  ButtonGroup,
   Pressable,
 } from '@midas-ds/components'
-import { ArrowUp, ArrowLeft, Info, UserCog, Share2 } from 'lucide-react'
+import { Info, UserCog } from 'lucide-react'
 import React from 'react'
-
-export const PopoverExample = () => {
-  return (
-    <div
-      className='card'
-      style={{ display: 'block' }}
-    >
-      <DialogTrigger>
-        <Button
-          variant='secondary'
-          icon={Share2}
-        >
-          Dela
-        </Button>
-        <Popover>
-          <div
-            style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
-          >
-            <div>
-              <Heading>Dela inköpslista</Heading>
-              <Text>Välj hur du vill dela din inköpslista</Text>
-            </div>
-            <ButtonGroup>
-              <Button>Mejla</Button>
-              <Button variant='secondary'>Kopiera texten</Button>
-            </ButtonGroup>
-          </div>
-        </Popover>
-      </DialogTrigger>
-    </div>
-  )
-}
 
 export const InfoPopoverExample = () => {
   return (
@@ -108,37 +75,6 @@ export const PopoverFormExample = () => {
           >
             Spara
           </Button>
-        </Popover>
-      </DialogTrigger>
-    </div>
-  )
-}
-
-export const PopoverPlacement = () => {
-  return (
-    <div
-      className='card'
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: '1rem',
-      }}
-    >
-      <DialogTrigger>
-        <Button>
-          <ArrowLeft />
-        </Button>
-        <Popover placement='left'>
-          Popover visas till vänster om trigger-elementet
-        </Popover>
-      </DialogTrigger>
-      <DialogTrigger>
-        <Button>
-          <ArrowUp />
-        </Button>
-        <Popover placement='top'>
-          Popover visas på ovansidan av trigger-elementet
         </Popover>
       </DialogTrigger>
     </div>

@@ -23,6 +23,10 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   description?: string
   /** Custom error messages */
   errorMessage?: string | ((validation: ValidationResult) => string)
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
   /**
    * Whether to show the character counter or not

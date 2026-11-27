@@ -6,8 +6,9 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import InfoBannerApi from '@midas-ds/api/components/InfoBanner.json'
-import { InfoBanner, Tab, Tabs, TabList, TabPanel } from '@midas-ds/components'
+import { InfoBanner } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -18,150 +19,29 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
 
-<div className='card'>
-  <Tabs label='Välj typ'>
-    <TabList>
-      <Tab id='success'>Success</Tab>
-      <Tab id='info'>Info</Tab>
-      <Tab id='important'>Important</Tab>
-      <Tab id='warning'>Warning</Tab>
-    </TabList>
-    <TabPanel id='success'>
-      <InfoBanner
-        type='success'
-        title='Formuläret har skickats'
-        message='Allt gick bra. Du kan nu stänga fönstret.'
-      />
-    </TabPanel>
-    <TabPanel id='info'>
-      <InfoBanner
-        type='info'
-        title='Kom ihåg att fylla i din semesterplan'
-        message='Vi behöver din semesterplan för att kunna gå vidare.'
-      />
-    </TabPanel>
-    <TabPanel id='important'>
-      <InfoBanner
-        type='important'
-        title='Du behöver komplettera!'
-        message='Vi saknar din semesterplan.'
-      />
-    </TabPanel>
-    <TabPanel id='warning'>
-      <InfoBanner
-        type='warning'
-        title='Formuläret kunde inte skickas!'
-        message='Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'
-      />
-    </TabPanel>
-  </Tabs>
-</div>
-
-## Varianter
-
-### Success
-
 ```tsx
-<InfoBanner
-  // highlight-start
-  type='success'
-  // highlight-end
-  title='Det gick bra!'
-  message='Detta är ett meddelande om att allt gick bra.'
-/>
+import { InfoBanner } from '@midas-ds/components'
 ```
 
-<div className='card'>
-  <InfoBanner
-    type='success'
-    title='Det gick bra!'
-    message='Detta är ett meddelande om att allt gick bra.'
-  />
-</div>
-
-### Info
-
-```tsx
-<InfoBanner
-  // highlight-start
-  type='info'
-  // highlight-end
-  title='Information'
-  message='Detta är ett meddelande med information.'
+<Playground
+  component={InfoBanner}
+  api={InfoBannerApi}
+  initialProps={{
+    type: 'success',
+    title: 'Formuläret har skickats',
+    message: 'Allt gick bra. Du kan nu stänga fönstret.',
+  }}
+  controls={{
+    type: {},
+    title: {},
+    message: {},
+    isDismissable: {},
+  }}
 />
-```
-
-<div className='card'>
-  <InfoBanner
-    type='info'
-    title='Information'
-    message='Detta är ett meddelande med information.'
-  />
-</div>
-
-### Important
-
-```tsx
-<InfoBanner
-  // highlight-start
-  type='important'
-  // highlight-end
-  title='Viktig information'
-  message='Detta är ett meddelande med viktig information.'
-/>
-```
-
-<div className='card'>
-  <InfoBanner
-    type='important'
-    title='Viktig information'
-    message='Detta är ett meddelande med viktig information.'
-  />
-</div>
-
-### Warning
-
-```tsx
-<InfoBanner
-  // highlight-start
-  type='warning'
-  // highlight-end
-  title='Varning'
-  message='Detta är en varning som används när något gått fel.'
-/>
-```
-
-<div className='card'>
-  <InfoBanner
-    type='warning'
-    title='Varning'
-    message='Detta är en varning som används när något gått fel.'
-  />
-</div>
 
 ## Stängbar
 
 Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `isDismissable`. Det bör inte användas för varningar.
-
-```tsx
-<InfoBanner
-  // highlight-start
-  isDismissable
-  // highlight-end
-  type='success'
-  title='Det gick bra!'
-  message='Detta är ett meddelande om att allt gick bra.'
-/>
-```
-
-<div className='card'>
-  <InfoBanner
-    isDismissable
-    type='success'
-    title='Det gick bra!'
-    message='Detta är ett meddelande om att allt gick bra.'
-  />
-</div>
 
 ## Kontrollera tillstånd
 

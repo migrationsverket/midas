@@ -9,6 +9,8 @@ import { PropTable } from '@site/src/components/PropsTable'
 import GridApi from '@midas-ds/api/components/Grid.json'
 import GridItemApi from '@midas-ds/api/components/GridItem.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { Grid, GridItem } from '@midas-ds/components'
 import {
   SimpleExample,
   ResponsiveExample,
@@ -16,7 +18,6 @@ import {
   GrowExample,
   OffsetExample,
   ResponsiveOffsetExample,
-  NoMarginExample,
   NestedExample,
 } from '@site/src/components/examples/grid/GridExamples.tsx'
 
@@ -30,7 +31,18 @@ Grid och GridItem är komponenter som bygger på CSS Flexbox för att skapa resp
 
 Använd Grid för tvådimensionell layout, där innehållet placeras i rader och kolumner i ett rutnät med 12 kolumner. Ska elementen bara ligga efter varandra i en rad eller en kolumn, använd [Stack](./stack.mdx).
 
-<SimpleExample />
+<Playground
+  component={Grid}
+  api={GridApi}
+  controls={{ isContained: {}, removeMargins: {} }}
+  fill
+  previewClassName='playground-grid'
+>
+  <GridItem size={8}>size=8</GridItem>
+  <GridItem size={4}>size=4</GridItem>
+  <GridItem size={4}>size=4</GridItem>
+  <GridItem size={8}>size=8</GridItem>
+</Playground>
 
 ```tsx
 import { Grid, GridItem } from '@midas-ds/components'
@@ -151,10 +163,10 @@ Föräldraelementet `<Grid>` är en container för rutnätet och bestämmer hur 
 
 ### Contained
 
-Med `contained` kan du ställa in att rutnätet ska ha en maxbredd och centrerat innehåll på större skärmar. Detta är användbart för att skapa en responsiv layout som inte sträcker sig över hela skärmens bredd.
+Med `isContained` kan du ställa in att rutnätet ska ha en maxbredd och centrerat innehåll på större skärmar. Detta är användbart för att skapa en responsiv layout som inte sträcker sig över hela skärmens bredd.
 
 ```tsx {1}
-<Grid contained>
+<Grid isContained>
   <GridItem size={6}>size=6</GridItem>
   <GridItem size='auto'>size=auto</GridItem>
   <GridItem size='grow'>size=grow</GridItem>
@@ -171,8 +183,6 @@ Flex har inbyggda marginaler som anpassar sig efter skärmstorlek. Marginalerna 
   <GridItem size={4}>size=4</GridItem>
 </Grid>
 ```
-
-<NoMarginExample />
 
 ## Nästlad användning
 

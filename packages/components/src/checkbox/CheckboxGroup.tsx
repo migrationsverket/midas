@@ -21,6 +21,10 @@ export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
   errorMessage?: string | ((validation: ValidationResult) => string)
   showSelectAll?: boolean
   selectAllLabel?: string
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
   popover?: InfoPopoverProps
 }

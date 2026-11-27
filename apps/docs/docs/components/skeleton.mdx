@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import SkeletonApi from '@midas-ds/api/components/Skeleton.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Skeleton } from '@midas-ds/components'
@@ -23,13 +24,19 @@ Komponent som används som en platshållare för den riktiga komponenten innan s
 import { Skeleton } from '@midas-ds/components'
 ```
 
-```tsx
-<Skeleton height='48px' />
-```
-
-<div className='card'>
-  <Skeleton height='48px' />
-</div>
+<Playground
+  fill
+  component={Skeleton}
+  api={SkeletonApi}
+  initialProps={{ height: '48px' }}
+  controls={{
+    variant: {},
+    size: { showWhen: { variant: 'form' } },
+    width: {},
+    height: { showWhen: { variant: 'rectangle' } },
+    isAnimated: {},
+  }}
+/>
 
 ## Varianter
 
@@ -37,95 +44,17 @@ import { Skeleton } from '@midas-ds/components'
 
 Detta är standardvarianten. Används som platshållare för text och de flesta komponenter vi har. Ange storleken i px, rem eller % med `width` och `height`. Om inget anges kommer den att fylla sin parent container.
 
-```tsx
-<Skeleton height='48px' />
-```
-
-<div className='card'>
-  <Skeleton height='48px' />
-</div>
-
 ### Circle
 
 Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` och sätter automatiskt höjden så att den blir rund.
-
-```tsx
-<Skeleton
-  // highlight-start
-  variant='circle'
-  // highlight-end
-  width='48px'
-/>
-```
-
-<div className='card'>
-  <Skeleton
-    variant='circle'
-    width='48px'
-  />
-</div>
 
 ### Form
 
 Används som platshållare för formulärfält som inte laddat klart än. Form-varianten visar en skeleton för etikett, beskrivning och inmatningsfält som liknar riktiga formulärkomponenter som TextField.
 
-```tsx
-<Skeleton
-  // highlight-start
-  variant='form'
-  // highlight-end
-  width='400px'
-/>
-```
-
-<div className='card'>
-  <Skeleton
-    variant='form'
-    width='400px'
-  />
-</div>
-
 #### Storlek
 
 Form-varianten stödjer två storlekar för inmatningsfältet: `large` (48px, standard) och `medium` (40px).
-
-```tsx
-<Skeleton
-  variant='form'
-  // highlight-start
-  size='medium'
-  // highlight-end
-  width='400px'
-/>
-```
-
-<div className='card'>
-  <Skeleton
-    variant='form'
-    size='medium'
-    width='400px'
-  />
-</div>
-
-## Animation
-
-Skeleton är animerad som standard. Det går att stänga av med `isAnimated={false}`.
-
-```tsx
-<Skeleton
-  height='48px'
-  // highlight-start
-  isAnimated={false}
-  // highlight-end
-/>
-```
-
-<div className='card'>
-  <Skeleton
-    height='48px'
-    isAnimated={false}
-  />
-</div>
 
 ## Att använda en annan bakgrundsfärg
 

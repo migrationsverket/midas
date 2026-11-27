@@ -28,6 +28,10 @@ export interface ComboBoxProps<T extends object> extends Omit<
   items?: Iterable<T>
   children: ReactNode | ((item: T) => ReactNode)
   placeholder?: string
+  /**
+   * The position of the error message
+   * @default 'top'
+   */
   errorPosition?: 'top' | 'bottom'
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'

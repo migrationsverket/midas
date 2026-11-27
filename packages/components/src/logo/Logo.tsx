@@ -15,7 +15,9 @@ export interface LogoProps extends React.DetailedHTMLProps<
    */
   primary?: boolean
   /**
-   * Specify logo size
+   * Specify logo size. Without it, the logo takes the size from a
+   * `LogoContext`, if there is one
+   * @default 'medium'
    */
   size?: 'x-small' | 'small' | 'medium' | 'large'
   /** There must be whitespace around the logo. By disabling our built in padding you must add at least an equal amount yourself. */

@@ -8,6 +8,7 @@ sidebar_custom_props:
 import { PropTable } from '@site/src/components/PropsTable'
 import LogoApi from '@midas-ds/api/components/Logo.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Playground } from '@site/src/components/Playground/Playground'
 import { Link, Logo } from '@midas-ds/components'
 
 <ComponentHeader
@@ -50,89 +51,15 @@ Faviconen används i webbläsarens flikar och bokmärken. Det är samma vapen so
 import { Logo } from '@midas-ds/components'
 ```
 
-```tsx
-<Logo />
-```
-
-<div className='card'>
-  <Logo />
-</div>
+<Playground
+  component={Logo}
+  api={LogoApi}
+  controls={{ size: {}, primary: {}, padding: {} }}
+/>
 
 ### Varianter
 
 Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
-
-#### X-small
-
-```tsx
-<Logo size="x-small" />
-<Logo primary={false} size="x-small" />
-```
-
-<div
-  className='card'
-  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
->
-  <Logo size='x-small' />
-  <Logo
-    primary={false}
-    size='x-small'
-  />
-</div>
-
-#### Small
-
-```tsx
-<Logo size='small' />
-<Logo primary={false} size='small'/>
-```
-
-<div
-  className='card'
-  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
->
-  <Logo size='small' />
-  <Logo
-    primary={false}
-    size='small'
-  />
-</div>
-
-#### Medium
-
-```tsx
-<Logo size="medium" />
-<Logo primary={false} size="medium" />
-```
-
-<div
-  className='card'
-  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
->
-  <Logo size='medium' />
-  <Logo
-    primary={false}
-    size='medium'
-  />
-</div>
-
-#### Large
-
-```tsx
-<Logo size="large" />
-<Logo primary={false} size="large" />
-```
-
-<div
-  className='card'
-  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
->
-  <Logo size='large' />
-  <Logo
-    primary={false}
-    size='large'
-  />
-</div>
 
 ## API
 

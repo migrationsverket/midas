@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import EmptyStateApi from '@midas-ds/api/components/EmptyState.json'
 import {
   Button,
@@ -38,8 +39,11 @@ import {
 import { Inbox } from 'lucide-react'
 ```
 
-```tsx
-<EmptyState>
+<Playground
+  component={EmptyState}
+  api={EmptyStateApi}
+  controls={{ align: {} }}
+>
   <EmptyStateVisual>
     <Inbox />
   </EmptyStateVisual>
@@ -48,21 +52,7 @@ import { Inbox } from 'lucide-react'
   <EmptyStateActions>
     <Button>Gör en ansökan</Button>
   </EmptyStateActions>
-</EmptyState>
-```
-
-<div className='card'>
-  <EmptyState>
-    <EmptyStateVisual>
-      <Inbox />
-    </EmptyStateVisual>
-    <EmptyStateHeading>Du har inga ärenden</EmptyStateHeading>
-    <EmptyStateText>När du skickar in en ansökan visas den här.</EmptyStateText>
-    <EmptyStateActions>
-      <Button>Gör en ansökan</Button>
-    </EmptyStateActions>
-  </EmptyState>
-</div>
+</Playground>
 
 ## Komponenter i EmptyState
 
@@ -78,30 +68,6 @@ import { Inbox } from 'lucide-react'
 ### Placering
 
 Använd `align='start'` när innehållet ska linjera med till exempel ett sökfält ovanför.
-
-```tsx
-<EmptyState
-  // highlight-start
-  align='start'
-  // highlight-end
->
-  <EmptyStateHeading>Inga sökträffar</EmptyStateHeading>
-  <EmptyStateText>Kontrollera stavningen eller prova med färre sökord.</EmptyStateText>
-  <EmptyStateActions>
-    <Button variant='secondary'>Rensa sökningen</Button>
-  </EmptyStateActions>
-</EmptyState>
-```
-
-<div className='card'>
-  <EmptyState align='start'>
-    <EmptyStateHeading>Inga sökträffar</EmptyStateHeading>
-    <EmptyStateText>Kontrollera stavningen eller prova med färre sökord.</EmptyStateText>
-    <EmptyStateActions>
-      <Button variant='secondary'>Rensa sökningen</Button>
-    </EmptyStateActions>
-  </EmptyState>
-</div>
 
 ### Rubriknivå
 

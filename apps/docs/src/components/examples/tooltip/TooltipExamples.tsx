@@ -2,36 +2,10 @@ import {
   Button,
   Tooltip,
   TooltipTrigger,
-  Text,
   Focusable,
 } from '@midas-ds/components'
-import { ArrowUp, ArrowLeft, Save } from 'lucide-react'
 import React from 'react'
 
-export const SimpleExample = () => {
-  return (
-    <div
-      className='card'
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: '1rem',
-      }}
-    >
-      <Text>Hovra över ikonen för att visa tooltip</Text>
-      <TooltipTrigger>
-        <Button
-          variant='icon'
-          aria-label='Spara'
-        >
-          <Save />
-        </Button>
-        <Tooltip>Spara</Tooltip>
-      </TooltipTrigger>
-    </div>
-  )
-}
 export const TooltipDelay = () => {
   return (
     <div
@@ -50,37 +24,6 @@ export const TooltipDelay = () => {
       <TooltipTrigger delay={600}>
         <Button variant='primary'>Hover later</Button>
         <Tooltip>Och nästa Tooltip visas då snabbare!</Tooltip>
-      </TooltipTrigger>
-    </div>
-  )
-}
-
-export const TooltipPlacement = () => {
-  return (
-    <div
-      className='card'
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        gap: '1rem',
-      }}
-    >
-      <TooltipTrigger delay={600}>
-        <Button>
-          <ArrowLeft />
-        </Button>
-        <Tooltip placement='left'>
-          Tooltip visas till vänster om trigger-elementet
-        </Tooltip>
-      </TooltipTrigger>
-      <TooltipTrigger delay={600}>
-        <Button>
-          <ArrowUp />
-        </Button>
-        <Tooltip placement='top'>
-          Tooltip visas på ovansidan av trigger-elementet
-        </Tooltip>
       </TooltipTrigger>
     </div>
   )

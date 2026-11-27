@@ -8,6 +8,7 @@ sidebar_custom_props:
 import { Button, FileTrigger } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import FileTriggerApi from '@midas-ds/api/components/FileTrigger.json'
 
 <ComponentHeader
@@ -25,6 +26,14 @@ FileTrigger är en komponent utan utseende och går att använda direkt från Re
 Se [Filuppladdning](/components/file-upload) för hur FileTrigger kombineras med [FileList](/components/file-upload/file-list)
 och [DropZone](/components/file-upload/dropzone).
 
+<Playground
+  component={FileTrigger}
+  api={FileTriggerApi}
+  controls={{ allowsMultiple: {}, acceptDirectory: {}, defaultCamera: {} }}
+>
+  <Button>Välj filer</Button>
+</Playground>
+
 ## Varianter
 
 Se [API](#api) samt [React Aria](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) för samtliga
@@ -40,18 +49,6 @@ drag & drop.
 
 På mobila enheter kan användaren använda enhetens kamera för att välja media. `defaultCamera` väljer vilken kamera som
 används.
-
-```tsx
-<FileTrigger defaultCamera={'environment'}>
-  <Button>Öppna kameran</Button>
-</FileTrigger>
-```
-
-<div className='card'>
-  <FileTrigger defaultCamera={'environment'}>
-    <Button>Öppna kameran</Button>
-  </FileTrigger>
-</div>
 
 ## API
 

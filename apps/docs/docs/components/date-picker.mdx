@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import DatePickerApi from '@midas-ds/api/components/DatePicker.json'
 import DateRangePickerApi from '@midas-ds/api/components/DateRangePicker.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -35,11 +36,22 @@ Inmatningsfält för att välja ett eller flera datum. Välj `DatePicker` för a
 import { DatePicker } from '@midas-ds/components'
 ```
 
-```tsx
-<DatePicker label='Välj ett datum' />
-```
-
-<Example />
+<Playground
+  component={DatePicker}
+  api={DatePickerApi}
+  initialProps={{ label: 'Välj ett datum' }}
+  controls={{
+    label: {},
+    description: {},
+    size: {},
+    isDisabled: {},
+    isReadOnly: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
+/>
 
 ## Användning
 

@@ -7,6 +7,7 @@ sidebar_custom_props:
 
 import { ControlledExample, ControlledGroupExample } from '@site/src/components/examples/checkbox/CheckboxExamples'
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import CheckboxApi from '@midas-ds/api/components/Checkbox.json'
 import CheckboxGroupApi from '@midas-ds/api/components/CheckboxGroup.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -27,25 +28,23 @@ Inmatningsfält för att låta användaren välja inget, ett eller flera av ett 
 import { Checkbox } from '@midas-ds/components'
 ```
 
-```tsx
-<Checkbox>Jag godkänner villkoren</Checkbox>
-```
-
-<div className='card'>
-  <Checkbox>Jag godkänner villkoren</Checkbox>
-</div>
+<Playground
+  component={Checkbox}
+  api={CheckboxApi}
+  initialProps={{ children: 'Jag godkänner villkoren' }}
+  controls={{
+    children: {},
+    description: {},
+    isIndeterminate: {},
+    isDisabled: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
+/>
 
 ## Varianter
-
-### Ensam checkbox
-
-```tsx
-<Checkbox>Jag godkänner villkoren</Checkbox>
-```
-
-<div className='card'>
-  <Checkbox>Jag godkänner villkoren</Checkbox>
-</div>
 
 ### Förvalt alternativ (okontrollerat)
 

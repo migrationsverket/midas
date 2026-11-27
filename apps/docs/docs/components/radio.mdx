@@ -6,6 +6,8 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
+import { Radio, RadioGroup } from '@midas-ds/components'
 import RadioApi from '@midas-ds/api/components/Radio.json'
 import RadioGroupApi from '@midas-ds/api/components/RadioGroup.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -34,21 +36,26 @@ Inmatningsfält som används för att välja exakt ett alternativ.
 import { Radio, RadioGroup } from '@midas-ds/components'
 ```
 
-```tsx
-<RadioGroup
-  label='Välj din favoritfrukt'
-  description='Du kan bara välja en'
+<Playground
+  component={RadioGroup}
+  api={RadioGroupApi}
+  initialProps={{ label: 'Välj din favoritfrukt' }}
+  controls={{
+    label: {},
+    description: {},
+    orientation: {},
+    isDisabled: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
 >
   <Radio value='apple'>Äpple</Radio>
   <Radio value='banan'>Banan</Radio>
   <Radio value='kiwi'>Kiwi</Radio>
   <Radio value='apelsin'>Apelsin</Radio>
-</RadioGroup>
-```
-
-<div className='card'>
-  <BasicExample />
-</div>
+</Playground>
 
 ## Kontrollerat val
 

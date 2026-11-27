@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import TextAreaApi from '@midas-ds/api/components/TextArea.json'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { TextArea } from '@midas-ds/components'
@@ -22,19 +23,22 @@ Inmatningsfält som används när användaren behöver fylla i längre informati
 import { TextArea } from '@midas-ds/components'
 ```
 
-```tsx
-<TextArea
-  label='Kommentar'
-  description='Skriv en kommentar'
+<Playground
+  component={TextArea}
+  api={TextAreaApi}
+  initialProps={{ label: 'Kommentar', description: 'Skriv en kommentar' }}
+  controls={{
+    label: {},
+    description: {},
+    size: {},
+    isDisabled: {},
+    isReadOnly: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
 />
-```
-
-<div className='card'>
-  <TextArea
-    label='Kommentar'
-    description='Skriv en kommentar'
-  />
-</div>
 
 ## Beskrivning
 

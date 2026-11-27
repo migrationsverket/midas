@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import TimeFieldApi from '@midas-ds/api/components/TimeField.json'
 import { TimeField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -35,14 +36,23 @@ In- och utdata bygger på [@internationalized/date](https://react-spectrum.adobe
 import { TimeField } from '@midas-ds/components'
 ```
 
-```tsx
-<TimeField
-  label='Etikett'
-  description='Beskrivning'
+<Playground
+  component={TimeField}
+  api={TimeFieldApi}
+  initialProps={{ label: 'Etikett', description: 'Beskrivning' }}
+  controls={{
+    label: {},
+    description: {},
+    size: {},
+    granularity: {},
+    isDisabled: {},
+    isReadOnly: {},
+    isRequired: {},
+    isInvalid: {},
+    errorMessage: { showWhen: 'isInvalid' },
+    errorPosition: { showWhen: 'isInvalid' },
+  }}
 />
-```
-
-<Example />
 
 ## Användning
 
@@ -107,23 +117,6 @@ Visar en knapp som tömmer fältet. Knappen visas bara när fältet har ett komp
 <Example
   isClearable
   defaultValue={new Time(14, 30)}
-/>
-
-### Sekunder
-
-Använd `granularity="second"` för att även visa sekunder.
-
-```tsx
-<TimeField
-  granularity='second'
-  defaultValue={new Time(14, 30, 45)}
-  label='Etikett'
-/>
-```
-
-<Example
-  granularity='second'
-  defaultValue={new Time(14, 30, 45)}
 />
 
 ### 12-timmarsformat

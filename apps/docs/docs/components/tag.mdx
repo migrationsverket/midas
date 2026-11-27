@@ -6,6 +6,7 @@ sidebar_custom_props:
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
+import { Playground } from '@site/src/components/Playground/Playground'
 import TagApi from '@midas-ds/api/components/Tag.json'
 import TagGroupApi from '@midas-ds/api/components/TagGroup.json'
 import TagListApi from '@midas-ds/api/components/TagList.json'
@@ -26,21 +27,21 @@ Komponent för att visa beskrivande etiketter som kan användas för att kategor
 import { Tag, TagGroup, TagList } from '@midas-ds/components'
 ```
 
-```tsx
-<TagGroup aria-label='Taggar'>
-  <TagList>
-    <Tag>Tag med information</Tag>
-  </TagList>
-</TagGroup>
-```
-
-<div className='card'>
-  <TagGroup aria-label='Taggar'>
-    <TagList>
-      <Tag>Tag med information</Tag>
-    </TagList>
-  </TagGroup>
-</div>
+<Playground
+  component={Tag}
+  api={TagApi}
+  initialProps={{ children: 'Tag med information' }}
+  controls={{
+    children: {},
+    color: {},
+    isDisabled: {},
+  }}
+  wrap={tag => (
+    <TagGroup aria-label='Taggar'>
+      <TagList>{tag}</TagList>
+    </TagGroup>
+  )}
+/>
 
 ## Användning
 
