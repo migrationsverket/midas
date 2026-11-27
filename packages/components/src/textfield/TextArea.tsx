@@ -1,6 +1,6 @@
 'use client'
 
-import { forwardRef } from 'react'
+import { forwardRef, type CSSProperties } from 'react'
 import { TextFieldBase, type TextFieldBaseProps } from './TextFieldBase'
 import {
   TextArea as AriaTextArea,
@@ -22,6 +22,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         form={form}
         ref={ref}
         rows={rows}
+        // With field-sizing on touch screens rows no longer sets the height,
+        // so the CSS uses it as the minimum instead
+        style={
+          rows
+            ? ({ '--midas-textarea-rows': rows } as CSSProperties)
+            : undefined
+        }
         wrap={wrap}
       />
     </TextFieldBase>
