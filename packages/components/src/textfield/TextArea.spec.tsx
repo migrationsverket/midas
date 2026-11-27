@@ -5,7 +5,7 @@ import * as stories from './TextArea.stories'
 import styles from './TextField.module.css'
 import { render } from '../../test-utils'
 
-const { Primary, Required, CustomValidation, MaxLength, ShowCounter } =
+const { Primary, Required, CustomValidation, MaxLength, ShowCounter, Rows } =
   composeStories(stories)
 
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
@@ -41,10 +41,11 @@ describe('given a Primary TextArea', async () => {
       .toHaveClass(styles.textArea, 'test-class')
   })
 
-  it('should only be resizable vertically', async () => {
+  it('should only be resizable vertically, or grow with the text on touch screens', async () => {
+    const touch = window.matchMedia('(pointer: coarse)').matches
     await expect
       .element(page.getByRole('textbox'))
-      .toHaveStyle({ resize: 'vertical' })
+      .toHaveStyle({ resize: touch ? 'none' : 'vertical' })
   })
 })
 
@@ -114,5 +115,17 @@ describe('given a TextArea with showCounter', async () => {
         .element(getByText('HEJ'.length.toString()))
         .toBeInTheDocument()
     })
+  })
+})
+
+describe('given a TextArea with rows', () => {
+  it('should pass rows on as the minimum height for touch screens', async () => {
+    const { getByRole } = await render(<Rows />)
+
+    expect(
+      getByRole('textbox')
+        .element()
+        .style.getPropertyValue('--midas-textarea-rows'),
+    ).toBe('5')
   })
 })

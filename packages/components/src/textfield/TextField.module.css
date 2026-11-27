@@ -52,6 +52,17 @@
   resize: vertical;
   overflow: auto;
 
+  /* The resize grip is drawn by the browser and too small to drag with a
+     finger, so on touch screens the field grows with its text instead.
+     Browsers without field-sizing keep a fixed height and scroll. The
+     minimum is the rows prop, or the browser's default of 2 rows */
+  @media (pointer: coarse) {
+    field-sizing: content;
+    resize: none;
+    min-block-size: calc(var(--midas-textarea-rows, 2) * 1lh + 2.25rem + 1px);
+    max-block-size: calc(12lh + 2.25rem + 1px);
+  }
+
   @media (forced-colors: active) {
     outline: 3px solid;
     outline-offset: 2px;

@@ -123,6 +123,11 @@ export const MaxLengthAndShowCounter: Story = {
   },
 }
 
+/** Taller from the start. On touch screens the field grows with its text, and `rows` is its minimum height */
+export const Rows: Story = {
+  args: { rows: 5 },
+}
+
 /** Shown on the components index in the docs, hidden from Storybook */
 export const Preview: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
